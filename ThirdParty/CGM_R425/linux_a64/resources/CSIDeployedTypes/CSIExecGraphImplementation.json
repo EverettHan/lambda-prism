@@ -1,0 +1,258 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type defining an implementation of a graph block (which can be a graph itself)",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "blocks",
+      "typeArray": "CSIExecGraphBlock",
+      "desc": "Graph property not optional: Array of block definitions",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "controlFlows",
+      "typeArray": "CSIExecGraphFlow",
+      "desc": "Graph property not optional: Array of control flows between the blocks",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "dataFlows",
+      "typeArray": "CSIExecGraphFlow",
+      "desc": "Graph property not optional: Array of data flows between the blocks",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "nodeIdSelectors",
+      "typeArray": "CSIExecGraphSelector",
+      "desc": "Graph property optional: Array of node id selectors referenced by the blocks",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "localDataPorts",
+      "typeArray": "CSIExecGraphLocalDataPort",
+      "desc": "Graph property optional: Array of local data used inside this graph",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "progressEvents",
+      "type": "CSIExecGraphProgressEvents",
+      "desc": "DEPRECATED: this section has been moved into the following runtimeSettings one",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "runtimeSettings",
+      "type": "CSIExecGraphRuntimeSettings",
+      "desc": "Graph property optional: Defining advanced runtime settings",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "ui",
+      "basic": "string",
+      "desc": "UI JSON stringified for a better experience into the Editor (containing the positions and test values)",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "pool",
+      "basic": "string",
+      "desc": "Function property not optional: Pool of the CSI Function this block reference",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "function",
+      "basic": "string",
+      "desc": "Function property not optional: Name of the CSI Function this block reference",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "version",
+      "basic": "uint32",
+      "desc": "Function property not optional: Version of the CSI Function this block reference",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "nodeIdSelector",
+      "basic": "string",
+      "desc": "Function property optional: Node id selector reference that this block will use for its execution",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "nbPorts",
+      "basic": "uint32",
+      "desc": "Logical property optional: Number of input control ports that this block has (mandatory only for 'waitAll' mode)",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "mode",
+      "basic": "string",
+      "desc": "Logical property not optional: Logical treatment of its input control ports ('waitAll' meaning wait the nbPorts calls before succeeding, 'onlyOne' meaning success for the first call and ignore for the others, 'ifCondi' and 'isEqual' being logical tests answering success if true, error if false)",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "dataTypes",
+      "basicArray": "string",
+      "desc": "DEPRECATED: this section has been migrated into inputDataTypes and outputDataTypes",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "inputDataTypes",
+      "typeArray": "CSIExecGraphDataType",
+      "desc": "Logical property optional",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "outputDataTypes",
+      "typeArray": "CSIExecGraphDataType",
+      "desc": "Logical property optional",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "definition",
+      "parameters": [
+        {
+          "label": "name",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Function name"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Function version"
+        },
+        {
+          "label": "pool",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Function pool"
+        },
+        {
+          "label": "desc",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Description of the function"
+        },
+        {
+          "label": "implementation",
+          "parameters": [
+            {
+              "label": "name",
+              "basic": "string",
+              "desc": "Name of the custom implementation to use"
+            },
+            {
+              "label": "version",
+              "basic": "uint32",
+              "desc": "Version of the custom implementation to use"
+            },
+            {
+              "label": "settings",
+              "parameters": [
+                {
+                  "label": "script",
+                  "basic": "string",
+                  "desc": "ECMAScript script to execute. (Must define a reachable onCall function)",
+                  "optional": {
+                    "isOptional": true
+                  }
+                },
+                {
+                  "label": "release",
+                  "basic": "string",
+                  "desc": "The name of the library to use to retrieve the function factory",
+                  "optional": {
+                    "isOptional": true
+                  }
+                },
+                {
+                  "label": "library",
+                  "basic": "string",
+                  "desc": "The name of the library to use to retrieve the function factory",
+                  "optional": {
+                    "isOptional": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "onCall",
+          "parameters": [
+            {
+              "label": "in",
+              "type": "CSICommandSignatureDefinition"
+            },
+            {
+              "label": "out",
+              "type": "CSICommandSignatureDefinition"
+            }
+          ],
+          "desc": "Function input and output signature"
+        },
+        {
+          "label": "progress",
+          "type": "CSICommandSignatureDefinition",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Function progress message format"
+        },
+        {
+          "label": "throwError",
+          "type": "CSICommandSignatureDefinition",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Function error message format"
+        }
+      ],
+      "desc": "CustomImpl property not optional: containing the complete declaration of a function",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

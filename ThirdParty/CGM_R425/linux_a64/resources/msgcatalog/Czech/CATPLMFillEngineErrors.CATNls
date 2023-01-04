@@ -1,0 +1,39 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+
+NoElement.Diagnostic="Nebyl odeslán žádný prvek do modulu plnění";
+NoElement.Advice="Zkontrolujte dostupnost dat na serveru";
+
+NoElementGrowable.Diagnostic="S žádným prvkem nelze zacházet pomocí modulu plnění";
+NoElementGrowable.Advice="Před načtením zkontrolujte stav součásti";
+
+ComponentLogged.Diagnostic="Poskytnutá součást je zaznamenána";
+ComponentLogged.Advice="Zkontrolujte, zda nebyla v relaci provedena žádná úprava";
+
+ComponentNotBrowsed.Diagnostic="Poskytnutá komponenta již byla před touto transakcí plněna";
+ComponentNotBrowsed.Advice="Před načtením zkontrolujte stav součásti";
+
+ComponentNotRepresented.Diagnostic="Poskytnutá součást nebyla v relaci ještě otevřena";
+ComponentNotRepresented.Advice="Před plněním data rozbalte";
+
+ComponentNotInWS.Diagnostic="Poskytnutá součást není v aktuálním pracovním prostoru dostupná";
+ComponentNotInWS.Advice="Před plněním zkontrolujte cíl součásti";
+
+Internal.Diagnostic="Vnitřní chyba modulu plnění";
+Internal.Advice="Obraťte se na místního správce";

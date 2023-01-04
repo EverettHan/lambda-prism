@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  
+  <!-- ==================================================================== -->
+  <!-- CAfrDefaultTemplate.xml contains the differents default templates    -->
+  <!-- always loaded inside the CAfr StyleProcessor instance.               -->
+  <!--                                                                      -->
+  <!-- For instance, the empty template for CATCAfrInclude is used for      -->
+  <!-- compatibility. Each time a CATCAfrInclude tag is encountered, it is  -->
+  <!-- used when no syp:Template is given (i.e. when a condition is set).   -->
+  <!-- ==================================================================== -->
+
+  <!-- ========================================== -->
+  <!-- Default empty template for CATCAfrInclude  -->
+  <!-- Used only for compatibility with the       -->
+  <!-- CATISYPTemplate interface implementation   -->
+  <!-- ========================================== -->
+  <Template syp:name="Empty" Target="CATCAfrInclude">
+    <CATCAfrForm Name="Form1" />
+  </Template>
+  
+</Styles>

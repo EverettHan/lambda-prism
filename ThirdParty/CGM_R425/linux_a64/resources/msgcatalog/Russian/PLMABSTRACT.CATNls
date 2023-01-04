@@ -1,0 +1,74 @@
+<meta charset="UTF-8"/>
+PLMABSTRACT="Абстрактная модель";
+
+PLMABSTRACT.PLMEntity="PLMEntity";
+//-- Simple de PLMEntity --
+PLMABSTRACT.PLMEntity.PLM_ExternalID="Имя";
+PLMABSTRACT.PLMEntity.V_CustoDiscipline="Дисциплина заказчика";
+PLMABSTRACT.PLMEntity.V_Name="Заголовок";
+PLMABSTRACT.PLMEntity.V_description="Описание";
+PLMABSTRACT.PLMEntity.V_discipline="Дисциплина";
+PLMABSTRACT.PLMEntity.V_isUptodate="Является Uptodate";
+PLMABSTRACT.PLMEntity.V_nature="Характер";
+PLMABSTRACT.PLMEntity.V_sec_level="Уровень безопасности";
+PLMABSTRACT.PLMEntity.V_usage="Использование";
+PLMABSTRACT.PLMEntity.workspaceid="ИД рабочего пространства";
+//-- Simple de BusinessType --
+PLMABSTRACT.PLMEntity.majorid="Основной ИД";
+PLMABSTRACT.PLMEntity.modified="Последнее изменение";
+PLMABSTRACT.PLMEntity.originated="Дата создания";
+PLMABSTRACT.PLMEntity.owner="Владелец";
+PLMABSTRACT.PLMEntity.reserved="Заблокировано";
+PLMABSTRACT.PLMEntity.reservedby="Кем заблокировано";
+PLMABSTRACT.PLMEntity.updatestamp="Метка синхронизации";
+//-- Volatile de PLMEntity --- 
+PLMABSTRACT.PLMEntity.C_created="Дата создания";
+PLMABSTRACT.PLMEntity.C_modified="Последнее изменение";
+PLMABSTRACT.PLMEntity.LOCKSTATUS="Заблокировано";
+PLMABSTRACT.PLMEntity.LOCKUSER="Кем заблокировано";
+PLMABSTRACT.PLMEntity.V_confidentiality="Конфиденциальность";
+PLMABSTRACT.PLMEntity.V_organization="Организация";
+PLMABSTRACT.PLMEntity.V_project="Пространство совместной работы";
+PLMABSTRACT.PLMEntity.V_user="Владелец";
+
+PLMABSTRACT.PLMStreamDescriptor="PLMStreamDescriptor";
+PLMABSTRACT.PLMStreamDescriptor.LOCKSTATUS="Заблокировано";
+PLMABSTRACT.PLMStreamDescriptor.LOCKUSER="Владелец блокировки";
+PLMABSTRACT.PLMStreamDescriptor.V_format="V_format";
+PLMABSTRACT.PLMStreamDescriptor.V_isMandatory="V_isMandatory";
+PLMABSTRACT.PLMStreamDescriptor.V_markstamp="V_markstamp";
+PLMABSTRACT.PLMStreamDescriptor.V_phaseOrigin="V_phaseOrigin";
+PLMABSTRACT.PLMStreamDescriptor.V_role="V_role";
+PLMABSTRACT.PLMStreamDescriptor.V_size="V_size";
+PLMABSTRACT.PLMStreamDescriptor.V_typelate="V_typelate";
+
+PLMABSTRACT.PLMEvtOccurrence="PLMEvtOccurrence";
+PLMABSTRACT.PLMEvtOccurrence.LOCKSTATUS="Заблокировано";
+PLMABSTRACT.PLMEvtOccurrence.LOCKUSER="Владелец блокировки";
+PLMABSTRACT.PLMEvtOccurrence.V_ContextData="V_ContextData";
+PLMABSTRACT.PLMEvtOccurrence.V_OccurrenceId="V_OccurrenceId";
+PLMABSTRACT.PLMEvtOccurrence.V_Service="V_Service";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetDataDomain="V_TargetDataDomain";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetLId="V_TargetLId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetPId="V_TargetPId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetType="V_TargetType";
+PLMABSTRACT.PLMEvtOccurrence.V_TransactionId="V_TransactionId";
+PLMABSTRACT.PLMEvtOccurrence.V_user="V_user";
+
+PLMABSTRACT.V_NatureEnum="V_NatureEnum";
+PLMABSTRACT.V_NatureEnum.Definition="Определение";
+PLMABSTRACT.V_NatureEnum.Presentation="Представление";
+PLMABSTRACT.V_NatureEnum.Specification="Спецификация";
+
+PLMABSTRACT.V_isUptodateEnum="V_isUptodateEnum";
+PLMABSTRACT.V_isUptodateEnum.MustBeRebuilt="MustBeRebuilt";
+PLMABSTRACT.V_isUptodateEnum.NotApplicable="NotApplicable";
+PLMABSTRACT.V_isUptodateEnum.UpdateToDate="UpdateToDate";
+
+PLMABSTRACT.V_FormatEnum="V_FormatEnum";
+PLMABSTRACT.V_FormatEnum.Authoring="Разработка";
+PLMABSTRACT.V_FormatEnum.AuthoringVisu="AuthoringVisu";
+PLMABSTRACT.V_FormatEnum.IndexRep="IndexRep";
+PLMABSTRACT.V_FormatEnum.JpegThumbnail="JpegThumbnail";
+PLMABSTRACT.V_FormatEnum.NavRep="NavRep";
+PLMABSTRACT.V_FormatEnum.VisuRep="VisuRep";

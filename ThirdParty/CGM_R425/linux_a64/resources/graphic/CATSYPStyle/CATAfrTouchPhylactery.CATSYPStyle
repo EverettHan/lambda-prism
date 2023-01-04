@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CATAfrBasicStyle.CATSYPStyle"/>
+  </Resources>
+  
+
+  <Template Target="l_CATAfrTouchPhylactery" syp:name="PhylacteryDialogBoxSignature">
+    <CATVidCtl syp:name="MainCtl">
+      
+      <CATVidLayGrid GridWeight="col1=1 row1=1">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidCtlXRect Name="Move" syp:name="Handle" BackgroundColor="0 0" CursorShape="PanCursor" syp:Template="Handle" Press="@DragCB" Drag="@DragCB" Release="@DropCB" />
+        <!--<CATVidLayGrid GridWeight="row1=1 col1=1">-->
+        <CATVidLayGrid>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+            <CATVidCtlBorder syp:name="BalloonBorder" syp:Template="PhylacteryBackgroundSignature" Content="@ApplicativePhylacteryWidget"/>
+            <!--<CATVidCtl PresenterContent="@PhylacteryHandleWidget"/>
+            <CATVidCtl PresenterContent="@ApplicativePhylacteryWidget"/>-->
+            <CATVidGPLine PickFlag="0" FirstPoint="@LabelAttached2DPoint" SecondPoint="@Label3D_2DPoint" Color="204 220 236 100" OutlineColor="204 220 236 55" LineType="1" OutlineLineType="1" VisibleFlag="@VisibilityLine"/>
+          </CATVidLayLayer>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+    </CATVidCtl>
+
+    <!--<CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="Leave" TargetName="Handle">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="AlphaFilterValue" CATSYPStoryboard.TargetName="MainCtl" BeginTime="0:0:0" Duration="0:0:2" From="255" To="128" />
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPEventTrigger>
+
+      <CATSYPEventTrigger RoutedEvent="Entry" TargetName="Handle">
+        <CATSYPSetter Property="AlphaFilterValue" TargetName="MainCtl" Value="255"/>
+      </CATSYPEventTrigger>
+
+    </CATSYPTriggerCollection>-->
+  </Template>
+  
+
+
+  <Template syp:name="BalloonDockArea" Target="CATVidCtl">
+
+    <CATVidGPSmartSquare syp:name="HorizontalDockAreaTop" Texture="vidHorizontalDockArea.png" ColorizeBlackPixelTo="69 154 210 255" LayoutWhenUnvisibleFlag="0" GridWeight="col1=1 row1=1">
+      <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="2 122" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+    </CATVidGPSmartSquare>
+
+  </Template>
+  
+    <Template syp:name="BalloonDockArea" Target="CATVidCtl" syp:Variation="Vertical">
+
+      <CATVidGPSmartSquare syp:name="VerticalDockAreaRight" Texture="vidVerticalDockArea.png" ColorizeBlackPixelTo="69 154 210 255" LayoutWhenUnvisibleFlag="0" GridWeight="col1=1 row1=1">
+        <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="122 2" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+
+  </Template>
+  
+  <Template syp:name="BalloonDockManager" Target="CATVidCtl">
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="col1=1 row1=1" >
+        <CATVidCtl syp:name="DockBoxLeft" RequestedMinimumDimension="66 66" VisibleFlag="0" VisibilityPolicy="SlideLToRAnimation" CATVidLayGrid.IndexedConstraints="x=0 y=0 ySpan=3 attach=RLTB">
+          <CATVidGPSmartSquare syp:name="VerticalDockAreaLeft" Texture="vidVerticalDockArea.png" ColorizeBlackPixelTo="69 154 210 255" LayoutWhenUnvisibleFlag="0" GridWeight="col1=1 row1=1">
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="122 2" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+        </CATVidCtl>
+        <CATVidCtl syp:name="DockBoxRight" RequestedMinimumDimension="66 66" VisibleFlag="0" VisibilityPolicy="SlideRToLAnimation" CATVidLayGrid.IndexedConstraints="x=2 y=0 ySpan=3 attach=RLTB">
+          <CATVidGPSmartSquare syp:name="VerticalDockAreaRight" Texture="vidVerticalDockArea.png" ColorizeBlackPixelTo="69 154 210 255" LayoutWhenUnvisibleFlag="0" GridWeight="col1=1 row1=1">
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="122 2" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+        </CATVidCtl>        
+        <CATVidCtl syp:name="DockBoxTop" RequestedMinimumDimension="66 66" VisibleFlag="0" VisibilityPolicy="SlideTToBAnimation" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidGPSmartSquare syp:name="HorizontalDockAreaTop" Texture="vidHorizontalDockArea.png" ColorizeBlackPixelTo="69 154 210 255" LayoutWhenUnvisibleFlag="0" GridWeight="col1=1 row1=1">
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="2 122" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+        </CATVidCtl>                  
+        <CATVidCtl syp:name="DockBoxBottom" RequestedMinimumDimension="66 66" VisibleFlag="0" VisibilityPolicy="SlideBToTAnimation" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB">
+          <CATVidGPSmartSquare syp:name="HorizontalDockAreaBottom" Texture="vidHorizontalDockArea.png" ColorizeBlackPixelTo="69 154 210 255" LayoutWhenUnvisibleFlag="0" GridWeight="col1=1 row1=1">
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="2 122" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+        </CATVidCtl>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+  
+</Styles>
+

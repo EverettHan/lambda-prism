@@ -1,0 +1,180 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for SurfacicTopoOperators  errors 
+// En_EN
+//----------------------------------invalid input
+//
+//8000->8099 **** Fill && PowerFill *************
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Request="Fülloperator:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Diagnostic="Die berechnete Teilfläche schneidet sich selbst.";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Advice="Die Eingaben oder die zur Generierung verwendeten Objekte ändern.";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Diagnostic="Der projizierte Punkt auf der ursprünglichen Fläche liegt zu nah am zu füllenden Drahtelement im Vergleich zum Abstand zwischen dem Punkt und seiner Projektion.";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Advice="Den Punkt ändern.";
+//
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Diagnostic="Eine auf dem zu füllenden Drahtelement befindliche Kurve ist zu klein und wird beim Berechnen der Füllung zu einem Punkt.";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Advice="Das Drahtelement durch Entfernen dieser Kurve bereinigen.";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8003.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Diagnostic="Das Drahtelement wird degeneriert.";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Advice="Das Drahtelement ändern.";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Diagnostic="Das durch die Tangentenstetigkeitsbedingungen definierte Normalenset liegt zu verstreut, und ein Durchgangspunkt liegt vor.";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Advice="Die Eingaben oder die zur Generierung verwendeten Objekte ändern, oder den Durchgangspunkt unterdrücken.";
+//
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Request="Fülloperator:";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Diagnostic="Das Drahtelement kann zum Füllen nicht verkettet werden.";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Advice="Das Drahtelement prüfen.";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Request="Fülloperator:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Diagnostic="Eine auf dem zu füllenden Drahtelement befindliche Kurve liegt nicht auf dem Stützelement.";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Advice="Das Drahtelement prüfen";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Request="Fülloperator:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Diagnostic="Die berechnete Teilfläche schneidet sich selbst, da das zu füllende Drahtelement sich ebenfalls selbst schneidet. ";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Advice="Das Drahtelement bereinigen.";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Request="Fülloperator:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Diagnostic="Die Berechnung der Flächenfüllung ergibt eine Teilfläche, die sich selbst schneidet.";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Advice="Die Eingaben oder die zur Generierung verwendeten Objekte ändern.";
+//
+// **** 8009 a deplacer en 8209 dans Healing && HealGaps *************
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Request="Reparaturoperator:";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Diagnostic="Keine Vielfachtopologie bei den von der Reparatur betroffenen Kanten.";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Advice="Die Eingabe oder die zur Generierung verwendeten Objekte ändern.";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8009.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Diagnostic="Die Lücke zwischen zwei Kanten des zu füllenden Drahtelements ist größer als die kleinste Länge dieser beiden Kanten.";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Advice="Das Drahtelement bereinigen.";
+//
+// **** 8011 a deplacer en 8211 dans Healing && HealGaps *************
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Request="Reparaturoperator:";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Diagnostic="Ungültige Geometrie.";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Advice="Die Eingabe oder die zur Generierung verwendeten Objekte ändern.";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Diagnostic="Der projizierte Punkt auf der ursprünglichen Fläche liegt außerhalb des zu füllenden Drahtelements.";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Advice="Den Punkt ändern.";
+//
+// **** 8013 a deplacer en 8213 dans Healing && HealGaps *************
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Request="Reparaturoperator:";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Diagnostic="WARNUNG: Im Scheitelpunkt wurde eine zu große Lücke festgestellt.";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Advice="Vor dem Ausführen der Reparatur den Abstand für die Zusammenführung verringern oder die Eingabefläche ändern";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Request="Fülloperator:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Diagnostic="Eine auf dem zu füllenden Drahtelement befindliche Kurve liegt nicht vollständig auf dem Stützelement.";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Advice="Das Drahtelement prüfen";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Request="Fülloperator:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Diagnostic="Das Ablegen einer Kurve auf ihr Stützelement ist fehlgeschlagen, weil die Topologien vor und hinter dieser Operation nicht kompatibel sind.";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Advice="Zuvor die Projektion auf das Stützelement durchführen.";
+//
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Request="Fülloperator:";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Diagnostic="Die Begrenzung ist nicht geschlossen.";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Advice="Die Geometrie muss verbessert werden.";
+
+//
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Request="Fülloperator:";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Diagnostic="An der Begrenzung der Füllfläche sind weiterhin Lücken vorhanden.";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Advice="Die Toleranz vergrößern.";
+
+SurfacicTopOpInFillPartialResult_ERR_8018.Request="Fülloperator:";
+SurfacicTopOpInFillPartialResult_ERR_8018.Diagnostic="Das Ergebnis ist ein Teilergebnis, da die inneren Bedingungen nicht berücksichtigt werden.";
+SurfacicTopOpInFillPartialResult_ERR_8018.Advice="Innere Bedingungen ändern.";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Diagnostic="Kein Ergebnis vorhanden, da das durch die Tangentenstetigkeitsbedingungen definierte Normalenset zu verstreut liegt.";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Advice="Die Tangentenstetigkeitsbedingungen löschen.";
+//
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Request="Fülloperator:";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Diagnostic="Das Füllen ist fehlgeschlagen, da die Eingabedaten nicht kompatibel sind.";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Advice="Ändern Sie die Eingabedaten.";
+//
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Request="Fülloperator:";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Diagnostic="Innere Begrenzungen befinden sich innerhalb der äußeren Begrenzungen.";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Advice="Innere Begrenzungen ändern.";
+//
+
+//
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Request="PowerFill-Operator:";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Diagnostic="Operatorregistrierung nicht erfolgreich.";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Advice="Ändern Sie die Eingabedaten.";
+//
+SurfacicTopOpInFillPartialResult_ERR_8023.Request="Warnung: Füllung:";
+SurfacicTopOpInFillPartialResult_ERR_8023.Diagnostic="G2-Bedingungen werden nicht berücksichtigt (Inkompatibilitäten zwischen den Bedingungen).";
+SurfacicTopOpInFillPartialResult_ERR_8023.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8024.Request="Warnung: Füllung:";
+SurfacicTopOpInFillPartialResult_ERR_8024.Diagnostic="Eingabedrahtelement schneidet sich selbst. Profil wurde erfolgreich repariert.";
+SurfacicTopOpInFillPartialResult_ERR_8024.Advice="";
+//
+
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Request="Fülloperator";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Diagnostic="Für diese Operation gibt es keine Lösung.";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8026.Request="Fülloperator:";
+SurfacicTopOpInFillPartialResult_ERR_8026.Diagnostic="Das Ergebnis ist ein Teilergebnis, weil G2-Bedingungen durch G1-Bedingungen ersetzt wurden.";
+SurfacicTopOpInFillPartialResult_ERR_8026.Advice="G2-Bedingungen entfernen.";
+
+//
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Request="Fülloperator:";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Diagnostic="Eine Kurve hat mehr als eine Stützfläche.";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Advice="Extrahieren Sie die Stützfläche, auf der Tangentenstetigkeits- oder Krümmungsbedingungen erforderlich sind.";
+
+
+//
+//8100->8199 **** Deformation && Unbend *************
+//
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Request="Verformungsoperator:";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Diagnostic="Ein Teil des Eingabekörpers liegt zu nahe an der Biegungsachse.";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Advice="Die Biegen- und Entbiegen-Operatoren können kein Material verformen, das sich innerhalb des Radius R der Biegungsachse befindet, wobei R = 20x der Modellauflösung beträgt.";
+
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Request="Entbiegungsoperation:";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Diagnostic="Der (Ent-)Biegungswinkel ist zu groß.";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Advice="Der Biegungswinkel muss zwischen 0 und 120 Grad betragen. Teilen Sie die Operation in mehrere Operationen auf.";
+
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Request="Verformungsoperator:";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Diagnostic="Beim Klassifizieren der Partitionen im Eingabekörper ist ein interner Fehler aufgetreten.";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Advice="";
+
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Request="Verformungsoperator:";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Diagnostic="Beim Auswerten der Zuordnung ist ein interner Fehler aufgetreten.";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Advice="";
+
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Request="Verformungsoperator:";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Diagnostic="Beim Aufteilen des Eingabekörpers in Partitionen ist ein interner Fehler aufgetreten.";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Advice="";
+
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Request="Verformungsoperator:";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Diagnostic="Eingabekörperbox ist leer.";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Advice="Prüfen Sie, ob der Eingabekörper existiert.";
+
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Request="Verformungsoperator:";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Diagnostic="Nicht homogene Körper werden derzeit nicht unterstützt.";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Advice="";
+
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Request="Verformungsoperator:";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Diagnostic="Der ausgewählte Bereich kann nicht gebogen oder entbogen werden.";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Advice="Der Biege-/Entbiegevorgang kann nicht ausgeführt werden, während die Topologie des Eingabekörpers beibehalten wird.";
+
+//
+
+//
+//8200->8299 **** Healing && HealGaps *************
+//
+SurfacicTopOpHealGaps_ERR_8200.Request="Operator HealGaps:";
+SurfacicTopOpHealGaps_ERR_8200.Diagnostic="Es gibt immer noch nicht reparierte Lücken.";
+SurfacicTopOpHealGaps_ERR_8200.Advice="Verwenden Sie GetGaps-Methoden, um die Zellen mit der Lücke abzurufen, und versuchen Sie die Reparatur auf diese Zellen einzuschränken.";
+//
+SurfacicTopOpHealingTopHealError_ERR_8220.Request="Reparaturoperator:";
+SurfacicTopOpHealingTopHealError_ERR_8220.Diagnostic="Topologische Reparatur fehlgeschlagen";
+SurfacicTopOpHealingTopHealError_ERR_8220.Advice="Verformung des Formteils zulassen";
+//
+
+
+

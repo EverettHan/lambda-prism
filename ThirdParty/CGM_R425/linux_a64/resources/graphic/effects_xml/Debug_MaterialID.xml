@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <ACCELERATION_STRUCTURE>
+    <NAME>TopLevelAS</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </ACCELERATION_STRUCTURE>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </CONSTANT_BUFFER>
+  
+
+  
+  <SAMPLER>
+    <NAME>positions</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>texture2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>texture2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>DebugMap</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>rgba8</FORMAT>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </STORAGE_IMAGE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    
+    <RAYTRACING_PASS>
+      <NAME>Default</NAME>
+
+      <RAYGEN_STAGE>
+        commonHelpers ubos 
+        PostEffect_Incl_Payload
+        Debug_MaterialID_RGS
+      </RAYGEN_STAGE>
+      <MISS_STAGE>
+        PostEffect_Incl_Payload
+        Debug_MaterialID_MS
+      </MISS_STAGE>
+      
+    </RAYTRACING_PASS>
+  </TECHNIQUE>
+</EFFECT>

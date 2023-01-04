@@ -1,0 +1,26 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Błąd systemowy";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Nie można sklonować nowego komponentu.";
+PLMc_ForbiddenScenario1.Advice="Zapisz ten komponent, a następnie spróbuj go sklonować.";
+
+PLMc_ForbiddenScenario2.Diagnostic="Ten scenariusz klonowania jest zabroniony: należy wykonać całkowity zapis między dwoma wywołaniami klonowania";
+PLMc_ForbiddenScenario2.Advice="Zapisz sesję przed ponownym wywołaniem klonowania.";
+
+PLMc_ForbiddenScenario3.Diagnostic="Opcja Resetuj konfigurację jest niedostępna, jeśli wymagany jest wpływ na zawartość sesji.";
+PLMc_ForbiddenScenario3.Advice="Upewnij się, że mechanizm klonowania został zainicjowany z użyciem niezawodnych celów.";
+
+ERR_05.Diagnostic="Komponenty zostały zduplikowane, ale nie można zresetować konfiguracji zduplikowanych struktur";
+ERR_05.Advice="Przed zresetowaniem konfiguracji należy upewnić się, że można zmodyfikować zduplikowaną strukturę";
+
+ERR_06.Diagnostic="Nieprawidłowe dane wejściowe dla operacji duplikowania: /p";
+ERR_06.Advice="Sprawdź atrybuty wprowadzone w danych wejściowych dla operacji duplikowania";
+
+ERR_07.Diagnostic="Nieprawidłowe dane wejściowe dla operacji duplikowania: /p";
+ERR_07.Advice="Sprawdź rozszerzenia wprowadzone w danych wejściowych dla operacji duplikowania";
+
+ERR_08.Diagnostic="Nie udało się odświeżyć sesji po duplikacji";
+ERR_08.Advice="Sprawdź, czy nie występują inne błędy uniemożliwiające odświeżenie sesji podczas operacji duplikowania";
+

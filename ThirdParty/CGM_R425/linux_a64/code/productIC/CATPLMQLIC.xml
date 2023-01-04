@@ -1,0 +1,34 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CATPLMQL.tst"/>
+  <attached name = "CATPLMAdapterDebug.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Private" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Private" name = "CATPLMImplAdapter"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <authorize name = "CATPLMAdapterDebug"/>
+  <authorize name = "CATPLMTestProviderDebug"/>
+  <authorize name = "CATPLMQL.tst"/>
+  <authorize name = "CATPLMImplDebug.tst"/>
+  <authorize name = "CATPLMImplAdapterQL.tst"/>
+  <authorize access = "Private" comment = "EKL procedures run on client side : Expand and Navigate " name = "CATPLMQLInEKLBinding"/>
+  <authorize access = "Protected" comment = "DataWareHouse CRUD / Query " name = "CATPLMDWHImpl"/>
+  <authorize access = "Protected" comment = "3D Index " name = "BBDV6Crawler"/>
+  <authorize access = "Protected" comment = "Pin reservation : Navigate, maybe Creation of SR (not validated yet) " name = "ElecLogicalServices"/>
+  <authorize comment = "Split CATImmPPRNavigator " meta = "TOREMOVE" name = "CATImmPPRNavigator"/>
+  <authorize access = "Protected" comment = "Split CATImmPPRNavigator " name = "CATImmPPRNavigatorImpl"/>
+  <authorize access = "Protected" name = "CATPLMIdentification_PLM.tst"/>
+  <authorize access = "Protected" name = "CATFmtToolsServices"/>
+  <authorize access = "Protected" name = "CATPLMIndexer.tst"/>
+  <authorize access = "Protected" name = "WCGSolver"/>
+  <authorize access = "Protected" name = "WCGSolverAssembly"/>
+  <authorize access = "Protected" name = "PLMExport_EV5_DXPAUT_ADV"/>
+  <authorize access = "Protected" name = "CATPLMTestProviderPerformance"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

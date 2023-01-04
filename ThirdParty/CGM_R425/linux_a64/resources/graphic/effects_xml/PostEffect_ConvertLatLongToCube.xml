@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <DST_STATE_GROUP>
+    <NAME>DepthNoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>NoBlend</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+  
+  <SAMPLER>
+    <NAME>s_EnvMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>sourceSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>sourceSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Geometry</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+        <STREAM>
+          <STAGES>Geometry_Fragment</STAGES>
+          <VARYING>
+            <NAME>gTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Solid</RASTERIZER_STATE>
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>PostEffect_FullScreenQuadx6GS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>PostEffect_EnvMap_Helpers PostEffect_DeclarePS PostEffect_ConvertLatLongToCube</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+</EFFECT>

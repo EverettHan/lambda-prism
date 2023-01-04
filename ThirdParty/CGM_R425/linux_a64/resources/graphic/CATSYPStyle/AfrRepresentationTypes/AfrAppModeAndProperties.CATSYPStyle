@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CATAfrIconBox.CATSYPStyle" />
+  </Resources>
+
+ 
+  
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrRep3LevelCascade Family representation                                                            -->
+  <!--***************************************************************************************************************************************-->  
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Containers creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  
+  
+  <!--Second container level : a button + an horizontal container which unfolds when a click on the button is performed-->
+  <Template syp:name="AppModeRepType" Target="CATAfrSYPContainerView">
+    <CATAfrSmartCtl CreateDialogBoxFlag="1" LayoutWhenUnvisibleFlag="0" TitleDialogBox="@Title" VisibleFlag="@WidgetsPanelVisibility" SnappableFlag="1"
+                    ContentPanelVisibleFlag="1" CloseButtonDialogBoxFlag="0" CompactDialogBoxFlag="1" ResizableDialogBoxFlag="1" HorizontallyStretchableFlag="1" VerticallyStretchableFlag="1" >
+      <CATVidLayFlow CellSpacing="2" UniformCellSizesFlag="0" Orientation="1" Items="@ToolsItems Mode=OneWayToSource"/>
+      <!--<CATVidLayGrid>
+        <CATVidLayFlow CellSpacing="2" UniformCellSizesFlag="0" Orientation="1" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=TL" Items="@ToolsItems Mode=OneWayToSource"/>
+      </CATVidLayGrid>-->
+    </CATAfrSmartCtl>
+  </Template>
+
+  <Template syp:name="AppModeRepTypePopover" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" RegisteredFlag="1" PersistenceSelectedStarterFlag="1">
+      <CATAfrVidIconBoxCtl syp:Template="Popover" IconBoxDirection="Bottom" PopupCenteredFlag="1" IconBoxHidePolicy="HideOnTimer" IconBoxShowPolicy="ShowOnMoveOver" PopupVisibleFlag="@WidgetsPanelVisibility" PresenterIconContent="@SelectedStarter"
+                ForceSnapFlag="1" PopupItems="@ToolsItems Mode=OneWayToSource" PopupShown="@CreateSubContainerEvent" PresenterDataTemplate="AppModeRepTypePopoverDataTemplate" PresenterStyleSheet="AfrAppModeAndProperties"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+  
+  <Template syp:name="ObjectPropertiesRepType" Target="CATAfrSYPContainerView">
+    <CATAfrSmartCtl CreateDialogBoxFlag="1" LayoutWhenUnvisibleFlag="0" TitleDialogBox="@Title" VisibleFlag="@WidgetsPanelVisibility" SnappableFlag="1"
+                    ContentPanelVisibleFlag="1" CloseButtonDialogBoxFlag="0" CompactDialogBoxFlag="1" ResizableDialogBoxFlag="1" HorizontallyStretchableFlag="1" VerticallyStretchableFlag="1" >
+      <CATVidLayFlow CellSpacing="2" UniformCellSizesFlag="0" Orientation="1" Items="@ToolsItems Mode=OneWayToSource"/>
+      <!--<CATVidLayGrid>
+        <CATVidLayFlow CellSpacing="2" UniformCellSizesFlag="0" Orientation="1" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=TL" Items="@ToolsItems Mode=OneWayToSource"/>
+      </CATVidLayGrid>-->
+    </CATAfrSmartCtl>
+  </Template>
+
+  <Template syp:name="ObjectPropertiesRepTypePopover" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" RegisteredFlag="1" PersistenceSelectedStarterFlag="1">
+      <CATAfrVidIconBoxCtl syp:Template="Popover" IconBoxDirection="Bottom" PopupCenteredFlag="1" IconBoxHidePolicy="HideOnTimer" IconBoxShowPolicy="ShowOnMoveOver" PopupVisibleFlag="@WidgetsPanelVisibility" PresenterIconContent="@SelectedStarter"
+                ForceSnapFlag="1" PopupItems="@ToolsItems Mode=OneWayToSource" PopupShown="@CreateSubContainerEvent" PresenterDataTemplate="ObjectPropertiesRepTypePopoverDataTemplate" PresenterStyleSheet="AfrRepresentationTypes/AfrAppModeAndProperties.CATSYPStyle"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+  
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <Template syp:name="AppModeRepType" Target="CATAfrSYPStarterView">
+    <!--We create a simple button for this level and bind all possible properties with model properties.-->
+    <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.-->
+    <!--And so, the container will know which command is active-->
+    <CATVidCtlButton Name="@Name" syp:Template="Toolbar" CheckMode="1" ClickMode="1" CheckState="@ActivationWidget Mode=TwoWays" EnableFlag="@EnableWidget" CropPolicy="NoCrop"
+                     RequestedMinimumDimension="24 24" IconDimension="22 22" Icon="@NormalIcon" Tooltip="@Help" Click="@ActionEvent" Entry="@FocusInEvent" Leave="@FocusOutEvent"/>
+  </Template>
+
+  <!--first button for third container level : a simple button-->
+  <Template syp:name="AppModeRepTypePopover" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="ButtonSecondLevel" syp:Template="Toolbar" CheckMode="1" ClickMode="0" CheckState="@ActivationWidget Mode=TwoWays" EnableFlag="@EnableWidget" CropPolicy="NoCrop"
+                      RequestedMinimumDimension="24 24" IconDimension="22 22" Icon="@NormalIcon" IconFilter="1" Tooltip="@Help" Click="@ActionEvent" DoubleClick="@RepeatActionEvent"
+                      Entry="@FocusInEvent" Leave="@FocusOutEvent"/>
+  </Template>
+
+  <DataTemplate syp:name="AppModeRepTypePopoverDataTemplate">
+    <CATVidCtlButton Name="ButtonSecondLevel" syp:Template="Toolbar" CheckMode="1" ClickMode="0" CheckState="@ActivationWidget Mode=TwoWays" EnableFlag="@EnableWidget" CropPolicy="NoCrop"
+                     RequestedMinimumDimension="24 24" IconDimension="22 22" Icon="@NormalIcon" IconFilter="1" Tooltip="@Help" Click="@ActionEvent" DoubleClick="@RepeatActionEvent"
+                     Entry="@FocusInEvent" Leave="@FocusOutEvent"/>
+  </DataTemplate>
+
+  <Template syp:name="ObjectPropertiesRepType" Target="CATAfrSYPStarterView">
+    <!--We create a simple button for this level and bind all possible properties with model properties.-->
+    <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.-->
+    <!--And so, the container will know which command is active-->
+    <CATVidCtlButton Name="@Name" syp:Template="Toolbar" CheckMode="1" ClickMode="1" CheckState="@ActivationWidget Mode=TwoWays" EnableFlag="@EnableWidget" CropPolicy="NoCrop"
+                     RequestedMinimumDimension="24 24" IconDimension="22 22" Icon="@NormalIcon" Tooltip="@Help" Click="@ActionEvent" Entry="@FocusInEvent" Leave="@FocusOutEvent"/>
+  </Template>
+
+  <!--first button for third container level : a simple button-->
+  <Template syp:name="ObjectPropertiesRepTypePopover" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="ButtonSecondLevel" syp:Template="Toolbar" CheckMode="1" ClickMode="0" CheckState="@ActivationWidget Mode=TwoWays" EnableFlag="@EnableWidget" CropPolicy="NoCrop"
+                      RequestedMinimumDimension="24 24" IconDimension="22 22" Icon="@NormalIcon" IconFilter="1" Tooltip="@Help" Click="@ActionEvent" DoubleClick="@RepeatActionEvent"
+                      Entry="@FocusInEvent" Leave="@FocusOutEvent"/>
+  </Template>
+
+  <DataTemplate syp:name="ObjectPropertiesRepTypePopoverDataTemplate">
+    <CATVidCtlButton Name="ButtonSecondLevel" syp:Template="Toolbar" CheckMode="1" ClickMode="0" CheckState="@ActivationWidget Mode=TwoWays" EnableFlag="@EnableWidget" CropPolicy="NoCrop"
+                      RequestedMinimumDimension="24 24" IconDimension="22 22" Icon="@NormalIcon" IconFilter="1" Tooltip="@Help" Click="@ActionEvent" DoubleClick="@RepeatActionEvent"
+                      Entry="@FocusInEvent" Leave="@FocusOutEvent"/>
+  </DataTemplate>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <!--first button for first container level : a simple button-->
+  <Template syp:name="AppModeRepType" Target="CATAfrSYPSeparatorView">
+    <CATVidSpacer/>
+  </Template>
+
+  <!--first button for first container level : a simple button-->
+  <Template syp:name="AppModeRepTypePopover" Target="CATAfrSYPSeparatorView">
+    <CATVidSpacer/>
+  </Template>
+
+  <!--first button for first container level : a simple button-->
+  <Template syp:name="ObjectPropertiesRepType" Target="CATAfrSYPSeparatorView">
+    <CATVidSpacer/>
+  </Template>
+
+  <!--first button for first container level : a simple button-->
+  <Template syp:name="ObjectPropertiesRepTypePopover" Target="CATAfrSYPSeparatorView">
+    <CATVidSpacer/>
+  </Template>
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrAppMode & AfrObjectProperties representation (OFFICIAL)                                                            -->
+  <!--***************************************************************************************************************************************-->
+  <!--*************************************************************************************************************************-->
+  <!--                                            Containers creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+
+  <Template syp:name="AfrAppMode" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData Mode="CAfr"
+                                    InsertInCAfrComponent="AfrModesAndPropertiesPanels.xml/AfrAppModePanel:AfrAppModePanel:CATCAfrModesAndPropertiesController:NoAutoDeletion"
+                                    AlwaysVisibleFlag="1">
+      <CATCAfrTree   Name="@Name"
+                     Display="@Title"
+                     Tooltip="@Title"
+                     Visibility ="1"
+                     ReadOnlyFlag="0"
+                     RegisterFlag="1">
+        <CATCAfrForm Name="PropertiesPanelToolbarForm"
+                     RepresentationType="CAfrView"
+                     Visibility ="1"
+                     ItemPickableFlag="0"
+                     SelectableFlag="0">
+          <CATCAfrToolbar Name           = "PropertiesPanelToolbarCAfrToolbar"
+                          RepresentationType ="AfrModesAndProp"
+                          Visibility = "1"
+                          Items="@ToolsItems Mode=OneWayToSource">
+          </CATCAfrToolbar>
+        </CATCAfrForm>
+      </CATCAfrTree>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <Template syp:name="AfrObjectProperties" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData Mode="CAfr"
+                                   InsertInCAfrComponent="AfrModesAndPropertiesPanels.xml/AfrObjectPropertiesPanel:AfrObjectPropertiesPanel:CATCAfrModesAndPropertiesController:NoAutoDeletion"
+                                   AlwaysVisibleFlag="1">
+      <CATCAfrTree   Name="@Name"
+                     Display="@Title"
+                     Tooltip="@Title"
+                     Visibility ="1"
+                     ReadOnlyFlag="0"
+                     RegisterFlag="1">
+        <CATCAfrForm Name="PropertiesPanelToolbarForm"
+                     RepresentationType="CAfrView"
+                     Visibility ="1"
+                     ItemPickableFlag="0"
+                     SelectableFlag="0">
+          <CATCAfrToolbar Name           = "PropertiesPanelToolbarCAfrToolbar"
+                          RepresentationType ="AfrModesAndProp"
+                          Visibility = "1"
+                          Items="@ToolsItems Mode=OneWayToSource">
+          </CATCAfrToolbar>
+        </CATCAfrForm>
+      </CATCAfrTree>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <Template syp:name="AfrAppModePopover" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" PersistenceSelectedStarterFlag="1" IconBoxFlag="1">
+      <CATAfrVidIconBoxCtl Name="@Name"
+						   syp:Template="CtxBarAndPanelsIconBox"
+                           Orientation="Vertical"
+                           IconBoxHidePolicy="AutoHide"
+                           IconBoxShowPolicy="ShowOnClickOnArrow"
+                           PopupVisibleFlag="@WidgetsPanelVisibility"
+                           PresenterIconContent="@SelectedStarter"
+                           ForceSnapFlag="1"
+                           PopupItems="@ToolsItems Mode=OneWayToSource"
+                           PopupShown="@CreateSubContainerEvent"
+                           PresenterDataTemplate="AfrAppModePopoverDataTemplate"
+                           IconBoxItemTemplate="NoPickDisableFlag"
+                           PresenterStyleSheet="AfrRepresentationTypes\AfrAppModeAndProperties.CATSYPStyle"
+                           LayoutWhenUnvisibleFlag="0"/>
+    </CATAfrSYPContainerViewMetaData>   
+  </Template>
+
+  <Template syp:name="AfrObjectPropertiesPopover" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" PersistenceSelectedStarterFlag="1" IconBoxFlag="1">
+      <CATAfrVidIconBoxCtl Name="@Name"
+						   syp:Template="CtxBarAndPanelsIconBox"
+                           Orientation="Vertical"
+                           IconBoxHidePolicy="AutoHide"
+                           IconBoxShowPolicy="ShowOnClickOnArrow"
+                           PopupVisibleFlag="@WidgetsPanelVisibility"
+                           PresenterIconContent="@SelectedStarter"
+                           ForceSnapFlag="1"
+                           PopupItems="@ToolsItems Mode=OneWayToSource"
+                           PopupShown="@CreateSubContainerEvent"
+                           PresenterDataTemplate="AfrObjectPropertiesDataTemplate"
+                           IconBoxItemTemplate="NoPickDisableFlag"
+                           PresenterStyleSheet="AfrRepresentationTypes\AfrAppModeAndProperties.CATSYPStyle"
+                           LayoutWhenUnvisibleFlag="0"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+	<DataTemplate syp:name="CATCAfrToolbar_AfrModesAndProp">
+		<CATAfrSYPModelViewMetaData SypNamePosition="AccessToolbarLeft">
+			<CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+							CreateDialogBoxFlag="@RootFlag"
+							ViewParent="@ViewParent"
+							VisibleFlag="@Visibility">
+				<CATVidLayFlow  syp:name="Container" Orientation="Horizontal" Items="@Items Mode=OneWayToSource" CellSpacing="2" Align="0" UniformCellSizesFlag="0"/>
+			</CATAfrSmartCtl>
+		</CATAfrSYPModelViewMetaData>
+	</DataTemplate>
+
+  <Template syp:name="NoPickDisableFlag" Target="CATAfrVidIconBoxItem"  >
+    <CATVidLayGrid GridWeight="col1=1">
+      <CATVidGPSquare RequestedMinimumDimension="8 8" Texture="AfrToolbarButtonArrowLeft.png" LayoutWhenUnvisibleFlag="0" VisibleFlag="@HasParentItemFlag" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidGPSquare syp:name="ActivatedSquare" VisibleFlag="@ItemActivatedFlag"/>
+        <CATVidCtl syp:name="WrapperItemCtl" />
+        </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+	
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starter creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <!--App Mode-->
+  <Template syp:name="AfrAppMode" Target="CATAfrSYPStarterView">
+      <CATVidCtlButton Name="@Name"
+                  syp:Template="CATAfrPropertyButton"
+                  CheckMode="1"
+                  ClickMode="0"
+                  CheckState="@ActivationWidget Mode=TwoWays"
+                  EnableFlag="@EnableWidget"
+                  CropPolicy="NoCrop"
+                  Icon="@LargeIcon"
+                  Label="@TitleIfNoIcon"
+                  LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                  TooltipTitle="@LongHelpTitle"
+                  TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                  TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                  LongHelpId="@LongHelpId"
+                  Click="@ActionEvent"
+				  DoubleClick="@RepeatActionEvent"
+                  VisibleFlag="@VisibleFlag"
+                  RequestedMinimumDimension="34 34"
+                  IconDimension="32 32"
+                  LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+
+  <!--App Mode-->
+  <DataTemplate syp:name="AfrAppModePopoverDataTemplate" >
+      <CATVidCtlButton Name="@Name"
+                  syp:Template="CATAfrPropertyButtonIconBox"
+                  CheckMode="1"
+                  ClickMode="0"
+                  CheckState="@ActivationWidget Mode=TwoWays"
+                  EnableFlag="@EnableWidget"
+                  CropPolicy="NoCrop"
+                  Icon="@LargeIcon"
+                  Label="@TitleIfNoIcon"
+                  LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                  TooltipTitle="@LongHelpTitle"
+                  TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                  TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                  LongHelpId="@LongHelpId"
+                  Click="@ActionEvent"
+				  DoubleClick="@RepeatActionEvent"
+                  VisibleFlag="@VisibleFlag"
+                  RequestedMinimumDimension="34 36"
+                  IconDimension="32 32"
+                  LayoutWhenUnvisibleFlag="0"/>
+  </DataTemplate>
+
+  <Template syp:name="AfrAppModePopover" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="@Name"
+                syp:Template="CATAfrPropertyButton"
+                CheckMode="1"
+                ClickMode="0"
+                CheckState="@ActivationWidget Mode=TwoWays"
+                EnableFlag="@EnableWidget"
+                CropPolicy="NoCrop"
+                Icon="@LargeIcon"
+                Label="@TitleIfNoIcon"
+                LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                TooltipTitle="@LongHelpTitle"
+                TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                LongHelpId="@LongHelpId"
+                Click="@ActionEvent"
+				DoubleClick="@RepeatActionEvent"
+                VisibleFlag="@VisibleFlag"
+                RequestedMinimumDimension="34 34"
+                IconDimension="32 32"
+                LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--Object Properties-->
+  <Template syp:name="AfrObjectProperties" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="@Name"
+                   syp:Template="CATAfrPropertyButton"
+                   CheckMode="1"
+                   ClickMode="0"
+                   CheckState="@ActivationWidget Mode=TwoWays"
+                   EnableFlag="@EnableWidget"
+                   CropPolicy="NoCrop"
+                   Icon="@LargeIcon"
+                   Label="@TitleIfNoIcon"
+                   LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                   TooltipTitle="@LongHelpTitle"
+                   TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                   TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                   LongHelpId="@LongHelpId"
+                   Click="@ActionEvent"
+				   DoubleClick="@RepeatActionEvent"
+                   VisibleFlag="@VisibleFlag"
+                   RequestedMinimumDimension="34 34"
+                   IconDimension="32 32"
+                   LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--Object Properties-->
+  <DataTemplate syp:name="AfrObjectPropertiesDataTemplate" >
+    <CATVidCtlButton Name="@Name"
+                syp:Template="CATAfrPropertyButtonIconBox"
+                CheckMode="1"
+                ClickMode="0"
+                CheckState="@ActivationWidget Mode=TwoWays"
+                EnableFlag="@EnableWidget"
+                CropPolicy="NoCrop"
+                Icon="@LargeIcon"
+                Label="@TitleIfNoIcon"
+                LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                TooltipTitle="@LongHelpTitle"
+                TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                LongHelpId="@LongHelpId"
+                Click="@ActionEvent"
+				DoubleClick="@RepeatActionEvent"
+                VisibleFlag="@VisibleFlag"
+                RequestedMinimumDimension="34 36"
+                IconDimension="32 32"
+                LayoutWhenUnvisibleFlag="0"/>
+  </DataTemplate>
+  
+  <!--Object Properties-->
+  <Template syp:name="AfrObjectPropertiesPopover" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="@Name"
+                   syp:Template="CATAfrPropertyButton"
+                   CheckMode="1"
+                   ClickMode="0"
+                   CheckState="@ActivationWidget Mode=TwoWays"
+                   EnableFlag="@EnableWidget"
+                   CropPolicy="NoCrop"
+                   Icon="@LargeIcon"
+                   Label="@TitleIfNoIcon"
+                   LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                   TooltipTitle="@LongHelpTitle"
+                   TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                   TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                   LongHelpId="@LongHelpId"
+                   Click="@ActionEvent"
+				   DoubleClick="@RepeatActionEvent"
+                   VisibleFlag="@VisibleFlag"
+                   RequestedMinimumDimension="34 34"
+                   IconDimension="32 32"
+                   LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+    
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                           -->
+  <!--*************************************************************************************************************************-->
+
+  <!--App Mode-->
+  <Template syp:name="AfrAppMode" Target="CATAfrSYPSeparatorView">
+      <CATVidGPSquare RequestedMinimumDimension="1 28"
+                Texture="I_VIAImmersiveToolBar_Sep.png"
+                 LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <Template syp:name="AfrAppModePopover" Target="CATAfrSYPSeparatorView">
+      <CATVidGPSquare RequestedMinimumDimension="28 1"
+                Texture="I_VIAImmersiveToolBar_Sep.png"
+                 LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--Object Properties-->
+  <Template syp:name="AfrObjectProperties" Target="CATAfrSYPSeparatorView">
+    <CATVidGPSquare RequestedMinimumDimension="1 28"
+                Texture="I_VIAImmersiveToolBar_Sep.png"
+                 LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <Template syp:name="AfrObjectPropertiesPopover" Target="CATAfrSYPSeparatorView">
+    <CATVidGPSquare RequestedMinimumDimension="28 1"
+                Texture="I_VIAImmersiveToolBar_Sep.png"
+                 LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            View Mode for CAfrlist                                                           -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrViewModePopover" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" PersistenceSelectedStarterFlag="1" IconBoxFlag="1">
+      <CATAfrVidIconBoxCtl syp:Template="AfrViewModeIconBox"
+                           Orientation="Vertical"
+                           IconBoxHidePolicy="AutoHide"
+                           IconBoxShowPolicy="ShowOnClickOnArrow"
+                           PopupVisibleFlag="@WidgetsPanelVisibility"
+                           PresenterIconContent="@SelectedStarter"
+                           ForceSnapFlag="1"
+                           PopupItems="@ToolsItems Mode=OneWayToSource"
+                           PopupShown="@CreateSubContainerEvent"
+                           PresenterDataTemplate="AfrViewModePopoverDataTemplate"
+                           PresenterStyleSheet="AfrRepresentationTypes\AfrAppModeAndProperties.CATSYPStyle"
+                           LayoutWhenUnvisibleFlag="0"/>
+    </CATAfrSYPContainerViewMetaData>   
+  </Template>
+  <DataTemplate syp:name="AfrViewModePopoverDataTemplate" >
+      <CATVidCtlButton Name="@Name"
+                  syp:Template="CATAfrViewModeButtonIconBox"
+                  CheckMode="1"
+                  ClickMode="0"
+                  CheckState="@ActivationWidget Mode=TwoWays"
+                  EnableFlag="@EnableWidget"
+                  CropPolicy="NoCrop"
+                  Icon="@NormalIcon"
+                  Label="@TitleIfNoIcon"
+                  Tooltip="@Help"
+                  Click="@ActionEvent"
+                  VisibleFlag="@VisibleFlag"
+                  RequestedMinimumDimension="28 28"
+                  IconDimension="22 22"
+                  LayoutWhenUnvisibleFlag="0"/>
+  </DataTemplate>
+  <Template syp:name="AfrViewModePopover" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="@Name"
+                syp:Template="CATAfrPropertyButton"
+                CheckMode="1"
+                ClickMode="0"
+                CheckState="@ActivationWidget Mode=TwoWays"
+                EnableFlag="@EnableWidget"
+                CropPolicy="NoCrop"
+                Icon="@NormalIcon"
+                Label="@TitleIfNoIcon"
+                Tooltip="@Help"
+                Click="@ActionEvent"
+                VisibleFlag="@VisibleFlag"
+                RequestedMinimumDimension="22 22"
+                IconDimension="22 22"
+                LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+</Styles>

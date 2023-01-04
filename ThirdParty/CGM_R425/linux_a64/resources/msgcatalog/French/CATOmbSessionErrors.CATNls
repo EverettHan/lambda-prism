@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+// VCS 09/04/2014 Creation
+// Error description file for all errors happening during OMB operations, excepted Switch and Stream/Unstream operations
+//
+//    Please keep following glossary format when adding errors:
+//
+// ERR_OMB_<category>_nnn.Diagnostic=<A short and clear message>;
+// ERR_OMB_<category>_nnn.Request="<some more detail with helpful minimal context>;
+// ERR_OMB_<category>_nnn.Advice=<only when REALLY helpfull for final user, as a misuse correction or a by-pass>;
+
+// --> ERR_OMB_SD_001 to ERR_OMB_SD_099 : StreamDescriptor management in session
+
+SD_CREATE="création";
+SD_DELETE="Suppression";
+SD_MOD_LR="modification de stockage local";
+SD_CREATE_LR="création de stockage local";
+SD_READ_LR="lecture de stockage local";
+SD_LOCK_LR="verrouillage de stockage local";
+SD_UNLOCK_LR="déverrouillage de stockage local";
+SD_ULOCK_LR="(dé)verrouillage de stockage local";
+SD_STREAM="diffusion de flux";
+SD_IMPORT="importation de données";
+SD_EXPORT="exportation de données";
+SD_OPERATE="opération";
+SD_UPD_VISU="mise à jour de la visualisation";
+SD_RESTORE="restaurer";
+
+SD_GET_SYNCHRO_CTX="La requête de synchronisation applicative a échoué.\nLa synchronisation par défaut a été appliquée.\n";
+SD_APPLI_SYNCHRO_CTX="La synchronisation applicative a échoué.\nLa synchronisation par défaut a été appliquée.\n";
+
+ERR_OMB_SD_001.Request="Descripteur de flux non valide.";
+ERR_OMB_SD_001.Diagnostic="Descripteur de flux /p1 interrompu. Identifiant SD (Format : /p2 |Rôle : /p3 |Nom : /p4 |Type : /p5) introuvable.";
+
+ERR_OMB_SD_002.Request="Le descripteur de flux existe déjà.";
+ERR_OMB_SD_002.Diagnostic="Descripteur de flux /p1 interrompu. L'identifiant SD (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5) existe déjà.";
+
+ERR_OMB_SD_003.Request="Descripteur de flux non valide.";
+ERR_OMB_SD_003.Diagnostic="Descripteur de flux /p1 interdit. Identifiant SD non valide (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_004.Request="Le descripteur de flux /p1 a échoué.";
+ERR_OMB_SD_004.Diagnostic="La demande de descripteur de flux /p1 a échoué. Identifiant SD non valide (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_005.Request="La requête de descripteur de flux /p1 a échoué, car le SD de création n'a pas été chargé dans la session.";
+ERR_OMB_SD_005.Diagnostic="Identifiant SD (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+ERR_OMB_SD_005.Advice="Le SD de création aurait dû être chargé au cours d'une précédente opération de commutation de données.";
+
+ERR_OMB_SD_006.Request="Descripteur de flux /p1 interdit.";
+ERR_OMB_SD_006.Diagnostic="La demande de descripteur de flux /p1 n'est pas autorisée. Identifiant de descripteur de flux (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_007.Request="La demande de descripteur de flux /p1 n'est pas autorisée, car aucun AuthoringVisu SD principal n'existe sur le composant.";
+ERR_OMB_SD_007.Diagnostic="Identifiant SD (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+ERR_OMB_SD_007.Advice="L'existence d'un AuthoringVisu SD principal est une condition préalable à l'opération actuelle.";
+
+ERR_OMB_SD_008.Request="Descripteur de flux /p1 non pris en charge.";
+ERR_OMB_SD_008.Diagnostic="Descripteur de flux /p1 non pris en charge avec la version courante. Identifiant de descripteur de flux (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_009.Request="Descripteur de flux /p1 non autorisé.";
+ERR_OMB_SD_009.Diagnostic="/p1 non autorisé sur le descripteur de flux modifié. Identifiant de descripteur de flux (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_010.Request="Descripteur de flux /p1 interdit.";
+ERR_OMB_SD_010.Diagnostic="La demande de descripteur de flux /p1 n'est pas autorisée, car le descripteur de flux est actuellement en cours de suppression. Identifiant de descripteur de flux (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_011.Request="Descripteur de flux /p1 non pris en charge.";
+ERR_OMB_SD_011.Diagnostic="Opération /p1 inutile pour le type descripteur de flux. Identifiant de descripteur de flux (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_012.Request="Le descripteur de flux /p1 a échoué.";
+ERR_OMB_SD_012.Diagnostic="Opération /p1 non autorisée. Le type de flux de visualisation en entrée est non valide ou incompatible avec le type de descripteur de flux associé. Identifiant SD (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_013.Request="Le descripteur de flux /p1 a échoué.";
+ERR_OMB_SD_013.Diagnostic="Opération /p1 non autorisée. Le nom de persistance n'est pas valide (doit être ascii sans caractères spéciaux). Identifiant SD (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+ERR_OMB_SD_014.Request="Avertissement : descripteur de flux /p1 incomplet.";
+ERR_OMB_SD_014.Diagnostic="La demande de descripteur de flux /p1 n'est pas terminée. Identifiant de descripteur de flux (Format :/p2 |Rôle :/p3 |Nom :/p4 |Type :/p5).";
+
+// --> ERR_OMB_SWITCH_RULE_001 to ERR_OMB_SWITCH_RULE_099 : Switch Loading rule
+
+ERR_OMB_SWITCH_RULE_001.Request="Mode de chargement cible inconnu.";
+ERR_OMB_SWITCH_RULE_001.Diagnostic="Impossible de trouver le mode cible de commutation dans la règle de chargement en entrée.";
+
+ERR_OMB_SWITCH_RULE_002.Request="Mode de chargement cible non défini.";
+ERR_OMB_SWITCH_RULE_002.Diagnostic="Mode cible de commutation non défini par la règle de chargement en entrée.";

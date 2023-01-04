@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP" xmlns:vid="http://www.3ds.com/xsd/VID">
+  
+  <!--======================================================================-->
+  <!-- Tooltip : Data template for long tooltip general                     -->
+  <!--======================================================================-->
+  
+  <DataTemplate syp:name="AdaptorLongTooltipGeneral">
+    <CATVidLayLayer>
+      <!-- Tooltip : Pickable background, needed to receive OnMove, ... GP events -->
+      <CATVidGPSquare syp:name="TooltipBackground" Name="Background" PickFlag="1" UseManipulatorFlag="1" Color="255 255 255 255"/>
+
+     <!-- Tooltip : Foreground -->
+	 <CATVidLayGrid>
+	 
+        <!--  Long Help Image area -->
+        <CATVidLayGrid syp:name="LongHelpImageArea" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0"
+                       ContentsMargins="4">
+          <CATVidGPSquare syp:name="LongHelpImageSquare" CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="@LongHelpImageDimension"
+                          Texture="@LongHelpImage"/>
+        </CATVidLayGrid>
+	  
+	  <!-- Long help area -->
+      <CATVidLayGrid syp:name="LongHelpArea" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0"
+                       ContentsMargins="4">
+          <CATVidGPText syp:name="LongHelpText" Text="@LongHelp" CATVidLayGrid.IndexedConstraints="x=0 y=0" OptimizeMinimumDimensionFlag="1"
+                        Color="0 0 0 255"
+                        LeftMargin="0" RightMargin="0" TopMargin="4" BottomMargin="4" Interline="0"
+                        WordWrapFlag="1" WordWrapPolicy="ToleranceMargin" WordWrapThreshold="@WrapThreshold" WordWrapToleranceMargin="@WrapToleranceMargin"/>
+      </CATVidLayGrid>
+		
+	 </CATVidLayGrid>	
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="LongHelp" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpArea" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LongHelpImage" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpImageArea" Value="0"/>
+	  </CATSYPTrigger>
+	  <CATSYPTrigger Property="Level" Value="Information">
+        <CATSYPSetter Property="Color" TargetName="TooltipBackground" Value="130 130 150 255"/>
+		<CATSYPSetter Property="Color" TargetName="LongHelpText" Value="255 255 255 255"/>
+	  </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+</Styles>

@@ -1,0 +1,513 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CATAfrIconBox.CATSYPStyle" />
+    <ResourceDictionary Source="CATAfrPLMCompassWidgets.CATSYPStyle" />
+  </Resources>
+
+  <!--======================================================-->
+  <!-- CATCAfrMenu_Afr3DS_Compass : view of a compass   -->
+  <!--======================================================-->
+
+  <DataTemplate syp:name="CATCAfrMenu_Afr3DS_Compass_old" >
+
+    <CATAfrSYPStarterViewMetaData syp:name="MetaData" SypNamePosition="SupraContainerCompassPosition" NameBis="@Name">
+      <!--<CATAfrSYPStarterViewMetaData.ControllerPresenter>
+        <CATAfrSYPAppsController FilteredSource="@FilterEditor ElementName=Container" />
+      </CATAfrSYPStarterViewMetaData.ControllerPresenter>-->
+      <CATAfrSmartCtl syp:name="MainControl"  Name="@Name" InitialDockArea="TopDockArea"  UpdateFlag="0"
+
+            ConstraintsDialogBox="widthPercent=100 topPercent=0">
+        <CATVidLayLayer>
+          <!-- Backround for this separated -->
+          <CATVidGPSmartSquare GridWeight="row1=1" Texture="PLMBar/top-bg.png">
+            <CATVidSpacer RequestedMinimumDimension="3 44" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 32" CATVidGPSmartSquare.GPConstraints="x=0  y=1 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+
+          <!-- ** END ** Layer for :Copy of 3DS Icon + Mini Compass + Text-->
+          <CATVidLayGrid GridWeight="row2=1 col2=1">
+            <CATVidSpacer RequestedMinimumDimension="16 44" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidCtl syp:name="ContainerForLegacyMenu" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+            <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+
+
+          <!-- Layer for 3DS Icon-->
+          <CATVidLayGrid GridWeight="col2=1 row2=1">
+            <CATVidSpacer RequestedMinimumDimension="14 6" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidGPSquare Texture="PLMBar/3ds_Logo.png" RequestedMinimumDimension="32 32" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T" />
+
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+
+          <!-- Layer for 3DXP Compass-->
+          <CATAfr3DXPCompass_old  syp:name="Container" TopBarModel="@TopBar" OnPanelDisplayed="@HandleEventMenuDeployed" OnPanelHidden="@HandleEventMenuHidden" />
+
+
+          <CATVidGPSquare syp:name="BlockingSquareForRecord" Name="BlockingSquareForRecordCompass" UseManipulatorFlag="1" VisibleFlag="0"/>
+        </CATVidLayLayer>
+
+      </CATAfrSmartCtl>
+
+    </CATAfrSYPStarterViewMetaData>
+
+
+  </DataTemplate>
+  <!--***************************************************************************************************************************************-->
+  <!--                                 CATCAfrToolbar Starter  Representation                                                            -->
+  <!--***************************************************************************************************************************************-->
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Signature compass creation                                                  -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrCompass" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData SypNamePosition="CompassPosition" AlwaysVisibleFlag="1">
+      <CATAfrPLMCompassVid Viewer="@Viewer" />
+    </CATAfrSYPContainerViewMetaData>
+
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            End Signature compass creation                                                  -->
+  <!--*************************************************************************************************************************-->
+  <!--*************************************************************************************************************************-->
+  <!--                                            Signature container 3DS + Compass + Text                                                  -->
+  <!--*************************************************************************************************************************-->
+
+  <!--===========================  Special Starter +Menu for Compass ================================================-->
+  <!--<DataTemplate syp:name="CATCAfrMenu_Afr3DS_Compass" >
+
+    <CATAfrSYPStarterViewMetaData syp:name="MetaData" SypNamePosition="SupraContainerCompassPosition" NameBis="@Name">
+      <CATAfrSmartCtl syp:name="MainControl"  Name="@Name" InitialDockArea="TopDockArea"  UpdateFlag="0"
+
+            ConstraintsDialogBox="widthPercent=100 topPercent=0">
+        <CATVidLayLayer>
+          <CATVidGPSmartSquare GridWeight="row1=1" Texture="PLMBar/top-bg.png">
+            <CATVidSpacer RequestedMinimumDimension="3 44" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 32" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+          <CATVidLayGrid GridWeight="row1=1"  >
+            <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLT" RequestedMinimumDimension="3 42" >
+  
+              --><!--Popup for Band Apps--><!--
+              <CATAfrSmartCtl syp:name="CompassPopup" Name="@NameBis ElementName=MetaData" VisibleFlag="@ContentVisibleFlag" LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Bottom"
+                        ConstraintsDialogBox="widthPercent=0 heightPercent=100 topPx=44" ModalFlag="1" UpdateFlag="1" PopupBecomesUnvisible="@HandleEventMenuHidden" >
+                <CATVidLayLayer syp:name="BandPopup">
+                  --><!-- Background of band--><!--
+                  <CATVidGPSquare   Color="116 116 116 255" />
+                  <CATVidLayGrid GridWeight="row1=1">
+                    <CATVidLayGrid GridWeight="col2=1" CATVidLayGrid.IndexedConstraints="x=0 y=0  attach=RLTB ">
+                      <CATVidSpacer RequestedMinimumDimension="35 36" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                      <CATVidLaySideAttach CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                        <CATVidLayLayer CATVidLaySideAttach.IndexedConstraints="topPx=-42 leftPx=-1">
+                           <CATVidLayGrid >
+                          <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                          <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+                        </CATVidLayGrid>
+                        <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  RequestedMinimumDimension="77 76">
+                          <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                          <CATAfrPLMCompassCentral syp:name="cloneCentral" syp:Template="SignatureV2"
+                                                CompassMode="@ModeApps ElementName=BigCompass "
+
+                                                PLMCompass="@PLMCompass ElementName=BigCompass"
+                                                LayoutWhenUnvisibleFlag="0"
+                                                WestDesignFlag="0"
+                                                WestDesignBorderFlag="0"
+                                                VisibleFlag="1"
+
+                          RequestedMinimumDimension="64 64" 
+                                              CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+                          <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                          <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+                        </CATVidLayGrid>
+                        </CATVidLayLayer >
+
+                        </CATVidLaySideAttach>
+                      --><!--Action="@HandleEvent ElementName=BigCompass"--><!--
+                      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB "/>
+                    </CATVidLayGrid>
+                   
+                   
+                    <CATVidCtlScrollableArea syp:name="Scrollable"   HScrollbarPolicy="AlwaysHidden" HStretchPolicy="Stretch" RequestedMinimumDimension="351 32"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB ">
+                      <CATVidLayGrid GridWeight="col1=1" >
+                        <CATVidSpacer RequestedMinimumDimension="24 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                        <CATVidCtl syp:name="Container" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+                        <CATVidSpacer RequestedMinimumDimension="14 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                      </CATVidLayGrid>
+                      
+                  </CATVidCtlScrollableArea>
+                  </CATVidLayGrid>
+
+
+
+                </CATVidLayLayer>
+
+
+              </CATAfrSmartCtl>
+            </CATVidLayLayer>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+          --><!-- ** END ** Layer for :Copy of 3DS Icon + Mini Compass + Text--><!--
+          --><!-- Layer for : 3DS Icon + Mini Compass + Text--><!--
+          <CATVidLayLayer>
+
+            <CATVidLayGrid CellSpacing="0"  GridWeight="row1=1 col3=1">
+              <CATVidLayGrid GridWeight="col2=1 row2=1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+                <CATVidSpacer RequestedMinimumDimension="3 6" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+                <CATVidGPSquare Texture="PLMBar/3ds_Logo.png" RequestedMinimumDimension="32 32" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T" />
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+              </CATVidLayGrid>
+
+              <CATVidCtl CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T" >
+                <CATAfrPLMCompassVid  syp:name="BigCompass" OnModeAppsChanged="@HandleEventMenuDeployed" CloneCompass="@Item ElementName=cloneCentral" />
+              </CATVidCtl>
+              <CATVidSpacer RequestedMinimumDimension="10 1" CATVidLayGrid.IndexedConstraints="x=3 y=1 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+
+          --><!--<CATVidLayGrid>
+            <CATVidSpacer RequestedMinimumDimension="10 36" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidCtl CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T" >
+              <CATAfrPLMCompassCentral  syp:Template="SignatureV2"
+                                              
+                                              LayoutWhenUnvisibleFlag="0"
+                                              WestDesignFlag="0"
+                                              WestDesignBorderFlag="0"
+                                              VisibleFlag="1"
+
+                        RequestedMinimumDimension="120 120" />
+            </CATVidCtl>
+          </CATVidLayGrid>--><!--
+
+          <CATVidGPSquare syp:name="BlockingSquareForRecord" Name="BlockingSquareForRecordCompass" UseManipulatorFlag="1" VisibleFlag="0"/>
+        </CATVidLayLayer>
+
+      </CATAfrSmartCtl>
+
+    </CATAfrSYPStarterViewMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ContentVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </DataTemplate>-->
+
+
+
+
+
+
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            End Signature compass creation                                                  -->
+  <!--*************************************************************************************************************************-->
+  <!--*************************************************************************************************************************-->
+  <!--                                            Menu special button like Expander creation                                                  -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrMenu" Target="CATAfrSYPStarterView">
+    <CATVidLayLayer >
+      <CATVidGPSquare  Color="0 0 0 255" BorderColor="0.05 150"/>
+      <CATVidCtlCheckBox Name="@Name" syp:Template="Toolbar-Text-Right" BackgroundColor="0 0 0 255" CheckMode="1"  Icon="@NormalIcon"
+                         IconDimension="32 32" CropPolicy="NoCrop" ForegroundColor="255 255 255 255"
+                         Label="@Title" CheckState="@ActivationWidget Mode=TwoWays"
+                         EnableFlag="@EnableWidget"
+                         Tooltip="@Help"
+                         Click="@ActionEvent"/>
+    </CATVidLayLayer>
+
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            End Signature compass creation                                                  -->
+  <!--*************************************************************************************************************************-->
+ 
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  My new representation                                                            -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Container creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="MyNewRepresentation" Target="CATAfrSYPContainerView">
+    <CATAfrSmartCtl   LayoutWhenUnvisibleFlag="0" Name="MyDialogBox" CreateDialogBoxFlag="@CreateDialogBoxFlag" ConstraintsDialogBox="leftPercent=90 topPx=10">
+      <CATVidCtlBorder syp:Template="ThinBorder" VisibleFlag="@WidgetsPanelVisibility" >
+        <CATVidLayStack CellBorder="4" Orientation="Vertical"
+                          Items="@ToolsItems Mode=OneWayToSource"/>
+      </CATVidCtlBorder>
+    </CATAfrSmartCtl>
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="MyNewRepresentation" Target="CATAfrSYPStarterView">
+
+
+    <CATVidCtlButton Name="@Name"
+                     syp:Template="Toolbar"
+                     CheckMode="1"
+                     ClickMode="0"
+                     CheckState="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     CropPolicy="NoCrop"
+                     RequestedMinimumDimension="48 48"
+                     IconDimension="32 32"
+                     Icon="@NormalIcon"
+                     Tooltip="@Help"
+                     Click="@ActionEvent"/>
+
+  </Template>
+
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <Template syp:name="MyNewRepresentation" Target="CATAfrSYPSeparatorView">
+
+    <CATVidGPSquare
+                       RequestedMinimumDimension="48 2" Texture="I_NXGVertical_Separator.png"/>
+
+  </Template>
+
+
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  My new representation type                                                           -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Container creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="MyRepresentationType" Target="CATAfrSYPContainerView">
+    <CATAfrSmartCtl   LayoutWhenUnvisibleFlag="0"  CreateDialogBoxFlag="@CreateDialogBoxFlag" ConstraintsDialogBox="leftPercent=25 bottomPx=10">
+      <CATVidCtlBorder syp:Template="ToolbarTouchBackground"  VisibleFlag="@WidgetsPanelVisibility" >
+        <CATVidLayStack CellBorder="4" Orientation="Horizontal"
+                          Items="@ToolsItems Mode=OneWayToSource"/>
+      </CATVidCtlBorder>
+    </CATAfrSmartCtl>
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="MyRepresentationType" Target="CATAfrSYPStarterView">
+
+
+    <CATVidCtlButtonIcon Name="@Name"
+                     syp:Template="Icon"
+                     CheckMode="1"
+                     ClickMode="0"
+                     CheckState="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     CropPolicy="NoCrop"
+                     RequestedMinimumDimension="32 32"
+                     IconDimension="28 28"
+                     OffTexture="@NormalIcon"
+                     OverTexture="@NormalIcon"
+                     OnTexture="@NormalIcon"
+                     Tooltip="@Help"
+                     Click="@ActionEvent"/>
+
+  </Template>
+
+  <Template syp:name="MyRepresentationTypeForCombo" Target="CATAfrSYPStarterView">
+
+    <CATVidLayGrid>
+      <CATVidCtlImageAndLabelCombo  Text="@Title Mode=TwoWays"   RequestedMinimumDimension="150 32"   CATVidLayGrid.IndexedConstraints="x=0 y=0">
+        <CATVidImageAndLabelData Label="Product:*"/>
+        <CATVidImageAndLabelData Label="prd:*"/>
+        <CATVidImageAndLabelData Label="..."/>
+      </CATVidCtlImageAndLabelCombo>
+      <CATVidCtlButtonIcon Name="@Name"
+                       syp:Template="Icon"
+                       CATVidLayGrid.IndexedConstraints="y=0 x=1 attach=RLTB"
+                       CheckMode="1"
+                       ClickMode="0"
+                       CheckState="@ActivationWidget Mode=TwoWays"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="32 32"
+                       IconDimension="28 28"
+                       OffTexture="@NormalIcon"
+                       OverTexture="@NormalIcon"
+                       OnTexture="@NormalIcon"
+                       Tooltip="@Help"
+                       Click="@ActionEvent"/>
+    </CATVidLayGrid>
+
+
+
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <Template syp:name="MyRepresentationType" Target="CATAfrSYPSeparatorView">
+
+    <CATVidGPSquare Name="MySeparator"
+                       RequestedMinimumDimension="2 32" Texture="I_NXGHorizontal_Separator.png"/>
+
+  </Template>
+
+
+  <Template syp:name="Balloon" Target="CATAfrVidIconBoxGrid" syp:Variation="Horizontal" >
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="CompassWestDesignLeftBackground" GridWeight="col1=1"
+                                Texture="phylactere-popup-h.png" RequestedMinimumDimension="15 34">
+        <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <CATVidGPSquare  Name="PickZone"  PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" />
+      <CATVidLayGrid>
+        <CATVidSpacer RequestedMinimumDimension="5 34" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl PresenterContent="@Content" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 34" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+
+    </CATVidLayLayer>
+  </Template>
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrCombo representation types                                                                 -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Container creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="AfrCombo" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" PersistenceSelectedStarterFlag="1">
+      <CATVidCtlImageAndLabelCombo ImageAndLabelItems="@ToolsItems Mode=OneWayToSource" IconDimension="24 24"  Icon="@IconContainer" ImageDimension="26 26" ComboSelect="@StartActiveCommand" SelectedIndex="@SelectedStarterIndex Mode=TwoWays" />
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="AfrCombo" Target="CATAfrSYPStarterView">
+
+
+    <CATVidImageAndLabelData
+                     Label="@Title"  ResourceImage="@NormalIcon"
+                     />
+
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                          NO  Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrTextBox representation types                                                                 -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                       NO     Container creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="AfrTextBox" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlMessagePublisher Name="@Name"
+                                  Message="@CATUnicodeStringArgument Mode=OneWayToSource"
+                                  PlaceHolderText="@Title"
+                                  PublishText="Publish"
+                                  PublishedFlag="@ActivationWidget Mode=OneWayToSource"
+                                  Published="@ActionEvent"/>
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrDefault & AfrOnlyTitle representation types                                                                 -->
+  <!--***************************************************************************************************************************************-->
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+
+  <Template syp:name="AfrExpandable" Target="CATAfrSYPStarterView">
+
+    <CATVidCtlButton Name="@Name" syp:name="Button"
+                 syp:Template="Button"
+                 CheckMode="1"
+                 ClickMode="0"
+                 BackgroundColor="0 0 0 255"
+                 ForegroundColor="255 255 255 255"
+                 CheckState="@ActivationWidget Mode=TwoWays"
+                 EnableFlag="@EnableWidget"
+                 CropPolicy="NoCrop"
+                 IconDimension="32 32"
+                 Icon="@NormalIcon"
+                 Tooltip="@Help"
+                 LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                 LongHelpId="@LongHelpId"
+                 Click="@ActionEvent" />
+
+
+  </Template>
+  <Template syp:name="AfrOnlyTitle" Target="CATAfrSYPStarterView">
+
+    <CATVidCtlButton Name="@Name" syp:name="Button"
+                 syp:Template="Button"
+                 CheckMode="1"
+                 ClickMode="0"
+                 BackgroundColor="0 0 0 255"
+                 ForegroundColor="255 255 255 255"
+                 CheckState="@ActivationWidget Mode=TwoWays"
+                 EnableFlag="@EnableWidget"
+                 CropPolicy="NoCrop"
+                 Label="@Title"
+                 Tooltip="@Help"
+                 LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                 LongHelpId="@LongHelpId"
+                 Click="@ActionEvent" />
+
+  </Template>
+
+
+  <!--===================================-->
+  <!--For test only -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrMyTstCAfrComponent_MyCAfrRepType">
+    <CATVidLayStack Orientation="Horizontal" syp:name="Container"  VisibleFlag="@Visibility"/>
+  </DataTemplate>
+
+</Styles>

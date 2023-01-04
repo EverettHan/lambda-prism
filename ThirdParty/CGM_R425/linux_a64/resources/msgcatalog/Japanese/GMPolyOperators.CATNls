@@ -1,0 +1,119 @@
+<meta charset="UTF-8"/>
+// WMN20200723 Reprise de TopologicalOperators.CATNls
+// WMN20200723 9000-9099- Polyhedral operators : Resp DPS, Week-07 2019.
+// CLO2 Change errors to 9200-9299 (KUB VariationnalOperators already use error 9000-9099)
+
+//Déplacement de toutes les erreurs
+// 9200-9209 Polyhedral Operators Name
+// Polyhedral operators names :
+
+GMPolyInPolySculptingOpe_ERR_9200="多面体スカルプト処理";
+GMPolyInPolySweepDraftOpe_ERR_9201="多面体スイープ ドラフト";
+GMPolyInPolyConversionOpe_ERR_9202="多面体変換";
+GMPolyInPolyBodyJoin_ERR_9203="多面体結合ボディー";
+GMPolyInPolyBodyTrimShells_ERR_9204="多面体トリム シェル";
+GMPolyInPolyBodySplitShells_ERR_9205="多面体分割シェル";
+GMPolyInPolyBodyVolByTrim_ERR_9206="多面体 VolumeByTrim";
+GMPolyInPolyBodyRoughOffset_ERR_9207="多面体 RoughOffset";
+
+
+// 9210-9299 Polyhedral errors
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Request="/p1 演算子:";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Diagnostic="現行または永続的制限のために、結果を計算できません。";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Advice="入力オペランドまたは/およびパラメーターを変更します。";
+
+//
+GMPolyInPolyInvalidResult_ERR_9211.Request="/p1 演算子:";
+GMPolyInPolyInvalidResult_ERR_9211.Diagnostic="結果が無効です";
+GMPolyInPolyInvalidResult_ERR_9211.Advice="";
+
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Request="多面体変換演算子:";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Diagnostic="頂点が相互に近すぎます。";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Advice="";
+
+//
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Request="多面体スカルプト処理演算子:";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Diagnostic="少なくとも 1 つのオペランドが、必要な仕様と整合していません。";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Advice="オペランドのシェイプを拡大するか、方向を反転します。";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Request="/p1 演算子:";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Diagnostic="少なくとも 2 つのフェースが交差しています";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Advice="入力サーフェスを修正して交差をなくしてださい";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Request="/p1 演算子:";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Diagnostic="少なくとも 1 つのエッジの隣接フェースで方向が矛盾しています";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Advice="入力サーフェスを修正してください。";
+
+//CLO2 - Extrapol Needed - IR790103 
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Request="/p1 演算子:";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Diagnostic="入力サーフェスが相互に切断されていません";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Advice="入力サーフェスを修正するか、外挿モードを有効にしてください";
+
+//CLO2 - Extension too short - IR79003 
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Request="VolumeByTrim 演算子:";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Diagnostic="入力サーフェス間の交差曲線が閉じていません。体積を計算できませんでした";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Advice="入力の形状を大きくするか、伸長を追加してください";
+
+//CLO2 - Extension too short - IR790103 
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Request="VolumeByTrim 演算子:";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Diagnostic="入力サーフェスは、閉じたサーフェスを作成できません。体積を計算できませんでした";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Advice="各サーフェス入力に保持する入力の辺を確認してください";
+
+//CLO2 - Rename and change ID
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Request="多面体スカルプト処理演算子:";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Diagnostic="カット オペランドとフィル オペランドが交差しています。";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Advice="カットまたは/およびフィル オペランドのシェイプを変更します。";
+
+//WMN20220209
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Request="/p1 演算子:";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Diagnostic="少なくとも 1 つのフェースが自己交差しています";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Advice="入力サーフェスを修正して交差をなくしてださい";
+
+//WMN20220209
+GMPolyInPolyFaceSelfContact_ERR_9221.Request="/p1 演算子:";
+GMPolyInPolyFaceSelfContact_ERR_9221.Diagnostic="少なくとも 1 つの面が自己接触しています";
+GMPolyInPolyFaceSelfContact_ERR_9221.Advice="接触をなくすため、入力サーフェスを修正してださい";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Request="/p1 演算子:";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Diagnostic="閉じたサーフェスまたは非多様サーフェスは押し出しできません。";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Advice="開いたサーフェスと多様なサーフェスのみを使用します。";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Request="/p1 演算子:";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Diagnostic="閉じた平面曲線または非多様平面曲線は、同じ平面内に押し出すことはできません。";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Advice="この平面に平行でない押し出し方向を選択してください。";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Request="/p1 演算子:";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Diagnostic="プロファイルは、押し出し方向にローカルに平行です。";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Advice="この押し出しプロファイルに平行でない押し出し方向を選択してください。";
+
+//RBU3_20222806
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Request="/p1 演算子:";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Diagnostic="オフセット値が小さすぎてオフセットを計算できません。";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Advice="オフセット値は、パーツのサイズの 1/1000 より大きくする必要があります。";
+
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Request="/p1 演算子:";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Diagnostic="入力が無効です。";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Advice="入力ボディーは同種で多様性があり、単一ボリューム ランプを含む必要があります。 オフセット値を設定する必要があります。";
+
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Request="/p1 演算子:";
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Diagnostic="オフセットの結果は空です。オフセットがほぼ閉じたサーフェス内またはボリューム内にあることが原因です。";
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Advice="オフセット値を修正して、入力ボディーにより近い結果を取得します。";
+
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Request="/p1 演算子:";
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Diagnostic="内部エラー。";
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Advice="";
+
+
+
+
+// WMN20200723 Nouveau
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Request="多面体変換演算子:";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Diagnostic="結果が無効です";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Advice="";

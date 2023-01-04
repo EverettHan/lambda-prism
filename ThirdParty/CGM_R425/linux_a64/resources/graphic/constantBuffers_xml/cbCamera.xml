@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbCbCamera</NAME>
+  <RASTERIZER_UPDATE>PassThroughCameraUpdater</RASTERIZER_UPDATE>
+  <FULL_SEMANTIC>FullCamera</FULL_SEMANTIC>
+  <UNIFORM>
+    <NAME>ViewMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>PrevViewProjMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM> 
+  <UNIFORM>
+    <NAME>ViewDeltaMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ProjMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ViewProjMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ViewInverseMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ProjInverseMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ViewProjInverseMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ViewInverseTransposeMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+	<NAME>UnjitteredProjMatrix</NAME>
+	<TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>EyeWorldPos</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>Pad1</NAME>
+    <TYPE>float</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>NearFarLogFactor</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>Pad2</NAME>
+    <TYPE>float</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ScreenSize</NAME>
+    <TYPE>float2</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ProjectionRatio</NAME>
+    <TYPE>float2</TYPE>
+  </UNIFORM>
+</CONSTANT_BUFFER>
+
+<!--{
+    "Name" : "cbCamera", 
+  "Parameters" : 
+  [
+    {"Semantic" : "ViewMatrix", "Type" : "Float4x4" }, 
+    {"Semantic" : "ProjMatrix", "Type" : "Float4x4" }, 
+    {"Semantic" : "ViewProjMatrix", "Type" : "Float4x4" }, 
+    {"Semantic" : "ViewInverseMatrix", "Type" : "Float4x4" }, 
+    {"Semantic" : "ProjInverseMatrix", "Type" : "Float4x4" }, 
+    {"Semantic" : "ViewProjInverseMatrix", "Type" : "Float4x4" },
+      {"Semantic" : "ViewInverseTransposeMatrix", "Type" : "Float4x4" },
+      {"Semantic" : "EyeWorldPos", "Type" : "Float3" }
+  ]
+}-->

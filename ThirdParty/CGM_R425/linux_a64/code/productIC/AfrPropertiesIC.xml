@@ -1,0 +1,39 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "AfrProperties.tst"/>
+  <attached name = "SystemExtensions.tst"/>
+  <attached name = "V5ClientRSW.tst"/>
+  <prerequisite access = "Public" name = "SpecialAPI"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "InfOSIDLItf"/>
+  <prerequisite access = "Protected" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrStandard"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AutomationInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "DialogEngine"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATView"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "InfInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SystemExtensions"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationController"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGManager"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" comment = "20150510 NFO/HEB New MePreferences Project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" comment = "20150510 NFO/HEB New MePreferences Project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "20150510 NFO/HEB New MePreferences Project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "20150510 NFO/HEB New MePreferences Project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" comment = "20150510 NFO/HEB New MePreferences Project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" comment = "20161130 ZBJ/HEB To call functions from JS" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrECMASImpl"/>
+  <prerequisite access = "Protected" comment = "20180627 ZBJ/HEB New MePreferences Project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisuImmersiveDialogEx"/>
+  <prerequisite access = "Protected" comment = "20180607 ANR8/HEB New MePreferences Project" expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" comment = "20180607 ANR8/HEB New MePreferences Project" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Private" comment = "20150510 NFO/HEB New MePreferences Project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrComponentsModel"/>
+  <prerequisite access = "Private" comment = "20180607 ANR8/HEB New MePreferences Project" expose = "ExposePrereq" name = "AfrFoundation"/>
+  <prerequisite access = "Private" comment = "20150510 NFO/HEB New MePreferences Project update 20180627 passage Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisuImmersiveDialog"/>
+  <authorize access = "Private" name = "V5ClientRSW.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

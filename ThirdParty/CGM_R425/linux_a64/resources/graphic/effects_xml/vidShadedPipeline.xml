@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >  
+
+  <DST_STATE_GROUP>
+    <NAME>DepthDeactivate</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+    <STENCIL_ENABLE>true</STENCIL_ENABLE>
+    <STENCIL_READ_MASK>33</STENCIL_READ_MASK>
+    <FRONT_FACE>
+      <STENCIL_WRITE_MASK>12</STENCIL_WRITE_MASK>
+      <STENCIL_FAIL_OP>Keep</STENCIL_FAIL_OP>
+      <DEPTH_FAIL_OP>Zero</DEPTH_FAIL_OP>
+      <STENCIL_PASS_OP>Replace</STENCIL_PASS_OP>
+      <STENCIL_FUNC>Equal</STENCIL_FUNC>
+    </FRONT_FACE>
+    <BACK_FACE>
+      <STENCIL_WRITE_MASK>14</STENCIL_WRITE_MASK>
+      <STENCIL_FAIL_OP>DecrementSat</STENCIL_FAIL_OP>
+      <DEPTH_FAIL_OP>Invert</DEPTH_FAIL_OP>
+      <STENCIL_PASS_OP>IncrementSat</STENCIL_PASS_OP>
+      <STENCIL_FUNC>GreaterEqual</STENCIL_FUNC>
+    </BACK_FACE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>TransTest</NAME>
+    <ALPHA_TO_COVERAGE>true</ALPHA_TO_COVERAGE>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <LOGIC_OP>Copy</LOGIC_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbViewTransition</NAME>
+    <NEEDS_OPTION>PassThroughTransition</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbNode</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVidMaterial</NAME>
+  </CONSTANT_BUFFER>
+
+  <UNIFORM>
+    <NAME>PushConstants</NAME>
+    <TYPE>float4</TYPE>
+  </UNIFORM>
+
+  <SAMPLER>
+    <NAME>vidTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!VID_TEXTURE_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>VID_TEXTURE_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>vidFreeTypeTexture</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>GPUPickingImage</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPickingImage</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>vidTextureSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>Nearest</MIP_FILTER>
+    <CMP_FUNC>Never</CMP_FUNC>
+    <CMP_MODE>None</CMP_MODE>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+
+    <!--Completely arbitrary-->
+    <LOD_BIAS>2.3</LOD_BIAS>
+    <MIN_LOD>2.63</MIN_LOD>
+    <MAX_LOD>3.28</MAX_LOD>
+  </SAMPLER_STATE>
+
+
+  <SAMPLER_STATE>
+    <NAME>vidFreeTypeTextureSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <CMP_FUNC>Never</CMP_FUNC>
+    <CMP_MODE>None</CMP_MODE>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <!--Completely arbitrary-->
+    <LOD_BIAS>2.3</LOD_BIAS>
+    <MIN_LOD>2.63</MIN_LOD>
+    <MAX_LOD>3.28</MAX_LOD>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>VidDefault</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DepthDeactivate</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>TransTest</BLEND_STATE>
+      
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>vidTexture</SAMPLER>
+          <STATES>vidTextureSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>vidFreeTypeTexture</SAMPLER>
+          <STATES>vidFreeTypeTextureSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vFrontColor</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>vUsingFreeTypeTexture</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      <COMMONS>streams varyings ubos</COMMONS>
+      <VERTEX_STAGE>vidVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>LogDepth vidPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</EFFECT>

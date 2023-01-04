@@ -1,0 +1,38 @@
+CATFaceUsePolygonalAttrSchmurz CATICGMDomainBinder libCATTesHLRUtilities
+CATEdgeUsePolygonalAttrSchmurz CATICGMDomainBinder libCATTesHLRUtilities
+
+CATCGMObjectBuilder     CATIPGMTessellationItfBldr     libCATTessellation
+
+Tessellate_CATech             CATechBehavior  libCATTessellate_CATech
+Tessellate_CATech             CATechChannel   libCATTessellate_CATech
+Tessellate_CATech             CATechGet       libCATTessellate_CATech
+CATech_CATTessSettings        CATechChannel   libCATTessellate_CATech
+
+CATech_CATTessSettingsExt  CATechChannel  libCATTessellate_CATech
+Tessellate_CATechExt  CATechBehavior  libCATTessellate_CATech
+Tessellate_CATechExt  CATechChannel  libCATTessellate_CATech
+Tessellate_CATechExt  CATechGet  libCATTessellate_CATech
+
+CATTessellateBodyStatic_CATechExt  CATechBehavior  libCATTessellateBodyStatic_CATech
+CATTessellateBodyStatic_CATechExt  CATechChannel  libCATTessellateBodyStatic_CATech
+CATTessellateBodyStatic_CATechExt  CATechGet  libCATTessellateBodyStatic_CATech  
+
+TESSPA_CATech  CATechBehavior  libCATTessellation
+TESSPA_CATech  CATechChannel   libCATTessellation
+TESSPA_CATech  CATechGet       libCATTessellation
+
+TESSPA_CATechExt  CATechBehavior  libCATTessellate_CATech
+TESSPA_CATechExt  CATechChannel  libCATTessellate_CATech
+TESSPA_CATechExt  CATechGet  libCATTessellate_CATech
+CATCGMUVCacheAttributeId  CATICGMDomainBinder  libCATTessellation
+CATCGMUVEdgeCacheAttributeId  CATICGMDomainBinder  libCATTessellation
+CATCGMUVFaceCacheAttributeId  CATICGMDomainBinder  libCATTessellation
+
+CATCGMDeltaCacheAttributeId      CATICGMDomainBinder        libCATTessellation
+CATCGMDeltaEdgeCacheAttributeId  CATICGMDomainBinder        libCATTessellation
+CATCGMDeltaFaceCacheAttributeId  CATICGMDomainBinder        libCATTessellation
+CATCGMTessCacheAttributeId       CATICGMDomainBinder        libCATTessellation
+CATCGMTessEdgeCacheAttributeId   CATICGMDomainBinder        libCATTessellation
+CATCGMTessFaceCacheAttributeId   CATICGMDomainBinder        libCATTessellation
+CATCXBody                        CATPGMBodyTessellateCache  libCATTessellation  
+CATCXBody                        CATPGMBodyTessDeltaCache   libCATTessellation

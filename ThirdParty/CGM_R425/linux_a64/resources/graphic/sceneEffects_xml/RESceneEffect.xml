@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SCENE_EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns ="urn:dsfx0">
+
+  <!-- DEPTH -->
+
+  <DST_STATE_GROUP>
+    <NAME>Test</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>TestWrite</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE>true</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>NoTest</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>NoTestOveride</NAME>
+    <DEPTH_ENABLE protected="1">false</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+    <STENCIL_ENABLE>false</STENCIL_ENABLE>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>TestProtected</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>TestNoWriteProtected</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>TestWriteProtected</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">true</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>TestWriteAllInZ</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">true</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <!--BLENDING -->
+
+  <BLEND_STATE_GROUP>
+    <NAME>NoBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>AlphaToCoverage</NAME>
+    <ALPHA_TO_COVERAGE protected="1">true</ALPHA_TO_COVERAGE>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>AlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>AlphaBlendingForSSR</NAME>
+    <SEPARATE_BLEND protected="1">true</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET protected="1">
+      <!-- Support for weighted average/OIT -->
+      <ID>1</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET protected="1">
+      <!-- IBL map with transparancy -->
+      <ID>2</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET protected="1">
+      <ID>3</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>LineOnLineAlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusDstAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BackgroundBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>Zero</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>Zero</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>GroundBlending</NAME>
+    <SEPARATE_BLEND>true</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>Zero</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET>
+      <ID>1</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>One</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>Zero</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>Zero</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>NoXOR</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>XOR</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>true</LOGIC_OP_ENABLE>
+      <LOGIC_OP>XOr</LOGIC_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>NoColor</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>None</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+  
+  <!--RASTERIZER -->
+
+  <!--Polygon Offset Off  -->
+  <RAST_STATE_GROUP>
+    <NAME>VolumeNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>VolumeNoBackFaceCullingNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>VolumeCCWNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>VolumeCCWNoBackFaceCullingNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>SkinNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>SkinBackFaceCullingNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>SkinCCWNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>SkinCCWBackFaceCullingNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>WireframeNoPolyOff</NAME>
+    <FILL_MODE protected="1">Wireframe</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>TransparentNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+  
+  <RAST_STATE_GROUP>
+    <NAME>TransparentCCWNoPolyOff</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+  
+  <!--Polygon Offset Off  -->
+
+  <RAST_STATE_GROUP>
+    <NAME>Volume</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>VolumeNoBackFaceCulling</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>VolumeCCW</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>VolumeCCWNoBackFaceCulling</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>Skin</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>SkinBackFaceCulling</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>SkinCCW</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>SkinCCWBackFaceCulling</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+
+  <RAST_STATE_GROUP>
+    <NAME>Wireframe</NAME>
+    <FILL_MODE protected="1">Wireframe</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>Transparent</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <!-- WARNING: After a regression in Simulia scenario (not covered by any ODT), we decide to lock cull mode. -->
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>TransparentCCW</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+
+  <RAST_STATE_GROUP>
+    <NAME>NoCull</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>NoAA</NAME>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <ANTI_ALIASED_LINE_ENABLE protected="1">false</ANTI_ALIASED_LINE_ENABLE>
+    <ANTI_ALIASED_POLYGON_ENABLE protected="1">false</ANTI_ALIASED_POLYGON_ENABLE>
+  </RAST_STATE_GROUP>
+
+
+  <RAST_STATE_GROUP>
+    <NAME>GroundNoPolygonOffset</NAME>
+    <CULL_MODE>Back</CULL_MODE>
+    <FILL_MODE>Solid</FILL_MODE>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <SCISSOR_ENABLE>false</SCISSOR_ENABLE>
+    <DEPTH_CLIP_ENABLE>true</DEPTH_CLIP_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>GroundWithPolygonOffset</NAME>
+    <CULL_MODE>Back</CULL_MODE>
+    <FILL_MODE>Solid</FILL_MODE>
+    <DEPTH_BIAS>2</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>3.0</DEPTH_SLOPE_FACTOR>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <SCISSOR_ENABLE>false</SCISSOR_ENABLE>
+    <DEPTH_CLIP_ENABLE>true</DEPTH_CLIP_ENABLE>
+  </RAST_STATE_GROUP>
+  
+  <RAST_STATE_GROUP>
+    <NAME>RasAdvancedPolite</NAME>
+    <LINE_STIPPLE_ENABLE protected="1">false</LINE_STIPPLE_ENABLE>
+  </RAST_STATE_GROUP>
+
+
+  <RAST_STATE_GROUP>
+    <NAME>VoxelMap</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS protected="1">0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>VoxelMap_Conservative</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS protected="1">0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">0.0</DEPTH_SLOPE_FACTOR>
+    <CONSERVATIVE_RASTERIZATION_ENABLE protected="1">true</CONSERVATIVE_RASTERIZATION_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <!--SCENE EFFECT -->
+
+  <TECHNIQUE>
+    <NAME>GroundWriteZ</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>GroundBlending</BLEND_STATE>
+      <RASTERIZER_STATE>GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundNoZTest</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>GroundBlending</BLEND_STATE>
+      <RASTERIZER_STATE>GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundOnlyZTest</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>GroundBlending</BLEND_STATE>
+      <RASTERIZER_STATE>GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundOnlyZTestForMobile</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+      <RASTERIZER_STATE>GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundOnlyZTestNoPolygonOffset</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>GroundBlending</BLEND_STATE>
+      <RASTERIZER_STATE>GroundNoPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Background</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>NoCull</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BackgroundBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Volume</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>Volume</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>VolumeNoBackFaceCulling</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>VolumeNoBackFaceCulling</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>VolumeCCW</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>VolumeCCW</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>VolumeCCWNoBackFaceCulling</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>VolumeCCWNoBackFaceCulling</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <TECHNIQUE>
+    <NAME>Skin</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>Skin</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SkinBackFaceCulling</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinBackFaceCulling</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SkinCCW</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinCCW</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SkinCCWBackFaceCulling</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinCCWBackFaceCulling</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AlphaTest</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>Skin</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaToCoverage</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AlphaTestCCW</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinCCW</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaToCoverage</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+
+  <TECHNIQUE>
+    <NAME>Wireframe</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>Wireframe</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Transparent</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>Transparent</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>TransparentForSSR</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>Transparent</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlendingForSSR</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>TransparentCCW</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>TransparentCCW</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>TransparentForSSRCCW</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>TransparentCCW</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlendingForSSR</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Edge</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>LineOnLine</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>LineOnLineAlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Other</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+    </PASS>
+    <PASS>
+      <NAME>AllInZ</NAME>
+      <DEPTH_STENCIL_STATE>TestWriteAllInZ</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PoliteFirstPass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>TestWriteProtected</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PoliteSecondPass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>TestProtected</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AdvancedPoliteFirstPass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>TestWriteProtected</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>RasAdvancedPolite</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AdvancedPoliteSecondPass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>TestNoWriteProtected</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>RasAdvancedPolite</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Highlight</NAME>
+    <PASS>
+      <NAME>NoXOR</NAME>
+      <BLEND_STATE>NoXOR</BLEND_STATE>
+      <RASTERIZER_STATE>NoAA</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <TECHNIQUE>
+    <NAME>PreHighlight</NAME>
+    <PASS>
+      <NAME>XOR</NAME>
+      <BLEND_STATE>XOR</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PreHighlightNotMain</NAME>
+    <PASS>
+      <NAME>XOR</NAME>
+      <BLEND_STATE>XOR</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestOveride</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <!-- GF8: No Polygon Offset techniques -->
+
+  <TECHNIQUE>
+    <NAME>VolumeNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>VolumeNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <TECHNIQUE>
+    <NAME>VolumeNoBackFaceCullingNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>VolumeNoBackFaceCullingNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>VolumeCCWNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>VolumeCCWNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>VolumeCCWNoBackFaceCullingNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>VolumeCCWNoBackFaceCullingNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SkinNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AlphaTestNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaToCoverage</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SkinBackFaceCullingNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinBackFaceCullingNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SkinCCWNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinCCWNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AlphaTestCCWNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinCCWNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaToCoverage</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SkinCCWBackFaceCullingNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>SkinCCWBackFaceCullingNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>WireframeNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>WireframeNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>TransparentNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>TransparentNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>TransparentForSSRNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>TransparentNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlendingForSSR</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>TransparentCCWNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>TransparentCCWNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>TransparentForSSRCCWNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>TransparentCCWNoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlendingForSSR</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Voxel</NAME>
+    <PASS>
+      <NAME>VoxelMap</NAME>
+      <RASTERIZER_STATE>VoxelMap</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>NoTestOveride</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoColor</BLEND_STATE>
+    </PASS>
+
+    <PASS>
+      <NAME>VoxelMap_Conservative</NAME>
+      <RASTERIZER_STATE>VoxelMap_Conservative</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>NoTestOveride</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>NoColor</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <!--
+  <TECHNIQUE>
+    <NAME>EdgeNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+      <SHADER_PARAM PolygonOffsetSlope="1.1" PolygonOffsetConstant="1"></SHADER_PARAM>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>LineOnLineNoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>LineOnLineAlphaBlending</BLEND_STATE>
+      <SHADER_PARAM PolygonOffsetSlope="1.1" PolygonOffsetConstant="1"></SHADER_PARAM>
+    </PASS>
+  </TECHNIQUE>
+  -->
+
+</SCENE_EFFECT>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <!--===================================-->
+ <!--Tweaker Arrow Types-->
+ <!--===================================-->
+ <!-- CATVisCIDComboLinetype-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerCentreType">
+  <CATVidLayStack syp:name="Container"  Orientation="Horizontal" VisibleFlag="1">
+   <CATVidCtlSimpleCombo ImageDimension="22 22"
+                        MaxVisibleItems="4"
+                        RequestedMinimumDimension="100 22"
+                        SelectedIndex="@Value Mode=TwoWays"
+                          >
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StTranslatorCenter1"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StTranslatorCenter2"/>
+     <!--CATVidImageAndLabelData  Label="" ResourceImage="I_StTranslatorArrow3"/-->
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StTranslatorCenter3"/>
+   </CATVidCtlSimpleCombo>
+  </CATVidLayStack>
+ </Template>
+ </Styles>

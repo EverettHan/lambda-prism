@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_FixedSize</NAME>
+  <UNIFORM>
+    <NAME>u_FixedSizeScaleFactor</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+    <SEMANTIC>FixedSizeScaleFactor</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_FixedSizeOrthographicProjectionScaleFactor</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+    <SEMANTIC>FixedSizeOrthographicProjectionScaleFactor</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_FixedSizeWorldScaleInverse</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1 1 1</DEFAULT_VALUE>
+    <SEMANTIC>FixedSizeWorldScaleInverse</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

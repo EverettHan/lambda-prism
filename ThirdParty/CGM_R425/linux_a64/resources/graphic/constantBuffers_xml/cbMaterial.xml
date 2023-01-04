@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_cbMaterial</NAME>
+  <UNIFORM>
+    <NAME>g_diffuseColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>g_fresnel</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>g_shininess</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>14.1</DEFAULT_VALUE>
+  </UNIFORM>
+</CONSTANT_BUFFER>
+
+<!--{
+    "Name" : "cbMaterial", 
+    "Parameters" : 
+    [
+        {"Name" : "g_diffuseColor", "Type" : "Float4", "Value" : [1, 0, 0, 1] }, 
+        {"Name" : "g_fresnel", "Type" : "Float", "Value" : 1 }, 
+        {"Name" : "g_shininess", "Type" : "Float", "Value" : 14.1 }
+    ]
+}-->

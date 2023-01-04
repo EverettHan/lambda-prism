@@ -1,0 +1,144 @@
+<meta charset="UTF-8"/>
+//** WARNING: YWE 16:095:02 SINGLE-CODE 2013x => NO LOCAL CHANGE EXPECTED - USE IMPORT **/
+// Messages for batches
+// MODULE :  PLMBatchxxx
+// US Version
+//=====================================================================
+
+//====================================================================
+//  Messages for Batches
+//  US Version
+//====================================================================
+ErrorDummy="内部错误 - 代码 = /p1";
+LicenseKO1="/p1 不可用";
+LicenseKO2="当前配置不允许使用此批处理";
+//====================================================================
+// Directory
+//====================================================================
+
+Directory.NotExist="目录“/p1”不存在";
+Directory.NoWritePermission="目录“/p1”与写入目录不匹配。
+请更改访问权限";
+Directory.NoReadPermission="目录“/p1”与读取目录不匹配。
+请更改访问权限";
+Directory.Undefined="未定义目录“/p1”。";
+Directory.NotSelected="必须更改并重新启动操作。";
+Directory.IsaFile="“/p1”字段不是目录，而是文件。";
+Directory.Conflict="“/p1”文件与“-id /p2 ”目录之间发生冲突";
+
+//====================================================================
+// Document
+//====================================================================
+Document.NoDomain="无法访问对象类型
+无法在站点上选择任何对象 ... 请检查您的环境
+已中止批处理";
+Document.NoDocEnv="在当前环境中无法选择对象";
+Document.NoSuppEnv="支持的环境不可用";
+Document.IsaDir="“/p1”不是文件而是目录。";
+
+Document.NotADoc="对象 \"/p1\" 不是有效的 CATIA V5 对象";
+Document.NotACatiaDoc="以下列出的对象不是 CATIA V5 对象，并且不受批处理支持：";
+Document.DocNotFound="对象“/p1”不存在或找不到 ";
+Document.NoReadPermission="没有对象 /p1 的读取权限";
+Document.AlreadySelected="对象“/p1”已选定";
+Document.BadExtension="对象“/p1”的对象类型无效";
+Document.GoodExtension="\t  支持的对象类型为：";
+Document.ProcessKo="无法处理对象....";
+Document.ProcessoK="已成功处理对象....";
+Document.ProcessWg="已部分处理对象 /p1....";
+Document.NoWritePermission="没有对象 /p1 的写入权限";
+Document.InUse="对象“/p1”已由另一批处理占用";
+Document.NoDoc="没有满足选择条件的对象";
+Document.ReadError="无法读取对象“/p1”";
+Document.WriteError="无法写入对象“/p1”";
+Document.Write="成功写入对象“/p1”";
+Document.NotModified="操作未修改对象“/p1”";
+Document.AlreadyExist="对象“/p1”已存在并且无法覆盖
+移动该对象或者选择“替换”选项";
+Document.AlreadyExistDocNoReplace="对象“/p1”已存在并且无法覆盖。请将此对象移到其他位置。";
+Document.Overwritten="对象“/p1”已存在且已被覆盖";
+Document.WillBeOverwritten="对象 \"/p1\" 已存在，并且将会按照选定的输出选项将其覆盖。";
+Document.BackUpCreated="已创建对象“/p1”的备份。";
+Document.CreationError="无法创建对象“/p1”
+请检查对象名称是否包含任何不受支持的字符";
+
+Object.LateTypeUnSupported="警告：选定的对象“/p1”无法进行批处理。";
+Object.LateTypeUnSupported2="后类型 \"/p1\" 的对象不受支持。";
+
+Object.ExtentionTypeUnSupported="扩展类型“/p1”的对象不受支持。";
+/////////////////////////////////////////////////////////////////////////////////
+// New documents ////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+Document.NewDocNoRefOverwrite="新对象“/p1”无法覆盖其参考
+请更改目标目录或重命名新对象";
+Document.NewDocAlreadyExist="新对象“/p1”已存在于目标目录中并且无法覆盖
+       更改目标目录，或者
+       重命名新对象，或者
+       选择“替换”选项，或者
+       重命名先前对象或将其移动至其他目录中";
+
+Document.NewDocNoWritePermission="无法在目标目录中创建新对象 /p1
+	请检查对目标目录的写入权限";
+Document.NewDocOverwritten="新对象“/p1”已存在且已被覆盖";
+Document.NewDocBackuped="已经在“/p1”中备份了此对象的之前版本 ";
+Document.NewDocBackupAbort="无法在“/p1”\n中备份对象的之前版本";
+Document.NewDocPowerCopied="成功超级复制未修改的对象“/p1”";
+Document.NewDocWrite="成功创建新对象“/p1”";
+Document.NewDocWriteError="无法创建新对象“/p1”";
+// ----------------------------------------------------------------------------
+// Messages for Input File  ---------------------------------------------------
+// ----------------------------------------------------------------------------
+InputFile.Inexistant="警告：输入文件“/p1”不存在";
+InputFile.NoReadAccess="警告：没有读取输入文件 /p1 的权限
+\t  无法打开文件";
+
+// ----------------------------------------------------------------------------
+// Messages for Parameters ----------------------------------------------------
+// ----------------------------------------------------------------------------
+Parameter.Invalid="警告：“/p1”参数无效";
+Parameter.Doubly="\t  参数已定义或组合无效";
+Parameter.Unknown="警告：
+“/p1”参数未知
+\t  使用“-h”选项查阅已知参数列表";
+Parameter.Skipped="\t  已跳过语句";
+Parameter.Missing="错误：缺少参数“/p1”
+\t  缺少必需参数或未正确传递必需参数
+\t  使用“-h”选项查阅必需参数列表";
+
+//====================================================================
+// Messages for ReportFile ----------------------------------------------------
+//====================================================================
+ReportFile.Exist="警告：报告文件“/p1”已存在且将被覆盖";
+ReportFile.NoWriteAccess="警告：报告文件“/p1”已存在，但为只读
+\t  报告将被写入标准输出";
+ReportFile.NoDir="警告：无法创建报告文件“/p1”
+\t  目录 /p2 不存在
+\t  已跳过语句 - 报告将被写入标准输出";
+ReportFile.DirNoWriteAccess="警告：无法创建报告文件“/p1”
+\t  目录 /p2 已存在，但为只读
+\t  已跳过语句 - 报告将被写入标准输出";
+ReportFile.CurDirNoWriteAccess="警告：无法创建报告文件“/p1”
+\t  当前目录存在，但为只读
+\t  已跳过语句 - 报告将被写入标准输出";
+
+//====================================================================
+// XmlFile
+//====================================================================
+XmlFile.IsaDir="“/p1”字段不是 Xml 文件，而是目录。";
+XmlFile.XmlFileNotFound="Xml 文件“/p1”不存在或找不到 ";
+XmlFile.NoReadPermission="没有 Xml 文件 /p1 的读取权限";
+XmlFile.NoWritePermission="没有 Xml 文件 /p1 的写入权限";
+XmlFile.XmlFileReadError="无法读取 Xml 文件“/p1”";
+XmlFile.XmlFileWriteError="无法写入 Xml 文件“/p1”";
+XmlFile.BadExtension="Xml 文件“/p1”的文件类型无效";
+XmlFile.InUse="Xml 文件“/p1”已由另一批处理使用";
+XmlFile.AlreadySelected="Xml 文件已定义
+跳过先前定义的 Xml 文件“/p1”的选择";
+XmlFile.NotSelected="不能选定 Xml 文件...";
+XmlFile.NoSelection="未选定 Xml 文件...";
+XmlFile.Overwritten="Xml 文件“/p1”已存在且将被覆盖";
+XmlFile.MoreObjects="\nxml 文件中选定对象的数目无法进行批处理。只能选择并处理一个对象";
+
+
+
+

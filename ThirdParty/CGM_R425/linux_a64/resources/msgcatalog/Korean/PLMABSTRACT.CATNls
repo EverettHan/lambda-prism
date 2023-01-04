@@ -1,0 +1,74 @@
+<meta charset="UTF-8"/>
+PLMABSTRACT="추상 모델";
+
+PLMABSTRACT.PLMEntity="PLMEntity";
+//-- Simple de PLMEntity --
+PLMABSTRACT.PLMEntity.PLM_ExternalID="이름";
+PLMABSTRACT.PLMEntity.V_CustoDiscipline="고객 분야";
+PLMABSTRACT.PLMEntity.V_Name="제목";
+PLMABSTRACT.PLMEntity.V_description="설명";
+PLMABSTRACT.PLMEntity.V_discipline="분야";
+PLMABSTRACT.PLMEntity.V_isUptodate="최신 상태";
+PLMABSTRACT.PLMEntity.V_nature="Nature";
+PLMABSTRACT.PLMEntity.V_sec_level="보안 레벨";
+PLMABSTRACT.PLMEntity.V_usage="사용";
+PLMABSTRACT.PLMEntity.workspaceid="작업 공간 ID";
+//-- Simple de BusinessType --
+PLMABSTRACT.PLMEntity.majorid="주 ID";
+PLMABSTRACT.PLMEntity.modified="최근 수정";
+PLMABSTRACT.PLMEntity.originated="생성일";
+PLMABSTRACT.PLMEntity.owner="소유자";
+PLMABSTRACT.PLMEntity.reserved="잠김";
+PLMABSTRACT.PLMEntity.reservedby="잠근 사람";
+PLMABSTRACT.PLMEntity.updatestamp="동기화 스탬프";
+//-- Volatile de PLMEntity --- 
+PLMABSTRACT.PLMEntity.C_created="생성일";
+PLMABSTRACT.PLMEntity.C_modified="최근 수정";
+PLMABSTRACT.PLMEntity.LOCKSTATUS="잠김";
+PLMABSTRACT.PLMEntity.LOCKUSER="잠근 사람";
+PLMABSTRACT.PLMEntity.V_confidentiality="기밀";
+PLMABSTRACT.PLMEntity.V_organization="조직";
+PLMABSTRACT.PLMEntity.V_project="협업 공간";
+PLMABSTRACT.PLMEntity.V_user="소유자";
+
+PLMABSTRACT.PLMStreamDescriptor="PLMStreamDescriptor";
+PLMABSTRACT.PLMStreamDescriptor.LOCKSTATUS="잠김";
+PLMABSTRACT.PLMStreamDescriptor.LOCKUSER="소유자 잠금";
+PLMABSTRACT.PLMStreamDescriptor.V_format="V_format";
+PLMABSTRACT.PLMStreamDescriptor.V_isMandatory="V_isMandatory";
+PLMABSTRACT.PLMStreamDescriptor.V_markstamp="V_markstamp";
+PLMABSTRACT.PLMStreamDescriptor.V_phaseOrigin="V_phaseOrigin";
+PLMABSTRACT.PLMStreamDescriptor.V_role="V_role";
+PLMABSTRACT.PLMStreamDescriptor.V_size="V_size";
+PLMABSTRACT.PLMStreamDescriptor.V_typelate="V_typelate";
+
+PLMABSTRACT.PLMEvtOccurrence="PLMEvtOccurrence";
+PLMABSTRACT.PLMEvtOccurrence.LOCKSTATUS="잠김";
+PLMABSTRACT.PLMEvtOccurrence.LOCKUSER="소유자 잠금";
+PLMABSTRACT.PLMEvtOccurrence.V_ContextData="V_ContextData";
+PLMABSTRACT.PLMEvtOccurrence.V_OccurrenceId="V_OccurrenceId";
+PLMABSTRACT.PLMEvtOccurrence.V_Service="V_Service";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetDataDomain="V_TargetDataDomain";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetLId="V_TargetLId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetPId="V_TargetPId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetType="V_TargetType";
+PLMABSTRACT.PLMEvtOccurrence.V_TransactionId="V_TransactionId";
+PLMABSTRACT.PLMEvtOccurrence.V_user="V_user";
+
+PLMABSTRACT.V_NatureEnum="V_NatureEnum";
+PLMABSTRACT.V_NatureEnum.Definition="정의";
+PLMABSTRACT.V_NatureEnum.Presentation="프레젠테이션";
+PLMABSTRACT.V_NatureEnum.Specification="사양";
+
+PLMABSTRACT.V_isUptodateEnum="V_isUptodateEnum";
+PLMABSTRACT.V_isUptodateEnum.MustBeRebuilt="MustBeRebuilt";
+PLMABSTRACT.V_isUptodateEnum.NotApplicable="NotApplicable";
+PLMABSTRACT.V_isUptodateEnum.UpdateToDate="UpdateToDate";
+
+PLMABSTRACT.V_FormatEnum="V_FormatEnum";
+PLMABSTRACT.V_FormatEnum.Authoring="작성";
+PLMABSTRACT.V_FormatEnum.AuthoringVisu="AuthoringVisu";
+PLMABSTRACT.V_FormatEnum.IndexRep="IndexRep";
+PLMABSTRACT.V_FormatEnum.JpegThumbnail="JpegThumbnail";
+PLMABSTRACT.V_FormatEnum.NavRep="NavRep";
+PLMABSTRACT.V_FormatEnum.VisuRep="VisuRep";

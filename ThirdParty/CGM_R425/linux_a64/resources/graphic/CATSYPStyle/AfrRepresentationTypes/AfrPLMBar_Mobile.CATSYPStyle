@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<!--@Used AfrFoundation\CATAfrModelAndReps.m\src\CATAfrBottomToolbar.cpp-->
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           TOP BAR SIGNATURE                                                -->
+  <!--*************************************************************************************************************************-->
+
+  <!-- ======================================================================-->
+  <!-- ===============            MAIN CONTAINER       =======================-->
+  <!-- ======================================================================-->
+  <Template syp:name="AfrPLMBarSignature" Target="CATAfrSYPContainerView" syp:Variation="mobile">
+    <CATAfrSYPContainerViewMetaData SypNamePosition="PLMBarPosition" AlwaysVisibleFlag="1" >
+      <CATAfrSmartCtl  Viewer="@Viewer" Name="@Name" ViewParent="@Parent" InitialDockArea="TopDockArea" VisibleFlag="@WidgetsPanelVisibility" ToolbarFlag="1"
+                  CreateDialogBoxFlag="1"
+                  ConstraintsDialogBox="widthPercent=100 topPercent=0">
+        <CATAfrVidSmartContainer syp:name="SmartControlThreshold" Threshold1="500" Threshold2="600" Threshold3="700" >
+          <!-- version if you modify this line -->
+          <CATVidLayGrid GridWeight="row1=1">
+
+            <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+
+              <!-- Background -->
+              <CATVidGPSmartSquare  GridWeight="row1=1" Texture="PLMBar/top-bg.png">
+                <CATVidSpacer syp:name="BackgroundTopBar" RequestedMinimumDimension="3 44" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="3 32" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=RLTB"/>
+              </CATVidGPSmartSquare>
+
+              <!-- / Background -->
+
+
+               <!-- Main Content-->
+              <CATVidLayGrid  GridWeight="row1=1" >
+                <CATVidLayLayer  RequestedMinimumDimension="3 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+                  
+                                      
+       
+                    <!--Layer For Stretchable Content-->
+                  <CATVidLayGrid  GridWeight="col1=1 row1=1">
+                    
+
+                    <!--Stretchable Side Attach-->
+                    <CATVidLaySideAttach syp:name="SideAttach"  IgnoreChildrenMinimumDimensionFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"  RequestedMinimumDimension="232 40">
+                      <!--Top Bar Title (Left)-->
+                      <CATVidLayGrid syp:name="Left" GridWeight="col1=1"   LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="3 42"  CATVidLaySideAttach.IndexedConstraints="leftPx=0 widthPercent=38.75">
+
+                        <!--Spacer For Compass : To Hide When Compass is inserted in its own view (Le Borgne)-->
+                        <CATVidSpacer syp:name="SpacerCompass" VisibleFlag="1" RequestedMinimumDimension="@Dimension ElementName=SupraContainerCompassPosition" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                        <CATVidLayGrid  syp:name="TopBarTitle" GridWeight="col3=1" VisibleFlag="0" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL">
+                          <CATVidGPLabel syp:name="3D"  LayoutWhenUnvisibleFlag="0" Text="3D" BoldFlag="1" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                          <CATVidGPLabel syp:name="EXPERIENCE" LayoutWhenUnvisibleFlag="0" Text="EXPERIENCE " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+                          <CATVidCtl syp:name="CurrentBrandNamePosition" LayoutWhenUnvisibleFlag="0" VisibleFlag="0"  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                          <CATVidCtl syp:name="CurrentAppliNamePosition"  CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+                        </CATVidLayGrid>
+
+                       
+                      </CATVidLayGrid>
+                      <!--/ Top Bar Title-->
+
+                      <!--Search (Center)-->
+                      <CATVidLayGrid  syp:name="SearchChildAttach" GridWeight="col0=1" RequestedMinimumDimension="3 42" CATVidLaySideAttach.IndexedConstraints="leftPercent=50 topPercent=50 widthPercent=22.25">
+                        <CATVidLayLayer RequestedMinimumDimension="100 24" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL">
+
+                        
+                          <CATVidGPNinePatchSquare  ScalableAreaBorder="6" Texture="PLMBar/Search_backround.png"></CATVidGPNinePatchSquare>
+                          <CATVidLayGrid  GridWeight="col1=1 row2=1" >
+                            <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                            <CATVidLayGrid GridWeight="col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                              <!---->
+                              <CATVidCtl syp:name="SearchMenuPosition" VisibleFlag="1"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                              <CATVidLayLayer syp:name="SearchFieldPosition" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+                            </CATVidLayGrid>
+                            <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+
+                          </CATVidLayGrid>
+                        </CATVidLayLayer>
+                        <!--Tag Button -->
+                        <CATVidCtl syp:name="SearchRefinement" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L"/>
+                      </CATVidLayGrid>
+
+                      <!--/ Search-->
+
+                      <!--Tag + User Name + Spacer (Right)-->
+                      <!--<CATVidCtlScrollableArea HScrollbarPolicy="AlwaysHidden" VScrollbarPolicy="AlwaysHidden" HStretchPolicy="Stretch" CATVidLaySideAttach.IndexedConstraints="rightPx=0 widthPercent=38.75">-->
+                      <CATVidLayGrid  GridWeight="col1=1" RequestedMinimumDimension="3 42"  CATVidLaySideAttach.IndexedConstraints="rightPx=0 widthPercent=38.75">
+
+
+                        <!--User Name-->
+                        <CATVidCtl syp:name="UserNamePosition" VisibleFlag="0" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"/>
+                        
+                        <!--Remaining Margin to fit with Top Bar Menus (200 -144 = 56) + 4 for margin between user name-->
+                        <CATVidSpacer syp:name="RightSpacerUserName" RequestedMinimumDimension="@Dimension ElementName=Container" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                      </CATVidLayGrid>
+                      <!--</CATVidCtlScrollableArea>-->
+
+
+
+                    </CATVidLaySideAttach>
+
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 attach=RLTB"/>
+
+                    <!--/ Tag + User Name + Spacer-->
+                    <!--
+                </CATVidLayGrid>-->
+                    <!--Spacer with Same dimension of compass to always have a centered Grid-->
+      
+                  </CATVidLayGrid>
+                  <!--/ Layer For Stretchable Content-->
+
+
+                  <!--Layer For Fixed Content-->
+                  <CATVidLayGrid    GridWeight="col1=1" >
+                    <!--Container for Compass -->
+                    <CATVidCtl syp:name="SupraContainerCompassPosition"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <!--Dummy Spacer-->
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL"/>
+                    <!--Container for Top Bar Menu (Should be have a width of 200 according to the spec :32+8+32+8+32+8+32+8+32+8)-->
+                    <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLT" RequestedMinimumDimension="3 40">
+                      <!-- Blocking Square  for menus-->
+                      <!-- Blocking Square For record Search -->
+                      
+                      <CATVidGPSquare  syp:name="BlockingSquareForMenu" Name="BlockingSquareForMenu" UseManipulatorFlag="1" VisibleFlag="0"/>
+                      <CATVidLayStack syp:name="Container" CellBorder="0" LayoutWhenUnvisibleFlag="0"  Items="@ToolsItems Mode=OneWayToSource" />
+                      <!--<CATVidLayGrid>
+                        <CATVidSpacer syp:name="TopSpacerMenu" RequestedMinimumDimension="1 6" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                       <CATVidLayStack syp:name="Container" CellBorder="0" Items="@ToolsItems Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLT"/>
+                      </CATVidLayGrid>-->
+                     
+
+
+
+                    </CATVidLayLayer>
+                    <!--/Container for Top Bar Menu-->
+                  </CATVidLayGrid>
+                   
+                  <!--/Layer For Fixed Content-->
+
+                   
+                </CATVidLayLayer>
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              </CATVidLayGrid>
+              <!--/ Main Content-->
+
+           
+
+              <CATVidGPSquare syp:name="BlockingSquareForRecord" Name="BlockingSquareForRecordTopBar" UseManipulatorFlag="1" VisibleFlag="0"/>
+            </CATVidLayLayer>
+            <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+
+
+        </CATAfrVidSmartContainer>
+      </CATAfrSmartCtl>
+    </CATAfrSYPContainerViewMetaData>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Threshold1Flag" Value="0">
+     
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBarTitle" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchMenuPosition" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="UserNamePosition" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CurrentBrandNamePosition" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchRefinement" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Threshold1Flag" Value="1">
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBarTitle" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchMenuPosition" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CurrentBrandNamePosition" Value="0"/>        
+        <CATSYPSetter Property="VisibleFlag" TargetName="3D" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="EXPERIENCE" Value="0"/>
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="UserNamePosition" Value="0"/>-->
+        <!--<CATSYPSetter Property="MaximumWidth" TargetName="SmartContainer" Value="200"/>-->
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Threshold2Flag" Value="1">
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="CurrentBrandNamePosition" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBarTitle" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchMenuPosition" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="UserNamePosition" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchRefinement" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CurrentBrandNamePosition" Value="0"/>   
+        <CATSYPSetter Property="VisibleFlag" TargetName="3D" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="EXPERIENCE" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Threshold3Flag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CurrentBrandNamePosition" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBarTitle" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchMenuPosition" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="UserNamePosition" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchRefinement" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CurrentBrandNamePosition" Value="1"/>   
+        <CATSYPSetter Property="VisibleFlag" TargetName="3D" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="EXPERIENCE" Value="1"/>
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+</Styles>

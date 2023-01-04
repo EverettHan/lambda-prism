@@ -1,0 +1,11 @@
+m|WebappsUtils/Logger.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.0.22071|3.2
+r|/u/lego/R425rel/BSF/.
+t|linux_a64/webapps/Logger/Logger.js|1625185244|4026
+s|WebappsUtils/Logger.mweb/src/Appenders/GelfHttp.js|1422220526|2568
+u|WebappsUtils/Logger.mweb/src/Appenders/Quake.js|1422220410|2724
+u|WebappsUtils/Logger.mweb/src/Logger.js|1422221217|18223
+u|linux_a64/code/toolcmds/mkwebconcat.sh|1625160842|342
+u|linux_a64/code/toolcmds/terser.sh|1625160842|343

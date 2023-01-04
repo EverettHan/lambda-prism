@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Concatenate two strings",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "string1",
+          "basic": "string",
+          "desc": "The first string"
+        },
+        {
+          "label": "string2",
+          "basic": "string",
+          "desc": "The second string"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "concat",
+          "basic": "string",
+          "desc": "The concatenation of the two strings"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

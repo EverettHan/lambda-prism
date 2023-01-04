@@ -1,0 +1,40 @@
+<meta charset="UTF-8"/>
+HelpNT.text="delcatenv 的用法
+[-e environment_name      ] 必选项。无默认值
+[-d storage_directory_name]	默认值：CSIDL_APPDATA\CATEnv
+[-a user|global           ]	环境类型。默认值：user
+[-server                  ] 激活服务器模式。默认值：未激活(interactif)
+[-desktop yes|no          ] 移除环境的桌面展示。默认值：yes
+[-v yes|no                ]	激活详细模式。默认值：yes            [-tools                   ]	移除工具快捷方式（独占命令）         [-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ] 指定环境展示的产品系列（默认值：CATIA）   [-h|-help]			此帮助。";
+
+HelpUNIX.text="delcatenv 的用法
+[-e environment_name      ] 必选项。无默认值                       [-d storage_directory_name] 默认值：$HOME/CATEnv
+[-a user|global           ] 环境类型。默认值：user
+[-server                  ] 激活服务器模式。默认值：未激活 (interactif)
+[-desktop yes|no          ] 移除环境的桌面展示。默认值：yes
+[-v yes|no                ] 激活详细模式。默认值：yes
+[-unregserver             ] 注销 CATIA 至桌面（独占命令）         [-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ]  指定环境展示的产品系列（默认值：CATIA） [-h|-help]                  此帮助。";
+
+ErrDelEnvUsr.Text="删除环境展示失败";
+ErrDelEnv.Text="删除环境失败";
+ErrUnset.Text="取消设置工作站失败";
+MustBeSystemAdmin.text="您必须是系统管理员才能使用此选项";
+EnvNameNotSpecified.Text="必须指定环境的名称";
+DefaultFolderNotFound.Text="找不到环境的默认文件夹";
+SpecifiedFolderNotFound.Text="找不到指定的存储目录";
+EnvFileNotFound.Text="找不到环境文件";
+AccessPb.Text="无法创建或打开文件。]
+							   [请检查您对存储目录是否有写权限。]";
+NonValidType.Text="必须通过 -a 选项指定类型（user 或 global）。";
+InitFolderFailed.Text="------------------ 警告 ----------------
+找不到默认存储文件夹。
+新存储文件夹设置为：
+";
+NoHome.Text="未设置 'HOME' 环境变量";
+UnknownProductLine.Text="/P1 是无效的产品系列。-cs 选项的授权值为：CATIA、ENOVIA、DELMIA、ENOVIA_3D_Live 和 DELMIA。";

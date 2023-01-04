@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_PostEffect_SSAO</NAME>
+
+  <!-- cos(degreetoradian(90-angle))) -->
+  <UNIFORM>
+    <NAME>u_SlotAngle</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.255445</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Attenuation</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.032</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Contrast</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.52</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_Power</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Color</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 0 0 0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_EdgeDetectionZStrength</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.52</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_EdgeDetectionZRatio</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_EdgeDetectionNormalRatio</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Radius</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.04</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_RadiusMin</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.005</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_RadiusMax</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.118</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_RadiusPixelMin</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>14</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_RadiusPixelMax</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>400</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_RandVec</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 0 0 0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>value</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_AOMapSize</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0 0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_PixelSize</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0 0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_AOScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

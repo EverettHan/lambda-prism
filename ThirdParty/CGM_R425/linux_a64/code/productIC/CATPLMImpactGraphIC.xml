@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" name = "CATPLMIdentification"/>
+  <prerequisite access = "Protected" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "CATPLMImplAdapter"/>
+  <attached name = "CATPLMImpactGraph.tst"/>
+  <attached name = "ImpactGraphValidation.tst"/>
+  <authorize name = "CATPLMSessionDebug"/>
+  <authorize name = "CATImmVPMImpactGraphModel"/>
+  <authorize name = "CATWorkspaceModelClient"/>
+  <authorize name = "CATPLMFstRelations"/>
+  <authorize name = "CATPLMImpactGraph.tst"/>
+  <authorize name = "ImpactGraphValidation.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

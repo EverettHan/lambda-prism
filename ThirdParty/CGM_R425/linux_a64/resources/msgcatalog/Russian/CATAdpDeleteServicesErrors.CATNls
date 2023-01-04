@@ -1,0 +1,51 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+UndefinedServerError.Diagnostic="Внутренняя ошибка сервера.";
+UndefinedServerError.Advice="Обратитесь в службу поддержки.";
+
+ERR_01.Diagnostic="Компонент открыт в сеансе.";
+ERR_01.Advice="Удаление будет выполнено, но обратите внимание, что журнал отмены будет очищен в результате выполнения операции удаления.";
+
+ERR_02.Diagnostic="Экземпляр ссылки все еще создается за пределами области удаления.";
+ERR_02.Advice="Перед удалением ссылки может потребоваться удалить существующие экземпляры.";
+
+ERR_03.Diagnostic="Ссылка не контролируется VPLM.";
+ERR_03.Advice="Вы не можете удалить ссылку. Сервер самостоятельно управляет своим жизненным циклом.";
+
+ERR_04.Diagnostic="Ссылка заблокирована.";
+ERR_04.Advice="Перед удалением ссылки может потребоваться удаление блокировки.";
+
+ERR_05.Diagnostic="Компонент открыт в сеансе. Компонент может быть выгружен, но некоторые связанные изменения в сеансе будут утеряны";
+ERR_05.Advice="Удаление будет выполнено, но обратите внимание, что изменения и журнал отмены будут удалены в результате выполнения операции удаления.";
+
+ERR_06.Diagnostic="Компонент открыт в сеансе и не может быть выгружен из сеанса.";
+ERR_06.Advice="Сбой при удалении. Вероятно, компонент удерживается редактором.";
+
+ERR_07.Diagnostic="Компонент открыт в сеансе, он может быть выгружен из сеанса, но, по крайней мере, еще один компонент находится в сеансе. ";
+ERR_07.Advice="Сбой при удалении. Связанный компонент в сеансе, вероятно, удерживается редактором.";
+
+ERR_08.Diagnostic="Компонент открыт в сеансе, он не может быть выгружен автоматически из сеанса, так как компонент принадлежит к типу ER. ";
+ERR_08.Advice="Удаление не может быть выполнено. Выгрузите этот компонент из связанных редакторов.";
+
+ERR_09.Diagnostic="Экземпляр ссылки создан за пределами области удаления, но у вас недостаточно прав для доступа к экземпляру. ";
+ERR_09.Advice="Не пытайтесь удалить эту ссылку. Обратитесь к администратору.";
+
+ERR_10.Diagnostic="Невозможно удалить ссылку агрегирования этой ссылки представления, созданной в одном экземпляре, поэтому невозможно удалить эту ссылку представления. ";
+ERR_10.Advice="Не пытайтесь удалить эту ссылку представления. Обратитесь к администратору.";
+
+

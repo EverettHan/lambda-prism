@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template Target="CATVidCtlViewMode" syp:name="Std">
+    <CATVidLayGrid CellSpacing="5" GridWeight="col1=1">
+      
+      <CATVidCtlExpander syp:Template="CheckExpander" FontWeight="1" ExpandedFlag="@ShadingFlag Mode=TwoWays" Icon="I_VM_Shading_24x24.png" IconDimension="24 24" BackgroundColor="0.5 30" syp:name="Shading" Name="Shading" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidLayGrid>
+          <CATVidCtlRadioButton Name="Material" syp:Template="Default" CheckState="@MaterialFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidCtlRadioButton Name="Gouraud" syp:Template="Default" CheckState="@GouraudFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          <CATVidCtlRadioButton Name="Wireframe" syp:Template="Default" CheckState="@WireframeFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlExpander>
+
+      <CATVidCtlExpander syp:Template="CheckExpander" FontWeight="1" ExpandedFlag="@EdgesFlag Mode=TwoWays" Icon="I_VM_Edges_24x24.png" IconDimension="24 24" BackgroundColor="0.5 30" syp:name="Edges" Name="Edges" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+        <CATVidLayGrid>
+          <CATVidCtlCheckBox Name="SmoothEdges" syp:Template="Default" CheckState="@SmoothEdgesFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidCtlCheckBox Name="HiddenEdges" syp:Template="Default" CheckState="@HiddenEdgesFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlExpander>
+
+      <CATVidCtlExpander RequestedMinimumDimension="170 0" syp:Template="Expander" FontWeight="1" Icon="I_VM_Wires_24x24.png" IconDimension="24 24" BackgroundColor="0.5 30" syp:name="Wires" Name="Wires" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB">
+        <CATVidLayGrid>
+          <CATVidCtlCheckBox Name="LinesAndProfiles" syp:Template="Default" CheckState="@LinesAndProfilesFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidCtlCheckBox Name="AxisSystemsAndPlanes" syp:Template="Default" CheckState="@AxisSystemsAndPlaneFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          <CATVidCtlCheckBox Name="Points" syp:Template="Default" CheckState="@PointsFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlExpander>
+      
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+    </CATSYPTriggerCollection>
+  </Template>
+</Styles>

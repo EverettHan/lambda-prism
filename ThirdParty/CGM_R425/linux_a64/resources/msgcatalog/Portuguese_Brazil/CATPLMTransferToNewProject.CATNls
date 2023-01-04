@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+TTNP_Dirty.Diagnostic="Não é possível processar /p1 porque ele precisa ser salvo";
+TTNP_Dirty.Advice="Salvar modificações";
+
+TTNP_Light.Diagnostic="Não é possível processar /p1 porque ele não está totalmente carregado";
+TTNP_Light.Advice="Abrir /p1";
+
+TTNP_NoProject.Diagnostic="Não é possível recuperar o Collaborative Space de /p1";
+TTNP_NoProject.Advice="";
+
+TTNP_CurrentProject.Diagnostic="Não é possível processar /p1 porque ele pertence ao Collaborative Space atual";
+TTNP_CurrentProject.Advice="Verificar seleção";
+
+TTNP_MutipleProjects.Diagnostic="Não é possível lidar com vários Collaborative Spaces: /p1 e /p2";
+TTNP_MutipleProjects.Advice="Verificar seleção";
+
+TTNP_Parent.Diagnostic="Não é possível processar /p1 sem o pai /p2";
+TTNP_Parent.Advice="Adicionar /p1 à seleção ou descarregá-lo";
+
+TTNP_Child.Diagnostic="Não é possível processar /p1 porque o filho /p2 pertence a outro Collaborative Space";
+TTNP_Child.Advice="Verificar estrutura";
+
+TTNP_ParentAlreadyCloned.Diagnostic="Não é possível processar /p1 porque o pai /p2 já foi clonado";
+TTNP_ParentAlreadyCloned.Advice="Inicie a operação em uma janela que contém o clone de /p1";
+
+TTNP_ChildLost.Diagnostic="Não é possível processar /p1 porque ele foi criado após a clonagem do pai /p2";
+TTNP_ChildLost.Advice="";
+
+TTNP_PointingOutsideScope.Diagnostic="Não é possível processar /p1 porque ele é referenciado pelo /p2, que não foi criado por meio do processo de clonagem";
+TTNP_PointingOutsideScope.Advice="Descarregue /p1 ou inicie a operação em uma sessão em que ele não esteja aberto.\nObserve que o servidor não reencaminhará /p1 para o clone de /p2";
+
+TTNP_QueryMapping.Diagnostic="Falha na consulta da tabela de mapeamento";
+TTNP_QueryMapping.Advice="Entre em contato com o suporte";
+
+TTNP_QueryAttributes.Diagnostic="Falha ao recuperar atributos do servidor";
+TTNP_QueryAttributes.Advice="Entre em contato com o suporte";
+
+TTNP_Open.Diagnostic="Falha ao abrir dados já clonados em /p1";
+TTNP_Open.Advice="Verifique as mensagens de erro subsequentes. Entre em contato com o suporte";
+
+TTNP_NothingToDo.Diagnostic="Todos os objetos já foram clonados";
+TTNP_NothingToDo.Advice="Abra a estrutura clonada";
+
+TTNP_ServerFork.Diagnostic="Falha na operação de clonagem do lado do servidor";
+TTNP_ServerFork.Advice="Verifique as mensagens de erro subsequentes. Fechar janela";
+
+TTNP_CannotStartTask.Diagnostic="Não foi possível iniciar a operação de clonagem do lado do servidor";
+TTNP_CannotStartTask.Advice="Fechar janela";
+
+TTNP_RefreshSessionMessage="Atualize a sessão (pressione F5) para que o servidor corresponda à sua sessão";
+
+TTNP_MissingForkRecord.Diagnostic="A duplicação foi concluída, mas /p1 não foi clonado no servidor";
+TTNP_MissingForkRecord.Advice="É possível que ele tenha sido excluído.\nFeche a janela e abra os dados clonados";
+
+TTNP_MissingForkImpactRecord.Diagnostic="A duplicação foi concluída, mas /p1 não foi reencaminhado ao servidor";
+TTNP_MissingForkImpactRecord.Advice="É possível que ele tenha sido excluído.\n/p1";
+
+TTNP_MissedImpact.Diagnostic="A duplicação foi concluída, mas /p1 não foi reencaminhado à sessão";
+TTNP_MissedImpact.Advice="É possível que ele tenha sido aberto após o início da clonagem.\n/p1";
+
+TTNP_ConcurrentModification.Diagnostic="A duplicação foi concluída com êxito, mas uma modificação simultânea foi detectada em /p1";
+TTNP_ConcurrentModification.Advice="/p1";
+
+TTNP_Internal1.Diagnostic="Ocorreu um erro interno durante o processamento de /p1";
+TTNP_Internal1.Advice="Entre em contato com o suporte (/p1)";
+
+TTNP_Internal2.Diagnostic="Ocorreu um erro interno";
+TTNP_Internal2.Advice="Entre em contato com o suporte (/p1)";
+
+TTNP_SessionPreview.Diagnostic="Não foi possível gerar a visualização da sessão";
+TTNP_SessionPreview.Advice="Verifique o log de erros";

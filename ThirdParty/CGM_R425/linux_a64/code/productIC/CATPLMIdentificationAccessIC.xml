@@ -1,0 +1,29 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "ObjectModelerSystem"/>
+  <attached name = "CATPLMIdentification.tst"/>
+  <attached name = "CATPLMIdentification_PLM.tst"/>
+  <attached name = "ObjectModelerBase_PLM.tst"/>
+  <attached name = "CATPLMServices.tst"/>
+  <attached name = "CATPLMImplAdapter.tst"/>
+  <attached name = "CATPLMImplAdapterQL.tst"/>
+  <attached name = "CATPLMIntegration.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentification"/>
+  <authorize access = "Private" name = "CATPLMIdentification.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentification_PLM.tst"/>
+  <authorize access = "Private" name = "ObjectModelerBase_PLM.tst"/>
+  <authorize access = "Private" name = "ObjectModelerBase"/>
+  <authorize access = "Private" name = "CATPLMIntegrationBase"/>
+  <authorize access = "Private" name = "CATPLMIdentificationTools"/>
+  <authorize access = "Private" name = "CATPLMImplDebug.tst"/>
+  <authorize access = "Private" name = "CATPLMServices"/>
+  <authorize access = "Private" name = "CATPLMPXn"/>
+  <authorize access = "Private" name = "CATPLMPXn.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

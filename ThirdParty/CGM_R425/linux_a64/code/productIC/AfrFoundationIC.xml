@@ -1,0 +1,67 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CAAApplicationFrame.tst"/>
+  <attached name = "ApplicationFrame.tst"/>
+  <attached name = "AfrImmersiveRender.tst"/>
+  <attached name = "AfrFoundation.tst"/>
+  <attached name = "AfrLicensing.tst"/>
+  <attached comment = "22.06.2015 HEB R418 Sample followed in BSF for IOS" name = "V6MobileNRESamples.tst"/>
+  <attached comment = "22.06.2015 HEB R418 Sample followed in BSF for IOS" name = "V6UserExperienceIOSApp.tst"/>
+  <attached comment = "06.10.2015 R57/HEB R418 WebInWin" name = "AfrComponentsModel.tst"/>
+  <attached comment = "29.08.2017 ERS/HEB R420 Coverage" name = "CATIAApplicationFrameUI.tst"/>
+  <attached comment = "14.02.2018 JFS/HEB R420 Coverage" name = "UserAssistance.tst"/>
+  <attached comment = "15.03.2021 ERS/HEB R424 Coverage" name = "AfrCustomization.tst"/>
+  <prerequisite access = "Protected" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "InfInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "InteractiveInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AutomationInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" comment = " Exported TOREMOVE " expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" comment = " Exported TOREMOVE! " expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerEngines"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VBA"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationController"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SGManager"/>
+  <prerequisite access = "Protected" comment = " Pour Boxing " export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "Pour frame declaratif" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Protected" comment = "06.11.2012 VV6/CDT R213" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "14.06.2012 TPC/HEB R216 HttpClient" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" comment = "05.10.2018 HEB R422 Suppression fork AfrCore" expose = "ExposePrereq" name = "AfrCore"/>
+  <prerequisite access = "Private" comment = "25.07.2012 LD3/CDT R214 C-Afr (AfrComponentsModel is private to AfrFoundation)" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "AfrComponentsModel"/>
+  <prerequisite access = "Public" comment = "Pour frame declaratif" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "XMLParserItf"/>
+  <authorize access = "Private" name = "AfrCustomization"/>
+  <authorize access = "Private" name = "AfrCustomization.tst"/>
+  <authorize access = "Private" name = "CATIAApplicationFrame"/>
+  <authorize access = "Private" name = "CATIAApplicationFrame.tst"/>
+  <authorize access = "Private" name = "AfrStandard"/>
+  <authorize access = "Private" name = "AfrImmersive"/>
+  <authorize access = "Private" name = "AfrImmersiveRender.tst"/>
+  <authorize access = "Private" name = "ApplicationFrame.tst"/>
+  <authorize access = "Private" name = "DialogXMLUI.tst"/>
+  <authorize access = "Private" name = "DialogEngine.tst"/>
+  <authorize access = "Private" name = "AfrStandard_UT.tst"/>
+  <authorize access = "Private" name = "CATMkCheckArchiCommand"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "DraftingBaseConfiguration.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "ENOValidation2D.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "ProductStructureUI.tst"/>
+  <authorize access = "Private" name = "IVDeviceAddin"/>
+  <authorize access = "Private" comment = "14.06.2012 NCT/CDT R214 - ios" name = "V6UserExperienceIOSApp.tst"/>
+  <authorize access = "Private" comment = "2013.01.24 TPC/HEB R215 Creation Header globaux pour commande Chg de vue" name = "VIAImmersiveView.tst"/>
+  <authorize access = "Private" comment = "2013.06.03 QF1/HEB R215 Outils debug CID/AFR" name = "CIDDebugTools"/>
+  <authorize access = "Private" comment = "2016.01.29 JOV/HEB R419 Testing CID_FRAME" name = "Afr_CID_FRAME.tst"/>
+  <authorize access = "Private" comment = "20160405 R57/HEB Gestion Contextbar lors de la manipulation robot" name = "AfrSelection"/>
+  <authorize access = "Private" comment = "20180607 ANR8/HEB New MePreferences" name = "AfrProperties"/>
+  <authorize access = "Private" comment = "20190802 PBS7/HEB Search Commandes" name = "AfrCommandSearch.tst"/>
+  <authorize access = "Private" comment = "2022.05.06 VV6/HEB A2X project" name = "AfrA2X"/>
+  <authorize access = "Private" comment = "2022.05.06 VV6/HEB Testing A2X" name = "AfrA2X.tst"/>
+  <authorize access = "Private" comment = "2022.10.20 VV6/HEB Testing A2X" name = "AfrA2XView.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

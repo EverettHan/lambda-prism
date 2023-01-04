@@ -1,0 +1,44 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Execute the given function with the given inputs and returns its outputs",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "definition",
+          "desc": "The function definition to be executed",
+          "type": "CSIDeclarativeFunctionDefinitionV3"
+        },
+        {
+          "label": "inputs",
+          "desc": "Function's input values",
+          "type": "Parameters"
+        },
+        {
+          "label": "debugMode",
+          "desc": "The function will be called in debug mode or not",
+          "basic": "bool",
+          "optional": {
+            "default_value": "false"
+          }
+        }
+      ]
+    },
+    "out": {
+      "type": "Parameters"
+    }
+  },
+  "progress": {
+    "type": "Parameters"
+  },
+  "throwError": {
+    "type": "Parameters"
+  }
+}

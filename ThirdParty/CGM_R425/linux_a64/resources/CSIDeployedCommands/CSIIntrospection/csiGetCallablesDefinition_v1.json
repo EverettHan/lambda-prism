@@ -1,0 +1,120 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns the Definition of the specified callable (Functions or Commands)",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "callablesName",
+          "desc": "Array of <String poolName, Parameters[] commands, Parameters[] functions>",
+          "parametersArray": [
+            {
+              "label": "poolName",
+              "desc": "Pool name",
+              "basic": "string"
+            },
+            {
+              "label": "commands",
+              "desc": "Array of <String name, Int32 version>",
+              "parametersArray": [
+                {
+                  "label": "name",
+                  "desc": "Command's name",
+                  "basic": "string"
+                },
+                {
+                  "label": "version",
+                  "desc": "Command's version",
+                  "basic": "int32"
+                }
+              ]
+            },
+            {
+              "label": "functions",
+              "desc": "Array of <String name, Int32 version>",
+              "parametersArray": [
+                {
+                  "label": "name",
+                  "desc": "Function's name",
+                  "basic": "string"
+                },
+                {
+                  "label": "version",
+                  "desc": "Function's version",
+                  "basic": "int32"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "callablesDefinition",
+          "desc": "Array of <String poolName, CSIDeclarativeFunctionDefinitionV3[] functionName>",
+          "parametersArray": [
+            {
+              "label": "poolName",
+              "desc": "Pool name",
+              "basic": "string"
+            },
+            {
+              "label": "functionsDefinition",
+              "desc": "List of retrieved functions definition for the specified pool",
+              "typeArray": "CSIDeclarativeFunctionDefinitionV3"
+            },
+            {
+              "label": "commandsDefinition",
+              "desc": "List of retrieved commands definition for the specified pool",
+              "typeArray": "CSIDeclarativeCommandDefinition"
+            },
+            {
+              "label": "callablesDefinitionError",
+              "desc": "Errors retrieved when parsing the Callables of the Pools",
+              "basic": "string",
+              "optional": {
+                "isOptional": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "progress": {
+    "parameters": [
+      {
+        "label": "poolName",
+        "desc": "Pool name",
+        "basic": "string"
+      },
+      {
+        "label": "functionsDefinition",
+        "desc": "List of retrieved functions definition for the specified pool",
+        "typeArray": "CSIDeclarativeFunctionDefinitionV3"
+      },
+      {
+        "label": "commandsDefinition",
+        "desc": "List of retrieved commands definition for the specified pool",
+        "typeArray": "CSIDeclarativeCommandDefinition"
+      },
+      {
+        "label": "callablesDefinitionError",
+        "desc": "Errors retrieved when parsing the Callables of the Pools",
+        "basic": "string",
+        "optional": {
+          "isOptional": true
+        }
+      }
+    ]
+  }
+}

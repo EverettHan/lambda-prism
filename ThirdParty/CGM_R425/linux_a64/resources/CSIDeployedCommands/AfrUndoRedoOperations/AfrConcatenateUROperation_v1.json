@@ -1,0 +1,10 @@
+{
+  "library" : "AfrComputeServer",
+  "desc" : "Afr concatenate undo steps request",
+  "onBeginParameters" : "none",
+  "onCommandParameters": {
+    "in": {"operationId": "string", "FirstTransaction": "int32" },
+    "answers": {"domainNames": "string[]", "domains": "Parameters"}
+  },
+  "onEndParameters" : "none"
+} 

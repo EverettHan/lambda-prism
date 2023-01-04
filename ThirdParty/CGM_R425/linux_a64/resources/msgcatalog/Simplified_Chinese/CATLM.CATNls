@@ -1,0 +1,158 @@
+<meta charset="UTF-8"/>
+//
+// CATIA License Manager Messages (low-level)
+//
+
+LicenseManager="许可证管理器";
+
+//
+// Messages    AS: Allow Save
+//
+CheckFailedEx="检查 /P01 许可证失败：/P03\n在接下来的 /P02 次尝试失败后，会话将停止\n强烈建议保存打开的文档";
+
+CheckFailedAS="未能检查 /P01 个许可证：\n/P03\n会话功能（本地保存和关闭除外）将在之后 /P02 次尝试失败后不可用。\n强烈建议保存打开的文档。";
+
+CheckOK="已成功检查许可证";
+
+TooManyChecksFailed="/P01 次尝试后仍无法检查许可证\n现在会话将停止";
+
+TooManyChecksFailedAS="/P01 次尝试后无法检查许可证\n会话功能（本地保存和关闭除外）现在不可用";
+
+TooManyChecksFailedAT="未能按预期检查许可证。\n会话功能（本地保存和关闭除外）现在不可用";
+
+TooManyChecksFailedAT2="无法检查许可证（系统错误）。\n现在会话功能（本地保存和关闭除外）不可用";
+
+TooManyChecksAfterRevoke="会话功能（本地保存和关闭除外）现在不可用";
+
+NoSuchProduct="找不到请求的产品：/P01";
+
+MissingPreq="/P01 无法使用，因为先决条件 (/P02) 未授权";
+
+InconpatibleEnvironment="会话不能在此环境中运行";
+
+NoLicenseForDemo="未对 /P01 演示模式提供许可证";
+
+LicenseRequestFailed="许可证未授权：/P01\n错误：/P03 ";
+
+NULRequestFailed="并发许可证未授权：/P01\n错误：/P02。";
+
+AllLicensesUsed="/P02 的所有 /P01 许可证正被以下对象使用：\n/P03";
+
+LicenseReleaseFailed="无法发布 /P01 的许可证\n/P02 出错：/P03";
+
+LicenseCheckFailed="无法检查 /P01 的许可证\n/P02 出错：/P03";
+
+LicenseRecovered="已成功恢复 /P01 的许可证";
+
+ErrorLoadingProduct="未能加载 /P01（代码 /P02）的产品定义\n请重新安装它";
+
+ProductInvalidVersion="/P01 产品定义的版本 /P02 无效\n请重新安装它";
+
+LicenseNotYetAvailable="/P02 的 /P01 许可证尚不可用";
+
+LicenseExpired="/P02 的 /P01 许可证已过期";
+
+BadHost="许可证未授权：/P01\n用户 /P02 已登录到计算机 /P03\n\n您可以在从其他计算机注销后重试或继续在其他计算机上工作";
+
+LicenseSoonExpired="如下授权许可证将过期：\n";
+
+LicenseExpIn="/P01 位于 ";
+
+ExpIn24h="24 小时之内过期\n";
+
+ExpIn1day="1 天之内过期\n";
+
+ExpInndays="/P01 天之内过期\n";
+
+NoLicenseForAlias="没有合适的许可证来实现 /P01 请求";
+
+ProductNotShareable="/P01 的许可证不可共享 － 请联系客户服务";
+
+RetrieveLicenses="/P01 正在从 /P1 检索许可证，请稍候";
+
+RetrieveLicensesFailed="无法从 /P1 获取许可证。";
+
+RetrieveLicensesSucceded="至少有一个本地许可证缺失、过期或即将到期。\n已根据管理员决定更新本地许可证。\n请重新启动会话。";
+
+FirstLoginFailedRestartSession="许可证初始化失败。\n请重新启动会话。";
+
+RetrieveLicensesURLKO="无法更新本地许可证。远程许可证档案库不可访问。\n请与您的管理员联系。";
+
+ProductNotAddon="/P01 的许可证中包含无效附加产品 /P02\n请联系客户服务";
+
+AddonPreqNotPresent="自定义配置 /P01 未包含附加产品 /P02 的先决条件\n请联系客户服务";
+
+ConfigHasPrereq="配置 /P01 不应具有先决条件\n请联系客户服务";
+
+InvalidScale="无法请求产品 /P01，因为其级别 /P02 高于当前配置";
+
+CannotStart="当前选定的许可证对运行此应用程序无效。\n请通过使用 CATOptionsMgt 工具（常规/许可选项卡）来选择适当的许可证。";
+
+ProdDefNotFound="已成功授予 /P01 个许可证，但未安装关联代码。\n请安装它。";
+
+NoConfigFound="没有许可证与已安装的配置匹配。\n已授权许可证的列表：\n/P01\n请更新安装或与您的管理员联系。";
+
+NULRequestFailed="许可证未授权：\n/P01\n。";
+
+LicenseRevoked="您的管理员已更新您的许可产品分派。\n当前授予的许可证对于运行此应用程序不再有效。\n请关闭会话。";
+
+LicOverFailed="没有为此用户分派 /P01。";
+
+NoLicAssigned="没有为用户授予许可证 /P01 (/P02)。";
+
+NoMCSLicAssigned="未为 /P01 (/P02) 授予 MCS 许可证。";
+
+LicOverAuthFailed="为您分派的许可证均未授权产品 /P01";
+
+LicOver="使用 /P02 覆盖 /P01";
+
+LicOverIgnored="无法覆盖许可证";
+
+PackagingMismatch="包装不匹配：所有请求的许可证必须从属于相同包装。\n-/P01\n-/P02";
+
+CasualLicAssigned="此应用程序不允许使用随意许可证。\n/P03 - /P01 (/P02)。";
+
+PlatformCasualLicMismatch="/P01 声明为随意指定用户。\n但以下已请求的许可证不是随意：/P02。";
+
+//---------------------------------------------------------------------------
+// Offline mode specific errors
+//---------------------------------------------------------------------------
+GrantedLicenseExtractionFailed="无法提取许可证 /P01。\n/P02";
+
+GrantedLicenseExtractionNotSupported="此操作系统上不支持提取脱机许可证。";
+
+LicenseExtractionKO_MaxDuration="提取许可证 /P01 的时间不能达到 /P02 天（许可证服务器允许的最长期限是 /P03 天）。";
+
+LicenseExtractionKO_LocalDirNotFound="脱机许可证目录不存在：/P01。";
+
+LicenseExtractionKO_LocalDirNotCreated="无法创建脱机许可证目录：/P01。";
+
+LicenseExtractionKO_LocalDirNotWriteable="无法在目录 /P01 中创建文件。\n检查当前用户对此目录的访问权限和可用磁盘空间。";
+
+LicenseExtractionKO_AlreadyOffline="/P01 以为 /P03 上的用户 /P02 提取。";
+
+LicenseExtractionKO_NoInitialLic="无法延长 /P01 脱机许可证期限。缺少初始许可证数据。";
+
+LicenseExtractionKO_NoKeyword="无法提取 /P01 脱机许可证：有关键字保护。";
+
+LicenseExtractionKO_OfflineDisabled="未在许可证服务器上启用脱机许可证提取功能。";
+
+LicenseExtractionKO_ExpiresBeforeEnd="提取许可证 /P01 的时间不能达到 /P02 天（许可证将在 /P03 天后过期）。";
+
+LicenseExtractionKO_Token="/P01 令牌不可提取。";
+
+LicenseExtractionKO_AuthFailed="/P01 脱机提取未经许可证服务器授权。";
+
+LicenseExtractionKO_NoLic="无法提取 /P01 脱机许可证。在服务器上未找到许可证。";
+
+WorkOfflineProdDefNotFound="某些功能可能在脱机模式下不可用。将不会请求获取 \n/P01 许可证，因为未安装与之关联的代码。\n请安装代码。";
+
+UnsupportedOS="不受支持的操作系统版本";
+
+
+//
+// License Types
+//
+nodelock_or_concurrent="节点锁定或并发";
+nodelock="节点锁定";
+concurrent="并发";

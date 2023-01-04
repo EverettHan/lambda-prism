@@ -1,0 +1,23 @@
+
+InheritsFrom = "CATIA_Metal";
+
+/// BEGIN - Data Model Semantic
+
+MappingScale.ParameterValue          = "BumpScale BumpScale";
+MappingRatio.ParameterValue          = "<non> BumpRatio";
+
+/// END - Data Model Semantic
+
+/// BEGIN - NRE Configuration
+
+Normal.DefaultValue                    = "CATIA_Normal_2DMap_MZDotGrid_1024.dds";
+Normal.ParameterValue                  = "Normal2DMap";
+bumpScale.ParameterUniform             = "BumpHeight";
+
+anisotropy.ParameterUniform            = "ReflectionAnisotropy";
+
+opacity.DefaultValue                   = "CATIA_Opacity_2DMap_MZDotGrid_1024.dds";
+opacity.ParameterSpatial               = "Opacity2DMap";
+opacity.ParameterVariabilitySemantic   = "Spatial";
+
+/// END - NRE Configuration

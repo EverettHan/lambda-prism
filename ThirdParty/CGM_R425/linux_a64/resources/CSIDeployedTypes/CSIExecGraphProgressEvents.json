@@ -1,0 +1,47 @@
+{
+  "grammarVersion": 3,
+  "desc": "A structure defining when the graph triggers onProgress events to track and/or debug its execution",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "flowIn",
+      "basic": "bool",
+      "desc": "When a Block has been called",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "flowOut",
+      "basic": "bool",
+      "desc": "When a Block has terminated (Success or Error)",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "notPluggedProgress",
+      "basic": "bool",
+      "desc": "When a Block has returned an unplugged Progress",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "select",
+      "basic": "bool",
+      "desc": "When a Select is done (pending), succeeds (connected) or failed (disconnected)",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "timestamp",
+      "basic": "bool",
+      "desc": "Timestamp of progress emit",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

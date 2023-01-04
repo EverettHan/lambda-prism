@@ -1,0 +1,56 @@
+{
+  "grammarVersion": 3,
+  "desc": "description",
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "cronJobName",
+          "basic": "string",
+          "desc": "description"
+        },
+        {
+          "label": "function",
+          "basic": "string",
+          "desc": "description"
+        },
+        {
+          "label": "version",
+          "basic": "int32",
+          "desc": "description",
+          "optional": {
+            "isOptional": true,
+            "default_value": "1"
+          }
+        },
+        {
+          "label": "delayInSeconds",
+          "basic": "int32",
+          "desc": "description",
+          "optional": {
+            "isOptional": true,
+            "default_value": "120"
+          }
+        }
+      ]
+    },
+    "out": {
+    }
+  },
+  "throwError": {
+    "parameters": [
+      {
+        "label": "error",
+        "basic": "string",
+        "desc": "description"
+      }
+    ]
+  }
+}

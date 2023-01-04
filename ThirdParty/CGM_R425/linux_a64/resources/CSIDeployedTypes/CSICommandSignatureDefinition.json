@@ -1,0 +1,65 @@
+{
+  "grammarVersion": 2,
+  "desc": "Definition of a signature for a CSI Declarative Command",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "desc",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Description of the signature"
+    },
+    {
+      "label": "type",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case signature is a declarative type. If defined, only desc and optional properties can be defined"
+    },
+    {
+      "label": "parameters",
+      "typeArray": "CSIPropertyDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case signature is an inline parameters. If defined, only desc and optional properties can be defined"
+    },
+    {
+      "label": "file",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is a parameters defined in a file. If defined, only desc property can be defined"
+    },
+    {
+      "label": "optional",
+      "parameters": [
+        {
+          "label": "isOptional",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Define is the signature is optional"
+        },
+        {
+          "label": "default_value",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Define a default value in case the signature is missing"
+        }
+      ],
+      "optional": {
+        "isOptional": true,
+        "default_value": "{\"isOptional\": false}"
+      },
+      "desc": "Define if the signature is optional and the default value if needed. Cannot be defined with the property file"
+    }
+  ]
+}

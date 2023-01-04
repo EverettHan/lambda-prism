@@ -1,0 +1,10 @@
+{
+  "library" : "AfrComputeServer",
+  "desc" : "Afr undo operation, undoes the last undo step in the server undo stack",
+  "onBeginParameters" : "none",
+  "onCommandParameters" : {
+    "in" : {"keepRedo" : {"type" : "bool", "defaultValue": true}},    
+    "answers":  { "domainNames" : "string[]", "domains" : "Parameters" }
+  },
+  "onEndParameters" : "none"
+} 

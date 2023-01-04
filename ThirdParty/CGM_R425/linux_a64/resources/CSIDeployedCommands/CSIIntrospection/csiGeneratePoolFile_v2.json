@@ -1,0 +1,49 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Generates the JSON content for the declarative file of the specified pool",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pool",
+          "type": "CSIDeclarativePoolDefinitionV2",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "filename",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "content",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  }
+}

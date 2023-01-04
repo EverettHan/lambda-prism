@@ -1,0 +1,464 @@
+<meta charset="UTF-8"/>
+PLMElectricalDictionary="Physique électrique";
+PLMElectricalDictionary.Electrical3DSystem="Système physique électrique";
+PLMElectricalDictionary.Electrical3DSystem.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.ElectricalGeometry="Géométrie électrique";
+PLMElectricalDictionary.ElectricalGeometry.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.ElectricalBranchGeometry="Géométrie de branche électrique";
+PLMElectricalDictionary.ElectricalBranchGeometry.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.ElectricalBranchGeometry.V_Elec_Suggested_Segregation="Code de séparation";
+PLMElectricalDictionary.ElectricalConductorRepository="Référentiel de conducteurs électriques ";
+PLMElectricalDictionary.FlatteningRepository="Référentiel de paramètres de mise à plat ";
+PLMElectricalDictionary.ElecSymbol2DRep="Représentation du plan d'installation";
+PLMElectricalDictionary.ElecPort="Port électrique";
+PLMElectricalDictionary.ElecPort.V_Elec_Extra_Length="Extra-long";
+PLMElectricalDictionary.ElecPort.V_Elec_Diameter="Diamètre";
+PLMElectricalDictionary.ElecPort.V_Elec_Width="Largeur";
+PLMElectricalDictionary.ElecPort.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.ElecPort.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.Elec3DCavity="Matrice";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_CavitySize="Taille de cavité";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType="Type de contact";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Pin="Broche";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Socket="Prise femelle";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Hybrid="Hybride";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Undefined="Non défini";
+PLMElectricalDictionary.Elec3DConnectorConnectionPoint="Point de connexion de connecteur";
+PLMElectricalDictionary.Elec3DBackShellConnectionPoint="Point de connexion du renfort arrière";
+PLMElectricalDictionary.Elec3DShellConnectionPoint="Point de connexion du boîtier";
+PLMElectricalDictionary.Elec3DSegmentConnectionPoint="Point de connexion de segment";
+PLMElectricalDictionary.Elec3DSegmentPositionPoint="Point de position de segment";
+PLMElectricalDictionary.Elec3DSplicePositionPoint="Point de position d'épissure";
+PLMElectricalDictionary.Elec3DCavityConnectionPoint="Point de connexion de matrice";
+PLMElectricalDictionary.ElecPortV5="Port électrique";
+PLMElectricalDictionary.ElecPortV5.V_Elec_Representation="Représentation";
+PLMElectricalDictionary.ElecPortV5.V_Elec_Related_Geo1="Géométrie connexe";
+PLMElectricalDictionary.ElecPortV5.V_Elec_Related_Geo2="Géométrie connexe";
+PLMElectricalDictionary.Elec3DCavityV5="Cavité avancée";
+PLMElectricalDictionary.Elec3DConnectorConnectionPointV5="Point de connexion de connecteur avancé";
+PLMElectricalDictionary.Elec3DBackShellConnectionPointV5="Point de connexion du renfort avancé";
+PLMElectricalDictionary.Elec3DShellConnectionPointV5="Point de connexion de boîtier avancé";
+PLMElectricalDictionary.Elec3DSegmentConnectionPointV5="Point de connexion du segment avancé";
+PLMElectricalDictionary.Elec3DSegmentPositionPointV5="Point de position du segment avancé";
+PLMElectricalDictionary.Elec3DSplicePositionPointV5="Point de position de l'épissure avancé";
+PLMElectricalDictionary.Elec3DCavityConnectionPointV5="Point de connexion de cavité avancé";
+PLMElectricalDictionary.ElecConductor="Conducteur";
+PLMElectricalDictionary.ElecConductor.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.ElecConductor.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.ElecConductor.V_Elec_Diameter="Diamètre externe";
+PLMElectricalDictionary.ElecConductor.V_Elec_Color="Couleur";
+PLMElectricalDictionary.ElecConductor.V_Elec_Line_Weight="Masse linéaire";
+PLMElectricalDictionary.Elec3DConductor="Conducteur électrique";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Diameter="Diamètre externe";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Color="Couleur";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Line_Weight="Masse linéaire";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_SectionArea="Surface de section";
+PLMElectricalDictionary.Elec3DConductorGroup="Groupe conducteur électrique";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Diameter="Diamètre externe";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Color="Couleur";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Line_Weight="Masse linéaire";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Wire_Length_Coeff="Coefficient de longueur de fil";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_WireGroup_Type="Type";
+PLMElectricalDictionary.ElecProtection="Protection";
+PLMElectricalDictionary.ElecProtection.V_Elec_SubType="Sous-type";
+PLMElectricalDictionary.ElecProtection.V_Elec_Line_Type="Type de droite";
+PLMElectricalDictionary.ElecProtection.V_Elec_Line_Weight="Masse";
+PLMElectricalDictionary.ElecProtection.V_Elec_Preferred_Length="Longueur préférée";
+PLMElectricalDictionary.ElecProtection.V_Elec_Flexibility="Flexibilité";
+PLMElectricalDictionary.ElecProtection.V_Elec_Annotation="Annotation";
+PLMElectricalDictionary.ElecProtection.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.Elec3DAdaptiveProtection="Couche de protection adaptative";
+PLMElectricalDictionary.Elec3DAdaptiveProtection.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.Elec3DFixedProtection="Couche de protection du diamètre fixe";
+PLMElectricalDictionary.Elec3DFixedProtection.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.Elec3DFixedProtection.V_Elec_Inner_Diameter="Diamètre interne";
+PLMElectricalDictionary.Elec3DFixedProtection.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.Elec3DTapeProtection="Couche de protection de la bande";
+PLMElectricalDictionary.Elec3DTapeProtection.V_Elec_Tape_Thickness="Épaisseur de la bande";
+PLMElectricalDictionary.Elec3DTapeProtection.V_Elec_Tape_Width="Largeur de la bande";
+PLMElectricalDictionary.Elec3DCorrugatedProtection="Couche de protection du tube";
+PLMElectricalDictionary.Elec3DCorrugatedProtection.V_Elec_Bend_Radius="Epaisseur";
+PLMElectricalDictionary.Elec3DCorrugatedProtection.V_Elec_Inner_Diameter="Diamètre interne";
+PLMElectricalDictionary.Elec3DCorrugatedProtection.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.ElecPart="Dispositif électrique";
+PLMElectricalDictionary.ElecPart.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.ElecPart.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.ElecPart.V_Elec_Series="Séries";
+PLMElectricalDictionary.Elec3DShell="Coque";
+PLMElectricalDictionary.Elec3DShell.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DTerminalBlock="Bornier";
+PLMElectricalDictionary.Elec3DTerminalBlock.V_Elec_NumberOfPins="Nombre de matrices";
+PLMElectricalDictionary.Elec3DTerminalBlock.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DTerminalBlock.V_Elec_ShuntCavityLayout="Disposition des dérivations et des cavités";
+PLMElectricalDictionary.Elec3DSingleInsertConnector="Prise";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_NumberOfPins="Nombre de matrices";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType="Type de contact";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Pin="Broche";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Socket="Prise femelle";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Hybrid="Hybride";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Undefined="Non défini";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Inherited="Hérité";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_PolarizedKey="Clé polarisée";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellSize="Taille de coque";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactLayout="Disposition des contacts";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType="Type de coque";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType.Range.Equal.Plug="Fiche";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType.Range.Equal.Receptacle="Prise";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType.Range.Equal.Undefined="Non défini";
+PLMElectricalDictionary.Elec3DStud="Borne";
+PLMElectricalDictionary.Elec3DStud.V_Elec_NumberOfPins="Nombre de matrices";
+PLMElectricalDictionary.Elec3DStud.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DBackShell="Renfort arrière";
+PLMElectricalDictionary.Elec3DBackShell.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DBackShell.V_Elec_Extra_Length="Extra-long";
+PLMElectricalDictionary.Elec3DTerminalStrip="Distributeur";
+PLMElectricalDictionary.Elec3DTerminalStrip.V_Elec_NumberOfPins="Nombre de matrices";
+PLMElectricalDictionary.Elec3DTerminalStrip.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DContact="Contact";
+PLMElectricalDictionary.Elec3DContact.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DContact.V_Elec_OutsideDiameter="Diamètre externe";
+PLMElectricalDictionary.Elec3DContact.V_Elec_SectionArea="Surface de section";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactSize="Taille du contact";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactType="Type de contact";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactType.Range.Equal.Pin="Broche";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactType.Range.Equal.Socket="Prise femelle";
+PLMElectricalDictionary.Elec3DContact.V_Elec_EndFitting="Raccord d'extrémité";
+PLMElectricalDictionary.Elec3DContact.V_Elec_AuthorizedWireGauge="Gauge";
+PLMElectricalDictionary.Elec3DSplice="Epissure";
+PLMElectricalDictionary.Elec3DSplice.V_Elec_NumberOfPins="Nombre de matrices";
+PLMElectricalDictionary.Elec3DSplice.V_Elec_Length="Longueur";
+PLMElectricalDictionary.Elec3DSplice.V_Elec_Equivalent_Thickness="Epaisseur équivalente";
+PLMElectricalDictionary.Elec3DFillerPlug="Bouchon de remplissage";
+PLMElectricalDictionary.Elec3DFillerPlug.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DMultiInsertConnector="Connecteur à prises multiples";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellSize="Taille de coque";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_InsertLayout="Disposition des plaquettes";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType="Type de coque";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType.Range.Equal.Plug="Fiche";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType.Range.Equal.Receptacle="Prise";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType.Range.Equal.Undefined="Non défini";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType="Type de contact";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Pin="Broche";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Socket="Prise femelle";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Hybrid="Hybride";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Undefined="Non défini";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_PolarizedKey="Clé polarisée";
+PLMElectricalDictionary.MountingEquipment="Equipement de montage";
+PLMElectricalDictionary.MountingEquipment.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.MountingEquipment.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.MountingEquipment.V_Elec_NumberOfPins="Nombre de matrices";
+PLMElectricalDictionary.MountingEquipment.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefBundle="Extension de système physique électrique";
+PLMElectricalDictionary.PLMEleRefBundle.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefGeoBundle="Extension de géométrie électrique";
+PLMElectricalDictionary.PLMEleRefGeoBundle.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefMountingEquipment="Extension d'équipement de montage";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_NumberOfPins="Nombre de cavités";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefConnectorShell="Extension de boîtier";
+PLMElectricalDictionary.PLMEleRefConnectorShell.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefConnectorShell.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefConnectorShell.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefTerminalBlock="Extension de bornier";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_NumberOfPins="Nombre de cavités";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_ShuntCavityLayout="Disposition des dérivations et des cavités";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector="Extension de connecteur à prise unique";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_NumberOfPins="Nombre de cavités";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefEquipment="Extension d'équipement électrique";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_NumberOfPins="Nombre de cavités";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefStud="Extension de goujon";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_NumberOfPins="Nombre de cavités";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefBackShell="Extension de renfort arrière";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_Extra_Length="Extra-long";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefTerminalStrip="Extension de distributeur";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_NumberOfPins="Nombre de cavités";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefContact="Extension de contact";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_OutsideDiameter="Diamètre extérieur";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_SectionArea="Surface de section";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefSplice="Extension d'épissure";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_NumberOfPins="Nombre de cavités";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_Length="Longueur";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_Equivalent_Thickness="Epaisseur équivalente";
+PLMElectricalDictionary.PLMEleRefFillerPlug="Extension de bouchon de remplissage";
+PLMElectricalDictionary.PLMEleRefFillerPlug.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefFillerPlug.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefFillerPlug.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefMultiBranchable="Extension de géométrie de branche électrique";
+PLMElectricalDictionary.PLMEleRefMultiBranchable.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefWire="Extension de conducteur";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Diameter="Diamètre extérieur";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Color="Couleur";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Line_Weight="Masse linéaire";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_SectionArea="Surface de section";
+PLMElectricalDictionary.PLMEleRefWireGroup="Extension du groupe de conducteurs";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Diameter="Diamètre extérieur";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Color="Couleur";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Line_Weight="Masse linéaire";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Wire_Length_Coeff="Coefficient de longueur de fil";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_WireGroup_Type="Type";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector="Extension de connecteur à prises multiples";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefStdCnctPt="Extension de port électrique";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Port_Type="Type";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Extra_Length="Extra-long";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Diameter="Diamètre";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Width="Largeur";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt="Extension de port électrique";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Port_Type="Type";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Representation="Représentation";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Related_Geo1="Géométrie connexe";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Related_Geo2="Géométrie connexe";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Related_Geo2="Géométrie connexe";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Extra_Length="Extra-long";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Diameter="Diamètre";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Width="Largeur";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefCavityCnctPt="Extension de point de connexion de matrice";
+PLMElectricalDictionary.PLMEleRefCavityCnctPt.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefCavityCnctPt.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefBackShellCnctPt="Extension de point de connexion du renfort arrière";
+PLMElectricalDictionary.PLMEleRefBackShellCnctPt.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefBackShellCnctPt.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefCavity="Extension de matrice";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_SignalID="Identificateur de signal";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_Extra_Length="Extra-long";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefConnectorCnctPt="Extension de point de connexion de connecteur";
+PLMElectricalDictionary.PLMEleRefConnectorCnctPt.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefConnectorCnctPt.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefShellCnctPt="Extension de point de connexion de boîtier";
+PLMElectricalDictionary.PLMEleRefShellCnctPt.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.PLMEleRefShellCnctPt.V_Elec_SubType="Sous-catégorie";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection="Extension de couche de protection adaptative";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_SubType="Sous-type";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Line_Type="Type de ligne";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Line_Weight="Masse";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Preferred_Length="Longueur préférée";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Flexibility="Flexibilité";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Annotation="Annotation";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection="Extension de couche de protection du diamètre fixe";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_SubType="Sous-type";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Line_Type="Type de ligne";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Line_Weight="Masse";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Preferred_Length="Longueur préférée";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Inner_Diameter="Diamètre interne";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Flexibility="Flexibilité";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Annotation="Annotation";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection="Extension de couche de protection de la bande";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_SubType="Sous-type";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Line_Type="Type de ligne";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Line_Weight="Masse";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Preferred_Length="Longueur préférée";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Tape_Thickness="Epaisseur de la bande";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Tape_Width="Largeur de la bande";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Flexibility="Flexibilité";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Annotation="Annotation";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_External_Reference="Référence externe";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection="Extension de couche de protection de tube";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_SubType="Sous-type";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Line_Type="Type de ligne";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Line_Weight="Masse";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Preferred_Length="Longueur préférée";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Inner_Diameter="Diamètre interne";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Thickness="Epaisseur";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Flexibility="Flexibilité";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Annotation="Annotation";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_External_Reference="Référence externe";
+
+
+// ===========================================================
+// [V6R2020x] 2019-06-13 ADZ Extended data model for PLM Cable
+// ===========================================================
+
+PLMElectricalDictionary.ElecRoutable="Routable électrique";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_SubType="Sous-type";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Bend_Radius="Rayon de courbure";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Diameter="Diamètre";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Color="Couleur";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Line_Mass="Masse linéaire";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Section_Area="Surface de section";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Family="Famille";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Series="Séries";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Gauge="Gauge";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_nbCores="Nombre de noyaux";
+
+PLMElectricalDictionary.ElecRoutable_Inst="Instance routable électrique";
+
+PLMElectricalDictionary.Elec3DCableReference="Référence de câble électrique";
+
+PLMElectricalDictionary.Elec3DCable="Câble électrique";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Segregation="Ségrégation";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_BoundaryLength_From="Longueur de bornage de départ";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_BoundaryLength_To="Longueur de bornage d'arrivée";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status="Etat";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status.Range.Equal.NotRouted="Non acheminé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status.Range.Equal.FullyRouted="Entièrement acheminé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status.Range.Equal.PartiallyRouted="Partiellement acheminé";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation="Validation";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation.Range.Equal.NotValidated="Non validé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation.Range.Equal.FullyValidated="Complètement validé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation.Range.Equal.InRevision="Partiellement validé";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Length="Longueur";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Itinerary_Snap="Eléments d'itinéraire";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ItineraryLength_Snap="Longueur d'itinéraire";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap="Lister l'état de l'acheminement";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap.Range.Equal.NotRouted="Non acheminé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap.Range.Equal.FullyRouted="Entièrement acheminé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap.Range.Equal.PartiallyRouted="Partiellement acheminé";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap="Lister la validation de l'acheminement";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap.Range.Equal.NotValidated="Non validé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap.Range.Equal.FullyValidated="Complètement validé";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap.Range.Equal.PartiallyValidated="Partiellement validé";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteLength_Snap="Lister la longueur de l'acheminement";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Mode="Mode Longueur de coupe";
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Mode.Range.Equal.Automatic="Automatique";
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Mode.Range.Equal.Manual="Manuel";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Tolerance="Tolérance de longueur de coupe";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength="Longueur de coupe";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ExtraLength_From="Surlongueur de départ";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ExtraLength_To="Longueur supplémentaire à";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ItineraryCuttingLength_Snap="Longueur de coupe d'itinéraire";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_SynchronizeConfig="Configuration de la synchronisation";
+
+
+
+PLMElectricalDictionary.Elec3DCableOccurrence="Occurrence de câble électrique";
+
+PLMElectricalDictionary.Elec3DCable_Inst="Instance de câble électrique";
+
+PLMElectricalDictionary.Elec3DCableConnection="Connexion par câble";
+
+PLMElectricalDictionary.Elec3DJunctionPoint="Point de jonction";
+
+PLMElectricalDictionary.ElecPort.V_Elec_Segregation="Ségrégation";
+
+
+PLMElectricalDictionary.ElecCableCoresDefinition="Définition des noyaux de câble";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreName="Nom principal";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreColor="Couleur du noyau";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreGauge="Jauge de noyau";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreOutsideDiameter="Diamètre extérieur du noyau";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreSectionArea="Zone de section de noyau";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreBendRadius="Rayon de pliage de noyau";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreLinearMass="Masse linéaire du noyau";
+
+
+PLMElectricalDictionary.ElecCableCoresLength="Longueur des noyaux de câble";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_StrippingLengthFrom="Longueur de dénudage de";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_StrippingLengthTo="Longueur de dénudage vers";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreLengthAfterCableStrippingFrom="Longueur de noyau après le dénudage de câble à partir de";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreLengthAfterCableStrippingTo="Longueur de noyau après le dénudage de câble vers";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreStrippingLengthFrom="Longueur de dénudage de noyau de";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreStrippingLengthTo="Longueur de dénudage de noyau vers";
+
+PLMElectricalDictionary.ElecCableRawMaterial="Matériau brut de câble";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_SubType="Sous-type";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Bend_Radius="Rayon de courbure";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_OutsideDiameter="Diamètre externe";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Color="Couleur";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Line_Mass="Masse linéaire";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Section_Area="Surface de section";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Family="Famille";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Series="Séries";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Gauge="Gauge";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_nbCores="Nombre de fils";
+// ===========================================================
+// [V6R2022x] 2019-05-06 ADS5 Extended data model for SolidWorks
+// ===========================================================
+
+PLMElectricalDictionary.Elec3DPLC="PLC";
+PLMElectricalDictionary.Elec3DPLC.V_Elec_MatingWith="Type de connexion";
+
+PLMElectricalDictionary.Elec3DModule="Module";
+PLMElectricalDictionary.Elec3DModule.V_Elec_MatingWith="Type de connexion";
+PLMElectricalDictionary.Elec3DModule.V_Elec_NumberOfPins="Nombre de cavités";
+
+PLMElectricalDictionary.Elec3DTerminalAccessory="Accessoire de terminal";
+PLMElectricalDictionary.Elec3DTerminalAccessory.V_Elec_MatingWith="Type de connexion";
+
+
+
+PLMElectricalDictionary.Elec3DRail="Rail";
+PLMElectricalDictionary.Elec3DRail.V_Elec_MaxLength="Longueur max.";
+PLMElectricalDictionary.Elec3DRail.V_Elec_Length="Longueur";
+
+PLMElectricalDictionary.Elec3DDuct="Goulotte";
+PLMElectricalDictionary.Elec3DDuct.V_Elec_MaxLength="Longueur max.";
+PLMElectricalDictionary.Elec3DDuct.V_Elec_Length="Longueur";
+
+PLMElectricalDictionary.Elec3DGuideCurve="Courbe guide";

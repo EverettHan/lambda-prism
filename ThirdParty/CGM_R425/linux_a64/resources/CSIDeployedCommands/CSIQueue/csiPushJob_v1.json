@@ -1,0 +1,109 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Push a job in the database",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pool",
+          "basic": "string"
+        },
+        {
+          "label": "functionName",
+          "basic": "string"
+        },
+        {
+          "label": "functionVersion",
+          "basic": "int32"
+        },
+        {
+          "label": "status",
+          "basic": "int32"
+        },
+        {
+          "label": "nodeIdentifier",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "priority",
+          "basic": "int32",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "ttk",
+          "basic": "int32",
+          "desc": "Time To Keep value in hours",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "ttl",
+          "basic": "int32",
+          "desc": "Time To Live value in minutes",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "functionInput",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "keepProgress",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "customProperties",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "estimatedMemoryInMB",
+          "basic": "int32",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "customMetric",
+          "basic": "int32",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "jobId",
+          "basic": "string"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

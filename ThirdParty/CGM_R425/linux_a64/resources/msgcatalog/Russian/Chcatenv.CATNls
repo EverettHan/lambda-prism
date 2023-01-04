@@ -1,0 +1,28 @@
+<meta charset="UTF-8"/>
+Help.Text="Синтаксис: 
+chcatenv   -e environment_name           Укажите имя среды 
+           -a user|global                Укажите характеристики среды
+           -var   variable=value         Задайте или обновите значения переменной
+           [-new]                        Создайте переменную, указанную в параметре -var
+           [-com]                        Добавьте комментарий для новой переменной.
+           [-del]                        Удалите переменную, указанную в параметре -var. Только новые переменные могут быть удалены
+           [-d storage_directory_name]   Укажите каталог хранения среды";
+MustBeSystemAdmin.Text="Для изменения глобальной среды необходимы права администратора.";
+NoCommentOnOfficialVar.Text="Можно комментировать только новые переменные.";
+BadFormatedVariable.Text="Значение, указанное в параметре -var, не допустимо.";
+UnableToWriteFile.Text="Не удалось сохранить измененный файл среды.";
+NoReadAccessInDir.Text="Каталог, указанный в параметре -d, недоступен в режиме чтения";
+NoWriteAccessInDir.Text="Каталог, указанный в параметре -d, недоступен в режиме записи";
+DirDoesntExist.Text="Каталог, указанный в параметре -d, недоступен.";
+EnvFileDoesntExist.Text="Указанная среда не найдена.";
+UnableToReadEnvFile.Text="chcatenv не удалось прочитать файл среды.";
+InvalidEnvNameOption.Text="Имя среды должно быть указано в параметре \"-e\".";
+VariableNotFound.Text="Эта переменная не найдена в файле среды. ";
+CannotDelOfficalVar.Text="Эта переменная не может быть удалена. Можно удалить только новые переменные.";
+NoVarSpecified.Text="Необходимо указать параметр \"-var\".";
+NoDirModeOption.Text="После параметра \"-a\" должно следовать слово \"user\" или \"global\" или укажите каталог хранения с помощью параметра -d.";
+InvalidEnvModeOption.Text="Для параметра \"-a\" должно быть задано значение \"user\" или \"global\".";
+GeneralFailure.Text="Во время инициализации chcatenv возникла проблема.";
+NoNewOfficialVariable.Text="/P1 уже существует. Выберите другое имя переменной.";
+
+

@@ -1,0 +1,32 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+NotFirstVersionNotModifiable_F_1.Diagnostic="Bei den Referenzen handelt es sich nicht um Referenzen der ersten Überarbeitung. Daher können die für sie festgelegten Kennungsattribute nicht geändert werden. Betroffene Referenzen:\n/p1";
+NotFirstVersionNotModifiable_F_1.Advice="";
+NotFirstVersionNotModifiable_F_1.Request="Festgelegte Kennungsattribute können Sie nur bei der ersten Überarbeitung einer Referenz ändern.";
+
+
+BlockingOwnerMaturity1_F_0.Diagnostic="/p-Exemplare können nicht erzeugt werden, da ihre Eignerreferenzen nicht bearbeitet werden können:\nDie Eignerreferenzen können aufgrund ihres Bearbeitungsstatus nicht bearbeitet werden.";
+BlockingOwnerMaturity1_F_0.Advice="Bearbeitungsstatus des Eignerobjekts ändern.";
+BlockingOwnerMaturity1_F_0.Request="";
+
+
+//  In Diagnostic's /p : Precision on which system problem occurs: this is DEBUG information
+PLMc_ServerSystemPb_F_1.Diagnostic="Systemprobleme beim Server \n(Debuginformationen: \n/p)";
+PLMc_ServerSystemPb_F_1.Advice="";
+PLMc_ServerSystemPb_F_1.Request="";

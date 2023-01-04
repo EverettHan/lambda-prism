@@ -1,0 +1,45 @@
+<meta charset="UTF-8"/>
+Usage="
+V5-Dienstprogramm für Datensatzerfassung/Dateiverwaltung.
+
+Verwendung: RecordTools -s name [-Check|-FindPath path |-FindCmd cmdname] [-h, -?, -help]
+       RecordTools -s name -d name -ChangePath    oldpath newpath [ID]
+       RecordTools -s name -d name -ChangeSubPath oldpath newpath
+       RecordTools -s name -d name -ChangeData  ID datapos newdata
+       RecordTools -s name -d name -ChangeDataString oldString NewString
+       RecordTools -s name -d name -ChangeEvent ID newevent
+       RecordTools -s name -d name -Delete ID
+       RecordTools -s name -d name -DeleteSubPath subpath
+
+   -h, -?, -help    : Diese Hilfe
+   -s name          : Name der Quelldatei (normalerweise capture.rec)
+   -d name          : Name der Zieldatei
+
+   -Check           : Überprüft die Integrität der Quelldatei und zeigt sie im XML-Format an
+   -FindPath        : Sucht den CATCommand-Pfad in der Quelldatei
+   -findCmd         : Sucht den CATCommand-Namen in der Quelldatei
+
+   -ChangePath      : Ändert überall den ganzen Pfad für 'oldpath' in 'newpath', es sei denn, 'ID' ist angegeben
+   -ChangeSubPath   : Ändert den untergeordneten Pfad 'oldpath' in 'newpath'
+   -ChangeData      : Ändert die Daten im Datensatzblock 'ID' an Position 'datapos' in 'newdata'
+   -ChangeDataString: Ersetzt oldString durch newString in allen Daten mit dem CHAR-Typ und für alle Blöcke
+   -ChangeEvent     : Ändert das Ereignis im Datensatzblock 'ID' in 'newevent'
+   -Delete          : Löscht den Datensatzblock 'ID'
+   -DeleteSubPath   : Löscht alle Datensatzblöcke, die 'subpath' enthalten
+
+   ID               : Interaktions-ID in der Form CRnnn oder CInnn, wie von der Option -Check angegeben"; // @validatedUsage AJT 13:10:10 option
+
+Error.0="Anzahl RecordTools-FEHLER: ";
+Error.1="-s: fehlende Quellendatei.";
+Error.2="Zieldatei kann nicht mit Quellendatei identisch sein.";
+Error.3="-d: fehlende Zieldatei.";
+Error.4="Fehlende Aufzeichnungsblocknummer.";
+Error.5="Fehlender untergeordneter Pfad.";
+Error.6="-s: Quellendatei kann nicht gefunden werden";
+Error.7="Unbekanntes Argument.";
+Error.8="-s: Quellendatei kann nicht geöffnet werden";
+Error.9="-d: fehlende Zieldatei.";
+Error.10="-d: Zieldatei bereits vorhanden.";
+Error.11="-d: Zielverzeichnis nicht vorhanden.";
+
+Error.99="Falsche Anzahl von Argumenten.";

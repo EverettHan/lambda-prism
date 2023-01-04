@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="系統錯誤";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="無法修訂新零組件";
+PLMc_ForbiddenScenario1.Advice="請儲存此零組件，並於之後嘗試修訂";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="禁止此新修訂版情境：必須在 2 次新修訂版呼叫之間進行總儲存";
+PLMc_ForbiddenScenario2.Advice="請先儲存您的工作階段，再重新呼叫新修訂版";
+
+PLMc_ForbiddenScenario3.Diagnostic="無法在工作階段中修訂此零組件";
+PLMc_ForbiddenScenario3.Advice="零組件已由另一個工作階段修改。請嘗試將您的本機修改儲存為新修訂版。";
+
+InvalidAncestor.Diagnostic="上代無法用於執行修訂操作";
+InvalidAncestor.Advice="選擇與您要進化之修訂版系列一致的上代";
+
+InvalidComponentState.Diagnostic="無法修訂零組件，因為該零組件尚未儲存到存放庫中";
+InvalidComponentState.Advice="請先將零組件儲存到存放庫中，再予以修訂";
+
+InvalidTypeOfComponent.Diagnostic="不允許對此類型的零組件進行修訂";
+InvalidTypeOfComponent.Advice="針對修訂版提供合規的零組件";
+
+InvalidComponentForDWS.Diagnostic="不允許對此工作區中的此類型零組件進行修訂";
+InvalidComponentForDWS.Advice="提供在此工作區中允許修訂的零組件";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="不允許版本，因為在工作階段中取代為部分副本複製";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="不指定要在工作階段中取代元素時複製的部分副本 (重複使用)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="不允許版本，因為在工作階段中以部分副本複製轉移修改";
+TransferModificationsForbiddenForPartialDuplicate.Advice="不指定要在轉移修改時要複製的部分副本";
+
+InvalidIntent.Diagnostic="使用此無效意圖呼叫的版本圖形：/p";
+InvalidIntent.Advice="請選擇有效的版本化意圖";
+
+InstanceWithoutOwner.Diagnostic="此副本不在複製範圍內，將會忽略：/p";
+InstanceWithoutOwner.Advice="操作可能會導致不想要的複製。如有可能，請嘗試排除有問題的副本。";
+
+RefreshFailed.Diagnostic="工作階段重新整理失敗。";
+RefreshFailed.Advice="進行全域重新整理，或再次載入版本化零組件。";
+
+NotRefreshedNoReidentification.Diagnostic="物件已在資料庫中修改，但尚未更新工作階段。";
+NotRefreshedNoReidentification.Advice="進行全域重新整理以擷取更新的零組件。";
+
+NotRefreshedAfterReidentification.Diagnostic="物件已在資料庫中成功版本化，但新版本不在工作階段中。您可能無法儲存您的工作階段。";
+NotRefreshedAfterReidentification.Advice="請嘗試全域重新整理。如果您無法重新整理，您將必須解除載入此零組件並解除本機修改才能儲存。";

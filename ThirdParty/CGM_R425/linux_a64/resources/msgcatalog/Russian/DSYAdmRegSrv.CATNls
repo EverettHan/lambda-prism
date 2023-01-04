@@ -1,0 +1,11 @@
+<meta charset="UTF-8"/>
+Help.text="Использование DSYAdmRegSrv\n\n[-set CATIA|ENOVIA_DMU_Navigator|ENOVIA_LCA|DELMIA|ENOVIA_3d_com] линейка продуктов, которую требуется зарегистрировать\n\n[-unset]                         Регистрация, которую требуется отменить\n\n[-env environment_name]          Имя среды (по умолчанию: DefaultEnvironment)\n\n[-direnv storage_directory_name] Каталог хранения среды (по умолчанию: CSIDL_APPDATA\\CATEnv)\n\n[-h|-help]                       Эта справка.";
+SetOrUnset.text="Необходимо использовать параметр -set или -unset";
+SetAndUnset.text="Параметры -set и -unset нельзя использовать вместе";
+NotAdministrator="Программа установки требует наличия прав администратора.";
+VistaNotAdminPrivileges="Для запуска этой программы используйте командную строку администратора.";
+MissingValueEnvName.text="После параметра -env должно следовать имя файла среды.\n";
+InvalidOption.text="Недопустимый параметр /p1\n";
+MissingValueEnvDir.text="-После параметра -direnv необходимо указать имя пути к файлу среды.";
+MissingValueSet.text="За параметром -set должно следовать название линейки продуктов";
+ExtraValueUnset.text="За параметром -unset следует бесполезный параметр /p1\n";

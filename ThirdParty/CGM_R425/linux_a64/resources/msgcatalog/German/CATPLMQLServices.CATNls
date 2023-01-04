@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+INVALID_SELECT_DEFAULT_PLMTYPE="Semantikfehler: Mehrdeutiger PLMType für das SELECT-Bedingungsattribut \"/p1\"";
+INVALID_SELECT_DEFAULT_PLMTYPE_ERR_ADV="PLMType-Alias für die SELECT-Attribute prüfen";
+
+INVALID_SELECT_MISSING_PLMTYPE="Semantikfehler: Mehrdeutiger PLMType-Alias \"/p1\" für SELECT-Bedingungsattribut verwendet, PLMType-Alias in FROM-Bedingung fehlt";
+INVALID_SELECT_MISSING_PLMTYPE_ERR_ADV="Obigen PLMType zur FROM-Bedingung hinzufügen";
+
+INVALID_WHERE_MISSING_PLMTYPE="Semantikfehler: Mehrdeutiger PLMType-Alias \"/p1\" für WHERE-Bedingungsattribut verwendet, PLMType-Alias in FROM-Bedingung fehlt";
+INVALID_WHERE_MISSING_PLMTYPE_ERR_ADV="Obigen PLMType zur FROM-Bedingung hinzufügen";
+
+INVALID_FROM_PLMTYPE="Semantikfehler: Ungültige Paket-/Klassen-IDs in FROM-Bedingung für PLMType \"'/p1'\" verwendet";
+INVALID_FROM_PLMTYPE_ERR_ADV="Richtigkeit der Werte für Paket/Klasse für obigen PLMType prüfen";
+
+NVALID_FROM_PLMTYPEID="Semantikfehler: Ungültige \"'/p1'\"-IDs für PLMType in FROM-Bedingung verwendet ";
+INVALID_FROM_PLMTYPEID_ERR_ADV="Richtigkeit der Werte für Paket/Klasse für obigen PLMType prüfen";
+
+INVALID_FROM_MULTIPLMTYPE="Semantikfehler: In FROM-Bedingung wird der PLMType-Alias \"/p1\" mehr als einmal verwendet";
+INVALID_FROM_MULTIPLMTYPE="PLMType-Alias in FROM-Bedingung prüfen";
+
+INVALID_SELECT_ATTRIBUTE="Semantikfehler: In der SELECT-Bedingung wird das ungültige Attribut \"/p1\" mit PLMType-Alias \"/p2\" verwendet";
+INVALID_SELECT_ATTRIBUTE_ERR_ADV="Sicherstellen, dass das Attribut vom PLMType unterstützt wird";
+
+INVALID_WHERE_ATTRIBUTE="Semantikfehler: In der Bedingung wird das ungültige Attribut \"/p1\" mit dem PLMType-Alias \"/p2\" verwendet";
+INVALID_WHERE_ATTRIBUTE_ERR_ADV="Sicherstellen, dass das Attribut vom PLMType unterstützt wird";
+
+INVALID_CREATE_RELATION="Semantikfehler: In der CREATE-Anweisung wird die ungültige Beziehung \"/p1\" verwendet";
+INVALID_CREATE_RELATION_ERR_ADV="Sicherstellen, dass die Beziehung vom PLMType unterstützt wird";
+
+INVALID_CREATE_ATTRIBUTE="Semantikfehler: In der CREATE-Anweisung wird das ungültige Attribut '\"/p1\" mit PLMType verwendet";
+INVALID_CREATE_ATTRIBUTE_ERR_ADV="Sicherstellen, dass das Attribut vom PLMType unterstützt wird";
+
+INVALID_CREATE_PLMTYPE="Semantikfehler: Ungültige Paket-/Klassen-IDs für PLMType \"'/p1'\" in der CREATE-Anweisung verwendet";
+INVALID_CREATE_PLMTYPE_ERR_ADV="Richtigkeit der Werte für Paket/Klasse für obigen PLMType prüfen";
+
+UNMATCHED_ATTR_AND_ATTRVALUES=" Größe der Attributliste und Größe der Attributwerteliste stimmen nicht überein";
+UNMATCHED_ATTR_AND_ATTRVALUES_ERR_ADV="Größe der Attributliste und Größe der Werteliste für das Attribut prüfen";
+
+ERROR_PLMQL_INTERFACE="PLMQL-Fehler: Abfrage der Schnittstelle CATIPLMQLbnfStatement fehlgeschlagen";
+ERROR_PLMQL_INTERFACE_ERR_ADV="";
+
+ERROR_PLMQL_INVALID_STATEMENT="PLMQL-Fehler: Ungültige PLMQL-Anweisung, Fehler in Syntax/Grammatik";
+ERROR_PLMQL_INTERFACE_ERR_ADV="Syntax und Grammatik der Anweisung prüfen";
+
+ERROR_PLMQL_MULTIPLE_QUERY="PLMQL-Fehler: Mehrere Abfragen sind nicht zulässig";
+ERROR_PLMQL_INTERFACE_ERR_ADV="Jede Abfrage in einem separaten Fenster ausführen";
+
+ERROR_PLMQL_MULTIPLE_STATEMENTS="PLMQL-Fehler: CRUD, NV, CLONE, QUEOP, MATURITY durcheinander";
+ERROR_PLMQL_MULTIPLE_STATEMENTS_ERR_ADV="Sicherstellen, dass nicht mehrere Operationen Bestandteil mehrerer Anweisungen sind";
+
+INVALID_EXT_ATTRIBUTE="Semantikfehler: In der SELECT-Bedingung wird das ungültige Erweiterungsattribut \"/p1\" mit PLMType-Alias \"/p2\" verwendet";
+INVALID_EXT_ATTRIBUTE_ERR_ADV="Sicherstellen, dass das Attribut vom Erweiterungs-PLMType unterstützt wird";
+
+INVALID_EXT_PLMTYPE="Semantikfehler: Ungültige [Custo]/Modeler/CoreType-IDs für Erweiterungs-PLMType \"'/p1'\" in der SELECT-Bedingung verwendet";
+INVALID_EXT_PLMTYPE_ERR_ADV="Richtigkeit der Werte für [Custo]/Modeler/CoreType für den obigen PLM-Erweiterungstyp prüfen";
+
+INVALID_PLMTYPE_USED="PLMTYPE WURDE NICHT IN DEN METADATEN GEFUNDEN";
+INVALID_PLMTYPE_USED_ERR_REQ="PLMTYPE WURDE NICHT IN DEN METADATEN GEFUNDEN";
+
+INVALID_PLMID_USED="Unzulässiger PLMID-/Repository-Name für den angeschlossenen Provider";
+INVALID_PLMID_USED_ERR_REQ="Unzulässiger PLMID-/Repository-Name für den angeschlossenen Provider";
+
+
+INVALID_SELECT_LIST_ERR_REQ="";
+INVALID_SELECT_LIST_ERR_DIAG="";
+INVALID_SELECT_LIST_ERR_ADV="";
+INVALID_SELECT_LIST_BQ="Ungültige SELECT-Attributliste in BuildQuery";
+
+Err_PLMQL_STMT="Fehler in INPUT-Anweisung, einige Parameter sind falsch";
+Err_PLMQL_STMT_ERR_REQ="Fehler in der INPUT-Anweisung";
+Err_PLMQL_STMT_ERR_DIAG="Fehler in der INPUT-Anweisung";
+Err_PLMQL_STMT_ERR_ADV="Sprachreferenz zu Rate ziehen";
+
+INVALID_SELECT_LIST_SIZE_ZERO="Ungültige SELECT-Attributliste mit der Listengröße NULL";
+
+APPLY_EVENT_ADAPTER_ERROR="Die INPUT-ID stellt kein Objekt dar, das zum PDM für die Transaktion gehört.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_REQ="Die INPUT-ID stellt kein Objekt dar, das zum PDM für die Transaktion gehört.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_ADV="PLM-ID in der INPUT-Anweisung prüfen.";
+
+COMMIT_STREAMS_ERROR="Beim Commit von Streams im Speicher ist ein Problem aufgetreten.";
+COMMIT_STREAMS_ERROR_ERR_REQ="Streams konnten nicht von der Quelle zum Ziel übertragen werden";
+COMMIT_STREAMS_ERROR_ERR_ADV="Richtigkeit der Einstellungen oder Syntax der Streams prüfen";

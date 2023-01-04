@@ -1,0 +1,37 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns 'ECHO' or the input specified value",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "msg",
+          "desc": "The message to send",
+          "basic": "string",
+          "optional": {
+            "default_value": ""
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "msg",
+          "desc": "The message received",
+          "basic": "string"
+        }
+      ]
+    }
+  },
+  "RESTExposition": {
+    "path": "CSIIntrospection/v2/csiEcho"
+  }
+}

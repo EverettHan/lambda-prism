@@ -1,0 +1,32 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "VisualizationRSW.tst"/>
+  <attached name = "Visualization.tst"/>
+  <attached comment = "AZX/JMA 05.09.2019 coverage with ODTs" name = "VisualizationCommands.tst"/>
+  <attached comment = "09.01.2012 SVQ/CDT R213 Testing Batch prereq VisuController" name = "VisualizationBase.tst"/>
+  <attached name = "CATGraphicProperties.tst"/>
+  <attached name = "GeometryVisualization.tst"/>
+  <attached name = "CATIAModelVisu.tst"/>
+  <attached name = "CATIAApplicationFrame.tst"/>
+  <attached name = "P3.tst"/>
+  <attached name = "CATImmersiveUI.tst"/>
+  <attached name = "OOCPointCloud.tst"/>
+  <attached name = "IVToolkit.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" comment = "20151021 JOV/HEB CID FRAME" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "SGManager"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "P3.tst"/>
+  <authorize access = "Private" name = "CATIAApplicationFrame.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

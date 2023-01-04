@@ -1,0 +1,53 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Public" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <authorize access = "Private" name = "VisualizationFoundation"/>
+  <authorize access = "Private" name = "SGInfra"/>
+  <authorize access = "Private" name = "SGInfra.tst"/>
+  <authorize access = "Private" name = "GlobeEngine"/>
+  <authorize access = "Private" name = "GlobeEngine.tst"/>
+  <authorize access = "Private" name = "SMASwxSimulationConnector.tst"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "VisualizationBase.tst"/>
+  <authorize access = "Private" name = "VisualizationSceneGraphCAA.tst"/>
+  <authorize access = "Private" name = "VisualizationSceneGraph.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "SMAHvcModeler"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "SMAMpaResultsModeler"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "SMAFeaBaseVisu"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATCloudVisualization"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "DNBHumanCore"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "DNBHumanModelingUI.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "PolyhedralVisuAppli.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "PolyhedralVisualization"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "PolyhedralVisualization.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "NATEnvironment"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "NATEnvironment.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "DSSocialGlobe"/>
+  <authorize access = "Private" comment = "ODM/STX 18 Feb 16 : Will be deleted soon, exchanging with CATLiveExpHumanPLM" meta = "TOREMOVE" name = "CATLiveExpAvatar"/>
+  <authorize access = "Private" comment = "ODM/STX 18 Feb 16 : See CATLiveExpAvatar comment" name = "CATLiveExpHumanPLM"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATFmtModelVisu"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "SWXVisu"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "SWXFeatureUI"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "DELMaterialRemovalSimulation"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATMaterialRemovalSimu.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATMaterialRemovalSimulation"/>
+  <authorize access = "Private" comment = "cdt/svq 2013.01.29 R215" meta = "TOREMOVE" name = "CATSimulationPlayerResources"/>
+  <authorize access = "Private" comment = "cdt/svq 2013.03.08 R215 Manikin in LRE" meta = "TOREMOVE" name = "RenderingEngine"/>
+  <authorize access = "Private" name = "NATEnvironment"/>
+  <authorize access = "Private" name = "NATPlantModeler"/>
+  <authorize access = "Private" name = "PolyhedralGPGPU"/>
+  <authorize access = "Private" name = "PolyhedralGPGPU.tst"/>
+  <authorize access = "Private" name = "SMADsrDetailRendition"/>
+  <authorize access = "Private" name = "CATSparkCoreUI"/>
+  <authorize access = "Private" name = "CATSparkCoreVisu"/>
+  <authorize access = "Private" comment = "r8z, request from ifj. to be removed when a better api exposition is found for sgv6" name = "DYNTranslator"/>
+  <authorize access = "Private" name = "CATFlexModeling.tst"/>
+  <attached name = "VisualizationSceneGraph.tst"/>
+  <authorize access = "Private" name = "VisualizationEngines"/>
+  <authorize access = "Private" comment = "07.19.2017 NHD Requested by LDH team for enabling some testing related to Lattice " name = "Lattice.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

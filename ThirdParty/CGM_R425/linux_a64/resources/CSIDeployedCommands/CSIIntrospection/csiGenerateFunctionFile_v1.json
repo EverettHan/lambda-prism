@@ -1,0 +1,36 @@
+{
+  "grammarVersion": 3,
+  "desc": "Generates the JSON content for the declarative file of the specified function",
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "definition",
+          "type": "CSIDeclarativeFunctionDefinition"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "filename",
+          "basic": "string"
+        },
+        {
+          "label": "content",
+          "basic": "string"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

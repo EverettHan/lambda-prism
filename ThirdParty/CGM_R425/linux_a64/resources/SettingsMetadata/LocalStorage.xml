@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<st:Description name="LocalStorage" PrimaryTabpage="/General/LocalStorage">
+		<st:role>Setting to handle the local persistency location for PLM local storage stream/unstream operations</st:role>
+		<st:detailedRole>This setting allows to customize the location of local storage persistency operations on authoring extended streams</st:detailedRole>
+		<st:RepositoryFile>LocalStorage</st:RepositoryFile>
+		<st:version>1</st:version>
+		<st:compatibility>
+			<st:FullCompatibilityfromLevel>1</st:FullCompatibilityfromLevel>
+			<st:UpwardCompatibilityfromLevel>1</st:UpwardCompatibilityfromLevel>
+		</st:compatibility>
+	</st:Description>
+  <st:attributes>
+    <st:attribute Name="LSManagedPath">
+      <st:role>Root path for the Local Storage managed directory</st:role>
+      <st:detailedRole>This option specifies the repository path on a local disk storing locally stored result streams.</st:detailedRole>
+      <st:URN>
+        <st:defaultWindows>
+          <st:value>CSIDL_LOCAL_APPDATA</st:value>
+        </st:defaultWindows>
+        <st:defaultUnix>
+          <st:value>${HOME}</st:value>
+        </st:defaultUnix>
+      </st:URN>
+    </st:attribute>
+  </st:attributes>
+</st:repository>

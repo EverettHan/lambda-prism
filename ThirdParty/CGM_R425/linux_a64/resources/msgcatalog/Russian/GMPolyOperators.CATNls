@@ -1,0 +1,119 @@
+<meta charset="UTF-8"/>
+// WMN20200723 Reprise de TopologicalOperators.CATNls
+// WMN20200723 9000-9099- Polyhedral operators : Resp DPS, Week-07 2019.
+// CLO2 Change errors to 9200-9299 (KUB VariationnalOperators already use error 9000-9099)
+
+//Déplacement de toutes les erreurs
+// 9200-9209 Polyhedral Operators Name
+// Polyhedral operators names :
+
+GMPolyInPolySculptingOpe_ERR_9200="Создание многогранных форм";
+GMPolyInPolySweepDraftOpe_ERR_9201="Многогранный сдвиг/уклон";
+GMPolyInPolyConversionOpe_ERR_9202="Многогранное преобразование";
+GMPolyInPolyBodyJoin_ERR_9203="Многогранные тела соединения";
+GMPolyInPolyBodyTrimShells_ERR_9204="Многогранные обрезанные оболочки";
+GMPolyInPolyBodySplitShells_ERR_9205="Многогранные рассеченные оболочки";
+GMPolyInPolyBodyVolByTrim_ERR_9206="Многогранный VolumeByTrim";
+GMPolyInPolyBodyRoughOffset_ERR_9207="Многогранный RoughOffset";
+
+
+// 9210-9299 Polyhedral errors
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Request="Оператор /p1:";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Diagnostic="Невозможно вычислить результат из-за текущего или постоянного ограничения.";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Advice="Измените входные операнды или/и параметры.";
+
+//
+GMPolyInPolyInvalidResult_ERR_9211.Request="Оператор /p1:";
+GMPolyInPolyInvalidResult_ERR_9211.Diagnostic="Недопустимый результат";
+GMPolyInPolyInvalidResult_ERR_9211.Advice="";
+
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Request="Оператор преобразования многогранных форм:";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Diagnostic="Вершины находятся слишком близко друг к другу.";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Advice="";
+
+//
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Request="Оператор создания многогранных форм:";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Diagnostic="По крайней мере один операнд не соответствует требуемой спецификации.";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Advice="Увеличьте форму операндов или инвертируйте ориентацию.";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Request="Оператор /p1:";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Diagnostic="Как минимум две грани пересекаются";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Advice="Измените заданные поверхности таким образом, чтобы они не пересекались";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Request="Оператор /p1:";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Diagnostic="Смежные грани по крайней мере одной кромки имеют несовместимые ориентации";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Advice="Измените входные поверхности.";
+
+//CLO2 - Extrapol Needed - IR790103 
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Request="Оператор /p1:";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Diagnostic="Входные поверхности не отсоединяются друг от друга";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Advice="Измените входные поверхности или включите режим экстраполяции";
+
+//CLO2 - Extension too short - IR79003 
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Request="Оператор VolumeByTrim:";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Diagnostic="Кривая пересечения входных поверхностей не замкнута. Не удалось вычислить объем";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Advice="Увеличьте входную форму или добавьте расширение";
+
+//CLO2 - Extension too short - IR790103 
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Request="Оператор VolumeByTrim:";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Diagnostic="Входные поверхности не могут создать замкнутую поверхность. Не удалось вычислить объем";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Advice="Проверьте входные стороны для каждой входной поверхности";
+
+//CLO2 - Rename and change ID
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Request="Оператор создания многогранных форм:";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Diagnostic="Операнды разреза и заполнения пересекаются.";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Advice="Измените форму разрезающих и/или заполняющих операндов.";
+
+//WMN20220209
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Request="Оператор /p1:";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Diagnostic="Как минимум одна грань пересекает сама себя";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Advice="Измените заданные поверхности таким образом, чтобы они не пересекались";
+
+//WMN20220209
+GMPolyInPolyFaceSelfContact_ERR_9221.Request="Оператор /p1:";
+GMPolyInPolyFaceSelfContact_ERR_9221.Diagnostic="Как минимум одна грань соприкасается сама с собой";
+GMPolyInPolyFaceSelfContact_ERR_9221.Advice="Измените заданные поверхности таким образом, чтобы они не соприкасались";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Request="Оператор /p1:";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Diagnostic="Невозможно вытянуть замкнутые или однородные поверхности.";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Advice="Используйте только открытые и разнородные поверхности.";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Request="Оператор /p1:";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Diagnostic="Невозможно вытянуть замкнутые или однородные плоские кривые в одной плоскости.";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Advice="Выберите направление вытяжки, не параллельное этой плоскости.";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Request="Оператор /p1:";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Diagnostic="Профиль локально параллелен направлению вытяжки.";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Advice="Выберите направление вытяжки, не параллельное вытянутому профилю.";
+
+//RBU3_20222806
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Request="Оператор /p1:";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Diagnostic="Слишком низкое значение смещения для вычисления смещения.";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Advice="Значение смещения должно быть больше 1/1000 от размера детали.";
+
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Request="Оператор /p1:";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Diagnostic="Недопустимые входные данные.";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Advice="Входное тело должно быть однородным, многообразным, с фрагментами одного объема. Должно быть установлено значение смещения.";
+
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Request="Оператор /p1:";
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Diagnostic="Результат смещения пуст. Должно быть, это обусловлено смещением ВНУТРИ почти замкнутой поверхности или в объеме.";
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Advice="Измените значение смещения, чтобы получить результат ближе к входному телу.";
+
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Request="Оператор /p1:";
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Diagnostic="Внутренняя ошибка.";
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Advice="";
+
+
+
+
+// WMN20200723 Nouveau
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Request="Оператор преобразования многогранных форм:";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Diagnostic="Недопустимый результат";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Advice="";

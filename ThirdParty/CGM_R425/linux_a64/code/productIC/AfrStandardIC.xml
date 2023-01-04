@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "AfrStandard.tst"/>
+  <attached name = "AfrStandard_UT.tst"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrFoundation"/>
+  <prerequisite access = "Protected" comment = "09.10.2011 ERS/CDT R213 C-Afr" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "AfrComponentsModel"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" comment = "2014.09.03 TPC/HEB RI Progress Task" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisuImmersiveDialog"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" comment = "2013.05.17 TPC/HEB Pour Boxing " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "2014.10.08 Q62/HEB Tools Palette Lifecycle " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "DialogEngine"/>
+  <prerequisite access = "Protected" comment = "20220131 ERS/HEB Suppression du split AfrCore" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrCore"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <authorize access = "Private" name = "ApplicationFrame.tst"/>
+  <authorize access = "Private" name = "AfrStandard_UT.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

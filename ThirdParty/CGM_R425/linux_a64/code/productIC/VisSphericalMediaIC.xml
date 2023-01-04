@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" comment = "29.11.17 AZX/WV3 to access Multimedia XMP services" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGCoreUtils"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "MultimediaH264"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" comment = "AZX 07.09.2017 video 360" name = "CATCameraAnimation"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

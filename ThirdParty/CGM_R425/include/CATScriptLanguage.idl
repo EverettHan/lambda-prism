@@ -1,0 +1,39 @@
+#ifndef CATScriptLanguage_idl
+#define CATScriptLanguage_idl
+
+// COPYRIGHT DASSAULT SYSTEMES 2002
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U1
+ */
+
+/**
+ * Types of macro libraries defined in the V5 architecture.
+ * @param CATVBScriptLanguage
+ * VB Script language.
+ * @param CATVBALanguage
+ * VBA language.
+ * @param CATBasicScriptLanguage
+ * BasicScript language.
+ * @param CATJavaLanguage
+ * Java language.
+ * @param CATJScriptLanguage
+ * JScript language. (reserved for future use)
+ * @param CATCSharpLanguage
+ * C# language.
+ * @param CATVBNetLanguage
+ * VB.Net language.
+ */
+enum CATScriptLanguage
+{
+CATVBScriptLanguage,
+CATVBALanguage,
+CATBasicScriptLanguage,
+CATJavaLanguage,
+CATJScriptLanguage,
+CATCSharpLanguage, 
+CATVBNetLanguage
+};
+
+#endif // CATScriptLanguage_idl
+

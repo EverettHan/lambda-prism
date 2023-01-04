@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_Ground_Matrix</NAME>
+  
+  <USAGE>Dynamic</USAGE>
+  
+  <UNIFORM>
+    <NAME>u_GroundMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>WorldViewMatrix</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GroundWorldMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>WorldMatrix</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GroundWorldInverseTransposeMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>WorldInverseTransposeMatrix</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>
+

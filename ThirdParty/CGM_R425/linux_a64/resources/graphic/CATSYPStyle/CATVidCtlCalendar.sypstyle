@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template Target="CATVidCtlCalendar" syp:name="Calendar">
+    <CATVidLayGrid Name="mainGrid" GridWeight="row0=1 row5=1"  RequestedMinimumDimension="202 166">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB"  />
+      <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=T" RequestedMinimumDimension="202 42">
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="202 42">
+          <CATVidGPSquare Name="NavigationBarGP" Color="241 241 241 255" RequestedMinimumDimension="202 42"/>
+          <CATVidLayGrid RequestedMinimumDimension="202 42">
+            <CATVidCtlButtonFontIcon Name="PrevButton" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L" FontIconSize="12 12" HorizontalAlignment="AlignCenter" IconName="expandLeft" syp:Template="Lite" RequestedMinimumDimension="26 42" Press="@HandlePrevEvent" DoubleClick="@OnPreviousButtonDoubleClick"/>
+            <CATVidCtlSimpleCombo Name="MonthCombo" AutoCompletionEnabledFlag="1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L" EditableFlag="1" RequestedMinimumDimension="72 0" ShowDropDownButtonFlag="0" syp:Template="Default" syp:name="MonthCombo" ComboSelect="@OnMonthComboSelect" EditingFinished="@OnMonthComboEditingFinished" ReturnPressed="@OnMonthComboReturnPressed" />
+            <CATVidSpacer Name="Spacer" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL" RequestedMinimumDimension="4 42"/>
+            <CATVidCtlSimpleCombo Name="YearCombo" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=R" EditableFlag="1" RequestedMinimumDimension="74 0" ShowDropDownButtonFlag="0" syp:Template="Default" syp:name="YearCombo" ComboSelect="@OnYearComboSelect" ReturnPressed="@OnYearComboReturnPressed" EditingFinished="@OnYearComboEditingFinished"/>
+            <CATVidCtlButtonFontIcon Name="NextButton" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R" HorizontalAlignment="AlignCenter" FontIconSize="12 12" IconName="expandRight" syp:Template="Lite" RequestedMinimumDimension="26 42" Press="@HandleNextEvent" DoubleClick="@OnNextButtonDoubleClick"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+      <CATVidLayGrid Name="MonthViewGrid" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=T" RequestedMinimumDimension="202 124" >
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="202 124"  >
+          <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" Color="249 249 249 255" RequestedMinimumDimension="202 124" />
+          <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="202 124">
+            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="202 26">
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="10 26"/>
+              <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=TB" syp:name="WeekNameLabels" RequestedMinimumDimension="182 26"/>
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=TBR" RequestedMinimumDimension="10 26"/>
+            </CATVidLayGrid>
+            <CATVidLayGrid GridWeight="row1=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=TB" RequestedMinimumDimension="202 98">
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="10 98"/>
+              <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=TB" syp:name="DayCellLabels" RequestedMinimumDimension="182 98"/>
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=TBR" RequestedMinimumDimension="10 98"/>
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=3 attach=T" RequestedMinimumDimension="202 10"/>
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+      <CATVidLayGrid Name="TimeViewGrid" syp:name="TimePickerViewGrid" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=T" RequestedMinimumDimension="202 42" LayoutWhenUnvisibleFlag="0" VisibleFlag="@TimePickerVisibility">
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="202 42"  >
+          <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" Color="255 255 255 255" RequestedMinimumDimension="202 42" />
+          <CATVidLayGrid RequestedMinimumDimension="202 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB">
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="10 42"/>
+            <CATVidLayStack Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0">
+              <CATVidLayGrid GridWeight="col0=1">
+                <CATVidCtlLineEditor Name="TimeEditor" syp:name="TimeEditor" RequestedMinimumDimension="182 22"  CATVidLayGrid.IndexedConstraints="x=0 y=0"  FontIconButtonEnableFlag="1" FontIconButtonVisibleFlag="1" FontIconName="clock" TextActivated="@OnTimePickerTextActivated" EditingFinished="@OnTimePickerEditingFinished" FontIconButtonPressed="@OnClockButtonPressed"> </CATVidCtlLineEditor>
+                <CATVidCtlPopup Name="TimePickerPopUp" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LR" syp:name="PopupForTimePicker" RequestedMinimumDimension="0 0" VisibleFlag="0" PopupCompactFlag="1" LayoutWhenUnvisibleFlag="0" AutoHide="@OnTimePickerPopupAutoHide">
+                  <CATVidLayGrid RequestedMinimumDimension="78 78">
+                    <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="78 78">
+                      <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" Color="255 255 255 255" RequestedMinimumDimension="78 78"/>
+                      <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=T" RequestedMinimumDimension="76 76" InnerCellSpacing="4" >
+                        <CATVidLayGrid syp:name="HourGrid" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="26 76">
+                          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="26 76">
+                            <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" Color="61 61 61 61" RequestedMinimumDimension="26 76" />
+                            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" GridWeight="row1=1" RequestedMinimumDimension="26 76">
+                              <CATVidCtlButtonFontIcon Name="HourStepUpButton" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" FontIconSize="14 14" IconName="expandUp" syp:Template="Lite" Emphasize="0" RequestedMinimumDimension="26 14" AllowMultiplePressFlag="1" Release="@OnHourStepUpButtonReleaseEvent" DoubleClick="@OnHourStepUpButtonDoubleClick" MultiplePress="@OnHourStepUpButtonMultiplePress"/>
+                              <CATVidCtlSpinBox Name="HourSpinBox" syp:name="HourSpinBox" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=TB" ButtonsVisibleFlag="0" RequestedMinimumDimension="26 48" Alignment="AlignCenter" WrappingFlag="1" UpOrDownButtonReleased="@OnHourSpinBoxUpOrDownButtonReleased" EditingFinished="@OnHourSpinBoxEditingFinished" />
+                              <CATVidCtlButtonFontIcon Name="HourStepDownButton" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=TB" FontIconSize="14 14" HorizontalAlignment="AlignCenter" IconName="expandDown" syp:Template="Lite" Emphasize="0" RequestedMinimumDimension="26 14" AllowMultiplePressFlag="1" Release="@OnHourStepDownButtonReleaseEvent" DoubleClick="@OnHourStepDownButtonDoubleClick" MultiplePress="@OnHourStepDownButtonMultiplePress"/>
+                            </CATVidLayGrid>
+                          </CATVidLayLayer>
+                        </CATVidLayGrid>
+                        <CATVidLayGrid syp:name="MinuteGrid" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=TB" RequestedMinimumDimension="26 76">
+                          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="26 76">
+                            <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" Color="61 61 61 61" RequestedMinimumDimension="26 76" />
+                            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" GridWeight="row0=1 row2=1" RequestedMinimumDimension="26 76">
+                              <CATVidCtlButtonFontIcon Name="MinuteStepUpButton" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=B" FontIconSize="14 14" IconName="expandUp" syp:Template="Lite" Emphasize="0" RequestedMinimumDimension="26 14" AllowMultiplePressFlag="1" Release="@OnMinuteStepUpButtonReleaseEvent" DoubleClick="@OnMinuteStepUpButtonDoubleClick" MultiplePress="@OnMinuteStepUpButtonMultiplePress" />
+                              <CATVidCtlSpinBox Name="MinuteSpinBox" syp:name="MinuteSpinBox" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=TB" ButtonsVisibleFlag="0" RequestedMinimumDimension="26 48" Alignment="AlignCenter" WrappingFlag="1" UpOrDownButtonReleased="@OnMinuteSpinBoxUpOrDownButtonReleased" EditingFinished="@OnMinuteSpinBoxEditingFinished"/>
+                              <CATVidCtlButtonFontIcon Name="MinuteStepDownButton" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=T" FontIconSize="14 14" HorizontalAlignment="AlignCenter" IconName="expandDown" syp:Template="Lite" Emphasize="0" RequestedMinimumDimension="26 14" AllowMultiplePressFlag="1" Release="@OnMinuteStepDownButtonReleaseEvent" DoubleClick="@OnMinuteStepDownButtonDoubleClick" MultiplePress="@OnMinuteStepDownButtonMultiplePress" />
+                            </CATVidLayGrid>
+                          </CATVidLayLayer>
+                        </CATVidLayGrid>
+                        <CATVidLayGrid syp:name="SecondGrid" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=TB" RequestedMinimumDimension="26 76">
+                          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="26 76">
+                            <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" Color="61 61 61 61" RequestedMinimumDimension="26 76" />
+                            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" GridWeight="row0=1 row2=1" RequestedMinimumDimension="26 76">
+                              <CATVidCtlButtonFontIcon Name="SecondStepUpButton" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=B" FontIconSize="14 14" IconName="expandUp" syp:Template="Lite" Emphasize="0" RequestedMinimumDimension="26 14" AllowMultiplePressFlag="1" Release="@OnSecondStepUpButtonReleaseEvent" DoubleClick="@OnSecondStepUpButtonDoubleClick" MultiplePress="@OnSecondStepUpButtonMultiplePress"/>
+                              <CATVidCtlSpinBox Name="SecondSpinBox" syp:name="SecondSpinBox" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=TB" ButtonsVisibleFlag="0" RequestedMinimumDimension="26 48" Alignment="AlignCenter" WrappingFlag="1" UpOrDownButtonReleased="@OnSecondSpinBoxUpOrDownButtonReleased" EditingFinished="@OnSecondSpinBoxEditingFinished"/>
+                              <CATVidCtlButtonFontIcon Name="SecondStepDownButton" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=T" FontIconSize="14 14" HorizontalAlignment="AlignCenter" IconName="expandDown" syp:Template="Lite" Emphasize="0" RequestedMinimumDimension="26 14" AllowMultiplePressFlag="1" Release="@OnSecondStepDownButtonReleaseEvent" DoubleClick="@OnSecondStepDownButtonDoubleClick" MultiplePress="@OnSecondStepDownButtonMultiplePress"/>
+                            </CATVidLayGrid>
+                          </CATVidLayLayer>
+                        </CATVidLayGrid>
+                      </CATVidLayGrid>
+                    </CATVidLayLayer>
+                  </CATVidLayGrid>
+                </CATVidCtlPopup>
+              </CATVidLayGrid>
+            </CATVidLayStack>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=TBR" RequestedMinimumDimension="10 42"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+      <CATVidLayGrid Name="TodayButtonGrid" syp:name="TodayButtonGrid" CATVidLayGrid.IndexedConstraints="x=0 y=4 attach=T" RequestedMinimumDimension="202 42">
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" RequestedMinimumDimension="202 42"  >
+          <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB" Color="255 255 255 255" RequestedMinimumDimension="202 42" />
+          <CATVidLayGrid RequestedMinimumDimension="202 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB">
+           <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="10 42"/>
+            <CATVidCtlButton Name="TodayButton" syp:name="TodayButton" RequestedMinimumDimension="182 22"  CATVidLayGrid.IndexedConstraints="x=1 y=0" Label="Today" BackgroundColor="241 241 241 255" ForegroundColor="0 0 0 255" Release="@OnTodayButtonRelease"> </CATVidCtlButton>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=TBR" RequestedMinimumDimension="10 42"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=5 attach=TB" />
+    </CATVidLayGrid>
+  </Template>
+</Styles>

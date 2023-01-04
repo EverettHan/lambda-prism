@@ -1,0 +1,72 @@
+#ifndef _TOPOLOGICALOPERATORSERRORS_INCLUDE
+#define _TOPOLOGICALOPERATORSERRORS_INCLUDE
+
+// COPYRIGHT DASSAULT SYSTEMES 1999
+
+typedef enum {
+
+            GBInEInvalidGeometry = 0x00020001u,
+            GBInEInvalidTopology = 0x00020002u,
+         GBInEInvalidProfileBody = 0x00020003u,
+    GBInEInvalidProfileDimension = 0x00020004u,
+          GBInEInvalidCenterBody = 0x00020005u,
+     GBInEInvalidCenterDimension = 0x00020006u,
+            GBInENonManifoldBody = 0x00020007u,
+   GBInEShellIn001NonManifoldOpd = 0x00020008u,
+    GBInEShellIn002InvalidOpdDim = 0x00020009u,
+
+               GBIntEBadGeometry = 0x00020001u,
+               GBIntEBadTopology = 0x00020002u,
+     GBIntEInvalidTopoMethodCall = 0x00020003u,
+          GBIntEBadSweepGeometry = 0x00020004u,
+          GBIntEBadSweepTopology = 0x00020005u,
+       GBIntEFilletInternalError = 0x00020006u,
+      GBIntEFilletProhibitedCall = 0x00020007u,
+         GBIntEFilletBadTopology = 0x00020008u,
+         GBIntEFilletBadGeometry = 0x00020009u,
+           GBIntEFilletBadNumber = 0x0002000au,
+    GBIntEFilletBadNumberOfFaces = 0x0002000bu,
+    GBIntEFilletBadNumberOfEdges = 0x0002000cu,
+    GBIntEFilletBadNumberOfRadii = 0x0002000du,
+ GBIntEFilletBadNumberOfSupports = 0x0002000eu,
+            GBIntEFilletBadInput = 0x0002000fu,
+            GBIntEFilletBadIndex = 0x00020010u,
+           GBIntEFilletBadNuplet = 0x00020011u,
+             GBIntEFilletBadSize = 0x00020012u,
+        GBIntEFilletBadDirection = 0x00020013u,
+        GBIntEFilletBadDimension = 0x00020014u,
+      GBIntEFilletBadOrientation = 0x00020015u,
+             GBIntEFilletBadSide = 0x00020016u,
+         GBIntEFilletBadLocation = 0x00020017u,
+         GBIntEFilletBadPosition = 0x00020018u,
+          GBIntEFilletBadTypeSol = 0x00020019u,
+    GBIntEFilletBadSupportNumber = 0x0002001au,
+       GBIntEFilletBadNupletType = 0x0002001bu,
+     GBIntEFilletNoExtrapolation = 0x0002001cu,
+              GBIntEFilletNoWire = 0x0002001du,
+          GBIntEFilletNoGeometry = 0x0002001eu,
+        GBIntEFilletNoCommonEdge = 0x0002001fu,
+            GBIntEFilletNULLCell = 0x00020020u,
+          GBIntEFilletNULLNuplet = 0x00020021u,
+     GBIntEFilletTooManySolution = 0x00020022u,
+GBIntEShellInt101NonConnectedBody = 0x00020023u,
+       GBIntEShellInt102NotFound = 0x00020024u,
+ GBIntEShellInt103NotInitialized = 0x00020025u,
+GBIntEShellInt199NotYetImplemented = 0x00020026u,
+   GBIntEDisconnectInternalError = 0x00020027u,
+        GBIntEDisconnectOpenLoop = 0x00020028u,
+    GBIntEDisconnectTooManyEdges = 0x00020029u,
+   GBIntEDisconnectLeftRecursion = 0x0002002au,
+  GBIntEDisconnectRightRecursion = 0x0002002bu,
+       GBIntEDisconnectRecursion = 0x0002002cu,
+  GBIntEDisconnectFirstBodyError = 0x0002002du,
+ GBIntEDisconnectSecondBodyError = 0x0002002eu,
+GBIntEDisconnectFirstCellMissing = 0x0002002fu,
+ GBIntEDisconnectNextCellMissing = 0x00020030u,
+GBIntEDisconnectEdgeCurveMissing = 0x00020031u,
+GBIntEDisconnectVertexGeometryMissing = 0x00020032u,
+GBIntEDisconnectDataStructureMissing = 0x00020033u
+
+} TopologicalOperatorsErrors;
+
+#endif

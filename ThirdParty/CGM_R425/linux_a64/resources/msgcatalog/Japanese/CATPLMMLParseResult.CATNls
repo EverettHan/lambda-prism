@@ -1,0 +1,60 @@
+<meta charset="UTF-8"/>
+DeclareAliasRelationMissing.Request="エラー メッセージ、構文解析エラー。";
+DeclareAliasRelationMissing.Diagnostic="[NAVIGATES] ブロックで使用されている /p1 [/p2,/p3] は [RELATIONDECLARATION] ブロックに存在しません。";
+DeclareAliasRelationMissing.Advice="入力をチェックしてください。";
+
+RoleAggregation.Request="エラー メッセージ、構文解析エラー。";
+RoleAggregation.Diagnostic="***エラー*** 役割==集約の関係 /p1 [/p2,/p3] が見つかりました。この関係は禁止されています。";
+RoleAggregation.Advice="入力をチェックしてください。";
+
+RoleOwner.Request="エラー メッセージ、構文解析エラー。";
+RoleOwner.Diagnostic="***エラー*** 役割==所有者の関係 /p1 [/p2,/p3] が見つかりました。この関係は禁止されています。";
+RoleOwner.Advice="入力をチェックしてください。";
+
+RoleInstOf.Request="エラー メッセージ、構文解析エラー。";
+RoleInstOf.Diagnostic="***エラー*** 役割==instOf の関係 /p1 [/p2,/p3] が見つかりました。この関係は禁止されています。";
+RoleInstOf.Advice="入力をチェックしてください。";
+
+AliasReDeclared.Request="エラー メッセージ、構文解析エラー。";
+AliasReDeclared.Diagnostic="***エラー*** [NODEDECLARATION] ブロックで使用されている別名 /p1 [/p2,/p3] はすでに宣言されています。別の名前を使用してください。";
+AliasReDeclared.Advice="入力をチェックしてください。";
+
+ExtNotAuthorized.Request="エラー メッセージ、構文解析エラー。";
+ExtNotAuthorized.Diagnostic="***エラー*** [NODEDECLARATION] ブロックで使用されている拡張 /p1 [/p2,/p3] は現行エンジンで使用できません。現行エンジンでの拡張の使用をやめるか、別のエンジンを使用してください。";
+ExtNotAuthorized.Advice="入力をチェックしてください。";
+
+LinesIsNotUsed.Request="エラー メッセージ、構文解析エラー。";
+LinesIsNotUsed.Diagnostic="***エラー*** [LINES] ブロックは現行エンジンで使用できません。現行エンジンでの [LINES] ブロックの使用をやめるか、別のエンジンを使用してください。";
+LinesIsNotUsed.Advice="入力をチェックしてください。";
+
+SrAliasReDeclared.Request="エラー メッセージ、構文解析エラー。";
+SrAliasReDeclared.Diagnostic="***エラー*** [RELATIONDECLARATION] ブロックで使用されているシリアルの別名 /p1 [/p2,/p3] はすでに宣言されています。別の名前を使用してください。";
+SrAliasReDeclared.Advice="入力をチェックしてください。";
+
+IdentifierUsedPreviously.Request="エラー メッセージ、構文解析エラー。";
+IdentifierUsedPreviously.Diagnostic="***エラー*** [NAVIGATES] ブロックで使用されている識別子 /p1 [/p2,/p3] はすでにナビゲーションで使用されています。";
+IdentifierUsedPreviously.Advice="別の識別子を使用してください。";
+
+IdentifierNeverUserBefore.Request="エラー メッセージ、構文解析エラー。";
+IdentifierNeverUserBefore.Diagnostic="***エラー*** [NAVIGATES] ブロックで使用されている識別子 /p1 [/p2,/p3] は以前のナビゲーションで使用されていません。";
+IdentifierNeverUserBefore.Advice="N 番目のナビゲーション (N>1) の最初の識別子は、すでに使用されている別名でなければなりません。";
+
+SyntaxError.Request="エラー メッセージ、構文解析エラー。";
+SyntaxError.Diagnostic="/p1";
+SyntaxError.Advice="入力をチェックしてください。";
+
+NavInGraphOptionsNotRecognized.Request="エラー メッセージ、構文解析エラー。";
+NavInGraphOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] は、CyclicityDetected または CyclicityNotDetected と等しくする必要があります。";
+NavInGraphOptionsNotRecognized.Advice="入力をチェックしてください。";
+
+SrLoadingOptionsNotRecognized.Request="エラー メッセージ、構文解析エラー。";
+SrLoadingOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] は CATPLMMLStandard または CATPLMLIntercalarySr と等しくする必要があります";
+SrLoadingOptionsNotRecognized.Advice="入力をチェックしてください。";
+
+moreThanOneLine.Request="エラー メッセージ、構文解析エラー。";
+moreThanOneLine.Diagnostic="***エラー*** ml では複数行を使用できません。";
+moreThanOneLine.Advice="入力をチェックしてください。";
+
+ParsingError7.Request="エラー メッセージ、構文解析エラー";
+ParsingError7.Diagnostic="行 /p1 列 /p2。関係 \"/p3\" が見つかりません。/p4。";
+ParsingError7.Advice="入力をチェックしてください。";

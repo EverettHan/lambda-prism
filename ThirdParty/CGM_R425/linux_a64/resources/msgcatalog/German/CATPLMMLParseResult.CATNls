@@ -1,0 +1,60 @@
+<meta charset="UTF-8"/>
+DeclareAliasRelationMissing.Request="Fehlerhafte Nachricht, Analysefehler.";
+DeclareAliasRelationMissing.Diagnostic="/p1 [/p2,/p3], verwendet im [NAVIGATES]-Block, wurde nicht im [RELATIONDECLARATION]-Block gefunden.";
+DeclareAliasRelationMissing.Advice="Prüfen Sie die Eingabedaten.";
+
+RoleAggregation.Request="Fehlerhafte Nachricht, Analysefehler.";
+RoleAggregation.Diagnostic="***FEHLER***: Es wurde eine Beziehung /p1 [/p2,/p3] mit Rolle==Aggregation gefunden. Dies ist verboten.";
+RoleAggregation.Advice="Prüfen Sie die Eingabedaten.";
+
+RoleOwner.Request="Fehlerhafte Nachricht, Analysefehler.";
+RoleOwner.Diagnostic="***FEHLER*** Es wurde eine Beziehung /p1 [/p2,/p3] mit Rolle==Eigner gefunden. Dies ist verboten.";
+RoleOwner.Advice="Prüfen Sie die Eingabedaten.";
+
+RoleInstOf.Request="Fehlerhafte Nachricht, Analysefehler.";
+RoleInstOf.Diagnostic="***FEHLER*** Es wurde eine Beziehung /p1 [/p2,/p3] mit Rolle==instOf gefunden. Dies ist verboten.";
+RoleInstOf.Advice="Prüfen Sie die Eingabedaten.";
+
+AliasReDeclared.Request="Fehlerhafte Nachricht, Analysefehler.";
+AliasReDeclared.Diagnostic="***FEHLER*** Im [NODEDECLARATION]-Block verwendetes Alias namens /p1 [/p2,/p3] wurde bereits deklariert. Verwenden Sie einen anderen Namen.";
+AliasReDeclared.Advice="Prüfen Sie die Eingabedaten.";
+
+ExtNotAuthorized.Request="Fehlerhafte Nachricht, Analysefehler.";
+ExtNotAuthorized.Diagnostic="***FEHLER*** Die im Block [NODEDECLARATION] verwendete Erweiterung namens /p1 [/p2,/p3] kann nicht mit der aktuellen Steuerkomponente verwendet werden. Verwenden Sie für die aktuelle Steuerkomponente keine Erweiterung, oder verwenden Sie eine andere Steuerkomponente.";
+ExtNotAuthorized.Advice="Prüfen Sie die Eingabedaten.";
+
+LinesIsNotUsed.Request="Fehlerhafte Nachricht, Analysefehler.";
+LinesIsNotUsed.Diagnostic="***FEHLER*** Block [LINES] kann nicht mit aktueller Steuerkomponente verwendet werden. Verwenden Sie Block [LINES] nicht für die aktuelle Steuerkomponente oder verwenden Sie eine andere Steuerkomponente.";
+LinesIsNotUsed.Advice="Prüfen Sie die Eingabedaten.";
+
+SrAliasReDeclared.Request="Fehlerhafte Nachricht, Analysefehler.";
+SrAliasReDeclared.Diagnostic="***FEHLER*** Im [RELATIONDECLARATION]-Block verwendetes Sr-Alias namens /p1 [/p2,/p3] wurde bereits deklariert. Verwenden Sie einen anderen Namen.";
+SrAliasReDeclared.Advice="Prüfen Sie die Eingabedaten.";
+
+IdentifierUsedPreviously.Request="Fehlerhafte Nachricht, Analysefehler.";
+IdentifierUsedPreviously.Diagnostic="***FEHLER*** Kennung /p1 [/p2,/p3], verwendet im [NAVIGATES]-Block, wurde bereits in der Navigation verwendet.";
+IdentifierUsedPreviously.Advice="Verwenden Sie eine andere Kennung.";
+
+IdentifierNeverUserBefore.Request="Fehlerhafte Nachricht, Analysefehler.";
+IdentifierNeverUserBefore.Diagnostic="***FEHLER*** Kennung /p1 [/p2,/p3], verwendet im [NAVIGATES]-Block, wurde noch nie in einer Navigation verwendet.";
+IdentifierNeverUserBefore.Advice="Die erste Kennung der N-ten Navigation (N>1) sollte ein bereits verwendetes Alias sein.";
+
+SyntaxError.Request="Fehlerhafte Nachricht, Analysefehler.";
+SyntaxError.Diagnostic="/p1";
+SyntaxError.Advice="Prüfen Sie die Eingabedaten.";
+
+NavInGraphOptionsNotRecognized.Request="Fehlerhafte Nachricht, Analysefehler.";
+NavInGraphOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] sollte CyclicityDetected oder CyclicityNotDetected entsprechen.";
+NavInGraphOptionsNotRecognized.Advice="Prüfen Sie die Eingabedaten.";
+
+SrLoadingOptionsNotRecognized.Request="Fehlerhafte Nachricht, Analysefehler.";
+SrLoadingOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] sollte CATPLMMLStandard oder CATPLMLIntercalarySr entsprechen.";
+SrLoadingOptionsNotRecognized.Advice="Prüfen Sie die Eingabedaten.";
+
+moreThanOneLine.Request="Fehlerhafte Nachricht, Analysefehler.";
+moreThanOneLine.Diagnostic="***FEHLER*** ml darf nur eine Zeile enthalten.";
+moreThanOneLine.Advice="Prüfen Sie die Eingabedaten.";
+
+ParsingError7.Request="Fehlerhafte Nachricht, Analysefehler.";
+ParsingError7.Diagnostic="Zeile /p1 Spalte /p2. Beziehung \"/p3\" nicht gefunden. /p4.";
+ParsingError7.Advice="Prüfen Sie die Eingabedaten.";

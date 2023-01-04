@@ -1,0 +1,24 @@
+
+InheritsFrom = "CATIA_ShaderV5";
+
+/// BEGIN - Data Model Semantic
+
+MappingScale.ParameterValue          = "DiffuseScale DiffuseScale";
+MappingRatio.ParameterValue          = "<none> DiffuseRatio";
+
+/// END - Data Model Semantic
+
+/// BEGIN - NRE Configuration
+
+//Normal.DefaultValue                  = "CATIA_Normal_2DMap_Noise_512.dds";
+Normal.ParameterValue                = "Normal2DMap";
+bumpScale.ParameterUniform           = "BumpHeight";
+
+//diffuse.ParameterSemantic              = "tinted-texture";
+diffuse.ParameterUniform               = "DiffuseColor";
+//diffuse.ParameterSpatial               = "Diffuse2DMap";
+//diffuse.ParameterVariabilitySemantic   = "Spatial";
+diffuse.ParameterM1                    = "DiffuseStrength";
+diffuse.ParameterM2                    = "DiffuseBlend";
+
+/// END - NRE Configuration

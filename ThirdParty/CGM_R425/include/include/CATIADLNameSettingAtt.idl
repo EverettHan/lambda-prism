@@ -1,0 +1,295 @@
+
+#ifndef CATIASysDLNameSettingAtt_IDL
+#define CATIASysDLNameSettingAtt_IDL
+/*IDLREP*/
+
+// COPYRIGHT DASSAULT SYSTEMES 2003
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+*/
+
+#include "CATIABase.idl"
+#include "CATVariant.idl"
+#include "CATSafeArray.idl"
+#include "CATIASettingController.idl"
+#include "CATBSTR.idl"
+
+
+/**
+* Interface to handle the DLNames.
+* <b>Role</b>: This interface is implemented by a component which
+* represents the controller of the DLNames. 
+* <br>This interface defines:
+* <ul>
+* <li>A method to set each DLName</li>
+* <li>A method to get the value of each DLName</li>
+* <li>A method to lock/unlock each parameter</li>
+* <li>A method to retrieve the informations concerning each parameter</li>
+* </ul>
+*/
+interface CATIADLNameSettingAtt : CATIASettingController
+{
+
+/**
+ * Returns or set the right to create new DLNames.
+ * <br><b>Role</b>:  Retrieves or set the right to create new DLNames.
+*/
+#pragma PROPERTY DLNameCreationRight
+  HRESULT get_DLNameCreationRight (out /*IDLRETVAL*/ boolean oAllowed);
+  HRESULT put_DLNameCreationRight (in boolean oAllowed);
+
+/**
+ * Locks or unlocks the parameter DLNameCreationRight.
+ * <br>Refer to @href CATIASettingController for a detailled description.
+*/
+  HRESULT SetDLNameCreationRightLock (in  boolean iLocked);
+
+
+/**
+ * Retrieves the state of the parameter DLNameCreationRight.
+ * <br>Refer to @href CATIASettingController for a detailled description.
+*/
+  HRESULT GetDLNameCreationRightInfo (inout CATBSTR AdminLevel,
+				      inout CATBSTR oLocked,
+				      out  /*IDLRETVAL*/boolean oModified);
+  
+/**
+ * Returns or set the right to create new Root DLNames.
+ * <br><b>Role</b>:  Retrieves or set the right to create new Root DLNames.
+*/
+#pragma PROPERTY RootDLNameCreationRight
+  HRESULT get_RootDLNameCreationRight (out /*IDLRETVAL*/ boolean oAllowed);
+  HRESULT put_RootDLNameCreationRight (in boolean oAllowed);
+
+/**
+ * Locks or unlocks the parameter RootDLNameCreationRight.
+ * <br>Refer to @href CATIASettingController for a detailled description.
+*/
+  HRESULT SetRootDLNameCreationRightLock (in  boolean iLocked);
+
+
+/**
+ * Retrieves the state of the parameter RootDLNameCreationRight.
+ * <br>Refer to @href CATIASettingController for a detailled description.
+*/
+  HRESULT GetRootDLNameCreationRightInfo (inout CATBSTR AdminLevel,
+					  inout CATBSTR oLocked,
+					  out  /*IDLRETVAL*/boolean oModified);
+
+
+/**
+ * Retrieves the list of the DLNames.
+ * <br><b>Role</b>: Retrieves the list of the defined DLNames.
+ * @param oTabDLName
+ *      a CATSafeArrayVariant of CATBSTR of nb elements. 
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT GetDLNameList ( out /*IDLRETVAL*/ CATSafeArrayVariant oTabDLName);
+
+/**
+ * Retrieves the list of the Sub-DLNames.
+ * <br><b>Role</b>: Retrieves the list of the DLNames created in a given DLName.
+ * @param iDLName
+ *      The Father DLName. if iDLName=NULL all DLNames created at the root level
+ *      are return.
+ * @param oNbDLname
+ *	The number of defined DLNames.
+ * @param oTabDLName
+ *	The array of DLNames
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ *	<br><tt>E_OUTOFMEMORY:</tt> on allocation failure
+ * 	<br><tt>E_FAIL:</tt>  on other failures
+*/
+  HRESULT GetDLNameSubList ( in CATBSTR iDLName,
+			     out /*IDLRETVAL*/ CATSafeArrayVariant oTabDLName);
+  
+/**
+ * Retrieves the mapping between a logical name and the physical path.
+ * <br><b>Role</b>: Retrieves the mapping between a logical name and 
+ * the physical path.
+ * @param iDLName
+ *	the logical name.
+ * @param oRealNameUnix
+ *	the real physical path corresponding to the logical name on Unix.
+ * @param oRealNameNT
+ *	the real physical path corresponding to the logical name on Windows.
+ *@param iFather
+ *	if applicable the Name of the parent DLName
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT GetDLName(in  CATBSTR iDLName, 
+		    inout CATBSTR oRealNameUnix,
+		    inout CATBSTR oRealNameNT,
+		    inout CATBSTR oFather);
+
+/**
+ * Retrieves the mapping between a logical name and the physical path.
+ * <br><b>Role</b>: Retrieves the mapping between a logical name and 
+ * the physical path in a litteral form.
+ * @param iDLName
+ *	the logical name.
+ * @param oRealNameUnix
+ *	the real physical path corresponding to the logical name on Unix.
+ * @param oRealNameNT
+ *	the real physical path corresponding to the logical name on Windows.
+ *@param iFather
+ *	if applicable the Name of the parent DLName
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT GetDLNameExp(in  CATBSTR iDLName, 
+		       inout CATBSTR oRealNameUnix,
+		       inout CATBSTR oRealNameNT,
+		       inout CATBSTR oFather);
+
+  
+
+  
+/**
+ * Sets the mapping between a logical name and the physical path.
+ * <br><b>Role</b>: Sets the value of the cache maximum size in Mo
+ * @param iDLName
+ *	the logical name.
+ * @param oRealNameUnix
+ *	the real physical path corresponding to the logical name on Unix.
+ * @param oRealNameNT
+ *	the real physical path corresponding to the logical name on Windows.
+ * @param iFather
+ *	if applicable the Name of the parent DLName
+ * @param iVerifDirectory
+ *	if VerifDirectory is set the existence of the directory on the current
+ *      platform will be check.
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT SetDLName(in  CATBSTR iDLName, 
+		    in  CATBSTR iRealNameUnix,
+		    in  CATBSTR iRealNameNT,
+		    in  CATBSTR iFather,
+		    in boolean iVerifDirectory);
+  
+/** 
+ * Locks or unlocks the DLName.
+ * <br><b>Role</b>: Locks or unlocks the given DLName if the
+ * operation is allowed in the current administrated environment. In user mode 
+ * this method will always return E_FAIL.
+ * @param iDLname
+ *      the DLname to be locked.
+ * @param iLocked
+ *	the locking operation to be performed
+ *	<b>Legal values</b>:
+ *	<br><tt>TRUE :</tt>   to lock the parameter.
+ * 	<br><tt>FALSE:</tt>   to unlock the parameter.
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT SetDLNameLock (in  CATBSTR iDLName,
+			 in  boolean iLocked);
+
+/**
+ * Retrieves the state of the for a given DLName. 
+ * <br><b>Role</b>: This information defines the state of the setting parameter and is made up of:</p>
+ * <ul>
+ * <li>The administration level that sets the current value or the value used to reset it</li>
+ * <li>The administration level that has locked the setting parameter.</li>
+ * <li>A flag to indicate whether the setting parameter was modified.</li>
+ * </ul>
+ * @param iDLName
+ *	 a DLname.
+ * @param ioAdminLevel [inout]
+ *   The administration leve that defines the value used when resetting the
+ *   setting parameter.
+ *   <p><b>Legal values</b>:</p>
+ *   <ul>
+ *     <li><b>Default value</b> if the DLName  has never been defined in the 
+ *         administration concatenation.</li>
+ *	   <li><b>Admin Level n</b> if the setting parameter has been 
+ *         administered, <br>where n is an integer starting from 0 representing 
+ *         the rank of the administration level.</li>
+ *   </ul>
+ * @param ioLocked [inout]
+ *   A character string to indicate whether the parameter is locked and the level
+ *   of administration where the locking has been proceeded.
+ *   <br><b>Legal values</b>: 
+ *   <ul>
+ *     <li><b>Locked at Admin Level n</b> if the setting parameter is locked by 
+ *            then administration level n, <br>where n is an integer starting 
+ *            from 0. 
+ *     <li><b>Upper Locked</b> if the setting parameter is locked by the current 
+ *            administration level</li>
+ *     <li><b>Unlocked</b> if the setting parameter is not locked</li>
+ *   </ul>
+ * @return
+ * <dd><b>True</b> to indicate that the DLName value has been defined at the 
+ *    current administrator or user level. This is only possible with unlocked 
+ *    DLNames.
+ *    <b>False</b> means that the DLName is inherited from the administration.</dd>
+*/
+  HRESULT GetDLNameInfo (in  CATBSTR iDLName,
+			 inout CATBSTR AdminLevel,
+			 inout CATBSTR oLocked,
+			 out /*IDLRETVAL*/ boolean oModified);
+
+
+
+
+
+
+/**
+ * Remove a logical name.
+ * <br><b>Role</b>: Remove a DLName in the current set if it is possible.
+ * @param iDLName
+ *	the logical name.
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT RemoveDLName( in CATBSTR iDLName);
+
+/**
+ * Rename an existing DLName.
+ * <br><b>Role</b>: Rename a DLName in the current set if it is possible.
+ * @param iDLName
+ *	the logical name to rename.
+ * @param iNewName
+ *	the new logical name.
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT RenameDLName(in CATBSTR iDLName,
+		       in CATBSTR iNewName);
+
+
+};
+
+// Interface Name : CATIADLNameSettingAtt
+#pragma ID CATIADLNameSettingAtt "DCE:aa6065d3-6a9a-0000-028003110e000000"
+#pragma DUAL CATIADLNameSettingAtt
+
+// VB Object Name : DLNameSettingAtt
+#pragma ID DLNameSettingAtt "DCE:aa606c3f-aca1-0000-028003110e000000"
+#pragma ALIAS CATIADLNameSettingAtt DLNameSettingAtt
+#endif
+  
+
+
+
+

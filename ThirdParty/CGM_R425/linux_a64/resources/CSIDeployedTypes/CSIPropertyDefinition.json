@@ -1,0 +1,126 @@
+{
+  "grammarVersion": 2,
+  "desc": "Definition of a CSI Parameters property",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "label",
+      "basic": "string",
+      "desc": "Label of the property"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Description of the property"
+    },
+    {
+      "label": "basic",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is a basic type. If defined, only label, desc and optional properties can be defined"
+    },
+    {
+      "label": "byteLimit",
+      "basic": "uint64",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Specifies the maximum number of bytes of a property (string or buffer only)"
+    },
+    {
+      "basic": "uint64",
+      "desc": "Specifies the maximum number of char of a string",
+      "label": "charLimit",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "enum",
+      "basicArray": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "enum range compatible only with properties of type string"
+    },
+    {
+      "label": "basicArray",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is an array of basic type. If defined, only label, desc and optional properties can be defined"
+    },
+    {
+      "label": "type",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is a declarative type. If defined, only label, desc and optional properties can be defined"
+    },
+    {
+      "label": "typeArray",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is an array of a declarative type. If defined, only label, desc and optional properties can be defined"
+    },
+    {
+      "label": "parameters",
+      "typeArray": "CSIPropertyDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is an inline parameters. If defined, only label, desc and optional properties can be defined"
+    },
+    {
+      "label": "parametersArray",
+      "typeArray": "CSIPropertyDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is an array of an inline parameters. If defined, only label, desc and optional properties can be defined"
+    },
+    {
+      "label": "file",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Case property is a parameters defined in a file. If defined, only label and desc properties can be defined"
+    },
+    {
+      "label": "optional",
+      "parameters": [
+        {
+          "label": "isOptional",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Define is the property is optional"
+        },
+        {
+          "label": "default_value",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Define a default value in case the property is missing"
+        }
+      ],
+      "optional": {
+        "isOptional": true,
+        "default_value": "{\"isOptional\": false}"
+      },
+      "desc": "Define if the property is optional and the default value if needed. Cannot be defined with the property file"
+    }
+  ]
+}

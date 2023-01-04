@@ -1,0 +1,31 @@
+<meta charset="UTF-8"/>
+//-------------------------------- Policy section below;
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.Requirement_Group = Requirement Group
+
+policy.Requirement_Group="Dossier de spécifications";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.Requirement_Group.InWork = In Work
+
+V_maturity.Exists="En traitement";
+V_maturity.Private="Privé";
+V_maturity.InWork="En traitement";
+V_maturity.Frozen="Figé";
+V_maturity.Release="Distribué";
+V_maturity.Obsolete="Obsolète";
+
+
+current.Exists="En traitement";
+current.Private="Privé";
+current.InWork="En traitement";
+current.Frozen="Figé";
+current.Release="Distribué";
+current.Obsolete="Obsolète";
+
+
+
+
+

@@ -1,0 +1,26 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" name = "Communications"/>
+  <prerequisite access = "Protected" name = "CATPLMCommunication"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" name = "CATPLMServices"/>
+  <prerequisite access = "Private" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" name = "CATPLMIdentification"/>
+  <prerequisite access = "Private" name = "CATPLMImplAdapter"/>
+  <prerequisite access = "Protected" name = "Mathematics"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Private" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Protected" name = "KnowledgeInterfaces"/>
+  <authorize access = "Protected" comment = "Local result stream management in cache" name = "CATPLMStreamDescriptor"/>
+  <authorize name = "CATPLMPXn.tst"/>
+  <authorize access = "Protected" name = "CATPLMCommunication.tst"/>
+  <attached name = "CATPLMPXn.tst"/>
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMCommunication.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

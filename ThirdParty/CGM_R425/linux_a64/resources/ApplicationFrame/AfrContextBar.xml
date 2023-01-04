@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template syp:name="AfrContextBar" Name="AfrContextBarComponent" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "AfrContextBarFraLabel"
+                   Title              = "ContextBar"
+                   Visibility         = "1"
+                   ContentVisibleFlag = "0"
+                   ResizableFlag      = "0"
+                   RepresentationType = "AfrVIDContextBar">
+      <!--<CATCAfrForm Name="AfrContextBarForm"
+                     Visibility ="1"
+                     Title ="Context Bar Form">-->
+        <CATCAfrToolbar Name                = "AfrContextBarRow1"
+                        RepresentationType  ="AfrImmersiveContextBar"
+                        Visibility          = "1">
+        </CATCAfrToolbar>
+        <CATCAfrToolbar Name                = "AfrContextBarRow2"
+                        RepresentationType  ="AfrImmersiveContextBar"
+                        Visibility          = "1">
+        </CATCAfrToolbar>
+        <CATCAfrToolbar Name                = "AfrContextBarRow3"
+                        RepresentationType  ="AfrImmersiveContextBar"
+                        Visibility          = "1">
+        </CATCAfrToolbar>
+        <CATCAfrMenu Name                   ="AfrContextBarMenu"
+                     Visibility             ="1"
+                     RepresentationType     ="AfrContextMenu"
+                     RegisteredFlag="1">
+          <!--<CATCmdContainer Name   = "testsubmenuctxbar"
+                      Visibility  = "1" >
+            <CATCmdStarter Name       ="AfrContextMenuExpanderButton1"
+                           Command    ="CylindricView"
+                           Visibility = "1"/>
+            <CATCmdStarter Name       ="AfrContextMenuExpanderButton2"
+                           Command    ="Reframe"
+                           Visibility = "1"/>
+          </CATCmdContainer>
+          <CATCmdStarter Name       ="AfrContextMenuExpanderButton2"
+                         Command    ="ConicView"
+                         Visibility = "1"/>
+          <CATCmdStarter Name       ="AfrContextMenuExpanderButton3"
+                         Command    ="ViewAngle"
+                         Visibility = "1"/>-->
+      </CATCAfrMenu>
+      <!--</CATCAfrForm>-->
+    </CATCAfrWindow>
+  </Template>
+
+</Styles>
+

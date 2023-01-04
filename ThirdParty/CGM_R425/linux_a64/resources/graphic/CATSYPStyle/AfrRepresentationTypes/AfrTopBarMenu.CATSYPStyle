@@ -1,0 +1,1169 @@
+<?xml version="1.0"?>
+<!--@Used AfrFoundation\CATAfrModelAndReps.m\src\CATCAfrMenu.cpp-->
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="AfrVidHoverMenu.CATSYPStyle"/>
+    <ResourceDictionary Source="AfrTopBar.CATSYPStyle"/>
+  </Resources>
+
+  <!--======================================================-->
+  <!-- CATCAfrToolbar_AfrPLMBarCollabMenu -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_AfrPLMBarCollabMenu" >
+
+    <CATVidLayLayer syp:name="CommunCollection">
+      <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+    </CATVidLayLayer>
+  </DataTemplate>
+  <!--======================================================-->
+  <!-- CATCAfrToolbar_AfrTopBarMenu -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_AfrTopBarMenu" >
+
+    <CATVidLayLayer syp:name="CommunCollection">
+      <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+    </CATVidLayLayer>
+
+
+  </DataTemplate>
+
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                 VerticalFlat  Representation Familly                                                           -->
+  <!--***************************************************************************************************************************************-->
+  <Template syp:name="VerticalFlat" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData SypNamePosition="CompassPosition" AlwaysVisibleFlag="1">
+      <CATVidLayStack syp:name="Container" Orientation="Vertical" Items="@ToolsItems Mode=OneWayToSource" StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           AfrTopBarSubMenu container                                               -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrTopBarSubMenu" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" IconBoxFlag="1">
+      <CATAfrVidHoverSubMenuContainer syp:name="Container" syp:Template="Default" Name="@Name" Title="@Title" Icon="@IconContainer"
+                                      Tooltip="@ShortHelp" HeaderActivated="@HandleActionEvent" Shown="@CreateSubContainerEvent" ContentVisibleFlag="@WidgetsPanelVisibility Mode=TwoWays"
+                                      Hidden="@DeleteSubContainerEvent" Items="@ToolsItems Mode=OneWayToSource"
+                                      LayoutWhenUnvisibleFlag="0" VisibleFlag="@HasChildsFlag"/>
+    </CATAfrSYPContainerViewMetaData>
+      <!--<CATVidLayLayer syp:name="MainLayer">
+        <CATVidLayLayer syp:name="Header" VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidLayGrid GridWeight="col0=1">
+            <CATAfrVidCtlActionButton Name="@Name"
+                   syp:name="AfrStatusBarButton"
+                   syp:Template="PLMBarMenuButton" 
+                   ClickMode="0"
+                   CropPolicy="CropWithDots"
+                   GiveFocusOnDragFlag="1"
+                   AcceptFocusOnDropFlag="1"
+                   IconDimension="25 25"
+                   BackgroundColor="239 239 239 230"
+                   ForegroundColor="61 61 61 255"
+                   RequestedMinimumDimension="110 29"
+                   Icon="@IconContainer"
+                   Label="@Title"
+                   KeyboardManipulationFlag="1"
+                   LayoutWhenUnvisibleFlag="0"
+                   Tooltip="@ShortHelp"
+                   Click="@HandleActionEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                     />
+            <CATVidCtlButton Name="@NameBis ElementName=MetaData"
+                             syp:Template="BlueButton"
+                             syp:name="SplitButton"
+                             Icon="Sub_Menu_Icon_Off.png"
+                             GiveFocusOnDragFlag="1"
+                             AcceptFocusOnDropFlag="1"
+                             BackgroundColor="239 239 239 230"
+                             IconDimension="30 30"
+                             RequestedMinimumDimension="30 30"
+                             ClickMode="0"
+                             Click="@CreateSubContainerEvent"
+                             CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+        <CATVidLayLayer  syp:name="NoHeader"  VisibleFlag="1" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtlButton syp:name="ButtonNoHeader" syp:Template="TopBarSubMenuLabelRightArrow"
+                           Name="@NameQuater ElementName=MetaData"
+                           IconDimension="25 25"
+                           BackgroundColor="239 239 239 230"
+                           ForegroundColor="61 61 61 255"
+                           RequestedMinimumDimension="110 29"
+						   GiveFocusOnDragFlag="1"
+                           AcceptFocusOnDropFlag="1"
+                           Icon="@IconContainer"
+                           Label="@Title"
+                           CropPolicy="CropWithDots"
+                           KeyboardManipulationFlag="1"
+                           Tooltip="@ShortHelp"
+                           Click="@CreateSubContainerEvent"/>
+        </CATVidLayLayer>
+
+
+        <CATAfrVidWidgetNoLayout VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtl syp:name="CommunCollectionItem"  LayoutWhenUnvisibleFlag="0" VisibleFlag="@OnCreateContainerFlag">
+            <CATVidLayLayer Name="@NameTer ElementName=MetaData" VisibleFlag="@WidgetsPanelVisibility">
+              <CATVidGPSquare Name="BackgroundCommunLayer" Color="239 239 239 255" UseManipulatorFlag="1" PickFlag="1"/>
+              <CATVidLayGrid  GridWeight="col0=1 row1=1">
+                <CATVidCtlButton syp:name="BackButton"
+                Name="BackButton"
+                syp:Template="BlueButton"
+                CheckMode="0"
+                ClickMode="0"
+                CropPolicy="CropWithDots"
+                IconDimension="13 13"
+                BackgroundColor="206 206 206 150"
+                ForegroundColor="255 255 255 255"
+                GiveFocusOnDragFlag="1"
+                AcceptFocusOnDropFlag="1"
+                RequestedMinimumDimension="110 29"
+                Icon="Sub_Menu_Back.png"
+                Label="@Title"
+                KeyboardManipulationFlag="1"
+                LayoutWhenUnvisibleFlag="0"
+                Click="@DeleteSubContainerEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                   />
+                <CATVidLayStack syp:name="Container" Items="@ToolsItems Mode=OneWayToSource" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+          </CATVidCtl>
+
+
+        </CATAfrVidWidgetNoLayout>
+      </CATVidLayLayer>
+    </CATAfrSYPContainerViewMetaData>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="0">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="1">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="MainLayer">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="BackgroundColor" Value="126 168 194 155"/>
+        <CATSYPSetter TargetName="SplitButton" Property="BackgroundColor" Value="13 97 150 230"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="MainLayer">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="BackgroundColor" Value="239 239 239 230"/>
+        <CATSYPSetter TargetName="SplitButton" Property="BackgroundColor" Value="239 239 239 230"/>
+      </CATSYPEventTrigger>
+      <CATSYPTrigger Property="MobileFlag" Value="1">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="SplitButton" Property="RequestedMinimumDimension" Value="30 60"/>
+        <CATSYPSetter TargetName="BackButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="ButtonNoHeader" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="CommunCollectionItem" Property="VisibilityPolicy" Value="NoAnimation"/>
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+-->
+  </Template>
+
+  <!-- EQUIVALENTS FOR CATCAFRMENU CONTAINER-->
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           AfrTopBarSubMenu container  [Activable header]                                             -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrTopBarSubMenu_ActivableHeader" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" IconBoxFlag="1" NameBis="@Name">
+      <CATAfrVidHoverSubMenuContainer syp:name="Container" syp:Template="ActivableHeader" Name="@Name" Title="@Title" Icon="@IconContainer"
+                                      Tooltip="@ShortHelp" HeaderActivated="@HandleActionEvent" Shown="@CreateSubContainerEvent" ContentVisibleFlag="@WidgetsPanelVisibility Mode=TwoWays"
+                                      Hidden="@DeleteSubContainerEvent" Items="@ToolsItems Mode=OneWayToSource"
+                                      LayoutWhenUnvisibleFlag="0" VisibleFlag="@HasChildsFlag"/>
+    </CATAfrSYPContainerViewMetaData>
+      <!--<CATVidLayLayer syp:name="MainLayer">
+        <CATVidLayLayer syp:name="Header" VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidLayGrid GridWeight="col0=1">
+            <CATAfrVidCtlActionButton Name="@Name"
+                   syp:name="AfrStatusBarButton"
+                   syp:Template="PLMBarMenuButton" 
+                   ClickMode="0"
+                   CropPolicy="CropWithDots"
+                   GiveFocusOnDragFlag="1"
+                   AcceptFocusOnDropFlag="1"
+                   IconDimension="25 25"
+                   BackgroundColor="239 239 239 230"
+                   ForegroundColor="61 61 61 255"
+                   RequestedMinimumDimension="110 29"
+                   Icon="@IconContainer"
+                   Label="@Title"
+                   KeyboardManipulationFlag="1"
+                   LayoutWhenUnvisibleFlag="0"
+                   Tooltip="@ShortHelp"
+                   Click="@HandleActionEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                     />
+            <CATVidCtlButton Name="@NameBis ElementName=MetaData"
+                             syp:Template="BlueButton"
+                             syp:name="SplitButton"
+                             Icon="Sub_Menu_Icon_Off.png"
+                             GiveFocusOnDragFlag="1"
+                             AcceptFocusOnDropFlag="1"
+                             BackgroundColor="239 239 239 230"
+                             IconDimension="30 30"
+                             RequestedMinimumDimension="30 30"
+                             ClickMode="0"
+                             Click="@CreateSubContainerEvent"
+                             CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+        <CATVidLayLayer  syp:name="NoHeader"  VisibleFlag="1" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtlButton syp:name="ButtonNoHeader" syp:Template="TopBarSubMenuLabelRightArrow"
+                           Name="@NameQuater ElementName=MetaData"
+                           IconDimension="25 25"
+                           BackgroundColor="239 239 239 230"
+                           ForegroundColor="61 61 61 255"
+                           RequestedMinimumDimension="110 29"
+						   GiveFocusOnDragFlag="1"
+                           AcceptFocusOnDropFlag="1"
+                           Icon="@IconContainer"
+                           Label="@Title"
+                           CropPolicy="CropWithDots"
+                           KeyboardManipulationFlag="1"
+                           Tooltip="@ShortHelp"
+                           Click="@CreateSubContainerEvent"/>
+        </CATVidLayLayer>
+
+
+        <CATAfrVidWidgetNoLayout VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtl syp:name="CommunCollectionItem"  LayoutWhenUnvisibleFlag="0" VisibleFlag="@OnCreateContainerFlag">
+            <CATVidLayLayer Name="@NameTer ElementName=MetaData" VisibleFlag="@WidgetsPanelVisibility">
+              <CATVidGPSquare Name="BackgroundCommunLayer" Color="239 239 239 255" UseManipulatorFlag="1" PickFlag="1"/>
+              <CATVidLayGrid  GridWeight="col0=1 row1=1">
+                <CATVidCtlButton syp:name="BackButton"
+                Name="BackButton"
+                syp:Template="BlueButton"
+                CheckMode="0"
+                ClickMode="0"
+                CropPolicy="CropWithDots"
+                IconDimension="13 13"
+                BackgroundColor="206 206 206 150"
+                ForegroundColor="255 255 255 255"
+                GiveFocusOnDragFlag="1"
+                AcceptFocusOnDropFlag="1"
+                RequestedMinimumDimension="110 29"
+                Icon="Sub_Menu_Back.png"
+                Label="@Title"
+                KeyboardManipulationFlag="1"
+                LayoutWhenUnvisibleFlag="0"
+                Click="@DeleteSubContainerEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                   />
+                <CATVidLayStack syp:name="Container" Items="@ToolsItems Mode=OneWayToSource" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+          </CATVidCtl>
+
+
+        </CATAfrVidWidgetNoLayout>
+      </CATVidLayLayer>
+    </CATAfrSYPContainerViewMetaData>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="0">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="1">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="MainLayer">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="BackgroundColor" Value="126 168 194 155"/>
+        <CATSYPSetter TargetName="SplitButton" Property="BackgroundColor" Value="13 97 150 230"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="MainLayer">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="BackgroundColor" Value="239 239 239 230"/>
+        <CATSYPSetter TargetName="SplitButton" Property="BackgroundColor" Value="239 239 239 230"/>
+      </CATSYPEventTrigger>
+      <CATSYPTrigger Property="MobileFlag" Value="1">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="SplitButton" Property="RequestedMinimumDimension" Value="30 60"/>
+        <CATSYPSetter TargetName="BackButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="ButtonNoHeader" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="CommunCollectionItem" Property="VisibilityPolicy" Value="NoAnimation"/>
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+-->
+
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                           AfrTopBarMenu container                                         -->
+  <!--*************************************************************************************************************************-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrTopBarMenu"  >
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData"  IconBoxFlag="1" NormalIcon="@Icon" NameBis="@Name">
+
+      <CATAfrVidTopBarMenu syp:name="Container"
+                           RecordName="@Name"
+                           Title="@Title"
+                           Icon="@ConvertedNormalIcon ElementName=MetaData"
+                           OverIcon="@ConvertedFocusedIcon ElementName=MetaData"
+                           OnIcon="@ConvertedSelectedIcon ElementName=MetaData"
+                           ContentVisibleFlag="@ContentVisibleFlag Mode=TwoWays"
+                           VisibleFlag="@UsefulFlag" LayoutWhenUnvisibleFlag="0"
+                           ContentShown="@HandleEventMenuDeployed"
+                           PresenterClick="@HandleActionEvent"
+                           PresenterTooltip="@Tooltip">
+
+      </CATAfrVidTopBarMenu>
+    </CATAfrSYPContainerViewMetaData>
+  </DataTemplate>
+  
+  <!--<DataTemplate syp:name="CATCAfrMenu_AfrTopBarMenu"  >
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData"  IconBoxFlag="1" NormalIcon="@Icon" NameBis="@Name">
+
+      <CATAfrVidHoverMenu syp:Template="Rounded" Orientation="Vertical" syp:name="Container" Name="@NameBis ElementName=MetaData"
+                          PopupVisibleFlag="@ContentVisibleFlag Mode=TwoWays"
+                          IconBoxDirection="Bottom"
+                          IconBoxSnapAlignment="SnapAlignRight"
+                          CommunCollection="@CommunCollection Mode=OneWayToSource ElementName=MetaData"
+                          PopupShown="@HandleEventMenuDeployed"
+                          PresenterClick="@HandleActionEvent" VisibleFlag="@UsefulFlag" LayoutWhenUnvisibleFlag="0"
+                        >
+        <CATVidLaySideAttach syp:name="SideAttach" RequestedMinimumDimension="40 40">
+          <CATVidCtlButtonIcon syp:name="Button" syp:Template="TopBarButton" Name="@Name"
+                              IconDimension="32 32"
+                              RequestedMinimumDimension="32 32"
+                              ClickMode="0"
+                              CheckMode="1"
+                              GiveFocusOnDragFlag="1"
+                              AcceptFocusOnDropFlag="1"
+                              CheckState="@PopupVisibleFlag ElementName=Container"
+                              CropPolicy="CropWithDots"
+                              ForegroundColor="239 239 239 230"
+                              OffTexture="@ConvertedNormalIcon ElementName=MetaData"
+                              OverTexture="@ConvertedNormalIcon ElementName=MetaData"
+                              OnTexture="@ConvertedSelectedIcon ElementName=MetaData"
+                              Click="@HandlePresenterClick ElementName=Container"
+                               CATVidLaySideAttach.IndexedConstraints="leftPercent=50 topPercent=50"
+                        />
+        </CATVidLaySideAttach>
+
+
+
+      </CATAfrVidHoverMenu>
+    </CATAfrSYPContainerViewMetaData>
+ <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Button" Value="48 48"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SideAttach" Value="48 32"/>
+
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>-->
+
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           AfrTopBarHomeMenu container                                                   -->
+  <!--*************************************************************************************************************************-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrTopBarHomeMenu" >
+    <!--A Syp Name to allow positionning the home menu in the Top Bar (see below)-->
+    <!--SypNamePosition="HomeMenuPosition"-->
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" NameBis="@Name"  IconBoxFlag="1" NormalIcon="@Icon" >
+      <CATAfrVidTopBarMenu syp:name="Container" syp:Template="HomeMenu"
+                           RecordName="@Name"
+                           Title="@Title"
+                           ContentVisibleFlag="@ContentVisibleFlag Mode=TwoWays"
+                           VisibleFlag="@UsefulFlag" LayoutWhenUnvisibleFlag="0"
+                           ContentShown="@HandleEventMenuDeployed"
+                           PresenterClick="@HandleActionEvent"
+                           PresenterTooltip="@Tooltip">
+
+        <!--<CATVidGPSquare RequestedMinimumDimension="44 44" Color="0 239 239 230" />-->
+        <CATAfrVidTopBarMenu.PresenterCtl>
+          <CATAfrVidExtraViewPresenter syp:name="ExtraViewPresenter" ExtraViewDataTemplate="AfrTopBarHomeMenu_Title"
+                                      PropertiesBinding="Button.Click=:Container.HandlePresenterEvent Button.CheckState:=:Container.ContentVisibleFlag"
+                                />
+        </CATAfrVidTopBarMenu.PresenterCtl>
+
+
+        <CATAfrVidTopBarMenu.PresenterInHoverMenuCtl>
+          <CATVidCtlButtonIcon syp:name="HomeIcon" syp:Template="TopBarButtonNoSpace" Name="HomeIconHoverMenu"
+            IconDimension="44 44"
+            RequestedMinimumDimension="44 44"
+            ClickMode="0"
+            CheckMode="1"
+            OffTexture="Large/IP_TopBarHome.png"
+            GiveFocusOnDragFlag="1"
+            AcceptFocusOnDropFlag="1"
+            CropPolicy="CropWithDots"
+            ForegroundColor="239 239 239 230"
+                            
+                        />
+        </CATAfrVidTopBarMenu.PresenterInHoverMenuCtl>
+      </CATAfrVidTopBarMenu>
+
+    </CATAfrSYPContainerViewMetaData>
+  </DataTemplate>
+  
+
+  <!--==========================================================================================-->
+  <!--=============================     ME MENU        =========================================-->
+  <!--==========================================================================================-->
+
+  <DataTemplate syp:name="CATCAfrMenu_AfrTopBarMeMenu" >
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" NameBis="@Name"  IconBoxFlag="1" NormalIcon="@Icon" >
+      <CATAfrVidTopBarMenu syp:name="Container" syp:Template="Custom"
+                           RecordName="@Name"
+                           Title="@Title"
+                           ContentVisibleFlag="@ContentVisibleFlag Mode=TwoWays"
+                           VisibleFlag="@UsefulFlag" LayoutWhenUnvisibleFlag="0"
+                           ContentShown="@HandleEventMenuDeployed"
+                           PresenterClick="@HandleActionEvent"
+                           PresenterTooltip="@Tooltip">
+
+        <CATAfrVidTopBarMenu.PresenterCtl>
+          <CATAfrVidExtraViewPresenter syp:name="ExtraViewPresenter" ExtraViewDataTemplate="AfrTopBarMeMenu_CID_Frame"
+                                      PropertiesBinding="Button.RightClick=:Container.HandleHideEvent Button.Click=:Container.HandlePresenterEvent Button.CheckState:=:Container.ContentVisibleFlag Button.OnTexture=:Icon.OffTexture Button.IconPixelImage=:Icon.IconPixelImage"
+                                />
+        </CATAfrVidTopBarMenu.PresenterCtl>
+        <CATAfrVidTopBarMenu.PresenterInHoverMenuCtl>
+          <CATVidCtlButtonIcon syp:name="Icon" syp:Template="TopBarMeButtonNoSpace" Name="IconHoverMenu"
+                    IconDimension="44 44"
+                    RequestedMinimumDimension="44 44"
+                    ClickMode="0"
+                    CheckMode="1"
+                    OffTexture="Large/IP_TopBarProfile.png"
+                    GiveFocusOnDragFlag="1"
+                    AcceptFocusOnDropFlag="1"
+                    CropPolicy="CropWithDots"
+                    ForegroundColor="239 239 239 230"                    
+                                     />
+        </CATAfrVidTopBarMenu.PresenterInHoverMenuCtl>
+      </CATAfrVidTopBarMenu>     
+    </CATAfrSYPContainerViewMetaData>
+  </DataTemplate>
+
+<!--==========================================================================================-->
+  <!--=============================     NOTIFICATION MENU      =========================================-->
+  <!--========================================================================================-->
+  
+  <DataTemplate syp:name="CATCAfrMenu_AfrTopBarNotificationMenu" >
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" NameBis="@Name"  IconBoxFlag="1" NormalIcon="@Icon" >
+      <CATAfrVidTopBarMenu syp:name="Container" syp:Template="Custom"
+                           RecordName="@Name"
+                           Title="@Title"
+                           ContentVisibleFlag="@ContentVisibleFlag Mode=TwoWays"
+                           VisibleFlag="@UsefulFlag" LayoutWhenUnvisibleFlag="0"
+                           ContentShown="@HandleEventMenuDeployed"
+                           PresenterClick="@HandleActionEvent"
+                           PresenterTooltip="@Tooltip">
+
+        <CATAfrVidTopBarMenu.PresenterCtl>
+          <CATAfrVidExtraViewPresenter syp:name="ExtraViewPresenter" ExtraViewDataTemplate="AfrTopBarNotificationMenu_CID_Frame"
+                                      PropertiesBinding="Button.Click=:Container.HandlePresenterEvent Button.CheckState:=:Container.ContentVisibleFlag "
+                                />
+        </CATAfrVidTopBarMenu.PresenterCtl>
+        <CATAfrVidTopBarMenu.PresenterInHoverMenuCtl>
+          <CATVidCtlButtonIcon syp:name="Icon" syp:Template="TopBarNotificationButtonNoSpace" Name="IconHoverMenu"
+            IconDimension="44 44"
+            RequestedMinimumDimension="44 44"
+            ClickMode="0"
+            CheckMode="1"
+            OnTexture="Large/IP_TopBarNotification.png"
+            GiveFocusOnDragFlag="1"
+            AcceptFocusOnDropFlag="1"
+            CropPolicy="CropWithDots"
+            ForegroundColor="239 239 239 230"
+                        />
+        </CATAfrVidTopBarMenu.PresenterInHoverMenuCtl>
+      </CATAfrVidTopBarMenu>
+     
+    </CATAfrSYPContainerViewMetaData>
+  </DataTemplate>
+
+
+  <!--===============================================================================================-->
+  <!--=============================     HOME MENU ITEM      =========================================-->
+  <!--===============================================================================================-->
+
+  <DataTemplate syp:name="CATCAfrMenu_AfrHomeMenuRep">
+    <!--Bind the following properties-->
+    <!--Name of Menu -> Name of Pen Icon (for record issue)-->
+    <!--ActivatedFlag  of Menu <-> Check State of Pen Icon (useful to know if the command is running or not)-->
+    <!--Click event of Pen Icon -> HandleActionEvent of Menu (trigger the command execution) -->
+    <!--Extra Property AccessRole of Menu Header -> Label of AccessRole GPLabel-->
+    <!--Extra Property Organization of Menu Header -> Label of Organization GPLabel-->
+    <CATVidLayLayer>
+      <CATAfrVidExtraViewPresenter  syp:name="ExtraViewPresenter" ExtraViewDataTemplate="HomeMenuItemWithIcon"
+                                                
+    PropertiesBinding=" PenIcon.Click=:HandleActionEvent PenIcon.Tooltip=:Tooltip"/>
+      <!--In odt mode, some items are append to this menu, this menu should not contains items in normal mode
+      so create an invisible layer which will be the container thanks to the tag |syp:name="Container" | -->
+      <CATVidLayLayer syp:name="Container" VisibleFlag="0" LayoutWhenUnvisibleFlag="0"/>
+    </CATVidLayLayer>
+
+  </DataTemplate>
+
+  <!--Icon.VisibleFlag:=IsIconVisible AccessRoleValue.Text:=AccessRole OrgNameValue.Text:=Organization-->
+  <!--PenIcon.Name:=Name PenIcon.Click=:HandleActionEvent  AccessRole.Text:=AccessRole Organization.Text:=Organization PenIcon.Tooltip=:Tooltip"-->
+ 
+
+
+  <!--<CATVidButtonIcon syp:name="PenIcon" OffTexture="I_pen_icon.png" OnTexture="IP_pen_icon.png" OverTexture="IF_pen_icon.png" CheckMode="1" CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=2 attach=RLTB"/>-->
+  
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           AfrTopBarSubMenu container                                               -->
+  <!--*************************************************************************************************************************-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrTopBarSubMenu">
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" IconBoxFlag="1" NormalIcon="@Icon">
+      <CATAfrVidHoverSubMenuContainer syp:name="Container" syp:Template="Default" Name="@Name" Title="@Title" Icon="@ConvertedNormalIcon ElementName=MetaData"
+                                      Tooltip="@Tooltip" HeaderActivatedFlag="@ActivatedFlag Mode=TwoWays" ContentVisibleFlag="@ContentVisibleFlag Mode=TwoWays" HeaderActivated="@HandleActionEvent"
+                                      Shown="@HandleEventMenuDeployed" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UsefulFlag"
+                                      Hidden="@HandleEventMenuHidden"/>
+    </CATAfrSYPContainerViewMetaData>
+    <!--<CATAfrSYPContainerViewMetaData syp:name="MetaData" IconBoxFlag="1" NormalIcon="@Icon" NameBis="@Name">
+      <CATVidLayLayer syp:name="MainLayer" VisibleFlag="@UsefulFlag" LayoutWhenUnvisibleFlag="0">
+        <CATVidLayLayer syp:name="Header" VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidLayLayer>
+            <CATVidGPSquare syp:name="Header_Highlight" Color="239 239 239 230"/>
+          </CATVidLayLayer>
+          <CATVidLayGrid Name="@Name" CellSpacing="2">
+            <CATVidLayGrid GridWeight="col0=1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+              <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton" 
+                     ClickMode="0"
+                     ActivatedFlag="@ActivatedFlag Mode=TwoWays"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                     BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@ConvertedNormalIcon ElementName=MetaData"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     Tooltip="@Tooltip"
+                     Click="@HandleActionEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                     />
+              <CATVidCtlButton Name="@NameBis ElementName=MetaData"
+                               syp:Template="TopBarSubMenuRightArrow"
+                               syp:name="SplitButton"
+                               Icon="Sub_Menu_Icon_Off.png"
+                               GiveFocusOnDragFlag="1"
+                               AcceptFocusOnDropFlag="1"
+                               LayoutWhenUnvisibleFlag="0"
+                               
+                               
+                               BackgroundColor="239 239 239 255"
+                               IconDimension="30 30"
+                               RequestedMinimumDimension="30 30"
+                               ClickMode="0"
+                               Click="@HandleEventMenuDeployed"
+                               CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+        <CATVidLayLayer  syp:name="NoHeader"  VisibleFlag="1" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtlButton syp:Template="TopBarSubMenuLabelRightArrow"
+                           syp:name="ButtonNoHeader"
+                           Name="@NameQuater ElementName=MetaData"
+                           IconDimension="25 25"
+                           BackgroundColor="239 239 239 255"
+                           ForegroundColor="61 61 61 255"
+                           RequestedMinimumDimension="110 29"
+                           GiveFocusOnDragFlag="1"
+                           AcceptFocusOnDropFlag="1"
+                           CropPolicy="CropWithDots"
+                           Icon="@ConvertedNormalIcon ElementName=MetaData"
+                           Label="@Title"
+                           KeyboardManipulationFlag="1"
+                           Tooltip="@Tooltip"
+                           Click="@HandleEventMenuDeployed"/>
+        </CATVidLayLayer>
+
+
+
+        <CATAfrVidWidgetNoLayout VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtl syp:name="CommunCollectionItem"  LayoutWhenUnvisibleFlag="0" VisibleFlag="@ContentVisibleFlag">
+            <CATVidLayLayer Name="@NameTer ElementName=MetaData" VisibleFlag="@ContentVisibleFlag">
+              <CATVidGPSquare Name="BackgroundCommunLayer" Color="239 239 239 255" UseManipulatorFlag="1" PickFlag="1"/>
+              <CATVidLayGrid  GridWeight="col0=1 row1=1">
+                <CATVidCtlButton syp:name="BackButton"
+                Name="BackButton"
+                syp:Template="BlueButton"
+                CheckMode="0"
+                ClickMode="0"
+                CropPolicy="CropWithDots"
+                IconDimension="13 13"
+                GiveFocusOnDragFlag="1"
+                AcceptFocusOnDropFlag="1"
+                BackgroundColor="206 206 206 150"
+                ForegroundColor="255 255 255 255"
+                RequestedMinimumDimension="110 29"
+                Icon="Sub_Menu_Back.png"
+                Label="@Title"
+                KeyboardManipulationFlag="1"
+                LayoutWhenUnvisibleFlag="0"
+                Click="@HandleEventMenuHidden" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                   />
+                <CATVidLayStack syp:name="Container"  Orientation="Vertical"
+                                StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+          </CATVidCtl>
+
+
+        </CATAfrVidWidgetNoLayout>
+      </CATVidLayLayer>
+    </CATAfrSYPContainerViewMetaData>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="0">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="1">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="MainLayer">
+        --><!--<CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPColorAnimation To="200 50 50 255" Duration="0:0:0.2" CATSYPStoryboard.TargetName="Header_Highlight" CATSYPStoryboard.TargetProperty="Color"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>--><!--
+        <CATSYPSetter TargetName="Header_Highlight" Property="Color" Value="13 97 150 255"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="MainLayer">
+        --><!--<CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPColorAnimation To="239 239 239 255" Duration="0:0:0.2" CATSYPStoryboard.TargetName="Header_Highlight" CATSYPStoryboard.TargetProperty="Color"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>--><!--
+        <CATSYPSetter TargetName="Header_Highlight" Property="Color" Value="239 239 239 255"/>
+      </CATSYPEventTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="SplitButton" Property="RequestedMinimumDimension" Value="30 60"/>
+        <CATSYPSetter TargetName="BackButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="ButtonNoHeader" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="CommunCollectionItem" Property="VisibilityPolicy" Value="NoAnimation"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>-->
+
+  </DataTemplate>
+  <!--*************************************************************************************************************************-->
+  <!--                                           AfrTopBarSubMenu container [ActivableHeader]                                               -->
+  <!--*************************************************************************************************************************-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrTopBarSubMenu_ActivableHeader">
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" IconBoxFlag="1" NormalIcon="@Icon">
+      <CATAfrVidHoverSubMenuContainer syp:name="Container" syp:Template="ActivableHeader" Name="@Name" Title="@Title" Icon="@ConvertedNormalIcon ElementName=MetaData"
+                                      Tooltip="@Tooltip" HeaderEnableFlag="@EnableFlag" HeaderActivatedFlag="@ActivatedFlag Mode=TwoWays" HeaderActivated="@HandleActionEvent" 
+                                      Shown="@HandleEventMenuDeployed" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UsefulFlag"
+                                      Hidden="@HandleEventMenuHidden"/>
+    </CATAfrSYPContainerViewMetaData>
+    <!--<CATAfrSYPContainerViewMetaData syp:name="MetaData" IconBoxFlag="1" NormalIcon="@Icon" NameBis="@Name">
+      <CATVidLayLayer syp:name="MainLayer" VisibleFlag="@UsefulFlag" LayoutWhenUnvisibleFlag="0">
+        <CATVidLayLayer syp:name="Header" VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidLayLayer>
+            <CATVidGPSquare syp:name="Header_Highlight" Color="239 239 239 230"/>
+          </CATVidLayLayer>
+          <CATVidLayGrid Name="@Name" CellSpacing="2">
+            <CATVidLayGrid GridWeight="col0=1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+              <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton" 
+                     ClickMode="0"
+                     ActivatedFlag="@ActivatedFlag Mode=TwoWays"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                     BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@ConvertedNormalIcon ElementName=MetaData"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     Tooltip="@Tooltip"
+                     Click="@HandleActionEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                     />
+              <CATVidCtlButton Name="@NameBis ElementName=MetaData"
+                               syp:Template="TopBarSubMenuRightArrow"
+                               syp:name="SplitButton"
+                               Icon="Sub_Menu_Icon_Off.png"
+                               GiveFocusOnDragFlag="1"
+                               AcceptFocusOnDropFlag="1"
+                               LayoutWhenUnvisibleFlag="0"
+                               
+                               
+                               BackgroundColor="239 239 239 255"
+                               IconDimension="30 30"
+                               RequestedMinimumDimension="30 30"
+                               ClickMode="0"
+                               Click="@HandleEventMenuDeployed"
+                               CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+        <CATVidLayLayer  syp:name="NoHeader"  VisibleFlag="1" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtlButton syp:Template="TopBarSubMenuLabelRightArrow"
+                           syp:name="ButtonNoHeader"
+                           Name="@NameQuater ElementName=MetaData"
+                           IconDimension="25 25"
+                           BackgroundColor="239 239 239 255"
+                           ForegroundColor="61 61 61 255"
+                           RequestedMinimumDimension="110 29"
+                           GiveFocusOnDragFlag="1"
+                           AcceptFocusOnDropFlag="1"
+                           CropPolicy="CropWithDots"
+                           Icon="@ConvertedNormalIcon ElementName=MetaData"
+                           Label="@Title"
+                           KeyboardManipulationFlag="1"
+                           Tooltip="@Tooltip"
+                           Click="@HandleEventMenuDeployed"/>
+        </CATVidLayLayer>
+
+
+
+        <CATAfrVidWidgetNoLayout VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtl syp:name="CommunCollectionItem"  LayoutWhenUnvisibleFlag="0" VisibleFlag="@ContentVisibleFlag">
+            <CATVidLayLayer Name="@NameTer ElementName=MetaData" VisibleFlag="@ContentVisibleFlag">
+              <CATVidGPSquare Name="BackgroundCommunLayer" Color="239 239 239 255" UseManipulatorFlag="1" PickFlag="1"/>
+              <CATVidLayGrid  GridWeight="col0=1 row1=1">
+                <CATVidCtlButton syp:name="BackButton"
+                Name="BackButton"
+                syp:Template="BlueButton"
+                CheckMode="0"
+                ClickMode="0"
+                CropPolicy="CropWithDots"
+                IconDimension="13 13"
+                GiveFocusOnDragFlag="1"
+                AcceptFocusOnDropFlag="1"
+                BackgroundColor="206 206 206 150"
+                ForegroundColor="255 255 255 255"
+                RequestedMinimumDimension="110 29"
+                Icon="Sub_Menu_Back.png"
+                Label="@Title"
+                KeyboardManipulationFlag="1"
+                LayoutWhenUnvisibleFlag="0"
+                Click="@HandleEventMenuHidden" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                   />
+                <CATVidLayStack syp:name="Container"  Orientation="Vertical"
+                                StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+          </CATVidCtl>
+
+
+        </CATAfrVidWidgetNoLayout>
+      </CATVidLayLayer>
+    </CATAfrSYPContainerViewMetaData>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="0">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ValidCommandHeaderFlag" Value="1">
+        <CATSYPSetter TargetName="NoHeader" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="Header" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="MainLayer">
+        -->
+    <!--<CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPColorAnimation To="200 50 50 255" Duration="0:0:0.2" CATSYPStoryboard.TargetName="Header_Highlight" CATSYPStoryboard.TargetProperty="Color"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>-->
+    <!--
+        <CATSYPSetter TargetName="Header_Highlight" Property="Color" Value="13 97 150 255"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="MainLayer">
+        -->
+    <!--<CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPColorAnimation To="239 239 239 255" Duration="0:0:0.2" CATSYPStoryboard.TargetName="Header_Highlight" CATSYPStoryboard.TargetProperty="Color"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>-->
+    <!--
+        <CATSYPSetter TargetName="Header_Highlight" Property="Color" Value="239 239 239 255"/>
+      </CATSYPEventTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter TargetName="AfrStatusBarButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="SplitButton" Property="RequestedMinimumDimension" Value="30 60"/>
+        <CATSYPSetter TargetName="BackButton" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="ButtonNoHeader" Property="RequestedMinimumDimension" Value="110 60"/>
+        <CATSYPSetter TargetName="CommunCollectionItem" Property="VisibilityPolicy" Value="NoAnimation"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>-->
+
+  </DataTemplate>
+
+  <!--Starters for AfrPLMBarMenu -->
+  <Template syp:name="AfrTopBarMenu" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton"  
+
+                     ClickMode="0"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                       BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@NormalIcon"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     
+                     Click="@ActionEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <!--Starters for AfrPLMBarMeMenu-->
+  <!-- They have the right to have icons (for status), so they use PLMBarMenuButtonWithIcon template -->
+  <Template syp:name="AfrTopBarMeMenu" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButtonWithIcon"
+                     ClickMode="0"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     CropPolicy="CropWithDots"
+                     IconDimension="24 24"
+                     BackgroundColor="0 0"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@NormalIcon"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     
+                     Click="@ActionEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+  <Template syp:name="AfrTopBarNewSearchMenu" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                   syp:name="AfrStatusBarButton"
+                   syp:Template="SearchMenuButton"
+                   ClickMode="1"
+                   GiveFocusOnDragFlag="1"
+                   AcceptFocusOnDropFlag="1"
+                   ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                   EnableFlag="@EnableWidget"
+                   CropPolicy="CropWithDots"
+                   IconDimension="20 20"
+                   BackgroundColor="0 0"
+                   ForegroundColor="61 61 61 255"
+                   RequestedMinimumDimension="110 29"
+                   Label="@Title"
+                   Icon="@NormalIcon"
+                   FontHeight="13"
+                   KeyboardManipulationFlag="1"
+                   LayoutWhenUnvisibleFlag="0"
+                   LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                   TooltipTitle="@LongHelpTitle"
+                   TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                   TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                   LongHelpId="@LongHelpId"
+                   VisibleFlag="@VisibleFlag"
+                   Click="@ActionEvent"/>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <Template syp:name="AfrTopBarMenuCheck" Target="CATAfrSYPStarterView">
+      <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="TopBarMenuCheck"
+                     ClickMode="0"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     CropPolicy="CropWithDots"
+                     IconDimension="13 13"
+                     BackgroundColor="0 0"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     VisibleFlag="@VisibleFlag"
+                     Click="@ActionEvent"/>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--separator for AfrPLMBarMenu-->
+  <Template syp:name="AfrTopBarMenu" Target="CATAfrSYPSeparatorView">
+      <CATVidGPSquare RequestedMinimumDimension="54 1"   LayoutWhenUnvisibleFlag="0" VisibleFlag="1" Color="226 228 227 230"/>
+  </Template>
+
+
+  <!--separator for AfrPLMBarMenu-->
+  <Template syp:name="SeparatorWithTitle" Target="CATAfrSYPSeparatorView">
+    <CATVidLayLayer  >
+      <CATVidLayLayer>
+        <CATVidGPSquare syp:name="BackgroundLayer" Color="255 255 255 230"  />
+      </CATVidLayLayer>
+       <CATVidLayGrid  InnerCellSpacing="2" >
+         <CATVidLayGrid CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB">
+          <CATVidGPSquare  RequestedMinimumDimension="54 1" VisibleFlag="1" Color="226 228 227 230"  CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB"/>
+         </CATVidLayGrid >
+         <CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB">
+            <CATVidSpacer RequestedMinimumDimension="14 0" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+            <CATVidGPLabel syp:name="LabelText"  Text="@Title" CropPolicy="NoCrop" FontName="Arial" FontSize="13" TextColor="180 182 186 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" />
+            <CATVidSpacer  RequestedMinimumDimension="14 0" CATVidLayGrid.IndexedConstraints="x=2 y=0"/>             
+        </CATVidLayGrid>
+    </CATVidLayGrid>      
+    </CATVidLayLayer>   
+    
+  </Template>  
+
+  <!-- ================================================================================================-->
+  <!--==================================== AFR MENU WITH CONTEXT INFRA ==========================================-->
+  <!-- ================================================================================================-->
+
+
+  <!--ZBJ: Starters for Help menu update badges -->
+  <!--UptoDate badge-->
+  <Template syp:name="AfrTopBarMenu_uptoDate" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton_uptoDate"
+
+                     ClickMode="0"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                       BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@NormalIcon"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     
+                     Click="@ActionEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <!--Update required badge-->
+  <Template syp:name="AfrTopBarMenu_UpdateRequired" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton_UpdateRequired"
+
+                     ClickMode="0"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                       BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@NormalIcon"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     
+                     Click="@ActionEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+  <!--Update badge-->
+  <Template syp:name="AfrTopBarMenu_Update" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton_update"
+
+                     ClickMode="0"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                       BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@NormalIcon"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     
+                     Click="@ActionEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+
+
+  <!--Scan for Update badge-->
+  <Template syp:name="AfrTopBarMenu_ScanForUpdate" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton_ScanForUpdate"
+
+                     ClickMode="0"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                       BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@NormalIcon"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     
+                     Click="@ActionEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+
+
+
+  <!--Update Error badge-->
+  <Template syp:name="AfrTopBarMenu_UpdateError" Target="CATAfrSYPStarterView">
+    <CATAfrVidCtlActionButton Name="@Name"
+                     syp:name="AfrStatusBarButton"
+                     syp:Template="PLMBarMenuButton_UpdateError"
+
+                     ClickMode="0"
+                     ActivatedFlag="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     CropPolicy="CropWithDots"
+                     IconDimension="25 25"
+                       BackgroundColor="239 239 239 230"
+                     ForegroundColor="61 61 61 255"
+                     RequestedMinimumDimension="110 29"
+                     Icon="@NormalIcon"
+                     Label="@Title"
+                     KeyboardManipulationFlag="1"
+                     LayoutWhenUnvisibleFlag="0"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                     TooltipTitle="@LongHelpTitle"
+                     TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                     TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                     LongHelpId="@LongHelpId"
+                     
+                     Click="@ActionEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="AfrStatusBarButton" Value="110 48" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+</Styles>

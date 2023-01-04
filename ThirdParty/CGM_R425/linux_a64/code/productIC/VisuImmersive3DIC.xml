@@ -1,0 +1,36 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "Visualization.tst"/>
+  <attached name = "VisuImmersiveDialog.tst"/>
+  <attached comment = "2013.01.17 JV8/HEB attach for test" name = "VisuImmersive3D.tst"/>
+  <attached comment = "2013.02.20 JV8/HEB attach for test" name = "Afr3DCompass.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" comment = "2014.02.28 JV8/HEB Rm Private PREREQ -  VisuImmersiveDialog shoud be friend of VisualizationFoundation " expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" comment = "2014.02.28 JV8/HEB Rm Private PREREQ" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "VisuImmersiveDialog"/>
+  <prerequisite access = "Protected" comment = "2013.01.17 JV8/HEB Expose-export modification" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationController"/>
+  <authorize access = "Private" name = "CATView"/>
+  <authorize access = "Private" name = "VisuImmersiveUI"/>
+  <authorize access = "Private" name = "DialogXMLUI.tst"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "VIDToolkit.tst"/>
+  <authorize access = "Private" name = "AfrImmersiveRender"/>
+  <authorize access = "Private" name = "VisuImmersiveDialog.tst"/>
+  <authorize access = "Private" name = "VisuImmersiveDialogEx.tst"/>
+  <authorize access = "Private" name = "VisuImmersiveDialogEx"/>
+  <authorize access = "Private" name = "V6UserExperienceIOSApp.tst"/>
+  <authorize access = "Private" comment = "2011.11.18 VR2/CDT CID Designer" name = "DSxDevCIDDesigner"/>
+  <authorize access = "Private" comment = "2011.11.18 VR2/CDT CID Designer" name = "DSxDevCIDDesigner.tst"/>
+  <authorize access = "Private" comment = "2012.04.06 CKO/CDT CID Debug Tools" name = "CIDDebugTools"/>
+  <authorize access = "Private" comment = "2020.11.25 GX2/HEB Creation VisuImmersiveReality" name = "VisuImmersiveReality"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

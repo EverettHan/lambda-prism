@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                 AfrExtraRepresentation representation                                                            -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Representation to manage Pixel image                                                         -->
+  <!--*************************************************************************************************************************-->
+
+  <DataTemplate syp:name="AfrTopBarMeMenu">
+
+    <CATVidLayGrid GridWeight="col0=1 col2=1">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+
+
+
+        <!-- Layer -->
+        <CATVidCtlButtonIcon
+                         syp:name="Button"
+                     syp:Template="TopBarButton"
+                     CheckMode="1"
+                     ClickMode="0"
+                     CropPolicy="NoCrop"
+                     IconDimension="32 32"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     RequestedMinimumDimension="32 32"
+
+                     FontHeight="19"
+                     FocusableFlag="0"
+                     KeyboardManipulationFlag="0"
+                     LayoutWhenUnvisibleFlag="0"
+                     />
+        <!-- / Layer -->
+
+        <!-- Picture -->
+        <CATVidLayGrid GridWeight="col1=1 row1=1">
+          <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidGPSquare
+                       
+                     RequestedMinimumDimension="22 22"
+                     PixelImage="@Image"
+                     LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"
+                     />
+          <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!-- / Picture -->
+        
+        <!-- Layer -->
+        <CATVidCtlButtonIcon
+                         syp:name="Button2"
+                     syp:Template="Icon"
+                     CheckMode="1"
+                     ClickMode="0"
+                     CropPolicy="NoCrop"
+                     IconDimension="32 32"
+                     GiveFocusOnDragFlag="1"
+                     AcceptFocusOnDropFlag="1"
+                     RequestedMinimumDimension="32 32"
+                     OffTexture="@StatusLayerIconNormal"
+                     OnTexture="@StatusLayerIconPressed"
+                     OverTexture="@StatusLayerIconNormal"
+                     FontHeight="19"
+                     FocusableFlag="0"
+                     KeyboardManipulationFlag="0"
+                     LayoutWhenUnvisibleFlag="0"
+                     />
+        <!-- / Layer -->
+        
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </DataTemplate>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Representation to manage Notification Text and Image                                                         -->
+  <!--*************************************************************************************************************************-->
+
+<DataTemplate syp:name="AfrTopBarNotificationMenu_CID_Frame">
+  <CATVidLayLayer>
+    <CATVidCtlButtonIcon
+            syp:name="Button"
+        syp:Template="TopBarNotificationButtonNoSpace"
+        CheckMode="1"
+        ClickMode="0"
+        CropPolicy="NoCrop"
+        IconDimension="44 44"
+        GiveFocusOnDragFlag="1"
+        AcceptFocusOnDropFlag="1"
+        RequestedMinimumDimension="44 44"        
+        OffTexture="I_TopbarNotification.png"
+        OverTexture="IF_TopbarNotification.png"
+        OnTexture="IP_TopbarNotification.png"
+        FontHeight="19"
+        FocusableFlag="0"
+        KeyboardManipulationFlag="0"
+        LayoutWhenUnvisibleFlag="0"
+        Label="@NotificationText" 
+                     />
+  </CATVidLayLayer>
+</DataTemplate>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Representation to manage Home Menu                                           -->
+  <!--*************************************************************************************************************************-->
+
+  <DataTemplate syp:name="AfrTopBarHomeMenu_Title">
+    <CATVidCtlButtonIcon syp:name="Button" syp:Template="IconTextNoBackground"
+                              CheckMode="1"
+                              IconDimension="12 12"                              
+                              ClickMode="0"
+                              CropPolicy="CropWithDots"
+                              Label="@PresenterTitle"
+                              LayoutWhenUnvisibleFlag="0"
+                              FontHeight="19"
+                              UnderlineFlag="1"
+                              OverTexture="homeArrow_hover.png"
+                              OffTexture="homeArrow.png"
+                              OnTexture="homeArrow_hover.png"
+                              CursorShape="NorthHandCursor"
+                              GiveFocusOnDragFlag="1"
+                              AcceptFocusOnDropFlag="1"
+                              FocusableFlag="0"
+                              KeyboardManipulationFlag="0"
+                              Tooltip="@HomeMenuToolTip"
+                         />
+
+  </DataTemplate>
+
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Representation to manage Me Menu Status Images                               -->
+  <!--*************************************************************************************************************************-->
+  <DataTemplate syp:name="AfrTopBarMeMenu_CID_Frame">
+    <CATVidLayLayer>
+      <CATAfrVidWidgetNoLayout syp:name="ConverterToLarge" LargeOffIcon="@StatusLayerIconNormal" 
+                               LargeOverIcon="@StatusLayerIconFocused"
+                               LargeOnIcon="@StatusLayerIconPressed"/>
+      <CATVidCtlButtonIcon
+          syp:name="Button"
+          syp:Template="TopBarMeButtonNoSpace"
+          CheckMode="1"
+          ClickMode="0"
+          CropPolicy="NoCrop"
+          IconDimension="44 44"
+          GiveFocusOnDragFlag="1"
+          AcceptFocusOnDropFlag="1"
+          RequestedMinimumDimension="44 44"
+          IconPixelImage="@Image"
+          OffTexture="@LargeOffIcon ElementName=ConverterToLarge"
+          OverTexture="@LargeOverIcon ElementName=ConverterToLarge" 
+          OnTexture="@LargeOnIcon ElementName=ConverterToLarge"
+          FontHeight="19"
+          FocusableFlag="0"
+          KeyboardManipulationFlag="0"
+          LayoutWhenUnvisibleFlag="0"          
+                     />
+    </CATVidLayLayer>
+   
+  </DataTemplate>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Representation to manage New Home Menu Item                               -->
+  <!--*************************************************************************************************************************-->
+  
+    <DataTemplate syp:name="HomeMenuItemWithIcon">
+  
+  <CATVidLayLayer Name="Layer">
+    <CATVidLayGrid syp:name="Label" GridWeight="col0=3 col1=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" ContentsMargins="8 8" >   <!--ContentsMargins="2 8"-->
+      <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L">
+        <CATVidGPLabel syp:name="AccessRole" Text="@AccessRoleText " TextHeight="16"  BoldFlag="1" FontName="Arial"  HorizontalAlignment="0" CaptionFontFlag="1" CropPolicy="NoCrop" TextColor="61 61 61 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+        <CATVidGPLabel syp:name="AccessRoleValue"  Text="@AccessRole" TextHeight="16" FontName="Arial"  HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="61 61 61 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L"/>
+        <CATVidGPLabel syp:name="OrgName" Text="@OrganizationText " TextHeight="16" BoldFlag="1" FontName="Arial"  HorizontalAlignment="0" CaptionFontFlag="1" CropPolicy="NoCrop" TextColor="61 61 61 255" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=L"/>
+        <CATVidGPLabel syp:name="OrgNameValue" Text="@Organization" TextHeight="16" FontName="Arial"  HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="61 61 61 255" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=L"/>
+        
+      </CATVidLayGrid>
+      <CATVidLayGrid syp:name="Icon" VisibleFlag="@IsIconVisible" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"   LayoutWhenUnvisibleFlag="0">
+        <CATVidSpacer RequestedMinimumDimension="30 8" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        <CATVidCtlButtonIcon syp:name="PenIcon" Tooltip="@PenIconToolTip" RequestedMinimumDimension="16 16" FocusableFlag="1" VisibleFlag="1" OffTexture="edit_bt_collabspace_menu_default.png" OnTexture="edit_bt_collabspace_menu_active.png" OverTexture="edit_bt_collabspace_menu_active.png"  CATVidLayGrid.IndexedConstraints="x=1 y=1  attach=RLTB"/>
+        <!--<CATVidGPSquare   syp:name="PenIcon" RequestedMinimumDimension="16 16"   VisibleFlag="1" EnableFlag="1" Texture="edit_bt_collabspace_menu_default.png"  PickFlag="1" UseManipulatorFlag="1" CATVidLayGrid.IndexedConstraints="x=1 y=1  attach=RLTB"/>-->
+      </CATVidLayGrid>
+      <!--<CATVidGPSquare RequestedMinimumDimension="0 3" CATVidLayGrid.IndexedConstraints=" y=1 xSpan=2"  LayoutWhenUnvisibleFlag="0" VisibleFlag="1" Color="226 228 227 230"/>-->
+    </CATVidLayGrid>
+  </CATVidLayLayer>
+  </DataTemplate>
+  <!--*************************************************************************************************************************-->
+  <!--                                            Representation to manage Editor with List                                                       -->
+  <!--*************************************************************************************************************************-->
+
+  <DataTemplate syp:name="AfrComboWithList" syp:version="1">
+    <CATAfrVidSearchEditor syp:name="Editor" PlaceholderText="@PlaceholderText"
+                     ReadOnlyFlag="@ReadOnlyFlag"
+                     Help="@Help"
+                     LongHelp="@LongHelp"
+                     EnableFlag="@EnableFlag"
+                     FocusedFlag="@FocusedFlag"
+                     SelectedText="@SelectedText Mode=TwoWays"  />
+
+  </DataTemplate>
+  <!--End  AfrExtraRepresentation representation                                                            -->
+  <!--*************************************************************************************************************************-->
+  <!--                                            Search Editor with Popup for AutoComplete                                                        -->
+  <!--*************************************************************************************************************************-->
+
+  <Template syp:name="Default" Target="CATAfrVidSearchEditor">
+    <CATVidLayLayer>
+      <CATVidLayGrid syp:name="Grid" GridWeight="row1=1">
+        <CATVidSpacer syp:name="Top" RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <!--Line Editor-->
+        <CATVidCtlLineEditor syp:name="Editor" Name="Editor" TextMargins="5 3 4 4"
+                       BorderVisibleFlag="0"
+                        Text="@Text  Mode=TwoWays"
+                       FontHeight="14" SelectAllTextOnFocusFlag="1"
+                       PlaceholderText="@PlaceholderText"
+                       ReadOnlyFlag="@ReadOnlyFlag"
+                       TooltipShortHelp="@Help"
+                       TooltipLongHelp="@LongHelp"
+                       SelectedText="@SelectedText Mode=OneWayToSource"
+                       ReturnPressed="@HandleEvents"
+                       ReturnReleased="@HandleEvents"
+                       TextActivated="@HandleEvents"
+                       TextChanged="@HandleEvents"
+                       SelectionChanged="@HandleEvents"
+                       EditingFinished="@HandleEvents"
+                       ResetButtonVisibleFlag="1" BackgroundColor="255 255 255 0"
+                       RequestedMinimumDimension="90 30"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+      </CATVidLayGrid>
+      <!--Popup-->
+      <CATVidCtlPopup syp:name="Popup" Name="Popup" SnapFlag="1" VisibleFlag="@PopupVisibleFlag Mode=TwoWays"  AutoHideFlag="0" SnapSide="Bottom" PopupCompactFlag="1">
+        <CATVidLayLayer RequestedMinimumDimension="@Dimension ElementName=Editor">
+          <CATVidGPNinePatchSquare syp:name="PopupBackgroundExtract" VisibleFlag="1" ScalableAreaBorder="0 4 6 5" TextureAlpha="255" Texture="dropdown_body.png" UseManipulatorFlag="0"/>
+          <CATVidLayGrid GridWeight="row1=1 col1=1">
+            <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidCtl syp:name="Content" ChildrenLifeCyclePolicy="DontDestroyChildren" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="RetinaFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Top" Value="0 4"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidSearchEditor" syp:Variation="NoPopup">
+    <CATVidLayLayer>
+      <CATVidLayGrid syp:name="Grid" GridWeight="row2=1">
+        <CATVidSpacer syp:name="Top" RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtlLineEditor syp:name="Editor" Name="Editor" TextMargins="5 3 4 4"
+                       BorderVisibleFlag="0"
+                        Text="@Text  Mode=TwoWays"
+                       FontHeight="14" SelectAllTextOnFocusFlag="1"
+                       PlaceholderText="@PlaceholderText"
+                       ReadOnlyFlag="@ReadOnlyFlag"
+                       TooltipShortHelp="@Help"
+                       TooltipLongHelp="@LongHelp"
+                       SelectedText="@SelectedText Mode=OneWayToSource"
+                       ReturnPressed="@HandleEvents"
+                       ReturnReleased="@HandleEvents"
+                       TextActivated="@HandleEvents"
+                       TextChanged="@HandleEvents"
+                       SelectionChanged="@HandleEvents"
+                       EditingFinished="@HandleEvents"
+                       ResetButtonVisibleFlag="1" BackgroundColor="255 255 255 0"
+                       RequestedMinimumDimension="90 30"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+
+
+
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="RetinaFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Top" Value="0 4"/>
+        <!--<CATSYPSetter IndexName="Editor"   Property="IndexedConstraints" TargetName="Grid" Value="x=0 y=0 attach=RLTB"/>-->
+        <!--<CATSYPSetter Property="TextMargins" TargetName="Editor" Value="5 5 4 4"/>-->
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+  <!--End  AfrExtraRepresentation representation                                                            -->
+</Styles>

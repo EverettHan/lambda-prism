@@ -1,0 +1,40 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type defining an execution graph block (which can be a graph itself)",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "displayName",
+      "basic": "string",
+      "desc": "The name of the Graph which is displayed into Editor and traces",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "id",
+      "basic": "string",
+      "desc": "Unique alphanumeric and camelCase identification",
+      "optional": {
+        "isOptional": false
+      }
+    },
+    {
+      "label": "type",
+      "basic": "string",
+      "desc": "Type of the following implementation",
+      "optional": {
+        "isOptional": false
+      },
+      "enum": ["ExecutionGraph", "ArrayMap", "Function", "CustomImpl", "Logical"]
+    },
+    {
+      "label": "implementation",
+      "type": "CSIExecGraphImplementation",
+      "desc": "Implementation of this block (ExecutionGraph, ArrayMap, Function, CustomImpl or Logical)",
+      "optional": {
+        "isOptional": false
+      }
+    }
+  ]
+}

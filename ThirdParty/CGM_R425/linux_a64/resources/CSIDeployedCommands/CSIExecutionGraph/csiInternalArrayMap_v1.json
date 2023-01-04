@@ -1,0 +1,40 @@
+{
+  "desc": "Run an Array Map given as input of this function",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "definition",
+          "type": "CSIExecGraphBlock",
+          "optional": {
+            "isOptional": false
+          }
+        },
+        {
+          "label": "inputs",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "type": "Parameters"
+    }
+  },
+  "progress": {
+    "type": "Parameters"
+  },
+  "throwError": {
+    "type": "Parameters"
+  }
+}

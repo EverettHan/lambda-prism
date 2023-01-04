@@ -1,0 +1,33 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Function that returns a list of event definition",
+  "onCall": {
+    "in": {
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "events",
+          "typeArray": "CSIDeclarativeEventDefinition"
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

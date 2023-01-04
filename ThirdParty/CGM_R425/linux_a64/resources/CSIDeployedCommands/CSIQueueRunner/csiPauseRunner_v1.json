@@ -1,0 +1,37 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Pause runner",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "waitForCompletion",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true,
+            "default_value": "false"
+          }
+        },
+        {
+          "label": "timeout",
+          "basic": "uint32",
+          "optional": {
+            "isOptional": true,
+            "default_value": "0"
+          }
+        }
+      ]
+    },
+    "out": {}
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

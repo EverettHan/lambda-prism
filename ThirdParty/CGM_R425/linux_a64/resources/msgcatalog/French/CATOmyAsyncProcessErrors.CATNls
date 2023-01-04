@@ -1,0 +1,44 @@
+<meta charset="UTF-8"/>
+ASYNC_Process_Death_NormalEnd.Diagnostic="Processus correct.";
+ASYNC_Process_Death_NormalEnd.Advice="";
+ASYNC_Process_Death_NormalEnd.Request="";
+
+ASYNC_Process_Death_KilledByCATIA.Diagnostic="L'opération a été annulée par l'utilisateur.";
+ASYNC_Process_Death_KilledByCATIA.Advice="";
+ASYNC_Process_Death_KilledByCATIA.Request="";
+
+ASYNC_Process_Death_KilledByTimeOut.Diagnostic="L'opération a été annulée, la réponse du serveur a dépassé le délai d'expiration.";
+ASYNC_Process_Death_KilledByTimeOut.Advice="";
+ASYNC_Process_Death_KilledByTimeOut.Request="";
+
+ASYNC_Process_Death_KilledByUser.Diagnostic="L'opération a été annulée, un processus asynchrone a été arrêté par une app externe.";
+ASYNC_Process_Death_KilledByUser.Advice="Assurez-vous qu'aucune autre app ne peut arrêter les processus asynchrones.";
+ASYNC_Process_Death_KilledByUser.Request="";
+
+ASYNC_Process_Death_SystemError.Diagnostic="L'opération a été annulée, erreur interne.";
+ASYNC_Process_Death_SystemError.Advice="Extrayez le fichier abend et contactez votre support local.";
+ASYNC_Process_Death_SystemError.Request="";
+
+ASYNC_Process_Death_Unknown.Diagnostic="L'opération a été annulée, erreur inattendue.";
+ASYNC_Process_Death_Unknown.Advice="Extrayez le fichier abend et contactez votre support local.";
+ASYNC_Process_Death_Unknown.Request="";
+
+ASYNC_Task_End_CanceledByUser.Diagnostic="L'opération a été annulée par l'utilisateur.";
+ASYNC_Task_End_CanceledByUser.Advice="";
+ASYNC_Task_End_CanceledByUser.Request="";
+
+ASYNC_Task_End_AsyncPlatformError.Diagnostic="L'opération a été annulée, erreur interne.";
+ASYNC_Task_End_AsyncPlatformError.Advice="Les commandes asynchrones sont désactivées.";
+ASYNC_Task_End_AsyncPlatformError.Request="";
+
+ASYNC_Process_Death_At_Connect.Diagnostic="Toutes les commandes seront exécutées de manière synchrone.";
+ASYNC_Process_Death_At_Connect.Advice="Recherchez Asynchronisme dans la documentation pour plus de détails. Vous pouvez continuer à travailler.";
+ASYNC_Process_Death_At_Connect.Request="Asynchronisme";
+
+ASYNC_Process_Death_At_Connect_DevStage.Diagnostic="Un processus prenant en charge des requêtes asynchrones est mort de manière inattendue pendant sa connexion.\nLes requêtes asynchrones sont maintenant désactivées ; toutes les requêtes seront faites de manière synchrone.";
+ASYNC_Process_Death_At_Connect_DevStage.Advice="Veuillez vérifier vos paramètres de connexion et contacter le propriétaire de CATPLMxProviderConnection::Connect à propos de ce problème.";
+ASYNC_Process_Death_At_Connect_DevStage.Request="Mort du processus - Erreur de connexion";
+
+ASYNC_Platform_Deactivated.Diagnostic="Les requêtes asynchrones sont maintenant désactivées ; toutes les requêtes seront faites de manière synchrone.";
+ASYNC_Platform_Deactivated.Advice="";
+ASYNC_Platform_Deactivated.Request="";

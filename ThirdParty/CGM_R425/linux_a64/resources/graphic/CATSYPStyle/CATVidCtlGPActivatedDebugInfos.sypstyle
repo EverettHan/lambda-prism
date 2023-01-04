@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP" xmlns:vid="http://www.3ds.com/xsd/VID">
+  <Template syp:name="Default" Target="CATVidCtlGPActivatedDebugInfos">
+    <CATVidLaySideAttach>
+      <CATVidGPSquare syp:name="gpShape" Dimension="@GPDimension" BorderColor="0 100 255 255" Color="0 150 255 150"/>
+      <CATVidGPSquare syp:name="cursorShape" RequestedMinimumDimension="32 32" Texture="VidDebugInfosTarget.png" ColorizeBlackPixelTo="0 100 255 255"/>
+    </CATVidLaySideAttach>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleFlag" Value="1" TargetName="cursorShape">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.8">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="cursorShape" CATSYPStoryboard.TargetProperty="TextureAlpha"  Duration="0:0:0.8" From="255" To="0" Easing="QuintIn"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisibleFlag" Value="1" TargetName="gpShape">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.8">
+            <CATSYPColorAnimation CATSYPStoryboard.TargetName="gpShape" CATSYPStoryboard.TargetProperty="Color"  Duration="0:0:0.8" To="0 0 0 0" Easing="QuintIn"/>
+            <CATSYPColorAnimation CATSYPStoryboard.TargetName="gpShape" CATSYPStoryboard.TargetProperty="BorderColor"  Duration="0:0:0.8" To="0 0 0 0" Easing="QuintIn"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+</Styles>

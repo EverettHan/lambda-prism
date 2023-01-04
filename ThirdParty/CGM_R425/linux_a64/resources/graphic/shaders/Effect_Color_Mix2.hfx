@@ -1,0 +1,74 @@
+//
+// FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM
+//
+
+#include "Effect_General.hfx"
+
+//--------------------------------
+// Tweakables
+//--------------------------------
+
+samplerRECT Auto_EyeMap<>;
+#ifdef MSAA
+sampler2DMS Auto_NormalMap_WithTransparency<>;
+float       Auto_NbAASamples<>;
+#else
+samplerRECT Auto_NormalMap_WithTransparency<>;
+#endif
+float4      Auto_Size<>;
+
+float4 u_Color1
+<
+> = float4(0,0,0,1.f);
+
+float4 u_Color2
+<
+> = float4(0,0,0,1.f);
+
+
+//-----------------------------------------------------------------------------------------
+//  Pixel Shader
+//-----------------------------------------------------------------------------------------
+
+#include "Effect_NormalZServices.hfx"
+
+float4 Effect_ColorMix2_PS(pixelInput IN) : COLOR 
+{
+	float4 colInit  = texRECT(Auto_EyeMap,  IN.texCoord.xy);    
+  unsigned int curSample = 0;
+
+	float4 col = 0;
+
+#ifdef MSAA
+  for(curSample = 0 ; curSample < Auto_NbAASamples ; ++curSample)
+  {
+#endif
+	  float4 colMix = u_Color1;
+	  if (IsBackground(Auto_NormalMap_WithTransparency ,IN.texCoord.xy, curSample)) colMix = u_Color2;
+
+    float4 colTmp = colInit;
+	  colTmp = (2-4*colMix)*(colTmp*colTmp)+(4*colMix-1)*colTmp;
+	  colTmp = lerp(colInit, colTmp, colMix.w);
+	  
+	  col += saturate(colTmp);
+#ifdef MSAA
+	}
+	col *= 1.f/Auto_NbAASamples;
+#endif
+
+	col.w = 1;
+	
+	return col;
+}
+
+//-----------------------------------------------------------------------------------------
+//  Techniques
+//-----------------------------------------------------------------------------------------
+
+technique Effect_ColorMix2_GLSL
+{
+  pass p0 
+  {		
+    FragmentProgram = compile glslf Effect_ColorMix2_PS();
+  }
+}

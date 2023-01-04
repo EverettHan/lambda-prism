@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# @quickReview CSY  17:04:28  Launch action ObjectModelerDicoCompiler_Done whenUpgrade="atTheEnd" so that it occurs after RemoveFilesAction
+# @quickReview CSY  17:08:29 Launch DeleteFileAction del_dicobin after action of checking running processes IR-532713-Abaqus2018
+# @quickReview CSY  17:09:21  DeleteFileAction is duplicated for Windows and UNIX, because the conditions are not the same
+# @quickReview CSY  18:05:23  Action CreatePCFGlist must be launched also during the upgrade : IR-603751, delete of CreatePCFGlist2
+# @quickReview CSY  18:06:28  Modification action del_dicobin
+-->
+<IC xmlns="http://DSYV6Install.3ds.com/XMLSchema">
+
+
+  <Add insTypeCond="CODE">
+
+    <DeleteFileAction name="ObjectModelerBinaryDictionary.bindict" targetDir="Path_dico_bin" id="del_dicobin" actPathDoesNotExist="notAnError" condition="ACT_CODE\|{CUR_OS}|\Administration?ObjectModelerDicoCompiler_Done" whenFirstInstall="never" whenDelete="early" type="file" whenAdditional="never" whenUpgrade="never"/>
+
+    <!--Compilation des dicos. Cette action devrait etre dans System, mais necessite CATSTART . Or il y a des media qui incluent
+    System et pas Administration.-->
+    <PathVariable name="Path_dico_bin" value="^s[^e(TARGET_PATH)/|{CUR_OS}|/code/dictionary/DirForBinOMDictionary]" createNonExistingDir="true" setType="fixed" type="dir" checkExistence="false"/>
+
+    <CreateDirAction id="CreatePathDicoBin" targetDir="Path_dico_bin"/>
+
+    <LaunchAppAction exe="^s[^e(TARGET_PATH)/|{CUR_OS}|/code/bin/CATSTART]" arguments='-run "JS0CORBADicExe -p \&quot;^s[^e(TARGET_PATH)\|{CUR_OS}|]\&quot;" -env Env -direnv "^e(Path_Catenv)"' condition="ACT_CODE\|{CUR_OS}|\DSYAdmEnvMgt?EnvCreation" wait="true" id="ObjectModelerDicoCompiler_Done" whenFirstInstall="normal" whenAdditional="normal" whenDelete="never" whenUpgrade="atTheEnd" msgCatalog="Inst_Administration">
+      <ReturnCode neq="0" msgKey="compilationBinaryDicoFailed" type="fail">
+        <Param value="SPE_RC"/>
+        <Button action="ok"/>
+      </ReturnCode>
+    </LaunchAppAction>
+
+    <!--Generation du fichier PCFG.list-->
+    <PathVariable name="Path_Control" value="^s[^e(TARGET_PATH)/|{CUR_OS}|/control]" createNonExistingDir="true" setType="fixed" type="dir" checkExistence="false"/>
+    <CreateDirAction id="CreatePathControl" targetDir="Path_Control"/>
+
+    <LaunchAppAction id="CreatePCFGlist" exe="^s[^v(CATInst)/|{CUR_OS}|/code/bin/DSYPcfgList]" arguments='"^s[^e(Path_Control)]" ^s[^G(SelectProduct)]' useInstallerEnvironment='true' whenAdditional="atTheEnd" whenDelete="never" whenFirstInstall="atTheEnd" whenUpgrade="atTheEnd" msgCatalog="Inst_Administration" wait="true">
+      <ReturnCode neq="0" msgKey="DSYPcfgListProductFailed" type="fail">
+        <Param value="SPE_RC"/>
+        <Param value="SPE_ERR"/>
+        <Button action="ok"/>
+      </ReturnCode>
+    </LaunchAppAction>
+
+    <DeleteFileAction name="|{CUR_OS}|\control\PCFG.list" id="del_PCFG_list_File" actPathDoesNotExist="notAnError" whenFirstInstall="never" whenDelete="normal" type="file" whenAdditional="never" whenUpgrade="never"/>
+
+  </Add>
+
+
+  <Add osCond="Windows" insTypeCond="CODE">
+    <CheckBoxVariable name="CustomShortcuts" msgCatalog="Inst_Administration" allSelected="true" noneSelected="false" selectAll="false" selectNone="false" canSubscribe="true" >
+      <Item name="AdminToolsShortcut" setType="default" value="true" />
+    </CheckBoxVariable>
+
+  </Add>
+
+  <DuplicateFW osCond="Windows" insTypeCond="CODE">
+    <Prefix name="" ctrlFile=""/>
+    <PrefixExtended name="_PRFEXT-RegServer" ctrlFile="empty">
+      <Add osCond="Windows" insTypeCond="CODE">
+        <!--DSYAdmRegSrv needs to register VSTA only if VSTA has been installed-->
+        <!--if VSTA has been installed an installation logfile exists-->
+        <BooleanVariable name="BOOL_VSTALOG" doNotShow="true" value="false" setType="default"/>
+        <CheckFileAction path="^p(tmpInstall)\DSVSTAInstaller.log" type="file" check="exist" id="Check_vstalog" varBool="BOOL_VSTALOG" setType="fixed" whenFirstInstall="atTheEnd" whenAdditional="never" whenDelete="never" whenUpgrade="atTheEnd" />
+        <TextVariable name="ValueRegVSTA" setType="default" doNotShow="true" type="normal" value="" />
+        <SetTextVariable name="ValueRegVSTA" setType="fixed" condition="VAR_BOOL_VSTALOG|AND|FIX_BOOL_VSTALOG" value="TRUE"/>
+        <SetTextVariable name="ValueRegVSTA" setType="fixed" condition="|!|VAR_BOOL_VSTALOG|AND|FIX_BOOL_VSTALOG" value="FALSE"/>
+        <!--Launch DSYAdmRegSrv with CATSTART because some values in the registry are NLS and we need CATMsgCatalogPath-->
+        <LaunchAppAction exe="^e(TARGET_PATH)\|{CUR_OS}|\code\bin\CATSTART.exe" arguments='-run "DSYAdmRegSrv -set ^m(productLine) -env Env -direnv \"^e(Path_Catenv)\""' condition="ACT_CODE\|{CUR_OS}|\DSYAdmEnvMgt?EnvCreation|AND|FIX_ValueRegVSTA" wait="true" id="SetRegserver_Done" whenAdditional="atTheEnd" whenDelete="never" whenFirstInstall="atTheEnd" whenUpgrade="atTheEnd" msgCatalog="Inst_Administration">
+          <setenv key="CATEnvName" value=""/>
+          <setenv key="BOOL_RegisterVSTA" value="^e(ValueRegVSTA)"/>
+          <ReturnCode neq="0" msgKey="SetRegServerFailed" type="fail">
+            <Param value="SPE_RC"/>
+            <Param value="SPE_OUT"/>
+            <Button action="ok"/>
+          </ReturnCode>
+        </LaunchAppAction>
+
+        <LaunchAppAction exe="^e(TARGET_PATH)\|{CUR_OS}|\code\bin\DSYAdmRegSrv" arguments='-unset' wait="true" id="UnsetRegserver_Done" whenAdditional="never" whenDelete="normal"  whenFirstInstall="never"  whenUpgrade="never" msgCatalog="Inst_Administration">
+          <ReturnCode neq="0" msgKey="UnsetRegServerFailed" type="fail">
+            <Param value="SPE_RC"/>
+            <Param value="SPE_OUT"/>
+            <Button action="ok"/>
+          </ReturnCode>
+        </LaunchAppAction>
+      </Add>
+    </PrefixExtended>
+  </DuplicateFW>
+
+  <InstallationFiles insTypeCond="CODE" cd="1" dest="inst" keepRelativePath="true" type="exe">
+    <CopyFile src="[installerOS]\code\bin\DSYPcfgList"/>
+  </InstallationFiles>
+</IC>

@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic="Erreur de système.";
+SystemERR.Advice="Veuillez contacter le service technique.";
+
+
+ServerInternalERR.Diagnostic="Erreur interne du serveur.";
+ServerInternalERR.Advice="Une sauvegarde locale a été effectuée pour conserver vos données. Vous pourrez restaurer votre session si nécessaire.";
+
+ServerInternalERRNoLS.Diagnostic="Erreur interne du serveur.";
+ServerInternalERRNoLs.Advice="Aucun enregistrement local n'a été possible. Veuillez réessayer ultérieurement.";
+
+VaultServerInternalERR.Diagnostic="Des erreurs sont survenues lors du transfert de flux.";
+VaultServerInternalERR.Advice="Une sauvegarde locale a été effectuée pour conserver vos données. Vous pourrez restaurer votre session si nécessaire.";
+
+VaultServerInternalERRNoLs.Diagnostic="Des erreurs sont survenues lors du transfert de flux.";
+VaultServerInternalERRNoLs.Advice="Aucun enregistrement local n'a été possible. Veuillez réessayer ultérieurement.";
+
+NoObjectToSaveWRN.Diagnostic="Il n'y a pas d'objet à enregistrer.";
+NoObjectToSaveWRN.Advice="Assurez-vous d'avoir bien sélectionné les éléments modifiés.";
+
+GenericSaveErrorWithCompo.Diagnostic="Impossible d'enregistrer le composant [/p1].";
+GenericSaveErrorWithCompo.Advice="Impossible de sauvegarder le composant /p1. \nIl est vivement conseillé de redémarrer cette application.";
+
+PLMSaveEngineError_501.Diagnostic="Impossible d'effectuer l'opération d'enregistrement.";
+PLMSaveEngineError_501.Advice="Le composant /p1 n'est pas un élément affecté de l'ECA courante.";
+
+ChangeLogInternalERR.Diagnostic="L'enregistrement ne peut pas être effectué en raison des données ChangeLog.";
+ChangeLogInternalERR.Advice="Veuillez contacter le support avec les dernière traces DebugChangeLog*.log de votre répertoire CATTemp.";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic="L'enregistrement ne peut pas être effectué en raison de la coexistence de la table de mappage.";
+SaveCoexMpgExchangeInternalERR.Advice="Veuillez contacter le service technique.";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic="Impossible d'effectuer l'opération d'enregistrement.";
+PLMSaveEngineError_601.Advice="L'opération d'enregistrement hors ligne ne fonctionne pas avec le composant/p1. \nLe composant a été modifié en dehors d'un espace de création.";
+PLMSaveEngineError_602.Diagnostic="Impossible d'effectuer l'opération d'enregistrement.";
+PLMSaveEngineError_602.Advice="L'opération d'enregistrement hors ligne ne fonctionne pas avec le composant/p1. \nLe composant est sous une transaction de cycle de vie.";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic="Impossible d'effectuer l'opération d'enregistrement.";
+PLMSaveEngineError_701.Advice="L'opération d'enregistrement ne fonctionne pas avec le composant/p1. \nLe composant a été modifié en dehors d'un espace de création.";
+PLMSaveEngineError_702.Diagnostic="Impossible d'effectuer l'opération d'enregistrement.";
+PLMSaveEngineError_702.Advice="L'opération d'enregistrement ne fonctionne pas avec le composant/p1. \nLe composant est sous une transaction de cycle de vie.";

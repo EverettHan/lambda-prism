@@ -1,0 +1,128 @@
+{
+  "comment": [
+    "- This model corresponds to old `CATGraphicMaterial` class."
+  ],
+
+  "parameters": [
+    {
+      "name": "AmbientColor",
+      "type": "Float",
+      "nbElements": 3
+    },
+
+    {
+      "name": "DiffuseColor",
+      "type": "Float",
+      "nbElements": 3
+    },
+
+    {
+      "name": "SpecularColor",
+      "type": "Float",
+      "nbElements": 3
+    },
+
+    {
+      "name": "AmbientCoeff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "DiffuseCoeff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "SpecularCoeff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "TransparencyCoeff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "ReflectionCoeff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "ShininessCoeff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "Texture",
+      "type": "Texture"
+    },
+
+    {
+      "name": "TextureFunction",
+      "type": "Int",
+      "nbElements": 1,
+      "range": {
+        "min": 0,
+        "max": 3
+      },
+      "comment": "0=Modulate, 1=Blend, 2=Decal, 3=Replace"
+    },
+
+    {
+      "name": "TextureMapping",
+      "type": "Int",
+      "nbElements": 1,
+      "range": {
+        "min": 0,
+        "max": 3
+      },
+      "comment": "0=User, 1=ObjectLinearPlanar, 2=EyeLinearPlanar, 3=Environment"
+    },
+
+    {
+      "name": "ProjectionPlaneS",
+      "type": "Float",
+      "nbElements": 4,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      }
+    },
+
+    {
+      "name": "ProjectionPlaneT",
+      "type": "Float",
+      "nbElements": 4,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      }
+    },
+
+    {
+      "name": "ProjectionPlaneR",
+      "type": "Float",
+      "nbElements": 4,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      }
+    },
+
+    {
+      "name": "ProjectionPlaneQ",
+      "type": "Float",
+      "nbElements": 4,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      }
+    }
+  ]
+}

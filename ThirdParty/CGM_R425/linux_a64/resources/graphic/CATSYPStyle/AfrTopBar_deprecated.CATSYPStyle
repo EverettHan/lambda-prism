@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="AfrVidHoverMenu.CATSYPStyle"/>
+  </Resources>
+
+  <!--======================================================-->
+  <!-- CATAfrVidTopBar : control to display the Signature Top Bar (starts with the minimal Top Bar)  -->
+  <!--======================================================-->
+  <Template syp:name="Deprecated" Target="CATAfrVidTopBar" >
+    <CATVidLayGrid  RequestedMinimumDimension="10 44" GridWeight="row1=1">
+
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+
+        <!-- Background -->
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidGPNinePatchSquare syp:name="Background" ScalableAreaBorder="1 1 2 1" TextureFilter="1" MinificationFilter="Nearest" RequestedMinimumDimension="42 44" Texture="PLMBar/top-bg.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" PickFlag="1"  UseManipulatorFlag="1"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!-- / Background -->
+        <!-- Main Content-->
+        <CATVidLayGrid syp:name="MainGrid" RequestedMinimumDimension="1 42" GridWeight="col1=1 row1=1">
+          <!--Compass spacer: Reserved spacer to emulated the space of the Compass -  To Hide When Compass is inserted in its own view (Le Borgne)-->
+          <CATVidSpacer syp:name="SpacerCompass"  RequestedMinimumDimension="144 42" VisibleFlag="@CompassVisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <!--Top Bar Title (Left) MinDimension = 785-144 = 641-->
+          <CATVidLayGrid  syp:name="TopBarTitle" GridWeight="col4=1" VisibleFlag="1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL">
+            <CATVidGPLabel LayoutWhenUnvisibleFlag="0" VisibleFlag="1" syp:name="3D" Text="3D" BoldFlag="1" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidGPLabel LayoutWhenUnvisibleFlag="0" VisibleFlag="1" syp:name="EXPERIENCE" Text="EXPERIENCE " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+            <CATVidGPLabel LayoutWhenUnvisibleFlag="0"  VisibleFlag="0" syp:name="pipe" Text="| " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+            <CATVidGPLabel  LayoutWhenUnvisibleFlag="0" VisibleFlag="1"
+                            Text="@BrandName" syp:name="BrandNameContainer"  BoldFlag="1" FontName="3ds"
+                            TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"
+                            CropPolicy="NoCrop" TextColor="255 255 255 255"
+                            CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB" Dimension="@BrandNameCurrentDimension Mode=OneWayToSource" />
+            <CATVidGPLabel CropPolicy="CropWithDots" syp:name="AppTitleContainer" Dimension="@AppTitleCurrentDimension Mode=OneWayToSource" FontName="3ds" TextHeight ="19" Text="@AppTitle" VerticalAlignment="1" HorizontalAlignment="0" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+            <CATVidGPSquare  syp:name="SpacerName" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" RequestedMinimumDimension="35 0" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+          </CATVidLayGrid>
+          <!--Top Bar Search + Tag +Menu (Right)-->
+          <CATVidLayGrid GridWeight="col0=1"   CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL">
+            <!--User name (hidden in this template)-->
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <!--Search button-->
+
+            <CATAfrVidHoverMenu syp:Template="Rounded_OnClick" syp:name="SearchMenuContainer" Orientation="Vertical" Name="SearchMenu"
+                          
+                          IconBoxDirection="Bottom"
+                          IconBoxSnapAlignment="SnapAlignCenter"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                          LayoutWhenUnvisibleFlag="0"
+                          ContentDimension="220 44"
+                        >
+              <CATAfrVidHoverMenu.Item>
+                <CATVidCtlButtonIcon syp:name="SearchButton" syp:Template="TopBarButtonNoSpace" Name="SearchButton"
+                        IconDimension="44 44"
+                        RequestedMinimumDimension="44 44"
+                        ClickMode="0"
+                        CheckMode="1"
+                        GiveFocusOnDragFlag="1"
+                        AcceptFocusOnDropFlag="1"
+                        CheckState="@CheckState Mode=TwoWays ElementName=SearchMenuContainer"
+                        OffTexture="large/I_Search.png"
+                        OverTexture="large/IF_Search.png"
+                        OnTexture="large/IP_Search.png"
+                                     Click="@HandleSearchPopupMenu"
+                                        />
+              </CATAfrVidHoverMenu.Item>
+              <CATVidCtl syp:name="SearchContainer" RequestedMinimumDimension="220 20" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" />
+              <CATVidCtl syp:name="SearchPopupContainer" ChildrenLifeCyclePolicy="DontDestroyChildren" RequestedMinimumDimension="220 20" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" />
+            </CATAfrVidHoverMenu>
+
+            <!--Tag Button -->
+            <CATVidCtl syp:name="RefinementContainer" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=L"/>
+            <!--Layer for Tag Search Hbg -->
+            <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB">
+              <CATAfrVidHoverMenu syp:Template="Rounded_OnClick" syp:name="MenuContainer" Orientation="Vertical" Name="DropDownMenu"
+                            
+                            IconBoxDirection="Bottom"
+                            IconBoxSnapAlignment="SnapAlignRight"
+                          CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"
+                            LayoutWhenUnvisibleFlag="0"
+                            ContainerLifeCyclePolicy="DontDestroyChildren"
+                            ContentDimension="220 44"
+                        >
+                <CATAfrVidHoverMenu.Item>
+
+                  <CATVidCtlButtonIcon syp:name="HbgButton" syp:Template="TopBarButtonNoSpace" Name="HbgButton"
+                          IconDimension="44 44"
+                          RequestedMinimumDimension="44 44"
+                          ClickMode="0"
+                          CheckMode="1"
+                          GiveFocusOnDragFlag="1"
+                          AcceptFocusOnDropFlag="1"
+                          CheckState="@CheckState Mode=TwoWays ElementName=MenuContainer"
+                          VisibleFlag="1"
+                          OverTexture="large/IF_TopBarList.png"
+                          OffTexture="large/I_TopBarList.png"
+                          OnTexture="large/IP_TopBarList.png"
+                          Click="@HandleHbgPopupMenu"
+         
+                        />
+                </CATAfrVidHoverMenu.Item>
+
+              </CATAfrVidHoverMenu>
+              <CATVidCtl syp:name="BlockingSquareCtl" ChildrenLifeCyclePolicy="DontDestroyChildren" VisibleFlag="0"/>
+            </CATVidLayLayer>
+
+
+            <!--Menus-->
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=3 attach=RLTB" />
+        </CATVidLayGrid>
+        <!--Compass container: the compass is inserted here in Full Screen or CID Frame mode-->
+        <CATVidLayGrid GridWeight="col1=1">
+          <CATVidCtl syp:name="CompassContainer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+
+      <!--When no brand display 3D EXPERIENCE-->
+      <CATSYPTrigger Property="UseBrandNameFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="3D" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="EXPERIENCE" Value="1"/>
+      </CATSYPTrigger>
+      <!--When brand exists hide 3D EXPERIENCE-->
+      <CATSYPTrigger Property="UseBrandNameFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="3D" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="EXPERIENCE" Value="0"/>
+      </CATSYPTrigger>
+      <!--When App Title is completely unvisible, add cropping to Brand name-->
+      <CATSYPTrigger Property="AppTitleNoMoreVisible" Value="1">
+        <CATSYPSetter Property="GridWeight"  TargetName="TopBarTitle" Value="col3=1"/>
+        <CATSYPSetter Property="CropPolicy" TargetName="BrandNameContainer" Value="CropWithDots"/>
+      </CATSYPTrigger>
+      <!--When App Title is almost visible, remove cropping to Brand name -->
+      <CATSYPTrigger Property="AppTitleNoMoreVisible" Value="0">
+        <CATSYPSetter Property="GridWeight"  TargetName="TopBarTitle" Value="col4=1"/>
+        <CATSYPSetter Property="CropPolicy" TargetName="BrandNameContainer" Value="NoCrop"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--======================================================-->
+  <!-- CATAfrVidTopBar : control to display the Signature Top Bar (max width:769)  -->
+  <!--======================================================-->
+  <Template syp:name="Deprecated" Target="CATAfrVidTopBar" syp:Variation="{644,44}">
+    <CATVidLayGrid RequestedMinimumDimension="400 44" GridWeight="row1=1">
+
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+
+        <!-- Background -->
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidGPNinePatchSquare syp:name="Background" ScalableAreaBorder="1 1 2 1" TextureFilter="1" MinificationFilter="Nearest" RequestedMinimumDimension="42 44" Texture="PLMBar/top-bg.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" PickFlag="1"  UseManipulatorFlag="1" />
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!-- / Background -->
+        <!-- Main Content-->
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayGrid RequestedMinimumDimension="1 44" GridWeight="col1=1 row1=1"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <!--Compass spacer: Reserved spacer to emulated the space of the Compass -  To Hide When Compass is inserted in its own view (Le Borgne)-->
+            <CATVidSpacer syp:name="SpacerCompass"  RequestedMinimumDimension="144 42" VisibleFlag="@CompassVisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <!--Top Bar Title (Left) MinDimension = 785-144 = 641-->
+            <CATVidLayGrid  syp:name="TopBarTitle" GridWeight="col4=1" VisibleFlag="1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL">
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0" syp:name="3D" Text="3D" BoldFlag="1" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0"  syp:name="EXPERIENCE" Text="EXPERIENCE " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0"  VisibleFlag="0" syp:name="pipe" Text="| " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+              <CATVidGPLabel  LayoutWhenUnvisibleFlag="0"
+                              Text="@BrandName" syp:name="BrandNameContainer"  BoldFlag="1" FontName="3ds"
+                              TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"
+                              CropPolicy="NoCrop" TextColor="255 255 255 255"
+                              CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+              <CATVidGPLabel CropPolicy="CropWithDots" syp:name="AppTitleContainer" FontName="3ds" TextHeight ="19" Text="@AppTitle" VerticalAlignment="1" HorizontalAlignment="0" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+              <CATVidGPSquare  syp:name="SpacerName" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" RequestedMinimumDimension="35 0" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+            </CATVidLayGrid>
+            <!--Top Bar Search + Tag +Menu (Right)-->
+            <CATVidLayGrid GridWeight="col0=1"   CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL">
+              <!--User name (hidden in this template)-->
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <!--Search button-->
+              <CATVidCtlButtonIcon syp:name="SearchButton" syp:Template="TopBarButtonNoSpace" Name="SearchButton"
+                  IconDimension="44 44"
+                  RequestedMinimumDimension="44 44"
+                  ClickMode="0"
+                  CheckMode="1"
+                  GiveFocusOnDragFlag="1"
+                  AcceptFocusOnDropFlag="1"
+                  CheckState="0"
+                  OffTexture="large/I_Search.png"
+                  OverTexture="large/IF_Search.png"
+                  OnTexture="large/IP_Search.png" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                                        />
+              <CATVidCtl syp:name="SearchContainer" RequestedMinimumDimension="220 20" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL"/>
+              <!--Tag Button -->
+              <CATVidCtl syp:name="RefinementContainer" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=L"/>
+              <CATVidCtlButtonIcon syp:name="HbgButton" syp:Template="TopBarButtonNoSpace" Name="HbgButton"
+                                        IconDimension="44 44"
+                                        RequestedMinimumDimension="44 44"
+                                        ClickMode="0"
+                                        CheckMode="1"
+                                        GiveFocusOnDragFlag="1"
+                                        AcceptFocusOnDropFlag="1"
+                                        CheckState="0"
+                                        VisibleFlag="0"
+                                        OverTexture="large/IF_TopBarList.png"
+                                        OffTexture="large/I_TopBarList.png"
+                                        OnTexture="large/IP_TopBarList.png"
+                                        CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"
+                        />
+              <!--Menus-->
+              <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB">
+                <CATVidLayStack syp:name="MenuContainer" Orientation="Horizontal"  ChildrenLifeCyclePolicy="DontDestroyChildren"  LayoutWhenUnvisibleFlag="0" VisibleFlag="1" />
+                <CATVidCtl syp:name="BlockingSquareCtl" ChildrenLifeCyclePolicy="DontDestroyChildren"/>
+              </CATVidLayLayer>
+            </CATVidLayGrid>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=3 attach=RLTB" />
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!--Compass container: the compass is inserted here in Full Screen or CID Frame mode-->
+        <CATVidLayGrid GridWeight="col1=1">
+          <CATVidCtl syp:name="CompassContainer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <!--Click on Search Button make Search Field visible and hide others menus. A Hamburger button is visible to restore the state-->
+      <CATSYPTrigger Property="CheckState" TargetName="SearchButton" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchContainer" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="MenuContainer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="HbgButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HbgButton" Value="1"/>
+      </CATSYPTrigger>
+      <!--Click on Hamburger Button make menus visible and hide Search Field. The Search button is visble to restore the state -->
+      <CATSYPTrigger Property="CheckState" TargetName="HbgButton" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchContainer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="MenuContainer" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="SearchButton" Value="1"/>
+        <CATSYPSetter Property="CheckState" TargetName="SearchButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HbgButton" Value="0"/>
+      </CATSYPTrigger>
+      <!--When no brand display 3D EXPERIENCE-->
+      <CATSYPTrigger Property="UseBrandNameFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="3D" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="EXPERIENCE" Value="1"/>
+      </CATSYPTrigger>
+      <!--When brand exists hide 3D EXPERIENCE-->
+      <CATSYPTrigger Property="UseBrandNameFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="3D" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="EXPERIENCE" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--======================================================-->
+  <!-- CATAfrVidTopBar : control to display the Signature Top Bar (maw width: 1269)  -->
+  <!--======================================================-->
+  <Template syp:name="Deprecated" Target="CATAfrVidTopBar" syp:Variation="{900,44}">
+    <CATVidLayGrid RequestedMinimumDimension="400 44" GridWeight="row1=1">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <!-- Background -->
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidGPNinePatchSquare syp:name="Background" ScalableAreaBorder="1 1 2 1" TextureFilter="1" MinificationFilter="Nearest" RequestedMinimumDimension="42 44" Texture="PLMBar/top-bg.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" PickFlag="1"  UseManipulatorFlag="1"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!-- / Background -->
+        <!-- Main Content-->
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayGrid RequestedMinimumDimension="1 44" GridWeight="col1=3 col2=1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <!--Compass spacer: Reserved spacer to emulated the space of the Compass -  To Hide When Compass is inserted in its own view (Le Borgne)-->
+            <CATVidSpacer syp:name="SpacerCompass"  RequestedMinimumDimension="144 42" VisibleFlag="@CompassVisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <!--Top Bar Title (Left) MinDimension = 785-144 = 641-->
+            <CATVidLayGrid  syp:name="TopBarTitle" GridWeight="col4=1" VisibleFlag="1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL">
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0" syp:name="3D" Text="3D" BoldFlag="1" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0"  syp:name="EXPERIENCE" Text="EXPERIENCE " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseBrandNameFlag" syp:name="pipe" Text="| " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+              <CATVidGPLabel  LayoutWhenUnvisibleFlag="0"
+                              Text="@BrandName" syp:name="BrandNameContainer"  BoldFlag="1" FontName="3ds"
+                              TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"
+                              CropPolicy="NoCrop" TextColor="255 255 255 255"
+                              CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+              <CATVidGPLabel CropPolicy="CropWithDots" syp:name="AppTitleContainer" FontName="3ds" TextHeight ="19" Text="@AppTitle" VerticalAlignment="1" HorizontalAlignment="0" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+              <CATVidGPSquare  syp:name="SpacerName" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" RequestedMinimumDimension="35 0" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+            </CATVidLayGrid>
+            <!--Top Bar Search + Tag +Menu (Right)-->
+            <CATVidLayGrid  GridWeight="col0=1" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB">
+              <CATVidCtl syp:name="SearchContainer" RequestedMinimumDimension="220 20"  LayoutWhenUnvisibleFlag="0" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL"/>
+              <!--Tag Button -->
+              <CATVidCtl syp:name="RefinementContainer" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L"/>
+              <!--User name (hidden in this template)-->
+              <CATVidGPLabel syp:name="UserNameLabel"
+                        CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="0"
+                       Text="@UserName" FontName="3ds"
+                       TextHeight="18"
+                       VerticalAlignment="1"
+                       HorizontalAlignment="2"
+                       CropPolicy="CropWithDots"
+                       TextColor="255 255 255 255" />
+              <!--Menus-->
+              <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB">
+
+                <CATVidLayStack syp:name="MenuContainer" Orientation="Horizontal"  ChildrenLifeCyclePolicy="DontDestroyChildren" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RL"/>
+                <CATVidCtl syp:name="BlockingSquareCtl" ChildrenLifeCyclePolicy="DontDestroyChildren"/>
+              </CATVidLayLayer>
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+
+        <CATVidLayGrid GridWeight="col1=1">
+          <CATVidCtl syp:name="CompassContainer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+  <!--======================================================-->
+  <!-- CATAfrVidTopBar : control to display the Signature Top Bar (maw width: 1269)  -->
+  <!--======================================================-->
+  <Template syp:name="Deprecated" Target="CATAfrVidTopBar" syp:Variation="{1269,44}">
+    <CATVidLayGrid RequestedMinimumDimension="400 44" GridWeight="row1=1">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <!-- Background -->
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidGPNinePatchSquare syp:name="Background" ScalableAreaBorder="1 1 2 1" TextureFilter="1" MinificationFilter="Nearest" RequestedMinimumDimension="42 44" Texture="PLMBar/top-bg.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" PickFlag="1" UseManipulatorFlag="1" />
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!-- / Background -->
+        <!-- Main Content-->
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayGrid  RequestedMinimumDimension="1 44" GridWeight="col1=1 col2=1"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <!--Compass spacer: Reserved spacer to emulated the space of the Compass -  To Hide When Compass is inserted in its own view (Le Borgne)-->
+            <CATVidSpacer syp:name="SpacerCompass"  RequestedMinimumDimension="144 42" VisibleFlag="@CompassVisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <!--Top Bar Title (Left) MinDimension = 785-144 = 641-->
+            <CATVidLayGrid  syp:name="TopBarTitle" GridWeight="col4=1" VisibleFlag="1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL">
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0" syp:name="3D" Text="3D" BoldFlag="1" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0"  syp:name="EXPERIENCE" Text="EXPERIENCE " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+              <CATVidGPLabel LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseBrandNameFlag" syp:name="pipe" Text="| " BoldFlag="0" FontName="3ds" TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+              <CATVidGPLabel  LayoutWhenUnvisibleFlag="0"
+                              Text="@BrandName" syp:name="BrandNameContainer"  BoldFlag="1" FontName="3ds"
+                              TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"
+                              CropPolicy="NoCrop" TextColor="255 255 255 255"
+                              CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+              <CATVidGPLabel CropPolicy="CropWithDots" syp:name="AppTitleContainer" FontName="3ds" TextHeight ="19" Text="@AppTitle" VerticalAlignment="1" HorizontalAlignment="0" TextColor="255 255 255 255" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+              <CATVidGPSquare  syp:name="SpacerName" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" RequestedMinimumDimension="35 0" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+            </CATVidLayGrid>
+            <!--Top Bar Search + Tag +Menu (Right)-->
+            <CATVidLayGrid  GridWeight="col2=1" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB">
+              <CATVidCtl syp:name="SearchContainer" RequestedMinimumDimension="350 20"  LayoutWhenUnvisibleFlag="0" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL"/>
+              <!--Tag Button -->
+              <CATVidCtl syp:name="RefinementContainer" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L"/>
+              <!--User name -->
+              <CATVidGPLabel syp:name="UserNameLabel"
+                        CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL" LayoutWhenUnvisibleFlag="0" VisibleFlag="1"
+                       Text="@UserName" FontName="3ds"
+                       TextHeight="18"
+                       VerticalAlignment="1"
+                       HorizontalAlignment="2"
+                       CropPolicy="CropWithDots"
+                       TextColor="255 255 255 255" />
+              <!--Menus-->
+              <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB">
+                <CATVidLayStack syp:name="MenuContainer" Orientation="Horizontal" RequestedMinimumDimension="1 44"  ChildrenLifeCyclePolicy="DontDestroyChildren" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RL"/>
+                <CATVidCtl syp:name="BlockingSquareCtl" ChildrenLifeCyclePolicy="DontDestroyChildren"/>
+              </CATVidLayLayer>
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!--Compass container: the compass is inserted here in Full Screen or CID Frame mode-->
+        <CATVidLayGrid GridWeight="col1=1">
+          <CATVidCtl syp:name="CompassContainer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+</Styles>
+
+

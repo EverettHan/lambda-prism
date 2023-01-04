@@ -1,0 +1,72 @@
+<meta charset="UTF-8"/>
+//=======================================================================================
+// WARNING: YWE 18:09:24 SINGLE-CODE 2015x => NO LOCAL CHANGE EXPECTED - USE IMPORT  
+//=======================================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2013-2014
+// Messages for utilities to generate XML reports
+//
+//==================================================================================
+// January 2013  NLS declaration for PLM Briefcase report generation utilities        Jean-Luc Medioni
+//==================================================================================
+
+// -------------------------------------------------
+// --- PLMGeneratePLMBriefcaseReport utility messages
+// -------------------------------------------------
+
+UtilityInput.Prolog="***** 参数 *****\n";
+UtilityInput.InputBriefcaseFile=" *** 输入 PLMBriefcase 文件：<variable>/p1\n</variable><break/>";
+UtilityInput.InputBriefcaseFolder=" *** 输入 PLMBriefcase 文件夹：<variable>/p1\n</variable><break/>";
+UtilityInput.OutputReportFile=" *** 输出 XML 报告文件：<variable>/p1\n</variable><break/>";
+UtilityInput.XslReportFile=" *** XSL 备用文件：        /p1\n";
+UtilityInput.SummaryReportFile=" *** 文本报告文件摘要：/p1\n";
+UtilityInput.Epilog="**********************\n\n";
+UtilityInput.Extension=" *** 显示扩展名\n";
+UtilityInput.AllAttributes=" *** 显示所有 DS 属性\n";
+UtilityInput.CustoAttributes=" *** 显示客户属性\n";
+UtilityInput.OtherOid=" *** 显示主要 Id 和 逻辑 Id\n";
+UtilityInput=" *** 参数设置为 /p2\n 时，激活 /p1 过滤";
+UtilityInput.Other=" *** <variable>/p1</variable>：<variable>/p2\n</variable><break/>";
+UtilityInput.Check=" *** 将运行某些检查。\n";
+UtilityInput.Iteration=" *** CD 和 EE 迭代迭代数显示。\n";
+UtilityInput.JsonOutputFormat=" *** JSON 输出格式。\n";
+UtilityInput.XmlOutputFormat=" *** XML 输出格式。\n";
+
+PR_HELP_GENERAL_REPORT="用法： PLMGeneratePLMBriefcaseReport  <标识如下所述>\n";
+PR_HELP_OUTPUT="-输出 <ReportFileName>        其中 <ReportFileName> 是 XML 报告输出文件。（必需）\n";
+PR_HELP_INPUT="-输入 <BriefcaseFileName>      其中 <BriefcaseFileName> 是要分析的 PLMBriefcase 输入文件；它是 3dxml 或 PLMBriefcase 文件。\n                                （必须至少提供 -input 或 -inFolder 这两个选项中的其中一项）\n";
+PR_HELP_INPUT_FOLDER="-inFolder <BriefcaseFolderName> 其中 <BriefcaseFolderName> 是要分析其中所有 PLMBriefcase 文件的输入文件夹；该选项与 -input 不兼容。\n";
+PR_HELP_XSL="-xsl <XslFileName>              其中 <XslFileName> 是将在 XML 报告中使用的 XSL 文件。\n";
+PR_HELP_SUMMARY="-summary <TextFileName>         其中 <TextFileName> 是文本报告文件摘要。（可选）\n";
+PR_HELP_FILTER_BY="-filterBy <Type> <Value>        其中 <Type> 定义要使用的过滤选项，值表示过滤操作的参数。\n";
+PR_HELP_EXTENSION="-扩展名                      以显示扩展名信息。（可选）\n";
+PR_HELP_DS_ATTRIBUTES="-cd                             以显示所有核心数据属性，不仅显示基本属性。（可选）\n";
+PR_HELP_CUSTO_ATTRIBUTES="-ee                             以显示所有暴露的扩展企业属。（可选）\n";
+PR_HELP_OTHER_OID="-oid                            以将主要 Id 和逻辑 Id 显示为属性。（可选）\n";
+PR_HELP_CHECK="-检查                          以激活某些 PLMBriefcase 检查。\n";
+PR_HELP_ITERATION="-迭代                      以显示与 CD 和 EE 零件相关的迭代数。\n";
+PR_HELP_JSON="-json                           以使用 JSON 格式生成报告。\n";
+PR_HELP_XML="-xml                            以使用 XML 格式生成报告。\n";
+PR_HELP_HELP="-h                              帮助\n";
+
+PR_REPORT_FAILED="错误：PLMGeneratePLMBriefcaseReport 执行失败\n";
+PR_REPORT_SUCCEEDED="PLMGeneratePLMBriefcaseReport 执行成功\n";
+
+//PR_LOGIN_SUCCESS        = "** Login Successful\n" ;
+//PR_REP_PACKAGES_SUCCESS = "** Successfully obtained replication packages. Number of packages being processed: /p1.\n" ;
+
+PR_DUPLICATE_PARAM="参数 /p1 出现多次。失败。";
+PR_MISSING_INPUT="/p1 关键字至少需要未提供值中的一个。失败。\n";
+PR_MISSING_PARAM="未指定所需参数 /p1。失败。\n";
+PR_NO_INPUT_DEFINED="-input 和 -inFolder 这 2 个关键字中必须至少提供其中一个用来定义要分析的 PLMBriefcase。失败。\n";
+PR_INCOMPATIBLE_INPUT="以下 2 个关键字 /p1 和 /p2 不兼容，请只选择一个，然后重新启动执行。当前操作失败。\n";
+PR_PLMBRIEFCASE_FOUND="错误：目录 /p1 不包含任何 PLMBriefcase，因此报告将为空。\n";
+
+// ---> Error messages
+
+UtilityInput.FileNotFound="错误：与 /p2 关键字关联的文件 /p1 未找到。\n";
+UtilityInput.NotPLMBriefcase="错误：文件 /p1 未被识别为 PLMBriefcase 文件（扩展名必须设置为 .3dxml 或 .PLMBriefcase）。\n";
+UtilityInput.NoPLMBriefcaseIn3dxml="错误：无法打开不包含任何创作数据的 3dxml 文件 /p1 或 3dxml 文件。\n";
+UtilityInput.NotXslFileType="错误：文件 /p1 未被识别为 XSL 文件（扩展名必须设置为 .xsl）。\n";
+UtilityInput.FileWriteAccessFail="错误：无法写入 /p1。\n";
+UtilityInput.NotValidFilterOption="警告：/p1 未被识别为有效的过滤器选项（值被设置为 /p2）。\n";
+

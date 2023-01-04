@@ -1,0 +1,416 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CATAfrPLMCompassWidgets.CATSYPStyle"/>
+    <ResourceDictionary Source="CATAfrCustomStyles.CATSYPStyle"/>
+  </Resources>
+  <!--======================================================-->
+  <!-- CATCAfrMenu_Afr3DS_Compass : view of a compass   -->
+  <!--======================================================-->
+
+
+
+  <!--======================================================-->
+  <!-- CATCAfrList_ContainerApps : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrPanelApps_ContainerApps">
+    <CATAfrSYPModelViewMetaData syp:name="MetaData" >
+
+      <!--<CATAfrSYPModelViewMetaData.ControllerPresenter>
+        <CATAfrSYPAppsController syp:name="Controller" FilteredSource="@Item ElementName=FilterEditor" />
+      </CATAfrSYPModelViewMetaData.ControllerPresenter>-->
+      <!-- Background of band-->
+
+      <CATVidCtl VisibilityPolicy="SlideLToRAnimation"
+                      LayoutWhenUnvisibleFlag="0" VisibleFlag="@Visibility">
+        <CATVidLayLayer>
+          <CATVidGPSquare BorderColor="179 181 185 255" Color="255 255 255 255"/>
+          <CATVidLayGrid  GridWeight="col0=1 row1=1">
+
+            <CATVidSpacer syp:name="TopSpacer" RequestedMinimumDimension="35 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+
+            <CATVidLayGrid GridWeight="row1=1"   LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidLayGrid  GridWeight="col1=1"   LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+                <CATVidSpacer RequestedMinimumDimension="10 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="0 15" LayoutWhenUnvisibleFlag="0" VisibleFlag="@BigCompassFlag ElementName=Controller" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+
+                <CATVidCtlButtonIcon syp:Template="Compact" syp:name="CloseButton" Name="ClosePanel" OnTexture="Compass/Close_Icon_Normal.png" OverTexture="Compass/Close_Icon_Normal.png"   OffTexture="Compass/Close_Icon_Normal.png"
+                                     RequestedMinimumDimension="32 32" IconDimension="13 13" Click="@OnCloseApps ElementName=Controller" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RT"/>
+                <CATVidSpacer  syp:name="SpacerWhenBigCompass" LayoutWhenUnvisibleFlag="0" VisibleFlag="@BigCompassFlag ElementName=Controller"
+                              RequestedMinimumDimension="32 22" CATVidLayGrid.IndexedConstraints="x=1 y=2 xSpan=2 attach=RLTB"/>
+                <CATVidLayGrid   LayoutWhenUnvisibleFlag="0" VisibleFlag="@FilteredSourceFlag ElementName=Controller"  CATVidLayGrid.IndexedConstraints="x=1 y=3 xSpan=2 attach=RLTB">
+                  <CATVidCtlButtonIcon syp:name="FilterButton" CheckMode="1" syp:Template="Compact" Name="SearchAppsButton"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=R"
+                                        OnTexture="Compass/Search_Icon_Pressed.png" OverTexture="Compass/Search_Icon_Over.png"   OffTexture="Compass/Search_Icon_Normal" IconDimension="24 24" RequestedMinimumDimension="32 32"/>
+                  <CATVidCtlLineEditor syp:name="FilterEditor" LayoutWhenUnvisibleFlag="0" VisibilityPolicy="SlideRToLAnimation" VisibleFlag="@CheckState ElementName=FilterButton" PlaceholderText="@Title"  ResetButtonVisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=1  attach=RLTB" />
+                </CATVidLayGrid>
+
+                <CATVidSpacer RequestedMinimumDimension="10 4" CATVidLayGrid.IndexedConstraints="x=3 y=4 attach=RLTB"/>
+              </CATVidLayGrid>
+              <CATVidLayLayer   CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB ">
+                <CATVidLayGrid syp:name="Loading" Color="255 255 255 255"  VisibleFlag="@LoadingVisibleFlag ElementName=Controller">
+                  <CATVidGPSquare syp:name="LoadingImage" Texture="I_Loading_Wheel_24x24.mng" AnimationOnFlag="@Visibility" RequestedMinimumDimension="24 24" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=B"/>
+                  <CATVidGPLabel syp:name="LoadingText"  FontName="3ds" CropPolicy="NoCrop" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=T" />
+                </CATVidLayGrid>
+
+                <CATVidCtlScrollableArea syp:name="Scrollable"   HScrollbarPolicy="AlwaysHidden" HStretchPolicy="Stretch" RequestedMinimumDimension="346 32"  >
+                  <CATVidLayGrid  GridWeight="col1=1" >
+                    <CATVidSpacer RequestedMinimumDimension="10 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATVidLayGrid GridWeight="row2=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+
+                      <CATVidCtl syp:name="FavoriteContainer"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                      <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy"
+                                      CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+
+                      </CATVidLayStack>
+                      <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+                    </CATVidLayGrid>
+
+                    <CATVidSpacer RequestedMinimumDimension="10 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                  </CATVidLayGrid>
+
+                </CATVidCtlScrollableArea>
+                <!--<CATVidLaySideAttach>
+                  <CATVidLayGrid  GridWeight="col1=1 row1=1" RequestedMinimumDimension="@Dimension ElementName=Scrollable"  LayoutWhenUnvisibleFlag="0" CATVidLaySideAttach.IndexedConstraints="topPx=0 leftPx=0">
+                    <CATVidSpacer RequestedMinimumDimension="24 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATVidLayStack Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+                      
+                        <CATVidCtl syp:name="FloatingFavoriteContainer" VisibleFlag="0"/>
+                        <CATVidCtl syp:name="FloatingNorthContainer" VisibleFlag="0" />
+                        <CATVidCtl syp:name="FloatingEastContainer" VisibleFlag="0" />
+                        <CATVidCtl syp:name="FloatingSouthContainer" VisibleFlag="0" />
+                        <CATVidCtl syp:name="FloatingWestContainer"  VisibleFlag="0"/>
+                        <CATVidCtl syp:name="FloatingPlayContainer"  VisibleFlag="0"/>
+                    </CATVidLayStack>
+                   
+                    
+                    <CATVidSpacer RequestedMinimumDimension="13 4" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+                  </CATVidLayGrid>
+
+
+                </CATVidLaySideAttach>-->
+              </CATVidLayLayer>
+            </CATVidLayGrid>
+
+            <CATVidCtlXRect syp:Template="SimpleHandle" Name="ResizeRight"  LayoutWhenUnvisibleFlag="0" CursorShape="SizeHorCursor" FocusableFlag="0" BackgroundColor="0 0" RequestedMinimumDimension="5 5"
+                            CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=2 attach=RLTB" Drag="@DragCB ElementName=Controller" Press="@DragCB ElementName=Controller" Release="@DragCB ElementName=Controller"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+      </CATVidCtl>
+
+
+
+
+
+
+
+
+    </CATAfrSYPModelViewMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="CheckState" TargetName="FilterButton" Value="0">
+        <CATSYPSetter Property="Text" TargetName="FilterEditor" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Visibility" Value="0">
+        <CATSYPSetter Property="Text" TargetName="FilterEditor" Value=""/>
+        <CATSYPSetter Property="CheckState" TargetName="FilterButton" Value="0"/>
+      </CATSYPTrigger>
+
+    </CATSYPTriggerCollection>
+
+
+
+  </DataTemplate>
+
+
+  <!--======================================================-->
+  <!-- CATCAfrList_ListApps : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_ListApps">
+    <CATAfrSYPModelViewMetaData>
+      <CATAfrSYPModelViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="FilteredSource=:Container.FilteredSource ItemsView:=Container.ItemsView"/>
+      </CATAfrSYPModelViewMetaData.ControllerPresenter>
+      <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1" VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    >
+
+        <CATVidLayGrid GridWeight="row0=1" Dimension="@MinimumDimension Mode=OneWayToSource">
+
+          <CATVidCtlExpander syp:Template="AppsSection" syp:name="Expander"
+                        ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                        Icon="@IconName"
+                        IconDimension="22 22"
+                        LayoutWhenUnvisibleFlag="0" CropPolicy="CropWithDots"
+                        FontWeight="1"
+                        Label="@Title"
+                        BackgroundColor="239 239 239 255" CATVidCtlExpander.Expanded="@HandleListEvent"
+                        ForegroundColor="119 121 124 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <CATVidLayGrid >
+              <CATAfrVidCtlListView syp:name="Container" syp:Template="ListV2"
+                             SourceDataTemplateName="l_CATAfrApp_Thumbnail"
+                             SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                             SelectionMode="SingleElement"
+                             SelectedIndexString="@ListSelectedObjectInString"
+                             ScrollableFlag="@ScrollableFlag"
+                             FilteredPropertyName="Title"
+                             FilteredPropertySourceName="Text"
+                                   
+                             DragFlag="@DragFlag"
+                             DropFlag="@DropFlag"
+                             ItemsFlow="0"
+                             ViewMode="1"
+                             TooltipProvider="@TooltipProvider"
+                             ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                             ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                             ListEvent="@HandleListEvent"
+                             ItemsScrollMode="PixelPerPixel"
+                             MaxItemsVisibles="@MaximumItemsVisible"
+                             RequestedMinimumDimension="295 112"
+                             DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                              />
+            </CATVidLayGrid>
+
+          </CATVidCtlExpander>
+          <CATVidSpacer RequestedMinimumDimension="0 10" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+
+      </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="HasChildFlag" Value="0">
+        <CATSYPSetter Property="ExpandedFlag" TargetName="Expander" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="HasChildFlag" Value="1">
+        <CATSYPSetter Property="ExpandedFlag" TargetName="Expander" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OptionsFlag" Value="1">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListItem_ListOption"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OptionsFlag" Value="0">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListItem_List"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+        <CATSYPSetter Property="ViewMode" TargetName="Container" Value="0"/>
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_TileMini"/>
+        <!--CATCAfrList_TileMini-->
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Classic">
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+        <CATSYPSetter Property="ViewMode" TargetName="Container" Value="1"/>
+        <CATSYPSetter Property="SypNamePosition" TargetName="Container" Value="SubObjectPresenter"/>
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="l_CATAfrApp_Thumbnail"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Basic">
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+        <CATSYPSetter Property="ViewMode" TargetName="Container" Value="1"/>
+        <CATSYPSetter Property="SypNamePosition" TargetName="Container" Value="SubObjectPresenter"/>
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Thumbnail_64"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- CATCAfrList_ListApps : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_FloatingApps">
+    <CATAfrSYPModelViewMetaData>
+      <CATAfrSYPModelViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="FloatingFavoriteContentFlag:=:Container.VisibleFlag"/>
+      </CATAfrSYPModelViewMetaData.ControllerPresenter>
+      <CATAfrSmartCtl Name="@Name"
+                      TitleDialogBox="@Title"
+                      SnappableFlag="1"
+                      ViewParent="@ViewParent"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ContentPanelVisibleFlag="1"
+                      ResizableDialogBoxFlag="1"
+                      CompactDialogBoxFlag="1"
+                      AutoCloseDialogBoxFlag="1"
+                      DiscretionFlag="1"
+                      LayoutWhenUnvisibleFlag="0"
+                      VisibleFlag="@Visibility">
+
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayGrid Color="255 255 255 255" GridWeight="row1=1 col1=1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <CATVidGPLabel Text="@Title"  TextHeight="15" TextColor="119 121 124 255" FontName="3ds" RequestedMinimumDimension="50 17" CropPolicy="CropWithDots"
+                           CATVidLayGrid.IndexedConstraints="x=0 xSpan=2 y=0 attach=RLTB" />
+            <CATVidSpacer RequestedMinimumDimension="0 15" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+            <CATAfrVidCtlListView syp:Template="Default" syp:name="Container" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" MaxItemsVisibles="@MaximumItemsVisible"
+                                 SourceDataTemplateName="l_CATAfrApp_Thumbnail"
+                                 SelectionMode="SingleElement"
+                                 SourceStyleSheet="AfrComponentviews/Apps.CATSYPStyle"
+                                 ScrollableFlag="@ScrollableFlag"
+                                 DragFlag="@DragFlag"
+                                 DropFlag="@DropFlag"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 ItemsFlow="0"
+                                  ViewMode="1"
+                                  SypNamePosition="SubObjectPresenter"
+                                 VisibleFlag="@ExpandedFlag"
+                                 TooltipProvider="@TooltipProvider"
+                                 ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                                 ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                                 ListEvent="@HandleListEvent"
+                                 DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>
+            <CATVidSpacer RequestedMinimumDimension="0 15" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=2 attach=RLTB"/>
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+
+      </CATAfrSmartCtl>
+
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+
+
+  <!--======================================================-->
+  <!-- CATCAfrList_ListApps : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_FloatingAppsJustHeader">
+    <CATVidLayGrid VisibleFlag="@Visibility" LayoutWhenUnvisibleFlag="0" GridWeight="row0=1" Dimension="@MinimumDimension Mode=OneWayToSource">
+
+      <CATVidCtlExpander syp:Template="AppsSection" syp:name="Expander"
+                    ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                    Icon="@IconName"
+                    IconDimension="22 22"
+                    LayoutWhenUnvisibleFlag="0" CropPolicy="CropWithDots"
+                    FontWeight="1"
+                    Label="@Title"
+                    BackgroundColor="239 239 239 255" CATVidCtlExpander.Expanded="@HandleListEvent"
+                    ForegroundColor="119 121 124 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+
+
+      </CATVidCtlExpander>
+      <CATVidSpacer RequestedMinimumDimension="0 10" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+
+
+
+  </DataTemplate>
+
+
+
+  <!--===================================-->
+  <!--CATCAfrList_Thumbnail_64 -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Thumbnail_64">
+
+    <CATVidLayStack RequestedMinimumDimension="90 112" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CellBorder="1" Orientation="Vertical" >
+      <CATVidLayGrid GridWeight="col0=1 col2=1">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="TileThumbnail"
+                  Texture = "@Thumbnail"
+                  PixelImage = "@ThumbPixelImage"
+                  RequestedMinimumDimension="64 64"
+                     CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=2"
+                />
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="SubObjectPresenter" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=B"/>
+      </CATVidLayGrid>
+      <CATAfrVidCtlWrapText Text="@Display" FontName="3ds"
+                            Alignment="AlignCenter"
+                             RequestedMinimumDimension="80 38" TextColor="50 49 50 255"
+                             ReadOnlyFlag="1"
+                             FontHeight="11"
+                             VScrollbarPolicy="AlwaysHidden"
+                             HScrollbarPolicy="AlwaysHidden"
+                             BackgroundColor="0.1 1"
+                             WordWrapMode="WrapAtWordBoundaryOrAnywhere"
+                             TextInteractionFlags="NoTextInteraction"
+                             />
+    </CATVidLayStack>
+
+  </DataTemplate>
+  
+  
+  <!--===================================-->
+  <!--l_CATAfrApp_Thumbnail -->
+  <!--===================================-->
+  <DataTemplate syp:name="l_CATAfrApp_Thumbnail">
+    <CATVidLayLayer>
+      <CATVidLayStack syp:name="AppsLayer" RequestedMinimumDimension="90 112" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CellBorder="1" Orientation="Vertical" >
+        <CATVidLayGrid GridWeight="col0=1 col2=1">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidGPSquare syp:name="TileThumbnail"
+                    Texture = "@Icon"
+                    PixelImage = "@PixelImage"
+                    RequestedMinimumDimension="64 64"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=2"
+                />
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="SubObjectPresenter" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=B"/>
+        </CATVidLayGrid>
+        <CATVidGPText Text="@Title"  FontFamily="3ds"
+                         Alignment="AlignCenter"
+                          RequestedMinimumDimension="80 38" Color="13 13 13 255"
+                       
+                          FontHeight="12"
+                        WordWrapFlag="1"
+                          WordWrapPolicy="Auto"
+                              
+
+                             />
+        <!--<CATAfrVidCtlWrapText Text="@Display" FontName="3ds"
+                            Alignment="AlignCenter" MaxNumberOfCharacters="24+"
+                             RequestedMinimumDimension="80 38" TextColor="50 49 50 255"
+                             ReadOnlyFlag="1"
+                             FontHeight="11"
+                             VScrollbarPolicy="AlwaysHidden"
+                             HScrollbarPolicy="AlwaysHidden"
+                             BackgroundColor="0.1 1"
+                             WordWrapMode="WrapAtWordBoundaryOrAnywhere"
+                             TextInteractionFlags="NoTextInteraction"
+                             />-->
+      </CATVidLayStack>
+      <CATVidLayGrid syp:name="DroppableLayer" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" >
+        <CATVidLayLayer  RequestedMinimumDimension="64 87" CATVidLayGrid.IndexedConstraints="x=0 y=0">
+          <CATVidGPSquare syp:name="DropZoneNormal" Texture="Compass/DropZone_Normal.png" />
+          <CATVidGPSquare syp:name="DropZoneOver" VisibleFlag="0"  Texture="Compass/DropZone_Over.png" />
+        </CATVidLayLayer>
+
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Droppable" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="AppsLayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="DroppableLayer" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Droppable" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="AppsLayer" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="DroppableLayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="DroppableOver" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="DropZoneNormal" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="DropZoneOver" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="DroppableOver" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="DropZoneNormal" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="DropZoneOver" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+
+  </DataTemplate>
+
+
+
+</Styles>
+
+

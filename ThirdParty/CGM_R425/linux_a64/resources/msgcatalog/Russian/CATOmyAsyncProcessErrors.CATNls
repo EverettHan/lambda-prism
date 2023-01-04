@@ -1,0 +1,44 @@
+<meta charset="UTF-8"/>
+ASYNC_Process_Death_NormalEnd.Diagnostic="Успешное завершение.";
+ASYNC_Process_Death_NormalEnd.Advice="";
+ASYNC_Process_Death_NormalEnd.Request="";
+
+ASYNC_Process_Death_KilledByCATIA.Diagnostic="Операция отменена пользователем.";
+ASYNC_Process_Death_KilledByCATIA.Advice="";
+ASYNC_Process_Death_KilledByCATIA.Request="";
+
+ASYNC_Process_Death_KilledByTimeOut.Diagnostic="Операция отменена. Истекло время ожидания ответа сервера.";
+ASYNC_Process_Death_KilledByTimeOut.Advice="";
+ASYNC_Process_Death_KilledByTimeOut.Request="";
+
+ASYNC_Process_Death_KilledByUser.Diagnostic="Операция отменена, асинхронный процесс завершен внешним приложением.";
+ASYNC_Process_Death_KilledByUser.Advice="Убедитесь, что любое другое приложение не может завершать асинхронные процессы.";
+ASYNC_Process_Death_KilledByUser.Request="";
+
+ASYNC_Process_Death_SystemError.Diagnostic="Операция отменена, внутренняя ошибка.";
+ASYNC_Process_Death_SystemError.Advice="Извлеките файл аварийного завершения и обратитесь в местную службу поддержки.";
+ASYNC_Process_Death_SystemError.Request="";
+
+ASYNC_Process_Death_Unknown.Diagnostic="Операция отменена, непредвиденная ошибка.";
+ASYNC_Process_Death_Unknown.Advice="Извлеките файл аварийного завершения и обратитесь в местную службу поддержки.";
+ASYNC_Process_Death_Unknown.Request="";
+
+ASYNC_Task_End_CanceledByUser.Diagnostic="Операция отменена пользователем.";
+ASYNC_Task_End_CanceledByUser.Advice="";
+ASYNC_Task_End_CanceledByUser.Request="";
+
+ASYNC_Task_End_AsyncPlatformError.Diagnostic="Операция отменена, внутренняя ошибка.";
+ASYNC_Task_End_AsyncPlatformError.Advice="Асинхронные команды отключены.";
+ASYNC_Task_End_AsyncPlatformError.Request="";
+
+ASYNC_Process_Death_At_Connect.Diagnostic="Все команды будут выполняться синхронно.";
+ASYNC_Process_Death_At_Connect.Advice="Для получения более подробной информации выполните поиск в документации. Вы можете продолжить работу.";
+ASYNC_Process_Death_At_Connect.Request="Асинхронизм";
+
+ASYNC_Process_Death_At_Connect_DevStage.Diagnostic="Процесс, поддерживающий асинхронные запросы, неожиданно завершился во время подключения.\nАсинхронные запросы теперь отключены. Все запросы будут выполняться синхронно.";
+ASYNC_Process_Death_At_Connect_DevStage.Advice="Проверьте параметры подключения и обратитесь к владельцу CATPLMxProviderConnection::Connect по поводу этой проблемы.";
+ASYNC_Process_Death_At_Connect_DevStage.Request="Завершение процесса — ошибка подключения";
+
+ASYNC_Platform_Deactivated.Diagnostic="Теперь асинхронные запросы отключены, все запросы будут выполняться синхронно";
+ASYNC_Platform_Deactivated.Advice="";
+ASYNC_Platform_Deactivated.Request="";

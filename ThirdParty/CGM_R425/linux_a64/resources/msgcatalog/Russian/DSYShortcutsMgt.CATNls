@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt=" 
+Чтобы создать или удалить все ярлыки приложений на рабочем столе, меню или инструменты, связанные с заданным файлом среды:
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+Чтобы создать или удалить пользовательский ярлык на рабочем столе, только связанный с заданным файлом среды:
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create or -del           : чтобы создать или удалить все ярлыки приложений на рабочем столе, меню или инструменты или создать или удалить пользовательский ярлык.
+  -desktop|menu|tools       : чтобы создать или удалить все ярлыки приложений на рабочем столе, меню или инструменты. По умолчанию используется рабочий стол. Игнорируется в пользовательском режиме.
+  -e EnvName                : имя файла среды. Не используется для удаления пользовательского ярлыка.
+  -d EnvDir                 : папка для хранения файлов среды (необязательно). Не используется в режим удаления.
+                              Если не указан и параметр -a не используется, то по умолчанию используется следующий вариант: EnvDir = \"/p1\"
+                              Если не указан, используется параметр -a global, по умолчанию используется вариант: EnvDir = \"/p2\"
+                              Если не указан, но используется параметр -a user, по умолчанию используется вариант: EnvDir = \"/p1\"
+  -a global|user            : чтобы создать или удалить ярлыки для всех пользователей или только для текущего пользователя (необязательно). Значение по умолчанию:-a user.
+                              Указывает расположение и тип ярлыка.
+                             -a global: ярлыки будут отображаться для всех пользователей. Вы должны обладать правами администратора, чтобы использовать этот параметр.
+                             -a user: ярлыки будут отображаться только для текущего пользователя.
+  -name DesktopShortcutName : чтобы создать или удалить пользовательский ярлык на рабочем столе с именем DesktopshortcutName для запуска команды Cmd.
+  -cmd Cmd                  : чтобы создать пользовательский ярлык DesktopshortcutName с Target = CATSTART -run Cmd env EnvName -direnv EnvDir.
+  -h                        : эта справка.";
+
+MissingOption_e="Параметр -e обязателен для присвоения имени файла среды.\n";
+MissingValue_e="После параметра -e должно следовать имя файла среды.\n";
+MissingValue_d="После параметра -d должен следовать путь к файлу среды.\n";
+MissingValue_a="За параметром -а должно следовать слово global или user.\n";
+MissingValue_Cmd="За параметром -Cmd должна следовать команда, которая запускается этим ярлыком.";
+MissingValue_name="За параметром -name должно следовать имя создаваемого ярлыка на рабочем столе.";
+MissingOption_cmd="Параметр -name необходимо использовать с параметром -cmd.\n";
+MissingOption_name="Параметр -cmd необходимо использовать с параметром -name.\n";
+BadOptions_menutools="Пользовательские ярлыки можно создавать только на рабочем столе.\n";
+BadOptions_TypeShortcut="Параметры -desktop, -tools или -menu нельзя использовать вместе.\n";
+Option_aMustAdmin="При использовании параметра -a необходимы права администратора, чтобы создать ярлыки для всех пользователей.\n";
+BadValue_a="За параметром -a должно следовать только слово global или user.\n";
+MissingOptions_createordel="Один из параметров -create или -del является обязательным.";
+MissingOption_typeshortcut="Один из следующих параметров -desktop, -tools или -menu является обязательным.\n";
+InvalidArg="Параметр /p1 использовать не разрешается.";
+BadOptions_createdel="Параметры -create и -del нельзя использовать вместе.";
+EnvnameNotFound="Файл среды /p1 не найден. Проверьте параметр -e.\n";
+CreateShortcutsIn="Создание ярлыков в \"/p1\"\n";
+DeleteShortcutsIn="Удаление ярлыков в \"/p1\"\n";
+CreateShortcutsDesktop="Создание ярлыков на рабочем столе...\n";
+CreateShortcutsDesktopOK="Ярлыки на рабочем столе созданы.\n";
+CreateShortcutsDesktopKO="Не удалось создать ярлыки на рабочем столе.\n";
+CreateShortcutDesktop="Создание ярлыка /p1 на рабочем столе...\n";
+CreateShortcutDesktopOK="Данный ярлык на рабочем столе создан.\n";
+CreateShortcutDesktopKO="Не удалось создать данный ярлык на рабочем столе.\n";
+CreateShortcutsTools="Создание ярлыков инструментов...\n";
+CreateShortcutsToolsOK="Ярлыки инструментов созданы.\n";
+CreateShortcutsToolsKO="Не удалось создать ярлыки инструментов.\n";
+CreateShortcutsMenu="Создание ярлыков в меню \"Пуск\"...\n";
+CreateShortcutsMenuOK="Ярлыки в меню \"Пуск\" созданы.\n";
+CreateShortcutsMenuKO="Не удалось создать ярлыки в меню \"Пуск\".\n";
+CreateDirFailed="Не удалось создать каталог \"/P1\".\n";
+DeleteShortcutsDesktop="Удаление ярлыков на рабочем столе...\n";
+DeleteShortcutsDesktopOK="Ярлыки на рабочем столе удалены.\n";
+DeleteShortcutsDesktopKO="Не удалось удалить ярлыки на рабочем столе.\n";
+DeleteShortcutDesktop="Удаление ярлыка /p1 на рабочем столе...\n";
+DeleteShortcutDesktopOK="Данный ярлык на рабочем столе удален.\n";
+DeleteShortcutDesktopKO="Не удалось ярлык на рабочем столе.\n";
+DeleteShortcutsTools="Удаление ярлыков инструментов на рабочем столе...\n";
+DeleteShortcutsToolsOK="Ярлыки инструментов удалены.\n";
+DeleteShortcutsToolsKO="Не удалось удалить ярлыки инструментов.\n";
+DeleteShortcutsMenu="Удаление ярлыков в меню \"Пуск\"...\n";
+DeleteShortcutsMenuOK="Ярлыки в меню \"Пуск\" удалены.\n";
+DeleteShortcutsMenuKO="Не удалось удалить ярлыки в меню \"Пуск\".\n";
+DeleteShortcutfailed="Не удалось удалить ярлык /p1.\n";
+ShortcutNotFound="Ярлык /p1 не найден.\n";
+DeleteShortcutOK="Ярлык /p1 удален.\n";
+CreateShortcutOK="Ярлык /p1 создан.\n";
+CreateShortcutKO="Не удалось создать ярлык /p1.\n";
+BadStartInFolder_MissingPourcent="Значение для запуска в папке: /p1 игнорируется, так как содержит несбалансированные символы (%).\n";
+BadStartInFolder_BadEnv="Переменная среды /p1 не задана.\n";
+BadStartInFolder_BadDir="Значение для запуска в папке: /p1 игнорируется, так как указанный путь не существует.\n";
+NoModuleName="Невозможно получить имя модуля.\n";
+CustomexeNotFound="Exe-файл /p1 не найден в объединении PATH.\n";
+Customexe2NotFound="Файлы /p1.exe или /p1.bat не найдены в объединении PATH.\n";
+NoShortcuts="Невозможно извлечь список ярлыков для создания. Файл /p1 не найден. \n";
+ErrGetRootPath="Невозможно извлечь значение папки для /p1.\n";
+DeleteDirKO="Невозможно удалить папку /p1: /p2\n";
+InvalidDiskPathFormat="Путь \"/p1\" начинается с буквы недопустимого диска.";
+InvalidUNCPathFormat="\"/p1\" — недопустимый UNC-путь.";
+InvalidPathFormat="\"/p1\" — недопустимый путь.";
+rootpathnotExist="Корневой путь \"/p1\" не существует и, следовательно, невозможно создать данную папку.\n";

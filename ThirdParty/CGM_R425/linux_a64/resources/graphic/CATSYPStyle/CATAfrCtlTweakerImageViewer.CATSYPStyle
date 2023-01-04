@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <!--===================================-->
+ <!--Tweaker Image Viewer-->
+ <!--===================================-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerImageViewer">
+   <CATVidLayGrid syp:name="grid" GridWeight="col1=1 ">
+    <CATVidGPSquare syp:name="Image" Name="ImageCtrl"
+                    RequestedMinimumDimension="50 50"
+                    Texture="@Value"
+                    VisibleFlag="1"
+                    EnableFlag="1"
+                    CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"
+                    />
+     </CATVidLayGrid>
+   </Template>
+ </Styles>

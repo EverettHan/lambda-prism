@@ -1,0 +1,41 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached comment = "For Protected NewUI  " name = "PLMDictionaryServices.tst"/>
+  <attached comment = "For Protected NewUI  " name = "PLMDictionaryValidation.tst"/>
+  <attached comment = "For Protected NewUI  " name = "PLMDictionaryExploitation.tst"/>
+  <attached comment = "For Protected NewUI  " name = "PLMDicRACE2.tst"/>
+  <attached comment = "For Protected NewUI  " name = "PLMDictionaryNavServices.tst"/>
+  <attached comment = "CATNewTypingMigrationDBDI::MigrateAppliFromV15ToV2" name = "CATDbdImportModeler.tst"/>
+  <attached comment = "CATCkeObjectAttrReadUIServices::InitializePLMNewKMLTypes" name = "LiteralsEditor.tst"/>
+  <prerequisite access = "Protected" comment = "Standard  " expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" comment = "Standard  " expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" comment = "Standard  " name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Private" comment = "Dictionary of types and notion of Object " expose = "ExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" comment = "For invoking BLs " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMBusinessLogicInterfaces"/>
+  <prerequisite access = "Protected" comment = "Environment     " expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" comment = "shared between dictionaries " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMDictionaryInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "Magnitude"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATExpressionEngine"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" comment = "to retrieve current environmnet        " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMSessionInterfaces"/>
+  <prerequisite access = "Protected" comment = "to retrieve current environmnet  " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMIntegrationAccess"/>
+  <prerequisite access = "Protected" comment = "to test licensing          " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMMultiDisciplineEnv"/>
+  <prerequisite access = "Protected" comment = "To Implement navigation functions" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMComponentInterfaces"/>
+  <prerequisite access = "Protected" comment = "To access parameterization console parameters for naming services" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMPosBaseInterfaces"/>
+  <authorize access = "Private" name = "PLMDictionaryServices"/>
+  <authorize access = "Private" name = "PLMDictionaryCustoServices"/>
+  <authorize access = "Private" name = "PLMDictionaryServices.tst"/>
+  <authorize access = "Private" name = "KnowledgeARMModel"/>
+  <authorize access = "Private" name = "PLMDictionaryNavServices.tst"/>
+  <authorize access = "Private" name = "PLMDictionaryValidation.tst"/>
+  <authorize access = "Private" name = "PLMDictionaryExploitation.tst"/>
+  <authorize access = "Private" name = "CATExpressionEngine.tst"/>
+  <authorize access = "Private" name = "PLMDictionaryServices.tst"/>
+  <authorize access = "Private" name = "LibraryInterfaces"/>
+  <authorize access = "Private" name = "CATPLMDictionaryUsage.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPhysicalMaterial</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbMadPhysicalMaterial</NAME>
+  </CONSTANT_BUFFER>
+
+  <!--ParameterFloat Textures-->
+
+  <SAMPLER>
+    <NAME>roughness</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>roughnessAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>glossiness</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>glossinessAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>fresnelCoefficient</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>fresnelCoefficientAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+
+  <SAMPLER>
+    <NAME>anisotropy</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>anisotropyAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>anisotropyAngle</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>anisotropyAngleAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>irradianceScale</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ThisParameterIsNotUsed</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>bumpScale</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>bumpScaleAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>transparency</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>transparencyAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>opacity</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>opacityAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>edgeColorBias</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>edgeColorBiasAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>displacement</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>displacementAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <!--ParameterFloat3 Textures-->
+
+  <SAMPLER>
+    <NAME>diffuse</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>diffuseAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>emissive</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>emissiveAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>edgeColor</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>edgeColorAsTexture</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <!--Other Textures-->
+
+  <SAMPLER>
+    <NAME>normalMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>normalMapEnabled</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>coatingNormalMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>coatingNormalMapEnabled</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>flakesMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler3D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ThisParameterIsNotUsed</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>heightMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>heightMapEnabled</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>occlusionMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>occlusionMapEnabled</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  <!--ParameterFloat Samplers-->
+  <!--For mobile support, please do not remove "Repeat" on wrapping properties-->
+
+  <SAMPLER_STATE>
+    <NAME>roughnessSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>glossinessSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+  
+  <SAMPLER_STATE>
+    <NAME>fresnelCoefficientSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>anisotropySampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>anisotropyAngleSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>irradianceScaleSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>bumpScaleSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>transparencySampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>opacitySampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>edgeColorBiasSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>displacementSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <!--ParameterFloat3 Samplers-->
+  <!--For mobile support, please do not remove "Repeat" on wrapping properties-->
+
+  <SAMPLER_STATE>
+    <NAME>diffuseSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>emissiveSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>edgeColorSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <!--Other Samplers-->
+  <!--For mobile support, please do not remove "Repeat" on wrapping properties-->
+
+  <SAMPLER_STATE>
+    <NAME>mapsSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+  
+  <SAMPLER_STATE>
+    <NAME>normalMapSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+  
+  <SAMPLER_STATE>
+    <NAME>heightMapSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>occlusionMapSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <MACRO_LIST>
+        <MACRO>
+          <DEFINE>PhysicalMaterial</DEFINE>
+          <CONTENT>1</CONTENT>
+        </MACRO>
+      </MACRO_LIST>
+      
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v_ObjectSpacePosition</NAME>
+            <TYPE>float3</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>v_ObjectSpaceNormal</NAME>
+            <TYPE>float3</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>diffuse</SAMPLER>
+          <STATES>diffuseSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>emissive</SAMPLER>
+          <STATES>emissiveSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>normalMap</SAMPLER>
+          <STATES>normalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>coatingNormalMap</SAMPLER>
+          <STATES>mapsSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>flakesMap</SAMPLER>
+          <STATES>mapsSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>heightMap</SAMPLER>
+          <STATES>heightMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>roughness</SAMPLER>
+          <STATES>roughnessSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>glossiness</SAMPLER>
+          <STATES>glossinessSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>fresnelCoefficient</SAMPLER>
+          <STATES>fresnelCoefficientSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>anisotropy</SAMPLER>
+          <STATES>anisotropySampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>anisotropyAngle</SAMPLER>
+          <STATES>anisotropyAngleSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>irradianceScale</SAMPLER>
+          <STATES>irradianceScaleSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>bumpScale</SAMPLER>
+          <STATES>bumpScaleSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparency</SAMPLER>
+          <STATES>transparencySampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>opacity</SAMPLER>
+          <STATES>opacitySampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>edgeColor</SAMPLER>
+          <STATES>edgeColorSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>edgeColorBias</SAMPLER>
+          <STATES>edgeColorBiasSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>displacement</SAMPLER>
+          <STATES>displacementSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>occlusionMap</SAMPLER>
+          <STATES>occlusionMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <COMMONS>PhysicalMaterialDefine PhysicalMaterialFloatParams PhysicalMaterialFloat4Params PhysicalMaterialAddParams PhysicalMaterialHelpers Noise Flakes</COMMONS>
+      <LIGHTING>true</LIGHTING>
+      <VERTEX_STAGE>PhysicalMaterialVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PhysicalMaterialMapping PhysicalMaterialFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+
+  <TECHNIQUE>
+    <NAME>RT</NAME>
+    <RAYTRACING_PASS>
+      <NAME>Default</NAME>
+      
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>diffuse</SAMPLER>
+          <STATES>diffuseSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>emissive</SAMPLER>
+          <STATES>emissiveSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>normalMap</SAMPLER>
+          <STATES>normalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>coatingNormalMap</SAMPLER>
+          <STATES>mapsSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>flakesMap</SAMPLER>
+          <STATES>mapsSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>heightMap</SAMPLER>
+          <STATES>heightMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>roughness</SAMPLER>
+          <STATES>roughnessSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>glossiness</SAMPLER>
+          <STATES>glossinessSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>fresnelCoefficient</SAMPLER>
+          <STATES>fresnelCoefficientSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>anisotropy</SAMPLER>
+          <STATES>anisotropySampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>anisotropyAngle</SAMPLER>
+          <STATES>anisotropyAngleSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>irradianceScale</SAMPLER>
+          <STATES>irradianceScaleSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>bumpScale</SAMPLER>
+          <STATES>bumpScaleSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparency</SAMPLER>
+          <STATES>transparencySampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>opacity</SAMPLER>
+          <STATES>opacitySampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>edgeColor</SAMPLER>
+          <STATES>edgeColorSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>edgeColorBias</SAMPLER>
+          <STATES>edgeColorBiasSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>displacement</SAMPLER>
+          <STATES>displacementSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>occlusionMap</SAMPLER>
+          <STATES>occlusionMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>PhysicalMaterial</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <HIT_GROUP>
+        <CLOSEST_HIT_STAGE>
+          PhysicalMaterialDefine PhysicalMaterialFloatParams PhysicalMaterialFloat4Params PhysicalMaterialAddParams PhysicalMaterialHelpers Noise Flakes PhysicalMaterialMapping PhysicalMaterialFS
+        </CLOSEST_HIT_STAGE>
+      </HIT_GROUP>
+    </RAYTRACING_PASS>
+  </TECHNIQUE>
+  
+</PDSFX>

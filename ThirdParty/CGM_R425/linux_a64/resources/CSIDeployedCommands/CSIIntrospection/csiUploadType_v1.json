@@ -1,0 +1,17 @@
+{
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "desc": "Uploads a specified declarative type on the node running this current command",
+  "onBeginParameters": "none",
+  "onCommandParameters": {
+    "in": {
+      "csiType": "CSIDeclarativeTypeDefinition"
+    },
+    "answers": {
+      "errors": "string"
+    }
+  },
+  "onEndParameters": "none"
+}

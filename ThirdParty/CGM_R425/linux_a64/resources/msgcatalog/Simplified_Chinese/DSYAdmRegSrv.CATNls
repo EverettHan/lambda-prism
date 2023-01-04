@@ -1,0 +1,16 @@
+<meta charset="UTF-8"/>
+Help.text="DSYAdmRegSrv 的用法\n
+[-set CATIA|ENOVIA_DMU_Navigator|ENOVIA_LCA|DELMIA|ENOVIA_3d_com] 要注册的产品系列\n
+[-unset]                         要取消设置的注册\n
+[-env environment_name]          环境名称（默认值：DefaultEnvironment）\n
+[-direnv storage_directory_name] 环境的存储目录（默认值：CSIDL_APPDATA\\CATEnv）\n
+[-h|-help]                       该项为帮助。";
+SetOrUnset.text="必须使用 -set 或 -unset 选项";
+SetAndUnset.text="-set 和 -unset 选项不可一起使用";
+NotAdministrator="安装程序需要管理员权限。";
+VistaNotAdminPrivileges="使用管理员命令提示来启动此程序";
+MissingValueEnvName.text="-env 选择后面必须跟环境文件的名称。\n";
+InvalidOption.text="选项 /p1 无效\n";
+MissingValueEnvDir.text="-direnv 选项后面必须跟环境文件的路径名称。";
+MissingValueSet.text="-set 选项后面必须跟产品系列的名称";
+ExtraValueUnset.text="-unset 选择后面必须跟无用参数 /p1\n";

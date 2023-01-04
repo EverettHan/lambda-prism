@@ -1,0 +1,29 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Push Job Inputs to the database",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "jobId",
+          "basic": "string"
+        },
+        {
+          "label": "functionInput",
+          "type": "Parameters"
+        }
+      ]
+    },
+    "out": {}
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

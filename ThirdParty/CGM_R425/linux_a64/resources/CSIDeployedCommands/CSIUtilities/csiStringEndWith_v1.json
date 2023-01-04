@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Check if the string end with a word",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "value",
+          "basic": "string",
+          "desc": "The string where to search"
+        },
+        {
+          "label": "end",
+          "basic": "string",
+          "desc": "The string to search"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "endWith",
+          "basic": "bool",
+          "desc": "return true if endWith"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

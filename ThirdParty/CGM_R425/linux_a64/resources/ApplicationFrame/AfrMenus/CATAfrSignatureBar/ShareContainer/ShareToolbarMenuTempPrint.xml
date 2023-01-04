@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+	<Template syp:name="ShareToolbarMenuTempPrintHeadersList" Target="CATCAfrInclude">
+		<CATCmdHeadersList>
+			<!--Add here your command header-->
+		</CATCmdHeadersList>
+	</Template>
+
+
+	<Template syp:name="ShareToolbarMenuTempPrintElements" Target="CATCAfrInclude">
+		<CATCAfrGroup>
+      <!--Add here your new elements-->
+      <CATCmdSeparator Name="ShareContainerSepPrint" Anchor="LocalSaveStr"/>
+      <CATCmdStarter Name="CATAfrPrintManagerStr" Command="Print"/>
+    </CATCAfrGroup>
+	</Template>
+
+</Styles>
+

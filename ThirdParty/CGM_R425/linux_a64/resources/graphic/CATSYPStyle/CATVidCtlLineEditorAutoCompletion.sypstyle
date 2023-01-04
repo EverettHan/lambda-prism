@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <DataTemplate syp:name="CATVidCtlLineEditorAutocompleteItem">
+   <CATVidLayGrid  GridWeight="col2=1">
+     <CATVidSpacer RequestedMinimumDimension="0 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=3 attach=RLTB"/>
+     <CATVidSpacer RequestedMinimumDimension="14 16" Dimension="14 16" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LRTB"/>
+     <CATVidGPLabel syp:name="MyLabel" Text="@Text" TextColor="0 0 0 255" TextHeight="16" CropPolicy="NoCrop" HorizontalAlignment="CATVidHAlignLeft" VerticalAlignment="CATVidVAlignCenter" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=LTB" />
+     <CATVidCtlButtonFontIcon syp:name="RemoveButton" syp:Template="Lite" Name="RemoveButton" LayoutWhenUnvisibleFlag="1" FontIconSize="14" RequestedMinimumDimension="14 14" FocusableFlag="0"
+                                  IconName="clear" Tooltip="Overwritten by NLS" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RTB" Click="@OnClick" VisibleFlag="@RemoveButtonVisibleFlag" />
+     <CATVidSpacer RequestedMinimumDimension="0 2" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=LTB"/>
+     <CATVidGPSquare Name="Separator" Texture="vidComboSeparator.png" RequestedMinimumDimension="0 1" CATVidLayGrid.IndexedConstraints="x=0 y=3 xSpan=3 attach=LRTB"/>
+   </CATVidLayGrid>
+  </DataTemplate>
+</Styles>

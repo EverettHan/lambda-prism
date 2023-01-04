@@ -1,0 +1,88 @@
+<meta charset="UTF-8"/>
+//General -General
+GeneralGeneral.Title="常规";
+
+//General-Help
+GeneralHelp.Title="帮助";
+DragAndDropGroup.Title="拖放";
+DragAndDrop.Title="启用“拖放”操作，用于剪切、复制和粘贴。";
+
+DragAndDrop.ShortHelp="用于剪切、复制和粘贴的“拖放”操作。";
+DragAndDrop.LongHelp="启用“拖放”操作，用于剪切、复制和粘贴。";
+
+MemoryWarningGroup.Title="内存警告";
+//Activation.Title="Trigger Memory warning at";
+MemWarningActive.Title="触发内存警告的条件";
+UsageLimit.Title="% 的内存已使用";
+
+MemWarningActive.ShortHelp="当检测到内存消耗过量时，激活警告。";
+MemWarningActive.LongHelp="当内存消耗超过给定的阈值时，激活警告。
+无需重新启动会话就可使此更改生效。";
+UsageLimit.ShortHelp="定义何时必须触发内存警告的限制。";
+UsageLimit.LongHelp="给出内存消耗百分比，高于此值即触发警告。";
+
+//General-Find
+GeneralFind.Title="查找";
+
+PrefixGroup.Title="超级输入的默认前缀";
+Prefix.Title="搜索前缀";
+Prefix0.Title="无";
+Prefix1.Title="最后一个";
+Prefix2.Title="命令 c：";
+Prefix3.Title="收藏 f：";
+Prefix4.Title="类型 t：";
+Prefix5.Title="名称 n：";
+Prefix6.Title="名称区分大小写 - Name_CAP";
+Prefix7.Title="图形中的名称 - graph：";
+Prefix8.Title="图形中的名称区分大小写 - NameInGraph_CAP";
+Prefix9.Title="设置 s：";
+Prefix10.Title="设置（设置区分大小写）- Set_CAP";
+Prefix11.Title="颜色 - col：";
+Prefix12.Title="可视性 vis：";
+Prefix13.Title="分层 l：";
+Prefix14.Title="虚线 d：";
+Prefix15.Title="重量 w：";
+Prefix16.Title="符号 symb：";
+
+Prefix.ShortHelp="超级输入的默认前缀";
+Prefix.LongHelp="定义在超级输入中输入的字符串前默认使用的前缀
+（若未明确输入任何内容。）
+例如，如果您将超级输入主要用于启动命令，
+请选择 c:，从而避免在每个命令名之前输入“c:”。";
+
+ContextPriorityGroup.Title="超级输入的默认搜索范围";
+ContextScope.Title="上下文范围";
+ContextScope0.Title="all as 任何地方";
+ContextScope1.Title="in as 在元素中";
+ContextScope2.Title="from as 从元素至底部";
+ContextScope3.Title="sel as 从当前选择";
+ContextScope4.Title="scr as 在屏幕上可见";
+ContextPriority.Title="在偏好查询中定义的替换范围";
+
+ContextScope.ShortHelp="超级输入中隐式使用的默认搜索范围";
+ContextScope.LongHelp="定义默认情况下要用搜索超级输入中输入的查询的上下文范围
+（若无未明确输入任何内容。）";
+ContextPriority.ShortHelp="在超级输入中使用偏好查询时将使用默认范围";
+ContextPriority.LongHelp="若要在超级输入中使用偏好查询时
+使用默认上下文范围，请选中此选项。";
+
+DeepSearchGroup.Title="深度搜索";
+DeepSearch.Title="激活深度搜索";
+
+DeepSearch.ShortHelp="激活深度搜索。";
+DeepSearch.LongHelp="选中此选项可在执行搜索时激活“深度搜索”选项。
+在此情况下，将暂时加载处于可视化模式下的文档以查找内部元素。"; // @validatedUsage AJT 13:11:04 option
+
+MaxDisplay.Title="最多显示结果数";
+MaxPSO.Title="预突出显示的最大元素数";
+
+MaxDisplay.ShortHelp="指定搜索结果页面上最多可显示的元素数目。";
+MaxDisplay.LongHelp="显示过多行会降低结果列表响应速度，因此建议不要将数目设太高。
+若要无任何限制地显示所有元素，可将数目设为 0。";
+
+MaxDisplayGroup.Title="最多显示结果数";
+MaxPSOGroup.Title="预突出显示的最大元素数";
+
+MaxPSO.ShortHelp="定义可预突出显示的元素的最大数目。";
+MaxPSO.LongHelp="如果预突出显示的元素太多，会降低会话响应速度，因此建议不要将数目设太高。
+如需无任何限制地预突出显示所有元素，可将数目设为 0。";

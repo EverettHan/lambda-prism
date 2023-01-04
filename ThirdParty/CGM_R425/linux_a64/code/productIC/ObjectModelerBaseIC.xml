@@ -1,0 +1,58 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "ObjectModelerBase.tst"/>
+  <attached name = "ObjectModelerBase_Unit.tst"/>
+  <attached name = "ObjectModelerBase_PLM.tst"/>
+  <attached name = "ObjectSpecsModeler.tst"/>
+  <attached name = "Cleaner.tst"/>
+  <attached name = "CATOmbLinkAccess.tst"/>
+  <attached name = "ObjectLinksModeler.tst"/>
+  <attached name = "ObjectModelerCATIA.tst"/>
+  <attached name = "CATPLMIdentification_PLM.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerInterfaces"/>
+  <prerequisite access = "Protected" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Private" name = "CATPLMIdentification"/>
+  <prerequisite access = "Protected" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Protected" name = "CATPLMComponentInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerNavigator"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" name = "PLMModelerBaseInterfaces"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "ObjectModelerEngines"/>
+  <authorize access = "Private" name = "CATPLMIdentificationTools"/>
+  <authorize access = "Private" name = "CATDataCompatibilityInfra"/>
+  <authorize access = "Private" name = "CATMappingInfraStructure"/>
+  <authorize access = "Private" name = "CATOmbLinkAccess"/>
+  <authorize access = "Private" name = "CATOmbMigrationAccess"/>
+  <authorize access = "Private" name = "CATPLMIdentification.tst"/>
+  <authorize access = "Private" name = "CATPLMSessionDebug"/>
+  <authorize access = "Private" name = "ObjectModelerDebug"/>
+  <authorize access = "Private" name = "ObjectSpecsModeler.tst"/>
+  <authorize access = "Private" name = "V5MiscellaneousDebug"/>
+  <authorize access = "Private" name = "CATFbdImportModeler"/>
+  <authorize access = "Private" comment = "RJS, June 2021, rearchi FBDI" name = "CATV5LegacyDataAccess"/>
+  <authorize access = "Private" name = "CATPLMSpecsModeler"/>
+  <authorize access = "Private" name = "CATPLMClientCore"/>
+  <authorize access = "Private" name = "ObjectModelerCATIA"/>
+  <authorize access = "Private" comment = "RJS, October 2022, FUN127008 Mapping API to find 3DEXPERIENCE Material related to original .CATMaterial " name = "CATMappingServices"/>
+  <authorize access = "Private" name = "ObjectModelerCATIA.tst"/>
+  <authorize access = "Private" comment = "BAD008 " name = "ObjectModelerBase_Unit.tst"/>
+  <authorize access = "Private" comment = "BAD008 " name = "ObjectModelerBase_PLM.tst"/>
+  <authorize access = "Private" comment = "BAD008 " name = "CATOmbLinkAccess.tst"/>
+  <authorize access = "Private" comment = "BAD008 " name = "CATPLMIdentification_PLM.tst"/>
+  <authorize access = "Private" comment = "BAD008 " name = "CATPLMSpecsModeler.tst"/>
+  <authorize access = "Private" comment = "BAD008 " name = "ObjectLinksModeler.tst"/>
+  <authorize access = "Private" comment = "CATOmbWDoc and co " name = "CATPLMClientCore.tst"/>
+  <authorize access = "Private" name = "CATxPDMInterfaces"/>
+  <prerequisite access = "Protected" export = "AddToClientPrereqs" name = "DataCommonProtocolUse"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "PLMModelerBaseStreamContentItf"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

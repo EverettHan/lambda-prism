@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <attached name = "ObjectModelerCollection.tst"/>
+  <authorize access = "Private" name = "CATPLMSpecsModeler.tst"/>
+  <authorize access = "Private" name = "CATOmxTestEngine"/>
+  <authorize access = "Private" name = "LiteralFeatures"/>
+  <authorize access = "Private" name = "LiteralFeatures.tst"/>
+  <authorize access = "Private" name = "ObjectSpecsModeler"/>
+  <authorize access = "Private" name = "ObjectSpecsModeler.tst"/>
+  <authorize access = "Private" name = "ObjectSpecEditor"/>
+  <authorize access = "Private" name = "ObjectSpecEditor.tst"/>
+  <authorize access = "Private" name = "ObjectSpecsTools"/>
+  <authorize access = "Private" name = "FeatureModelerDebug"/>
+  <authorize access = "Private" name = "ObjectModelerDebug"/>
+  <authorize access = "Private" name = "ObjectModelerDebugger"/>
+  <authorize access = "Private" name = "ObjectModelerDebuggerIPC"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

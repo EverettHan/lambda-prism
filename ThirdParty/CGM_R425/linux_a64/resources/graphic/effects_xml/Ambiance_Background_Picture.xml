@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Background_Camera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Background_Picture</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Main_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <SAMPLER>
+    <NAME>s_Picture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>PICTURE_CUBEMAP</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler1D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>PICTURE_1D</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>PICTURE_2D</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>PICTURE_2D_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler3D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>PICTURE_3D</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>PictureSampler</NAME> 
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 0.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Pass0</NAME>
+      
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_Picture</SAMPLER>
+          <STATES>PictureSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>BACKGROUND_TEXCOORD</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <COMMONS>streams varyings Ambiance_Background_CBCamera</COMMONS>
+      <VERTEX_STAGE>Ambiance_Background_MainVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>Ambiance_Background_DeclarePS PostEffect_Viewport_Helpers Draw_Picture_Helpers Ambiance_Background_PicturePS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</EFFECT>

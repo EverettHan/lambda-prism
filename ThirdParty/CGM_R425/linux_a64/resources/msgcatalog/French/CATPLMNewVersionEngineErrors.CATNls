@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Erreur système";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Impossible de réviser un nouveau composant";
+PLMc_ForbiddenScenario1.Advice="Veuillez enregistrer ce composant et essayer de le réviser plus tard";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="Ce nouveau scénario de révision n'est pas autorisé : un enregistrement complet doit être effectué entre les deux nouvelles révisions";
+PLMc_ForbiddenScenario2.Advice="Sauvegardez votre session avant d'appeler à nouveau la nouvelle révision";
+
+PLMc_ForbiddenScenario3.Diagnostic="Impossible de créer une révision de ce composant dans la session";
+PLMc_ForbiddenScenario3.Advice="Le composant a été modifié par une autre session. Essayez d'enregistrer vos modifications locales comme nouvelle révision.";
+
+InvalidAncestor.Diagnostic="Vous ne pouvez pas utiliser l'ancêtre pour effectuer une opération de révision";
+InvalidAncestor.Advice="Choisissez un ancêtre cohérent avec la famille de révisions que vous souhaitez faire évoluer";
+
+InvalidComponentState.Diagnostic="Vous ne pouvez pas réviser le composant car il n'a jamais été sauvegardé dans un référentiel";
+InvalidComponentState.Advice="Enregistrez le composant dans le référentiel avant de créer sa révision";
+
+InvalidTypeOfComponent.Diagnostic="La révision n'est pas autorisée sur ce type de composant";
+InvalidTypeOfComponent.Advice="Fournir les composants conformes pour la révision";
+
+InvalidComponentForDWS.Diagnostic="La révision n'est pas autorisée dans cet espace de travail sur ce type de composant";
+InvalidComponentForDWS.Advice="Fournissez des composants pour lesquels la révision est autorisée dans cet espace de travail";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="La version n'est pas autorisée car elle est remplacée dans la session par duplication d'instances partielles";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="Ne spécifiez pas d'instances partielles à dupliquer lors du remplacement d'éléments dans la session (réutilisation)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="La version n'est pas autorisée en raison de modifications de transfert dans la session par duplication d'instances partielles";
+TransferModificationsForbiddenForPartialDuplicate.Advice="Ne spécifiez pas les instances partielles à dupliquer lors du transfert des modifications";
+
+InvalidIntent.Diagnostic="Graphique de version appelé avec cet objectif non valide : / p";
+InvalidIntent.Advice="Veuillez choisir un objectif valide pour la gestion des versions";
+
+InstanceWithoutOwner.Diagnostic="Cette instance n'est pas dans le périmètre de duplication et sera ignorée : / p";
+InstanceWithoutOwner.Advice="Le fonctionnement peut entraîner une duplication indésirable. Essayez d'exclure les instances problématiques si possible.";
+
+RefreshFailed.Diagnostic="L'actualisation de la session a échoué.";
+RefreshFailed.Advice="Effectuez une actualisation globale ou chargez à nouveau les composants versionnés.";
+
+NotRefreshedNoReidentification.Diagnostic="L'objet a été modifié dans la base de données, mais la session n'a pas été mise à jour.";
+NotRefreshedNoReidentification.Advice="Effectuez une actualisation globale pour extraire le composant mis à jour.";
+
+NotRefreshedAfterReidentification.Diagnostic="L'objet a été versionné avec succès dans la base de données, mais la nouvelle version n'est pas dans la session. Vous ne pourrez peut-être pas enregistrer votre session.";
+NotRefreshedAfterReidentification.Advice="Essayez d'effectuer une actualisation globale. Si l'actualisation est impossible, vous devrez annuler le chargement de ce composant et perdrez les modifications locales pour pouvoir enregistrer.";

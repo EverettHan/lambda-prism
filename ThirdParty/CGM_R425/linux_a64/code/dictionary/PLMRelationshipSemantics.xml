@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!-- COPYRIGHT DASSAULT SYSTEMES 2005, All rights reserved -->
+<!-- ANY MODIFICATION IN THIS FILE MUST BE APPROVED BY PLMINF ARCHITECTURE COMMITTEE  -->
+
+<!-- ===============================================================================  -->
+<!-- WARNING: TO ENFORCE DEFINITION CONSISTENCY, DO NOT FORGET TO APPLY APPRIOPRIATE  --> 
+<!-- =======  CHANGES IN THE FOLLOWING FILES:                                         --> 
+<!--          RELATION_ENUMS.metadata                                                 --> 
+<!--          Dictionary00.dtd                                                        --> 
+<!-- ===============================================================================  -->
+
+<Definitions>
+	<!-- Used by : All modelers (Default), DMU -->
+	<Semantics	Name="Reference"
+			PropagOnDelete="None"
+			Visibility="Yes"
+			Orientation="Neutral"
+			SynchroSensitivity="None"/>
+
+	<!-- Used by : Product, Process -->
+	<Semantics	Name="Composition"
+			PropagOnDelete="Outward"
+			Visibility="Yes"
+			Orientation="Neutral"
+			SynchroSensitivity="None"/>
+
+	<!-- Formerly IsAggregatedBy -->
+	<!-- Used by : Product, Process -->
+	<Semantics	Name="IsInstanceOf"
+			PropagOnDelete="Inward"
+			Visibility="Yes"
+			Orientation="Neutral"
+			SynchroSensitivity="None"/>
+
+	<!-- Used by : QuerySpec, DMU -->
+	<Semantics	Name="Reference2"
+			PropagOnDelete="None"
+			Visibility="No"
+			Orientation="Neutral"
+			SynchroSensitivity="None"/>
+
+	<!-- Used by : CtxDesign, Port, Oriented Csts, Drafting -->
+	<Semantics	Name="Reference3"
+			PropagOnDelete="None"
+			Visibility="Yes"
+			Orientation="In"
+			SynchroSensitivity="PathAndLast"/>
+
+	<!-- Used by : Knowledge params+DT -->
+	<Semantics	Name="Reference4"
+			PropagOnDelete="None"
+			Visibility="Yes"
+			Orientation="In"
+			SynchroSensitivity="Last"/>
+
+	<!-- Used by : Oriented Csts -->
+	<Semantics	Name="Reference5"
+			PropagOnDelete="None"
+			Visibility="Yes"
+			Orientation="Out"
+			SynchroSensitivity="Last"/>
+
+	<!-- Used by : Csts Target -->
+	<Semantics 	Name="Reference6" 
+			PropagOnDelete="None" 
+			Visibility="Yes" 
+			Orientation="InOut" 
+			SynchroSensitivity="PathAndLast"/>
+
+	<!-- Used by : PS Config connection -->
+	<Semantics 	Name="Reference7" 
+			PropagOnDelete="Inward" 
+			Visibility="Yes" 
+			Orientation="Out" 
+			SynchroSensitivity="Last"/>
+
+</Definitions>
+
+

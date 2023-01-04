@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_VoxelMap_Debug_Auto</NAME> 
+    
+  <UNIFORM>
+    <NAME>viewBoundingBox</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>ViewVoxelBoundingBox</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>transfoViewToVoxel</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>VoxelTransfoViewToVoxel</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>transfoVoxelToView</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>VoxelTransfoVoxelToView</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

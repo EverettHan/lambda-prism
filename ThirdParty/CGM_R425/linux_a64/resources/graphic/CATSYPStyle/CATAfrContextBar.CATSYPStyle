@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidContextBarCtl.cpp--> 
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  
+  <!--*************************************************************************************************************************-->
+  <!--                                            Internal ContextBar/ContextMenu                                              -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidContextBarCtl"  >
+    <CATVidLayLayer  LayoutWhenUnvisibleFlag="0">
+      <CATVidGPSquare  syp:name="BackgroundLayer" LayoutWhenUnvisibleFlag="0" UseManipulatorFlag="1" Name="PickZone" PickFlag="1" Press="@HandleBackgroundEvent"/>
+      <CATVidLayGrid GridWeight="row0=1" LayoutWhenUnvisibleFlag="0"  >
+        <CATVidCtl syp:name="Content" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0"/>
+        <CATVidCtlButton  syp:Template="Toolbar"
+                          syp:name="ContextMenuButton"
+						  Name="ContextMenuButton"
+                          CheckMode="0"
+                          IconDimension="8 8"
+                          ForegroundColor="255 255 255 255"
+                          ClickMode="0"
+                          Icon="AfrToolbarButtonArrow.png"
+                          Tooltip=""
+                          Click="@HandleEvent"
+                          Press="@HandleBackgroundEvent"
+                          RequestedMinimumDimension="0 16"
+                          LayoutWhenUnvisibleFlag="0"
+                          CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"
+                          VisibleFlag="0"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+    
+    <!--<CATSYPTriggerCollection>
+    </CATSYPTriggerCollection>-->
+
+  </Template>
+  
+</Styles>

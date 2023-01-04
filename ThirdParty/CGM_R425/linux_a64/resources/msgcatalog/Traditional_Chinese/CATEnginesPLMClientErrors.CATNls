@@ -1,0 +1,32 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+NotFirstVersionNotModifiable_F_1.Diagnostic="參考並非第一個修訂參考，因此無法修改其識別碼屬性集。相關參考：/p1";
+NotFirstVersionNotModifiable_F_1.Advice="";
+NotFirstVersionNotModifiable_F_1.Request="您僅可修改參考第一個修訂版的識別碼屬性集。";
+
+
+BlockingOwnerMaturity1_F_0.Diagnostic="無法建立 /p 執行個體，因為其擁有者參考無法編輯：\n其擁有者參考因其成熟狀態而無法編輯。";
+BlockingOwnerMaturity1_F_0.Advice="修改擁有者物件的成熟狀態。";
+BlockingOwnerMaturity1_F_0.Request="";
+
+
+//  In Diagnostic's /p : Precision on which system problem occurs: this is DEBUG information
+PLMc_ServerSystemPb_F_1.Diagnostic="伺服器系統問題\n(除錯資訊：\n/p)";
+PLMc_ServerSystemPb_F_1.Advice="";
+PLMc_ServerSystemPb_F_1.Request="";

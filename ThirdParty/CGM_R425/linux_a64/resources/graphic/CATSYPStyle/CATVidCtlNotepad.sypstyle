@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="CATVidCtlNotepadTools.sypstyle"/>
+  </Resources>
+
+  <Template Target="CATVidCtlNotepad" syp:name="Default" syp:version="2">
+    <CATVidLayGrid GridWeight="row1=1" CellSpacing="2" >
+      <!-- Toolbar -->
+      <CATVidCtlNotepadTools Name="Toolbar" syp:name="Toolbar" syp:Template="Default" TextEditor="@TextEditor Mode=OneWay" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB" FontNameAndSizeCombosVisibilityFlag="@FontComboVisibilityFlag" />
+      <!-- Text editor -->
+      <CATVidCtlTextEditor Name="Editor" syp:name="Editor" syp:Template="TextEditor" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB" RequestedMinimumDimension="50 50" />
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="1">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="0">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+  <Template Target="CATVidCtlNotepad" syp:name="Default" syp:Variation="ToolbarAtBottom" syp:version="2">
+    <CATVidLayGrid GridWeight="row0=1" CellSpacing="2">
+      <!-- Text editor -->
+      <CATVidCtlTextEditor Name="Editor" syp:name="Editor" syp:Template="TextEditor" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB" RequestedMinimumDimension="50 50"  />
+      <!-- Toolbar -->
+      <CATVidCtlNotepadTools Name="Toolbar" syp:name="Toolbar" syp:Template="Default" TextEditor="@TextEditor Mode=OneWay" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB" FontNameAndSizeCombosVisibilityFlag="@FontComboVisibilityFlag"/>
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="1">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="0">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template Target="CATVidCtlNotepad" syp:name="Default">
+    <CATVidLayGrid GridWeight="row1=1" CellSpacing="2" >
+      <!-- Toolbar -->
+      <CATVidCtlNotepadTools syp:name="Toolbar" syp:Template="Default" TextEditor="@TextEditor Mode=OneWay" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=LTB" />
+      <!-- Text editor -->
+      <CATVidCtlTextEditor syp:name="Editor" syp:Template="TextEditor" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB" RequestedMinimumDimension="50 50" />
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="1">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="0">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+  <Template Target="CATVidCtlNotepad" syp:name="Default" syp:Variation="ToolbarAtBottom">
+    <CATVidLayGrid GridWeight="row0=1" CellSpacing="2">
+      <!-- Text editor -->
+      <CATVidCtlTextEditor syp:name="Editor" syp:Template="TextEditor" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB" RequestedMinimumDimension="50 50"  />
+      <!-- Toolbar -->
+      <CATVidCtlNotepadTools syp:name="Toolbar" syp:Template="Default" TextEditor="@TextEditor Mode=OneWay" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=LTB" />
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="1">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger TargetName="Editor" Property="ReadOnlyFlag" Value="0">
+        <CATSYPSetter TargetName="Toolbar" Property="EnableFlag" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+
+</Styles>

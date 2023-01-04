@@ -1,0 +1,83 @@
+{
+  "grammarVersion": 3,
+  "desc": "Definition of a CSI Declarative Pool",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Name of the pool"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "desc": "Description of the pool"
+    },
+    {
+      "label": "declarativeFile",
+      "parameters": [
+        {
+          "label": "filename",
+          "basic": "string"
+        },
+        {
+          "label": "filepath",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ],
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "If the pool is defined thanks to a declarative file, contains information about the file"
+    },
+    {
+      "label": "implementation",
+      "parameters": [
+        {
+          "label": "library",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "javaClassPath",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ],
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "If a node data has been defined for the pool, defined the libray used to find symbols"
+    },
+    {
+      "label": "imports",
+      "typeArray": "CSIPoolImports",
+      "desc": "list of imports",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "recordable",
+      "basic": "bool",
+      "desc": "tells if the pool is recordable, false if unspecified",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="VisQualityPresetDefinition.xsl"?>
+
+<VisRenderQuality>
+  <VisRenderQualityDef MajorVersion="0" MinorVersion="0">
+
+    <ParamGroup Name="AntiAliasingGr">
+      <Param Type="eEnum" Name="AASetting" Range="None;2x (2xMS);4x (4xMS);8x (8xMS);8x (4xSS, 2xMS);16x (4xSS, 4xMS);16x (16xSS)"/>
+      <Param Type="eEnum" Name="PostProcessAA" Range="None;FXAA;TAA"/>
+      <Param Type="eEnum" Name="FXAAQuality" Range="Fast;Default;High;Extreme"/>
+      <Param Type="eBool" Name="UseAAOnSSAO"/>
+    </ParamGroup>
+    <ParamGroup Name="OutlineViewmodeGr">
+      <Param Type="eBool" Name="AllowOutline"/>
+    </ParamGroup>
+    <ParamGroup Name="PixelCulling_LODGr">
+      <Param Type="eInt" Name="CullMinPixelSize" Range="0-400"/>
+      <Param Type="eFloat" Name="LODQuality" Range="0.0-40.0"/>
+      <Param Type="eBool" Name="Occlusion"/>
+      <Param Type="eEnum" Name="OcclusionStrategy" Range="Precise;Optimal;Fast"/>
+      <Param Type="eBool" Name="ForceCompiledPath"/>
+    </ParamGroup>
+    <ParamGroup Name="TransparencyModeGr">
+      <Param Type="eEnum" Name="TranspMode" Range="ScreenDoor;AlphaBlendingNoSort;AlphaBlendingWithSort;WeightedAverage;OrderIndependant;OrderIndependantWithColor"/>
+    </ParamGroup>
+    <ParamGroup Name="ShadowsGr">
+      <Param Type="eBool" Name="AllowGroundShadow"/>
+      <Param Type="eBool" Name="AllowInterObjShadow"/>
+      <Param Type="eBool" Name="AllowTransparentShadow"/>
+      <Param Type="eBool" Name="AllowAreaLightShadows"/>
+      <Param Type="eEnum" Name="MaxShadowMapSize" Range="64;128;256;512;1024;2048;4096;8192"/>
+      <Param Type="eBool" Name="UseBoundingBox"/>
+      <Param Type="eEnum" Name="ShadowFiltering" Range="PCF;ESM;PCSS"/>
+      <Param Type="eEnum" Name="ShadowFilteringQuality" Range="Low;Medium;High;Ultra"/>
+    </ParamGroup>
+    <ParamGroup Name="ReflectionsGr">
+      <Param Type="eEnum" Name="GroundReflMode" Range="None;Mirror;SSR"/>
+      <Param Type="eEnum" Name="InterObjReflMode" Range="None;SSR"/>
+      <Param Type="eEnum" Name="SSRQuality" Range="Low;High"/>
+    </ParamGroup>
+    <ParamGroup Name="GlobalIlluminationGr">
+      <Param Type="eBool" Name="AllowSSAO"/>
+      <Param Type="eEnum" Name="AOMode"           Range="SSAO;HBAO;HQAO;HQAO+IBL"/>
+      <Param Type="eEnum" Name="SSAOMaxSampling"  Range="8;16;32;64"/>
+      <Param Type="eEnum" Name="AOBlurMode"       Range="None;BlurWithEdgeDetectionFromZ;BlurWithEdgeDetectionFromZAndNormal;BlurWithAccurateEdgeDetectionFromZAndNormal"/>
+      <Param Type="eInt"  Name="SSAOMaxBlurLevel" Range="0-10"/>
+      <Param Type="eBool" Name="HQAOSpecularShadows" EnvVar="VisHQAOSpecularShadows=1" />
+      <Param Type="eEnum" Name="HQAOCacheSize"    Range="Low;High" />
+      <Param Type="eEnum" Name="HQAOMinQuality"   Range="Low;Medium;High;Ultra" />
+      <Param Type="eEnum" Name="HQAOMaxQuality"   Range="Low;Medium;High;Ultra" />
+    </ParamGroup>
+    <ParamGroup Name="BloomGr">
+      <Param Type="eBool" Name="AllowBloom"/>
+      <Param Type="eInt" Name="MaxBloomQuality" Range="1-10"/>
+      <!--Hidden Bloom parameters
+      <Param Type="eInt"   Name="BloomMaxTexLvl"        Range="1-10"/>
+      <Param Type="eInt"   Name="BloomMaxBlurNbPass"    Range="1-10"/>
+      <Param Type="eFloat" Name="BloomMaxBlurSz"        Range="1-20"/>
+      <Param Type="eFloat" Name="BloomMaxBlurNbSamples" Range="2-40"/>-->
+    </ParamGroup>
+    <ParamGroup Name="DepthOfFieldGr">
+      <Param Type="eBool" Name="AllowDoF"/>
+    </ParamGroup>
+    <ParamGroup Name="CappingGr">
+      <Param Type="eBool" Name="EnableMultiColorCapping"/>
+    </ParamGroup>
+    <ParamGroup Name="DownsamplingGr">
+      <Param Type="eFloat" Name="DownsamplingFactor" Range="0.4-1.0" />
+      <Param Type="eEnum"  Name="ShadingRate" Range="1x1;2x2;4x4" />
+    </ParamGroup>
+    <ParamGroup Name="MaterialGr">
+      <Param Type="eEnum" Name="MetallicFlakesQuality" Range="Low;Medium;High;Ultra" />
+      <Param Type="eBool" Name="CloseupFlakesMode" />
+      <Param Type="eBool" Name="XriteNativeShader" /> <!--EOO2-->
+    </ParamGroup>
+    <ParamGroup Name="DepthGr">
+      <Param Type="eEnum" Name="DepthMode" Range="Default;Log" />
+      <Param Type="eEnum" Name="DepthOffset" Range="Edge;Face" />
+      <Param Type="eBool" Name="DepthFlickeringReduction"/>
+    </ParamGroup>
+    <DisableParam RenderMode="Static"  Name="AllowOutline"/>
+    <DisableParam RenderMode="Dynamic" Name="TranspMode"/>
+    <DisableParam RenderMode="Dynamic" Name="UseBoundingBox"/>
+    <DisableParam RenderMode="Dynamic" Name="MaxShadowMapSize"/>
+    <DisableParam RenderMode="Dynamic" Name="ShadowFiltering"/>
+    <DisableParam RenderMode="Dynamic" Name="ShadowFilteringQuality"/>
+    <DisableParam RenderMode="Dynamic" Name="AllowTransparentShadow"/>
+    <DisableParam RenderMode="Dynamic" Name="EnableMultiColorCapping"/>
+    <DisableParam RenderMode="Dynamic" Name="Occlusion"/>
+    <DisableParam RenderMode="Dynamic" Name="OcclusionStrategy"/>
+    <DisableParam RenderMode="Dynamic" Name="ForceCompiledPath"/>
+    <DisableParam RenderMode="Dynamic" Name="DownsamplingFactor"/>
+	<DisableParam RenderMode="Dynamic" Name="ShadingRate"/>
+    <DisableParam RenderMode="Dynamic" Name="SSRQuality"/>
+    <DisableParam RenderMode="Dynamic" Name="AOMode"/>
+    <DisableParam RenderMode="Dynamic" Name="HQAOCacheSize"/>
+    <DisableParam RenderMode="Dynamic" Name="HQAOSpecularShadows"/>
+    <DisableParam RenderMode="Dynamic" Name="DepthMode"/>
+
+    <ModifyParamRange Name="TranspMode" Range="AlphaBlendingNoSort;AlphaBlendingWithSort;WeightedAverage;OrderIndependant;OrderIndependantWithColor"/>
+
+    <PresetDef Name="Min"
+               AASetting="None" PostProcessAA="None" FXAAQuality="Fast" UseAAOnSSAO="false"
+               AllowOutline="false"
+               CullMinPixelSize="5" LODQuality="5" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="AlphaBlendingNoSort"
+               AllowGroundShadow="false" AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="64" UseBoundingBox="false" ShadowFiltering="ESM" ShadowFilteringQuality="Low"
+               GroundReflMode="None" InterObjReflMode="None" SSRQuality="Low"
+               AllowSSAO="false" SSAOMaxSampling="8" SSAOMaxBlurLevel="0" AOMode="SSAO" AOBlurMode="None" HQAOCacheSize="Low"
+               AllowDoF="false"
+               AllowBloom="false" MaxBloomQuality="1"
+               EnableMultiColorCapping="false"
+               DownsamplingFactor="0.4" ShadingRate="1x1"
+               MetallicFlakesQuality="Low" XriteNativeShader="false"
+               DepthMode="Default"
+               DepthOffset="Face"
+               DepthFlickeringReduction="false"/>
+
+    <PresetDef Name="Low"
+               AASetting="None" PostProcessAA="None" FXAAQuality="High" UseAAOnSSAO="false"
+               AllowOutline="false"
+               CullMinPixelSize="5" LODQuality="3" Occlusion="true" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="AlphaBlendingWithSort"
+               AllowGroundShadow="false"  AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="1024" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Low"
+               GroundReflMode="None" InterObjReflMode="None" SSRQuality="Low"
+               AllowSSAO="false" SSAOMaxSampling="8"  SSAOMaxBlurLevel="0" AOMode="SSAO" AOBlurMode="None" HQAOCacheSize="Low"
+               AllowDoF="false"
+               AllowBloom="false" MaxBloomQuality="1"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="Low" XriteNativeShader="false"
+               DepthMode="Default"
+               DepthOffset="Face"
+               DepthFlickeringReduction="false"/>
+
+    <PresetDef Name="Medium"
+               AASetting="4x (4xMS)"      PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+               AllowOutline="true"
+               CullMinPixelSize="3" LODQuality="3" Occlusion="true" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="WeightedAverage"
+               AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="true" MaxShadowMapSize="2048" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Medium"
+               GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+               AllowSSAO="true"  SSAOMaxSampling="16" SSAOMaxBlurLevel="7" AOMode="SSAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+               AllowDoF="false"
+               AllowBloom="false" MaxBloomQuality="1"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="Medium" XriteNativeShader="false"
+               DepthMode="Default"
+               DepthOffset="Face"
+               DepthFlickeringReduction="false"/>
+
+    <PresetDef Name="High"
+               AASetting="4x (4xMS)"      PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+               AllowOutline="true"
+               CullMinPixelSize="2" LODQuality="0.5" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="WeightedAverage"
+               AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="true" MaxShadowMapSize="4096" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+               GroundReflMode="Mirror" InterObjReflMode="SSR" SSRQuality="Low"
+               AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7" AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+               AllowDoF="true"
+               AllowBloom="true"  MaxBloomQuality="5"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="High" XriteNativeShader="false"
+               DepthMode="Default"
+               DepthOffset="Edge"
+               DepthFlickeringReduction="false"/>
+
+    <PresetDef Name="Ultra"
+               AASetting="8x (8xMS)"     PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+               AllowOutline="true"
+               CullMinPixelSize="2" LODQuality="0.5" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="OrderIndependantWithColor"
+               AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="true" MaxShadowMapSize="4096" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Ultra"
+               GroundReflMode="Mirror" InterObjReflMode="SSR" SSRQuality="High"
+               AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+               AllowDoF="true"
+               AllowBloom="true"  MaxBloomQuality="10"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="Ultra" XriteNativeShader="true"
+               DepthMode="Default"
+               DepthOffset="Edge"
+               DepthFlickeringReduction="false"/>
+
+    <PresetDef Name="Max"
+               AASetting="16x (16xSS)"     PostProcessAA="FXAA" FXAAQuality="Extreme" UseAAOnSSAO="true"
+               AllowOutline="true"
+               CullMinPixelSize="1" LODQuality="0.1" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="OrderIndependant"
+               AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="true" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Ultra"
+               GroundReflMode="Mirror" InterObjReflMode="SSR" SSRQuality="High"
+               AllowSSAO="true"  SSAOMaxSampling="64" SSAOMaxBlurLevel="10"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+               AllowDoF="true"
+               AllowBloom="true"  MaxBloomQuality="10"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="Ultra" XriteNativeShader="true"
+               DepthMode="Default"
+               DepthOffset="Edge"
+               DepthFlickeringReduction="false"/>
+
+    <PresetDef Name="Immersive"
+               AASetting="4x (4xMS)" PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+               AllowOutline="false"
+               CullMinPixelSize="3" LODQuality="0.0" Occlusion="true" OcclusionStrategy="Precise" ForceCompiledPath="true"
+               TranspMode="AlphaBlendingWithSort"
+               AllowGroundShadow="true" AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="1024" UseBoundingBox="false" ShadowFiltering="PCF" ShadowFilteringQuality="Medium"
+               GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+               AllowSSAO="false"  SSAOMaxSampling="16" SSAOMaxBlurLevel="3"  AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+               AllowDoF="false"
+               AllowBloom="false"  MaxBloomQuality="1"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="Low" XriteNativeShader="false"
+               DepthMode="Default"
+               DepthOffset="Face"
+               DepthFlickeringReduction="false"/>
+
+	  <PresetDef Name="Default" RenderMode="Static"  BasePreset="Low" />
+	  <PresetDef Name="Default" RenderMode="Dynamic" BasePreset="Low" />
+
+    <!--maintain old defaults for initialization-->
+	  <!--PresetDef Name="Default" RenderMode="Static"
+               AASetting="4x (4xMS)" PostProcessAA="None" FXAAQuality="Default" UseAAOnSSAO="false"
+               AllowOutline="true"
+               CullMinPixelSize="2" LODQuality="0.5" Occlusion="true" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="AlphaBlendingWithSort"
+               AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+               GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+               AllowSSAO="true" SSAOMaxSampling="64" SSAOMaxBlurLevel="10"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+               AllowDoF="true"
+               AllowBloom="true" MaxBloomQuality="10"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="Ultra"
+               DepthMode="Default"
+               DepthOffset="Face"
+               DepthFlickeringReduction="false"/>
+
+    <PresetDef Name="Default" RenderMode="Dynamic"
+               AASetting="None" PostProcessAA="None" FXAAQuality="Default" UseAAOnSSAO="false"
+               AllowOutline="true"
+               CullMinPixelSize="3" LODQuality="3.0" Occlusion="true" OcclusionStrategy="Precise" ForceCompiledPath="false"
+               TranspMode="AlphaBlendingWithSort"
+               AllowGroundShadow="false" AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+               GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+               AllowSSAO="true" SSAOMaxSampling="16" SSAOMaxBlurLevel="5"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+               AllowDoF="true"
+               AllowBloom="true" MaxBloomQuality="10"
+               EnableMultiColorCapping="true"
+               DownsamplingFactor="1.0" ShadingRate="1x1"
+               MetallicFlakesQuality="Ultra"
+               DepthMode="Default"
+               DepthOffset="Face"
+               DepthFlickeringReduction="false"/-->
+
+    <GPUOptimization>
+
+      <!--High end NVIDIA GPUs-->
+      <GPUGroup GPUs="Quadro M6000, Quadro M5000, Quadro M4000, Quadro K5000, GRID K2, 
+                Quadro P4000, Quadro P5000, Quadro P6000, Quadro GP100, Quadro GV100">
+        <PresetDef Name="Default" RenderMode="Static"   BasePreset="High" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic"  BasePreset="High" CullMinPixelSize="3" LODQuality="3.0" />
+      </GPUGroup>
+
+      <GPUGroup GPUs="Quadro RTX4000, Quadro RTX5000, Quadro RTX6000, Quadro RTX8000">
+        <PresetDef Name="Default" RenderMode="Static"   BasePreset="High" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic"  BasePreset="High" CullMinPixelSize="3" LODQuality="3.0" />
+      </GPUGroup>
+
+      <!--High end AMD GPUs-->
+      <GPUGroup GPUs="FirePro W9100, FirePro W8100, FirePro W9000, FirePro W7170M, FirePro W8000, FirePro W7100, 
+                Mobility Radeon WX7100, Radeon Pro WX7100">
+        <PresetDef Name="Default" RenderMode="Static"   BasePreset="High" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic"  BasePreset="High" CullMinPixelSize="3" LODQuality="3.0" />
+      </GPUGroup>
+
+      <!--Medium end NVIDIA GPUs-->
+      <GPUGroup GPUs="Quadro K5100M, Quadro K6000, Quadro K5200, Quadro K4200, Quadro K5000M, Quadro K4100M, Quadro K4000M, Quadro K3100M,
+                Quadro K4000, Quadro M3000M, Quadro P3000">
+        <PresetDef Name="Default" RenderMode="Static"   BasePreset="Medium" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic" BasePreset="Medium"  CullMinPixelSize="3" LODQuality="3.0" />
+      </GPUGroup>
+
+      <!--Medium end AMD GPUs -->
+      <GPUGroup GPUs="FirePro V8800, FirePro V7800, FirePro V7900, FirePro W7000, FirePro M8900, FirePro V5800, 
+                FirePro M7820, FirePro W5100, FirePro M6100, FirePro W5000, FirePro W4300, FirePro W4000, 
+                FirePro W5170M, FirePro M6000, FirePro M5100, FirePro W4100, FirePro W5130M, FirePro M4000, 
+                FirePro V5900, Radeon Pro WX5100, Radeon Pro WX4100">
+        <PresetDef Name="Default" RenderMode="Static"   BasePreset="Medium" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic" BasePreset="Medium"  CullMinPixelSize="3" LODQuality="3.0" />
+      </GPUGroup>
+
+      <!--Low end NVIDIA GPUs-->
+      <GPUGroup GPUs="Quadro K2200, Quadro K2200M, Quadro K3000M, Quadro K2100M, Quadro K1200, Quadro 6000, Quadro 5010M, 
+                Quadro K2000, Quadro K2000M, Quadro K1100M, Quadro K620, Quadro K620M, Quadro 5000, Quadro 4000M, 
+                Quadro 5000M, Quadro 4000, Quadro 3000M, Quadro M1000, Quadro M1000M, Quadro M1200, Quadro M1200M, 
+                Quadro M2000, Quadro M2000M, Quadro M2200, Quadro P600, Quadro P1200, Quadro P2000">
+        <PresetDef Name="Default" RenderMode="Static"  BasePreset="Low" AllowOutline="true" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic" BasePreset="Low" AllowOutline="true" CullMinPixelSize="3" LODQuality="3.0" />
+      </GPUGroup>
+
+      <!--Ultra Low end NVIDIA GPUs ... EnableMultiColorCapping=false -->
+      <GPUGroup GPUs="Quadro 2000, Quadro 2000M, Quadro K600, Quadro K420, Quadro K610M, Quadro 600, Quadro 1000M,
+                Quadro 500M, Quadro M520, Quadro M620">
+        <ModifyParamRange Name="AASetting" Range="None;2x (2xMS);4x (4xMS);8x (8xMS);8x (4xSS, 2xMS);16x (4xSS, 4xMS)"/>
+        <PresetDef Name="Default" RenderMode="Static"  BasePreset="Low" AllowOutline="true" EnableMultiColorCapping="false" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic" BasePreset="Low" AllowOutline="true" EnableMultiColorCapping="false" CullMinPixelSize="3" LODQuality="3.0" />
+        <PresetDef Name="Max"     AASetting="16x (4xSS, 4xMS)" />
+      </GPUGroup>
+
+      <!--Low end AMD GPUs-->
+      <GPUGroup GPUs="FirePro M5950, FirePro V4900, FirePro V3900, FirePro V4800, FirePro V3800, FirePro W4170M, FirePro M4100, 
+                FirePro W2100, Radeon Pro WX3100, Radeon Pro WX2100, Mobility Radeon WX4130, Mobility Radeon WX4150">
+        <PresetDef Name="Default" RenderMode="Static"  BasePreset="Low" AllowOutline="true" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic" BasePreset="Low" AllowOutline="true" CullMinPixelSize="3" LODQuality="3.0" />
+      </GPUGroup>
+
+      <!-- Intel HD Graphics 5000 (used in Surface Pro 3 for example) -->
+      <GPUGroup GPUs="HD Graphics 5000">
+        <ModifyParamRange Name="AASetting" Range="None;2x (2xMS);4x (4xMS);8x (8xMS);8x (4xSS, 2xMS);16x (4xSS, 4xMS)"/>
+        <ModifyParamRange Name="TranspMode" Range="AlphaBlendingNoSort;AlphaBlendingWithSort;WeightedAverage"/>
+        <PresetDef Name="Ultra" TranspMode="WeightedAverage"/>
+        <PresetDef Name="Max"   TranspMode="WeightedAverage" AASetting="16x (4xSS, 4xMS)" />
+      </GPUGroup>
+
+      <!--Deactivate ESM on all AMD GPUs. TODO: remove when driver bug is fixed. -->
+      <GPUGroup GPUs="FirePro W9100, FirePro W8100, FirePro W9000, FirePro W7170M, FirePro W8000, FirePro W7100, FirePro V8800, FirePro V7800, FirePro V7900, FirePro W7000, FirePro M8900, FirePro V5800, 
+                FirePro M7820, FirePro W5100, FirePro M6100, FirePro W5000, FirePro W4300, FirePro W4000, FirePro W5170M, FirePro M6000, FirePro M5100, FirePro W4100, FirePro W5130M, FirePro M4000, FirePro V5900,
+                FirePro M5950, FirePro V4900, FirePro V3900, FirePro V4800, FirePro V3800, FirePro W4170M, FirePro M4100, FirePro W2100,
+        Mobility Radeon WX7100, Radeon Pro WX7100, Radeon Pro WX5100, Radeon Pro WX4100, Radeon Pro WX3100, Radeon Pro WX2100, Mobility Radeon WX4130, Mobility Radeon WX4150">
+        <ModifyParamRange Name="ShadowFiltering" Range="PCF;PCSS"/>
+        <PresetDef Name="Min"     BasePreset="None"    ShadowFiltering="PCF" />
+        <PresetDef Name="Low"     BasePreset="Low"     ShadowFiltering="PCF" />
+        <PresetDef Name="Medium"  BasePreset="Medium"  ShadowFiltering="PCF" />
+        <PresetDef Name="High"    BasePreset="High"    ShadowFiltering="PCF" />
+        <PresetDef Name="Ultra"   BasePreset="Ultra"   ShadowFiltering="PCF" />
+        <PresetDef Name="Max"     BasePreset="Max"     ShadowFiltering="PCF" />
+        <PresetDef Name="Default" BasePreset="Default" RenderMode="Static"  ShadowFiltering="PCF" />
+        <PresetDef Name="Default" BasePreset="Default" RenderMode="Dynamic" ShadowFiltering="PCF" />
+      </GPUGroup>
+
+      <!-- Deactivate SSR on all AMD GPUs. (IR-658680) -->
+      <GPUGroup GPUs="FirePro W9100, FirePro W8100, FirePro W9000, FirePro W7170M, FirePro W8000, FirePro W7100, FirePro V8800, FirePro V7800, FirePro V7900, FirePro W7000, FirePro M8900, FirePro V5800, 
+                FirePro M7820, FirePro W5100, FirePro M6100, FirePro W5000, FirePro W4300, FirePro W4000, FirePro W5170M, FirePro M6000, FirePro M5100, FirePro W4100, FirePro W5130M, FirePro M4000, FirePro V5900,
+                FirePro M5950, FirePro V4900, FirePro V3900, FirePro V4800, FirePro V3800, FirePro W4170M, FirePro M4100, FirePro W2100,
+        Mobility Radeon WX7100, Radeon Pro WX7100, Radeon Pro WX5100, Radeon Pro WX4100, Radeon Pro WX3100, Radeon Pro WX2100, Mobility Radeon WX4130, Mobility Radeon WX4150">
+        <ModifyParamRange Name="GroundReflMode" Range="None;Mirror"/>
+        <ModifyParamRange Name="InterObjReflMode" Range="None"/>
+        <PresetDef Name="Min"     BasePreset="None"    />
+        <PresetDef Name="Low"     BasePreset="Low"     />
+        <PresetDef Name="Medium"  BasePreset="Medium"  />
+        <PresetDef Name="High"    BasePreset="High"    InterObjReflMode="None" />
+        <PresetDef Name="Ultra"   BasePreset="Ultra"   InterObjReflMode="None" />
+        <PresetDef Name="Max"     BasePreset="Max"     InterObjReflMode="None" />
+        <PresetDef Name="Default" BasePreset="Default" RenderMode="Static"  InterObjReflMode="None" />
+        <PresetDef Name="Default" BasePreset="Default" RenderMode="Dynamic" InterObjReflMode="None" />
+      </GPUGroup>
+
+      <!--for any Unknown GPU... old defaults-->
+      <GPUGroup GPUs="Unknown">
+        <PresetDef Name="Default" RenderMode="Static"
+                   AASetting="4x (4xMS)"    PostProcessAA="None" FXAAQuality="Default" UseAAOnSSAO="false"
+                   AllowOutline="false"
+                   CullMinPixelSize="2" LODQuality="0.5" Occlusion="true" OcclusionStrategy="Precise"
+                   TranspMode="AlphaBlendingWithSort"
+                   AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+                   GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                   AllowSSAO="true" SSAOMaxSampling="64" SSAOMaxBlurLevel="10"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="true"
+                   AllowBloom="true" MaxBloomQuality="10"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="Ultra" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+
+        <PresetDef Name="Default" RenderMode="Dynamic"
+                   AASetting="None" PostProcessAA="None" FXAAQuality="Default" UseAAOnSSAO="false"
+                   AllowOutline="true"
+                   CullMinPixelSize="3" LODQuality="3.0" Occlusion="true" OcclusionStrategy="Precise"
+                   TranspMode="AlphaBlendingWithSort"
+                   AllowGroundShadow="false" AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+                   GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                   AllowSSAO="true" SSAOMaxSampling="16" SSAOMaxBlurLevel="5"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="true"
+                   AllowBloom="true" MaxBloomQuality="10"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="Ultra" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+      </GPUGroup>
+
+      <!--for internal testing-->
+      <GPUGroup GPUs="TestGPU">
+        <PresetDef Name="Default" RenderMode="Static"  BasePreset="Ultra"
+                   AASetting="4x (4xMS)"
+                   BloomMaxTexLvl="8" BloomMaxBlurNbPass="6" BloomMaxBlurSz="15" BloomMaxBlurNbSamples="22" />
+        <PresetDef Name="Default" RenderMode="Dynamic" BasePreset="Low"
+                   AASetting="4x (4xMS)"
+                   BloomMaxTexLvl="5" BloomMaxBlurNbPass="4" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="10" />
+        <PresetDef Name="Custom"  RenderMode="Static"  BasePreset="High"/>
+        <PresetDef Name="Custom"  RenderMode="Dynamic" BasePreset="Medium"
+                   AASetting="8x (8xMS)" />
+        <DisablePreset Name="High"/>
+        <DisableParam Name="UseAAOnSSAO"/>
+        <ModifyParamRange Name="CullMinPixelSize" Range="0-20"/>
+      </GPUGroup>
+
+      <!--For ODT replay: not to have impact when preset def change and to maintain old defaults-->
+      <GPUGroup GPUs="ODT_GPU">
+        <PresetDef Name="Min"
+                   AASetting="None"      PostProcessAA="None" FXAAQuality="Fast"    UseAAOnSSAO="false"
+                   AllowOutline="false"
+                   CullMinPixelSize="5" LODQuality="5" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="AlphaBlendingNoSort"
+                   AllowGroundShadow="false" AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="64"   UseBoundingBox="false" ShadowFiltering="ESM" ShadowFilteringQuality="Low"
+                   GroundReflMode="None"   InterObjReflMode="None" SSRQuality="Low"
+                   AllowSSAO="false" SSAOMaxSampling="8"  SSAOMaxBlurLevel="0"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="false"
+                   AllowBloom="false" MaxBloomQuality="1"
+                   EnableMultiColorCapping="false"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+        <PresetDef Name="Low"
+                   AASetting="2x (2xMS)" PostProcessAA="None" FXAAQuality="High"    UseAAOnSSAO="false"
+                   AllowOutline="false"
+                   CullMinPixelSize="4" LODQuality="4" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="AlphaBlendingWithSort"
+                   AllowGroundShadow="true"  AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="1024" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Low"
+                   GroundReflMode="None"   InterObjReflMode="None" SSRQuality="Low"
+                   AllowSSAO="false" SSAOMaxSampling="8"  SSAOMaxBlurLevel="0"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="false"
+                   AllowBloom="false" MaxBloomQuality="1"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+        <PresetDef Name="Medium"
+                   AASetting="4x (4xMS)" PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                   AllowOutline="false"
+                   CullMinPixelSize="3" LODQuality="3" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="WeightedAverage"
+                   AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="2048" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Medium"
+                   GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                   AllowSSAO="true"  SSAOMaxSampling="16" SSAOMaxBlurLevel="7"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="false"
+                   AllowBloom="false" MaxBloomQuality="1"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+        <PresetDef Name="High"
+                   AASetting="4x (4xMS)" PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                   AllowOutline="true"
+                   CullMinPixelSize="2" LODQuality="2" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="WeightedAverage"
+                   AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="4096" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+                   GroundReflMode="Mirror" InterObjReflMode="SSR"  SSRQuality="Low"
+                   AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="true"
+                   AllowBloom="true"  MaxBloomQuality="5"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+        <PresetDef Name="Ultra"
+                   AASetting="8x (8xMS)" PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                   AllowOutline="true"
+                   CullMinPixelSize="1" LODQuality="1" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="OrderIndependant"
+                   AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="4096" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Ultra"
+                   GroundReflMode="Mirror" InterObjReflMode="SSR"  SSRQuality="High"
+                   AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="true"
+                   AllowBloom="true"  MaxBloomQuality="10"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+        <PresetDef Name="Max"
+                   AASetting="8x (8xMS)" PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="true"
+                   AllowOutline="true"
+                   CullMinPixelSize="0" LODQuality="0.5" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="OrderIndependant"
+                   AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="Ultra"
+                   GroundReflMode="Mirror" InterObjReflMode="SSR"  SSRQuality="High"
+                   AllowSSAO="true"  SSAOMaxSampling="64" SSAOMaxBlurLevel="10" AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal" HQAOCacheSize="High"
+                   AllowDoF="true"
+                   AllowBloom="true"  MaxBloomQuality="10"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+        <PresetDef Name="Immersive"
+            AASetting="4x (4xMS)" PostProcessAA="None" FXAAQuality="Extreme" UseAAOnSSAO="false"
+            AllowOutline="false"
+            CullMinPixelSize="3" LODQuality="0.0" Occlusion="true" OcclusionStrategy="Precise" ForceCompiledPath="true"
+            TranspMode="AlphaBlendingWithSort"
+            AllowGroundShadow="true" AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="1024" UseBoundingBox="false" ShadowFiltering="PCF" ShadowFilteringQuality="Medium"
+            GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+            AllowSSAO="false"  SSAOMaxSampling="16" SSAOMaxBlurLevel="3"  AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+            AllowDoF="false"
+            AllowBloom="false"  MaxBloomQuality="1"
+            EnableMultiColorCapping="true"
+            DownsamplingFactor="1.0" ShadingRate="1x1"
+            MetallicFlakesQuality="Low" XriteNativeShader="false"
+            DepthMode="Default"
+            DepthOffset="Face"
+            DepthFlickeringReduction="false"/>
+        <PresetDef Name="Default" RenderMode="Static"
+                   AASetting="4x (4xMS)" PostProcessAA="None" FXAAQuality="Default" UseAAOnSSAO="false"
+                   AllowOutline="true"
+                   CullMinPixelSize="2" LODQuality="0.5" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="AlphaBlendingWithSort"
+                   AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+                   GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                   AllowSSAO="true" SSAOMaxSampling="64" SSAOMaxBlurLevel="10" AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal"
+                   AllowDoF="true"
+                   AllowBloom="true" MaxBloomQuality="10"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+        <PresetDef Name="Default" RenderMode="Dynamic"
+                   AASetting="None"      PostProcessAA="None" FXAAQuality="Default" UseAAOnSSAO="false"
+                   AllowOutline="true"
+                   CullMinPixelSize="3" LODQuality="3.0" Occlusion="false" OcclusionStrategy="Precise" ForceCompiledPath="false"
+                   TranspMode="AlphaBlendingWithSort"
+                   AllowGroundShadow="false" AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="true"  ShadowFiltering="ESM" ShadowFilteringQuality="High"
+                   GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                   AllowSSAO="true" SSAOMaxSampling="16" SSAOMaxBlurLevel="5"  AOMode="SSAO" AOBlurMode="BlurWithAccurateEdgeDetectionFromZAndNormal"
+                   AllowDoF="true"
+                   AllowBloom="true" MaxBloomQuality="10"
+                   EnableMultiColorCapping="true"
+                   DownsamplingFactor="1.0" ShadingRate="1x1"
+                   MetallicFlakesQuality="High" XriteNativeShader="false"
+                   DepthMode="Default"
+                   DepthOffset="Face"
+                   DepthFlickeringReduction="false"/>
+      </GPUGroup>
+      <!--Mesa-->
+      <GPUGroup GPUs="Mesa">
+        <PresetDef Name="Default" RenderMode="Static"   BasePreset="Min" DownsamplingFactor="1.0" AASetting="None" PostProcessAA="None" FXAAQuality="Fast" UseAAOnSSAO="false" CullMinPixelSize="2" LODQuality="0.5" />
+        <PresetDef Name="Default" RenderMode="Dynamic"  BasePreset="Min" DownsamplingFactor="1.0" AASetting="None" PostProcessAA="None" FXAAQuality="Fast" UseAAOnSSAO="false" CullMinPixelSize="3" LODQuality="3.0" />
+        <DisablePreset Name="Low"/>
+        <DisablePreset Name="Medium"/>
+        <DisablePreset Name="High"/>
+        <DisablePreset Name="Ultra"/>
+        <DisablePreset Name="Max"/>
+        <DisablePreset Name="Immersive"/>
+      </GPUGroup>
+
+    </GPUOptimization>
+
+    <AppOverride Name="DSGlobe">
+      <!-- DEFAULT -->
+      <PresetDef Name="Default" BasePreset="Default"
+                AASetting="2x (2xMS)"     PostProcessAA="FXAA" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="4096" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Ultra"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="AlphaBlendingWithSort"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                AllowOutline="false"
+                CullMinPixelSize="7" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="Low" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Edge"
+                DepthFlickeringReduction="false"/>
+
+      <!-- Immersive -->
+      <PresetDef Name="Immersive" BasePreset="Immersive"
+                AASetting="None"     PostProcessAA="FXAA" FXAAQuality="Fast" UseAAOnSSAO="false"
+                AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="1024" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Medium"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="AlphaBlendingWithSort"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                AllowOutline="false"
+                CullMinPixelSize="7" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="Low" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Face"
+                DepthFlickeringReduction="false"/>
+
+      <!-- MIN -->
+      <!-- With DepthOffset=Face mode visual artefacts may appear when Log is used -->
+      <PresetDef Name="Min" BasePreset="Min"
+                AASetting="None"     PostProcessAA="None" FXAAQuality="Fast" UseAAOnSSAO="false"
+                AllowGroundShadow="false"  AllowInterObjShadow="false" AllowTransparentShadow="false" MaxShadowMapSize="512" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Medium"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="AlphaBlendingWithSort"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                AllowOutline="false"
+                CullMinPixelSize="7" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="Low" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Face"
+                DepthFlickeringReduction="false"/>
+      <!-- LOW -->
+      <!-- With DepthOffset=Face mode visual artefacts may appear when Log is used -->
+      <PresetDef Name="Low" BasePreset="Low"
+                AASetting="None"     PostProcessAA="FXAA" FXAAQuality="Fast" UseAAOnSSAO="false"
+                AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="4096" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Medium"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="AlphaBlendingWithSort"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                AllowOutline="false"
+                CullMinPixelSize="7" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="32" SSAOMaxBlurLevel="7" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="Low" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Face"
+                DepthFlickeringReduction="false"/>
+      <!-- MEDIUM -->
+      <PresetDef Name="Medium" BasePreset="Medium"
+                AASetting="2x (2xMS)"     PostProcessAA="FXAA" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="4096" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Ultra"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="AlphaBlendingWithSort"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                AllowOutline="false"
+                CullMinPixelSize="3" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="64" SSAOMaxBlurLevel="10" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="Medium" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Edge"
+                DepthFlickeringReduction="false"/>
+      <!-- HIGH -->
+      <PresetDef Name="High" BasePreset="High"
+                AASetting="4x (4xMS)"     PostProcessAA="FXAA" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="4096" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Ultra"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="AlphaBlendingWithSort"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+        AllowOutline="false"
+                CullMinPixelSize="3" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="64" SSAOMaxBlurLevel="10" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="High" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Edge"
+                DepthFlickeringReduction="false"/>
+      <!-- ULTRA -->
+      <PresetDef Name="Ultra" BasePreset="Ultra"
+                AASetting="8x (4xSS, 2xMS)"     PostProcessAA="FXAA" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Ultra"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="AlphaBlendingWithSort"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                AllowOutline="false"
+                CullMinPixelSize="3" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="64" SSAOMaxBlurLevel="10" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="Ultra" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Edge"
+                DepthFlickeringReduction="false"/>
+      <!-- MAX -->
+      <PresetDef Name="Max" BasePreset="Max"
+                AASetting="16x (16xSS)"     PostProcessAA="FXAA" FXAAQuality="Extreme" UseAAOnSSAO="false"
+                AllowGroundShadow="true"  AllowInterObjShadow="true" AllowTransparentShadow="false" MaxShadowMapSize="8192" UseBoundingBox="false"  ShadowFiltering="PCF" ShadowFilteringQuality="Ultra"
+                AllowBloom="true" BloomMaxTexLvl="4" BloomMaxBlurNbPass="2" BloomMaxBlurSz="10" BloomMaxBlurNbSamples="6"
+                TranspMode="OrderIndependant"
+                GroundReflMode="Mirror" InterObjReflMode="None" SSRQuality="Low"
+                AllowOutline="false"
+                CullMinPixelSize="3" LODQuality="3.0" Occlusion="false"
+                AllowSSAO="true"  SSAOMaxSampling="64" SSAOMaxBlurLevel="10" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                AllowDoF="false"
+                EnableMultiColorCapping="false"
+                MetallicFlakesQuality="Ultra" XriteNativeShader="false"
+                DepthMode="Log"
+                DepthOffset="Edge"
+                DepthFlickeringReduction="false"/>
+    </AppOverride>
+
+    <AppOverride Name="DSTechViz">
+      <PresetDef Name="Default" BasePreset="Default"
+                 AASetting="None" PostProcessAA="None" FXAAQuality="Fast" UseAAOnSSAO="false"
+                 AllowOutline="false"
+                 CullMinPixelSize="0" LODQuality="0.0" Occlusion="false"
+                 TranspMode="AlphaBlendingNoSort"
+                 AllowSSAO="false" SSAOMaxSampling="8"  SSAOMaxBlurLevel="0" AOMode="HBAO" AOBlurMode="BlurWithEdgeDetectionFromZ" HQAOCacheSize="Low"
+                 AllowBloom="false"
+                 AllowDoF="false" />
+    </AppOverride>
+
+
+    <DisableParamIf Key="AOMode" Condition="AllowSSAO=false" />
+
+    <DisableParamIf Key="SSAOMaxSampling;AOBlurMode;SSAOMaxBlurLevel" Condition="AllowSSAO=false" />
+    
+    <DisableParamIf Key="SSAOMaxSampling;AOBlurMode;SSAOMaxBlurLevel" Condition="AOMode=HQAO" />
+    <DisableParamIf Key="SSAOMaxSampling;AOBlurMode;SSAOMaxBlurLevel" Condition="AOMode=HQAO+IBL" />
+    
+    <DisableParamIf Key="LODQuality" Condition="AOMode=HQAO;AllowSSAO=true" />
+    <DisableParamIf Key="LODQuality" Condition="AOMode=HQAO+IBL;AllowSSAO=true" />
+    
+    <DisableParamIf Key="SSAOMaxBlurLevel" Condition="AllowSSAO=false" />
+    <DisableParamIf Key="SSAOMaxBlurLevel" Condition="AOMode=HQAO" />
+    <DisableParamIf Key="SSAOMaxBlurLevel" Condition="AOMode=HQAO+IBL" />
+    <DisableParamIf Key="SSAOMaxBlurLevel" Condition="AOBlurMode=None" />
+
+    <DisableParamIf Key="MaxShadowMapSize;UseBoundingBox;ShadowFiltering;ShadowFilteringQuality" Condition="AllowGroundShadow=false;AllowInterObjShadow=false" />
+
+    <DisableParamIf Key="SSRQuality" Condition="GroundReflMode=None;InterObjReflMode=None" />
+    <DisableParamIf Key="SSRQuality" Condition="GroundReflMode=Mirror;InterObjReflMode=None" />
+
+    <DisableParamIf Key="MaxBloomQuality" Condition="AllowBloom=false" />
+
+    <DisableParamIf Key="OcclusionStrategy" Condition="Occlusion=false" />
+
+    <DisableParamIf Key="FXAAQuality" Condition="PostProcessAA=None" />
+
+    <DisableParamIf Key="HQAOCacheSize" Condition="AllowSSAO=false" />
+    <DisableParamIf Key="HQAOCacheSize" Condition="AOMode=SSAO" />
+    <DisableParamIf Key="HQAOCacheSize" Condition="AOMode=HBAO" />
+    
+    <DisableParamIf Key="HQAOMinQuality" Condition="AllowSSAO=false" />
+    <DisableParamIf Key="HQAOMinQuality" Condition="AOMode=SSAO" />
+    <DisableParamIf Key="HQAOMinQuality" Condition="AOMode=HBAO" />
+
+    <DisableParamIf Key="HQAOMaxQuality" Condition="AllowSSAO=false" />
+    <DisableParamIf Key="HQAOMaxQuality" Condition="AOMode=SSAO" />
+    <DisableParamIf Key="HQAOMaxQuality" Condition="AOMode=HBAO" />
+
+    <DisableParamIf Key="HQAOSpecularShadows" Condition="AllowSSAO=false" />
+    <DisableParamIf Key="HQAOSpecularShadows" Condition="AOMode=SSAO" />
+    <DisableParamIf Key="HQAOSpecularShadows" Condition="AOMode=HBAO" />
+    <DisableParamIf Key="HQAOSpecularShadows" Condition="AOMode=HQAO" />
+    
+    <!--<ModifyParamRange Name="AOMode" Range="SSAO;HBAO;HQAO;HQAO+IBL" EnvVar="VisIBLShadows=1"/>-->
+  </VisRenderQualityDef>
+
+</VisRenderQuality>
+

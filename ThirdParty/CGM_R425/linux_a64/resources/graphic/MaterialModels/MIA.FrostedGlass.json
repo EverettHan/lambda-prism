@@ -1,0 +1,75 @@
+{
+  "parameters": [
+    {
+      "name": "refr_falloff_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "refr_falloff_dist",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "refr_ior",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "thin_walled",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "refr_gloss",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "refr_gloss_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "do_refractive_caustics",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "refr_interpolate",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "intr_grid_density",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "intr_refr_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "emissive_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "emissive_intensity",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+
+    {
+      "name": "bump",
+      "type": "Texture",
+      "nbElements": 3
+    }
+  ]
+}

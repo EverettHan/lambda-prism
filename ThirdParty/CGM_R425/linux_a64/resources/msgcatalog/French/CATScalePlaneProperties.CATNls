@@ -1,0 +1,60 @@
+﻿<meta charset="UTF-8"/>
+//--------------------------------------
+// Resource file for CATScalePlaneProperties Class
+// En_EN
+//--------------------------------------
+Title="Propriétés du plan d'échelle";
+CancelButton.Title="Fermer";
+
+//--------------------------------------
+//  ScaleLabel
+//--------------------------------------
+mainFrame.ScaleLabel.Title="Echelle : ";
+mainFrame.ScaleLabel.LongHelp="Change l'échelle du plan d'échelle.";
+mainFrame.ScaleEdit.LongHelp="Change l'échelle du plan d'échelle.
+La valeur par défaut ('1') fournit un affichage taille réelle, alors que '0,5' correspond à un affichage de moitié.
+Ainsi, il est possible de mesurer les petits objets en saisissant un facteur d'échelle supérieur à 1, et les grands objets en saisissant un facteur
+d'échelle inférieur à 1.";
+
+//--------------------------------------
+//  WidthLabel
+//--------------------------------------
+mainFrame.WidthLabel.Title="Largeur : ";
+mainFrame.WidthLabel.LongHelp="Change la largeur en millimètres du plan d'échelle.";
+mainFrame.WidthEdit.LongHelp="Change la largeur en millimètres du plan d'échelle.
+Par exemple, '200' signifie que la largeur est divisée en 20 carrés de 10 mm chacun.";
+
+//--------------------------------------
+//  LineWidthLabel
+//--------------------------------------
+mainFrame.LineWidthLabel.Title="Espacement vertical : ";
+mainFrame.LineWidthLabel.LongHelp="Change l'espace en millimètres entre les lignes verticales.";
+mainFrame.LineWidthEdit.LongHelp="Change l'espace en millimètres entres les lignes verticales.
+Si la valeur n'est pas un multiple de la largeur ou de la hauteur,
+l'espace entre les lignes est approximatif pour fournir un nombre arrondi (ce qui peut
+rendre la mesure plus difficile directement sur l'écran).";
+
+//--------------------------------------
+//  HeightLabel
+//--------------------------------------
+mainFrame.HeightLabel.Title="Hauteur : ";
+mainFrame.HeightLabel.LongHelp="Change la hauteur en millimètres du plan d'échelle.";
+mainFrame.HeightEdit.LongHelp="Change la hauteur  en millimètres du plan d'échelle.
+Par exemple, '100' signifie que la hauteur est divisée en 10 carrés de 10 mm chacun.";
+
+//--------------------------------------
+//  LineHeightLabel
+//--------------------------------------
+mainFrame.LineHeightLabel.Title="Espacement horizontal : ";
+mainFrame.LineHeightLabel.LongHelp="Change l'espace en millimètres entre les lignes horizontales.";
+mainFrame.LineHeightEdit.LongHelp="Change l'espace en millimètres entres les lignes horizontales.
+Si la valeur n'est pas un multiple de la valeur définie pour la largeur ou la hauteur,
+l'espace entre les lignes est approximatif pour fournir un nombre arrondi (ce qui peut
+rendre la mesure plus difficile directement sur l'écran).";
+
+//--------------------------------------
+//  ShowPlane
+//--------------------------------------
+mainFrame.ShowPlane.Title="Afficher la grille";
+mainFrame.ShowPlane.LongHelp="Activer ou désactiver l'affichage d'une grille utilisée pour mesurer les éléments.
+Il est recommandé d'afficher la grille lorsque vous travaillez dans une projection conique (à savoir, une vue de perspective).";

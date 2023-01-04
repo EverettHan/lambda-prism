@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Ground_Shadow_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+      <NAME>Pass0</NAME>
+            
+      <COMMONS>streams ubos commonHelpers</COMMONS>
+      <VERTEX_STAGE>PostEffect_Ground_ShadowClipVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_Helpers RayTracer_Helpers PostEffect_Ground_ShadowClipPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</EFFECT>

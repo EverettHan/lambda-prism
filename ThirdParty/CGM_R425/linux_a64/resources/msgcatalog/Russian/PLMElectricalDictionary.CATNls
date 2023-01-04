@@ -1,0 +1,464 @@
+<meta charset="UTF-8"/>
+PLMElectricalDictionary="Электрофизическая";
+PLMElectricalDictionary.Electrical3DSystem="Электрофизическая система";
+PLMElectricalDictionary.Electrical3DSystem.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.ElectricalGeometry="Геометрия электрооборудования";
+PLMElectricalDictionary.ElectricalGeometry.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.ElectricalBranchGeometry="Геометрия электрических ответвлений";
+PLMElectricalDictionary.ElectricalBranchGeometry.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.ElectricalBranchGeometry.V_Elec_Suggested_Segregation="Код разделения";
+PLMElectricalDictionary.ElectricalConductorRepository="Хранилище электрических проводников ";
+PLMElectricalDictionary.FlatteningRepository="Репозиторий параметров выравнивания ";
+PLMElectricalDictionary.ElecSymbol2DRep="Представление плана расположения";
+PLMElectricalDictionary.ElecPort="Электрический порт";
+PLMElectricalDictionary.ElecPort.V_Elec_Extra_Length="Дополнительная длина";
+PLMElectricalDictionary.ElecPort.V_Elec_Diameter="Диаметр";
+PLMElectricalDictionary.ElecPort.V_Elec_Width="Ширина";
+PLMElectricalDictionary.ElecPort.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.ElecPort.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.Elec3DCavity="Полость";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_CavitySize="Размер полости";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType="Тип контакта";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Pin="Штифт";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Socket="Разъем";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Hybrid="Гибридный";
+PLMElectricalDictionary.Elec3DCavity.V_Elec_ContactType.Range.Equal.Undefined="Не определено";
+PLMElectricalDictionary.Elec3DConnectorConnectionPoint="Точка подключения соединителя";
+PLMElectricalDictionary.Elec3DBackShellConnectionPoint="Точка разъема";
+PLMElectricalDictionary.Elec3DShellConnectionPoint="Точка подключения оболочки";
+PLMElectricalDictionary.Elec3DSegmentConnectionPoint="Точка подключения сегмента";
+PLMElectricalDictionary.Elec3DSegmentPositionPoint="Точка положения сегмента";
+PLMElectricalDictionary.Elec3DSplicePositionPoint="Точка положения сращивания";
+PLMElectricalDictionary.Elec3DCavityConnectionPoint="Точка подключения гнезда";
+PLMElectricalDictionary.ElecPortV5="Электрический порт";
+PLMElectricalDictionary.ElecPortV5.V_Elec_Representation="Представление";
+PLMElectricalDictionary.ElecPortV5.V_Elec_Related_Geo1="Связанная геометрия";
+PLMElectricalDictionary.ElecPortV5.V_Elec_Related_Geo2="Связанная геометрия";
+PLMElectricalDictionary.Elec3DCavityV5="Гнездо, дополнительно";
+PLMElectricalDictionary.Elec3DConnectorConnectionPointV5="Точка подключения соединителя, дополнительно";
+PLMElectricalDictionary.Elec3DBackShellConnectionPointV5="Точка разъема, дополнительно";
+PLMElectricalDictionary.Elec3DShellConnectionPointV5="Точка подключения внешней оболочки кабеля, дополнительно";
+PLMElectricalDictionary.Elec3DSegmentConnectionPointV5="Точка подключения сегмента, дополнительно";
+PLMElectricalDictionary.Elec3DSegmentPositionPointV5="Точка положения сегмента, дополнительно";
+PLMElectricalDictionary.Elec3DSplicePositionPointV5="Точка положения сращивания, дополнительно";
+PLMElectricalDictionary.Elec3DCavityConnectionPointV5="Точка подключения гнезда, дополнительно";
+PLMElectricalDictionary.ElecConductor="Проводник";
+PLMElectricalDictionary.ElecConductor.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.ElecConductor.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.ElecConductor.V_Elec_Diameter="Наружный диаметр";
+PLMElectricalDictionary.ElecConductor.V_Elec_Color="Цвет";
+PLMElectricalDictionary.ElecConductor.V_Elec_Line_Weight="Линейная масса";
+PLMElectricalDictionary.Elec3DConductor="Электрический проводник";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Diameter="Наружный диаметр";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Color="Цвет";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_Line_Weight="Линейная масса";
+PLMElectricalDictionary.Elec3DConductor.V_Elec_SectionArea="Площадь сечения";
+PLMElectricalDictionary.Elec3DConductorGroup="Группа электрического проводника";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Diameter="Наружный диаметр";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Color="Цвет";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Line_Weight="Линейная масса";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_Wire_Length_Coeff="Коэффициент длины провода";
+PLMElectricalDictionary.Elec3DConductorGroup.V_Elec_WireGroup_Type="Тип";
+PLMElectricalDictionary.ElecProtection="Защитное покрытие";
+PLMElectricalDictionary.ElecProtection.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.ElecProtection.V_Elec_Line_Type="Тип линии";
+PLMElectricalDictionary.ElecProtection.V_Elec_Line_Weight="Масса";
+PLMElectricalDictionary.ElecProtection.V_Elec_Preferred_Length="Предпочитаемая длина";
+PLMElectricalDictionary.ElecProtection.V_Elec_Flexibility="Гибкость";
+PLMElectricalDictionary.ElecProtection.V_Elec_Annotation="Примечание";
+PLMElectricalDictionary.ElecProtection.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.Elec3DAdaptiveProtection="Адаптивное защитное покрытие";
+PLMElectricalDictionary.Elec3DAdaptiveProtection.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.Elec3DFixedProtection="Защитное покрытие фиксированного диаметра";
+PLMElectricalDictionary.Elec3DFixedProtection.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.Elec3DFixedProtection.V_Elec_Inner_Diameter="Внутренний диаметр";
+PLMElectricalDictionary.Elec3DFixedProtection.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.Elec3DTapeProtection="Защитное покрытие ленты";
+PLMElectricalDictionary.Elec3DTapeProtection.V_Elec_Tape_Thickness="Толщина ленты";
+PLMElectricalDictionary.Elec3DTapeProtection.V_Elec_Tape_Width="Ширина ленты";
+PLMElectricalDictionary.Elec3DCorrugatedProtection="Защитное покрытие трубки";
+PLMElectricalDictionary.Elec3DCorrugatedProtection.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.Elec3DCorrugatedProtection.V_Elec_Inner_Diameter="Внутренний диаметр";
+PLMElectricalDictionary.Elec3DCorrugatedProtection.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.ElecPart="Электрическое устройство";
+PLMElectricalDictionary.ElecPart.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.ElecPart.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.ElecPart.V_Elec_Series="Серия";
+PLMElectricalDictionary.Elec3DShell="Кожух";
+PLMElectricalDictionary.Elec3DShell.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DTerminalBlock="Клеммный блок";
+PLMElectricalDictionary.Elec3DTerminalBlock.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.Elec3DTerminalBlock.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DTerminalBlock.V_Elec_ShuntCavityLayout="Расположение шунтов и полостей";
+PLMElectricalDictionary.Elec3DSingleInsertConnector="Соединитель для одноразового подключения";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType="Тип контакта";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Pin="Штифт";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Socket="Разъем";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Hybrid="Гибридный";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Undefined="Не определено";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactType.Range.Equal.Inherited="Унаследовано";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_PolarizedKey="Поляризованный ключ";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellSize="Размер оболочки";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ContactLayout="Компоновка контакта";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType="Тип оболочки";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType.Range.Equal.Plug="Заглушка";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType.Range.Equal.Receptacle="Розетка";
+PLMElectricalDictionary.Elec3DSingleInsertConnector.V_Elec_ShellType.Range.Equal.Undefined="Не определено";
+PLMElectricalDictionary.Elec3DStud="Шпилька";
+PLMElectricalDictionary.Elec3DStud.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.Elec3DStud.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DBackShell="Корпус разъема";
+PLMElectricalDictionary.Elec3DBackShell.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DBackShell.V_Elec_Extra_Length="Дополнительная длина";
+PLMElectricalDictionary.Elec3DTerminalStrip="Клеммная колодка";
+PLMElectricalDictionary.Elec3DTerminalStrip.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.Elec3DTerminalStrip.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DContact="Контакт";
+PLMElectricalDictionary.Elec3DContact.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DContact.V_Elec_OutsideDiameter="Наружный диаметр";
+PLMElectricalDictionary.Elec3DContact.V_Elec_SectionArea="Площадь сечения";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactSize="Размер контакта";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactType="Тип контакта";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactType.Range.Equal.Pin="Штифт";
+PLMElectricalDictionary.Elec3DContact.V_Elec_ContactType.Range.Equal.Socket="Разъем";
+PLMElectricalDictionary.Elec3DContact.V_Elec_EndFitting="Концевая арматура";
+PLMElectricalDictionary.Elec3DContact.V_Elec_AuthorizedWireGauge="Разрешенное сечение проводов";
+PLMElectricalDictionary.Elec3DSplice="Сращивание";
+PLMElectricalDictionary.Elec3DSplice.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.Elec3DSplice.V_Elec_Length="Длина";
+PLMElectricalDictionary.Elec3DSplice.V_Elec_Equivalent_Thickness="Эквивалентная толщина";
+PLMElectricalDictionary.Elec3DFillerPlug="Заправочная пробка";
+PLMElectricalDictionary.Elec3DFillerPlug.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DMultiInsertConnector="Соединитель для многоразового подключения";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellSize="Размер оболочки";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_InsertLayout="Вставить компоновку";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType="Тип оболочки";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType.Range.Equal.Plug="Заглушка";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType.Range.Equal.Receptacle="Розетка";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ShellType.Range.Equal.Undefined="Не определено";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType="Тип контакта";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Pin="Штифт";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Socket="Разъем";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Hybrid="Гибридный";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_ContactType.Range.Equal.Undefined="Не определено";
+PLMElectricalDictionary.Elec3DMultiInsertConnector.V_Elec_PolarizedKey="Поляризованный ключ";
+PLMElectricalDictionary.MountingEquipment="Крепежное оборудование";
+PLMElectricalDictionary.MountingEquipment.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.MountingEquipment.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.MountingEquipment.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.MountingEquipment.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefBundle="Расширение электрофизической системы";
+PLMElectricalDictionary.PLMEleRefBundle.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefGeoBundle="Расширение геометрии электрооборудования";
+PLMElectricalDictionary.PLMEleRefGeoBundle.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefMountingEquipment="Расширение крепежного оборудования";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.PLMEleRefMountingEquipment.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefConnectorShell="Расширение оболочки";
+PLMElectricalDictionary.PLMEleRefConnectorShell.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefConnectorShell.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefConnectorShell.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefTerminalBlock="Расширение клеммного блока";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefTerminalBlock.V_Elec_ShuntCavityLayout="Расположение шунтов и полостей";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector="Расширение соединителя для одноразового подключения";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.PLMEleRefSingleInsertConnector.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefEquipment="Расширение электрического оборудования";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.PLMEleRefEquipment.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefStud="Расширение шпильки";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.PLMEleRefStud.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefBackShell="Расширение корпуса разъема";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_Extra_Length="Дополнительная длина";
+PLMElectricalDictionary.PLMEleRefBackShell.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefTerminalStrip="Расширение клеммной колодки";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefTerminalStrip.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefContact="Расширение контакта";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_OutsideDiameter="Наружный диаметр";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_SectionArea="Площадь сечения";
+PLMElectricalDictionary.PLMEleRefContact.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefSplice="Расширение сращивания";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_NumberOfPins="Количество гнезд";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_Length="Длина";
+PLMElectricalDictionary.PLMEleRefSplice.V_Elec_Equivalent_Thickness="Эквивалентная толщина";
+PLMElectricalDictionary.PLMEleRefFillerPlug="Расширение заправочной пробки";
+PLMElectricalDictionary.PLMEleRefFillerPlug.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefFillerPlug.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefFillerPlug.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefMultiBranchable="Расширение геометрии электрических ответвлений";
+PLMElectricalDictionary.PLMEleRefMultiBranchable.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefWire="Расширение проводника";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Diameter="Наружный диаметр";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Color="Цвет";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_Line_Weight="Линейная масса";
+PLMElectricalDictionary.PLMEleRefWire.V_Elec_SectionArea="Площадь сечения";
+PLMElectricalDictionary.PLMEleRefWireGroup="Расширение группы проводников";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Diameter="Наружный диаметр";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Color="Цвет";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Line_Weight="Линейная масса";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_Wire_Length_Coeff="Коэффициент длины провода";
+PLMElectricalDictionary.PLMEleRefWireGroup.V_Elec_WireGroup_Type="Тип";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector="Расширение соединителя для многоразового подключения";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefMultiInsertConnector.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefStdCnctPt="Расширение электрического порта";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Port_Type="Тип";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Extra_Length="Дополнительная длина";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Diameter="Диаметр";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Width="Ширина";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.PLMEleRefStdCnctPt.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt="Расширение электрического порта";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Port_Type="Тип";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Representation="Представление";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Related_Geo1="Связанная геометрия";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Related_Geo2="Связанная геометрия";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Related_Geo2="Связанная геометрия";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Extra_Length="Дополнительная длина";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Diameter="Диаметр";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Width="Ширина";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.PLMEleRefMultiCnctPt.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefCavityCnctPt="Расширение точки подключения гнезда";
+PLMElectricalDictionary.PLMEleRefCavityCnctPt.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefCavityCnctPt.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefBackShellCnctPt="Расширение точки разъема";
+PLMElectricalDictionary.PLMEleRefBackShellCnctPt.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefBackShellCnctPt.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefCavity="Расширение гнезда";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_SignalID="Идентификатор сигнала";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_Extra_Length="Дополнительная длина";
+PLMElectricalDictionary.PLMEleRefCavity.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefConnectorCnctPt="Расширение точки подключения соединителя";
+PLMElectricalDictionary.PLMEleRefConnectorCnctPt.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefConnectorCnctPt.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefShellCnctPt="Расширение точки подключения оболочки";
+PLMElectricalDictionary.PLMEleRefShellCnctPt.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.PLMEleRefShellCnctPt.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection="Расширение адаптивного защитного покрытия";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Line_Type="Тип линии";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Line_Weight="Масса";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Preferred_Length="Предпочитаемая длина";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Flexibility="Гибкость";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Annotation="Примечание";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.PLMEleRefInternalAdaptiveProtection.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection="Расширение защитного покрытия фиксированного диаметра";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Line_Type="Тип линии";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Line_Weight="Масса";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Preferred_Length="Предпочитаемая длина";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Inner_Diameter="Внутренний диаметр";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Flexibility="Гибкость";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_Annotation="Примечание";
+PLMElectricalDictionary.PLMEleRefInternalFixedProtection.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection="Расширение защитного покрытия ленты";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Line_Type="Тип линии";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Line_Weight="Масса";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Preferred_Length="Предпочитаемая длина";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Tape_Thickness="Толщина ленты";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Tape_Width="Ширина ленты";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Flexibility="Гибкость";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_Annotation="Примечание";
+PLMElectricalDictionary.PLMEleRefInternalTapeProtection.V_Elec_External_Reference="Внешняя ссылка";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection="Расширение защитного покрытия трубки";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Line_Type="Тип линии";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Line_Weight="Масса";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Preferred_Length="Предпочитаемая длина";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Inner_Diameter="Внутренний диаметр";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Thickness="Толщина";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Flexibility="Гибкость";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_Annotation="Примечание";
+PLMElectricalDictionary.PLMEleRefInternalCorrugatedProtection.V_Elec_External_Reference="Внешняя ссылка";
+
+
+// ===========================================================
+// [V6R2020x] 2019-06-13 ADZ Extended data model for PLM Cable
+// ===========================================================
+
+PLMElectricalDictionary.ElecRoutable="Электрический маршрутизируемый объект";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_SubType="Подтип";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Bend_Radius="Радиус сгиба";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Diameter="Диаметр";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Color="Цвет";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Line_Mass="Линейная масса";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Section_Area="Площадь сечения";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Family="Семейство";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Series="Серия";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_Gauge="Манометр";
+
+PLMElectricalDictionary.ElecRoutable.V_Elec_nbCores="Число жил";
+
+PLMElectricalDictionary.ElecRoutable_Inst="Экземпляр электрического маршрутизируемого объекта";
+
+PLMElectricalDictionary.Elec3DCableReference="Ссылка электрического кабеля";
+
+PLMElectricalDictionary.Elec3DCable="Электрический кабель";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Segregation="Сегрегация";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_BoundaryLength_From="Длина границы от";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_BoundaryLength_To="Длина границы до";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status="Статус";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status.Range.Equal.NotRouted="Не маршрутизируется";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status.Range.Equal.FullyRouted="Полностью маршрутизируется";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Status.Range.Equal.PartiallyRouted="Частично маршрутизируется";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation="Проверка";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation.Range.Equal.NotValidated="Не проверено";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation.Range.Equal.FullyValidated="Полностью проверено";
+PLMElectricalDictionary.Elec3DCable.V_Elec_Validation.Range.Equal.InRevision="Частично проверено";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Length="Длина";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_Itinerary_Snap="Элементы маршрута";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ItineraryLength_Snap="Длина маршрута";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap="Вывод статуса маршрута";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap.Range.Equal.NotRouted="Не маршрутизируется";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap.Range.Equal.FullyRouted="Полностью маршрутизируется";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteStatus_Snap.Range.Equal.PartiallyRouted="Частично маршрутизируется";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap="Вывод результата проверки маршрута";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap.Range.Equal.NotValidated="Не проверено";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap.Range.Equal.FullyValidated="Полностью проверено";
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteValidation_Snap.Range.Equal.PartiallyValidated="Частично проверено";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ListRouteLength_Snap="Вывод длины маршрута";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Mode="Режим длины резания";
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Mode.Range.Equal.Automatic="Автоматически";
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Mode.Range.Equal.Manual="Вручную";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength_Tolerance="Допуск по длине резания";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_CuttingLength="Длина резания";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ExtraLength_From="Дополнительная длина от";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ExtraLength_To="Дополнительная длина до";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_ItineraryCuttingLength_Snap="Длина резания маршрута";
+
+PLMElectricalDictionary.Elec3DCable.V_Elec_SynchronizeConfig="Синхронизировать конфигурацию";
+
+
+
+PLMElectricalDictionary.Elec3DCableOccurrence="Наличие электрического кабеля";
+
+PLMElectricalDictionary.Elec3DCable_Inst="Экземпляр электрического кабеля";
+
+PLMElectricalDictionary.Elec3DCableConnection="Кабельное соединение";
+
+PLMElectricalDictionary.Elec3DJunctionPoint="Точка соединения";
+
+PLMElectricalDictionary.ElecPort.V_Elec_Segregation="Сегрегация";
+
+
+PLMElectricalDictionary.ElecCableCoresDefinition="Определение жил кабеля";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreName="Название жилы";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreColor="Цвет жилы";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreGauge="Внутренний диаметр жилы";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreOutsideDiameter="Наружный диаметр жилы";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreSectionArea="Площадь поперечного сечения жилы";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreBendRadius="Радиус сгиба жилы";
+PLMElectricalDictionary.ElecCableCoresDefinition.V_Elec_CoreLinearMass="Линейная масса жилы";
+
+
+PLMElectricalDictionary.ElecCableCoresLength="Длина жил кабеля";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_StrippingLengthFrom="Длина зачищенного края от";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_StrippingLengthTo="Длина зачищенного края до";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreLengthAfterCableStrippingFrom="Длина жилы после зачистки кабеля от";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreLengthAfterCableStrippingTo="Длина жилы после зачистки кабеля до";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreStrippingLengthFrom="Длина зачистки жилы от";
+PLMElectricalDictionary.ElecCableCoresLength.V_Elec_CoreStrippingLengthTo="Длина зачистки жилы до";
+
+PLMElectricalDictionary.ElecCableRawMaterial="Материал изготовления кабеля";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_SubType="Подтип";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Bend_Radius="Радиус сгиба";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_OutsideDiameter="Наружный диаметр";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Color="Цвет";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Line_Mass="Линейная масса";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Section_Area="Площадь сечения";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Family="Семейство";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Series="Серия";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_Gauge="Манометр";
+PLMElectricalDictionary.ElecCableRawMaterial.V_Elec_nbCores="Число жил";
+// ===========================================================
+// [V6R2022x] 2019-05-06 ADS5 Extended data model for SolidWorks
+// ===========================================================
+
+PLMElectricalDictionary.Elec3DPLC="ПЛК";
+PLMElectricalDictionary.Elec3DPLC.V_Elec_MatingWith="Группа сопряжения";
+
+PLMElectricalDictionary.Elec3DModule="Модуль";
+PLMElectricalDictionary.Elec3DModule.V_Elec_MatingWith="Группа сопряжения";
+PLMElectricalDictionary.Elec3DModule.V_Elec_NumberOfPins="Количество гнезд";
+
+PLMElectricalDictionary.Elec3DTerminalAccessory="Наконечник";
+PLMElectricalDictionary.Elec3DTerminalAccessory.V_Elec_MatingWith="Группа сопряжения";
+
+
+
+PLMElectricalDictionary.Elec3DRail="Рейка";
+PLMElectricalDictionary.Elec3DRail.V_Elec_MaxLength="Максимальная длина";
+PLMElectricalDictionary.Elec3DRail.V_Elec_Length="Длина";
+
+PLMElectricalDictionary.Elec3DDuct="Канал";
+PLMElectricalDictionary.Elec3DDuct.V_Elec_MaxLength="Максимальная длина";
+PLMElectricalDictionary.Elec3DDuct.V_Elec_Length="Длина";
+
+PLMElectricalDictionary.Elec3DGuideCurve="Направляющая кривая";

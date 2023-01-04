@@ -1,0 +1,46 @@
+<meta charset="UTF-8"/>
+HelpNT.text="delcatenv の使用法
+[-e environment_name      ] 必須オプション。デフォルト値はありません
+[-d storage_directory_name]	デフォルト: CSIDL_APPDATA\CATEnv
+[-a user|global           ]	環境タイプ。デフォルト: user
+[-server                  ] サーバー モードを活動化します。デフォルト: 非活動化 (interactif)
+[-desktop yes|no          ] 環境のデスクトップ リプレゼンテーションを除去します。デフォルト: yes
+[-v yes|no                ]	冗長モードを活動化します。デフォルト: yes
+[-tools                   ]	ツールのショートカットを除去します (排他コマンド)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ] 環境リプレゼンテーションに製品ラインを指定します (デフォルト: CATIA)
+[-h|-help]			このヘルプ。";
+
+HelpUNIX.text="delcatenv の使用法
+[-e environment_name      ] 必須オプション。デフォルト値はありません
+[-d storage_directory_name] デフォルト: $HOME/CATEnv
+[-a user|global           ] 環境タイプ。デフォルト: user
+[-server                  ] サーバー モードを活動化します。デフォルト: 非活動化 (interactif)
+[-desktop yes|no          ] 環境のデスクトップ リプレゼンテーションを除去します。デフォルト: yes
+[-v yes|no                ] 冗長モードを活動化します。デフォルト: yes
+[-unregserver             ] CATIA をデスクトップの登録から除去します (排他コマンド)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ] 環境リプレゼンテーションに製品ラインを指定します (デフォルト: CATIA)
+[-h|-help]                  このヘルプ。";
+
+ErrDelEnvUsr.Text="環境リプレゼンテーションを削除できませんでした";
+ErrDelEnv.Text="環境を削除できませんでした";
+ErrUnset.Text="ワークステーションを設定解除できませんでした";
+MustBeSystemAdmin.text="このオプションはシステム管理者のみ使用できます";
+EnvNameNotSpecified.Text="環境の名前を指定する必要があります";
+DefaultFolderNotFound.Text="環境のデフォルト フォルダーが見つかりませんでした";
+SpecifiedFolderNotFound.Text="指定した格納ディレクトリが見つかりませんでした";
+EnvFileNotFound.Text="環境ファイルが見つかりませんでした";
+AccessPb.Text="ファイルを作成またはオープンできません。]
+							   [格納ディレクトリへの書き込み許可があるかをチェックしてください。]";
+NonValidType.Text="タイプ (ユーザーまたはグローバル) は、-a オプションを経由して指定される必要があります。";
+InitFolderFailed.Text="------------------ 警告 ----------------
+デフォルトのストレージ フォルダーが見つかりませんでした。
+新規のストレージ フォルダーは次のように設定されました:
+";
+NoHome.Text="'HOME'環境変数が設定されていません";
+UnknownProductLine.Text="/P1 は有効な製品ラインではありません。-cs オプションの許可された値: CATIA、ENOVIA、DELMIA、ENOVIA_3D_Live、DELMIA。";

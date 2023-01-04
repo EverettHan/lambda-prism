@@ -1,0 +1,47 @@
+{
+  "desc": "Run a block whose exectations have been given by a function (prepare) and input data comes by another function (receive)",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "key",
+          "basic": "uint32"
+        },
+        {
+          "label": "port",
+          "basic": "string"
+        },
+        {
+          "label": "function",
+          "basic": "string"
+        },
+        {
+          "label": "version",
+          "basic": "uint32"
+        },
+        {
+          "label": "definition",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "type CSIExecGraphBlock for Graph and ArrayMap, or CSIDeclarativeFunctionDefinitionV3 for CustomImpl"
+        }
+      ]
+    },
+    "out": {}
+  },
+  "progress": {},
+  "throwError": {
+    "type": "Parameters",
+    "desc": "CSIError if internal error or Empty if the given function returns Error"
+  }
+}

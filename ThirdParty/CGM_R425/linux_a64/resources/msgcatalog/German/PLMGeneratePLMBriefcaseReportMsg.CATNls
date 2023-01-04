@@ -1,0 +1,72 @@
+<meta charset="UTF-8"/>
+//=======================================================================================
+// WARNING: YWE 18:09:24 SINGLE-CODE 2015x => NO LOCAL CHANGE EXPECTED - USE IMPORT  
+//=======================================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2013-2014
+// Messages for utilities to generate XML reports
+//
+//==================================================================================
+// January 2013  NLS declaration for PLM Briefcase report generation utilities        Jean-Luc Medioni
+//==================================================================================
+
+// -------------------------------------------------
+// --- PLMGeneratePLMBriefcaseReport utility messages
+// -------------------------------------------------
+
+UtilityInput.Prolog="***** Parameter *****\n";
+UtilityInput.InputBriefcaseFile=" *** PLMBriefcase-Eingabedatei:  /p1\n<break/>";
+UtilityInput.InputBriefcaseFolder=" *** PLMBriefcase-Eingabeordner: /p1\n<break/>";
+UtilityInput.OutputReportFile=" *** Ausgegebene XML-Berichtsdatei:  /p1\n<break/>";
+UtilityInput.XslReportFile=" *** Alternative XSL-Datei:        /p1\n";
+UtilityInput.SummaryReportFile=" *** Textberichtdatei mit der Zusammenfassung: /p1\n";
+UtilityInput.Epilog="**********************\n\n";
+UtilityInput.Extension=" *** Angezeigte Erweiterung\n";
+UtilityInput.AllAttributes=" *** Alle angezeigten DS-Attribute\n";
+UtilityInput.CustoAttributes=" *** Angezeigte Kundenattribute\n";
+UtilityInput.OtherOid=" *** Angezeigte primäre ID und logische ID\n";
+UtilityInput=" *** /p1-Filterung mit auf /p2\n festgelegtem Parameter aktivieren";
+UtilityInput.Other=" *** <variable>/p1</variable>: <variable>/p2\n</variable><break/>";
+UtilityInput.Check=" *** Einige Überprüfungen werden ausgeführt.\n";
+UtilityInput.Iteration=" *** CD- & EE- Iterationsnummer angezeigt.\n";
+UtilityInput.JsonOutputFormat=" *** JSON-Ausgabeformat.\n";
+UtilityInput.XmlOutputFormat=" *** XML-Ausgabeformat.\n";
+
+PR_HELP_GENERAL_REPORT="Verwendung: PLMGeneratePLMBriefcaseReport  <Flags wie unten beschrieben>\n";
+PR_HELP_OUTPUT="-output <Name_der_Berichtsdatei>        wobei <Name_der_Berichtsdatei> dem Namen einer XML-Berichtsausgabedatei entspricht. (Obligatorisch)\n";
+PR_HELP_INPUT="-input &lt;BriefcaseFileName&gt;      wobei &lt;BriefcaseFileName&gt; die zu analysierende PLMBriefcase-Eingabedatei ist. Dabei handelt es sich entweder um eine 3dxml- oder PLMBriefcase-Datei.<break/>                                (eine der beiden Optionen -input oder -inFolder ist obligatorisch)<break/>\n";
+PR_HELP_INPUT_FOLDER="-inFolder <BriefcaseFolderName>, wobei <BriefcaseFolderName> der Eingabeordner zum Analysieren aller PLMBriefcase-Dateien ist. Diese Option ist nicht kompatibel mit -input.\n";
+PR_HELP_XSL="-xsl <XslFileName>              wobei <XslFileName> die XSL-Datei ist, die im XML-Bericht verwendet wird.\n";
+PR_HELP_SUMMARY="-summary <TextFileName>         wobei <TextFileName> die Textbericht-Ausgabedatei mit der Zusammenfassung ist (optional)\n";
+PR_HELP_FILTER_BY="-filterBy <Type> <Value>        wobei <Type> die zu verwendende Filterungsoption definiert und der Wert die Parameter der Filterungsoption darstellt.\n";
+PR_HELP_EXTENSION="-extension                      um Erweiterungsinformationen anzuzeigen. (Optional)\n";
+PR_HELP_DS_ATTRIBUTES="-cd                             um alle Attribute für Kerndaten anzuzeigen, nicht nur die Basisattribute. (Optional)\n";
+PR_HELP_CUSTO_ATTRIBUTES="-ee                             um alle zugänglichen Attribute für erweiterte Unternehmen anzuzeigen. (Optional)\n";
+PR_HELP_OTHER_OID="-oid                            um 'Primäre ID' und 'Logische ID' als Attribute anzuzeigen. (Optional)\n";
+PR_HELP_CHECK="-check                          um Überprüfungen von PLMBriefcase zu aktivieren.\n";
+PR_HELP_ITERATION="-iteration                      um Iterationsnummer für CD- & EE-Teile anzuzeigen.\n";
+PR_HELP_JSON="-json                           um das JSON-Ausgabeformat für die Erzeugung des Berichts zu verwenden.\n";
+PR_HELP_XML="-xml                           um das XML-Ausgabeformat für die Erzeugung des Berichts zu verwenden.\n";
+PR_HELP_HELP="-h                              Hilfe\n";
+
+PR_REPORT_FAILED="FEHLER: Ausführung von PLMGeneratePLMBriefcaseReport fehlgeschlagen\n";
+PR_REPORT_SUCCEEDED="PLMGeneratePLMBriefcaseReport-Ausführung erfolgreich\n";
+
+//PR_LOGIN_SUCCESS        = "** Login Successful\n" ;
+//PR_REP_PACKAGES_SUCCESS = "** Successfully obtained replication packages. Number of packages being processed: /p1.\n" ;
+
+PR_DUPLICATE_PARAM="Parameter /p1 kommt mehrmals vor. Vorgang schlägt fehl.";
+PR_MISSING_INPUT="Mindestens ein für Schlüsselwort /p1 erforderlicher Wert nicht angegeben. Vorgang schlägt fehl.\n";
+PR_MISSING_PARAM="Erforderlicher Parameter /p1 nicht angegeben. Vorgang schlägt fehl.\n";
+PR_NO_INPUT_DEFINED="Mindestens eines der beiden Schlüsselwörter -input oder -inFolder ist erforderlich, um die zu analysierende PLMBriefcase-Datei zu definieren. Fehler.\n";
+PR_INCOMPATIBLE_INPUT="Die beiden folgenden Schlüsselwörter /p1 & /p2 sind inkompatibel. Wählen Sie nur eines aus, und starten Sie die Ausführung erneut.  Fehler.\n";
+PR_PLMBRIEFCASE_FOUND="FEHLER: Das Verzeichnis /p1 enthält keine PLMBriefcase-Dateien. Der Bericht ist deshalb leer.\n";
+
+// ---> Error messages
+
+UtilityInput.FileNotFound="FEHLER: Datei /p1, die dem Schlüsselwort /p2 zugeordnet ist, nicht gefunden.\n";
+UtilityInput.NotPLMBriefcase="FEHLER: Datei /p1 nicht als PLMBriefcase-Datei (Erweiterung muss .3dxml oder .PLMBriefcase lauten) erkannt.\n";
+UtilityInput.NoPLMBriefcaseIn3dxml="FEHLER: 3DXML-Datei /p1 konnte nicht geöffnet werden oder 3DXML-Datei enthält keine Authoring-Daten.\n";
+UtilityInput.NotXslFileType="FEHLER: Datei /p1 nicht als XSL-Datei erkannt (Erweiterung muss .xsl lauten).\n";
+UtilityInput.FileWriteAccessFail="FEHLER: Schreiben in /p1 nicht möglich.\n";
+UtilityInput.NotValidFilterOption="WARNUNG: /p1 wird nicht als gültige Filteroption erkannt (Wert wurde auf /p2 gesetzt).\n";
+

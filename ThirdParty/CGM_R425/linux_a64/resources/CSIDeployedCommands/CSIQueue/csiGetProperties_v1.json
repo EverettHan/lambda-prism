@@ -1,0 +1,40 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Get the job properties",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "jobIds",
+          "basicArray": "string"
+        },
+        {
+          "label": "includeJobData",
+          "basic": "bool",
+          "desc": "Retrieve Job Data (input/progress/answer) in addition to job properties",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "jobs",
+          "typeArray": "CSIJobProperties"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

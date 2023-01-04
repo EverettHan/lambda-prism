@@ -1,0 +1,54 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for AdvancedTopologicalOpe errors 
+// En_EN
+
+CATATOVolSwpIncorrectPoints_ERR_1100.Request = "Volumetric sweep:";
+CATATOVolSwpIncorrectPoints_ERR_1100.Diagnostic = "Sweep profile must have at least 4 points.";
+CATATOVolSwpIncorrectPoints_ERR_1100.Advice = "Add points to the profile definition";
+
+CATATOVolSwpProfileEndPerp_ERR_1200.Request = "Volumetric sweep:";
+CATATOVolSwpProfileEndPerp_ERR_1200.Diagnostic = "First and last linear segments of the profile must be perpendicular to the axis of revolution.";
+CATATOVolSwpProfileEndPerp_ERR_1200.Advice = "Make the first and last segments perpendicular to axis of revolution";
+
+CATATOVolSwpIncorrectRadii_ERR_1300.Request = "Volumetric sweep:";
+CATATOVolSwpIncorrectRadii_ERR_1300.Diagnostic = "Number of input radii must be either 1 or 2 less than number of profile points";
+CATATOVolSwpIncorrectRadii_ERR_1300.Advice = "Change the number of input radii values";
+
+CATATOVolSwpSmallRadii_ERR_1400.Request = "Volumetric sweep:";
+CATATOVolSwpSmallRadii_ERR_1400.Diagnostic = "A profile segment has small radius";
+CATATOVolSwpSmallRadii_ERR_1400.Advice = "Increase radius of profile segment";
+
+CATATOVolSwpNonPlanar_ERR_1500.Request = "Volumetric sweep:";
+CATATOVolSwpNonPlanar_ERR_1500.Diagnostic = "Input profile wire body not defined on a plane";
+CATATOVolSwpNonPlanar_ERR_1500.Advice = "Define input profile wire body in a plane";
+
+CATATOVolSwpNonStrCircular_ERR_1600.Request = "Volumetric sweep:";
+CATATOVolSwpNonStrCircular_ERR_1600.Diagnostic = "Edges in the input profile wire body must be straight lines or circles";
+CATATOVolSwpNonStrCircular_ERR_1600.Advice = "Make the profile wire body using only straight and circular edges";
+
+CATATOVolSwpNonCoPlanar_ERR_1700.Request ="Volumetric sweep:";
+CATATOVolSwpNonCoPlanar_ERR_1700.Diagnostic ="Vertices in input profile wire body are not co-planar";
+CATATOVolSwpNonCoPlanar_ERR_1700.Advice ="Define the profile wire body in a plane";
+
+CATATOVolSwpLargeRadius_ERR_1800.Request ="Volumetric sweep:";
+CATATOVolSwpLargeRadius_ERR_1800.Diagnostic ="At least one of the radius values is large.";
+CATATOVolSwpLargeRadius_ERR_1800.Advice ="Reduce the radius value";
+
+
+CATATOVolSwpSegNotPerp_ERR_1900.Request ="Volumetric sweep:";
+CATATOVolSwpSegNotPerp_ERR_1900.Diagnostic ="Segment ending on axis of revolution of profile is not perpendicular to the axis.";
+CATATOVolSwpSegNotPerp_ERR_1900.Advice ="Modify the segment";
+
+CATATOVolSwpSegNotStraight_ERR_2000.Request ="Volumetric sweep:";
+CATATOVolSwpSegNotStraight_ERR_2000.Diagnostic ="Segment ending on axis of revolution of profile is not straight";
+CATATOVolSwpSegNotStraight_ERR_2000.Advice ="Modify the segment";
+
+CATATOVolSwpNoSolid_ERR_2100.Request ="Volumetric sweep:";
+CATATOVolSwpNoSolid_ERR_2100.Diagnostic ="Could not combine individual envelope solutions into a solid body";
+CATATOVolSwpNoSolid_ERR_2100.Advice ="Modify the motion";
+
+TopOpInNestingTrayDimension_ERR_7200.Request ="PrintSetup Nesting:";
+TopOpInNestingTrayDimension_ERR_7200.Diagnostic ="Sheet dimensions is too small.";
+TopOpInNestingTrayDimension_ERR_7200.Advice ="Change the sheet dimensions.";
+

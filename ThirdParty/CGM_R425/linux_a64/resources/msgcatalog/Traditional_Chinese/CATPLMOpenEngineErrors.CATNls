@@ -1,0 +1,70 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of Components concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each component 
+// This parameter has to be documented
+
+GenericMediatorErrorWithCompo.Diagnostic="無法開啟 [/p1] 零組件";
+GenericMediatorErrorWithCompo.Advice="無法開啟零組件 /p1。\n重新啟動程序。\n啟動錯誤記錄統計資料以協助您的管理員對問題進行疑難排解。\n請嘗試執行零組件檢查程式。";
+
+GenericMediatorError.Diagnostic="在工作階段建立期間發生非預期的錯誤。";
+GenericMediatorError.Advice="強烈建議重新啟動程序。您可以嘗試執行 ComponentChecker。";
+
+BulkSessionManagementIntegrityFailure.Diagnostic="在工作階段建立期間發生非預期的錯誤。無法確保工作階段的完整性。";
+BulkSessionManagementIntegrityFailure.Advice="重新啟動程序。\n可能無法連線伺服器中的完整性零組件。請檢查伺服器上的 P&O 規則，並與您的管理員聯絡。";
+
+//Copy-pasted from PLM_NotRetrievedComponent@PLMServerActionErrors.CATNls
+ComponentUnavailabilityInDatabase.Diagnostic="無法從資料庫查詢零組件。";
+ComponentUnavailabilityInDatabase.Advice="零組件可能不再存在，或其安全性原則防止您讀取它。";
+
+AnotherMinorInSession.Diagnostic="/p：工作階段中存在同一個主要系列中的其他次要系列，而防止其開啟";
+AnotherMinorInSession.Advice="解除載入次要系列，以完成開啟的目的";
+
+AnotherMinorInInput.Diagnostic="/p：同一個主要系列中的其他次要系列以輸入元素的方式存在，而防止其開啟";
+AnotherMinorInInput.Advice="請與您的本機管理員聯絡";
+
+ConcurrencyInSessionOfflineContent.Diagnostic="/p：此元素已在離線內容和工作階段中修改。";
+ConcurrencyInSessionOfflineContent.Advice="處於不同狀態的部分元素已在工作階段中載入。\n請先關閉包含這些元素的標籤，再開啟離線內容。";
+
+NoElement.Diagnostic="沒有將任何元素傳送至開啟引擎";
+NoElement.Advice="檢查伺服器中的資料可用性";
+
+NoEltToOpen.Diagnostic="列出要開啟的所有零組件都已在工作階段中載入，但資料可能不是最新狀態。開啟操作不會執行重新整理";
+NoEltToOpen.Advice="如果您要載入最新更新，您必須先關閉目前製作工作階段";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+AdapterCom.Diagnostic="嘗試擷取伺服器上的資訊時發生問題";
+AdapterCom="與伺服器之間的連線可能中斷";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// (correspond a une err systeme, donc a un abend)
+Internal.Diagnostic="內部開啟引擎錯誤";
+Internal.Advice="請與您的本機管理員聯絡";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+MessageStructure.Diagnostic="在伺服器上擷取的資料不一致";
+MessageStructure.Advice="描述零組件的資料可能不完整";
+
+AlreadyOpened_F_0.Diagnostic="列出要開啟的 /p 零組件已在工作階段中載入，但資料可能不是最新狀態。開啟操作不會執行重新整理";
+AlreadyOpened_F_0.Advice="如果您要載入最新更新，您必須先關閉目前製作工作階段";
+
+UnstreamPb.Diagnostic="至少無法載入一個串流";
+UnstreamPb.Advice="請檢查資料保險箱的狀態";
+
+FactoryNotFound.Diagnostic="由於遺失工廠，無法在工作階段中產生 /p 類型的零組件。";
+FactoryNotFound.Advice="請與您的管理員聯絡：您可能遺失類型 /p 的某些套件或使用許可。";
+
+ReentranceForbidden.Diagnostic="現在無法啟動新的「/p1」，因為其他操作正在執行中。";
+ReentranceForbidden.Advice="請與支援部門聯絡。";

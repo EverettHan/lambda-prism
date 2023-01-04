@@ -1,0 +1,47 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "LCCommon.tst"/>
+  <attached name = "LCCommonSDK.tst"/>
+  <attached name = "FloatingCtrl.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <buildtimeOnlyPrereq access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SysSSL"/>
+  <buildtimeOnlyPrereq access = "Private" expose = "DoNotExposePrereq" name = "SystemTS"/>
+  <authorize access = "Private" name = "System"/>
+  <authorize access = "Private" name = "System.tst"/>
+  <authorize access = "Private" name = "SystemLicensing.tst"/>
+  <authorize access = "Private" name = "SysSSL"/>
+  <authorize access = "Private" name = "SysSSL.tst"/>
+  <authorize access = "Private" name = "ENOCppKernel"/>
+  <authorize access = "Private" name = "ENOCppKernel.tst"/>
+  <authorize access = "Private" name = "LCCommonSDK.tst"/>
+  <authorize access = "Private" name = "LicClientAdmin"/>
+  <authorize access = "Private" name = "LicClientAdmin.tst"/>
+  <authorize access = "Private" name = "FloatingCtrl"/>
+  <authorize access = "Private" name = "FloatingCtrl.tst"/>
+  <authorize access = "Private" name = "DSYInsMsiUKU"/>
+  <authorize access = "Private" name = "SMAFipCore"/>
+  <authorize access = "Private" name = "SMAExeFiperCore"/>
+  <authorize access = "Private" name = "SMAExeFiperCore.tst"/>
+  <authorize access = "Private" name = "SMAEliBase"/>
+  <authorize access = "Private" name = "SMAEliLicensing"/>
+  <authorize access = "Private" name = "SMAEliLicensing.tst"/>
+  <authorize access = "Private" name = "SMATocLicenseProvider"/>
+  <authorize access = "Private" name = "SMATocLicenseProvider.tst"/>
+  <authorize access = "Private" name = "SMAFsfLM"/>
+  <authorize access = "Private" name = "GridFrontEndLicensing"/>
+  <authorize access = "Private" name = "PLMPCSCounters"/>
+  <authorize access = "Private" name = "PCSTransactionsCompass"/>
+  <authorize access = "Private" name = "ISPFT9DSLS"/>
+  <authorize access = "Private" name = "LCJava"/>
+  <authorize access = "Private" name = "LCPHPModule"/>
+  <authorize access = "Private" name = "RemoteDesktopServer"/>
+  <authorize access = "Private" name = "RemoteDesktopClient"/>
+  <authorize access = "Private" name = "XCTRenCommons"/>
+  <authorize access = "Private" name = "ENODesignSync"/>
+  <authorize access = "Private" name = "X3DShareModeler"/>
+  <authorize access = "Private" name = "DYNDymolaStandalone"/>
+  <authorize access = "Private" name = "VCXVectoAsServiceCSI"/>
+  <authorize access = "Private" name = "XCTInfrastructure"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

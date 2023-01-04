@@ -1,0 +1,26 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "function return the sysname",
+  "onCall": {
+    "in": {},
+    "out": {
+       "parameters": [
+        {
+          "label": "sysname",
+          "basic": "string",
+          "desc": "The sysname value"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

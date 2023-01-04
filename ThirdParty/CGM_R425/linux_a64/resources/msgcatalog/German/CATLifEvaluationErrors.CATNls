@@ -1,0 +1,65 @@
+<meta charset="UTF-8"/>
+MainMessageFormula="Prüfungsfehler in Formel /P1";
+MainMessageRule="Prüfungsfehler in Regel /P1";
+MainMessageCheck="Prüfungsfehler in Prüfung /P1";
+MainMessageRelation="Prüfungsfehler in Beziehung /P1";
+MainMessageNeutral="Prüfungsfehler";
+MainMessageNeutral2="Prüfungsfehler in /P1";
+CallingMessage="beim Aufruf von /P1 ";
+MainMessageFormulaInformation="Informationen in Formel /P1";
+MainMessageRuleInformation="Informationen in Regel /P1";
+MainMessageCheckInformation="Informationen in Prüfung /P1";
+MainMessageRelationInformation="Informationen in Beziehung /P1";
+MainMessageNeutralInformation="Informationen";
+MainMessageFormulaWarning="Warnung in Formel /P1";
+MainMessageRuleWarning="Warnung in Regel /P1";
+MainMessageCheckWarning="Warnung in Prüfung /P1";
+MainMessageRelationWarning="Warnung in Beziehung /P1";
+MainMessageNeutralWarning="Warnung";
+UnknownError="Unbekannter Fehler";
+OutOfBounds="Argument liegt außerhalb des gültigen Bereichs: Auswerten nicht möglich ";
+DividedBy0="Division durch null: Auswerten nicht möglich ";
+Unset="Ein nicht gesetzter Wert wurde in einer Operation verwendet.\nDas Ergebnis ist unvorhersehbar.";
+ReadAttributeBadKind="Attribut /P1 des Objekts /P2 des Typs /P3 als /P4 kann nicht gelesen werden";
+WriteAttributeBadKind="Attribut /P1 des Objekts /P2 des Typs /P3 als /P4 kann nicht geschrieben werden";
+InexistingAttribute="Attribut /P1 auf Objekt /P2 existiert nicht";
+ReadOnlyAttribute="Attribut /P1 auf Objekt /P2 kann nicht geändert werden";
+Update="Aktualisierung fehlgeschlagen";
+SetValueOnParmWithFormula="Das Attribut /P1 kann aufgrund der Beziehung /P2 nicht ausgewertet werden";
+VBNotSupported="Das Objekt /P1 kann nicht in VB Script verwendet werden";
+EnableErrors="EnableErrors wurde ohne passenden DisableErors Aufruf aufgerufen";
+SilentErrorsMismatch="Es gab eine nicht passende Anzahl von Aufrufen für DisableErrors und EnableErrors.\nDas kann zu Fehlern führen, die für den Benutzer verborgen sind.";
+
+
+BadTypeError="Ein Argument weist einen falschen Typ auf";
+BadTypeOfExpressionError="Der Ausdruck weist einen falschen Typ auf.";
+SelfAddedListError="Eine Liste kann nicht sich selbst hinzugefügt werden";
+StringNotAReal="Die Zeichenfolge /P1 kann nicht in eine reelle Zeichenfolge umgewandelt werden";
+StringNotADimension="Die Zeichenfolge /P1 konnte nicht als eine Bemaßung analysiert werden.";
+BadAssignementInLoop="Der Typ des /P1-ten Elements der Liste ist nicht mit der Variablen der Schleife kompatibel (/P2 anstelle von /P3).";
+
+
+NotMagnitude="/P1 ist keine vorhandene Einheit";
+NotGoodMagnitude="/P1 ist keine gültige Einheit";
+nbDecError="Die Zahl für die Genauigkeit muss eine positive ganze Zahl sein";
+MethodOnNullObject="Die Methode /P1 wird bei einer Nullvariablen /P2 aufgerufen.";
+ArgumentNULL="Die Argumentnummer /P1 der Funktion /P2 lautet NULL. Dies ist kein gültiger Aufruf.";
+
+LineNumber="Zeile /P1: ";
+Update2="Aktualisierung fehlgeschlagen:\n/P1";
+
+UnsetValueInOperation="In Operation /P1 wurde ein nicht festgelegter Wert verwendet.\nDas Ergebnis ist unvorhersehbar.";
+DeleteImpossible="Objekt /P1 kann nicht gelöscht werden.";
+UseMethodForbiddenInContext="Die Verwendung der Funktion oder Methode /P1 in diesem Kontext ist nicht zulässig.";
+ValueNotAuthorizedAsArgument="Fehler in /P1 /P2. Das Argument mit der Nummer /P3 kann nicht gleich </P4> sein";
+NoLicenseToExecute="Keine Berechtigung zum Ausführen von /P1 /P2, weil die erforderliche Lizenz (/P3) nicht vorhanden ist";
+EvaluationCycle="Die maximale Größe des Auswertungsstapels wurde erreicht. Überprüfen Sie Ihre Ausdrücke auf Zyklen, oder versuchen Sie, die verwendete Rekursivität einzuschränken.";
+AttributeNotAccessible="Das Attribut /P1 kann von Objekt /P2 nicht geöffnet werden";
+
+OnlyOneDeploymentExtension="Unmöglich, mehr als eine Bereitstellungserweiterung zu einem Objekt hinzuzufügen";
+CannotExtend="Nicht autorisiert, um einen Objekttyp /P1 mit einer Erweiterung vom Typ /P2 zu erweitern";
+ReusableFunctionNotFoundAtEvaluation="Wiederverwendbare Funktion oder Methode /P2 aus Bibliothek /P1 wurde bei der Auswertung des Ausdrucks nicht gefunden. Überprüfen Sie, dass die Bibliothek noch immer eine derartige Funktion mit übereinstimmenden Argumenten enthält.";
+ReusableFunctionSignatureChanged="Die Signatur der wiederverwendbaren Funktion oder Methode /P1 wurde seit der letzten Validierung des aufrufenden Ausdrucks geändert und die Signatur ist nicht mehr kompatibel. Bitte ändern Sie die wiederverwendbare Funktion oder das aufrufende Skript.";
+BreakOutsideLoop="Break-Anweisung befand sich außerhalb der Schleife.";
+ContinueOutsideLoop="Continue-Anweisung befand sich außerhalb der Schleife.";
+

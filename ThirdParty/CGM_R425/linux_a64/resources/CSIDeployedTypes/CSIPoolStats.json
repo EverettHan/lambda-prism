@@ -1,0 +1,26 @@
+{
+  "grammarVersion": 3,
+  "desc": "Pool statistics in the queue",
+  "category": "CSIQueue",
+  "definition": [
+    {
+      "label": "poolName",
+      "basic": "string"
+    },
+    {
+      "label": "totalEstimatedMemoryInMB",
+      "basic": "int64",
+      "desc": "Sum of estimated memory in MB of all pending jobs"
+    },
+    {
+      "label": "totalCustomMetric",
+      "basic": "int64",
+      "desc": "Sum of custom metric of all pending jobs"
+    },
+    {
+      "label": "numPendingJobs",
+      "basic": "uint32",
+      "desc": "Number of pending jobs"
+    }
+  ]
+}

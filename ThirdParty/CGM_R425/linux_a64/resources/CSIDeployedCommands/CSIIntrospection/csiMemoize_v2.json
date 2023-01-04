@@ -1,0 +1,50 @@
+{
+  "desc": "Memoize is an optimization function used to speed up computer programs by storing the results of expensive function call and returning the cached result when the same inputs occur again (https://en.wikipedia.org/wiki/Memoization)",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "function",
+          "basic": "string",
+          "desc": "The name of the function you want to invoke",
+          "optional": {
+            "isOptional": false
+          }
+        },
+        {
+          "label": "version",
+          "basic": "int32",
+          "desc": "The version of the function you want to invoke",
+          "optional": {
+            "default_value": "1"
+          }
+        },
+        {
+          "label": "inputs",
+          "type": "Parameters",
+          "desc": "The inputs of the function you want to invoke",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "type": "Parameters"
+    }
+  },
+  "progress": {
+    "type": "Parameters"
+  },
+  "throwError": {
+    "type": "Parameters"
+  }
+}

@@ -1,0 +1,25 @@
+<meta charset="UTF-8"/>
+UnknownModelerAttr.Request="参数错误。";
+UnknownModelerAttr.Diagnostic="错误消息：类型 /p4 上找不到 [/p1,/p2] 属性 /p3。";
+UnknownModelerAttr.Advice="请检查与 PLMType 关联的属性。";
+
+PlmidOwnerInstOfAttrForbidden.Request="参数错误。";
+PlmidOwnerInstOfAttrForbidden.Diagnostic="错误消息：[/p1,/p2] 属性 /p3 不是可显示属性 /p4。";
+PlmidOwnerInstOfAttrForbidden.Advice="请仅使用自由、用户或外部属性。";
+
+InternalModelerAttrForbidden.Request="参数错误。";
+InternalModelerAttrForbidden.Diagnostic="错误消息：[/p1,/p2] 属性 /p3 是内部属性 /p4。";
+InternalModelerAttrForbidden.Advice="请在 [COLUMNS] 块中仅使用自由、用户或外部属性。";
+
+InternalModelerAttrMandatory.Request="参数错误。";
+InternalModelerAttrMandatory.Diagnostic="错误消息：[/p1,/p2] 属性 /p3 不是内部属性 /p4。";
+InternalModelerAttrMandatory.Advice="请在 [INTERNALCOLUMNS] 块中仅使用内部属性。";
+
+CustoTypeError.Request="参数错误。";
+CustoTypeError.Diagnostic="错误消息：自定义类型 /p1 不继承基本类型 /p2。";
+CustoTypeError.Advice="请检查与 PLMType 关联的属性。";
+
+UnknownCustoAttr.Request="参数错误。";
+UnknownCustoAttr.Diagnostic="错误消息：/p2 类型上找不到 /p1 属性。";
+UnknownCustoAttr.Advice="请检查与 PLMType 关联的属性。";
+

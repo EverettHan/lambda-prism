@@ -1,0 +1,41 @@
+<meta charset="UTF-8"/>
+GRAPH.ErrorStart="===============!!! ОШИБКА !!!==================";
+GRAPH.ErrorEnd="===============! ОКОНЧАНИЕ ОШИБКИ !==================";
+GRAPH.Address="адрес";
+GRAPH.Id="ид";
+GRAPH.Number="номер";
+GRAPH.GraphEnd="Окончание графика команды"; // @validatedUsage AJT 13:10:10 graph
+GRAPH.Result="Результат";
+
+GRAPH.NoState="Команда не содержит состояний. 
+Используйте метод
+CATICmdStateCommand::AddState(CATICmdState *iState) 
+для связи состояния с командой";
+
+GRAPH.NoInitialState="Команда не содержит начального состояния. 
+Используйте метод
+CATICmdStateCommand::SetInitialState(CATICmdState *iState) 
+для определения начального состояния команды";
+
+GRAPH.NoTransition="Команда не содержит никакого перехода.
+Используйте метод 
+CATICmdStateCommand::AddTransition(CATICmdTransition *iTrans) 
+для связи перехода с командой";
+
+GRAPH.NoSourceState="Переход не связан с исходным состоянием.
+Используйте метод 
+CATICmdStateTransition::AddSourceState(CATICmdState *iState) 
+для объявления состояния как исходного состояния перехода";
+
+GRAPH.UnlinkedState="Состояние не связано с переходом и
+недоступно, если это не начальное состояние. 
+Используйте метод
+CATICmdStateTransition::AddSourceState(CATICmdState *iState)
+или  
+CATICmdStateTransition::AddTargerState(CATICmdState *iState)
+для связи состояния с переходом";
+
+GRAPH.UnknownState="Команде неизвестно данное состояние. 
+Используйте метод 
+CATICmdStateCommand::AddState(CATICmdState *iState) 
+для связи состояния с командой";

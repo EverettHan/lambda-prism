@@ -1,0 +1,37 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "GraphicEditor.tst"/>
+  <prerequisite access = "Public" comment = "09.08.2017 AZX/JMA command dev Discovery" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrSelection"/>
+  <prerequisite access = "Public" comment = "09.08.2017 AZX/JMA command dev Discovery" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationCore"/>
+  <prerequisite access = "Public" name = "Dialog"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "DialogEngine"/>
+  <prerequisite access = "Protected" name = "InfInterfaces"/>
+  <prerequisite access = "Protected" comment = "27.11.2020 AZX Interface moved from InfInterfaces" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "InfModelInterfaces"/>
+  <prerequisite access = "Protected" comment = "ERS 03.2021 move CATFrmVisuServices from AfrFoundation to VisualizationCommands" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIModelInterfaces"/>
+  <prerequisite access = "Protected" comment = "10.2020 ERS To be removed once CATIStandard* move from AfrInterfaces to UIModelInterfaces" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "InteractiveInterfaces"/>
+  <prerequisite access = "Protected" name = "AfrFoundation"/>
+  <prerequisite access = "Protected" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" name = "VisualizationController"/>
+  <prerequisite access = "Protected" name = "SGManager"/>
+  <prerequisite access = "Protected" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" name = "SGInfra"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "VisuImmersiveUI"/>
+  <prerequisite access = "Protected" comment = "13.01.2017 ODM/JMA CATVolatileGhostable usage" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "VisualizationSceneGraph"/>
+  <prerequisite access = "Protected" comment = "13.01.2017 ODM/JMA CATViewSyncCmd command enhancement" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" name = "Mathematics"/>
+  <prerequisite access = "Protected" name = "VisuImmersiveDialog"/>
+  <prerequisite access = "Protected" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" comment = "09.10.2018 AZX/QJO IR-581185" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMComponentInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrProperties"/>
+  <prerequisite access = "Protected" comment = "JMA/AZX 19.02.2020 CATDiscover selection in Graph" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "ObjectModelerNavigator"/>
+  <prerequisite access = "Protected" comment = "AZX/SFN6 24.03.2020 ray-tracing logging infra" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisuRayTracingTools"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

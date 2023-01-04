@@ -1,0 +1,866 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="CATAfrPLMCompassWidgets.CATSYPStyle"/>
+  </Resources>
+
+
+  <Template syp:name="ChartCommandHeaders" Target="CATCAfrInclude">
+    <CATCAfrToolbarHeaders syp:name="ToolbarHeaders">
+      <CATCmdHeadersList>
+        <CATCommandHeader ID = "UpdateChartHdr" ClassName = "CATCAfrSynchToControllerCmd" SharedLibraryName = "CATAfrFoundation" ResourceFile = "CATAfrChartHeaders" Available = "1">
+          <CATAfrCommandHeaderArgs>
+            <CATCommandHeaderArg ID = "EventID" Value = "Update" Mode = "In" />
+          </CATAfrCommandHeaderArgs>
+        </CATCommandHeader>
+      </CATCmdHeadersList>
+    </CATCAfrToolbarHeaders>
+  </Template>
+
+  <Template syp:name="DefaultToolbar" Target="CATAfrComponent">
+    <CATCAfrToolbar>
+      <CATCAfrInclude syp:Template="ChartCommandHeaders"/>
+      <CATCmdStarter Name="UpdateStr" Command="UpdateChartHdr"/>
+    </CATCAfrToolbar>
+  </Template>
+  <!--LoadToolbar="./ChartToolbar:ChartToolbar"-->
+
+  <!--======================================-->
+  <!-- Label for Compass -->
+  <!--======================================-->
+  <Template syp:name="CompassLabel" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "CompassLabel"
+                   Visibility         = "1"
+                   TitleBarVisibleFlag= "1"
+                   SnappableFlag      = "1"
+                   CompactFlag        = "1"
+                   CloseButtonFlag    ="0"
+                   ContentVisibleFlag = "0"
+                   ResizableFlag      = "0"
+                   RepresentationType = "AfrFraLabel">
+      <CATAfrModelWrapper Name = "Content"/>
+    </CATCAfrWindow>
+  </Template>
+
+  <!--======================================-->
+  <!-- Apps For Compass -->
+  <!--======================================-->
+  <Template syp:name="MyServices" Target="CATAfrComponent">
+    <CATCAfrList syp:name="AfrServices_AppsList" Name="AfrServices_AppsList"
+      Title ="3DEXPERIENCE Marketplace"
+      Visibility ="1" ThumbnailsMode="Classic" RepresentationType="ListApps"
+      IconName="Compass/Services_icon.png"
+      ExpandedFlag="0" ScrollableFlag="0" DragFlag="0" DropFlag="0" />
+  </Template>
+
+  <Template syp:name="WebCompass_HiddenBackground" Target="CATAfrComponent">
+    <CATCAfrWindow syp:name="Web_Window" Name="Web_Window" ResizableFlag= "1" ContentVisibleFlag ="1"  CompactFlag="0" RepresentationType="AfrFraPanel">
+      <CATCAfrUrlViewer syp:name="WebCompass_HiddenBackground_Viewer" Name="WebCompass_HiddenBackground_Viewer"
+        Visibility="1"
+        Url=""
+        NoPopup="1"
+        MinimumDimension="480 200"> 
+      </CATCAfrUrlViewer>
+
+    </CATCAfrWindow>
+   </Template>
+  <Template syp:name="AfrWebCompassApps" Target="CATAfrComponent">
+    <CATCAfrWindow syp:name="Web_Window" Name="Web_Window" RepresentationType="AfrFraPanel">
+      <CATCAfrUrlViewer syp:name="Web_Viewer" Name="Web_Viewer"
+        Visibility="1"
+        Url=""
+        NoPopup="1"
+        MinimumDimension="480 200"> <!--1500 900-->
+      </CATCAfrUrlViewer>
+
+      <CATCAfrList Name="AfrAppsRoles_AppsList" syp:name="AfrAppsRoles_AppsList" Title="3DEXPERIENCE Roles and Apps" Visibility ="0" RepresentationType="GroupListAppsNew" IconName="Compass/Social_and_CollabApps_Icon.png" ExpandedFlag="1">
+        <CATCAfrList syp:name="AfrRole_AppsList" Name="AfrRole_AppsList" Title ="My Roles" Visibility ="0"
+                     ThumbnailsMode="Classic" RepresentationType="ListRolesNew" IconName="Compass/Role_Section_Icon.png"
+                     ExpandedFlag="1" ScrollableFlag="0" DragFlag="1" DropFlag="1" >
+          <CATCAfrList syp:name="AfrRoleGrantable_AppsList" Name="AfrRoleGrantable_AppsList" Visibility ="0"
+                       ThumbnailsMode="Classic" RepresentationType="SubGroupListApps"
+                       ExpandedFlag="1" ScrollableFlag="0" DragFlag="1" DropFlag="1" />
+        </CATCAfrList>
+      </CATCAfrList>
+      
+      <CATCAfrList Name="AfrPlayAppsMenu" syp:name="PlayList"  Visibility ="0" RepresentationType="GroupListApps">
+        <CATCAfrList Name="AfrPlayExperiencesList"  Title="Play Experiences" Visibility ="1" ThumbnailsMode="Basic" RepresentationType="ListPlayExperience" ExpandedFlag="1" ScrollableFlag="0" />
+        <CATCAfrList Name="AfrSuggestedExperiencesList"  Title="Suggested Experiences" Visibility ="1" ThumbnailsMode="Basic"  RepresentationType="ListPlayExperience"/>
+      </CATCAfrList>
+    </CATCAfrWindow>
+    
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="AfrComponentChange" Value="PlayActivated">
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+    
+  </Template>
+
+  <Template syp:name="AfrCompassApps" Target="CATAfrComponent" syp:version="2">
+    <CATCAfrPanelApps Name="AfrAppsMenu" RepresentationType="ContainerApps" ResourceFile="Afr3DExperiencesApps">
+      
+      <!--<CATCAfrInclude Condition="($IsCATPSEHeaderAvailable == 1) &amp;&amp; (GetEnv(CATDisableMyServices) == 0)"  Template="MyServices"/>-->
+      <CATCAfrList syp:name="AfrServicesNew_AppsList" Name="AfrServicesNew_AppsList"
+                    Title ="3DEXPERIENCE Marketplace"
+                    Visibility ="0" ThumbnailsMode="Classic" RepresentationType="GroupListAppsNew"
+                    IconName="Compass/Services_icon.png"
+                    ExpandedFlag="1" ScrollableFlag="0" DragFlag="0" DropFlag="0" >
+          <CATCAfrList syp:name="AfrEServices_AppsList" Name="AfrEServices_AppsList"
+                       Title ="My Enterprise Services" IconName="Compass/my_enterprise_services.png"
+                       Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+                       RepresentationType="ListAppsNew"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1"/>
+
+          <CATCAfrList syp:name="AfrCServices_AppsList" Name="AfrCServices_AppsList"
+                       Title ="My Community Services" IconName="Compass/my_community_services.png"
+                       Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+                       RepresentationType="ListAppsNew"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1"/>
+      </CATCAfrList>
+      
+      <CATCAfrList syp:name="AfrServices_AppsList" Name="AfrServices_AppsList"
+                  Title ="3DEXPERIENCE Marketplace"
+                  Visibility ="0" ThumbnailsMode="Classic" RepresentationType="ListApps"
+                  IconName="Compass/Services_icon.png"
+                  ExpandedFlag="1" ScrollableFlag="0" DragFlag="0" DropFlag="0" />
+
+      <CATCAfrList Name="AfrAppsRoles_AppsList" syp:name="AfrAppsRoles_AppsList" Title="3DEXPERIENCE Roles and Apps" Visibility ="1" RepresentationType="GroupListAppsNew" IconName="Compass/Social_and_CollabApps_Icon.png" ExpandedFlag="1">
+        <CATCAfrList syp:name="AfrRole_AppsList" Name="AfrRole_AppsList" Title ="My Roles" Visibility ="1"
+                     ThumbnailsMode="Classic" RepresentationType="ListRolesNew" IconName="Compass/Role_Section_Icon.png"
+                     ExpandedFlag="1" ScrollableFlag="0" DragFlag="1" DropFlag="1" >
+              <CATCAfrList syp:name="AfrRoleGrantable_AppsList" Name="AfrRoleGrantable_AppsList" Visibility ="1"
+                           ThumbnailsMode="Classic" RepresentationType="SubGroupListApps"
+                           ExpandedFlag="1" ScrollableFlag="0" DragFlag="1" DropFlag="1" />
+        </CATCAfrList>
+
+        <CATCAfrList syp:name="AfrFavourite_AppsList" Name="AfrFavourite_AppsList" Title ="My Favorite Apps" Visibility ="1"
+                     ThumbnailsMode="Classic" RepresentationType="ListAppsNew" IconName="Compass/FavoriteApps_Icon.png"
+                     ExpandedFlag="0" ScrollableFlag="0" DragFlag="1" DropFlag="1" />
+
+        <CATCAfrList syp:name="AfrNorth_AppsList" Name="AfrNorth_AppsList" Title ="My People Apps" Visibility ="1"
+                     IconName="Compass/Social_and_CollabApps_Icon.png" ThumbnailsMode="Classic" ExpandedFlag="1"
+                     RepresentationType="ListAppsNew"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1"/>
+        
+        <CATCAfrList syp:name="AfrEast_AppsList" Name="AfrEast_AppsList" Title ="My Information Intelligence Apps" Visibility ="1"
+                     IconName="Compass/InformationIntelligenceApps_Icon.png" ThumbnailsMode="Classic"
+                     RepresentationType="ListAppsNew"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1" ExpandedFlag="1"/>
+        
+        <CATCAfrList syp:name="AfrSouth_AppsList" Name="AfrSouth_AppsList" Title ="My V+R Apps" Visibility ="1"
+                     IconName="Compass/Content_and_SimulationApps_Icon.png" ThumbnailsMode="Classic" ExpandedFlag="1"
+                     RepresentationType="ListAppsNew"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1"/>
+        
+        <CATCAfrList syp:name="AfrWest_AppsList" Name="AfrWest_AppsList" Title ="My 3D Apps" Visibility ="1"
+                     IconName="Compass/3DModelingApps_Icon.png" ThumbnailsMode="Classic" ExpandedFlag="1"
+                     RepresentationType="ListAppsNew"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1"/>
+
+      </CATCAfrList>
+      
+       <CATCAfrList Name="AfrNorthAppsMenu" syp:name="NorthList" Title="My People Apps" Visibility ="0" RepresentationType="GroupListApps">
+            <CATCAfrList syp:name="AfrNorthMoreAboutList" Name="AfrNorthMoreAboutList"
+              Title ="Dassault Systemes Communities"
+              Visibility ="1" ThumbnailsMode="Classic"
+              RepresentationType="ListApps"  ScrollableFlag="0" ExpandedFlag="0"/>
+        </CATCAfrList>
+
+      <CATCAfrList Name="AfrEastAppsMenu" syp:name="EastList" Title="My Information Intelligence Apps" Visibility ="0" RepresentationType="GroupListApps">
+            <CATCAfrList syp:name="AfrEastMoreAboutList" Name="AfrEastMoreAboutList"
+              Title ="Dassault Systemes Communities"
+              Visibility ="1" ThumbnailsMode="Classic"
+              RepresentationType="ListApps"  ScrollableFlag="0" ExpandedFlag="0"/>
+      </CATCAfrList>
+
+      <CATCAfrList Name="AfrSouthAppsMenu" syp:name="SouthList" Title="My V+R Apps" Visibility ="0" RepresentationType="GroupListApps">
+            <CATCAfrList syp:name="AfrSouthMoreAboutList" Name="AfrSouthMoreAboutList"
+              Title ="Dassault Systemes Communities"
+              Visibility ="1" ThumbnailsMode="Classic"
+              RepresentationType="ListApps"  ScrollableFlag="0"  ExpandedFlag="0"/>
+      </CATCAfrList>
+
+      <CATCAfrList Name="AfrWestAppsMenu" syp:name="WestList" Title="My 3D Apps" Visibility ="0" RepresentationType="GroupListApps">
+            <CATCAfrList syp:name="AfrWestMoreAboutList" Name="AfrWestMoreAboutList"
+              Title ="Dassault Systemes Communities"
+              Visibility ="1" ThumbnailsMode="Classic"
+              RepresentationType="ListApps"  ScrollableFlag="0"  ExpandedFlag="0"/>
+      </CATCAfrList>
+      
+      <!-- Play Experiences (Play)-->
+      <CATCAfrList Name="AfrPlayAppsMenu" syp:name="PlayList"  Visibility ="0" RepresentationType="GroupListApps">
+        <CATCAfrList Name="AfrPlayExperiencesList"  Title="Play Experiences" Visibility ="1" ThumbnailsMode="Basic" RepresentationType="ListPlayExperience" ExpandedFlag="1" ScrollableFlag="0" />
+        <CATCAfrList Name="AfrSuggestedExperiencesList"  Title="Suggested Experiences" Visibility ="1" ThumbnailsMode="Basic"  RepresentationType="ListPlayExperience"/>
+      </CATCAfrList>
+    </CATCAfrPanelApps>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="AfrComponentChange" Value="NorthActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="0"/>      
+      
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="EastActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="SouthActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="WestActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="PlayActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="0"/>
+      
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="Mobile_Source">
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="0"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrNorthMoreAboutList" Value="1"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrWestMoreAboutList" Value="1"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrEastMoreAboutList" Value="1"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrSouthMoreAboutList" Value="1"/>         
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+
+  <Template syp:name="AfrCompassApps" Target="CATAfrComponent" syp:version="1">
+    <CATCAfrPanelApps Name="AfrAppsMenu" RepresentationType="ContainerApps" ResourceFile="Afr3DExperiencesApps">
+
+      <CATCAfrInclude Condition="($IsCATPSEHeaderAvailable == 1) &amp;&amp; (GetEnv(CATDisableMyServices) == 0)"  Template="MyServices"/>
+      <CATCAfrList syp:name="AfrRole_AppsList" Name="AfrRole_AppsList"
+               Title ="My Roles"
+               Visibility ="1" ThumbnailsMode="Classic" RepresentationType="ListRoles"
+               IconName="Compass/Role_Section_Icon.png"
+               ExpandedFlag="1" ScrollableFlag="0" DragFlag="1" DropFlag="1" >
+        <CATCAfrList syp:name="AfrRoleGrantable_AppsList" Name="AfrRoleGrantable_AppsList"
+               Visibility ="1" ThumbnailsMode="Classic" RepresentationType="SubGroupListApps"
+               ExpandedFlag="1" ScrollableFlag="0" DragFlag="1" DropFlag="1" />
+        
+      </CATCAfrList>
+
+      
+
+      <CATCAfrList syp:name="AfrFavourite_AppsList" Name="AfrFavourite_AppsList"
+               Title ="My Favorite Apps"
+               Visibility ="1" ThumbnailsMode="Classic" RepresentationType="ListApps"
+               IconName="Compass/FavoriteApps_Icon.png"
+               ExpandedFlag="0" ScrollableFlag="0" DragFlag="1" DropFlag="1" />
+      <!--MultiRepType="ListApps*FavoriteContainer" AppendAllRepFlag="1"-->
+      <!--<CATCAfrList syp:name="AfrFavourite_AppsList" Name="AfrFavourite_AppsList"
+                       Title ="My Favorite Apps"
+                       Visibility ="1" ThumbnailsMode="Classic"
+                       RepresentationType="ListApps*FavoriteContainer"  ExpandedFlag="1" ScrollableFlag="0" DragFlag="1" DropFlag="1" />
+      <CATCAfrList syp:name="AfrFloatingFavorite_AppsList" Name="AfrFloatingFavorite_AppsList"
+                 Title ="My Favorite Apps"
+                 Visibility ="1" ThumbnailsMode="Classic"
+                 RepresentationType="FloatingApps*FloatingFavoriteContainer"  ExpandedFlag="0" ScrollableFlag="0" DragFlag="1" DropFlag="1" />-->
+      <!-- People Apps (North)-->
+      <CATCAfrList Name="AfrNorthAppsMenu" syp:name="NorthList" Title="My People Apps" Visibility ="0" RepresentationType="GroupListApps">
+        <CATCAfrList syp:name="AfrNorth_AppsList" Name="AfrNorth_AppsList"
+         Title ="My People Apps" IconName="Compass/Social_and_CollabApps_Icon.png"
+         Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+         RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1" >
+         
+
+        </CATCAfrList>
+        <!-- Learn more about-->
+        <CATCAfrList syp:name="AfrNorthMoreAboutList" Name="AfrNorthMoreAboutList"
+          Title ="Dassault Systemes Communities"
+          Visibility ="1" ThumbnailsMode="Classic"
+          RepresentationType="ListApps"  ScrollableFlag="0" ExpandedFlag="0">
+        </CATCAfrList>
+
+      </CATCAfrList>
+
+      <!-- Information Intelligence Apps (East)-->
+      <CATCAfrList Name="AfrEastAppsMenu" syp:name="EastList" Title="My Information Intelligence Apps" Visibility ="0" RepresentationType="GroupListApps">
+
+        <CATCAfrList syp:name="AfrEast_AppsList" Name="AfrEast_AppsList"
+      Title ="My Information Intelligence Apps" IconName="Compass/InformationIntelligenceApps_Icon.png"
+      Visibility ="1" ThumbnailsMode="Classic"
+      RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1" ExpandedFlag="1">
+        </CATCAfrList>
+        <!-- Learn more about-->
+        <CATCAfrList syp:name="AfrEastMoreAboutList" Name="AfrEastMoreAboutList"
+          Title ="Dassault Systemes Communities"
+          Visibility ="1" ThumbnailsMode="Classic"
+          RepresentationType="ListApps"  ScrollableFlag="0" ExpandedFlag="0">
+             </CATCAfrList>
+
+
+      </CATCAfrList>
+
+      <!-- V+R Apps (South)-->
+      <CATCAfrList Name="AfrSouthAppsMenu" syp:name="SouthList" Title="My V+R Apps" Visibility ="0" RepresentationType="GroupListApps">
+        <CATCAfrList syp:name="AfrSouth_AppsList" Name="AfrSouth_AppsList"
+      Title ="My V+R Apps" IconName="Compass/Content_and_SimulationApps_Icon.png"
+      Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+      RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1">
+
+        </CATCAfrList>
+        <!-- Learn more about-->
+        <CATCAfrList syp:name="AfrSouthMoreAboutList" Name="AfrSouthMoreAboutList"
+          Title ="Dassault Systemes Communities"
+          Visibility ="1" ThumbnailsMode="Classic"
+          RepresentationType="ListApps"  ScrollableFlag="0"  ExpandedFlag="0">
+
+        </CATCAfrList>
+
+      </CATCAfrList>
+
+      <!-- 3D Apps (West)-->
+      <CATCAfrList Name="AfrWestAppsMenu" syp:name="WestList" Title="My 3D Apps" Visibility ="0" RepresentationType="GroupListApps">
+        <CATCAfrList syp:name="AfrWest_AppsList" Name="AfrWest_AppsList"
+        Title ="My 3D Apps" IconName="Compass/3DModelingApps_Icon.png"
+        Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+        RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" DragFlag="1" DropFlag="1">
+
+        </CATCAfrList>
+        <!-- Learn more about-->
+        <CATCAfrList syp:name="AfrWestMoreAboutList" Name="AfrWestMoreAboutList"
+          Title ="Dassault Systemes Communities"
+          Visibility ="1" ThumbnailsMode="Classic"
+          RepresentationType="ListApps"  ScrollableFlag="0"  ExpandedFlag="0">
+        </CATCAfrList>
+
+      </CATCAfrList>
+      <!-- Play Experiences (Play)-->
+      <CATCAfrList Name="AfrPlayAppsMenu" syp:name="PlayList"  Visibility ="0" RepresentationType="GroupListApps">
+        <CATCAfrList Name="AfrPlayExperiencesList"  Title="Play Experiences" Visibility ="1" ThumbnailsMode="Basic" RepresentationType="ListPlayExperience" ExpandedFlag="1" ScrollableFlag="0" />
+        <CATCAfrList Name="AfrSuggestedExperiencesList"  Title="Suggested Experiences" Visibility ="1" ThumbnailsMode="Basic"  RepresentationType="ListPlayExperience"/>
+      </CATCAfrList>
+    </CATCAfrPanelApps>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="AfrComponentChange" Value="NorthActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="EastActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="SouthActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="WestActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="PlayActivated">
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AfrComponentChange" Value="Mobile_Source">
+        <CATSYPSetter Property="Visibility" TargetName="AfrFavourite_AppsList" Value="0"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrNorthMoreAboutList" Value="1"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrWestMoreAboutList" Value="1"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrEastMoreAboutList" Value="1"/> 
+        <CATSYPSetter Property="ExpandedFlag" TargetName="AfrSouthMoreAboutList" Value="1"/>         
+        <CATSYPSetter Property="Visibility" TargetName="AfrRole_AppsList" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="0"/>
+
+        <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="0"/>
+
+        <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="0"/>
+
+        <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="0"/>
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <!--======================================-->
+  <!-- App Option (Tenant) -->
+  <!--======================================-->
+  <Template syp:name="CATAfrAppOption" Target="CATAfrComponent">
+    <CATCAfrList Name="CATAfrAppOption"
+          Title ="Tenant List"
+          Visibility ="1" ThumbnailsMode="Classic"
+          RepresentationType="AppOptionList"  ScrollableFlag="0"  ExpandedFlag="1">
+      
+    </CATCAfrList>
+  </Template>
+  <!--======================================-->
+  <!-- Refinenement Panel -->
+  <!--======================================-->
+  <Template syp:name="CATAfrRefinementComponent" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "CATAfrRefinementCompPanel"
+                   Title              = "6W Tagger"
+                   IconName           = "I_VIATag.png"
+                   Visibility         = "1"
+                   RepresentationType = "AfrVIDTagFraPanel">
+      <CATAfrModelWrapper Name = "Content">
+      </CATAfrModelWrapper>
+    </CATCAfrWindow>
+  </Template>
+
+  <!--======================================-->
+  <!-- Quick Pick Panel -->
+  <!--======================================-->
+  <Template syp:name="CATCAfrQuickPickComponent" Target="CATAfrComponent">
+    <CATCAfrWindow Name                       = "CATCAfrQuickPickCompPanel"
+                   Title                      = "Quick Pick"
+                   IconName                   = "I_VIAQuickPick.png"
+                   Visibility                 = "1"
+                   RepresentationType         = "AfrVIDQuickPickFraPanel">
+      <CATCAfrForm Name="CATVIARefinementAndPickTabAfr"
+                   Visibility ="1"
+                   Decorator="ScrollableArea"
+                   MinimumDimension="250 200">
+      </CATCAfrForm>
+    </CATCAfrWindow>
+  </Template>
+
+  <!--======================================-->
+  <!-- Progress task-->
+  <!--======================================-->
+  <Template syp:name="CAfrProgressTask" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "AfrVIDFraProgressTaskPanel"
+                   Visibility         = "1"
+                   Orientation        = "Horizontal"
+                   RepresentationType = "AfrFraProgress">
+      <CATCAfrForm Name="ProgressTaskForm"
+                   Visibility ="1">
+      </CATCAfrForm>
+      <CATCAfrForm Name="ProgressProgressTaskFormToolbar"
+                   Visibility ="1">
+        <CATCAfrToolbar Name            = "ProgressTaskToolbar"
+                        RepresentationType="EmptyDecorationToolBar"
+                        Visibility = "1">
+          <CATCmdStarter Name="CAfrProgressTaskStopStr"
+                         Command="CAfrProgressTaskStopHdr"
+                         Visibility="1"
+                         RepresentationType="VIAImmersiveToolBar"/>
+          <CATCmdStarter Name="CAfrProgressTaskCancelStr"
+                         Command="CAfrProgressTaskCancelHdr"
+                         Visibility="0"
+                         RepresentationType="VIAImmersiveToolBar"/>
+        </CATCAfrToolbar>
+      </CATCAfrForm>
+    </CATCAfrWindow>
+  </Template>
+
+  <!--======================================-->
+  <!-- CATCAfrTree for CATTreeView Migration-->
+  <!--======================================-->
+  <Template syp:name="CATCAfrTree_CATTreeView" Target="CATAfrComponent">
+    <CATCAfrTree Name="CATTreeView"
+                 Visibility ="1"
+                 RepresentationType="Classic"
+                 SelectionMode="MultiRange"
+                 MinimumDimension  ="150 200"
+                 RootDecorationFlag="1"
+                 ExpanderLook="Plus"
+                 RegisterFlag="0">
+    </CATCAfrTree>
+  </Template>
+  
+
+    <!--======================================-->
+    <!-- Apps For Compass -->
+    <!--======================================-->
+    <Template syp:name="AfrCompassApps" Target="CATAfrComponent">
+      <CATCAfrPanelApps Name="AfrAppsMenu" RepresentationType="AfrMenu" ResourceFile="Afr3DExperiencesApps">
+
+        <!-- People Apps (North)-->
+        <CATCAfrList Name="AfrNorthAppsMenu" syp:name="NorthList" Title="My People Apps" Visibility ="0" RepresentationType="GroupListApps">
+          <CATCAfrList syp:name="AfrFavouriteNorth_AppsList" Name="AfrFavouriteNorth_AppsList"
+                   Title ="My Favorite People Apps"
+                   Visibility ="1" ThumbnailsMode="Classic"
+                   RepresentationType="ListApps"  ExpandedFlag="1" ScrollableFlag="0" >
+            <!--Add here the list of favourites apps-->
+          </CATCAfrList>
+
+          <CATCAfrList syp:name="AfrNorth_AppsList" Name="AfrNorth_AppsList"
+           Title ="My People Apps"
+           Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+           RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title">
+
+
+          </CATCAfrList>
+          <!-- Learn more about-->
+          <CATCAfrList Name="AfrNorthMoreAboutList"
+            Title ="Dassault Systemes Communities"
+            Visibility ="1" ThumbnailsMode="Classic"
+            RepresentationType="ListApps"  ScrollableFlag="0" ExpandedFlag="1">
+            <!--<l_CATAfrApp Name="LearnMoreAboutENOVIA" Title="ENOVIA"  Tooltip="ENOVIA www.enovia.com"
+                          Icon="Compass/Signature/Brands/ENOVIA-64.png" LaunchInfos="http://www.enovia.com" />
+          <l_CATAfrApp Name="LearnMoreAbout3DSWYM" Title="3DSWYM"  Tooltip="3DSWYM www.3dswym.com"
+                Icon="Compass/Signature/Brands/3DSWYM-64.png" LaunchInfos="http://www.3dswym.com" />-->
+          </CATCAfrList>
+          <!--ENOVIA apps-->
+          <!--
+        <CATCAfrList Name="AfrENOVIA_AppsList"
+         Title ="ENOVIA"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+
+        </CATCAfrList>
+        -->
+          <!--3DSWYM apps-->
+          <!--
+        <CATCAfrList Name="Afr3DSWYM_AppsList"
+         Title ="3DSWYM"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+
+        </CATCAfrList>-->
+
+          <!--Add here the list of domains-->
+        </CATCAfrList>
+
+        <!-- Information Intelligence Apps (East)-->
+        <CATCAfrList Name="AfrEastAppsMenu" syp:name="EastList" Title="My Information Intelligence Apps" Visibility ="0" RepresentationType="GroupListApps">
+          <CATCAfrList syp:name="AfrFavouriteEast_AppsList" Name="AfrFavouriteEast_AppsList"
+                   Title ="My Favorite Information intelligence Apps"
+                   Visibility ="1" ThumbnailsMode="Classic"
+                   RepresentationType="ListApps"   ExpandedFlag="1" ScrollableFlag="0">
+            <!--Add here the list of favourites apps-->
+          </CATCAfrList>
+
+          <CATCAfrList syp:name="AfrEast_AppsList" Name="AfrEast_AppsList"
+        Title ="My Information Intelligence Apps"
+        Visibility ="1" ThumbnailsMode="Classic"
+        RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title" ExpandedFlag="1">
+            <!--<l_CATAfrApp Name="IFWECompassLaunchInfos" Title="IFWE COMPASS" Icon="I_IfWeCompass.png" Tooltip="IFWE Compass"
+                          LaunchInfos="http://myapps-ifwecompass20130304t194511z-dev5-ifwe.cloud.3dswymer.com" />
+          <l_CATAfrApp Name="CATAfrLegacyCompassHeaderHdr" Title="PLM B.I. Essentials" Tooltip="PLM B.I. Essentials" Icon="I_PLMB_I_Essentials.png" />-->
+
+          </CATCAfrList>
+          <!-- Learn more about-->
+          <CATCAfrList Name="AfrEastMoreAboutList"
+            Title ="Dassault Systemes Communities"
+            Visibility ="1" ThumbnailsMode="Classic"
+            RepresentationType="ListApps"  ScrollableFlag="0" ExpandedFlag="1">
+            <!--<l_CATAfrApp Name="LearnMoreAboutEXALEAD" Title="EXALEAD"  Tooltip="EXALEAD www.exalead.com"
+                          Icon="Compass/Signature/Brands/EXALEAD-64.png" LaunchInfos="http://www.exalead.com" />
+          <l_CATAfrApp Name="LearnMoreAboutNETVIBES" Title="NETVIBES"  Tooltip="NETVIBES www.netvibes.com"
+                Icon="Compass/Signature/Brands/NETVIBES-64.png" LaunchInfos="http://www.netvibes.com" />-->
+          </CATCAfrList>
+          <!--EXALEAD apps-->
+          <!--
+        <CATCAfrList Name="AfrEXALEAD_AppsList"
+         Title ="EXALEAD"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+         
+        </CATCAfrList>
+         -->
+          <!--NETVIBES apps-->
+          <!--
+        <CATCAfrList Name="AfrNETVIBES_AppsList"
+         Title ="NETVIBES"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+         
+        </CATCAfrList>-->
+
+        </CATCAfrList>
+
+        <!-- V+R Apps (South)-->
+        <CATCAfrList Name="AfrSouthAppsMenu" syp:name="SouthList" Title="My V+R Apps" Visibility ="0" RepresentationType="GroupListApps">
+          <CATCAfrList syp:name="AfrFavouriteSouth_AppsList" Name="AfrFavouriteSouth_AppsList"
+                   Title ="My Favorite V+R Apps"
+                   Visibility ="1" ThumbnailsMode="Classic"
+                   RepresentationType="ListApps" ScrollableFlag="0"  ExpandedFlag="1">
+            <!--Add here the list of favourites apps-->
+          </CATCAfrList>
+          <CATCAfrList syp:name="AfrSouth_AppsList" Name="AfrSouth_AppsList"
+        Title ="My V+R Apps"
+        Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+        RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title">
+
+          </CATCAfrList>
+          <!-- Learn more about-->
+          <CATCAfrList Name="AfrSouthMoreAboutList"
+            Title ="Dassault Systemes Communities"
+            Visibility ="1" ThumbnailsMode="Classic"
+            RepresentationType="ListApps"  ScrollableFlag="0"  ExpandedFlag="1">
+            <!--<l_CATAfrApp Name="LearnMoreAboutDELMIA" Title="DELMIA" Tooltip="DELMIA www.delmia.com"
+                          Icon="Compass/Signature/Brands/DELMIA-64.png" LaunchInfos="http://www.delmia.com" />
+          <l_CATAfrApp Name="LearnMoreAboutSIMULIA" Title="SIMULIA"  Tooltip="SIMULIA www.simulia.com"
+                Icon="Compass/Signature/Brands/SIMULIA-64.png" LaunchInfos="http://www.simulia.com" />
+          <l_CATAfrApp Name="LearnMoreAbout3DVIA" Title="3DVIA" Tooltip="3DVIA www.3dvia.com"
+                Icon="Compass/Signature/Brands/3DVIA-64.png" LaunchInfos="http://www.3DVIA.com" />-->
+          </CATCAfrList>
+
+          <!--DELMIA apps-->
+          <!--
+        <CATCAfrList Name="AfrDELMIA_AppsList"
+         Title ="DELMIA"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+
+        </CATCAfrList>
+        -->
+          <!--SIMULIA apps-->
+          <!--
+        <CATCAfrList Name="AfrSIMULIA_AppsList"
+         Title ="SIMULIA"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+
+        </CATCAfrList>
+        -->
+          <!--3DVIA apps-->
+          <!--
+        <CATCAfrList Name="Afr3DVIA_AppsList"
+         Title ="3DVIA"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+
+        </CATCAfrList>-->
+
+        </CATCAfrList>
+
+        <!-- 3D Apps (West)-->
+        <CATCAfrList Name="AfrWestAppsMenu" syp:name="WestList" Title="My 3D Apps" Visibility ="0" RepresentationType="GroupListApps">
+          <CATCAfrList syp:name="AfrFavouriteWest_AppsList" Name="AfrFavouriteWest_AppsList"
+                   Title ="My Favorite 3D Apps"
+                   Visibility ="1" ThumbnailsMode="Classic"
+                   RepresentationType="ListApps"  ScrollableFlag="0"  ExpandedFlag="1">
+            <!--Add here the list of favourites apps-->
+          </CATCAfrList>
+          <!--CATIA apps-->
+          <!--
+        <CATCAfrList Name="AfrCATIA_AppsList"
+         Title ="CATIA"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+         
+        </CATCAfrList>
+         -->
+          <!--SOLIDWORKS apps-->
+          <!--
+        <CATCAfrList Name="AfrSOLIDWORKS_AppsList"
+         Title ="SOLIDWORKS"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+         
+        </CATCAfrList>
+        -->
+          <!--GEOVIA apps-->
+          <!--
+        <CATCAfrList Name="AfrGEOVIA_AppsList"
+         Title ="GEOVIA"
+         Visibility ="1" ThumbnailsMode="Classic"
+         RepresentationType="ListApps"  MaximumItemsVisible="5" SortFlag="1" SortPropertyName="Title">
+
+        </CATCAfrList>-->
+          <CATCAfrList syp:name="AfrWest_AppsList" Name="AfrWest_AppsList"
+          Title ="My 3D Apps"
+          Visibility ="1" ThumbnailsMode="Classic" ExpandedFlag="1"
+          RepresentationType="ListApps"  ScrollableFlag="0" SortFlag="2" SortPropertyName="Title">
+
+          </CATCAfrList>
+          <!-- Learn more about-->
+          <CATCAfrList Name="AfrWestMoreAboutList"
+            Title ="Dassault Systemes Communities"
+            Visibility ="1" ThumbnailsMode="Classic"
+            RepresentationType="ListApps"  ScrollableFlag="0"  ExpandedFlag="1">
+            <!--<l_CATAfrApp Name="LearnMoreAboutCATIA" Title="CATIA" Tooltip="CATIA www.catia.com"
+                          Icon="Compass/Signature/Brands/CATIA-64.png" LaunchInfos="http://www.catia.com" />
+          <l_CATAfrApp Name="LearnMoreAboutSOLIDWORKS" Title="SOLIDWORKS"  Tooltip="SOLIDWORKS www.solidworks.com"
+                Icon="Compass/Signature/Brands/SOLIDWORKS-64.png" LaunchInfos="http://www.solidworks.com" />
+          <l_CATAfrApp Name="LearnMoreAboutGEOVIA" Title="GEOVIA"  Tooltip="GEOVIA www.geovia.com"
+                Icon="Compass/Signature/Brands/GEOVIA-64.png" LaunchInfos="http://www.GEOVIA.com" />-->
+          </CATCAfrList>
+
+        </CATCAfrList>
+        <!-- Play Experiences (Play)-->
+        <CATCAfrList Name="AfrPlayAppsMenu" syp:name="PlayList"  Visibility ="0" RepresentationType="GroupListApps">
+          <CATCAfrList Name="AfrPlayExperiencesList"  Title="Play Experiences" Visibility ="1" RepresentationType="ListApps" ExpandedFlag="1" ScrollableFlag="0" />
+          <CATCAfrList Name="AfrSuggestedExperiencesList"  Title="Suggested Experiences" Visibility ="1" RepresentationType="ListApps"/>
+        </CATCAfrList>
+      </CATCAfrPanelApps>
+      <CATSYPTriggerCollection>
+        <CATSYPTrigger Property="AfrComponentChange" Value="NorthActivated">
+          <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="1"/>
+          <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="AfrComponentChange" Value="EastActivated">
+          <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="EastList" Value="1"/>
+          <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="AfrComponentChange" Value="SouthActivated">
+          <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="1"/>
+          <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="AfrComponentChange" Value="WestActivated">
+          <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="WestList" Value="1"/>
+          <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="0"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="AfrComponentChange" Value="PlayActivated">
+          <CATSYPSetter Property="Visibility" TargetName="NorthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="EastList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="SouthList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="WestList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="PlayList" Value="1"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="AfrComponentChange" Value="IOS_Source">
+          <CATSYPSetter Property="Visibility" TargetName="AfrFavouriteNorth_AppsList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="AfrNorth_AppsList" Value="0"/>
+
+          <CATSYPSetter Property="Visibility" TargetName="AfrFavouriteEast_AppsList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="AfrEast_AppsList" Value="0"/>
+
+          <CATSYPSetter Property="Visibility" TargetName="AfrFavouriteSouth_AppsList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="AfrSouth_AppsList" Value="0"/>
+
+          <CATSYPSetter Property="Visibility" TargetName="AfrFavouriteWest_AppsList" Value="0"/>
+          <CATSYPSetter Property="Visibility" TargetName="AfrWest_AppsList" Value="0"/>
+
+        </CATSYPTrigger>
+      </CATSYPTriggerCollection>
+    </Template>
+
+
+    <!--======================================-->
+    <!--  Action Pad-->
+    <!--======================================-->
+    <Template syp:name="AfrActionPad" Target="CATAfrComponent">
+        <CATCAfrWindow Name               = "AfrActionPadCAfrWindow"
+                       syp:name           = "AfrActionPadCAfrWindow"
+                       ResizableFlag      = "1"
+                       VerticallyCompactFlag="0"
+                       Visibility         = "1"
+                       Orientation        = "Vertical"
+                       VerticallyStretchableFlag="0"
+                       HorizontallyStretchableFlag="0"
+                       AutoCloseFlag      ="0"
+                       ResourceFile       ="AfrActionPad"
+                       ModalFlag          = "0"
+                       RepresentationType = "AfrActionPadPanel"
+                       IconName           = "I_ActionPadShow"
+                       >
+                <CATCAfrToolbar Visibility="0" RepresentationType="AfrActionPadTopBar" RegisterFlag="0" syp:name="AfrActionPadTopBar" >
+                    <CATCmdStarter Command="ActionPadPin" RepresentationType="AfrActionPadTopBar" />
+                    <CATCmdStarter Command="ActionPadHideVolatile" RepresentationType="AfrActionPadTopBar" />
+                </CATCAfrToolbar>
+                <!-- IR-696814 - WARNING: The following item must be the second one of the list.
+				                          If you want to modify this, make sure to adapt the
+										  CATCAfrActionPadController::ComponentAction method
+										  (search for piAfrComponent->GetElements)
+				-->
+			    <CATCAfrToolbar  Visibility="0" RepresentationType="AfrActionPad" syp:name="AfrActionPadCustomizeToolbar" >
+                    <CATCAfrForm Visibility="1" RepresentationType="AfrActionPadSection" syp:name="CustomizeButton" Name="CustomizeSection">
+                        <CATCAfrToolbar Visibility="1" RepresentationType="AfrActionPadGroup" RegisterFlag="0"  >
+                            <CATCmdStarter Command="DragDropCustomizeActionPad" RepresentationType="AfrActionPadCustomize"  />
+                        </CATCAfrToolbar>
+                    </CATCAfrForm>
+                    <CATCAfrToolbar Visibility="0" RepresentationType="AfrActionPadGroupCustomize" syp:name="CustomizeGroup" Name="NewGroup"/>
+                </CATCAfrToolbar>
+        </CATCAfrWindow>
+        <CATSYPTriggerCollection>
+            <CATSYPTrigger    Property="Customizing" TargetName="AfrActionPadCustomizeToolbar"     Value="1">
+                <CATSYPSetter Property="Visibility"      TargetName="CustomizeButton" Value="0"/>
+                <CATSYPSetter Property="Visibility"      TargetName="CustomizeGroup" Value="1"/>
+            </CATSYPTrigger>
+            <CATSYPTrigger    Property="Customizing" TargetName="AfrActionPadCustomizeToolbar"     Value="0">
+                <CATSYPSetter Property="Visibility"      TargetName="CustomizeButton" Value="1"/>
+                <CATSYPSetter Property="Visibility"      TargetName="CustomizeGroup" Value="0"/>
+            </CATSYPTrigger>
+
+            <CATSYPTrigger    Property="ModalFlag" TargetName="AfrActionPadCAfrWindow"     Value="1">
+                <CATSYPSetter Property="Visibility"         TargetName="AfrActionPadTopBar" Value="1"/>
+                <CATSYPSetter Property="ContentVisibleFlag" TargetName="AfrActionPadCAfrWindow" Value="0"/>
+                <CATSYPSetter Property="RepresentationType" TargetName="AfrActionPadCAfrWindow" Value="AfrVIDVolatileActionPad"/>
+            </CATSYPTrigger>
+            <CATSYPTrigger    Property="ModalFlag" TargetName="AfrActionPadCAfrWindow"     Value="0">
+                <CATSYPSetter Property="Visibility"         TargetName="AfrActionPadTopBar" Value="0"/>
+                <CATSYPSetter Property="ContentVisibleFlag" TargetName="AfrActionPadCAfrWindow" Value="1"/>
+                <CATSYPSetter Property="RepresentationType" TargetName="AfrActionPadCAfrWindow" Value="AfrActionPadPanel"/>
+            </CATSYPTrigger>
+
+        </CATSYPTriggerCollection>
+    </Template>
+
+</Styles>

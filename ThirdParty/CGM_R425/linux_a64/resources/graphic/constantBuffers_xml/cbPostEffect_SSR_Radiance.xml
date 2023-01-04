@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_PostEffect_SSR_Radiance</NAME>
+
+  <UNIFORM>
+    <NAME>u_EyeMapMipsCount</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ZMapMipsCount</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ZMapPixelSize</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GGXNoiseRepeat</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>32</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_MaxRayCastCount</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>8</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_RayZBias</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.01</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_DepthDiscontinuity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.01</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_RayMarchingLowRes</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>4</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_RayMarchingPrecision</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_SceneRadiusRateFalloff</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0.8 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ScreenBorderRateFalloff</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0.9 0.9</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

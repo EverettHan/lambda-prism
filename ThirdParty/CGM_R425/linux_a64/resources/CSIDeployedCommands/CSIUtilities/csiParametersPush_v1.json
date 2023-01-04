@@ -1,0 +1,42 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "push a parameters into a parameters array",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "array",
+          "typeArray": "Parameters",
+          "desc": "The parameters array",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "param",
+          "type": "Parameters",
+          "desc": "The parameters to push into the array"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "result",
+          "typeArray": "Parameters",
+          "desc": "The array with the param push into"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

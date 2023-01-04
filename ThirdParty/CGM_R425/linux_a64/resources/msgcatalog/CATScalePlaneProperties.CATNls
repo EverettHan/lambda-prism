@@ -1,0 +1,60 @@
+<meta charset="UTF-8"/>
+//--------------------------------------
+// Resource file for CATScalePlaneProperties Class
+// En_EN
+//--------------------------------------
+Title="Scale Plane Properties";
+CancelButton.Title="Close";
+
+//--------------------------------------
+//  ScaleLabel
+//--------------------------------------
+mainFrame.ScaleLabel.Title="Scale: ";
+mainFrame.ScaleLabel.LongHelp = "Changes the scale of the scale plane.";
+mainFrame.ScaleEdit.LongHelp = "Changes the scale of the scale plane.
+The default value ('1') provides a real size display whereas '0.5' corresponds to a halfsize display.
+You can thus measure small objects by entering a scale factor greater than 1 as well as big objects
+by entering a scale factor lower than 1.";
+
+//--------------------------------------
+//  WidthLabel
+//--------------------------------------
+mainFrame.WidthLabel.Title="Width: ";
+mainFrame.WidthLabel.LongHelp = "Changes the width in millimeters of the scale plane.";
+mainFrame.WidthEdit.LongHelp = "Changes the width in millimeters of the scale plane.
+For instance, '200' means that the width is divided into 20 squares of 10 mm each.";
+
+//--------------------------------------
+//  LineWidthLabel
+//--------------------------------------
+mainFrame.LineWidthLabel.Title = "Vertical spacing: ";
+mainFrame.LineWidthLabel.LongHelp = "Changes the space in millimeters between vertical lines.";
+mainFrame.LineWidthEdit.LongHelp = "Changes the space in millimeters between vertical lines.
+If the value is not a multiple of the value set for Width or Height, the space
+between lines is approximated to give a round number (which may make it more
+difficult to measure directly on screen).";
+
+//--------------------------------------
+//  HeightLabel
+//--------------------------------------
+mainFrame.HeightLabel.Title="Height: ";
+mainFrame.HeightLabel.LongHelp = "Changes the height in millimeters of the scale plane.";
+mainFrame.HeightEdit.LongHelp = "Changes the height in millimeters of the scale plane.
+For instance, '100' means that the height is divided into 10 squares of 10 mm each.";
+
+//--------------------------------------
+//  LineHeightLabel
+//--------------------------------------
+mainFrame.LineHeightLabel.Title = "Horizontal spacing: ";
+mainFrame.LineHeightLabel.LongHelp = "Changes the space in millimeters between horizontal lines.";
+mainFrame.LineHeightEdit.LongHelp = "Changes the space in millimeters between horizontal lines.
+If the value is not a multiple of the value set for Width or Height, the space
+between lines is approximated to give a round number (which might make it more
+difficult to measure directly on screen).";
+
+//--------------------------------------
+//  ShowPlane
+//--------------------------------------
+mainFrame.ShowPlane.Title="Show the grid";
+mainFrame.ShowPlane.LongHelp = "Enable or disable the display of a grid used to measure items.
+It is recommended to display the grid when working in a conical projection (i.e. a perspective view).";

@@ -1,0 +1,1198 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template Target="CATAfrPLMCompassPlayTab" syp:name="SignatureEast" >
+    <CATVidLayLayer  syp:name="PlayerLayer" >
+
+      <CATVidLayLayer syp:name="MainLayer" >
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <CATVidLayLayer syp:name="Undef" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+              <CATVidGPSmartSquare syp:name="PlayTabBackgroundUndef" VisibleFlag="1"  GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.6 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+              </CATVidGPSmartSquare>
+
+              <CATVidLayGrid GridWeight=" col1=1" >
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+                <CATVidLayStack syp:name="UndefStack" CellBorder ="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                  <CATVidCtlButtonIcon Name="UndefBackButton" Tooltip="Back" syp:name="UndefBackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBack.png" OverTexture="Compass/Player/IF_CompassPlayerBack.png" OnTexture="Compass/Player/IP_CompassPlayerBack.png"  DisabledTexture="Compass/Player/IP_CompassPlayerBack.png"  Click="@HandleEventBack" />
+                  <CATVidCtlButtonIcon Name="UndefPauseButton" Tooltip="Pause" syp:name="UndefPauseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPause.png" OverTexture="Compass/Player/IF_CompassPlayerPause.png" OnTexture="Compass/Player/IP_CompassPlayerPause.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPause.png"  Click="@HandleEventPause" />
+                  <CATVidCtlButtonIcon Name="UndefPlayButton" Tooltip="Play" syp:name="UndefPlayButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlay.png" OverTexture="Compass/Player/IF_CompassPlayerPlay.png" OnTexture="Compass/Player/IP_CompassPlayerPlay.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPlay.png"  Click="@HandleEventPlay" />
+                  <CATVidCtlButtonIcon Name="UndefNextButton" Tooltip="Next" syp:name="UndefNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  DisabledTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                  <CATVidCtlEditor syp:name="UndefEditor"  Name="UndefEditor" LayoutWhenUnvisibleFlag="0" VisibleFlag="@EditorVisibleFlag" MultilineFlag="0" DataType="0" Line="@StringValue Mode=TwoWays" RequestedMinimumDimension="100 16" ReadOnlyFlag="0" />
+                  <!--<CATVidCtlButtonIcon Name="UndefOptionsButton" Tooltip="Options" syp:name="UndefOptionsButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerOptions.png" OverTexture="Compass/Player/IF_CompassPlayerOptions.png" OnTexture="Compass/Player/IP_CompassPlayerOptions.png" Click="@HandleEventOptions" />-->
+                  <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" OnTexture="AfrToolbarButtonArrow.png" Click="@DebugEvent" />
+                </CATVidLayStack>
+
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R" RequestedMinimumDimension="5 5"/>
+
+                <CATVidLayGrid GridWeight="row0=1 col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLT" >
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                  <CATVidLayLayer syp:name="UndefSliderLayer" Name="UndefSliderLayer" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                    <CATVidCtlSlider syp:name="UndefSlider" Name="UndefSlider" syp:Template="PlayerSlider"
+                    Orientation="Horizontal" Value="@PercentValue Mode=TwoWays" MinimumValue="0" MaximumValue="100"/>
+                    <CATVidGPSquare syp:name="UndefNoPicklayer"
+                      Name="UndefNoPicklayer" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1"
+                       VisibleFlag="@SliderInNoPick"/>
+                  </CATVidLayLayer>
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                </CATVidLayGrid>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+            <!-- Animation Layer -->
+            <CATVidLayLayer syp:name="Animation" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+
+
+              <CATVidGPSmartSquare syp:name="PlayTabBackgroundAnim"    GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.1 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+              </CATVidGPSmartSquare>
+
+              <CATVidLayGrid GridWeight=" col1=1" >
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+
+                <CATVidLayStack syp:name="AnimationStack" CellBorder="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                  <CATVidCtlButtonIcon Name="AnimationFirstButton" Tooltip="First" syp:name="AnimationFirstButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerFirst.png" OverTexture="Compass/Player/IF_CompassPlayerFirst.png" OnTexture="Compass/Player/IP_CompassPlayerFirst.png"  Click="@HandleEventFirst" />
+                  <CATVidCtlButtonIcon Name="AnimationBackwardButton" Tooltip="Backward" syp:name="AnimationBackwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" OnTexture="Compass/Player/IP_CompassPlayerBackward.png" DisabledTexture="Compass/Player/IP_CompassPlayerBackward.png" Click="@HandleEventBackward"  Entry="@HandleEventCtx" />
+                  <!--<CATVidCtlButton Name="AnimationBackwardButton" syp:name="AnimationBackwardButton" Label="Backward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" OnTexture="Compass/Player/IP_CompassPlayerBackward.png" Tooltip="Backward" Click="@HandleEventBackward" Entry="@HandleEventCtx" />-->
+                  <CATVidCtlButtonIcon Name="AnimationBackButton" Tooltip="Back" syp:name="AnimationBackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBack.png" OverTexture="Compass/Player/IF_CompassPlayerBack.png" OnTexture="Compass/Player/IP_CompassPlayerBack.png"  DisabledTexture="Compass/Player/IP_CompassPlayerBack.png"  Click="@HandleEventBack" Entry="@HandleEventCtx" />
+                  <CATVidCtlButtonIcon Name="AnimationPlayReverseButton" Tooltip="Play reverse" syp:name="AnimationPlayReverseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlayReverse.png" OverTexture="Compass/Player/IF_CompassPlayerPlayReverse.png" OnTexture="Compass/Player/IP_CompassPlayerPlayReverse.png" DisabledTexture="Compass/Player/IP_CompassPlayerPlayReverse.png" Click="@HandleEventPlayReverse" />
+                  <CATVidCtlButtonIcon Name="AnimationPauseButton" Tooltip="Pause" syp:name="AnimationPauseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPause.png" OverTexture="Compass/Player/IF_CompassPlayerPause.png" OnTexture="Compass/Player/IP_CompassPlayerPause.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPause.png"  Click="@HandleEventPause" />
+                  <CATVidCtlButtonIcon Name="AnimationPlayButton"  syp:name="AnimationPlayButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlay.png" OverTexture="Compass/Player/IF_CompassPlayerPlay.png" OnTexture="Compass/Player/IP_CompassPlayerPlay.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPlay.png"  Click="@HandleEventPlay" />
+                  <CATVidCtlButtonIcon Name="AnimationNextButton" Tooltip="Next" syp:name="AnimationNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  DisabledTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                  <CATVidCtlButtonIcon Name="AnimationForwardButton" Tooltip="Forward" syp:name="AnimationForwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" OnTexture="Compass/Player/IP_CompassPlayerForward.png"  DisabledTexture="Compass/Player/IP_CompassPlayerForward.png"  Click="@HandleEventForward" Entry="@HandleEventCtx" />
+                  <!--<CATVidCtlButton Name="AnimationForwardButton" syp:name="AnimationForwardButton" Label="Forward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" OnTexture="Compass/Player/IP_CompassPlayerForward.png" Tooltip="Forward" Click="@HandleEventForward" Entry="@HandleEventCtx" />-->
+                  <CATVidCtlButtonIcon Name="AnimationLastButton" Tooltip="Last" syp:name="AnimationLastButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerLast.png" OverTexture="Compass/Player/IF_CompassPlayerLast.png" OnTexture="Compass/Player/IP_CompassPlayerLast.png"  DisabledTexture="Compass/Player/IP_CompassPlayerLast.png"  Click="@HandleEventLast" />
+                  <CATVidCtlEditor syp:name="AnimationEditor"  Name="AnimationEditor" DataType="0" MultilineFlag="0" Line="@StringValue Mode=TwoWays" RequestedMinimumDimension="100 16" ReadOnlyFlag="0" WordWrapFlag="1" />
+                  <CATVidLayLayer>
+                    <CATVidCtlButtonIcon Name="AnimationLoopRunOnceButton" Tooltip="Loop" syp:name="AnimationLoopRunOnceButton" syp:Template="ColorizedIcon"
+                                         ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                         OffTexture="Compass/Player/I_CompassPlayerLoopRunOnce.png"
+                                         OverTexture="Compass/Player/IF_CompassPlayerLoopRunOnce.png"
+                                         OnTexture="Compass/Player/IP_CompassPlayerLoopRunOnce.png"
+                                         RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="1"/>
+                    <CATVidCtlButtonIcon Name="AnimationLoopRunContinuouslyButton" Tooltip="Loop" syp:name="AnimationLoopRunContinuouslyButton" syp:Template="ColorizedIcon"
+                                         ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                         OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuously.png"
+                                         OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuously.png"
+                                         OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuously.png"
+                                         RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+                    <CATVidCtlButtonIcon Name="AnimationLoopRunContinuouslyBackAndForthButton" Tooltip="Loop" syp:name="AnimationLoopRunContinuouslyBackAndForthButton" syp:Template="ColorizedIcon"
+                                         ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                         OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                         OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                         OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                         RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+                  </CATVidLayLayer>
+                  <CATVidCtlButtonIcon Name="AnimationOptionsButton" Tooltip="Options" syp:name="AnimationOptionsButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerOptions.png" OverTexture="Compass/Player/IF_CompassPlayerOptions.png" OnTexture="Compass/Player/IP_CompassPlayerOptions.png"  DisabledTexture="Compass/Player/IP_CompassPlayerOptions.png"  Click="@HandleEventOptions" />
+                  <!--<CATVidCtlButtonIcon Name="AnimationStackButton" syp:name="AnimationStackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerStack.png" OverTexture="Compass/Player/IF_CompassPlayerStack.png" OnTexture="Compass/Player/IP_CompassPlayerStack.png"  Click="@HandleEventStack" />-->
+                  <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" OnTexture="AfrToolbarButtonArrow.png" Click="@DebugEvent" />
+                </CATVidLayStack>
+
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR" RequestedMinimumDimension="5 5"/>
+
+                <CATVidLayGrid GridWeight="row0=1 col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLT" >
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                  <CATVidLayLayer syp:name="AnimationSliderLayer" Name="AnimationSliderLayer" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                    <CATVidCtlSlider syp:name="AnimationSlider" Name="AnimationSlider" syp:Template="PlayerSlider"
+                    Orientation="Horizontal" Value="@PercentValue Mode=TwoWays" MinimumValue="0" MaximumValue="100"/>
+                    <CATVidGPSquare syp:name="AnimationNoPicklayer"
+                    Name="AnimationNoPicklayer" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1"
+                     VisibleFlag="@SliderInNoPick"/>
+                  </CATVidLayLayer>
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                </CATVidLayGrid>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+            <!-- Program Layer -->
+            <CATVidLayLayer syp:name="Program"  LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+              <CATVidGPSmartSquare syp:name="PlayTabBackgroundProgram"    GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.1 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+              </CATVidGPSmartSquare>
+
+              <CATVidLayGrid GridWeight="row0=1 col1=1"  >
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+                <CATVidLayStack syp:name="ProgramStack" CellBorder="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB">
+                  <CATVidCtlButtonIcon Name="ProgramStopButton" Tooltip="Stop" syp:name="ProgramStopButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255"  CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerStop.png" OverTexture="Compass/Player/IF_CompassPlayerStop.png" OnTexture="Compass/Player/IP_CompassPlayerStop.png"  DisabledTexture="Compass/Player/IP_CompassPlayerStop.png"  Click="@HandleEventStop" />
+                  <CATVidCtlButtonIcon Name="ProgramPauseButton" Tooltip="Pause" syp:name="ProgramPauseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPause.png" OverTexture="Compass/Player/IF_CompassPlayerPause.png" OnTexture="Compass/Player/IP_CompassPlayerPause.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPause.png"  Click="@HandleEventPause" />
+                  <CATVidCtlButtonIcon Name="ProgramPlayButton" Tooltip="Play" syp:name="ProgramPlayButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlay.png" OverTexture="Compass/Player/IF_CompassPlayerPlay.png" OnTexture="Compass/Player/IP_CompassPlayerPlay.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPlay.png"  Click="@HandleEventPlay" />
+                  <CATVidCtlButtonIcon Name="ProgramBackwardButton" Tooltip="Backward" syp:name="ProgramBackwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" OnTexture="Compass/Player/IP_CompassPlayerBackward.png"  DisabledTexture="Compass/Player/IP_CompassPlayerBackward.png"  Click="@HandleEventBackward" Entry="@HandleEventCtx" />
+                  <!--<CATVidCtlButton Name="ProgramBackwardButton" syp:name="ProgramBackwardButton" Label="Backward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" DisabledTexture="Compass/Player/IP_CompassPlayerBackward.png" TooltipOnTexture="Compass/Player/IP_CompassPlayerBackward.png" Tooltip="Backward" Click="@HandleEventBackward" Entry="@HandleEventCtx" />-->
+                  <CATVidCtlButtonIcon Name="ProgramForwardButton" Tooltip="Forward" syp:name="ProgramForwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" OnTexture="Compass/Player/IP_CompassPlayerForward.png"  DisabledTexture="Compass/Player/IP_CompassPlayerForward.png"  Click="@HandleEventForward" Entry="@HandleEventCtx" />
+                  <!--<CATVidCtlButton Name="ProgramForwardButton" syp:name="ProgramForwardButton" Label="Forward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" DisabledTexture="Compass/Player/IP_CompassPlayerForward.png" TooltipOnTexture="Compass/Player/IP_CompassPlayerForward.png" Tooltip="Forward" Click="@HandleEventForward" Entry="@HandleEventCtx" />-->
+                  <CATVidCtlButtonIcon Name="ProgramNextButton" Tooltip="Next" syp:name="ProgramNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  DisabledTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                  <CATVidCtlButtonIcon Name="ProgramEmptyButton"  syp:name="ProgramEmptyButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerEmpty.png"  />
+
+                  <CATVidCtlEditor syp:name="ProgramEditor" Name="ProgramEditor"  DataType="0" MultilineFlag="0" Line="@StringValue Mode=TwoWays" RequestedMinimumDimension="100 16" ReadOnlyFlag="0" />
+                  <CATVidCtlButtonIcon Name="ProgramOptionsButton" Tooltip="Options" syp:name="ProgramOptionsButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerOptions.png" OverTexture="Compass/Player/IF_CompassPlayerOptions.png" OnTexture="Compass/Player/IP_CompassPlayerOptions.png"  DisabledTexture="Compass/Player/IP_CompassPlayerOptions.png"  Click="@HandleEventOptions" />
+                  <!--<CATVidCtlButtonIcon Name="ProgramStackButton" syp:name="ProgramStackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerStack.png" OverTexture="Compass/Player/IF_CompassPlayerStack.png" DisabledTexture="Compass/Player/IP_CompassPlayerStack.png"  ClickOnTexture="Compass/Player/IP_CompassPlayerStack.png"  Click="@HandleEventStack" />-->
+                  <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" DisabledTexture="AfrToolbarButtonArrow.png"  Click="@DebugEvent" />
+                </CATVidLayStack>
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R" RequestedMinimumDimension="5 5"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+            <!-- TimeMachine Layer -->
+            <CATVidLayLayer syp:name="TimeMachine" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+              <CATVidLayGrid>
+                <CATVidLayStack syp:name="TimeMachineStack" CellBorder="4" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+                  <CATVidLayLayer>
+                    <CATVidCtlButtonIcon Name="TimeMachineLoopRunOnceButton" Tooltip="Loop" syp:name="TimeMachineLoopRunOnceButton" syp:Template="ColorizedIcon"
+                                         ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                         OffTexture="Compass/Player/I_CompassPlayerLoopRunOnce.png"
+                                         OverTexture="Compass/Player/IF_CompassPlayerLoopRunOnce.png"
+                                         OnTexture="Compass/Player/IP_CompassPlayerLoopRunOnce.png"
+                                         RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="1"/>
+                    <CATVidCtlButtonIcon Name="TimeMachineLoopRunContinuouslyButton" Tooltip="Loop" syp:name="TimeMachineLoopRunContinuouslyButton" syp:Template="ColorizedIcon"
+                                         ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                         OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuously.png"
+                                         OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuously.png"
+                                         OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuously.png"
+                                         RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+                    <CATVidCtlButtonIcon Name="TimeMachineLoopRunContinuouslyBackAndForthButton" Tooltip="Loop" syp:name="TimeMachineLoopRunContinuouslyBackAndForthButton" syp:Template="ColorizedIcon"
+                                         ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                         OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                         OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                         OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                         RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+                  </CATVidLayLayer>
+                  <!--<CATVidCtlButtonIcon Name="TimeMachineLoopButton" syp:name="TimeMachineLoopButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" Click="@HandleEventLoop" />-->
+                  <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" OnTexture="AfrToolbarButtonArrow.png" Click="@DebugEvent" />
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R" RequestedMinimumDimension="15 5"/>
+
+                </CATVidLayStack>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+            <!-- For anchored position Layer -->
+            <CATVidLayLayer syp:name="AnchoredPlayer" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+              <CATVidLayGrid GridWeight="row0=1 row2=1 col1=1">
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"  />
+                <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+                  <CATVidGPSmartSquare syp:name="PlayTabBackgroundAnchoredPlayer"   GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.1 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+                    <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+                    <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+                  </CATVidGPSmartSquare>
+                  <CATVidLayGrid GridWeight=" col1=1"  >
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+
+                    <CATVidLayStack  syp:name="AnchoredStack" CellBorder="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                      <CATVidCtlButtonIcon Name="AnchoredPlayerFirstButton" Tooltip="First" syp:name="AnchoredPlayerFirstButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerFirst.png" OverTexture="Compass/Player/IF_CompassPlayerFirst.png" OnTexture="Compass/Player/IP_CompassPlayerFirst.png"  Click="@HandleEventFirst" />
+                      <CATVidCtlButtonIcon Name="AnchoredPlayerBackButton" Tooltip="Back" syp:name="AnchoredPlayerBackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBack.png" OverTexture="Compass/Player/IF_CompassPlayerBack.png" OnTexture="Compass/Player/IP_CompassPlayerBack.png"  Entry="@HandleEventCtx" />
+                      <CATVidCtlButtonIcon Name="AnchoredPlayerNextButton" Tooltip="Next" syp:name="AnchoredPlayerNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                      <CATVidCtlButtonIcon Name="AnchoredPlayerLastButton" Tooltip="Last" syp:name="AnchoredPlayerLastButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerLast.png" OverTexture="Compass/Player/IF_CompassPlayerLast.png" OnTexture="Compass/Player/IP_CompassPlayerLast.png"  Click="@HandleEventLast" />
+                    </CATVidLayStack>
+
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR" RequestedMinimumDimension="5 5"/>
+
+                    <CATVidLayGrid GridWeight="row0=1 col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLT" >
+                      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                      <CATVidLayLayer syp:name="AnchoredPlayerSliderLayer" Name="AnchoredPlayerSliderLayer" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                        <CATVidCtlSlider syp:name="AnchoredPlayerSlider" Name="AnchoredPlayerSlider" syp:Template="PlayerSlider"
+                        Orientation="Horizontal" Value="@PercentValue Mode=TwoWays" MinimumValue="0" MaximumValue="100"/>
+                        <CATVidGPSquare syp:name="AnchoredPlayerNoPicklayer"
+                        Name="AnchoredPlayerNoPicklayer" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1"
+                         VisibleFlag="@SliderInNoPick"/>
+                      </CATVidLayLayer>
+                      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                    </CATVidLayGrid>
+                  </CATVidLayGrid>
+                </CATVidLayLayer>
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"  />
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"  />
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+
+          </CATVidLayLayer>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!--<CATVidLayGrid GridWeight="row0=1" >
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" syp:name="PlayerLayouting">-->
+        <!-- Undef Layer -->
+
+
+
+        <!--</CATVidLayLayer>
+      </CATVidLayGrid >-->
+      </CATVidLayLayer>
+    </CATVidLayLayer>
+
+
+    <CATSYPTriggerCollection>
+
+      <!-- Position management -->
+      <CATSYPTrigger Property="Position" Value="Docked">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="1"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Position" Value="Anchored">
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="1"/>
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <!-- Mode Selection -->
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleUndef">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleAnimation">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleProgram">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleTimeMachine">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="1"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="1"/>
+      </CATSYPTrigger>
+
+      <!-- Special cases -->
+
+      <CATSYPTrigger Property="Command" Value="NoCommand">
+
+        <!-- enable button to prevent to click them when its pressed-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="1"/>
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+        <!--Uncheck play button -->
+        <CATSYPSetter Property="CheckState" TargetName="UndefPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayReverseButton" Value="0"/>
+
+        <!--Uncheck pause button -->
+        <CATSYPSetter Property="CheckState" TargetName="UndefPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPauseButton" Value="0"/>
+
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Command" Value="Pause">
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationNextButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationForwardButton" Value="0"/>
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramBackwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramForwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramNextButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramEmptyButton" Value="1"/>
+
+        <!-- enable button to prevent to click them when its pressed-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="0"/>
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+
+        <CATSYPSetter Property="CheckState" TargetName="UndefPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="0"/>
+
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayReverseButton" Value="0"/>
+
+
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Command" Value="Stop">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramBackwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramForwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramNextButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramEmptyButton" Value="1"/>
+
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPauseButton" Value="0"/>
+
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Command" Value="Play">
+        <CATSYPSetter Property="CheckState" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="1"/>
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationNextButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationForwardButton" Value="1"/>
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramBackwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramForwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramNextButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramEmptyButton" Value="0"/>
+
+        <!-- enable button to prevent to click them when its pressed-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="0"/>
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="1"/>
+
+
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+        <!--<CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayReverseButton" Value="1"/>-->
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+
+        <CATSYPSetter Property="CheckState" TargetName="UndefPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPauseButton" Value="0"/>
+
+
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayReverseButton" Value="0"/>
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramPlayReverseButton" Value="0"/>-->
+
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Command" Value="PlayReverse">
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationNextButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationForwardButton" Value="1"/>
+
+        <CATSYPSetter Property="CheckState" TargetName="UndefPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPauseButton" Value="0"/>
+
+
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="0"/>
+
+
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+
+
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="1"/>
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+
+      </CATSYPTrigger>
+
+
+      <CATSYPTrigger Property="SliderHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefSliderLayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SliderHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefSliderLayer" Value="1"/>
+      </CATSYPTrigger>
+
+      <!--<CATSYPTrigger Property="SliderParametersHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefEditor" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SliderParametersHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefEditor" Value="1"/>
+      </CATSYPTrigger>-->
+      <!--
+      <CATSYPTrigger Property="BackwardButtonHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefFirstButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="BackwardButtonHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefFirstButton" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="ForwardButtonHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefLastButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ForwardHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefLastButton" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="MiniPlayerHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefMiniPlayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="MiniPlayerHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefMiniPlayer" Value="1"/>
+      </CATSYPTrigger>
+-->
+      <CATSYPTrigger Property="Loop" Value="CATPLMCompassMaxiPlayerLoopRunOnce">
+        <CATSYPSetter TargetName="AnimationLoopRunOnceButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>
+
+        <CATSYPSetter TargetName="TimeMachineLoopRunOnceButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Loop" Value="CATPLMCompassMaxiPlayerLoopRunContinuously">
+        <CATSYPSetter TargetName="AnimationLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>
+
+        <CATSYPSetter TargetName="TimeMachineLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Loop" Value="CATPLMCompassMaxiPlayerLoopRunContinuouslyBackAndForth">
+        <CATSYPSetter TargetName="AnimationLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="1"/>
+
+        <CATSYPSetter TargetName="TimeMachineLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>
+
+      <!-- Change Position (Anchored) -->
+      <CATSYPTrigger Property="VisibleBackground" Value="1">
+        <CATSYPSetter TargetName="PlayTabBackgroundUndef" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnim" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundProgram" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnchoredPlayer" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundUndef" Property="ColorizeBlackPixelTo" Value="0.3 255"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnim" Property="ColorizeBlackPixelTo" Value="0.3 255"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundProgram" Property="ColorizeBlackPixelTo" Value="0.3 255"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnchoredPlayer" Property="ColorizeBlackPixelTo" Value="0.3 255"/>
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisibleBackground" Value="0">
+        <CATSYPSetter TargetName="PlayTabBackgroundUndef" Property="TextureAlpha" Value="10"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnim" Property="TextureAlpha" Value="10"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundProgram" Property="TextureAlpha" Value="10"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnchoredPlayer" Property="TextureAlpha" Value="10"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="MobileSourceFlag" Value="1">
+        <CATSYPSetter TargetName="UndefStack" Property="CellBorder" Value="20"/>
+        <CATSYPSetter TargetName="AnimationStack" Property="CellBorder" Value="20"/>
+        <CATSYPSetter TargetName="ProgramStack" Property="CellBorder" Value="20"/>
+        <CATSYPSetter TargetName="AnchoredStack" Property="CellBorder" Value="20"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="PlayerOnlyDesignFlag" Value="1">
+        <CATSYPSetter TargetName="PlayerLayer" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>-->
+    </CATSYPTriggerCollection>
+  </Template>
+  <Template Target="CATAfrPLMCompassPlayTab" syp:name="Default" >
+    <CATVidLayLayer  syp:name="PlayerLayer" RequestedMinimumDimension="@RequestedEastDimension">        
+      <CATVidCtlXRect syp:name="HandleCompassLegends" syp:Template="HandleCompass" FocusableFlag="0" Color="0 0 0 0" MenuContextualItems="@HideShowItems Mode=OneWayToSource"/>
+        <CATVidLayGrid syp:name="ShowPlayerInfo" VisibleFlag="0">
+          <CATVidCtlButton syp:name="HyperLinkShowInfo" syp:Template="CompassHyperLinkText" FocusableFlag="0" CursorShape="NorthHandCursor" Label="@ShowPlayerInfo" Click="@HandleEventHideShow" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+        </CATVidLayGrid>
+      <CATVidLayLayer syp:name="MainLayer" >
+        <!--<CATVidLayGrid GridWeight="row0=1" >
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" syp:name="PlayerLayouting">-->
+        <!-- Undef Layer -->
+
+        <CATVidLayLayer syp:name="Undef" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+          <CATVidLayGrid GridWeight="row0=1 col0=1" >
+
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="1 0" />
+
+            <CATVidGPSmartSquare syp:name="PlayTabBackgroundUndef" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"  GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.6 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+
+            <CATVidLayGrid GridWeight=" col1=1"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" >
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+              <CATVidLayStack  syp:name="UndefStack" CellBorder="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                <CATVidCtlButtonIcon Name="UndefBackButton" Tooltip="Back" syp:name="UndefBackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBack.png" OverTexture="Compass/Player/IF_CompassPlayerBack.png" OnTexture="Compass/Player/IP_CompassPlayerBack.png"  DisabledTexture="Compass/Player/IP_CompassPlayerBack.png"  Click="@HandleEventBack" />
+                <CATVidCtlButtonIcon Name="UndefPauseButton" Tooltip="Pause" syp:name="UndefPauseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPause.png" OverTexture="Compass/Player/IF_CompassPlayerPause.png" OnTexture="Compass/Player/IP_CompassPlayerPause.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPause.png"  Click="@HandleEventPause" />
+                <CATVidCtlButtonIcon Name="UndefPlayButton" Tooltip="Play" syp:name="UndefPlayButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlay.png" OverTexture="Compass/Player/IF_CompassPlayerPlay.png" OnTexture="Compass/Player/IP_CompassPlayerPlay.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPlay.png"  Click="@HandleEventPlay" />
+                <CATVidCtlButtonIcon Name="UndefNextButton" Tooltip="Next" syp:name="UndefNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  DisabledTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                <CATVidCtlEditor syp:name="UndefEditor"  Name="UndefEditor" LayoutWhenUnvisibleFlag="0" VisibleFlag="@EditorVisibleFlag" MultilineFlag="0" DataType="0" Line="@StringValue Mode=TwoWays" RequestedMinimumDimension="100 16" ReadOnlyFlag="0" />
+                <!--<CATVidCtlButtonIcon Name="UndefOptionsButton" Tooltip="Options" syp:name="UndefOptionsButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerOptions.png" OverTexture="Compass/Player/IF_CompassPlayerOptions.png" OnTexture="Compass/Player/IP_CompassPlayerOptions.png" Click="@HandleEventOptions" />-->
+                <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" OnTexture="AfrToolbarButtonArrow.png" Click="@DebugEvent" />
+              </CATVidLayStack>
+
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R" RequestedMinimumDimension="5 5"/>
+
+              <CATVidLayGrid GridWeight="row0=1 col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLT" >
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                <CATVidLayLayer syp:name="UndefSliderLayer" Name="UndefSliderLayer" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                  <CATVidCtlSlider syp:name="UndefSlider" Name="UndefSlider" syp:Template="PlayerSlider"
+                  Orientation="Horizontal" Value="@PercentValue Mode=TwoWays" MinimumValue="0" MaximumValue="100"/>
+                  <CATVidGPSquare syp:name="UndefNoPicklayer"
+                    Name="UndefNoPicklayer" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1"
+                     VisibleFlag="@SliderInNoPick"/>
+                </CATVidLayLayer>
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+              </CATVidLayGrid>
+            </CATVidLayGrid>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" RequestedMinimumDimension="1 19" />
+            <!--<CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="1 0" />-->
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+        <!-- Animation Layer -->
+        <CATVidLayLayer syp:name="Animation" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+          <CATVidLayGrid  GridWeight="row0=1 col0=1" >
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="1 1" />
+
+            <CATVidGPSmartSquare syp:name="PlayTabBackgroundAnim"   CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"  GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.1 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+
+            <CATVidLayGrid GridWeight=" col1=1"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" >
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+
+              <CATVidLayStack syp:name="AnimationStack" CellBorder="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                <CATVidCtlButtonIcon Name="AnimationFirstButton" Tooltip="First" syp:name="AnimationFirstButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerFirst.png" OverTexture="Compass/Player/IF_CompassPlayerFirst.png" OnTexture="Compass/Player/IP_CompassPlayerFirst.png"  Click="@HandleEventFirst" />
+                <CATVidCtlButtonIcon Name="AnimationBackwardButton" Tooltip="Backward" syp:name="AnimationBackwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" OnTexture="Compass/Player/IP_CompassPlayerBackward.png" DisabledTexture="Compass/Player/IP_CompassPlayerBackward.png" Click="@HandleEventBackward"  Entry="@HandleEventCtx" />
+                <!--<CATVidCtlButton Name="AnimationBackwardButton" syp:name="AnimationBackwardButton" Label="Backward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" OnTexture="Compass/Player/IP_CompassPlayerBackward.png" Tooltip="Backward" Click="@HandleEventBackward" Entry="@HandleEventCtx" />-->
+                <CATVidCtlButtonIcon Name="AnimationBackButton" Tooltip="Back" syp:name="AnimationBackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBack.png" OverTexture="Compass/Player/IF_CompassPlayerBack.png" OnTexture="Compass/Player/IP_CompassPlayerBack.png"  DisabledTexture="Compass/Player/IP_CompassPlayerBack.png"  Click="@HandleEventBack" Entry="@HandleEventCtx" />
+                <CATVidCtlButtonIcon Name="AnimationPlayReverseButton" Tooltip="Play reverse" syp:name="AnimationPlayReverseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlayReverse.png" OverTexture="Compass/Player/IF_CompassPlayerPlayReverse.png" OnTexture="Compass/Player/IP_CompassPlayerPlayReverse.png" DisabledTexture="Compass/Player/IP_CompassPlayerPlayReverse.png" Click="@HandleEventPlayReverse" />
+                <CATVidCtlButtonIcon Name="AnimationPauseButton" Tooltip="Pause" syp:name="AnimationPauseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPause.png" OverTexture="Compass/Player/IF_CompassPlayerPause.png" OnTexture="Compass/Player/IP_CompassPlayerPause.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPause.png"  Click="@HandleEventPause" />
+                <CATVidCtlButtonIcon Name="AnimationPlayButton"  syp:name="AnimationPlayButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlay.png" OverTexture="Compass/Player/IF_CompassPlayerPlay.png" OnTexture="Compass/Player/IP_CompassPlayerPlay.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPlay.png"  Click="@HandleEventPlay" />
+                <CATVidCtlButtonIcon Name="AnimationNextButton" Tooltip="Next" syp:name="AnimationNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  DisabledTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                <CATVidCtlButtonIcon Name="AnimationForwardButton" Tooltip="Forward" syp:name="AnimationForwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" OnTexture="Compass/Player/IP_CompassPlayerForward.png"  DisabledTexture="Compass/Player/IP_CompassPlayerForward.png"  Click="@HandleEventForward" Entry="@HandleEventCtx" />
+                <!--<CATVidCtlButton Name="AnimationForwardButton" syp:name="AnimationForwardButton" Label="Forward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" OnTexture="Compass/Player/IP_CompassPlayerForward.png" Tooltip="Forward" Click="@HandleEventForward" Entry="@HandleEventCtx" />-->
+                <CATVidCtlButtonIcon Name="AnimationLastButton" Tooltip="Last" syp:name="AnimationLastButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerLast.png" OverTexture="Compass/Player/IF_CompassPlayerLast.png" OnTexture="Compass/Player/IP_CompassPlayerLast.png"  DisabledTexture="Compass/Player/IP_CompassPlayerLast.png"  Click="@HandleEventLast" />
+                <CATVidCtlEditor syp:name="AnimationEditor"  Name="AnimationEditor" DataType="0" MultilineFlag="0" Line="@StringValue Mode=TwoWays" RequestedMinimumDimension="100 16" ReadOnlyFlag="0" WordWrapFlag="1" />
+                <CATVidLayLayer>
+                  <CATVidCtlButtonIcon Name="AnimationLoopRunOnceButton" Tooltip="Loop" syp:name="AnimationLoopRunOnceButton" syp:Template="ColorizedIcon"
+                                       ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                       OffTexture="Compass/Player/I_CompassPlayerLoopRunOnce.png"
+                                       OverTexture="Compass/Player/IF_CompassPlayerLoopRunOnce.png"
+                                       OnTexture="Compass/Player/IP_CompassPlayerLoopRunOnce.png"
+                                       RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="1"/>
+                  <CATVidCtlButtonIcon Name="AnimationLoopRunContinuouslyButton" Tooltip="Loop" syp:name="AnimationLoopRunContinuouslyButton" syp:Template="ColorizedIcon"
+                                       ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                       OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuously.png"
+                                       OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuously.png"
+                                       OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuously.png"
+                                       RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+                  <CATVidCtlButtonIcon Name="AnimationLoopRunContinuouslyBackAndForthButton" Tooltip="Loop" syp:name="AnimationLoopRunContinuouslyBackAndForthButton" syp:Template="ColorizedIcon"
+                                       ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                       OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                       OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                       OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                       RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+                </CATVidLayLayer>
+                <CATVidCtlButtonIcon Name="AnimationOptionsButton" Tooltip="Options" syp:name="AnimationOptionsButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerOptions.png" OverTexture="Compass/Player/IF_CompassPlayerOptions.png" OnTexture="Compass/Player/IP_CompassPlayerOptions.png"  DisabledTexture="Compass/Player/IP_CompassPlayerOptions.png"  Click="@HandleEventOptions" />
+                <!--<CATVidCtlButtonIcon Name="AnimationStackButton" syp:name="AnimationStackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerStack.png" OverTexture="Compass/Player/IF_CompassPlayerStack.png" OnTexture="Compass/Player/IP_CompassPlayerStack.png"  Click="@HandleEventStack" />-->
+                <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" OnTexture="AfrToolbarButtonArrow.png" Click="@DebugEvent" />
+              </CATVidLayStack>
+
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR" RequestedMinimumDimension="5 5"/>
+
+              <CATVidLayGrid GridWeight="row0=1 col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLT" >
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                <CATVidLayLayer syp:name="AnimationSliderLayer" Name="AnimationSliderLayer" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                  <CATVidCtlSlider syp:name="AnimationSlider" Name="AnimationSlider" syp:Template="PlayerSlider"
+                  Orientation="Horizontal" Value="@PercentValue Mode=TwoWays" MinimumValue="0" MaximumValue="100"/>
+                  <CATVidGPSquare syp:name="AnimationNoPicklayer"
+                  Name="AnimationNoPicklayer" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1"
+                   VisibleFlag="@SliderInNoPick"/>
+                </CATVidLayLayer>
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+              </CATVidLayGrid>
+            </CATVidLayGrid>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" RequestedMinimumDimension="1 19" />
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+        <!-- Program Layer -->
+        <CATVidLayLayer syp:name="Program"  LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+          <CATVidLayGrid GridWeight="row0=1 col1=1" >
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="1 1" />
+
+            <CATVidGPSmartSquare syp:name="PlayTabBackgroundProgram"   CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"  GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.1 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+
+            <CATVidLayGrid GridWeight="row0=1 col1=1"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LTB" >
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+              <CATVidLayStack CellBorder="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB">
+                <CATVidCtlButtonIcon Name="ProgramStopButton" Tooltip="Stop" syp:name="ProgramStopButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255"  CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerStop.png" OverTexture="Compass/Player/IF_CompassPlayerStop.png" OnTexture="Compass/Player/IP_CompassPlayerStop.png"  DisabledTexture="Compass/Player/IP_CompassPlayerStop.png"  Click="@HandleEventStop" />
+                <CATVidCtlButtonIcon Name="ProgramPauseButton" Tooltip="Pause" syp:name="ProgramPauseButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPause.png" OverTexture="Compass/Player/IF_CompassPlayerPause.png" OnTexture="Compass/Player/IP_CompassPlayerPause.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPause.png"  Click="@HandleEventPause" />
+                <CATVidCtlButtonIcon Name="ProgramPlayButton" Tooltip="Play" syp:name="ProgramPlayButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" CheckMode="1" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerPlay.png" OverTexture="Compass/Player/IF_CompassPlayerPlay.png" OnTexture="Compass/Player/IP_CompassPlayerPlay.png"  DisabledTexture="Compass/Player/IP_CompassPlayerPlay.png"  Click="@HandleEventPlay" />
+                <CATVidCtlButtonIcon Name="ProgramBackwardButton" Tooltip="Backward" syp:name="ProgramBackwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" OnTexture="Compass/Player/IP_CompassPlayerBackward.png"  DisabledTexture="Compass/Player/IP_CompassPlayerBackward.png"  Click="@HandleEventBackward" Entry="@HandleEventCtx" />
+                <!--<CATVidCtlButton Name="ProgramBackwardButton" syp:name="ProgramBackwardButton" Label="Backward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBackward.png" OverTexture="Compass/Player/IF_CompassPlayerBackward.png" DisabledTexture="Compass/Player/IP_CompassPlayerBackward.png" TooltipOnTexture="Compass/Player/IP_CompassPlayerBackward.png" Tooltip="Backward" Click="@HandleEventBackward" Entry="@HandleEventCtx" />-->
+                <CATVidCtlButtonIcon Name="ProgramForwardButton" Tooltip="Forward" syp:name="ProgramForwardButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" OnTexture="Compass/Player/IP_CompassPlayerForward.png"  DisabledTexture="Compass/Player/IP_CompassPlayerForward.png"  Click="@HandleEventForward" Entry="@HandleEventCtx" />
+                <!--<CATVidCtlButton Name="ProgramForwardButton" syp:name="ProgramForwardButton" Label="Forward" syp:Template="Button" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerForward.png" OverTexture="Compass/Player/IF_CompassPlayerForward.png" DisabledTexture="Compass/Player/IP_CompassPlayerForward.png" TooltipOnTexture="Compass/Player/IP_CompassPlayerForward.png" Tooltip="Forward" Click="@HandleEventForward" Entry="@HandleEventCtx" />-->
+                <CATVidCtlButtonIcon Name="ProgramNextButton" Tooltip="Next" syp:name="ProgramNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  DisabledTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                <CATVidCtlButtonIcon Name="ProgramEmptyButton"  syp:name="ProgramEmptyButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerEmpty.png"  />
+
+                <CATVidCtlEditor syp:name="ProgramEditor" Name="ProgramEditor"  DataType="0" MultilineFlag="0" Line="@StringValue Mode=TwoWays" RequestedMinimumDimension="100 16" ReadOnlyFlag="0" />
+                <CATVidCtlButtonIcon Name="ProgramOptionsButton" Tooltip="Options" syp:name="ProgramOptionsButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerOptions.png" OverTexture="Compass/Player/IF_CompassPlayerOptions.png" OnTexture="Compass/Player/IP_CompassPlayerOptions.png"  DisabledTexture="Compass/Player/IP_CompassPlayerOptions.png"  Click="@HandleEventOptions" />
+                <!--<CATVidCtlButtonIcon Name="ProgramStackButton" syp:name="ProgramStackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerStack.png" OverTexture="Compass/Player/IF_CompassPlayerStack.png" DisabledTexture="Compass/Player/IP_CompassPlayerStack.png"  ClickOnTexture="Compass/Player/IP_CompassPlayerStack.png"  Click="@HandleEventStack" />-->
+                <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" DisabledTexture="AfrToolbarButtonArrow.png"  Click="@DebugEvent" />
+              </CATVidLayStack>
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R" RequestedMinimumDimension="5 5"/>
+
+            </CATVidLayGrid>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RL" RequestedMinimumDimension="5 5" />
+
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=L" RequestedMinimumDimension="1 41" />
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+        <!-- TimeMachine Layer -->
+        <CATVidLayLayer syp:name="TimeMachine" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+          <CATVidLayGrid>
+            <CATVidLayStack CellBorder="4" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+              <CATVidLayLayer>
+                <CATVidCtlButtonIcon Name="TimeMachineLoopRunOnceButton" Tooltip="Loop" syp:name="TimeMachineLoopRunOnceButton" syp:Template="ColorizedIcon"
+                                     ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                     OffTexture="Compass/Player/I_CompassPlayerLoopRunOnce.png"
+                                     OverTexture="Compass/Player/IF_CompassPlayerLoopRunOnce.png"
+                                     OnTexture="Compass/Player/IP_CompassPlayerLoopRunOnce.png"
+                                     RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="1"/>
+                <CATVidCtlButtonIcon Name="TimeMachineLoopRunContinuouslyButton" Tooltip="Loop" syp:name="TimeMachineLoopRunContinuouslyButton" syp:Template="ColorizedIcon"
+                                     ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                     OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuously.png"
+                                     OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuously.png"
+                                     OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuously.png"
+                                     RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+                <CATVidCtlButtonIcon Name="TimeMachineLoopRunContinuouslyBackAndForthButton" Tooltip="Loop" syp:name="TimeMachineLoopRunContinuouslyBackAndForthButton" syp:Template="ColorizedIcon"
+                                     ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0"
+                                     OffTexture="Compass/Player/I_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                     OverTexture="Compass/Player/IF_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                     OnTexture="Compass/Player/IP_CompassPlayerLoopRunContinuouslyBackAndForth.png"
+                                     RequestedMinimumDimension="16 16"  Click="@HandleEventLoop" VisibleFlag="0"/>
+              </CATVidLayLayer>
+              <!--<CATVidCtlButtonIcon Name="TimeMachineLoopButton" syp:name="TimeMachineLoopButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" Click="@HandleEventLoop" />-->
+              <CATVidCtlButtonIcon syp:Template="ColorizedIcon" VisibleFlag="@VisibleDebug" ColorizeIconBlackPixelTo="0.8 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="8 8" OffTexture="AfrToolbarButtonArrow.png" OverTexture="AfrToolbarButtonArrow.png" OnTexture="AfrToolbarButtonArrow.png" Click="@DebugEvent" />
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R" RequestedMinimumDimension="15 5"/>
+
+            </CATVidLayStack>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+        <!-- For anchored position Layer -->
+        <CATVidLayLayer syp:name="AnchoredPlayer" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+          <CATVidLayGrid GridWeight="row0=1 row2=1 col1=1">
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"  />
+            <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidGPSmartSquare syp:name="PlayTabBackgroundAnchoredPlayer"   GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.1 255" TextureAlpha="125"  Texture="Compass/Player/CompassLegendBackground.png">
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+              </CATVidGPSmartSquare>
+              <CATVidLayGrid GridWeight=" col1=1"  >
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="5 5"/>
+
+                <CATVidLayStack CellBorder="5" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                  <CATVidCtlButtonIcon Name="AnchoredPlayerFirstButton" Tooltip="First" syp:name="AnchoredPlayerFirstButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerFirst.png" OverTexture="Compass/Player/IF_CompassPlayerFirst.png" OnTexture="Compass/Player/IP_CompassPlayerFirst.png"  Click="@HandleEventFirst" />
+                  <CATVidCtlButtonIcon Name="AnchoredPlayerBackButton" Tooltip="Back" syp:name="AnchoredPlayerBackButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerBack.png" OverTexture="Compass/Player/IF_CompassPlayerBack.png" OnTexture="Compass/Player/IP_CompassPlayerBack.png"  Entry="@HandleEventCtx" />
+                  <CATVidCtlButtonIcon Name="AnchoredPlayerNextButton" Tooltip="Next" syp:name="AnchoredPlayerNextButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerNext.png" OverTexture="Compass/Player/IF_CompassPlayerNext.png" OnTexture="Compass/Player/IP_CompassPlayerNext.png"  Click="@HandleEventNext" />
+                  <CATVidCtlButtonIcon Name="AnchoredPlayerLastButton" Tooltip="Last" syp:name="AnchoredPlayerLastButton" syp:Template="ColorizedIcon" ColorizeIconBlackPixelTo="0.99 255" LayoutWhenUnvisibleFlag="0" FocusableFlag="0" RequestedMinimumDimension="16 16" OffTexture="Compass/Player/I_CompassPlayerLast.png" OverTexture="Compass/Player/IF_CompassPlayerLast.png" OnTexture="Compass/Player/IP_CompassPlayerLast.png"  Click="@HandleEventLast" />
+                </CATVidLayStack>
+
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR" RequestedMinimumDimension="5 5"/>
+
+                <CATVidLayGrid GridWeight="row0=1 col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLT" >
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                  <CATVidLayLayer syp:name="AnchoredPlayerSliderLayer" Name="AnchoredPlayerSliderLayer" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                    <CATVidCtlSlider syp:name="AnchoredPlayerSlider" Name="AnchoredPlayerSlider" syp:Template="PlayerSlider"
+                    Orientation="Horizontal" Value="@PercentValue Mode=TwoWays" MinimumValue="0" MaximumValue="100"/>
+                    <CATVidGPSquare syp:name="AnchoredPlayerNoPicklayer"
+                    Name="AnchoredPlayerNoPicklayer" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1"
+                     VisibleFlag="@SliderInNoPick"/>
+                  </CATVidLayLayer>
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+                </CATVidLayGrid>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"  />
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"  />
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+
+
+        <!--</CATVidLayLayer>
+      </CATVidLayGrid >-->
+      </CATVidLayLayer>
+    </CATVidLayLayer>
+    
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleBackground" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShowPlayerInfo" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisibleBackground" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShowPlayerInfo" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableShowPlayerFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MainLayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableShowPlayerFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MainLayer" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableHidePlayerFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MainLayer" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableHidePlayerFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MainLayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="1"/>
+      </CATSYPTrigger>
+      <!-- Position management -->
+      <CATSYPTrigger Property="Position" Value="Docked">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="1"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Position" Value="Anchored">
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="1"/>
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <!-- Mode Selection -->
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleUndef">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleAnimation">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleProgram">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="1"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Style" Value="CATPLMCompassMaxiPlayerStyleTimeMachine">
+        <!--<CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TimeMachine" Value="1"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="Undef" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnchoredPlayer" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Animation" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Program" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TimeMachine" Value="1"/>
+      </CATSYPTrigger>
+
+      <!-- Special cases -->
+
+        <CATSYPTrigger Property="Command" Value="NoCommand">
+
+          <!-- enable button to prevent to click them when its pressed-->
+          <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="1"/>
+          <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+
+          <!-- active buttons previously enabled-->
+          <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+
+          <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+          <!--Uncheck play button -->
+        <CATSYPSetter Property="CheckState" TargetName="UndefPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayReverseButton" Value="0"/>
+
+          <!--Uncheck pause button -->
+          <CATSYPSetter Property="CheckState" TargetName="UndefPauseButton" Value="0"/>
+          <CATSYPSetter Property="CheckState" TargetName="AnimationPauseButton" Value="0"/>
+          <CATSYPSetter Property="CheckState" TargetName="ProgramPauseButton" Value="0"/>
+
+
+      </CATSYPTrigger>
+        <CATSYPTrigger Property="Command" Value="Pause">
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationNextButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationForwardButton" Value="0"/>
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramBackwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramForwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramNextButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramEmptyButton" Value="1"/>
+
+          <!-- enable button to prevent to click them when its pressed-->
+          <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="0"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="0"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="0"/>
+          <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+
+          <!-- active buttons previously enabled-->
+          <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+          <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+
+          <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+          
+        <CATSYPSetter Property="CheckState" TargetName="UndefPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="0"/>
+
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayReverseButton" Value="0"/>
+
+
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Command" Value="Stop">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramBackwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramForwardButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramNextButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramEmptyButton" Value="1"/>
+        
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>       
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPauseButton" Value="0"/>
+
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+        
+      </CATSYPTrigger>
+      
+      <CATSYPTrigger Property="Command" Value="Play">
+        <CATSYPSetter Property="CheckState" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPlayButton" Value="1"/>
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationNextButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationForwardButton" Value="1"/>
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramBackwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramForwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramNextButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ProgramEmptyButton" Value="0"/>
+
+        <!-- enable button to prevent to click them when its pressed-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="0"/>
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="1"/>
+
+
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+        <!--<CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayReverseButton" Value="1"/>-->
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+        
+        <CATSYPSetter Property="CheckState" TargetName="UndefPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="ProgramPauseButton" Value="0"/>
+
+        
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayReverseButton" Value="0"/>
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramPlayReverseButton" Value="0"/>-->
+
+        <CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Command" Value="PlayReverse">
+
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackwardButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationBackButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationNextButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AnimationForwardButton" Value="1"/>
+        
+        <CATSYPSetter Property="CheckState" TargetName="UndefPauseButton" Value="0"/>
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPauseButton" Value="0"/>
+
+        
+        <CATSYPSetter Property="CheckState" TargetName="AnimationPlayButton" Value="0"/>
+
+
+
+        <!-- active buttons previously enabled-->
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPlayButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramStopButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPlayReverseButton" Value="1"/>
+
+
+
+        <CATSYPSetter Property="EnableFlag" TargetName="UndefPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="AnimationPauseButton" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="ProgramPauseButton" Value="1"/>
+        <!--<CATSYPSetter Property="CheckState" TargetName="ProgramStopButton" Value="1"/>-->
+
+      </CATSYPTrigger>
+
+
+      <CATSYPTrigger Property="SliderHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefSliderLayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SliderHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefSliderLayer" Value="1"/>
+      </CATSYPTrigger>
+
+      <!--<CATSYPTrigger Property="SliderParametersHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefEditor" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SliderParametersHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefEditor" Value="1"/>
+      </CATSYPTrigger>-->
+<!--
+      <CATSYPTrigger Property="BackwardButtonHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefFirstButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="BackwardButtonHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefFirstButton" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="ForwardButtonHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefLastButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ForwardHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefLastButton" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="MiniPlayerHidden" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefMiniPlayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="MiniPlayerHidden" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="UndefMiniPlayer" Value="1"/>
+      </CATSYPTrigger>
+-->
+      <CATSYPTrigger Property="Loop" Value="CATPLMCompassMaxiPlayerLoopRunOnce">
+        <CATSYPSetter TargetName="AnimationLoopRunOnceButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>
+        
+        <CATSYPSetter TargetName="TimeMachineLoopRunOnceButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Loop" Value="CATPLMCompassMaxiPlayerLoopRunContinuously">
+        <CATSYPSetter TargetName="AnimationLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>
+
+        <CATSYPSetter TargetName="TimeMachineLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyButton" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="0"/>        
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="Loop" Value="CATPLMCompassMaxiPlayerLoopRunContinuouslyBackAndForth">
+        <CATSYPSetter TargetName="AnimationLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="AnimationLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="1"/>
+
+        <CATSYPSetter TargetName="TimeMachineLoopRunOnceButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyButton" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TimeMachineLoopRunContinuouslyBackAndForthButton" Property="VisibleFlag" Value="1"/>        
+      </CATSYPTrigger>
+
+      <!-- Change Position (Anchored) -->
+      <CATSYPTrigger Property="VisibleBackground" Value="1">
+        <CATSYPSetter TargetName="PlayTabBackgroundUndef" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnim" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundProgram" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnchoredPlayer" Property="TextureAlpha" Value="125"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundUndef" Property="ColorizeBlackPixelTo" Value="0.3 255"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnim" Property="ColorizeBlackPixelTo" Value="0.3 255"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundProgram" Property="ColorizeBlackPixelTo" Value="0.3 255"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnchoredPlayer" Property="ColorizeBlackPixelTo" Value="0.3 255"/>        
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisibleBackground" Value="0">
+        <CATSYPSetter TargetName="PlayTabBackgroundUndef" Property="TextureAlpha" Value="10"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnim" Property="TextureAlpha" Value="10"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundProgram" Property="TextureAlpha" Value="10"/>
+        <CATSYPSetter TargetName="PlayTabBackgroundAnchoredPlayer" Property="TextureAlpha" Value="10"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="PlayerOnlyDesignFlag" Value="1">
+        <CATSYPSetter TargetName="PlayerLayer" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>-->
+    </CATSYPTriggerCollection>
+  </Template>
+  
+  
+</Styles>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template Target="UAPanel" syp:name="default">
+    <CATVidLayGrid CellSpacing="0" RequestedMinimumDimension="250 400" GridWeight="row0=1" Color="255 255 255 0" Name="UAPanel">
+
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+
+        <CATVidCtlWebViewer syp:name="WebViewer" AutoLoadFlag="1" HomeURL="about:blank" Start="@HandleViewerStartEvent" />
+
+        <CATVidLayGrid syp:name="OutdatedGrid" GridWeight="row0=1 col1=1" CellSpacing="0" Color="128 128 128 0" Name="OutdatedLayer">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+          <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" BorderColor="0 184 222 255" Color="242 245 247 255" />
+          <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" GridWeight="col1=1" CellSpacing="0">
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="8 6"/>
+            <CATVidGPLabel CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" TextColor="61 61 61 255" Name="UpdateMsg" CropPolicy="CropWithDots" HorizontalAlignment="0" VerticalAlignment="1" RequestedMinimumDimension="100 10" FontSize="13"/>
+            <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=R" syp:Template="Button" Icon="icons/I_UAPRefresh"  IconDimension="20 20" Name="UpdateBtn" syp:name="UpdateBtn" FontHeight="13" Click="@HandleEvent"/>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=3 y=1 attach=RTB" RequestedMinimumDimension="10 22"/>
+            <CATVidCtlButtonIcon CATVidLayGrid.IndexedConstraints="x=4 y=1" syp:Template="Hyperlink" Icon="icons/I_UAPCloseRefreshNotification" IconDimension="12 12" Name="CloseBtn" syp:name="CloseBtn"  Click="@HandleEvent"/>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=5 y=2 attach=RLTB" RequestedMinimumDimension="8 6"/>
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" RequestedMinimumDimension="5 5"/>
+        </CATVidLayGrid>
+
+      </CATVidLayLayer>
+
+      <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" syp:name="MoreHelpGrid" GridWeight="row0=1 col1=1" CellSpacing="0" Color="128 128 128 0" Name="MoreHelpLayer">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" GridWeight="col1=1" CellSpacing="0">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="8 6"/>
+          <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=R" syp:Template="Button" Name="MoreHelpBtn" syp:name="MoreHelpBtn" FontHeight="13" Click="@HandleEvent"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" RequestedMinimumDimension="8 6"/>
+        </CATVidLayGrid>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" RequestedMinimumDimension="5 5"/>
+      </CATVidLayGrid>
+      
+    </CATVidLayGrid>
+  </Template>
+
+  <Template Target="UAPanel" syp:name="nomorehelp">
+    <CATVidLayGrid CellSpacing="0" RequestedMinimumDimension="250 400" GridWeight="row0=1" Color="255 255 255 0" Name="UAPanel">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidCtlWebViewer  syp:name="WebViewer" AutoLoadFlag="1" HomeURL="about:blank" Start="@HandleViewerStartEvent" />
+        <CATVidLayGrid syp:name="OutdatedGrid" GridWeight="row0=1 col1=1" CellSpacing="0" Color="128 128 128 0" Name="OutdatedLayer">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+          <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" BorderColor="0 184 222 255" Color="242 245 247 255" />
+          <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" GridWeight="col1=1" CellSpacing="0">
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="8 6"/>
+            <CATVidGPLabel CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" TextColor="61 61 61 255" Name="UpdateMsg" CropPolicy="CropWithDots" HorizontalAlignment="0" VerticalAlignment="1" RequestedMinimumDimension="100 10" FontSize="13"/>
+            <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=R" syp:Template="Button" Icon="icons/I_UAPRefresh"  IconDimension="20 20" Name="UpdateBtn" syp:name="UpdateBtn" FontHeight="13" Click="@HandleEvent"/>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=3 y=1 attach=RTB" RequestedMinimumDimension="10 22"/>
+            <CATVidCtlButtonIcon CATVidLayGrid.IndexedConstraints="x=4 y=1" syp:Template="Hyperlink" Icon="icons/I_UAPCloseRefreshNotification" IconDimension="12 12" Name="CloseBtn" syp:name="CloseBtn"  Click="@HandleEvent"/>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=5 y=2 attach=RLTB" RequestedMinimumDimension="8 6"/>
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" RequestedMinimumDimension="5 5"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+
+</Styles>

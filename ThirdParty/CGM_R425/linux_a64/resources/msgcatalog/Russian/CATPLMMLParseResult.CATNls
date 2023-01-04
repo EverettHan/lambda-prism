@@ -1,0 +1,60 @@
+<meta charset="UTF-8"/>
+DeclareAliasRelationMissing.Request="Неверное сообщение, ошибка при анализе.";
+DeclareAliasRelationMissing.Diagnostic="/p1 [/p2,/p3], используемая в блоке [NAVIGATES], не найдена в блоке [RELATIONDECLARATION].";
+DeclareAliasRelationMissing.Advice="Проверьте входные данные.";
+
+RoleAggregation.Request="Неверное сообщение, ошибка при анализе.";
+RoleAggregation.Diagnostic="***ОШИБКА*** Мы обнаружили взаимосвязь /p1 [/p2,/p3], для которой role==aggregation. Это запрещено.";
+RoleAggregation.Advice="Проверьте входные данные.";
+
+RoleOwner.Request="Неверное сообщение, ошибка при анализе.";
+RoleOwner.Diagnostic="ОШИБКА*** Мы обнаружили взаимосвязь /p1 [/p2,/p3], для которой role==owner. Это запрещено.";
+RoleOwner.Advice="Проверьте входные данные.";
+
+RoleInstOf.Request="Неверное сообщение, ошибка при анализе.";
+RoleInstOf.Diagnostic="ОШИБКА*** Мы обнаружили взаимосвязь /p1 [/p2,/p3], для которой role==instOf. Это запрещено.";
+RoleInstOf.Advice="Проверьте входные данные.";
+
+AliasReDeclared.Request="Неверное сообщение, ошибка при анализе.";
+AliasReDeclared.Diagnostic="***ОШИБКА*** Если используемый в блоке [NODEDECLARATION] псевдоним /p1 [/p2,/p3] уже был объявлен, используйте другое имя.";
+AliasReDeclared.Advice="Проверьте входные данные.";
+
+ExtNotAuthorized.Request="Неверное сообщение, ошибка при анализе.";
+ExtNotAuthorized.Diagnostic="***ОШИБКА*** Используемое в блоке [NODEDECLARATION] расширение /p1 [/p2,/p3] не может использоваться вместе с текущим модулем. Не используйте это расширение для текущего модуля или используйте другой модуль.";
+ExtNotAuthorized.Advice="Проверьте входные данные.";
+
+LinesIsNotUsed.Request="Неверное сообщение, ошибка при анализе.";
+LinesIsNotUsed.Diagnostic="***ОШИБКА*** Блок [LINES] не может использоваться с текущим модулем. Не используйте блок [LINES] для текущего модуля или используйте другой модуль.";
+LinesIsNotUsed.Advice="Проверьте входные данные.";
+
+SrAliasReDeclared.Request="Неверное сообщение, ошибка при анализе.";
+SrAliasReDeclared.Diagnostic="***ОШИБКА*** Если используемый в блоке [RELATIONDECLARATION] псевдоним /p1 [/p2,/p3] уже был объявлен, используйте другое имя.";
+SrAliasReDeclared.Advice="Проверьте входные данные.";
+
+IdentifierUsedPreviously.Request="Неверное сообщение, ошибка при анализе.";
+IdentifierUsedPreviously.Diagnostic="***ОШИБКА*** Использованный в блоке [NAVIGATES] идентификатор /p1 [/p2,/p3] ранее уже использовался для навигации.";
+IdentifierUsedPreviously.Advice="Используйте другой идентификатор.";
+
+IdentifierNeverUserBefore.Request="Неверное сообщение, ошибка при анализе.";
+IdentifierNeverUserBefore.Diagnostic="***ОШИБКА*** Использованный в блоке [NAVIGATES] идентификатор /p1 [/p2,/p3] ранее никогда не использовался для навигации.";
+IdentifierNeverUserBefore.Advice="Первый идентификатор N-й навигации (N>1) должен быть ранее использованным псевдонимом.";
+
+SyntaxError.Request="Неверное сообщение, ошибка при анализе.";
+SyntaxError.Diagnostic="/p1";
+SyntaxError.Advice="Проверьте входные данные.";
+
+NavInGraphOptionsNotRecognized.Request="Неверное сообщение, ошибка при анализе.";
+NavInGraphOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] должен быть равен CyclicityDetected или CyclicityNotDetected.";
+NavInGraphOptionsNotRecognized.Advice="Проверьте входные данные.";
+
+SrLoadingOptionsNotRecognized.Request="Неверное сообщение, ошибка при анализе.";
+SrLoadingOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] должен быть равен CATPLMMLStandard или CATPLMLIntercalarySr";
+SrLoadingOptionsNotRecognized.Advice="Проверьте входные данные.";
+
+moreThanOneLine.Request="Неверное сообщение, ошибка при анализе.";
+moreThanOneLine.Diagnostic="***ОШИБКА*** В ml нельзя иметь больше одной строки.";
+moreThanOneLine.Advice="Проверьте входные данные.";
+
+ParsingError7.Request="Неверное сообщение, ошибка при анализе.";
+ParsingError7.Diagnostic="строка /p1, столбец /p2. Взаимосвязь \"/p3\" не найдена. /p4.";
+ParsingError7.Advice="Проверьте входные данные.";

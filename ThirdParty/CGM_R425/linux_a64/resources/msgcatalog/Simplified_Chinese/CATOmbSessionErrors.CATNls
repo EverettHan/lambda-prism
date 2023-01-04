@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+// VCS 09/04/2014 Creation
+// Error description file for all errors happening during OMB operations, excepted Switch and Stream/Unstream operations
+//
+//    Please keep following glossary format when adding errors:
+//
+// ERR_OMB_<category>_nnn.Diagnostic=<A short and clear message>;
+// ERR_OMB_<category>_nnn.Request="<some more detail with helpful minimal context>;
+// ERR_OMB_<category>_nnn.Advice=<only when REALLY helpfull for final user, as a misuse correction or a by-pass>;
+
+// --> ERR_OMB_SD_001 to ERR_OMB_SD_099 : StreamDescriptor management in session
+
+SD_CREATE="创建";
+SD_DELETE="删除";
+SD_MOD_LR="本地存储更改";
+SD_CREATE_LR="本地存储创建";
+SD_READ_LR="本地存储读取";
+SD_LOCK_LR="本地存储锁定";
+SD_UNLOCK_LR="本地存储解锁";
+SD_ULOCK_LR="本地存储（解除）锁定";
+SD_STREAM="流";
+SD_IMPORT="数据导入";
+SD_EXPORT="数据导出";
+SD_OPERATE="操作";
+SD_UPD_VISU="可视化更新";
+SD_RESTORE="恢复";
+
+SD_GET_SYNCHRO_CTX="应用同步请求失败。\n已应用默认同步。\n";
+SD_APPLI_SYNCHRO_CTX="应用同步失败。\n已应用默认同步。\n";
+
+ERR_OMB_SD_001.Request="未找到流描述符。";
+ERR_OMB_SD_001.Diagnostic="流描述符 /p1已中止。未找到 SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_002.Request="已经存在流描述符。";
+ERR_OMB_SD_002.Diagnostic="流描述符 /p1已中止。已经存在 SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_003.Request="流描述符无效。";
+ERR_OMB_SD_003.Diagnostic="流描述符 /p1已被禁止。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）无效。";
+
+ERR_OMB_SD_004.Request="流描述符 /p1失败。";
+ERR_OMB_SD_004.Diagnostic="流描述符 /p1请求失败。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_005.Request="流描述符 /p1请求失败，因为未在会话中加载创作 SD。";
+ERR_OMB_SD_005.Diagnostic="SD 标识符（格式：/p2|角色：/p3 |名称：/p4 |类型：/p5）。";
+ERR_OMB_SD_005.Advice="应已经通过之前的数据切换操作加载创作 SD。";
+
+ERR_OMB_SD_006.Request="流描述符 /p1被禁止。";
+ERR_OMB_SD_006.Diagnostic="流描述符 /p1请求被禁止。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_007.Request="流描述符 /p1请求失败，因为部件上不存在任何主要 AuthoringVisu SD。";
+ERR_OMB_SD_007.Diagnostic="SD 标识符（格式：/p2|角色：/p3 |名称：/p4 |类型：/p5）。";
+ERR_OMB_SD_007.Advice="存在主要 AuthoringVisu SD 是当前操作的先决条件。";
+
+ERR_OMB_SD_008.Request="流描述符 /p1不受支持。";
+ERR_OMB_SD_008.Diagnostic="流描述符 /p1在当前版本上不受支持。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_009.Request="流描述符 /p1未被授权。";
+ERR_OMB_SD_009.Diagnostic="/p1在已修改流描述符上未被授权。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_010.Request="流描述符 /p1被禁止。";
+ERR_OMB_SD_010.Diagnostic="流描述符 /p1请求被禁止，因为 SD 当前正被删除。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_011.Request="流描述符 /p1不受支持。";
+ERR_OMB_SD_011.Diagnostic="/p1运算对于流描述符类型无意义。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_012.Request="流描述符 /p1失败。";
+ERR_OMB_SD_012.Diagnostic="未授权 /p1操作。输入“可视化流”类型无效或与相关流描述符类型不符。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_013.Request="流描述符 /p1失败。";
+ERR_OMB_SD_013.Diagnostic="未授权 /p1 操作。“持久性名称”无效（应为不含特殊字符的 Ascii 字符）。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+ERR_OMB_SD_014.Request="警告：流描述符 /p1 未完成。";
+ERR_OMB_SD_014.Diagnostic="流描述符 /p1 请求未完成。SD 标识符（格式：/p2 |角色：/p3 |名称：/p4 |类型：/p5）。";
+
+// --> ERR_OMB_SWITCH_RULE_001 to ERR_OMB_SWITCH_RULE_099 : Switch Loading rule
+
+ERR_OMB_SWITCH_RULE_001.Request="未知的目标加载模式。";
+ERR_OMB_SWITCH_RULE_001.Diagnostic="从输入加载规则中找不到切换目标模式。";
+
+ERR_OMB_SWITCH_RULE_002.Request="未定义的目标加载模式。";
+ERR_OMB_SWITCH_RULE_002.Diagnostic="输入加载规则未定义切换目标模式。";

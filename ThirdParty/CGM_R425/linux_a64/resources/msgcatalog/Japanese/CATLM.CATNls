@@ -1,0 +1,160 @@
+<meta charset="UTF-8"/>
+//
+// CATIA License Manager Messages (low-level)
+//
+
+LicenseManager="ライセンス管理プログラム";
+
+//
+// Messages    AS: Allow Save
+//
+CheckFailedEx="/P01 ライセンスのチェックに失敗しました:\n/P03\nセッションは次の /P02 回の試行が失敗した後で停止します\n開いているドキュメントを保存してください";
+
+CheckFailedAS="/P01 ライセンスのチェックに失敗しました:\n/P03\nセッション機能 ([ローカル保存]、[閉じる] を除く) は、次の /P02 回の試行が失敗した後で使用不可になります。\n開いているドキュメントを保存してください。";
+
+CheckOK="ライセンスは正常にチェックされました";
+
+TooManyChecksFailed="/P01 回の試行の後でライセンスのチェックに失敗しました \nセッションは停止します";
+
+TooManyChecksFailedAS="/P01 回の試行の後でライセンスのチェックに失敗しました
+セッション機能 ([ローカル保存]、[閉じる] を除く) は使用不可になりました";
+
+TooManyChecksFailedAT="ライセンスのチェックは予期したようにできませんでした。
+セッション機能 ([ローカル保存]、[閉じる] を除く) は使用不可になりました";
+
+TooManyChecksFailedAT2="ライセンスのチェックに失敗しました (システム エラー)。\nセッション機能 ([ローカル保存]、[閉じる] を除く) は使用不可になりました";
+
+TooManyChecksAfterRevoke="セッション機能 ([ローカル保存]、[閉じる] を除く) は使用不可になりました";
+
+NoSuchProduct="要求された製品が見つかりません: /P01";
+
+MissingPreq="/P01 は、許可されない前提条件 (/P02) のため使用できません";
+
+InconpatibleEnvironment="セッションはこの環境では実行できません";
+
+NoLicenseForDemo="/P01 デモ モードで使用可能なライセンスがありません";
+
+LicenseRequestFailed="ライセンスが付与されていません: /P01\nエラー: /P03 ";
+
+NULRequestFailed="同時使用ライセンスが付与されていません: /P01\nエラー: /P02";
+
+AllLicensesUsed="/P02 のすべての /P01 ライセンスが以下で使用されています:\n/P03";
+
+LicenseReleaseFailed="/P01 のライセンスのリリースに失敗しました\n/P02 エラー: /P03";
+
+LicenseCheckFailed="/P01 のライセンスのチェックに失敗しました\n/P02 エラー: /P03";
+
+LicenseRecovered="/P01 のライセンスが正常に回復されました";
+
+ErrorLoadingProduct="/P01 (コード /P02) の製品定義のロードに失敗しました \n再インストールしてください";
+
+ProductInvalidVersion="/P01 のバージョン /P02 の製品定義が無効です。\n再インストールしてください";
+
+LicenseNotYetAvailable="/P02 の /P01 ライセンスはまだ使用できません";
+
+LicenseExpired="/P02 の /P01 ライセンスは有効期限が切れています";
+
+BadHost="ライセンスが付与されていません: /P01\nユーザー /P02 はすでにマシン /P03 にログオンしています\n\n別のマシンからログオフした後再試行するか、別のマシン上で操作を続行できます";
+
+LicenseSoonExpired="次の付与されたライセンスが間もなく有効期限切れになります:\n";
+
+LicenseExpIn="/P01 - 期限切れまで: ";
+
+ExpIn24h="24 時間未満\n";
+
+ExpIn1day="1 日\n";
+
+ExpInndays="/P01 日\n";
+
+NoLicenseForAlias="/P01 要求を満たすのに適切なライセンスがありません";
+
+ProductNotShareable="/P01 のライセンスはシェアラブルではありません -- お客様サービスにご連絡ください";
+
+RetrieveLicenses="/P01 が /P1 からライセンスを検索中の間、お待ちください";
+
+RetrieveLicensesFailed="/P1 からライセンスの取得に失敗しました。";
+
+RetrieveLicensesSucceded="少なくとも 1 つのローカル ライセンスがありません。または、期限切れであるか、間もなく期限切れになります。\nローカル ライセンスは管理者決定に従って更新されました。\nセッションを再度開始してください。";
+
+FirstLoginFailedRestartSession="ライセンスの初期化に失敗しました。\nセッションを再度開始してください。";
+
+RetrieveLicensesURLKO="ローカル ライセンスを更新できません。リモート ライセンス リポジトリはアクセス不能です。 \n管理者に連絡してください。";
+
+ProductNotAddon="/P01 のライセンスに無効なアドオン製品 /P02 が含まれています。\n お客様サービスにご連絡ください";
+
+AddonPreqNotPresent="ユーザー設定 /P01 にアドオン製品 /P02 の前提条件が含まれていません。\nお客様サービスにご連絡ください";
+
+ConfigHasPrereq="構成 /P01 に前提条件は必要ありません。\nお客様サービスにご連絡ください";
+
+InvalidScale="製品 /P01 は、そのスケール /P02 が現行構成パッケージより高いので、要求できません。";
+
+CannotStart="現在選択されているライセンスではこのアプリケーションを実行できません。\nCATOptionsMgt ツールを使用して適切なライセンスを選択してください ([一般]/[ライセンス交付] タブ)。";
+
+ProdDefNotFound="/P01 ライセンスが正常に付与されましたが、関連付けられたコードがインストールされていません。\n インストールしてください。";
+
+NoConfigFound="ライセンスがインストール済み構成パッケージに合致しません。 \n付与されたライセンスのリスト: \n /P01 \nインストールを更新するか、管理者に連絡してください。";
+
+NULRequestFailed="ライセンスが付与されていません:\n/P01\n。";
+
+LicenseRevoked="ライセンス交付を受けたプロダクトの割り当てが管理者によって更新されました。\n 現在付与されているライセンスは、このアプリケーションの実行に有効ではありません。\nセッションを閉じてください。";
+
+LicOverFailed="/P01 は、このユーザーに割り当てられていませんでした。";
+
+NoLicAssigned="ユーザー /P01 (/P02) にはライセンスが付与されていません。";
+
+NoMCSLicAssigned="/P01 (/P02) には MCS ライセンスが付与されていません。";
+
+LicOverAuthFailed="割り当てられたライセンスでは、プロダクト /P01 を使用できません";
+
+LicOver="/P01 を /P02 で上書きする";
+
+LicOverIgnored="ライセンスの上書きに失敗しました";
+
+PackagingMismatch="パッケージングの不一致: リクエストされたすべてのライセンスが同じパッケージングに属している必要があります。\n-/P01\n-/P02";
+
+CasualLicAssigned="このアプリケーションでは一時ライセンスは使用できません。\n/P03 - /P01 (/P02)。";
+
+PlatformCasualLicMismatch="/P01 は一時指定ユーザーとして宣言されています。\nしかし、要求された以下のライセンスは一時ではありません: /P02。";
+
+//---------------------------------------------------------------------------
+// Offline mode specific errors
+//---------------------------------------------------------------------------
+GrantedLicenseExtractionFailed="ライセンス /P01 は、抽出できません。\n/P02";
+
+GrantedLicenseExtractionNotSupported="オフライン ライセンスの抽出は、この OS でサポートされていません。";
+
+LicenseExtractionKO_MaxDuration="ライセンス /P01 は /P02 日間の抽出ができません (ライセンス サーバーによって許可される最大期間は /P03 日です)。";
+
+LicenseExtractionKO_LocalDirNotFound="オフライン ライセンス ディレクトリが存在しません: /P01";
+
+LicenseExtractionKO_LocalDirNotCreated="オフライン ライセンス ディレクトリを作成できません: /P01";
+
+LicenseExtractionKO_LocalDirNotWriteable="ディレクトリ /P01 にファイルを作成できませんでした。\n現在のユーザーのこのディレクトリに対するアクセス権、および使用可能ディスク容量を確認してください。";
+
+LicenseExtractionKO_AlreadyOffline="/P01 はユーザー /P02 用にホスト /P03 ですでに抽出されています。";
+
+LicenseExtractionKO_NoInitialLic="/P01 オフライン ライセンス期間を延長できませんでした。初期ライセンス データがありません。";
+
+LicenseExtractionKO_NoKeyword="/P01 オフライン ライセンスの抽出に失敗しました。キーワードによって保護されています。";
+
+LicenseExtractionKO_OfflineDisabled="オフライン ライセンスの抽出がライセンス サーバーで無効になっています。";
+
+LicenseExtractionKO_ExpiresBeforeEnd="ライセンス /P01 は /P02 日間の抽出ができません (ライセンスは /P03 日で期限切れとなります)。";
+
+LicenseExtractionKO_Token="/P01 トークンは抽出できません。";
+
+LicenseExtractionKO_AuthFailed="/P01 オフライン抽出はライセンス サーバーによって許可されていません。";
+
+LicenseExtractionKO_NoLic="/P01 オフライン ライセンスを抽出できませんでした。ライセンスがサーバー上に見つかりませんでした。";
+
+WorkOfflineProdDefNotFound="一部の機能はオフライン モードでは使用できない可能性があります。\n関連付けられたコードがインストールされていないので、/P01 ライセンスは要求されません。\nインストールしてください。";
+
+UnsupportedOS="サポートされていない OS バージョン";
+
+
+//
+// License Types
+//
+nodelock_or_concurrent="ノードロックまたはコンカレント";
+nodelock="ノードロック";
+concurrent="コンカレント";

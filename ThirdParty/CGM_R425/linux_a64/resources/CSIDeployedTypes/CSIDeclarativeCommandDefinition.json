@@ -1,0 +1,133 @@
+{
+  "grammarVersion": 3,
+  "desc": "Definition of a CSI Declarative Command",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Command name"
+    },
+    {
+      "label": "version",
+      "basic": "uint32",
+      "desc": "Command version"
+    },
+    {
+      "label": "pool",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Command pool"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "desc": "Description of the command"
+    },
+    {
+      "label": "filename",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Command filename"
+    },
+    {
+      "label": "filepath",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Command install path"
+    },
+    {
+      "label": "implementation",
+      "parameters": [
+        {
+          "label": "library",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Library name exporting implementation code. Only compatible with debugLibrary implementation"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "implementation version, static build compatible from version 2, default is 1"
+        },
+        {
+          "label": "debugLibrary",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Library name exporting debug implementation code. Only compatible with library implementation"
+        },
+        {
+          "label": "workflow",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Definition of the workflow implementation. Incompatible with other implementation"
+        }
+      ]
+    },
+    {
+      "label": "onBeginParameters",
+      "parameters": [
+        {
+          "label": "in",
+          "type": "CSICommandSignatureDefinition"
+        },
+        {
+          "label": "answers",
+          "type": "CSICommandSignatureDefinition"
+        }
+      ],
+      "desc": "Begin signature"
+    },
+    {
+      "label": "onCommandParameters",
+      "parameters": [
+        {
+          "label": "in",
+          "type": "CSICommandSignatureDefinition"
+        },
+        {
+          "label": "answers",
+          "type": "CSICommandSignatureDefinition"
+        }
+      ],
+      "desc": "Command signature"
+    },
+    {
+      "label": "onEndParameters",
+      "parameters": [
+        {
+          "label": "in",
+          "type": "CSICommandSignatureDefinition"
+        },
+        {
+          "label": "answers",
+          "type": "CSICommandSignatureDefinition"
+        }
+      ],
+      "desc": "End signature"
+    },
+    {
+      "label": "throwError",
+      "type": "CSICommandSignatureDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Command error message format"
+    }
+  ]
+}

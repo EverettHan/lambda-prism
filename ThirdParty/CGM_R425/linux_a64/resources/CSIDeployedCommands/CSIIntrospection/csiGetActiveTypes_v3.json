@@ -1,0 +1,32 @@
+{
+  "desc": "Returns a list of active type definition, which are the dependencies of active commands",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {},
+    "out": {
+      "parameters": [
+        {
+          "basic": "string",
+          "label": "errors",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "types",
+          "optional": {
+            "isOptional": true
+          },
+          "typeArray": "CSIDeclarativeTypeDefinition"
+        }
+      ]
+    }
+  }
+}

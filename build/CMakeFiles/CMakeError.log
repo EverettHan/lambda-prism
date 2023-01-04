@@ -1,0 +1,33 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/zhn/git/lambda-prism/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_49b6e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_49b6e.dir/build.make CMakeFiles/cmTC_49b6e.dir/build
+gmake[1]: Entering directory `/home/zhn/git/lambda-prism/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_49b6e.dir/CheckSymbolExists.cxx.o
+/usr/bin/g++    -std=gnu++11 -o CMakeFiles/cmTC_49b6e.dir/CheckSymbolExists.cxx.o -c /home/zhn/git/lambda-prism/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_49b6e
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_49b6e.dir/link.txt --verbose=1
+/usr/bin/g++       CMakeFiles/cmTC_49b6e.dir/CheckSymbolExists.cxx.o  -o cmTC_49b6e 
+CMakeFiles/cmTC_49b6e.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_49b6e] Error 1
+gmake[1]: Leaving directory `/home/zhn/git/lambda-prism/build/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_49b6e/fast] Error 2
+
+File /home/zhn/git/lambda-prism/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

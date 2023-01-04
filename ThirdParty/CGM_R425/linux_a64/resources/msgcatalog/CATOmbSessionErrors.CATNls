@@ -1,0 +1,85 @@
+<meta charset="UTF-8"/>
+// VCS 09/04/2014 Creation
+// Error description file for all errors happening during OMB operations, excepted Switch and Stream/Unstream operations
+//
+//    Please keep following glossary format when adding errors:
+//
+// ERR_OMB_<category>_nnn.Diagnostic=<A short and clear message>;
+// ERR_OMB_<category>_nnn.Request="<some more detail with helpful minimal context>;
+// ERR_OMB_<category>_nnn.Advice=<only when REALLY helpfull for final user, as a misuse correction or a by-pass>;
+
+// --> ERR_OMB_SD_001 to ERR_OMB_SD_099 : StreamDescriptor management in session
+
+SD_CREATE="creation";
+SD_DELETE="deletion";
+SD_MOD_LR="local storage change";
+SD_CREATE_LR="local storage creation";
+SD_READ_LR="local storage read";
+SD_LOCK_LR="local storage lock";
+SD_UNLOCK_LR="local storage unlock";
+SD_ULOCK_LR="local storage (un)lock";
+SD_STREAM="streaming";
+SD_IMPORT="data import";
+SD_EXPORT="data export";
+SD_OPERATE="operation";
+SD_UPD_VISU="visu update";
+SD_RESTORE="restore";
+
+SD_GET_SYNCHRO_CTX="Applicative synchronization request failed.\nDefault synchronization applied.\n";
+SD_APPLI_SYNCHRO_CTX="Applicative synchronization failed.\nDefault synchronization applied.\n";
+
+ERR_OMB_SD_001.Request="Stream descriptor not found.";
+ERR_OMB_SD_001.Diagnostic="Stream Descriptor /p1 aborted. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5) not found.";
+
+ERR_OMB_SD_002.Request="Stream descriptor already exists.";
+ERR_OMB_SD_002.Diagnostic="Stream Descriptor /p1 aborted. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5) already exists.";
+
+ERR_OMB_SD_003.Request="Invalid Stream descriptor.";
+ERR_OMB_SD_003.Diagnostic="Stream Descriptor /p1 forbidden. Invalid SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_004.Request="Stream descriptor /p1 failed.";
+ERR_OMB_SD_004.Diagnostic="Stream Descriptor /p1 request failed. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_005.Request="Stream descriptor /p1 request failed, as Authoring SD not loaded in session.";
+ERR_OMB_SD_005.Diagnostic="SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+ERR_OMB_SD_005.Advice="Authoring SD should have been loaded by a previous data switch operation.";
+
+ERR_OMB_SD_006.Request="Stream descriptor /p1 forbidden.";
+ERR_OMB_SD_006.Diagnostic="Stream Descriptor /p1 request forbidden. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_007.Request="Stream descriptor /p1 request failed, as no main AuthoringVisu SD exists on component.";
+ERR_OMB_SD_007.Diagnostic="SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+ERR_OMB_SD_007.Advice="Main AuthoringVisu SD existence is a prerequisite for current operation.";
+
+ERR_OMB_SD_008.Request="Stream descriptor /p1 not supported.";
+ERR_OMB_SD_008.Diagnostic="Stream Descriptor /p1 not supported on current version. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_009.Request="Stream descriptor /p1 not authorized.";
+ERR_OMB_SD_009.Diagnostic="/p1 not authorized on modified Stream Descriptor. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_010.Request="Stream descriptor /p1 forbidden.";
+ERR_OMB_SD_010.Diagnostic="Stream Descriptor /p1 request forbidden, as SD is currently under deletion. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_011.Request="Stream descriptor /p1 not supported.";
+ERR_OMB_SD_011.Diagnostic="/p1 operation meaningless for this Stream Descriptor type. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_012.Request="Stream descriptor /p1 failed.";
+ERR_OMB_SD_012.Diagnostic="/p1 operation not authorized. input Visu Stream type invalid or not compliant with related Stream Descriptor type. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_013.Request="Stream descriptor /p1 failed.";
+ERR_OMB_SD_013.Diagnostic="/p1 operation not authorized. Persistency Name is not valid (should be ascii with no special characters). SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_014.Request="Warning: Stream descriptor /p1 not completed.";
+ERR_OMB_SD_014.Diagnostic="Stream Descriptor /p1 request not completed. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+ERR_OMB_SD_015.Request="Stream descriptor /p1 completed but warning";
+ERR_OMB_SD_015.Diagnostic="Stream Descriptor /p1 request completed but warning. SD identifier (Format:/p2 |Role:/p3 |Name:/p4 |Type:/p5).";
+
+// --> ERR_OMB_SWITCH_RULE_001 to ERR_OMB_SWITCH_RULE_099 : Switch Loading rule
+
+ERR_OMB_SWITCH_RULE_001.Request="Unknown target loading mode.";
+ERR_OMB_SWITCH_RULE_001.Diagnostic="Switch targeted mode cannot be found from input loading rule.";
+
+ERR_OMB_SWITCH_RULE_002.Request="Undefined target loading mode.";
+ERR_OMB_SWITCH_RULE_002.Diagnostic="Switch targeted mode not defined by input loading rule.";
+

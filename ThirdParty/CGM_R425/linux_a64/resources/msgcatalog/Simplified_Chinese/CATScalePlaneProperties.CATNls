@@ -1,0 +1,60 @@
+﻿<meta charset="UTF-8"/>
+//--------------------------------------
+// Resource file for CATScalePlaneProperties Class
+// En_EN
+//--------------------------------------
+Title="刻度平面属性";
+CancelButton.Title="关闭";
+
+//--------------------------------------
+//  ScaleLabel
+//--------------------------------------
+mainFrame.ScaleLabel.Title="刻度： ";
+mainFrame.ScaleLabel.LongHelp="更改刻度平面中的刻度。";
+mainFrame.ScaleEdit.LongHelp="更改刻度平面中的刻度。
+默认值 ('1') 显示实际大小，而 '0.5' 相当于显示一半大小。
+因此，可输入大于 1 的缩放系数来测量小对象，
+输入小于 1 的缩放系数来测量大对象。";
+
+//--------------------------------------
+//  WidthLabel
+//--------------------------------------
+mainFrame.WidthLabel.Title="宽度： ";
+mainFrame.WidthLabel.LongHelp="更改刻度平面中的毫米刻度线之间的宽度。";
+mainFrame.WidthEdit.LongHelp="更改刻度平面中的毫米刻度线之间的宽度。
+例如，'200' 表示高分成 20 个方格，每一个方格为 10 mm。";
+
+//--------------------------------------
+//  LineWidthLabel
+//--------------------------------------
+mainFrame.LineWidthLabel.Title="垂直间距： ";
+mainFrame.LineWidthLabel.LongHelp="更改标示毫米刻度的垂直线之间的间距。";
+mainFrame.LineWidthEdit.LongHelp="更改标示毫米刻度的垂直线之间的间距。
+如果该值不是为“宽度”或“高度”设置的值的倍数，将会取线间距的近似值，
+以提供一个约整数（这可能
+这可能会增加在屏幕上直接测量的难度）。";
+
+//--------------------------------------
+//  HeightLabel
+//--------------------------------------
+mainFrame.HeightLabel.Title="高度： ";
+mainFrame.HeightLabel.LongHelp="更改刻度平面中的毫米刻度线的高度。";
+mainFrame.HeightEdit.LongHelp="更改刻度平面中的毫米刻度线之间的高度。
+例如，'100' 表示高分成 10 个方格，每一个方格为 10 mm。";
+
+//--------------------------------------
+//  LineHeightLabel
+//--------------------------------------
+mainFrame.LineHeightLabel.Title="水平间距： ";
+mainFrame.LineHeightLabel.LongHelp="更改标示毫米刻度的水平线之间的间距。";
+mainFrame.LineHeightEdit.LongHelp="更改标示毫米刻度的水平线之间的间距。
+如果该值不是为“宽度”或“高度”设置的值的倍数，将会取线间距的近似值，
+以提供一个约整数（这可能
+这可能会增加在屏幕上直接测量的难度）。";
+
+//--------------------------------------
+//  ShowPlane
+//--------------------------------------
+mainFrame.ShowPlane.Title="显示网格";
+mainFrame.ShowPlane.LongHelp="启用或禁用显示用于测量项目的网格。
+当在圆锥投影（亦即一个透视图）中工作时，建议显示该网格。";

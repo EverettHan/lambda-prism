@@ -1,0 +1,56 @@
+// This interface is an interface which could be used to generate macros
+/*IDLNOGEN*/
+
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+/*=======================================================================*/
+/* COPYRIGHT DASSAULT SYSTEMES 1997                                      */
+/*=======================================================================*/
+/*                                                                       */
+/*              CATBaseDispatch                                          */
+/*                                                                       */
+/*  Description of the CATBaseDispatch class                             */ 
+/*  This the base class of the CATIA exposable interfaces                */
+/*                                                                       */
+/*  This class derives from the IDispatch interface                      */
+/*=======================================================================*/
+/*  Creation june 1997                                                   */
+/*  Creator  bge                                                         */
+/*=======================================================================*/
+
+#ifndef __CATBaseDispatchIDLDescription
+#define __CATBaseDispatchIDLDescription
+
+
+//#include "IDispatch.idl"
+
+#include "CATBSTR.idl"
+#include "CATBaseUnknown.idl"
+
+//
+//
+// Definition of CATBaseDispatch
+//
+#pragma ID CATBaseDispatch "DCE:7cdb17ca-91c1-0000-0280020bcb000000"
+
+/**
+ * Base class for Automation interfaces.
+ * <b>Role</b>: All Automation interfaces must inherit from
+ * the <tt>CATBaseDispatch</tt> interface. They usually do not
+ * inherit directly from <tt>CATBaseDispatch</tt>, but rather
+ * from one of its subclasses: @href CATIABase for individual objects 
+ * or @href CATIACollection for collection objects.
+ * Some methods may however have arguments of type <tt>CATBaseDispatch</tt>
+ * when they accept both individual objects or collection objects.
+ * The interface provides no functionalities per se.
+ */ 
+interface CATBaseDispatch : CATBaseUnknown
+{
+};
+
+
+#endif
+ //__CATBaseDispatchIDLDescription

@@ -1,0 +1,228 @@
+<meta charset="UTF-8"/>
+//*------------------------*//
+//* PLMSidlErrors messages *//
+//*------------------------*//
+ERR_SidlInvalidStream_141001="无效流";
+ERR_SidlInvalidStream_141001.Request="通信层未准备好处理已完全读取的请求或回答";
+ERR_SidlInvalidStream_141001.Advice="可重试请求";
+
+ERR_SidlInvalidParam_141002="无效参数";
+ERR_SidlInvalidParam_141002.Request="通信层 /p1";
+ERR_SidlInvalidParam_141002.Advice="重新配置通信参数或联系您的管理员";
+
+ERR_SidlNoMemory_141003="内存不足";
+ERR_SidlNoMemory_141003.Request="内存不足";
+ERR_SidlNoMemory_141003.Advice="可稍后尝试请求，或关闭其他应用程序";
+
+ERR_SidlUnsupportedServerLevel_141004="不受支持的服务器级别";
+ERR_SidlUnsupportedServerLevel_141004.Request="服务器级别与客户端不同，且不兼容";
+ERR_SidlUnsupportedServerLevel_141004.Advice="将客户端配置为使用兼容服务器，或升级客户端级别";
+
+ERR_SidlTruncatedAnswer_141005="服务器回复被截断";
+ERR_SidlTruncatedAnswer_141005.Request="已截断服务器回复";
+ERR_SidlTruncatedAnswer_141005.Advice="重试请求，或联系您的管理员以检查网络环境";
+
+ERR_SidlInvalidHeader_141006="通信标题无效";
+ERR_SidlInvalidHeader_141006.Request="通信标题中的数据错误";
+ERR_SidlInvalidHeader_141006.Advice="重试请求，或联系您的管理员以检查网络环境";
+
+ERR_SidlCompressFailed_141007="压缩失败";
+ERR_SidlCompressFailed_141007.Request="客户端无法压缩请求";
+ERR_SidlCompressFailed_141007.Advice="重试请求或重新安装软件";
+
+ERR_SidlUnCompressFailed_141008="解压缩失败";
+ERR_SidlUnCompressFailed_141008.Request="客户端无法解压缩服务器发送的数据";
+ERR_SidlUnCompressFailed_141008.Advice="重试请求或检查服务器和客户端上的安装";
+
+ERR_SidlInternalError_141009="内部错误";
+ERR_SidlInternalError_141009.Request="客户端上出现内部通信错误";
+ERR_SidlInternalError_141009.Advice="配置服务器连接并重试";
+
+ERR_SidlUnknownError_141010="未知错误";
+ERR_SidlUnknownError_141010.Request="出现未知错误";
+ERR_SidlUnknownError_141010.Advice="配置服务器连接或联系您的管理员";
+
+ERR_SidlSocketConnectionFailed_141021="连接失败";
+ERR_SidlSocketConnectionFailed_141021.Request="无法连接到服务器";
+ERR_SidlSocketConnectionFailed_141021.Advice="配置服务器连接，检查防火墙规则或联系您的管理员";
+
+ERR_SidlSocketSendFailed_141022="发送请求失败";
+ERR_SidlSocketSendFailed_141022.Request="无法向服务器发送请求";
+ERR_SidlSocketSendFailed_141022.Advice="配置服务器连接，检查防火墙规则或联系您的管理员";
+
+ERR_SidlSocketRecievedFailed_141023="接收回复失败";
+ERR_SidlSocketRecievedFailed_141023.Request="无法接收服务器回复";
+ERR_SidlSocketRecievedFailed_141023.Advice="重试请求，如果问题仍存在，请联系您的管理员";
+
+ERR_SidlSocketUnknownError_141024="未知套接字错误";
+ERR_SidlSocketUnknownError_141024.Request="出现未知套接字错误";
+ERR_SidlSocketUnknownError_141024.Advice="检查您的权限和网络配置，或联系您的管理员";
+
+ERR_SidlHTTPBadRequest_141031="HTTP 无效请求";
+ERR_SidlHTTPBadRequest_141031.Request="HTTP 无效请求";
+ERR_SidlHTTPBadRequest_141031.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPUnauthorized_141032="HTTP 未授权";
+ERR_SidlHTTPUnauthorized_141032.Request="HTTP 未授权";
+ERR_SidlHTTPUnauthorized_141032.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPPaymentRequired_141033="需要 HTTP 付款";
+ERR_SidlHTTPPaymentRequired_141033.Request="需要 HTTP 付款";
+ERR_SidlHTTPPaymentRequired_141033.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPForbidden_141034="HTTP 被禁止";
+ERR_SidlHTTPForbidden_141034.Request="HTTP 被禁止";
+ERR_SidlHTTPForbidden_141034.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPNotFound_141035="未找到 HTTP";
+ERR_SidlHTTPNotFound_141035.Request="未找到 HTTP";
+ERR_SidlHTTPNotFound_141035.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPMethodNotAllowed_141036="不允许 HTTP 方法";
+ERR_SidlHTTPMethodNotAllowed_141036.Request="不允许 HTTP 方法";
+ERR_SidlHTTPMethodNotAllowed_141036.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPNotAcceptable_141036="HTTP 不可接受";
+ERR_SidlHTTPNotAcceptable_141036.Request="HTTP 不可接受";
+ERR_SidlHTTPNotAcceptable_141036.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPProxyAuthFailed_141037="HTTP 代理认证失败";
+ERR_SidlHTTPProxyAuthFailed_141037.Request="HTTP 代理认证失败";
+ERR_SidlHTTPProxyAuthFailed_141037.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPServerTimeout_141038="HTTP 服务器超时";
+ERR_SidlHTTPServerTimeout_141038.Request="HTTP 服务器超时";
+ERR_SidlHTTPServerTimeout_141038.Advice="重试请求，或联系您的管理员以检查网络环境";
+
+ERR_SidlHTTPConflict_141039="HTTP 冲突";
+ERR_SidlHTTPConflict_141039.Request="HTTP 冲突";
+ERR_SidlHTTPConflict_141039.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPGone_141039="HTTP 不存在";
+ERR_SidlHTTPGone_141039.Request="HTTP 不存在";
+ERR_SidlHTTPGone_141039.Advice="请求的资源在服务器上不再可用且不知道转发地址（联系您的管理员）。";
+
+ERR_SidlHTTPLengthRequired_141039="需要 HTTP 长度";
+ERR_SidlHTTPLengthRequired_141039.Request="需要 HTTP 长度";
+ERR_SidlHTTPLengthRequired_141039.Advice="服务器拒绝接受没有定义内容长度的请求（联系您的管理员）。";
+
+ERR_SidlHTTPPreconditionFailed_141039="HTTP 先决条件失败";
+ERR_SidlHTTPPreconditionFailed_141039.Request="HTTP 先决条件失败";
+ERR_SidlHTTPPreconditionFailed_141039.Advice="在服务器上进行测试时，一个或多个请求标题字段中的先决条件被赋值为 false（联系您的管理员）。";
+
+ERR_SidlHTTPRequestEntityTooLarge_141039="HTTP 请求实体过大";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Request="HTTP 请求实体过大";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Advice="服务器拒绝处理请求，因为请求实体过大（联系您的管理员）。";
+
+ERR_SidlHTTPRequestURITooLong_141039="HTTP 请求 URI 过长";
+ERR_SidlHTTPRequestURITooLong_141039.Request="HTTP 请求 URI 过长";
+ERR_SidlHTTPRequestURITooLong_141039.Advice="服务器拒绝为请求提供服务，因为请求 URI 过长（联系您的管理员）。";
+
+ERR_SidlHTTPUnsupportedMediaType_141039="不受支持的 HTTP 媒体类型";
+ERR_SidlHTTPUnsupportedMediaType_141039.Request="不受支持的 HTTP 媒体类型";
+ERR_SidlHTTPUnsupportedMediaType_141039.Advice="服务器拒绝为请求提供服务，因为请求实体的格式不受支持（联系您的管理员）。";
+
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039="无法满足 HTTP 请求范围";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Request="无法满足 HTTP 请求范围";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPExpectationFailed_141039="HTTP 预期失败";
+ERR_SidlHTTPExpectationFailed_141039.Request="HTTP 预期失败";
+ERR_SidlHTTPExpectationFailed_141039.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPMalformedRequest_141040="HTTP 错误请求";
+ERR_SidlHTTPMalformedRequest_141040.Request="HTTP 错误请求";
+ERR_SidlHTTPMalformedRequest_141040.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPExpectationFailed_141041="HTTP 意外失败";
+ERR_SidlHTTPExpectationFailed_141041.Request="HTTP 意外失败";
+ERR_SidlHTTPExpectationFailed_141041.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPInternalServerError_141042="HTTP 内部服务器错误";
+ERR_SidlHTTPInternalServerError_141042.Request="HTTP 内部服务器错误";
+ERR_SidlHTTPInternalServerError_141042.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPNotImplemented_141043="HTTP 未实施";
+ERR_SidlHTTPNotImplemented_141043.Request="HTTP 未实施";
+ERR_SidlHTTPNotImplemented_141043.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPBadGateway_141043="HTTP 网关错误";
+ERR_SidlHTTPBadGateway_141043.Request="HTTP 网关错误";
+ERR_SidlHTTPBadGateway_141043.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPGatewayTimeout_141044="HTTP 网关超时";
+ERR_SidlHTTPGatewayTimeout_141044.Request="HTTP 网关超时";
+ERR_SidlHTTPGatewayTimeout_141044.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlUnSupportedHTTPLevel_141045="HTTP 不受支持的级别";
+ERR_SidlUnSupportedHTTPLevel_141045.Request="HTTP 不受支持的级别";
+ERR_SidlUnSupportedHTTPLevel_141045.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlUnknownHTTPError_141046="HTTP 未知错误";
+ERR_SidlUnknownHTTPError_141046.Request="HTTP 未知错误";
+ERR_SidlUnknownHTTPError_141046.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPServiceUnavailable_141047="HTTP 服务不可用";
+ERR_SidlHTTPServiceUnavailable_141047.Request="HTTP 服务不可用";
+ERR_SidlHTTPServiceUnavailable_141047.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPVersionNotSupported_141047="不支持 HTTP 版本";
+ERR_SidlHTTPVersionNotSupported_141047.Request="不支持 HTTP 版本";
+ERR_SidlHTTPVersionNotSupported_141047.Advice="联系您的管理员，以检查 HTTP 服务器配置";
+
+ERR_SidlHTTPServerSessionTimeout_141048="HTTP 服务器会话超时";
+ERR_SidlHTTPServerSessionTimeout_141048.Request="HTTP 服务器会话超时";
+ERR_SidlHTTPServerSessionTimeout_141048.Advice="重试请求，或联系您的管理员以检查网络环境";
+
+ERR_SidlServerRecieveFailed_141061="服务器接收失败";
+ERR_SidlServerRecieveFailed_141061.Request="服务器无法接收请求";
+ERR_SidlServerRecieveFailed_141061.Advice="检查网络配置或应用程序服务器配置";
+
+ERR_SidlServerSendFailed_141062="服务器发送失败";
+ERR_SidlServerSendFailed_141062.Request="服务器无法发送回复";
+ERR_SidlServerSendFailed_141062.Advice="检查网络配置或应用程序服务器配置";
+
+ERR_SidlLevelUnsupported_141063="不受支持的客户端级别";
+ERR_SidlLevelUnsupported_141063.Request="客户端级别与服务器不同，且不兼容";
+ERR_SidlLevelUnsupported_141063.Advice="将客户端配置为使用兼容服务器，或升级服务器端级别";
+
+ERR_SidlServerTruncatedRequest_141064="请求被截断";
+ERR_SidlServerTruncatedRequest_141064.Request="客户端请求已被截断";
+ERR_SidlServerTruncatedRequest_141064.Advice="检查网络配置或应用程序服务器配置";
+
+ERR_SidlServerInvalidHeader_141065="通信标题无效";
+ERR_SidlServerInvalidHeader_141065.Request="服务器：通信标题中的数据错误";
+ERR_SidlServerInvalidHeader_141065.Advice="请联系您的管理员，以检查网络环境";
+
+ERR_SidlServerCompressFailed_141066="服务器压缩失败";
+ERR_SidlServerCompressFailed_141066.Request="服务器无法压缩回复";
+ERR_SidlServerCompressFailed_141066.Advice="重试请求或在服务器上重新安装软件";
+
+ERR_SidlServerUnCompressFailed_141067="服务器解压缩失败";
+ERR_SidlServerUnCompressFailed_141067.Request="服务器无法解压缩客户端请求数据";
+ERR_SidlServerUnCompressFailed_141067.Advice="重试请求或在服务器上重新安装软件";
+
+ERR_SidlServerUnknownError_141068="服务器未知错误";
+ERR_SidlServerUnknownError_141068.Request="出现未知服务器错误";
+ERR_SidlServerUnknownError_141068.Advice="联系您的管理员，以检查服务器日志";
+
+ERR_SidlServerUnavailable_141071="SDAM 和服务器之间的通信错误";
+ERR_SidlServerUnavailable_141071.Request="SDAM 和服务器之间的通信错误";
+ERR_SidlServerUnavailable_141071.Advice="重试请求或重新启动服务器";
+
+ERR_SidlServerLostDuringRq_141072="服务器和 SDAM 之间出现通信错误";
+ERR_SidlServerLostDuringRq_141072.Request="回复前服务器和 SDAM 之间出现通信错误";
+ERR_SidlServerLostDuringRq_141072.Advice="重试请求或重新启动服务器";
+
+ERR_SidlServerLostDuringAnswer_141073="服务器和 SDAM 之间出现通信错误";
+ERR_SidlServerLostDuringAnswer_141073.Request="服务器和 SDAM 之间出现通信错误";
+ERR_SidlServerLostDuringAnswer_141073.Advice="重试请求或重新启动服务器";
+
+ERR_SidlNoHttpstatusCode_141074="客户端和服务器之间的通信错误";
+ERR_SidlNoHttpstatusCode_141074.Request="通信错误：回复中没有 HTTP 状态代码";
+ERR_SidlNoHttpstatusCode_141074.Advice="配置服务器连接或联系您的管理员（激活 HTTP 跟踪或使用网络捕获工具）";
+
+ERR_SidlUnsupportedHttpStatus_141075="不受支持的 HTTP 响应";
+ERR_SidlUnsupportedHttpStatus_141075.Request="不受支持的 HTTP 响应";
+ERR_SidlUnsupportedHttpStatus_141075.Advice="配置服务器连接或联系您的管理员（激活 HTTP 跟踪或使用网络捕获工具）";
+

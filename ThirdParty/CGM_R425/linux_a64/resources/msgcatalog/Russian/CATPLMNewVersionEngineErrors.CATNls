@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Системная ошибка";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Невозможно пересмотреть новый компонент.";
+PLMc_ForbiddenScenario1.Advice="Сохраните данный компонент и попробуйте пересмотреть его позднее.";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="Этот новый сценарий редакции запрещен: необходимо выполнить полное сохранение между 2 вызовами новых редакций.";
+PLMc_ForbiddenScenario2.Advice="Сохраните сеанс перед повторным вызовом новой редакции";
+
+PLMc_ForbiddenScenario3.Diagnostic="Невозможно пересмотреть данный компонент в сеансе";
+PLMc_ForbiddenScenario3.Advice="Компонент изменен в другом сеансе. Попробуйте сохранить локальные изменения в качестве новой редакции.";
+
+InvalidAncestor.Diagnostic="Невозможно использовать объект-предок для выполнения операции пересмотра.";
+InvalidAncestor.Advice="Выберите объект-предок, который согласуется с семейством редакций для доработки.";
+
+InvalidComponentState.Diagnostic="Невозможно пересмотреть компонент, так как он никогда не был сохранен в репозитории";
+InvalidComponentState.Advice="Сохраните компонент в репозитории, прежде чем выполнять пересмотр";
+
+InvalidTypeOfComponent.Diagnostic="Редакция запрещена для компонента данного типа";
+InvalidTypeOfComponent.Advice="Укажите совместимые компоненты для редакции";
+
+InvalidComponentForDWS.Diagnostic="Редакция запрещена в данном рабочем пространстве для компонента данного типа";
+InvalidComponentForDWS.Advice="Укажите компоненты, для которых редакция разрешена в данном рабочем пространстве";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="Использование версии не допускается из-за замены в сеансе частичным дублированием экземпляров";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="Не указывайте частичные экземпляры для дублирования при замене элементов в сеансе (повторное использование)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="Использование версии не допускается из-за передачи изменений в сеансе с помощью дублирования частичных экземпляров";
+TransferModificationsForbiddenForPartialDuplicate.Advice="Не указывайте частичные экземпляры для дублирования во время передачи изменений";
+
+InvalidIntent.Diagnostic="График версии вызван с недопустимым назначением: /p";
+InvalidIntent.Advice="Выберите допустимое назначение для управления версиями";
+
+InstanceWithoutOwner.Diagnostic="Этот экземпляр не входит в область дублирования и будет игнорироваться: /p";
+InstanceWithoutOwner.Advice="Операция может привести к нежелательному дублированию. Попробуйте исключить проблемные экземпляры, если это возможно.";
+
+RefreshFailed.Diagnostic="Не удалось обновить сеанс.";
+RefreshFailed.Advice="Выполните общее обновление или повторно загрузите компоненты с контролем версий.";
+
+NotRefreshedNoReidentification.Diagnostic="Объект был изменен в базе данных, но сеанс не был обновлен.";
+NotRefreshedNoReidentification.Advice="Выполните общее обновление, чтобы извлечь обновленный компонент.";
+
+NotRefreshedAfterReidentification.Diagnostic="Версия объекта была изменена в базе данных, но новая версия не находится в сеансе. Вы не сможете сохранить сеанс.";
+NotRefreshedAfterReidentification.Advice="Попробуйте выполнить общее обновление. Если это невозможно, необходимо выгрузить этот компонент и отменить локальные изменения, чтобы сохранить его.";

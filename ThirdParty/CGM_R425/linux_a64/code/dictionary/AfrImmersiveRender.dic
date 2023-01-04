@@ -1,0 +1,250 @@
+# COPYRIGHT Dassault Systemes 2009
+#======================================================================
+# Dictionary AfrImmersiveRender.dic
+#  associated with framework AfrImmersiveRender
+#======================================================================
+#
+#  Sep 2009  Creation: LD3 - ERS
+#======================================================================
+
+
+
+# PLM Toolbar
+#   - XAfr
+CATVidCtlLineEditor				CATIAfrComboWrapper					libCATAfrImmersiveRender
+CATVidCtlButton							CATIAfrButtonWrapper				libCATAfrImmersiveRender
+CATAfrGridWrapper						CATIAfrGridWrapper					libCATAfrImmersiveRender
+
+
+#   - Style Processor
+
+
+# Phylactery Mode Multitouch
+l_CATExtIBarViewModel				    l_CATIAfrBalloonModel		        libCATAfrImmersiveRender
+#Correction HEB Missing Entries in Official Dictionaries 21/10/11
+CATExtIBarViewModel 	                l_CATIAfrBalloonModel 	            libCATAfrImmersiveRender
+l_CATBarView							l_CATIAfrBalloon					libCATAfrImmersiveRender
+l_CATBarView							CATICreateInstance					libCATAfrImmersiveRender
+CATAfrVidCtlBalloonButton				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidBalloonStack					CATISYPIntrospectable				libCATAfrImmersiveRender
+
+#Declarative X-Afr
+CATXAfrSYPConnector						CATISYPIntrospectable				libCATAfrImmersiveRender
+
+CATAfrSYPAccessViewMetaData				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPAccessViewMetaData				CATISYPPresenter					libCATAfrImmersiveRender
+CATAfrSYPContainerViewMetaData 			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPStarterViewMetaData 			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPAfrComponentMetaData 			CATISYPIntrospectable				libCATAfrImmersiveRender
+
+CATCmdStarterRep						CATIAfrSYPStarterViewFactory		libCATAfrImmersiveRender
+CATAfrSYPStarterView    				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPStarterView    				CATISYPTemplate						libCATAfrImmersiveRender
+
+CATCmdContainerRep						CATIAfrSYPContainerViewFactory		libCATAfrImmersiveRender
+CATAfrSYPContainerView  				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPContainerView  				CATISYPTemplate						libCATAfrImmersiveRender
+
+CATCmdSeparatorRep						CATIAfrSYPSeparatorViewFactory		libCATAfrImmersiveRender
+CATAfrSYPSeparatorView  				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPSeparatorView  				CATISYPTemplate						libCATAfrImmersiveRender
+
+#X-Afr ++
+CATAfrSYPModelView		  				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrModelBase							CATIAfrModelViewFactory				libCATAfrImmersiveRender
+#------------End XAfr------------------------------------------------------------------------------------
+
+# VID Compass
+CATAfrVidAttachedCompass				CATIAfrPLMCompass					libCATAfrImmersiveRender
+CATAfrVidAttachedCompass						CATIAfrVIDCompass 					libCATAfrImmersiveRender
+
+CATAfrPLMCompassVid						CATIAfrPLMCompass					libCATAfrImmersiveRender
+CATAfrPLMCompassVid						CATIAfrVIDCompass 					libCATAfrImmersiveRender
+# CATAfrPLMCompassVid					CATISYPCollection					libCATAfrImmersiveRender
+# CATAfrPLMCompassVid					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfr3DXPCompass						CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfr3DXPPlayListController			CATICAfrComponentController			libCATAfrImmersiveRender
+
+CATAfrPLMCompassServices                CATIAfrPLMCompassFactory			libCATAfrImmersiveRender
+
+CATAfrPLMCompassModel                   CATIAfrPLMCompassModel				libCATAfrImmersiveRender
+CATAfrPLMCompassModel                   CATIAfrPLMCompassModelEvent			libCATAfrImmersiveRender
+CATAfrPLMCompassModel					CATIObjectSetViewModel				libCATAfrImmersiveRender
+CATAfrPLMCompassModel					CATIObjectViewModel					libCATAfrImmersiveRender
+CATAfrPLMCompassModel					CATITextOverlayViewModel			libCATAfrImmersiveRender
+CATAfrPLMCompassModel					CATITextOverlayViewModel2			libCATAfrImmersiveRender
+CATAfrPLMCompassModel					CATITextOverlayViewModel3			libCATAfrImmersiveRender
+CATAfrPLMCompassModel                   CATITextOverlayViewModel4			libCATAfrImmersiveRender
+CATAfrPLMCompassModel                   CATIViewModel						libCATAfrImmersiveRender
+
+
+CATAfrPLMCompassEast                    CATISYPIntrospectable				libCATAfrImmersiveRender
+
+
+CATAfrPLMCompassCentral  				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrPLMCompassComboAndLegendTab  		CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATAfrPLMCompassLegend  				CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATAfrPLMCompassPlayTab  				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrPLMCompassTooltip  				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrPLMCompassTooltip 				CATIAfrViewTooltipModel 			libCATAfrImmersiveRender 
+CATAfrPLMCompassVid  					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrPLMCompassVid  					CATIXAfrSYPConnector  				libCATAfrImmersiveRender
+CATAfrPLMCompassWidget  				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATEAfrPLMCompassVid  					CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATEAfrPLMCompassVid  					CATISYPPresenter					libCATAfrImmersiveRender
+CATEAfrPLMCompassVid  					CATISYPTemplate 					libCATAfrImmersiveRender
+CATAfrPLMCompassProgressTaskLayer		CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrPLMCompassProgressTaskLayer		CATIAfrPLMCompassProgressTask		libCATAfrImmersiveRender
+
+CATVidHit  								CATISYPCollection  					libCATAfrImmersiveRender
+CATVidHit  								CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATVidHitItem  							CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATVidHitItemImageMask  				CATISYPIntrospectable				libCATAfrImmersiveRender
+l_CATAfrTouchPhylactery  				CATISYPIntrospectable				libCATAfrImmersiveRender
+l_CATAfrTouchPhylactery  				CATISYPPresenter					libCATAfrImmersiveRender
+l_CATAfrTouchPhylactery  				CATISYPTemplate						libCATAfrImmersiveRender
+
+
+CATAfrSmartCtl							CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidIconBoxCtl						CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidIconBoxCtl						CATISYPCollection					libCATAfrImmersiveRender
+CATAfrVidIconBoxGrid					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidIconBoxItem					CATISYPIntrospectable				libCATAfrImmersiveRender
+
+CATAfrCompassLabelViewFactory 			CATIAfrCompassLabelViewFactory		libCATAfrImmersiveRender
+CATAfrCompassLabelViewFactory  			CATICreateInstance					libCATAfrImmersiveRender
+
+CATAfrSYPViewLabel             			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPViewLabel             			CATISYPIntrospectablePrivate		libCATAfrImmersiveRender
+CATAfrSYPViewLabelTitle        			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrSYPViewLabelTitle        			CATISYPIntrospectablePrivate		libCATAfrImmersiveRender
+
+CATAfrLabelView                			CATIAfrLabelView					libCATAfrImmersiveRender
+CATAfrLabelView                			CATICreateInstance					libCATAfrImmersiveRender
+CATAfrLabelDefaultObject       			CATIAfrLabel						libCATAfrImmersiveRender
+CATAfrLabelDefaultObject       			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrLabelItem                			CATIAfrLabelItem					libCATAfrImmersiveRender
+CATAfrCompassLabelView 					CATIAfrCompassLabelView 			libCATAfrImmersiveRender
+
+CATAfrBarChartCtl 						CATISYPIntrospectable 				libCATAfrImmersiveRender
+CATAfrBarChartCtl 						CATISYPIntrospectablePrivate 		libCATAfrImmersiveRender 
+
+CATVidCtlRefinementDatePicker    CATISYPIntrospectable               libCATAfrImmersiveRender
+CATVidCtlTweakerCATTime          CATISYPIntrospectable               libCATAfrImmersiveRender
+
+CATAfrSpiderChartCtl					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidPolygonSide					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidLaySpiderSeriesGroup			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidSpiderCategory					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidSpiderSeriesValue				CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidSpiderSeriesHandler			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidSeriesHandler 					CATISYPIntrospectable 				libCATAfrImmersiveRender 
+
+CATAfrVidBarChartSeriesGroup			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidCtlBarChart					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidCtlBarChartCategory			CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidCtlBarChartValue				CATISYPIntrospectable				libCATAfrImmersiveRender
+
+CATAfrVidCtlCollection				    CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidCtlCollection					CATISYPCollection					libCATAfrImmersiveRender
+CATAfrVidCtlHierachyWidget				CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATAfrVidCtlAbstractScrollView			CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATAfrVidCtlScrollViews					CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATAfrVidCtlListView					CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATAfrVidCtlTab    				    	CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATAfrVidCtlTreeView					CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATAfrTreeDataTemplateProvider          CATIVidMdlDataTemplateProvider	    libCATAfrImmersiveRender 
+
+CATAfrVidWidgetNoLayout					CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATAfrToolView  				    	CATISYPIntrospectable  				libCATAfrImmersiveRender
+
+CATAfrVidSubMenuAction					CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATAfrVidSubMenuAction					CATISYPCollection					libCATAfrImmersiveRender
+CATAfrVidActionGroup					CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATAfrVidActionGroup					CATISYPCollection					libCATAfrImmersiveRender
+CATAfrVidAction							CATISYPIntrospectable  				libCATAfrImmersiveRender
+
+AfrCmpHdrFactory						CATIAfrCommandHeaderFactory    		libCATAfrImmersiveRender
+CATVidMdlAbstractMenu				    CATISYPCollection					libCATAfrImmersiveRender
+CATAfrVidMdlMenu						CATISYPIntrospectable  				libCATAfrImmersiveRender
+
+CATVidCtlTweakerCATAfrPathComponent     CATISYPIntrospectable               libCATAfrImmersiveRender
+CATAfrVidCtlMessagePublisher	        CATISYPIntrospectable               libCATAfrImmersiveRender
+CATAfrVidExtraViewPresenter	            CATISYPIntrospectable               libCATAfrImmersiveRender
+CATAfrVidCtlMenuButton		            CATISYPIntrospectable               libCATAfrImmersiveRender
+
+CATVidCtlLineEditor						CATIXAfrIntrospectable				libCATAfrImmersiveRender
+CATAfrVidSmartContainer					CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrListAppsController				CATIAfrAppsManagement				libCATAfrImmersiveRender
+CATAfrVidCtlWrapText		            CATISYPIntrospectable               libCATAfrImmersiveRender
+
+
+CATAfrWindowGroup                       CATISYPIntrospectable                 libCATAfrImmersiveRender
+CATAfrWindowGroup                       CATISYPCollection                     libCATAfrImmersiveRender
+
+CATAfrVidLayLayerForThumbnail           CATISYPIntrospectable                 libCATAfrImmersiveRender
+CATAfrVidCtlForThumbnailOver            CATISYPIntrospectable                 libCATAfrImmersiveRender
+CATAfrVidCtlForThumbnail                CATISYPIntrospectable                 libCATAfrImmersiveRender
+CATAfrVidCtlForTextTile                 CATISYPIntrospectable                 libCATAfrImmersiveRender
+
+CATVidCtlTweakerCATAfrColor             CATISYPIntrospectable                 libCATAfrImmersiveRender
+CATAfrCtlTweakerTextEditor              CATISYPIntrospectable                 libCATAfrImmersiveRender
+CATAfrCtlTweakerText                    CATISYPIntrospectable                 libCATAfrImmersiveRender
+
+ObjectPropertiesRepTypeVID              CATIAfrContainerViewFactory           libCATAfrImmersiveRender
+AppModeRepTypeVID                       CATIAfrContainerViewFactory           libCATAfrImmersiveRender
+
+# HEB MKCA MDE 28/05/2013
+CATAfrVidHoverMenu                      CATISYPIntrospectable                 libCATAfrImmersiveRender
+
+CATAfrAppsManagement					CATICAfrComponentController			libCATAfrImmersiveRender
+CATAfrVidContextBarCtl					CATISYPIntrospectable				libCATAfrImmersiveRender
+
+CATAfrFormTooltipProvider               CATISYPIntrospectableProvider       libCATAfrImmersiveRender
+CATAfrFormTooltipProvider               CATISYPIntrospectableSetter         libCATAfrImmersiveRender
+CATAfrFormTooltipProvider               CATICreateInstance                  libCATAfrImmersiveRender
+CATAfrMdlAppDataTemplateProvider		CATIVidMdlDataTemplateProvider		libCATAfrImmersiveRender
+CATAfrVidCtlPanelApps					CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATAfrVidCtlSectionApps    			  	CATISYPIntrospectable  				libCATAfrImmersiveRender
+CATAfrVidCtlGroupSectionsApps			CATISYPIntrospectable				libCATAfrImmersiveRender 
+CATXAfrServices						    CATIXAfrServices					libCATAfrImmersiveRender
+CATAfrVidCtlActionButton			    CATISYPIntrospectable				libCATAfrImmersiveRender
+CATAfrVidCtlSectionRoles   			  	CATISYPIntrospectable  				libCATAfrImmersiveRender
+
+CATAfrVidMdlAbstractProxy               CATISYPIntrospectable               libCATAfrImmersiveRender
+
+CATAfrVidCtlApps	    			  	CATISYPIntrospectable  				libCATAfrImmersiveRender
+
+AfrActionBarCtl					CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarSectionButtonIcon	CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarSectionChooser		CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarButtonCtl 			CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarVidButton			CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarVidDDButton			CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarSectionCtl			CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarToolbarCtl			CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarNewGroupCtl			CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarToolbarStack		CATISYPIntrospectable	libCATAfrImmersiveRender
+AfrActionBarEmptyAreaCtl		CATISYPIntrospectable	libCATAfrImmersiveRender
+
+CAfrStarterRep                  CATIAfrStarterViewFactory         libCATAfrImmersiveRender
+CATAfrCAfrStarterView           CATISYPIntrospectable             libCATAfrImmersiveRender
+CATAfrCAfrStarterView           CATISYPTemplate                   libCATAfrImmersiveRender
+
+CATCAfrPreferencesFileSelectController  CATICAfrComponentController  libCATAfrMePreferenceCtls
+CATCAfrPreferencesFolderSelectController  CATICAfrComponentController  libCATAfrMePreferenceCtls
+
+CATVidMdlMenu  CATISYPCollection  libCATAfrImmersiveRender
+
+AfrActionBarV3_MainView                   CATIAfrContainerViewFactory           libCATAfrImmersiveRender
+AfrActionBarV3MainView                    CATIAfrActionBarV3                    libCATAfrImmersiveRender
+AfrActionBarV3_Section                    CATIAfrContainerViewFactory           libCATAfrImmersiveRender
+AfrActionBarV3_Group                      CATIAfrContainerViewFactory           libCATAfrImmersiveRender
+AfrActionBarV3_FlyOut                     CATIAfrContainerViewFactory           libCATAfrImmersiveRender
+AfrActionBarV3_Starter                    CATIAfrStarterViewFactory             libCATAfrImmersiveRender
+AfrActionBarV3FlyOutView                  CATISYPIntrospectable                 libCATAfrImmersiveRender
+
+CATCAfrPreferencesPLMChooserController CATICAfrComponentController libCATAfrMePreferenceCtls
+
+AfrActionBarServicesImpl          CATIAfrActionBarServices          libCATAfrImmersiveRender
+AfrActionBarServicesImpl_latetype CATIAfrActionBarServices          libCATAfrImmersiveRender

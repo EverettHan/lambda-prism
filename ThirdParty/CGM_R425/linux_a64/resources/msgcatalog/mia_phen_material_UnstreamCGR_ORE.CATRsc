@@ -1,0 +1,43 @@
+/// BEGIN - NRE Configuration
+
+    AlphaMode.DefaultValue            = "ePhysicalMaterial";
+
+    Normal.DefaultValue               = "none";
+    Height.DefaultValue               = "none";
+    Coating.DefaultValue              = "none";
+    Flakes.DefaultValue               = "none";
+
+    glossiness.DefaultValue           = "0.85";
+    anisotropy.DefaultValue           = "0.0";
+    anisotropyAngle.DefaultValue      = "0.0";
+    bumpScale.DefaultValue            = "0.0";
+    transparency.DefaultValue         = "0.0";
+    opacity.DefaultValue              = "1.0";
+    edgeColorBias.DefaultValue        = "0.0";
+    displacement.DefaultValue         = "0.0";
+    flakesWeight.DefaultValue         = "0.0";
+    flakesStrength.DefaultValue       = "0.0";
+    flakesScale.DefaultValue          = "0.0";
+    diffuse.DefaultValue              = "1.0 1.0 1.0";
+    fresnelCoefficient.DefaultValue   = "0.04 0.04 0.04";
+    edgeColor.DefaultValue            = "0.0 0.0 0.0";
+    flakesColor.DefaultValue          = "0.0 0.0 0.0";
+
+    diffuse.ParameterUniform           = "diffuse";
+    diffuse.ParameterM1                = "diffuse_weight";
+
+    fresnelCoefficient.ParameterSemantic = "ior";
+    fresnelCoefficient.ParameterUniform  = "refr_ior";
+    fresnelCoefficient.ParameterM1       = "reflectivity";
+    fresnelCoefficient.ParameterM2       = "refl_color";
+
+    glossiness.ParameterUniform            = "refl_gloss";
+
+    anisotropy.ParameterUniform          = "anisotropy";
+    anisotropyAngle.ParameterUniform     = "anisotropy_rotation";
+
+    transparency.ParameterUniform          = "transparency";
+
+    opacity.ParameterUniform               = "cutout_opacity";
+
+/// END - NRE Configuration

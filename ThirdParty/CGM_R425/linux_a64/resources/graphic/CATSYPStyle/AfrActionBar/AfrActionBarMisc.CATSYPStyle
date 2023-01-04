@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template syp:name="Default" Target="AfrActionBarButtonCtl" syp:version="2">
+    <CATVidLayGrid GridWeight="col1=1">
+      <CATVidSpacer syp:name="LeftSpacer" RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidCtl syp:name="ButtonPresenter" Name="Content" RequestedMinimumDimension="32 32" />
+        <CATVidGPSquare UseManipulatorFlag="1" syp:name="pickZone" Name="PickZone"/>
+      </CATVidLayLayer>
+      <CATVidSpacer  syp:name="RightSpacer" RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ButtonPresenter"   Value="40 40"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="LeftSpacer"   Value="3 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="RightSpacer"  Value="3 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ButtonPresenter"   Value="32 32"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="LeftSpacer"   Value="2 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="RightSpacer"  Value="2 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ShowClipped" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="LeftSpacer" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="RightSpacer" Value="0 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableCloak" Value="0">
+        <CATSYPSetter Property="UseManipulatorFlag" TargetName="pickZone" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableCloak" Value="1">
+        <CATSYPSetter Property="UseManipulatorFlag" TargetName="pickZone" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="AfrActionBarVidButton" syp:clonableFlag="TRUE" syp:version="2">
+      <CATVidLayLayer syp:name="LayerFull" VisibleFlag="1" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPNinePatchSquare syp:name="ButtonTexture" Name="PickZone" ScalableAreaBorder="4" Texture="" GiveFocusOnHoldDragFlag="@GiveFocusOnHoldDragFlag" GiveFocusOnDragFlag="@GiveFocusOnDragFlag" AcceptFocusOnDropFlag="@AcceptFocusOnDropFlag" UseManipulatorFlag="1"  PickFlag="1"
+                                 Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" DoubleRelease="@HandleEvent" Press="@HandleEvent" Drag="@HandleEvent" Hold="@HandleEvent" LongHold="@HandleEvent" TouchMove="@HandleEvent" MoveOver="@HandleEvent"
+                                 MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent" PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayGrid syp:name="Icon2" CATVidLayGrid.IndexedConstraints="x=0 y=0" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseIconFlag" GridWeight="col1=1 row1=1">
+            <CATVidSpacer syp:name="Icon2LeftSpacer" RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=1" GridWeight="col0=1">
+              <CATVidGPSquare syp:name="IconSquare2" PixelImage="@IconPixelImage" Texture="@Icon" TextureFilter="@IconFilter" MinificationFilter="@MinificationFilter" RequestedMinimumDimension="@IconDimension" CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+              <CATVidGPSquare syp:name="DropDownIcon"  Texture="ActionBar/ABButtonDropDownArrow-1x.png" LayoutWhenUnvisibleFlag="0"  RequestedMinimumDimension="13 10" VisibleFlag="@ShowDropDownInFlyoutFlag" CATVidLayGrid.IndexedConstraints="x=1 y=0" />
+            </CATVidLayGrid>
+            <CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" />
+          </CATVidLayGrid>
+          <CATVidLayGrid syp:name="BototmLabel" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseLabelFlag">
+            <CATVidGPLabel Text="@Label" LeftMargin="2" RightMargin="2" RequestedMinimumDimension="75 10" TextHeight="@TextHeight" FontSize="@FontSize" VerticalAlignment="1" HorizontalAlignment="@HorizontalAlignment" CaptionFontFlag="@FontWeight" CropPolicy="NoCrop" TextColor="@ForegroundColor" UnderlineFlag="@UnderlineFlag" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidGPLabel Text="@SecondRowText" LeftMargin="2" RightMargin="2" RequestedMinimumDimension="75 10" TextHeight="@TextHeight" FontSize="@FontSize" VerticalAlignment="1" HorizontalAlignment="@HorizontalAlignment" CaptionFontFlag="@FontWeight" CropPolicy="@CropPolicy" TextColor="@ForegroundColor" UnderlineFlag="@UnderlineFlag" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+          </CATVidLayGrid>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisualState" Value="Off">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="Over">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDBoxHover32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="On">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDBoxSelected32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="OnAndOver">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDBoxSelectedHover32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="FlyoutButton" Target="AfrActionBarVidButton" syp:clonableFlag="TRUE">
+      <CATVidLayLayer syp:name="LayerFull" VisibleFlag="1" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPNinePatchSquare syp:name="ButtonTexture" Name="PickZone" ScalableAreaBorder="4" GiveFocusOnHoldDragFlag="@GiveFocusOnHoldDragFlag" GiveFocusOnDragFlag="@GiveFocusOnDragFlag" AcceptFocusOnDropFlag="@AcceptFocusOnDropFlag" UseManipulatorFlag="1"  PickFlag="1"
+                                 Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" DoubleRelease="@HandleEvent" Press="@HandleEvent" Drag="@HandleEvent" Hold="@HandleEvent" LongHold="@HandleEvent" TouchMove="@HandleEvent" MoveOver="@HandleEvent"
+                                 MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent" PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+        <CATVidLayGrid GridWeight="col1=1">
+          <CATVidLayGrid syp:name="Icon2" CATVidLayGrid.IndexedConstraints="x=0 y=0" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseIconFlag" GridWeight="col1=1 row1=1">
+            <CATVidSpacer syp:name="Icon2LeftSpacer" RequestedMinimumDimension="3 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=1" GridWeight="col0=1">
+              <CATVidGPSquare syp:name="IconSquare2" PixelImage="@IconPixelImage" Texture="@Icon" TextureFilter="@IconFilter" MinificationFilter="@MinificationFilter" RequestedMinimumDimension="@IconDimension" CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+              <CATVidGPSquare syp:name="DropDownIcon"  Texture="ActionBar/ABButtonDropDownArrow-1x.png" LayoutWhenUnvisibleFlag="0"  RequestedMinimumDimension="13 10" VisibleFlag="@ShowDropDownInFlyoutFlag" CATVidLayGrid.IndexedConstraints="x=1 y=0" />
+            </CATVidLayGrid>
+            <CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" />
+          </CATVidLayGrid>
+          <CATVidLayGrid syp:name="RHSLabel" GridWeight="col2=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=2 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="1">
+            <CATVidGPSquare RequestedMinimumDimension="1 1" Color="122 122 122 200" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTBR" />
+            <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" />
+            <CATVidGPLabel Text="@ButtonText" CropPolicy="NoCrop" TextHeight="@TextHeight" FontSize="@FontSize" HorizontalAlignment="0" VerticalAlignment="1" CaptionFontFlag="@FontWeight" TextColor="@ForegroundColor" UnderlineFlag="@UnderlineFlag" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR" />
+            <CATVidSpacer RequestedMinimumDimension="5 3" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB" />
+          </CATVidLayGrid>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisualState" Value="Off">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="Over">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDBoxHover32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="On">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDBoxSelected32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="OnAndOver">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDBoxSelectedHover32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+  <Template syp:name="Clipped" Target="AfrActionBarVidButton" syp:clonableFlag="TRUE">
+      <CATVidLayLayer syp:name="LayerClipped" VisibleFlag="1" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPNinePatchSquare syp:name="ButtonTexture" Name="PickZone" ScalableAreaBorder="4 3 4 4" GiveFocusOnHoldDragFlag="@GiveFocusOnHoldDragFlag" GiveFocusOnDragFlag="@GiveFocusOnDragFlag" AcceptFocusOnDropFlag="@AcceptFocusOnDropFlag" UseManipulatorFlag="1"  PickFlag="1"
+                                 Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" DoubleRelease="@HandleEvent" Press="@HandleEvent" Drag="@HandleEvent" Hold="@HandleEvent" LongHold="@HandleEvent" TouchMove="@HandleEvent" MoveOver="@HandleEvent"
+                                 MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent" PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+        <CATVidGPNinePatchSquare syp:name="IndirectHoverBorderLayer" ScalableAreaBorder="4 3 4 4" Texture="ActionBar/ABHUDDropBoxLIndirectHover32-1x.png"/>
+        <CATVidLayGrid>
+          <CATVidLayGrid syp:name="Icon1" CATVidLayGrid.IndexedConstraints="x=0 y=0" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseIconFlag" GridWeight="col1=1 row1=1">
+            <CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidGPSquare   syp:name="IconSquare1" PixelImage="@IconPixelImage" Texture="@Icon" TextureFilter="@IconFilter" MinificationFilter="@MinificationFilter" RequestedMinimumDimension="@IconDimension" CATVidLayGrid.IndexedConstraints="x=1 y=1" />
+            <CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" />
+          </CATVidLayGrid>
+          <CATVidLayGrid syp:name="Label1" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseLabelFlag">
+            <CATVidGPLabel Text="@Label" LeftMargin="2" RightMargin="2" RequestedMinimumDimension="75 10" TextHeight="@TextHeight"	FontSize="@FontSize" HorizontalAlignment="@HorizontalAlignment" CaptionFontFlag="@FontWeight" CropPolicy="NoCrop" TextColor="@ForegroundColor" UnderlineFlag="@UnderlineFlag" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidGPLabel Text="@SecondRowText" LeftMargin="2" RightMargin="2" RequestedMinimumDimension="75 10" TextHeight="@TextHeight"	FontSize="@FontSize" VerticalAlignment="1" HorizontalAlignment="@HorizontalAlignment" CaptionFontFlag="@FontWeight" CropPolicy="@CropPolicy" TextColor="@ForegroundColor" UnderlineFlag="@UnderlineFlag" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+          </CATVidLayGrid>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisualState" Value="Off">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="Over">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDDropBoxLHover32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="On">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDDropBoxLSelected32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="OnAndOver">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDDropBoxLSelectedHover32-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlagIndirect" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonTexture" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="IndirectHoverBorderLayer" Value="255" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlagIndirect" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonTexture" Value="255" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="IndirectHoverBorderLayer" Value="0" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+
+  <Template syp:name="SplitBtnRHS" Target="AfrActionBarVidButton" syp:clonableFlag="TRUE" syp:version="2">
+    <CATVidLayLayer syp:name="Layer">
+      <CATVidGPNinePatchSquare syp:name="ButtonTexture" Name="PickZone" ScalableAreaBorder="4 4 4 3" GiveFocusOnHoldDragFlag="@GiveFocusOnHoldDragFlag" GiveFocusOnDragFlag="@GiveFocusOnDragFlag" AcceptFocusOnDropFlag="@AcceptFocusOnDropFlag" UseManipulatorFlag="1"  PickFlag="1"
+                                 Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" DoubleRelease="@HandleEvent" Press="@HandleEvent" Drag="@HandleEvent" Hold="@HandleEvent" LongHold="@HandleEvent" TouchMove="@HandleEvent" MoveOver="@HandleEvent" MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent" PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+      <CATVidGPNinePatchSquare syp:name="IndirectHoverBorderLayer" ScalableAreaBorder="4 4 4 3" Texture="ActionBar/ABHUDDropBoxRIndirectHover32-1x.png" />
+      <CATVidLayGrid>
+        <CATVidGPSquare syp:name="DDArrow" Texture="ActionBar/ABButtonDropDownArrow-1x.png" RequestedMinimumDimension="13 10" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LR"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisualState" Value="Off">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value=""/>
+        <CATSYPSetter Property="Texture" TargetName="DDArrow" Value="ActionBar/ABButtonDropDownArrow-1x.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="Over">      
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDDropBoxRHover32-1x.png"/>
+        <CATSYPSetter Property="Texture" TargetName="DDArrow" Value="ActionBar/ABButtonDropDownArrowHover-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="On">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDDropBoxRSelected32-1x.png"/>
+        <CATSYPSetter Property="Texture" TargetName="DDArrow" Value="ActionBar/ABButtonDropDownArrowSelected-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisualState" Value="OnAndOver">
+        <CATSYPSetter Property="Texture" TargetName="ButtonTexture" Value="ActionBar/ABHUDDropBoxRSelectedHover32-1x.png"/>
+        <CATSYPSetter Property="Texture" TargetName="DDArrow" Value="ActionBar/ABButtonDropDownArrowSelected-1x.png"/>
+        <CATSYPSetter Property="UseColorizeFlag" TargetName="ButtonTexture" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlagIndirect" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonTexture" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="IndirectHoverBorderLayer" Value="255" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlagIndirect" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonTexture" Value="255" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="IndirectHoverBorderLayer" Value="0" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <Template syp:name="TabDot" Target="AfrActionBarSectionButtonIcon">
+    <CATVidLayGrid GridWeight="row1=1">
+      <CATVidSpacer syp:name="BkgndTouchSpacer" RequestedMinimumDimension="@TouchSpacerDim" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidCtlButtonIcon OffTexture="@OffTexture" OnTexture="@OnTexture" OverTexture="@OverTexture" DisabledTexture="@DisabledTexture" OnAndOverTexture="@OnAndOverTexture" RequestedMinimumDimension="@IconDimension" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="TabButton" Target="AfrActionBarSectionButtonIcon">
+    <CATVidLayLayer syp:name="Layer">
+      <CATVidGPSquare syp:name="PickZone" Name="PickZone" PickFlag="1" UseManipulatorFlag="1" GiveFocusOnDragFlag="@GiveFocusOnDragFlag" AcceptFocusOnDropFlag="@AcceptFocusOnDropFlag"
+                           Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" DoubleRelease="@HandleEvent" Press="@HandleEvent" Drag="@HandleEvent" Hold="@HandleEvent" LongHold="@HandleEvent" TouchMove="@HandleEvent"
+                           MoveOver="@HandleEvent" MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent" PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+      <CATVidGPNinePatchSquare syp:name="Off" ScalableAreaBorder="6" Texture="@OffTexture" TextureAlpha="255" />
+      <CATVidGPNinePatchSquare syp:name="On" ScalableAreaBorder="6" Texture="@OnTexture" TextureAlpha="0" />
+      <CATVidGPNinePatchSquare syp:name="Over" ScalableAreaBorder="6" Texture="@OverTexture" TextureAlpha="0" />
+      <CATVidGPNinePatchSquare syp:name="Disabled" ScalableAreaBorder="6" Texture="@DisabledTexture" TextureAlpha="0" />
+      <CATVidLayGrid syp:name="Label" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPLabel Text="@Label"  LeftMargin="@LabelLeftMargin" RightMargin="@LabelRightMargin" TopMargin="@LabelTopMargin" BottomMargin="@LabelBottomMargin"
+                       HorizontalAlignment="@HorizontalAlignment" VerticalAlignment="@VerticalAlignment" CropPolicy="@CropPolicy" RequestedMinimumDimension="@RequestedMinimumDimension"
+                       TextHeight="@TextHeight" TextColor="@ForegroundColor" UnderlineFlag="@UnderlineFlag" BoldFlag="@BoldFlag" FontSize="@FontSize"
+                       CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+
+      </CATVidLayGrid>
+      <CATVidLayGrid syp:name="EditBoxGrid" LayoutWhenUnvisibleFlag="0" CellSpacing="2" VisibleFlag="0">
+        <CATVidCtlLineEditor syp:name="EditBox" Name="EditBox" Text="@Label" SelectAllTextOnFocusFlag="1" EditingFinished="@OnEditingFinished"  ReturnPressed="@OnReturnPressed" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="EditMode" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="EditBoxGrid" Value="1" />
+        <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="0" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EditMode" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="EditBoxGrid" Value="0" />
+        <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="1" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OnFlag" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Off" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Over" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Disabled" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="On" Value="255" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OnFlag" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Off" Value="255" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="On" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Over" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Disabled" Value="0" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Off" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="On" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Disabled" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Over" Value="255" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Off" Value="255" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Over" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="On" Value="0" />
+        <CATSYPSetter Property="TextureAlpha" TargetName="Disabled" Value="0" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="AfrActionBarSectionChooser">
+      <CATVidLayGrid GridWeight="col0=50 col2=50">
+        <CATVidSpacer RequestedMinimumDimension="6 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB compactFlag=1"/>
+        <CATVidLayStack syp:name="RootStack" Orientation="Horizontal" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=1 y=0">
+          <CATVidCtl syp:name="TabsArea" VisibleFlag="@TabsVisibility" LayoutWhenUnvisibleFlag="0" CATVidLayStack.IndexedConstraints="Compact=TRUE">
+            <CATVidLayGrid syp:name="TabsInnerGrid" GridWeight="col1=1" LayoutWhenUnvisibleFlag="0">
+              <CATVidCtlButtonIcon syp:Template="Icon" syp:name="SectionChooserMoveLeft"
+                   Name="LeftArrow"
+                   CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL compactFlag=1"
+                   AllowMultiplePressFlag="1"
+                   RequestedMinimumDimension="25 26"
+                   LayoutWhenUnvisibleFlag="0"
+                   OffTexture="ActionBar/AB-NextButtonLeftArrow"
+                   OnTexture="ActionBar/AB-NextButtonLeftArrowHover"
+                   OverTexture="ActionBar/AB-NextButtonLeftArrowHover"
+                   Click="@OnLeftArrowClicked"
+                   VisibleFlag="@SrollEnabled"/>
+              <CATVidCtlScrollableArea syp:name="ScrollableArea" Name="SectionChooserScrollable" syp:Template="Default" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB compactFlag=1"
+                                             HScrollbarPolicy="AlwaysHidden"  VScrollbarPolicy="AlwaysHidden"
+                                             VStretchPolicy="NoStretchFit" AlwaysDispatchLimitReachedFlag="1" MouseWheelOrientation="Horizontal">
+                <CATVidLayStack syp:name="InnerStack" Orientation="Horizontal" StackAttachmentAppendPolicy="StretchAttachmentPolicy">
+                  <CATVidCtl syp:name="CirclesCtl" VisibleFlag="" LayoutWhenUnvisibleFlag="0"  CATVidLayStack.IndexedConstraints="Compact=TRUE">
+                    <CATVidLayLayer syp:name="ButtonsLayer" LayoutWhenUnvisibleFlag="0">
+                      <CATVidSpacer syp:name="BkgndTouchSpacer" RequestedMinimumDimension="0 0"/>
+                      <CATVidGPNinePatchSquare syp:name="BackgroundLayer" Name="PickZone" ScalableAreaBorder="6" Texture="ActionBar/AB-LabelBar" TextureAlpha="255" UseManipulatorFlag="1"  PickFlag="1" />
+                      <CATVidLayGrid syp:name="DotsGrid" GridWeight="col1=50 col3=50" LayoutWhenUnvisibleFlag="0">
+                        <CATVidSpacer RequestedMinimumDimension="4 20" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                        <CATVidLayStack syp:name="LabelsStack" Name="LabelsContainer" CellBorder="0" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach="/>
+                        <CATVidLayStack syp:name="CirclesStack" Name="CirclesContainer" CellBorder="0" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach="/>
+                        <CATVidSpacer RequestedMinimumDimension="8 20" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+                      </CATVidLayGrid>
+                    </CATVidLayLayer>
+                  </CATVidCtl>
+                  <CATVidCtl syp:name="LabelsCtl"  LayoutWhenUnvisibleFlag="0" CATVidLayStack.IndexedConstraints="Compact=TRUE">
+                    <CATVidLayGrid syp:name="ButtonsGrid" GridWeight="col0=1" LayoutWhenUnvisibleFlag="0">
+                      <CATVidLayStack syp:name="ButtonsStack" CellBorder="0" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach="/>
+                    </CATVidLayGrid>
+                  </CATVidCtl>
+                </CATVidLayStack>
+              </CATVidCtlScrollableArea>
+              <CATVidCtlButtonIcon syp:Template="Icon" syp:name="SectionChooserMoveRight"
+                   Name="RightArrow"
+                   CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL compactFlag=1"
+                   AllowMultiplePressFlag="1"
+                   RequestedMinimumDimension="25 26"
+                   OffTexture="ActionBar/AB-NextButtonRightArrow"
+                   OnTexture="ActionBar/AB-NextButtonRightArrowHover"
+                   OverTexture="ActionBar/AB-NextButtonRightArrowHover"
+                   LayoutWhenUnvisibleFlag="0"
+                   Click="@OnRightArrowClicked"
+                   VisibleFlag="@SrollEnabled"/>
+            </CATVidLayGrid>
+          </CATVidCtl>
+          <AfrActionBarSectionButtonIcon syp:name="MinArrow" Name="MinimizeArrow" syp:Template="TabDot" IconDimension="24 24" OffTexture="ActionBar/ABExpanderCollapse-1x.png" OnTexture="ActionBar/ABExpanderCollapseHover-1x.png" OverTexture="ActionBar/ABExpanderCollapseHover-1x.png" CATVidLayStack.IndexedConstraints="Compact=TRUE"/>
+        </CATVidLayStack>
+        <CATVidSpacer RequestedMinimumDimension="6 2" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB compactFlag=1"/>
+      </CATVidLayGrid>
+    
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ShowSectionLabels" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CirclesCtl" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelsCtl" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ShowSectionLabels" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CirclesCtl" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelsCtl" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExpandedFlag" Value="1">
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TabsArea" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExpandedFlag" Value="0">
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="TabsArea" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BkgndTouchSpacer" Value="20 44"/>
+        <CATSYPSetter Property="Texture" TargetName="BackgroundLayer" Value="ActionBar/AB-LabelBar-Touch"/>
+        <CATSYPSetter Property="IconDimension" TargetName="MinArrow" Value="44 44"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BkgndTouchSpacer" Value="0 0"/>
+        <CATSYPSetter Property="Texture" TargetName="BackgroundLayer" Value="ActionBar/AB-LabelBar"/>
+        <CATSYPSetter Property="IconDimension" TargetName="MinArrow" Value="24 24"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="AfrActionBarNewGroupCtl">
+    <CATVidLayGrid LayoutWhenUnvisibleFlag="0" GridWeight="col1=1">
+      <CATVidGPSquare Texture="ActionBar/ABDivider.png" RequestedMinimumDimension="4 45" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPNinePatchSquare syp:name="pickZone" Name="PickZone" UseManipulatorFlag="1" PickFlag="1" ScalableAreaBorder="4" Texture="ActionBar/ABNewGroupBackground.png" LayoutWhenUnvisibleFlag="0"/>
+        <CATVidGPLabel syp:name="NewGroupText" TextColor="50 50 50 255" CropPolicy="NoCrop" LeftMargin="2" TopMargin="0" RightMargin="2" HorizontalAlignment="1" VerticalAlignment="1" TextHeight="16" Text="@Message" RequestedMinimumDimension="100 40" LayoutWhenUnvisibleFlag="0"/>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Secondary" Target="AfrActionBarEmptyAreaCtl">
+    <CATVidLayLayer>
+      <CATVidGPSquare Name="PickZone" UseManipulatorFlag="1" PickFlag="1"/>
+      <CATVidLayGrid syp:name="InfoTextGrid" GridWeight="col0=1" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPText syp:name="InfoText" LeftMargin="5" RightMargin="5" LayoutWhenUnvisibleFlag="0" Color="50 50 50 255" WordWrapFlag="0" Text="Drag Items here to hide them" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidSpacer RequestedMinimumDimension="10 0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template syp:name="Primary" Target="AfrActionBarEmptyAreaCtl">
+    <CATVidLayLayer>
+      <CATVidGPSquare Name="PickZone" UseManipulatorFlag="1" PickFlag="1" RequestedMinimumDimension="32 32"/>
+    </CATVidLayLayer>
+  </Template>
+
+
+</Styles>

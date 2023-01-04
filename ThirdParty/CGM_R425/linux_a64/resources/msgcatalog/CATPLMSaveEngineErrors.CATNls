@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic = "System error.";
+SystemERR.Advice     = "Please contact the support.";
+
+
+ServerInternalERR.Diagnostic = "Internal server error.";
+ServerInternalERR.Advice     = "A Local Save was performed to preserve your data. You will be able to restore your session if needed.";
+
+ServerInternalERRNoLS.Diagnostic = "Internal server error.";
+ServerInternalERRNoLs.Advice     = "No Local Save was possible. Please retry later.";
+
+VaultServerInternalERR.Diagnostic = "Some errors occurred during transfer of streams.";
+VaultServerInternalERR.Advice = "A Local Save was performed to preserve your data. You will be able to restore your session if needed.";
+
+VaultServerInternalERRNoLs.Diagnostic = "Some errors occurred during transfer of streams.";
+VaultServerInternalERRNoLs.Advice = "No Local Save was possible. Please retry later.";
+
+NoObjectToSaveWRN.Diagnostic       = "There isn't any object to save.";
+NoObjectToSaveWRN.Advice           = "Make sure you have really selected what you have modified.";
+
+GenericSaveErrorWithCompo.Diagnostic = "The Component [/p1] cannot be saved.";
+GenericSaveErrorWithCompo.Advice = "Save operation cannot deal with Component /p1. \nIt is strongly advised to restart this application.";
+
+PLMSaveEngineError_501.Diagnostic = "Save operation cannot be performed.";
+PLMSaveEngineError_501.Advice = "The component /p1 is not an affected item of the current ECA.";
+
+ChangeLogInternalERR.Diagnostic = "Save operation cannot be performed, due the ChangeLog data.";
+ChangeLogInternalERR.Advice = "Please contact the support with the last traces DebugChangeLog*.log in your CATTemp directory.";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic = "Save operation cannot be performed, due the coexistence mapping table.";
+SaveCoexMpgExchangeInternalERR.Advice = "Please contact the support.";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic = "Save operation cannot be performed.";
+PLMSaveEngineError_601.Advice =  "OfflineSave operation cannot deal with Component /p1. \nThe component has been modified outside an authoring space.";
+PLMSaveEngineError_602.Diagnostic = "Save operation cannot be performed.";
+PLMSaveEngineError_602.Advice =  "OfflineSave operation cannot deal with Component /p1. \nThe component in under a Lifecycle transaction.";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic = "Save operation cannot be performed.";
+PLMSaveEngineError_701.Advice =  "Save operation cannot deal with Component /p1. \nThe component has been modified outside an authoring space.";
+PLMSaveEngineError_702.Diagnostic = "Save operation cannot be performed.";
+PLMSaveEngineError_702.Advice =  "Save operation cannot deal with Component /p1. \nThe component in under a Lifecycle transaction.";

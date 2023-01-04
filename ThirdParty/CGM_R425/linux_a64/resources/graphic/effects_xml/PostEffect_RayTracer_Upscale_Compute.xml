@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">    
+
+  <STORAGE_IMAGE>
+    <NAME>i_Source</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>rgba8</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  
+  <STORAGE_IMAGE>
+    <NAME>i_Dest</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>rgba8</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <COMPUTE_PASS>
+      <NAME>Pass0</NAME>
+      <COMPUTE_STAGE>PostEffect_RayTracer_Upscale_Compute</COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+    
+</EFFECT>

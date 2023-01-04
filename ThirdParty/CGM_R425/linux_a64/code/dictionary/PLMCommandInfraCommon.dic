@@ -1,0 +1,17 @@
+PLMStreamReaderImpl		CreateInterface           libPLMSCBStreamer
+PLMStreamWriterImpl		CreateInterface           libPLMSCBStreamer
+
+PLMCmdAccumulatorDocHandler	CATISAXDocumentHandler	libPLMCmdXMLDocHandlers
+PLMCmdAccumulatorDocHandler	CATISAXContentHandler	libPLMCmdXMLDocHandlers
+PLMCmdCounterDocHandler		CATISAXDocumentHandler	libPLMCmdXMLDocHandlers
+PLMCmdCounterDocHandler		CATISAXContentHandler 	libPLMCmdXMLDocHandlers
+PLMCmdSplitterDocHandler	CATISAXDocumentHandler	libPLMCmdXMLDocHandlers
+PLMCmdSplitterDocHandler	CATISAXContentHandler 	libPLMCmdXMLDocHandlers
+
+PLMCmdParamDocHandler		CATISAXDocumentHandler	libPLMCommandBaseImpl
+PLMCmdParamDocHandler		CATISAXContentHandler 	libPLMCommandBaseImpl
+PLMCmdParamImporter		CATISAXDocumentHandler	libPLMCommandBaseImpl
+PLMCmdParamImporter		CATISAXContentHandler 	libPLMCommandBaseImpl
+PLMCmdStreamImporter		CATISAXDocumentHandler	libPLMCommandBaseImpl
+PLMCmdStreamImporter 		CATISAXContentHandler 	libPLMCommandBaseImpl
+

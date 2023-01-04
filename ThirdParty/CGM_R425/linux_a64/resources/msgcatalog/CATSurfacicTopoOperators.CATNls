@@ -1,0 +1,180 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for SurfacicTopoOperators  errors 
+// En_EN
+//----------------------------------invalid input
+//
+//8000->8099 **** Fill && PowerFill *************
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Request="Fill operator:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Diagnostic="The computed face is self intersecting."; 
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Advice="Modify the inputs or the objects used to generate it .";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Request="Fill operator:";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Diagnostic="The projected point on the initial surface is too close from the wire to fill in relation to the distance between the point and its projection .";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Advice="Modify the point .";
+//
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Request="Fill operator:";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Diagnostic="A curve of the wire to fill is too small and becomes punctual during fill computation."; 
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Advice="Clean the wire by removing this curve .";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8003.Request="Fill operator:";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Diagnostic="The wire is degenerated."; 
+SurfacicTopOpInFillInvalidWire_ERR_8003.Advice="Modify the wire .";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Request="Fill operator:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Diagnostic="The set of normals defined by the tangency constraints is too scattered and there is a passing point."; 
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Advice="Modify the inputs or the objects used to generate it, or suppress the passing point.";
+//
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Request="Fill operator:";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Diagnostic="It is impossible to chain the wire to fill."; 
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Advice="Check the wire.";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Request="Fill operator:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Diagnostic="A curve of the wire to fill is not lying on its support."; 
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Advice="Check the wire";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Request="Fill operator:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Diagnostic="The computed face is self intersecting because the wire to fill is self intersecting. "; 
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Advice="Clean the wire.";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Request="Fill operator:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Diagnostic="The computation of the fill  provides a face with self intersections."; 
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Advice="Modify the inputs or the objects used to generate it .";
+//
+// **** 8009 a deplacer en 8209 dans Healing && HealGaps *************
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Request="Healing operator:";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Diagnostic="Non Manifold Topology on edges impacted by healing."; 
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Advice="Modify the input or the objects used to generate it .";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8009.Request="Fill operator:";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Diagnostic="The gap between two edges of the wire to fill is greater than the smallest length of these edges."; 
+SurfacicTopOpInFillInvalidWire_ERR_8009.Advice="Clean the wire.";
+//
+// **** 8011 a deplacer en 8211 dans Healing && HealGaps *************
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Request="Healing operator:";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Diagnostic="Invalid Geometry."; 
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Advice="Modify the input or the objects used to generate it .";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Request="Fill operator:";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Diagnostic="The projected point on the initial surface is outside of the wire to fill.";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Advice="Modify the point .";
+//
+// **** 8013 a deplacer en 8213 dans Healing && HealGaps *************
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Request="Healing operator:";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Diagnostic="WARNING : a too large gap is detected on Vertex"; 
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Advice="Decrease the merging distance or modify input surface before applying Healing"; 
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Request="Fill operator:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Diagnostic="A curve of the wire to fill is not fully lying on its support."; 
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Advice="Check the wire";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Request="Fill operator:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Diagnostic="The lying down operation of a curve on its support failed because the topologies before and after this operation are incompatible."; 
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Advice="Previously project it on the support.";
+//
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Request="Fill operator:";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Diagnostic="Your boundary is not closed."; 
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Advice="Try to improve your geometry.";
+
+//
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Request="Fill operator:";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Diagnostic="It remains gaps on the boundary of the Fill Surface."; 
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Advice="Increase Tolerance.";
+
+SurfacicTopOpInFillPartialResult_ERR_8018.Request="Fill operator:";
+SurfacicTopOpInFillPartialResult_ERR_8018.Diagnostic="The result is partial because the following inner contraints are not taken into account."; 
+SurfacicTopOpInFillPartialResult_ERR_8018.Advice="Modify inner constraints.";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Request="Fill operator:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Diagnostic="There is no result because the set of normals defined by the tangency constraints is too scattered ."; 
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Advice="Delete the tangency constraints.";
+//
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Request="Fill operator:";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Diagnostic="The Fill failed because input data are incompatible."; 
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Advice="Modify input data.";
+//
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Request="Fill operator:";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Diagnostic="Inner Boundaries are the one in the other one."; 
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Advice="Modify Inner Boundaries.";
+//
+
+//
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Request="PowerFill operator:";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Diagnostic="Operator registration unsuccessful."; 
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Advice="Modify input data.";
+//
+SurfacicTopOpInFillPartialResult_ERR_8023.Request="Fill warning:";
+SurfacicTopOpInFillPartialResult_ERR_8023.Diagnostic="G2 constraints are not take in account (incompabilities between the constraints).";
+SurfacicTopOpInFillPartialResult_ERR_8023.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8024.Request="Fill warning:";
+SurfacicTopOpInFillPartialResult_ERR_8024.Diagnostic="Input wire is self-intersecting. Profile has been healed successfully.";
+SurfacicTopOpInFillPartialResult_ERR_8024.Advice="";
+//
+
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Request="Fill operator";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Diagnostic="There is no solution for this operation.";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8026.Request="Fill operator:";
+SurfacicTopOpInFillPartialResult_ERR_8026.Diagnostic="The result is partial because G2 contraints have been replaced by G1 constraints."; 
+SurfacicTopOpInFillPartialResult_ERR_8026.Advice="Remove G2 constraints.";
+
+//
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Request="Fill operator:";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Diagnostic="One curve has more than one support surface."; 
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Advice="Extract the support surface on which tangency or curvature constraints are required .";
+
+
+//
+//8100->8199 **** Deformation && Unbend *************
+//
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Request="Deformation operator:";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Diagnostic="Part of the input body is too close to the bend axis.";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Advice="The bend and unbend operators cannot deform material that is within radius R of the bend axis, where R = 20x the model resolution.";
+
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Request="Unbend operation:";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Diagnostic="The (un)bend angle is too large.";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Advice="The bend angle must be between 0 and 120 degrees.  Divide the operation up into multiple operations.";
+
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Request="Deformation operator:";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Diagnostic="An internal error occurred while classifying the partitions in the input body.";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Advice="";
+
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Request="Deformation operator:";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Diagnostic="An internal error occurred while evaluating the map.";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Advice="";
+
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Request="Deformation operator:";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Diagnostic="An internal error occurred while dividing the input body into partitions.";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Advice="";
+
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Request="Deformation operator:";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Diagnostic="Input body box is empty.";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Advice="Check that the input body exists.";
+
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Request="Deformation operator:";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Diagnostic="Inhomogeneous bodies are currently not supported.";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Advice="";
+
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Request="Deformation operator:";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Diagnostic="The selected region cannot be bent or unbent.";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Advice="The bend/unbend operation cannot be performed while preserving the topology of the input body.";
+
+//
+
+//
+//8200->8299 **** Healing && HealGaps *************
+//
+SurfacicTopOpHealGaps_ERR_8200.Request="HealGaps operator:";
+SurfacicTopOpHealGaps_ERR_8200.Diagnostic="There are un-healed gaps left.";
+SurfacicTopOpHealGaps_ERR_8200.Advice="Use GetGaps methods to retrieve the cells with gap and try restricting healing to those cells.";
+//
+SurfacicTopOpHealingTopHealError_ERR_8220.Request="Healing operator:";
+SurfacicTopOpHealingTopHealError_ERR_8220.Diagnostic="Topological Healing failed"; 
+SurfacicTopOpHealingTopHealError_ERR_8220.Advice="Allow Shape Deformation";
+//
+
+
+

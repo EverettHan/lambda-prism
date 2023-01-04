@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:dsfx0" xmlns:tgn="urn:dsfx0" elementFormDefault="qualified">
+  
+ <xs:include schemaLocation="DSFX.xsd"/>
+  
+  <xs:complexType name ="ExternalSamplerDeclaration">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:choice>
+        <xs:element name="SAMPLER_TYPE" type="tgn:SamplerType" minOccurs="0"/>
+        <xs:element name="SAMPLER_DECLARATION" type="tgn:SamplerDeclaration" minOccurs="0" maxOccurs="unbounded" />
+      </xs:choice>
+      <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="SamplerDeclarations">
+    <xs:sequence>
+      <xs:element name="SAMPLER" minOccurs="0" maxOccurs="unbounded" type="tgn:ExternalSamplerDeclaration"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="SAMPLER_DECLARATIONS" type="tgn:SamplerDeclarations"/>
+</xs:schema>

@@ -1,0 +1,32 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+NotFirstVersionNotModifiable_F_1.Diagnostic="リファレンスが最初のリビジョン リファレンスでないため、その識別子属性の設定を修正できません。関係する参照: /p1";
+NotFirstVersionNotModifiable_F_1.Advice="";
+NotFirstVersionNotModifiable_F_1.Request="識別子属性設定は参照の最初のリビジョンでのみ修正できます。";
+
+
+BlockingOwnerMaturity1_F_0.Diagnostic="所有者の参照が編集可能ではないため、インスタンス /p を作成できません: \n所有者の参照は完成度状況が原因で編集不能です。";
+BlockingOwnerMaturity1_F_0.Advice="所有者オブジェクトの完成度状況を修正します。";
+BlockingOwnerMaturity1_F_0.Request="";
+
+
+//  In Diagnostic's /p : Precision on which system problem occurs: this is DEBUG information
+PLMc_ServerSystemPb_F_1.Diagnostic="サーバーのシステムの問題 \n(デバッグ情報: \n/p)";
+PLMc_ServerSystemPb_F_1.Advice="";
+PLMc_ServerSystemPb_F_1.Request="";

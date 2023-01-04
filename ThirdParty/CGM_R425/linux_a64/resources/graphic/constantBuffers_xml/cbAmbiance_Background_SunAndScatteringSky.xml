@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cbBackground</NAME>
+
+  <UNIFORM>
+    <NAME>Normal</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0 0 1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_Boost</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1000</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_RayleighAmount</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.005</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_MieAmount</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0005</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Greenstein</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>-0.996</DEFAULT_VALUE>
+    <UI_MIN_VALUE>-2.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>2.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.001</UI_STEP_VALUE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>
+

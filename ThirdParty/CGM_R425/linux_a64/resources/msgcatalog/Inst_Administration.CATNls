@@ -1,0 +1,50 @@
+<meta charset="UTF-8"/>
+//---------------------------------------------------------------------------
+//  Custom Shortcut panel 
+//---------------------------------------------------------------------------
+CustomShortcuts.Title = "Custom Shortcuts Creation";
+CustomShortcuts.Label1 = "The installation program will create the following shortcuts:";
+CustomShortcuts.Label2 = "\n";
+AdminToolsShortcut = "Tools entries in the Start Menu";
+CustomShortcuts.Resume="Setup will create the following shortcuts: /P1";
+CustomShortcuts.Resume.None="Setup will not create shortcuts.";
+
+EnvCreationFailed.Title="Error";
+EnvCreationFailed.Text="DSYEnvMgt failed: rc= /P1./P2";
+EnvCreationFailed.ok = "OK";
+
+chcatenvFailed.Title="Error";
+chcatenvFailed.Text="chcatenv failed: rc= /P1./P2";
+chcatenvFailed.ok = "OK";
+
+// DSYpcfgList
+DSYPcfgListExtraProductFailed.Title ="Error";
+DSYPcfgListExtraProductFailed.Text="DSYPcfgList failed updating extra-products in PCFG.list: rc= /P1./P2";
+DSYPcfgListProductFailed.Title ="Error";
+DSYPcfgListProductFailed.Text="DSYPcfgList failed updating products in PCFG.list: rc= /P1./P2";
+
+// DSYInstallxml
+DSYInstallTxtFailed.Title ="Error";
+DSYInstallTxtFailed.Text="/P2: rc= /P1";
+
+// RegServer
+SetRegServerFailed.Title="Error";
+SetRegServerFailed.Text="DSYAdmRegSrv failed: rc= /P1./P2";
+SetRegServerFailed.ok = "OK";
+
+UnsetRegServerFailed.Title="Error";
+UnsetRegServerFailed.Text="DSYAdmRegSrv failed: rc= /P1./P2";
+UnsetRegServerFailed.ok = "OK";
+
+//---------------------------------------------------------------------------
+//  System
+//---------------------------------------------------------------------------
+compilationBinaryDicoFailed.Title="Error";
+compilationBinaryDicoFailed.Text="Compilation of OM dictionaries failed: rc=/P1";
+
+//---------------------------------------------------------------------------
+//  System : WatchDog
+//---------------------------------------------------------------------------
+WatchDog_TaskKill.ExecuteAppli ="Stopping application information manager";
+WatchDogConsoleEngine_TaskKill.ExecuteAppli ="Stopping send report engine";
+WatchDogInteractiveEngine_TaskKill.ExecuteAppli ="Stopping send report UI engine";

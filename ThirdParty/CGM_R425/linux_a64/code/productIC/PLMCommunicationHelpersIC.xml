@@ -1,0 +1,31 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" name = "XMLParserItf"/>
+  <attached name = "CATPLMIndexInterfaces.tst"/>
+  <attached name = "CATPLMIndexer.tst"/>
+  <attached name = "CATPLMIndexServices.tst"/>
+  <authorize name = "CAT3DXMLPlayerSetup"/>
+  <authorize name = "zzIndusPerfo_PLMCoreServer.tst"/>
+  <authorize name = "PLMCommandInfraClient"/>
+  <authorize name = "ENOPLMCommunicationHelpers"/>
+  <authorize name = "CATIAPLMCommunicationHelpers"/>
+  <authorize name = "PLMCommandInfraServer"/>
+  <authorize name = "PLMCommandInfraDebug"/>
+  <authorize name = "PLMPCSToolkit"/>
+  <authorize name = "PLMCommandInfraCommon"/>
+  <authorize name = "CATPLMImplEV5Connectivity"/>
+  <authorize name = "CATPLMIndexItfImpl"/>
+  <authorize access = "Private" name = "CATPLMIndexServer"/>
+  <authorize name = "ENOCorPLMIndexClient"/>
+  <authorize name = "CATPLMSessionDebug"/>
+  <authorize name = "PLMPosBase"/>
+  <authorize name = "PLMPosBase.tst"/>
+  <authorize name = "PLMPosClient"/>
+  <authorize name = "PLMPosClient.tst"/>
+  <authorize name = "CATPLMImplAdapter.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

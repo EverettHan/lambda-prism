@@ -1,0 +1,57 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for input tesselation errors 
+// En_EN
+//================================================================
+//                           INPUT
+//================================================================
+//----------------------------------hlr
+//
+TessInHLROutOfRange="指定给 /p2 类型对象的方法 /p1（其值为 /p3）超出范围。
+      它应该介于 /p4 和 /p5 之间。";
+//
+TessInHLRNoSuchBody="没有几何体响应给定的 CATHLRBodyId，或者该几何体无效(不包含边线)。";
+//
+TessInHLRInvalidObject="未识别指定给 HLR 的 CATBaseUnknown 类型的对象。
+      实现的实际类型为 /p1。";
+//
+TessInHLREmptyObject="指定给 HLR 的对象没有有价值的数据：
+      例如，没有边线、未识别的 V4 对象";
+//
+//----------------------------------tessellation
+//
+TessInTooLargeLength="指定给方法 /p1::/p2 的长度过大。
+      其值应小于 /p3。";
+//
+TessInTooSmallLength="指定给方法 /p1::/p2 的长度过小。
+      其值应大于 /p3。";
+//
+TessInInvalidSag="弦高 /p1 过小。它应大于 /p2。";
+//
+TessInInvalidStep="步长 /p1 过小。它应大于 /p2。";
+//
+TessInInvalidAngle="最大角度 /p1 不正确。它应在 [ /p2、/p3 ] 范围内。";
+//================================================================
+//                           INternal
+//================================================================
+//----------------------------------Null or invalid input
+//
+TessIntHLRImpossibleProjection="曲线的投影无法完成或已退化。";
+//
+TessIntHLRComputationError="计算隐藏线时发生错误。";
+//
+TessIntHLRNoProjectionData="您试图在未提供投影数据的情况下投影一条曲线。";
+//
+TessIntHLRNoSeledtedDataResult="未选定 /p1。
+      读取结果前，您应选择 /p2。";
+//
+//----------------------------------tessellation
+//
+TessInUnableToAllocate=" 无法分配 ";
+//
+TessInInternalError=" 镶嵌中发生内部错误 ";
+//
+TessInInvalidTransaction_ERR_101.Request="镶嵌无效。";
+TessInInvalidTransaction_ERR_101.Diagnostic="没有相关的起始结束事务。";
+TessInInvalidTransaction_ERR_101.Advice="请检查 CAT 网格化/螺纹化用法。";
+//

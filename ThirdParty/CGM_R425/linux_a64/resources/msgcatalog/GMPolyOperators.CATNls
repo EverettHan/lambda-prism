@@ -1,0 +1,125 @@
+<meta charset="UTF-8"/>
+// WMN20200723 Reprise de TopologicalOperators.CATNls
+// WMN20200723 9000-9099- Polyhedral operators : Resp DPS, Week-07 2019.
+// CLO2 Change errors to 9200-9299 (KUB VariationnalOperators already use error 9000-9099)
+
+//Déplacement de toutes les erreurs
+// 9200-9209 Polyhedral Operators Name
+// Polyhedral operators names :
+
+GMPolyInPolySculptingOpe_ERR_9200="Polyhedral Sculpting";
+GMPolyInPolySweepDraftOpe_ERR_9201="Polyhedral SweepDraft";
+GMPolyInPolyConversionOpe_ERR_9202="Polyhedral Conversion";
+GMPolyInPolyBodyJoin_ERR_9203="Polyhedral Join Bodies";
+GMPolyInPolyBodyTrimShells_ERR_9204="Polyhedral Trim Shells";
+GMPolyInPolyBodySplitShells_ERR_9205="Polyhedral Split Shells";
+GMPolyInPolyBodyVolByTrim_ERR_9206="Polyhedral VolumeByTrim";
+GMPolyInPolyBodyRoughOffset_ERR_9207="Polyhedral RoughOffset";
+
+
+// 9210-9299 Polyhedral errors
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Request="/p1 Operator:";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Diagnostic="The result cannot be computed because of a current or permanent restriction.";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Advice="Modify input operands or/and parameters.";
+
+//
+GMPolyInPolyInvalidResult_ERR_9211.Request="/p1 Operator:";
+GMPolyInPolyInvalidResult_ERR_9211.Diagnostic="Invalid result";
+GMPolyInPolyInvalidResult_ERR_9211.Advice="";
+
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Request="Polyhedral Conversion Operator:";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Diagnostic="Vertices are too close to each other.";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Advice="";
+
+//
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Request="Polyhedral Sculpting Operator:";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Diagnostic="At least one operand is not consistent with the required specification.";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Advice="Enlarge the shape of operands or invert the orientation.";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Request="/p1 Operator:";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Diagnostic="At least two faces are intersecting";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Advice="Modify the input surfaces in order to have no intersection";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Request="/p1 Operator:";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Diagnostic="Adjacent faces of at least one edge have inconsistent orientations";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Advice="Modify the input surfaces.";
+
+//CLO2 - Extrapol Needed - IR790103 
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Request="/p1 Operator:";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Diagnostic="Input surfaces are not disconnecting each other";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Advice="Modify the input surfaces or enable extrapolation mode";
+
+//CLO2 - Extension too short - IR79003 
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Request="VolumeByTrim Operator:";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Diagnostic="The intersection curve between input surfaces is not closed. Volume could not be computed";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Advice="Enlarge the shape of input or add an extension";
+
+//CLO2 - Extension too short - IR790103 
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Request="VolumeByTrim Operator:";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Diagnostic="The input surfaces cannot create a closed surface. Volume could not be computed";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Advice="Check input sides to keep for each surface inputs";
+
+//CLO2 - Rename and change ID
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Request="Polyhedral Sculpting Operator:";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Diagnostic="The Cutting and Filling operands are intersecting.";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Advice="Modify the shape of cutting or/and filling operands.";
+
+//WMN20220209
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Request="/p1 Operator:";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Diagnostic="At least one face is intersecting itself";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Advice="Modify the input surfaces in order to have no intersection";
+
+//WMN20220209
+GMPolyInPolyFaceSelfContact_ERR_9221.Request="/p1 Operator:";
+GMPolyInPolyFaceSelfContact_ERR_9221.Diagnostic="At least one face is in contact with itself";
+GMPolyInPolyFaceSelfContact_ERR_9221.Advice="Modify the input surfaces in order to have no contact";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Request="/p1 Operator:";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Diagnostic="Closed or non manifold surfaces cannot be extruded.";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Advice="Use open and manifold surfaces only.";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Request="/p1 Operator:";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Diagnostic="Closed or non manifold planar curves cannot be extruded in the same plane.";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Advice="Choose an extrusion direction not parallel to this plane.";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Request="/p1 Operator:";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Diagnostic="Profile is locally parallel to extrusion direction.";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Advice="Choose an extrusion direction not parallel to extruded profile.";
+
+//RBU3_20222806
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Request="/p1 Operator:";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Diagnostic="The offset value is too small for this operation.";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Advice="Approximation of the minimum offset value (absolute value): /p1.";
+
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Request="/p1 Operator:";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Diagnostic="The inputs are not valid : /p1.";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Advice="/p1.";
+
+GMPolyInPolyRoughOffsetInternalError_ERR_9227.Request="/p1 Operator:";
+GMPolyInPolyRoughOffsetInternalError_ERR_9227.Diagnostic="Internal error : /p1";
+GMPolyInPolyRoughOffsetInternalError_ERR_9227.Advice="/p1";
+
+GMPolyInPolyRoughOffsetSurfaceIntersection_ERR_9228.Request="/p1 Operator:";
+GMPolyInPolyRoughOffsetSurfaceIntersection_ERR_9228.Diagnostic="The offsets of two shells are in intersection.";
+GMPolyInPolyRoughOffsetSurfaceIntersection_ERR_9228.Advice="You can try to offset each shell individualy.";
+
+
+//WMN20220831
+GMPolyInPolyBodyCheckerCleaner_InvalidInput_ERR_9229.Request="/p1 Operator:";
+GMPolyInPolyBodyCheckerCleaner_InvalidInput_ERR_9229.Diagnostic="Checker has detected input as invalid.";
+GMPolyInPolyBodyCheckerCleaner_InvalidInput_ERR_9229.Advice="";
+
+GMPolyInPolyBodyCheckerCleaner_InvalidInput_ERR_9230.Request="/p1 Operator:";
+GMPolyInPolyBodyCheckerCleaner_InvalidInput_ERR_9230.Diagnostic="Cleaner could not heal invalid input.";
+GMPolyInPolyBodyCheckerCleaner_InvalidInput_ERR_9230.Advice="";
+// WMN20200723 Nouveau
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Request="Polyhedral Conversion Operator:";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Diagnostic="Invalid result";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Advice="";

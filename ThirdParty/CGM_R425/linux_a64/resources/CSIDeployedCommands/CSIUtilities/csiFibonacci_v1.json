@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Compute the N first numbers of the fibonacci series",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "nbElem",
+          "basic": "uint64",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "nbRun",
+          "basic": "uint64",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "result",
+          "basicArray": "uint64"
+        }
+      ]
+    }
+  }
+}

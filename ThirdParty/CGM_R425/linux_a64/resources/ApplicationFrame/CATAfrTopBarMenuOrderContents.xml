@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+    <Resources>
+    <ResourceDictionary Source="CATPLMUISignatureAddins.xml" />
+  </Resources>
+  <Template syp:name="CATAfrTopBarMeMenu" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+      <!--My Profile-->
+      <CATCmdStarter Name="CATAfrMyProfileStr" />
+      <!--My Status-->
+      <CATCmdContainer Name="CATAfrMyStatusCont" Icon="PLMBar/I_Status.png" ResourceFile="CATPLMMenuMe" />
+        <!--My Notification-->
+       <CATCAfrMenu Name="PublishSubscribeMenu" ContainerCommand="PubSubNotifHdr" RegisteredFlag="1" ResourceFile="CATPLMPubSubMenuHdr"/>
+      <!--My Preferences-->
+      <CATCAfrMenu Name="CATAfrMyPreferencesMenu" RegisteredFlag="1" ResourceFile="AfrPLMBar"/>
+      <!-- Work Offline-->
+      <CATCmdStarter Name="SignOutStr" />
+          <!--<CATCmdStarter Name="CATAfrSignInCollabStr"/>-->
+    </CATCAfrGroup> 
+  </Template>
+
+  <Template syp:name="CATAfrTopBarShareMenu" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+      <!-- Save-->
+      <CATCAfrMenu Name="CATAfrSaveCont"  ContainerCommand="Propagate" ResourceFile="CATPropagateStatusBarHdr" />
+      <!-- Share on-->
+      <CATCAfrMenu Name="CATPLMShareToMenu" ResourceFile="AfrPLMBar" RegisteredFlag="1" />
+      <!-- Chat-->
+      <CATCmdStarter Name="ChatWithStr"  />
+      <!-- Export-->
+      <CATCAfrMenu Name = "PLMExchangeExportMenu"
+                       RegisteredFlag = "1"
+                       ResourceFile = "ShareMenuExportCmds"
+                        >
+
+      </CATCAfrMenu>
+      
+      
+      <!-- Print-->
+      <CATCmdStarter Name="CATAfrPrintManagerStr"/>
+
+      
+    </CATCAfrGroup>
+  </Template>
+
+  <Template syp:name="CATAfrTopBarShareMenu_Old1" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+      <CATCmdStarter Name="ChatWithStr"  />
+      <CATCmdSeparator Name="ShareContainerSep1"/>
+      <CATCmdStarter Name="SendToStr"/>
+      <CATCmdStarter Name="ChatWithStr1" />
+      <CATCmdSeparator Name="ShareContainerSep2"/>
+      <CATCmdContainer Name="ShareMore" Icon="PLMBar/I_Share.png">
+        <!--<CATCAfrMenu Name="CATPLMCSpaceShareMenu" RegisteredFlag="1" Icon="PLMBar/I_Share.png" >
+        </CATCAfrMenu>
+        <CATCmdSeparator Name="ShareContainerSep2"/>
+        <CATCmdStarter Name="ShareStr" />-->
+      </CATCmdContainer>
+      <CATCmdSeparator Name="ShareContainerSep3"/>
+      <CATCAfrMenu Name="CATAfrSaveCont"  ContainerCommand="Propagate" ResourceFile="CATPropagateStatusBarHdr" >
+
+      </CATCAfrMenu>
+      <CATCAfrMenu Name = "PLMExchangeExportMenu"
+                       RegisteredFlag = "1"
+                       ResourceFile = "ShareMenuExportCmds"
+                        >
+
+      </CATCAfrMenu>
+      <CATCmdSeparator Name="PLMPIMShareMenuSep"/>
+      <CATCmdStarter Name="CATDMUPublishValidationCmd"/>
+
+
+    </CATCAfrGroup>
+  </Template>
+
+  <Template syp:name="CATAfrTopBarPlusMenu" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+
+
+    </CATCAfrGroup>
+  </Template>
+
+  <Template syp:name="CATAfrTopBarHomeMenu" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+
+
+    </CATCAfrGroup>
+  </Template>
+
+  <Template syp:name="CATAfrTopBarHelpMenu" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+
+
+    </CATCAfrGroup>
+  </Template>
+</Styles>

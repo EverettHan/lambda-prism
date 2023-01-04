@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <!--===================================-->
+ <!--Tweaker Multilist-->
+ <!--===================================-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerAfrMultiList">
+  <CATVidCtlGroupBox FontWeight="1" Label="CIDGroupBox" RequestedMinimumDimension="95 50" syp:Template="GroupBox">
+   <CATVidLayGrid syp:name="syp_MainGrid" Name="MainGrid" RequestedMinimumDimension="10 20">
+    
+    <CATVidLayGrid syp:name="syp_grid1" Name="Grid1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="60 20">
+     <CATVidCtlSimpleCombo syp:name="CategoryCombo" syp:Template="Default" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB" RequestedMinimumDimension="300 20"  ComboSelect="@OnCategorySelect" />
+     <CATVidCtlSimpleCombo syp:name="AppCombo"  syp:Template="Default" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RTB" RequestedMinimumDimension="300 20"  ComboSelect="@OnAppSelect"/>
+    </CATVidLayGrid>
+    
+    <CATVidLayGrid syp:name="syp_grid2" Name="Grid2" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LT" RequestedMinimumDimension="60 20">
+     <CATVidCtlListView  ViewMode="Multi" syp:name="CustomMultilist" StrechLastColumnFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="600 200">
+      
+      <CATVidCtlListView.GridView>
+       <CATVidGridViewColumn HeaderTitle="Item number"   Data="Property1" Width="30"  />
+       <CATVidGridViewColumn HeaderTitle="Color" Data="Property2" Width="190" />
+       <CATVidGridViewColumn HeaderTitle="App Commands" Data="Property3" Width="190" />
+       <CATVidGridViewColumn HeaderTitle="Command Availability" Data="Property4" Width="190"  EditableFlag="1" EditionMode="EditOnClick"/>
+      </CATVidCtlListView.GridView>
+      
+     </CATVidCtlListView>
+    </CATVidLayGrid>
+    
+   </CATVidLayGrid>
+  </CATVidCtlGroupBox>
+ </Template>
+</Styles>

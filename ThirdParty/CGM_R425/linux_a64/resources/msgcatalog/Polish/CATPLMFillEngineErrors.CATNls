@@ -1,0 +1,39 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+
+NoElement.Diagnostic="Do silnika wypełniania nie został przesyłany żaden element";
+NoElement.Advice="Sprawdź dostępność danych na serwerze";
+
+NoElementGrowable.Diagnostic="Żaden element nie może zostać obsłużony przez silnik wypełniania";
+NoElementGrowable.Advice="Sprawdź stan komponentu przed jego załadowaniem";
+
+ComponentLogged.Diagnostic="Podany komponent został zarejestrowany";
+ComponentLogged.Advice="Sprawdź, czy w sesji nie dokonano żadnych modyfikacji";
+
+ComponentNotBrowsed.Diagnostic="Podany komponent został już wypełniony przed tą transakcją";
+ComponentNotBrowsed.Advice="Sprawdź stan komponentu przed jego załadowaniem";
+
+ComponentNotRepresented.Diagnostic="Podany komponent nie został jeszcze otwarty w sesji";
+ComponentNotRepresented.Advice="Rozwiń dane przed wypełnieniem";
+
+ComponentNotInWS.Diagnostic="Podany komponent nie jest dostępny w bieżącym obszarze roboczym";
+ComponentNotInWS.Advice="Sprawdź miejsce docelowe komponentu przed jego wypełnieniem";
+
+Internal.Diagnostic="Wewnętrzny błąd silnika wypełniania";
+Internal.Advice="Skontaktuj się z lokalnym administratorem";

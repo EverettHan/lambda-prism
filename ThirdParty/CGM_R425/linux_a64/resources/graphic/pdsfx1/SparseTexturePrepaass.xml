@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+
+  <VERSION>1</VERSION>
+
+  <SAMPLER>
+    <NAME>prepassTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SparseTexturePrepass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>prepassSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>prepassTexture</SAMPLER>
+          <STATES>prepassSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <LIGHTING>false</LIGHTING>
+      <VERTEX_STAGE>SparseTexturePrepassVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>SparseTexturePrepassPS</FRAGMENT_STAGE>
+
+    </PASS>
+  </TECHNIQUE>
+
+</PDSFX>
+

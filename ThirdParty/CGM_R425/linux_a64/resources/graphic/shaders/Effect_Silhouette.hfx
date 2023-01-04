@@ -1,0 +1,83 @@
+//
+// FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM
+//
+
+#include "Effect_General.hfx"
+
+//--------------------------------
+// Tweakables
+//--------------------------------
+
+#ifdef MSAA
+sampler2DMS Auto_NormalMap_WithTransparency<>;
+#else
+samplerRECT Auto_NormalMap_WithTransparency<>;
+#endif
+float Auto_NbAASamples<>;
+float4 Auto_Size<>;
+
+float u_Size
+<
+  float UIMin		= 0.f;
+	float UIMax		= 10.f;
+	float UIStep	= 1.f;
+> = 1.f;
+
+float4 u_Color
+<
+> = float4(0,0,0,1.f);
+
+//-----------------------------------------------------------------------------------------
+//  Pixel Shader
+//-----------------------------------------------------------------------------------------						 
+
+#include "Effect_NormalZServices.hfx"
+
+float4 Effect_OutLine_PS(pixelInput IN) : COLOR 
+{
+  float2 screenCoord  = IN.texCoord.xy; 
+ 
+  float ratio = 0;
+  unsigned int curSample = 0;
+
+#ifdef MSAA
+  for(curSample = 0 ; curSample < Auto_NbAASamples ; ++curSample)
+  { 
+#endif
+    int silhouette = 0;
+    int flag = IsBackground(Auto_NormalMap_WithTransparency,	IN.texCoord.xy, curSample);
+    
+    for (int i=0; i<=u_Size; i++)
+    {
+      for (int j=0; j<=u_Size; j++)
+      {
+        if(flag != IsBackground(Auto_NormalMap_WithTransparency,	IN.texCoord.xy+float2(i,j), curSample)) 
+        {
+          silhouette = 1;
+        }
+      }
+    }
+    
+    if (silhouette==1) ratio++;
+#ifdef MSAA
+  }
+  
+  ratio *= (1.f/Auto_NbAASamples);
+#endif
+
+  return float4(u_Color.xyz, u_Color.w * ratio);
+}
+
+//-----------------------------------------------------------------------------------------
+//  Techniques
+//-----------------------------------------------------------------------------------------
+
+technique Effect_DOFX_GLSL
+{
+    pass p0 
+    {		
+        FragmentProgram = compile glslf Effect_OutLine_PS();
+    }
+}
+
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <STORAGE_IMAGE>
+    <NAME>textureDesaturate</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>rgba8</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <COMPUTE_PASS>
+      <NAME>Pass0</NAME>
+      <COMPUTE_STAGE>desaturateCS</COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+    
+</EFFECT>

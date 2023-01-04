@@ -1,0 +1,228 @@
+<meta charset="UTF-8"/>
+//*------------------------*//
+//* PLMSidlErrors messages *//
+//*------------------------*//
+ERR_SidlInvalidStream_141001="Flux non valide";
+ERR_SidlInvalidStream_141001.Request="La couche de communication n'est pas prête pour exécuter une requête ou une réponse déjà lue.";
+ERR_SidlInvalidStream_141001.Advice="La requête peut être relancée.";
+
+ERR_SidlInvalidParam_141002="Paramètre non valide";
+ERR_SidlInvalidParam_141002.Request="Paramètre non valide dans la couche de communication /p1";
+ERR_SidlInvalidParam_141002.Advice="Reconfigurez le paramètre de communication ou contactez votre administrateur.";
+
+ERR_SidlNoMemory_141003="Pas assez de mémoire";
+ERR_SidlNoMemory_141003.Request="Pas assez de mémoire";
+ERR_SidlNoMemory_141003.Advice="La requête peut être relancée ultérieurement ou une autre application peut être fermée.";
+
+ERR_SidlUnsupportedServerLevel_141004="Niveau de serveur non pris en charge";
+ERR_SidlUnsupportedServerLevel_141004.Request="Niveau de serveur différent de celui du client et non compatible";
+ERR_SidlUnsupportedServerLevel_141004.Advice="Configurez le client pour utiliser un serveur compatible ou mettez à niveau le client.";
+
+ERR_SidlTruncatedAnswer_141005="Réponse du serveur tronquée";
+ERR_SidlTruncatedAnswer_141005.Request="La réponse du serveur a été tronquée.";
+ERR_SidlTruncatedAnswer_141005.Advice="Relancez la requête ou contactez votre administrateur pour vérifier l'environnement réseau.";
+
+ERR_SidlInvalidHeader_141006="En-tête de communication non valide";
+ERR_SidlInvalidHeader_141006.Request="Données incorrectes dans l'en-tête de communication";
+ERR_SidlInvalidHeader_141006.Advice="Relancez la requête ou contactez votre administrateur pour vérifier l'environnement réseau.";
+
+ERR_SidlCompressFailed_141007="La compression a échoué.";
+ERR_SidlCompressFailed_141007.Request="Le client n'a pas pu compresser la requête.";
+ERR_SidlCompressFailed_141007.Advice="Relancez la requête ou réinstallez le logiciel.";
+
+ERR_SidlUnCompressFailed_141008="La décompression a échoué.";
+ERR_SidlUnCompressFailed_141008.Request="Le client ne peut pas décompresser les données envoyées par le serveur.";
+ERR_SidlUnCompressFailed_141008.Advice="Relancez la requête ou vérifiez l'installation sur le serveur et sur le client.";
+
+ERR_SidlInternalError_141009="Erreur interne";
+ERR_SidlInternalError_141009.Request="Erreur interne de communication sur le client";
+ERR_SidlInternalError_141009.Advice="Configurez la connexion serveur et renouvelez l'opération.";
+
+ERR_SidlUnknownError_141010="Erreur inconnue";
+ERR_SidlUnknownError_141010.Request="Une erreur inconnue est survenue.";
+ERR_SidlUnknownError_141010.Advice="Configurez la connexion serveur ou contactez votre administrateur.";
+
+ERR_SidlSocketConnectionFailed_141021="Echec de la connexion";
+ERR_SidlSocketConnectionFailed_141021.Request="Impossible de se connecter au serveur";
+ERR_SidlSocketConnectionFailed_141021.Advice="Configurez la connexion serveur, vérifiez les règles de pare-feu ou contactez votre administrateur.";
+
+ERR_SidlSocketSendFailed_141022="L'envoi de la requête a échoué.";
+ERR_SidlSocketSendFailed_141022.Request="Impossible d'envoyer une requête au serveur";
+ERR_SidlSocketSendFailed_141022.Advice="Configurez la connexion serveur, vérifiez les règles de pare-feu ou contactez votre administrateur.";
+
+ERR_SidlSocketRecievedFailed_141023="La réception de la réponse a échoué.";
+ERR_SidlSocketRecievedFailed_141023.Request="Impossible de recevoir une réponse du serveur.";
+ERR_SidlSocketRecievedFailed_141023.Advice="Relancez la requête et contactez votre administrateur si le problème persiste.";
+
+ERR_SidlSocketUnknownError_141024="Erreur inconnue de connecteur";
+ERR_SidlSocketUnknownError_141024.Request="Une erreur inconnue de connecteur s'est produite.";
+ERR_SidlSocketUnknownError_141024.Advice="Vérifiez vos droits, votre configuration réseau ou contactez votre administrateur.";
+
+ERR_SidlHTTPBadRequest_141031="Mauvaise requête HTTP";
+ERR_SidlHTTPBadRequest_141031.Request="Mauvaise requête HTTP";
+ERR_SidlHTTPBadRequest_141031.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPUnauthorized_141032="HTTP non autorisé";
+ERR_SidlHTTPUnauthorized_141032.Request="HTTP non autorisé";
+ERR_SidlHTTPUnauthorized_141032.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPPaymentRequired_141033="Paiement HTTP requis";
+ERR_SidlHTTPPaymentRequired_141033.Request="Paiement HTTP requis";
+ERR_SidlHTTPPaymentRequired_141033.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPForbidden_141034="HTTP interdit";
+ERR_SidlHTTPForbidden_141034.Request="HTTP interdit";
+ERR_SidlHTTPForbidden_141034.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPNotFound_141035="HTTP introuvable";
+ERR_SidlHTTPNotFound_141035.Request="HTTP introuvable";
+ERR_SidlHTTPNotFound_141035.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPMethodNotAllowed_141036="Méthode HTTP non autorisée";
+ERR_SidlHTTPMethodNotAllowed_141036.Request="Méthode HTTP non autorisée";
+ERR_SidlHTTPMethodNotAllowed_141036.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPNotAcceptable_141036="HTTP inacceptable";
+ERR_SidlHTTPNotAcceptable_141036.Request="HTTP inacceptable";
+ERR_SidlHTTPNotAcceptable_141036.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPProxyAuthFailed_141037="L'authentification proxy HTTP a échoué.";
+ERR_SidlHTTPProxyAuthFailed_141037.Request="L'authentification proxy HTTP a échoué.";
+ERR_SidlHTTPProxyAuthFailed_141037.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPServerTimeout_141038="Le délai d'attente du serveur HTTP est dépassé.";
+ERR_SidlHTTPServerTimeout_141038.Request="Le délai d'attente du serveur HTTP est dépassé.";
+ERR_SidlHTTPServerTimeout_141038.Advice="Relancez la requête ou contactez votre administrateur pour vérifier l'environnement réseau.";
+
+ERR_SidlHTTPConflict_141039="Conflit HTTP";
+ERR_SidlHTTPConflict_141039.Request="Conflit HTTP";
+ERR_SidlHTTPConflict_141039.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPGone_141039="HTTP absent";
+ERR_SidlHTTPGone_141039.Request="HTTP absent";
+ERR_SidlHTTPGone_141039.Advice="La ressource demandée n'est plus disponible au serveur et aucune adresse de réexpédition n'est connue (contactez votre administrateur).";
+
+ERR_SidlHTTPLengthRequired_141039="Longueur HTTP requise";
+ERR_SidlHTTPLengthRequired_141039.Request="Longueur HTTP requise";
+ERR_SidlHTTPLengthRequired_141039.Advice="Le serveur refuse d'accepter la demande sans une longueur de contenu définie (contactez votre administrateur).";
+
+ERR_SidlHTTPPreconditionFailed_141039="Echec de la précondition HTTP";
+ERR_SidlHTTPPreconditionFailed_141039.Request="Echec de la précondition HTTP";
+ERR_SidlHTTPPreconditionFailed_141039.Advice="La précondition fournie dans un ou plusieurs champs d'en-tête de demande a été évaluée comme false lors d'un test sur le serveur (contactez votre administrateur).";
+
+ERR_SidlHTTPRequestEntityTooLarge_141039="Entité de demande HTTP trop volumineuse";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Request="Entité de demande HTTP trop volumineuse";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Advice="Le serveur refuse de traiter une demande car l'entité de demande est plus grande (contactez votre administrateur).";
+
+ERR_SidlHTTPRequestURITooLong_141039="Demande HTTP-URI trop longue";
+ERR_SidlHTTPRequestURITooLong_141039.Request="Demande HTTP-URI trop longue";
+ERR_SidlHTTPRequestURITooLong_141039.Advice="Le serveur refuse de répondre à la demande car la Demande-URI est trop longue (contactez votre administrateur).";
+
+ERR_SidlHTTPUnsupportedMediaType_141039="Type de média non pris en charge par HTTP";
+ERR_SidlHTTPUnsupportedMediaType_141039.Request="Type de média non pris en charge par HTTP";
+ERR_SidlHTTPUnsupportedMediaType_141039.Advice="Le serveur refuse de répondre à la demande car l'entité de la demande est dans un format non pris en charge (contactez votre administrateur).";
+
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039="Plage HTTP demandée ne pouvant être satisfaite";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Request="Plage HTTP demandée ne pouvant être satisfaite";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPExpectationFailed_141039="L'attente HTTP a échoué";
+ERR_SidlHTTPExpectationFailed_141039.Request="L'attente HTTP a échoué";
+ERR_SidlHTTPExpectationFailed_141039.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPMalformedRequest_141040="Requête HTTP syntaxiquement incorrecte";
+ERR_SidlHTTPMalformedRequest_141040.Request="Requête HTTP syntaxiquement incorrecte";
+ERR_SidlHTTPMalformedRequest_141040.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPExpectationFailed_141041="L'attente HTTP a échoué";
+ERR_SidlHTTPExpectationFailed_141041.Request="L'attente HTTP a échoué";
+ERR_SidlHTTPExpectationFailed_141041.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPInternalServerError_141042="Erreur interne du serveur HTTP";
+ERR_SidlHTTPInternalServerError_141042.Request="Erreur interne du serveur HTTP";
+ERR_SidlHTTPInternalServerError_141042.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPNotImplemented_141043="HTTP non implémenté";
+ERR_SidlHTTPNotImplemented_141043.Request="HTTP non implémenté";
+ERR_SidlHTTPNotImplemented_141043.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPBadGateway_141043="Mauvaise passerelle HTTP";
+ERR_SidlHTTPBadGateway_141043.Request="Mauvaise passerelle HTTP";
+ERR_SidlHTTPBadGateway_141043.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPGatewayTimeout_141044="Dépassement du délai d'attente de la passerelle HTTP";
+ERR_SidlHTTPGatewayTimeout_141044.Request="Dépassement du délai d'attente de la passerelle HTTP";
+ERR_SidlHTTPGatewayTimeout_141044.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlUnSupportedHTTPLevel_141045="Niveau HTTP non pris en charge";
+ERR_SidlUnSupportedHTTPLevel_141045.Request="Niveau HTTP non pris en charge";
+ERR_SidlUnSupportedHTTPLevel_141045.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlUnknownHTTPError_141046="Erreur HTTP inconnue";
+ERR_SidlUnknownHTTPError_141046.Request="Erreur HTTP inconnue";
+ERR_SidlUnknownHTTPError_141046.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPServiceUnavailable_141047="Service HTTP non disponible";
+ERR_SidlHTTPServiceUnavailable_141047.Request="Service HTTP non disponible";
+ERR_SidlHTTPServiceUnavailable_141047.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPVersionNotSupported_141047="Version HTTP non prise en charge";
+ERR_SidlHTTPVersionNotSupported_141047.Request="Version HTTP non prise en charge";
+ERR_SidlHTTPVersionNotSupported_141047.Advice="Contactez votre administrateur pour vérifier la configuration du serveur HTTP.";
+
+ERR_SidlHTTPServerSessionTimeout_141048="Dépassement du délai d'attente du serveur HTTP";
+ERR_SidlHTTPServerSessionTimeout_141048.Request="Dépassement du délai d'attente du serveur HTTP";
+ERR_SidlHTTPServerSessionTimeout_141048.Advice="Relancez la requête ou contactez votre administrateur pour vérifier l'environnement réseau.";
+
+ERR_SidlServerRecieveFailed_141061="Echec de réception du serveur";
+ERR_SidlServerRecieveFailed_141061.Request="Le serveur n'a pas pu recevoir la requête.";
+ERR_SidlServerRecieveFailed_141061.Advice="Vérifiez la configuration réseau ou la configuration du serveur d'applications.";
+
+ERR_SidlServerSendFailed_141062="Echec d'envoi du serveur";
+ERR_SidlServerSendFailed_141062.Request="Le serveur n'a pas pu envoyer la réponse.";
+ERR_SidlServerSendFailed_141062.Advice="Vérifiez la configuration réseau ou la configuration du serveur d'applications.";
+
+ERR_SidlLevelUnsupported_141063="Niveau du client non pris en charge";
+ERR_SidlLevelUnsupported_141063.Request="Niveau de client différent de celui du serveur et non compatible";
+ERR_SidlLevelUnsupported_141063.Advice="Configurez le client pour utiliser un serveur compatible ou mettez à niveau votre serveur.";
+
+ERR_SidlServerTruncatedRequest_141064="Requête tronquée";
+ERR_SidlServerTruncatedRequest_141064.Request="La requête du client a été tronquée.";
+ERR_SidlServerTruncatedRequest_141064.Advice="Vérifiez la configuration réseau ou la configuration du serveur d'applications.";
+
+ERR_SidlServerInvalidHeader_141065="En-tête de communication non valide";
+ERR_SidlServerInvalidHeader_141065.Request="Serveur : les données de l'en-tête de communication sont incorrectes.";
+ERR_SidlServerInvalidHeader_141065.Advice="Contactez votre administrateur pour vérifier l'environnement réseau.";
+
+ERR_SidlServerCompressFailed_141066="La compression du serveur a échoué.";
+ERR_SidlServerCompressFailed_141066.Request="Le serveur n'a pas pu compresser la réponse.";
+ERR_SidlServerCompressFailed_141066.Advice="Relancez la requête ou réinstallez le logiciel sur le serveur.";
+
+ERR_SidlServerUnCompressFailed_141067="La décompression du serveur a échoué.";
+ERR_SidlServerUnCompressFailed_141067.Request="Le serveur n'a pas pu décompresser les données de la requête client.";
+ERR_SidlServerUnCompressFailed_141067.Advice="Relancez la requête ou réinstallez le logiciel sur le serveur.";
+
+ERR_SidlServerUnknownError_141068="Erreur serveur inconnue";
+ERR_SidlServerUnknownError_141068.Request="Une erreur serveur inconnue est survenue.";
+ERR_SidlServerUnknownError_141068.Advice="Contactez votre administrateur pour vérifier les journaux du serveur.";
+
+ERR_SidlServerUnavailable_141071="Erreur de communication entre SDAM et le serveur";
+ERR_SidlServerUnavailable_141071.Request="Erreur de communication entre SDAM et le serveur";
+ERR_SidlServerUnavailable_141071.Advice="Relancez la requête ou redémarrez le serveur.";
+
+ERR_SidlServerLostDuringRq_141072="Erreur de communication entre le serveur et SDAM";
+ERR_SidlServerLostDuringRq_141072.Request="Erreur de communication entre le serveur et SDAM avant la réponse";
+ERR_SidlServerLostDuringRq_141072.Advice="Relancez la requête ou redémarrez le serveur.";
+
+ERR_SidlServerLostDuringAnswer_141073="Erreur de communication entre le serveur et SDAM";
+ERR_SidlServerLostDuringAnswer_141073.Request="Erreur de communication entre le serveur et SDAM";
+ERR_SidlServerLostDuringAnswer_141073.Advice="Relancez la requête ou redémarrez le serveur.";
+
+ERR_SidlNoHttpstatusCode_141074="Erreur de communication entre le client et le serveur";
+ERR_SidlNoHttpstatusCode_141074.Request="Erreur de communication : aucun code d'état HTTP en réponse";
+ERR_SidlNoHttpstatusCode_141074.Advice="Configurez la connexion au serveur ou contactez votre administrateur (activez les traces HTTP ou utilisez un outil de capture réseau)";
+
+ERR_SidlUnsupportedHttpStatus_141075="Réponse HTTP non prise en charge";
+ERR_SidlUnsupportedHttpStatus_141075.Request="Réponse HTTP non prise en charge";
+ERR_SidlUnsupportedHttpStatus_141075.Advice="Configurez la connexion au serveur ou contactez votre administrateur (activez les traces HTTP ou utilisez un outil de capture réseau)";
+

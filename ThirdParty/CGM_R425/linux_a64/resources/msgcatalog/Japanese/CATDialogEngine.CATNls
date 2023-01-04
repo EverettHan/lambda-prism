@@ -1,0 +1,15 @@
+<meta charset="UTF-8"/>
+LocalUndo.Title="オブジェクトの取得";
+
+// CATEditAgent Command
+CATDialogEngine.CATEditAgent.UndoTitle="編集";
+// CATEditAgent Agents
+CATDialogEngine.CATEditAgent.TriggerEditAgent.UndoTitle="編集のトリガ";
+// CATEditAgent States
+CATDialogEngine.CATEditAgent.EditState.Message="現行オブジェクトを編集して終了します"; // @validatedUsage AJT 13:11:05 Edit
+
+// Notify box when another editor is activated
+CATDialogEngine.EdtChangeRequestOKCancelTitle="エディターを非活動化"; // @validatedUsage AJT 13:11:05 Editor
+CATDialogEngine.EdtChangeRequestOKCancelMessage="
+コマンドは停止されます。
+[OK] を選択してコマンドをコミットするか、[キャンセル] を選択してコマンドを取り消してください。";

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <st:Description name="PLMCache" PrimaryTabpage="/General/Cache">
+    <st:role>Setting to handle the parameters of the PLM persistency options for Vault stream/unstream operations</st:role>
+    <st:detailedRole>This setting allows to customize the behavior of PLM vault persistency operations through the user interface</st:detailedRole>
+    <st:RepositoryFile>PLMCache</st:RepositoryFile>
+    <st:version>1</st:version>
+    <st:compatibility>
+      <st:FullCompatibilityfromLevel>1</st:FullCompatibilityfromLevel>
+      <st:UpwardCompatibilityfromLevel>1</st:UpwardCompatibilityfromLevel>
+    </st:compatibility>
+  </st:Description>
+  <st:attributes>
+    <st:attribute Name="CacheRemovalPolicy">
+      <st:role>Specify the Cache removal policy </st:role>
+      <st:detailedRole>This option allows to set the removal policy used to remove unused streams in cache .</st:detailedRole>
+      <st:int>
+	<st:enum>
+	  <st:role>Sets the Aggressive removal policy </st:role>
+	  <st:detailedRole>This option specifies that each Stream is removed when its URL connection is closed.</st:detailedRole>
+	  <st:value>2</st:value>
+	  <st:role>Sets the Standard removal policy</st:role>
+	  <st:detailedRole>This option specifies that when Cache size exceeds the maximum authorized size, a Cache decrease trial to its half Max size is performed.</st:detailedRole>
+	  <st:value>1</st:value>
+	  <st:role>Sets the Lazy removal policy</st:role>
+	  <st:detailedRole>This option specifies that all deletable Streams are deleted when Cache size exceeds Max authorized size.</st:detailedRole>
+	  <st:value>0</st:value>
+	</st:enum>
+	<st:default>
+	  <st:role>The Standard removal policy is set by default</st:role>
+	  <st:value>1</st:value>
+	</st:default>
+      </st:int>
+    </st:attribute>
+    <st:attribute Name="CacheMetadataMaxElements">
+      <st:role>Maximum size authorized for the Cache Metadata</st:role>
+      <st:detailedRole>This option specifies the maximal size (in number of entries) authorized for the Cache Metadata.</st:detailedRole>
+      <st:uint>
+        <st:min>100</st:min>
+        <st:max>10000000</st:max>
+        <st:default>
+          <st:value>5000000</st:value>
+      </st:default>
+      </st:uint>
+    </st:attribute>
+    <st:attribute Name="CacheMaxSize">
+      <st:role>Maximum size authorized for the Cache</st:role>
+      <st:detailedRole>This option specifies the maximal size (in MB) authorized for the Cache. When this max size is reached by unloaded streams, a decrease trial is performed, according to the current removal policy.</st:detailedRole>
+      <st:uint>
+        <st:min>10</st:min>
+        <st:max>30720</st:max>
+        <st:default>
+          <st:value>1000</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+    <st:attribute Name="CacheMaxSizeUpperBound">
+      <st:role>Maximum size authorized for the Cache, bounding the CacheMaxSize set by the user</st:role>
+      <st:detailedRole>This option specifies the upper bound of the CacheMaxSize attribute.</st:detailedRole>
+      <st:uint>
+        <st:default>
+          <st:value>30720</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+    <st:attribute Name="CacheLocalPath">
+      <st:role>Root path for the Cache directory</st:role>
+      <st:detailedRole>This option specifies the root path defining on a local disk the file sub-tree for all cached streams.</st:detailedRole>
+      <st:URN>
+        <st:defaultWindows>
+          <st:value>CSIDL_LOCAL_APPDATA</st:value>
+        </st:defaultWindows>
+        <st:defaultUnix>
+          <st:value>${HOME}</st:value>
+        </st:defaultUnix>
+      </st:URN>
+    </st:attribute>
+    <st:attribute Name="CheckCacheCoherency">
+      <st:role>Activate or not the Cache coherency check</st:role>
+      <st:detailedRole>This option specifies whether the Cache coherency is to be checked or not at cache opening.</st:detailedRole>
+      <st:boolean>
+        <st:default>
+          <st:value>0</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+    <st:attribute Name="DeleteCache">
+      <st:role>Lock or not the Cache deletion capability</st:role>
+      <st:detailedRole>This option is used implicitely in admin mode to lock the cache deletion capability.</st:detailedRole>
+      <st:boolean>
+        <st:default>
+          <st:value>0</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+  </st:attributes>
+</st:repository>

@@ -1,0 +1,88 @@
+<meta charset="UTF-8"/>
+//General -General
+GeneralGeneral.Title="一般";
+
+//General-Help
+GeneralHelp.Title="ヘルプ";
+DragAndDropGroup.Title="ドラッグ アンド ドロップ";
+DragAndDrop.Title="切り取り、コピー、貼り付けに対しドラッグ/ドロップを有効化";
+
+DragAndDrop.ShortHelp="切り取り、コピー、貼り付けに対しドラッグ/ドロップを使用";
+DragAndDrop.LongHelp="切り取り、コピー、貼り付けに対しドラッグ/ドロップの使用を有効にします。";
+
+MemoryWarningGroup.Title="メモリの警告";
+//Activation.Title="Trigger Memory warning at";
+MemWarningActive.Title="次の条件でメモリの警告を出す";
+UsageLimit.Title="メモリ使用率 (%)";
+
+MemWarningActive.ShortHelp="過剰なメモリ消費が検出されたときに警告を活動化";
+MemWarningActive.LongHelp="メモリ消費が一定のしきい値を超えた場合に警告を活動化します。
+この変更を有効にするためにセッションを再度開始する必要はありません。";
+UsageLimit.ShortHelp="メモリの警告を出す条件を定義する限界値";
+UsageLimit.LongHelp="メモリ消費のパーセンテージを指定します。これを上回ると警告が出されます。";
+
+//General-Find
+GeneralFind.Title="検索";
+
+PrefixGroup.Title="パワー入力のデフォルト接頭部";
+Prefix.Title="検索の接頭部";
+Prefix0.Title="なし";
+Prefix1.Title="前回";
+Prefix2.Title="コマンド c:";
+Prefix3.Title="お気に入り f:";
+Prefix4.Title="タイプ t:";
+Prefix5.Title="名前 n:";
+Prefix6.Title="名前 (大文字と小文字を区別) - Name_CAP";
+Prefix7.Title="グラフ内の名前 - graph:";
+Prefix8.Title="グラフ内の名前 (大文字と小文字を区別) - NameInGraph_CAP";
+Prefix9.Title="セット s:";
+Prefix10.Title="セット (大文字と小文字を区別) - Set_CAP";
+Prefix11.Title="色 - col:";
+Prefix12.Title="表示/非表示 vis:";
+Prefix13.Title="レイヤー l:";
+Prefix14.Title="線種 d:";
+Prefix15.Title="線幅 w:";
+Prefix16.Title="シンボル symb:";
+
+Prefix.ShortHelp="パワー入力のデフォルト接頭部";
+Prefix.LongHelp="パワー入力に入力する文字列の先頭に、明示的に入力しない場合にデフォルトで
+使用する接頭部を定義します。
+たとえば、パワー入力を主にコマンドの開始に使用するのであれば、c: を選択します。
+こうしておけば、各コマンド名の前に \"c:\"を入力する必要がなくなります。";
+
+ContextPriorityGroup.Title="パワー入力のデフォルト検索範囲";
+ContextScope.Title="コンテキスト有効範囲";
+ContextScope0.Title="all は全体";
+ContextScope1.Title="in はエレメント内";
+ContextScope2.Title="from はエレメントからボトムまで";
+ContextScope3.Title="sel は現在の選択項目";
+ContextScope4.Title="scr は画面上の表示";
+ContextPriority.Title="お気に入り照会に定義された範囲を置換";
+
+ContextScope.ShortHelp="パワー入力で暗黙的に使用されるデフォルトの検索範囲";
+ContextScope.LongHelp="パワー入力に入力する検索照会に対して、明示的に入力しない場合にデフォルトで使用する
+コンテキストの範囲を定義します。";
+ContextPriority.ShortHelp="パワー入力でお気に入り照会を使用する場合にデフォルトの範囲を使用";
+ContextPriority.LongHelp="パワー入力で使用するお気に入り照会でデフォルトのコンテキスト範囲を使用する場合に
+このオプションをチェックします。";
+
+DeepSearchGroup.Title="ディープ検索";
+DeepSearch.Title="ディープ検索の活動化";
+
+DeepSearch.ShortHelp="ディープ検索を活動化。";
+DeepSearch.LongHelp="検索の実行時にディープ検索オプションを活動化する場合に、このオプションをチェックします。 
+この場合、内部エレメントを探すために、表示モードのドキュメントが一時的にロードされます。"; // @validatedUsage AJT 13:11:04 option
+
+MaxDisplay.Title="最大表示結果";
+MaxPSO.Title="事前高輝度表示エレメントの最大数";
+
+MaxDisplay.ShortHelp="検索結果ページに表示できるエレメントの最大数を定義します。";
+MaxDisplay.LongHelp="表示する行が多すぎると、結果リストの表示が遅くなるため、あまり大きい数を設定しないことをお勧めします。
+この数を 0 にすると制限がなくなり、常にすべてのエレメントが表示されます。";
+
+MaxDisplayGroup.Title="最大表示結果";
+MaxPSOGroup.Title="事前高輝度表示エレメントの最大数";
+
+MaxPSO.ShortHelp="事前に高輝度表示できるエレメントの最大数を定義します。";
+MaxPSO.LongHelp="事前に高輝度表示するエレメントが多すぎると、セッションの動きが遅くなるため、あまり大きい数を設定しないことをお勧めします。
+この数を 0 にすると制限がなくなり、常にすべてのエレメントが事前に高輝度表示されます。";

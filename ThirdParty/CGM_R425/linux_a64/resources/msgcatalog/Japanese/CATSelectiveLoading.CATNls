@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+// General switch messages format 
+// Key.Diag=Switch Diagnostic Value. /p1  where /p1 = 1rst internal error Diagnostic
+// Key.Advice=/p1                         where /p1 = [1rst internal error Key/Catalog] + its Advice 
+
+// ------- Validate a switch operation ------
+
+// WARNING
+ERR_OMB_SWITCH_PENDING.Diagnostic="この構成要素には別のスイッチが現在動作中です。";
+ERR_OMB_SWITCH_PENDING.Advice="カレント スイッチが終了するのを待って、再度コマンドを実行します。";
+
+// SEVERE ERROR -> Factory can decide to use a different loading mode 
+ERR_OMB_SWITCH_TARGET_ACCESS.Diagnostic="ターゲットのロード モードに到達することができません。";
+ERR_OMB_SWITCH_TARGET_ACCESS.Advice="ターゲットのモードではロードするデータがないか、またはアクセスできない可能性があります。";
+
+// ------- Message d'erreur BATCH_StartTransition ------
+
+// SEVERE ERROR -> unknown case -> better to cancel and to analyze the problem
+// Unknown error while performing the start transition step. 
+ERR_OMB_SWITCH_START.Diagnostic="スイッチ操作の起動中に問題が発生しました。/p1";
+ERR_OMB_SWITCH_START.Advice="/p1";
+
+// WARNING (This problem only arises when switching from a mode1 to a mode2)
+// The SD in the Vault are more recent than the one retrieved in the session
+ERR_OMB_SWITCH_SYNCHRO.Diagnostic="構成要素はこのセッション外で修正されています。/p1";
+ERR_OMB_SWITCH_SYNCHRO.Advice="VPM エディターでリフレッシュ コマンドを起動するか、この構成要素を閉じて再び開いてください。";
+
+ERR_OMB_SWITCH_COMPID.Diagnostic="スイッチ エントリのチェックで問題が明らかになりました。/p1";
+ERR_OMB_SWITCH_COMPID.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Unload 
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_UNLOAD.Diagnostic="データのアンロード中に問題が発生しました。/p1";
+ERR_OMB_SWITCH_UNLOAD.Advice="/p1";
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_STREAM_REP.Diagnostic="キャッシュへのデータのストリーミング中に問題が発生しました。/p1";
+ERR_OMB_SWITCH_STREAM_REP.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Load 
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_LOAD.Diagnostic="データのロード中に問題が発生しました。/p1";
+ERR_OMB_SWITCH_LOAD.Advice="/p1";
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_DOWNLOAD.Diagnostic="セッション キャッシュにデータをダウンロード中に問題が発生しました。/p1";
+ERR_OMB_SWITCH_DOWNLOAD.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Close 
+// SEVERE ERROR
+ERR_OMB_SWITCH_CLOSE.Diagnostic="スイッチの終了中に問題が発生しました。/p1";
+ERR_OMB_SWITCH_CLOSE.Advice="/p1";
+
+// ------- Messages additionnels RevertSwitch
+// ADDITIONAL WARNING
+WARN_OMB_SWITCH_REVERT="構成要素は現行のロード モードのままです。";
+
+// ADDITIONAL ERROR
+ERR_OMB_SWITCH_REVERT="構成要素を直前のロード モードに戻せません。";
+
+// -------- Message d'erreur divers --------------
+ERR_OMB_SWITCH_CSA_REENTRANCE="スイッチが拒否されました。他のスイッチがすでにこの構成要素で実行されています (SwitchSDs)";
+ERR_OMB_SWITCH_0001="ターゲット モード '/p1' は、拘束デフォルト モード '/p2’ に相当しません。ターゲット モードは保持されます";
+
+// ------- Messages additionnels pour test error management
+// ADDITIONAL TEST WARNINGS
+INFO_OMB_TEST_SWITCH_EXECUTE="テスト用に生成されたダミー実行情報。";
+WARN_OMB_TEST_SWITCH_EXECUTE="テスト用に生成されたダミー実行警告。";
+

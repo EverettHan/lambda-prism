@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CATAfrIconBox.CATSYPStyle" />         
+  </Resources>
+
+ 
+  
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrRep3LevelCascade Family representation                                                            -->
+  <!--***************************************************************************************************************************************-->  
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Containers creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  
+  
+  <!--First container level : a simple list of items without background and decoration-->
+  <Template syp:name="AfrRep3LevelCascadeFirstLevel" Target="CATAfrSYPContainerView">
+    <CATAfrSmartCtl   LayoutWhenUnvisibleFlag="0" BottomToolbarFlag="1" VisibleFlag="@WidgetsPanelVisibility" CreateDialogBoxFlag="@CreateDialogBoxFlag" ConstraintsDialogBox="leftPercent=50 topPx=0">
+      
+      <CATVidLayGrid  VisibleFlag="@WidgetsPanelVisibility" >
+        <CATVidSpacer RequestedMinimumDimension="0 15" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayStack CellBorder="4" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=TB"
+                            Items="@ToolsItems Mode=OneWayToSource"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </Template>
+
+  <!--Second container level : a button + an horizontal container which unfolds when a click on the button is performed-->
+  <Template syp:name="AfrRep3LevelCascadeSecondLevel" Target="CATAfrSYPContainerView">
+    <CATVidLayLayer>
+      <!--We create a button which will unfold the container. This container is shown when a click on the button is performed.-->
+      <!--The event method " SwitchContainerVisibility" manage the visibilty or not of the container for each performed click.-->
+      <!--This button is only visible when a container is included in an another. That 's why the use of SubContainerFlag.-->
+      <!--Icon of the button is provided by the model or can be teh icon of the selective command in the container.-->
+      <CATVidCtlButton Name="@Name" syp:name ="ButtonContainer"
+                       syp:Template="Toolbar"
+                       CheckMode="1"
+                       CheckState="@OnCreateContainerFlag"
+                       ClickMode="0"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="40 40"
+                       IconDimension="32 32"
+                       Tooltip="@ShortHelp"
+                       Icon="@IconContainer"
+                       VisibleFlag="@SubContainerFlag"
+                       Click="@SwitchContainerVisibility" 
+                       />
+      <!--The CATAfrSmartCtl is a control which allow to create or not a dialog box with its presenter content.-->
+      <!--In this case, it will create always a dialog box in every instances at the position at 20% from the left of the screen and 60% at the top of the screen-->
+      <!--It is visibledepending on the "OnCreateContainerFlag" property value-->
+      <!--The "OnCreateContainerFlag" is managed by the event method "SwitchContainerVisibility"-->
+      <!--The "ToolsItems" will contain all access representations-->
+      <CATAfrSmartCtl syp:name="IconBoxSmartCtl"   CenteredFromTopWidgetFlag="1" IconBoxOffsetPosition="0 4" BottomToolbarFlag="1" ConstraintsDialogBox="leftPercent=50 topPx=63" VisibleFlag="@OnCreateContainerFlag"  UpdateFlag="@OnCreateContainerFlag">
+        <CATVidLayGrid>
+          <CATVidLayStack CellBorder="4" Orientation="Horizontal" VisibleFlag="@WidgetsPanelVisibility"
+        Items="@ToolsItems Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB"/>
+        </CATVidLayGrid>
+        
+
+      </CATAfrSmartCtl>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="CreateDialogBoxFlag" Value="0">
+        <CATSYPSetter TargetName="IconBoxSmartCtl" Property="CreateDialogBoxFlag" Value="0"/>
+        <CATSYPSetter TargetName="IconBoxSmartCtl" Property="CreateIconBoxFlag" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CreateDialogBoxFlag" Value="1">
+        <CATSYPSetter TargetName="IconBoxSmartCtl" Property="CreateDialogBoxFlag" Value="1"/>
+        <CATSYPSetter TargetName="IconBoxSmartCtl" Property="CreateIconBoxFlag" Value="0"/>
+      </CATSYPTrigger>      
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--Third container level : a button + a vertical container which unfolds when a click on the button is performed-->
+  <Template syp:name="AfrRep3LevelCascadeThirdLevel" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData PersistenceSelectedStarterFlag="1" AlwaysVisibleFlag="1" IconBoxFlag="1">
+      <CATAfrVidIconBoxCtl syp:Template="Default" Orientation="Vertical" IconBoxHidePolicy="HideOnTimer" IconBoxShowPolicy="ShowOnMoveOver" PopupVisibleFlag="@WidgetsPanelVisibility" PresenterIconContent="@SelectedStarter"
+                   PopupItems="@ToolsItems Mode=OneWayToSource" PopupShown="@CreateSubContainerEvent" PresenterDataTemplate ="AfrRep3LevelCascadeThirdLevelDataTemplate" PresenterStyleSheet="AfrRepresentationTypes/AfrRep3LevelCascade.CATSYPStyle"/>
+    </CATAfrSYPContainerViewMetaData>
+    
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <!--first button for first container level : a simple button-->
+  <Template syp:name="AfrRep3LevelCascadeFirstLevel" Target="CATAfrSYPStarterView">
+
+      <!--We create a simple button for this level and bind all possible properties with model properties.-->
+      <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--> 
+      <!--And so, the container will know which command is active-->
+      <CATVidCtlButton Name="@Name"
+                       syp:Template="Toolbar"
+                       CheckMode="1"
+                       ClickMode="0"
+                       CheckState="@ActivationWidget Mode=TwoWays"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="40 40"
+                       IconDimension="32 32"
+                       Icon="@NormalIcon"
+                       Tooltip="@Help"
+                       LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                       LongHelpId="@LongHelpId"
+                       Click="@ActionEvent"/>
+
+  </Template>
+  
+   <!--first button for second container level : a simple button-->
+  <Template syp:name="AfrRep3LevelCascadeSecondLevel" Target="CATAfrSYPStarterView">
+
+      <!--We create a simple button for this level and bind all possible properties with model properties.-->
+      <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--> 
+      <!--And so, the container will know which command is active-->
+      <CATVidCtlButton Name="@Name"
+                       syp:Template="Toolbar"
+                       CheckMode="1"
+                       ClickMode="0"
+                       CheckState="@ActivationWidget Mode=TwoWays"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="44 44"
+                       IconDimension="32 32"
+                       Icon="@NormalIcon"
+                       LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                       LongHelpId="@LongHelpId"
+                       Tooltip="@Help"
+                       Click="@ActionEvent"/>
+
+  </Template> 
+  
+    <!--first button for third container level : a simple button-->
+  <Template syp:name="AfrRep3LevelCascadeThirdLevel" Target="CATAfrSYPStarterView">
+
+      <!--We create a simple button for this level and bind all possible properties with model properties.-->
+      <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--> 
+      <!--And so, the container will know which command is active-->
+      <CATVidCtlButton Name="@Name"
+                       syp:Template="Toolbar"
+                       CheckMode="1"
+                       ClickMode="0"
+                       CheckState="@ActivationWidget Mode=TwoWays"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="44 44"
+                       IconDimension="32 32"
+                       Icon="@NormalIcon"
+                       Tooltip="@Help"
+                       LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                       LongHelpId="@LongHelpId"
+                       Click="@ActionEvent"
+                       Entry="@FocusInEvent"
+                       Leave="@FocusOutEvent"/>
+
+  </Template>
+
+  <DataTemplate syp:name="AfrRep3LevelCascadeThirdLevelDataTemplate">
+    <CATVidCtlButton Name="@Name"
+                       syp:Template="Toolbar"
+                       CheckMode="1"
+                       ClickMode="0"
+                       CheckState="@ActivationWidget Mode=TwoWays"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="44 44"
+                       IconDimension="32 32"
+                       Icon="@NormalIcon"
+                       Tooltip="@Help"
+                       LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                       LongHelpId="@LongHelpId"
+                       Click="@ActionEvent"
+                       Entry="@FocusInEvent"
+                       Leave="@FocusOutEvent"/>
+  </DataTemplate>
+  
+    
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <!--first button for first container level : a simple button-->
+  <Template syp:name="AfrRep3LevelCascadeSeparator" Target="CATAfrSYPSeparatorView">
+
+      <!--We create a simple button for this level and bind all possible properties with model properties.-->
+      <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--> 
+      <!--And so, the container will know which command is active-->
+    <CATVidGPSquare   UseManipulatorFlag="0" 
+                       RequestedMinimumDimension="10 10"
+                       Entry="@FocusInEvent"
+                       Leave="@FocusOutEvent"/>
+
+  </Template>
+  
+    <!--first button for first container level : a simple button-->
+  <Template syp:name="AfrRep3LevelCascadeFirstLevel" Target="CATAfrSYPSeparatorView">
+
+      <!--We create a simple button for this level and bind all possible properties with model properties.-->
+      <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--> 
+      <!--And so, the container will know which command is active-->
+    <CATVidGPSquare  UseManipulatorFlag="0"
+                       RequestedMinimumDimension="10 10"
+                       Entry="@FocusInEvent"
+                       Leave="@FocusOutEvent"/>
+
+  </Template>
+    <!--first button for first container level : a simple button-->
+  <Template syp:name="AfrRep3LevelCascadeSecondLevel" Target="CATAfrSYPSeparatorView">
+
+      <!--We create a simple button for this level and bind all possible properties with model properties.-->
+      <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--> 
+      <!--And so, the container will know which command is active-->
+    <CATVidGPSquare  UseManipulatorFlag="1"
+                       RequestedMinimumDimension="10 10"
+                       Entry="@FocusInEvent"
+                       Leave="@FocusOutEvent"/>
+
+  </Template>
+    <!--first button for first container level : a simple button-->
+  <Template syp:name="AfrRep3LevelCascadeThirdLevel" Target="CATAfrSYPSeparatorView">
+
+      <!--We create a simple button for this level and bind all possible properties with model properties.-->
+      <!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--> 
+      <!--And so, the container will know which command is active-->
+    <CATVidGPSquare  UseManipulatorFlag="0"
+                       RequestedMinimumDimension="28 10"
+                       Entry="@FocusInEvent"
+                       Leave="@FocusOutEvent"/>
+
+  </Template>
+
+
+</Styles>

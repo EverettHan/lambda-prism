@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="CAfrMainPreferencesTree.xml" />
+    <ResourceDictionary Source="CAfrAllPreferencesTree.xml" />
+    <ResourceDictionary Source="CAfrMainPreferencesTree_NewTree.xml" />
+    <ResourceDictionary Source="CAfrAllPreferencesTree_NewTree.xml" />
+  </Resources>
+
+  <Template syp:name="CATCAfrWindowDialog" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "MePreferenceDialog"
+                   IconName           = "Preferences\\Options_Customize_Small.png"
+                   ResizableFlag      = "1"
+                   Visibility         = "1"
+                   ContentVisibleFlag ="1"
+                   CompactFlag        ="0"
+                   AutoCloseFlag      ="0"
+                   VerticallyStretchableFlag="0"
+                   ResourceFile       = "MePreferences"
+                   ToolBarPos="4"
+                   RepresentationType = "AfrFraPanelEx"
+                   DialogBoxDimension ="825 650">
+      <CATCAfrToolbar Name            = "MePreferenceDialogToolbar"
+                      RepresentationType="EmptyDecorationToolBar"
+                      Visibility = "1">
+        <CATCAfrInclude syp:Template="MePreferenceDialogToolbarHeaders"/>
+        <CATCmdStarter Name="MePreferenceDialogOk"
+                       Command="MePreferenceDialogOk"
+                       Visibility="1"
+                       RepresentationType="VIAImmersiveToolBar"/>
+        <CATCmdStarter Name="MePreferenceDialogApply"
+                       Command="MePreferenceDialogApply"
+                       Visibility="1"
+                       RepresentationType="VIAImmersiveToolBar"/>
+        <CATCmdStarter Name="MePreferenceDialogClose"
+                       Command="MePreferenceDialogClose"
+                       Visibility="1"
+                       RepresentationType="VIAImmersiveToolBar"/>
+
+        <!-- ODTChecker button shhould be visible in ODT mode only -->
+        <CATCAfrInclude Condition="($IsCAfrPrefODTMode == 1)"  Template="CAfrMePrefODTCheckerTemplate"/>
+        
+      </CATCAfrToolbar>
+      <CATCAfrToolbar Name            = "MePreferenceCmdsToolbar"
+                      RepresentationType="EmptyDecorationToolBarLeft"
+                      Visibility = "1">
+        <CATCmdStarter Name="MePreferenceDialogDump"
+                       Command="MePreferenceDialogDump"
+                       Visibility="1"
+                       RepresentationType="VIAImmersiveToolBar"/>
+        <CATCmdStarter Name="MePreferenceDialogReset"
+                       Command="MePreferenceDialogReset"
+                       Visibility="1"
+                       RepresentationType="VIAImmersiveToolBar"/>
+      </CATCAfrToolbar>
+      
+        <CATCAfrInclude Condition="($IsCAfrPrefODTMode == 0)"  Template="FormHorizontal_DISP"/>
+        <CATCAfrInclude Condition="($IsCAfrPrefODTMode == 1)"  Template="FormHorizontal_ODT"/>
+
+    </CATCAfrWindow>
+  </Template>
+
+  <Template syp:name="FormHorizontal_DISP" Target ="CATAfrComponent" syp:version="1">
+    <CATCAfrForm Name="FormVertical" Visibility="1" RepresentationType="AfrFullSpace">
+      
+      <CATCAfrForm Name="FormHorizontal1" Visibility="1">
+        <CATCAfrForm Name="Search" Visibility="1">
+          <!--<CATAfrPrefPageStateToggle> </CATAfrPrefPageStateToggle>-->
+        </CATCAfrForm>
+      </CATCAfrForm>
+        
+      <CATCAfrForm Name="FormHorizontal" Visibility="1"
+                    RepresentationType="AfrMePrefHorizontal">
+        <CATCAfrForm Name="TreeFrom"
+                      Title=""
+                      Visibility ="1"
+                      MinimumDimension  ="300 325"
+                      RepresentationType="AfrFullSpace">
+          <CATCAfrInclude syp:Template="CATCAfrTree_Tabs"/>
+        </CATCAfrForm>
+        <CATCAfrForm Name="Splitter"
+                      Visibility="1"
+                      RepresentationType="AfrGridSplitter">
+        </CATCAfrForm>
+        <CATCAfrForm Name="MainForm"
+                      Visibility ="1"
+                      syp:name="Container"
+                      RepresentationType="AfrGroupBox">
+          <CATCAfrForm syp:name="PreferenceContainer"
+                        Name="PreferenceContainer"
+                        Visibility ="1"
+                        UseTransactionFlag="1"
+                        UseDetailedViewTransactionFlag="1"
+                        Decorator ="ScrollableArea"
+                        MinimumDimension  ="300 325">
+          </CATCAfrForm>
+          
+        </CATCAfrForm>
+      </CATCAfrForm>
+
+    </CATCAfrForm>
+  </Template>
+  
+  <Template syp:name="FormHorizontal_DISP" Target ="CATAfrComponent" syp:version="2">
+    <CATCAfrForm Name="FormVertical" Visibility="1" RepresentationType="AfrFullSpace">
+
+      <CATCAfrForm Name="FormHorizontal1" Visibility="1">
+        <CATCAfrForm Name="Search" Visibility="1">
+        </CATCAfrForm>
+      </CATCAfrForm>
+
+      <CATCAfrForm Name="FormHorizontal" Visibility="1"
+                    RepresentationType="AfrMePrefHorizontal">
+        <CATCAfrForm Name="TreeFrom"
+                      Title=""
+                      Visibility ="1"
+                      MinimumDimension  ="300 325"
+                      RepresentationType="AfrFullSpace">
+          <CATCAfrInclude  syp:Template="CATCAfrTree_Tab_NewTree"/>
+        </CATCAfrForm>
+        <CATCAfrForm Name="Splitter"
+                      Visibility="1"
+                      RepresentationType="AfrGridSplitter">
+        </CATCAfrForm>
+        <CATCAfrForm Name="MainForm"
+                      Visibility ="1"
+                      syp:name="Container"
+                      RepresentationType="AfrGroupBox">
+          <CATCAfrForm syp:name="PreferenceContainer"
+                        Name="PreferenceContainer"
+                        Visibility ="1"
+                        UseTransactionFlag="1"
+                        UseDetailedViewTransactionFlag="1"
+                        Decorator ="ScrollableArea"
+                        MinimumDimension  ="300 325">
+          </CATCAfrForm>
+
+        </CATCAfrForm>
+
+      </CATCAfrForm>
+    </CATCAfrForm>
+  </Template>
+  
+    <Template syp:name="FormHorizontal_ODT" Target ="CATAfrComponent" syp:version="1">
+    <CATCAfrForm Name="FormVertical" Visibility="1" RepresentationType="AfrFullSpace">
+      
+      <CATCAfrForm Name="FormHorizontal1" Visibility="1">
+        <CATCAfrForm Name="Search" Visibility="1">
+          <!--<CATAfrPrefPageStateToggle> </CATAfrPrefPageStateToggle>-->
+        </CATCAfrForm>
+      </CATCAfrForm>
+        
+      <CATCAfrForm Name="FormHorizontal" Visibility="1"
+                    RepresentationType="AfrMePrefHorizontal">
+        <CATCAfrForm Name="TreeFrom"
+                      Title=""
+                      Visibility ="1"
+                      MinimumDimension  ="300 650"
+                      RepresentationType="AfrFullSpace">
+          <CATCAfrInclude syp:Template="CATCAfrTree_Tabs"/>
+        </CATCAfrForm>
+        <CATCAfrForm Name="Splitter"
+                      Visibility="1"
+                      RepresentationType="AfrGridSplitter">
+        </CATCAfrForm>
+        <CATCAfrForm Name="MainForm"
+                      Visibility ="1"
+                      syp:name="Container"
+                      RepresentationType="AfrGroupBox">
+          <CATCAfrForm syp:name="PreferenceContainer"
+                        Name="PreferenceContainer"
+                        Visibility ="1"
+                        UseTransactionFlag="1"
+                        UseDetailedViewTransactionFlag="1"
+                        Decorator ="ScrollableArea"
+                        MinimumDimension  ="500 650">
+          </CATCAfrForm>
+          
+        </CATCAfrForm>
+      </CATCAfrForm>
+
+    </CATCAfrForm>
+  </Template>
+  
+  <Template syp:name="FormHorizontal_ODT" Target ="CATAfrComponent" syp:version="2">
+    <CATCAfrForm Name="FormVertical" Visibility="1" RepresentationType="AfrFullSpace">
+
+      <CATCAfrForm Name="FormHorizontal1" Visibility="1">
+        <CATCAfrForm Name="Search" Visibility="1">
+        </CATCAfrForm>
+      </CATCAfrForm>
+
+      <CATCAfrForm Name="FormHorizontal" Visibility="1"
+                    RepresentationType="AfrMePrefHorizontal">
+        <CATCAfrForm Name="TreeFrom"
+                      Title=""
+                      Visibility ="1"
+                      MinimumDimension  ="300 650"
+                      RepresentationType="AfrFullSpace">
+          <CATCAfrInclude syp:Template="CATCAfrTree_Tab_NewTree"/>
+        </CATCAfrForm>
+        <CATCAfrForm Name="Splitter"
+                      Visibility="1"
+                      RepresentationType="AfrGridSplitter">
+        </CATCAfrForm>
+        <CATCAfrForm Name="MainForm"
+                      Visibility ="1"
+                      syp:name="Container"
+                      RepresentationType="AfrGroupBox">
+          <CATCAfrForm syp:name="PreferenceContainer"
+                        Name="PreferenceContainer"
+                        Visibility ="1"
+                        UseTransactionFlag="1"
+                        UseDetailedViewTransactionFlag="1"
+                        Decorator ="ScrollableArea"
+                        MinimumDimension  ="500 650">
+          </CATCAfrForm>
+
+        </CATCAfrForm>
+      </CATCAfrForm>
+
+    </CATCAfrForm>
+  </Template>
+  
+  <Template syp:name="FormHorizontal_DISP" Target ="CATAfrComponent">
+      <CATCAfrForm Name="FormHorizontal" Visibility="1"
+                   RepresentationType="AfrMePrefHorizontal">
+        <CATCAfrForm Name="TreeFrom"
+                     Title=""
+                     Visibility ="1"
+                     MinimumDimension  ="300 325"
+                     RepresentationType="AfrFullSpace">
+          <CATCAfrInclude syp:Template="CATCAfrTree_Tabs"/>
+        </CATCAfrForm>
+        <CATCAfrForm Name="Splitter" 
+                     Visibility="1" 
+                     RepresentationType="AfrGridSplitter">
+        </CATCAfrForm>
+        <CATCAfrForm Name="MainForm"
+                     Visibility ="1"
+                     syp:name="Container"
+                     RepresentationType="AfrGroupBox">
+          <CATCAfrForm syp:name="PreferenceContainer"
+                       Name="PreferenceContainer"
+                       Visibility ="1"
+                       UseTransactionFlag="1"
+                       UseDetailedViewTransactionFlag="1"
+                       Decorator ="ScrollableArea"
+                       MinimumDimension  ="300 325">
+          </CATCAfrForm>
+        </CATCAfrForm>
+      </CATCAfrForm>
+  </Template>
+  <Template syp:name="FormHorizontal_ODT" Target ="CATAfrComponent">
+      <CATCAfrForm Name="FormHorizontal" Visibility="1"
+                   RepresentationType="AfrMePrefHorizontal">
+        <CATCAfrForm Name="TreeFrom"
+                     Title=""
+                     Visibility ="1"
+                     MinimumDimension  ="300 650"
+                     RepresentationType="AfrFullSpace">
+          <CATCAfrInclude syp:Template="CATCAfrTree_Tabs"/>
+        </CATCAfrForm>
+        <CATCAfrForm Name="Splitter" 
+                     Visibility="1" 
+                     RepresentationType="AfrGridSplitter">
+        </CATCAfrForm>
+        <CATCAfrForm Name="MainForm"
+                     Visibility ="1"
+                     syp:name="Container"
+                     RepresentationType="AfrGroupBox">
+          <CATCAfrForm syp:name="PreferenceContainer"
+                       Name="PreferenceContainer"
+                       Visibility ="1"
+                       UseTransactionFlag="1"
+                       UseDetailedViewTransactionFlag="1"
+                       Decorator ="ScrollableArea"
+                       MinimumDimension  ="500 650">
+          </CATCAfrForm>
+        </CATCAfrForm>
+      </CATCAfrForm>
+  </Template>
+  
+  <Template syp:name="CATCAfrTree_Tabs" Target ="CATCAfrInclude">
+    <CATCAfrForm Name="PreferencesCategories"
+                 Visibility="1"
+                 RepresentationType="AfrGroupBox">
+      <CATCAfrForm Name ="MyPreferencesTrees"
+                   Visibility ="1"
+                   Decorator="TabPage"
+                   ForceTabIconFlag="0"
+                   MinimumTabSize ="250">
+        <CATCAfrInclude syp:Template="CATCAfrTree_Imp"/>
+        <CATCAfrInclude syp:Template="CATCAfrTree_All"/>
+      </CATCAfrForm>
+    </CATCAfrForm>
+  </Template>
+
+  <Template syp:name="CATCAfrTree_Tab_NewTree" Target ="CATCAfrInclude">
+    <CATCAfrForm Name="PreferencesCategories"
+                 Visibility="1"
+                 RepresentationType="AfrGroupBox">
+      <CATCAfrForm Name ="MyPreferencesTrees"
+                   Visibility ="1"
+                   Decorator="TabPage"
+                   ForceTabIconFlag="0"
+                   LabelsCropPolicy="NoCrop"
+                   MinimumTabSize ="250">
+        <CATCAfrInclude syp:Template="CATCAfrTree_Imp_NewTree"/>
+        <CATCAfrInclude syp:Template="CATCAfrTree_All_NewTree"/>
+      </CATCAfrForm>
+    </CATCAfrForm>
+  </Template>
+  
+    
+  <Template syp:name="CATAfrParentTreeTab" Target="CATAfrComponent">
+    <CATCAfrForm Name="PreferencesCategories"
+                 Visibility="1"
+                 RepresentationType="AfrGroupBox">
+      <CATCAfrForm Name ="MyPreferencesTrees"
+                   Visibility ="1"
+                   Decorator="TabPage"
+                   ForceTabIconFlag="0"
+                   MinimumTabSize ="250">
+        <CATCAfrInclude syp:Template="CATCAfrTree_Imp"/>
+        <CATCAfrInclude syp:Template="CATCAfrTree_All"/>
+      </CATCAfrForm>
+    </CATCAfrForm>
+  </Template>
+
+  <Template syp:name="CATAfrParentTreeTab_NewTree" Target="CATAfrComponent">
+    <CATCAfrForm Name="PreferencesCategories"
+                 Visibility="1"
+                 RepresentationType="AfrGroupBox">
+      <CATCAfrForm Name ="MyPreferencesTrees"
+                   Visibility ="1"
+                   Decorator="TabPage"
+                   ForceTabIconFlag="0"
+                   LabelsCropPolicy="NoCrop"
+                   MinimumTabSize ="250">
+        <CATCAfrInclude syp:Template="CATCAfrTree_Imp_NewTree"/>
+        <CATCAfrInclude syp:Template="CATCAfrTree_All_NewTree"/>
+      </CATCAfrForm>
+    </CATCAfrForm>
+  </Template>
+  
+  <!--PrefItem with and without Lock -->
+  <Template syp:name="ControlWithLock" Target="CATAfrComponent">
+    <CATCAfrForm Name="CtrlFormHorizontal"
+                 Visibility="1"
+                 RepresentationType="AfrHorizontal">
+      <CATCAfrForm Name="L" Visibility ="1">
+        <CATAfrLock Name="Lock" />
+      </CATCAfrForm >
+      <CATCAfrForm Name="ControlFrom"
+                   Visibility ="1"
+                   LabelsCropPolicy="CropWithDots"/>
+    </CATCAfrForm>
+  </Template>
+
+  <Template syp:name="ControlWithoutLock" Target="CATAfrComponent">
+    <CATCAfrForm Name="CtrlFormHorizontal"
+                 Visibility="1"
+                 RepresentationType="AfrHorizontal">
+      <CATCAfrForm Name="L" Visibility ="1"
+                   LabelsCropPolicy="CropWithDots">
+       <CATAfrLock Name="Lock" RepresentationType="WithoutLockWithControlIcon"/>
+      </CATCAfrForm >
+      <CATCAfrForm Name="ControlFrom"
+                   Visibility ="1"
+                />
+    </CATCAfrForm>
+  </Template>
+  
+  <Template syp:name="ControlWithoutLockAndIcon" Target="CATAfrComponent">
+    <CATCAfrForm Name="CtrlFormHorizontal"
+                 Visibility="1"
+                 >
+      <CATCAfrForm Name="ControlFrom"
+                   Visibility ="1"
+                />
+    </CATCAfrForm>
+  </Template>
+
+  <Template syp:name="ControlWithoutLockOnlyIcon" Target="CATAfrComponent">
+    <CATCAfrForm Name="CtrlFormHorizontal"
+                 Visibility="1"
+                 RepresentationType="AfrHorizontal">
+      <CATCAfrForm Name="L" Visibility ="1"
+                   LabelsCropPolicy="CropWithDots">
+        <CATAfrLock Name="Lock" RepresentationType="WithoutLockOnlyControlIcon"/>
+      </CATCAfrForm >
+      <CATCAfrForm Name="ControlFrom"
+                   Visibility ="1"
+                />
+    </CATCAfrForm>
+  </Template>
+
+
+  <!--File Select Dialog -->
+  <Template syp:name="CAfrWindowOpenFile" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "CAfrWindowOpenFile"
+                   CompactFlag        = "1"
+                   AutoCloseFlag      = "1"
+                   ResourceFile       = "MePreferences"
+                   Visibility         = "1"
+                   Directory          = ""
+                   FileName           = ""
+                   FilterExt          = "txt *.txt png *.png bmp *.bmp doc *.doc pdf *.pdf * *.*"
+                   RepresentationType = "AfrOpenFile">
+    </CATCAfrWindow>
+  </Template>
+
+  <!--Folder Select Dialog -->
+  <Template syp:name="CAfrWindowOpenFolder" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "CAfrWindowOpenFolder"
+                   CompactFlag        = "1"
+                   AutoCloseFlag      = "1"
+                   ResourceFile       = "MePreferences"
+                   Visibility         = "1"
+                   Directory          = ""
+                   RepresentationType = "AfrOpenFolder">
+    </CATCAfrWindow>
+  </Template>
+
+  <!--PLM Chooser Dialog -->
+  <Template syp:name="CAfrWindowPLMChooser" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "CAfrWindowPLMChooser"
+                   CompactFlag        = "1"
+                   AutoCloseFlag      = "1"
+                   ResourceFile       = "MePreferences"
+                   Visibility         = "1"
+                   RepresentationType = "PLMChooser">
+    </CATCAfrWindow>
+  </Template>
+  
+  <!--======================================-->
+  <!-- My Header for my toolbar "Ok|Apply|Close" -->
+  <!--======================================-->
+  <Template syp:name="MePreferenceDialogToolbarHeaders" Target="CATCAfrInclude">
+    <CATCAfrToolbarHeaders syp:name="ToolbarHeaders">
+      <CATCmdHeadersList>
+        <CATCommandHeader ID = "MePreferenceDialogOk"
+                          ClassName = "CATCAfrSynchToControllerCmd"
+                          SharedLibraryName = "CATAfrFoundation"
+                          ResourceFile = "MePreferences"
+                          Available = "1"
+                          AvailabilityMode = "Normal=YES AsyncTask=YES CoReviewObserver=YES ReviewMode=YES CoReviewLeader=YES Editability=YES Offline=YES">
+          <CATAfrCommandHeaderArgs>
+            <CATCommandHeaderArg ID = "EventID"
+                                 Value = "Ok"
+                                 Mode = "In" />
+          </CATAfrCommandHeaderArgs>
+        </CATCommandHeader>
+        <CATCommandHeader ID = "MePreferenceDialogApply"
+                          ClassName = "CATCAfrSynchToControllerCmd"
+                          SharedLibraryName = "CATAfrFoundation"
+                          ResourceFile = "MePreferences"
+                          Available = "1"
+                          AvailabilityMode = "Normal=YES AsyncTask=YES CoReviewObserver=YES ReviewMode=YES CoReviewLeader=YES Editability=YES Offline=YES">
+          <CATAfrCommandHeaderArgs>
+            <CATCommandHeaderArg ID = "EventID"
+                                 Value = "Apply"
+                                 Mode = "In" />
+          </CATAfrCommandHeaderArgs>
+        </CATCommandHeader>
+        <CATCommandHeader ID = "MePreferenceDialogClose"
+                          ClassName = "CATCAfrSynchToControllerCmd"
+                          SharedLibraryName = "CATAfrFoundation"
+                          ResourceFile = "MePreferences"
+                          Available = "1"
+                          AvailabilityMode = "Normal=YES AsyncTask=YES CoReviewObserver=YES ReviewMode=YES CoReviewLeader=YES Editability=YES Offline=YES">
+          <CATAfrCommandHeaderArgs>
+            <CATCommandHeaderArg ID = "EventID"
+                                 Value = "Close"
+                                 Mode = "In" />
+          </CATAfrCommandHeaderArgs>
+        </CATCommandHeader>
+        <CATCommandHeader ID = "MePreferenceDialogReset"
+                          ClassName = "CATCAfrSynchToControllerCmd"
+                          SharedLibraryName = "CATAfrFoundation"
+                          ResourceFile = "MePreferences"
+                          Available = "1"
+                          AvailabilityMode = "Normal=YES AsyncTask=YES CoReviewObserver=YES ReviewMode=YES CoReviewLeader=YES Editability=YES Offline=YES">
+          <CATAfrCommandHeaderArgs>
+            <CATCommandHeaderArg ID = "EventID"
+                                 Value = "Reset"
+                                 Mode = "In" />
+          </CATAfrCommandHeaderArgs>
+        </CATCommandHeader>
+        <CATCommandHeader ID = "MePreferenceDialogDump"
+                          ClassName = "CATCAfrSynchToControllerCmd"
+                          SharedLibraryName = "CATAfrFoundation"
+                          ResourceFile = "MePreferences"
+                          Available = "1"
+                          AvailabilityMode = "Normal=YES AsyncTask=YES CoReviewObserver=YES ReviewMode=YES CoReviewLeader=YES">
+          <CATAfrCommandHeaderArgs>
+            <CATCommandHeaderArg ID = "EventID"
+                                 Value = "Dump"
+                                 Mode = "In" />
+          </CATAfrCommandHeaderArgs>
+        </CATCommandHeader>
+        <CATCommandHeader ID = "MePreferenceDialogODTChecker"
+                          ClassName = "CATCAfrSynchToControllerCmd"
+                          SharedLibraryName = "CATAfrFoundation"
+                          ResourceFile = "MePreferences"
+                          Available = "1"
+                          AvailabilityMode = "Normal=YES AsyncTask=YES CoReviewObserver=YES ReviewMode=YES CoReviewLeader=YES">
+          <CATAfrCommandHeaderArgs>
+            <CATCommandHeaderArg ID = "EventID"
+                                 Value = "ODTChecker"
+                                 Mode = "In" />
+          </CATAfrCommandHeaderArgs>
+        </CATCommandHeader>        
+
+      </CATCmdHeadersList>
+    </CATCAfrToolbarHeaders>
+  </Template>
+
+
+  <!-- ODTChecker button shhould be visible in ODT mode only -->
+  <Template syp:name="CAfrMePrefODTCheckerTemplate" Target="CATAfrComponent">
+    <CATCmdStarter Name="MePreferenceDialogODTChecker"
+                   Command="MePreferenceDialogODTChecker"
+                   Visibility="1"
+                   RepresentationType="VIAImmersiveToolBar"/>
+  </Template>
+  
+</Styles>

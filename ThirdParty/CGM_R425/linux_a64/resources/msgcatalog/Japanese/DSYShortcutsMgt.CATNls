@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt=" 
+指定された環境ファイルにリンクされたデスクトップ、メニュー、またはツール上のすべてのアプリケーション ショートカットを作成または削除するには:
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+指定された環境ファイルにリンクされたデスクトップのカスタム ショートカットのみを作成または削除するには:
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create または -del           : デスクトップ、メニュー、ツール上のすべてのアプリケーション ショートカットを作成または削除、あるいはカスタム ショートカットを作成または削除します。
+  -desktop|menu|tools       : デスクトップ、メニューまたはツール上のすべてのアプリケーション ショートカットを作成または削除します。デフォルトは desktop です。カスタム モードでは無効です。
+  -e EnvName                : 環境ファイル名。カスタム ショートカットを削除する場合には無効です。
+  -d EnvDir                 : 環境ファイル ストレージ フォルダー (オプション)。削除モードでは無効です。
+                              これを指定せず、 -a を使用しなかった場合のデフォルトは、次のようになります: EnvDir  = \"/p1\"
+                              これを指定せず、-a global を使用した場合のデフォルトは、次のようになります: EnvDir = \"/p2\"
+                              これを指定せず、-a user を使用した場合のデフォルトは、次のようになります: EnvDir =  \"/p1\"
+  -a global|user            : すべてのユーザーのショートカット、または現在のユーザーのショートカットのみを作成または削除します (オプション)。デフォルトは -a user です。
+                              ショートカットの場所およびタイプを指定します。
+                             -a global: ショートカットは、すべてのユーザーに表示可能になります。このオプションを使用するには、管理者権限が必要です。
+                             -a user: ショートカットは、現在のユーザーにのみ表示可能になります。
+  -name DesktopShortcutName : Cmd コマンドを起動する DesktopshortcutName という名前のカスタム デスクトップ ショートカットを作成または削除します。
+  -cmd Cmd                  : DesktopshortcutName という名前のカスタム デスクトップ ショートカットを、Target = CATSTART -run Cmd env EnvName -direnv EnvDir 付きで作成または削除します。
+  -h                        : このヘルプ。";
+
+MissingOption_e="オプション -e は環境ファイルの名前を指定するために必須です。\n";
+MissingValue_e="-e オプションの後に環境ファイルの名前を続ける必要があります。\n";
+MissingValue_d="-d オプションの後に環境ファイルのパスの名前を続ける必要があります。\n";
+MissingValue_a="-a オプションの後に global または user を続ける必要があります。\n";
+MissingValue_Cmd="-Cmd オプションの後に、ショートカットで起動されるコマンドを続ける必要があります。";
+MissingValue_name="-name オプションの後に、作成されるデスクトップ ショートカットの名前を続ける必要があります。";
+MissingOption_cmd="オプション -name は、-cmd オプションと組み合わせて使用する必要があります。\n";
+MissingOption_name="オプション -cmd は、-name オプションと組み合わせて使用する必要があります。\n";
+BadOptions_menutools="カスタム ショートカットは、デスクトップでのみ作成できます。\n";
+BadOptions_TypeShortcut="オプション -desktop、-tools または -menu を一緒には使用できません。\n";
+Option_aMustAdmin="全ユーザーのショートカットを作成するにはオプション -a に管理者特権が必要です。\n";
+BadValue_a="オプション -a の後に続くのは global または user のいずれかのみに限られます。\n";
+MissingOptions_createordel="-create または -del オプションのいずれかが必須です。";
+MissingOption_typeshortcut="-desktop、-tools または -menu オプションのいずれかが必須です。\n";
+InvalidArg="オプション /p1 は許可されていません。";
+BadOptions_createdel="オプション -create と -del は同時に使用できません。";
+EnvnameNotFound="環境ファイル /p1 が見つかりませんでした。-e オプションを確認してください\n";
+CreateShortcutsIn="次の場所にショートカットを作成しています: \"/p1 \"\n";
+DeleteShortcutsIn="次の場所のショートカットを削除しています: \"/p1 \"\n";
+CreateShortcutsDesktop="デスクトップにショートカットを作成しています...\n";
+CreateShortcutsDesktopOK="デスクトップへのショートカットの作成に成功しました。\n";
+CreateShortcutsDesktopKO="デスクトップへのショートカットの作成に失敗しました。\n";
+CreateShortcutDesktop="デスクトップ ショートカット /p1 を作成中...\n";
+CreateShortcutDesktopOK="デスクトップ ショートカットの作成に成功しました。\n";
+CreateShortcutDesktopKO="デスクトップ ショートカットの作成に失敗しました。\n";
+CreateShortcutsTools="ツール ショートカットを作成中...\n";
+CreateShortcutsToolsOK="ツールのショートカットの作成に成功しました。\n";
+CreateShortcutsToolsKO="ツールのショートカットの作成に失敗しました。\n";
+CreateShortcutsMenu="[スタート] メニューにショートカットを作成しています...\n";
+CreateShortcutsMenuOK="[スタート] メニューへのショートカットの作成に成功しました。\n";
+CreateShortcutsMenuKO="[スタート] メニューへのショートカットの作成に失敗しました。\n";
+CreateDirFailed="ディレクトリ \"/P1 \"の作成に失敗しました。\n";
+DeleteShortcutsDesktop="デスクトップのショートカットを削除しています...\n";
+DeleteShortcutsDesktopOK="デスクトップのショートカットの削除に成功しました。\n";
+DeleteShortcutsDesktopKO="デスクトップのショートカットの削除に失敗しました。\n";
+DeleteShortcutDesktop="デスクトップ ショートカット /p1 を削除中...\n";
+DeleteShortcutDesktopOK="デスクトップ ショートカットの削除に成功しました。\n";
+DeleteShortcutDesktopKO="デスクトップ ショートカットの削除に失敗しました。\n";
+DeleteShortcutsTools="デスクトップのツールのショートカットを削除しています...\n";
+DeleteShortcutsToolsOK="ツールのショートカットの削除に成功しました。\n";
+DeleteShortcutsToolsKO="ツールのショートカットの削除に失敗しました。\n";
+DeleteShortcutsMenu="[スタート] メニューのショートカットを削除しています...\n";
+DeleteShortcutsMenuOK="[スタート] メニューのショートカットの削除に成功しました。\n";
+DeleteShortcutsMenuKO="[スタート] メニューのショートカットの削除に失敗しました。\n";
+DeleteShortcutfailed="ショートカット /p1 を削除できませんでした。\n";
+ShortcutNotFound="ショートカット /p1 が見つかりませんでした。\n";
+DeleteShortcutOK="ショートカット /p1 は削除されました。\n";
+CreateShortcutOK="ショートカット /p1 が正しく作成されました。\n";
+CreateShortcutKO="ショートカット /p1 を作成できませんでした。\n";
+BadStartInFolder_MissingPourcent="開始フォルダーの値: 対でない % 文字が含まれているため、/p1 は無視されました。\n";
+BadStartInFolder_BadEnv="環境変数 /p1 が設定されていません。\n";
+BadStartInFolder_BadDir="開始フォルダーの値: パスが存在しないため /p1 は無視されました。\n";
+NoModuleName="モジュール名を取得できません。\n";
+CustomexeNotFound="Exe /p1 が PATH 連結にありません。\n";
+Customexe2NotFound="/p1.exe または /p1.bat が PATH 連結にありません。\n";
+NoShortcuts="作成するショートカットのリストを取得できません。ファイル /p1 が見つかりませんでした。 \n";
+ErrGetRootPath="/p1 のフォルダー値を取得できません。\n";
+DeleteDirKO="フォルダーを削除できません: /p1/p2\n";
+InvalidDiskPathFormat="'/p1' パスの先頭のディスク ドライブが無効です。";
+InvalidUNCPathFormat="'/p1' は無効な UNC パスです。";
+InvalidPathFormat="'/p1' は無効なパスです。";
+rootpathnotExist="ルート パス '/p1' が存在しないため、フォルダーを作成できません。";

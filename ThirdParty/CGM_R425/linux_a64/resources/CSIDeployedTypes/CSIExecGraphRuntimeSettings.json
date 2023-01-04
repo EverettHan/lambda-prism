@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "desc": "A structure defining defining advanced runtime settings of an CSI Execution Graph",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "directData",
+      "basic": "bool",
+      "desc": "The data flows will be resolved directly from block to block (without transiting by the engine)",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "multipleCall",
+      "basic": "bool",
+      "desc": "The functional blocks can be called multiple times, allowing reentrancy and loops",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "defaultTimeout",
+      "basic": "uint32",
+      "desc": "For each block witout nodeIdSelector, this default timeout is applied",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "progressEvents",
+      "type": "CSIExecGraphProgressEvents",
+      "desc": "For the graph to trigger onProgress events to track and/or debug its execution",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

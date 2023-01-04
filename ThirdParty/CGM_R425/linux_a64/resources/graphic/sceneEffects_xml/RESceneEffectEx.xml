@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SCENE_EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns ="urn:dsfx0">
+
+  
+  <!--  ########################################################### -->
+  <!--                Depth Stencil States                          -->
+  <!--  ########################################################### -->
+  
+  <DST_STATE_GROUP>
+    <NAME>DSS_Test</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_TestWrite</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE>true</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_NoTest</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_NoTestOveride</NAME>
+    <DEPTH_ENABLE protected="1">false</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+    <STENCIL_ENABLE>false</STENCIL_ENABLE>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_TestProtected</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_TestNoWriteProtected</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_TestWriteProtected</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">true</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_WriteAlwaysProtected</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">true</DEPTH_WRITE>
+    <DEPTH_FUNC protected="1">Always</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_TestWriteAllInZ</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">true</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <!-- Depth Stencil Test States moduler -->
+  
+  <DST_STATE_GROUP>
+    <NAME>DSS_WriteStencil</NAME>
+    <STENCIL_ENABLE>true</STENCIL_ENABLE>
+    <STENCIL_READ_MASK>255</STENCIL_READ_MASK>
+    <STENCIL_REF>0</STENCIL_REF>
+    <BACK_FACE>
+      <DEPTH_FAIL_OP>Keep</DEPTH_FAIL_OP>
+      <STENCIL_PASS_OP>Increment</STENCIL_PASS_OP>
+      <STENCIL_FAIL_OP>Increment</STENCIL_FAIL_OP>
+      <STENCIL_FUNC>Always</STENCIL_FUNC>
+      <STENCIL_WRITE_MASK>255</STENCIL_WRITE_MASK>
+    </BACK_FACE>
+    <FRONT_FACE>
+      <DEPTH_FAIL_OP>Keep</DEPTH_FAIL_OP>
+      <STENCIL_PASS_OP>Increment</STENCIL_PASS_OP>
+      <STENCIL_FAIL_OP>Increment</STENCIL_FAIL_OP>
+      <STENCIL_FUNC>Always</STENCIL_FUNC>
+      <STENCIL_WRITE_MASK>255</STENCIL_WRITE_MASK>
+    </FRONT_FACE>
+  </DST_STATE_GROUP>
+
+
+
+  <!--  ########################################################### -->
+  <!--                        Blend States                          -->
+  <!--  ########################################################### -->
+  
+  <BLEND_STATE_GROUP>
+    <NAME>BS_NoBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_AlphaToCoverage</NAME>
+    <ALPHA_TO_COVERAGE protected="1">true</ALPHA_TO_COVERAGE>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>One</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>Zero</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_AlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+  
+  <BLEND_STATE_GROUP>
+    <NAME>BS_ForSSR</NAME>
+    <SEPARATE_BLEND protected="1">true</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET protected="1">
+      <!-- Support for weighted average/OIT -->
+      <ID>1</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET protected="1">
+      <!-- IBL map with transparancy -->
+      <ID>2</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET protected="1">
+      <ID>3</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_LineOnLineAlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusDstAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_BackgroundBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>Zero</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>Zero</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_GroundBlending</NAME>
+    <SEPARATE_BLEND>true</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+    <TARGET>
+      <ID>1</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>One</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>Zero</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>Zero</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_NoXOR</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_XOR</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>true</LOGIC_OP_ENABLE>
+      <LOGIC_OP>XOr</LOGIC_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_NoColor</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>None</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_SetProtected</NAME>
+    <SEPARATE_BLEND protected="1">false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <LOGIC_OP>Set</LOGIC_OP>
+      <LOGIC_OP_ENABLE>true</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <!-- Blend States modulers -->
+
+
+
+  <!--  ########################################################### -->
+  <!--                    Rasterizer States                         -->
+  <!--  ########################################################### -->
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_NoCull</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_NoAA</NAME>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+    <ANTI_ALIASED_LINE_ENABLE protected="1">false</ANTI_ALIASED_LINE_ENABLE>
+    <ANTI_ALIASED_POLYGON_ENABLE protected="1">false</ANTI_ALIASED_POLYGON_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_Volume</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>Back</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_Skin</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_Wireframe</NAME>
+    <FILL_MODE>Wireframe</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_WireframeProtected</NAME>
+    <FILL_MODE protected="1">Wireframe</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW protected="1">true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_Transparent</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_GroundWithPolygonOffset</NAME>
+    <CULL_MODE>None</CULL_MODE>
+    <FILL_MODE>Solid</FILL_MODE>
+    <DEPTH_BIAS>2</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>3.0</DEPTH_SLOPE_FACTOR>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <SCISSOR_ENABLE>false</SCISSOR_ENABLE>
+    <DEPTH_CLIP_ENABLE>true</DEPTH_CLIP_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_RasAdvancedPolite</NAME>
+    <LINE_STIPPLE_ENABLE protected="1">false</LINE_STIPPLE_ENABLE>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_VoxelMap</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS protected="1">0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_VoxelMap_Conservative</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS protected="1">0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">0.0</DEPTH_SLOPE_FACTOR>
+    <CONSERVATIVE_RASTERIZATION_ENABLE protected="1">true</CONSERVATIVE_RASTERIZATION_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_SectionProfile</NAME>
+    <FILL_MODE protected="1">Wireframe</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <!-- Rasterizer States modulers -->
+
+  <RAST_STATE_GROUP>
+    <!-- Only usefull to avoid a bug with Edge.WiteStencil technique -->
+    <NAME>RS_Empty</NAME>
+  </RAST_STATE_GROUP>
+  
+  <RAST_STATE_GROUP>
+    <NAME>RS_NoBFCull</NAME>
+    <CULL_MODE>None</CULL_MODE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_BFCull</NAME>
+    <CULL_MODE>Back</CULL_MODE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_CCW</NAME>
+    <IS_FRONT_CCW>false</IS_FRONT_CCW>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_BwdPolyOff</NAME>
+    <DEPTH_BIAS>1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_BwdPolyOffProtected</NAME>
+    <DEPTH_BIAS protected="1">1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_NoPolyOff</NAME>
+    <DEPTH_BIAS protected="1">0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">0.0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_FwdPolyOff</NAME>
+    <DEPTH_BIAS protected="1">-1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">-1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+
+  
+  <!--  ########################################################### -->
+  <!--                    Techniques                                -->
+  <!--  ########################################################### -->
+
+  <!-- TECHNIQUE Modulators -->
+  
+  <TECHNIQUE>
+    <NAME>NoBFCull</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_NoBFCull</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>BFCull</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_BFCull</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>CCW</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_CCW</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>ForSSR</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <BLEND_STATE>BS_ForSSR</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>NoPolyOff</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_NoPolyOff</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AntiZFight</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_NoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestNoWriteProtected</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>ZFightPrePass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_BwdPolyOffProtected</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>ReadOnlyZPass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_NoPolyOff</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestNoWriteProtected</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>WriteStencil</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_Empty</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_WriteStencil</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+
+  <!-- TECHNIQUE Volume -->
+  
+  <TECHNIQUE>
+    <NAME>Volume</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_Volume</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE> <DECLARE_NAME>Volume.NoBFCull</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.NoBFCull</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.NoBFCull.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.NoBFCull.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.NoBFCull.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.NoBFCull.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  
+  <TECHNIQUE> <DECLARE_NAME>Volume.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.NoBFCull.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.NoBFCull.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  
+  <TECHNIQUE> <DECLARE_NAME>Volume.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.NoBFCull.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Volume.CCW.NoBFCull.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  
+  
+  <!-- TECHNIQUE Skin -->
+  
+  <TECHNIQUE>
+    <NAME>Skin</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_Skin</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE> <DECLARE_NAME>Skin.BFCull</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.BFCull</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.BFCull.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.BFCull.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.BFCull.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.BFCull.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  
+  <TECHNIQUE> <DECLARE_NAME>Skin.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.BFCull.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.BFCull.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  
+  
+  <TECHNIQUE> <DECLARE_NAME>Skin.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.BFCull.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Skin.CCW.BFCull.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+
+  
+  <!-- TECHNIQUE TransparLargeAsm -->
+  
+  <TECHNIQUE>
+    <NAME>TransparLargeAsm</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_Skin</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestWriteProtected</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  
+  <!-- TECHNIQUE AlphaTest -->
+  
+  <TECHNIQUE>
+    <NAME>AlphaTest</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_Skin</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaToCoverage</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.CCW</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.CCW.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.CCW.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.CCW.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>AlphaTest.CCW.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  
+  
+  <!-- TECHNIQUE Transparent -->
+  
+  <TECHNIQUE>
+    <NAME>Transparent</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_Transparent</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.CCW</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.CCW</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.CCW.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.CCW.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.CCW.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.CCW.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  
+  <TECHNIQUE> <DECLARE_NAME>Transparent.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.CCW.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.CCW.AntiZFight</DECLARE_NAME> </TECHNIQUE>
+
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.CCW.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Transparent.ForSSR.CCW.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+
+  
+  <!-- TECHNIQUE Wireframe -->
+  
+  <TECHNIQUE>
+    <NAME>Wireframe</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_Wireframe</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_NoBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE> <DECLARE_NAME>Wireframe.NoPolyOff</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Wireframe.ZFightPrePass</DECLARE_NAME> </TECHNIQUE>
+  <TECHNIQUE> <DECLARE_NAME>Wireframe.AntiZFight</DECLARE_NAME> </TECHNIQUE>  
+  <TECHNIQUE> <DECLARE_NAME>Wireframe.ReadOnlyZPass</DECLARE_NAME> </TECHNIQUE>
+
+  
+  <!-- TECHNIQUE WireframeOnMesh -->
+  
+  <TECHNIQUE>
+    <NAME>WireframeOnMesh</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_WireframeProtected</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_SetProtected</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>WireframeOnMesh.NoPolyOff</DECLARE_NAME></TECHNIQUE>
+
+  <!-- TECHNIQUE Edge/Line -->
+  
+  <TECHNIQUE>
+    <NAME>Edge</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>Edge.WriteStencil</DECLARE_NAME></TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>LineOnLine</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_LineOnLineAlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <!-- TECHNIQUE Other -->
+  
+  <TECHNIQUE>
+    <NAME>Other</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+    </PASS>
+    <PASS>
+      <NAME>AllInZ</NAME>
+      <DEPTH_STENCIL_STATE>DSS_TestWriteAllInZ</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <!-- TECHNIQUE Highlight/PreHighlight  -->
+  
+  <TECHNIQUE>
+    <NAME>PoliteFirstPass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_TestWriteProtected</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PoliteSecondPass</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_TestProtected</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AdvancedPolite</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <BLEND_STATE>BS_NoXOR</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestWriteProtected</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>RS_RasAdvancedPolite</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AdvancedPoliteEdgeOther</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <BLEND_STATE>BS_NoXOR</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DSS_WriteAlwaysProtected</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>RS_RasAdvancedPolite</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>AdvancedPolite.NoPolyOff</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>AdvancedPoliteEdgeOther.NoPolyOff</DECLARE_NAME></TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Highlight</NAME>
+    <PASS>
+      <NAME>NoXOR</NAME>
+      <BLEND_STATE>BS_NoXOR</BLEND_STATE>
+      <RASTERIZER_STATE>RS_NoAA</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PreHighlight</NAME>
+    <PASS>
+      <NAME>XOR</NAME>
+      <BLEND_STATE>BS_XOR</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PreHighlightNotMain</NAME>
+    <PASS>
+      <NAME>XOR</NAME>
+      <BLEND_STATE>BS_XOR</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DSS_NoTestOveride</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <!-- TECHNIQUE Ground  -->
+  
+  <TECHNIQUE>
+    <NAME>GroundWriteZ</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_GroundBlending</BLEND_STATE>
+      <RASTERIZER_STATE>RS_GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundShadowClip</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_NoBlending</BLEND_STATE>
+      <RASTERIZER_STATE>RS_GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundNoZTest</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_GroundBlending</BLEND_STATE>
+      <RASTERIZER_STATE>RS_GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundOnlyZTest</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_GroundBlending</BLEND_STATE>
+      <RASTERIZER_STATE>RS_GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GroundOnlyZTestForMobile</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+      <RASTERIZER_STATE>RS_GroundWithPolygonOffset</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>GroundOnlyZTest.NoPolyOff</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>GroundOnlyZTest.ZFightPrePass</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>GroundWriteZ.NoPolyOff</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>GroundWriteZ.ZFightPrePass</DECLARE_NAME></TECHNIQUE>
+
+
+  <!-- TECHNIQUE Background  -->
+  
+  <TECHNIQUE>
+    <NAME>Background</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_NoCull</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_NoTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_BackgroundBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  
+  <!-- TECHNIQUE Voxel  -->
+
+  <TECHNIQUE>
+    <NAME>Voxel</NAME>
+    <PASS>
+      <NAME>VoxelMap</NAME>
+      <RASTERIZER_STATE>RS_VoxelMap</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_NoTestOveride</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_NoColor</BLEND_STATE>
+    </PASS>
+
+    <PASS>
+      <NAME>VoxelMap_Conservative</NAME>
+      <RASTERIZER_STATE>RS_VoxelMap_Conservative</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_NoTestOveride</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_NoColor</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <!-- TECHNIQUE Section Profile -->
+  
+  <TECHNIQUE>
+    <NAME>SectionProfile</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>RS_SectionProfile</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>DSS_TestWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+  
+</SCENE_EFFECT>

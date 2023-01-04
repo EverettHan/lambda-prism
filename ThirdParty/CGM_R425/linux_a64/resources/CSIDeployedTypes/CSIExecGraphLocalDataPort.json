@@ -1,0 +1,23 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type defining a local data port defined into a graph",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "id",
+      "basic": "string",
+      "desc": "Unique alphanumeric and camelCase identification",
+      "optional": {
+        "isOptional": false
+      }
+    },
+    {
+      "label": "value",
+      "basic": "string",
+      "desc": "Value of the data in JSON formalism (type/value)",
+      "optional": {
+        "isOptional": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Erreur du système";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Impossible de cloner un nouveau composant.";
+PLMc_ForbiddenScenario1.Advice="Enregistrez le composant, puis tentez de nouveau de le cloner.";
+
+PLMc_ForbiddenScenario2.Diagnostic="Ce scénario de clonage est interdit : un enregistrement total doit être effectué entre deux appels de clonage";
+PLMc_ForbiddenScenario2.Advice="Enregistrez votre session avant de cloner de nouveau.";
+
+PLMc_ForbiddenScenario3.Diagnostic="La commande Réinitialiser la configuration n'est pas disponible si l'opération doit avoir un impact sur le contenu de la session.";
+PLMc_ForbiddenScenario3.Advice="Vérifiez que le moteur de clonage est initialisé avec un objectif réaliste.";
+
+ERR_05.Diagnostic="Les composants étaient dupliqués mais la configuration n'a pas pu être réinitialisée sur la structure dupliquée";
+ERR_05.Advice="Vous devez vérifier que vous aurez l'autorisation de modifier la structure dupliquée avant de choisir de réinitialiser la configuration";
+
+ERR_06.Diagnostic="Entrée non valide pour l'opération de duplication : /p";
+ERR_06.Advice="Vérifier les attributs donnés dans l'entrée de l'opération de duplication";
+
+ERR_07.Diagnostic="Entrée non valide pour l'opération de duplication : /p";
+ERR_07.Advice="Vérifier les extensions données dans l'entrée de l'opération de duplication";
+
+ERR_08.Diagnostic="Impossible d'actualiser la session après la duplication";
+ERR_08.Advice="Vérifier les autres erreurs empêchant l'actualisation de session pendant l'opération de duplication";
+

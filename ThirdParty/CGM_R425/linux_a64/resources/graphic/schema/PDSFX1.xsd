@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:dsfx0"
+           xmlns:tgn="urn:dsfx0"
+           elementFormDefault="qualified"
+>
+  <xs:include schemaLocation="PDSFXCommons.xsd"/>
+
+  <!--PASS-->      
+  <xs:complexType name="PassDSFX1">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>            
+      <!--I must declare a sampler associativity list type because I use xs:all-->
+      <xs:element name="SAMPLER_ASSIGNMENT_LIST" minOccurs="0"  type="tgn:SamplerAssociativityList"/>
+      <xs:element name="ATTRIBUTES" minOccurs="0" type="tgn:pdsfxAttributes"/>
+      <xs:element name="STREAMS" minOccurs="0" type="tgn:Streams"/>
+      <!--BRDF selection for current pass : if not specified : blinn phong is used-->
+      <xs:element name="LIGHTING" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="IBL_CONTROL" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="BRDF_CONTROL" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="BLINN_PHONG_NDF" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="CUSTOM_BRDF_LAYER" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="IBL_MIRROR_MAP" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="DISABLE_GLOSSINESS_SMOOTHING" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="ENABLE_TANGENT_SPACE"  minOccurs="0" type="xs:boolean"/>
+      <xs:element name="TRANSPARENT_MANUAL_ZTEST" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="POLYGON_OFFSET" minOccurs="0" maxOccurs="1" type="tgn:PolygonOffset"/>
+      <xs:element name="MAKE_ALPHA_TEST" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
+      <xs:element name="POST_OPAQUE" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
+      <xs:element name="ACCESS_MIRROR_MAP" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
+      <xs:element name="HIGH_PRECISION_CAMERA" minOccurs="0" maxOccurs="1" type="xs:boolean"/>
+      <!--Shader Stage - PDSFX V1 only -->
+      <xs:element name="MACRO_LIST" type="tgn:pdsfxMacroList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MANUAL_ENTRY_POINTS" type="tgn:pdsfxManualEntryPoint" minOccurs="0" maxOccurs="1"/>
+      <!--Shader Stage - PDSFX V0 compliant -->
+      <xs:element name="COMMONS" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="VERTEX_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>      
+      <xs:element name="GEOMETRY_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="FRAGMENT_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="TESS_CONTROL_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="TESS_EVALUATION_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+
+    </xs:all>
+  </xs:complexType>
+  
+  <!--COMPUTE PASS-->      
+  <xs:complexType name="ComputePassDSFX1">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="SAMPLER_ASSIGNMENT_LIST" minOccurs="0"  type="tgn:SamplerAssociativityList"/>
+      <xs:element name="TRANSPARENT_ACCESS_COLOR_REFRACTION_MAP" minOccurs="0" type="xs:boolean"/>
+      <xs:element name="TRANSPARENT_ACCESS_Z_MAP" minOccurs="0" type="xs:boolean"/>
+      <!--Shader Stage - PDSFX V1 only -->
+      <xs:element name="MACRO_LIST" type="tgn:pdsfxMacroList" minOccurs="0" maxOccurs="1"/>
+      <!--Shader Stage - PDSFX V0 compliant -->
+      <xs:element name="COMPUTE_STAGE" type="tgn:NonEmptyStringList" minOccurs="1"/>
+    </xs:all>
+  </xs:complexType>
+
+  <!--RT PASS-->
+  <xs:complexType name="RayTracingPassDSFX1">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="SAMPLER_ASSIGNMENT_LIST" minOccurs="0"  type="tgn:SamplerAssociativityList"/>
+      <xs:element name="SHADER_OPTIONS" minOccurs="0" type ="tgn:ShaderOptions"/>
+      <xs:element name="COMMONS" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="HIT_GROUP"    type="tgn:HitGroup" minOccurs="1" maxOccurs="1"/>
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:complexType name="TechniqueDSFX1">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:choice>
+        <xs:element name="PASS" type="tgn:PassDSFX1"/>
+        <xs:element name="COMPUTE_PASS" type="tgn:ComputePassDSFX1"/>
+        <xs:element name="RAYTRACING_PASS" type="tgn:RayTracingPassDSFX1"/>
+      </xs:choice>
+    </xs:sequence>    
+  </xs:complexType>
+
+  <xs:simpleType name="BaseModel">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Basic"/>
+      <xs:enumeration value="EVisuPBR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="EffectDSFX1">
+    <xs:sequence>
+      <!--VERSION - Mandatory for PDSFX V1, this tag won't be accepted on PDSFX V0 (due to stricly positive value asked)-->
+      <xs:element name="VERSION" minOccurs="0" maxOccurs="1" type="xs:positiveInteger"/>
+      <!--INHERITANCE-->
+      <xs:element name="INHERITANCE" minOccurs="0" maxOccurs="1" type="tgn:BaseModel"/>
+      <!--CONSTANT BUFFERS-->
+      <xs:element name="CONSTANT_BUFFER" minOccurs="0" maxOccurs="unbounded" type="tgn:_ConstantBuffer"/>            
+      <!--SAMPLER-->
+      <xs:element name="SAMPLER" minOccurs="0" maxOccurs="unbounded" type="tgn:pdsfxSampler"/>
+      <!--IMAGE-->
+      <xs:element name="IMAGE" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+      <!--STORAGE IMAGE: Same as IMAGE but supports better declaration syntax-->
+      <xs:element name="STORAGE_IMAGE" minOccurs="0" maxOccurs="unbounded" type="tgn:pdsfxStorageImage"/>
+      <!--SAMPLER STATES-->
+      <xs:element name="SAMPLER_STATE" minOccurs="0" maxOccurs="unbounded" type="tgn:SamplerState"/>
+      <!--UNORDERED BUFFER-->
+      <xs:element name="UNORDERED_BUFFER" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+      <!--STRUCTURED BUFFER: Same as UNORDERED_BUFFER with better declaration syntax-->
+      <xs:element name="STRUCTURED_BUFFER" minOccurs="0" maxOccurs="unbounded" type="tgn:pdsfxStructuredBuffer"/>
+      <!-- TECHNIQUES-->
+      <xs:element name="TECHNIQUE" minOccurs="1" maxOccurs="unbounded" type="tgn:TechniqueDSFX1"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!--ROOT ELEMENT-->
+  <xs:element name="PDSFX" type="tgn:EffectDSFX1"/>
+ 
+</xs:schema>

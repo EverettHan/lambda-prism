@@ -1,0 +1,201 @@
+CATPLMSaveEngineScope               CATIPLMSaveScope                    libCATPLMIntegration
+CATPLMSaveEngineScope               CATIPLMListConsultation             libCATPLMIntegration
+CATPLMSaveListConsult               CATIPLMListConsultation             libCATPLMIntegration
+CATPLMEngineErrorReporter           CATIPLMEngineErrorReporter          libCATPLMIntegration
+CATPLMErrorCell                     CATIPLMErrorCell                    libCATPLMIntegration
+CATPLMSaveEngineScope	            CATIPLMSaveScopeExcludeManagement	libCATPLMIntegration
+CATPLMSaveEngine                    CATIPLMSaveEngine                   libCATPLMIntegration
+CATPLMSaveEngine                    CATIPLMTransactionEnhancer          libCATPLMIntegration
+CATPLMIntegRecordWrite              CATIPLMIntegRecordWrite             libCATPLMIntegration
+CATPLMIntegRecordRead               CATIPLMIntegRecordRead              libCATPLMIntegration
+CATPLMIntegRecordRead               CATIPLMAttributeBlockAccess         libCATPLMIntegration
+CATPLMReplicationEngine             CATIPLMReplicationEngine            libCATPLMIntegration
+CATPLMReplicationEngine             CATIPLMSiteOwnershipServices        libCATPLMIntegration
+CATPLMBriefcaseServices             CATIPLMBriefcaseServices            libCATPLMIntegration
+CATPLMBriefcaseFileHeader           CATIPLMBriefcaseHeader              libCATPLMIntegration
+CATPLMReplicationEngine             CATIPLMEnginePlug                   libCATPLMIntegration
+CATPLMCompleteGraph                 CATIPLMImageCompletion              libCATPLMIntegration
+CATPLMReplicationEngine             CATICreateInstance                  libCATPLMIntegration
+CATPLMBriefcaseServices             CATICreateInstance                  libCATPLMIntegration
+CATPLMSessionBuilder                CATIPLMSessionBuilder               libCATPLMIntegration
+CATPLMExpandEngine                  CATIPLMMessageFiller                libCATPLMIntegration
+CATPLMBuildingMediator              CATIPLMSessionBuildingMediator      libCATPLMIntegration
+CATPLMBuildingMediator              CATIPLMSpecializationBuilder        libCATPLMIntegration
+CATPLMSBUnstreamer                  CATIPLMStreamManagement             libCATPLMIntegration
+CATPLMIntegAttrWrite                CATIPLMAttrWrite                    libCATPLMIntegration
+CATPLMOpenMediator                  CATIPLMOpenMediator                 libCATPLMIntegration
+CATPLMMaturityEngine                CATIPLMMaturityEngine               libCATPLMIntegration
+CATPLMMaturityAnalyzer              CATIPLMMaturityAnalyzer             libCATPLMIntegration
+CATPLMMaturityDescriptor            CATIPLMMaturityDescriptor           libCATPLMIntegration
+CATPLMFillMediator                  CATIPLMOpenMediator                 libCATPLMIntegration
+CATPLMFillEngine                    CATIPLMFillEngine                   libCATPLMIntegration
+CATPLMFillEngine                    CATIPLMMessageFiller                libCATPLMIntegration
+CATPLMReplicationEngine             CATIPLMReplReportServices           libCATPLMIntegration
+CATPLMTransferOwnershipEngine       CATIPLMTransferOwnershipEngine      libCATPLMIntegration
+CATPLMPhotoEngineListener           CATIPLMLocalSaveListener            libCATPLMIntegration
+CATPLMPhotoEngine                   CATIPLMLocalSaveEngine              libCATPLMIntegration
+CATPLMLockEngine                    CATIPLMLockEngine                   libCATPLMIntegration
+
+CATPLMOccurrencesBuilder            CATIPLMOccurrencesBuilder           libCATPLMIntegration
+CATPLMOfflineContentSaveEngine      CATIPLMPrepareEngine                libCATPLMIntegration
+CATPLMOfflineContentSaveEngine      CATIPLMSaveEngine                   libCATPLMIntegration
+CATPLMOfflineSessionOpenEngine      CATIPLMOfflineContentOpenEngine     libCATPLMIntegration
+CATPLMOfflineSessionOpenEngine      CATIPLMPrepareEngine                libCATPLMIntegration
+CATPLMWSReservationEngine           CATIPLMPrepareEngine                libCATPLMIntegration
+CATPLMWSReservationEngine           CATIPLMWSReservationEngine          libCATPLMIntegration
+
+CATPLMCompleteGraph	          CATIPLMCompleteGraph	libCATPLMIntegration
+CATAdpOrderedRawCompleteGraph	CATIPLMCompleteGraph	libCATPLMIntegration
+
+CATPLMNewVersionEngine	CATIPLMNewVersionEngine	libCATPLMIntegration
+CATPLMNewVersionEngine  CATIPLMTransactionEnhancer libCATPLMIntegration
+CATPLMNewVersionEngine  CATIPLMReplaceAbilityCheckerActivation libCATPLMIntegration
+CATPLMVersioningDatum	CATIPLMVersioningResult	libCATPLMIntegration
+
+# Working level protocol - adhesion of components from strangers models.
+BSMRepReference     CATIPLMWorkingLevel      libCATPLMIntegration
+CATItgTstInstance  CATIPLMWorkingLevel      libCATPLMIntegration
+CATItgTstReference CATIPLMWorkingLevel	    libCATPLMIntegration
+
+# Editability
+# CATPLMClientCoreMastering CATIPLMClientCoreMastering libCATPLMIntegration # Removed to correct NNDE errors
+CATAdpClientCoreMastering	CATIPLMClientCoreMastering	libCATPLMIntegration
+CATPLMCompLeavingSubscriber	CATIComponentIdSubscriber	libCATPLMIntegration
+
+#Cloning
+CATPLMDuplicationEngine	CATIPLMCloningEngine	libCATPLMIntegration
+CATPLMDuplicationEngine CATIPLMReplaceAbilityCheckerActivation libCATPLMIntegration
+
+#VersionGraph
+CATPLMVersionGraph CATIPLMReplaceAbilityCheckerActivation libCATPLMIntegration
+
+CATPLMDebugListener 		CATIPLMEngineListener		libCATPLMIntegration
+CATPLMComponentAttributesDescriptor CATIPLMAttributesReader     libCATPLMIntegration
+
+CATPLMAttributeSet CATIPLMAttributeSet libCATPLMIntegration
+CATPLMVersioningDatum 	 CATIPLMOperationResult 	 libCATPLMIntegration
+
+CATPLMDefaultEngineListener	CATIPLMEngineListener	libCATPLMIntegration
+CATPLMDefaultEngineListener	CATIPLMLocalSaveListener	libCATPLMIntegration
+
+CATOmyPrivateSIDescriptor  CATIAdpChangeLogSetter  libCATPLMIntegration
+CATOmyPrivateSIDescriptor  CATIAdpChangeLogGetter  libCATPLMIntegration
+OmyNoLocalSaveImage        CATIAdpChangeLogSetter  libCATPLMIntegration
+OmyNoLocalSaveImage        CATIAdpChangeLogGetter  libCATPLMIntegration
+CATOmyLocalSaveImage       CATIAdpChangeLogGetter  libCATPLMIntegration
+CATOmyLocalSaveImage       CATIAdpChangeLogSetter  libCATPLMIntegration 
+
+# Ajout AEA for MDE correction  - June 2009
+CATPLMCopyEngine 	CATIPLMCopyEngine 	 	libCATPLMIntegration 
+CATPLMEngineFactory 	CATIPLMEngineFactory 		libCATPLMIntegration 		
+OmySessionImageAdapter 	CATIPLMSessionImageManager 	libCATPLMIntegration
+CATPLMCompleteGraphWithFilter  CATIPLMCompleteGraph  libCATPLMIntegration
+CATPLMCompleteGraphWithFilter 	CATIPLMCompleteGraphWithFilter 	libCATPLMIntegration
+CATPLMCompletionCheck  CATIPLMCompletionCheck  libCATPLMIntegration
+
+
+# Ajout PBV - Refresh & Overload common
+CATPLMSessionManagerAsyncTask   CATIPLMAsyncTask                    libCATPLMIntegration
+CATPLMSessionManagerAsyncTask   CATIPLMAsyncTaskResult              libCATPLMIntegration      CATPreCondForSessionManagerAsyncTaskResult
+CATPLMSessionOperation          CATIPLMSessionOperation             libCATPLMIntegration
+
+# Ajout PBV - Refresh
+CATPLMSynchronizationRequest    CATIPLMSynchronizationRequest       libCATPLMIntegration
+CATPLMSynchronizationRequest    CATIPLMPrepareEngine                libCATPLMIntegration
+CATPLMSynchronizationProposals  CATIPLMSynchronizationProposals     libCATPLMIntegration
+CATPLMSynchronizationProposal   CATIPLMSynchronizationProposal      libCATPLMIntegration
+CATPLMSynchronizationSolution   CATIPLMSynchronizationSolution      libCATPLMIntegration
+
+# ajout PBV - Overload
+CATPLMMinorVersionOverloadingEngine     CATIPLMMinorVersionOverloadingEngine        libCATPLMIntegration
+CATPLMMinorVersionOverloadingSolution   CATIPLMMinorVersionOverloadingSolution      libCATPLMIntegration
+CATPLMMinorVersionOverloadingEngine     CATIPLMPrepareEngine                        libCATPLMIntegration
+
+# ajout PBV - SessionDuplicate
+CATPLMSessionDuplicateEngine     CATIPLMSessionDuplicateEngine               libCATPLMIntegration
+CATPLMSessionDuplicateEngine     CATIPLMPrepareEngine                        libCATPLMIntegration
+
+## Min Maj version engine
+CATPLMNewMinorVersionEngine 	CATIPLMNewMinorVersionEngine 	 libCATPLMIntegration
+CATPLMNewMinorVersionEngine 	CATIPLMPrepareEngine 	libCATPLMIntegration 
+CATPLMNewMinorVersionEngine     CATIPLMTransactionEnhancer libCATPLMIntegration
+
+CATPLMCollabExporter  CATIPLMCollabExporter           libCATPLMIntegration
+CATPLMCollabImporter  CATIPLMCollabImporter           libCATPLMIntegration
+CATPLMCollabVaultSite CATIVVSSoftComponent            libCATPLMIntegration
+CATPLMCollabVaultSite CATIVVSSoftComponentLifeCycle   libCATPLMIntegration
+CATPLMCollabVaultSite CATIVVSVaultAccess              libCATPLMIntegration
+CATPLMCollabVaultSite CATIVVSVaultQuery               libCATPLMIntegration
+CATPLMCollabVaultSite CATIVVSVaultUrlLifeCycleManager libCATPLMIntegration
+CATPLMCollabVaultSite CATIVVSMassiveSendExtFactory    libCATPLMIntegration
+
+CATPLMCollabTransactionsManager CATIOmyTransactionsManager libCATPLMIntegration
+
+CATPLMWSSynchronizeEngine CATIPLMWSSynchronizeEngine libCATPLMIntegration
+CATPLMWSDeliverEngine     CATIPLMWSDeliverEngine     libCATPLMIntegration
+CATPLMWSOperationDatum    CATIPLMWSSynchronizeResult libCATPLMIntegration
+CATPLMWSOperationDatum    CATIPLMWSDeliverResult     libCATPLMIntegration
+
+CATPLMSaveEngineMultiProcess CATIPLMSaveEngineMultiProcess libCATPLMIntegration
+
+CATPLMContentRefresher     CATIPLMContentRefresher     libCATPLMIntegration
+
+CATPLMSaveEngine             CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMNewVersionEngine       CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMWSSynchronizeEngine    CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMWSDeliverEngine        CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMContentRefresher       CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMCopyEngine             CATIPLMPrepareEngine libCATPLMIntegration 	
+CATPLMDuplicationEngine      CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMCollabExporter         CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMCollabImporter         CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMCompleteGraph	         CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMSaveEngine             CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMMaturityEngine         CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMFillEngine             CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMPhotoEngine            CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMLockEngine             CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMSynchronizationEngine  CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMSaveEngineMultiProcess CATIPLMPrepareEngine libCATPLMIntegration
+
+CATPLMTETransaction      CATIPLMCompTransactionService  libCATPLMIntegration
+
+CATPLMImportInputOutput  CATIPLMImportInputOutput         libCATPLMIntegration
+CATPLMImportInputOutput  CATIPLMImportInputOutputPrivate  libCATPLMIntegration
+
+CATPLMSessionPopulate    CATIPLMSessionPopulate           libCATPLMIntegration
+CATPLMSessionPopulate    CATIPLMSessionPopulatePrivate    libCATPLMIntegration
+
+CATPLMSessionSave        CATIPLMSessionSave               libCATPLMIntegration
+
+
+CATPLMCompleteGraph                         CATIPLMImageCompletion          libCATPLMIntegration
+CATPLMCompleteGraphWithFilter               CATIPLMCompleteGraph            libCATPLMIntegration
+CATPLMCompleteGraphWithFilter 	            CATIPLMCompleteGraphWithFilter 	libCATPLMIntegration
+CATPLMCompletionCheck                       CATIPLMCompletionCheck          libCATPLMIntegration
+CATPLMCompleteGraph	                        CATIPLMCompleteGraph            libCATPLMIntegration
+CATPLMCompleteGraphForRelevantCnxAndPorts 	CATICreateInstance 	            libCATPLMIntegration
+CATPLMCompleteGraphForRelevantCnxAndPorts 	CATIPLMCompleteGraph 	          libCATPLMIntegration
+CATPLMCompleteGraphForRFLImplementLinks 	  CATICreateInstance 	            libCATPLMIntegration
+CATPLMCompleteGraphForRFLImplementLinks   	CATIPLMCompleteGraph 	          libCATPLMIntegration
+CATPLMCompleteGraphWithFilter 	            CATIPLMCompleteGraphWithFilter 	libCATPLMIntegration
+
+CATPLMEvolutionEngine 	                    CATIPLMEvolutionEngine 	        libCATPLMIntegration
+CATPLMEvolutionEngine 	                    CATIPLMPrepareEngine           	libCATPLMIntegration
+
+CATPLMSessionOpenEngine CATIPLMOpenEngine libCATPLMIntegration
+CATPLMSessionOpenEngine CATIPLMPrepareEngine libCATPLMIntegration
+CATPLMSessionOpenEngine	CATIPLMIterationsOpener	libCATPLMIntegration
+CATPLMSessionOpenEngine	CATIPLMPrivateOpenEngine libCATPLMIntegration
+
+
+# Add NR8 - Asyncronism
+CATPLMDownloader    CATIOmyAsyncTaskCompletionCallBack libCATPLMIntegration
+CATPLMDownloader 	CATIAsyncTaskCompletionCallBack 	libCATPLMIntegration 	
+
+# Ajout par AEA pour correction MDE - 2012-09-11
+CATPLMTransferOwnershipEngine 	CATIPLMPrepareEngine 	libCATPLMIntegration
+CATPLMTransitionalOpenEngine 	CATIPLMPrepareEngine 	libCATPLMIntegration
+CATPLMTransitionalOpenEngine 	CATIPLMTransitionalOpenEngine 	libCATPLMIntegration
+
+

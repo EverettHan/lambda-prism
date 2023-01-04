@@ -1,0 +1,70 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of Components concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each component 
+// This parameter has to be documented
+
+GenericMediatorErrorWithCompo.Diagnostic="構成要素 [/p1] を開けません";
+GenericMediatorErrorWithCompo.Advice="構成要素 /p1 を開けません。\nプロセスを再度開始してください。\n管理者による問題のトラブルシューティングの役に立つように、エラー ログ統計を活動化してください。\n構成要素チェッカーを実行してください。";
+
+GenericMediatorError.Diagnostic="セッションの作成中に想定外のエラーが発生しました。";
+GenericMediatorError.Advice="プロセスを再度開始することを強くお勧めします。構成要素チェッカーを実行してみてください。";
+
+BulkSessionManagementIntegrityFailure.Diagnostic="セッションの作成中に想定外のエラーが発生しました。セッションの完全性は保証できません。";
+BulkSessionManagementIntegrityFailure.Advice="プロセスを再度開始してください。\nサーバーで完全性構成要素に到達できない可能性があります。サーバーの P&O ルールを確認し、管理者に連絡してください。";
+
+//Copy-pasted from PLM_NotRetrievedComponent@PLMServerActionErrors.CATNls
+ComponentUnavailabilityInDatabase.Diagnostic="構成要素をデータベースで照会できませんでした。";
+ComponentUnavailabilityInDatabase.Advice="構成要素が存在していないか、セキュリティ ポリシーによって読み込めない可能性があります。";
+
+AnotherMinorInSession.Diagnostic="/p : セッションに同じメジャー ファミリーの別のマイナーが存在するため、開けません";
+AnotherMinorInSession.Advice="マイナーをアンロードして開いてください";
+
+AnotherMinorInInput.Diagnostic="/p: 同じメジャー ファミリーからの他のマイナーが入力エレメントとして存在するため、開けません";
+AnotherMinorInInput.Advice="ローカル管理者に連絡してください";
+
+ConcurrencyInSessionOfflineContent.Diagnostic="/p : このエレメントは、オフライン コンテンツとセッションで修正されています。";
+ConcurrencyInSessionOfflineContent.Advice="異なる状態の複数のエレメントがすでにセッションにロードされています。\n オフライン コンテンツを開く前に、これらのエレメントが含まれているタブを閉じてください。";
+
+NoElement.Diagnostic="オープン エンジンに送信されるエレメントがありません。";
+NoElement.Advice="サーバー内のデータの使用可否を確認してください";
+
+NoEltToOpen.Diagnostic="開くためにリストした構成要素はすでにすべてセッションにロードされていますが、データは最新でない可能性があります。開く操作によってリフレッシュは実行されません";
+NoEltToOpen.Advice="最新の更新をロードするには、最初に現行のオーサリング セッションを閉じてください";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+AdapterCom.Diagnostic="サーバーの情報を取り込む際に問題が発生しました";
+AdapterCom="サーバーとの接続がダウンしている可能性があります";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// (correspond a une err systeme, donc a un abend)
+Internal.Diagnostic="内部オープン エンジン エラー";
+Internal.Advice="ローカル管理者に連絡してください";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+MessageStructure.Diagnostic="サーバーに取り込んだデータは一貫していません";
+MessageStructure.Advice="構成要素を記述するデータが不完全である可能性があります。";
+
+AlreadyOpened_F_0.Diagnostic="/p 開くためにリストした構成要素はすでにすべてセッション内にありますが、データは最新でない可能性があります。開く操作によってリフレッシュは実行されません";
+AlreadyOpened_F_0.Advice="最新の更新をロードするには、最初に現行のオーサリング セッションを閉じてください";
+
+UnstreamPb.Diagnostic="少なくとも 1 つのストリームがロードできません";
+UnstreamPb.Advice="ボールト状況を確認してください";
+
+FactoryNotFound.Diagnostic="欠落しているファクトリがあるため、セッションでタイプ /p の構成要素を作成できませんでした。";
+FactoryNotFound.Advice="管理者に連絡してください: タイプ /p に欠落しているパッケージまたはライセンスがあります。";
+
+ReentranceForbidden.Diagnostic="別の操作が実行中であるため、新しい '/p1' 操作を開始できません。";
+ReentranceForbidden.Advice="サポート担当者に連絡してください。";

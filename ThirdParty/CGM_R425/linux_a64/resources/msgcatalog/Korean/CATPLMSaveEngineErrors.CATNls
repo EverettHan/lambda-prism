@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic="시스템 오류.";
+SystemERR.Advice="지원 부서에 문의하십시오.";
+
+
+ServerInternalERR.Diagnostic="내부 서버 오류입니다.";
+ServerInternalERR.Advice="데이터를 보존하기 위해 로컬 저장이 수행되었습니다. 필요한 경우 세션을 복원할 수 있습니다.";
+
+ServerInternalERRNoLS.Diagnostic="내부 서버 오류입니다.";
+ServerInternalERRNoLs.Advice="로컬 저장이 불가능합니다. 나중에 다시 시도하십시오.";
+
+VaultServerInternalERR.Diagnostic="스트림 전송 중 오류가 발생했습니다.";
+VaultServerInternalERR.Advice="데이터를 보존하기 위해 로컬 저장이 수행되었습니다. 필요한 경우 세션을 복원할 수 있습니다.";
+
+VaultServerInternalERRNoLs.Diagnostic="스트림 전송 중 오류가 발생했습니다.";
+VaultServerInternalERRNoLs.Advice="로컬 저장이 불가능합니다. 나중에 다시 시도하십시오.";
+
+NoObjectToSaveWRN.Diagnostic="저장할 개체가 없습니다.";
+NoObjectToSaveWRN.Advice="수정한 항목을 정말로 선택했는지 확인하십시오.";
+
+GenericSaveErrorWithCompo.Diagnostic="[/p1] 구성 요소를 저장할 수 없습니다.";
+GenericSaveErrorWithCompo.Advice="저장 작업에서 /p1 구성 요소를 처리할 수 없습니다.\n이 애플리케이션을 다시 시작하는 것이 좋습니다.";
+
+PLMSaveEngineError_501.Diagnostic="저장 작업을 수행할 수 없습니다.";
+PLMSaveEngineError_501.Advice="/p1 구성 요소가 현재 ECA의 영향을 받는 아이템이 아닙니다.";
+
+ChangeLogInternalERR.Diagnostic="ChangeLog 데이터로 인해 저장 작업을 수행할 수 없습니다.";
+ChangeLogInternalERR.Advice="CATTemp 디렉터리에 있는 마지막 추적 DebugChangeLog*.log에 대해 지원 부서에 문의하십시오.";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic="공존 매핑 테이블로 인해 저장 작업을 수행할 수 없습니다.";
+SaveCoexMpgExchangeInternalERR.Advice="지원 부서에 문의하십시오.";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic="저장 작업을 수행할 수 없습니다.";
+PLMSaveEngineError_601.Advice="오프라인 저장 작업에서 /p1 구성 요소를 처리할 수 없습니다.\n구성 요소가 작성 공간 외부에서 수정되었습니다.";
+PLMSaveEngineError_602.Diagnostic="저장 작업을 수행할 수 없습니다.";
+PLMSaveEngineError_602.Advice="오프라인 저장 작업에서 /p1 구성 요소를 처리할 수 없습니다.\n라이프사이클 트랜잭션의 구성 요소입니다.";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic="저장 작업을 수행할 수 없습니다.";
+PLMSaveEngineError_701.Advice="저장 작업에서 /p1 구성 요소를 처리할 수 없습니다.\n구성 요소가 작성 공간 외부에서 수정되었습니다.";
+PLMSaveEngineError_702.Diagnostic="저장 작업을 수행할 수 없습니다.";
+PLMSaveEngineError_702.Advice="저장 작업에서 /p1 구성 요소를 처리할 수 없습니다.\n라이프사이클 트랜잭션의 구성 요소입니다.";

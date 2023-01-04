@@ -1,0 +1,62 @@
+<meta charset="UTF-8"/>
+HelpNT.text = "Syntax von setcatenv
+[-e Umgebungsname          ]   Obligatorische Option. Kein Standardwert
+[-d Speicherverzeichnisname]   Standardwert: CSIDL_APPDATA\CATEnv
+[-p Verkettungspfad        ]   Standardwert: Root-Installationspfad
+[-a user|global            ]   Umgebungstyp. Standardwert: user
+[-server                   ]   Aktiviert den Servermodus. Standardwert: nicht aktiviert (interaktiv)
+[-new yes|no               ]   Erzwingt die Erzeugung der Umgebung. Standardwert: yes
+[-icon  yes|no             ]   Erzeugt ein Symbol auf dem Windows-Desktop.  Standardwert: yes
+[-menu yes|no              ]   Erzeugt eine Verknüpfung im Start-Menü. Standardwert: yes
+[-desktop yes|no           ]   Erzeugt eine Desktopdarstellung für die Umgebung. Standardwert: yes (gleichwertig mit -icon yes -menu yes )
+[-cf Pfad_der_Umgebung     ]   Aktualisiert die Variablenwerte mit der durch Pfad_der_Umgebung angegebenen Umgebung
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live     ]   Geben Sie eine Produktlinie für die Umgebungsdarstellung an (Standardwert: CATIA)
+[-v yes|no                 ]   Aktiviert den ausführlichen Modus. Standardwert: yes
+[-regserver                ]   Registriert CATIA auf dem Desktop (exklusiver Befehl)
+[-tools                    ]   Richtet die Toolverknüpfungen ein (exklusiver Befehl)
+[-h|-help                  ]   Diese Hilfe." ;
+HelpUNIX.text = "Syntax von setcatenv
+[-e Umgebungsname          ] Obligatorische Option. Kein Standardwert
+[-d Speicherverzeichnisname] Standardwert: $HOME/CATEnv
+[-p Verkettungspfad        ] Standardwert: Root-Installationspfad (/usr/catia/DassaultSystemes/B06)
+[-a user|global            ] Umgebungstyp. Standardwert: user
+[-server                   ] Aktiviert den Servermodus. Standardwert: nicht aktiviert (interaktiv)
+[-new yes|no               ] Erzwingt die Erzeugung der Umgebung. Standardwert: yes
+[-desktop yes|no           ] Erzeugt eine Desktopdarstellung für die Umgebung. Standardwert: yes (außer bei IRIX)
+[-cf Pfad_der_Umgebung     ] Aktualisiert die Variablenwerte mit der durch Pfad_der_Umgebung angegebenen Umgebung
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live     ] Geben Sie eine Produktlinie für die Umgebungsdarstellung an (Standardwert: CATIA)
+[-v yes|no                 ] Aktiviert den ausführlichen Modus. Standardwert: yes
+[-regserver                ] Registriert CATIA auf dem Desktop (exklusiver Befehl)
+[-h|-help                  ] Diese Hilfe." ;
+NoBlankInEnvName.text        = "Leerzeichen sind in Umgebungsnamen nicht zulässig" ;
+NoHome.text                  = "Umgebungsvariable 'HOME' kann nicht gefunden werden" ;
+EnvCreationFailed.text       = "Erzeugung der Umgebung fehlgeschlagen" ;
+IconeCreationFailed.text     = "Erzeugung des Umgebungssymbols fehlgeschlagen" ;
+IconeCreationFailed2.text    = "Es wurde keine Verknüpfung auf dem Desktop erzeugt. Überprüfen, ob /P1 im Installationsverzeichnis vorhanden ist." ;
+ModifyVariableFailed.text    = "Änderung der Umgebungsvariablen fehlgeschlagen" ;
+UpdateVariableFailed.text    = "Aktualisierung der Umgebungsvariablen fehlgeschlagen" ;
+NoSuchVariable.text          = "Variable ist nicht vorhanden" ;
+WSSsetupFailed.text          = "Installation der Workstation fehlgeschlagen" ;
+ToolsSetupFailed.text        = "Installation der Tools fehlgeschlagen" ;
+MustBeSystemAdmin.text       = "Administratorberechtigung erforderlich zur Verwendung dieser Option\n" ;
+RefFileNotFound.Text         = "Der Referenzdateideskriptor wurde nicht gefunden";
+EnvNameNotSpecified.Text     = "Ein Name für die Umgebung muss angegeben werden";
+DefaultFolderNotFound.Text   = "Der Standardordner für die Umgebung wurde nicht gefunden";
+SpecifiedFolderNotFound.Text = "Das Verzeichnis \"/P1\" wurde nicht gefunden.";
+EnvFileNotFound.Text       = "Die Umgebungsdatei wurde nicht gefunden";
+AccessPb.Text              = "Die Umgebungsdatei kann nicht in \"/P1\" gesichert werden.";
+FileAlreadyExist.Text      = "Die Umgebungsdatei existiert bereits"; 
+NoConcatSpecified.Text     = "Eine Verkettung muss angegeben werden";
+DiskFull.Text              = "Umgebung kann nicht gespeichert werden: Datenträger voll";
+InitFolderFailed.Text      = "------------------ Warnung ----------------
+Der Standardspeicherordner wurde nicht gefunden.
+Die Umgebung wurde gesichert in:
+";
+UnknownProductLine.Text    ="/P1 ist keine gültige Produktlinie. Zulässige Werte für die Option -cs sind:";
+UnknownOption.Text          ="Ungültige Option: /P1.";

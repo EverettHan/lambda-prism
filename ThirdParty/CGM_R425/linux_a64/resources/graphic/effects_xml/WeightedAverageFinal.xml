@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+      
+  <DST_STATE_GROUP>
+    <NAME>DepthNoTestNoWrite</NAME>
+    <DEPTH_ENABLE protected="1">false</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>Blend</NAME>
+    <SEPARATE_BLEND protected="1">false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>Solid</NAME>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <FILL_MODE protected="1">Solid</FILL_MODE>
+    <DEPTH_BIAS protected="1">0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+  
+  <SAMPLER>
+    <NAME>WA_ColorAccumulation</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMSArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>WA_MSAA MultiviewSinglePass&gt;1</SAMPLER_OPTION_GRAMMAR> <!-- MultiviewSinglePass > 1 -->
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>WA_MSAA !MultiviewSinglePass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!WA_MSAA MultiviewSinglePass&gt;1</SAMPLER_OPTION_GRAMMAR> <!-- MultiviewSinglePass > 1 -->
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!WA_MSAA !MultiviewSinglePass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>WA_DepthAccumulation</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMSArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>WA_MSAA MultiviewSinglePass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>WA_MSAA !MultiviewSinglePass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!WA_MSAA MultiviewSinglePass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!WA_MSAA !MultiviewSinglePass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  
+  <SAMPLER_STATE>
+    <NAME>smpLinear</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>WA_ColorAccumulation</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>WA_DepthAccumulation</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>Blend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Solid</RASTERIZER_STATE>
+      <VERTEX_STAGE>fullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>WeightedAverageFinal</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+    
+  <TECHNIQUE>
+    <NAME>PostProcess_MS</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>WA_ColorAccumulation</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>WA_DepthAccumulation</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>WA_MSAA</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>Blend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Solid</RASTERIZER_STATE>
+      <VERTEX_STAGE>fullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>WeightedAverageFinal</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+    
+</EFFECT>

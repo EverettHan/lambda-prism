@@ -1,0 +1,29 @@
+<meta charset="UTF-8"/>
+//-------------------------------- Policy section below;
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.Test_Execution = Test Execution
+
+policy.Test_Execution="Выполнение теста";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.Test_Execution.InWork = In Work
+
+V_maturity.Create="Частное";
+V_maturity.In_Progress="В работе";
+V_maturity.Review="Заморожено";
+V_maturity.Complete="Выпуск";
+V_maturity.Obsolete="Устарело";
+
+
+current.Create="Частное";
+current.In_Progress="В работе";
+current.Review="Заморожено";
+current.Complete="Выпуск";
+current.Obsolete="Устарело";
+
+
+
+
+

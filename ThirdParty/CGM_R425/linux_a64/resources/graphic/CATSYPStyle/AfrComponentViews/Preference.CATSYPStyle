@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <DataTemplate syp:name="CATCAfrPreferencePage_Undef">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Name"
+                  SnappableFlag="1"
+                 ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  VisibleFlag="@Visibility"
+                  EnableFlag="1"
+                  LayoutWhenUnvisibleFlag="0">
+   <CATVidCtlExpander syp:Template="Expander"
+                      syp:name="AfrPreferencePage"
+                      ExpandedFlag="@ExpandFlag Mode=TwoWays"
+                      ExclusiveFlag="1"
+                      LayoutWhenUnvisibleFlag="0"
+                      FontWeight="1"
+                      Label="@Title"
+                      Icon="@IconName"
+                      IconDimension="21 21"
+                      BackgroundColor="0.05 200"
+                      ForegroundColor="1 255"
+                         >
+    <CATVidCtlForm syp:Template="Form"
+                   GridFlag="1"
+                   NlsFiles="@Resource"
+                   LabelsAlignment="AlignLeft"
+                   syp:name="Container"
+                         />
+   </CATVidCtlExpander>
+  </CATAfrSmartCtl>
+
+  <CATSYPTriggerCollection>
+   <CATSYPTrigger Property="Icon" TargetName="AfrPreferencePage" Value="">
+    <CATSYPSetter Property="IconDimension" TargetName="AfrPreferencePage" Value="0 0"/>
+   </CATSYPTrigger>
+  </CATSYPTriggerCollection>
+
+ </DataTemplate>
+
+  <!--<DataTemplate syp:name="CATCAfrPreferencePage_Undef" syp:version="1">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Name"
+                    SnappableFlag="1"
+                   ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="1"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtlExpander syp:Template="Expander"
+                         syp:name="AfrPreferencePage"
+                         ExpandedFlag="@ExpandFlag Mode=TwoWays"
+                         ExclusiveFlag="1"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="1"
+                         Label="@Title"
+                         Icon="@IconName"
+                         IconDimension="21 21"
+                         BackgroundColor="0.05 200"
+                         ForegroundColor="1 255"
+                         >
+        <CATVidLayGrid syp:name="grid" GridWeight="col0=1 ">
+          <CATVidGPLabel syp:name="PagePath"
+                         Text="@PageTreePath"
+                         TextHeight="16"
+                         VisibleFlag="@SearchStatus"
+                         RequestedMinimumDimension="100 21"
+                         LayoutWhenUnvisibleFlag="0"
+                         VerticalAlignment="1"
+                         BoldFlag="0"
+                         CropPolicy="NoCrop"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RT"
+                      />
+          <CATVidCtlButton Name="@Name"
+                           syp:name="ToPageButton"
+                           syp:Template="Toolbar"
+                           CheckMode="@Mode"
+                           ClickMode="0"
+                           IconDimension="16 16"
+                           Label=""
+                           RequestedMinimumDimension="21 21"
+                           Icon="CAfrPrefSearchGroupBy_22x22.png"
+                           VisibleFlag="@SearchStatus"
+                           EnableFlag="1"
+                           Click="@ComeOutOfSearchContextCB "
+                           CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RT"
+                           LayoutWhenUnvisibleFlag="0"
+                        />
+          <CATVidCtlForm syp:Template="Form"
+                         GridFlag="1"
+                         NlsFiles="@Resource"
+                         LabelsAlignment="AlignLeft"
+                         syp:name="Container"
+                         CATVidLayGrid.IndexedConstraints="x=0 xSpan=2 y=1 attach=LRTB"
+                         />
+
+        </CATVidLayGrid>
+      </CATVidCtlExpander>
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Icon" TargetName="AfrPreferencePage" Value="">
+        <CATSYPSetter Property="IconDimension" TargetName="AfrPreferencePage" Value="0 0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </DataTemplate>-->
+
+ <DataTemplate syp:name="CATAfrPrefItem_Undef">
+  <CATVidCtl Name="@Name"
+             syp:name="Container"
+             VisibleFlag="@Visibility"
+             ChildrenLifeCyclePolicy="DontDestroyChildren"
+             EnableFlag="@EnableFlag"
+             LayoutWhenUnvisibleFlag="0">
+  </CATVidCtl>
+ </DataTemplate>
+
+
+ <DataTemplate syp:name="CATAfrPrefItemGroup_Undefdef">
+  <CATVidCtl Name="@Name"
+             syp:name="Container"
+             VisibleFlag="@Visibility"
+             ChildrenLifeCyclePolicy="DontDestroyChildren"
+             EnableFlag="@EnableFlag"
+             LayoutWhenUnvisibleFlag="0">
+  </CATVidCtl>
+ </DataTemplate>
+
+
+  <DataTemplate syp:name="CATAfrPrefItemGroup_Undef">
+    <CATAfrSmartCtl Name="@Name"
+                    syp:name="GroupSmartCtr"
+                    TitleDialogBox="@Title"
+                   ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtlGroupBox syp:Template="GroupBox"
+                         syp:name="PrefItemGroup"
+                         Name="@Name"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="1"
+                         Icon="@IconName"
+                         IconDimension="21 21"
+                         Label="@Title"
+                         VisibleFlag="@Visibility"
+                         EnableFlag="@EnableFlag">
+        <CATVidLayGrid syp:name="grid" GridWeight="col1=1 ">
+          <CATVidCtlButton Name="@Name"
+                           syp:Template="Toolbar"
+                           CheckMode="@Mode"
+                           ClickMode="0"
+                           IconDimension="16 16"
+                           RequestedMinimumDimension="21 21"
+                           CheckState="@ActivationWidget Mode=TwoWays"
+                           Icon="@NormalIcon"
+                           VisibleFlag="@Lock"
+                           EnableFlag="@EnableWidget"
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB"
+                           LayoutWhenUnvisibleFlag="0"
+                           />
+          <CATVidCtlForm syp:Template="Form"
+                         LabelsAlignment="AlignLeft"
+                         syp:name="Container"
+                         EnableFlag="@ContainerSencitivity"
+                         CATVidLayGrid.IndexedConstraints="x=1 xSpan=2 y=0 attach=LRTB"
+                         />
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Icon" TargetName="PrefItemGroup" Value="">
+        <CATSYPSetter Property="IconDimension" TargetName="PrefItemGroup" Value="0 0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="VisibleFlag" TargetName="PrefItemGroup" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="GroupSmartCtr" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="VisibleFlag" TargetName="PrefItemGroup" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="GroupSmartCtr" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATAfrPrefItemGroup_SearchGroup">
+    <CATAfrSmartCtl Name="@Name"
+                    syp:name="GroupSmartCtr"
+                    TitleDialogBox="@Title"
+                   ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtl    syp:name="PrefItemGroup"
+                    Name="@Name"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="1"
+                    LayoutWhenUnvisibleFlag="0">
+        <CATVidLayGrid syp:name="grid" GridWeight="col0=1 ">
+          <CATVidGPSquare Name="AllGP" 
+                          RequestedMinimumDimension="100 1" 
+                          Texture="CAfrPrefSearchGroupSep.png" 
+                          UseManipulatorFlag="1" 
+                          PickFlag="0"
+                          VisibleFlag="1"
+                          CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LR"/>
+          <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel syp:name="PagePath"
+                         Text="@Title"
+                         TextHeight="16"
+                         VisibleFlag="1"
+                         RequestedMinimumDimension="100 21"
+                         VerticalAlignment="1"
+                         BoldFlag="0"
+                         CropPolicy="NoCrop"
+                         CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RT"
+                         LayoutWhenUnvisibleFlag="0"
+                         />
+          <CATVidCtlButton Name="@Name"
+                           syp:name="ToPageButton"
+                           syp:Template="Toolbar"
+                           CheckMode="0"
+                           ClickMode="0"
+                           IconDimension="16 16"
+                           Label=""
+                           RequestedMinimumDimension="21 21"
+                           Icon="CAfrPrefSearchGroupBy_22x22.png"
+                           VisibleFlag="1"
+                           EnableFlag="1"
+                           Click="@ComeOutOfSearchContextCB"
+                           CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RT"
+                           LayoutWhenUnvisibleFlag="0"
+                        />
+          </CATVidLayGrid>
+      </CATVidCtl>
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+      <!--<CATSYPTrigger Property="Icon" TargetName="PrefItemGroup" Value="">
+        <CATSYPSetter Property="IconDimension" TargetName="PrefItemGroup" Value="0 0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="VisibleFlag" TargetName="PrefItemGroup" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="GroupSmartCtr" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="VisibleFlag" TargetName="PrefItemGroup" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="GroupSmartCtr" Value="0"/>
+      </CATSYPTrigger>-->
+    </CATSYPTriggerCollection>
+
+  </DataTemplate>
+  
+    <DataTemplate syp:name="CATAfrPrefItemGroup_EmptyResult">
+    <CATAfrSmartCtl Name="@Name"
+                    syp:name="GroupSmartCtr"
+                    TitleDialogBox="@Title"
+                   ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtl    syp:name="PrefItemGroup"
+                    Name="@Name"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="1"
+                    LayoutWhenUnvisibleFlag="0">
+        <CATVidLayGrid syp:name="grid" GridWeight="col0=1 ">
+          <CATVidGPLabel syp:name="PagePath"
+                         Text="@Title"
+                         Name="@Name"
+                         TextHeight="16"
+                         VisibleFlag="1"
+                         RequestedMinimumDimension="100 21"
+                         VerticalAlignment="1"
+                         BoldFlag="0"
+                         CropPolicy="NoCrop"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT"
+                         LayoutWhenUnvisibleFlag="0"
+                         />
+
+          </CATVidLayGrid>
+      </CATVidCtl>
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+    </CATSYPTriggerCollection>
+
+  </DataTemplate>
+  
+  
+ <DataTemplate syp:name="CATAfrPrefItemGroup_Horizontal">
+  <CATAfrSmartCtl Name="@Name"
+                  syp:name="GroupSmartCtr"
+                  TitleDialogBox="@Title"
+                  ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  LayoutWhenUnvisibleFlag="0">
+   <CATVidCtlGroupBox syp:Template="GroupBox"
+                      syp:name="PrefItemGroup"
+                      Name="@Name"
+                      LayoutWhenUnvisibleFlag="0"
+                      FontWeight="1"
+                      Icon="@IconName"
+                      IconDimension="21 21"
+                      Label="@Title"
+                      VisibleFlag="@Visibility"
+                      EnableFlag="@EnableFlag">
+    <CATVidLayGrid GridWeight="col1=1 ">
+          <CATVidCtlButton Name="@Name"
+                           syp:Template="Toolbar"
+                           CheckMode="@Mode"
+                           ClickMode="0"
+                           IconDimension="16 16"
+                           RequestedMinimumDimension="21 21"
+                           CheckState="@ActivationWidget Mode=TwoWays"
+                           Icon="@NormalIcon"
+                           VisibleFlag="@Lock"
+                           EnableFlag="@EnableWidget"
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB"
+                           LayoutWhenUnvisibleFlag="0"
+                           />      
+      <CATVidLayFlow syp:name="Container" Name="LayFlow" Orientation="Horizontal" Align="0"  ComputedCellDimensionFlag="1"  EnableFlag="@ContainerSencitivity" Items="@Items Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=1 xSpan=2 y=0 attach=LRTB" />
+    </CATVidLayGrid>
+   </CATVidCtlGroupBox>
+  </CATAfrSmartCtl>
+
+   <CATSYPTriggerCollection>
+     <CATSYPTrigger Property="Icon" TargetName="PrefItemGroup" Value="">
+       <CATSYPSetter Property="IconDimension" TargetName="PrefItemGroup" Value="0 0"/>
+     </CATSYPTrigger>
+
+     <CATSYPTrigger Property="VisibleFlag" TargetName="PrefItemGroup" Value="1">
+       <CATSYPSetter Property="VisibleFlag" TargetName="GroupSmartCtr" Value="1"/>
+     </CATSYPTrigger>
+
+     <CATSYPTrigger Property="VisibleFlag" TargetName="PrefItemGroup" Value="0">
+       <CATSYPSetter Property="VisibleFlag" TargetName="GroupSmartCtr" Value="0"/>
+     </CATSYPTrigger>
+   </CATSYPTriggerCollection>
+
+ </DataTemplate>
+  
+ <DataTemplate syp:name="CATAfrPrefItemGroup_WithoutBorder">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Title"
+                 ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  LayoutWhenUnvisibleFlag="0"
+                  EnableFlag="@EnableFlag"
+                  VisibleFlag="@Visibility">
+    <CATVidCtlForm syp:Template="Form"
+                   LabelsAlignment="AlignLeft"
+                   syp:name="Container"/>
+  </CATAfrSmartCtl>
+ </DataTemplate>
+
+  <!--Added group lock in group without border-->
+  <DataTemplate syp:name="CATAfrPrefItemGroup_WithoutBorder" syp:version="1">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                   ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag"
+                    VisibleFlag="@Visibility">
+      <CATVidLayGrid syp:name="grid" GridWeight="col1=1 ">
+        <CATVidCtlButton Name="@Name"
+                         syp:Template="Toolbar"
+                         CheckMode="@Mode"
+                         ClickMode="0"
+                         IconDimension="16 16"
+                         RequestedMinimumDimension="21 21"
+                         CheckState="@ActivationWidget Mode=TwoWays"
+                         Icon="@NormalIcon"
+                         VisibleFlag="@Lock"
+                         EnableFlag="@EnableWidget"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB"
+                         LayoutWhenUnvisibleFlag="0"
+                           />
+        <CATVidCtlForm syp:Template="Form"
+                       LabelsAlignment="AlignLeft"
+                       syp:name="Container"
+                       CATVidLayGrid.IndexedConstraints="x=1 xSpan=2 y=0 attach=LRTB"
+                       EnableFlag="@ContainerSencitivity"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+ <DataTemplate syp:name="CATAfrPrefItemGroup_HorizontalWithoutBorder">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Title"
+                  ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  LayoutWhenUnvisibleFlag="0"
+                  EnableFlag="@EnableFlag"
+                  VisibleFlag="@Visibility">
+    <CATVidLayGrid>
+     <!--<CATVidLayFlow syp:name="Container" Name="LayFlow" Orientation="Horizontal"  Align="0"  ComputedCellDimensionFlag="1"  Items="@Items Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB" />  -->
+     <CATVidLayStack syp:name="Container"  Orientation="Horizontal" StackAttachmentAppendPolicy="NoAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+    </CATVidLayGrid>
+  </CATAfrSmartCtl>
+ </DataTemplate>
+
+
+  <!--Added group lock in group without border-->
+  <DataTemplate syp:name="CATAfrPrefItemGroup_HorizontalWithoutBorder" syp:version="1">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag"
+                    VisibleFlag="@Visibility">
+      <CATVidLayGrid  syp:name="grid" GridWeight="col1=1 ">
+        <CATVidCtlButton Name="@Name"
+                   syp:Template="Toolbar"
+                   CheckMode="@Mode"
+                   ClickMode="0"
+                   IconDimension="16 16"
+                   RequestedMinimumDimension="21 21"
+                   CheckState="@ActivationWidget Mode=TwoWays"
+                   Icon="@NormalIcon"
+                   VisibleFlag="@Lock"
+                   EnableFlag="@EnableWidget"
+                   CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB"
+                   LayoutWhenUnvisibleFlag="0"
+                           />
+        <!--<CATVidLayFlow syp:name="Container" Name="LayFlow" Orientation="Horizontal"  Align="0"  ComputedCellDimensionFlag="1"  Items="@Items Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB" />  -->
+        <CATVidLayStack syp:name="Container"  Orientation="Horizontal" StackAttachmentAppendPolicy="NoAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB"
+                        EnableFlag="@ContainerSencitivity"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  
+  <DataTemplate syp:name="CATAfrPrefItemGroup_HorizontalWithGrid">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Title"
+                  ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  LayoutWhenUnvisibleFlag="0">
+   <CATVidCtlGroupBox syp:Template="GroupBox"
+                      syp:name="PrefItemGroup"
+                      Name="@Name"
+                      LayoutWhenUnvisibleFlag="0"
+                      FontWeight="1"
+                      Icon="@IconName"
+                      IconDimension="21 21"
+                      Label="@Title"
+                      VisibleFlag="@Visibility"
+                      EnableFlag="@EnableFlag">
+    <CATVidLayGrid syp:name="Container" GridAppendPolicy="GridColumnAppend">
+    </CATVidLayGrid>
+   </CATVidCtlGroupBox>
+  </CATAfrSmartCtl>
+  <CATSYPTriggerCollection>
+   <CATSYPTrigger Property="Icon" TargetName="PrefItemGroup" Value="">
+    <CATSYPSetter Property="IconDimension" TargetName="PrefItemGroup" Value="0 0"/>
+   </CATSYPTrigger>
+  </CATSYPTriggerCollection>
+ </DataTemplate>
+ 
+<DataTemplate syp:name="CATAfrPrefItemGroup_RowAppend">
+   <CATVidCtlGroupBox syp:Template="GroupBox"
+                      syp:name="PrefItemGroup"
+                      Name="@Name"
+                      LayoutWhenUnvisibleFlag="0"
+                      FontWeight="1"
+                      Icon="@IconName"
+                      IconDimension="21 21"
+                      Label="@Title"
+                      VisibleFlag="@Visibility"
+                      EnableFlag="@EnableFlag">
+    <CATVidLayGrid syp:name="Container" 
+                   GridAppendPolicy="GridRowAppend">
+    </CATVidLayGrid>
+   </CATVidCtlGroupBox>
+  <CATSYPTriggerCollection>
+   <CATSYPTrigger Property="Icon" TargetName="PrefItemGroup" Value="">
+    <CATSYPSetter Property="IconDimension" TargetName="PrefItemGroup" Value="0 0"/>
+   </CATSYPTrigger>
+  </CATSYPTriggerCollection>
+ </DataTemplate>
+  
+
+  
+ <DataTemplate syp:name="CATAfrLock_LockWithControlIcon">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Title"
+                  ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  VisibleFlag="@Visibility"
+                  LayoutWhenUnvisibleFlag="0">
+   <CATVidLayStack syp:name="Container"  Orientation="Horizontal">
+    <CATVidCtlButton Name="@Name"
+                 syp:Template="Toolbar"
+                 CheckMode="@Mode"
+                 ClickMode="0"
+                 IconDimension="16 16"
+                 RequestedMinimumDimension="21 21"
+                 CheckState="@ActivationWidget Mode=TwoWays"
+                 Icon="@NormalIcon"
+                 Tooltip="@ToolTip"    
+                 VisibleFlag="@Visibility"
+                 EnableFlag="@EnableWidget"
+                />
+    <CATVidGPSquare Name="IconButton"
+                RequestedMinimumDimension="22 22"
+                Texture="@ControlIcon"
+                VisibleFlag="1"
+                EnableFlag="1"
+                    />
+   </CATVidLayStack>
+  </CATAfrSmartCtl>
+ </DataTemplate>
+
+ <DataTemplate syp:name="CATAfrLock_WithoutLockWithControlIcon">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Title"
+                  ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  VisibleFlag="@Visibility"
+                  LayoutWhenUnvisibleFlag="0">
+   <CATVidLayStack syp:name="Container"  Orientation="Horizontal">
+    <CATVidCtlButton Name="@Name"
+                 syp:Template="Toolbar"
+                 CheckMode="@Mode"
+                 ClickMode="0"
+                 IconDimension="16 16"
+                 RequestedMinimumDimension="21 21"
+                 CheckState="@ActivationWidget Mode=TwoWays"
+                 Icon="@NormalIcon"
+                 Tooltip="@ToolTip"
+                 VisibleFlag="0" 
+                 EnableFlag="@EnableWidget"
+                />    
+    <CATVidGPSquare Name="IconButton"
+                    RequestedMinimumDimension="22 22"
+                    Texture="@ControlIcon"
+                    VisibleFlag="1"
+                    EnableFlag="1"
+                    />
+   </CATVidLayStack>
+  </CATAfrSmartCtl>
+ </DataTemplate>
+
+  <DataTemplate syp:name="CATAfrLock_WithoutLockOnlyControlIcon">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidLayStack syp:name="Container"  Orientation="Horizontal">
+        <CATVidGPSquare Name="IconButton"
+                        RequestedMinimumDimension="22 22"
+                        Texture="@ControlIcon"
+                        VisibleFlag="1"
+                        EnableFlag="1"
+                    />
+      </CATVidLayStack>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATAfrMorePreferences_Undef">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Name"
+                  SnappableFlag="1"
+                 ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  VisibleFlag="1"
+                  EnableFlag="1"
+                  LayoutWhenUnvisibleFlag="0">
+       <CATVidLayGrid >
+           <CATVidCtlButton syp:name="More_Butoon"
+                            syp:Template="Button"
+                            CheckMode="1"
+                            ClickMode="0"
+                            IconDimension="16 16"
+                            RequestedMinimumDimension="21 21"
+                            CheckState="0"
+                            Click="@MoreButtonClickCB"
+                            Icon=""
+                            Tooltip="@MoreTooltip"
+                            VisibleFlag="@VisibleFlag"
+                            EnableFlag="@EnableFlag"
+                            Label="@MoreLabel"
+                            CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LTB"
+                            />
+        <CATVidCtlGroupBox syp:Template="GroupBox"
+                           syp:name="PrefItemGroup"
+                           Name="Name"
+                           FontWeight="1"
+                           Label=""
+                           BackgroundColor="187 241 191 255"
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB"
+                           LayoutWhenUnvisibleFlag="0"
+                           VisibleFlag="@VisibleFlag"
+                           EnableFlag="@EnableFlag"
+                           >
+         <CATVidCtlForm syp:Template="Form"
+                        NlsFiles=""
+                        LabelsAlignment="AlignLeft"
+                        syp:name="Container"
+                        LayoutWhenUnvisibleFlag="0"
+                         />
+        </CATVidCtlGroupBox>
+        </CATVidLayGrid>
+  </CATAfrSmartCtl>
+  <CATSYPTriggerCollection>
+   
+   <CATSYPTrigger Property="CheckState" TargetName="More_Butoon" Value="1">
+    <CATSYPSetter Property="VisibleFlag" TargetName="PrefItemGroup" Value="1"/>
+   </CATSYPTrigger>
+   
+   <CATSYPTrigger Property="CheckState" TargetName="More_Butoon" Value="0">
+    <CATSYPSetter Property="VisibleFlag" TargetName="PrefItemGroup" Value="0"/>
+   </CATSYPTrigger>
+
+   <CATSYPTrigger Property="EnableFlag" TargetName="More_Butoon" Value="0">
+    <CATSYPSetter Property="CheckState" TargetName="More_Butoon" Value="0"/>
+   </CATSYPTrigger>
+
+  </CATSYPTriggerCollection>
+ </DataTemplate>
+  
+<DataTemplate syp:name="CATAfrMorePreferences_Undef" syp:version="1">
+  <CATAfrSmartCtl Name="@Name"
+                  TitleDialogBox="@Name"
+                  SnappableFlag="1"
+                 ContentPanelVisibleFlag="1"
+                  ResizableDialogBoxFlag="1"
+                  CompactDialogBoxFlag="1"
+                  AutoCloseDialogBoxFlag="1"
+                  DiscretionFlag="1"
+                  VisibleFlag="1"
+                  EnableFlag="1"
+                  LayoutWhenUnvisibleFlag="0">
+       <CATVidLayGrid >
+           <CATVidCtlButton syp:name="More_Butoon"
+                            syp:Template="Button"
+                            CheckMode="1"
+                            ClickMode="0"
+                            IconDimension="16 16"
+                            RequestedMinimumDimension="21 21"
+                            CheckState="0"
+                            Click="@MoreButtonClickCB"
+                            Icon=""
+                            Tooltip="@MoreTooltip"
+                            VisibleFlag="@VisibleFlag"
+                            EnableFlag="@EnableFlag"
+                            Label="@MoreLabel"
+                            CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LTB"
+                            />
+         <CATVidCtlForm syp:Template="Form"
+                        NlsFiles=""
+                        LabelsAlignment="AlignLeft"
+                        syp:name="Container"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB"
+                        LayoutWhenUnvisibleFlag="0"
+                         />
+        </CATVidLayGrid>
+  </CATAfrSmartCtl>
+  <CATSYPTriggerCollection>
+   
+   <CATSYPTrigger Property="CheckState" TargetName="More_Butoon" Value="1">
+    <CATSYPSetter Property="VisibleFlag" TargetName="Container" Value="1"/>
+   </CATSYPTrigger>
+   
+   <CATSYPTrigger Property="CheckState" TargetName="More_Butoon" Value="0">
+    <CATSYPSetter Property="VisibleFlag" TargetName="Container" Value="0"/>
+   </CATSYPTrigger>
+
+   <CATSYPTrigger Property="EnableFlag" TargetName="More_Butoon" Value="0">
+    <CATSYPSetter Property="CheckState" TargetName="More_Butoon" Value="0"/>
+   </CATSYPTrigger>
+
+  </CATSYPTriggerCollection>
+ </DataTemplate>
+
+
+  <DataTemplate syp:name="CATAfrPrefPageStateToggle_Undef">
+    <CATAfrSmartCtl Name="@Name"
+                    syp:name="GroupSmartCtr"
+                    TitleDialogBox="@Title"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0">
+        <CATVidLayGrid syp:name="grid" >
+          <CATVidLayGrid syp:name="grid2"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RT"
+                         >
+          <CATVidCtlButton Name="ExpandAllButton"
+                           syp:Template="Button"
+                           CheckMode="0"
+                           ClickMode="1"
+                           IconDimension="16 16"
+                           RequestedMinimumDimension="21 21"
+                           CheckState="0"
+                           Label="@ExpandTitle"
+                           VisibleFlag="1"
+                           EnableFlag="1"
+                           Click="@ExpandAllButtonClickCB "
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RT"
+                           LayoutWhenUnvisibleFlag="0"
+                           />
+          <CATVidCtlButton Name="CollapseAllButton"
+                           syp:Template="Button"
+                           CheckMode="0"
+                           ClickMode="1"
+                           IconDimension="16 16"
+                           RequestedMinimumDimension="21 21"
+                           CheckState="0"
+                           Label="@CollapseTitle"
+                           VisibleFlag="1"
+                           EnableFlag="1"
+                           Click="@CollapseAllButtonClickCB "
+                           CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RT"
+                           LayoutWhenUnvisibleFlag="0"
+                           />
+          </CATVidLayGrid>
+          <CATVidSpacer syp:name="Spacer" RequestedMinimumDimension="4 4" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB"/>
+        </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <DataTemplate syp:name="CATAfrPrefPageStateToggle_Undef" syp:version="1">
+    <CATAfrSmartCtl Name="@Name"
+                    syp:name="GroupSmartCtr"
+                    TitleDialogBox="@Title"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid syp:name="grid" >
+        <CATVidCtlLineEditor syp:Template="Default" syp:name="Preference_SearchEditor" Name="Editor" RequestedMinimumDimension="300 21" TextMargins="5 0 1 0"
+                               VisibleFlag="@SearchAvailability" ReturnPressed="@OnEditorEditingFinished" FontIconButtonPressed="@OnEditorEditingFinished" TextActivated="@OnGetFocus" TextChanged="@OnTextChange" Text="@SearchText Mode=TwoWays"
+                               ResetButtonVisibleFlag="1" FontIconButtonVisibleFlag="1" FontIconName="search" SelectAllTextOnFocusFlag="1" PlaceholderText="@PlaceHolderText"
+                               CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT"/>
+        <CATVidLayGrid syp:name="grid2"
+                         CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RT"
+                         >
+          <CATVidCtlButton Name="ExpandAllButton"
+                           syp:Template="Button"
+                           CheckMode="0"
+                           ClickMode="1"
+                           IconDimension="16 16"
+                           RequestedMinimumDimension="21 21"
+                           CheckState="0"
+                           Label="@ExpandTitle"
+                           VisibleFlag="1"
+                           EnableFlag="1"
+                           Click="@ExpandAllButtonClickCB "
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RT"
+                           LayoutWhenUnvisibleFlag="0"
+                           />
+          <CATVidCtlButton Name="CollapseAllButton"
+                           syp:Template="Button"
+                           CheckMode="0"
+                           ClickMode="1"
+                           IconDimension="16 16"
+                           RequestedMinimumDimension="21 21"
+                           CheckState="0"
+                           Label="@CollapseTitle"
+                           VisibleFlag="1"
+                           EnableFlag="1"
+                           Click="@CollapseAllButtonClickCB "
+                           CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RT"
+                           LayoutWhenUnvisibleFlag="0"
+                           />
+        </CATVidLayGrid>
+        <CATVidSpacer syp:name="Spacer" RequestedMinimumDimension="4 4" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="y=2 x=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+</Styles>
+

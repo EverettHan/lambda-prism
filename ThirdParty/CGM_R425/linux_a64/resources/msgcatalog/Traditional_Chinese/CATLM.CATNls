@@ -1,0 +1,158 @@
+<meta charset="UTF-8"/>
+//
+// CATIA License Manager Messages (low-level)
+//
+
+LicenseManager="使用許可管理員";
+
+//
+// Messages    AS: Allow Save
+//
+CheckFailedEx="無法檢查 /P01 使用許可：\n/P03\n工作階段將再 /P02 次嘗試失敗後停止\n強烈建議儲存開啟的文件";
+
+CheckFailedAS="無法檢查 /P01 使用許可：\n/P03\n工作階段功能 (本機儲存和關閉除外) 將再 /P02 次嘗試失敗後無法使用。\n強烈建議儲存開啟的文件。";
+
+CheckOK="已成功檢查使用許可";
+
+TooManyChecksFailed="/P01 次嘗試後無法檢查使用許可\n工作階段會立即停止";
+
+TooManyChecksFailedAS="/P01 次嘗試後無法檢查使用許可\n工作階段功能 (本機儲存和關閉除外) 會即刻無法使用";
+
+TooManyChecksFailedAT="無法如預期檢查使用許可。\n工作階段功能 (本機儲存和關閉除外) 會即刻無法使用";
+
+TooManyChecksFailedAT2="無法檢查使用許可 (系統錯誤)。\n工作階段功能 (本機儲存和關閉除外) 會即刻無法使用";
+
+TooManyChecksAfterRevoke="工作階段功能 (本機儲存和關閉除外) 會即刻無法使用";
+
+NoSuchProduct="找不到要求的產品：/P01";
+
+MissingPreq="/P01 由於未授權先決條件而無法使用 (/P02)";
+
+InconpatibleEnvironment="工作階段無法在此環境上執行";
+
+NoLicenseForDemo="沒有 /P01 示範模式的使用許可";
+
+LicenseRequestFailed="未授予使用許可：/P01\n錯誤：/P03 ";
+
+NULRequestFailed="未授予並行使用許可：/P01\n錯誤：/P02。";
+
+AllLicensesUsed="所有 /P02 的 /P01 使用許可已由：\n/P03 使用中";
+
+LicenseReleaseFailed="無法釋出 /P01 的使用許可\n/P02 錯誤：/P03";
+
+LicenseCheckFailed="無法檢查 /P01 的使用許可\n/P02 錯誤：/P03";
+
+LicenseRecovered="/P01 的使用許可已成功復原";
+
+ErrorLoadingProduct="無法載入 /P01 的產品定義 (代碼 /P02)\n請重新安裝";
+
+ProductInvalidVersion="/P01 /P02 版本的產品定義無效\n請重新安裝";
+
+LicenseNotYetAvailable="/P02 的 /P01 使用許可尚無法使用";
+
+LicenseExpired="/P02 的 /P01 使用許可已過期";
+
+BadHost="未授予使用許可：/P01\n使用者 /P02 已登入機器 /P03\n\n您可以在登出另一台機器後重試，或繼續使用另一台機器";
+
+LicenseSoonExpired="下列授予的使用許可即將過期：\n";
+
+LicenseExpIn="/P01 再 ";
+
+ExpIn24h="不到 24 小時\n";
+
+ExpIn1day="1 天\n";
+
+ExpInndays="/P01 天\n";
+
+NoLicenseForAlias="沒有合適的使用許可來滿足 /P01 要求";
+
+ProductNotShareable="/P01 的使用許可無法分享 -- 請聯絡客戶服務";
+
+RetrieveLicenses="請稍候，/P01 正在從 /P1 擷取使用許可";
+
+RetrieveLicensesFailed="無法從 /P1 取得使用許可。";
+
+RetrieveLicensesSucceded="至少有一個本機使用許可遺失、過期或即將過期。\n本機使用許可已根據您的管理員決定更新。\n請重新啟動您的工作階段。";
+
+FirstLoginFailedRestartSession="使用許可初始化失敗。\n請重新啟動您的工作階段。";
+
+RetrieveLicensesURLKO="無法更新本機使用許可。無法存取遠端使用許可存放庫。\n請聯絡您的管理員。";
+
+ProductNotAddon="/P01 的使用許可包含無效的附加產品 /P02\n請聯絡客戶服務";
+
+AddonPreqNotPresent="自訂組態 /P01 未包含附加產品 /P02 的先決條件\n請聯絡客戶服務";
+
+ConfigHasPrereq="組態 /P01 不應有先決條件\n請聯絡客戶服務";
+
+InvalidScale="無法要求產品 /P01，因其規模 /P02 高於目前的組態";
+
+CannotStart="目前所選的使用許可無法用於執行此應用程式。\n請使用 CATOptionsMgt 工具 (「一般/使用許可」標籤) 選擇適當的使用許可。";
+
+ProdDefNotFound="已成功授予 /P01 使用許可，但未安裝相關聯的代碼。\n請安裝。";
+
+NoConfigFound="您沒有任何使用許可與已安裝的組態相符。\n授予的使用許可清單：\n/P01\n請更新您的安裝或聯絡您的管理員。";
+
+NULRequestFailed="未授予使用許可：\n/P01\n。";
+
+LicenseRevoked="您的管理員已更新您的使用許可產品指派。\n目前授予的使用許可已無法用於執行此應用程式。\n請關閉您的工作階段。";
+
+LicOverFailed="/P01 未指派給此使用者。";
+
+NoLicAssigned="沒有使用許可授予使用者 /P01 (/P02)。";
+
+NoMCSLicAssigned="沒有 MCS 使用許可授予 /P01 (/P02)。";
+
+LicOverAuthFailed="您沒有任何指派的使用許可授權產品 /P01";
+
+LicOver="以 /P02 覆寫 /P01";
+
+LicOverIgnored="無法覆寫使用許可";
+
+PackagingMismatch="套件不相符：所有要求的使用許可都必須屬於相同的套件。\n-/P01\n-/P02";
+
+CasualLicAssigned="此應用程式不允許使用非正式使用許可。\n/P03 - /P01 (/P02)。";
+
+PlatformCasualLicMismatch="/P01 受宣告為非正式的記名使用者。\n但下列要求的使用許可不是非正式：/P02。";
+
+//---------------------------------------------------------------------------
+// Offline mode specific errors
+//---------------------------------------------------------------------------
+GrantedLicenseExtractionFailed="無法擷取使用許可 /P01。\n/P02";
+
+GrantedLicenseExtractionNotSupported="此作業系統未支援離線使用許可擷取。";
+
+LicenseExtractionKO_MaxDuration="無法擷取 /P01 使用許可 /P02 天 (使用許可伺服器允許的最長持續時間為 /P03 天)。";
+
+LicenseExtractionKO_LocalDirNotFound="離線使用許可目錄不存在：/P01。";
+
+LicenseExtractionKO_LocalDirNotCreated="無法建立離線使用許可目錄：/P01。";
+
+LicenseExtractionKO_LocalDirNotWriteable="無法在目錄 /P01 中建立檔案。\n檢查目前使用者的此目錄存取權限和可用磁碟空間。";
+
+LicenseExtractionKO_AlreadyOffline="已針對主機 /P03 上的使用者 /P02 擷取 /P01。";
+
+LicenseExtractionKO_NoInitialLic="無法延長 /P01 離線使用許可持續時間。遺失初始使用許可資料。";
+
+LicenseExtractionKO_NoKeyword="無法擷取 /P01 離線使用許可：受關鍵字保護。";
+
+LicenseExtractionKO_OfflineDisabled="使用許可伺服器上未啟用離線使用許可擷取。";
+
+LicenseExtractionKO_ExpiresBeforeEnd="無法擷取 /P01 使用許可 /P02 天 (使用許可將於 /P03 天內過期)。";
+
+LicenseExtractionKO_Token="無法擷取 /P01 權杖。";
+
+LicenseExtractionKO_AuthFailed="/P01 離線擷取未獲使用許可伺服器授權。";
+
+LicenseExtractionKO_NoLic="無法擷取 /P01 離線使用許可。伺服器上找不到使用許可。";
+
+WorkOfflineProdDefNotFound="部分功能可能無法在離線模式中使用。\n將不會要求 /P01 使用許可，因為未安裝相關聯的代碼。\n請安裝。";
+
+UnsupportedOS="未支援的作業系統版本";
+
+
+//
+// License Types
+//
+nodelock_or_concurrent="節點鎖定或並行";
+nodelock="節點鎖定";
+concurrent="並行";

@@ -1,0 +1,203 @@
+<meta charset="UTF-8"/>
+//===================================================================================
+//XX  XX   XXXXXXX  XXXX     XXXXXX            XX   XX   XXXXXX    XXXX
+//XX  XX    XX   X   XX       XX  XX           XXX XXX  XX    X   XX  X
+//XX  XX    XX X     XX       XX  XX           XXXXXXX  XX       XX
+//XXXXXX    XXXX     XX       XXXXX            XX X XX   XXXXX   XX
+//XX  XX    XX X     XX       XX               XX   XX       XX  XX  XXX
+//XX  XX    XX   X   XX  XX   XX               XX   XX  X    XX   XX  XX
+//XX  XX   XXXXXXX  XXXXXXX  XXXX              XX   XX  XXXXXX     XXX X
+//====================================================================================
+SETCATENV_HELP.text="Erzeugt eine neue Umgebungsdatei 
+
+setcatenv -e name [-d directory][-p concatenation ][-a user|global][-new yes|no][-server][-cf path][-v yes|no]
+
+Allgemeine Optionen:
+    -e environment_name: Umgebungsname. Obligatorische Option. 
+    -d directory        : Umgebungsdatei-Speicherordner.  
+                          Standardwert: \"/P1\".
+    -p concatenation    : Installationspfad. Mehrere Pfade können mit : als Pfadtrennzeichen angegeben werden.
+                          Standardwert: \"/P2\"
+    -a user|global      : Umgebungstyp. Wirkungslos, wenn -d angegeben ist.
+                          user: Die in \"/P3\" gespeicherte Umgebungsdatei.
+                          global: Die in \"/P4\" gespeicherte Umgebungsdatei. 
+                          Standardwert: user
+    -new     yes|no     : Wenn eine Umgebung den gleichen Namen hat, diese überschreiben. 
+                          Standardwert: yes
+    -server             : Aktiviert den Servermodus.
+    -cf    file_path    : Gibt den Namen des Pfads einer bestehenden Umgebung an, aus der Sie eine neue Umgebung erstellen.
+                          Zum Beispiel erzeugt der Befehl: setcatenv -e MyNewEnv -cf MyFirstEnv
+                          die neue Umgebung MyNewEnv aus einer Kopie von MyFirstEnv.
+                          So können Sie vorherige Anpassungen übernehmen, ohne dass Sie sie in der neuen Umgebung erneut erzeugen müssen.
+    -v yes|no           : Aktiviert den ausführlichen Modus: Standard: yes
+    -h|-help            : Diese Hilfe";
+
+//***************************************************************************************************************************************    
+DELCATENV_HELP.text="Löscht eine Umgebungsdatei. 
+
+delcatenv -e name [-d directory][-a user|global][-desktop yes|no][-v yes|no]
+
+Allgemeine Optionen:
+    -e environment_name: Umgebungsname. Obligatorische Option. 
+    -d directory        : Umgebungsdatei-Speicherordner.  
+                          Standardwert:\"/P1\".
+    -a user|global      : Umgebungstyp. Wirkungslos, wenn -d angegeben ist.
+                          user: Die in \"/P2\" gespeicherte Umgebungsdatei.
+                          global: Die in \"/P3\" gespeicherte Umgebungsdatei
+                          Standardwert: user
+    -v yes|no           : Aktiviert den ausführlichen Modus. Standard: yes
+    -h|-help            : Diese Hilfe.";
+
+//***************************************************************************************************************************************    
+
+LSCATENV_HELP.text="Listet die verfügbaren Umgebungen auf:
+
+lscatenv   [-a user|global] [-d storage_directory_name]
+
+Optionen:
+    -d directory        : Speicherordner für die Umgebungsdatei.
+                          Standardwert: \"/P1\".
+    -a user|global      : Umgebungstyp. Ohne Bedeutung, wenn -d angegeben ist.
+                          user:   Die Umgebungsdatei wird in \"/P2\" gespeichert.
+                          global: Die Umgebungsdatei wird in \"/P3\" gespeichert.
+                          Standardwert: user";
+//***************************************************************************************************************************************
+READCATENV_HELP.text="Zeigt den Inhalt einer Umgebungsdatei an.
+
+delcatenv -e name [-d directory][-a user|global] [-var variable][-short][-l]
+
+Optionen:
+    -e environment_name : Name der Umgebung. Obligatorische Option.
+    -d directory        : Speicherordner für die Umgebungsdatei.
+                          Standardwert: \"/P1\".
+    -a user|global      : Umgebungstyp. Ohne Bedeutung, wenn -d angegeben ist.
+                          user:   Die Umgebungsdatei wird in \"/P2\" gespeichert.
+                          global: Die Umgebungsdatei wird in \"/P3\" gespeichert.
+                          Standardwert: user
+    -var varname        : Zeigt nur den Wert der angegebenen Variablen an. Wenn diese Option nicht festgelegt ist,
+                          zeigt readcatenv alle Variablen mit Werten in der Umgebungsdatei an.
+    -short              : Zeigt nur den Wert der Variablen an.
+    -l                  : Variablenwert nicht erweitern.";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_NT.text="Ermöglicht das Bearbeiten von Variablen in Umgebungsdateien.
+
+chcatenv -e name -var variable=value [-d directory][-a user|global][-new][-com][-del]
+
+Optionen:
+    -e environment_name : Name der Umgebung. Obligatorische Option. 
+    -d directory        : Speicherordner für die Umgebungsdatei.  
+                          Obligatorisch, wenn Option -a nicht angegeben ist.
+    -a user|global      : Umgebungstyp. 
+                          Ohne Bedeutung, wenn -d angegeben ist; obligatorisch, wenn -d nicht angegeben ist.
+                          user:   Die Umgebungsdatei wird in \"/P2\" gespeichert.
+                          global: Die Umgebungsdatei wird in \"/P3\" gespeichert, 
+                          wenn Option -d angegeben ist, Standardwert: user
+    -var var1=new_value : Legt die Variable var1 auf neuer_wert fest. Dieses Argument muss zwischen \" stehen.
+                          Bsp: chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\MyData\"
+                          oder  chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\My Data\"
+                          Wenn eine Variable aktualisiert werden soll, diesen Befehl wie folgt ausführen:
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=%CATInstallPath%;C:\Temp\MyNewPath\"                           
+                          oder 
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=C:\Temp\MyNewPath\;%CATInstallPath%\"                            
+    -new                : Wenn die in der Option -var angegebene Variable nicht existiert, wird sie erstellt.
+                          Bsp: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new. 
+                          Um ein unerwünschtes Verhalten zu vermeiden, sollten keine Leerzeichen in Variablennamen verwendet werden.
+    -com \"Comment\"      : Fügt in der Umgebungsdatei einen Kommentar für die angegebene Variable hinzu.
+                          Nur verfügbar für Variablen, die vom Benutzer erzeugt wurden.
+                          Bsp: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"Add some comment here\"
+    -del                : Löscht die in der Option -var angegebene Variable (nur für Variablen, die vom Benutzer erzeugt wurden).
+                          Bsp: chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_UNIX.text="Ermöglicht das Bearbeiten von Variablen in Umgebungsdateien.
+
+chcatenv -e name -var variable=value [-d directory][-a user|global][-new][-com][-del]
+Optionen:
+    -e environment_name : Name der Umgebung. Obligatorische Option.
+    -d directory        : Speicherordner für die Umgebungsdatei.
+                          Standardwert: \"/P1\".
+    -a user|global      : Umgebungstyp. Ohne Bedeutung, wenn -d angegeben ist.
+                          user:   Die Umgebungsdatei wird in \"/P2\" gespeichert.
+                          global: Die Umgebungsdatei wird in \"/P3\" gespeichert.
+                          Standardwert: user
+    -var var1=new_value : Legt die Variable var1 auf neuer_wert fest. Dieses Argument muss zwischen \" stehen.
+                          Bsp.: chcatenv -e MyEnv -a user -var \"CATTemp=/tmp/MyData\"
+                          Wenn eine Variable aktualisiert werden soll, diesen Befehl wie folgt ausführen:
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=\$CATInstallPath:/tmp/MyNewPath\"
+                          oder
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=/tmp/MyNewPath:\$CATInstallPath\"
+    -new                : Wenn die in der Option -var angegebene Variable nicht existiert, wird sie erstellt.
+                          Bsp.: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new.
+                          Um ein unerwünschtes Verhalten zu vermeiden, sollten keine Leerzeichen in Variablennamen verwendet werden.
+    -com \"Comment\"    : Fügt in der Umgebungsdatei einen Kommentar für die angegebene Variable hinzu.
+                          Nur verfügbar für Variablen, die vom Benutzer erzeugt wurden.
+                          Bsp.: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"Add some comment here\"
+    -del                : Löscht die in der Option -var angegebene Variable (nur für Variablen, die vom Benutzer erzeugt wurden).
+                          Bsp.: chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+//***************************************************************************************************************************************
+
+
+//***************************************************************************************************************************************
+
+
+//====================================================================================
+//XXXXXXX  XXXXXX   XXXXXX    XXXXX   XXXXXX            XX   XX   XXXXXX    XXXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XXX XXX  XX    X   XX  X
+// XX X     XX  XX   XX  XX  XX   XX   XX  XX           XXXXXXX  XX       XX
+// XXXX     XXXXX    XXXXX   XX   XX   XXXXX            XX X XX   XXXXX   XX
+// XX X     XX XX    XX XX   XX   XX   XX XX            XX   XX       XX  XX  XXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XX   XX  X    XX   XX  XX
+//XXXXXXX  XXX  XX  XXX  XX   XXXXX   XXX  XX           XX   XX  XXXXXX     XXX X
+//====================================================================================
+
+AccessPb.Text="Die Umgebungsdatei kann nicht in \"/P1\" gesichert werden.";
+BadFormatedVariable.Text="Der in der Option -var angegebene Wert ist ungültig.";
+BadOptions.Text="Die Argumente sind nicht korrekt. Die Befehlszeile prüfen";
+CannotDelOfficalVar.Text="Diese Variable kann nicht gelöscht werden. Es können nur neue Variablen gelöscht werden.";
+DefaultFolderNotFound.Text="Der Standardspeicherordner für Umgebungen (/P1) ist nicht zugänglich";
+DirDoesntExist.Text="Das Verzeichnis /P1 ist nicht zugänglich.";
+DiskFull.Text="Umgebung kann nicht gespeichert werden: Datenträger voll";
+EnvCreationFailed.text="Erzeugung der Umgebung fehlgeschlagen";
+EnvFileDoesntExist.Text="Die angegebene Umgebung wurde nicht gefunden.";
+EnvFileNotFound.Text="Die Umgebungsdatei wurde nicht gefunden";
+EnvNameNotSpecified.Text="Der Umgebungsname muss in der Option \"-e\" angegeben werden.";
+ErrDelEnv.Text="Löschen der Umgebung fehlgeschlagen";
+ErrDelEnvUsr.Text="Löschen der Umgebungsdarstellung fehlgeschlagen";
+ErrUnset.Text="Zurücknehmen der Festlegung der Workstation fehlgeschlagen";
+FileAlreadyExist.Text="Die Umgebungsdatei existiert bereits";
+GeneralFailure.Text="Bei der Initialisierung von chcatenv ist ein Problem aufgetreten.";
+IconeCreationFailed.text="Erzeugung des Umgebungssymbols fehlgeschlagen";
+IconeCreationFailed2.text="Es wurde keine Verknüpfung auf dem Desktop erzeugt. Überprüfen, ob /P1 im Installationsverzeichnis vorhanden ist.";
+InitFolderFailed.Text="Der Standardspeicherordner wurde nicht gefunden.\nDie Umgebung wurde gesichert in: /P1";
+InvalidEnvModeOption.Text="Die Option \"-a\" muss auf \"user\" oder \"global\" gesetzt werden.";
+InvalidEnvNameOption.Text="Der Umgebungsname muss in der Option \"-e\" angegeben werden.";
+ModifyVariableFailed.text="Änderung der Umgebungsvariablen fehlgeschlagen.";
+MustBeSystemAdmin.Text="Zum Ausführen dieser Aktion sind Administratorrechte erforderlich.";
+NoBlankInEnvName.text="Leerzeichen sind in Umgebungsnamen nicht zulässig";
+NoCommentOnOfficialVar.Text="Es können nur neue Variablen mit einem Kommentar versehen werden.";
+NoConcatSpecified.Text="Eine Verkettung muss angegeben werden";
+NoDirModeOption.Text="Die Option \"-a\" muss auf \"user\" oder \"global\" gesetzt werden, oder es muss über die Option \"-d\" ein Speicherverzeichnis angegeben werden.";
+NoHome.text="Umgebungsvariable \$HOME kann nicht gefunden werden";
+NoNewOfficialVariable.Text="/P1 existiert bereits. Bitte wählen Sie einen anderen Variablennamen.";
+NoReadAccessInDir.Text="Das Verzeichnis /P1 ist im Lesemodus nicht zugänglich.";
+NoSuchVariable.text="Variable in der Umgebungsdatei nicht gefunden.";
+NoVarSpecified.Text="Die Option \"-var\" muss angegeben werden.";
+NoWriteAccessInDir.Text="Das Verzeichnis /P1 ist im Schreibmodus nicht zugänglich.";
+NonValidType.Text="Ein Typ (Benutzer oder global) muss über die Option -a angegeben werden.";
+ReadFailed.text="Lesen dieser Umgebung nicht möglich";
+ReadFailed.text="Lesen dieser Umgebung nicht möglich";
+RefFileNotFound.Text="Der Referenzdateideskriptor wurde nicht gefunden.";
+SpecifiedFolderNotFound.Text="Das Verzeichnis \"/P1\" ist nicht zugänglich.";
+ToolsSetupFailed.text="Installation der Tools fehlgeschlagen";
+UnableToReadEnvFile.Text="Die Umgebungsdatei kann nicht gelesen werden.";
+UnableToWriteFile.Text="Die geänderte Umgebungsdatei kann nicht gesichert werden.";
+UnknownOption.Text="Ungültige Option: /P1. ";
+UnknownProductLine.Text="/P1 ist keine gültige Produktlinie.\nZulässige Werte für die Option -cs sind: /P2";
+UnknownError.Text="Ein Fehler ist aufgetreten. /P1.";
+UpdateVariableFailed.text="Aktualisierung der Umgebungsvariablen fehlgeschlagen.";
+VariableNotFound.Text="Die Variable /P1 wurde in der Umgebungsdatei nicht gefunden. ";
+VariableNotValued.Text="Die Variable /P1 weist keinen Wert auf. Wenn eine leere Zeichenfolge als neuer Wert festgelegt werden soll, hinter dem Zeichen = keine weiteren Zeichen einfügen.\nBeispiel: chcatenv -e MeineUmgeb -a Benutzer -var \"MeineNeueVar=\". ";
+WSSsetupFailed.text="Installation der Workstation fehlgeschlagen";
+
+

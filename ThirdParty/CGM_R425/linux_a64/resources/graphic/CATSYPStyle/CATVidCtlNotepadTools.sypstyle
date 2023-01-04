@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="basicTweakers.sypstyle"/>
+  </Resources>
+  <Template Target="CATVidCtlNotepadTools" syp:name="Default" syp:version="2">
+    <CATVidLayGrid>
+      <CATVidCtlStack  syp:name="ContainerStack" AlwaysHideComboBoxFlag="1" AlwaysShowComboBoxFlag="0" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB">
+	      <!-- Font Tools -->
+        <!--<CATVidLayStack Orientation="Horizontal">-->
+           <CATVidCtlSimpleCombo syp:name="FontNameCombo" ComboSelect="@FontNameCB" LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="20 0" Text="@FontName  Mode=TwoWays" />
+        <!--</CATVidLayStack>-->
+        <CATVidCtlBorder  syp:Template="Lisibility" BackgroundColor="0.8 100" >
+          <CATVidLayStack Orientation="Horizontal">
+            <CATVidCtlSimpleCombo syp:name="FontHeightCombo" ComboSelect="@FontHeightCB" LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="20 0" Text="@FontHeight  Mode=TwoWays" />
+            <!-- Font size change tools -->
+            <CATVidCtlButton Name="FontHtUpBtn" Click="@IncreaseFontHeight" TooltipShortHelp="@FontHtUpBtnTooltip" Icon="VidNotepad_FontHeightUp.png" IconDimension="16 16" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+            <CATVidCtlButton Name="FontHtDownBtn" Click="@DecreaseFontHeight" TooltipShortHelp="@FontHtDownBtnTooltip" Icon="VidNotepad_FontHeightDown.png" IconDimension="16 16" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+          </CATVidLayStack>
+        </CATVidCtlBorder>
+        <CATVidSpacer RequestedMinimumDimension="2 0"/>
+        <CATVidCtlBorder  syp:Template="Lisibility" BackgroundColor="0.8 100" >
+          <CATVidLayStack Orientation="Horizontal">
+            <!-- Text Style tools -->
+            <CATVidCtlCheckBox CheckState="@BoldFlag Mode=TwoWays" Name="BoldChkB" TooltipShortHelp="@BoldChkBTooltip" IconDimension="16 16" Icon="VidNotepad_Bold.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+            <CATVidCtlCheckBox CheckState="@ItalicFlag Mode=TwoWays" Name="ItalicChkB" TooltipShortHelp="@ItalicChkBTooltip" IconDimension="16 16" Icon="VidNotepad_Italic.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+            <CATVidCtlCheckBox CheckState="@UnderlineFlag Mode=TwoWays" Name="UnderlineChkB" TooltipShortHelp="@UnderlineChkBTooltip" IconDimension="16 16" Icon="VidNotepad_Underline.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+            <!-- Text Color tools -->
+            <CATVidCtlTweakerCATVidRGBA TweakerData="@TextColor Mode=TwoWays" Name="TextColorBtn" TooltipShortHelp="@TextColorBtnTooltip" RequestedMinimumDimension="20 20" />
+          </CATVidLayStack>
+        </CATVidCtlBorder>
+        <CATVidSpacer RequestedMinimumDimension="2 0"/>
+        <CATVidCtlBorder  syp:Template="Lisibility" BackgroundColor="0.8 100" >
+          <CATVidLayStack Orientation="Horizontal">
+            <!-- Format copy tools -->
+            <CATVidCtlCheckBox Name="StyleCopyChkBtn" CheckState="@StyleCopyState Mode=TwoWays" TooltipShortHelp="@StyleCopyChkBtnTooltip" Icon="VidNotepad_StyleCopy.png" IconDimension="16 16" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20"/>
+          </CATVidLayStack>
+        </CATVidCtlBorder>
+        <CATVidSpacer RequestedMinimumDimension="2 0"/>
+        <CATVidCtlBorder  syp:Template="Lisibility" BackgroundColor="0.8 100" >
+          <CATVidLayStack Orientation="Horizontal">
+             <!-- Clipboard tools -->
+            <CATVidCtlButton EnableFlag="@SelectionPresent" Name="CutBtn" Click="@DoCut" TooltipShortHelp="@CutBtnTooltip" IconDimension="16 16" Icon="VidNotepad_Cut.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+            <CATVidCtlButton EnableFlag="@SelectionPresent" Name="CopyBtn" Click="@DoCopy" TooltipShortHelp="@CopyBtnTooltip" IconDimension="16 16" Icon="VidNotepad_Copy.png" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+            <CATVidCtlButton EnableFlag="@CanPaste" Name="PasteBtn" Click="@DoPaste" TooltipShortHelp="@PasteBtnTooltip" IconDimension="16 16" Icon="VidNotepad_Paste.png" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+          </CATVidLayStack>
+         </CATVidCtlBorder>
+         <CATVidSpacer RequestedMinimumDimension="2 0"/>
+         <CATVidCtlBorder  syp:Template="Lisibility" BackgroundColor="0.8 100" >
+              <!-- Alignment Tools-->
+              <CATVidLayStack Orientation="Horizontal">
+              <CATVidCtlRadioButton Name="Left" CheckState="1" RequestedMinimumDimension="20 20" IconDimension="16 16" Icon="VIDTextEditor_LeftJustIcon.png" Tooltip="@AlignLeftBtnTooltip" Click="@AlignLeftCB" syp:Template="Toolbar"/>
+              <CATVidCtlRadioButton Name="Center" RequestedMinimumDimension="20 20" IconDimension="16 16" Icon="VIDTextEditor_CenterJustIcon.png" Tooltip="@AlignCenterBtnTooltip" Click="@AlignCenterCB" syp:Template="Toolbar"/>
+              <CATVidCtlRadioButton Name="Right" RequestedMinimumDimension="20 20" IconDimension="16 16" Icon="VIDTextEditor_RightJustIcon.png" Tooltip="@AlignRightBtnTooltip" Click="@AlignRightCB" syp:Template="Toolbar"/>
+              <CATVidCtlTweakerCATVidRGBA TweakerData="@BackgroundColor Mode=TwoWays" Name="BackgroundColorBtn" TooltipShortHelp="@BackgroundColorBtnTooltip" RequestedMinimumDimension="20 20" />-->
+              </CATVidLayStack>
+         </CATVidCtlBorder>
+        
+        <CATVidSpacer RequestedMinimumDimension="2 0"/>
+        <CATVidCtlBorder  syp:Template="Lisibility" BackgroundColor="0.8 100" >
+          <!-- Special Character Tools-->
+          <CATVidLayStack Orientation="Horizontal">
+            <CATVidLayGrid>
+              <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT" Name="SpecialCharacterBtn" Click="@DisplaySpecialCharacterPopup" TooltipShortHelp="@SpecialCharacterTooltip" Icon="VidNotepad_SpecialCharacter.png" IconDimension="16 16"  syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+              <CATVidCtlPopup CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LT" syp:name="Popup" RequestedMinimumDimension="0 0" LayoutWhenUnvisibleFlag="0" VisibleFlag="0"/>
+            </CATVidLayGrid>
+          </CATVidLayStack>
+        </CATVidCtlBorder>
+       </CATVidCtlStack>
+      
+      </CATVidLayGrid>
+  </Template>
+  <Template Target="CATVidCtlNotepadTools" syp:name="Default">
+    <CATVidLayStack Orientation="Horizontal">
+      <!-- Text Style tools -->
+      <CATVidCtlBorder syp:Template="Lisibility" BackgroundColor="0.8 100" >
+        <CATVidLayStack Orientation="Horizontal" CellBorder="1" RequestedMinimumDimension="23 23">
+          <CATVidCtlCheckBox CheckState="@BoldFlag Mode=TwoWays" Name="BoldChkB" TooltipShortHelp="@BoldChkBTooltip" IconDimension="16 16" Icon="VidNotepad_Bold.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+          <CATVidCtlCheckBox CheckState="@ItalicFlag Mode=TwoWays" Name="ItalicChkB" TooltipShortHelp="@ItalicChkBTooltip" IconDimension="16 16" Icon="VidNotepad_Italic.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+          <CATVidCtlCheckBox CheckState="@UnderlineFlag Mode=TwoWays" Name="UnderlineChkB" TooltipShortHelp="@UnderlineChkBTooltip" IconDimension="16 16" Icon="VidNotepad_Underline.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+        </CATVidLayStack>
+      </CATVidCtlBorder>
+      <CATVidSpacer RequestedMinimumDimension="2 0"/>
+      <!-- Font size change tools -->
+      <CATVidCtlBorder syp:Template="Lisibility" BackgroundColor="0.8 100">
+        <CATVidLayStack Orientation="Horizontal" CellBorder="1" RequestedMinimumDimension="23 23">
+          <CATVidCtlButton Name="FontHtUpBtn" Click="@IncreaseFontHeight" TooltipShortHelp="@FontHtUpBtnTooltip" Icon="VidNotepad_FontHeightUp.png" IconDimension="16 16" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+          <CATVidCtlButton Name="FontHtDownBtn" Click="@DecreaseFontHeight" TooltipShortHelp="@FontHtDownBtnTooltip" Icon="VidNotepad_FontHeightDown.png" IconDimension="16 16" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+        </CATVidLayStack>
+      </CATVidCtlBorder>
+      <CATVidSpacer RequestedMinimumDimension="2 0"/>
+      <!-- Text Color tools -->
+      <CATVidCtlBorder syp:Template="Lisibility" BackgroundColor="0.8 100">
+        <CATVidLayStack Orientation="Horizontal" CellBorder="1" RequestedMinimumDimension="23 23">
+          <CATVidCtlTweakerCATVidRGBA TweakerData="@TextColor Mode=TwoWays" Name="TextColorBtn" TooltipShortHelp="@TextColorBtnTooltip" RequestedMinimumDimension="20 20" />
+        </CATVidLayStack>
+      </CATVidCtlBorder>
+      <CATVidSpacer RequestedMinimumDimension="2 0"/>
+      <!-- Format copy tools -->
+      <CATVidCtlBorder syp:Template="Lisibility" BackgroundColor="0.8 100">
+        <CATVidLayStack Orientation="Horizontal" CellBorder="1" RequestedMinimumDimension="23 23">
+          <CATVidCtlCheckBox Name="StyleCopyChkBtn" CheckState="@StyleCopyState Mode=TwoWays" TooltipShortHelp="@StyleCopyChkBtnTooltip" Icon="VidNotepad_StyleCopy.png" IconDimension="16 16" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20"/>
+        </CATVidLayStack>
+      </CATVidCtlBorder>
+      <CATVidSpacer RequestedMinimumDimension="2 0"/>
+      <!-- Clipboard tools -->
+      <CATVidCtlBorder syp:Template="Lisibility" BackgroundColor="0.8 100" >
+        <CATVidLayStack Orientation="Horizontal" CellBorder="1" RequestedMinimumDimension="23 23">
+          <CATVidCtlButton EnableFlag="@SelectionPresent" Name="CutBtn" Click="@DoCut" TooltipShortHelp="@CutBtnTooltip" IconDimension="16 16" Icon="VidNotepad_Cut.png" ColorizeIconBlackPixelTo="1 200" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+          <CATVidCtlButton EnableFlag="@SelectionPresent" Name="CopyBtn" Click="@DoCopy" TooltipShortHelp="@CopyBtnTooltip" IconDimension="16 16" Icon="VidNotepad_Copy.png" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+          <CATVidCtlButton EnableFlag="@CanPaste" Name="PasteBtn" Click="@DoPaste" TooltipShortHelp="@PasteBtnTooltip" IconDimension="16 16" Icon="VidNotepad_Paste.png" syp:Template="Toolbar" RequestedMinimumDimension="20 20" />
+        </CATVidLayStack>
+      </CATVidCtlBorder>
+    </CATVidLayStack>
+  </Template>
+</Styles>

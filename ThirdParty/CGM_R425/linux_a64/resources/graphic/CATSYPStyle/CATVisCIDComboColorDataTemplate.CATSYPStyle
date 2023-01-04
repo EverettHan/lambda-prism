@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <DataTemplate syp:name="ComboColor_OneColorPerRow">
+    <CATVidLayLayer>
+      <CATVidLayGrid syp:name="ColorDisplay" GridWeight="col0=0 col1=1 col2=0" VisibleFlag="0" RequestedMinimumDimension="30 0">
+        <CATVidSpacer RequestedMinimumDimension="3 3" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare BorderColor="0.5 255" Color="@Color Mode=OneWay" RequestedMinimumDimension="40 13" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="3 3" CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+      </CATVidLayGrid>
+      <CATVidGPLabel syp:name="SpecialColor" Text="@SpecialName Mode=OneWay"  TextHeight="16" VerticalAlignment="1" CropPolicy="NoCrop" VisibleFlag="1" RequestedMinimumDimension="30 0"/>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="SpecialType" Value="0">
+        <CATSYPSetter TargetName="ColorDisplay" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="SpecialColor" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <DataTemplate syp:name="ComboColor_Default_top_Linedata">
+    <!--<Template Target="CATVisCIDComboColorData" syp:name="ComboColor_Default_top_Linedata">-->
+    <CATVidLayLayer>
+           <CATVidLayGrid GridWeight="col0=0 col1=1 col2=0" VisibleFlag="0" RequestedMinimumDimension="30 0">
+        <CATVidGPSquare BorderColor="0.5 255" Color="@Color Mode=OneWay" RequestedMinimumDimension="40 13" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </DataTemplate>
+
+</Styles>

@@ -1,0 +1,158 @@
+<meta charset="UTF-8"/>
+//
+// CATIA License Manager Messages (low-level)
+//
+
+LicenseManager="Gestione licenze";
+
+//
+// Messages    AS: Allow Save
+//
+CheckFailedEx="Impossibile verificare le licenze di /P01:\n/P03\nLa sessione verrà terminata dopo /P02 tentativi con esito negativo\nSi consiglia di salvare i documenti aperti";
+
+CheckFailedAS="Impossibile verificare le licenze di /P01:\n/P03\nLe funzionalità della sessione (ad eccezione del salvataggio locale e della chiusura) non saranno disponibili dopo /P02 tentativi con esito negativo.\nSi consiglia di salvare i documenti aperti.";
+
+CheckOK="Le licenze sono state verificate";
+
+TooManyChecksFailed="Impossibile verificare le licenze dopo /P01 tentativi\nLa sessione verrà interrotta";
+
+TooManyChecksFailedAS="Impossibile verificare le licenze dopo /P01 tentativi\nLe funzionalità della sessione (ad eccezione del salvataggio locale e della chiusura) non sono più disponibili";
+
+TooManyChecksFailedAT="Impossibile verificare le licenze come previsto.\nLe funzionalità della sessione (ad eccezione del salvataggio locale e della chiusura) non sono più disponibili";
+
+TooManyChecksFailedAT2="Impossibile verificare le licenze (errore di sistema).\nLe funzionalità della sessione (a eccezione del salvataggio locale e della chiusura) non sono più disponibili";
+
+TooManyChecksAfterRevoke="Le funzionalità della sessione (ad eccezione del salvataggio locale e della chiusura) non sono più disponibili";
+
+NoSuchProduct="Prodotto richiesto non trovato: /P01";
+
+MissingPreq="/P01 non può essere utilizzato a causa di un prerequisito non autorizzato (/P02)";
+
+InconpatibleEnvironment="Non è possibile eseguire la sessione nell'ambiente in uso";
+
+NoLicenseForDemo="Nessuna licenza disponibile per la modalità Demo di /P01";
+
+LicenseRequestFailed="Licenza non concessa: /P01\nErrore: /P03 ";
+
+NULRequestFailed="Licenza simultanea non concessa: /P01\nErrore: /P02.";
+
+AllLicensesUsed="Tutte le licenze /P01 per /P02 sono utilizzate da:\n/P03";
+
+LicenseReleaseFailed="Impossibile rilasciare la licenza per /P01 \n/P02 errore: /P03";
+
+LicenseCheckFailed="Impossibile verificare la licenza per /P01 \n/P02 errore: /P03";
+
+LicenseRecovered="La licenza per /P01 è stata ripristinata";
+
+ErrorLoadingProduct="Impossibile caricare la definizione del prodotto per /P01 (codice /P02)\nReinstallarla";
+
+ProductInvalidVersion="La versione /P02 della definizione del prodotto /P01 non è valida\nReinstallarla";
+
+LicenseNotYetAvailable="La licenza /P01 per /P02 non è ancora disponibile";
+
+LicenseExpired="La licenza /P01 per /P02 è scaduta";
+
+BadHost="Licenza non concessa: /P01\nL'utente /P02 è già connesso al computer /P03\n\nRiprovare dopo aver disconnesso l'altro computer oppure continuare a lavorare sull'altro computer";
+
+LicenseSoonExpired="Le licenze concesse seguenti scadranno a breve:\n";
+
+LicenseExpIn="/P01 entro ";
+
+ExpIn24h="meno di 24 ore\n";
+
+ExpIn1day="1 giorno\n";
+
+ExpInndays="/P01 giorni\n";
+
+NoLicenseForAlias="Nessuna licenza adatta in grado di soddisfare la richiesta di /P01";
+
+ProductNotShareable="La licenza per /P01 non è condivisibile -- Contattare l'assistenza clienti";
+
+RetrieveLicenses="Attendere. /P01 sta recuperando le licenze da /P1";
+
+RetrieveLicensesFailed="Impossibile recuperare le licenze da /P1.";
+
+RetrieveLicensesSucceded="Almeno una licenza locale è mancante, scaduta o prossima alla scadenza.\nLe licenze locali sono state aggiornate in base alle decisioni in qualità di amministratore\nRiavviare la sessione.";
+
+FirstLoginFailedRestartSession="Inizializzazione delle licenze non riuscita.\nRiavviare la sessione.";
+
+RetrieveLicensesURLKO="Impossibile aggiornare le licenze locali. Il repository delle licenze remoto non è accessibile.\nContattare l'amministratore.";
+
+ProductNotAddon="La licenza per /P01 contiene un prodotto aggiuntivo/P02 non valido\nContattare l'assistenza clienti";
+
+AddonPreqNotPresent="La configurazione personalizzata /P01 non include i prerequisiti per il prodotto aggiuntivo /P02\nContattare l'assistenza clienti";
+
+ConfigHasPrereq="La configurazione /P01 non deve avere prerequisiti\nContattare l'assistenza clienti";
+
+InvalidScale="Non è possibile richiedere il prodotto /P01 in quanto la relativa scala /P02 è più elevata rispetto alle configurazioni correnti";
+
+CannotStart="Le licenze attualmente selezionate non sono valide per l'esecuzione di questa applicazione\nSelezionare le licenze appropriate tramite lo strumento CATOptionsMgtl (scheda Generale/Gestione licenze).";
+
+ProdDefNotFound="Sono state concesse /P01 licenze ma il codice associato non è installato.\nInstallarlo.";
+
+NoConfigFound="Nessuna licenza corrisponde a una configurazione installata.\nElenco licenze concesse:\n/P01\nAggiornare l'installazione o contattare l'amministratore.";
+
+NULRequestFailed="Licenza non concessa:\n/P01\n.";
+
+LicenseRevoked="L'amministratore ha aggiornato l'assegnazione dei prodotti concessi in licenza.\nLe licenze attualmente concesse non sono più valide per l'esecuzione di questa applicazione.\nChiudere la sessione.";
+
+LicOverFailed="/P01 non assegnata a questo utente.";
+
+NoLicAssigned="Nessuna licenza concessa all'utente /P01 (/P02).";
+
+NoMCSLicAssigned="Nessuna licenza MCS concessa a /P01 (/P02).";
+
+LicOverAuthFailed="Nessuna delle licenze assegnate all'utente autorizza il prodotto /P01";
+
+LicOver="Sostituzione di /P01 con /P02";
+
+LicOverIgnored="Impossibile sovrascrivere la licenza";
+
+PackagingMismatch="Mancata corrispondenza pacchetti: tutte le licenze richieste devono appartenere allo stesso pacchetto.\n-/P01\n-/P02";
+
+CasualLicAssigned="L'uso di licenze occasionali non è consentito per questa applicazione.\n/P03 - /P01 (/P02).";
+
+PlatformCasualLicMismatch="/P01 è stato dichiarato come singolo utente occasionale.\nTuttavia, le seguenti licenze richieste non sono occasionali: /P02.";
+
+//---------------------------------------------------------------------------
+// Offline mode specific errors
+//---------------------------------------------------------------------------
+GrantedLicenseExtractionFailed="Impossibile estrarre la licenza /P01.\n/P02";
+
+GrantedLicenseExtractionNotSupported="L'estrazione della licenza offline non è supportata su questo sistema operativo.";
+
+LicenseExtractionKO_MaxDuration="La licenza /P01 non può essere estratta per /P02 giorni (la durata massima consentita dal server di licenza è di /P03 giorni).";
+
+LicenseExtractionKO_LocalDirNotFound="La directory della licenza offline non esiste: /P01.";
+
+LicenseExtractionKO_LocalDirNotCreated="Impossibile creare una directory di licenza offline: /P01.";
+
+LicenseExtractionKO_LocalDirNotWriteable="Impossibile creare file nella directory /P01.\nVerificare i diritti di accesso su questa directory per l'utente corrente e la disponibilità dello spazio su disco.";
+
+LicenseExtractionKO_AlreadyOffline="L'estrazione di /P01 è già stata effettuata per l'utente /P02 sull'host /P03.";
+
+LicenseExtractionKO_NoInitialLic="Impossibile estendere la durata della licenza offline di /P01 Dati della licenza iniziale mancanti.";
+
+LicenseExtractionKO_NoKeyword="Impossibile estrarre la licenza offline di /P01: dati protetti da parola chiave.";
+
+LicenseExtractionKO_OfflineDisabled="L'estrazione della licenza offline non è attivata sul server di licenza.";
+
+LicenseExtractionKO_ExpiresBeforeEnd="La licenza /P01 non può essere estratta per /P02 giorni (la licenza scadrà tra /P03 giorni).";
+
+LicenseExtractionKO_Token="Il token /P01 non può essere estratto.";
+
+LicenseExtractionKO_AuthFailed="L'estrazione offline di /P01 non è autorizzata dal server di licenza.";
+
+LicenseExtractionKO_NoLic="Impossibile estratte la licenza offline di /P01. La licenza non è presente sul server.";
+
+WorkOfflineProdDefNotFound="Alcune funzionalità potrebbero non essere disponibili in modalità offline.\nLa licenza di /P01 non sarà richiesta perché il codice associato non è installato.\nInstallarlo.";
+
+UnsupportedOS="Versione OS non supportata";
+
+
+//
+// License Types
+//
+nodelock_or_concurrent="node-locked o simultanea";
+nodelock="node-locked";
+concurrent="simultanea";

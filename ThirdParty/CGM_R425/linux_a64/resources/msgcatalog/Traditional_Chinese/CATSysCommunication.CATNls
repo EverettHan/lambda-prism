@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="在主機 /p2 上找不到連接埠 /p1 ";
+CATSysComPortFailure_150002.Request="無法在主機 /p2 的連接埠 /p1 上宣告";
+CATSysComPortAcceptFailed_150003.Request="無法接受連接埠 /p1";
+CATSysComPortAcceptFailed_150004.Request="等待連接埠 /p1 期間發生錯誤";
+CATSysComInitSocketError_150102.Request="通訊端操作發生錯誤。可能遺失對骨幹的連線。";
+CATSysComSendSocketError_150103.Request="通訊端傳送操作發生錯誤。可能遺失對骨幹的連線。";
+CATSysComRecvSocketError_150104.Request="通訊端接收操作發生錯誤。可能遺失對骨幹的連線。";
+CATSysComMsgClassError_151001.Request="找不到訊息類別 \p1。";
+CATSysComMsgStreamError_151002.Request="類別 \p1 的資料串流期間發生錯誤。";
+CATSysComMsgUnstreamError_151003.Request="類別 \p1 的資料取消串流期間發生錯誤。";
+CATSysComMsgClassInvalid_152001.Request="訊息類別 \p1 必須實作 CATIStreamMsg。";
+CATSysComMsgClassInvalid_152002.Request="訊息類別 \p1 必須實作 CATICommMsg。";
+CATSysComMsgInvalid_152003.Request="訊息不需要回答。";
+CATSysComInstanciationError_152004.Request="無法具現化類別 \p1 的訊息物件。";
+CATSysComReentranceError_152005.Request="內部錯誤。找到重新進入條件。";
+CATSysComTimeoutOccurred_152006.Request="發生逾時。";
+CATSysComApplicationNotFound_152007.Request="目標應用程式 \p1 不存在。";

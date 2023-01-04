@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template syp:name="List" Target="CATVidCtlModelEditor">
+    <CATVidLayGrid GridWeight="row0=1">
+      <CATVidCtlListView  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" ViewMode="Multi" SelectionMode="MultiRange" syp:name="ModelEditorTreeList">
+        <CATVidCtlListView.GridView>
+        </CATVidCtlListView.GridView>
+      </CATVidCtlListView>
+
+      <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=1">
+        <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" syp:name="AddModelItem" Label="Add item" Name="AddModelItem" RequestedMinimumDimension="50 20" syp:Template="Button" Click="@OnAddModelItem"/>
+        <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" syp:name="RemoveModelItem" Label="Remove Item" Name="RemoveModelItem" RequestedMinimumDimension="50 20" syp:Template="Button" Click="@OnRemoveModelItem"/>
+      </CATVidLayGrid>
+
+    </CATVidLayGrid>
+  </Template>
+
+
+  <Template syp:name="Tree" Target="CATVidCtlModelEditor">
+    <CATVidLayGrid GridWeight="row0=1">
+
+      <CATVidCtlTreeView  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" ViewMode="Multi" SelectionMode="MultiRange" ExpanderLook="Plus" syp:name="ModelEditorTreeList">        
+        <CATVidCtlTreeView.GridView>
+        </CATVidCtlTreeView.GridView>
+      </CATVidCtlTreeView>
+
+      <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=1">
+        <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Label="Add child item" Name="AddModelChildItem" syp:name="AddModelChildItem" RequestedMinimumDimension="50 20" syp:Template="Button" EnableFlag="0" Click="@OnAddModelChildItem"/>
+        <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" syp:name="AddModelItem" Label="Add item" Name="AddModelItem" RequestedMinimumDimension="50 20" syp:Template="Button" Click="@OnAddModelItem"/>
+        <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" syp:name="RemoveModelItem" Label="Remove Item" Name="RemoveModelItem" RequestedMinimumDimension="50 20" syp:Template="Button" Click="@OnRemoveModelItem"/>        
+      </CATVidLayGrid>
+      
+    </CATVidLayGrid>
+  </Template>
+ 
+</Styles>
+

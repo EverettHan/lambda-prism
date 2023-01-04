@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0">
+
+  <STRUCTURED_BUFFER>
+    <NAME>outputBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>outstream[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>writeonly</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+  
+  <TECHNIQUE>
+  <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <VERTEX_STAGE>
+        OcclusionPackResultVS
+      </VERTEX_STAGE>
+    </PASS>
+  </TECHNIQUE>
+</EFFECT>

@@ -1,0 +1,36 @@
+struct fragment_out
+{
+	float4 color	: COLOR;
+	float depth : DEPTH;
+};
+
+struct fragment_in
+{
+	float4 color	: COLOR;
+	float4 position : WPOS;
+	float4 texcoord : TEXCOORD0;
+};
+
+fragment_out main(fragment_in IN,
+                  uniform samplerRECT sampler)
+{
+	fragment_out OUT;	
+	
+	/************* DEPTH TEST **************/
+	float4 depthtest1 = texRECT(sampler,IN.position.xyz);			
+	
+	if(depthtest1.r==0){
+	  discard;
+	}
+	
+	OUT.depth=IN.position.z;
+	
+	
+	/************* TEXTURE MAPPING *********/
+	 
+	OUT.color=IN.color;
+	
+
+	
+	return OUT;
+}

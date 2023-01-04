@@ -1,0 +1,51 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+UndefinedServerError.Diagnostic="内部サーバー エラー";
+UndefinedServerError.Advice="サポートまでご連絡ください。";
+
+ERR_01.Diagnostic="構成要素はこのセッションで開かれています。";
+ERR_01.Advice="削除しても問題ありませんが、削除操作によって元に戻すのログがフラッシュされることに注意してください。";
+
+ERR_02.Diagnostic="削除の範囲外でリファレンスがまだインスタンス化されています。";
+ERR_02.Advice="リファレンスを除去する前に既存のインスタンスの除去が必要な場合があります。";
+
+ERR_03.Diagnostic="リファレンスがVPLM制御されていません。";
+ERR_03.Advice="このリファレンスは削除できません。サーバーがライフサイクルを管理しています。";
+
+ERR_04.Diagnostic="リファレンスはロックされています。";
+ERR_04.Advice="リファレンスを削除する前にロックの除去が必要な場合があります。";
+
+ERR_05.Diagnostic="構成要素はこのセッションで開かれています。構成要素をアンロードすることはできますが、セッション内の関係する修正の一部は失われます";
+ERR_05.Advice="削除しても問題ありませんが、削除操作によって修正と [元に戻す] ログが失われることに注意してください。";
+
+ERR_06.Diagnostic="構成要素がこのセッションで開かれているため、このセッションからはアンロードできません。";
+ERR_06.Advice="削除は失敗します。構成要素がエディターによって保持されている可能性があります。";
+
+ERR_07.Diagnostic="構成要素はこのセッションで開かれています。このセッションからアンロードすることはできますが、少なくとも 1 つの別の構成要素がセッションで保持されます。 ";
+ERR_07.Advice="削除は失敗します。セッション内の関係する構成要素がエディターによって保持されている可能性があります。";
+
+ERR_08.Diagnostic="構成要素はこのセッションで開かれています。ER タイプからの構成要素はセッションから自動的にアンロードできません。 ";
+ERR_08.Advice="削除は実行できません。関係するエディターから構成要素をアンロードしてください。";
+
+ERR_09.Diagnostic="リファレンスは削除範囲外でインスタンス化されますが、インスタンスにアクセスするための十分な権限がありません。 ";
+ERR_09.Advice="このリファレンスを削除しようとしないでください。管理者に問い合わせてください。";
+
+ERR_10.Diagnostic="このモノ インスタンス化リプレゼンテーション リファレンスの集約リファレンスは削除できないため、このリプレゼンテーション リファレンスを削除できません。 ";
+ERR_10.Advice="このプレゼンテーション リファレンスを削除しようとしないでください。管理者に問い合わせてください。";
+
+

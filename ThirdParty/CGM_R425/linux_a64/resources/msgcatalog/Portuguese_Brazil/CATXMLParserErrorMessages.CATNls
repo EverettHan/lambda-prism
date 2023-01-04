@@ -1,0 +1,246 @@
+<meta charset="UTF-8"/>
+// COPYRIGHT DASSAULT SYSTEMES 
+//----------------------------
+
+
+// NLS error messages for the XMLParser component. 
+
+SourceLabel="Fonte: ";
+DescriptionLabel="Descrição: ";
+HelpfileLabel="Arquivo de ajuda: ";
+//CodeLabel = "Error code: ";
+StatementLabel="Declarações: ";
+LineLabel="Linha: ";
+ColumnLabel="Coluna: ";
+
+EditPrompt="Gostaria de editar o código-fonte da macro agora?";
+
+XML4C_XMLException="Mensagem de exceção XML4C3.0\n: /p1 Código: /p2 Arquivo de origem: /p3 Número da linha: /p4";
+Internal_Error_hr="Erro interno com hr = /p1";
+Internal_Error_msg="Erro interno com mensagem = /p1";
+
+ADAPTER_ILLEGAL_PREFIX="Prefixo de namespace inválido: /p1";
+ADAPTER_UNDECLARED_PREFIX="Prefixo de namespace não declarado: /p1";
+
+NODE_ITERATOR_ILLEGAL_STATE="CATIDOMNodeIterator::Detach já foi chamado no iterador.";
+
+XMLParserERR_0000="Erro interno. O código de retorno é igual a /p1.";
+
+XMLParserERR_1000="DOM não é exceção.";
+
+XMLParserERR_2000.Request="/p1";
+XMLParserERR_2000.Diagnostic="Exceção SAX : /p1";
+XMLParserERR_2000.Advice="";
+
+XMLParserERR_2001.Request="/p1";
+XMLParserERR_2001.Diagnostic="Exceção SAX IO : /p1";
+XMLParserERR_2001.Advice="";
+
+XMLParserERR_2002.Request="/p1";
+XMLParserERR_2002.Diagnostic="Exceção na análise SAX : /p1\nID do sistema : /p2\nID da publicação : p3\nLinha : /p4\nColuna : /p5";
+XMLParserERR_2002.Advice="";
+
+XMLParserERR_2003.Request="/p1";
+XMLParserERR_2003.Diagnostic="Exceção de análise UTF-8 : /p1\nID do sistema : /p2\nID da publicação : p3\nLinha : /p4\nColuna : /p5";
+XMLParserERR_2003.Advice="";
+
+XMLParserERR_2100.Request="Instanciar analisador SAX";
+XMLParserERR_2100.Diagnostic="Definição de opções inválida.";
+XMLParserERR_2100.Advice="A lista de nomes de opções e a lista de valores de opções devem ter o mesmo tamanho.";
+
+XMLParserERR_2101.Request="Instanciar analisador SAX";
+XMLParserERR_2101.Diagnostic="Opção não suportada \"/p1”.";
+XMLParserERR_2101.Advice="Invoque GetSupportedOptions para obter a lista de opções suportadas para esta implementação do analisador.";
+
+XMLParserERR_2102.Request="Instanciar analisador SAX";
+XMLParserERR_2102.Diagnostic="Valor inválido \"/p1\" para a opção \"/p2\".";
+XMLParserERR_2102.Advice="Consulte a documentação dos valores autorizados para esta opção.";
+
+XMLParserERR_2200.Request="/p1";
+XMLParserERR_2200.Diagnostic="Erro Dom desconhecido /p1 : /p2";
+XMLParserERR_2200.Advice="";
+
+XMLParserERR_2201.Request="/p1";
+XMLParserERR_2201.Diagnostic="INDEX_SIZE_ERR : /p1";
+XMLParserERR_2201.Advice="";
+
+XMLParserERR_2202.Request="/p1";
+XMLParserERR_2202.Diagnostic="ERRO_TAMANHO_DOMSTRING : /p1";
+XMLParserERR_2202.Advice="";
+
+XMLParserERR_2203.Request="/p1";
+XMLParserERR_2203.Diagnostic="HIERARCHY_REQUEST_ERR : /p1";
+XMLParserERR_2203.Advice="";
+
+XMLParserERR_2204.Request="/p1";
+XMLParserERR_2204.Diagnostic="WRONG_DOCUMENT_ERR : /p1";
+XMLParserERR_2204.Advice="";
+
+XMLParserERR_2205.Request="/p1";
+XMLParserERR_2205.Diagnostic="INVALID_CHARACTER_ERR : /p1";
+XMLParserERR_2205.Advice="";
+
+XMLParserERR_2206.Request="/p1";
+XMLParserERR_2206.Diagnostic="NO_DATA_ALLOWED_ERR : /p1";
+XMLParserERR_2206.Advice="";
+
+XMLParserERR_2207.Request="/p1";
+XMLParserERR_2207.Diagnostic="NO_MODIFATION_ALLOWED_ERR : /p1";
+XMLParserERR_2207.Advice="";
+
+XMLParserERR_2208.Request="/p1";
+XMLParserERR_2208.Diagnostic="NOT_FOUND_ERR : /p1";
+XMLParserERR_2208.Advice="";
+
+XMLParserERR_2209.Request="/p1";
+XMLParserERR_2209.Diagnostic="NOT_SUPPORTED_ERR : /p1";
+XMLParserERR_2209.Advice="";
+
+XMLParserERR_2210.Request="/p1";
+XMLParserERR_2210.Diagnostic="INUSE_ATTRIBUTE_ERR : /p1";
+XMLParserERR_2210.Advice="";
+
+XMLParserERR_2211.Request="/p1";
+XMLParserERR_2211.Diagnostic="INVALID_STATE_ERR : /p1";
+XMLParserERR_2211.Advice="";
+
+XMLParserERR_2212.Request="/p1";
+XMLParserERR_2212.Diagnostic="SINTAXE_ERR : /p1";
+XMLParserERR_2212.Advice="";
+
+XMLParserERR_2213.Request="/p1";
+XMLParserERR_2213.Diagnostic="INVALID_MODIFICATION_ERR : /p1";
+XMLParserERR_2213.Advice="";
+
+XMLParserERR_2214.Request="/p1";
+XMLParserERR_2214.Diagnostic="NAMESPACE_ERR : /p1";
+XMLParserERR_2214.Advice="";
+
+XMLParserERR_2215.Request="/p1";
+XMLParserERR_2215.Diagnostic="INVALID_ACCESS_ERR : /p1";
+XMLParserERR_2215.Advice="";
+
+XMLParserERR_2300.Request="/p1";
+XMLParserERR_2300.Diagnostic="Nome de propriedade SAX2 não reconhecido : /p1";
+XMLParserERR_2300.Advice="";
+
+XMLParserERR_2301.Request="/p1";
+XMLParserERR_2301.Diagnostic="Nome de propriedade SAX2 não suportado : /p1";
+XMLParserERR_2301.Advice="";
+
+XMLParserERR_2302.Request="/p1";
+XMLParserERR_2302.Diagnostic="Nome do recurso SAX2 não reconhecido : /p1";
+XMLParserERR_2302.Advice="";
+
+XMLParserERR_2303.Request="/p1";
+XMLParserERR_2303.Diagnostic="Nome do recurso SAX2 não suportado : /p1";
+XMLParserERR_2303.Advice="";
+
+XMLParserERR_2304.Request="/p1";
+XMLParserERR_2304.Diagnostic="Nome da propriedade SAX2 : /p1 não pode ser modificado durante a análise";
+XMLParserERR_2304.Advice="";
+
+XMLParserERR_2305.Request="/p1";
+XMLParserERR_2305.Diagnostic="Nome do recurso SAX2 : /p1 não pode ser modificado enquanto a análise estiver em andamento";
+XMLParserERR_2305.Advice="";
+
+XMLParserERR_2400.Request="/p1";
+XMLParserERR_2400.Diagnostic="Erro de E/S";
+XMLParserERR_2400.Advice="";
+
+XMLParserERR_2401.Request="/p1";
+XMLParserERR_2401.Diagnostic="Erro de uso da API: /p1 . A ação solicitada não pode ser executada ou resultaria em um documento XML não bem formado";
+XMLParserERR_2401.Advice="";
+
+XMLParserERR_2402.Request="";
+XMLParserERR_2402.Diagnostic="Transcodificação de caracteres não suportada";
+XMLParserERR_2402.Advice="";
+
+XMLParserERR_2500.Request="Erro XML binário";
+XMLParserERR_2500.Diagnostic="/p1";
+XMLParserERR_2500.Advice="";
+BINARY_XML_DIAGNOSTIC="/p1: Nenhum diagnóstico detalhado disponível";
+
+ERR_CHARACTER_INVALID="Sequência ilegal ']]>' nos dados de caracteres";
+ERR_CDATA_INVALID="Sequência ilegal ']]>' na seção CDATA";
+ERR_PI_INVALID_DATA="Caracteres inválidos no processamento de dados de instrução";
+ERR_PI_XML="Destino de instrução de processamento ilegal";
+ERR_INVALID_COMMENT="Sequência inválida '--' no comentário";
+ERR_ATTRIBUTE_DEFINED="Atributo já definido";
+ERR_XMLSPACE_VALUE="Valor inválido para atributo xml:space";
+ERR_XMLNS_PREFIX="O prefixo xmlns é reservado para namespaces xml";
+ERR_XML_PREFIX="O prefixo xml é reservado";
+ERR_INVALID_VALUE="Valor inválido para opção";
+ERR_DECLARATION="Não é possível gravar a declaração XML";
+ERR_DOCTYPE="Não é possível gravar o tipo de documento";
+ERR_NO_PREFIX_DEFINED="Nenhum prefixo definido para uri";
+ERR_DOCUMENT_CLOSED="O documento já foi fechado";
+ERR_NO_CURRENT_ELEMENT="Nenhum elemento atual";
+ERR_NO_DOCUMENT="Nenhum documento aberto";
+ERR_INVALID_NAME="Nome inválido";
+ERR_INVALID_NCNAME="Ncname inválido";
+ERR_INVALID_PUBID="Id público inválido";
+ERR_INVALID_SYSTEMID="Id do sistema inválido";
+ERR_INVALID_CHARACTER_ENTITY="Entidade de caractere inválida";
+ERR_INVALID_CHARS="Caracteres XML inválidos";
+
+XMLParserERR_2600.Request="Erro de instanciação do analisador XML";
+XMLParserERR_2600.Diagnostic="O aplicativo falhou porque o analisador MSXML XML, que é um pré-requisito, não está instalado em sua máquina";
+XMLParserERR_2600.Advice="Consultar a documentação para obter instruções sobre como baixar e instalar o componente MSXML";
+
+XMLParserERR_2601.Request="Erro de instanciação do analisador XML";
+XMLParserERR_2601.Diagnostic="O aplicativo falhou porque o analisador MS XMLLite, que é um pré-requisito, não está instalado em sua máquina";
+XMLParserERR_2601.Advice="Consultar a documentação para obter instruções sobre como baixar e instalar o componente XMLLite";
+
+XMLParserERR_2700.Request="CATIXMLDOMDocumentBuilder::Gravar";
+XMLParserERR_2700.Diagnostic="Erro de falta de memória";
+XMLParserERR_2700.Advice="";
+
+XMLParserERR_2800.Request="Erro de sintaxe XPath";
+XMLParserERR_2800.Diagnostic="/p1";
+XMLParserERR_2800.Advice="";
+
+XMLParserERR_2801.Request="Erro de avaliação do XPath";
+XMLParserERR_2801.Diagnostic="/p1";
+XMLParserERR_2801.Advice="";
+
+XMLParserERR_2900.Request="Obter opção XSLT";
+XMLParserERR_2900.Diagnostic="A opção \"/p1\". não está definida";
+XMLParserERR_2900.Advice="Definir a opção XSLT.";
+
+XMLParserERR_2901.Request="Definir a opção XSLT";
+XMLParserERR_2901.Diagnostic="Opção não suportada \"/p1”.";
+XMLParserERR_2901.Advice="Consultar a documentação para obter os nomes das opções de suporte.";
+
+XMLParserERR_2902.Request="Definir a opção XSLT";
+XMLParserERR_2902.Diagnostic="Valor inválido \"/p2\" para a opção \"/p1\".";
+XMLParserERR_2902.Advice="Consultar a documentação dos valores autorizados para esta opção.";
+
+XMLParserERR_2903.Request="Obter parâmetro XSLT";
+XMLParserERR_2903.Diagnostic="O parâmetro \"{/p2}/p1”. não está definido";
+XMLParserERR_2903.Advice="Definir o parâmetro XSLT.";
+
+XMLParserERR_2910.Request="Executar XSLT: Ferramentas administrativas";
+XMLParserERR_2910.Diagnostic="Nenhuma fonte de entrada especificada";
+XMLParserERR_2910.Advice="Especificar uma fonte de entrada.";
+
+XMLParserERR_2911.Request="Executar XSLT: Ferramentas administrativas";
+XMLParserERR_2911.Diagnostic="Nenhuma fonte de saída especificada";
+XMLParserERR_2911.Advice="Especificar uma fonte de saída.";
+
+XMLParserERR_2912.Request="Executar XSLT";
+XMLParserERR_2912.Diagnostic="Erro de execução: /p1";
+XMLParserERR_2912.Advice="";
+
+XMLParserERR_3000.Request="/p1";
+XMLParserERR_3000.Diagnostic="Erro de uso da API: /p1.";
+XMLParserERR_3000.Advice="";
+
+XMLParserERR_3001.Request="/p1";
+XMLParserERR_3001.Diagnostic="Erro do analisador de recebimento: /p1.";
+XMLParserERR_3001.Advice="";
+
+ERR_SUBTREE_NO_START_ELEMENT="O leitor não está posicionado em um nó do tipo NodeType_StartElement";
+ERR_LOCK_BY_SUBTREE_READER="O leitor está bloqueado por um leitor de subárvore";
+ERR_NO_CURRENT_NODE="Nenhum nó atual";
+ERR_INDEX="Índice de atributo fora dos limites";

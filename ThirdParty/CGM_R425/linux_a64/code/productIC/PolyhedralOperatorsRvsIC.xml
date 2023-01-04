@@ -1,0 +1,26 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATCloudBasicResources"/>
+  <prerequisite access = "Protected" name = "CATFuzzyOperators"/>
+  <prerequisite access = "Protected" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" name = "PolyhedralBodyOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SystemTS"/>
+  <authorize access = "Protected" name = "CATCloudEditorResources"/>
+  <authorize access = "Protected" name = "CATCloudEditorUI"/>
+  <authorize access = "Protected" name = "DELAdditiveMfgAlgos"/>
+  <authorize access = "Protected" comment = "for code rearchitecture in Additive Manufacturing - (TYF's request/14-apr-2021)" name = "DELAdditiveMfgServices"/>
+  <authorize access = "Protected" comment = "for GEOVIA (vertices confusion) - (FBR's request/29-jan-2021)" name = "GEODataExchangeModel"/>
+  <authorize access = "Protected" name = "Milling2DServices"/>
+  <authorize access = "Protected" name = "CATCloudEditorUI.tst"/>
+  <authorize access = "Protected" name = "CATSubdivisionMeshGen.tst"/>
+  <authorize access = "Protected" name = "PolyhedralOperatorsRvs.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

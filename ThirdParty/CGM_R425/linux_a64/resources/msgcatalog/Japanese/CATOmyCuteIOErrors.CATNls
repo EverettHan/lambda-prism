@@ -1,0 +1,80 @@
+<meta charset="UTF-8"/>
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2005
+//=================================================================
+//
+// Usage Notes:    This is the CuteIO-PowerIO Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to CuteIO/PowerIO functions
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error.
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters :
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use.
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+
+//=================   DURING LOAD PROCESS  ===========================================
+//=================   DURING UNLOAD PROCESS  =========================================
+//=================   DURING LOCAL SAVE PROCESS  =====================================
+//=================   DURING CLOSE PROCESS  ==========================================
+//=================   DURING ASYNCHRONOUS LOAD PROCESS  ==============================
+
+//=================   DURING SAVE PROCESS  ===========================================
+
+// To be interpreted by the client save engine - factorisation case
+CIO_Save_CopyURL_Error.Diagnostic="このトランザクションで少なくとも1つのストリームをボールトにアップロードできません。";
+CIO_Save_CopyURL_Error.Advice="サーバー接続を確認してください";
+CIO_Save_CopyURL_Error.Request="サーバー接続に問題がない場合は、サポート担当員に連絡してください";
+
+CIO_Open_Index_Error.Diagnostic="キャッシュ インデックスを開けません。キャッシュをリセットしてください。";
+CIO_Open_Index_Error.Advice="";
+CIO_Open_Index_Error.Request="";
+CIO_Version_Cache_Error.Diagnostic="キャッシュ バージョンが異なります。キャッシュをリセットしてください。";
+CIO_Version_Cache_Error.Advice="";
+CIO_Version_Cache_Error.Request="";
+CIO_LS_Cache_Error.Diagnostic="ローカルの保存イメージが多すぎます。キャッシュをリセットしてください";
+CIO_LS_Cache_Error.Advice="";
+CIO_LS_Cache_Error.Request="";
+CIO_Coherency_Index_Error.Diagnostic="インデックス ファイルが存在しないか欠落しています。キャッシュをリセットしてください";
+CIO_Coherency_Index_Error.Advice="";
+CIO_Coherency_Index_Error.Request="";
+//=================   DURING OPEN PROCESS  ===========================================
+CIO_Index_Points_Missing_Files.Diagnostic="キャッシュで矛盾が検出されました。キャッシュは次回の再起動時に修復されます。ローカルの保存イメージが失われます";
+CIO_Index_Points_Missing_Files.Advice="変更を保存して、アプリケーションを再起動してください。";
+CIO_Index_Points_Missing_Files.Request="";
+
+CIO_LoadCommit_Points_Missing_Files.Diagnostic="一部のファイルはサーバーからダウンロードできません";
+CIO_LoadCommit_Points_Missing_Files.Advice="サーバー接続に問題がない場合は、サポート担当員に連絡して格納の整合性をチェックしてください";
+CIO_LoadCommit_Points_Missing_Files.Request="";
+
+CIO_SaveCommit_Points_Missing_Files.Diagnostic="一部のファイルがストアにアップロードできません";
+CIO_SaveCommit_Points_Missing_Files.Advice="再度保存してみてください";
+CIO_SaveCommit_Points_Missing_Files.Request="";

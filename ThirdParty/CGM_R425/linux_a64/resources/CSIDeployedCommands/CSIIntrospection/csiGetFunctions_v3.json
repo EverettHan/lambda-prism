@@ -1,0 +1,45 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns a list of function definition for given pools if specified",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pools",
+          "basicArray": "string",
+          "optional": {
+            "default_value": "[]"
+          },
+          "desc": "Specify for which pool name functions must be retrieved. By default, functions from all pools are returned"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "functions",
+          "typeArray": "CSIDeclarativeFunctionDefinitionV3",
+          "desc": "List of retrieved function definition for specified pools"
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Errors throws during declarative functions parsing"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

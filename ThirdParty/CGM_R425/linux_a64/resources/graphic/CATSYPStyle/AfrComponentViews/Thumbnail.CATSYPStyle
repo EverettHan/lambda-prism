@@ -1,0 +1,968 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="basicTweakers.sypstyle"/>
+  </Resources>
+
+  <!--===================================-->
+  <!--For Thumbails -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Default_TPC">
+    <CATVidCtlBorder syp:name="MainBorder" syp:Template="Shadow">
+      <CATVidLayGrid Name="Layer" CellSpacing="2" GridWeight="row0=1">
+        <CATVidLayLayer Name="ButtonLayer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+          <CATVidGPSquare Color="219 224 189 150"/>
+          <CATVidLayGrid Name="ButtonGrid" CellSpacing="2" GridWeight="row0=1 col0=1">
+            <CATVidCtlButton syp:name="Button" syp:Template="Button"
+                             CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                             FocusableFlag="0"
+                             ForegroundColor="@ForegroundColor"
+                             BackgroundColor="219 224 189 150"
+                             Icon="@Thumbnail"
+                             IconPixelImage="@ThumbPixelImage"
+                             IconDimension="144 108"
+                             Tooltip="@Display"
+                             CursorShape="NorthHandCursor"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+        <CATVidLayLayer Name="Layer" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+          <CATVidGPSquare Color="219 224 189 150" Name="PickZone" PickFlag="1" UseManipulatorFlag="1"/>
+          <CATVidGPLabel Text="@Display" TextHeight="16" FontName="Arial" CaptionFontFlag="@FontWeight"
+                         TesselateFontFlag="@TesselateFontFlag" CropPolicy="CropWithDots"
+                         TextColor="0.25 255" HorizontalAlignment="1"/>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATVidCtlBorder>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!-- CATCAfrList_NewClassic -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_NewClassic">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData" CATAfrColor="@ShadingColor">
+      <CATVidLayLayer syp:name="LayLayerThumb">
+        <CATVidGPNinePatchSquare syp:name="ContourSquare"
+                                 ScalableAreaBorder="5"
+                                 Texture="Thumbnail_Normal.png"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 RequestedMinimumDimension = "156 120"/>
+        <CATVidLayGrid CellSpacing = "6">
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <!-- Thumbnails -->
+            <CATVidGPSquare Name="Thumbnail"
+                            Texture = "@Thumbnail"
+                            PixelImage = "@ThumbPixelImage"
+                            AnimationOnFlag = "@LoaderFlag"/>
+            <!-- Icone ranking -->
+            <CATVidLaySideAttach>
+              <CATVidGPSquare Name="RankingIcon"
+                              RequestedMinimumDimension = "88 20"
+                              PixelImage = "@ThumbDisplay"
+                              CATVidLaySideAttach.IndexedConstraints="leftPx=23 topPx=2"/>
+            </CATVidLaySideAttach>
+            <!-- Icone type and label -->
+            <CATVidLayGrid CellSpacing = "0" GridWeight="row0=1">
+              <!-- Spacer pour le decalage bas -->
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATAfrVidLayLayerForThumbnail syp:name="LayLayerMain"
+                                             Display = "@Display"
+                                             ActivateTextFlag="@ActivateTextFlag Mode=TwoWays"
+                                             CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+                <!-- Square du fond -->
+                <CATVidGPSquare syp:name="BackGroundSquare"
+                                Color="255 255 255 220"
+                                PickFlag="1"
+                                Name="SquareDuFond"/>
+                <!-- Icon type and Display -->
+                <CATVidLayGrid CellSpacing = "0" GridWeight="col1=2"
+                               Color = "@VidColor ElementName=MetaData"
+                               RequestedMinimumDimension = "144 21">
+                  <CATVidSpacer RequestedMinimumDimension = "5 5"
+                                CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidGPSquare syp:name="IconType" Name="SquareIconType"
+                                RequestedMinimumDimension = "16 16"
+                                Texture = "@Icon"
+                                PixelImage = "@IconPixelImage"
+                                VisibleFlag="0"
+                                LayoutWhenUnvisibleFlag="0"
+                                CATVidLayGrid.IndexedConstraints = "x=0 y=1 attach=LT"/>
+                  <CATAfrVidCtlForThumbnail Name="@Name"
+                                            VisibleFlag="1"
+                                            RequestedMinimumDimension = "123 21"
+                                            Display = "@Display"
+                                            ReadOnlyFlag="@ReadOnlyFlag"
+                                            EditorFlag="@EditorFlag Mode=TwoWays"
+                                            SelectedFlag="@SelectedFlag Mode=TwoWays"
+                                            ActivateTextFlag="@ActivateTextFlag"
+                                            EditingFinished="@HandleItemEvent"
+                                            FontHeight="12"
+                                            CATVidLayGrid.IndexedConstraints = "x=1 y=1 attach=RLTB">
+                  </CATAfrVidCtlForThumbnail>
+                </CATVidLayGrid>
+              </CATAfrVidLayLayerForThumbnail>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconTypeFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconTypeFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Normal.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Over.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="2">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Selected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="3">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_UIActive.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="4">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSelected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="5">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="6">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="7">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_SUI.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrList_Classic_Tiers">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData" CATAfrColor="@ShadingColor">
+      <CATVidLayLayer syp:name="LayLayerThumb">
+        <CATVidGPNinePatchSquare syp:name="ContourSquare"
+                                 ScalableAreaBorder="5"
+                                 Texture="Thumbnail_Normal.png"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 RequestedMinimumDimension = "110 84"/>
+        <CATVidLayGrid CellSpacing = "6">
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <!-- Thumbnails -->
+            <CATVidGPSquare Name="Thumbnail"
+                            Texture = "@Thumbnail"
+                            PixelImage = "@ThumbPixelImage"
+                            AnimationOnFlag = "@LoaderFlag"/>
+            <!-- Icone type and label -->
+            <CATVidLayGrid CellSpacing = "0" GridWeight="row0=1">
+              <!-- Spacer pour le decalage bas -->
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATAfrVidLayLayerForThumbnail syp:name="LayLayerMain"
+                                             Display = "@Display"
+                                             ActivateTextFlag="@ActivateTextFlag Mode=TwoWays"
+                                             CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+                <!-- Square du fond -->
+                <CATVidGPSquare syp:name="BackGroundSquare"
+                                Color="255 255 255 220"
+                                PickFlag="1"
+                                Name="SquareDuFond"/>
+                <!-- Icon type and Display -->
+                <CATVidLayGrid CellSpacing = "0" GridWeight="col1=2"
+                               Color = "@VidColor ElementName=MetaData"
+                               RequestedMinimumDimension = "100 21">
+                  <CATVidSpacer RequestedMinimumDimension = "5 5"
+                                CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidGPSquare syp:name="IconType" Name="SquareIconType"
+                                RequestedMinimumDimension = "16 16"
+                                Texture = "@Icon"
+                                PixelImage = "@IconPixelImage"
+                                VisibleFlag="0"
+                                LayoutWhenUnvisibleFlag="0"
+                                CATVidLayGrid.IndexedConstraints = "x=0 y=1 attach=LT"/>
+                  <CATAfrVidCtlForThumbnail Name="@Name"
+                                            VisibleFlag="1"
+                                            RequestedMinimumDimension = "86 21"
+                                            Display = "@Display"
+                                            ReadOnlyFlag="@ReadOnlyFlag"
+                                            EditorFlag="@EditorFlag Mode=TwoWays"
+                                            SelectedFlag="@SelectedFlag Mode=TwoWays"
+                                            ActivateTextFlag="@ActivateTextFlag"
+                                            EditingFinished="@HandleItemEvent"
+                                            FontHeight="12"
+                                            CATVidLayGrid.IndexedConstraints = "x=1 y=1 attach=RLTB">
+                  </CATAfrVidCtlForThumbnail>
+                </CATVidLayGrid>
+              </CATAfrVidLayLayerForThumbnail>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconTypeFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconTypeFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Normal.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Over.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="2">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Selected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="3">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_UIActive.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="4">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSelected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="5">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="6">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="7">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_SUI.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!-- CATCAfrList_NewTile -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_NewTile">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData" CATAfrColor="@ShadingColor">
+      <CATVidLayLayer syp:name="LayLayerTile">
+        <!-- Contour -->
+        <CATVidGPNinePatchSquare syp:name="ContourSquare"
+                                 ScalableAreaBorder="5"
+                                 Texture="Thumbnail_Normal.png"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 RequestedMinimumDimension = "386 70"/>
+        <CATVidLayGrid CellSpacing = "6" GridWeight="row1=1 col1=1">
+          <CATVidLayGrid RequestedMinimumDimension = "60 60" 
+                         Color = "233 234 236 220"
+                         CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB">
+            <CATVidGPSquare Name="TileThumbnail"
+                            Texture = "@TileIcon"
+                            PixelImage = "@TilePixelImage"
+                            AnimationOnFlag = "@LoaderFlag"
+                            RequestedMinimumDimension = "60 45" 
+                            CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+            </CATVidLayGrid>
+          <CATVidLayGrid CellSpacing = "1" 
+                         CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+            <!-- Title -->
+            <CATVidLayLayer CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=RLT">
+              <CATVidGPSquare Name="TileLabelSquare"
+                              Color = "@VidColor ElementName=MetaData"/>
+              <CATAfrVidCtlForThumbnail syp:Template="Tile"
+                                        Name="@Name"
+                                        VisibleFlag="1"
+                                        Display = "@Display"
+                                        ReadOnlyFlag="@ReadOnlyFlag"
+                                        EditorFlag="@EditorFlag Mode=TwoWays"
+                                        SelectedFlag="@SelectedFlag Mode=TwoWays"
+                                        ActivateTextFlag="@ActivateTextFlag"
+                                        EditingFinished="@HandleItemEvent"
+                                        FontHeight="12"
+                                        RequestedMinimumDimension="285 12">
+              </CATAfrVidCtlForThumbnail>
+            </CATVidLayLayer>
+              <!-- Description -->
+            <CATVidGPLabel FontName="3ds"
+                           FontSize="10"
+                           HorizontalAlignment="0"
+                           VerticalAlignment="0"
+                           CropPolicy="CropWithDots"
+                           LeftMargin="5"
+                           RightMargin="0"
+                           TopMargin="0"
+                           Text = "@Description"
+                           TextColor="142 142 142 255"
+                           RequestedMinimumDimension="285 10"
+                           CATVidLayGrid.IndexedConstraints = "x=0 y=1 attach=RLT"/>
+            <!-- Tile Info -->
+            <CATAfrVidCtlForTextTile RequestedMinimumDimension = "284 20"
+                                     FontSize="10"
+                                     Display = "@TileInfo"
+                                     CATVidLayGrid.IndexedConstraints = "x=0 y=2 attach=RLT"/>
+          </CATVidLayGrid>
+        </CATVidLayGrid>
+        <CATVidLaySideAttach>
+          <CATVidGPSquare Name="TileIconType"
+                          RequestedMinimumDimension = "16 16"
+                          Texture = "@Icon"
+                          CATVidLaySideAttach.IndexedConstraints="leftPx=54 topPx=8"/>
+        </CATVidLaySideAttach>
+      </CATVidLayLayer>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailContour" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Normal.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Over.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="2">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Selected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="3">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_UIActive.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="4">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSelected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="5">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="6">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="7">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_SUI.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!-- CATCAfrList_ListIconText -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_ListIconText">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData" CATAfrColor="@ShadingColor">
+      <CATVidLayLayer syp:name="LayLayerTile">
+        <!-- Contour -->
+        <CATVidGPNinePatchSquare syp:name="ContourSquare"
+                                 ScalableAreaBorder="5"
+                                 Texture="Thumbnail_Normal.png"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 RequestedMinimumDimension = "170 20"/>
+        <CATVidLayGrid CellSpacing = "5" GridWeight="col1=1">
+          <CATVidGPSquare Name="IconType"
+                          RequestedMinimumDimension = "16 16"
+                          Texture = "@Icon"
+                          CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=L"/>
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints = "x=1 y=0 attach=RLT">
+            <CATVidGPSquare Name="TileLabelSquare"
+                            Color = "@VidColor ElementName=MetaData"/>
+            <CATAfrVidCtlForThumbnail syp:Template="Tile"
+                                        Name="@Name"
+                                        VisibleFlag="1"
+                                        Display = "@Display"
+                                        ReadOnlyFlag="@ReadOnlyFlag"
+                                        EditorFlag="@EditorFlag Mode=TwoWays"
+                                        SelectedFlag="@SelectedFlag Mode=TwoWays"
+                                        ActivateTextFlag="@ActivateTextFlag"
+                                        EditingFinished="@HandleItemEvent"
+                                        FontHeight="12"
+                                        RequestedMinimumDimension="155 12">
+            </CATAfrVidCtlForThumbnail>
+          </CATVidLayLayer>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailContour" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Normal.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Over.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="2">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_Selected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="3">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_UIActive.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="4">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSelected.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="5">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OverSUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="6">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_OUI.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailContour" Value="7">
+        <CATSYPSetter Property="Texture" TargetName="ContourSquare" Value="Thumbnail_SUI.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+    
+  <!--===================================-->
+  <!--Top Line for combo type -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_ComboRep">
+    <CATVidLayGrid CellSpacing="5" RequestedMinimumDimension="0 20">
+      <CATVidGPLabel syp:name="Label" 
+                     Text="@Title" 
+                     TextHeight="16" 
+                     TextColor="110 110 110 255" 
+                     CropPolicy="NoCrop" 
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+    </CATVidLayGrid>
+  </DataTemplate>
+    
+  <!--===================================-->
+  <!--CATCAfrList_Default -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Default">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData" CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col1=1" CellSpacing = "0" Color = "1 0">
+        <CATVidGPSquare RequestedMinimumDimension = "150 150"
+                        Color = "0 25"
+                        CATVidLayGrid.IndexedConstraints = "x=0 y=0 xSpan=5 ySpan=4"/>
+        <CATVidGPSquare RequestedMinimumDimension = "144 144"
+                        PickFlag = "0"
+                        Color = "0 254"
+                        CATVidLayGrid.IndexedConstraints = "x=1 y=1 xSpan=2 ySpan=2"/>
+        <CATVidGPSquare RequestedMinimumDimension = "150 3"
+                        Color = "@VidColor ElementName=MetaData"
+                        CATVidLayGrid.IndexedConstraints = "x=0 y=0 xSpan=5 ySpan=1"/>
+        <CATVidGPSquare RequestedMinimumDimension = "3 35"
+                        CATVidLayGrid.IndexedConstraints = "x=0 y=1 xSpan=1 ySpan=1"/>
+        <CATVidGPSquare RequestedMinimumDimension = "3 35"
+                        CATVidLayGrid.IndexedConstraints = "x=3 y=1 xSpan=1 ySpan=1"/>
+        <CATVidGPSquare RequestedMinimumDimension = "150 4"
+                        CATVidLayGrid.IndexedConstraints = "x=0 y=3 xSpan=4 ySpan=1"/>
+        <CATVidLayGrid CellSpacing = "0" Color = "1 0" GridWeight="col1=1"
+                       CATVidLayGrid.IndexedConstraints = "x=1 y=1 attach=RLTB">
+          <CATVidGPSquare syp:name="IconType"
+                          RequestedMinimumDimension = "22 22"
+                          Texture = "@Icon"
+                          PixelImage = "@IconPixelImage"
+                          VisibleFlag="0"
+                          LayoutWhenUnvisibleFlag="0"
+                          CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=LT"/>
+          <!--<CATVidCtlTextEditor Text="@Display"
+                               RequestedMinimumDimension="122 32"
+                               ReadOnlyFlag="1"
+                               VScrollbarPolicy="AlwaysHidden"
+                               HScrollbarPolicy="AlwaysHidden"
+                               BackgroundColor="0.1 0"
+                               WordWrapMode="WrapAtWordBoundaryOrAnywhere"
+                               TextInteractionFlags="NoTextInteraction"
+                               CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL"/>-->
+
+          <CATVidGPLabel RequestedMinimumDimension = "122 35"
+                         TextHeight="16"
+                         HorizontalAlignment="0"
+                         VerticalAlignment="0"
+                         CropPolicy="CropWithDots"
+                         LeftMargin="3"
+                         RightMargin="3"
+                         TopMargin="1"
+                         Text = "@Display"
+                         TextColor="1 255"
+                         CATVidLayGrid.IndexedConstraints = "x=1 y=0 attach=RLTB"/>
+
+        </CATVidLayGrid>
+        <CATVidLayLayer syp:name="Image"
+                        VisibleFlag="0"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=2 xSpan=2 ySpan=1 attach=RLTB">
+          <CATVidGPSquare RequestedMinimumDimension = "144 108"
+                        Texture = "@Thumbnail"
+                        PixelImage = "@ThumbPixelImage"/>
+        </CATVidLayLayer>
+        <CATVidLayLayer syp:name="Text"
+                        VisibleFlag="0"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=2 xSpan=2 ySpan=1 attach=RLTB">
+          <CATVidGPLabel Text="@Description"
+                         RequestedMinimumDimension = "144 108"
+                         TextColor = "0.7 255"
+                         TextHeight="16"
+                         HorizontalAlignment="1"
+                         VerticalAlignment="2"
+                         CropPolicy="CropWithDots"
+                         LeftMargin="3"
+                         RightMargin="3"
+                         BottomMargin="0"
+                         TopMargin = "1"
+                         BoldFlag="0"/>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+   
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Text" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Image" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Text" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Image" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconTypeFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconTypeFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrList_Default_Viewer -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Default_Viewer">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData" CATAfrColor="@ShadingColor">
+      <CATVidLayGrid CellSpacing = "0" Color = "1 0">
+      <CATVidGPSquare RequestedMinimumDimension = "150 150"
+                      Color = "0 25" 
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=0 xSpan=5 ySpan=4"/>
+      <CATVidGPSquare RequestedMinimumDimension = "144 144"
+                      PickFlag = "0"
+                      Color = "0 254"
+                      CATVidLayGrid.IndexedConstraints = "x=1 y=1 xSpan=2 ySpan=2"/>
+      <CATVidGPSquare RequestedMinimumDimension = "150 3"
+                      Color = "@VidColor ElementName=MetaData"
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=0 xSpan=5 ySpan=1"/>
+      <CATVidGPSquare RequestedMinimumDimension = "3 35"
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=1 xSpan=1 ySpan=1"/>
+      <CATVidGPSquare RequestedMinimumDimension = "3 35"
+                      CATVidLayGrid.IndexedConstraints = "x=3 y=1 xSpan=1 ySpan=1"/>
+      <CATVidGPSquare RequestedMinimumDimension = "150 4"
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=3 xSpan=4 ySpan=1"/>
+      <CATVidGPSquare RequestedMinimumDimension = "22 22"
+                      Texture = "@Icon"
+                      PixelImage = "@IconPixelImage"
+                      LayoutWhenUnvisibleFlag="0"
+                      CATVidLayGrid.IndexedConstraints = "x=1 y=1 xSpan=1 ySpan=1 attach=LT"/>
+      <CATVidGPText RequestedMinimumDimension = "122 35"
+                    Color = "1 255"
+                    WordWrapFlag = "1"
+                    LeftMargin = "3"
+                    RightMargin = "3"
+                    TopMargin = "1"
+                    BottomMargin = "0"
+                    WordWrapPolicy="Auto"
+                    Text = "@Display"
+                    CATVidLayGrid.IndexedConstraints = "x=2 y=1 xSpan=1 ySpan=1 attach=RLTB"/>
+      <CATVidCtl3DViewer SpecialRep="@Rep3D"
+                         ShowReferenceAxisFlag="0"
+                         Camera="@Camera"
+                         RequestedMinimumDimension = "144 108"
+                         CATVidLayGrid.IndexedConstraints="x=1 y=2 xSpan=2 ySpan=1 attach=RLTB"/>
+    </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrList_Drafting3DMaster -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Drafting3DMaster">
+    <CATVidLayGrid GridWeight="row0=1">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="24 24">
+        <CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="7 7"/>
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1" RequestedMinimumDimension="@RequestedMinimumDimension">
+            <CATVidGPSquare Color="0 255" />
+            <CATVidCtl3DViewer SpecialRep="@Rep" Camera="@Camera" ShowReferenceAxisFlag="0"/>
+            <CATVidCtlButton syp:Template="Button" CursorShape="NorthHandCursor" AlphaFilterValue="0" DragAndDropFlag="@DragAndDropFlag" Click="@Click" DoubleClick="@DoubleClick" Drag="@Drag" PreDrop="@PreDrop" EndPreDrop="@EndPreDrop" Drop="@Drop" PostDrop="@PostDrop" TooltipTitle="@DisplayText" TooltipShortHelp="@DisplayText"/>
+          </CATVidLayLayer>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2" RequestedMinimumDimension="4 4"/>
+        </CATVidLayGrid>
+        <CATVidGPSmartSquare GridWeight="row1=1 col1=1" ColorizeBlackPixelTo="@ColorizeBlackPixelToColorInside" Texture="T_DlcThumbnailBorderInside.png">
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=0 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="10 7" CATVidGPSmartSquare.GPConstraints="x=1 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=2 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="7 10" CATVidGPSmartSquare.GPConstraints="x=0 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="10 10" CATVidGPSmartSquare.GPConstraints="x=1 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="7 10" CATVidGPSmartSquare.GPConstraints="x=2 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=0 y=2"/>
+          <CATVidSpacer RequestedMinimumDimension="10 7" CATVidGPSmartSquare.GPConstraints="x=1 y=2"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=2 y=2"/>
+        </CATVidGPSmartSquare>
+        <CATVidGPSmartSquare GridWeight="row1=1 col1=1" ColorizeBlackPixelTo="@ColorizeBlackPixelToColorOuter" Texture="T_DlcThumbnailBorderOuter.png">
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=0 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="10 7" CATVidGPSmartSquare.GPConstraints="x=1 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=2 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="7 10" CATVidGPSmartSquare.GPConstraints="x=0 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="10 10" CATVidGPSmartSquare.GPConstraints="x=1 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="7 10" CATVidGPSmartSquare.GPConstraints="x=2 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=0 y=2"/>
+          <CATVidSpacer RequestedMinimumDimension="10 7" CATVidGPSmartSquare.GPConstraints="x=1 y=2"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=2 y=2"/>
+        </CATVidGPSmartSquare>
+        <CATVidGPSmartSquare GridWeight="row1=1 col1=1" ColorizeBlackPixelTo="@ColorizeBlackPixelToColorInner" Texture="T_DlcThumbnailBorderInner.png">
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=0 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="10 7" CATVidGPSmartSquare.GPConstraints="x=1 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=2 y=0"/>
+          <CATVidSpacer RequestedMinimumDimension="7 10" CATVidGPSmartSquare.GPConstraints="x=0 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="10 10" CATVidGPSmartSquare.GPConstraints="x=1 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="7 10" CATVidGPSmartSquare.GPConstraints="x=2 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=0 y=2"/>
+          <CATVidSpacer RequestedMinimumDimension="10 7" CATVidGPSmartSquare.GPConstraints="x=1 y=2"/>
+          <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="x=2 y=2"/>
+        </CATVidGPSmartSquare>
+      </CATVidLayLayer>
+      <!--CATVidCtlButton syp:Template="Button" CursorShape="NorthHandCursor" AlphaFilterValue="0" DragAndDropFlag="@DragAndDropFlag" Click="@Click" DoubleClick="@DoubleClick" Drag="@Drag" PreDrop="@PreDrop" EndPreDrop="@EndPreDrop" Drop="@Drop" PostDrop="@PostDrop" TooltipTitle="@DisplayText" TooltipShortHelp="@DisplayText" CATVidLayGrid.IndexedConstraints = "x=0 y=0 ySpan=2 attach=TBRL"/-->
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LR" RequestedMinimumDimension="24 6">
+        <CATVidGPSmartSquare GridWeight="row0=1 col1=1" ColorizeBlackPixelTo="@ColorizeBlackPixelToColorInside" Texture="T_DlcThumbnailBottomBorderIn.png">
+          <CATVidSpacer RequestedMinimumDimension="1 5" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="22 5" CATVidGPSmartSquare.GPConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="1 5" CATVidGPSmartSquare.GPConstraints="x=2 y=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="1 1" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="22 1" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="1 1" CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+        </CATVidGPSmartSquare>
+        <CATVidGPSmartSquare GridWeight="row0=1 col1=1" ColorizeBlackPixelTo="@ColorizeBlackPixelToColorOuter" Texture="T_DlcThumbnailBottomBorderOut.png">
+          <CATVidSpacer RequestedMinimumDimension="1 5" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="22 5" CATVidGPSmartSquare.GPConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="1 5" CATVidGPSmartSquare.GPConstraints="x=2 y=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="1 1" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="22 1" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="1 1" CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+        </CATVidGPSmartSquare>
+        <CATVidLayGrid GridWeight="col1=1" CellSpacing="1">
+          <CATVidGPSquare RequestedMinimumDimension="16 16" Texture="@Icon" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidLayLayer RequestedMinimumDimension="50 20" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LR">
+            <CATVidLayGrid>
+              <CATVidLayLayer VisibleFlag="@Name_VisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LR">
+                <CATVidCtlLineEditor syp:name="NameEditor" SelectAllTextOnFocusFlag="1" FocusableFlag="1" VisibleFlag="0" LayoutWhenUnvisibleFlag="0" BackgroundColor="0 0" ForegroundColor="1 255" Text="@DisplayName Mode=TwoWays" syp:Template="Default"/>
+              </CATVidLayLayer>
+              <CATVidLayLayer VisibleFlag="@ID_VisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LR">
+                <CATVidCtlLineEditor syp:name="IDEditor" SelectAllTextOnFocusFlag="1" VisibleFlag="0" LayoutWhenUnvisibleFlag="0" BackgroundColor="0 0" ForegroundColor="1 255" Text="@ID Mode=TwoWays" syp:Template="Default"/>
+              </CATVidLayLayer>
+              <CATVidLayLayer VisibleFlag="@Suffix_VisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR">
+                <CATVidCtlLineEditor syp:name="SuffixEditor" SelectAllTextOnFocusFlag="1" VisibleFlag="0" LayoutWhenUnvisibleFlag="0" BackgroundColor="0 0" ForegroundColor="1 255" Text="@Suffix Mode=TwoWays" syp:Template="Default"/>
+              </CATVidLayLayer>
+            </CATVidLayGrid>
+            <CATVidGPLabel syp:name="TextLabel" TextHeight="18" CropPolicy="CropWithDots" RequestedMinimumDimension="50 20" TextColor="1 255" Text="@DisplayText" HorizontalAlignment="1" VerticalAlignment="1"/>
+            <CATVidCtlButton syp:name="TextButton" syp:Template="Button" CursorShape="NorthHandCursor" AlphaFilterValue="0" TooltipTitle="@DisplayText" TooltipShortHelp="@DisplayText"/>
+          </CATVidLayLayer>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPEventTrigger TargetName="TextButton" RoutedEvent="Click">
+        <!-->CATSYPSetter TargetName="NameEditor" Property="CursorPosition" Value="0 0"/>
+        <CATSYPSetter TargetName="NameEditor" Property="SelectionFromPoint" Value="-1 -1"/-->
+        <CATSYPSetter TargetName="NameEditor" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="IDEditor" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="SuffixEditor" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TextLabel" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TextButton" Property="VisibleFlag" Value="0"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger TargetName="NameEditor" RoutedEvent="ReturnPressed">
+        <CATSYPSetter TargetName="NameEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="IDEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="SuffixEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TextLabel" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TextButton" Property="VisibleFlag" Value="1"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger TargetName="IDEditor" RoutedEvent="ReturnPressed">
+        <CATSYPSetter TargetName="NameEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="IDEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="SuffixEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TextLabel" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TextButton" Property="VisibleFlag" Value="1"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger TargetName="SuffixEditor" RoutedEvent="ReturnPressed">
+        <CATSYPSetter TargetName="NameEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="IDEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="SuffixEditor" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="TextLabel" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="TextButton" Property="VisibleFlag" Value="1"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrList_Tile -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Tile">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col1=1" CellSpacing = "0" Color = "1 0">
+      <CATVidGPSquare RequestedMinimumDimension = "225 60"
+                      Color = "0 25"
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=0 xSpan=5 ySpan=4"/>
+      <CATVidGPSquare RequestedMinimumDimension = "219 54"
+                      PickFlag = "0"
+                      Color = "0 254"
+                      CATVidLayGrid.IndexedConstraints = "x=1 y=1 xSpan=2 ySpan=2"/>
+      <CATVidGPSquare RequestedMinimumDimension = "225 3"
+                      Color = "@VidColor ElementName=MetaData"
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=0 xSpan=5 ySpan=1"/>
+      <CATVidGPSquare RequestedMinimumDimension = "3 54"
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=1 xSpan=1 ySpan=1"/>
+      <CATVidGPSquare RequestedMinimumDimension = "3 54"
+                      CATVidLayGrid.IndexedConstraints = "x=3 y=1 xSpan=1 ySpan=1"/>
+      <CATVidGPSquare RequestedMinimumDimension = "225 4"
+                      CATVidLayGrid.IndexedConstraints = "x=0 y=3 xSpan=4 ySpan=1"/>
+      <CATVidLayGrid CellSpacing = "0" Color = "1 0" 
+                     GridWeight="col1=1"
+                     CATVidLayGrid.IndexedConstraints = "x=1 y=1 attach=RLTB">
+        <CATVidLayGrid syp:name="ThumbnailGrid"
+                       CellSpacing="0"
+                       RequestedMinimumDimension="50 50"
+                       CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L">
+          <CATVidGPSquare syp:name="TileThumbnail"
+                          Texture = "@TileIcon"
+                          PixelImage = "@TilePixelImage"
+                          RequestedMinimumDimension="48 48"
+                          CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Label" CellSpacing="0"
+                       VisibleFlag="1"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidGPLabel Text="@Display"
+                         TextHeight="16"
+                         CropPolicy="CropWithDots"
+                         TextColor="1 255"
+                         BoldFlag="1"
+                         LeftMargin = "3"
+                         RightMargin = "3"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL"/>
+          <CATVidGPLabel Text="@Description"
+                         TextHeight="16"
+                         CropPolicy="CropWithDots"
+                         TextColor="1 255"
+                         BoldFlag="0"
+                         LeftMargin = "3"
+                         RightMargin = "3" 
+                         CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RL"/>
+          <CATVidGPLabel Text="@TileInfo"
+                         TextHeight="16"
+                         CropPolicy="CropWithDots"
+                         TextColor="1 255"
+                         BoldFlag="0"
+                         LeftMargin = "3"
+                         RightMargin = "3"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RL"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+  
+ <!--===================================-->
+  <!--CATCAfrList_Tile -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_TileMini">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData" 
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col1=1" CellSpacing = "5" Color = "1 0">
+        <CATVidGPSquare syp:name="TileThumbnail"
+                Texture = "@TileIcon"
+                PixelImage = "@TilePixelImage"
+                RequestedMinimumDimension="32 32"
+                CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=R"/>
+        <CATVidLayGrid syp:name="Label" CellSpacing="0"
+                      VisibleFlag="1"
+                      CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidGPLabel Text="@Display"
+                         TextHeight="16"
+                         CropPolicy="CropWithDots"
+                         TextColor="1 255"
+                         BoldFlag="1"
+                         LeftMargin = "3"
+                         RightMargin = "3"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL"/>
+          <CATVidGPLabel Text="@Description"
+                         TextHeight="16"
+                         CropPolicy="CropWithDots"
+                         TextColor="1 255"
+                         BoldFlag="0"
+                         LeftMargin = "3"
+                         RightMargin = "3"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RL"/>
+          <CATVidGPLabel Text="@TileInfo"
+                         TextHeight="16"
+                         CropPolicy="CropWithDots"
+                         TextColor="1 255"
+                         BoldFlag="0"
+                         LeftMargin = "3"
+                         RightMargin = "3"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RL"/>
+        </CATVidLayGrid>
+     
+    </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrList_Thumbnail_64 -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Thumbnail_64">
+
+    <CATVidLayStack RequestedMinimumDimension="90 112" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CellBorder="1" Orientation="Vertical" >
+      <CATVidLayGrid GridWeight="col0=1 col2=1">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="TileThumbnail"
+                  Texture = "@Thumbnail"
+                  PixelImage = "@ThumbPixelImage"
+                  RequestedMinimumDimension="64 64"
+                     CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=2"
+                />
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="SubObjectPresenter" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=B"/>
+      </CATVidLayGrid>
+      <CATAfrVidCtlWrapText Text="@Display" FontName="3ds"
+                            Alignment="AlignCenter"
+                             RequestedMinimumDimension="80 38" TextColor="50 49 50 255"
+                             ReadOnlyFlag="1"
+                             FontHeight="11"
+                             VScrollbarPolicy="AlwaysHidden"
+                             HScrollbarPolicy="AlwaysHidden"
+                             BackgroundColor="0.1 1"
+                             WordWrapMode="WrapAtWordBoundaryOrAnywhere"
+                             TextInteractionFlags="NoTextInteraction"
+                             />
+    </CATVidLayStack>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--CATCAfrList_NavigationTag -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_NavigationTag">
+    <CATVidCtlBorder syp:Template="Rounded"
+                 BackgroundColor="0 25">
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidGPSquare syp:name="IconType"
+                        RequestedMinimumDimension = "16 16"
+                        Texture = "@Icon"
+                        VisibleFlag="0"
+                        LayoutWhenUnvisibleFlag="0"
+                        CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=LT"/>
+        <CATVidGPLabel Name="TagLabel"
+                       Text="@Display"
+                       BoldFlag="1"
+                       TextHeight="16"
+                       VerticalAlignment="1"
+                       CropPolicy="CropWithDots"
+                       RequestedMinimumDimension="200 16"
+                       TextColor="1 255"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidCtlButtonIcon Name="TagButton"
+                             syp:Template="Icon"
+                             RequestedMinimumDimension="16 16"
+                             VisibleFlag="1"
+                             FocusableFlag="0"
+                             OffTexture="vidPanelClose.png"
+                             OverTexture="vidPanelCloseOver.png"
+                             OnTexture="vidPanelCloseOn.png"
+                             Click="@HandleItemEvent"
+                             CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+      </CATVidLayGrid>
+    </CATVidCtlBorder>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconTypeFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconTypeFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconType" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrList_Basic -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Basic">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2">
+        <CATVidLayLayer syp:name="IconLayer"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                        LayoutWhenUnvisibleFlag="0"
+                        VisibleFlag="0">
+          <CATVidGPSquare syp:name="IconType"
+                          PixelImage="@IconPixelImage"
+                          Texture="@Icon"
+                          RequestedMinimumDimension="16 16"/>
+        </CATVidLayLayer>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0"
+                      RequestedMinimumDimension="2 0"/>
+        <CATVidLayLayer syp:name="TextLayer"
+                        CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL">
+          <CATVidLayLayer syp:name="LayerTextLabel"
+                          VisibleFlag="1">
+            <CATVidGPSquare RequestedMinimumDimension = "100 16"
+                            Color = "@VidColor ElementName=MetaData"/>
+            <CATVidGPLabel syp:name="TextLabel"
+                           RequestedMinimumDimension = "100 16"
+                           TextHeight="16"
+                           FontName="3ds"
+                           HorizontalAlignment="0"
+                           VerticalAlignment="0"
+                           CropPolicy="CropWithDots"
+                           LeftMargin="3"
+                           RightMargin="3"
+                           TopMargin="1"
+                           Text = "@Display"
+                           TextColor="1 255"
+                           UnderlineFlag="@UnderlineFlag"/>
+          </CATVidLayLayer>
+          <!--<CATVidLayLayer syp:name="LayerTextEditor"
+                          VisibleFlag="0">
+            <CATVidCtlLineEditor syp:name="TextEditor"
+                             syp:Template="Default"
+                             SelectAllTextOnFocusFlag="1"
+                             FocusableFlag="1"
+                             BackgroundColor="0 255"
+                             ForegroundColor="1 255"
+                             Text="@Display Mode=TwoWays"
+                             ReadOnlyFlag="@ReadOnlyFlag"
+                             RequestedMinimumDimension="100 16"
+                             BorderVisibleFlag="0"
+                             UnderlineFlag="@UnderlineFlag"/>
+          </CATVidLayLayer>-->
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconTypeFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconTypeFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="EditorFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="0"/>
+        <CATSYPSetter Property="SelectAllTextOnFocusFlag" TargetName="TextEditor" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EditorFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="1"/>
+      </CATSYPTrigger>-->
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+ 
+
+  <!--===================================-->
+  <!--CATCAfrList_CAfr -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_CAfr">
+    <CATVidCtl PresenterContent="@CAfrView"
+               VisibleFlag="1"
+               ChildrenLifeCyclePolicy="DontDestroyChildren"
+               RequestedMinimumDimension="@MinimumDimension"
+               FocusableFlag="0"/>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--HyperLink -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_QuickPick">
+    <CATVidCtlButton  Name="@Name"
+                      syp:name="HyperLink"
+                      syp:Template="HyperLinkText"
+                      CursorShape="NorthHandCursor"
+                      Label="@Display"
+                      Tooltip="@Tooltip"
+                      RequestedMinimumDimension = "150 17"
+                      Click="@HandleItemEvent"/>
+  </DataTemplate>
+
+  
+</Styles>

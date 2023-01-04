@@ -1,0 +1,10 @@
+<meta charset="UTF-8"/>
+PackageName="PLM 功能";
+CATKnowledge.ListInstances.Description="列出给定上下文中给定参考的现有实例。\n如果多个相同实例的匹配项存在于上下文下，则仅一个实例将被返回。\n另请参阅匹配项列表 ";
+CATKnowledge.ListInstances.Sample="let root(VPMReference)\nlet searchInstancesOf(VPMReference)\nlet lInstances(List)\let currentInstance(VPMInstance)\n\n[...]\n\nlInstances = searchInstancesOf->ListInstances(root) \nfor currentInstance inside lInstances\n{ \n	/* Treatment on each instance */ \n}\n";
+
+CATKnowledge.ListOccurrences.Description="在给定上下文中列出给定参考的所有匹配项。\n另请参阅实例列表 ";
+CATKnowledge.ListOccurrences.Sample="let root(VPMReference)\nlet searchOccurrencesOf(VPMReference)\nlet lInstances(List)\let currentOccurrence(ProductOccurrence)\n\n[...]\n\nlInstances = searchOccurrencesOf->ListOccurrences(root) \nfor currentOccurrence inside lOccurrences\n{ \n	/* Treatment on each occurrence */ \n}\n";
+
+CATKnowledge.RefreshEntities.Description="<p><span style=\"font-weight:bold;font-size:12px;\">RefreshEntities</span><span style=\"font-size:12px;\">执行选择性刷新。</span><//p><p><span style=\"font-weight:bold;font-size:12px;\">输入：</span><//p><p> - <span style=\"font-weight:bold;font-size:12px;\">iPLMEntitylist</span>（列表）：指定要刷新的实体列表。<//p><p> - <span style=\"font-weight:bold;font-size:12px;\">iIsRecursive</span>（布尔值）：指定刷新模式是（适用于提供的实体及其子级）否（仅适用于提供的实体）递归。<br/> <//p><p>请注意：输入的实体可以是：<br/> - 递归模式的 VPMReferences、VPMInstances、VPMRepReferences 和 VPMRepInstances<br/> - 否则是 VPMReferences 和 VPMRepReferences。<//p><p>私有 VPMRep 排除在刷新流程以外。<//p>";
+CATKnowledge.RefreshEntities.Sample="/*Whole assembly refresh */ \nLet lEntities(List) \nlet oRoot,oPrd (VPMReference) \nset oRoot = GetEditorRoots(\"VPMReference\")->GetItem(1) \nlEntities.Append(oRoot) \nRefreshEntities(lEntities,true)\n";

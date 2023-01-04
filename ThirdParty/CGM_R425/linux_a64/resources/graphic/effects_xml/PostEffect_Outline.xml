@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">    
+
+  <DST_STATE_GROUP>
+    <NAME>DepthNoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>AlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Main_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Outline</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Outline_Normal</NAME>
+    <NEEDS_OPTION>OUTLINE_NORMAL</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Outline_Z</NAME>
+    <NEEDS_OPTION>OUTLINE_Z</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Displacement_PixelSize</NAME>
+    <NEEDS_OPTION>OUTLINE_DISPLACEMENT</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <EXTERNAL_NAME>s_NormalMap</EXTERNAL_NAME>
+  </SAMPLER>
+
+  <SAMPLER>
+    <EXTERNAL_NAME>s_ZMap</EXTERNAL_NAME>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>s_DisplacementMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>OUTLINE_DISPLACEMENT</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>smpPoint</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+  
+  <SAMPLER_STATE>
+    <NAME>smpDisplacement</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_NormalMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_ZMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_DisplacementMap</SAMPLER>
+          <STATES>smpDisplacement</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_Helpers PostEffect_Texture_Helpers PostEffect_Viewport_Helpers PostEffect_NormalMap_DeclarePS PostEffect_ZMap_DeclarePS PostEffect_Outline_Helpers PostEffect_Outline</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+    
+</EFFECT>

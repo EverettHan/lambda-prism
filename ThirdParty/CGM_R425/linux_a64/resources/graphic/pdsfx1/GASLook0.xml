@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <SAMPLER>
+    <NAME>NoiseVolumeTextureMap</NAME>
+    <SAMPLER_TYPE>sampler3D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>LinearStateGroup</NAME>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+  </SAMPLER_STATE>    
+  
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>           
+      <LIGHTING>true</LIGHTING>   
+      
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>NoiseVolumeTextureMap</SAMPLER>
+          <STATES>LinearStateGroup</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>noiseCoords</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>vColor</NAME>
+            <TYPE>float4</TYPE>
+            <OPTION>VertexColor</OPTION>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      
+      <VERTEX_STAGE>GASLook0VS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>GASLook0PS</FRAGMENT_STAGE>          
+      
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>RT</NAME>
+    <RAYTRACING_PASS>
+      <NAME>Default</NAME>
+      <HIT_GROUP>
+        <CLOSEST_HIT_STAGE>
+          GASLook0HG
+        </CLOSEST_HIT_STAGE>
+      </HIT_GROUP>
+    </RAYTRACING_PASS>
+  </TECHNIQUE>
+
+</PDSFX>

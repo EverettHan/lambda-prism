@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML declaration file for the PLM Business Logic resources -->
+
+<src:AppResourceSet Id="CATPLMBusinessLogicUpgrade" Scope="ClientOnly"
+                     xsi:schemaLocation="urn:com:dassault_systemes:AppResourceSet AppResourceSetDescription.xsd"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:src="urn:com:dassault_systemes:AppResourceSet">
+
+  <!--Business logic relative to instance aggregation validation -->
+  <src:BusinessRule Id="INFRA_UnifiedTypingMigration" ExecutionMode="Computation" Scope="ClientOnly">
+    <src:Parameter Name="DefaultTargetTypeName" Type="String" Mode="IN"/>
+    <src:Parameter Name="PreviousAttributes" Type="List" Mode="IN"/>
+    <src:Parameter Name="Policy" Type="String" Mode="IN" Criterion="true"/>
+    <src:Parameter Name="ComputedTargetTypeName" Type="String" Mode="OUT"/>
+    <src:Parameter Name="MappedAttributes" Type="List" Mode="OUT"/>
+    <src:Parameter Name="MappedExtensions" Type="List" Mode="OUT"/>
+  </src:BusinessRule>
+
+</src:AppResourceSet>

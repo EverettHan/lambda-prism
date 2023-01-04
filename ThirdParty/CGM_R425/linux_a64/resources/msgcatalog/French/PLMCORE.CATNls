@@ -1,0 +1,94 @@
+<meta charset="UTF-8"/>
+PLMCORE="Modèle central";
+
+//--------------------------------------------------------
+PLMCORE.PLMReference="PLMReference";
+//-- Simple from PLMReference --
+PLMCORE.PLMReference.V_ApplicabilityDate="Date d'applicabilité";
+PLMCORE.PLMReference.V_AuthorityControl="Contrôle d'autorité";
+PLMCORE.PLMReference.V_DerivedFrom="Dérivé de";
+PLMCORE.PLMReference.V_EffectivityKind="Type d'effectivité";
+PLMCORE.PLMReference.V_ProjectApplicability="Applicable dans les projets";
+PLMCORE.PLMReference.V_VersionID="ID de version";
+PLMCORE.PLMReference.V_fromExternalID="Créé(e) à partir de";
+PLMCORE.PLMReference.V_hasConfigContext="Configurable";
+PLMCORE.PLMReference.V_isLastMinorVersion="Est la dernière révision mineure";
+PLMCORE.PLMReference.V_isLastVersion="Est la dernière révision";
+PLMCORE.PLMReference.V_isVPLMControlled="Contrôle physique";
+PLMCORE.PLMReference.V_order="Ordre";
+PLMCORE.PLMReference.V_versionComment="Commentaire de révision";
+//-- Simple from BusinessType (but which are "internal" ? -- 
+PLMCORE.PLMReference.majororder="Ordre de la version majeure";
+PLMCORE.PLMReference.minororder="Ordre de la version mineure";
+PLMCORE.PLMReference.versionid="ID de version";
+//-- Volatile from PLMReference --
+PLMCORE.PLMReference.InstantiatedBy="Est instancié par";
+PLMCORE.PLMReference.IsExported="Est exporté";
+PLMCORE.PLMReference.V_maturity="Maturité";
+PLMCORE.PLMReference.V_version="Révision";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreReference="PLMCoreReference";
+//-- Simple from PLMCoreReference --
+PLMCORE.PLMCoreReference.V_ChangeHistory="Changer l'historique";
+PLMCORE.PLMCoreReference.V_isTerminal="Terminal";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepReference="PLMCoreRepReference";
+//-- Simple from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.V_isOnceInstantiable="Instanciable une fois";
+PLMCORE.PLMCoreRepReference.V_markstamp="Markstamp";
+//-- Volatile from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.AggregatingReference="Référence d'agrégat";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMConnection="PLMConnection";
+//-- Simple from PLMConnection --
+PLMCORE.PLMConnection.V_isVPLMControlled="Contrôlé par PLM";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMPort="PLMPort";
+//-- Simple from PLMPort --
+PLMCORE.PLMPort.V_isVPLMControlled="Contrôlé par PLM";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMInstance="PLMInstance";
+//-- Simple from PLMInstance --
+PLMCORE.PLMInstance.PLM_ExternalID="Nom";
+PLMCORE.PLMInstance.V_CustoDiscipline="Discipline perso";
+PLMCORE.PLMInstance.V_EffectivityCompiledForm="Effectivité compilée depuis";
+PLMCORE.PLMInstance.V_Name="Description courte";
+PLMCORE.PLMInstance.V_TreeOrder="Ordre d'arborescence";
+PLMCORE.PLMInstance.V_description="Description";
+PLMCORE.PLMInstance.V_discipline="Discipline";
+PLMCORE.PLMInstance.V_hasConfigEffectivity="Configuré";
+PLMCORE.PLMInstance.V_hasConfigStaticMapping="Mappé à une configuration";
+PLMCORE.PLMInstance.V_isVPLMControlled="Contrôlé par PLM";
+PLMCORE.PLMInstance.V_nature="Nature";
+PLMCORE.PLMInstance.V_sec_level="Niveau de sécurité";
+PLMCORE.PLMInstance.V_usage="Utilisation";
+//-- Simple from RelationType --
+PLMCORE.PLMInstance.modified="Dernière modification";
+PLMCORE.PLMInstance.originated="Date de création";
+PLMCORE.PLMInstance.owner="Propriétaire";
+//-- Volatile from PLMInstance --
+PLMCORE.PLMInstance.C_created="Date de création";
+PLMCORE.PLMInstance.C_modified="Dernière modification";
+PLMCORE.PLMInstance.LOCKSTATUS="Verrouillé";
+PLMCORE.PLMInstance.LOCKUSER="Verrouillé par";
+PLMCORE.PLMInstance.V_confidentiality="Confidentialité";
+PLMCORE.PLMInstance.V_organization="Organisation";
+PLMCORE.PLMInstance.V_project="Espace de collaboration";
+PLMCORE.PLMInstance.V_user="Propriétaire";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreInstance="PLMCoreInstance";
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepInstance="PLMCoreRepInstance";

@@ -1,0 +1,175 @@
+#ifndef CATIACollection_IDL
+#define CATIACollection_IDL
+/*IDLNOGEN*/
+/*IDLREP*/
+
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U6
+ */
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 1997
+//=================================================================
+
+#include "CATBaseDispatch.idl"
+
+interface IUnknown;
+interface CATIABase;
+interface CATIAApplication;
+
+/**
+ * Represents the base object for collections.
+ * As a base object, it provides properties and methods shared by
+ * any other object.
+ */
+interface CATIACollection : CATBaseDispatch
+{
+	//		================
+	//		== PROPERTIES ==
+	//		================
+
+    /**
+     * Returns the application.
+     * The application is the root object in the object structure and can be
+     * retrieved from any object
+     * in the object structure using the Application property.
+     * The Application property is the way to jump from any object up to the
+     * root of the object data structure, allowing then to navigate downwards.
+     * For in-process scripting, the application is always referred to as
+     * <tt>CATIA</tt>.
+     * Note that the Application property of the Application object returns the
+     * Application object itself.
+     * <! @sample >
+     * <dl>
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example retrieves in <tt>CurrentApplication</tt> the application
+     * object, root of the object structure, from a given object of this
+     * structure: a document refered to using the <tt>MyDocCollecion</tt>
+     * variable.
+     * <pre>
+     * Dim CurrentApplication As Application
+     * Set CurrentApplication = MyDocCollecion.<font color="red">Application</font>
+     * </pre>
+     * </dl>
+     */
+#pragma PROPERTY Application
+	HRESULT get_Application
+				( out /*IDLRETVAL*/		CATIAApplication		oAppli );
+	
+    /**
+     * Returns the parent object.
+     * The parent object of a given object is the object that created this
+     * object, usually the object just above in the object tree structure
+     * and that aggregates it.
+     * In the case of an object part of a collection, the parent object
+     * is not the collection object itself, but the object that
+     * aggregates the collection object.
+     * The Parent property is the way to step upwards in the object data
+     * structure.
+     * Note that the Parent property of the Application object returns the
+     * Application object itself.
+     * <! @sample >
+     * <dl>
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example retrieves in <tt>ParentObject</tt> the parent object
+     * of the <tt>GivenObject</tt> object.
+     * <pre>
+     * Dim ParentObject As AnyObject
+     * Set ParentObject = GivenObject.<font color="red">Parent</font>
+     * </pre>
+     * </dl>
+     */
+#pragma PROPERTY Parent
+	HRESULT get_Parent
+				( out /*IDLRETVAL*/		CATBaseDispatch		oParent );
+
+  /**
+   * Returns an object from its name.
+   * <br><b>Role</b>: To retrieve an object when only its name is available.
+   * <b>You should not use this method</b>, but you can find it in the macros generated
+   * by the Tools->Macro command.
+   * @param IDName
+   *   The searched obect name
+   * @return
+   *   The searched object
+   */
+        HRESULT GetItem(in CATBSTR IDName, out /*IDLRETVAL*/ CATBaseDispatch RealObj);
+
+    /**
+     * Returns or sets the name of the object.
+     * The name is a character string you can assign to any object to
+     * handle it easier.
+     * In the case of an object part of a collection, the name can often
+     * be used in place of the object rank to retrieve or remove the object,
+     * providing the Item and Remove methods of the collection feature
+     * an argument with the Variant type.
+     * If the object has no name set, the name returned is the one of
+     * its parent.
+     * <! @sample >
+     * <dl>
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example sets to <tt>MyObject</tt> the name <tt>Nice and Handy
+     * Object Name</tt>.
+     * <pre>
+     * MyObject.<font color="red">Name</font>("Nice and Handy Object Name")
+     * </pre>
+     * </dl>
+     */
+#pragma PROPERTY Name
+	HRESULT get_Name
+				( inout /*IDLRETVAL*/	CATBSTR					oName );
+
+    /**
+     * Returns the number of objects in the collection.
+     * This is handy to scan all the objects in a collection.
+     * <! @sample >
+     * <dl>
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example retrieves in  <tt>ObjectNumber</tt> the number of objects
+     * currently gathered in <tt>MyCollection</tt>.
+     * <pre>
+     * ObjectNumber = MyCollection.<font color="red">Count</font>
+     * </pre>
+     * </dl>
+     */
+#pragma PROPERTY Count
+//
+	HRESULT		get_Count
+				( out /*IDLRETVAL*/					long				oNbItems );
+
+			
+		/**
+		 * Returns an iterator on the collection.
+		 * <br><b>Role</b>:
+		 * This method must be implemented to allow the caller to easily iterate
+		 * through the collection in VB scripts with the <tt>For Each</tt> statement.
+		 * @param oEnumIter
+		 *   The returned iterator
+		 */
+#pragma PROPERTY _NewEnum
+//
+	HRESULT     get__NewEnum
+				( out /*IDLRETVAL*/		IUnknown			oEnumIter );
+
+};
+
+// Interface name : CATIACollection
+#pragma ID CATIACollection "DCE:91d1d553-495c-11d1-a26e0000f87546fd"
+#pragma DUAL CATIACollection
+
+// VB object name : Collection (Id used in Visual Basic)
+#pragma ID Collection "DCE:922b3d82-495c-11d1-a26e0000f87546fd"
+#pragma ALIAS CATIACollection Collection
+
+// Include of forward interfaces
+//#include "CATIABase.idl"
+//#include "CATIAApplication.idl"
+
+#endif
+// CATIACollection_IDL
+

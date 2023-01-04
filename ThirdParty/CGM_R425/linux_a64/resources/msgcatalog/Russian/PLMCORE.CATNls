@@ -1,0 +1,94 @@
+<meta charset="UTF-8"/>
+PLMCORE="Базовая модель";
+
+//--------------------------------------------------------
+PLMCORE.PLMReference="PLMReference";
+//-- Simple from PLMReference --
+PLMCORE.PLMReference.V_ApplicabilityDate="Дата применимости";
+PLMCORE.PLMReference.V_AuthorityControl="Контроль полномочий";
+PLMCORE.PLMReference.V_DerivedFrom="Производный от";
+PLMCORE.PLMReference.V_EffectivityKind="Тип эффективности";
+PLMCORE.PLMReference.V_ProjectApplicability="Применимо к проектам";
+PLMCORE.PLMReference.V_VersionID="ИД версии";
+PLMCORE.PLMReference.V_fromExternalID="Создано из";
+PLMCORE.PLMReference.V_hasConfigContext="Настраиваемый";
+PLMCORE.PLMReference.V_isLastMinorVersion="Является последней промежуточной редакцией";
+PLMCORE.PLMReference.V_isLastVersion="Является последней редакцией";
+PLMCORE.PLMReference.V_isVPLMControlled="Физическое управление";
+PLMCORE.PLMReference.V_order="Заказ";
+PLMCORE.PLMReference.V_versionComment="Комментарий к редакции";
+//-- Simple from BusinessType (but which are "internal" ? -- 
+PLMCORE.PLMReference.majororder="Порядок основных";
+PLMCORE.PLMReference.minororder="Порядок вспомогательных";
+PLMCORE.PLMReference.versionid="ИД версии";
+//-- Volatile from PLMReference --
+PLMCORE.PLMReference.InstantiatedBy="Кем вставлено";
+PLMCORE.PLMReference.IsExported="Экспортировано";
+PLMCORE.PLMReference.V_maturity="Степень готовности";
+PLMCORE.PLMReference.V_version="Редакция";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreReference="PLMCoreReference";
+//-- Simple from PLMCoreReference --
+PLMCORE.PLMCoreReference.V_ChangeHistory="История изменений";
+PLMCORE.PLMCoreReference.V_isTerminal="Клемма";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepReference="PLMCoreRepReference";
+//-- Simple from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.V_isOnceInstantiable="Is OnceInstantiable";
+PLMCORE.PLMCoreRepReference.V_markstamp="Markstamp";
+//-- Volatile from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.AggregatingReference="Ссылка на агрегирование";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMConnection="PLMConnection";
+//-- Simple from PLMConnection --
+PLMCORE.PLMConnection.V_isVPLMControlled="Управляется PLM";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMPort="PLMPort";
+//-- Simple from PLMPort --
+PLMCORE.PLMPort.V_isVPLMControlled="Управляется PLM";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMInstance="PLMInstance";
+//-- Simple from PLMInstance --
+PLMCORE.PLMInstance.PLM_ExternalID="Имя";
+PLMCORE.PLMInstance.V_CustoDiscipline="Настройка дисциплины";
+PLMCORE.PLMInstance.V_EffectivityCompiledForm="Откомпилированная форма эффективности";
+PLMCORE.PLMInstance.V_Name="Заголовок";
+PLMCORE.PLMInstance.V_TreeOrder="Порядок дерева";
+PLMCORE.PLMInstance.V_description="Описание";
+PLMCORE.PLMInstance.V_discipline="Дисциплина";
+PLMCORE.PLMInstance.V_hasConfigEffectivity="Настроено";
+PLMCORE.PLMInstance.V_hasConfigStaticMapping="С сопоставлением конфигурации";
+PLMCORE.PLMInstance.V_isVPLMControlled="Управляется PLM";
+PLMCORE.PLMInstance.V_nature="Характер";
+PLMCORE.PLMInstance.V_sec_level="Уровень безопасности";
+PLMCORE.PLMInstance.V_usage="Использование";
+//-- Simple from RelationType --
+PLMCORE.PLMInstance.modified="Последнее изменение";
+PLMCORE.PLMInstance.originated="Дата создания";
+PLMCORE.PLMInstance.owner="Владелец";
+//-- Volatile from PLMInstance --
+PLMCORE.PLMInstance.C_created="Дата создания";
+PLMCORE.PLMInstance.C_modified="Последнее изменение";
+PLMCORE.PLMInstance.LOCKSTATUS="Заблокировано";
+PLMCORE.PLMInstance.LOCKUSER="Кем заблокировано";
+PLMCORE.PLMInstance.V_confidentiality="Конфиденциальность";
+PLMCORE.PLMInstance.V_organization="Организация";
+PLMCORE.PLMInstance.V_project="Пространство совместной работы";
+PLMCORE.PLMInstance.V_user="Владелец";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreInstance="PLMCoreInstance";
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepInstance="PLMCoreRepInstance";

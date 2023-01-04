@@ -1,0 +1,40 @@
+{
+  "desc": "Receive input data for a Block execution prepared by a function (prepare) and which will be run by another function (execute)",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "key",
+          "basic": "uint32"
+        },
+        {
+          "label": "from",
+          "basic": "string"
+        },
+        {
+          "label": "to",
+          "basic": "string"
+        },
+        {
+          "label": "data",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {}
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

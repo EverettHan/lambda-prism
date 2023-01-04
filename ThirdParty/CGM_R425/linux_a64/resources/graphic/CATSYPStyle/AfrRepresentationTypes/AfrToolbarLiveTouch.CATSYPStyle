@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrToolbarLiveTouch representation                                                            -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Container creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <Template syp:name="AfrToolbarLiveTouch" Target="CATAfrSYPContainerView">
+    <CATAfrSmartCtl   LayoutWhenUnvisibleFlag="0" BottomToolbarFlag="1" VisibleFlag="@WidgetsPanelVisibility" CreateDialogBoxFlag="@CreateDialogBoxFlag" ConstraintsDialogBox="leftPercent=50 topPx=10">
+      <CATVidLayGrid>
+        <CATVidCtlBorder syp:Template="ToolbarTouchBackground"   CATVidLayGrid.IndexedConstraints="x=1 y=0" >
+          <CATVidLayStack CellBorder="4" Orientation="Horizontal"
+                            Items="@ToolsItems Mode=OneWayToSource"/>
+        </CATVidCtlBorder>
+      </CATVidLayGrid>
+
+    </CATAfrSmartCtl>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <Template syp:name="AfrToolbarLiveTouch" Target="CATAfrSYPStarterView">
+
+
+    <CATVidCtlButton Name="@Name"
+                     syp:Template="Toolbar"
+                     CheckMode="1"
+                     ClickMode="0"
+                     CheckState="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     CropPolicy="NoCrop"
+                     RequestedMinimumDimension="48 48"
+                     IconDimension="32 32"
+                     Icon="@NormalIcon"
+                     Tooltip="@Help"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                     LongHelpId="@LongHelpId"
+                     Click="@ActionEvent"/>
+
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+  <Template syp:name="AfrToolbarLiveTouch" Target="CATAfrSYPSeparatorView">
+
+    
+<!--We create a simple button for this level and bind all possible properties with model properties.--><!--
+    --><!--ActionEvent allows to start the command. Then, it will notify its parent container of this action.--><!--
+    --><!--And so, the container will know which command is active-->
+    <CATVidGPSquare 
+                       RequestedMinimumDimension="10 48"/>
+
+  </Template>
+  
+</Styles>

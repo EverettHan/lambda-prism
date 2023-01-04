@@ -1,0 +1,38 @@
+{
+  "grammarVersion": 3,
+  "desc": "CSI Parameters event description and its file content already pre-parsed, returned by command 'csiGetEvents' on pool 'CSIIntrospection'",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Name of the declarative event"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "desc": "Description of the declarative eveny"
+    },
+    {
+      "label": "filename",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Name of the file containing the declarative event definition"
+    },
+    {
+      "label": "filepath",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Path of the file containing the declarative event definition"
+    },
+    {
+      "label": "definition",
+      "typeArray": "CSIPropertyDefinition",
+      "desc": "Definition of the event parameters"
+    }
+  ]
+}

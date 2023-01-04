@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+ <!--===================================-->
+ <!--Tweaker Spin Box-->
+ <!--===================================-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerSlider">
+   <CATVidLayStack syp:name="Container"  Orientation="Horizontal" VisibleFlag="1">
+     <CATVidCtlSlider syp:Template="Default" Name="Value" RequestedMinimumDimension="100 21" Orientation="Horizontal" TickPosition="NoTicks"
+                   MinimumValue="@MinimumValue" MaximumValue="@MaximumValue"
+                   Value="@Value Mode=TwoWays"
+                   SingleStep="@SingleStepValueAsInt"
+                   UndefinedFlag="@UndefinedFlag Mode=TwoWays" />
+  </CATVidLayStack>
+ </Template>
+</Styles>

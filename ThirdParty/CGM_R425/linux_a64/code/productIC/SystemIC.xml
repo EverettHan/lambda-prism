@@ -1,0 +1,87 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <toolPrerequisite name = "VENMocCompiler"/>
+  <attached name = "System.tst"/>
+  <attached name = "SystemTS.tst"/>
+  <attached name = "SystemExtensions.tst"/>
+  <attached name = "SystemLicensing.tst"/>
+  <attached name = "AutomationInfrastructure.tst"/>
+  <attached name = "DatabaseServices.tst"/>
+  <attached name = "Communications.tst"/>
+  <attached name = "BatchInfrastructure.tst"/>
+  <attached name = "CATCollaborationInfra.tst"/>
+  <attached name = "DSYAdmInfra.tst"/>
+  <attached name = "CATPLMImplMx.tst"/>
+  <attached name = "PLMSecuritySSOLogin.tst"/>
+  <attached name = "Administration.tst"/>
+  <attached name = "PLMPosModeler.tst"/>
+  <attached name = "Debug.tst"/>
+  <attached name = "SystemInternals.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "LCCommon"/>
+  <prerequisite access = "Private" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "SystemTS"/>
+  <buildtimeOnlyPrereq access = "Private" expose = "DoNotExposePrereq" name = "SysSSL"/>
+  <authorize access = "Private" name = "SysSSL"/>
+  <authorize access = "Private" name = "SystemExtensions"/>
+  <authorize access = "Private" name = "SystemServices"/>
+  <authorize access = "Private" name = "SystemAdvanced"/>
+  <authorize access = "Private" name = "SystemInternals"/>
+  <authorize access = "Private" name = "Administration"/>
+  <authorize access = "Private" name = "CAFTools"/>
+  <authorize access = "Private" name = "DSYAdmSys"/>
+  <authorize access = "Private" name = "DSYAdmEnvMgt"/>
+  <authorize access = "Private" name = "DSYAdmEnvMgtUI"/>
+  <authorize access = "Private" name = "DSYInsBuildMSI"/>
+  <authorize access = "Private" name = "DSYInsMgt"/>
+  <authorize access = "Private" name = "DSYInsMgtUI"/>
+  <authorize access = "Private" name = "DSYInsMsiInfra"/>
+  <authorize access = "Private" name = "DSYInsDoc"/>
+  <authorize access = "Private" name = "DSYInsSetup"/>
+  <authorize access = "Private" name = "DSYInsSetupUI"/>
+  <authorize access = "Private" name = "DSYInsSetupGUI"/>
+  <authorize access = "Private" name = "DSYInsSetupMacGUI"/>
+  <authorize access = "Private" name = "DSYInsSetupTUI"/>
+  <authorize access = "Private" name = "DSYInsMediaCheck"/>
+  <authorize access = "Private" name = "DSYInsStdInfra"/>
+  <authorize access = "Private" name = "InsVCpreq"/>
+  <authorize access = "Private" name = "InsVC10preq"/>
+  <authorize access = "Private" name = "InsVC10preq.tst"/>
+  <authorize access = "Private" name = "LCCommon"/>
+  <authorize access = "Private" name = "MultiProcessing.tst"/>
+  <authorize access = "Private" name = "SysSSL.tst"/>
+  <authorize access = "Private" name = "SystemServices.tst"/>
+  <authorize access = "Private" name = "SystemRestrictedIO.tst"/>
+  <authorize access = "Private" name = "SystemTS.tst"/>
+  <authorize access = "Private" name = "SystemLicensing.tst"/>
+  <authorize access = "Private" name = "zzIndusPerfo_System.tst"/>
+  <authorize access = "Private" name = "Administration.tst"/>
+  <authorize access = "Private" name = "DSYAdmSys.tst"/>
+  <authorize access = "Private" name = "DSYAdmEnvMgt.tst"/>
+  <authorize access = "Private" name = "DSYAdmEnvMgtUI.tst"/>
+  <authorize access = "Private" name = "DSYInsMgt.tst"/>
+  <authorize access = "Private" name = "DSYInsMgtUI.tst"/>
+  <authorize access = "Private" name = "DSYInsMsiInfra.tst"/>
+  <authorize access = "Private" name = "DSYInsDoc.tst"/>
+  <authorize access = "Private" name = "DSYInsSetup.tst"/>
+  <authorize access = "Private" name = "DSYInsSetupUI.tst"/>
+  <authorize access = "Private" name = "DSYInsSetupGUI.tst"/>
+  <authorize access = "Private" name = "DSYInsSetupTUI.tst"/>
+  <authorize access = "Private" name = "DSYAdmInfra.tst"/>
+  <authorize access = "Private" name = "DSYInsMediaCheck.tst"/>
+  <authorize access = "Private" name = "DSYInsStdInfra.tst"/>
+  <authorize access = "Private" name = "SystemExtensions.tst"/>
+  <authorize access = "Private" name = "Debug"/>
+  <authorize access = "Private" name = "Debug.tst"/>
+  <authorize access = "Private" name = "CATVSTAIntegration"/>
+  <authorize access = "Private" name = "SystemDSDrive"/>
+  <authorize access = "Private" name = "SystemDSDriveOsIntegration"/>
+  <authorize access = "Private" name = "SystemDSDrive.tst"/>
+  <authorize access = "Private" name = "SystemInternals"/>
+  <authorize access = "Private" name = "InsVC11preq"/>
+  <authorize access = "Private" name = "InsVC12preq"/>
+  <authorize access = "Private" name = "FloatingCtrlInst"/>
+  <authorize access = "Private" name = "FloatingCtrlInst.tst"/>
+  <authorize access = "Private" name = "CATInteractiveTestDesigner"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

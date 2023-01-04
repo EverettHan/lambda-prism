@@ -1,0 +1,42 @@
+{
+  "grammarVersion": 2,
+  "desc": "Launches the replay of a recorded scenario. The scenario must have been recorded on the node or previously loaded.",
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  },
+  "onCommandParameters": {
+    "in": {
+      "parameters": [
+        {
+          "label": "id",
+          "basic": "int32",
+          "desc": "Identifier of the record returned by the stop or the addScript command"
+        }
+      ]
+    },
+    "answers": {
+      "parameters": [
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  }
+}

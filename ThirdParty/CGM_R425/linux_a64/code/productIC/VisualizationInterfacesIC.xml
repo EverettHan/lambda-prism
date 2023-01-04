@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "VisualizationRSW.tst"/>
+  <attached name = "Visualization.tst"/>
+  <attached name = "CATGraphicProperties.tst"/>
+  <attached name = "IVToolkit.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

@@ -1,0 +1,246 @@
+<meta charset="UTF-8"/>
+// COPYRIGHT DASSAULT SYSTEMES 
+//----------------------------
+
+
+// NLS error messages for the XMLParser component. 
+
+SourceLabel="Zdroj: ";
+DescriptionLabel="Popis: ";
+HelpfileLabel="Soubor nápovědy: ";
+//CodeLabel = "Error code: ";
+StatementLabel="Výraz: ";
+LineLabel="Řádek: ";
+ColumnLabel="Sloupec: ";
+
+EditPrompt="Chcete nyní upravit zdrojový kód makra?";
+
+XML4C_XMLException="Výjimka XML4C3.0\nZpráva: /p1\nKód: /p2\nZdrojový soubor: /p3\nČíslo řádku: /p4";
+Internal_Error_hr="Interní chyba, hr = /p1";
+Internal_Error_msg="Vnitřní chyba, zpráva = /p1";
+
+ADAPTER_ILLEGAL_PREFIX="Neplatná předpona prostoru názvů: /p1";
+ADAPTER_UNDECLARED_PREFIX="Nedeklarovaná předpona prostoru názvů: /p1";
+
+NODE_ITERATOR_ILLEGAL_STATE="CATIDOMNodeIterator: odpojení již bylo voláno na iterátoru.";
+
+XMLParserERR_0000="Interní chyba. Návratový kód je /p1.";
+
+XMLParserERR_1000="Výjimka DOM.";
+
+XMLParserERR_2000.Request="/p1";
+XMLParserERR_2000.Diagnostic="Výjimka SAX: /p1";
+XMLParserERR_2000.Advice="";
+
+XMLParserERR_2001.Request="/p1";
+XMLParserERR_2001.Diagnostic="Výjimka SAX IO: /p1";
+XMLParserERR_2001.Advice="";
+
+XMLParserERR_2002.Request="/p1";
+XMLParserERR_2002.Diagnostic="Výjimka při analýze SAX: /p1\nSystemId: /p2\nPublicId: p3\nŘádek: /p4\nSloupec: /p5";
+XMLParserERR_2002.Advice="";
+
+XMLParserERR_2003.Request="/p1";
+XMLParserERR_2003.Diagnostic="Výjimka při analýze UTF-8: /p1\nSystemId: /p2\nPublicId: p3\nŘádek: /p4\nSloupec: /p5";
+XMLParserERR_2003.Advice="";
+
+XMLParserERR_2100.Request="Vytvořit instanci analyzátoru SAX";
+XMLParserERR_2100.Diagnostic="Neplatná definice přepínačů.";
+XMLParserERR_2100.Advice="Seznam názvů přepínačů a seznam hodnot přepínačů musí mít stejnou velikost.";
+
+XMLParserERR_2101.Request="Vytvořit instanci analyzátoru SAX";
+XMLParserERR_2101.Diagnostic="Nepodporovaný přepínač „/p1“.";
+XMLParserERR_2101.Advice="Vyvolat metodu GetSupportedOptions pro načtení seznamu podporovaných přepínačů pro tuto implementaci analyzátoru.";
+
+XMLParserERR_2102.Request="Vytvořit instanci analyzátoru SAX";
+XMLParserERR_2102.Diagnostic="Neplatná hodnota „/p1“ pro přepínač „/p2“.";
+XMLParserERR_2102.Advice="Informace o povolených hodnotách pro tento přepínač naleznete v dokumentaci.";
+
+XMLParserERR_2200.Request="/p1";
+XMLParserERR_2200.Diagnostic="Neznámá chyba DOM /p1: /p2";
+XMLParserERR_2200.Advice="";
+
+XMLParserERR_2201.Request="/p1";
+XMLParserERR_2201.Diagnostic="INDEX_SIZE_ERR : /p1";
+XMLParserERR_2201.Advice="";
+
+XMLParserERR_2202.Request="/p1";
+XMLParserERR_2202.Diagnostic="DOMSTRING_SIZE_ERR : /p1";
+XMLParserERR_2202.Advice="";
+
+XMLParserERR_2203.Request="/p1";
+XMLParserERR_2203.Diagnostic="HIERARCHY_REQUEST_ERR : /p1";
+XMLParserERR_2203.Advice="";
+
+XMLParserERR_2204.Request="/p1";
+XMLParserERR_2204.Diagnostic="WRONG_DOCUMENT_ERR : /p1";
+XMLParserERR_2204.Advice="";
+
+XMLParserERR_2205.Request="/p1";
+XMLParserERR_2205.Diagnostic="INVALID_CHARACTER_ERR : /p1";
+XMLParserERR_2205.Advice="";
+
+XMLParserERR_2206.Request="/p1";
+XMLParserERR_2206.Diagnostic="NO_DATA_ALLOWED_ERR : /p1";
+XMLParserERR_2206.Advice="";
+
+XMLParserERR_2207.Request="/p1";
+XMLParserERR_2207.Diagnostic="NO_MODIFICATION_ALLOWED_ERR : /p1";
+XMLParserERR_2207.Advice="";
+
+XMLParserERR_2208.Request="/p1";
+XMLParserERR_2208.Diagnostic="NOT_FOUND_ERR : /p1";
+XMLParserERR_2208.Advice="";
+
+XMLParserERR_2209.Request="/p1";
+XMLParserERR_2209.Diagnostic="NOT_SUPPORTED_ERR : /p1";
+XMLParserERR_2209.Advice="";
+
+XMLParserERR_2210.Request="/p1";
+XMLParserERR_2210.Diagnostic="INUSE_ATTRIBUTE_ERR : /p1";
+XMLParserERR_2210.Advice="";
+
+XMLParserERR_2211.Request="/p1";
+XMLParserERR_2211.Diagnostic="INVALID_STATE_ERR : /p1";
+XMLParserERR_2211.Advice="";
+
+XMLParserERR_2212.Request="/p1";
+XMLParserERR_2212.Diagnostic="SYNTAX_ERR : /p1";
+XMLParserERR_2212.Advice="";
+
+XMLParserERR_2213.Request="/p1";
+XMLParserERR_2213.Diagnostic="INVALID_MODIFICATION_ERR : /p1";
+XMLParserERR_2213.Advice="";
+
+XMLParserERR_2214.Request="/p1";
+XMLParserERR_2214.Diagnostic="NAMESPACE_ERR : /p1";
+XMLParserERR_2214.Advice="";
+
+XMLParserERR_2215.Request="/p1";
+XMLParserERR_2215.Diagnostic="INVALID_ACCESS_ERR : /p1";
+XMLParserERR_2215.Advice="";
+
+XMLParserERR_2300.Request="/p1";
+XMLParserERR_2300.Diagnostic="Nerozpoznaný název vlastnosti SAX2: /p1";
+XMLParserERR_2300.Advice="";
+
+XMLParserERR_2301.Request="/p1";
+XMLParserERR_2301.Diagnostic="Nepodporovaný název vlastnosti SAX2: /p1";
+XMLParserERR_2301.Advice="";
+
+XMLParserERR_2302.Request="/p1";
+XMLParserERR_2302.Diagnostic="Nerozpoznaný název funkce SAX2: /p1";
+XMLParserERR_2302.Advice="";
+
+XMLParserERR_2303.Request="/p1";
+XMLParserERR_2303.Diagnostic="Nepodporovaný název funkce SAX2: /p1";
+XMLParserERR_2303.Advice="";
+
+XMLParserERR_2304.Request="/p1";
+XMLParserERR_2304.Diagnostic="Název vlastnosti SAX2: /p1 nelze změnit během analýzy";
+XMLParserERR_2304.Advice="";
+
+XMLParserERR_2305.Request="/p1";
+XMLParserERR_2305.Diagnostic="Název prvku SAX2: /p1 nelze změnit během analýzy";
+XMLParserERR_2305.Advice="";
+
+XMLParserERR_2400.Request="/p1";
+XMLParserERR_2400.Diagnostic="Chyba vstupu/výstupu";
+XMLParserERR_2400.Advice="";
+
+XMLParserERR_2401.Request="/p1";
+XMLParserERR_2401.Diagnostic="Chyba využití API: /p1. Požadovanou akci nelze provést nebo by vedla k vytvoření dokumentu XML v nesprávném formátu";
+XMLParserERR_2401.Advice="";
+
+XMLParserERR_2402.Request="";
+XMLParserERR_2402.Diagnostic="Nepodporované překódování znaků";
+XMLParserERR_2402.Advice="";
+
+XMLParserERR_2500.Request="Chyba binárního souboru XML";
+XMLParserERR_2500.Diagnostic="/p1";
+XMLParserERR_2500.Advice="";
+BINARY_XML_DIAGNOSTIC="/p1: není k dispozici žádná podrobná diagnostika";
+
+ERR_CHARACTER_INVALID="Neplatná sekvence „]]>“ v datech znaků";
+ERR_CDATA_INVALID="Neplatná sekvence „]]>“ v sekci CDATA";
+ERR_PI_INVALID_DATA="Neplatné znaky v datech instrukcí pro zpracování";
+ERR_PI_XML="Neplatný cíl zpracování instrukcí";
+ERR_INVALID_COMMENT="Neplatná sekvence „--“ v komentáři";
+ERR_ATTRIBUTE_DEFINED="Atribut je již definován";
+ERR_XMLSPACE_VALUE="Neplatná hodnota atributu xml:space";
+ERR_XMLNS_PREFIX="Předpona xmlns je vyhrazena pro obory názvů xml";
+ERR_XML_PREFIX="Předpona xml je vyhrazená";
+ERR_INVALID_VALUE="Neplatná hodnota pro přepínač";
+ERR_DECLARATION="Nelze zapsat deklaraci XML";
+ERR_DOCTYPE="Nelze zapsat typ dokumentu";
+ERR_NO_PREFIX_DEFINED="Pro identifikátor uri není definována předpona";
+ERR_DOCUMENT_CLOSED="Dokument byl již zavřen";
+ERR_NO_CURRENT_ELEMENT="Žádný aktuální prvek";
+ERR_NO_DOCUMENT="Žádný otevřený dokument";
+ERR_INVALID_NAME="Neplatný název";
+ERR_INVALID_NCNAME="Neplatný název ncname";
+ERR_INVALID_PUBID="Neplatné veřejné ID";
+ERR_INVALID_SYSTEMID="Neplatné ID systému";
+ERR_INVALID_CHARACTER_ENTITY="Neplatná znaková entita";
+ERR_INVALID_CHARS="Neplatné znaky XML";
+
+XMLParserERR_2600.Request="Chyba vytvoření instance analyzátoru XML";
+XMLParserERR_2600.Diagnostic="Aplikace selhala, protože analyzátor MSXML XML, který je nezbytný, není na vašem počítači nainstalován";
+XMLParserERR_2600.Advice="Pokyny ke stažení a instalaci komponenty MSXML naleznete v dokumentaci";
+
+XMLParserERR_2601.Request="Chyba vytvoření instance analyzátoru XML";
+XMLParserERR_2601.Diagnostic="Aplikace selhala, protože na vašem počítači není nainstalován analyzátor MS XMLLite, který je nezbytný";
+XMLParserERR_2601.Advice="Pokyny ke stažení a instalaci komponenty XMLLite naleznete v dokumentaci";
+
+XMLParserERR_2700.Request="CATIXMLDOMDocumentBuilder::Write";
+XMLParserERR_2700.Diagnostic="Chyba, nedostatek paměti";
+XMLParserERR_2700.Advice="";
+
+XMLParserERR_2800.Request="Chyba syntaxe XPath";
+XMLParserERR_2800.Diagnostic="/p1";
+XMLParserERR_2800.Advice="";
+
+XMLParserERR_2801.Request="Chyba vyhodnocení XPath";
+XMLParserERR_2801.Diagnostic="/p1";
+XMLParserERR_2801.Advice="";
+
+XMLParserERR_2900.Request="Načíst volbu XSLT";
+XMLParserERR_2900.Diagnostic="Přepínač „/p1“ není nastaven";
+XMLParserERR_2900.Advice="Nastavit přepínač XSLT.";
+
+XMLParserERR_2901.Request="Nastavit přepínač XSLT";
+XMLParserERR_2901.Diagnostic="Nepodporovaný přepínač „/p1“.";
+XMLParserERR_2901.Advice="Názvy přepínačů pro podporovatele naleznete v dokumentaci.";
+
+XMLParserERR_2902.Request="Nastavit přepínač XSLT";
+XMLParserERR_2902.Diagnostic="Neplatná hodnota „/p2“ pro přepínač „/p1“.";
+XMLParserERR_2902.Advice="Informace o povolených hodnotách pro tento přepínač naleznete v dokumentaci.";
+
+XMLParserERR_2903.Request="Načíst parametr XSLT";
+XMLParserERR_2903.Diagnostic="Parametr „{/p2}/p1“ není nastaven";
+XMLParserERR_2903.Advice="Nastavte parametr XSLT.";
+
+XMLParserERR_2910.Request="Spustit XSLT";
+XMLParserERR_2910.Diagnostic="Není zadán žádný vstupní zdroj";
+XMLParserERR_2910.Advice="Zadejte vstupní zdroj.";
+
+XMLParserERR_2911.Request="Spustit XSLT";
+XMLParserERR_2911.Diagnostic="Není zadán žádný výstupní zdroj";
+XMLParserERR_2911.Advice="Zadejte výstupní zdroj.";
+
+XMLParserERR_2912.Request="Spustit XSLT";
+XMLParserERR_2912.Diagnostic="Chyba spuštění: /p1";
+XMLParserERR_2912.Advice="";
+
+XMLParserERR_3000.Request="/p1";
+XMLParserERR_3000.Diagnostic="Chyba využití API: /p1.";
+XMLParserERR_3000.Advice="";
+
+XMLParserERR_3001.Request="/p1";
+XMLParserERR_3001.Diagnostic="Chyba analyzátoru: /p1.";
+XMLParserERR_3001.Advice="";
+
+ERR_SUBTREE_NO_START_ELEMENT="Čtečka se nenachází na uzlu typu NodeType_StartElement";
+ERR_LOCK_BY_SUBTREE_READER="Čtečka je uzamčena čtečkou podstromu";
+ERR_NO_CURRENT_NODE="Žádný aktuální uzel";
+ERR_INDEX="Index atributu je mimo rozsah";

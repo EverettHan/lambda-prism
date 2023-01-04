@@ -1,0 +1,966 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+  <Template syp:name="Mobile" Target="CATAfr3DXPCompass" syp:version="1">
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidSpacer RequestedMinimumDimension="35 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="CompassGrid" Color="234 235 235 255" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLayGrid GridWeight="row1=1 col2=1" >
+        <!--Spacer for 3DS and its margin-->
+        <CATVidSpacer RequestedMinimumDimension="53 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="LayerForCompass70" RequestedMinimumDimension="81 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATAfrSmartCtl   syp:name="CompassLayer" Name="@MobileName"
+                    LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right"
+              ModalFlag="0" UpdateFlag="1">
+            <CATVidLayLayer>
+              <CATVidLayGrid  >
+                <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" VisibleFlag="@VisibleFlag ElementName=defaultCompassCentral" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+              </CATVidLayGrid>
+
+              <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  >
+                <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATAfrVidCompassWidget  syp:name="defaultCompassCentral"
+                                    Mode="@ModeApps"
+                                    SimulationMode="@PlayStatus Mode=TwoWays"
+                                    LayoutWhenUnvisibleFlag="1"
+                                    VisibleFlag="1"
+                                    Action="@HandleCompassEvent"
+                                    CompassLook="Mini"
+                                    RequestedMinimumDimension="64 64"
+                                    CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+
+                <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+              </CATVidLayGrid>
+              <CATVidGPSquare Name="ActionMiniCompass" syp:name="ActionMiniCompass" UseManipulatorFlag="1" />
+            </CATVidLayLayer>
+
+          </CATAfrSmartCtl>
+          <!--<CATVidLaySideAttach IgnoreChildrenMinimumDimensionFlag="0">
+              <CATVidCtl syp:name="CompassLayer" VisibilityPolicy="NoAnimation" CATVidLaySideAttach.IndexedConstraints="topPercent=0 leftPx=0">
+                <CATVidLayLayer  >
+                  <CATVidLayGrid >
+                    <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png"  RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+                  </CATVidLayGrid>
+
+                  <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  >
+                    <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATAfrVidCompassWidget  syp:name="defaultCompassCentral"
+                                        Mode="@ModeApps"
+                                        SimulationMode="@PlayStatus Mode=TwoWays"
+                                        LayoutWhenUnvisibleFlag="1"
+                                        VisibleFlag="1"
+                                        Action="@HandleCompassEvent"
+                                        CompassLook="Mini"
+                                        RequestedMinimumDimension="64 64"
+                                        CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+
+                    <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                    <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+                  </CATVidLayGrid>
+                  <CATVidGPSquare Name="ActionMiniCompass" syp:name="ActionMiniCompass" UseManipulatorFlag="1" />
+                </CATVidLayLayer>
+              </CATVidCtl>
+            </CATVidLaySideAttach>-->
+          <!--<CATAfrSmartCtl   syp:name="MobilePopupMiniCompass" Name="MobilePopupMiniCompass"
+                       LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right"
+                 ModalFlag="0" UpdateFlag="1">
+              
+             
+
+            </CATAfrSmartCtl>-->
+
+
+        </CATVidLayLayer>
+        <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <!--Popup for Band Apps-->
+      <CATAfrSmartCtl syp:name="CompassPopup" Name="Afr3DS_Compass_CurrentExpStrBis"  PopupVisibleFlag="@PopupVisibleFlag Mode=TwoWays" LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right"
+                 ModalFlag="1" UpdateFlag="1" PopupBecomesUnvisible="@HandleEvent">
+        <CATVidLayLayer syp:name="BandPopup" RequestedMinimumDimension="@BandDimension">
+          <!--<CATVidGPSquare Color="200 100 100 100"/>-->
+
+          <!-- Background of band-->
+          <CATVidLayGrid GridWeight="row1=1">
+            <CATVidSpacer RequestedMinimumDimension="35 44" LayoutWhenUnvisibleFlag="0"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidCtl syp:name="ContainerApps"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+          </CATVidLayGrid>
+
+
+
+
+
+
+          <!-- Layer for Big Compass when InsideViewerFlag is On  -->
+          <CATVidCtl syp:name="BigCompassGrid" VisibleFlag="@PopupVisibleFlag" >
+            <CATVidLayGrid   GridWeight="row1=1 col2=1" LayoutWhenUnvisibleFlag="0" >
+              <!--Spacer for 3DS and its margin-->
+              <CATVidSpacer syp:name="SpacerPopup3DS" RequestedMinimumDimension="26 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayLayer   CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+
+                <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  RequestedMinimumDimension="77 76">
+                  <CATVidSpacer syp:name="SpacerPopupTopCompass" RequestedMinimumDimension="5 10" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATAfrVidCompassWidget  syp:name="bigCompassCentral"
+                                           CompassLook="Big"
+               Mode="@ModeApps"
+               SimulationMode="@PlayStatus Mode=TwoWays"
+               LayoutWhenUnvisibleFlag="0"
+   
+               VisibleFlag="1"
+               Action="@HandleCompassEvent"
+               RequestedMinimumDimension="64 64"
+                                      CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+                </CATVidLayGrid>
+
+              </CATVidLayLayer>
+              <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+            </CATVidLayGrid>
+
+
+          </CATVidCtl>
+
+          <!-- end layer for big compass-->
+        </CATVidLayLayer>
+
+
+      </CATAfrSmartCtl>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="1">
+        <!--<CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>-->
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/>
+        <!--<CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>-->
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="LoadingVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="Scrollable" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LoadingVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="Scrollable" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>-->
+
+      <CATSYPEventTrigger RoutedEvent="Press" TargetName="ActionMiniCompass">
+        <CATSYPSetter TargetName="CompassPopup" Property="PopupVisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/>
+
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfr3DXPCompass">
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidSpacer RequestedMinimumDimension="35 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="CompassGrid" Color="234 235 235 255" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLayGrid GridWeight="col0=1">
+        <!--Spacer for 3DS and its margin-->
+        <CATVidSpacer RequestedMinimumDimension="53 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="CompassLayer" VisibilityPolicy="NoAnimation"  RequestedMinimumDimension="81 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidLayLayer syp:name="LayerForCompass70">
+
+            <CATVidLayGrid Color="255 0 255 255" >
+              <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" VisibleFlag="1" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+            </CATVidLayGrid>
+
+            <CATVidLayGrid   >
+              <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATAfrVidCompassWidget  syp:name="miniCompassCentral"
+                                  Mode="@ModeApps"
+                                  SimulationMode="@PlayStatus Mode=TwoWays"
+                                  LayoutWhenUnvisibleFlag="1"
+                                  VisibleFlag="1"
+                                  Action="@HandleCompassEvent"
+                                  CompassLook="Mini"
+                                  RequestedMinimumDimension="64 64"
+                                  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+            </CATVidLayGrid>
+
+
+          </CATVidLayLayer>
+        </CATVidCtl>
+
+        <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+      <!--Popup for Band Apps-->
+      <CATAfrSmartCtl syp:name="CompassPopup" Name="Afr3DS_Compass_CurrentExpStrBis" VisibilityPolicy="ClipAnimation" PopupVisibleFlag="@PopupVisibleFlag Mode=TwoWays" LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Bottom"
+                 ModalFlag="1" UpdateFlag="1" PopupBecomesUnvisible="@HandleEvent" >
+        <CATVidLayLayer syp:name="BandPopup" RequestedMinimumDimension="@BandDimension">
+          <!--<CATVidGPSquare Color="200 100 100 100"/>-->
+
+          <!-- Background of band-->
+          <CATVidLayGrid GridWeight="row1=1">
+            <CATVidSpacer RequestedMinimumDimension="35 44" LayoutWhenUnvisibleFlag="0" VisibleFlag="@InsideViewerFlag"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidCtl syp:name="ContainerApps"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATAfrSmartCtl>
+    </CATVidLayLayer>
+  </Template>
+  <Template syp:name="Default" Target="CATAfr3DXPCompass" syp:Variation="InsideViewer">
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidSpacer RequestedMinimumDimension="35 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="CompassGrid" Color="234 235 235 255" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLayGrid GridWeight="row1=1 col2=1">
+        <!--Spacer for 3DS and its margin-->
+        <CATVidSpacer RequestedMinimumDimension="53 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="LayerForCompass70" RequestedMinimumDimension="81 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATAfrSmartCtl   syp:name="MobilePopupMiniCompass" Name="@MobileName"
+                     LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right"
+               ModalFlag="0" UpdateFlag="0">
+            <CATVidLayLayer>
+              <CATVidLayGrid  >
+                <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" VisibleFlag="@VisibleFlag ElementName=defaultCompassCentral" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+              </CATVidLayGrid>
+
+              <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  >
+                <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATAfrVidCompassWidget  syp:name="defaultCompassCentral"
+                                    Mode="@ModeApps"
+                                    SimulationMode="@PlayStatus Mode=TwoWays"
+                                    LayoutWhenUnvisibleFlag="1"
+                                    VisibleFlag="1"
+                                    Action="@HandleCompassEvent"
+                                    CompassLook="Mini"
+                                    RequestedMinimumDimension="64 64"
+                                    CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+
+                <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+
+          </CATAfrSmartCtl>
+
+
+        </CATVidLayLayer>
+        <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <!--Popup for Band Apps-->
+      <CATAfrSmartCtl syp:name="CompassPopup" Name="Afr3DS_Compass_CurrentExpStrBis" VisibilityPolicy="ClipAnimation" PopupVisibleFlag="@PopupVisibleFlag Mode=TwoWays" LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right"
+                 ModalFlag="1" UpdateFlag="1" PopupBecomesUnvisible="@HandleEvent" >
+        <CATVidLayLayer syp:name="BandPopup" RequestedMinimumDimension="@BandDimension">
+          <!--<CATVidGPSquare Color="200 100 100 100"/>-->
+
+          <!-- Background of band-->
+          <CATVidLayGrid GridWeight="row1=1">
+            <CATVidSpacer RequestedMinimumDimension="35 44" LayoutWhenUnvisibleFlag="0" VisibleFlag="@InsideViewerFlag"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidCtl syp:name="ContainerApps"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+          </CATVidLayGrid>
+
+
+
+
+
+
+
+          <!-- Layer for Big Compass when InsideViewerFlag is On  -->
+          <CATVidCtl syp:name="CtlBigCompass" AlphaFilterValue="255" VisibleFlag="@InsideViewerFlag" EnableFlag="@InsideViewerFlag">
+            <CATVidLayGrid syp:name="BigCompassGrid"  GridWeight="row1=1 col2=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="@PopupVisibleFlag">
+              <!--Spacer for 3DS and its margin-->
+              <CATVidSpacer syp:name="SpacerPopup3DS" RequestedMinimumDimension="52 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayLayer  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                <CATVidLayGrid syp:name="BgPopupCompass" LayoutWhenUnvisibleFlag="0">
+                  <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+                </CATVidLayGrid>
+                <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  RequestedMinimumDimension="77 76">
+                  <CATVidSpacer syp:name="SpacerPopupTopCompass" RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATAfrVidCompassWidget  syp:name="bigCompassCentral"
+               Mode="@ModeApps"
+               SimulationMode="@PlayStatus Mode=TwoWays"
+               LayoutWhenUnvisibleFlag="0"
+   
+               VisibleFlag="1"
+               Action="@HandleCompassEvent"
+               RequestedMinimumDimension="64 64"
+                                      CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+                </CATVidLayGrid>
+
+              </CATVidLayLayer>
+              <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+            </CATVidLayGrid>
+
+
+          </CATVidCtl>
+
+          <!-- end layer for big compass-->
+        </CATVidLayLayer>
+
+
+      </CATAfrSmartCtl>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="defaultCompassCentral">
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <Template syp:name="Signature" Target="CATAfr3DXPCompass">
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidSpacer RequestedMinimumDimension="35 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="CompassGrid" Color="234 235 235 255" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+        <CATVidLayGrid GridWeight="row1=1 col2=1">
+          <!--Spacer for 3DS and its margin-->
+          <CATVidSpacer RequestedMinimumDimension="53 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidLayLayer syp:name="LayerForCompass70" RequestedMinimumDimension="81 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+            <CATAfrSmartCtl   syp:name="MobilePopupMiniCompass" Name="@MobileName"
+                       LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right"
+                 ModalFlag="0" UpdateFlag="0">
+              <CATVidLayLayer>
+                <CATVidLayGrid  >
+                  <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+                </CATVidLayGrid>
+
+                <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  >
+                  <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATAfrPLMCompassCentral  syp:name="defaultCompassCentral" syp:Template="SignatureV2"
+                                      CompassMode="@ModeApps"
+                                             OnPlayerVisibleFlag="@PlayStatus"
+                                      LayoutWhenUnvisibleFlag="1"
+                                      VisibleFlag="1"
+                                      Action="@HandleEvent"
+                                
+                                      RequestedMinimumDimension="64 64"
+                                      CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+                </CATVidLayGrid>
+              </CATVidLayLayer>
+
+            </CATAfrSmartCtl>
+
+
+          </CATVidLayLayer>
+          <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+    
+      <!--Popup for Band Apps-->
+      <CATAfrSmartCtl syp:name="CompassPopup" Name="Afr3DS_Compass_CurrentExpStrBis" VisibilityPolicy="ClipAnimation" PopupVisibleFlag="@PopupVisibleFlag Mode=TwoWays" LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Bottom"
+                 ModalFlag="1" UpdateFlag="1" PopupBecomesUnvisible="@HandleEvent" >
+        <CATVidLayLayer syp:name="BandPopup" RequestedMinimumDimension="@BandDimension">
+          <!--<CATVidGPSquare Color="200 100 100 100"/>-->
+          
+          <!-- Background of band-->
+          <CATVidCtl syp:name="CtlContentGrid">
+             <CATVidLayGrid GridWeight="row1=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="@ContentVisibleFlag">
+            <CATVidSpacer syp:name="SpacerWhenInsertedInViewer" LayoutWhenUnvisibleFlag="0" VisibleFlag="@InsideViewerFlag" RequestedMinimumDimension="32 41" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidLayGrid Color="234 235 235 255" GridWeight="col0=1 row2=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+
+              <CATVidSpacer syp:name="SpacerForBigCompass" RequestedMinimumDimension="35 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayGrid GridWeight="col0=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+                <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidCtlButtonIcon syp:Template="Compact" syp:name="CloseButton" Name="ClosePanel" OnTexture="Compass/Close_Icon_Normal.png" OverTexture="Compass/Close_Icon_Normal.png"   OffTexture="Compass/Close_Icon_Normal.png" RequestedMinimumDimension="32 32" IconDimension="13 13" Click="@HandleEvent" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"/>
+                <CATVidSpacer RequestedMinimumDimension="13 4" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+              </CATVidLayGrid>
+              <CATVidLayLayer  CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB ">
+                <CATVidLayGrid syp:name="Loading"  VisibleFlag="@LoadingVisibleFlag">
+                  <CATVidGPSquare syp:name="LoadingImage" Texture="I_Loading_Wheel_24x24.mng" AnimationOnFlag="@PopupVisibleFlag" RequestedMinimumDimension="24 24" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=B"/>
+                  <CATVidGPLabel syp:name="LoadingText"  FontName="3ds" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=T" />
+                </CATVidLayGrid>
+                <CATVidCtlScrollableArea syp:name="Scrollable"   HScrollbarPolicy="AlwaysHidden" HStretchPolicy="Stretch" RequestedMinimumDimension="346 32" >
+                  <CATVidLayGrid GridWeight="col1=1" >
+                    <CATVidSpacer RequestedMinimumDimension="24 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATVidCtl syp:name="ContainerApps" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+
+                    <CATVidSpacer RequestedMinimumDimension="14 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                  </CATVidLayGrid>
+
+                </CATVidCtlScrollableArea>
+              </CATVidLayLayer>
+
+              <CATVidCtlXRect syp:Template="SimpleHandle" Name="ResizeRight"  LayoutWhenUnvisibleFlag="0" CursorShape="SizeHorCursor" FocusableFlag="0" BackgroundColor="0 0" RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=3 attach=RLTB" Drag="@DragCB" Press="@DragCB" Release="@DragCB"/>
+            </CATVidLayGrid>
+          
+          </CATVidLayGrid>
+          </CATVidCtl>
+
+         
+
+
+
+
+          <!-- Layer for Big Compass when InsideViewerFlag is On  -->
+          <CATVidCtl syp:name="CtlBigCompass" AlphaFilterValue="0" VisibleFlag="@InsideViewerFlag" EnableFlag="@InsideViewerFlag">
+            <CATVidLayGrid syp:name="BigCompassGrid"  GridWeight="row1=1 col2=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="@PopupVisibleFlag">
+              <!--Spacer for 3DS and its margin-->
+              <CATVidSpacer syp:name="SpacerPopup3DS" RequestedMinimumDimension="52 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayLayer  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                <CATVidLayGrid syp:name="BgPopupCompass" LayoutWhenUnvisibleFlag="0">
+                  <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+                </CATVidLayGrid>
+                <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  RequestedMinimumDimension="77 76">
+                  <CATVidSpacer syp:name="SpacerPopupTopCompass" RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATAfrPLMCompassCentral  syp:name="bigCompassCentral" syp:Template="SignatureV2"
+               CompassMode="@ModeApps"
+               OnPlayerVisibleFlag="@PlayStatus"
+               LayoutWhenUnvisibleFlag="0"
+               WestDesignFlag="0"
+               WestDesignBorderFlag="0"
+               VisibleFlag="1"
+               Action="@HandleEvent"
+               RequestedMinimumDimension="64 64"
+                                      CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+                </CATVidLayGrid>
+
+              </CATVidLayLayer>
+              <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+            </CATVidLayGrid>
+            
+     
+          </CATVidCtl>
+
+          <!-- end layer for big compass-->
+        </CATVidLayLayer>
+
+
+      </CATAfrSmartCtl>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="MobileFlag" Value="1">
+        <CATSYPSetter TargetName="MobilePopupMiniCompass" Property="UpdateFlag" Value="1"/>        
+        
+        <CATSYPSetter TargetName="bigCompassCentral" Property="CompassLook" Value="Big"/>
+        <CATSYPSetter TargetName="SpacerPopup3DS" Property="RequestedMinimumDimension" Value="26 0"/>
+        <CATSYPSetter TargetName="SpacerPopupTopCompass" Property="RequestedMinimumDimension" Value="0 0"/>
+         <CATSYPSetter TargetName="BgPopupCompass" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag" Value="1">
+        <CATSYPSetter TargetName="CompassPopup" Property="SnapSide" Value="Right"/>
+        <CATSYPSetter TargetName="CtlBigCompass" Property="AlphaFilterValue" Value="255"/>
+        <CATSYPSetter TargetName="SpacerForBigCompass" Property="RequestedMinimumDimension" Value="35 50"/>       
+        
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag" Value="0">
+        <CATSYPSetter TargetName="CompassPopup" Property="SnapSide" Value="Bottom"/>
+        <CATSYPSetter TargetName="CtlBigCompass" Property="AlphaFilterValue" Value="0"/>
+        <CATSYPSetter TargetName="SpacerForBigCompass" Property="RequestedMinimumDimension" Value="35 4"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="0"/>        
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LoadingVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="Scrollable" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LoadingVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="Scrollable" Property="VisibleFlag" Value="1"/> 
+      </CATSYPTrigger>      
+      
+      <CATSYPEventTrigger RoutedEvent="MoveOver" TargetName="defaultCompassCentral">
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <Template syp:name="defaultCompass" Target="CATAfrPLMCompassVid">
+    <!--RequestedMinimumDimension="@ToolbarEastDimension" DialogBoxDimension="@DialogBoxDimension"-->
+    <CATAfrSmartCtl syp:name="CompassDialogBox" UpdateFlag="@UpdatedViewFlag" CreateDialogBoxFlag="1" UseRestrictedAreaFlag="@UseRestrictedAreaFlag" DiscretionFlag="1" AnchorPoint="@AnchorPoint" ConnectionPoint="@ConnectionPoint" ConstraintsDialogBox="@AttachConstraints" Viewer="@Viewer">
+
+      <!---->
+
+
+      <CATVidLayGrid   GridWeight="col2=1 row0=1" EnableFlag="@EnableFlag" VisibleFlag="@VisibleFlag" >
+        <!--West toolbar-->
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RTB"/>
+        <!--<CATAfrPLMCompassWestToolbar syp:Template="defaultCompassWestToolbar"
+                                     NewItemToAppend="@NewItemToAppend"
+                                     ClearItemsFlag="@ClearItemsFlag"
+                                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RB"
+                                     OnVisibleFlag="@CompassWestVisibleFlag Mode=TwoWays"
+                                    
+                                     RequestedMinimumDimension="@ToolbarWestDimension Mode=TwoWays"
+                                     
+                                     />-->
+        <!--En rajoutant une couleur on a pas de probleme de resizing de compass IR-116792V6R2012xWIM, Pourquoi je ne sais pas -->
+        <CATVidLayGrid  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RB"  GridWeight="col0=1 row0=1" RequestedMinimumDimension="@ToolbarWestDimension Mode=TwoWays">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RTB"/>
+          <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RTB"/>
+          <CATVidLayGrid syp:name="CtlToolbarWest" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=R">
+            <CATVidCtl
+                                 CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL"
+                                 ChildrenLifeCyclePolicy="DontDestroyChildren"
+                                 VisibleFlag="@CompassWestVisibleFlag"
+                                 VisibilityPolicy="SlideAnimation"
+                                 PresenterContent="@ToolbarWest"
+                                 LayoutWhenUnvisibleFlag="0"
+                                     
+                                     
+                                     />
+          </CATVidLayGrid>
+
+        </CATVidLayGrid>
+
+        <!--LayoutWhenUnvisibleFlag="0"-->
+        <!--Central Compass-->
+        <CATVidLayGrid  syp:name="layerCompassCentral"  GridWeight="row0=1 col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+
+          <CATVidSpacer   CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <!--default compass-->
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=B">
+            <CATAfrPLMCompassCentral syp:name="defaultCompassCentral"
+                                 CompassMode="@Mode"
+                                 PLMCompass="@PLMCompass"
+                                 PlayerOnlyDesignFlag="@PlayerOnlyDesignFlag"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 WestDesignFlag="@WestDesignVisibleFlag"
+                                 WestDesignBorderFlag="@WestDesignBorderFlag"
+                                 OnEastVisibleFlag="@VisibleFlag ElementName=eastPanel"
+                                 VisibleFlag="1"
+                                 Action="@HandleEvent" Edit="@HandleEvent" TooltipLink="@HandleEvent"/>
+            <CATVidLaySideAttach  >
+              <CATAfrPLMCompassProgressTaskLayer syp:name="ProgressTaskLayer" syp:Template="TextAtTop"
+                                                 CATVidLaySideAttach.IndexedConstraints="leftPx=-10 topPx=-39"/>
+            </CATVidLaySideAttach>
+          </CATVidLayLayer>
+
+
+          <!--medium compass (75)-->
+          <CATVidLayGrid  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=B">
+            <CATAfrPLMCompassCentral syp:name="defaultMediumCompassCentral" syp:Template="defaultCompass75Central"
+                 VisibleFlag="0"
+                 CATVidLayGrid.IndexedConstraints="x=0 y=0 "
+                 
+                 LayoutWhenUnvisibleFlag="0"
+                 CompassMode="@Mode"
+                 PLMCompass="@PLMCompass"
+                 WestDesignFlag="@WestDesignVisibleFlag"
+                 WestDesignBorderFlag="@WestDesignBorderFlag"
+                 OnEastVisibleFlag="@VisibleFlag ElementName=eastPanel"
+                 PlayerOnlyDesignFlag="@PlayerOnlyDesignFlag"
+                 RequestedMinimumDimension="85 85"
+                 Action="@HandleEvent" Edit="@HandleEvent" TooltipLink="@HandleEvent"/>
+
+          </CATVidLayGrid>
+
+          <CATVidSpacer   CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+        </CATVidLayGrid>
+
+        <CATAfrSmartCtl  Name="GhostDialogBox" syp:name="GhostDialogBox"  LayoutWhenUnvisibleFlag="0"  CreateDialogBoxFlag="1" ConstraintsDialogBox="leftPercent=50 topPercent=100" Viewer="@Viewer" UpdateFlag="@UpdatedViewFlag" CATVidLayGrid.IndexedConstraints="x=2 y=2">
+          <CATVidGPSquare syp:name="CompassGhostTexture" VisibleFlag="0" Name="CompassGhostTexture" UseManipulatorFlag="1"
+                  LayoutWhenUnvisibleFlag="0"
+       Texture="Compass/CompassCentralLayerGhost.png" Entry="@HandleEvent"
+                 
+                 />
+
+        </CATAfrSmartCtl>
+
+        <!--East toolbar-->
+        <CATAfrPLMCompassEast syp:name="eastPanel" syp:Template="Default"
+                              CompassMode="@Mode"
+                              PLMCompass="@PLMCompass"
+                              FocusableFlag="0" 
+                              CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=L"
+                      
+                              VisibilityPolicy="@EastVisibilityPolicy"
+                              RequestedMinimumDimension="@ToolbarEastDimension"
+                              CompassPosition="@CompassPosition"
+                             />
+        <!--SlideAnimation-->
+      </CATVidLayGrid>
+
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+
+      <CATSYPEventTrigger RoutedEvent="EastPanelInitialized" TargetName="eastPanel">
+        <CATSYPSetter TargetName="CompassDialogBox" Property="ReloadResourcesFlag" Value="1"/>
+      </CATSYPEventTrigger>
+      <!--Position management-->
+
+      <!--<CATSYPTrigger Property="CompassPosition" Value="Docked">
+        <CATSYPSetter Property="ConstraintUpdateAllowedFlag" TargetName="CompassDialogBox" Value="1"/>
+        <CATSYPSetter Property="UseAnchoredDialogBoxFlag" TargetName="CompassDialogBox" Value="0"/>
+        -->
+      <!--<CATSYPSetter Property="VisibleFlag" TargetName="GhostDialogBox" Value="0"/>-->
+      <!--
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="CompassGhostTexture" Value="1 113"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CompassGhostTexture" Value="0"/>
+
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="CompassPosition" Value="Anchored">
+        <CATSYPSetter Property="ConstraintUpdateAllowedFlag" TargetName="CompassDialogBox" Value="0"/>
+        <CATSYPSetter Property="UseAnchoredDialogBoxFlag" TargetName="CompassDialogBox" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="GhostDialogBox" Value="1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="CompassGhostTexture" Value="113 113"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CompassGhostTexture" Value="1"/>
+
+      </CATSYPTrigger>
+
+      <!--Widget Size management-->
+
+      <CATSYPTrigger Property="WidgetSize" Value="UndefinedSize">
+        <CATSYPSetter Property="VisibleFlag" TargetName="defaultCompassCentral" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="defaultMediumCompassCentral" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CompassGhostTexture" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="defaultCompassCentral" Value="113 113"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="CtlToolbarWest" Value="0 113"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="WidgetSize" Value="MediumSize">
+        <CATSYPSetter Property="VisibleFlag" TargetName="defaultCompassCentral" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="defaultMediumCompassCentral" Value="1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="defaultCompassCentral" Value="85 85"/>
+        <CATSYPSetter Property="CentralEastBorderDimension" TargetName="eastPanel" Value="85 85"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="CtlToolbarWest" Value="0 85"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="WidgetSize" Value="LargeSize">
+        <CATSYPSetter Property="UseAnchoredDialogBoxFlag" TargetName="CompassDialogBox" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="defaultCompassCentral" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="defaultMediumCompassCentral" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="CompassGhostTexture" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="defaultCompassCentral" Value="113 113"/>
+        <CATSYPSetter Property="CentralEastBorderDimension" TargetName="eastPanel" Value="113 113"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="CtlToolbarWest" Value="0 113"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PlayerOnlyDesignFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="eastPanel" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LoadingFlag" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="defaultCompassCentral" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="CtlToolbarWest" Value="0"/>        
+        <CATSYPSetter Property="EnableFlag" TargetName="eastPanel" Value="0"/>       
+      </CATSYPTrigger>      
+      <CATSYPTrigger Property="LoadingFlag" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="defaultCompassCentral" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="CtlToolbarWest" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="eastPanel" Value="1"/>
+      </CATSYPTrigger>            
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="SignatureDesktop2" Target="CATAfrPLMCompassVid">
+    <!--CATAfrSmartCtlRequestedMinimumDimension="@ToolbarEastDimension" -->
+
+
+    <!---->
+    <CATVidLayLayer >
+      
+        <CATAfrPLMCompassCentral syp:name="MiniCompass" syp:Template="SignatureV2"
+                            CompassMode="@Mode"
+                            PLMCompass="@PLMCompass"
+                            PlayerOnlyDesignFlag="@PlayerOnlyDesignFlag"
+                            LayoutWhenUnvisibleFlag="0"
+                            VisibleFlag="1"
+                            Action="@HandleEvent"  Edit="@HandleEvent" TooltipLink="@HandleEvent"
+                            RequestedMinimumDimension="113 113"
+                            />
+      <CATVidLayLayer VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+        <CATAfrSmartCtl syp:name="PopupEast" CreateDialogBoxFlag="1" SnappableFlag="1" Viewer="@Viewer"
+                 ResizableDialogBoxFlag="1" ContentPanelVisibleFlag="1"  CompactDialogBoxFlag="1"
+                 TitleDialogBox="Experience Player" InitialDockArea="TopDockArea"  UpdateFlag="@CompassPlayerVisibleFlag"   VisibleFlag="@CompassPlayerVisibleFlag">
+
+          <CATAfrPLMCompassPlayTab syp:Template="SignatureEast" syp:name="Player"/>
+        </CATAfrSmartCtl>
+      </CATVidLayLayer>
+ 
+      <CATVidLayLayer VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+        <CATAfrSmartCtl syp:name="RefinementPanel" LayoutWhenUnvisibleFlag="0" Viewer="@Viewer" CreateDialogBoxFlag="1" ToolbarFlag="1" InitialDockArea="LeftDockArea" VisibleFlag="@CompassEastVisibleFlag" UpdateFlag="@CompassEastVisibleFlag">
+          <CATAfrRefinementPanelCtl syp:name="RefinementPanelCtl" syp:Template="SignatureRefinementPanel" VIDCompass="@PLMCompass" RequestedMinimumDimension="200 200" />
+        </CATAfrSmartCtl>
+      </CATVidLayLayer>
+      <CATVidLaySideAttach  >
+              <CATAfrPLMCompassProgressTaskLayer syp:name="ProgressTaskLayer" syp:Template="TextAtRight" LoadingFlag="@LoadingFlag"
+                                                 CATVidLaySideAttach.IndexedConstraints="leftPx=-10 topPx=-10"/>
+      </CATVidLaySideAttach>
+
+
+      <!--<CATAfrSmartCtl syp:name="PopupEast"  CreateIconBoxFlag="1" IconBoxOffsetPosition="1 113"  VisibleFlag="1">
+          <CATVidLayLayer>
+            <CATAfrPLMCompassEast syp:name="eastPanel" syp:Template="Default"
+                   CompassMode="@Mode"
+                   PLMCompass="@PLMCompass"
+                   VisibilityPolicy="@EastVisibilityPolicy"
+                   CompassPosition="@CompassPosition"
+                  
+                             />
+            -->
+      <!--RequestedMinimumDimension="@ToolbarEastDimension" DialogBoxDimension="@ToolbarEastDimension"-->
+      <!--
+          </CATVidLayLayer>
+
+
+        </CATAfrSmartCtl>-->
+      <!--IconBoxOffsetPosition="@PopupWestOffset"-->
+    </CATVidLayLayer>
+
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="LoadingFlag" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="MiniCompass" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="Player" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="RefinementPanelCtl" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LoadingFlag" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="MiniCompass" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="Player" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="RefinementPanelCtl" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+  
+  <Template syp:name="SignatureDesktop" Target="CATAfrPLMCompassVid">
+    <CATVidLayGrid GridWeight="row1=1 col1=1">
+      <CATVidLayLayer syp:name="LayerForCompass70"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidLayGrid >
+          <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  RequestedMinimumDimension="77 76">
+          <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATAfrPLMCompassCentral  syp:name="defaultCompassCentral" syp:Template="SignatureV2"
+                              CompassMode="@Mode"
+                              PLMCompass="@PLMCompass"
+                              PlayerOnlyDesignFlag="@PlayerOnlyDesignFlag"
+                              LayoutWhenUnvisibleFlag="0"
+                              OnPlayerVisibleFlag="@CompassPlayerVisibleFlag"
+                              VisibleFlag="1"
+                              Action="@HandleEvent"
+                              RequestedMinimumDimension="64 64"
+                              CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+          <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+          <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+        </CATVidLayGrid>
+        <CATVidLaySideAttach  >
+          <CATAfrPLMCompassProgressTaskLayer syp:name="ProgressTaskLayer" syp:Template="TextAtRight_Small" LoadingFlag="@LoadingFlag"
+                                             CATVidLaySideAttach.IndexedConstraints="leftPx=-3 topPx=-8"/>
+        </CATVidLaySideAttach>
+         <!--<CATVidLayLayer VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATAfrSmartCtl syp:name="SpacerPlayer" CreateDialogBoxFlag="1" SnappableFlag="1" Viewer="@Viewer"
+                   ResizableDialogBoxFlag="1" ContentPanelVisibleFlag="1"  CompactDialogBoxFlag="1" PanelDeleted="@HandleEvent"
+                   TitleDialogBox="Spacer Player" InitialDockArea="TopDockArea"  UpdateFlag="@PlayerVisibleFlag"   VisibleFlag="@PlayerVisibleFlag">
+
+            <CATVidSpacer RequestedMinimumDimension="250 10" />
+          </CATAfrSmartCtl>
+        </CATVidLayLayer>-->
+        <CATVidLayLayer VisibleFlag="0" LayoutWhenUnvisibleFlag="0">
+          <CATAfrSmartCtl syp:name="ExperiencePanel" Name="ExperiencePanel" CreateDialogBoxFlag="1" SnappableFlag="1" ConstraintsDialogBox="topPx=50 leftPercent=50" Viewer="@Viewer"
+                   ResizableDialogBoxFlag="1" ContentPanelVisibleFlag="1"  CompactDialogBoxFlag="1" PanelDeleted="@HandleEvent"
+                    InitialDockArea="TopDockArea"  UpdateFlag="@CompassPlayerVisibleFlag"   VisibleFlag="@CompassPlayerVisibleFlag">
+
+            <CATAfrPLMCompassPlayTab syp:Template="SignatureEast" syp:name="Player"/>
+          </CATAfrSmartCtl>
+        </CATVidLayLayer>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+   
+
+    <CATSYPTriggerCollection>
+      <!--<CATSYPEventTrigger RoutedEvent="Action" TargetName="MiniCompass">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerForCompass120" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="RefinementPanelCtl" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="BackgroundPanel" Value="1"/>        
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerForCompass70" Value="0"/>
+      </CATSYPEventTrigger>-->
+   
+      <CATSYPTrigger Property="LoadingFlag" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="defaultCompassCentral" Value="0"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="Player" Value="0"/>
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LoadingFlag" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="defaultCompassCentral" Value="1"/>
+        <CATSYPSetter Property="EnableFlag" TargetName="Player" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="MobileSourceFlag" Value="1">
+        <CATSYPSetter Property="SnappableFlag" TargetName="ExperiencePanel" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+
+
+  <Template syp:name="SignatureMobile" Target="CATAfrPLMCompassVid">
+    <!--CATAfrSmartCtlRequestedMinimumDimension="@ToolbarEastDimension" -->
+
+
+      <!---->
+      <CATVidLayLayer >
+        <CATVidLayGrid   RequestedMinimumDimension="113 113">
+           <CATAfrPLMCompassCentral  syp:name="MiniCompass" syp:Template="SignatureV2"
+                               CompassMode="@Mode"
+                               PLMCompass="@PLMCompass"
+                               PlayerOnlyDesignFlag="@PlayerOnlyDesignFlag"
+                               LayoutWhenUnvisibleFlag="0"
+                               VisibleFlag="1"
+                               Action="@HandleEvent"
+                               RequestedMinimumDimension="70 70"
+                               CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=T"/>
+        </CATVidLayGrid>
+        <CATAfrSmartCtl syp:name="CompassPopup" UpdateFlag="@UpdatedViewFlag" CreateIconBoxFlag="1" ModalFlag="1" SnapSide="Right" VisibleFlag="0">
+          <CATAfrPLMCompassCentral syp:name="defaultCompassCentral" syp:Template="SignatureV2"
+                               CompassMode="@Mode"
+                               PLMCompass="@PLMCompass"
+                               PlayerOnlyDesignFlag="@PlayerOnlyDesignFlag"
+                               LayoutWhenUnvisibleFlag="0"
+                               WestDesignFlag="@WestDesignVisibleFlag"
+                               WestDesignBorderFlag="@WestDesignBorderFlag"
+                               VisibleFlag="1"
+                               Action="@HandleEvent" Edit="@HandleEvent" TooltipLink="@HandleEvent"
+                               RequestedMinimumDimension="120 120"/>
+        </CATAfrSmartCtl>
+        
+
+        <!--<CATAfrSmartCtl syp:name="PopupEast"  CreateIconBoxFlag="1" IconBoxOffsetPosition="1 113"  VisibleFlag="1">
+          <CATVidLayLayer>
+            <CATAfrPLMCompassEast syp:name="eastPanel" syp:Template="Default"
+                   CompassMode="@Mode"
+                   PLMCompass="@PLMCompass"
+                   VisibilityPolicy="@EastVisibilityPolicy"
+                   CompassPosition="@CompassPosition"
+                  
+                             />
+            --><!--RequestedMinimumDimension="@ToolbarEastDimension" DialogBoxDimension="@ToolbarEastDimension"--><!--
+          </CATVidLayLayer>
+
+
+        </CATAfrSmartCtl>--><!--IconBoxOffsetPosition="@PopupWestOffset"-->
+      </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="Action" TargetName="MiniCompass">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CompassPopup" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="MiniCompass" Value="0"/>        
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="PopupBecomesUnvisible" TargetName="CompassPopup">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CompassPopup" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="MiniCompass" Value="1"/>        
+      </CATSYPEventTrigger>      
+    </CATSYPTriggerCollection>
+
+  
+  </Template>
+  
+  
+  
+<!-- GridWeight="col0=1 col1=1 row1=1 row2=1"-->
+  <Template syp:name="TextAtTop" Target="CATAfrPLMCompassProgressTaskLayer">
+    <CATVidLayGrid syp:name="Grid"  VisibleFlag="@LoadingFlag">
+      <CATVidGPLabel syp:name="Text" HorizontalAlignment="0"
+                     CropPolicy="CropWithDots"
+                     Text="@CommentText"
+                     RequestedMinimumDimension="100 20"
+                     TextHeight="16"
+                     LayoutWhenUnvisibleFlag="0"
+                     ItalicFlag="1"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+      <CATVidCtlButtonIcon syp:name="Button" syp:Template="Icon"
+                       IconDimension="29 29"
+                       RequestedMinimumDimension="29 29"
+                       OffTexture="I_AfrStandardCross.png"
+                       OverTexture="I_AfrStandardCrossOver.png"
+                       OnTexture="I_AfrStandardCross.png"
+                       Click="@HandleCancelLoading"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RTB"
+                       />
+      <CATVidGPSquare syp:name="LoadingSquare"  
+                      Texture="Signature_Compass_Normal.mng" 
+                      RequestedMinimumDimension="133 133" 
+                      AnimationOnFlag ="@LoadingFlag"
+                      CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 ySpan=2 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+  
+  <Template syp:name="TextAtRight" Target="CATAfrPLMCompassProgressTaskLayer">
+    <CATVidLayGrid syp:name="Grid"  VisibleFlag="@LoadingFlag">
+      <CATVidGPLabel syp:name="Text" HorizontalAlignment="0"
+                     CropPolicy="CropWithDots"
+                     Text="@CommentText"
+                     RequestedMinimumDimension="100 20"
+                     TextHeight="16"
+                     LayoutWhenUnvisibleFlag="0"
+                     ItalicFlag="1"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=LB"/>
+      <CATVidCtlButtonIcon syp:name="Button" syp:Template="Icon"
+                       IconDimension="29 29"
+                       RequestedMinimumDimension="29 29"
+                       OffTexture="I_AfrStandardCross.png"
+                       OverTexture="I_AfrStandardCrossOver.png"
+                       OnTexture="I_AfrStandardCross.png"
+                       Click="@HandleCancelLoading"
+                       CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=LT"
+                       />
+      <CATVidGPSquare syp:name="LoadingSquare"  
+                      Texture="Signature_Compass_Normal.mng" 
+                      RequestedMinimumDimension="133 133" 
+                      AnimationOnFlag ="@LoadingFlag"
+                      CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 ySpan=2 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+    <Template syp:name="TextAtRight_Small" Target="CATAfrPLMCompassProgressTaskLayer">
+    <CATVidLayGrid syp:name="Grid"  VisibleFlag="@LoadingFlag">
+      <!--<CATVidGPLabel syp:name="Text" HorizontalAlignment="0"
+                     CropPolicy="CropWithDots"
+                     Text="@CommentText"
+                     RequestedMinimumDimension="100 20"
+                     TextHeight="16"
+                     LayoutWhenUnvisibleFlag="0"
+                     ItalicFlag="1"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=LB"/>-->
+      <CATVidCtlButtonIcon syp:name="Button" syp:Template="Icon"
+                       IconDimension="29 29"
+                       RequestedMinimumDimension="29 29"
+                       OffTexture="I_AfrStandardCross.png"
+                       OverTexture="I_AfrStandardCrossOver.png"
+                       OnTexture="I_AfrStandardCross.png"
+                       Click="@HandleCancelLoading"
+                       CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=LT"
+                       />
+           <CATVidGPLabel syp:name="Text" HorizontalAlignment="0"
+                     CropPolicy="CropWithDots"
+                     Text="@CommentText"
+                     RequestedMinimumDimension="100 20"
+                     TextHeight="16"
+                     LayoutWhenUnvisibleFlag="0"
+                     ItalicFlag="1"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=LB"/>
+      <CATVidGPSquare syp:name="LoadingSquare"  
+                      Texture="Signature_Compass_Small.mng" 
+                      RequestedMinimumDimension="84 84" 
+                      AnimationOnFlag ="@LoadingFlag"
+                      CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 ySpan=2 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+</Styles>
+

@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Check if the string start with a word",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "value",
+          "basic": "string",
+          "desc": "The string where to search"
+        },
+        {
+          "label": "start",
+          "basic": "string",
+          "desc": "The string to search"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "startWith",
+          "basic": "bool",
+          "desc": "return true if startWith"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

@@ -1,0 +1,70 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of Components concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each component 
+// This parameter has to be documented
+
+GenericMediatorErrorWithCompo.Diagnostic="Komponente [/p1] kann nicht geöffnet werden";
+GenericMediatorErrorWithCompo.Advice="Komponente /p1 kann nicht geöffnet werden.\nStarten Sie den Prozess neu.\nAktivieren Sie Fehlerprotokollstatistiken, um Ihren Administrator bei der Fehlerbehebung zu unterstützen.\nVersuchen Sie, die Komponentenprüfung auszuführen.";
+
+GenericMediatorError.Diagnostic="Beim Erstellen der Sitzung ist ein unerwarteter Fehler aufgetreten.";
+GenericMediatorError.Advice="Es wird dringend empfohlen, diesen Prozess neu zu starten. Führen Sie den Komponentenprüfer aus.";
+
+BulkSessionManagementIntegrityFailure.Diagnostic="Ein unerwarteter Fehler ist während des Sitzungsaufbaus aufgetreten. Die Integrität der Sitzung kann nicht sichergestellt werden.";
+BulkSessionManagementIntegrityFailure.Advice="Starten Sie den Prozess neu.\nIntegritätskomponenten können ggf. nicht im Server erreicht werden. Prüfen Sie die P&O-Regeln auf dem Server und wenden Sie sich an Ihren Administrator.";
+
+//Copy-pasted from PLM_NotRetrievedComponent@PLMServerActionErrors.CATNls
+ComponentUnavailabilityInDatabase.Diagnostic="Die Komponente konnte nicht aus der Datenbank abgefragt werden.";
+ComponentUnavailabilityInDatabase.Advice="Die Komponente ist möglicherweise nicht mehr vorhanden oder die zugehörige Sicherheitsrichtlinie lässt ein Lesen nicht zu.";
+
+AnotherMinorInSession.Diagnostic="/p: In der Sitzung ist ein weiteres untergeordnetes Element aus derselben Hauptfamilie vorhanden und verhindert das Öffnen";
+AnotherMinorInSession.Advice="Untergeordnetes Element entladen, um das Öffnen zu erreichen";
+
+AnotherMinorInInput.Diagnostic="/p:  In der Sitzung ist ein weiteres untergeordnetes Element aus derselben Hauptfamilie vorhanden und verhindert das Öffnen";
+AnotherMinorInInput.Advice="Bitte wenden Sie sich an Ihren lokalen Administrator.";
+
+ConcurrencyInSessionOfflineContent.Diagnostic="/p: dieses Element wurde im Offline-Inhalt und in der Sitzung geändert.";
+ConcurrencyInSessionOfflineContent.Advice="Einige Elemente in einem anderen Status sind bereits in der Sitzung geladen.\n Schließen Sie die Registerkarten, in denen diese enthalten sind, bevor Sie den Offline-Inhalt öffnen.";
+
+NoElement.Diagnostic="Kein Element an die Engine für Öffnen gesendet";
+NoElement.Advice="Prüfen Sie die Datenverfügbarkeit im Server";
+
+NoEltToOpen.Diagnostic="Alle zum Öffnen aufgelisteten Komponenten wurden in der Sitzung bereits geladen, aber die Daten sind möglicherweise nicht aktuell. Beim Öffnen wurde keine Aktualisierung durchgeführt";
+NoEltToOpen.Advice="Wenn die neueste Aktualisierung geladen werden soll, muss zuerst die aktuelle Authoring-Sitzung beendet werden";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+AdapterCom.Diagnostic="Beim Versuch, Informationen auf dem Server abzurufen, ist ein Problem aufgetreten";
+AdapterCom="Die Verbindung mit dem Server ist möglicherweise getrennt";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// (correspond a une err systeme, donc a un abend)
+Internal.Diagnostic="Interner Fehler bei Engine für Öffnen";
+Internal.Advice="Bitte wenden Sie sich an Ihren lokalen Administrator";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+MessageStructure.Diagnostic="Die auf dem Server abgerufenen Daten sind nicht konsistent";
+MessageStructure.Advice="Die Daten zum Beschreiben einer Komponente sind möglicherweise unvollständig";
+
+AlreadyOpened_F_0.Diagnostic="/p Zum Öffnen aufgelistete Komponenten sind bereits in der Sitzung, aber die Daten sind möglicherweise nicht aktuell. Beim Öffnen wurde keine Aktualisierung durchgeführt";
+AlreadyOpened_F_0.Advice="Wenn die neueste Aktualisierung geladen werden soll, muss zuerst die aktuelle Authoring-Sitzung beendet werden";
+
+UnstreamPb.Diagnostic="Mindestens ein Datenstrom konnte nicht geladen werden";
+UnstreamPb.Advice="Bitte überprüfen Sie den Status des Vault";
+
+FactoryNotFound.Diagnostic="Eine Komponente des Typs /p konnte in der Sitzung nicht erzeugt werden, weil eine Factory fehlt.";
+FactoryNotFound.Advice="Wenden Sie sich an Ihren Administrator: Ihnen fehlen möglicherweise ein Paket oder Lizenzen für Typ /p.";
+
+ReentranceForbidden.Diagnostic="Es kann derzeit keine neue '/p1'-Operation gestartet werden, da noch eine andere Operation läuft.";
+ReentranceForbidden.Advice="Support kontaktieren.";

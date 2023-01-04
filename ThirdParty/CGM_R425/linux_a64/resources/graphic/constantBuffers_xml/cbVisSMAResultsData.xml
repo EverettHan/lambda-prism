@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_cbSMAResultsData</NAME>
+
+  <!-- ResultShift and ResultScale are used in place of the missing texture transform.
+       Only the 1st dimension is transformed. The 2nd dimension of 2D is unaffected. -->
+
+  <UNIFORM>
+    <NAME>ResultShift</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>    
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>ResultScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>NoResultScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>100000.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--0=No texture, 1=1D texture, 2=2D texture -->
+  <UNIFORM>
+    <NAME>ResultsDim</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>6</UI_MAX_VALUE>
+    <!--UI_STEP_VALUE>1</UI_STEP_VALUE-->
+  </UNIFORM>
+
+  <!--0=0 or 1 sets of texture coords, 2=2 sets of texture coordinates -->
+  <UNIFORM>
+    <NAME>FrontBack</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1</UI_MAX_VALUE>
+    <!--UI_STEP_VALUE>1</UI_STEP_VALUE-->
+  </UNIFORM>
+
+  <!--Currently only used by SMAHvcSphereInstVS.glsl -->
+  <UNIFORM>
+    <NAME>ResultsAlpha</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1</UI_MAX_VALUE>
+    <!--UI_STEP_VALUE>1</UI_STEP_VALUE-->
+  </UNIFORM>
+
+</CONSTANT_BUFFER>
+

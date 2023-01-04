@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">  
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Background_Uniform</NAME>
+  </CONSTANT_BUFFER>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Pass0</NAME>
+      
+      <COMMONS>streams varyings Ambiance_Background_CBCamera</COMMONS>
+      <VERTEX_STAGE>Ambiance_Background_MainVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>Ambiance_Background_DeclarePS Ambiance_Background_UniformPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</EFFECT>

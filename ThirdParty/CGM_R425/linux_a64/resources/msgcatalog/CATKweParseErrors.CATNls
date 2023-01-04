@@ -1,0 +1,40 @@
+<meta charset="UTF-8"/>
+CATCkeBadNbArg1=" bad number of arguments in /P1 /P2 : /P3 instead of /P4";
+CATCkeBadNbArg2=" bad number of arguments in /P1 /P2";
+CATCkeBadKindOfArg1=" bad kind of argument number /P1 in /P2 /P3 \n",
+                    " (should be /P4 instead of /P5)";
+CATCkeBadKindOfArg2=" bad kind of argument number /P1 in /P2 /P3 ";
+CATCkeBadKindOfArg3=" impossible to compare a variable of type /P1 with a variable of type /P2 ";
+CATCkeBadKindOfArg4=" impossible to affect a variable of type /P2 in a variable of type /P1. \n you can use the syntax <set x=y> if your intention is to operate a cast between 2 variables  ";
+CATCkeBadKindOfArg5=" operation /P1 is impossible between a variable of type /P2 and a variable of type /P3 ";
+CATCkeBadKindOfArg6=" operation /P1 is impossible on a variable of type /P2 ";
+CATCkeNonExistingMethod=" invalid /P1 used : /P2";
+CATCkeNonExistingMethod2=" invalid /P1 used : /P2 \n (a /P1 /P2 exists but on a type /P3 instead of /P4)";
+CATCkeInvalidExpression2=" a formula that returns a /P1 cannot be used to valuate a parameter of type /P2";
+CATCkeInvalidExpression=" invalid kind of expression : should be /P1";
+CATCkeNonExistingType=" invalid type name : /P1 ";
+CATCkeUndeterminableUnit=" unable to determine the magnitude of /P1";
+CATCkeBadType=" type /P1 can not be used to declare a local variable";
+CATCkeDoublyDefinedVariable=" variable /P1 is already defined";
+CATCkeParseMultiLevel=" incorrect arguments: /P1";
+CATCkeParseRestrictMethod=" method /P1 is not autorized in a /P2";
+CATCkeParseRestrictFunction=" function /P1 can not be used in the context of a /P2";
+CATCkeParseRestrictOperator=" operator /P1 can not be used in the context of a /P2";
+CATCkeParseRestrictKeyword=" keyword /P1 can not be used in the context of a /P2";
+CATCkeParseRestrictType=" type /P1 can not be used in the context of a /P2";
+CATCkeSyntaxError="syntax error";
+
+ExprIsNotAnOptConstraint="Expression is not an optimization constraint. It has to be a boolean expression.";	
+ExprIsNotACheck="Expression is not a check. It has to be a boolean expression.";	
+IncludesDefError="Syntax error in Includes definition. Correct Syntax is \"Include <Library name>;\".";
+MissingSemicolonInclude="Missing ';' at end of Include definition."; 
+IncludesRetrieveError="Could not retrieve included Library /P1. Check Data Setup or Resource Table in the current Context.";	
+IncludesRetrieveErrorTitle="Invalid Include";	
+AlreadyIncludedLibTitle="Library included multiple times.";
+AlreadyIncludedLib="Library /P1 is already included under the name /P2. Please remove one of the two includes.";
+InvalidLibName="No functions library named /P1 was included. Check the includes section of your rule.";	
+InvalidReusableFunctionName="No function named /P2 was found in library /P1 or with incompatible arguments. Check the library for such a function.";	
+UnprotectedInteger="Invalid type name in variable declaration. If you intend to use a type name starting with an integer please surround it with backquotes (ex: let arc(`2DArc`))";	
+
+AttributesOnIncompatibleTypes="An attribute is requested for the second time on the same object but on a different and incompatible type. Please use another variable with the exact type or use function that retrieves the type dynamically (GetAttribute...)";
+ExprIsNotAffectationForWithInit="Expression does not contain a simple affectation.";

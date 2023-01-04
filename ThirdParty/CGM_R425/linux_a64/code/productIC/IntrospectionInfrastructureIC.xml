@@ -1,0 +1,15 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "Visualization.tst"/>
+  <attached name = "VisuImmersiveDialog.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <authorize access = "Private" name = "VisuImmersiveDialog.tst"/>
+  <authorize access = "Private" comment = "13.05.2011 DMO/CDT Introspection is now exposed" name = "CATStyleProcessor"/>
+  <authorize access = "Private" comment = "2014/07/31: CPT/QJP" name = "VIDToolkit.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

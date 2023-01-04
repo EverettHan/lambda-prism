@@ -1,0 +1,18 @@
+<meta charset="UTF-8"/>
+CATPLMBusinessLogicUpgrade.Alias="Logique applicative pour la prise en charge de la mise à niveau des données ";
+CATPLMBusinessLogicUpgrade.Description="Définition d'ouvertures pour la mise à niveau des données si nécessaire.";
+
+INFRA_UnifiedTypingMigration.Alias="Migration de typage unifié : mappage de types et d'attributs";
+INFRA_UnifiedTypingMigration.Description="Permet l'introduction de règles métier pour définir le mappage de types et d'attributs utilisé lors de la migration des données de l'ancien typage vers le typage unifié. Pour mettre Ie PVS à niveau (filtre de vue de produit) et les requêtes enregistrées";
+INFRA_UnifiedTypingMigration.ThisObject.Alias="Type dans l'entrée (de PVS ou requête)";
+INFRA_UnifiedTypingMigration.ThisObject.Description="Objet factice dont le type est l'ancien type de typage enregistré dans la requête ou le PVS qui doit être mappé.";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Alias="Nom du type par défaut à utiliser à la place dans la requête";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Description="Type cible par défaut dans l'entrée.";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Alias="Liste de noms d'attributs";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Description="Liste des noms d'attributs de l'entrée qui appartenaient à la requête à mettre à niveau.";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Alias="Nom du type à utiliser à la place dans la requête";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Description="Entrez ce nom de type si le type de la requête doit changer.";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="Liste de noms d'attributs (éventuellement mappés)";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="La taille de la liste doit être identique à celle de SavedAttributes dans l'entrée. Avec les mêmes noms, si les attributs sont conservés et non mappés, ou de nouveaux noms. Un nom peut être vide si l'attribut doit être ignoré.";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="Liste des noms d'extensions où figurent les attributs après la migration";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="La taille de la liste doit être identique à celle de MappedAttributes dans la sortie. Avec des noms vides si les attributs sont conservés sur le type, ou un nom d'extension si l'attribut se trouve sur une extension après la migration.";

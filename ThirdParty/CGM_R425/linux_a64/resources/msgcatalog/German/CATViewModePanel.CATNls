@@ -1,0 +1,263 @@
+<meta charset="UTF-8"/>
+//--------------------------------------
+// Resource file 
+// En_EN
+//--------------------------------------
+VMTitle="Anpassung des Anzeigemodus";
+//-----------------------------------------------------------------------------
+// Edges frame
+//-----------------------------------------------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.HeaderFrame.Global.Title="Linien und Punkte";
+
+//--------------------------------------
+// Edges
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeFrame.edgeBtn.Title="Kanten und Punkte";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeFrame.edgeBtn.LongHelp="Zeigt die Geometrie im Schattierungsmodus mit Punkten und Kanten an.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeFrame.edgeBtn.ShortHelp="Zeigt die Geometrie im Schattierungsmodus mit Punkten und Kanten an.";
+//--------------------------------------
+// All Edges
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.allEdgeBtn.Title="Alle Kanten";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.allEdgeBtn.LongHelp="Zeigt die Geometrie mit allen Kanten ungeachtet des Typs (weich oder nicht) an.
+Dieser Modus entspricht dem Modus Schattierung mit Kanten, der im Abschnitt Ansicht zur Verfügung steht.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.allEdgeBtn.ShortHelp="Zeigt die Geometrie mit allen Kanten ungeachtet des Typs (weich oder nicht) an.
+Dieser Modus entspricht dem Modus Schattierung mit Kanten, der im Ansichtsabschnitt zur Verfügung steht.";
+
+
+//--------------------------------------
+//  withHalfLightedSmoothEdges
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.halfLightedSmoothEdgeBtn.Title="Halbsichtbare weiche Kanten";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.halfLightedSmoothEdgeBtn.LongHelp="Zeigt weiche Kanten, die so gezeichnet sind, dass sie weniger sichtbar sind als scharfe Kanten, teilweise an.
+Dieser Modus wirkt sich nicht aus, wenn die Schattierung entfernt wurde.
+Die auf Kanten angewendete Farbe entspricht der Farbe, die in den Grafikeigenschaften des Hauptkörpers definiert wurde.
+Bei mehrfarbigen Objekten erhalten Kanten die Farbe der Fläche, zu der sie gehören.
+Die Materialoption wirkt sich nicht auf die auf die Kanten angewendete Farbe aus. Die verwendete Farbe ist noch immer
+die Farbe, die in den Grafikeigenschaften des Hauptkörpers definiert wurde.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.halfLightedSmoothEdgeBtn.ShortHelp="Zeigt weiche Kanten, die so gezeichnet sind, dass sie weniger sichtbar sind als scharfe Kanten, teilweise an.
+Dieser Modus wirkt sich nicht aus, wenn die Schattierung entfernt wurde.
+Die auf Kanten angewendete Farbe entspricht der Farbe, die in den Grafikeigenschaften des Hauptkörpers definiert wurde.
+Bei mehrfarbigen Objekten erhalten Kanten die Farbe der Fläche, zu der sie gehören.
+Die Materialoption wirkt sich nicht auf die Kanten angewendete Farbe aus. Die verwendete Farbe ist noch immer
+die Farbe, die in den Grafikeigenschaften des Hauptkörpers definiert wurde.";
+//--------------------------------------
+// WithoutSmoothEdges 
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmoothEdgeBtn.Title="Keine weichen Kanten";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmoothEdgeBtn.LongHelp="Blendet weiche Kanten in der Geometrie aus.
+Dieser Modus entspricht dem Modus Schattierung mit Kanten ohne weiche Kanten, der im Abschnitt Ansicht verfügbar ist.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmoothEdgeBtn.ShortHelp="Blendet weiche Kanten in der Geometrie aus.
+Dieser Modus entspricht dem Modus Schattierung mit Kanten ohne weiche Kanten, der im Ansichtsabschnitt verfügbar ist.";
+//------------------------------------------
+// Without Small Curvature Step Smooth Edges
+//------------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmallCurvatureEdgeBtn.Title="Keine weichen Kanten mit kleinem Krümmungsschritt";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmallCurvatureEdgeBtn.LongHelp="Blendet weiche Kanten mit kleinen Krümmungsschritten in der Geometrie aus.
+Blendet die Kanten zwischen zwei Oberflächen mit einer ähnlichen Krümmung aus.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmallCurvatureEdgeBtn.ShortHelp="Blendet weiche Kanten mit kleinen Krümmungsschritten in der Geometrie aus.
+Blendet die Kanten zwischen zwei Oberflächen mit ähnlichen Krümmungen aus.";
+//--------------------------------------
+//  All points
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.allPointBtn.Title="Alle Punkte";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.allPointBtn.LongHelp="Zeigt Kanten und alle zugehörigen Punkte einschließlich Scheitelpunkte an.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.allPointBtn.ShortHelp="Zeigt Kanten und alle zugehörigen Punkte einschließlich Scheitelpunkte an.";
+
+//--------------------------------------
+//  Without vertices
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.withoutVertexBtn.Title="Keine Scheitelpunkte";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.withoutVertexBtn.LongHelp="deaktiviert die Anzeige von Scheitelpunkten für Kanten. Nur freie Punkte werden angezeigt und können ausgewählt werden. Hiermit wird die Lesbarkeit bei komplexen Modellen verbessert und es ergibt sich ein positiver Effekt für die Leistung.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.withoutVertexBtn.ShortHelp="deaktiviert die Anzeige von Scheitelpunkten für Kanten.
+Nur freie Punkte werden angezeigt und können ausgewählt werden.
+Hiermit wird die Lesbarkeit bei komplexen Modellen verbessert
+und es ergibt sich ein positiver Effekt für die Leistung.";
+
+//--------------------------------------
+//  ColoredEdgesFromFaces
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.ColoredEdgesFromFacesFrame.ColoredEdgesFromFacesBtn.Title="Farbige Kanten aus Teilflächen";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.ColoredEdgesFromFacesFrame.ColoredEdgesFromFacesBtn.LongHelp="Färbt Kanten (Begrenzungskanten, interne weiche
+Kanten oder scharfe Kanten) gemäß der auf die Teilflächen der Geometrie angewendeten Farbe ein.
+Für interne Kanten gilt: Wenn die beiden benachbarten Teilflächen jeweils eine andere Farbe haben,
+wird die Kante gemäß der Farbe der Teilfläche eingefärbt, deren Radius der Begrenzungskugel
+am kleinsten ist. Die echte Oberfläche wird nicht berücksichtigt.
+Abhängig von der zugrunde liegenden Komponente gibt es zwei Möglichkeiten:
+- die Begrenzungskugel ist die kleinste Kugel, die die Teilfläche enthält (der aktuellste Fall).
+- die Begrenzungskugel ist größer als die kleinste umgebende Kugel.
+Die verwendete Speichermenge wird erhöht, um die Farbe für jede Kante im Objekt zu berechnen.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.ColoredEdgesFromFacesFrame.ColoredEdgesFromFacesBtn.ShortHelp="Färbt Kanten (Begrenzungskanten, interne weiche
+Kanten oder scharfe Kanten) gemäß der auf die Teilflächen der Geometrie angewendeten Farbe ein.
+Für interne Kanten gilt: Wenn die beiden benachbarten Teilflächen jeweils eine andere Farbe haben,
+wird die Kante gemäß der Farbe der Teilfläche eingefärbt, deren Radius der Begrenzungskugel
+am kleinsten ist. Die echte Oberfläche wird nicht berücksichtigt.
+Abhängig von der zugrunde liegenden Komponente gibt es zwei Möglichkeiten:
+- die Begrenzungskugel ist die kleinste Kugel, die die Teilfläche enthält (der aktuellste Fall).
+- die Begrenzungskugel ist größer als die kleinste umgebende Kugel.
+Die verwendete Speichermenge wird erhöht, um die Farbe für jede Kante im Objekt zu berechnen.";
+
+//--------------------------------------
+//  outline
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.outlineFrame.outlineBtn.Title="Umriss";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.outlineFrame.outlineBtn.LongHelp="Legt fest, ob Umrisse angezeigt werden. Dieser Modus eignet sich besonders für die Arbeit mit Rotationsflächen (wie Wellen oder Zylindern).
+Die Nutzung dieser Modus erfordert einiges an Speicherkapazität.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.outlineFrame.outlineBtn.ShortHelp="Legt fest, ob Umrisse angezeigt werden. Dieser Modus eignet sich besonders für die Arbeit mit Rotationsflächen (wie Wellen oder Zylindern).
+Die Nutzung dieses Modus erfordert einiges an Speicherkapazität.";
+
+//--------------------------------------
+//  line-on-line
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.lineOnLineFrame.lineOnLineBtn.Title="Linie-auf-Linie";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.lineOnLineFrame.lineOnLineBtn.LongHelp="Ermöglicht die Darstellung von überblendeten Linien, indem diese in einer anderen Farbe angezeigt werden.
+Für bessere Sichtbarkeit wird empfohlen, eine dunkle Hintergrundfarbe zu verwenden.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.lineOnLineFrame.lineOnLineBtn.ShortHelp="Ermöglicht die Darstellung von überblendeten Linien, indem diese in einer anderen Farbe angezeigt werden.
+Für bessere Sichtbarkeit wird empfohlen, eine dunkle Hintergrundfarbe zu verwenden.";
+
+//--------------------------------------
+// Isopar
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.isoparFrame.isoparBtn.Title="Isoparametrien";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.isoparFrame.isoparBtn.LongHelp="Zeigt topologische Elemente an, die als Isoparametrien definiert sind.
+Zur Verwendung dieses Modus erst die Option Generierung von Isoparametrien unter Me > Vorgaben > Allgemein > Anzeige > Leistung aktivieren."; // @validatedUsage AJT 13:11:05 option
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.isoparFrame.isoparBtn.ShortHelp="Zeigt topologische Elemente an, die als Isoparametrien definiert sind.
+Zur Verwendung dieses Modus erst die Option zur Generierung von Isoparametrien unter Me > Vorgaben > Allgemein > Anzeige > Leistung aktivieren.";
+
+//--------------------------------------
+//  Nowire
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutwiresFrame.withoutwiresBtn.Title="Keine Drahtelemente";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutwiresFrame.withoutwiresBtn.LongHelp="Deaktiviert die Anzeige von Drahtelementen.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutwiresFrame.withoutwiresBtn.ShortHelp="Deaktiviert die Anzeige von Drahtelementen.";
+
+//--------------------------------------
+//  Noaxis
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutaxisFrame.withoutaxisBtn.Title="Keine Achsen und Ebenen";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutaxisFrame.withoutaxisBtn.LongHelp="Aktiviert oder deaktiviert die Anzeige der Achsen, Achsensysteme und Ebenen.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutaxisFrame.withoutaxisBtn.ShortHelp="Aktiviert oder deaktiviert die Anzeige der Achsen, Achsensysteme und Ebenen.";
+
+//--------------------------------------
+//  NoPoints
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutpointsFrame.withoutpointsBtn.Title="Keine Punkte";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutpointsFrame.withoutpointsBtn.LongHelp="deaktiviert die Anzeige von Punkten.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutpointsFrame.withoutpointsBtn.ShortHelp="deaktiviert die Anzeige von Punkten.";
+
+//-----------------------------------------------------------------------------
+// Mesh frame
+//-----------------------------------------------------------------------------
+mainFrame.optionFrame.meshOptionFrame.HeaderFrame.Global.Title="Netz";
+
+//--------------------------------------
+//  SimpleShading
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.simpleShadingFrame.simpleShadingBtn.Title="Schattierung";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.simpleShadingFrame.simpleShadingBtn.LongHelp="Definiert den Schattierungstyp, der für die Anzeige der Geometrie verwendet werden soll.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.simpleShadingFrame.simpleShadingBtn.ShortHelp="Definiert den Schattierungstyp, der für die Anzeige der Geometrie verwendet werden soll.";
+
+//--------------------------------------
+//  Gouraud
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.shadingFrame.shadingBtn.Title="Gouraud";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.shadingFrame.shadingBtn.LongHelp="Zeigt die Geometrie in Gouraud-Schattierung an.
+Bei dieser Flächenschattierungstechnik wird eine Farbe oder eine Schattierung linear über ein Polygon interpoliert, damit die Geometrie weicher erscheint.
+Dieser Modus ist der standardmäßige Darstellungsmodus und entspricht dem Schattierungsmodus, der über die Ansichtssymbolleiste zur Verfügung steht.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.shadingFrame.shadingBtn.ShortHelp="Zeigt die Geometrie in Gouraud-Schattierung an.
+Bei dieser Flächenschattierungstechnik wird eine Farbe oder eine Schattierung linear über ein Polygon interpoliert, damit die Geometrie weicher erscheint.
+Dieser Modus ist der standardmäßige Darstellungsmodus und entspricht dem Schattierungsmodus, der im Ansichtsabschnitt zur Verfügung steht.";
+
+//--------------------------------------
+// Material 
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.materialFrame.materialBtn.Title="Material";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.materialFrame.materialBtn.LongHelp="Zeigt die Materialien an, die auf die Geometrie angewendet wurden.
+Dieser Modus entspricht dem Modus Schattierung mit Material, der im Abschnitt Ansicht verfügbar ist.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.materialFrame.materialBtn.ShortHelp="Zeigt die Materialien an, die auf die Geometrie angewendet wurden.
+Dieser Modus entspricht dem Modus Schattierung mit Material, der im Ansichtsabschnitt verfügbar ist.";
+
+//--------------------------------------
+// Polygons
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.polygonFrame.polygonBtn.Title="Dreiecke";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.polygonFrame.polygonBtn.LongHelp="Zeigt die Dreiecke auf den Teilflächen der Geometrie an.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.polygonFrame.polygonBtn.ShortHelp="Zeigt die Dreiecke auf den Teilflächen der Geometrie an.";
+
+//--------------------------------------
+// Transparent 
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.transparentFrame.transparentBtn.Title="Transparent";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.transparentFrame.transparentBtn.LongHelp="Zeigt die gesamte Geometrie im Transparenzmodus an, vorausgesetzt, der Schattierungsmodus ist aktiviert.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.transparentFrame.transparentBtn.ShortHelp="Zeigt die gesamte Geometrie im Transparenzmodus an, vorausgesetzt, der Schattierungsmodus ist aktiviert.";
+
+//--------------------------------------
+// HiddenEdges & points 
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hedgeFrame.hedgeBtn.Title="Verdeckte Kanten und Punkte";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hedgeFrame.hedgeBtn.LongHelp="Zeigt die Geometrie im Schattierungsmodus mit Punkten und Kanten an, und zwar unabhängig davon, ob diese verdeckt sind oder nicht.
+Dieser Modus entspricht dem Modus Schattierung mit Kanten und verdeckten Kanten, der im Abschnitt Ansicht verfügbar ist.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hedgeFrame.hedgeBtn.ShortHelp="Zeigt die Geometrie im Schattierungsmodus mit Punkten und Kanten an, und zwar unabhängig davon, ob diese verdeckt sind oder nicht.
+Dieser Modus entspricht dem Modus für die Schattierung mit Kanten und verdeckten Kanten, der im Ansichtsabschnitt verfügbar ist.";
+
+//--------------------------------------
+//  hrd
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hrdFrame.hrdBtn.Title="Dynamisches Entfernen verdeckter Linien";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hrdFrame.hrdBtn.LongHelp="Zeigt die Geometrie im Modus zum schnellen dynamischen Entfernen verdeckter Linien an. In diesem Modus verdecken 3D-Flächen visuell sämtliche Elemente, die sich dahinter befinden, wozu auch 1D-Elemente (wie Drahtmodellelemente) gehören.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hrdFrame.hrdBtn.ShortHelp="Zeigt die Geometrie im Modus zum schnellen dynamischen Entfernen verdeckter Linien an.
+In diesem Modus verdecken 3D-Flächen visuell sämtliche Elemente, die sich dahinter befinden,
+wozu auch 1D-Elemente (wie Drahtmodellelemente) gehören.";
+
+//--------------------------------------
+//  toon
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.toonFrame.toonBtn.Title="Zeichentrick";
+
+//--------------------------------------
+//  Options
+//--------------------------------------
+mainFrame.optionFrame.optionsOptionFrame.HeaderFrame.Global.Title="Optionen"; // @validatedUsage AJT 13:10:10 Options
+
+//--------------------------------------
+//  ObjectViewMode
+//--------------------------------------
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.objectViewModeBtn.Title="Objektbezogene Darstellung in der Wiedergabe";
+RSPOEnabledMessage="Berücksichtigt die im Dialogfenster \"Eigenschaften\" oder über die Symbolleiste \"Objekteigenschaften\" definierten Wiedergabemodi beim Darstellen von Objekten in einer Registerkarte.";
+
+RSPODisabledMessageStart="\"Objektbezogene Darstellung in der Wiedergabe\" kann nicht aktiviert werden,
+weil ";
+
+RSPODisabledMessageEndOne=" die Option inkompatibel ist.";
+RSPODisabledMessageEndMany=" die Optionen inkompatibel sind.";
+
+//--------------------------------------
+// Rep View Mode Related 
+//--------------------------------------
+RVMTitle="Darstellungstyp anpassen";
+
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.noDisplayBtn.Title="Transparent";
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.noDisplayBtn.LongHelp="Macht das Objekt unsichtbar, aber auswählbar. Objekt wird im Hervorhebungsmodus angezeigt, wenn mit Mausklick ausgewählt.";
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.noDisplayBtn.ShortHelp="Macht das Objekt unsichtbar, aber auswählbar. Objekt wird im Hervorhebungsmodus angezeigt, wenn mit Mausklick ausgewählt.";
+
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.IconViewModeFrame.statuslbl.Title="Kompatibilität mit Viewer:  ";
+
+
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.IconViewModeFrame.updateViewerBtn.ShortHelp="Aktivieren Sie die notwendigen Modi im Viewer, um Kompatibilität zu erreichen.";
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.IconViewModeFrame.updateViewerBtn.LongHelp="Aktivieren Sie die notwendigen Modi im Viewer, um Kompatibilität zu erreichen.";
+
+RVMBlockedIconMessage="Die aktuellen Modi werden nicht angewendet, da die Funktion \"Objektbezogene Darstellung in der Wiedergabe\" nicht im Viewer aktiviert werden kann.";
+RVMWarnIconMessageRspo="Die aktuellen Modi werden angewendet, wenn die Funktion \"Objektbezogene Darstellung in der Wiedergabe\" im Viewer aktiviert wird.";
+RVMWarnIconMessageOl="Die aktuellen Modi werden angewendet, wenn \"Umrisse\" im Viewer aktiviert werden.";
+RVMWarnIconMessageRspoOl="Die aktuellen Modi werden angewendet, wenn die Funktionen \"Objektbezogene Darstellung in der Wiedergabe\" und \"Umrisse\" im Viewer aktiviert werden.";
+RVMWarnIconMessageDefault="Die aktuellen Modi werden möglicherweise nicht wie gewünscht angewendet.";
+
+//--------------------------------------
+//  Raytracing
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.rayTracingFrame.rayTracingBtn.Title="Punktweise Betrachtung";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.rayTracingFrame.rayTracingBtn.LongHelp="Zeigt die Geometrie mithilfe von punktweiser Betrachtung an";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.rayTracingFrame.rayTracingBtn.ShortHelp="Zeigt die Geometrie mithilfe von punktweiser Betrachtung an";
+
+
+

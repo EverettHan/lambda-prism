@@ -1,0 +1,966 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="basicTweakers.sypstyle"/>
+  </Resources>
+
+  <!--===================================-->
+  <!--Here you define your components view -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormUndef">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtlForm syp:Template="Form"
+                     syp:name="Container"
+                     GridFlag="@GridFlag"
+                     NlsFiles="@ResourceFile"
+                     AlternateBackgroundFlag="@AlternateBackgroundFlag"
+                     LabelsCropPolicy ="@LabelsCropPolicy"
+                     UndoButtonFlag="0"
+                     Data="@IntroObject"
+                     RequestedMinimumDimension="@MinimumDimension"
+                     EditingStarted="@OnEditingStarted"
+                     EditingFinished="@OnEditingFinished"
+                     ValueLiveChanged="@OnValueLiveChanged"
+                     ValueChanged="@OnValueChanged"
+                     UseTransactionFlag="@UseTransactionFlag"
+                     UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag"
+                     TooltipProvider="@TooltipProvider"
+                     TooltipWrapPolicy="Multiline"
+                     ShortTooltipTemplateName="DefaultShortTooltip"
+                     ShortTooltipStyleSheet="AfrComponentViews/Form.CATSYPStyle"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!-- Form in center -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormCenter">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+    <CATVidLayGrid GridWeight="row1=1 row3=1">
+      <!-- Form in center car le form vid met un spacer de 4 4 à la fin -->
+      <CATVidGPSquare RequestedMinimumDimension="4 8"
+                      CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidCtlForm syp:Template="Form"
+                     syp:name="Container"
+                     GridFlag="@GridFlag"
+                     NlsFiles="@ResourceFile"
+                     AlternateBackgroundFlag="@AlternateBackgroundFlag"
+                     LabelsCropPolicy ="@LabelsCropPolicy"
+                     UndoButtonFlag="0"
+                     Data="@IntroObject"
+                     RequestedMinimumDimension="@MinimumDimension"
+                     EditingStarted="@OnEditingStarted"
+                     EditingFinished="@OnEditingFinished"
+                     ValueLiveChanged="@OnValueLiveChanged"
+                     ValueChanged="@OnValueChanged"
+                     UseTransactionFlag="@UseTransactionFlag"
+                     UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag"
+                     TooltipProvider="@TooltipProvider"
+                     TooltipWrapPolicy="Multiline"
+                     ShortTooltipTemplateName="DefaultShortTooltip"
+                     ShortTooltipStyleSheet="AfrComponentViews/Form.CATSYPStyle"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <DataTemplate syp:name="CATCAfrForm_Undef">
+    <CATVidCtl Name="@Name"
+               syp:name="Container"
+               VisibleFlag="@Visibility"
+               ChildrenLifeCyclePolicy="DontDestroyChildren"
+               EnableFlag="@EnableFlag"
+               LayoutWhenUnvisibleFlag="0"
+               RequestedMinimumDimension="@MinimumDimension">
+    </CATVidCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Expander -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormExpander" syp:version="2">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid GridWeight="row0=1" CellSpacing="1">
+        <CATVidCtlExpander syp:Template="Divided"
+                         ExpandedFlag="@DecoratorExpandFlag Mode=TwoWays"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="0"
+                         Label="@Title"
+                         BackgroundColor="0.05 200"
+                         ForegroundColor="1 255"
+                         VisibleFlag="@Visibility"
+                         Icon="@IconName"
+                         IconDimension="16 16"
+                         Collapsed ="@ExpanderEvent"
+                         Expanded ="@ExpanderEvent"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+          <CATVidCtlForm syp:Template="Form"
+                         GridFlag="@GridFlag"
+                         NlsFiles="@ResourceFile"
+                         AlternateBackgroundFlag="@AlternateBackgroundFlag"
+                         LabelsCropPolicy ="@LabelsCropPolicy"
+                         UndoButtonFlag="0"
+                         syp:name="Container"
+                         Data="@IntroObject"
+                         RequestedMinimumDimension="@MinimumDimension"
+                         EditingStarted="@OnEditingStarted"
+                         EditingFinished="@OnEditingFinished"
+                         ValueLiveChanged="@OnValueLiveChanged"
+                         ValueChanged="@OnValueChanged"
+                         UseTransactionFlag="@UseTransactionFlag"
+                         UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag"
+                         TooltipProvider="@TooltipProvider"
+                         TooltipWrapPolicy="Multiline"
+                         ShortTooltipTemplateName="DefaultShortTooltip"
+                         ShortTooltipStyleSheet="AfrComponentViews/Form.CATSYPStyle"/>
+        </CATVidCtlExpander>
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrForm_AfrFormExpander">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid GridWeight="row0=1" CellSpacing="1">
+        <CATVidCtlExpander syp:Template="Expander"
+                         ExpandedFlag="@DecoratorExpandFlag Mode=TwoWays"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="0"
+                         Label="@Title"
+                         BackgroundColor="0.05 200"
+                         ForegroundColor="1 255"
+                         VisibleFlag="@Visibility"
+                         Icon="@IconName"
+                         IconDimension="16 16"
+                         Collapsed ="@ExpanderEvent"
+                         Expanded ="@ExpanderEvent"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidCtlForm syp:Template="Form"
+                       GridFlag="@GridFlag"
+                       NlsFiles="@ResourceFile"
+                       AlternateBackgroundFlag="@AlternateBackgroundFlag"
+                       LabelsCropPolicy ="@LabelsCropPolicy"
+                       UndoButtonFlag="0"
+                       syp:name="Container"
+                       Data="@IntroObject"
+                       RequestedMinimumDimension="@MinimumDimension"
+                       EditingStarted="@OnEditingStarted"
+                       EditingFinished="@OnEditingFinished"
+                       ValueLiveChanged="@OnValueLiveChanged"
+                       ValueChanged="@OnValueChanged"
+                       UseTransactionFlag="@UseTransactionFlag"
+                       UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag"
+                       TooltipProvider="@TooltipProvider"
+                       TooltipWrapPolicy="Multiline"
+                       ShortTooltipTemplateName="DefaultShortTooltip"
+                       ShortTooltipStyleSheet="AfrComponentViews/Form.CATSYPStyle"/>
+      </CATVidCtlExpander>
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Group box -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormGroupBox">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtlGroupBox syp:Template="GroupBox"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="1"
+                         Label="@Title"
+                         VisibleFlag="@Visibility">
+        <CATVidCtlForm syp:Template="Form"
+                       GridFlag="@GridFlag"
+                       NlsFiles="@ResourceFile"
+                       AlternateBackgroundFlag="@AlternateBackgroundFlag" LabelsCropPolicy ="@LabelsCropPolicy" UndoButtonFlag="0"
+                       syp:name="Container"
+                       Data="@IntroObject"
+                       RequestedMinimumDimension="@MinimumDimension"
+                       EditingStarted="@OnEditingStarted"
+                       EditingFinished="@OnEditingFinished"
+                       ValueLiveChanged="@OnValueLiveChanged"
+                       ValueChanged="@OnValueChanged"
+                       UseTransactionFlag="@UseTransactionFlag"
+                       UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag"
+                       TooltipProvider="@TooltipProvider"
+                       TooltipWrapPolicy="Multiline"
+                       ShortTooltipTemplateName="DefaultShortTooltip"
+                       ShortTooltipStyleSheet="AfrComponentViews/Form.CATSYPStyle"/>
+      </CATVidCtlGroupBox>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Group box for add content-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrGroupBox">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtlGroupBox syp:Template="GroupBox"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="1"
+                         Label="@Title"
+                         VisibleFlag="@Visibility">
+                <CATVidLayGrid syp:name="Container"
+                               GridAppendPolicy="GridRowAppend"/>
+      </CATVidCtlGroupBox>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Form with style Border -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormFrame">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtlBorder syp:Template="Shadow"
+                       LayoutWhenUnvisibleFlag="0"
+                       VisibleFlag="@Visibility">
+        <CATVidCtlForm syp:Template="Form"
+                       GridFlag="@GridFlag"
+                       NlsFiles="@ResourceFile"
+                       AlternateBackgroundFlag="@AlternateBackgroundFlag" LabelsCropPolicy ="@LabelsCropPolicy" UndoButtonFlag="0"
+                       syp:name="Container"
+                       Data="@IntroObject"
+                       RequestedMinimumDimension="@MinimumDimension"
+                       EditingStarted="@OnEditingStarted"
+                       EditingFinished="@OnEditingFinished"
+                       ValueLiveChanged="@OnValueLiveChanged"
+                       ValueChanged="@OnValueChanged"
+                       UseTransactionFlag="@UseTransactionFlag"
+                       UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag"
+                       TooltipProvider="@TooltipProvider"
+                       TooltipWrapPolicy="Multiline"
+                       ShortTooltipTemplateName="DefaultShortTooltip"
+                       ShortTooltipStyleSheet="AfrComponentViews/Form.CATSYPStyle"/>
+      </CATVidCtlBorder>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Menu -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrMenu">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Form s'attache aux extrémité -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFullSpace">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidCtlForm syp:Template="Std"
+                     syp:name="Container"
+                     GridFlag="@GridFlag"
+                     NlsFiles="@ResourceFile"
+                     AlternateBackgroundFlag="@AlternateBackgroundFlag"
+                     LabelsCropPolicy ="@LabelsCropPolicy"
+                     UndoButtonFlag="0"
+                     Data="@IntroObject"
+                     RequestedMinimumDimension="@MinimumDimension"
+                     EditingStarted="@OnEditingStarted"
+                     EditingFinished="@OnEditingFinished"
+                     ValueLiveChanged="@OnValueLiveChanged"
+                     ValueChanged="@OnValueChanged"
+                     UseTransactionFlag="@UseTransactionFlag"
+                     UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag"
+                     TooltipProvider="@TooltipProvider"
+                     TooltipWrapPolicy="Multiline"
+                     ShortTooltipTemplateName="DefaultShortTooltip"
+                     ShortTooltipStyleSheet="AfrComponentViews/Form.CATSYPStyle"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Tab -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormTabPage">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid GridWeight="row0=1" >
+        <CATAfrVidCtlTab VisibleFlag="@Visibility"
+                         syp:name="Container"
+                         TabEvent="@HandleTabEvent"
+                         CurrentIndex="@SelectableFlag"
+                         CropPolicy="@LabelsCropPolicy"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        </CATAfrVidCtlTab >
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Left Tab -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormLeft_TabPage">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATAfrVidCtlTab syp:name="Container"
+                       TabPosition="Left"
+                       LayoutWhenUnvisibleFlag="0"
+                       VisibleFlag="@Visibility"
+                       ForceIconFlag="@ForceTabIconFlag"
+                       MinimumTabSize="@MinimumTabSize"
+                       CurrentIndex="@SelectableFlag"
+                       TabEvent="@HandleTabEvent">
+      </CATAfrVidCtlTab >
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style ScrollableArea -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormScrollableArea">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    VisibleFlag="@Visibility"
+                    SnappableFlag="1"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1">
+      <CATVidLayGrid GridWeight="row0=1 col0=1" >
+        <CATVidCtlScrollableArea syp:Template="Default"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 VisibleFlag="@Visibility"
+                                 VScrollbarSide="Right"
+                                 HReboundFlag="0"
+                                 VReboundFlag="0"
+                                 InertiaFlag="1"
+                                 RequestedMinimumDimension="@MinimumDimension"
+                                 EnableFlag="@EnableFlag"
+                                 CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+          <CATVidLayStack syp:name="Container"
+                          Orientation="Vertical"
+                          CellBorder="1"
+                          StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+      </CATVidCtlScrollableArea >
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form Horizontal -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrHorizontal">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidLayStack syp:name="Container" 
+                        Orientation="Horizontal"
+                        StackAttachmentAppendPolicy="StretchAttachmentPolicy"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form Horizontal for Me preference-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrMePrefHorizontal">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATVidLayGrid GridWeight="col2=1"
+                     syp:name="Container"
+                     CellSpacing="2"
+                     GridAppendPolicy="GridColumnAppend">
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <DataTemplate syp:name="CATCAfrForm_AfrFormList">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidCtlExpander Label ="@Title" ExpandedFlag="1" BackgroundColor="0 0 0 255" ForegroundColor="255 255 255 255" >
+        <CATAfrVidCtlListView syp:name="Container" 
+                              SourceDataTemplateName="CATAfrListItem_List" 
+                              SourceStyleSheet="AfrComponentViews/Form.CATSYPStyle" 
+                              RequestedMinimumDimension="200 100"
+                              DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>
+      </CATVidCtlExpander>
+    </CATAfrSmartCtl>
+
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrForm_AfrFormListSingleSelection">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidCtlExpander Label ="@Title" ExpandedFlag="1" BackgroundColor="0 0 0 255" ForegroundColor="255 255 255 255" >
+        <CATAfrVidCtlListView syp:name="Container" SourceDataTemplateName="CATAfrListItem_ListOption" SourceStyleSheet="AfrComponentViews/Form.CATSYPStyle"  RequestedMinimumDimension="200 45"/>
+      </CATVidCtlExpander>
+
+    </CATAfrSmartCtl>
+
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrFormItem_Default">
+    <CATVidCtlFormItem Name="@Name" Data="@Data"
+                       PropertiesBehavior="@PropertiesBehavior"/>
+  </DataTemplate>
+
+ 
+  <!--===================================-->
+  <!--A retirer -->
+  <!--===================================-->
+  <!--===================================-->
+  <!--Here you define your components view -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrFormUndef">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title" 
+                    IconName="@IconName"
+                    SnappableFlag="1" 
+                    ViewParent="@ViewParent" 
+                    CreateDialogBoxFlag="@RootFlag" 
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1" 
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+        <CATVidCtlForm syp:Template="Form" 
+                       GridFlag="@GridFlag" 
+                       NlsFiles="@ResourceFile" 
+                       AlternateBackgroundFlag="@AlternateBackgroundFlag" 
+                       LabelsCropPolicy ="@LabelsCropPolicy" 
+                       UndoButtonFlag="0"
+                       syp:name="Container"
+                       RequestedMinimumDimension="@MinimumDimension"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Expander -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrFormExpander">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidCtlExpander syp:Template="Expander"
+                         ExpandedFlag="@DecoratorExpandFlag Mode=TwoWays"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="1" 
+                         Label="@Title" 
+                         BackgroundColor="0.05 200" 
+                         ForegroundColor="1 255"
+                         VisibleFlag="@Visibility">
+          <CATVidCtlForm syp:Template="Form" 
+                         GridFlag="@GridFlag" 
+                         NlsFiles="@ResourceFile" 
+                         AlternateBackgroundFlag="@AlternateBackgroundFlag"
+                         LabelsCropPolicy ="@LabelsCropPolicy"
+                         UndoButtonFlag="0"
+                         syp:name="Container"
+                         RequestedMinimumDimension="@MinimumDimension"/>
+      </CATVidCtlExpander>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Group box -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrFormGroupBox">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidCtlGroupBox syp:Template="GroupBox"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="1" 
+                         Label="@Title" 
+                         VisibleFlag="@Visibility">
+          <CATVidCtlForm syp:Template="Form" 
+                         GridFlag="@GridFlag" 
+                         NlsFiles="@ResourceFile" 
+                         AlternateBackgroundFlag="@AlternateBackgroundFlag" LabelsCropPolicy ="@LabelsCropPolicy" UndoButtonFlag="0"
+                         syp:name="Container"
+                         RequestedMinimumDimension="@MinimumDimension"/>
+      </CATVidCtlGroupBox>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Border -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrFormFrame">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidCtlBorder syp:Template="Shadow"
+                       LayoutWhenUnvisibleFlag="0"
+                       VisibleFlag="@Visibility">
+          <CATVidCtlForm syp:Template="Form" 
+                         GridFlag="@GridFlag" 
+                         NlsFiles="@ResourceFile" 
+                         AlternateBackgroundFlag="@AlternateBackgroundFlag" LabelsCropPolicy ="@LabelsCropPolicy" UndoButtonFlag="0"
+                         syp:name="Container"
+                         RequestedMinimumDimension="@MinimumDimension"/>
+      </CATVidCtlBorder>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Menu -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrMenu">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Tab -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrFormTabPage">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATAfrVidCtlTab LayoutWhenUnvisibleFlag="0"
+                       VisibleFlag="@Visibility"
+                       syp:name="Container">
+      </CATAfrVidCtlTab >
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Form with style Left Tab -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrFormLeft_TabPage">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATAfrVidCtlTab TabPosition="Left"
+                      LayoutWhenUnvisibleFlag="0"
+                      VisibleFlag="@Visibility"
+                      syp:name="Container">
+      </CATAfrVidCtlTab >
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style ScrollableArea -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrForm_AfrFormScrollableArea">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    IconName="@IconName"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    VisibleFlag="@Visibility"
+                    SnappableFlag="1"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1">
+      <CATVidCtlScrollableArea syp:Template="Default"
+                               LayoutWhenUnvisibleFlag="0"
+                               VisibleFlag="@Visibility"
+                               VScrollbarSide="Right"
+                               HReboundFlag="0"
+                               VReboundFlag="0"
+                               InertiaFlag="1"
+                               RequestedMinimumDimension="@MinimumDimension">
+        <CATVidLayStack syp:name="Container"
+                        Orientation="Vertical"
+                        CellBorder="1"
+                        StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+      </CATVidCtlScrollableArea >
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATAfrForm_AfrFormList">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+        <CATVidCtlExpander Label ="@Title" ExpandedFlag="1" BackgroundColor="0 0 0 255" ForegroundColor="255 255 255 255" >
+          <CATAfrVidCtlListView syp:name="Container" SourceDataTemplateName="CATAfrListItem_List" SourceStyleSheet="AfrComponentViews/Form.CATSYPStyle"  RequestedMinimumDimension="200 100"/>
+        </CATVidCtlExpander>
+    </CATAfrSmartCtl>
+
+  </DataTemplate>
+  
+    <DataTemplate syp:name="CATAfrForm_AfrFormListSingleSelection">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+        <CATVidCtlExpander Label ="@Title" ExpandedFlag="1" BackgroundColor="0 0 0 255" ForegroundColor="255 255 255 255" >
+          <CATAfrVidCtlListView syp:name="Container" SourceDataTemplateName="CATAfrListItem_ListOption" SourceStyleSheet="AfrComponentViews/Form.CATSYPStyle"  RequestedMinimumDimension="200 45"/>
+        </CATVidCtlExpander>
+
+    </CATAfrSmartCtl>
+
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATAfrFormItem_Default">
+    <CATAfrSYPModelViewMetaData Child="@Data"/>
+
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATAfrItemViewer_Default -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrItemViewer_Default">
+    <CATAfrSmartCtl Name="@Name"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    VisibleFlag="@Visibility"
+                    ReframeFlag="@ReframeFlag">
+      <CATVidCtl3DViewer Name="Ctl3DViewer"
+                         VisibleFlag="@Visibility"
+                         SpecialRep="@Rep"
+                         ShowReferenceAxisFlag="0"
+                         Camera="@Camera"
+                         RequestedMinimumDimension="@Dimension"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATAfrItemViewer_Viewer2D -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATAfrItemViewer_Viewer2D">
+    <CATAfrSmartCtl Name="@Name"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    VisibleFlag="@Visibility"
+                    ReframeFlag="@ReframeFlag">
+      <CATVidCtl2DViewer Name="Ctl2DViewer"
+                         VisibleFlag="@Visibility"
+                         SpecialRep="@Rep"
+                         Zoom="@Zoom"
+                         RequestedMinimumDimension="@Dimension"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form Tooltip -->
+  <!--===================================-->
+  <DataTemplate syp:name="DefaultShortTooltip">
+    <CATVidLayLayer LayoutWhenUnvisibleFlag="0">
+      <CATVidGPSquare Name="Background" PickFlag="1" UseManipulatorFlag="1"/>
+      <CATVidLayGrid syp:name="ShortHelpArea" CellSpacing="4">
+        <CATVidGPText Color="80 80 80 255"
+                      Text="@ShortHelp"
+                      LeftMargin="0"
+                      RightMargin="0"
+                      TopMargin="0"
+                      BottomMargin="0"
+                      Interline="0"
+                      WordWrapFlag="1"
+                      WordWrapPolicy="ToleranceMargin"
+                      WordWrapThreshold="270"
+                      WordWrapToleranceMargin="100"
+                      OptimizeMinimumDimensionFlag="1"
+                      CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ShortHelp" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpArea" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrForm_AfrFormToolbar -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrFormToolbar">
+    <CATAfrSmartCtl Name                       ="@Name"
+                    ViewParent                 ="@ViewParent"
+                    VisibleFlag                ="@Visibility"
+                    CreateDialogBoxFlag        ="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    EnableFlag="@EnableFlag"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid syp:name="MainContainer"
+                     GridWeight="row1=1 col1=1">
+        <CATVidLayGrid syp:name="ContainerToolbar"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                       GridWeight="col1=1">
+          <CATVidCtl syp:name="AccessToolbarLeft"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare syp:name="AccessToolbarSpace"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="AccessToolbar"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Container"
+                       VisibleFlag="@Visibility"
+                       GridAppendPolicy="GridColumnAppend"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+  </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Form with style Group box for add content-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrForm_AfrGridSplitter">
+    <CATVidCtlGridSplitter Orientation="Vertical"/>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATAfrCommandLauncherSearch_Undef">
+    <CATAfrSmartCtl Name="@Name"
+                    syp:name="CLSearchCtr"
+                    TitleDialogBox="@Title"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid syp:name="grid" >
+        <CATVidCtlLineEditor syp:Template="Default" syp:name="CommandLauncherSearchEditor" Name="Editor" RequestedMinimumDimension="650 20" TextMargins="5 0 1 0"
+                               VisibleFlag="@SearchAvailability" ReturnPressed="@OnEditorEditingFinished" FontIconButtonPressed="@OnEditorEditingFinished" TextActivated="@OnGetFocus" TextChanged="@OnTextChange" Text="@SearchText Mode=TwoWays"
+                               ResetButtonVisibleFlag="1" FontIconButtonVisibleFlag="1" FontIconName="search" SelectAllTextOnFocusFlag="1" PlaceholderText="@PlaceHolderText"
+                               CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRT"/>
+        <!--<CATVidCtlButtonIcon syp:Template="Compact" syp:name="ScopeButton" Name="ScopeButton" OnTexture="I_Scope.png" OverTexture="I_Scope.png"   OffTexture="I_Scope.png"
+                                       RequestedMinimumDimension="15 20" IconDimension="15 20" Click="@OnButtonClose" CATVidLayGrid.IndexedConstraints="x=1 y=0 xSpan=2 attach=RT"/>-->
+        <!--<CATVidCtlButton syp:name="ScopeButton" syp:Template="Button" CATVidLayGrid.IndexedConstraints="x=1 y=0" ForegroundColor="123 156 201 0" BackgroundColor="123 156 201 0" RequestedMinimumDimension="15 20" IconDimension="15 20"/>-->
+                                         <!--Icon="I_Scope.png" Press="@OnCancelCopyExtn"-->
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+</Styles>

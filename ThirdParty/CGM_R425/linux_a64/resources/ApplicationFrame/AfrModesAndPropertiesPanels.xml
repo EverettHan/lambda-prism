@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template syp:name="AfrAppModePanel" Name="AfrAppModePanelComponent" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "AfrAppModePanel_Window"
+                   Title              = "App Options"
+                   ResizableFlag      = "1"
+                   Visibility         = "1"
+                   HorizontallyStretchableFlag="1"
+                   VerticallyStretchableFlag="1"
+                   RepresentationType = "AfrVIDFraPanel">
+      <CATCAfrTree Name="AfrAppModePanel_Tree"
+                   Display="App Options"
+                   Tooltip="App Options"
+                   Visibility ="1"
+                   RepresentationType="CAfrComponent"
+                   SelectionMode="MultiRange"
+                   RegisterFlag="1"
+                   DragFlag="0" DropFlag="0"
+                   RootDecorationFlag="1"
+                   DropLocations="AfrDnDDropAfter|AfrDnDDropBefore"
+                   PreSelectionColorFlag="0"
+                   MinimumDimension ="1 60"
+				   HUnitScrollPixelsValue="50"
+				   VUnitScrollPixelsValue="50"
+				   DynamicCellsSizeFlag="1">
+      </CATCAfrTree>
+    </CATCAfrWindow>
+  </Template>
+
+	<Template syp:name="AfrAppModePanel" Name="AfrAppModePanelComponent" Target="CATAfrComponent" syp:version="2">
+		<CATCAfrWindow Name               = "AfrAppModePanel_Window"
+					   Title              = "App Options"
+					   ResizableFlag      = "1"
+					   Visibility         = "1"
+					   HorizontallyStretchableFlag="1"
+					   VerticallyStretchableFlag="1"
+					   RepresentationType = "AfrVIDFraPanel"
+					   DialogBoxDimension ="250 250"
+             IconName           = "I_AppOptions">
+			<CATCAfrTree Name="AfrAppModePanel_Tree"
+						 Display="App Options"
+						 Tooltip="App Options"
+						 Visibility ="1"
+						 RepresentationType="CAfrComponent"
+						 SelectionMode="MultiRange"
+						 RegisterFlag="1"
+						 DragFlag="0" DropFlag="0"
+						 RootDecorationFlag="1"
+						 DropLocations="AfrDnDDropAfter|AfrDnDDropBefore"
+						 PreSelectionColorFlag="0"
+						 HUnitScrollPixelsValue="50"
+						 VUnitScrollPixelsValue="50"
+						 DynamicCellsSizeFlag="1"
+						 MinimumDimension ="1 60">
+			</CATCAfrTree>
+		</CATCAfrWindow>
+	</Template>
+
+  <Template syp:name="AfrObjectPropertiesPanel" Name="AfrObjectPropertiesPanelComponent" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "AfrObjectPropertiesPanel_Window"
+                   Title              = "Object Properties"
+                   ResizableFlag      = "1"
+                   Visibility         = "1"
+                   HorizontallyStretchableFlag="1"
+                   VerticallyStretchableFlag="1"
+                   RepresentationType = "AfrVIDFraPanel">
+      <CATCAfrTree Name="AfrObjectPropertiesPanel_Tree"
+                   Display="Object Properties"
+                   Tooltip="Object Properties"
+                   Visibility ="1"
+                   RepresentationType="CAfrComponent"
+                   SelectionMode="MultiRange"
+                   RegisterFlag="1"
+                   DragFlag="0" DropFlag="0"
+                   RootDecorationFlag="1"
+                   DropLocations="AfrDnDDropAfter|AfrDnDDropBefore"
+                   PreSelectionColorFlag="0"
+				   HUnitScrollPixelsValue="50"
+				   VUnitScrollPixelsValue="50"
+				   DynamicCellsSizeFlag="1">
+      </CATCAfrTree>
+    </CATCAfrWindow>
+  </Template>
+	
+	<Template syp:name="AfrObjectPropertiesPanel" Name="AfrObjectPropertiesPanelComponent" Target="CATAfrComponent" syp:version="2">
+		<CATCAfrWindow Name               = "AfrObjectPropertiesPanel_Window"
+					   Title              = "Object Properties"
+					   ResizableFlag      = "1"
+					   Visibility         = "1"
+					   HorizontallyStretchableFlag="1"
+					   VerticallyStretchableFlag="1"
+					   RepresentationType = "AfrVIDFraPanel"
+					   DialogBoxDimension ="250 250"
+             IconName           = "I_ObjectProperties">
+			<CATCAfrTree Name="AfrObjectPropertiesPanel_Tree"
+						 Display="Object Properties"
+						 Tooltip="Object Properties"
+						 Visibility ="1"
+						 RepresentationType="CAfrComponent"
+						 SelectionMode="MultiRange"
+						 RegisterFlag="1"
+						 DragFlag="0" DropFlag="0"
+						 RootDecorationFlag="1"
+						 DropLocations="AfrDnDDropAfter|AfrDnDDropBefore"
+						 PreSelectionColorFlag="0"
+						 HUnitScrollPixelsValue="50"
+						 VUnitScrollPixelsValue="50"
+						 DynamicCellsSizeFlag="1"
+						 MinimumDimension ="1 60">
+			</CATCAfrTree>
+		</CATCAfrWindow>
+	</Template>
+
+  <Template syp:name="PropertiesPanelToolbar" Name="PropertiesPanelToolbarComponent" Target="CATAfrComponent">
+    <CATCAfrTree     Name="PropertiesPanelToolbarTree"
+                     Display="ToolBar"
+                     Tooltip="Toolbar"
+                     Visibility ="1"
+                     ReadOnlyFlag="0"
+                     RegisterFlag="1"
+                     MinimumDimension ="1 60">
+      <CATCAfrForm Name="PropertiesPanelToolbarForm"
+                   RepresentationType="CAfrView"
+                   Visibility ="1">
+        <CATCAfrToolbar Name           = "PropertiesPanelToolbarCAfrToolbar"
+                        RepresentationType ="AfrImmersiveContextBar"
+                        Visibility = "1">
+        </CATCAfrToolbar>
+      </CATCAfrForm>
+    </CATCAfrTree>
+  </Template>
+
+</Styles>
+

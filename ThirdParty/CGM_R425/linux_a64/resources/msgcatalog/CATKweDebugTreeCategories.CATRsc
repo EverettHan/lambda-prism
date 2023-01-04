@@ -1,0 +1,54 @@
+//Categories indices must be in order
+//Allowed fields for VisibilityDefault are E_ENABLED and E_HIDE_CHILDREN
+//E_HIDE_CHILDREN hides the catgeory as well as all its subnodes (unless a E_ENABLED node is encountered)
+//LimitVisibility must almost always be set to FALSE, unless a category needs to be completely disabled for user (in that case, set it to internal)
+//Internal categories are always E_HIDE_CHILDREN (no matter what their visibility in this file is), unless a special command is used to activate them
+//EKL_EXP is treated in a special manner:
+// E_HIDE_CHILDREN means it is E_DISABLED (does not affect its children).
+// E_ENABLED means it will only be enabled under one of the categories in InheritanceCategories, provided that category is enabled
+//No category other than EKL_EXP can have a InheritanceCategories attribute
+//The name for EKL_EXP must never be changed
+//category name, VisibilityDefault and Internal are landatory fields for all categories
+//have fun
+Category1 = "DPC";
+Category1.Internal="FALSE";
+Category1.VisibilityDefault="E_ENABLED";
+
+Category2 = "EKL_BR";
+Category2.Internal="FALSE";
+Category2.VisibilityDefault="E_HIDE_CHILDREN";
+Category2.LimitVisibility="FALSE";
+
+Category3 = "EKL_OTHER";
+Category3.Internal="FALSE";
+Category3.VisibilityDefault="E_ENABLED";
+Category3.LimitVisibility="FALSE";
+
+Category4 = "EKL_EXP";
+Category4.Internal="FALSE";
+Category4.VisibilityDefault="E_HIDE_CHILDREN";
+Category4.LimitVisibility="FALSE";
+Category4.InheritanceCategories="EKL_BR,EKL_OTHER,KML_EVAL,EKX_EVAL";
+
+Category5 = "KML_EVAL";
+Category5.Internal="FALSE";
+Category5.VisibilityDefault="E_ENABLED";
+Category5.LimitVisibility="FALSE";
+
+Category6 = "EKX_EVAL";
+Category6.Internal="FALSE";
+Category6.VisibilityDefault="E_ENABLED";
+Category6.LimitVisibility="FALSE";
+
+Option1="DPC.TechObjAttributes";
+Option1.IsEnabled="TRUE";
+
+Option2="HiddenNodes";
+Option2.IsEnabled="FALSE";
+Option2.LimitToExpert="TRUE";
+
+Option3="MemoryFootPrint";
+Option3.IsEnabled="FALSE";
+Option3.LimitToExpert="TRUE";
+
+

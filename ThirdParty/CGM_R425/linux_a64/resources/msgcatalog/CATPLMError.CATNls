@@ -1,0 +1,34 @@
+<meta charset="UTF-8"/>
+ERR_Empty.Request       =  "/P01"; 
+ERR_Empty.Diagnostic    =  "/P01"; 
+ERR_Empty.Advice        =  "/P01"; 
+
+ERR_WhileServerNotMigrated.Diagnostic  = "Unknown server error :   key=/P1   catalog=/P2 ";
+ERR_WhileServerNotMigrated.Advice      ="";
+ERR_WhileServerNotMigrated.Request     ="";
+
+
+ERR_ServerFormatOnError.Diagnostic  = "The server has reported a global error using an unexpected report format. \nThis report is not accurate enough to discriminate the component(s) in error and the kind of error";
+ERR_ServerFormatOnError.Advice      = "Please contact your local support";
+ERR_ServerFormatOnError.Request     = "";
+
+
+ERR_ServerGErrorKeyCatalog.Diagnostic  = "The server has reported a global error with an unexpected or missing error key/catalog";
+ERR_ServerGErrorKeyCatalog.Advice      = "Please contact your local support";
+ERR_ServerGErrorKeyCatalog.Request     = "";
+
+ERR_ServerGErrorSeverity.Diagnostic  = "The server has reported a global error with an unexpected or missing Severity value";
+ERR_ServerGErrorSeverity.Advice      = "Please contact your local support";
+ERR_ServerGErrorSeverity.Request     = "";
+
+ERR_ServerLErrorKeyCatalog.Diagnostic  = "The server has reported an error on component with an unexpected or missing error key/catalog";
+ERR_ServerLErrorKeyCatalog.Advice      = "Please contact your local support";
+ERR_ServerLErrorKeyCatalog.Request     = "";
+
+ERR_ServerLErrorSeverity.Diagnostic  = "The server has reported an error on component with an unexpected or missing Severity value";
+ERR_ServerLErrorSeverity.Advice      = "Please contact your local support";
+ERR_ServerLErrorSeverity.Request     = "";
+
+ERR_ServerNoGlobalError.Diagnostic  = "The server has reported error(s) on component(s) without any global error report";
+ERR_ServerNoGlobalError.Advice      = "Please contact your local support";
+ERR_ServerNoGlobalError.Request     = "";

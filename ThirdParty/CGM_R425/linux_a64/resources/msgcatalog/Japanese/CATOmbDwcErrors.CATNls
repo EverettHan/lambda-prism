@@ -1,0 +1,57 @@
+<meta charset="UTF-8"/>
+ERR_LINK_0="要求されたサイズが大きすぎるためリンクを作成できません。";
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2009
+//=================================================================
+//
+// Usage Notes:    This is the OmbLink Document Unstream Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to OMB Document Unstream
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :   
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error. 
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters : 
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms 
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use. 
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+//=================   DURING OMB STEP OF CATDWC V6TOV5 AS SPEC PROCESS  =====================
+
+// Parameter is be interpreted by omb step at CATDWC or Check prepro for CATDWC time
+// Specificity : user message valuated at run time into parameter when usefull
+OMB_CATALOG_COMPLIANCE_ERROR.Diagnostic="/p ";
+OMB_CATALOG_COMPLIANCE_ERROR.Advice="V6ToV5 カタログ適合宣言を確認してください。";
+OMB_CATALOG_COMPLIANCE_ERROR.Request="\n";
+
+// Parameter is be interpreted by omb step at CATDWC or Check prepro for CATDWC time
+// Specificity : user message valuated at run time into parameter when usefull
+OMB_DWCCONTAINER_COMPLIANCE_ERROR.Diagnostic="このコンテナ リストは、CATBack 操作: /p1 に準拠していません";
+OMB_DWCCONTAINER_COMPLIANCE_ERROR.Advice="コンテナの所有者に連絡してください。";
+OMB_DWCCONTAINER_COMPLIANCE_ERROR.Request="\n";
+

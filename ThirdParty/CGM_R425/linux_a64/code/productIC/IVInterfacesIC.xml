@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "IVToolkit.tst"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Public" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "28.06.2012 FOR/CDT" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "03.06.2015 ODM" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <authorize access = "Private" name = "IVCore"/>
+  <authorize access = "Private" name = "IVDeviceCore"/>
+  <authorize access = "Private" name = "IVSUICore"/>
+  <authorize access = "Private" name = "IVToolkit.tst"/>
+  <authorize access = "Private" comment = "AZX/JME4 2019.04.24 Rename IVSUIApplicativeCommands to IVSUIHumanAvatar" name = "IVSUIHumanAvatar"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

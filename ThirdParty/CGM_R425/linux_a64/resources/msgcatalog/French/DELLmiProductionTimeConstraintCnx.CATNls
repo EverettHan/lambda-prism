@@ -1,0 +1,69 @@
+<meta charset="UTF-8"/>
+DELLmiProductionTimeConstraintCnx="Contraintes temporelles";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx="Relation de la contrainte temporelle";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Type de dépendance";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Delay="Délai";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Contiguity="Contiguïté";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_MaterialNeed="Matériau nécessaire";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_OptionalTimeConstraint="Optionnel";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.PLM_ExternalID="Titre";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_IsActive="Active";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode="Mode intervalle";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MinDelay="Intervalle minimum";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MaxDelay="Intervalle maximum";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.Synchro="Synchronisation";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint="Contrainte de ressource";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.None="Aucun";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResources="Ressources identiques";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResourcesWithReservation="Ressources identiques avec réservation";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.DifferentResources="Ressources différentes";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Type de dépendance";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType="Enumération des types de dépendance";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToStart="Fin à début";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToStart="Début à début";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToFinish="Fin à fin";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToFinish="Début à fin";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.PreviousCycle="Cycle précédent";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainingObject="Lien vers l'objet de contrainte de temps";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainedObject="Lien vers l'objet auquel s'applique une contrainte de temps";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract="Résumé de catégorie";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract.V_ExecutionReturnCode="Code de motif";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed="Echoué";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed.V_MaximumRetries="Nombre maximal de tentatives";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintAlternative="Alternatif";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintScrapped="Abandonné";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract="Résumé de quantité de chevauchement";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode="Code retour d'exécution";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MinQuantity="Quantité minimum";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MaxQuantity="Quantité maximum";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.Synchro="Synchronisation";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each="Quantité de chevauchement Chaque";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each.V_OverlapQty="Quantité de chevauchement";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area="Quantité de chevauchement Zone";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area.V_OverlapQty="Quantité de chevauchement";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length="Quantité de chevauchement Longueur";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length.V_OverlapQty="Quantité de chevauchement";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight="Quantité de chevauchement Poids";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight.V_OverlapQty="Quantité de chevauchement";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume="Quantité de chevauchement Volume";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume.V_OverlapQty="Quantité de chevauchement";
+
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension="Extension de flux de produit";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityIN="Priorité d'entrée";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionIN="Proportion en entrée";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityOUT="Priorité de sortie";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionOUT="Proportion en sortie";

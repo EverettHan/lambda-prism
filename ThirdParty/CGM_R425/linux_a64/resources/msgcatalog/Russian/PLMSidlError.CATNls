@@ -1,0 +1,228 @@
+<meta charset="UTF-8"/>
+//*------------------------*//
+//* PLMSidlErrors messages *//
+//*------------------------*//
+ERR_SidlInvalidStream_141001="Недопустимый поток";
+ERR_SidlInvalidStream_141001.Request="Уровень связи не готов к обработке запроса или ответ уже полностью прочитан";
+ERR_SidlInvalidStream_141001.Advice="Запрос можно повторить";
+
+ERR_SidlInvalidParam_141002="Недопустимый параметр";
+ERR_SidlInvalidParam_141002.Request="Недопустимый параметр на уровне связи /p1";
+ERR_SidlInvalidParam_141002.Advice="перенастройте параметр связи или обратитесь к администратору";
+
+ERR_SidlNoMemory_141003="Недостаточно памяти";
+ERR_SidlNoMemory_141003.Request="Недостаточно памяти";
+ERR_SidlNoMemory_141003.Advice="Запрос может быть отправлен позже, или другое приложение может быть закрыто";
+
+ERR_SidlUnsupportedServerLevel_141004="Неподдерживаемый уровень сервера";
+ERR_SidlUnsupportedServerLevel_141004.Request="Уровень сервера отличен от уровня клиента и не совместим";
+ERR_SidlUnsupportedServerLevel_141004.Advice="Настройте клиент на использование совместимого сервера или обновите уровень клиента";
+
+ERR_SidlTruncatedAnswer_141005="Усеченный ответ сервера";
+ERR_SidlTruncatedAnswer_141005.Request="Ответ сервера усечен";
+ERR_SidlTruncatedAnswer_141005.Advice="Повторите запрос или обратитесь к администратору для проверки сетевой среды";
+
+ERR_SidlInvalidHeader_141006="Недопустимый заголовок связи";
+ERR_SidlInvalidHeader_141006.Request="Неверные данные в заголовке связи";
+ERR_SidlInvalidHeader_141006.Advice="Повторите запрос или обратитесь к администратору для проверки сетевой среды";
+
+ERR_SidlCompressFailed_141007="Сбой сжатия";
+ERR_SidlCompressFailed_141007.Request="Клиент не смог сжать запрос";
+ERR_SidlCompressFailed_141007.Advice="Повторите запрос или переустановите программное обеспечение";
+
+ERR_SidlUnCompressFailed_141008="Сбой распаковки";
+ERR_SidlUnCompressFailed_141008.Request="Клиенту не удается распаковать данные, отправляемые сервером";
+ERR_SidlUnCompressFailed_141008.Advice="Повторите запрос или проверьте установку на сервере и клиенте";
+
+ERR_SidlInternalError_141009="Внутренняя ошибка";
+ERR_SidlInternalError_141009.Request="Внутренняя ошибка связи на клиенте";
+ERR_SidlInternalError_141009.Advice="Настройте подключение к серверу и повторите попытку";
+
+ERR_SidlUnknownError_141010="Неизвестная ошибка";
+ERR_SidlUnknownError_141010.Request="Произошла неизвестная ошибка";
+ERR_SidlUnknownError_141010.Advice="Настройте подключение к серверу или обратитесь к администратору";
+
+ERR_SidlSocketConnectionFailed_141021="Сбой подключения";
+ERR_SidlSocketConnectionFailed_141021.Request="Не удается подключиться к серверу";
+ERR_SidlSocketConnectionFailed_141021.Advice="Настройте подключение к серверу, проверьте правила брандмауэра или обратитесь к администратору";
+
+ERR_SidlSocketSendFailed_141022="Не удалось отправить запрос";
+ERR_SidlSocketSendFailed_141022.Request="Не удалось отправить запрос серверу";
+ERR_SidlSocketSendFailed_141022.Advice="Настройте подключение к серверу, проверьте правила брандмауэра или обратитесь к администратору";
+
+ERR_SidlSocketRecievedFailed_141023="Не удалось получить ответ";
+ERR_SidlSocketRecievedFailed_141023.Request="Не удалось получить ответ сервера";
+ERR_SidlSocketRecievedFailed_141023.Advice="Если проблема сохраняется, повторите запрос и обратитесь к администратору";
+
+ERR_SidlSocketUnknownError_141024="Неизвестная ошибка сокета";
+ERR_SidlSocketUnknownError_141024.Request="Произошла неизвестная ошибка сокета";
+ERR_SidlSocketUnknownError_141024.Advice="Проверьте правильность конфигурации сети, конфигурацию сети или обратитесь к администратору";
+
+ERR_SidlHTTPBadRequest_141031="HTTP Неверный запрос";
+ERR_SidlHTTPBadRequest_141031.Request="HTTP Неверный запрос";
+ERR_SidlHTTPBadRequest_141031.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPUnauthorized_141032="HTTP Отсутствует разрешение";
+ERR_SidlHTTPUnauthorized_141032.Request="HTTP Отсутствует разрешение";
+ERR_SidlHTTPUnauthorized_141032.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPPaymentRequired_141033="HTTP Требуется оплата";
+ERR_SidlHTTPPaymentRequired_141033.Request="HTTP Требуется оплата";
+ERR_SidlHTTPPaymentRequired_141033.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPForbidden_141034="HTTP Запрещено";
+ERR_SidlHTTPForbidden_141034.Request="HTTP Запрещено";
+ERR_SidlHTTPForbidden_141034.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPNotFound_141035="HTTP Не найдено";
+ERR_SidlHTTPNotFound_141035.Request="HTTP Не найдено";
+ERR_SidlHTTPNotFound_141035.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPMethodNotAllowed_141036="HTTP Недопустимый метод";
+ERR_SidlHTTPMethodNotAllowed_141036.Request="HTTP Недопустимый метод";
+ERR_SidlHTTPMethodNotAllowed_141036.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPNotAcceptable_141036="HTTP Неприемлемо";
+ERR_SidlHTTPNotAcceptable_141036.Request="HTTP Неприемлемо";
+ERR_SidlHTTPNotAcceptable_141036.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPProxyAuthFailed_141037="HTTP Ошибка проверки подлинности прокси-сервера";
+ERR_SidlHTTPProxyAuthFailed_141037.Request="HTTP Ошибка проверки подлинности прокси-сервера";
+ERR_SidlHTTPProxyAuthFailed_141037.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPServerTimeout_141038="HTTP Время ожидания сервера истекло";
+ERR_SidlHTTPServerTimeout_141038.Request="HTTP Время ожидания сервера истекло";
+ERR_SidlHTTPServerTimeout_141038.Advice="Повторите запрос или обратитесь к администратору для проверки сетевой среды";
+
+ERR_SidlHTTPConflict_141039="HTTP Конфликт";
+ERR_SidlHTTPConflict_141039.Request="HTTP Конфликт";
+ERR_SidlHTTPConflict_141039.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPGone_141039="HTTP Отсутствует";
+ERR_SidlHTTPGone_141039.Request="HTTP Отсутствует";
+ERR_SidlHTTPGone_141039.Advice="Запрошенный ресурс больше не доступен на сервере, и адрес переадресации не известен (обратитесь к администратору).";
+
+ERR_SidlHTTPLengthRequired_141039="HTTP Требуется длина";
+ERR_SidlHTTPLengthRequired_141039.Request="HTTP Требуется длина";
+ERR_SidlHTTPLengthRequired_141039.Advice="Сервер отказывается принять запрос без определенного заголовка Content-Length (обратитесь к администратору).";
+
+ERR_SidlHTTPPreconditionFailed_141039="HTTP Ошибка в предусловии";
+ERR_SidlHTTPPreconditionFailed_141039.Request="HTTP Ошибка в предусловии";
+ERR_SidlHTTPPreconditionFailed_141039.Advice="При тестировании на сервере оценка показывает, что не выполняется предварительное условие, указанное в одном или нескольких полях заголовков запроса (обратитесь к администратору).";
+
+ERR_SidlHTTPRequestEntityTooLarge_141039="HTTP Объект запроса слишком велик";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Request="HTTP Объект запроса слишком велик";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Advice="Сервер отказывается обработать запрос из-за большого объекта запроса (обратитесь к администратору).";
+
+ERR_SidlHTTPRequestURITooLong_141039="HTTP Слишком велика длина URI в запросе";
+ERR_SidlHTTPRequestURITooLong_141039.Request="HTTP Слишком велика длина URI в запросе";
+ERR_SidlHTTPRequestURITooLong_141039.Advice="Сервер отказывается обслужить запрос из-за слишком длинного Request-URI (обратитесь к администратору).";
+
+ERR_SidlHTTPUnsupportedMediaType_141039="HTTP Неподдерживаемый тип носителя";
+ERR_SidlHTTPUnsupportedMediaType_141039.Request="HTTP Неподдерживаемый тип носителя";
+ERR_SidlHTTPUnsupportedMediaType_141039.Advice="Сервер отказывается обслужить запрос из-за неподдерживаемого формата объект запроса (обратитесь к администратору).";
+
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039="HTTP Запрашиваемый диапазон невыполним";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Request="HTTP Запрашиваемый диапазон невыполним";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPExpectationFailed_141039="HTTP Ошибка ожидания";
+ERR_SidlHTTPExpectationFailed_141039.Request="HTTP Ошибка ожидания";
+ERR_SidlHTTPExpectationFailed_141039.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPMalformedRequest_141040="HTTP Неправильно оформленный запрос";
+ERR_SidlHTTPMalformedRequest_141040.Request="HTTP Неправильно оформленный запрос";
+ERR_SidlHTTPMalformedRequest_141040.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPExpectationFailed_141041="HTTP Ошибка отмены ожидания";
+ERR_SidlHTTPExpectationFailed_141041.Request="HTTP Ошибка отмены ожидания";
+ERR_SidlHTTPExpectationFailed_141041.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPInternalServerError_141042="HTTP Внутренняя ошибка сервера";
+ERR_SidlHTTPInternalServerError_141042.Request="HTTP Внутренняя ошибка сервера";
+ERR_SidlHTTPInternalServerError_141042.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPNotImplemented_141043="HTTP Не реализовано";
+ERR_SidlHTTPNotImplemented_141043.Request="HTTP Не реализовано";
+ERR_SidlHTTPNotImplemented_141043.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPBadGateway_141043="HTTP Недопустимый шлюз";
+ERR_SidlHTTPBadGateway_141043.Request="HTTP Недопустимый шлюз";
+ERR_SidlHTTPBadGateway_141043.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPGatewayTimeout_141044="HTTP Истекло время ожидания шлюза";
+ERR_SidlHTTPGatewayTimeout_141044.Request="HTTP Истекло время ожидания шлюза";
+ERR_SidlHTTPGatewayTimeout_141044.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlUnSupportedHTTPLevel_141045="HTTP Неподдерживаемый уровень";
+ERR_SidlUnSupportedHTTPLevel_141045.Request="HTTP Неподдерживаемый уровень";
+ERR_SidlUnSupportedHTTPLevel_141045.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlUnknownHTTPError_141046="HTTP Неизвестная ошибка";
+ERR_SidlUnknownHTTPError_141046.Request="HTTP Неизвестная ошибка";
+ERR_SidlUnknownHTTPError_141046.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPServiceUnavailable_141047="HTTP Служба недоступна";
+ERR_SidlHTTPServiceUnavailable_141047.Request="HTTP Служба недоступна";
+ERR_SidlHTTPServiceUnavailable_141047.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPVersionNotSupported_141047="HTTP Версия не поддерживается";
+ERR_SidlHTTPVersionNotSupported_141047.Request="HTTP Версия не поддерживается";
+ERR_SidlHTTPVersionNotSupported_141047.Advice="Обратитесь к администратору для проверки конфигурации сервера HTTP";
+
+ERR_SidlHTTPServerSessionTimeout_141048="HTTP Время ожидания сеанса сервера истекло";
+ERR_SidlHTTPServerSessionTimeout_141048.Request="HTTP Время ожидания сеанса сервера истекло";
+ERR_SidlHTTPServerSessionTimeout_141048.Advice="Повторите запрос или обратитесь к администратору для проверки сетевой среды";
+
+ERR_SidlServerRecieveFailed_141061="Сбой получения сервером";
+ERR_SidlServerRecieveFailed_141061.Request="Сервер не смог получить запрос";
+ERR_SidlServerRecieveFailed_141061.Advice="Проверьте конфигурацию сети или конфигурацию сервера приложений";
+
+ERR_SidlServerSendFailed_141062="Сбой отправки на сервере";
+ERR_SidlServerSendFailed_141062.Request="Серверу не удалось отправить ответ";
+ERR_SidlServerSendFailed_141062.Advice="Проверьте конфигурацию сети или конфигурацию сервера приложений";
+
+ERR_SidlLevelUnsupported_141063="Неподдерживаемый уровень клиента";
+ERR_SidlLevelUnsupported_141063.Request="Уровень клиента отличен от уровня сервера и не совместим";
+ERR_SidlLevelUnsupported_141063.Advice="Настройте клиент на использование совместимого сервера или обновите сервер";
+
+ERR_SidlServerTruncatedRequest_141064="Усеченный запрос";
+ERR_SidlServerTruncatedRequest_141064.Request="Запрос клиента усечен";
+ERR_SidlServerTruncatedRequest_141064.Advice="Проверьте конфигурацию сети или конфигурацию сервера приложений";
+
+ERR_SidlServerInvalidHeader_141065="Недопустимый заголовок связи";
+ERR_SidlServerInvalidHeader_141065.Request="Сервер: неверные данные в заголовке связи";
+ERR_SidlServerInvalidHeader_141065.Advice="Обратитесь к администратору для проверки сетевой среды";
+
+ERR_SidlServerCompressFailed_141066="Сбой сжатия на сервере";
+ERR_SidlServerCompressFailed_141066.Request="Серверу не удалось сжать ответ";
+ERR_SidlServerCompressFailed_141066.Advice="Повторите запрос или переустановите программное обеспечение на сервере";
+
+ERR_SidlServerUnCompressFailed_141067="Сбой распаковки на сервере";
+ERR_SidlServerUnCompressFailed_141067.Request="Серверу не удалось распаковать данные запроса клиента";
+ERR_SidlServerUnCompressFailed_141067.Advice="Повторите запрос или переустановите программное обеспечение на сервере";
+
+ERR_SidlServerUnknownError_141068="Неизвестная ошибка сервера";
+ERR_SidlServerUnknownError_141068.Request="Произошла неизвестная ошибка сервера";
+ERR_SidlServerUnknownError_141068.Advice="Обратитесь к администратору для проверки журналов сервера";
+
+ERR_SidlServerUnavailable_141071="Ошибка связи между SDAM и сервером";
+ERR_SidlServerUnavailable_141071.Request="Ошибка связи между SDAM и сервером";
+ERR_SidlServerUnavailable_141071.Advice="Повторите запрос или перезапустите сервер";
+
+ERR_SidlServerLostDuringRq_141072="Ошибка связи между сервером и SDAM";
+ERR_SidlServerLostDuringRq_141072.Request="Ошибка связи между сервером и SDAM перед ответом";
+ERR_SidlServerLostDuringRq_141072.Advice="Повторите запрос или перезапустите сервер";
+
+ERR_SidlServerLostDuringAnswer_141073="Ошибка связи между сервером и SDAM";
+ERR_SidlServerLostDuringAnswer_141073.Request="Ошибка связи между сервером и SDAM";
+ERR_SidlServerLostDuringAnswer_141073.Advice="Повторите запрос или перезапустите сервер";
+
+ERR_SidlNoHttpstatusCode_141074="Ошибка связи между клиентом и сервером";
+ERR_SidlNoHttpstatusCode_141074.Request="Ошибка связи: в ответе нет кода статуса HTTP";
+ERR_SidlNoHttpstatusCode_141074.Advice="Настройте подключение к серверу или обратитесь к администратору (активируйте трассировку HTTP или используйте средство захвата сети)";
+
+ERR_SidlUnsupportedHttpStatus_141075="Неподдерживаемый HTTP-ответ";
+ERR_SidlUnsupportedHttpStatus_141075.Request="Неподдерживаемый HTTP-ответ";
+ERR_SidlUnsupportedHttpStatus_141075.Advice="Настройте подключение к серверу или обратитесь к администратору (активируйте трассировку HTTP или используйте средство захвата сети)";
+

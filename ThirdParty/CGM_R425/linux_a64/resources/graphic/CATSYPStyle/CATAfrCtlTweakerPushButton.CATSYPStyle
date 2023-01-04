@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+ <!--===================================-->
+ <!--Tweaker PushButton-->
+ <!--===================================-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerPushButton">
+   <CATVidCtlButton syp:name="PushButton" 
+                    syp:Template="Button" 
+                    CheckMode="0" 
+                    ClickMode="1" 
+                    CheckState="0" 
+                    Click="@ButtonClickCB "
+                    EnableFlag="1"
+                    CropPolicy="NoCrop"
+                    IconDimension="21 21"
+                    Icon="@IconName"
+                    Label="@TitleLabel"
+                    RequestedMinimumDimension="25 25"
+                    />
+ </Template>
+</Styles>

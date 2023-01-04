@@ -1,0 +1,74 @@
+<meta charset="UTF-8"/>
+PLMABSTRACT="Modèle abstrait";
+
+PLMABSTRACT.PLMEntity="EntitéPLM";
+//-- Simple de PLMEntity --
+PLMABSTRACT.PLMEntity.PLM_ExternalID="Nom";
+PLMABSTRACT.PLMEntity.V_CustoDiscipline="Discipline client";
+PLMABSTRACT.PLMEntity.V_Name="Titre";
+PLMABSTRACT.PLMEntity.V_description="Description";
+PLMABSTRACT.PLMEntity.V_discipline="Discipline";
+PLMABSTRACT.PLMEntity.V_isUptodate="A jour";
+PLMABSTRACT.PLMEntity.V_nature="Nature";
+PLMABSTRACT.PLMEntity.V_sec_level="Niveau de sécurité";
+PLMABSTRACT.PLMEntity.V_usage="Utilisation";
+PLMABSTRACT.PLMEntity.workspaceid="ID d'espace de travail";
+//-- Simple de BusinessType --
+PLMABSTRACT.PLMEntity.majorid="ID principal";
+PLMABSTRACT.PLMEntity.modified="Dernière modification";
+PLMABSTRACT.PLMEntity.originated="Date de création";
+PLMABSTRACT.PLMEntity.owner="Propriétaire";
+PLMABSTRACT.PLMEntity.reserved="Verrouillé";
+PLMABSTRACT.PLMEntity.reservedby="Verrouillé par";
+PLMABSTRACT.PLMEntity.updatestamp="Embouti synchronisation";
+//-- Volatile de PLMEntity --- 
+PLMABSTRACT.PLMEntity.C_created="Date de création";
+PLMABSTRACT.PLMEntity.C_modified="Dernière modification";
+PLMABSTRACT.PLMEntity.LOCKSTATUS="Verrouillé";
+PLMABSTRACT.PLMEntity.LOCKUSER="Verrouillé par";
+PLMABSTRACT.PLMEntity.V_confidentiality="Confidentialité";
+PLMABSTRACT.PLMEntity.V_organization="Organisation";
+PLMABSTRACT.PLMEntity.V_project="Espace collaboratif";
+PLMABSTRACT.PLMEntity.V_user="Propriétaire";
+
+PLMABSTRACT.PLMStreamDescriptor="PLMStreamDescriptor";
+PLMABSTRACT.PLMStreamDescriptor.LOCKSTATUS="Verrouillé";
+PLMABSTRACT.PLMStreamDescriptor.LOCKUSER="Propriétaire du verrou";
+PLMABSTRACT.PLMStreamDescriptor.V_format="V_format";
+PLMABSTRACT.PLMStreamDescriptor.V_isMandatory="V_isMandatory";
+PLMABSTRACT.PLMStreamDescriptor.V_markstamp="V_markstamp";
+PLMABSTRACT.PLMStreamDescriptor.V_phaseOrigin="V_phaseOrigin";
+PLMABSTRACT.PLMStreamDescriptor.V_role="V_role";
+PLMABSTRACT.PLMStreamDescriptor.V_size="V_size";
+PLMABSTRACT.PLMStreamDescriptor.V_typelate="V_typelate";
+
+PLMABSTRACT.PLMEvtOccurrence="PLMEvtOccurrence";
+PLMABSTRACT.PLMEvtOccurrence.LOCKSTATUS="Verrouillé";
+PLMABSTRACT.PLMEvtOccurrence.LOCKUSER="Propriétaire du verrou";
+PLMABSTRACT.PLMEvtOccurrence.V_ContextData="V_ContextData";
+PLMABSTRACT.PLMEvtOccurrence.V_OccurrenceId="V_OccurrenceId";
+PLMABSTRACT.PLMEvtOccurrence.V_Service="V_Service";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetDataDomain="V_TargetDataDomain";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetLId="V_TargetLId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetPId="V_TargetPId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetType="V_TargetType";
+PLMABSTRACT.PLMEvtOccurrence.V_TransactionId="V_TransactionId";
+PLMABSTRACT.PLMEvtOccurrence.V_user="V_user";
+
+PLMABSTRACT.V_NatureEnum="V_NatureEnum";
+PLMABSTRACT.V_NatureEnum.Definition="Définition";
+PLMABSTRACT.V_NatureEnum.Presentation="Présentation";
+PLMABSTRACT.V_NatureEnum.Specification="Spécification";
+
+PLMABSTRACT.V_isUptodateEnum="V_isUptodateEnum";
+PLMABSTRACT.V_isUptodateEnum.MustBeRebuilt="AReconstruire";
+PLMABSTRACT.V_isUptodateEnum.NotApplicable="NonApplicable";
+PLMABSTRACT.V_isUptodateEnum.UpdateToDate="MisAJour";
+
+PLMABSTRACT.V_FormatEnum="V_FormatEnum";
+PLMABSTRACT.V_FormatEnum.Authoring="Création";
+PLMABSTRACT.V_FormatEnum.AuthoringVisu="AuthoringVisu";
+PLMABSTRACT.V_FormatEnum.IndexRep="IndexRep";
+PLMABSTRACT.V_FormatEnum.JpegThumbnail="JpegThumbnail";
+PLMABSTRACT.V_FormatEnum.NavRep="NavRep";
+PLMABSTRACT.V_FormatEnum.VisuRep="VisuRep";

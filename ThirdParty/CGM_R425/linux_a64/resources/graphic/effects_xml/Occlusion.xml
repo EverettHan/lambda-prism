@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <!-- Effect States -->
+  <DST_STATE_GROUP>
+    <NAME>Test</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>NoBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+      <COLOR_W_MASK>None</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>AlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>Zero</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>One</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>Skin</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0</DEPTH_SLOPE_FACTOR>
+    <REPRESENTATIVE_FRAGMENT_TEST_ENABLE>true</REPRESENTATIVE_FRAGMENT_TEST_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>DebugBox</NAME>
+    <FILL_MODE>Solid</FILL_MODE>
+    <CULL_MODE>None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+ 
+  <!-- Effect Interface -->
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbViewTransition</NAME>
+    <NEEDS_OPTION>PassThroughTransition</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbViewport</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbFrustumPlanes</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbOcclusionCamera</NAME>
+    <NEEDS_OPTION>StereoOcclusion</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <TEXTURE_BUFFER>
+    <NAME>matricesTex</NAME>
+  </TEXTURE_BUFFER>
+
+  <TEXTURE_BUFFER>
+    <NAME>bboxesTex</NAME>
+  </TEXTURE_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>visibilityBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>visibles[]</NAME>
+        <TYPE>int</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>!DebugBoxes</OPTION_GRAMMAR>
+    <STAGES>VertexStage FragmentStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <SAMPLER>
+    <NAME>depthTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!DebugBoxes LogDepth</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>depthSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <CMP_MODE>None</CMP_MODE>
+    <CMP_FUNC>Never</CMP_FUNC>
+  </SAMPLER_STATE>
+
+  <!-- Effect Techniques -->
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Skin</RASTERIZER_STATE>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>depthTex</SAMPLER>
+          <STATES>depthSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <COMMONS>ubos</COMMONS>
+      <VERTEX_STAGE>OcclusionVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>OcclusionGS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>LogDepth OcclusionPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>DebugBoxes</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>DebugBoxes</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>DebugBox</RASTERIZER_STATE>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>depthTex</SAMPLER>
+          <STATES>depthSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <COMMONS>ubos</COMMONS>
+      <VERTEX_STAGE>OcclusionVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>OcclusionGS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>LogDepth OcclusionPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</EFFECT>

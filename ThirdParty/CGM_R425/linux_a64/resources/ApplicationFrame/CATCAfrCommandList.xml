@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+<Template syp:name="CATCAfrCommandListInDialog" Target="CATAfrComponent">
+
+<CATCAfrWindow Name = "CATCAfrCommandListDialog"
+    ResizableFlag               = "1"
+    Visibility                  = "1"
+    HorizontallyStretchableFlag = "1"
+    VerticallyStretchableFlag   = "1"
+    RepresentationType          = "AfrFraDialog"
+    ResourceFile                = "CATCAfrCommandList">
+  <!--DialogButtons               = "Ok|Apply|Close"-->
+  <CATCAfrList
+      Name               = "CATCAfrCommandList"
+      Visibility         = "1"
+      MinimumDimension   = "150 200"
+      RepresentationType = "Multi"
+      SelectionMode      = "MultiRange"
+      ResourceFile       = "CATCAfrCommandList">
+    <CATCAfrList.Categories>
+      <CATAfrListHeader Name = "DisplayName" RepresentationType = "MultiList_Icon_Name" Type = "CATUnicodeString"/>
+      <CATAfrListHeader Name = "HeaderAccel" Type = "CATUnicodeString"/>
+    </CATCAfrList.Categories>
+  </CATCAfrList>
+</CATCAfrWindow>
+
+</Template>
+
+</Styles>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+<Template syp:name="MasterProfile" Target="CATPAfrMasterProfile">
+  <CATPAfrMasterList>
+    <!--List of the variables managed by all the profiles-->
+    <CATPAfrSettings syp:name="SWNavigationMode" file="VisualizationRepository" type="boolean" default="false"/>
+    <CATPAfrSettings syp:name="3DAccuracy" type="uint" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="3DFxAccuracy" file="VisualizationRepository" type="float"/>
+    <CATPAfrSettings syp:name="3DPpAccuracy" type="float" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="StaticCull" type="uint" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="DynamicCull" type="uint" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="FullSceneAntiAliasingMode" type="uint" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="AntiAliasing" type="uint" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="AntiAliasingOffset" type="float" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="AADynamic" type="uint" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="RenderingStyle.Default" type="int" file="FrameGeneral"/>
+    <CATPAfrSettings syp:name="CustomerViewMode.Default" type="int" file="FrameGeneral"/>
+    <CATPAfrSettings syp:name="AccuratePickingMode" type="uint" file="VisualizationRepository"/>
+    <CATPAfrSettings syp:name="VersionCombo" type="int" file="3DShapeColor"/>
+    <CATPAfrSettings syp:name="SurfaceDefaultProperties" type="double" file="3DShapeColor"/>
+    <CATPAfrSettings syp:name="VolumeDefaultProperties" type="double" file="3DShapeColor"/>
+    <CATPAfrSettings syp:name="OutlinesDynamic" file="VisualizationRepository" type="uint"/>
+    <CATPAfrSettings syp:name="BGMode" file="VisualizationRepository" type="uint" />
+    <CATPAfrSettings syp:name="Background" file="VisualizationRepository" type="color" />
+    <!--Variables used in SWX profile update 19-09-2018-->
+    <CATPAfrSettings syp:name="ArcSelection" file="Tree" type="int" default="-1" />
+    <CATPAfrSettings syp:name="AxisSystemLength" file="VisualizationRepository" type="uint" default="10" />
+    <CATPAfrSettings syp:name="PreHighlightMode" file="VisualizationRepository" type="uint" />
+    <CATPAfrSettings syp:name="HighlightMode" file="VisualizationRepository" type="uint" />
+    <CATPAfrSettings syp:name="PreHighlight" file="VisualizationRepository" type="uint" />
+    <CATPAfrSettings syp:name="PrehighlightColor" file="VisualizationRepository" type="color" />
+    <CATPAfrSettings syp:name="AccuratePickingWindowSize" file="VisualizationRepository" type="uint" default ="1"/>
+    <CATPAfrSettings syp:name="VolumeEdgesDefaultColor" file="3DShapeColor" type="double" />
+    <CATPAfrSettings syp:name="WireDefaultProperties" file="3DShapeColor" type="double" />
+    <CATPAfrSettings syp:name="SearchKeyWordEditor" default="#all" type="textUS" file="MaterialOptionsSettings" />
+    <CATPAfrPreferences syp:name="PrtWks" default="" type="text" file="AfrWorkbenches" />
+    <CATPAfrPreferences syp:name="PRDWorkshop" default="" type="text" file="AfrWorkbenches" />
+    <CATPAfrSettings syp:name="PartProdMode" file="IGES" type="int" default="0" />
+    <CATPAfrSettings syp:name="ApplyJoin" file="IGES" type="int" default="0" />
+    <CATPAfrSettings syp:name="ActiveExactGeometry" file="MultiCAD" type="int" default="0" />
+    <CATPAfrSettings syp:name="SWXOrientationMode" file="MultiCAD" type="int" default="0" />
+    <CATPAfrSettings syp:name="UndoMax" file="GeneralPCS" type="uint" default="10" />
+    <!--Variables used for sketch customization in SWX profile-->
+    <CATPAfrSettings syp:name="DYS_settings_GridSnapPt" file="Sketcher" type="int" default="1" />
+    <CATPAfrSettings syp:name="DYS_settings_BackgroundSmartPick" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_ColorDefaultElts" file="Sketcher" type="uint" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_ColorDiagWellDefinedElts" file="Sketcher" type="uint" default="65280" />
+    <CATPAfrSettings syp:name="DYS_settings_ColorConstructElts" file="Sketcher" type="uint" default="9211020" />
+    <CATPAfrSettings syp:name="DYS_settings_ColorProtectedElts" file="Sketcher" type="uint" default="16776960" />
+    <CATPAfrSettings syp:name="DYS_settings_DragWithEndPts" file="Sketcher" type="uint" default="1" />
+    <CATPAfrSettings syp:name="DYS_settings_ShowPosition" file="Sketcher" type="int" default="1" />
+    <CATPAfrSettings syp:name="DYS_settings_MscNormalToMinTransfo" file="Sketcher" type="int" default="1" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXMakeGroupCreatingClosedGeometry" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXMakeGroupClosingProfileWhenCreatingGeometry" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXDragGroup" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXReducedSnapsInferences" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWX2DCtxBarConstraint" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXStylePointMarker" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXStyleConstructionPointNormalView" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXStyleSketchGroupInShading" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXStyleProduceSketchGroupSheetBodies" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXStyleConstructionOutputFeature" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_SWXStyleEnableHVPoints" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_GridDisplay" file="Sketcher" type="int" default="1" />
+    <CATPAfrSettings syp:name="DYS_settings_ShowPositionOnCursor" file="Sketcher" type="int" default="1" />
+    <CATPAfrSettings syp:name="DYS_settings_RepeatCommandsAutomatically" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_UseAlternativeAppearanceNotInEdition" file="Sketcher" type="int" default="0" />
+    <CATPAfrSettings syp:name="DYS_settings_AlternativeColorNotInEdition" file="Sketcher" type="uint" default="10342045" />
+    <CATPAfrSettings syp:name="DYS_settings_AlternativeThicknessNotInEdition" file="Sketcher" type="int" default="1" />
+  </CATPAfrMasterList>
+  </Template>
+  <Template syp:name="CATIAProfile" Target="CATPAfrProfile">
+    <CATPAfrVariableList>
+      <!--HEB: Activate CATIA mouse behaviour-->
+      <CATPAfrVariable syp:name="SWNavigationMode" vname="SWNavigationMode" default="false"/>
+      <!--HEB: Tessellation accuracy mode-->
+      <CATPAfrVariable syp:name="3DAccuracy" default="1" vname="3DAccuracy"/>
+      <!--ERS: Tessellation accuracy-->
+      <CATPAfrVariable syp:name="3DFxAccuracy" vname="3DFxAccuracy" default="0.2"/>
+      <!--HEB: Tessellation accuracy-->
+      <CATPAfrVariable syp:name="3DPpAccuracy" default="0.2" vname="3DPpAccuracy"/>
+      <!--HEB: these cull values are important for edges in drawings, and manipulators-->
+      <CATPAfrVariable syp:name="StaticCull" default="2" vname="StaticCull"/>
+      <CATPAfrVariable syp:name="DynamicCull" default="3" vname="DynamicCull"/>
+      <!--HEB: 3 means 4x-->
+      <CATPAfrVariable syp:name="FullSceneAntiAliasingMode" default="3" vname="FullSceneAntiAliasingMode"/>
+      <CATPAfrVariable syp:name="AADynamic" default="0" vname="AADynamic"/>
+      <!--HEB: line aa on, but it should not actually make any difference given the other aa options-->
+      <CATPAfrVariable syp:name="AntiAliasing" default="0" vname="AntiAliasing"/>
+      <CATPAfrVariable syp:name="AntiAliasingOffset" default="0.2" vname="AntiAliasingOffset"/>
+      <!--HEB: default "custom view" style: outlines on, materials on, no smooth edges etc.-->
+      <CATPAfrVariable syp:name="RenderingStyle.Default" default="8199" vname="RenderingStyle.Default"/>
+      <!--HEB: default "custom view" style: outlines on, materials on, no smooth edges etc.-->
+      <CATPAfrVariable syp:name="CustomerViewMode.Default" default="8199" vname="CustomerViewMode.Default"/>
+      <CATPAfrVariable syp:name="AccuratePickingMode" default="0" vname="AccuratePickingMode"/>
+      <!--HEB: Default colors for bodies & surfaces to hide z-fighting in coplanar surfaces -->
+      <CATPAfrVariable syp:name="VersionCombo" default="3" vname="VersionCombo"/>
+      <CATPAfrVariable syp:name="OutlinesDynamic" vname="OutlinesDynamic" default="0"/>
+      <!--FBJ: Default background color for "Basic" ambiance -->
+      <CATPAfrVariable syp:name="BGMode" vname="BGMode" default="1"/>
+      <CATPAfrVariable syp:name="Background" vname="Background" default="3 3 64"/>
+      <!--Variables used for sketch customization in SWX profile-->
+      <CATPAfrVariable syp:name="DYS_settings_GridSnapPt" vname="DYS_settings_GridSnapPt" default="1" />
+      <CATPAfrVariable syp:name="DYS_settings_BackgroundSmartPick" vname="DYS_settings_BackgroundSmartPick" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_ColorDefaultElts" vname="DYS_settings_ColorDefaultElts" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_ColorDiagWellDefinedElts" vname="DYS_settings_ColorDiagWellDefinedElts" default="65280" />
+      <CATPAfrVariable syp:name="DYS_settings_ColorConstructElts" vname="DYS_settings_ColorConstructElts" default="9211020" />
+      <CATPAfrVariable syp:name="DYS_settings_ColorProtectedElts" vname="DYS_settings_ColorProtectedElts" default="16776960" />
+      <CATPAfrVariable syp:name="DYS_settings_DragWithEndPts" vname="DYS_settings_DragWithEndPts" default="1" />
+      <CATPAfrVariable syp:name="DYS_settings_ShowPosition" vname="DYS_settings_ShowPosition" default="1" />
+      <CATPAfrVariable syp:name="DYS_settings_MscNormalToMinTransfo" vname="DYS_settings_MscNormalToMinTransfo" default="1" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXMakeGroupCreatingClosedGeometry" vname="DYS_settings_SWXMakeGroupCreatingClosedGeometry" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXMakeGroupClosingProfileWhenCreatingGeometry" vname="DYS_settings_SWXMakeGroupClosingProfileWhenCreatingGeometry" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXDragGroup" vname="DYS_settings_SWXDragGroup" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXReducedSnapsInferences" vname="DYS_settings_SWXReducedSnapsInferences" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWX2DCtxBarConstraint" vname="DYS_settings_SWX2DCtxBarConstraint" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXStylePointMarker" vname="DYS_settings_SWXStylePointMarker" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXStyleConstructionPointNormalView" vname="DYS_settings_SWXStyleConstructionPointNormalView" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXStyleSketchGroupInShading" vname="DYS_settings_SWXStyleSketchGroupInShading" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXStyleProduceSketchGroupSheetBodies" vname="DYS_settings_SWXStyleProduceSketchGroupSheetBodies" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXStyleConstructionOutputFeature" vname="DYS_settings_SWXStyleConstructionOutputFeature" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_SWXStyleEnableHVPoints" vname="DYS_settings_SWXStyleEnableHVPoints" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_GridDisplay" vname="DYS_settings_GridDisplay" default="1" />
+      <CATPAfrVariable syp:name="DYS_settings_ShowPositionOnCursor" vname="DYS_settings_ShowPositionOnCursor" default="1" />
+      <CATPAfrVariable syp:name="DYS_settings_RepeatCommandsAutomatically" vname="DYS_settings_RepeatCommandsAutomatically" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_UseAlternativeAppearanceNotInEdition" vname="DYS_settings_UseAlternativeAppearanceNotInEdition" default="0" />
+      <CATPAfrVariable syp:name="DYS_settings_AlternativeColorNotInEdition" vname="DYS_settings_AlternativeColorNotInEdition" default="10342045" />
+      <CATPAfrVariable syp:name="DYS_settings_AlternativeThicknessNotInEdition" vname="DYS_settings_AlternativeThicknessNotInEdition" default="1" />
+      <!--Variables used in SWX profile update 19-09-2018-->
+      <CATPAfrVariable syp:name="ArcSelection" vname="ArcSelection" default="1" />
+      <CATPAfrVariable syp:name="AxisSystemLength" vname="AxisSystemLength" default="10" />
+      <CATPAfrVariable syp:name="HighlightMode" vname="HighlightMode" default="1" />
+      <CATPAfrVariable syp:name="PreHighlight" vname="PreHighlight" default="4" />
+      <CATPAfrVariable syp:name="PreHighlightMode" vname="PreHighlightMode" default="0" />
+      <CATPAfrVariable syp:name="PrehighlightColor" vname="PrehighlightColor" default="0 255 255" />
+      <CATPAfrVariable syp:name="AccuratePickingWindowSize" vname="AccuratePickingWindowSize" default="1" />
+      <CATPAfrVariable syp:name="SurfaceDefaultProperties" vname="SurfaceDefaultProperties" default="2139062271" />
+      <CATPAfrVariable syp:name="VolumeDefaultProperties" vname="VolumeDefaultProperties" default="3032203007" />
+      <CATPAfrVariable syp:name="VolumeEdgesDefaultColor" vname="VolumeEdgesDefaultColor" default="255" />
+      <CATPAfrVariable syp:name="WireDefaultProperties" vname="WireDefaultProperties" default="255" />
+      <CATPAfrVariable syp:name="SearchKeyWordEditor" vname="SearchKeyWordEditor" default=" " />
+      <CATPAfrVariable syp:name="PrtWks" vname="PrtWks" default="" />
+      <CATPAfrVariable syp:name="PRDWorkshop" vname="PRDWorkshop" default="" />
+      <CATPAfrVariable syp:name="PartProdMode" vname="PartProdMode" default="0" />
+      <CATPAfrVariable syp:name="ApplyJoin" vname="ApplyJoin" default="0" />
+      <CATPAfrVariable syp:name="ActiveExactGeometry" vname="ActiveExactGeometry" default="1" />
+      <CATPAfrVariable syp:name="SWXOrientationMode" vname="SWXOrientationMode" default="0" />
+      <CATPAfrVariable syp:name="UndoMax" vname="UndoMax" default="10" />
+    </CATPAfrVariableList>
+  </Template>
+</Styles>

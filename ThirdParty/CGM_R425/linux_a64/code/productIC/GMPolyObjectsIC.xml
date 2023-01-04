@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "GMPolyObjects.tst"/>
+  <attached name = "GMPolyOperators.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AdvancedMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMModelInterfaces"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "NewTopologicalObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralOperators"/>
+  <authorize access = "Private" name = "CATMathStream.tst"/>
+  <authorize access = "Private" name = "CATCGM_STREAM.tst"/>
+  <authorize access = "Private" name = "CATCGMStream.tst"/>
+  <authorize access = "Private" name = "CAT3DTopology.tst"/>
+  <authorize access = "Private" name = "CAT3DControl.tst"/>
+  <authorize access = "Protected" name = "GMPolyOperators"/>
+  <authorize access = "Protected" name = "GMPolyUtilities"/>
+  <authorize access = "Protected" name = "GMPolyUtilities.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

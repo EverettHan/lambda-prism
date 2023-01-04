@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="语法错误";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="无法修订新部件";
+PLMc_ForbiddenScenario1.Advice="请保存此部件，稍后尝试修订";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="禁止此新修订版方案：必须在 2 次新修订版调用之间执行完全保存";
+PLMc_ForbiddenScenario2.Advice="在再次调用新修订版之前，先保存您的会话";
+
+PLMc_ForbiddenScenario3.Diagnostic="在会话中无法修订此部件";
+PLMc_ForbiddenScenario3.Advice="另一个会话已修改部件。请尝试将本地修改另存为新修订版。";
+
+InvalidAncestor.Diagnostic="不能使用原始项执行修订操作";
+InvalidAncestor.Advice="选择与要进行衍生的修订版系列一致的原始项";
+
+InvalidComponentState.Diagnostic="无法修订此部件，因为它从未保存到档案库";
+InvalidComponentState.Advice="在修订此部件之前，先将其保存到档案库";
+
+InvalidTypeOfComponent.Diagnostic="不允许修订这种类型的部件";
+InvalidTypeOfComponent.Advice="为修订版提供兼容部件";
+
+InvalidComponentForDWS.Diagnostic="不允许在此工作区中修订这种类型的部件";
+InvalidComponentForDWS.Advice="提供允许在此工作区中进行修订的部件";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="由于在会话中替换时复制了部分实例，因此版本不被允许";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="在替换会话中的元素时，请勿指定要复制的部分实例（重用）";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="由于在会话中转移修改时复制了部分实例，因此版本不被允许";
+TransferModificationsForbiddenForPartialDuplicate.Advice="请勿指定在转移修改时要复制的部分实例";
+
+InvalidIntent.Diagnostic="使用此无效意图调用的版本图：/p";
+InvalidIntent.Advice="请选择有效的版本控制意图";
+
+InstanceWithoutOwner.Diagnostic="此实例不在复制范围内，将被忽略：/p";
+InstanceWithoutOwner.Advice="操作可能导致不必要的重复。如果可能，尝试排除有问题的实例。";
+
+RefreshFailed.Diagnostic="会话刷新失败。";
+RefreshFailed.Advice="执行全局刷新，或再次加载版本控制部件。";
+
+NotRefreshedNoReidentification.Diagnostic="对象已在数据库中修改，但会话尚未更新。";
+NotRefreshedNoReidentification.Advice="执行全局刷新以获取更新的部件。";
+
+NotRefreshedAfterReidentification.Diagnostic="对象已在数据库中成功进行版本控制，但新版本未处于会话中。您可能无法保存会话。";
+NotRefreshedAfterReidentification.Advice="尝试全局刷新。如果无法刷新，则必须卸载此部件并释放本地修改才能保存。";

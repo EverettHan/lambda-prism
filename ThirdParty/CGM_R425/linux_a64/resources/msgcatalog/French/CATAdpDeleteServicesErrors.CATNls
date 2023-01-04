@@ -1,0 +1,51 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+UndefinedServerError.Diagnostic="Erreur interne du serveur.";
+UndefinedServerError.Advice="Veuillez contacter le service technique.";
+
+ERR_01.Diagnostic="Le composant est ouvert dans la session.";
+ERR_01.Advice="Vous pourrez procéder à la suppression, mais sachez que le journal des annulations sera supprimé par l'action de suppression.";
+
+ERR_02.Diagnostic="La référence est toujours instanciée hors de la portée de suppression.";
+ERR_02.Advice="Vous devrez peut-être supprimer les instances existantes avant de la supprimer.";
+
+ERR_03.Diagnostic="La référence n'est pas contrôlée par VPLM.";
+ERR_03.Advice="Vous n'êtes pas autorisé à supprimer la référence. Le serveur est responsable de son cycle de vie.";
+
+ERR_04.Diagnostic="La référence est verrouillée.";
+ERR_04.Advice="Vous devrez peut-être enlever le verrouillage avant de supprimer la référence.";
+
+ERR_05.Diagnostic="Le composant est ouvert dans la session. Il peut être déchargé, mais certaines modifications liées dans la session seront perdues.";
+ERR_05.Advice="Vous pourrez procéder à la suppression, mais sachez que les modifications et le journal des annulations seront perdus par l'action de suppression.";
+
+ERR_06.Diagnostic="Le composant est ouvert dans la session et ne peut être déchargé à partir de celle-ci.";
+ERR_06.Advice="La suppression va échouer. Le composant est probablement détenu par un éditeur.";
+
+ERR_07.Diagnostic="Le composant est ouvert dans la session ; il peut être déchargé à partir de celle-ci, mais au moins un autre composant est détenu dans la session. ";
+ERR_07.Advice="La suppression va échouer. Un composant lié dans la session est probablement détenu par un éditeur.";
+
+ERR_08.Diagnostic="Le composant est ouvert dans la session. Impossible le décharger automatiquement de celle-ci, car il est de type ER. ";
+ERR_08.Advice="Impossible de poursuivre la suppression. Veuillez décharger ce composant des éditeurs liés.";
+
+ERR_09.Diagnostic="La référence est instanciée en dehors de la portée de la suppression mais vous ne disposez pas des privilèges nécessaires pour accéder à l'instance. ";
+ERR_09.Advice="N'essayez pas de supprimer cette référence. Contactez votre administrateur.";
+
+ERR_10.Diagnostic="La référence d'agrégat de cette référence de représentation instanciée simple ne peut pas être supprimée donc cette référence de représentation ne peut pas être supprimée. ";
+ERR_10.Advice="N'essayez pas de supprimer cette référence de représentation. Contactez votre administrateur.";
+
+

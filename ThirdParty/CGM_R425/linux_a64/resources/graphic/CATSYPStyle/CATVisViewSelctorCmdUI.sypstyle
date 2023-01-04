@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template Target="CATVisViewSelctorCmdUI" syp:name="VisViewSelctorCmdUI">
+    <CATVidLaySideAttach >
+      <CATVidGPSquare Name="Left"   syp:name="Left"   VisibleFlag="1"  Press="@OnPressCallback" DoubleClick="@OnDoubleClickCallback" Entry="@OnEntryCallback" Leave="@OnLeaveCallback" Texture="I_ViewSelectorCmdUIArrow.png"  TextureAlpha="@AlphaValue" RotationInDegree="180"  UseManipulatorFlag="1"  RequestedMinimumDimension="64 64" CATVidLaySideAttach.IndexedConstraints="leftPx=25	topPercent=50" />
+      <CATVidGPSquare Name="Right"  syp:name="Right"  VisibleFlag="1"  Press="@OnPressCallback" DoubleClick="@OnDoubleClickCallback" Entry="@OnEntryCallback" Leave="@OnLeaveCallback" Texture="I_ViewSelectorCmdUIArrow.png"  TextureAlpha="@AlphaValue" RotationInDegree="0"    UseManipulatorFlag="1"  RequestedMinimumDimension="64 64" CATVidLaySideAttach.IndexedConstraints="rightPx=25 topPercent=50" />
+      <CATVidGPSquare Name="Up"     syp:name="Up"     VisibleFlag="1"  Press="@OnPressCallback" DoubleClick="@OnDoubleClickCallback" Entry="@OnEntryCallback" Leave="@OnLeaveCallback" Texture="I_ViewSelectorCmdUIArrow.png"  TextureAlpha="@AlphaValue" RotationInDegree="90"   UseManipulatorFlag="1"  RequestedMinimumDimension="64 64" CATVidLaySideAttach.IndexedConstraints="leftPercent=50 topPx=5"/>
+      <CATVidGPSquare Name="Down"   syp:name="Down"   VisibleFlag="1"  Press="@OnPressCallback" DoubleClick="@OnDoubleClickCallback" Entry="@OnEntryCallback" Leave="@OnLeaveCallback" Texture="I_ViewSelectorCmdUIArrow.png"  TextureAlpha="@AlphaValue" RotationInDegree="270"  UseManipulatorFlag="1"  RequestedMinimumDimension="64 64" CATVidLaySideAttach.IndexedConstraints="leftPercent=50 bottomPx=-5"/>
+
+      <CATVidGPSquare Name="Iso"    syp:name="Iso"    VisibleFlag="1"  Press="@OnPressCallback" UseManipulatorFlag="1"  StandaloneManipulatorFlag="1" CATVidLaySideAttach.IndexedConstraints="rightPx=50 topPx=50" RequestedMinimumDimension="32 32" />
+
+      <CATVidGPSquare Name="TurnLeft" syp:name="TurnLeft"    VisibleFlag="1"  Press="@OnPressCallback" DoubleClick="@OnDoubleClickCallback" Entry="@OnEntryCallback" Leave="@OnLeaveCallback" Texture="I_ViewSelectoRotateAntiClockWise.png" UseManipulatorFlag="1" TextureAlpha="@AlphaValue" StandaloneManipulatorFlag="1" CATVidLaySideAttach.IndexedConstraints="leftPx=25 bottomPx=10" RequestedMinimumDimension="64 64" />
+      <CATVidGPSquare Name="TurnRight" syp:name="TurnRight"  VisibleFlag="1"  Press="@OnPressCallback" DoubleClick="@OnDoubleClickCallback" Entry="@OnEntryCallback" Leave="@OnLeaveCallback" Texture="I_ViewSelectoRotateClockWise.png" UseManipulatorFlag="1" TextureAlpha="@AlphaValue" StandaloneManipulatorFlag="1" CATVidLaySideAttach.IndexedConstraints="rightPx=25 bottomPx=10" RequestedMinimumDimension="64 64" />
+
+    </CATVidLaySideAttach>
+  </Template>
+</Styles>

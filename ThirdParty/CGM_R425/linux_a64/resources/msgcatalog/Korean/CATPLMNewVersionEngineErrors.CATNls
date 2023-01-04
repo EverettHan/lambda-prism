@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="시스템 오류";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="새 구성 요소를 수정할 수 없습니다.";
+PLMc_ForbiddenScenario1.Advice="이 구성 요소를 저장하고 나중에 다시 수정해 보십시오.";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="이 새 리비전 시나리오는 금지됩니다. 2개의 새 리비전 호출 사이에 총 저장을 수행해야 합니다.";
+PLMc_ForbiddenScenario2.Advice="새 리비전을 다시 호출하기 전에 세션을 저장하십시오.";
+
+PLMc_ForbiddenScenario3.Diagnostic="세션에서 이 구성 요소를 수정할 수 없습니다.";
+PLMc_ForbiddenScenario3.Advice="구성 요소가 다른 세션에 의해 수정되었습니다. 로컬 수정 사항을 새 리비전으로 저장해 보십시오.";
+
+InvalidAncestor.Diagnostic="상위 항목을 사용하여 수정 작업을 수행할 수 없습니다.";
+InvalidAncestor.Advice="전개할 리비전 패밀리와 일치하는 상위 항목을 선택하십시오.";
+
+InvalidComponentState.Diagnostic="구성 요소가 리포지토리에 저장되지 않아서 수정할 수 없습니다.";
+InvalidComponentState.Advice="구성 요소를 수정하기 전에 리포지토리에 저장하십시오.";
+
+InvalidTypeOfComponent.Diagnostic="이 구성 요소 유형에는 리비전이 허용되지 않습니다.";
+InvalidTypeOfComponent.Advice="수정할 호환 구성 요소를 제공하십시오.";
+
+InvalidComponentForDWS.Diagnostic="이 구성 요소 유형의 이 작업 공간에서는 리비전이 허용되지 않습니다.";
+InvalidComponentForDWS.Advice="이 작업 공간에서 리비전이 허용되는 구성 요소를 제공하십시오.";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="세션에서 부분 인스턴스 복제로 대치되어, 버전이 허용되지 않습니다.";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="세션에서 요소를 대치하는 동안 복제할 부분 인스턴스를 지정하지 마십시오(재사용).";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="부분 인스턴스 중복이 있는 세션에서 전송 수정으로 인해 버전이 허용되지 않습니다.";
+TransferModificationsForbiddenForPartialDuplicate.Advice="수정을 전송하는 동안 복제할 부분 인스턴스를 지정하지 마십시오.";
+
+InvalidIntent.Diagnostic="이 잘못된 의도로 호출된 버전 그래프: /p";
+InvalidIntent.Advice="버전 관리를 위한 올바른 의도를 선택하십시오.";
+
+InstanceWithoutOwner.Diagnostic="이 인스턴스는 복제 범위에 없으므로 무시됩니다. /p";
+InstanceWithoutOwner.Advice="작업을 수행하면 원치 않는 복제가 발생할 수 있습니다. 가급적이면 문제가 있는 인스턴스를 제외해 보십시오.";
+
+RefreshFailed.Diagnostic="세션을 새로 고치지 못했습니다.";
+RefreshFailed.Advice="전체 새로 고침을 수행하거나 버전이 있는 구성 요소를 다시 로드하십시오.";
+
+NotRefreshedNoReidentification.Diagnostic="개체가 데이터베이스에서 수정되었지만 세션이 업데이트되지 않았습니다.";
+NotRefreshedNoReidentification.Advice="전체 새로 고침을 수행하여 업데이트된 구성 요소를 가져옵니다.";
+
+NotRefreshedAfterReidentification.Diagnostic="데이터베이스에서 개체의 버전이 성공적으로 생성되었지만 새 버전이 세션에 없습니다. 세션을 저장하지 못할 수 있습니다.";
+NotRefreshedAfterReidentification.Advice="전체 새로 고침을 해 보십시오. 새로 고칠 수 없는 경우 이 구성 요소를 언로드하고 로컬 수정 사항을 풀어야 저장할 수 있습니다.";

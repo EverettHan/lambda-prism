@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_cbPSEmit</NAME>
+
+  <UNIFORM>
+    <NAME>MaxParticle</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>100000</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>LifeTime</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>5.0 6.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+
+  <UNIFORM>
+    <NAME>ParticuleSize</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>1.0 2.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>PositionMin</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+    <UNIFORM>
+    <NAME>PositionMax</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>VelocityMin</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>VelocityMax</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>ParticuleColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>StartTime</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>Duration</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>StartAt</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>IsLoop</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>Spawn</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>TransformMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+</CONSTANT_BUFFER>

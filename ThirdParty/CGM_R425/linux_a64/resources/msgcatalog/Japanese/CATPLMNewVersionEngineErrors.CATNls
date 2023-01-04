@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="システム エラー";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="新規構成要素をリビジョン作成できません";
+PLMc_ForbiddenScenario1.Advice="この構成要素を保存してから、後でリビジョン作成してみてください";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="この新規リビジョン シナリオは許可されていません : 2 つの新規リビジョンの呼び出しの間に全部を保存する必要があります";
+PLMc_ForbiddenScenario2.Advice="新規リビジョンを再度呼び出す前にセッションを保存してください。";
+
+PLMc_ForbiddenScenario3.Diagnostic="セッションでこの構成要素をリビジョン作成できません";
+PLMc_ForbiddenScenario3.Advice="構成要素は別のセッションで変更されました。ローカル変更を新規リビジョンとして保存してみてください。";
+
+InvalidAncestor.Diagnostic="親を使用してリビジョン作成操作を実行することはできません";
+InvalidAncestor.Advice="展開するリビジョン ファミリーと整合性がある親を選択してください";
+
+InvalidComponentState.Diagnostic="構成要素がリポジトリに保存されていないため、リビジョン作成できません";
+InvalidComponentState.Advice="構成要素をリポジトリに保存してからリビジョン作成してください";
+
+InvalidTypeOfComponent.Diagnostic="このタイプの構成要素のリビジョンは許可されません";
+InvalidTypeOfComponent.Advice="リビジョンに適合する構成要素を指定してください";
+
+InvalidComponentForDWS.Diagnostic="このワークスペースでこのタイプの構成要素のリビジョンは許可されません";
+InvalidComponentForDWS.Advice="このワークスペースでのリビジョンが許可されている構成要素を指定してください";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="バージョンは、セッション内で部分的なインスタンス複写と置換することになるため、許可されません";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="セッション内でエレメントを置換する際には、複写対象として部分インスタンスを指定しないでください (再使用)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="バージョンは、セッション内で一部のインスタンスを複写することによる変更を転送することになるため、許可されません";
+TransferModificationsForbiddenForPartialDuplicate.Advice="変更の転送では、一部のインスタンスを複写するように指定しないでください";
+
+InvalidIntent.Diagnostic="バージョン グラフが、無効な意図で呼び出されました: /p";
+InvalidIntent.Advice="バージョン管理に有効な意図を選択してください";
+
+InstanceWithoutOwner.Diagnostic="このインスタンスは複写範囲内にないため、無視されます: /p";
+InstanceWithoutOwner.Advice="操作によって、不要な重複が生じる場合があります。可能であれば、問題のあるインスタンスを除外してみてください。";
+
+RefreshFailed.Diagnostic="セッションのリフレッシュに失敗しました。";
+RefreshFailed.Advice="グローバル リフレッシュを実行するか、バージョン管理された構成要素を再度ロードします。";
+
+NotRefreshedNoReidentification.Diagnostic="データベースでオブジェクトが変更されましたが、セッションは更新されていません。";
+NotRefreshedNoReidentification.Advice="グローバル リフレッシュを実行して、更新された構成要素を取得してください。";
+
+NotRefreshedAfterReidentification.Diagnostic="データベースでオブジェクトが正常にバージョン作成されましたが、セッションに新しいバージョンがありません。セッションを保存できない可能性があります。";
+NotRefreshedAfterReidentification.Advice="グローバル リフレッシュを試してください。リフレッシュできない場合は、この構成要素をアンロードし、ローカルな修正を解放して、保存できるようにする必要があります。";

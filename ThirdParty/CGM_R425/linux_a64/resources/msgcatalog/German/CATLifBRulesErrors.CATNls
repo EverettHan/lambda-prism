@@ -1,0 +1,45 @@
+<meta charset="UTF-8"/>
+CATLifBRStandardMessage="Die Anpassung Ihrer letzten Operation ist infolge einer fehlerhaften Umgebung fehlgeschlagen. Bitte wenden Sie sich an Ihren Administrator.";
+CATLifBRTraceInitExecution="Ausführung der Geschäftsregeln: </P1> bei Objekt </P2>.";
+CATLifBRTraceInitValidation="Prüfung der Geschäftsregeln: </P1> bei Objekt </P2>.";
+CATLifBRTraceInitComputation="Berechnung der Geschäftsregeln: </P1> bei Objekt </P2>.";
+CATLifBRTraceInitHasOpening="Prüfung der Geschäftsregeln wird geöffnet: </P1> für Objekt </P2>.";
+CATLifBRTraceInitExecutionWithType="Ausführung der Geschäftsregeln: </P1> für Objekt </P2> des Typs </P3>.";
+CATLifBRTraceInitValidationWithType="Prüfung der Geschäftsregeln: </P1> für Objekt </P2> des Typs </P3>.";
+CATLifBRTraceInitComputationWithType="Berechnung der Geschäftsregeln: </P1> für Objekt </P2> des Typs </P3>.";
+CATLifBRTraceInitHasOpeningWithType="Prüfung der Geschäftsregeln wird geöffnet: <FSSERVERSDASSAULT/P1> für Objekt </P2> des Typs </P3>.";
+CATLifBRTraceScriptNotFound="Die Ausführung der Geschäftsregeln ist fehlgeschlagen, weil Skript </P1> in der Laufzeitumgebung nicht gefunden wurde.";
+CATLifBRTraceScriptSyntaxError="Die Ausführung der Geschäftsregeln zum Öffnen von </P1> ist fehlgeschlagen, weil die Syntax des Scripts ungültig ist: /P2.";
+CATLifBRTraceScriptEvaluationError="Die Ausführung der Geschäftsregeln zum Öffnen von </P1> ist fehlgeschlagen, weil die Scriptausführung zu einem Auswertungsfehler führte: /P2.";
+CATLifBRTraceScriptRedirection="Die Ausführung der Geschäftsregeln wurde an Skript </P1> umgeleitet.";
+CATLifBRTraceContext="Der Kontext der Geschäftsregeln lautet (Name = /P1, Benutzer = /P2, Sicherheit = /P3).";
+CATLifBRTestingOpeningSuccess="Prüfung der Geschäftsregeln wird geöffnet: </P1> erfolgreich.";
+CATLifBRTestingOpeningFailure="Prüfung der Geschäftsregeln wird geöffnet: </P1> fehlgeschlagen.";
+CATLifBRTraceEndValidationOK="Operation geprüft.";
+CATLifBRTraceEndValidationKO="Operation nicht geprüft.";
+CATLifBRTraceEndValidationMessage="Im Script wurde eine zusätzliche Nachricht hinzugefügt: </P1>.";
+CATLifBRTraceRuleExitFound="Gelesene Umleitungsdatei: </P1>.";
+CATLifBRTraceRuleFound="Gelesene Scriptdatei: </P1>.";
+CATLifBRTraceRuleNotFound="Scriptdatei nicht gefunden oder nicht lesbar: </P1>.";
+CATLifBRTraceRuleExitMisplacedConditionTagSyntaxError="Falsche Bedingungsposition in Umleitungsdatei </P1>.";
+CATLifBRTraceRuleExitInvalidTagSyntaxError="Ungültige Kennung </P1> in Umleitungsdatei </P2>."; // @validatedUsage JPI 13:10:11
+CATLifBRTraceRuleExitInvalidAttributeSyntaxError="Ungültige Attribute für Kennung </P1> in Umleitungsdatei </P2>."; // @validatedUsage JPI 13:10:11
+CATLifBRTraceRedirectionWithConditionEligible="Öffnung </P1> für Typ </P2> zu Script </P3> mit Bedingung </P4> ist berechtigt.";
+CATLifBRTraceRedirectionWithConditionRejected="Öffnung </P1> für Typ </P2> zu Script </P3> mit Bedingung </P4> wurde zurückgewiesen.";
+CATLifBRTraceRedirectionWithConditionSelected="Öffnung </P1> mit Bedingung </P2> wurde wegen der höheren Genauigkeit (= /P3) ausgewählt.";
+CATLifBRTraceRedirectionConflict="Konflikt zwischen Umleitungen.";
+CATLifBRTraceRedirectionConflictWithRules="Konflikt zwischen Umleitungen zu den folgenden Regeln /P1.";
+CATLifBRTraceFactInInput="Speicherauszug für Fakt in Eingabe:";
+CATLifBRTraceParameterInInput="Speicherauszug für Parameter in Eingabe:";
+CATLifBRTraceFactInOutput="Speicherauszug für Fakt in Ausgabe:";
+CATLifBRTraceParameterInOutput="Speicherauszug für Parameter in Ausgabe:";
+CATLifBRPopUpWarningTitle="Warnung während Operation aufgrund einer Verletzung von Kundenregeln";
+CATLifBRPopUpErrorTitle="Operation aufgrund einer Verletzung von Kundenregeln abgebrochen";
+CATLifBRPopUpWarningMessage="Einige Kundenregeln mit geringer Wertigkeit wurden bei Ausführung dieser Operation für Objekt /P1 verletzt";
+CATLifBRPopUpErrorMessage="Einige Kundenregeln mit hoher Wertigkeit wurden bei Ausführung dieser Operation für Objekt /P1 verletzt. \n Die Operation wird abgebrochen";
+CATLifBRNoSecurityParameters="FEHLER: Sicherheitsparameter sind für das Parameterobjekt, das für die Geschäftsregeln angegeben wurde, nicht verfügbar.";
+CATLifBRElapsedTime="[Abgelaufene Zeit = %H::%M::%S (Stunden::Minuten::Sekunden)]";
+CATLifBRUnexpectedError="FEHLER: Unerwartetes Ereignis verhindert, dass die Öffnungen funktionieren";
+
+CATLifBRTraceHeader="************************";
+CATLifBRTraceDirectoryNotReadable="FEHLER: Nicht lesbares Verzeichnis in Knowledge-Pfadverkettung /P1";

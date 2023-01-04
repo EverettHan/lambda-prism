@@ -1,0 +1,10 @@
+{
+  "library" : "AfrComputeServer",
+  "desc" : "Afr operation setting the server undo and redo stacks max capacity",
+  "onBeginParameters" : "none",
+  "onCommandParameters" : {
+    "in" : {"stacksSize" : "int32"},
+    "answers":  { "domainNames" : "string[]", "domains" : "Parameters" }
+  },  
+  "onEndParameters" : "none"
+} 

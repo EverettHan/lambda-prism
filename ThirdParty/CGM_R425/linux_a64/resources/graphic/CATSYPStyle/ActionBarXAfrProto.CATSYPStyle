@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="AfrActionBar/AfrActionBarMisc.CATSYPStyle" />
+
+  </Resources>
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                 Prototype action bar  Representation Familly                                                           -->
+  <!--***************************************************************************************************************************************-->
+  <Template syp:name="ProtoActionBarMain2" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData >
+      <CATAfrSYPContainerViewMetaData.ControllerPresenter>
+        <AfrActionBarDnDController syp:name="Controller"/>
+      </CATAfrSYPContainerViewMetaData.ControllerPresenter>
+      <CATAfrSmartCtl   LayoutWhenUnvisibleFlag="0"  VisibleFlag="@VisibleFlag ElementName=ActionBar" CreateDialogBoxFlag="@CreateDialogBoxFlag"
+                        InitialDockArea="BottomDockArea"  ToolbarFlag="1" CompactDialogBoxFlag="1"
+                        ConstraintsDialogBox="leftPercent=50 topPx=10" Viewer="@ViewerActionBar ElementName=ActionBar" >
+
+        <AfrActionBarCtl syp:name="ActionBar" Name="ActionBar" syp:Template="Default"  Title="@Title" FinalizeViewFlag="@FinalizeViewFlag" DeletingViewFlag="@DeletingViewFlag"
+                         LayoutWhenUnvisibleFlag="0" VisibleFlag="0" Items="@ToolsItems Mode=OneWayToSource"
+                         ResetAll="@ResetEvent ElementName=Controller"
+                         NewSection="@NewSectionEvent ElementName=Controller"
+                         DeleteSection="@DeleteSectionEvent ElementName=Controller"
+                         RenameSection="@RenameSectionEvent ElementName=Controller"
+                         CustomizationMode="@CustomizationModeEvent ElementName=Controller"
+                         SectionLabels="@SectionLabelsEvent ElementName=Controller"
+                         ButtonLabels="@ButtonLabelsEvent ElementName=Controller"
+                         ToggleExtraction="@ToggleExtractionEvent ElementName=Controller"
+                         />
+                        <!-- ReorderSection="@ReorderSectionEvent ElementName=Controller" -->
+      </CATAfrSmartCtl>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <Template syp:name="ProtoActionBarSection2" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData ActivateCleverModel="0" >
+      <CATAfrSYPContainerViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="ImportDataEvent:=ActionBarSection.ImportData CanImportDataEvent:=ActionBarSection.CanImportData"/>
+      </CATAfrSYPContainerViewMetaData.ControllerPresenter>
+      <AfrActionBarSectionCtl syp:name="ActionBarSection" Name="@Name" syp:Template="Default" VisibleFlag="@WidgetsPanelVisibility"
+                           LayoutWhenUnvisibleFlag="0" Items="@ToolsItems Mode=OneWayToSource" Parent="@Parent" Title="@Title" FinalizeViewFlag="@FinalizeViewFlag"
+                           ActivateEvt="@CreateSubContainerEvent"  PinEvt="@CreateSubContainerEvent" ActiveState="@ActiveFlag Mode=TwoWays" PinnedState="@PinnedFlag Mode=TwoWays"
+                           OnCreateContainerFlag="@OnCreateContainerFlag" ContainerPersistence="@ContainerPersistence">
+        
+      </AfrActionBarSectionCtl>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <Template syp:name="ProtoActionBarFixedSection2" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData ActivateCleverModel="0" AlwaysVisibleFlag="1">
+        <AfrActionBarSectionCtl syp:name="FixedSection" Name="@Name" syp:Template="FixedArea" FixedSection="1" PinnedState="1" VisibleFlag="@WidgetsPanelVisibility"
+                             LayoutWhenUnvisibleFlag="0" Items="@ToolsItems Mode=OneWayToSource" Parent="@Parent" Title="@Title" FinalizeViewFlag="@FinalizeViewFlag"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+  
+  <Template syp:name="ProtoActionBarGroup2" Target="CATAfrSYPContainerView" >
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" ActivateCleverModel="0">
+      <CATAfrSYPContainerViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="DraggedEvent:=ActionBarToolbar.Dragged DroppedEvent:=ActionBarToolbar.Dropped ImportDataEvent:=ActionBarToolbar.ImportData CanImportDataEvent:=ActionBarToolbar.CanImportData"/>
+      </CATAfrSYPContainerViewMetaData.ControllerPresenter>
+        <AfrActionBarToolbarCtl syp:name="ActionBarToolbar" Name="@Name" syp:Template="Default" LayoutWhenUnvisibleFlag="0" Items="@ToolsItems Mode=OneWayToSource" VisibleFlag="@WidgetsPanelVisibility"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <Template syp:name="ProtoActionBarDropDown2" Target="CATAfrSYPContainerView" >
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" ActivateCleverModel="0" PersistenceSelectedStarterFlag="1">
+      <CATAfrSYPContainerViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="RemoveEvent:=ActionBarDropDown.Remove ButtonPreClickEvent:=ActionBarDropDown.PreClick"/>
+      </CATAfrSYPContainerViewMetaData.ControllerPresenter>
+      <AfrActionBarDropDownCtl syp:name="ActionBarDropDown" syp:Template="Default"
+                               Name="@Name"
+                               LayoutWhenUnvisibleFlag="0" Items="@ToolsItems Mode=OneWayToSource" Weight="@Weight" Title="@Title"
+                               SelectedStarter="@SelectedStarter" FinalizeViewFlag="@FinalizeViewFlag" IconContainer="@IconContainer" VisibleFlag="@WidgetsPanelVisibility"
+                               ShortHelp="@ShortHelp" 
+                               ShortHelpImage="@ShortHelpIconName"
+                               LongHelp="@LongHelp" 
+                               LongHelpImage="@LongHelpIconName"                            
+                               F1Help="@LongHelpId"
+                               />
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+  
+  <Template syp:name="ProtoActionBarStarter2" Target="CATAfrSYPStarterView" >
+    <CATAfrSYPContainerViewMetaData ActivateCleverModel="0" >
+      <CATAfrSYPContainerViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="RemoveEvent:=Button.Remove ButtonPreClickEvent:=Button.PreClick"/>
+      </CATAfrSYPContainerViewMetaData.ControllerPresenter>
+      <AfrActionBarButtonCtl Label="@Title" syp:name="Button" Name="@Name" syp:Template="Default"  LayoutWhenUnvisibleFlag="0" 
+                            Icon="@NormalIcon" IconDimension="32 32" Weight="@Weight" VisibleFlag="@VisibleFlag"
+                            ActivatedFlag="@ActivationWidget Mode=TwoWays" Click="@ActionEvent" DoubleClick="@RepeatActionEvent" 
+                            EnableWidget="@EnableWidget"                             
+                            Tooltip="@Help"
+                            LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  
+                            LongTooltipTemplateName="DefaultAfrLongTooltip" 
+                            TooltipTitle="@LongHelpTitle" 
+                            ShortHelp="@ShortHelp"
+                            ShortHelpImage="@ShortHelpIconName"
+                            ShortHelpImageDimension="@ShortHelpIconDimension"
+                            LongHelp="@LongHelp" 
+                            LongHelpImage="@LongHelpIconName"                            
+                            LongHelpImageDimension="@LongHelpIconDimension"
+                            F1Help="@LongHelpId"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+
+  <Template syp:name="Default" Target="AfrActionBarCtl">
+    <CATVidLayLayer syp:name="RootLayer" LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid syp:name="RootContainer" GridWeight="row1=1">
+        <CATVidSpacer syp:name="TopSpacer" RequestedMinimumDimension="10 27" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <!-- Stack for actual section containers in second row -->
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0">
+          <CATVidCtl syp:name="ABControl" LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="0 52">
+            <CATVidLayGrid GridWeight="col1=1" LayoutWhenUnvisibleFlag="0">
+
+              <!-- Move left button -->
+              <CATVidLayGrid GridWeight="row1=1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB compactFlag=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="@SrollEnabled">
+                <CATVidGPSquare RequestedMinimumDimension="1 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Texture="ActionBar/ABLeftRightArrowsTopShadow"/>
+                <CATVidLayLayer  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0">
+                  <CATVidCtlButtonIcon syp:Template="Icon" syp:name="ActionBarMoveLeft"
+                                   Name="LeftArrow"
+                                   AllowMultiplePressFlag="1"
+                                   RequestedMinimumDimension="25 48"
+                                   LayoutWhenUnvisibleFlag="0"
+                                   OffTexture="ActionBar/AB-NextButtonLeftNormal.png"
+                                   OnTexture="ActionBar/AB-NextButtonLeftHover.png"
+                                   OverTexture="ActionBar/AB-NextButtonLeftHover.png"
+                                   Click="@OnLeftArrowClicked"/>
+                  <CATVidLayGrid GridWeight="row0=50 row2=50">
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATVidGPSquare RequestedMinimumDimension="25 26" Texture="ActionBar/AB-NextButtonLeftArrow" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+                  </CATVidLayGrid>
+                </CATVidLayLayer>
+              </CATVidLayGrid>
+
+              <!-- Scrollable area holding the buttons -->
+              <CATVidCtlScrollableArea syp:name="ScrollableArea" syp:Template="Default" Name="ABContent" HAutoscrollMargins="0"
+                     HScrollbarPolicy="AlwaysHidden"  VScrollbarPolicy="AlwaysHidden"
+                     VStretchPolicy="NoStretchFit" AlwaysDispatchLimitReachedFlag="1" MouseWheelOrientation="Horizontal"
+                     CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB compactFlag=1">
+
+                <!-- The Sections(fixed and regular go here)  -->
+                <CATVidLayGrid syp:name="MainGrid" GridWeight="col0=1 col2=1" >
+                  <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB compactFlag=1"/>
+                  <CATVidLayLayer syp:name="ABMidLayer" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB compactFlag=1">
+                    <CATVidGPNinePatchSquare syp:name="ABBkgndSquare" Name="PickZone" Texture="ActionBar/ABBaseBackground-1x" ScalableAreaBorder="8" UseManipulatorFlag="1"  PickFlag="1" />
+
+                    <CATVidLayGrid  GridWeight="row1=1">
+                      <CATVidSpacer   CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL compactFlag=1" RequestedMinimumDimension="1 4"/>
+                      <CATVidLayLayer  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB compactFlag=1">
+
+                        <CATVidLayGrid syp:name="BackgroundFixedArea" GridWeight="col2=1" LayoutWhenUnvisibleFlag="1" VisibleFlag="0">
+                          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL compactFlag=1" RequestedMinimumDimension="4 1"/>
+                          <CATVidGPSquare syp:name="WhiteBkgndSquare" Color="255 255 255 255" RequestedMinimumDimension="0 10" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB compactFlag=1"/>
+                          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL compactFlag=1" RequestedMinimumDimension="4 1"/>
+                        </CATVidLayGrid>
+
+                        <CATVidLayGrid syp:name="SectionsGrid" GridWeight="col0=1 col3=1">
+                          <CATVidSpacer  syp:name="BtnsLeftSpacer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RL compactFlag=1" RequestedMinimumDimension="4 1"/>
+                          <!--Player Section-->
+                          <CATVidCtl syp:name="PlayerSection" Name="PlayerContainer" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB compactFlag=1" />
+                    
+
+                          <!-- The fixed area container -->
+                          <CATVidCtl syp:name="FixedArea" Name="FixedSectionContainer" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB compactFlag=1" />
+                          <!-- The stack that layouts all the others sections-->
+                          
+                          <CATVidLayStack syp:name="SectionsCollection" Name="SectionsContainer" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=LBT compactFlag=1" StackAttachmentAppendPolicy="StretchAttachmentPolicy" VAlignment="VAlignCenter" />
+                          <CATVidSpacer  syp:name="BtnsRightSpacer" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RL compactFlag=1" RequestedMinimumDimension="6 1"/>
+                        </CATVidLayGrid>
+                      </CATVidLayLayer>
+                    </CATVidLayGrid>
+                  </CATVidLayLayer>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB compactFlag=1" />
+                </CATVidLayGrid>
+              </CATVidCtlScrollableArea>
+
+              <!-- Move right button -->
+              <CATVidLayGrid GridWeight="row1=1" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=TB compactFlag=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="@SrollEnabled">
+                <CATVidGPSquare RequestedMinimumDimension="1 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Texture="ActionBar/ABLeftRightArrowsTopShadow"/>
+                <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+                  <CATVidCtlButtonIcon syp:Template="Icon" syp:name="ActionBarMoveRight"
+                                   Name="RightArrow"
+                                   AllowMultiplePressFlag="1"
+                                   RequestedMinimumDimension="25 48"
+                                   OffTexture="ActionBar/AB-NextButtonRightNormal.png"
+                                   OverTexture="ActionBar/AB-NextButtonRightHover.png"
+                                   OnTexture="ActionBar/AB-NextButtonRightHover.png"
+                                   LayoutWhenUnvisibleFlag="0"
+                                   Click="@OnRightArrowClicked"/>
+                  <CATVidLayGrid GridWeight="row0=50 row2=50">
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATVidGPSquare RequestedMinimumDimension="25 26" Texture="ActionBar/AB-NextButtonRightArrow" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+                    <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+                  </CATVidLayGrid>
+                </CATVidLayLayer>
+              </CATVidLayGrid>
+
+            </CATVidLayGrid>
+          </CATVidCtl>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+
+      <CATVidCtl>
+        <CATVidLaySideAttach syp:name="SectionsSideAttach">
+          <!-- Stack for section buttons on top row-->
+          <AfrActionBarSectionChooser syp:name="SectionChooser" Name="SectionChooser" syp:Template="Default" CATVidLaySideAttach.IndexedConstraints="leftPercent=50 topPx=4"/>
+        </CATVidLaySideAttach>
+      </CATVidCtl>
+
+      <CATVidCtlPopup syp:name="MoveCopyPopup" LayoutWhenUnvisibleFlag="0" ConsumeMouseEventFlag="0" SnapFlag="0" PopupCompactFlag="1" VisibleFlag="0" ModalFlag="1" AutoHideFlag="1">
+        <CATVidLayLayer>
+          <CATVidGPSquare UseManipulatorFlag="1" PickFlag="1" />
+          <CATVidLayGrid CellSpacing="4" RequestedMinimumDimension="150 20">
+            <CATVidCtlRadioButton syp:name="MoveButton" syp:Template="Default" Label="Move" CheckState="1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidCtlRadioButton syp:name="CopyButton" syp:Template="Default" Label="Duplicate" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ExpandedFlag" Value="1">
+        <CATSYPSetter Property="VisibilityPolicy" TargetName="ABControl" Value="SlideBToTAnimation"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ABControl" Value="1"/>
+
+        <!--<CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:1">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="ABControl" CATSYPStoryboard.TargetProperty="VisibleFlag" BeginTime="0:0:0.7" Duration="0:0:0.1" To="1" Easing="QuadOut"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>-->
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExpandedFlag" Value="0">
+        <!-- For some reason SlideBToTAnimation doesn't work correctly here. SlideTToBAnimation does.-->
+        <CATSYPSetter Property="VisibilityPolicy" TargetName="ABControl" Value="SlideBToTAnimation"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ABControl" Value="0"/>
+        <!--CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:1">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="ABControl" CATSYPStoryboard.TargetProperty="VisibleFlag" BeginTime="0:0:0.4" Duration="0:0:0.1" To="0" Easing="QuadOut"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>-->
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SrollEnabled" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="ABBkgndSquare" Value="ActionBar/ABBaseBackground-1x" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SrollEnabled" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="ABBkgndSquare" Value="ActionBar/ABBaseBackgroundFull-1x" />
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="IndexedConstraints" IndexName="SectionChooser" TargetName="SectionsSideAttach" Value="leftPercent=50 topPx=0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TopSpacer" Value="10 40"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="0">
+        <CATSYPSetter Property="IndexedConstraints" IndexName="SectionChooser" TargetName="SectionsSideAttach" Value="leftPercent=50 topPx=4"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TopSpacer" Value="10 27"/>
+      </CATSYPTrigger>
+      <!-- no need of any by-pass for CID truncation.That has been fixed. But the following helps in compacting when icon labels are toggled -->
+      <CATSYPTrigger Property="ShowButtonLabels" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ABMidLayer" Value="0  40"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ShowButtonLabels" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ABMidLayer" Value="0  50"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Mode" Value="DEFAULT">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PlayerSection" Value="0"/>
+        <CATSYPSetter Property="GridWeight" TargetName="SectionsGrid" Value="col0=1 col3=1"/>
+        <CATSYPSetter Property="GridWeight" TargetName="MainGrid" Value="col0=1 col2=1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SectionsGrid" Value="1  1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ABMidLayer" Value="0  40"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="MainGrid" Value="1 1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Mode" Value="PLAYER">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PlayerSection" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="BackgroundFixedArea" Value="0"/>
+        <CATSYPSetter Property="GridWeight" TargetName="MainGrid" Value="col1=1"/>
+        <CATSYPSetter Property="GridWeight" TargetName="SectionsGrid" Value="col1=1"/>
+        
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ABMidLayer" Value="0  40"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <Template syp:name="FixedArea" Target="AfrActionBarSectionCtl">
+    <CATVidLayLayer LayoutWhenUnvisibleFlag="0">
+      <CATVidGPNinePatchSquare syp:name="FixedAreaBkgnd" Name="PickZone" ScalableAreaBorder="4" Texture="" UseManipulatorFlag="1" PickFlag="1"/>
+      <CATVidGPSquare Color="255 255 255 255" RequestedMinimumDimension="0 10"/>
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidGPSquare Texture="ActionBar/AB-SectionDivider-1x" LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="1 0"  VisibleFlag="@ShowDivider" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+        <CATVidSpacer RequestedMinimumDimension="5 10"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB compactFlag=1"/>
+        <CATVidLayStack syp:name="GroupsCollection" Name=".Content" Orientation="Horizontal" StackAttachmentAppendPolicy="NoAttachmentPolicy" VAlignment="VAlignCenter" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB compactFlag=1"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template syp:name="Default" Target="AfrActionBarSectionCtl">
+    <CATVidLayGrid  syp:name="MainGrid" GridWeight="row0=1 col2=1" LayoutWhenUnvisibleFlag="0" >
+      <!-- Container of all groups of the section -->      
+      <CATVidGPSquare Texture="ActionBar/AB-SectionDivider-1x" LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="1 0"  VisibleFlag="@ShowDivider" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+      <CATVidSpacer RequestedMinimumDimension="6 48"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidLayStack syp:name="GroupsCollection" Name=".Content" LayoutWhenUnvisibleFlag="0" Orientation="Horizontal" StackAttachmentAppendPolicy="NoAttachmentPolicy" VAlignment="VAlignCenter" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="6 48"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+      <AfrActionBarNewGroupCtl  syp:name="NewGroupCtl" Name="NewGroupCtl" syp:Template="Default" LayoutWhenUnvisibleFlag="0" VisibleFlag="@Customizing" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Default" Target="AfrActionBarPlayerSectionCtl">
+    <CATVidLayGrid  syp:name="MainGrid" GridWeight="row0=1 col2=1" LayoutWhenUnvisibleFlag="0" >
+      <!-- Container of all groups of the section -->
+      <CATVidSpacer RequestedMinimumDimension="6 48"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidLayLayer syp:name="GroupsCollection" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="6 48"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+  
+  <Template syp:name="Default" Target="AfrActionBarToolbarCtl">
+    <CATVidLayLayer LayoutWhenUnvisibleFlag="0">
+      <CATVidLayStack syp:name="RootStack" Orientation="Horizontal" StackAttachmentAppendPolicy="NoAttachmentPolicy" VAlignment="VAlignCenter">
+        <!-- Primary area of the group -->
+        <CATVidLayLayer CATVidLayStack.IndexedConstraints="Compact=TRUE" LayoutWhenUnvisibleFlag="0">
+          <AfrActionBarEmptyAreaCtl syp:name="EmptyPrimaryAreaCtl" Name="EmptyPrimaryArea" syp:Template="Primary" VisibleFlag="@ShowEmptyPrimaryArea" LayoutWhenUnvisibleFlag="0"/>
+          <AfrActionBarToolbarStack syp:name="PrimaryArea" Orientation="Horizontal" StackAttachmentAppendPolicy="StretchAttachmentPolicy" />
+        </CATVidLayLayer>
+        <CATVidSpacer syp:name="ExpanderLeftSpacer" RequestedMinimumDimension="10 48" LayoutWhenUnvisibleFlag="0"/>
+        <!-- Button to switch the visibility of the secondary area -->
+        <CATVidCtlButtonIcon syp:name="SecondaryAreaBtn" Name="SecondaryAreaBtn" Click="@HandleClickSecondaryAreaBtn" RequestedMinimumDimension="19 48" VisibleFlag="@ShowSecondaryAreaButton" OffTexture="ActionBar/AB-ExpanderNormal-1x" OverTexture="ActionBar/AB-ExpanderHover-1x" OnTexture="ActionBar/AB-ExpanderHover-1x" OnAndOverTexture="ActionBar/AB-ExpanderHover-1x" LayoutWhenUnvisibleFlag="0"/>
+        <CATVidSpacer syp:name="ExpanderInnerLeftSpacer" RequestedMinimumDimension="10 48" LayoutWhenUnvisibleFlag="0" VisibleFlag="@SecondaryAreaVisibleFlag"/>
+        <!-- Secondary area of the group -->
+        <CATVidLayLayer CATVidLayStack.IndexedConstraints="Compact=TRUE" VisibleFlag="@SecondaryAreaVisibleFlag" LayoutWhenUnvisibleFlag="0">
+          <AfrActionBarEmptyAreaCtl syp:name="EmptySecondaryAreaCtl" Name="EmptySecondaryArea" syp:Template="Secondary" VisibleFlag="@ShowEmptySecondayArea" LayoutWhenUnvisibleFlag="0"/>
+          <CATVidLayGrid LayoutWhenUnvisibleFlag="0">
+            <AfrActionBarToolbarStack syp:name="SecondaryArea" Orientation="Horizontal" LayoutWhenUnvisibleFlag="0" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+        <CATVidSpacer syp:name="ExpanderInnerRightSpacing" RequestedMinimumDimension="10 48" LayoutWhenUnvisibleFlag="0" VisibleFlag="@SecondaryAreaVisibleFlag"/>
+        <CATVidGPSquare Texture="ActionBar/AB-ExpanderRightBorder-1x" VisibleFlag="@SecondaryAreaVisibleFlag" RequestedMinimumDimension="5 48" LayoutWhenUnvisibleFlag="0" />
+        <CATVidSpacer syp:name="ExpanderRightSpacer" RequestedMinimumDimension="6 48" LayoutWhenUnvisibleFlag="0" VisibleFlag="@SecondaryAreaVisibleFlag"/>
+        <CATVidCtl syp:name="GroupDivider" VisibleFlag="@GroupDividerVisibleFlag" LayoutWhenUnvisibleFlag="0" CATVidLayStack.IndexedConstraints="Compact=TRUE">
+          <CATVidLayGrid GridWeight="col1=1" LayoutWhenUnvisibleFlag="0" >
+            <CATVidSpacer syp:name="SpaceBeforeGroupDivider" RequestedMinimumDimension="6 48" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidGPSquare Texture="ActionBar/AB-GroupDivider-1x" VisibleFlag="1" RequestedMinimumDimension="5 48"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="4 48" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidCtl>
+      </CATVidLayStack>
+      <CATVidLaySideAttach syp:name="ThumbSideAttach">
+        <CATVidGPSquare syp:name="Thumb" CATVidLaySideAttach.IndexedConstraints="leftPx=0 topPx=0" VisibleFlag="0"/>
+      </CATVidLaySideAttach>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SecondaryAreaBtn"  Value="40 48"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ExpanderLeftSpacer"   Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ExpanderInnerLeftSpacer"   Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ExpanderRightSpacer" Value="6 48"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SpaceBeforeGroupDivider" Value="0 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SecondaryAreaBtn"  Value="19 48"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ExpanderLeftSpacer"   Value="10 48"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ExpanderInnerLeftSpacer"   Value="10 48"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="ExpanderRightSpacer" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SpaceBeforeGroupDivider" Value="6 48"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="SplitDD" Target="AfrActionBarVidDDButton">
+    <!-- DropDown with split -->
+    <CATVidLayLayer syp:name="SplitButtonLayer" LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid GridWeight="col1=1" CellSpacing="0">
+        <CATVidSpacer syp:name="LeftSpacer" RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="DDPresenter" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB compactFlag=1"/>
+        <AfrActionBarVidButton syp:name="DDButton" Name="DDButton" RequestedMinimumDimension="13 32" syp:Template="SplitBtnRHS" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB compactFlag=1" ClickMode="1" CheckMode="1" LayoutWhenUnvisibleFlag="0" VisibleFlag="1" 
+                               Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" Click="@HandleEvent" Drag="@HandleEvent"/>
+        <CATVidSpacer syp:name="RightSpacer" RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+      <CATVidCtlPopup syp:name="SplitBtnPopup" Name="DDPopup" LayoutWhenUnvisibleFlag="0" ConsumeMouseEventFlag="0" SnapFlag="1" SnapSide="Top" SnapAlignment="SnapAlignLeft" PopupCompactFlag="1" 
+                      VisibleFlag="@CheckState ElementName=DDButton Mode=TwoWays" ModalFlag="1" AutoHideFlag="1">
+        <CATVidLayLayer>
+          <CATVidGPSquare syp:name="SplitBtnPopupBkgnd" Name="PickZone" UseManipulatorFlag="1" Color="226 228 227 255"/>
+          <CATVidLayStack syp:name="SplitBtnPopupStack" Name=".Content" Orientation="Vertical" CellBorder="0" StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="LeftSpacer"     Value="3 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="RightSpacer"    Value="3 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="LeftSpacer"     Value="2 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="RightSpacer"    Value="2 0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="IconBoxDD" Target="AfrActionBarVidDDButton">
+    <!-- Flyout with no split (IconBox) -->
+    <CATVidLayLayer syp:name="FullButtonLayer" LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid GridWeight="col1=1" CellSpacing="0">
+        <CATVidSpacer syp:name="LeftSpacer2" RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <AfrActionBarVidButton syp:name="FullButton" syp:Template="Default" OverFlagIndirect="@CheckState ElementName=FullButton" EnableFlag="1" ShowClipped="0" ShowDropDownInFlyoutFlag="1"  
+                                 Icon="@IconContainer" IconDimension="32 32" CheckMode="1" RequestedMinimumDimension="45 32"  ForegroundColor="0 0 0 255" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" Click="@HandleEvent" TextHeight="14" FontSize="11"/>
+        </CATVidLayLayer>
+        <CATVidSpacer syp:name="RightSpacer2" RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+      <CATVidCtlPopup syp:name="FullBtnPopup" Name="IconBoxPopup" LayoutWhenUnvisibleFlag="0" ConsumeMouseEventFlag="0" SnapFlag="1" SnapSide="Top" SnapAlignment="SnapAlignLeft" PopupCompactFlag="1" VisibleFlag="@CheckState ElementName=FullButton Mode=TwoWays" ModalFlag="1" AutoHideFlag="1">
+        <CATVidLayLayer>
+          <CATVidGPSquare syp:name="FullBtnPopupBkgnd" UseManipulatorFlag="1" Color="226 228 227 255"/>
+          <CATVidLayStack syp:name="FullBtnPopupStack" Orientation="Vertical" CellBorder="0" StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="FullButton"   Value="53 40"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="LeftSpacer2"    Value="3 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="RightSpacer2"   Value="3 0"/>
+        <CATSYPSetter Property="GiveFocusOnDragFlag" TargetName="FullButton"   Value="1"/>
+        <CATSYPSetter Property="AcceptFocusOnDropFlag" TargetName="FullButton"   Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="FullButton"   Value="45 32"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="LeftSpacer2"    Value="2 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="RightSpacer2"   Value="2 0"/>
+        <CATSYPSetter Property="GiveFocusOnDragFlag" TargetName="FullButton"   Value="0"/>
+        <CATSYPSetter Property="AcceptFocusOnDropFlag" TargetName="FullButton"   Value="0"/>       
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+  <Template syp:name="Default" Target="AfrActionBarDropDownCtl">
+    <CATVidLayLayer LayoutWhenUnvisibleFlag="0">
+      <CATVidCtl syp:name="PresenterCtl" Name=".Content" />
+    </CATVidLayLayer>
+  </Template>
+</Styles>
+

@@ -1,0 +1,252 @@
+#======================================================================
+# COPYRIGHT DASSAULT SYSTEMES 2006
+#======================================================================
+#  Dictionary CATPLMImplAdapter.dic
+#  associated with framework CATPLMImplAdapter
+#======================================================================
+#  Jun 2006  Creation: FLE
+#======================================================================
+## Added to correct mkCheckArchi errors, to be redispatch in each section.
+CATPLMAttrReadForBlockAdapter     CATIPLMAttrRead                   libCATPLMImplAdapterBase
+CATPLMAttrWriteForBlockAdapter    CATIPLMAttrWrite                  libCATPLMImplAdapterBase
+CATPLMCompCopyRecordWrite         CATIPLMSystemAttrWrite            libCATPLMImplAdapterBase
+
+CATPLMAdapter           CATIPLMProviderMgr                     libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompMetaDataService             libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompMetaDataServicePrivate      libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompStatementService            libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompTransactionService          libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompConnectionService           libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMErrorStack                      libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompMaturityService             libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompProviderFeatureService      libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompCallbackMgr                 libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompCallbackPublisher           libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompGRDSession                  libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompExpandService               libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompAutoNamingService           libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompVersioningService           libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompProviderRestrictedAccess    libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompProcedureCallService        libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompJSProcedureCallService      libCATPLMImplAdapterBase
+#CATIPLMCompArea51Service doesn't exist anymore
+#CATPLMAdapter           CATIPLMCompArea51Service                        libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompChangeControlService                  libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompHistoryServices                       libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompEventMonitorServices                  libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMAsyncInterfaces                           libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMAsyncTasksServices                        libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompIterationService                      libCATPLMImplAdapterBase
+#CATIPLMCompIterationTransaction is implemented by CATPLMCompIterationTransaction and not by CATPLMAdapter
+#CATPLMAdapter           CATIPLMCompIterationTransaction                 libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompNonLinearVersioningServiceWrite            libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompNonLinearVersioningServiceWriteRestricted  libCATPLMImplAdapterBase
+CATPLMAdapter           CATIPLMCompNonLinearVersioningServiceReadRestricted  libCATPLMImplAdapterBase
+
+CATPLMCompRecordReadSet     CATIPLMCompRecordReadSet               libCATPLMImplAdapterBase
+CATPLMCompRecordReadSet     CATIPLMCompRecordReadSetPrivate        libCATPLMImplAdapterBase
+CATPLMCompRecordReadSet     CATIPLMReconciliationAccess            libCATPLMImplAdapterBase
+
+CATPLMCompStatement         CATIPLMCompStatement                   libCATPLMImplAdapterBase
+
+CATPLMQueryFilter           CATIPLMQueryFilter                     libCATPLMImplAdapterBase
+CATPLMQueryFilter           CATIPLMQueryFilterPrivate              libCATPLMImplAdapterBase
+CATPLMQueryFilter           CATIPLMMessageStream                   libCATPLMImplAdapterBase
+CATPLMQueryFilter           CATIPLMMessageXML                      libCATPLMImplAdapterBase
+CATPLMQueryFilter           CATIPLMQueryFilterAdditionalParams     libCATPLMImplAdapterBase
+CATPLMQueryFilter           CATIPLMSplitQueryFilter                libCATPLMImplAdapterBase
+CATPLMQueryFilter           CATIPLMQueryFilterWM                   libCATPLMImplAdapterBase
+
+CATPLMFilterAttribute       CATIPLMFilterAttribute                 libCATPLMImplAdapterBase
+CATPLMFilterAttribute       CATIPLMFilterAttributeRestricted       libCATPLMImplAdapterBase
+CATPLMFilterAttribute       CATIPLMMessageStream                   libCATPLMImplAdapterBase
+
+CATPLMFilterFunction       CATIPLMFilterFunction           libCATPLMImplAdapterBase
+CATPLMFilterFunction       CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+#CATPLMFilterConfig doesn't exist anymore
+#CATPLMFilterConfig          CATIPLMFilterConfig             libCATPLMImplAdapterBase
+#CATPLMFilterConfig          CATIPLMMessageStream            libCATPLMImplAdapterBase
+#CATPLMFilterConfig          CATIPLMFilterConfigPrivate      libCATPLMImplAdapterBase  
+CATPLMFilterVolume          CATIPLMFilterVolume             libCATPLMImplAdapterBase
+CATPLMFilterVolume          CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+# Ajout par AEA pour correction MDE - 2012-09-11
+CATPLMCompIterationTransaction  CATIPLMCompIterationTransaction  libCATPLMImplAdapterBase
+
+CATPLMFilterSimilar              CATIPLMFilterSimilar              libCATPLMImplAdapterBase
+CATPLMVisualFilterWrap           CATIPLMVisualFilterWrap           libCATPLMImplAdapterBase
+CATPLMVisualFilterViewpoint      CATIPLMVisualFilterViewpoint      libCATPLMImplAdapterBase
+
+CATPLMFilterVolumeLine      CATIPLMFilterVolumeLine         libCATPLMImplAdapterBase
+CATPLMFilterVolumeLine      CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterVolumeSphere    CATIPLMFilterVolumeSphere       libCATPLMImplAdapterBase
+CATPLMFilterVolumeSphere    CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterVolumeCuboid    CATIPLMFilterVolumeCuboid       libCATPLMImplAdapterBase
+CATPLMFilterVolumeCuboid    CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterVolumeProximity    CATIPLMFilterVolumeProximity libCATPLMImplAdapterBase
+CATPLMFilterVolumeProximity    CATIPLMMessageStream         libCATPLMImplAdapterBase
+
+CATPLMFilterVolumeZone      CATIPLMFilterVolumeZone         libCATPLMImplAdapterBase
+CATPLMFilterVolumeZone      CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterRelation        CATIPLMFilterRelation           libCATPLMImplAdapterBase
+CATPLMFilterRelation        CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterRelationQuality CATIPLMFilterRelationQuality    libCATPLMImplAdapterBase
+CATPLMFilterRelationQuality CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterCondition       CATIPLMFilterCondition           libCATPLMImplAdapterBase
+CATPLMFilterCondition       CATIPLMFilterConditionRestricted libCATPLMImplAdapterBase
+CATPLMFilterCondition       CATIPLMMessageStream             libCATPLMImplAdapterBase
+
+CATPLMFilterCriteria        CATIPLMFilterCriteria           libCATPLMImplAdapterBase
+CATPLMFilterCriteria        CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterSelectCondition CATIPLMFilterSelectCondition    libCATPLMImplAdapterBase
+CATPLMFilterSelectCondition CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterSelectCriteria  CATIPLMFilterSelectCriteria     libCATPLMImplAdapterBase
+CATPLMFilterSelectCriteria  CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterObjectToTreat   CATIPLMFilterObjectToTreat      libCATPLMImplAdapterBase
+CATPLMFilterObjectToTreat   CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMFilterOrderBy         CATIPLMFilterOrderBy            libCATPLMImplAdapterBase
+CATPLMFilterOrderBy         CATIPLMMessageStream            libCATPLMImplAdapterBase
+
+CATPLMCompSaveTransaction   CATIPLMCompSaveTransaction      libCATPLMImplAdapterBase
+
+CATPLMGRDSaveTransaction    CATIPLMCompSaveTransaction      libCATPLMImplAdapterBase
+
+CATPLMCompRecordWrite       CATIPLMCompRecordWrite          libCATPLMImplAdapterBase
+CATPLMCompRecordWrite       CATIPLMCompMaturityRecordWrite  libCATPLMImplAdapterBase
+CATPLMCompRecordWrite       CATIPLMSystemAttrWrite          libCATPLMImplAdapterBase
+CATPLMCompRecordWrite       CATIPLMInternalDataWriter       libCATPLMImplAdapterBase
+CATPLMCompRecordWrite       CATIPLMAttributeBlockWriter     libCATPLMImplAdapterBase
+CATPLMCompRecordWrite       CATIPLMEventRecordWrite         libCATPLMImplAdapterBase
+
+CATPLMCompImportTransaction	CATIPLMCompImportTransaction    libCATPLMImplAdapterBase
+CATPLMCompImportRecordWrite	CATIPLMCompRecordWrite          libCATPLMImplAdapterBase
+CATPLMCompImportRecordWrite	CATIPLMCompImportRecordWrite    libCATPLMImplAdapterBase
+CATPLMCompImportRecordWrite	CATIPLMSystemAttrWrite          libCATPLMImplAdapterBase
+CATPLMCompImportRecordWrite	CATIPLMImportAttrWrite          libCATPLMImplAdapterBase
+#CATIPLMInternalDataWriter is implemented by CATPLMCompRecordWrite
+#CATPLMCompImportRecordWrite	CATIPLMInternalDataWriter       libCATPLMImplAdapterBase
+
+CATPLMCompNewVersionTransaction	CATIPLMCompNewVersionTransaction  libCATPLMImplAdapterBase
+CATPLMCompNewVersionRecordWrite	CATIPLMCompNewVersionRecordWrite  libCATPLMImplAdapterBase
+CATPLMCompNewVersionRecordWrite CATIPLMSystemAttrWrite            libCATPLMImplAdapterBase
+
+#CATPLMCompIterationRecordWrite doesn't exist anymore
+#CATPLMCompIterationRecordWrite CATIPLMCompIterationRecordWrite   libCATPLMImplAdapterBase
+CATPLMCompLockUnlockTransaction CATIPLMCompLockUnlockTransaction  libCATPLMImplAdapterBase
+CATPLMCompLockUnlockRecordWrite CATIPLMCompLockUnlockRecordWrite  libCATPLMImplAdapterBase
+CATPLMCompLockUnlockRecordWrite CATIPLMSystemAttrWrite            libCATPLMImplAdapterBase
+
+CATPLMCompTransferOwnershipRecordWrite CATIPLMCompTransferOwnershipRecordWrite  libCATPLMImplAdapterBase
+CATPLMCompTransferOwnershipRecordWrite CATIPLMSystemAttrWrite                   libCATPLMImplAdapterBase
+
+CATPLMCompCheckEditTransaction CATIPLMCompCheckEditTransaction  libCATPLMImplAdapterBase
+CATPLMCompCheckEditRecordWrite CATIPLMCompCheckEditRecordWrite  libCATPLMImplAdapterBase
+CATPLMCompCheckEditRecordWrite CATIPLMSystemAttrWrite           libCATPLMImplAdapterBase
+
+CATPLMCompDeleteRefTransaction CATIPLMCompDeleteRefTransaction libCATPLMImplAdapterBase
+CATPLMCompDeleteRefRecordWrite CATIPLMCompDeleteRefRecordWrite libCATPLMImplAdapterBase
+CATPLMCompDeleteRefRecordWrite CATIPLMSystemAttrWrite          libCATPLMImplAdapterBase
+
+CATPLMCompCloneTransaction     CATIPLMCompCloneTransaction        libCATPLMImplAdapterBase
+CATPLMCompCloneRecordWrite     CATIPLMCompCloneRecordWrite        libCATPLMImplAdapterBase
+CATPLMCompCloneRecordWrite     CATIPLMSystemAttrWrite             libCATPLMImplAdapterBase
+
+CATPLMCompWspMngtTransaction  CATIPLMCompWorkspaceMngtTransaction     libCATPLMImplAdapterBase
+#no object modeler found on CATPLMCompWspMngtRecordWrite
+#CATPLMCompWspMngtRecordWrite  CATIPLMCompWspMngtRecordWrite           libCATPLMImplAdapterBase
+#CATPLMCompWspMngtRecordWrite  CATIPLMSystemAttrWrite                  libCATPLMImplAdapterBase
+
+CATPLMCompRefreshTransaction  CATIPLMCompRefreshTransaction    libCATPLMImplAdapterBase
+#no object modeler found on CATPLMCompRefreshRecordWrite
+#CATPLMCompRefreshRecordWrite  CATIPLMCompRefreshRecordWrite    libCATPLMImplAdapterBase
+#CATPLMCompRefreshRecordWrite  CATIPLMSystemAttrWrite           libCATPLMImplAdapterBase
+
+CATPLMCompApplyEventTransaction  CATIPLMCompApplyEventTransaction  libCATPLMImplAdapterBase
+
+CATPLMCompConnectionInstance    CATIPLMCompConnectionInstance          libCATPLMImplAdapterBase
+CATPLMCompConnectionInstance    CATIPLMCompConnectionInstancePrivate   libCATPLMImplAdapterBase
+CATPLMCompConnectionInstance    CATIPLMSecurity                        libCATPLMImplAdapterBase
+CATPLMCompConnectionInstance    CATIPLMSecurity2                       libCATPLMImplAdapterBase IsImplementedByProvider
+CATPLMCompConnectionInstance    CATIPLMCompConnectionMode              libCATPLMImplAdapterBase
+CATPLMCompConnectionInstance    CATIPLMCompContentMngtInstance         libCATPLMImplAdapterBase IsPLM1
+
+#CATPLMTosServices               CATICreateInstance          libCATPLMImplAdapterBase
+CATPLMTosServices               CATITosPLMServices          libCATPLMImplAdapterBase
+
+# Config filter (this V5 component is defined in Fw CATPLMConfigAccess)
+CATCfgNavConfiguration           CATIPLMMessageStream  libCATPLMImplAdapterBase
+CATCfgExternalDomainFilter       CATIPLMMessageStream  libCATPLMImplAdapterBase
+CATCfgVolatileConfigFilter       CATIPLMMessageStream  libCATPLMImplAdapterBase
+#level >= R423 F05
+CATCfgVolatileFilter             CATIPLMMessageStream  libCATPLMImplAdapterBase
+
+PCCMemVPMCfgConfiguration        CATIPLMMessageStream  libCATPLMImplAdapterBase
+PCCMemProduct_Configuration      CATIPLMMessageStream  libCATPLMImplAdapterBase
+
+CATPLMCompCopyTransaction   CATIPLMCompCopyTransaction      libCATPLMImplAdapterBase
+CATPLMCompCopyRecordWrite   CATIPLMCompCopyRecordWrite      libCATPLMImplAdapterBase
+
+CATPLMGRDLoadInSessionSaveTransaction CATIPLMCompSaveTransaction libCATPLMImplAdapterBase
+
+CATPLMCompAsyncRecordReadSet  CATIPLMCompRecordReadSet      libCATPLMImplAdapterBase
+
+#no object modeler found on CATPLMFilterMinorObjReplacingBSF
+#CATPLMFilterMinorObjReplacingBSF  CATIPLMFilterObjectToTreat  libCATPLMImplAdapterBase
+#CATPLMFilterMinorObjReplacingBSF  CATIPLMMessageStream        libCATPLMImplAdapterBase
+CATPLMFilterExplicit         CATIPLMFilterExplicit           libCATPLMImplAdapterBase
+
+CATPLMExpandResultHandlerForConfigNav  CATIPLMExpandResultHandlerExtended   libCATPLMImplAdapterBase
+CATPLMExpandResultHandlerForConfigNav  CATIPLMExpandResultHandlerStatistics libCATPLMImplAdapterBase
+CATPLMExpandResultHandlerForConfigNav  CATIPLMExpandResultHandler           libCATPLMImplAdapterBase
+CATPLMExpandResultHandlerForConfigNav  CATIPLMExpandResultHandlerPrivate    libCATPLMImplAdapterBase
+
+CATPLMDumpAndTransmitExpandHandler     CATIPLMExpandResultHandlerExtended   libCATPLMImplAdapterBase
+CATPLMDumpAndTransmitExpandHandler     CATIPLMExpandResultHandlerStatistics libCATPLMImplAdapterBase
+CATPLMDumpAndTransmitExpandHandler     CATIPLMExpandResultHandler           libCATPLMImplAdapterBase
+CATPLMDumpAndTransmitExpandHandler     CATIPLMExpandResultHandlerPrivate    libCATPLMImplAdapterBase
+
+#CATPLMExpandForConfigNavComponent doesn't exist anymore
+#CATPLMExpandForConfigNavComponent      CATIPLMRecordRead                  libCATPLMImplAdapterBase
+CATPLMRecordReadSetAdapterImpl CATIPLMRecordReadSet       libCATPLMImplAdapterBase
+CATPLMRecordReadSetAdapterImpl CATIPLMRecordReadSetBroken libCATPLMImplAdapterBase
+
+CATPLMRecordReadExtraInfoAdapter CATIPLMRecordReadExtraInfo libCATPLMImplAdapterBase
+
+CATPLMCompApplicationLoaderImpl CATIPLMCompApplicationLoader libCATPLMImplAdapterBase
+
+CATPLMRecordReadAdapterImpl     CATIPLMRecordRead                       libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMSystemAttrAccess                 libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMReIdentification                 libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMSystemAttrRead                   libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMAttributeBlockAccess             libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMRecordReadModifySRAndSDAndExt    libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMRecordReadAsyncData              libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMAttrRead                         libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl     CATIPLMTag                              libCATPLMImplAdapterBase IsTagSetted
+CATPLMRecordReadAdapterImpl     CATIPLMWspMngtRecordAccess              libCATPLMImplAdapterBase IsOperationNameSetted
+CATPLMRecordReadAdapterImpl     CATIPLMRecordReadPPrime                 libCATPLMImplAdapterBase
+
+CATAsyncForkTaskMP              CATIPLMTaskMP                libCATPLMImplAdapterBase
+
+CATPLMCompApplicationLoaderImpl CATIPLMOfflineApplicationLoader libCATPLMImplAdapterBase
+
+CATPLMCompForkTransaction             CATIPLMCompForkTransaction              libCATPLMImplAdapterBase
+CATPLMCompRecordReadSet               CATIPLMCompRecordReadSetBroken          libCATPLMImplAdapterBase
+CATPLMCompWspReservationRecordWrite   CATIPLMCompWspReservationRecordWrite    libCATPLMImplAdapterBase
+CATPLMDataSetQueryError               CATIPLMError                            libCATPLMImplAdapterBase
+CATPLMDataSetQueryError               CATIPLMErrorAssociatedComponents        libCATPLMImplAdapterBase
+CATPLMExpandResultHandlerController   CATIPLMExpandResultHandler              libCATPLMImplAdapterBase
+CATPLMRecordReadAdapterImpl           CATIPLMRecordReadSetAssociatedObjects   libCATPLMImplAdapterBase
+CATPLMRecordReadSetAdapterImpl        CATIPLMRecordReadSetPrivate             libCATPLMImplAdapterBase
+

@@ -1,0 +1,158 @@
+<meta charset="UTF-8"/>
+//
+// CATIA License Manager Messages (low-level)
+//
+
+LicenseManager = "License Manager";
+
+//
+// Messages    AS: Allow Save
+//
+CheckFailedEx = "Failed to check /P01 license(s):\n/P03\nThe session will stop after the next /P02 unsuccessful attempts\nSaving open documents is strongly recommended";
+
+CheckFailedAS = "Failed to check /P01 license(s):\n/P03\nThe session functionalities (except local save and close) will be unavailable after the next /P02 unsuccessful attempts.\nSaving open documents is strongly recommended.";
+
+CheckOK = "License(s) have been successfully checked";
+
+TooManyChecksFailed = "Failed to check license(s) after /P01 attempts\nThe session will now stop";
+
+TooManyChecksFailedAS = "Failed to check license(s) after /P01 attempts\nThe session functionalities (except local save and close) are now unavailable";
+
+TooManyChecksFailedAT = "Failed to check license(s) as expected.\nThe session functionalities (except local save and close) are now unavailable";
+
+TooManyChecksFailedAT2 = "Failed to check license(s) (System error).\nThe session functionalities (except local save and close) are now unavailable";
+
+TooManyChecksAfterRevoke = "The session functionalities (except local save and close) are now unavailable";
+
+NoSuchProduct = "Requested product not found: /P01";
+
+MissingPreq = "/P01 cannot be used because of unauthorized prerequisite (/P02)";
+
+InconpatibleEnvironment = "The session cannot run on this environment";
+
+NoLicenseForDemo = "No license available for /P01 Demo mode";
+
+LicenseRequestFailed = "License not granted: /P01\nError: /P03 ";
+
+NULRequestFailed = "Concurrent license not granted: /P01\nError: /P02.";
+
+AllLicensesUsed = "All /P01 licenses for /P02 are in use by:\n/P03";
+
+LicenseReleaseFailed = "Failed to release license for /P01 \n/P02 error: /P03";
+
+LicenseCheckFailed = "Failed to check license for /P01 \n/P02 error: /P03";
+
+LicenseRecovered = "License for /P01 has been successfully recovered";
+
+ErrorLoadingProduct = "Failed to load product definition for /P01 (code /P02)\nPlease reinstall it";
+
+ProductInvalidVersion = "Version /P02 of /P01 product definition is invalid\nPlease reinstall it";
+
+LicenseNotYetAvailable = "The /P01 license for /P02 is not yet available";
+
+LicenseExpired = "The /P01 license for /P02 has expired";
+
+BadHost = "License not granted: /P01\nUser /P02 is already logged onto machine /P03\n\nYou can retry after logging off the other machine or continue working on the other machine";
+
+LicenseSoonExpired = "The following granted license(s) will soon expire:\n";
+
+LicenseExpIn = "/P01 in ";
+
+ExpIn24h = "less than 24 hours\n";
+
+ExpIn1day = "1 day\n";
+
+ExpInndays = "/P01 days\n";
+
+NoLicenseForAlias = "There is no suitable license to fulfill the /P01 request";
+
+ProductNotShareable = "The license for /P01 is not shareable -- Please contact customer service";
+
+RetrieveLicenses = "Please wait while /P01 is retrieving licences from /P1";
+
+RetrieveLicensesFailed = "Failed to get licenses from /P1.";
+
+RetrieveLicensesSucceded = "At least one local license was missing, expired or about to expire.\nLocal licenses have been updated according to your Administrator decisions.\nPlease restart your session.";
+
+FirstLoginFailedRestartSession = "Licenses initialization failed.\nPlease restart your session.";
+
+RetrieveLicensesURLKO = "Unable to update local licenses. The remote license repository is not accessible.\nPlease contact your administrator."; 
+
+ProductNotAddon = "The license for /P01 contains an invalid add-on product /P02\nPlease contact customer service";
+
+AddonPreqNotPresent = "The custom configuration /P01 does not contain the prerequisite(s) for the add-on product /P02\nPlease contact customer service";
+
+ConfigHasPrereq = "The configuration /P01 should not have prerequisite(s)\nPlease contact customer service";
+
+InvalidScale = "The product /P01 cannot be requested for its scale /P02 is higher than the current configuration(s)";
+
+CannotStart = "The licenses currently selected are not valid for running this app.\nPlease select appropriate licenses by using the CATOptionsMgt tool (General/Licensing tab).";
+
+ProdDefNotFound = "/P01 license(s) successfully granted, but the associated code is not installed.\nPlease install it.";
+
+NoConfigFound = "None of your licenses matches an installed configuration.\nList of granted licenses:\n/P01\nPlease update your install or contact your administrator.";
+
+NULRequestFailed = "License not granted:\n/P01\n.";
+
+LicenseRevoked = "Your administrator has updated your licensed products assignement.\nThe licenses currently granted are no longer valid for running this app.\nPlease close your session.";
+
+LicOverFailed = "/P01 was not assigned to this user.";
+
+NoLicAssigned = "No license granted to user /P01 (/P02).";
+
+NoMCSLicAssigned = "No MCS license granted to /P01 (/P02).";
+
+LicOverAuthFailed = "None of your assigned licenses authorizes product /P01";
+
+LicOver = "Overriding /P01 with /P02";
+
+LicOverIgnored = "Failed to override license";
+
+PackagingMismatch = "Packaging mismatch: all requested licenses must belong to the same packaging.\n-/P01\n-/P02";
+
+CasualLicAssigned = "Usage of casual licenses not allowed for this application.\n/P03 - /P01 (/P02).";
+
+PlatformCasualLicMismatch = "/P01 is declared as a casual named user.\nBut following requested licenses are not casual: /P02.";
+
+//---------------------------------------------------------------------------
+// Offline mode specific errors
+//---------------------------------------------------------------------------
+GrantedLicenseExtractionFailed = "License /P01 cannot be extracted.\n/P02";
+
+GrantedLicenseExtractionNotSupported = "Offline license extraction is not supported on this OS.";
+
+LicenseExtractionKO_MaxDuration = "License /P01 cannot be extracted for /P02 days (maximum duration allowed by license server is /P03 days).";
+
+LicenseExtractionKO_LocalDirNotFound = "Offline license directory does not exist: /P01.";
+
+LicenseExtractionKO_LocalDirNotCreated = "Unable to create offline license directory: /P01.";
+
+LicenseExtractionKO_LocalDirNotWriteable = "Failed to create file in directory /P01.\nCheck access rights on this directory for the current user and avaliable disk space.";
+
+LicenseExtractionKO_AlreadyOffline = "/P01 has already been extracted for user /P02 on host /P03.";
+
+LicenseExtractionKO_NoInitialLic = "Failed to extend /P01 offline license duration. Missing initial license data.";
+
+LicenseExtractionKO_NoKeyword = "Failed to extract /P01 offline license: protected by keyword.";
+
+LicenseExtractionKO_OfflineDisabled = "Offline license extraction is not enabled on license server.";
+
+LicenseExtractionKO_ExpiresBeforeEnd = "License /P01 cannot be extracted for /P02 days (license will expire in /P03 days).";
+
+LicenseExtractionKO_Token = "/P01 token cannot be extracted.";
+
+LicenseExtractionKO_AuthFailed = "/P01 offline extraction not authorized by license server.";
+
+LicenseExtractionKO_NoLic = "Failed to extract /P01 offline license. License not found on server.";
+
+WorkOfflineProdDefNotFound = "Some functionnalities may be unavailable in offline mode.\n/P01 license will not be requested because the associated code is not installed.\nPlease install it.";
+
+UnsupportedOS = "Unsupported OS version";
+
+
+//
+// License Types
+//
+nodelock_or_concurrent = "nodelocked or concurrent";
+nodelock = "nodelocked";
+concurrent = "concurrent";

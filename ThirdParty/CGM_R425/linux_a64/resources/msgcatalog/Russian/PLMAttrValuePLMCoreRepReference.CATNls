@@ -1,0 +1,80 @@
+<meta charset="UTF-8"/>
+//  NLS File for gathering NLS Value of attribute PLMCoreReference (from KW Dicitionary). 
+//Notice on KW Dictionnary attribute of PLMReference are  only available through the Public PLMCoreRepReference or PLMCoreReference (this is why file may be translated twice)
+//take care that the meaning of value  may be different (depending on site deployment) 
+//Below meaning is entered for OOTB RACE IRPC deployment and would defaulty apply for  any of the PLMEntity derivative type
+//to ensure the Same NLS could be deployed both win and web; 
+//Do not forget to ask for updating Web accordingly to the translation of this in emxFrameworkStringResource.properties
+//when appropriate the emxFramework pattern is mentioned
+//----------------------------------------
+//-------------------------------- Policy section below; 
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type 
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.VPLM_SMB_Definition = Global Design Definition
+
+policy.VPLM_SMB_Definition="Классическое техническое описание";
+policy.VPLM_SMB_Definition_MajorRev="Техническое описание";
+policy.VPLM_SMB_Definition_Document="Классический документ \"Техническое описание\"";
+policy.VPLM_SMB_Definition_Document_MajorRev="Документ \"Техническое описание\"";
+policy.VPLM_SMB_Evaluation="Классическая инженерная оценка";
+policy.VPLM_SMB_Evaluation_MajorRev="Инженерная оценка";
+policy.VPLM_SMB_Resource="Классический инженерный ресурс";
+policy.VPLM_SMB_Resource_MajorRev="Инженерный ресурс";
+policy.VPLM_SMB_Management="Персональное проектирование";
+policy.VPLM_SMB_CoDesignRepRef="Глобальное совместное проектирование";
+policy.VPLM_SMB_CoDesignRef="Глобальное совместное проектирование";
+policy.VPLM_SMB_PostIt_Management="Положение";
+policy.VPLM_SMB_Task_Management="Задача глобального проектирования";
+policy.VPLM_SMB_DesignPrj="Глобальный дизайн-проект";
+policy.VPLM_SMB_DesignWS="Рабочее пространство глобального проекта";
+policy.VPLM_SMB_Action="Действие глобального проектирования";
+
+//emxFramework.Policy.VPLM_SMB = Global Sample Policy
+policy.VPLM_SMB="Политика глобального проектирования";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.VPLM_SMB_Definition.IN_WORK = Under Collaborative Design
+V_maturity.IN_WORK="В работе";
+V_maturity.FROZEN="Заморожено";
+V_maturity.RELEASED="Выпущено";
+V_maturity.OBSOLETE="Устарело";
+V_maturity.PRIVATE="Частное";
+V_maturity.REMOVED="Исключено";
+V_maturity.DEFAULT="Не определено";
+
+V_maturity.Unspec="Проходит техническое описание";
+V_maturity.In_work="Выполняемое действие";
+V_maturity.Completed="Выполнено";
+V_maturity.Unspecified="Проходит техническое описание";
+V_maturity.WIP_Active="Активный";
+V_maturity.WIP_Run="Выполняемое действие";
+V_maturity.WIP_Suspended="Приостановлено";
+V_maturity.WaitApproval="Проходит проверку";
+V_maturity.Obsolete="Устарело";
+V_maturity.Create="Создать";
+V_maturity.DesignWork="DesignWork";
+V_maturity.Review="Проверка";
+V_maturity.Rejected="Отклонено";
+
+current.IN_WORK="В работе";
+current.FROZEN="Заморожено";
+current.RELEASED="Выпущено";
+current.OBSOLETE="Устарело";
+current.PRIVATE="Частное";
+current.REMOVED="Исключено";
+current.DEFAULT="Не определено";
+
+current.Unspec="Проходит техническое описание";
+current.In_work="Выполняемое действие";
+current.Completed="Выполнено";
+current.Unspecified="Проходит техническое описание";
+current.WIP_Active="Активный";
+current.WIP_Run="Выполняемое действие";
+current.WIP_Suspended="Приостановлено";
+current.WaitApproval="Проходит проверку";
+current.Obsolete="Устарело";
+current.Create="Создать";
+current.DesignWork="DesignWork";
+current.Review="Проверка";
+current.Rejected="Отклонено";

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <!--======================================-->
+  <!-- CATCAfrTree_Imp-->
+  <!--======================================-->
+  <Template syp:name="CATCAfrTree_Imp_NewTree" Target="CATCAfrInclude">
+
+    <CATCAfrForm Name ="MyPreferencesTree1"
+                 Title ="Common Preferences"
+                 Visibility ="1"
+                 RepresentationType="AfrFullSpace"
+                 IconName = "Preferences\\Options_Customize_Small.png"
+				 ResourceFile = "CATCMainPreferencesTree">
+
+      <CATCAfrTree Name="MainPreferences"
+                   Display="Common Preferences"
+                   Tooltip="Common Preferences"
+                   Visibility ="1"
+                   RepresentationType="ClassicPreferences"
+                   SelectionMode="MultiRange"
+                   RootDecorationFlag="0"
+                   ExpanderLook="Arrow"
+                   ExpandedFlag="1"
+                   BoldFlag="0"
+                   RegisterFlag="1"
+                   MinimumDimension="200 325"
+				   ResourceFile = "CATCMainPreferencesTree">
+
+        <CATCAfrTree Name="Profile" Visibility ="1" Display="User Profile" ExpandedFlag="1" Tooltip="User Profile" BoldFlag="1" RootDecorationFlag="1" ExpanderLook="NoExpander"/>
+
+        <CATCAfrTree Name="General2" Visibility ="1" Display="General" BoldFlag="1" ExpandedFlag="1" Tooltip="General preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="Open" Icon="Preferences\\NFO1_Icon1.png" Display = "Open and Content Access" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="LocalSave" Icon="Preferences\\NFO1_Icon1.png" Display = "Save and Exit" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="CachePerformance"  Icon="Preferences\\NFO1_Icon1.png" Display = "Cache and Performance" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="ImmersiveVirtuality"  Icon="Preferences\\NFO1_Icon1.png" Display = "Immersive Virtuality" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="PrintersAudios" Icon="Preferences\\NFO1_Icon1.png" Display = "Printers and Audio" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Licensing"  Icon="Preferences\\NFO1_Icon1.png" Display = "Licensing" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Login" Icon="Preferences\\NFO1_Icon1.png" Display = "Login" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Macros" Icon="Preferences\\NFO1_Icon1.png" Display = "Macros" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Files" Icon="Preferences\\NFO1_Icon1.png" Display = "Files Management" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="SearchPreferences" Icon="Preferences\\NFO1_Icon1.png" Display = "Search Preferences" Tooltip="" ExpanderLook="NoExpander"/>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="2D3DDisplay" Visibility ="1" BoldFlag="1" Display="2D 3D View Display" ExpandedFlag="1" Tooltip="2D 3D Display preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="Navigation" Icon="Preferences\\NFO1_Icon1.png" Display="Navigation" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Selection" Icon="Preferences\\NFO1_Icon1.png" Display="Selection" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Performance" Icon="Preferences\\NFO1_Icon1.png" Display="Perfomance" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Visualization" Icon="Preferences\\NFO1_Icon1.png" Display="Visualization" Tooltip="" ExpanderLook="NoExpander"/>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="UserInterface" Visibility ="1" BoldFlag="1" Display="User Interface" ExpandedFlag="1" Tooltip="User Interface preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="WidgetLayout" Icon="Preferences\\NFO1_Icon1.png" Display="Widget Layout" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="SpecTree" Icon="Preferences\\NFO1_Icon1.png" Display="Spec Tree" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="PowerInput" Icon="Preferences\\NFO1_Icon1.png"  Display="Status Bar" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="LineType" Icon="Preferences\\NFO1_Icon1.png" Display="Line Type" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="ThicknessFont" Icon="Preferences\\NFO1_Icon1.png" Display="Thickness and Fonts" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="LinksRelation" Icon="Preferences\\NFO1_Icon1.png" Display="Links and Relations" Tooltip="" ExpanderLook="NoExpander"/>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="ParametersMeasureUnits" Visibility ="1" BoldFlag="1" Display="Parameters  Measures and Units" ExpandedFlag="1" Tooltip="Parameters preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="PMU_Parameters" Icon="Preferences\\NFO1_Icon1.png" Display="Parameters" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="PMU_Measures" Icon="Preferences\\NFO1_Icon1.png" Display="Measures" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="PMU_Units" Icon="Preferences\\NFO1_Icon1.png" Display="Units" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="PMU_ComponentFamily" Icon="Preferences\\NFO1_Icon1.png" Display="Component Family" Tooltip="" ExpanderLook="NoExpander"/>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="ObjectProperties" Visibility ="1" BoldFlag="1" Display="Object Properties" ExpandedFlag="1" Tooltip="Object Properties preferences for all apps " ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="OP_3DShape" Visibility ="1" Display="3D Shape"  Tooltip="" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="OP_3DShape_Display" Icon="Preferences\\NFO1_Icon1.png" Display="Display" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="OP_3DShape_GraphicProperties" Icon="Preferences\\NFO1_Icon1.png" Display="Graphic Properties" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="OP_3DShape_Infra" Icon="Preferences\\NFO1_Icon1.png" Display="Infrastructure" Tooltip="" ExpanderLook="NoExpander"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="OP_3DAnnotations" Visibility ="1" Display="3D Annotations" Tooltip="" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="OP_3DAnnotations_Display" Icon="Preferences\\NFO1_Icon1.png" Display="Display" Tooltip=""  ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="OP_3DAnnotations_GraphicProperties" Icon="Preferences\\NFO1_Icon1.png" Display="Graphic Properties" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="OP_3DAnnotations_Infra" Icon="Preferences\\NFO1_Icon1.png" Display="Infrastructure" Tooltip="" ExpanderLook="NoExpander"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="OP_Constraints" Visibility ="1" Display="Constraints and Dimensions" Tooltip="" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="OP_Contraints_GraphicProperties" Icon="Preferences\\NFO1_Icon1.png" Display="Graphic Properties" Tooltip="" ExpanderLook="NoExpander"/>
+          </CATCAfrTree>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="ExchangeMngt"  Visibility ="1" BoldFlag="1" Display="Exchange Management" ExpandedFlag="1" Tooltip="Exchange Management" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="Compatibility" Visibility ="1" Display="Compatibility" Tooltip="Compatibility"  ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Compatibility_V4V6Draw" Icon="Preferences\\NFO1_Icon1.png" Display="V4/V6 DRAW" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="Compatibility_ICEM" Icon="Preferences\\NFO1_Icon1.png" Display="ICEM External I/O" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="Compatibility_Graphics" Icon="Preferences\\NFO1_Icon1.png" Display="Graphics Format" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="Compatibility_Solidworks"  Icon="Preferences\\NFO1_Icon1.png" Display="Solidworks" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="Compatibility_VRML" Icon="Preferences\\NFO1_Icon1.png" Display="VRML" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="Compatibility_SURPAC"  Icon="Preferences\\NFO1_Icon1.png" Display="SURPAC" Tooltip="" ExpanderLook="NoExpander"/>
+            <CATCAfrTree Name="Compatibility_3XF"  Icon="Preferences\\NFO1_Icon1.png" Display="3XF" Tooltip="" ExpanderLook="NoExpander"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Import" Icon="Preferences\\NFO1_Icon1.png" Display="Import" Tooltip="Import" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="3DXML" Icon="Preferences\\NFO1_Icon1.png" Display="3D XML" Tooltip="3DXML" ExpanderLook="NoExpander"/>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="DeploymentAdmin" Visibility ="1"  BoldFlag="1" Display="Deployment/Admin" ExpandedFlag="1" Tooltip="Administration preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="Batch" Icon="Preferences\\NFO1_Icon1.png" Display="Batch" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Commands" Icon="Preferences\\NFO1_Icon1.png" Display="Commands" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="ContentAccess" Icon="Preferences\\NFO1_Icon1.png" Display="Platform Access" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="3DMessaging" Icon="Preferences\\NFO1_Icon1.png" Display="3D Messaging" Tooltip="" ExpanderLook="NoExpander"/>
+          <CATCAfrTree Name="Statistics" Icon="Preferences\\NFO1_Icon1.png" Display = "Statistics and Reporting" Tooltip="" ExpanderLook="NoExpander"/>
+        </CATCAfrTree>
+
+      </CATCAfrTree>
+
+    </CATCAfrForm>
+
+  </Template>
+
+</Styles>

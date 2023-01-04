@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <!--======================================-->
+  <!-- Home Page Url viewer Component CID-->
+  <!--======================================-->
+  <Template syp:name="CAfrHomePageUrlViewer" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "CAfrHomePageUrlViewer"
+                   Title              = "IF WE NAVIGATOR"
+                   ResizableFlag      = "1"
+                   ContentVisibleFlag ="1"
+                   CompactFlag        ="0"
+                   RepresentationType = "AfrVIDFraPanel">
+      <CATCAfrUrlViewer Name       ="HomePageUrlViewer"
+                        Visibility ="1"
+                        Dimension  ="200 300"
+                        Silent     = "1">
+      </CATCAfrUrlViewer>
+    </CATCAfrWindow>
+  </Template>
+
+  <!--======================================-->
+  <!-- Home Page Url viewer Component Dialog OLD!!-->
+  <!--======================================-->
+  <Template syp:name="CAfrHomePageUrlViewerDialog" Target="CATAfrComponent">
+    <CATCAfrUrlViewer Name       ="HomePageUrlViewer"
+                      Visibility ="1"
+                      Silent     = "1"
+                      Url="http://dell621dsy/Coachmark/win_b64/webroot/plugins/Coachmark/Coachmark.html"
+                      RepresentationType="CATCAfrUrlViewer_Dialog"
+                      Dimension  = "624 484">
+    </CATCAfrUrlViewer>
+  </Template>
+  
+  <!--======================================-->
+  <!-- Home Page Url viewer Component CID-->
+  <!--======================================-->
+  <Template syp:name="CAfrHomePageUrlViewerWeb" Target="CATAfrComponent">
+    <CATCAfrWindow Name               = "CAfrHomePageUrlViewerDialog"
+                   Visibility         ="1"
+                   RepresentationType = "AfrDialogBox">
+      <CATCAfrForm Name="Form_HomePageUrlViewer"
+                   Visibility ="1">
+        <CATCAfrUrlViewer Name       ="HomePageUrlViewer"
+                          MinimumDimension  = "624 484"
+                          Visibility ="1"
+                          Url="about:blank"
+                          Silent     = "1">
+      </CATCAfrUrlViewer>
+      </CATCAfrForm>
+    </CATCAfrWindow>
+  </Template>
+
+</Styles>

@@ -1,0 +1,18 @@
+<meta charset="UTF-8"/>
+CATPLMBusinessLogicUpgrade.Alias="PLM-Geschäftslogik für die Unterstützung von Datenaktualisierungen";
+CATPLMBusinessLogicUpgrade.Description="Definition von Öffnungen zur Aktualisierung der Daten bei Bedarf.";
+
+INFRA_UnifiedTypingMigration.Alias="Einheitliche Migration von Typisierungen: Zuordnung von Typen und Attributen";
+INFRA_UnifiedTypingMigration.Description="Ermöglicht die Einführung von Geschäftsregeln zur Wiedergabe von Typ- und Attributzuordnungen, die während der Migration von Daten aus früheren Typisierungen zur einheitlichen Typisierung verwendet werden. Wird zur Aktualisierung von PVS (Produktansichtsfilter) und gespeicherten Abfragen verwendet.";
+INFRA_UnifiedTypingMigration.ThisObject.Alias="Typ in der Eingabe (von PVS oder Abfrage)";
+INFRA_UnifiedTypingMigration.ThisObject.Description="Unmaßstäbliches Objekt, dessen Typ der frühere Typisierungstyp ist, der in der Abfrage oder der PVS gespeichert ist, die zugeordnet werden muss.";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Alias="Name des in der Abfrage stattdessen zu verwendenden Standardtyps";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Description="Standard-Zieltyp in Eingabe.";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Alias="Liste der Attributnamen";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Description="Liste der Attributnamen in der Eingabe, die zu der zu aktualisierenden Abfrage gehören.";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Alias="Name des in der Abfrage stattdessen zu verwendenden Typs";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Description="Geben Sie diesen Typnamen ein, wenn der Abfragetyp geändert werden muss.";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="Liste der Attributnamen (möglicherweise zugeordnet)";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="Die Liste muss die gleiche Größe aufweisen wie SavedAttributes in der Eingabe. Wenn Attribute beibehalten und nicht zugeordnet werden, müssen die Attributnamen identisch sein. Ansonsten können neue Namen verwendet oder der Name leer gelassen werden, wenn das Attribut nicht berücksichtigt werden soll.";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="Liste der Erweiterungsnamen, die angeben, wo sich das Attribut nach der Migration befindet";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="Die Liste muss die gleiche Größe aufweisen wie MappedAttributes in der Ausgabe. Mit leeren Namen, wenn die Attribute für den Typ beibehalten werden, oder Erweiterungsname, wenn das Attribut nach der Migration eine Erweiterung ist.";

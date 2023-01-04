@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Błąd systemowy";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Nie można skorygować nowego komponentu";
+PLMc_ForbiddenScenario1.Advice="Zapisz ten komponent, a następnie spróbuj go skorygować";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="Ten nowy scenariusz korekty jest zabroniony: należy wykonać całkowity zapis między dwoma wywołaniami korekty";
+PLMc_ForbiddenScenario2.Advice="Zapisz sesję przed ponownym wywołaniem nowej wersji";
+
+PLMc_ForbiddenScenario3.Diagnostic="Nie można zmodyfikować tego komponentu w sesji";
+PLMc_ForbiddenScenario3.Advice="Komponent został zmodyfikowany przez inną sesję. Spróbuj zapisać lokalne modyfikacje jako nową wersję.";
+
+InvalidAncestor.Diagnostic="Przodek nie może być użyty do wykonania operacji korekty";
+InvalidAncestor.Advice="Wybierz przodka zgodnego z rodziną wersji, którą chcesz rozwijać";
+
+InvalidComponentState.Diagnostic="Nie można skorygować komponentu, ponieważ nigdy nie został on zapisany w repozytorium";
+InvalidComponentState.Advice="Zapisz komponent w repozytorium przed skorygowaniem";
+
+InvalidTypeOfComponent.Diagnostic="Korekta nie jest dozwolona dla komponentu tego typu";
+InvalidTypeOfComponent.Advice="Podaj zgodne komponenty, aby dokonać korekty";
+
+InvalidComponentForDWS.Diagnostic="Korekta nie jest dozwolona w tym obszarze roboczym dla komponentu tego typu";
+InvalidComponentForDWS.Advice="Podaj komponenty, dla których korekta jest dozwolona w tym obszarze roboczym";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="Wersja nie jest dozwolona ze względu na zastąpienie w sesji z duplikacją częściowych wystąpień";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="Nie należy określać częściowych wystąpień do duplikowania podczas zastępowania elementów w sesji (ponowne użycie)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="Wersja nie jest dozwolona ze względu na transfer modyfikacji w sesji z duplikacją częściowych wystąpień";
+TransferModificationsForbiddenForPartialDuplicate.Advice="Nie należy określać częściowych wystąpień do duplikowania podczas przenoszenia modyfikacji";
+
+InvalidIntent.Diagnostic="Wywołano wykres wersji z następującym nieprawidłowym celem: /p";
+InvalidIntent.Advice="Proszę wybrać prawidłowy cel dla wersjowania";
+
+InstanceWithoutOwner.Diagnostic="To wystąpienie nie jest w zakresie duplikacji i zostanie zignorowane: /p";
+InstanceWithoutOwner.Advice="Operacja może prowadzić do niepożądanej duplikacji. Spróbuj wykluczyć problematyczne wystąpienia, jeśli to możliwe.";
+
+RefreshFailed.Diagnostic="Odświeżanie sesji nie powiodło się.";
+RefreshFailed.Advice="Przeprowadź odświeżanie globalne lub załaduj ponownie wersjowane komponenty.";
+
+NotRefreshedNoReidentification.Diagnostic="Obiekt został zmodyfikowany w bazie danych, ale sesja nie została zaktualizowana.";
+NotRefreshedNoReidentification.Advice="Wykonaj odświeżanie globalne, aby pobrać zaktualizowany komponent.";
+
+NotRefreshedAfterReidentification.Diagnostic="Obiekt został pomyślnie wersjowany w bazie danych, ale nowa wersja nie jest obecna w sesji. Zapisanie sesji może nie być możliwe.";
+NotRefreshedAfterReidentification.Advice="Spróbuj wykonać globalne odświeżanie. Jeśli nie możesz odświeżyć, musisz zwolnić ten komponent i utracić lokalne modyfikacje, aby umożliwić zapis.";

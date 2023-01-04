@@ -1,0 +1,39 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+
+NoElement.Diagnostic="フィル エンジンに送信する要素がありません";
+NoElement.Advice="サーバー内のデータが使用可能か確認してください";
+
+NoElementGrowable.Diagnostic="フィル エンジンが扱える要素がありません";
+NoElementGrowable.Advice="ロード前にコンポーネントのステータスをチェックしてください";
+
+ComponentLogged.Diagnostic="指定されたコンポーネントが記録されています";
+ComponentLogged.Advice="セッションで実行された修正がないかチェックしてください";
+
+ComponentNotBrowsed.Diagnostic="指定されたコンポーネントはこのトランザクション前にすでに塗りつぶされています";
+ComponentNotBrowsed.Advice="ロード前にコンポーネントのステータスをチェックしてください";
+
+ComponentNotRepresented.Diagnostic="提供されたコンポーネントはセッションでまだ開かれていません";
+ComponentNotRepresented.Advice="塗りつぶす前にデータを拡張します";
+
+ComponentNotInWS.Diagnostic="指定されたコンポーネントは現行のワークスペースで使用できません";
+ComponentNotInWS.Advice="記入前にコンポーネントの宛先をチェックしてください";
+
+Internal.Diagnostic="内部フィルエンジン エラー";
+Internal.Advice="ローカル管理者に連絡してください";

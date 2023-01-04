@@ -1,0 +1,131 @@
+#ifndef CATCGMVersionningDef60_h
+#define CATCGMVersionningDef60_h
+
+// COPYRIGHT DASSAULT SYSTEMES  2001
+#include "CATCGMVersionLevel.h"
+
+//----------------------------------------------------------------------------
+//  Dedicated To Build-Time 
+//     for compilation with comparison with short Level
+//  Documentation is available in 
+//    Mathematics\PrivateInterfaces\CATCGMVersionDefine.h 
+//    (only for read, do not attempt include on CATCGMVersionDefine)
+//----------------------------------------------------------------------------
+
+CATCGMVersionLevel(RlmUtilSurfExtrapolationOnVertex)
+#define CGM_Versionning_RlmUtilSurfExtrapolationOnVertex CATCGMVersionLevel_RlmUtilSurfExtrapolationOnVertex
+
+CATCGMVersionLevel(Loft_SnappingOn2Profiles)
+#define CGM_Versionning_Loft_SnappingOn2Profiles CATCGMVersionLevel_Loft_SnappingOn2Profiles
+
+CATCGMVersionLevel(TopRibSewing_ErrorInCaseOfAmbiguousFace)
+#define CGM_Versionning_TopRibSewing_ErrorInCaseOfAmbiguousFace CATCGMVersionLevel_TopRibSewing_ErrorInCaseOfAmbiguousFace
+
+CATCGMVersionLevel(RibRelim_BadFacesComeLast)
+#define CGM_Versionning_RibRelim_BadFacesComeLast CATCGMVersionLevel_RibRelim_BadFacesComeLast
+
+CATCGMVersionLevel(SmartDuplicate_LyingOnLinks)
+#define CGM_Versionning_SmartDuplicate_LyingOnLinks CATCGMVersionLevel_SmartDuplicate_LyingOnLinks
+
+CATCGMVersionLevel(Fillet_EndTwistManagement)
+#define CGM_Versionning_Fillet_EndTwistManagement CATCGMVersionLevel_Fillet_EndTwistManagement
+
+CATCGMVersionLevel(Simplify_Cylinders_Inverse)
+#define CGM_Versionning_Simplify_Cylinders_Inverse CATCGMVersionLevel_Simplify_Cylinders_Inverse
+
+CATCGMVersionLevel(Junction_Edges)
+#define CGM_Versionning_Junction_Edges CATCGMVersionLevel_Junction_Edges
+
+CATCGMVersionLevel(Simplif_ConfusionFaces)
+#define CGM_Versionning_Simplif_ConfusionFaces CATCGMVersionLevel_Simplif_ConfusionFaces
+
+CATCGMVersionLevel(Draft_RecursiveCompletion)
+#define CGM_Versionning_Draft_RecursiveCompletion CATCGMVersionLevel_Draft_RecursiveCompletion
+
+CATCGMVersionLevel(RibRelim_CouplingECrvSur)
+#define CGM_Versionning_RibRelim_CouplingECrvSur CATCGMVersionLevel_RibRelim_CouplingECrvSur
+
+CATCGMVersionLevel(ExtruderBySweepExtrapolation)
+#define CGM_Versionning_ExtruderBySweepExtrapolation CATCGMVersionLevel_ExtruderBySweepExtrapolation
+
+CATCGMVersionLevel(Fillet_Sharpness_Setting_Level1)
+#define CGM_Versionning_Fillet_Sharpness_Setting_Level1 CATCGMVersionLevel_Fillet_Sharpness_Setting_Level1
+
+CATCGMVersionLevel(Sweep_NewSmooth)
+#define CGM_Versionning_Sweep_NewSmooth CATCGMVersionLevel_Sweep_NewSmooth
+
+CATCGMVersionLevel(Intersect_StabilizeOrientation)
+#define CGM_Versionning_Intersect_StabilizeOrientation CATCGMVersionLevel_Intersect_StabilizeOrientation
+
+CATCGMVersionLevel(Offset_KeepFaceAlongDegenSurf)
+#define CGM_Versionning_Offset_KeepFaceAlongDegenSurf CATCGMVersionLevel_Offset_KeepFaceAlongDegenSurf
+
+CATCGMVersionLevel(Offset_LogicalSmoothEdges)
+#define CGM_Versionning_Offset_LogicalSmoothEdges CATCGMVersionLevel_Offset_LogicalSmoothEdges
+
+CATCGMVersionLevel(Extrapol_With_Spine)
+#define CGM_Versionning_Extrapol_With_Spine CATCGMVersionLevel_Extrapol_With_Spine
+
+CATCGMVersionLevel(Projection_NewOption_For_GeometricalOperator)
+#define CGM_Versionning_Projection_NewOption_For_GeometricalOperator CATCGMVersionLevel_Projection_NewOption_For_GeometricalOperator
+
+CATCGMVersionLevel(TriTangent_Orientation)
+#define CGM_Versionning_TriTangent_Orientation CATCGMVersionLevel_TriTangent_Orientation
+
+CATCGMVersionLevel(Parallel_SurfaceToCurve)
+#define CGM_Versionning_Parallel_SurfaceToCurve CATCGMVersionLevel_Parallel_SurfaceToCurve
+
+CATCGMVersionLevel(ThroughTwoLines_Parallel)
+#define CGM_Versionning_ThroughTwoLines_Parallel CATCGMVersionLevel_ThroughTwoLines_Parallel
+
+CATCGMVersionLevel(Sweep_TwistDetectionOnProfiles2)
+#define CGM_Versionning_Sweep_TwistDetectionOnProfiles2 CATCGMVersionLevel_Sweep_TwistDetectionOnProfiles2
+
+CATCGMVersionLevel(Sweep_SmoothUnspec)
+#define CGM_Versionning_Sweep_SmoothUnspec CATCGMVersionLevel_Sweep_SmoothUnspec
+
+CATCGMVersionLevel(Draft_JournalForUnusedDraftFaces)
+#define CGM_Versionning_Draft_JournalForUnusedDraftFaces CATCGMVersionLevel_Draft_JournalForUnusedDraftFaces
+
+CATCGMVersionLevel(Draft_TwistInside_HeightAdjustement)
+#define CGM_Versionning_Draft_TwistInside_HeightAdjustement CATCGMVersionLevel_Draft_TwistInside_HeightAdjustement
+
+CATCGMVersionLevel(Draft_SideToKeepImplement)
+#define CGM_Versionning_Draft_SideToKeepImplement CATCGMVersionLevel_Draft_SideToKeepImplement
+
+CATCGMVersionLevel(ImplicitSpineOperator_AdaptativePlaneDetection)
+#define CGM_Versionning_ImplicitSpineOperator_AdaptativePlaneDetection CATCGMVersionLevel_ImplicitSpineOperator_AdaptativePlaneDetection
+
+CATCGMVersionLevel(RibRelim_PropagBeyondExtrRib)
+#define CGM_Versionning_RibRelim_PropagBeyondExtrRib CATCGMVersionLevel_RibRelim_PropagBeyondExtrRib
+
+CATCGMVersionLevel(NewJournalForFilletWithLimiting)
+#define CGM_Versionning_NewJournalForFilletWithLimiting CATCGMVersionLevel_NewJournalForFilletWithLimiting
+
+CATCGMVersionLevel(TwistAnalysis_NewTipDetection)
+#define CGM_Versionning_TwistAnalysis_NewTipDetection CATCGMVersionLevel_TwistAnalysis_NewTipDetection
+
+CATCGMVersionLevel(Sweep_Comb_Compatibility)
+#define CGM_Versionning_Sweep_Comb_Compatibility CATCGMVersionLevel_Sweep_Comb_Compatibility
+
+CATCGMVersionLevel(Fillet_Sharpness_Setting_Level2)
+#define CGM_Versionning_Fillet_Sharpness_Setting_Level2 CATCGMVersionLevel_Fillet_Sharpness_Setting_Level2
+
+CATCGMVersionLevel(Parallel_ExtrapolForTwist)
+#define CGM_Versionning_Parallel_ExtrapolForTwist CATCGMVersionLevel_Parallel_ExtrapolForTwist
+
+CATCGMVersionLevel(CleanCurve_JournalInfos)
+#define CGM_Versionning_CleanCurve_JournalInfos CATCGMVersionLevel_CleanCurve_JournalInfos
+
+CATCGMVersionLevel(Sweep_TwistDetectionForSweepDraft)
+#define CGM_Versionning_Sweep_TwistDetectionForSweepDraft CATCGMVersionLevel_Sweep_TwistDetectionForSweepDraft
+
+CATCGMVersionLevel(Sweep_TrimmedSkin)
+#define CGM_Versionning_Sweep_TrimmedSkin CATCGMVersionLevel_Sweep_TrimmedSkin
+
+CATCGMVersionLevel(Corner_OrientGoodCurve)
+#define CGM_Versionning_Corner_OrientGoodCurve CATCGMVersionLevel_Corner_OrientGoodCurve
+
+#endif
+
+

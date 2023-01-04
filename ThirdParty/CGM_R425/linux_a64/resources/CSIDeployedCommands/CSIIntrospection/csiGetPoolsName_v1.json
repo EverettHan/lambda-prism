@@ -1,0 +1,32 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns the name of all available Pools",
+  "onCall": {
+    "in": {},
+    "out": {
+      "parameters": [
+        {
+          "label": "poolsName",
+          "desc": "String array of Pools name",
+          "basicArray": "string"
+        }
+      ]
+    }
+  },
+  "progress": {
+    "parameters": [
+      {
+        "label": "poolName",
+        "desc": "Name of a single available Pool",
+        "basic": "string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Style Target="CATAfrPLMCompassTooltip" syp:name="defaultTooltip" >
+
+    
+      <CATVidLayLayer>
+        <CATVidCtlXRect BackgroundColor="0 0" FocusableFlag="0" syp:Template="Handle" Entry="@HandleEvent" Leave="@HandleEvent"/>
+        <!--<CATVidCtlBorder syp:Template="ThinBorder" BackgroundColor="255 255 225 255"/>-->
+        <CATVidGPSquare Color="255 255 225 255"/>
+        <CATVidGPSmartSquare syp:name="BorderLayer" ColorizeBlackPixelTo="0.9 255" GridWeight="col1=1 row1=1" Texture="buttonBorder.png">
+          <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="252 2" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="2 252" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="252 252" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="2 252" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="252 2" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+        </CATVidGPSmartSquare>
+        <CATVidLayGrid  CellSpacing="5" GridWeight="col1=1 row1=1">
+          <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0">
+            <CATVidCtl PresenterContent="@PixelImage" FocusableFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=T"/>
+          </CATVidLayGrid>
+          <CATVidLayGrid GridWeight="col0=1 row2=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+            <CATVidGPLabel TextHeight="16"
+                           CropPolicy="NoCrop"
+                           VerticalAlignment="1"
+                           TextColor="0 0 0 255"
+                           Text="@Text"
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidCtlXRect Name="HyperLink" FocusableFlag="0" BackgroundColor="0 0" CursorShape="NorthHandCursor" syp:Template="Handle" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"/>
+              <CATVidGPLabel TextHeight="16"
+                             CropPolicy="NoCrop"
+                             UnderlineFlag="1"
+                             VerticalAlignment="1"
+                             TextColor="0 0 255 255"
+                             Text="@LinkText"
+                         />
+            </CATVidLayLayer>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+  </Style>
+</Styles>

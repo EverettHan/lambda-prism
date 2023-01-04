@@ -1,0 +1,21 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Returns input parameters as output",
+  "onCall": {
+    "in": {
+      "type": "Parameters",
+      "desc": "any input parameters"
+    },
+    "out": {
+      "type": "Parameters",
+      "desc": "mirror copy of input parameters"
+    }
+  }
+}

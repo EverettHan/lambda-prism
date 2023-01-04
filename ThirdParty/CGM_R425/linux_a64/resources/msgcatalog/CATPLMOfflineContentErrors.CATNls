@@ -1,0 +1,13 @@
+<meta charset="UTF-8"/>
+FlushError.Diagnostic       = "Can't remove \p from offline content session layer.";
+FlushError.Advice           = "You may have to destroy offline content manually.";
+
+SyncWhileModificationError.Diagnostic       = "Can't synchronise this favorite because there are concurrent offline modifications.";
+SyncWhileModificationError.Advice           = "Please save your modified content, or remove and recreate favorite.";
+
+DeletedIdentifierError.Diagnostic       = "Can't create offline favorite as online favorite is not found.";
+DeletedIdentifierError.Advice           = "Recreate an online favorite.";
+
+GraphOpenError.Diagnostic               = "Can't access the offline favorite. Your cache may be locked, or your favorite content may not be compatible anymore.";
+GraphOpenError.Advice                   = "Try to access the offline favorite folder, or erase it if your version is not compatible.";
+

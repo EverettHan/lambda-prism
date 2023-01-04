@@ -1,0 +1,1518 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp--> 
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="AfrComponentViews/Thumbnail.CATSYPStyle"/>
+    <ResourceDictionary Source="CATAfrCustomStyles.CATSYPStyle"/>    
+  </Resources>
+
+  <!--===================================-->
+  <!--Here you define your components view -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Classic">
+ <CATAfrSmartCtl Name="@Name"
+                 TitleDialogBox="@Title"
+                 SnappableFlag="1"
+                 ViewParent="@ViewParent"
+                 CreateDialogBoxFlag="@RootFlag"
+                 ContentPanelVisibleFlag="1"
+                 ResizableDialogBoxFlag="1"
+                 CompactDialogBoxFlag="1"
+                 AutoCloseDialogBoxFlag="1"
+                 DiscretionFlag="1"
+                 VisibleFlag="@Visibility"
+                 LayoutWhenUnvisibleFlag="0"
+                 EnableFlag="@EnableFlag">
+          <CATAfrVidCtlListView syp:name="Container" 
+                                SourceDataTemplateName="CATCAfrList_Default" 
+                                SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                                SelectionMode="@SelectionMode" 
+                                SelectedIndexString="@ListSelectedObjectInString"
+                                ScrollableFlag="@ScrollableFlag"
+                                DragFlag="@DragFlag"
+                                DropFlag="@DropFlag"
+                                ItemsFlow="0" 
+                                ViewMode="1"
+                                TooltipProvider="@TooltipProvider"
+                                ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                                ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                                ListEvent="@HandleListEvent"
+                                ItemsScrollMode="PixelPerPixel"
+                                MaxItemsVisibles="@MaximumItemsVisible"
+                                RequestedMinimumDimension="@MinimumDimension"
+                                DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                                SelectedElements="@SelectedElements"
+                                DropLocations="@DropLocationsValues"/>
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="ThumbnailViewer">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Default_Viewer"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Drafting3DMaster">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Drafting3DMaster"/>
+      </CATSYPTrigger>
+     <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Tile"/>
+      </CATSYPTrigger>
+     <CATSYPTrigger Property="ThumbnailsMode" Value="Classic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Default"/>
+      </CATSYPTrigger>
+     <CATSYPTrigger Property="ThumbnailsMode" Value="NewClassic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NavigationTag">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NavigationTag"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="CAfrComponentView">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_CAfr"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="QuickPick">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_QuickPick"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Basic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Basic"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Here you define your components view -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Classic_New">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlListView syp:name="Container"
+                            syp:Template="DefaultThumbnails"
+                            SourceDataTemplateName="CATCAfrList_NewClassic"
+                            SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            ItemsFlow="0"
+                            ViewMode="1"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="ItemPerItem"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            SelectedElements="@SelectedElements"
+                            DropLocations="@DropLocationsValues"/>
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="ThumbnailViewer">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Default_Viewer"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Drafting3DMaster">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Drafting3DMaster"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Tile"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewTile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewTile"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Classic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewClassic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Classic_Tiers">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Classic_Tiers"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NavigationTag">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NavigationTag"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="CAfrComponentView">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_CAfr"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="QuickPick">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_QuickPick"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Basic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_ListIconText"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Multi list view -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Multi">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlListView syp:name="Container"
+                            syp:Template="Default"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            ItemsFlow="0"
+                            ViewMode="2"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            SelectedElements="@SelectedElements"
+                            DropLocations="@DropLocationsValues"
+                            Categories="@Categories"
+                            AutoSizeFlag="@AutoSizeFlag"
+                            FilteredSource="@FilteredSource"
+                            FilteredPropertyName="@FilteredPropertyName"
+                            FilteredPropertySourceName="@FilteredPropertySourceName"
+                            CompletionString="@CompletionString"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--one Column list view -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_OneColumn">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlListView syp:name="Container"
+                            syp:Template="Default"
+                            SourceDataTemplateName="CATCAfrList_Basic"
+                            SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            ItemsFlow="0"
+                            ViewMode="0"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            SelectedElements="@SelectedElements"
+                            DropLocations="@DropLocationsValues"/>
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="ThumbnailViewer">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Default_Viewer"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewTile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewTile"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewClassic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="CAfrComponentView">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_CAfr"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Basic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Basic"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Representation Channel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Channel">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlListView syp:name="Container"
+                            SourceDataTemplateName="CATCAfrList_NewClassic"
+                            SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            ItemsFlow="1"
+                            ViewMode="1"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            SelectedElements="@SelectedElements"
+                            DropLocations="@DropLocationsValues"/>
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="ThumbnailViewer">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Default_Viewer"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Drafting3DMaster">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Drafting3DMaster"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Tile"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Classic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewClassic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NavigationTag">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NavigationTag"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="CAfrComponentView">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_CAfr"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="QuickPick">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_QuickPick"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Basic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Basic"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Representation Channel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Channel_New">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlListView syp:name="Container"
+                            syp:Template="DefaultThumbnails"
+                            SourceDataTemplateName="CATCAfrList_Default"
+                            SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            ItemsFlow="1"
+                            ViewMode="1"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            SelectedElements="@SelectedElements"
+                            DropLocations="@DropLocationsValues"/>
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="ThumbnailViewer">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Default_Viewer"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Drafting3DMaster">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Drafting3DMaster"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Tile"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewTile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewTile"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Classic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Default"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewClassic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NavigationTag">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NavigationTag"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="CAfrComponentView">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_CAfr"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="QuickPick">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_QuickPick"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Basic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Basic"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Representation Menu -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_AfrMenu">
+    <CATAfrVidViewsStack syp:name="Container" Orientation="Vertical" LayoutWhenUnvisibleFlag="0" VisibleFlag="@Visibility" />
+  </DataTemplate>
+  <!--===================================-->
+  <!--Representation Menu With Title -->
+  <!--===================================-->
+      <DataTemplate syp:name="CATCAfrList_AfrMenuWithTitle">
+
+        <CATVidLayGrid GridWeight="row1=1" VisibleFlag="@Visibility" LayoutWhenUnvisibleFlag="0">
+          <CATVidLayGrid  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" >
+            <CATVidSpacer RequestedMinimumDimension="1 10"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidGPLabel Text="@Title" TextColor="255 255 255 255" VisibleFlag="0" TextHeight="25" BoldFlag="1" LeftMargin="5" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="1 10"  CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+            <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+          </CATVidLayGrid>
+          <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+
+
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Representation AfrExpandable -->
+  <!--===================================-->
+    <DataTemplate syp:name="CATCAfrList_AfrExpandable">
+      <CATAfrSmartCtl Name="@Name"
+                      TitleDialogBox="@Title"
+                      SnappableFlag="1"
+                      ViewParent="@ViewParent"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ContentPanelVisibleFlag="1"
+                      ResizableDialogBoxFlag="1"
+                      CompactDialogBoxFlag="1"
+                      AutoCloseDialogBoxFlag="1"
+                      DiscretionFlag="1" LayoutWhenUnvisibleFlag="0"
+                      VisibleFlag="@Visibility">
+        <CATVidCtlExpander syp:Template="Expander"
+                 ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                 ExclusiveFlag="@ExclusiveFlag"
+                 LayoutWhenUnvisibleFlag="0"
+                 FontWeight="1"
+                 Label="@Title"
+                 BackgroundColor="0.05 200"
+                 ForegroundColor="1 255"
+                   > 
+          <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" />
+        </CATVidCtlExpander>
+      
+      </CATAfrSmartCtl>
+  </DataTemplate>
+    
+    
+  <DataTemplate syp:name="CATCAfrList_List">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0"
+                    VisibleFlag="@Visibility">
+
+      <CATVidCtlExpander syp:Template="Expander"
+                       ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                       ExclusiveFlag="@ExclusiveFlag"
+                       LayoutWhenUnvisibleFlag="0"
+                       FontWeight="1"
+                       Label="@Title"
+                       BackgroundColor="0.05 200"
+                       ForegroundColor="1 255" 
+                       >
+          <CATAfrVidCtlListView syp:Template="ListV1" syp:name="Container" MaxItemsVisibles="@MaximumItemsVisible"
+                                SourceDataTemplateName="CATAfrListItem_List" 
+                                SelectionMode="@SelectionMode"
+                                SelectedIndexString="@ListSelectedObjectInString"
+                                SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                                ScrollableFlag="@ScrollableFlag"
+                                DragFlag="@DragFlag"
+                                DropFlag="@DropFlag"
+                                 KeyboardManipulationFlag="1"
+                                LayoutWhenUnvisibleFlag="0"
+                                TooltipProvider="@TooltipProvider"
+                                ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                                ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                                ListEvent="@HandleListEvent"
+                                DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>
+        </CATVidCtlExpander>
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+     <CATSYPTrigger Property="OptionsFlag" Value="1">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListItem_ListOption"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OptionsFlag" Value="0">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListItem_List"/>
+        </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_TileMini"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="QuickPick">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_QuickPick"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>    
+    
+  <DataTemplate syp:name="CATCAfrList_List2">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    LayoutWhenUnvisibleFlag="0"
+                    VisibleFlag="@Visibility">
+
+      
+          <CATAfrVidCtlListView syp:name="Container" MaxItemsVisibles="@MaximumItemsVisible" 
+                                SourceDataTemplateName="CATAfrListItem_List" 
+                                SelectionMode="@SelectionMode"
+                                SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                                ScrollableFlag="@ScrollableFlag"
+                                DragFlag="@DragFlag"
+                                DropFlag="@DropFlag"
+                                TooltipProvider="@TooltipProvider"
+                                ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                                ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                                ListEvent="@HandleListEvent"
+                                 KeyboardManipulationFlag="1"
+                                DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>
+
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+     <CATSYPTrigger Property="OptionsFlag" Value="1">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListItem_ListOption"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OptionsFlag" Value="0">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListItem_List"/>
+        </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_TileMini"/>
+      </CATSYPTrigger>
+ 
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+    
+  <DataTemplate syp:name="CATCAfrList_HeaderList">
+    <CATAfrSmartCtl Name="@Name"
+                   TitleDialogBox="@Title"
+                   SnappableFlag="1"
+                   ViewParent="@ViewParent"
+                   CreateDialogBoxFlag="@RootFlag"
+                   ContentPanelVisibleFlag="1"
+                   ResizableDialogBoxFlag="1"
+                   CompactDialogBoxFlag="1"
+                   AutoCloseDialogBoxFlag="1"
+                   DiscretionFlag="1"
+                   LayoutWhenUnvisibleFlag="0"
+                   VisibleFlag="@Visibility">
+
+      <CATVidLayGrid GridWeight="row1=1 col1=1">
+        <CATVidGPLabel Text="@Title" BoldFlag="1" TextHeight="15" LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseTitleFlag" FontName="3ds" RequestedMinimumDimension="50 17" CropPolicy="CropWithDots" CATVidLayGrid.IndexedConstraints="x=0 xSpan=2 y=0 attach=RLTB" />
+        <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        <CATAfrVidCtlListView syp:Template="Default" syp:name="Container" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" MaxItemsVisibles="@MaximumItemsVisible"
+                             SourceDataTemplateName="CATAfrListHeaderItem_List"
+                             SelectionMode="SingleElementJustClick"
+                             KeyboardManipulationFlag="1"
+                             SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                             ScrollableFlag="@ScrollableFlag"
+                             DragFlag="@DragFlag"
+                             DropFlag="@DropFlag" 
+                             LayoutWhenUnvisibleFlag="0"
+                             TooltipProvider="@TooltipProvider"
+                             ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                             ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                             ListEvent="@HandleListEvent"
+                             DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>        
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 xSpan=2 y=2 attach=RLTB">
+          <CATVidGPSquare RequestedMinimumDimension="0 3"   LayoutWhenUnvisibleFlag="0" VisibleFlag="1" Color="226 228 227 230"/>
+         </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="OptionsFlag" Value="1">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListItem_ListOption"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OptionsFlag" Value="0">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATAfrListHeaderItem_List"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Tile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_TileMini"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="QuickPick">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_QuickPick"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+
+  
+  <DataTemplate syp:name="CATAfrListItem_List">
+    <!--<CATVidGPLabel syp:name="Button" Text="@Display" PickFlag="1" RequestedMinimumDimension="110 29"  />-->
+    <CATVidLayLayer>
+      <CATVidLayLayer>
+        <CATVidGPSquare syp:name="Background" VisibleFlag="@SelectedFlag" Color="0 0"/>
+        <CATVidGPSquare BorderColor="13 97 150 255" Color="192 192 192 100" VisibleFlag="@KeyboardSelectedFlag"/>
+      </CATVidLayLayer>
+       <CATVidLayGrid syp:name="Grid"  GridWeight="col1=1" RequestedMinimumDimension="110 29">
+        <CATVidLayGrid syp:name="Icon" CATVidLayGrid.IndexedConstraints="x=0 y=0" LayoutWhenUnvisibleFlag="0" VisibleFlag="@HasIconFlag" RequestedMinimumDimension="32 32">
+          <CATVidSpacer RequestedMinimumDimension="6 0" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0" RequestedMinimumDimension="18 18" >
+            <CATVidGPSquare syp:name="Off"  Texture="@Icon"   />
+            <CATVidGPSquare syp:name="Over"  Texture="@IconOver" VisibleFlag="0"   />
+            <CATVidGPSquare syp:name="On" Texture="@IconOn" VisibleFlag="0"   />
+            
+          </CATVidLayLayer>
+          <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Label" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="1">
+          <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=3"/>
+          <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RL">
+            
+            <CATVidGPLabel syp:name="LabelOff" Text="@Display" FontName="3ds" HorizontalAlignment="0" UnderlineFlag="@KeyboardSelectedFlag"  CropPolicy="CropWithDots" TextColor="0 0 0 255"  />
+            <CATVidGPLabel syp:name="LabelOver" Text="@Display" VisibleFlag="0" FontName="3ds" UnderlineFlag="@KeyboardSelectedFlag"  HorizontalAlignment="0"  CropPolicy="CropWithDots" TextColor="255 255 255 255" />
+            <CATVidGPLabel syp:name="LabelOn" Text="@Display" VisibleFlag="0" FontName="3ds" UnderlineFlag="@KeyboardSelectedFlag" HorizontalAlignment="0"  CropPolicy="CropWithDots" TextColor="13 97 150 255" />
+            
+          </CATVidLayLayer>
+
+          <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+      
+    </CATVidLayLayer>
+     
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="SelectedFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Off" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Over" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="On" Value="1"/>
+        <CATSYPSetter Property="TextColor" TargetName="LabelOff" Value="13 97 150 255"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOff" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOver" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOn" Value="1"/>
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SelectedFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Off" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="On" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Over" Value="0"/>
+        <CATSYPSetter Property="TextColor" TargetName="LabelOff" Value="0 0 0 255"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOff" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOn" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOver" Value="0"/>
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PreSelectedFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Off" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="On" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Over" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOff" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOn" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOver" Value="1"/>
+        <CATSYPSetter Property="Color"       TargetName="Background" Value="13 97 150 255"/><!---->
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PreSelectedFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Off" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Over" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="On" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOff" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOver" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LabelOn" Value="0"/>
+        <CATSYPSetter Property="Color" TargetName="Background" Value="0 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Grid" Value="110 60"/>
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  <!--CheckState="@SelectedFlag Mode=TwoWays"-->
+
+
+  <DataTemplate syp:name="CATAfrListHeaderItem_List">
+    <!--<CATVidGPLabel syp:name="Button" Text="@Display" PickFlag="1" RequestedMinimumDimension="110 29"  />-->
+    <CATVidLayLayer>      
+      <CATVidLayLayer>
+        <CATVidGPSquare syp:name="Background" VisibleFlag="@SelectedFlag" Color="0 0"/>
+        <CATVidGPSquare BorderColor="13 97 150 255" Color="255 255 255 230" VisibleFlag="@KeyboardSelectedFlag"/>      
+      </CATVidLayLayer>
+      
+      <CATVidGPSmartSquare syp:name="ForegroundLayer" GridWeight="row1=1 col1=1" Texture="PLMBar/Menu_Over.png" TextureAlpha="0" TextureFilter="1">
+        <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="30 30" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      
+      <CATVidLayGrid syp:name="Grid"  GridWeight="col1=1" RequestedMinimumDimension="110 29">      
+        <CATVidLayGrid syp:name="Label" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="1">
+          <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=3"/>
+          <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <!-- ANR8/KTR4 -->
+          <CATVidLayGrid syp:name="Label2" GridWeight="col1=2" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="1">
+            <CATVidGPSquare PixelImage="@IconPixelImage" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L" Texture="@Icon" RequestedMinimumDimension="18 18"/>
+            <!--CATVidGPLabel syp:name="LabelOn" Text="@Display" FontName="Arial" HorizontalAlignment="0" UnderlineFlag="@KeyboardSelectedFlag"  CropPolicy="CropWithDots" TextColor="0 0 0 255" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=L" RequestedMinimumDimension="141 10"/-->
+            <CATVidGPLabel syp:name="LabelOn" Text="@Display" FontName="Arial" HorizontalAlignment="0" UnderlineFlag="@KeyboardSelectedFlag"  CropPolicy="CropWithDots" TextColor="0 0 0 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL" RequestedMinimumDimension="141 10" ContentsMargins="0 0 0 13"/>
+          </CATVidLayGrid>
+          <!--CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RL">
+            <CATVidGPLabel syp:name="LabelOn" Text="@Display" FontName="Arial" HorizontalAlignment="0" UnderlineFlag="@KeyboardSelectedFlag"  CropPolicy="CropWithDots" TextColor="0 0 0 255"  />            
+          </CATVidLayLayer-->
+          <!-- ANR8/KTR4 -->
+          <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+      
+      
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>           
+      <CATSYPTrigger Property="PreSelectedFlag" Value="1">           
+        <CATSYPSetter Property="TextureAlpha" TargetName="ForegroundLayer" Value="255"/>      
+      </CATSYPTrigger>      
+      <CATSYPTrigger Property="PreSelectedFlag" Value="0">                    
+        <CATSYPSetter Property="TextureAlpha" TargetName="ForegroundLayer" Value="0"/>        
+      </CATSYPTrigger>      
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Grid" Value="110 60"/>
+      </CATSYPTrigger>      
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+  <DataTemplate syp:name="CATAfrListItem_ListOption">
+      <CATVidLayGrid syp:name="Grid" GridWeight="col2=1" CellSpacing="2">
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="9 7">
+          <CATVidGPSquare syp:name="CheckSign"  />
+        </CATVidLayLayer>
+        <CATVidSpacer Dimension="2 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=L">
+          <CATVidGPLabel syp:name="Label" Text="@Display"  CropPolicy="NoCrop" TextColor="0 0 0 255"  />
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+      <CATSYPTriggerCollection>
+
+        <CATSYPTrigger Property="SelectedFlag" Value="1">
+          <CATSYPSetter Property="Texture" TargetName="CheckSign" Value="AfrOptionAppCheck.png"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="SelectedFlag" Value="0">
+          <CATSYPSetter Property="Texture" TargetName="CheckSign" Value=""/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="PreSelectedFlag" Value="1">
+          <CATSYPSetter TargetName="Label" Property="TextColor" Value="255 255 255 255"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="PreSelectedFlag" Value="0">
+          <CATSYPSetter TargetName="Label" Property="TextColor" Value="0 0 0 255"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="TouchFlag" Value="1">
+          <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Grid" Value="110 60"/>
+
+        </CATSYPTrigger>
+      </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- CATAfrListItem_Default -->
+  <!--======================================================-->
+    <DataTemplate syp:name="CATAfrListItem_Default">
+    <CATAfrSYPModelViewMetaData Child="@Data"/>
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- List CAfrForm -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrForm_CAfrView">
+    <CATAfrSYPModelViewMetaData Child="@Data"/>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CAfrTree -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrTree_Classic">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlTreeView syp:name="Container"
+                            SourceDataTemplateName="CATCAfrTree_Default"
+                            SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            RootDecorationFlag="@RootDecorationFlag"
+                            ExpanderLook="@ExpanderLook"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            DropLocations="@DropLocationsValues"
+                            SelectedElements="@SelectedElements"
+                            PreSelectionColorFlag="@PreSelectionColorFlag"
+                            ViewMode="0"
+                            MdlCompletionProxy="@MdlCompletionProxy"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CAfrTree -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrTree_ClassicPreferences">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlTreeView syp:name="Container"
+                            SourceDataTemplateName="CATCAfrTree_DefaultPreferences"
+                            SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            RootDecorationFlag="@RootDecorationFlag"
+                            ExpanderLook="@ExpanderLook"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            DropLocations="@DropLocationsValues"
+                            SelectedElements="@SelectedElements"
+                            PreSelectionColorFlag="@PreSelectionColorFlag"
+                            Indentation="10"
+                            ViewMode="0"
+                            MdlCompletionProxy="@MdlCompletionProxy"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Tree Multi list view -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrTree_Multi">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlTreeView syp:name="Container"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            RootDecorationFlag="@RootDecorationFlag"
+                            ExpanderLook="@ExpanderLook"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            DropLocations="@DropLocationsValues"
+                            SelectedElements="@SelectedElements"
+                            PreSelectionColorFlag="@PreSelectionColorFlag"
+                            Categories="@Categories"
+                            AutoSizeFlag="@AutoSizeFlag"
+                            ViewMode="1"
+                            DisplayOnHeader="@DisplayOnHeader"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CAfrTree included CAfrComponent-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrTree_CAfrComponent">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlTreeView syp:name="Container"
+                            syp:Template="CAfrComponent"
+                            RootDecorationFlag="0"
+                            SourceDataTemplateName="CATCAfrTree_Channel"
+                            SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                            SelectionMode="@SelectionMode"
+                            SelectedIndexString="@ListSelectedObjectInString"
+                            ScrollableFlag="@ScrollableFlag"
+                            DragFlag="@DragFlag"
+                            DropFlag="@DropFlag"
+                            ExpanderLook="Arrow"
+                            TooltipProvider="@TooltipProvider"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ListEvent="@HandleListEvent"
+                            ItemsScrollMode="PixelPerPixel"
+							VUnitScrollPixelsValue="@VUnitScrollPixelsValue"
+							HUnitScrollPixelsValue="@HUnitScrollPixelsValue"
+							DynamicCellsSizeFlag="@DynamicCellsSizeFlag"
+                            MaxItemsVisibles="@MaximumItemsVisible"
+                            RequestedMinimumDimension="@MinimumDimension"
+                            DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"
+                            DropLocations="@DropLocationsValues"
+                            SelectedElements="@SelectedElements"
+                            PreSelectionColorFlag="@PreSelectionColorFlag"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Multi List Column Display Name Column-->
+  <!--===================================-->
+  <DataTemplate syp:name="MultiList_Icon_Name">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2" 
+                     Color = "@VidColor ElementName=MetaData">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                    RequestedMinimumDimension="0 3"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1" 
+                    RequestedMinimumDimension="8 0"/>
+        <CATVidGPSquare Texture="@IconDisplayName"
+                        RequestedMinimumDimension="16 16"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+        <CATVidGPLabel Text="@DisplayName" 
+                       FontSize="12"
+                       FontName="3ds"
+                       TextColor="71 71 71 255"
+                       LeftMargin="8"
+                       RightMargin="8"
+                       TopMargin="0"
+                       CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" 
+                       RequestedMinimumDimension="32 16"
+                       CropPolicy="CropWithDots"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2"
+                    RequestedMinimumDimension="0 3"/>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Arrow Icon-->
+  <!--===================================-->
+  <DataTemplate syp:name="List_Icon_Arrow">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2"
+                     Color = "@VidColor ElementName=MetaData">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                    RequestedMinimumDimension="0 3"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1"
+                    RequestedMinimumDimension="8 0"/>
+        <CATVidGPSquare Texture="I_Arrow.png"
+                        RequestedMinimumDimension="16 16"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2"
+                    RequestedMinimumDimension="0 3"/>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Find Icon-->
+  <!--===================================-->
+  <DataTemplate syp:name="List_Icon_Find">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2"
+                     Color = "@VidColor ElementName=MetaData">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                    RequestedMinimumDimension="0 3"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1"
+                    RequestedMinimumDimension="8 0"/>
+        <CATVidGPSquare Texture="I_FindCommand.png"
+                        RequestedMinimumDimension="16 16"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2"
+                    RequestedMinimumDimension="0 3"/>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Assistant Icon-->
+  <!--===================================-->
+  <DataTemplate syp:name="List_Icon_Assistant">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2"
+                     Color = "@VidColor ElementName=MetaData">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                    RequestedMinimumDimension="0 3"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1"
+                    RequestedMinimumDimension="8 0"/>
+        <CATVidGPSquare Texture="I_CmdAssistant.png"
+                        RequestedMinimumDimension="16 16"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2"
+                    RequestedMinimumDimension="0 3"/>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Detail_View -->
+  <!--===================================-->
+  <DataTemplate syp:name="Detail_View">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2"
+                     Color = "@VidColor ElementName=MetaData">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                      RequestedMinimumDimension="0 3"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1" 
+                      RequestedMinimumDimension="8 0"/>
+        <CATVidLayLayer syp:name="IconLayer"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=1"
+                        LayoutWhenUnvisibleFlag="0"
+                        VisibleFlag="0">
+          <CATVidGPSquare syp:name="IconType"
+                          PixelImage="@IconPixelImage"
+                          Texture="@Icon"
+                          RequestedMinimumDimension="16 16"/>
+        </CATVidLayLayer>
+        <CATVidGPLabel syp:name="TextLabel" 
+                       Text = "@Display"
+                       FontSize="12"
+                       FontName="3ds"
+                       TextColor="71 71 71 255"
+                       LeftMargin="8"
+                       RightMargin="8"
+                       TopMargin="0"
+                       CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" 
+                       RequestedMinimumDimension="32 16"
+                       CropPolicy="CropWithDots"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2"
+                      RequestedMinimumDimension="0 3"/>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconTypeFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconTypeFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Multi List Column Display Name Column-->
+  <!--===================================-->
+  <DataTemplate syp:name="Icon_Name">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2"
+                     Color = "@VidColor ElementName=MetaData">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                      RequestedMinimumDimension="0 3"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1" 
+                      RequestedMinimumDimension="8 0"/>
+        <CATVidGPSquare syp:name="Icon"
+                        LayoutWhenUnvisibleFlag="0"
+                        RequestedMinimumDimension="16 16"
+                        CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+        <CATVidGPLabel syp:name="Label" 
+                       FontSize="12"
+                       FontName="3ds"
+                       TextColor="71 71 71 255"
+                       LeftMargin="8"
+                       RightMargin="8"
+                       TopMargin="0"
+                       CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" 
+                       RequestedMinimumDimension="32 16"
+                       CropPolicy="CropWithDots"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2"
+                      RequestedMinimumDimension="0 3"/>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Multi List Column Display and Icon -->
+  <!--===================================-->
+  <DataTemplate syp:name="Name_Icon">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                    RequestedMinimumDimension="0 3"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1" 
+                    RequestedMinimumDimension="8 0"/>
+        <CATVidGPLabel syp:name="Label" 
+                     FontSize="12"
+                     FontName="3ds"
+                     TextColor="71 71 71 255"
+                     LeftMargin="8"
+                     RightMargin="8"
+                     TopMargin="0"
+                     CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" 
+                     RequestedMinimumDimension="32 16"
+                     CropPolicy="CropWithDots"/>
+        <CATVidGPSquare syp:name="Icon"
+                      LayoutWhenUnvisibleFlag="0"
+                      RequestedMinimumDimension="16 16"
+                      CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=R"/>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2"
+                    RequestedMinimumDimension="0 3"/>
+    </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Multi List Column CAfrComponent -->
+  <!--===================================-->
+  <DataTemplate syp:name="MultiList_CAfrView">
+    <CATVidCtl PresenterContent="@CAfrView"
+               VisibleFlag="1"
+               ChildrenLifeCyclePolicy="DontDestroyChildren"
+               RequestedMinimumDimension="@MinimumDimension"/>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Channels -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrChannels_AfrChannelUndef">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidLayStack syp:name="Container"
+                      VisibleFlag="@Visibility"
+                      Orientation="Vertical"
+                      StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrChannels_AfrChannelExpander">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility">
+      <CATVidCtlExpander syp:Template="Expander"
+                         ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                         ExclusiveFlag="@ExclusiveFlag"
+                         LayoutWhenUnvisibleFlag="0"
+                         FontWeight="1"
+                         Label="@Title"
+                         BackgroundColor="0.05 200"
+                         ForegroundColor="1 255"
+                         VisibleFlag="@Visibility">
+        <CATVidLayGrid>
+          <CATVidSpacer RequestedMinimumDimension="1 1"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidLayLayer syp:name="Container"
+                          VisibleFlag="@Visibility"
+                          CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="2 2"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlExpander>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrTree_Default -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrTree_Default">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2">
+        <CATVidLayLayer syp:name="IconLayer"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                        LayoutWhenUnvisibleFlag="0"
+                        VisibleFlag="0">
+          <CATVidGPSquare RequestedMinimumDimension = "22 22"
+                          Color = "0.5 128"
+                          VisibleFlag="@HideStatusFlag"/>
+          <CATVidGPSquare PixelImage="@IconPixelImage"
+                          Texture="@Icon"
+                          RequestedMinimumDimension="22 22"/>
+          <CATVidLaySideAttach>
+            <CATVidGPSquare PixelImage="@MaskPixelImage"
+                            Texture="@Mask"
+                            TextureAlpha="150"
+                            RequestedMinimumDimension="16 16"
+                            CATVidLaySideAttach.IndexedConstraints="leftPx=3 topPx=3"/>
+          </CATVidLaySideAttach>
+        </CATVidLayLayer>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0"
+                      RequestedMinimumDimension="3 0"/>
+        <CATVidLayLayer syp:name="TextLayer"
+                        CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"
+                        LayoutWhenUnvisibleFlag="0">
+          <CATVidLayGrid GridWeight="col1=1">
+            <CATVidGPSquare RequestedMinimumDimension = "12 16"
+                            Color = "@VidColor ElementName=MetaData"
+                            CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidGPLabel syp:name="TextLabel"
+                           TextHeight="16"
+                           FontName="3ds"
+                           HorizontalAlignment="0"
+                           VerticalAlignment="0"
+                           CropPolicy="CropWithDots"
+                           LeftMargin="3"
+                           RightMargin="3"
+                           TopMargin="1"
+                           Text = "@Display"
+                           BoldFlag="@BoldFlag"
+                           TextColor="1 255"
+                           UnderlineFlag="@UnderlineFlag"
+                           CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+            <!--<CATVidCtlLineEditor syp:name="TextLabel"
+                             syp:Template="Default"
+                             SelectAllTextOnFocusFlag="0"
+                             FocusableFlag="1"
+                             VisibleFlag="1"
+                             LayoutWhenUnvisibleFlag="0"
+                             BackgroundColor="@VidColor ElementName=MetaData"
+                             ForegroundColor="1 255"
+                             Text="@Display"
+                             ReadOnlyFlag="@ReadOnlyFlag"
+                             RequestedMinimumDimension="100 16"
+                             BorderVisibleFlag="0"
+                             UnderlineFlag="@UnderlineFlag"/>-->
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--CATCAfrTree_DefaultPreferences -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrTree_DefaultPreferences">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2">
+        <CATVidLayLayer syp:name="IconLayer"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                        LayoutWhenUnvisibleFlag="0"
+                        VisibleFlag="0">
+          <CATVidGPSquare RequestedMinimumDimension = "22 22"
+                          Color = "0.5 128"
+                          VisibleFlag="@HideStatusFlag"/>
+          <CATVidGPSquare PixelImage="@IconPixelImage"
+                          Texture="@Icon"
+                          RequestedMinimumDimension="22 22"/>
+          <CATVidLaySideAttach>
+            <CATVidGPSquare PixelImage="@MaskPixelImage"
+                            Texture="@Mask"
+                            TextureAlpha="150"
+                            RequestedMinimumDimension="16 16"
+                            CATVidLaySideAttach.IndexedConstraints="leftPx=3 topPx=3"/>
+          </CATVidLaySideAttach>
+        </CATVidLayLayer>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0"
+                      RequestedMinimumDimension="3 0"/>
+        <CATVidLayLayer syp:name="TextLayer"
+                        CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"
+                        LayoutWhenUnvisibleFlag="0">
+          <CATVidLayGrid GridWeight="col1=1">
+            <!--<CATVidGPSquare RequestedMinimumDimension = "12 16"
+                            Color = "@VidColor ElementName=MetaData"
+                            CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>-->
+            <CATVidGPLabel syp:name="TextLabel"
+                           TextHeight="16"
+                           FontName="3ds"
+                           HorizontalAlignment="0"
+                           VerticalAlignment="0"
+                           CropPolicy="CropWithDots"
+                           LeftMargin="3"
+                           RightMargin="3"
+                           TopMargin="1"
+                           Text = "@Display"
+                           BoldFlag="@BoldFlag"
+                           TextColor="1 255"
+                           UnderlineFlag="@UnderlineFlag"
+                           CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--CATCAfrTree_Channel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrTree_Channel">
+    <CATAfrSYPAfrComponentMetaData syp:name="MetaData"
+                                   CATAfrColor="@ShadingColor">
+      <CATVidLayGrid GridWeight="col2=2">
+        <CATVidLayLayer syp:name="IconLayer"
+                        CATVidLayGrid.IndexedConstraints="x=0 y=0"
+                        LayoutWhenUnvisibleFlag="0"
+                        VisibleFlag="0">
+          <CATVidGPSquare PixelImage="@IconPixelImage"
+                          Texture="@Icon"
+                          RequestedMinimumDimension="16 16"/>
+        </CATVidLayLayer>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0"
+                      RequestedMinimumDimension="3 0"/>
+        <CATVidLayLayer syp:name="TextLayer"
+                        CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RL">
+          <CATVidLayLayer syp:name="LayerTextLabel"
+                          VisibleFlag="1">
+            <CATVidGPSquare RequestedMinimumDimension = "100 16"
+                            Color = "@VidColor ElementName=MetaData"/>
+            <CATVidGPLabel syp:name="TextLabel"
+                           RequestedMinimumDimension = "100 16"
+                           TextHeight="16"
+                           FontName="3ds"
+                           HorizontalAlignment="0"
+                           VerticalAlignment="0"
+                           CropPolicy="CropWithDots"
+                           LeftMargin="3"
+                           RightMargin="3"
+                           TopMargin="1"
+                           Text = "@Display"
+                           TextColor="1 255"
+                           UnderlineFlag="@UnderlineFlag"/>
+          </CATVidLayLayer>
+          <CATVidLayLayer syp:name="LayerTextEditor"
+                          VisibleFlag="0">
+            <CATVidCtlLineEditor syp:name="TextEditor"
+                             syp:Template="Default"
+                             SelectAllTextOnFocusFlag="1"
+                             FocusableFlag="1"
+                             BackgroundColor="0 255"
+                             ForegroundColor="1 255"
+                             Text="@Display Mode=TwoWays"
+                             ReadOnlyFlag="@ReadOnlyFlag"
+                             RequestedMinimumDimension="100 16"
+                             BorderVisibleFlag="0"
+                             UnderlineFlag="@UnderlineFlag"/>
+          </CATVidLayLayer>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATAfrSYPAfrComponentMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="IconLayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EditorFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="0"/>
+        <CATSYPSetter Property="SelectAllTextOnFocusFlag" TargetName="TextEditor" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EditorFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Web representation type -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Web">
+    <CATCAfrUrlViewer Name       ="@Name"
+                      Visibility ="@Visibility"
+                      Url        ="about:blank"
+                      NoPopup    ="1"
+                      UseContextMenuFlag="1"
+                      CustomSchemes="jsnotif"
+                      MinimumDimension  ="300 300">
+    </CATCAfrUrlViewer>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--In combo representation type-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrList_Combo">
+    <CATAfrSmartCtl Name="@Name"
+                    TitleDialogBox="@Title"
+                    SnappableFlag="1"
+                    ViewParent="@ViewParent"
+                    CreateDialogBoxFlag="@RootFlag"
+                    ContentPanelVisibleFlag="1"
+                    ResizableDialogBoxFlag="1"
+                    CompactDialogBoxFlag="1"
+                    AutoCloseDialogBoxFlag="1"
+                    DiscretionFlag="1"
+                    VisibleFlag="@Visibility"
+                    LayoutWhenUnvisibleFlag="0"
+                    EnableFlag="@EnableFlag">
+      <CATAfrVidCtlComboView syp:name="Container"
+                             syp:Template="Default"
+                             Title="@Title"
+                             SourceDataTemplateName="CATCAfrList_ListIconText"
+                             SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                             TooltipProvider="@TooltipProvider"
+                             ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                             ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                             ListEvent="@HandleListEvent"
+                             RequestedMinimumDimension="@MinimumDimension"
+                             SelectedIndexString="@ListSelectedObjectInString"
+                             SelectedElements="@SelectedElements"
+                             DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewTile">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewTile"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="NewClassic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_NewClassic"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Classic_Tiers">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_Classic_Tiers"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="CAfrComponentView">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_CAfr"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ThumbnailsMode" Value="Basic">
+        <CATSYPSetter Property="SourceDataTemplateName" TargetName="Container" Value="CATCAfrList_ListIconText"/>
+        <CATSYPSetter Property="ItemsFlow" TargetName="Container" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+</Styles>

@@ -1,0 +1,94 @@
+<meta charset="UTF-8"/>
+PLMCORE="コア モデル";
+
+//--------------------------------------------------------
+PLMCORE.PLMReference="PLM リファレンス";
+//-- Simple from PLMReference --
+PLMCORE.PLMReference.V_ApplicabilityDate="適用可能日";
+PLMCORE.PLMReference.V_AuthorityControl="権限制御";
+PLMCORE.PLMReference.V_DerivedFrom="派生元";
+PLMCORE.PLMReference.V_EffectivityKind="使用条件の種類";
+PLMCORE.PLMReference.V_ProjectApplicability="プロジェクトに適用可能";
+PLMCORE.PLMReference.V_VersionID="バージョン ID";
+PLMCORE.PLMReference.V_fromExternalID="作成元";
+PLMCORE.PLMReference.V_hasConfigContext="設定可能";
+PLMCORE.PLMReference.V_isLastMinorVersion="最新のマイナー リビジョン";
+PLMCORE.PLMReference.V_isLastVersion="最新リビジョン";
+PLMCORE.PLMReference.V_isVPLMControlled="物理制御";
+PLMCORE.PLMReference.V_order="順序";
+PLMCORE.PLMReference.V_versionComment="リビジョンのコメント";
+//-- Simple from BusinessType (but which are "internal" ? -- 
+PLMCORE.PLMReference.majororder="メジャーの順序";
+PLMCORE.PLMReference.minororder="マイナーの順序";
+PLMCORE.PLMReference.versionid="バージョン ID";
+//-- Volatile from PLMReference --
+PLMCORE.PLMReference.InstantiatedBy="インスタンス化";
+PLMCORE.PLMReference.IsExported="エクスポート";
+PLMCORE.PLMReference.V_maturity="完成度";
+PLMCORE.PLMReference.V_version="リビジョン";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreReference="PLM コア リファレンス";
+//-- Simple from PLMCoreReference --
+PLMCORE.PLMCoreReference.V_ChangeHistory="変更履歴";
+PLMCORE.PLMCoreReference.V_isTerminal="V_isTerminal";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepReference="PLM コア リプレゼンテーション リファレンス";
+//-- Simple from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.V_isOnceInstantiable="1回インスタンス化可能";
+PLMCORE.PLMCoreRepReference.V_markstamp="マーク スタンプ";
+//-- Volatile from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.AggregatingReference="集約リファレンス";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMConnection="PLM 接続";
+//-- Simple from PLMConnection --
+PLMCORE.PLMConnection.V_isVPLMControlled="PLM 制御";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMPort="PLM ポート";
+//-- Simple from PLMPort --
+PLMCORE.PLMPort.V_isVPLMControlled="PLM 制御";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMInstance="PLM インスタンス";
+//-- Simple from PLMInstance --
+PLMCORE.PLMInstance.PLM_ExternalID="名前";
+PLMCORE.PLMInstance.V_CustoDiscipline="カスタム分野";
+PLMCORE.PLMInstance.V_EffectivityCompiledForm="V_EffectivityCompiledForm";
+PLMCORE.PLMInstance.V_Name="タイトル";
+PLMCORE.PLMInstance.V_TreeOrder="ツリーの順序";
+PLMCORE.PLMInstance.V_description="説明";
+PLMCORE.PLMInstance.V_discipline="分野";
+PLMCORE.PLMInstance.V_hasConfigEffectivity="構成済み";
+PLMCORE.PLMInstance.V_hasConfigStaticMapping="マップされた構成";
+PLMCORE.PLMInstance.V_isVPLMControlled="PLM 制御";
+PLMCORE.PLMInstance.V_nature="特性";
+PLMCORE.PLMInstance.V_sec_level="セキュリティ レベル";
+PLMCORE.PLMInstance.V_usage="用途";
+//-- Simple from RelationType --
+PLMCORE.PLMInstance.modified="最終更新日";
+PLMCORE.PLMInstance.originated="作成日";
+PLMCORE.PLMInstance.owner="所有者";
+//-- Volatile from PLMInstance --
+PLMCORE.PLMInstance.C_created="作成日";
+PLMCORE.PLMInstance.C_modified="最終更新日";
+PLMCORE.PLMInstance.LOCKSTATUS="ロック済み";
+PLMCORE.PLMInstance.LOCKUSER="ロックしたユーザー";
+PLMCORE.PLMInstance.V_confidentiality="機密性";
+PLMCORE.PLMInstance.V_organization="組織";
+PLMCORE.PLMInstance.V_project="コラボレーション スペース";
+PLMCORE.PLMInstance.V_user="所有者";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreInstance="PLM コア インスタンス";
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepInstance="PLM コア リプレゼンテーション インスタンス";

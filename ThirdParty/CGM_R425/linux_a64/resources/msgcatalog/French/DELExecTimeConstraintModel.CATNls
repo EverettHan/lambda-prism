@@ -1,0 +1,72 @@
+<meta charset="UTF-8"/>
+DELExecTimeConstraintModel="Contraintes de durée d'exécution";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation="Relation de la contrainte de durée d'exécution";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType="Type de dépendance";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.FinishToStart="Fin à début";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.StartToStart="Début à début";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.FinishToFinish="Fin à fin";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_Delay="Délai";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_MaterialNeed="Matériau nécessaire";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_OptionalTimeConstraint="Optionnel";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.PLM_ExternalID="Titre";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_IsActive="Actif";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode="Mode intervalle";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.MinDelay="Intervalle minimum";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.MaxDelay="Intervalle maximum";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.Synchro="Synchronisation";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint="Contrainte de ressource";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.None="Aucune";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.SameResources="Ressources identiques";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.SameResourcesWithReservation="Ressources identiques avec réservation";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.DifferentResources="Ressources différentes";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintCategoryAbstract="Résumé de catégorie";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintCategoryAbstract.V_ExecutionReturnCode="Code de motif";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintFailed="Echec";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintFailed.V_MaximumRetries="Nombre maximal de tentatives";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintAlternative="Alternative";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintScrapped="Abandonné";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract="Résumé de quantité de chevauchement";
+DELExecTimeConstraintModel.DELExecLmiTCOverlapQty_Abstract.V_OverlapQuantityMode="Code retour d'exécution";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MinQuantity="Quantité minimum";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MaxQuantity="Quantité maximum";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.Synchro="Synchronisation";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Each="Quantité de chevauchement Chaque";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Each.V_OverlapQty="Quantité de chevauchement";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Area="Quantité de chevauchement Zone";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Area.V_OverlapQty="Quantité de chevauchement";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Length="Quantité de chevauchement Longueur";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Length.V_OverlapQty="Quantité de chevauchement";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Weight="Quantité de chevauchement Poids";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Weight.V_OverlapQty="Quantité de chevauchement";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Volume="Quantité de chevauchement Volume";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Volume.V_OverlapQty="Quantité de chevauchement";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Abstract="Résumé de quantité de transfert";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Abstract.V_Order="Ordre";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Each="Quantité de transfert Chaque";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Each.V_TransferQty="Quantité transférée";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Area="Quantité de transfert Zone";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Area.V_TransferQty="Quantité transférée";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Length="Quantité de transfert Longueur";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Length.V_TransferQty="Quantité transférée";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Weight="Quantité de transfert Poids";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Weight.V_TransferQty="Quantité transférée";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Volume="Quantité de transfert Volume";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Volume.V_TransferQty="Quantité transférée";

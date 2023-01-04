@@ -1,0 +1,92 @@
+//
+// FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM
+//
+
+#include "Effect_General.hfx"
+
+//--------------------------------
+// Tweakables
+//--------------------------------
+
+samplerRECT Auto_EyeMap                     <>;
+#ifdef MSAA
+sampler2DMS Auto_ZMap_WithTransparency      <>;
+sampler2DMS Auto_NormalMap_WithTransparency <>;
+float       Auto_NbAASamples                <>;
+#else
+samplerRECT Auto_ZMap_WithTransparency      <>;
+samplerRECT Auto_NormalMap_WithTransparency <>;
+#endif
+float4      Auto_Size                       <>;
+float4      Auto_NearFar                    <>;
+float       Auto_ProjectionMode             <>;
+
+#include "Effect_Outline.hfx"
+
+float u_LuminanceLimit
+<
+  float UIMin		= 0;
+	float UIMax		= 1.f;
+	float UIStep	= 0.01f;
+> = 0.1f;
+
+float u_RatioDark
+<
+  float UIMin		= 0;
+	float UIMax		= 2.f;
+	float UIStep	= 0.01f;
+> = 1.f;
+
+float u_RatioLight
+<
+  float UIMin		= 0;
+	float UIMax		= 2.f;
+	float UIStep	= 0.01f;
+> = 1.f;
+
+//-----------------------------------------------------------------------------------------
+//  Pixel Shader
+//-----------------------------------------------------------------------------------------
+
+float GetLuminance(float2 iScreenCoord)		
+{  
+  float4 col = texRECT(Auto_EyeMap, iScreenCoord); 
+  return max(max(col.x, col.y), col.z);
+}	 
+
+float4 Effect_OutLine_Toon_PS(pixelInput IN) : COLOR 
+{
+  float2 screenCoord = IN.texCoord.xy;
+
+  float ratio = ComputeOutline(screenCoord);
+	
+  //-------------------
+  // Calcul Final
+   
+  float l = GetLuminance(screenCoord);
+  l  = max(l, GetLuminance(screenCoord + float2( 1.f, 0.f)));
+  l  = max(l, GetLuminance(screenCoord + float2(-1.f, 0.f)));
+  l  = max(l, GetLuminance(screenCoord + float2( 0.f, 1.f)));
+  l  = max(l, GetLuminance(screenCoord + float2( 0.f,-1.f)));
+    
+  float4 col = float4(0,0,0, ratio*u_RatioDark);
+  if (l<u_LuminanceLimit) 
+  {
+    float4 col2 = float4(1,1,1, ratio*u_RatioLight);
+    col = lerp(col2, col, l/u_LuminanceLimit);
+  }
+ 
+  return col;
+}
+
+//-----------------------------------------------------------------------------------------
+//  Techniques
+//-----------------------------------------------------------------------------------------
+
+technique Effect_OutLine_ToonMS_GLSL
+{
+    pass p0 
+    {		
+        FragmentProgram = compile glslf Effect_OutLine_Toon_PS();
+    }
+}

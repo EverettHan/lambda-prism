@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Systemfehler";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Eine neue Komponente kann nicht überarbeitet werden";
+PLMc_ForbiddenScenario1.Advice="Sichern Sie diese Komponente und versuchen Sie die Überarbeitung später erneut";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="Dieses neue Überarbeitungsszenario ist nicht zulässig: Zwischen zwei Aufrufen einer neuen Überarbeitung muss eine vollständige Sicherung ausgeführt werden";
+PLMc_ForbiddenScenario2.Advice="Sichern Sie Ihre Sitzung, bevor Sie die neue Überarbeitung erneut aufrufen";
+
+PLMc_ForbiddenScenario3.Diagnostic="Überarbeitung dieser Komponente ist in der Sitzung nicht möglich";
+PLMc_ForbiddenScenario3.Advice="Komponente wurde durch eine andere Sitzung geändert. Versuchen Sie, Ihre lokalen Änderungen als neue Überarbeitung zu speichern.";
+
+InvalidAncestor.Diagnostic="Der Vorgänger kann nicht verwendet werden, um eine Überarbeitungsoperation auszuführen";
+InvalidAncestor.Advice="Wählen Sie einen Vorgänger aus, der zur Überarbeitungsfamilie passt, die entstehen soll";
+
+InvalidComponentState.Diagnostic="Überarbeitung der Komponente ist nicht möglich, weil sie niemals in einem Repository gesichert wurde";
+InvalidComponentState.Advice="Speichern Sie die Komponente im Repository, bevor Sie die Überarbeitung durchführen";
+
+InvalidTypeOfComponent.Diagnostic="Überarbeitung ist für eine Komponente dieses Typs ist nicht zulässig";
+InvalidTypeOfComponent.Advice="Passende Komponenten für die Überarbeitung bereitstellen";
+
+InvalidComponentForDWS.Diagnostic="Überarbeitung ist für eine Komponente dieses Typs in diesem Arbeitsbereich nicht zulässig";
+InvalidComponentForDWS.Advice="Geben Sie Komponenten an, für die eine Überarbeitung in diesem Arbeitsbereich zulässig ist";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="Version ist nicht zulässig, da in der Sitzung eine Ersetzung durch duplizierte Teilinstanzen erfolgt ist";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="Keine Teilinstanzen zur Duplikation angeben, während Elemente in der Sitzung ersetzt (wiederverwendet) werden";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="Version ist nicht zulässig, da in der Sitzung Übertragungsänderungen durch duplizierte Teilinstanzen erfolgt sind";
+TransferModificationsForbiddenForPartialDuplicate.Advice="Geben Sie keine Teilinstanzen an, die dupliziert werden sollen, während Änderungen übertragen werden";
+
+InvalidIntent.Diagnostic="Versionsdiagramm mit folgender ungültigen Absicht aufgerufen: /p";
+InvalidIntent.Advice="Gültige Absicht für die Versionierung auswählen";
+
+InstanceWithoutOwner.Diagnostic="Die folgende Instanz liegt nicht im Duplikationsbereich und wird ignoriert: /p";
+InstanceWithoutOwner.Advice="Der Vorgang kann zu einer unerwünschten Duplizierung führen. Versuchen Sie, problematische Instanzen nach Möglichkeit auszuschließen.";
+
+RefreshFailed.Diagnostic="Die Sitzungsaktualisierung war nicht erfolgreich.";
+RefreshFailed.Advice="Führen Sie eine globale Aktualisierung durch, oder laden Sie die versionierten Komponenten erneut.";
+
+NotRefreshedNoReidentification.Diagnostic="Das Objekt wurde in der Datenbank geändert, die Sitzung wurde jedoch nicht aktualisiert.";
+NotRefreshedNoReidentification.Advice="Führen Sie eine globale Aktualisierung durch, um die aktualisierte Komponente abzurufen.";
+
+NotRefreshedAfterReidentification.Diagnostic="Das Objekt wurde erfolgreich in der Datenbank versioniert, aber die neue Version ist nicht in der Sitzung. Sie können die Sitzung möglicherweise nicht speichern.";
+NotRefreshedAfterReidentification.Advice="Versuchen Sie eine globale Aktualisierung. Wenn Sie nicht aktualisieren können, müssen Sie diese Komponente entladen und die lokalen Änderungen verlieren, um speichern zu können.";

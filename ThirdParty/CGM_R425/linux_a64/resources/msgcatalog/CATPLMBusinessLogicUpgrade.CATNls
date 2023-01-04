@@ -1,0 +1,18 @@
+<meta charset="UTF-8"/>
+CATPLMBusinessLogicUpgrade.Alias ="PLM Business Logic to support data upgrade";
+CATPLMBusinessLogicUpgrade.Description ="Definition of openings to upgrade data when necessary.";
+
+INFRA_UnifiedTypingMigration.Alias ="Unified typing migration: type and attributes mapping";
+INFRA_UnifiedTypingMigration.Description ="Enables to introduce business rules to express type and attribute mapping used during data migration from former typing to unified typing. In order to upgrade PVS (product view filter) and saved queries";
+INFRA_UnifiedTypingMigration.ThisObject.Alias ="Type in input (of PVS or query)";
+INFRA_UnifiedTypingMigration.ThisObject.Description ="Fake object which type is the former typing type saved in query or PVS that needs to be mapped.";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Alias ="Name of the default type to use instead in the query";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Description ="Default target type in input.";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Alias ="List of attribute names";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Description ="List of attribute names in input that belonged to the query to upgrade.";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Alias ="Name of the type to use instead in the query";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Description ="Fill this type name if the type of the query must change.";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias ="List of attribute names (potentially mapped)";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias ="The list must be of the same size as the SavedAttributes in input. With same names, if attributes are kept and not mapped or new names. Name can be blank if attribute is to be forgotten.";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description ="List of extension names where attribute are located after migration";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description ="The list must be of the same size as the MappedAttributes in output. With blank names if attributes are kept on the type, or extension name, if attribute is on an extension after migration.";

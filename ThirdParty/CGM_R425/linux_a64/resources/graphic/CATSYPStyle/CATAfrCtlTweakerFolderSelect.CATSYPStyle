@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <!--===================================-->
+ <!--Tweaker File Select-->
+ <!--===================================-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerFolderSelect">
+  <CATVidLayStack syp:name="Container"  Orientation="Horizontal" VisibleFlag="1">
+   <CATVidCtlLineEditor syp:Template="Default" Name="PathEditor" EnableFlag="@EditorEnable" UndefinedFlag="@UndefinedFlag Mode=TwoWays" RequestedMinimumDimension="300 21" TextMargins="5 0 1 0" TextActivated="@OnEditingStarted" TextEdited="@OnEditorTextEdited" ReturnPressed="@OnEditorEditingFinished" EditingFinished="@OnEditorEditingFinished" Text="@Value"/>
+   <CATVidCtlButton Name="Browse"
+                syp:Template="Button"
+                CheckMode="0"
+                ClickMode="1"
+                Click="@OpenButtonClickCB "
+                EnableFlag="1"
+                CropPolicy="NoCrop"
+                IconDimension="21 21"
+                Icon="Preferences/I_StandardOpen_20"
+                Tooltip="@ToolTip"
+                RequestedMinimumDimension="25 25"
+                />
+  </CATVidLayStack>
+ </Template>
+ </Styles>

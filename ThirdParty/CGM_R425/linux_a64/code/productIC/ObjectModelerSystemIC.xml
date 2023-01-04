@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SystemExtensions"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATFileVaultSystem"/>
+  <attached name = "ObjectModelerSystem.tst"/>
+  <attached name = "ObjectModelerBase_Unit.tst"/>
+  <attached name = "CATEnoviaVaultSystem.tst"/>
+  <attached name = "CATPLMIntegrationAsync.tst"/>
+  <attached name = "ObjectModelerBase_PLM.tst"/>
+  <attached name = "CATPLMImplAdapterQL.tst"/>
+  <attached name = "CATPLMServices.tst"/>
+  <authorize access = "Private" name = "ObjectModelerBase.tst"/>
+  <authorize access = "Private" name = "ObjectModelerBase_Unit.tst"/>
+  <authorize access = "Private" name = "ObjectModelerBase_PLM.tst"/>
+  <authorize access = "Private" name = "zzPCS_ObjectModelerSystem.tst"/>
+  <authorize access = "Private" name = "CATPLMPXn.tst"/>
+  <authorize access = "Private" comment = "JBB, 20181004, Private for tcl error management (CATA5Reader)" name = "CATPLMIntegration.tst"/>
+  <authorize access = "Private" comment = "JBB, 20181004, Private for tcl error management (CATA5Reader)" name = "CATPLMIntegrationAccess.tst"/>
+  <authorize access = "Private" name = "CATPLMCommunication.tst"/>
+  <authorize access = "Private" name = "CATEnoviaVaultSystem.tst"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterMQL.tst"/>
+  <authorize access = "Private" comment = "Needed by CME4." name = "CATPLMImplAdapterQL.tst"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterQL"/>
+  <authorize access = "Private" comment = "avoid partial redefiniton of OjbectModelerSystem's class by Mr H." name = "ObjectModelerDebug"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

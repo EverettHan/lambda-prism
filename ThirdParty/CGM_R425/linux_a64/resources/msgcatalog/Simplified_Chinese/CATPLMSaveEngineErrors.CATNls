@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic="系统错误。";
+SystemERR.Advice="请与支持人员联系。";
+
+
+ServerInternalERR.Diagnostic="内部服务器错误。";
+ServerInternalERR.Advice="已执行本地保存来保留您的数据。如果需要，您将能够恢复会话。";
+
+ServerInternalERRNoLS.Diagnostic="内部服务器错误。";
+ServerInternalERRNoLs.Advice="无法进行本地保存。请稍后重试。";
+
+VaultServerInternalERR.Diagnostic="在传送流时发生了一些错误。";
+VaultServerInternalERR.Advice="已执行本地保存来保留您的数据。如果需要，您将能够恢复会话。";
+
+VaultServerInternalERRNoLs.Diagnostic="在传送流时发生了一些错误。";
+VaultServerInternalERRNoLs.Advice="无法进行本地保存。请稍后重试。";
+
+NoObjectToSaveWRN.Diagnostic="没有任何要保存的项目。";
+NoObjectToSaveWRN.Advice="请确保确实已选择修改的对象。";
+
+GenericSaveErrorWithCompo.Diagnostic="无法保存部件 [/p1]。";
+GenericSaveErrorWithCompo.Advice="保存操作无法处理部件 /p1。\n强烈建议重启此应用程序。";
+
+PLMSaveEngineError_501.Diagnostic="无法执行保存操作。";
+PLMSaveEngineError_501.Advice="部件 /p1不是当前 ECA 的受影响项目。";
+
+ChangeLogInternalERR.Diagnostic="ChangeLog 数据导致保存操作无法执行。";
+ChangeLogInternalERR.Advice="请联系支持中心，提供 CATTemp 目录中的最后跟踪 DebugChangeLog*.log。";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic="共存映射表导致保存操作无法执行。";
+SaveCoexMpgExchangeInternalERR.Advice="请与支持人员联系。";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic="无法执行保存操作。";
+PLMSaveEngineError_601.Advice="脱机保存操作无法处理零部件：/p1。\n零部件已在创作区外部进行修改。";
+PLMSaveEngineError_602.Diagnostic="无法执行保存操作。";
+PLMSaveEngineError_602.Advice="脱机保存操作无法处理零部件 /p1。\n零部件在生命周期事务以下。";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic="无法执行保存操作。";
+PLMSaveEngineError_701.Advice="保存操作无法处理零部件：/p1。\n零部件已在创作区外部进行修改。";
+PLMSaveEngineError_702.Diagnostic="无法执行保存操作。";
+PLMSaveEngineError_702.Advice="保存操作无法处理零部件 /p1。\n零部件在生命周期事务以下。";

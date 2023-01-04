@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">    
+  
+  <DST_STATE_GROUP>
+    <NAME>DepthNoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+  
+  <BLEND_STATE_GROUP>
+    <NAME>NoBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>ColorBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>Zero</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcColor</COLOR_DST_BLEND>
+      <ALPHA_SRC_BLEND>Zero</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>One</ALPHA_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+  
+  <RAST_STATE_GROUP>
+    <NAME>Solid</NAME>
+    <CULL_MODE>None</CULL_MODE>
+    <FILL_MODE>Solid</FILL_MODE>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Main_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_SSAO</NAME>
+  </CONSTANT_BUFFER>
+  
+  <SAMPLER>
+    <EXTERNAL_NAME>s_ZMap</EXTERNAL_NAME>
+  </SAMPLER>
+
+  <SAMPLER>
+    <EXTERNAL_NAME>s_NormalMap</EXTERNAL_NAME>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>s_RandomTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>AO_MSAA !AO_STATIC_ARRAY</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>AO_MSAA !ZMAP_ARRAY_ID</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!AO_MSAA !AO_STATIC_ARRAY</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>!AO_MSAA !ZMAP_ARRAY_ID</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  
+  <SAMPLER_STATE>
+    <NAME>smpMap</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <CMP_MODE>None</CMP_MODE>
+    <CMP_FUNC>Never</CMP_FUNC>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>smpRandom</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <CMP_MODE>None</CMP_MODE>
+    <CMP_FUNC>Never</CMP_FUNC>
+  </SAMPLER_STATE>
+
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_NormalMap</SAMPLER>
+          <STATES>smpMap</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_ZMap</SAMPLER>
+          <STATES>smpMap</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RandomTexture</SAMPLER>
+          <STATES>smpRandom</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Solid</RASTERIZER_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_SSAO_VS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_Helpers PostEffect_Texture_Helpers PostEffect_ZMap_DeclarePS PostEffect_NormalMap_DeclarePS PostEffect_SSAO_Helpers PostEffect_SSAO</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PostProcessWithDraw</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_NormalMap</SAMPLER>
+          <STATES>smpMap</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_ZMap</SAMPLER>
+          <STATES>smpMap</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RandomTexture</SAMPLER>
+          <STATES>smpRandom</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>ColorBlending</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Solid</RASTERIZER_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_SSAO_VS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_Helpers PostEffect_Texture_Helpers PostEffect_ZMap_DeclarePS PostEffect_NormalMap_DeclarePS PostEffect_SSAO_Helpers PostEffect_SSAO</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess_WithGeometryShader</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_NormalMap</SAMPLER>
+          <STATES>smpMap</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_ZMap</SAMPLER>
+          <STATES>smpMap</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RandomTexture</SAMPLER>
+          <STATES>smpRandom</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlending</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Solid</RASTERIZER_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_SSAO_VS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>PostEffect_SSAO_GS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_Helpers PostEffect_Texture_Helpers PostEffect_ZMap_DeclarePS PostEffect_NormalMap_DeclarePS PostEffect_SSAO_Helpers PostEffect_SSAO</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+</EFFECT>

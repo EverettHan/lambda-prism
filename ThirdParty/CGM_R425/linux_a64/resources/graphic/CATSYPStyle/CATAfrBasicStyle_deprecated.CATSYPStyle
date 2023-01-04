@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+<!--*******************************************************************************************************************************************-->
+<!--                                                            Styles overriden for compass-->
+<!--*******************************************************************************************************************************************-->
+
+  <!--======================================================-->
+  <!-- CATVidCtlTabButton : Template button for default tabulation -->
+  <!--======================================================-->
+  <Template syp:name="PLMCompassTabNewStyle" Target="CATVidCtlTabButton">
+    <CATVidLayLayer Name="Layer" syp:name="MainLayout">
+
+      <CATVidLayLayer>
+        <CATVidGPSquare syp:name="BackgroundLayer"   Name="PickZone" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" Press="@HandleEvent" Drag="@HandleEvent" MoveOver="@HandleEvent" MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent" PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+      </CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="BorderLayer1" ColorizeBlackPixelTo="0.3 255" TextureAlpha="125" GridWeight="col1=1 row1=1"  Texture="Compass/East/CompassTabButtonBorderTop1_1.png">
+        <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="y=0 x=0"/>
+        <CATVidSpacer RequestedMinimumDimension="19 19" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="y=2 x=2"/>
+      </CATVidGPSmartSquare>
+      <CATVidGPSmartSquare syp:name="BorderLayer2" GridWeight="col1=1 row0=1" ColorizeBlackPixelTo="0.3 255" TextureAlpha="125"  Texture="Compass/East/CompassTabButtonBorderTop2.png">
+        <CATVidSpacer RequestedMinimumDimension="1 4" CATVidGPSmartSquare.GPConstraints="y=0 x=0"/>
+        <CATVidSpacer RequestedMinimumDimension="5 4" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="1 2" CATVidGPSmartSquare.GPConstraints="y=1 x=0"/>
+        <CATVidSpacer RequestedMinimumDimension="5 2" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <CATVidLayGrid syp:name="Grid" GridWeight="col2=1 row1=1">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <!--<CATVidLayGrid syp:name="Icon" GridWeight="col0=1 col2=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 ySpan=3" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+          <CATVidSpacer RequestedMinimumDimension="4 4" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidGPSquare syp:name="IconSquare" PixelImage="@IconPixelImage" Texture="@Icon" TextureFilter="@IconFilter" ColorizeBlackPixelTo="@ColorizeIconBlackPixelTo"  UseColorizeFlag="@ColorizeIconBlackPixelFlag" RequestedMinimumDimension="@IconDimension"  CATVidLayGrid.IndexedConstraints="x=1 y=1" />
+          <CATVidSpacer RequestedMinimumDimension="4 4" CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+        </CATVidLayGrid>-->
+        <CATVidLayGrid syp:name="Label" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="1">
+          <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=3"/>
+          <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidGPLabel  Text="@Label" TextHeight="@FontHeight" HorizontalAlignment="1" CaptionFontFlag="@FontWeight" CropPolicy="NoCrop" TextColor="0.8 255" UnderlineFlag="@UnderlineFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RL"/>
+          <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+          <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3"/>
+        </CATVidLayGrid>
+        <!--<CATVidLayGrid syp:name="Close" GridWeight="col0=1 col2=1 row0=1 row2=1" CATVidLayGrid.IndexedConstraints="x=3 y=1 ySpan=3" TextColor="@ForegroundColor"LayoutWhenUnvisibleFlag="0" VisibleFlag="@UseCloseButtonFlag">
+          <CATVidSpacer RequestedMinimumDimension="4 2" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlButtonIcon FocusableFlag="0" Name="@Name" LayoutWhenUnvisibleFlag="0" syp:name="CloseButton" syp:Template="Icon" RequestedMinimumDimension="14 15" OffTexture="vidclose.png" OverTexture="vidclose.png" OnTexture="vidcloseon.png" CATVidLayGrid.IndexedConstraints="x=1 y=1" Click="@CloseButtonCB" Press="@CloseButtonPressCB"/>
+          <CATVidSpacer RequestedMinimumDimension="4 2" CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+        </CATVidLayGrid>-->
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=3 y=3"/>
+      </CATVidLayGrid>
+      <CATVidGPSmartSquare syp:name="ForegroundLayer" VisibleFlag="0" GridWeight="row1=2 col1=1" Texture="Compass/East/CompassTabButtonForeground.png" TextureAlpha="127" TextureFilter="1">
+        <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="252 252" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <CATVidGPSmartSquare syp:name="OnLayer2" GridWeight="row1=2 col1=1" Texture="Compass/East/CompassTabbuttonOnShadow.png" TextureFilter="1">
+        <CATVidSpacer RequestedMinimumDimension="9 11" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="247 11" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="9 245" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="247 245" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="OverFlag" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="ForegroundLayer" Value="255"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="0">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="ForegroundLayer" Duration="0:0:0.2" To="127"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OnFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BorderLayer1" Value="125"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BorderLayer2" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="BorderLayer2" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="OnLayer2" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ForegroundLayer" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OnFlag" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BorderLayer1" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BorderLayer2" Value="125"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="BorderLayer2" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="OnLayer2" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ForegroundLayer" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="UseLabelFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="UseLabelFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--======================================================-->
+  <!-- CATVidCtlTabBar : Template button for default tabulation -->
+  <!--======================================================-->
+
+  <Template syp:name="PLMCompassTabNewStyle" Target="CATVidCtlTabBar">
+    <CATVidLayLayer>
+
+      <!--<CATVidLayGrid GridWeight="row0=1">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Color="1.0 255" TextureAlpha="0" RequestedMinimumDimension="0 2" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+      <CATVidGPSmartSquare syp:name="BorderLayer" ColorizeBlackPixelTo="1.0 255" GridWeight="row0=1 col0=1" Texture="Compass/East/CompassTabBorder.png">
+        <CATVidSpacer RequestedMinimumDimension="5 4" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 2" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 4" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="1 2" CATVidGPSmartSquare.GPConstraints="y=1 x=1"/>
+      </CATVidGPSmartSquare>-->
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidCtl ChildrenLifeCyclePolicy="DontDestroyChildren"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" PresenterContent="@ButtonCollection"/>
+        <CATVidGPSmartSquare syp:name="BorderLayerLeft" ColorizeBlackPixelTo="0.3 255" TextureAlpha="125" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" GridWeight="col1=1 row1=1" Texture="Compass/East/CompassTabBorderLeft.png">
+          <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=0 x=0"/>
+          <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=2 x=2"/>
+        </CATVidGPSmartSquare>
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" GridWeight="col0=1">
+          <CATVidGPSmartSquare syp:name="BorderLayer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" ColorizeBlackPixelTo="0.3 255" TextureAlpha="125"  GridWeight="col0=1 row0=1" Texture="Compass/East/CompassTabBorder.png">
+            <CATVidSpacer RequestedMinimumDimension="5 4" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="1 4" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="1 2" CATVidGPSmartSquare.GPConstraints="y=1 x=1"/>
+            <CATVidSpacer RequestedMinimumDimension="5 2" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="5 6" />
+          <!--<CATVidGPSmartSquare syp:name="BorderLayer" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="5 6"  ColorizeBlackPixelTo="0.1 255" TextureAlpha="125"  GridWeight="row0=1" Texture="Compass/East/CompassTabBorderRight.png">
+            <CATVidSpacer RequestedMinimumDimension="5 5" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 1" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=R"/>
+          </CATVidGPSmartSquare>-->
+        </CATVidLayGrid>
+
+        <!--<CATVidGPSmartSquare syp:name="BorderLayer"  ColorizeBlackPixelTo="0.1 255" TextureAlpha="125" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" GridWeight="row0=1" Texture="Compass/East/CompassTabBorderRight.png">
+          <CATVidSpacer RequestedMinimumDimension="1 4" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="1 2" CATVidGPSmartSquare.GPConstraints="y=1 x=0"/>
+        </CATVidGPSmartSquare>-->
+      </CATVidLayGrid>
+
+    </CATVidLayLayer>
+  </Template>
+
+
+  <!--======================================================-->
+  <!-- CATVidCtlTabBar : Template button for default tabulation -->
+  <!--======================================================-->
+
+  <Template syp:name="PLMCompassTabNewStyle" Target="CATVidCtlTab">
+    <CATVidLayGrid  GridWeight="row1=1 col1=1" >
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidLayGrid syp:name="Grid"  GridWeight="row1=1 col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+        <CATVidCtl syp:name="TabBar"  VisibleFlag="@ShowTabBarState" LayoutWhenUnvisibleFlag="0" PresenterContent="@TabBar" CATVidLayGrid.IndexedConstraints="x=1 y=0 xSpan=3 attach=RLTB"/>
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+          <CATVidGPSmartSquare syp:name="LegendTabForeground2" VisibleFlag="1"  GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.3 255" TextureAlpha="125"  Texture="Compass/East/CompassEastTabBackground.png">
+            <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="y=0 x=0"/>
+            <CATVidSpacer RequestedMinimumDimension="19 19" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="7 7" CATVidGPSmartSquare.GPConstraints="y=2 x=2"/>
+          </CATVidGPSmartSquare>
+          <!--<CATVidGPSquare Color="0.1 255"/>-->
+          <CATVidLayGrid GridWeight="row1=1 col1=1">
+            <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidCtl PresenterContent="@CurrentWidget"  ChildrenLifeCyclePolicy="DontDestroyChildren" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ShowTabBarState"  Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="LegendTabForeground2" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ShowTabBarState"  Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="LegendTabForeground2" Value="125"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <!--===============================================-->
+  <!-- CATVidCtlExpander: Template for Check Expander-->
+  <!--===============================================-->
+
+  <Template syp:name="BlackExpander" Target="CATVidCtlExpander">
+    <CATVidLayGrid GridWeight="row1=1">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLT">
+        <CATVidGPSquare Color="0 0 0 255" BorderColor="0.05 150"/>
+        <CATVidLayLayer>
+          <CATVidCtlButton Name="CheckBox" syp:Template="Toolbar-Text-Right" CheckMode="1" CheckState="@ExpandedFlag Mode=TwoWays" FontWeight="@FontWeight" Icon="@Icon"
+                           ColorizeIconBlackPixelTo="255 255 255 255" IconDimension="@IconDimension" CropPolicy="@CropPolicy" ForegroundColor="@ForegroundColor"
+                           Label="@Label" FontHeight="@FontHeight"/>
+          <CATVidLaySideAttach>
+            <CATVidLayGrid CATVidLaySideAttach.IndexedConstraints="rightPx=2 topPercent=50">
+              <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+              <CATVidGPSquare Name="Button" syp:Template="Icon" syp:name="CheckSign"  RequestedMinimumDimension="9 9"
+                                  CATVidLayGrid.IndexedConstraints="x=1 y=0"
+                                
+                            />
+            </CATVidLayGrid>
+          </CATVidLaySideAttach>
+        </CATVidLayLayer>
+
+      </CATVidLayLayer>
+      <CATVidCtl VisibilityPolicy="BlindAnimation" LayoutWhenUnvisibleFlag="0" syp:name="Presenter" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB">
+        <CATVidLayGrid  GridWeight="row1=1 col1=1" >
+          <CATVidSpacer RequestedMinimumDimension="4 6" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+          <CATVidCtl Name=".Content" PresenterContent="@Content Mode=TwoWays" Item="@HeaderedContentItem Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="y=1 x=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="4 4" CATVidLayGrid.IndexedConstraints="y=2 x=2"/>
+        </CATVidLayGrid>
+      </CATVidCtl>
+      <!--CATVidSpacer syp:name="Spacer" VisibleFlag="1" CATVidLayGrid.IndexedConstraints="y=2 x=0 attach=RLTB"/-->
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ExpandedFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Presenter" Value="0"/>
+        <CATSYPSetter Property="Texture" TargetName="CheckSign" Value="vidDockingBottomArrow.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExpandedFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Presenter" Value="1"/>
+        <CATSYPSetter Property="Texture" TargetName="CheckSign" Value="vidDockingTopArrow.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <!--======================================================-->
+  <!-- CATVidCtlBorder : Border for compass west bar -->
+  <!--======================================================-->
+  <Template Target="CATVidCtlBorder" syp:name="AfrPLMCompassBackground">
+    <CATVidLayGrid  syp:name ="CompassDesignLayer" Name="CompassDesignLayer"
+                          >
+
+      <CATVidGPSmartSquare syp:name="CompassWestDesignLeftBackground" GridWeight="col1=1 row1=1"
+                           Texture="Compass/West/Info/CompassWestDesignLeftBackgroundLight.png" RequestedMinimumDimension="30 40"
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                           ColorizeBlackPixelTo="0 255">
+        <CATVidSpacer RequestedMinimumDimension="8 8" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="14 24" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="8 8" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+
+      <CATVidGPSmartSquare syp:name="CompassWestDesignLeftBorder" GridWeight="col1=1 row1=1"
+                           Texture="Compass/West/Info/CompassWestDesignLeftBorderLight.png" RequestedMinimumDimension="30 40"
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                           ColorizeBlackPixelTo="0 255">
+        <CATVidSpacer RequestedMinimumDimension="8 8" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="14 24" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="8 8" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <!--<CATVidSpacer RequestedMinimumDimension="11 39" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>-->
+        <CATVidCtl PresenterContent="@Content" Item="@BorderItem Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"/>
+        <!--<CATVidSpacer RequestedMinimumDimension="11 40" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>-->
+      </CATVidLayGrid>
+      <CATVidGPSquare RequestedMinimumDimension="1 1" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+
+  <!--*******************************************************************************************************************************************-->
+  <!--                                                            Styles overriden for Balloon-->
+  <!--*******************************************************************************************************************************************-->
+
+  <!--======================================================-->
+  <!-- CATVidCtlBorder : Default Border for phylactery background -->
+  <!--======================================================-->
+  <Template Target="CATVidCtlBorder" syp:name="PhylacteryBackground">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare GridWeight="col1=1" Texture="phylactere-h.png">
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="206 44" CATVidGPSmartSquare.GPConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=2 y=0 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <!--<CATVidLayGrid GridWeight="col1=1">
+        <CATVidGPSquare Texture="v6Theme/phylactere-left-h.png" RequestedMinimumDimension="5 44" CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+        <CATVidGPSquare Texture="v6Theme/phylactere-center-h.png" RequestedMinimumDimension="50 44" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" />
+        <CATVidGPSquare Texture="v6Theme/phylactere-right-h.png" RequestedMinimumDimension="5 44" CATVidLayGrid.IndexedConstraints="x=2 y=0" />
+      </CATVidLayGrid>-->
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidSpacer RequestedMinimumDimension="15 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl PresenterContent="@Content" Item="@BorderItem Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="15 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+  <!--======================================================-->
+  <!-- CATVidCtlBorder : Border for phylactery background in touch mode-->
+  <!--======================================================-->
+  <Template Target="CATVidCtlBorder" syp:name="PhylacteryBackground" syp:Variation="Horizontal48x48">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="PhylacteryLayer48" GridWeight="col1=1" Texture="phylactere-48-horizontal.png">
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="314 12" CATVidGPSmartSquare.GPConstraints="x=1 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=2 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=0 y=1"/>
+        <CATVidSpacer RequestedMinimumDimension="314 44" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=2 y=1 "/>
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=0 y=2 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="314 12" CATVidGPSmartSquare.GPConstraints="x=1 y=2 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RL"/>
+      </CATVidGPSmartSquare>
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidSpacer RequestedMinimumDimension="15 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl PresenterContent="@Content" Item="@BorderItem Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="15 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+  <!--======================================================-->
+  <!-- CATVidCtlBorder : Border for phylactery background in vertical-->
+  <!--======================================================-->
+  <Template Target="CATVidCtlBorder" syp:name="PhylacteryBackground" syp:Variation="Vertical">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="OffLayer2" GridWeight="row1=1 col1=1" Texture="phylactere-docked-v.png">
+        <CATVidSpacer RequestedMinimumDimension="44 5" CATVidGPSmartSquare.GPConstraints="x=0 y=0"/>
+        <CATVidSpacer RequestedMinimumDimension="44 201" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=TB"/>
+        <CATVidSpacer RequestedMinimumDimension="44 5" CATVidGPSmartSquare.GPConstraints="x=0 y=2 "/>
+      </CATVidGPSmartSquare>
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidSpacer RequestedMinimumDimension="0 15" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl PresenterContent="@Content" Item="@BorderItem Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="0 15" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+  <!--======================================================-->
+  <!-- CATVidCtlBorder : Border for phylactery background in vertical and touch mode-->
+  <!--======================================================-->
+  <Template Target="CATVidCtlBorder" syp:name="PhylacteryBackground" syp:Variation="Vertical48x48">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="OffLayer48" GridWeight="row1=1 col1=1" Texture="phylactere-48-docked-v.png">
+        <CATVidSpacer RequestedMinimumDimension="68 5" CATVidGPSmartSquare.GPConstraints="x=0 y=0"/>
+        <CATVidSpacer RequestedMinimumDimension="68 314" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=TB"/>
+        <CATVidSpacer RequestedMinimumDimension="68 5" CATVidGPSmartSquare.GPConstraints="x=0 y=2 "/>
+      </CATVidGPSmartSquare>
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidSpacer RequestedMinimumDimension="0 15" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl PresenterContent="@Content" Item="@BorderItem Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="0 15" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+
+
+
+  <!--======================================================-->
+  <!-- CATVidCtlImageAndLabelCombo : PLM Bar combo-->
+  <!--======================================================-->
+  <Template syp:name="PLMBarCombo" Target="CATVidCtlImageAndLabelCombo"  >
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="col1=1" CellSpacing="0">
+        <CATVidCtl RequestedMinimumDimension="12 19" ChildrenLifeCyclePolicy="DontDestroyChildren" PresenterContent="@TopLineWidget" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" />
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="10 19" >
+          <CATVidCtlButtonIcon syp:name="DropButton" VisibleFlag="@ShowDropDownButtonFlag" FocusableFlag="0"
+                         CheckState="@DropListFlag Mode=TwoWays" CheckMode="1"
+                         LayoutWhenUnvisibleFlag="0" ClickMode="0" RequestedMinimumDimension="9 8"  OffTexture="PLMBarComboArrow.png" OnTexture="PLMBarComboArrow.png" OverTexture="PLMBarComboArrow.png"
+                         syp:Template="Icon" CATVidLayGrid.IndexedConstraints="x=0 y=0 " />
+        </CATVidLayGrid>
+
+      </CATVidLayGrid>
+      <CATVidCtl ChildrenLifeCyclePolicy="DontDestroyChildren" PresenterContent="@Popup" />
+    </CATVidLayLayer>
+    <!--<CATSYPTriggerCollection>
+      <CATSYPTrigger Property="UseIconFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Icon" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="UseIconFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Icon" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>-->
+  </Template>
+
+  <!--======================================================-->
+  <!-- CATVidCtlImageAndLabelCombo : PLM Bar combo translucent-->
+  <!--======================================================-->
+  <Template syp:name="PLMBarComboTranslucent" Target="CATVidCtlImageAndLabelCombo"  >
+    <CATVidLayLayer>
+      <CATVidCtl RequestedMinimumDimension="12 19" ChildrenLifeCyclePolicy="DontDestroyChildren" PresenterContent="@TopLineWidget"  />
+
+      <CATVidLaySideAttach>
+        <CATVidCtlButtonIcon syp:Template="Icon" syp:name="DropButton" BackgroundColor="255 255 255 255" VisibleFlag="@ShowDropDownButtonFlag" FocusableFlag="0"
+                        CheckState="@DropListFlag Mode=TwoWays" CheckMode="1"  OffTexture="PLMBarComboArrow.png" OnTexture="PLMBarComboArrow.png" OverTexture="PLMBarComboArrow.png"
+                        LayoutWhenUnvisibleFlag="0" ClickMode="0" IconDimension="9 8" CATVidLaySideAttach.IndexedConstraints="rightPx=2 topPercent=50"
+                         />
+      </CATVidLaySideAttach>
+      <CATVidCtl ChildrenLifeCyclePolicy="DontDestroyChildren" PresenterContent="@Popup" />
+    </CATVidLayLayer>
+
+  </Template>
+
+
+  <!--======================================================-->
+  <!-- CATVidCtlImageAndLabelCombo : PLM Bar combo button-->
+  <!--======================================================-->
+  <Template syp:name="PLMBarComboButton" Target="CATVidCtlButton"  >
+    <CATVidLayLayer>
+      <CATVidGPSquare syp:name="BackgroundLayer" GiveFocusOnDragFlag="@GiveFocusOnDragFlag" AcceptFocusOnDropFlag="@AcceptFocusOnDropFlag"
+                      UseManipulatorFlag="1" Color="@BackgroundColor"  Name="PickZone" PickFlag="1"
+                      Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" Press="@HandleEvent"
+                      Drag="@HandleEvent" MoveOver="@HandleEvent" MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent"
+                      PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+      <CATVidLayGrid syp:name="Icon" LayoutWhenUnvisibleFlag="0" VisibleFlag="1">
+        <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+        <CATVidGPSquare syp:name="IconSquare" PixelImage="@IconPixelImage" Texture="@Icon" TextureFilter="@IconFilter"  RequestedMinimumDimension="@IconDimension"  CATVidLayGrid.IndexedConstraints="x=1 y=0" />
+        <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+
+
+  <!--======================================================-->
+  <!-- CATVidCtlBorder : Default Border for toolbar touch mode-->
+  <!--======================================================-->
+  <Template Target="CATVidCtlBorder" syp:name="ToolbarTouchBackground">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare Texture="vidsliderbar.png" GridWeight="col1=1 row1=1">
+        <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="4 2" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="2 4" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="4 4" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="2 4" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="4 2" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="2 2" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <CATVidLayGrid GridWeight="row1=1 col1=1">
+        <CATVidSpacer RequestedMinimumDimension="6 6"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+        <CATVidSpacer RequestedMinimumDimension="20 20"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+        <CATVidCtl PresenterContent="@Content" Item="@BorderItem Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="20 20"  CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" />
+        <CATVidSpacer RequestedMinimumDimension="6 6"  CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" />
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+
+</Styles>

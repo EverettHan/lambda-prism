@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbCbViewTransition</NAME>
+  <RASTERIZER_UPDATE>PassThroughTransitionUpdater</RASTERIZER_UPDATE>
+
+  <UNIFORM>
+    <NAME>View</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ViewInv</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ViewInvTransp</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>WorldEyePos</NAME>
+    <TYPE>float4</TYPE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

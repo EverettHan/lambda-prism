@@ -1,0 +1,139 @@
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<st:Description name="VrmlFormat" PrimaryTabpage="/General/Compatibility/VRML">
+		<st:role  >Setting to handle the VRML export/import options</st:role>
+		<st:RepositoryFile>VrmlFormat</st:RepositoryFile>
+		<st:version>1</st:version>
+		<st:compatibility>
+			<st:FullCompatibilityfromLevel>1</st:FullCompatibilityfromLevel>
+			<st:UpwardCompatibilityfromLevel>1</st:UpwardCompatibilityfromLevel>
+		</st:compatibility>
+		<st:DedicatedController>
+			<st:Framework_CPP>SGManager</st:Framework_CPP>
+			<st:Interface_CPP>CATIVisVrmlSettingAtt</st:Interface_CPP>
+			<st:Framework_IDL>CATIAApplicationFrame</st:Framework_IDL>
+			<st:Interface_IDL>CATIAVrmlSettingAtt</st:Interface_IDL>
+			<st:LateType>CATVisVrmlSettingCtrl</st:LateType>
+		</st:DedicatedController>
+	</st:Description>
+	<st:attributes>	
+		
+		<st:attribute Name="ImportUnit">
+			<st:role>Units of imported VRML files.</st:role>
+			<st:int>
+				<st:enum>
+					<st:role>Millimeters</st:role>
+					<st:value>0</st:value>
+					<st:role>Centimeters</st:role>
+					<st:value>1</st:value>
+					<st:role>Meters</st:role>
+					<st:value>2</st:value>
+					<st:role>Inches</st:role>
+					<st:value>3</st:value>
+					<st:role>Feets</st:role>
+					<st:value>4</st:value>
+				</st:enum>
+				<st:default>	
+					<st:role>By default imported VRML files are considered to be in meters</st:role>
+					<st:value>2</st:value>
+				</st:default>
+			</st:int>
+		</st:attribute>
+		
+		<st:attribute Name="ImportCreaseAngle">
+			<st:role>CreaseAngle tuning.</st:role>
+			<st:float>
+				<st:default>	
+					<st:value>0.5</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="ExportVersion">
+			<st:role>Version of exported VRML files.</st:role>
+			<st:int>
+				<st:enum>
+					<st:role>VRML 1.0 format</st:role>
+					<st:value>1</st:value>
+					<st:role>VRML 97 format</st:role>
+					<st:value>2</st:value>
+				</st:enum>
+				<st:default>	
+					<st:role>By default VRML 97 files are generated</st:role>
+					<st:value>2</st:value>
+				</st:default>
+			</st:int>
+		</st:attribute>
+		
+		<st:attribute Name="ExportNormals">
+			<st:role>Permit export of normal informations.</st:role>
+			<st:boolean size="1">
+				<st:default size="1">  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>	
+		</st:attribute>
+		
+		<st:attribute Name="ExportEdges">
+			<st:role>Permit export of edges.</st:role>
+			<st:boolean size="1">
+				<st:default size="1">  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="ExportTexture">
+			<st:role>Permit export of textures.</st:role>
+			<st:boolean size="1">
+				<st:default size="1">  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="ExportTextureFile">
+			<st:role>Texture export in VRML files or in external files.</st:role>
+			<st:int>
+				<st:enum>
+					<st:role>VRML file</st:role>
+					<st:value>0</st:value>
+					<st:role>external files</st:role>
+					<st:value>1</st:value>
+				</st:enum>
+				<st:default>	
+					<st:role>By default textures are generated in VRML file</st:role>
+					<st:value>0</st:value>
+				</st:default>
+			</st:int>
+		</st:attribute>
+		
+		<st:attribute Name="ExportTextureFormat">
+			<st:role>Format of exported texture. NOT USED.</st:role>
+			<st:int>
+				<st:enum>
+					<st:role>JPEG / PNG</st:role>
+					<st:value>0</st:value>
+				</st:enum>
+				<st:default>	
+					<st:role>By default textures are generated in JPEG / PNG depending of transparency management</st:role>
+					<st:value>0</st:value>
+				</st:default>
+			</st:int>
+		</st:attribute>
+		
+		<st:attribute Name="ExportBackgroundColor">
+			<st:role>Export background color.</st:role>
+			<st:int size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:role>Black in RGB order</st:role>
+						<st:value>0</st:value>
+						<st:value>0</st:value>
+						<st:value>0</st:value>
+				</st:default>
+			</st:int>
+		</st:attribute>
+	
+	</st:attributes>
+</st:repository>

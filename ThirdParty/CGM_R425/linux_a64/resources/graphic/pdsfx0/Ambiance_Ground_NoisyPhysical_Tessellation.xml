@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+    
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Ground</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Ground_NoisyPhysical</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbShadow</NAME>
+    <NEEDS_OPTION>GROUND_SHADOW</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Ground_Matrix</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Ground_Shadow_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <SAMPLER>
+    <NAME>s_MaterialMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>s_DisplacementMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>s_NormalMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>s_RoughnessMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>s_BaseColorMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>smpShadow</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 0.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>smpDefault</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>smpMirror</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Ground</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapTex2</SAMPLER>
+          <STATES>smpShadow</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>mirrorMapTex</SAMPLER>
+          <STATES>smpMirror</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_MaterialMap</SAMPLER>
+          <STATES>smpDefault</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_DisplacementMap</SAMPLER>
+          <STATES>smpDefault</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_NormalMap</SAMPLER>
+          <STATES>smpDefault</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RoughnessMap</SAMPLER>
+          <STATES>smpDefault</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_BaseColorMap</SAMPLER>
+          <STATES>smpDefault</STATES>
+        </SAMPLER_ASSIGNMENT>
+       
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>TessEval_Fragment</STAGES>
+          <VARYING>
+            <NAME>vGroundWorldNormal</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>vGroundWorldTangent</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>vGroundWorldBiNormal</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>vGroundUV</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <POLYGON_OFFSET>Neutral</POLYGON_OFFSET>
+      <COMMONS>Ambiance_Ground_PhysicalCommon Ambiance_Ground_Helpers</COMMONS>
+      <LIGHTING>true</LIGHTING>
+      <VERTEX_STAGE>GroundShadowsVS Ambiance_Ground_PhysicalCommonVS Ambiance_Ground_Empty_VS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>GroundShadowsPS Ambiance_Ground_PhysicalCommonPS Ambiance_Ground_NoisyPhysicalPS</FRAGMENT_STAGE>
+      <TESS_CONTROL_STAGE>Ambiance_Ground_TessellationCS</TESS_CONTROL_STAGE>
+      <TESS_EVALUATION_STAGE>ShadowsVS GroundShadowsVS Ambiance_Ground_PhysicalCommonVS Ambiance_Ground_TessellationES Ambiance_Ground_NoisyPhysicalVS</TESS_EVALUATION_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+</PDSFX>

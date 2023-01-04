@@ -1,0 +1,27 @@
+#======================================================================
+# COPYRIGHT DASSAULT SYSTEMES 2005
+#======================================================================
+# Dictionary CATPLMImpactGraph.dic
+#======================================================================
+
+
+CATPLMImpactGraphEngine     CATIPLMImpactGraphEngine libCATPLMImpactGraph
+CATPLMIGFilterConditionImpl CATIPLMFilterCondition   libCATPLMImpactGraph
+# CATPLMIGNode CATIPLMTestImpactNode libCATPLMImpactGraph # Removed to correct NNDE errors
+# CATPLMIG_SRNode CATIPLMTestImpactNode libCATPLMImpactGraph # Removed to correct NNDE errors
+CATPLMIG_SRNode	            CATIPLMTestImpactNode    libCATPLMImpactGraph
+CATPLMIGRecordReadSet       CATIPLMCompRecordReadSet libCATPLMImpactGraph
+
+
+# Added to correct MDE errors
+CATPLMIGNode	CATIPLMIGNode	libCATPLMImpactGraph
+
+# Added to correct MDE errors
+CATPLMIG_SRNode	CATIPLMIGNode	libCATPLMImpactGraph
+
+# Added to correct MDE errors
+CATPLMImpactGraphError	CATIPLMErrorCell	libCATPLMImpactGraph
+
+# Added to correct MDE errors
+CATPLMImpactGraphErrorReporter	CATIPLMEngineErrorReporter	libCATPLMImpactGraph
+

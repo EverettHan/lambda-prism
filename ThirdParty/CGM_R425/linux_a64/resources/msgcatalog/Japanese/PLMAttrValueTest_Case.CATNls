@@ -1,0 +1,29 @@
+<meta charset="UTF-8"/>
+//-------------------------------- Policy section below;
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.Test_Case = Test Case
+
+policy.Test_Case="テスト ケース";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.Test_Case.InWork = In Work
+
+V_maturity.Propose="非公開";
+V_maturity.Approve="承認中";
+V_maturity.Validate="検証中";
+V_maturity.Complete="リリース";
+V_maturity.Obsolete="廃版";
+
+
+current.Propose="非公開";
+current.Approve="承認中";
+current.Validate="検証中";
+current.Complete="リリース";
+current.Obsolete="廃版";
+
+
+
+
+

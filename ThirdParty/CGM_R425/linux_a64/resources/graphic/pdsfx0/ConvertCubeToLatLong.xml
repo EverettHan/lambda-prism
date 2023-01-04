@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbConvertCubeToLatLong</NAME>  
+  </CONSTANT_BUFFER>
+  
+  <SAMPLER>
+    <NAME>CubeMap</NAME>
+    <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+  
+  <STORAGE_IMAGE>
+    <NAME>LatLongMap</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  
+  <SAMPLER_STATE>
+    <NAME>sourceSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <COMPUTE_PASS>
+    
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>CubeMap</SAMPLER>
+          <STATES>sourceSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <NAME>Pass0</NAME>
+
+      <COMPUTE_STAGE>PostEffect_EnvMap_Helpers ConvertCubeToLatLongCS</COMPUTE_STAGE>
+      
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+    
+</PDSFX>

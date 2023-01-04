@@ -1,0 +1,48 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMImplEV5Replication.tst"/>
+  <attached name = "CATPLMIntegrationAccess.tst"/>
+  <attached name = "CATPLMPXn.tst"/>
+  <prerequisite access = "Public" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" name = "ObjectModelerInterfaces"/>
+  <prerequisite access = "Protected" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" name = "CATPLMCommunication"/>
+  <prerequisite access = "Protected" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" name = "CATOmbLinkNavigationAccess"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIntegrationAccessItf"/>
+  <prerequisite access = "Protected" name = "PLMDictionaryInterfaces"/>
+  <prerequisite access = "Protected" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" name = "CATPLMStreamDescriptor"/>
+  <prerequisite access = "Private" comment = "Private for CATIPLMEngineListenerPlug" expose = "ExposePrereq" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Private" name = "CATPLMComponentInterfaces"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "ObjectModelerEngines"/>
+  <prerequisite access = "Private" name = "CATPLMServices"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Private" name = "CATPLMIdentification"/>
+  <prerequisite access = "Private" name = "CATPLMImplAdapter"/>
+  <authorize access = "Protected" name = "CATPLMIntegrationUI"/>
+  <authorize access = "Protected" comment = "temporary V6R2014 - access should be through CATPLMIntegrationAccess" meta = "TOREMOVE" name = "CATPLMIdentificationTools"/>
+  <authorize access = "Protected" name = "CATLSWebServer"/>
+  <authorize access = "Protected" name = "ObjectModelerDebug"/>
+  <authorize access = "Protected" comment = "To construct MSI" name = "CAT3DXMLPlayerSetup"/>
+  <authorize access = "Protected" name = "CATPLMImplAdapterMQL.tst"/>
+  <authorize access = "Protected" comment = "JBB, 20210507, use of CATAdpProtectedConnectionAccess" name = "CATPLMQLInEKLBinding"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess"/>
+  <authorize access = "Private" name = "CATPLMIntegration"/>
+  <authorize access = "Private" name = "CATPLMIntegrationUse"/>
+  <authorize access = "Private" name = "CATPLMSessionDebug"/>
+  <authorize access = "Private" name = "CATPLMIntegration.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentification_PLM.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess.tst"/>
+  <authorize access = "Private" name = "zzPCS_PLMIntegration.tst"/>
+  <authorize access = "Private" name = "CATPLMPXn.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

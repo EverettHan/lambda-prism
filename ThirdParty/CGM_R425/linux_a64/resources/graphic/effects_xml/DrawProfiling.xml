@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">    
+  
+  <DST_STATE_GROUP>
+    <NAME>DepthNoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>AlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>Zero</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>One</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>Solid</NAME>
+    <CULL_MODE>None</CULL_MODE>
+    <FILL_MODE>Solid</FILL_MODE>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbFrameTime</NAME>
+  </CONSTANT_BUFFER>
+  
+  <SAMPLER>
+    <NAME>sourceTex</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER_STATE>
+    <NAME>smpLinear</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>sourceTex</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <RASTERIZER_STATE>Solid</RASTERIZER_STATE>
+      <VERTEX_STAGE>fullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>DrawProfiling</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+    
+</EFFECT>

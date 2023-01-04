@@ -1,0 +1,66 @@
+#ifndef Effect_NormalZServices_H
+#define Effect_NormalZServices_H
+
+//-------------------------
+// Background
+
+int IsBackground(samplerRECT iMap, float2 iScreenCoord, unsigned int iCurSample)
+{  
+  if (texRECT(iMap,	iScreenCoord, iCurSample).w !=1.f) return 1;
+  return 0;
+}
+
+int IsBackground(sampler2DMS iMap, float2 iScreenCoord, unsigned int iCurSample)
+{
+  if (tex2DMSfetch(iMap,	iScreenCoord, iCurSample).w !=1.f) return 1;
+  return 0;
+}
+
+//-------------------------
+// Normal
+
+float4 DecodeN(float4 iN)
+{  
+  return float4(2.f*(iN.xyz-0.5f), iN.w);
+}
+
+float4 GetNormal(samplerRECT iNormalMap, float2 iScreenCoord, unsigned int iSample)						  
+{
+  float4 n = texRECT(Auto_NormalMap_WithTransparency, iScreenCoord); 
+  return DecodeN(n);
+}
+
+float4 GetNormal(sampler2DMS iNormalMap, float2 iScreenCoord, unsigned int iSample)						  
+{
+  float4 n = tex2DMSfetch(Auto_NormalMap_WithTransparency, iScreenCoord, iSample); 
+  return DecodeN(n);
+}
+
+//-------------------------
+// Z
+
+float DecodeZ(float iZ)
+{  
+  float z = iZ;
+  if (Auto_ProjectionMode.x==1) z = Auto_NearFar.w/(z-Auto_NearFar.z);
+  else                          z = (Auto_NearFar.z*z+Auto_NearFar.w);
+
+  z = (z-Auto_NearFar.x)/(Auto_NearFar.y-Auto_NearFar.x);
+
+  return z;
+}
+
+float GetZ(samplerRECT iZMap, float2 iScreenCoord, unsigned int iSample)						  
+{
+  float z = texRECT(Auto_ZMap_WithTransparency, iScreenCoord).z; 
+  return DecodeZ(z);
+}
+
+float GetZ(sampler2DMS iZMap, float2 iScreenCoord, unsigned int iSample)						  
+{
+  float z = tex2DMSfetch(Auto_ZMap_WithTransparency, iScreenCoord, iSample).z; 
+  return DecodeZ(z);
+}
+
+#endif
+

@@ -1,0 +1,21 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <authorize access = "Private" name = "CATPLMIntegrationBase"/>
+  <authorize access = "Private" name = "CATPLMIntegration"/>
+  <authorize access = "Private" name = "CATPLMClientCore"/>
+  <authorize access = "Private" name = "PLMModelerBase"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <attached name = "CATPLMIntegrationAccess.tst"/>
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMIntegration_Unit.tst"/>
+  <attached name = "CAAPLMClientAdapter.tst"/>
+  <attached name = "CATPLMDocEnv.tst"/>
+  <attached name = "CATPLMClientCore.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

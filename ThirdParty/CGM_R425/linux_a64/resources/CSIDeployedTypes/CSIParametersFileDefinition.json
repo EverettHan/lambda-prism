@@ -1,0 +1,33 @@
+{
+  "grammarVersion": 3,
+  "desc": "Definition of a CSI parameters file",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Name of the parameters file"
+    },
+    {
+      "label": "filename",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Parameters file filename"
+    },
+    {
+      "label": "filepath",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Parameters file filepath"
+    },
+    {
+      "label": "definition",
+      "typeArray": "CSIPropertyDefinition",
+      "desc": "Definition of the parameters"
+    }
+  ]
+}

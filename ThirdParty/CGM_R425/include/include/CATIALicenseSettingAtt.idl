@@ -1,0 +1,300 @@
+//===========================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2003                                         
+//===========================================================================
+//                                                                           
+//  CATIALicenseSettingAtt                                                
+//                                                                           
+//  Usage Notes: Interface Definition                                          
+//===========================================================================
+//  Creation fevrier  2003                                 adt         	
+//===========================================================================
+#ifndef __CATIALICENSINGSETTINGATT
+#define __CATIALICENSINGSETTINGATT 
+/*IDLREP*/
+
+// COPYRIGHT DASSAULT SYSTEMES 2003
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+#include "CATIABase.idl"
+#include "CATVariant.idl"
+#include "CATSafeArray.idl"
+#include "CATIASettingController.idl"
+#include "CATBSTR.idl"
+
+
+
+/**
+* Interface to handle the licensing settings.
+* <b>Role</b>: This interface is implemented by a component which
+* represents the controller of the static Licenses. 
+* <br>To access this property page:
+* <li>Click the Options command in the Tools menu</li>
+* <li>Click General</li>
+* <li>Click the Licensing Property Page</li>
+* <br>This interface defines:
+* <li>A method to set each License</li>
+* <li>A method to get the value of each License</li>
+* <li>A method to lock/unlock each parameter</li>
+* <li>A method to retrieve the information concerning each parameter</li>
+*/
+interface CATIALicenseSettingAtt : CATIASettingController 
+{
+
+	 // PMR // PAS de mode demo en R207
+     
+/**
+* Retrieves or Sets the server time out.
+* <br><b>Role</b>:  Retrieves or sets the value of the parameter describing 
+* the licensing server time out in minutes. For more information about the range and maximum, refers to the 
+* Infrastructure documentation.
+*/
+#pragma PROPERTY ServerTimeOut
+  HRESULT get_ServerTimeOut (out /*IDLRETVAL*/ float oTimeOut);
+  HRESULT put_ServerTimeOut (in float iTimeOut);
+
+
+
+
+/** 
+* Retrieves information about the TimeOut setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/ 
+  HRESULT GetServerTimeOutInfo (inout CATBSTR ioAdminLevel,
+				inout CATBSTR ioLocked,
+				out  /*IDLRETVAL*/boolean oModified);
+  
+/** 
+* Locks or unlocks the TimeOut setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/
+  HRESULT SetServerTimeOutLock (in boolean iLock);
+
+
+/**
+* Retrieves or Sets the license expiry alert.
+* <br><b>Role</b>:  Retrieves or sets the value of the parameter describing 
+* the the license expiry alertt in days. For more information about the range and maximum, refers to the 
+* Infrastructure documentation.
+*/
+#pragma PROPERTY NodelockAlert
+  HRESULT get_NodelockAlert (out /*IDLRETVAL*/ long oAlert);
+  HRESULT put_NodelockAlert (in long iAlert);
+
+
+
+
+/** 
+* Retrieves information about the license expiry alert setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/ 
+  HRESULT GetNodelockAlertInfo (inout CATBSTR ioAdminLevel,
+				inout CATBSTR ioLocked,
+				out  /*IDLRETVAL*/boolean oModified);
+  
+/** 
+* Locks or unlocks the license expiry alert setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/
+  HRESULT SetNodelockAlertLock (in boolean iLock);
+
+
+/**
+* Retrieves or Sets the contact frequency.
+* <br><b>Role</b>:  Retrieves or sets the value of the parameter describing 
+* the server contact frequency. Note that a null value represents the maximum
+* contact frequency value in minutes. For more information about the range and maximum, refers to the 
+* Infrastructure documentation.
+*/
+#pragma PROPERTY Frequency
+  HRESULT get_Frequency (out /*IDLRETVAL*/ float oFrequency);
+  HRESULT put_Frequency (in float iFrequency);
+
+
+/** 
+* Retrieves information about the Frequency setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/ 
+  HRESULT GetFrequencyInfo (inout CATBSTR ioAdminLevel,
+			    inout CATBSTR ioLocked,
+			    out  /*IDLRETVAL*/boolean oModified);
+
+/** 
+* Locks or unlocks the Frequency setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/
+  HRESULT SetFrequencyLock( in boolean iLock);
+  
+
+
+/**
+* Retrieves or Sets the show license .
+* <br><b>Role</b>:  Retrieves or sets the value of the parameter describing 
+* the complete license information. 
+* When the parameter is set, the user gets more information about the reason of the failure to request a license.
+*/
+#pragma PROPERTY ShowLicense
+  HRESULT get_ShowLicense (out /*IDLRETVAL*/ boolean oMode);
+  HRESULT put_ShowLicense (in boolean iMode);
+
+
+/** 
+* Retrieves information about the ShowLicense setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/ 
+  HRESULT GetShowLicenseInfo (inout CATBSTR ioAdminLevel,
+		       inout CATBSTR ioLocked,
+		       out  /*IDLRETVAL*/boolean oModified);
+
+
+/** 
+* Locks or unlocks the ShowLicense setting parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/
+  HRESULT SetShowLicenseLock (in boolean iLock);
+  
+
+
+
+
+
+/**
+* Retrieves the list of the requested or locked licenses.
+* <br><b>Role</b>: Retrieves the list of the requested or locked licenses.
+* There is no SetLicensesList() because the list is initialized using LUM.
+* @param iDefaultLicenses
+*  If iDefaultLicenses!=0 and the settings are empty, returns the default licenses,
+*  that is, the visible nodolocked licenses.
+*  If iDefaultLicenses = 0 and the settings are empty, returns the selected licenses
+* (not yet stored, because not yet validated by OK button). 
+* @return
+*	<li>The array of Licenses.
+*	<li>character meaning in license name:</li>
+*   <li>"_": internal notation for a license configuration</li>
+*   <li>"+": you chose "Any license" mode, example of returned value: _ME1.slt+FS1</li>
+*	<li>When the return value is a serial number (_ME1.slt_SerialNumber), you have chosen the "Explicit"
+*	license mode. In this case the add on product is not indicated in the license name.</li>
+*/
+  HRESULT GetLicensesList (in long iDefaultLicenses, out /*IDLRETVAL*/ CATSafeArrayVariant oTabDLName);
+
+/**
+* Retrieves information about the LicensesList setting parameter.
+* <br><b>Role</b>: Retrieves information about the LicensesList setting locking state (global lock for the LicensesList).
+* It is used to get the lock status of the List of the Licenses.
+* If the LicensesList is locked all the licenses are locked.
+* When the licenses are locked, it means that an administrator has locked the attribute.
+* It does not means that an administrator has changed the value of the attribute.
+* The value of the setting is not updatable because it refers to a lock on a list. 
+* That is why the return value is false.
+* @param ioAdminLevel 
+* Level of administrator.
+* @param ioLocked
+* Locked/Unlocked.
+* @return 
+* False.
+* <br>Information returned in the dump:
+* <li>Parameter 1 : "Value taken in case of reset" : useless. Default value : "Default value" </li>
+* <li>Parameter 2 : "Locking state" value : unlocked / locked / locked at Admin Level n </li>
+* <li>Parameter 3 : "Returned value" : useless, default value : False </li>
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/
+    HRESULT GetLicensesListInfo ( inout CATBSTR ioAdminLevel,
+				inout CATBSTR ioLocked,
+				out /*IDLRETVAL*/ boolean oModified);
+
+  
+/**
+* Locks or unlocks the LicensesList setting parameter.
+* <br><b>Role</b>:Locks or unlocks the LicensesList setting parameter.
+* Locks or unlocks the parameter describing the list of 
+* installed licenses, if the  operation is allowed in the current
+* administrated environment.
+* It is the global lock on all the licenses.
+* When the LicenseList is locked all the licenses are locked.
+* When the LicenseList is unlocked all the licenses are unlocked.
+* @param iLock
+*	the locking operation to be performed:
+*	<br><tt>True:</tt>   to lock the parameter.
+* 	<br><tt>False:</tt>   to unlock the parameter.
+* <br>Refer to @href CATIASettingController for a detailed description.
+*/
+  HRESULT SetLicensesListLock ( in boolean iLock);
+  
+  
+/**
+* Retrieves the value of the license.
+* <br><b>Role</b>: Retrieves the mapping between a name of a license and 
+* the value of the license. 
+* The license does not need to be returned by GetLicensesList().
+* But if the license is not installed the license will be "NotRequested"
+* @param iLicense
+*  the name of the License: "PMG.prd", "_MD2.slt+", "_MD2.slt+GSD" for example.
+* <br>"PMG.prd" represent the license of the product PMG
+* <br>"_MD2.slt+" represent the license of the solution MD2
+* <br>"_MD2.slt+GSD" represent the license of the solution MD2, with the
+*  AddOn product GSD
+* @return
+*	the value of the License:
+*	<br><tt> Not requested :</tt>   License is not Requested.
+* 	<br><tt> key :</tt>  the name of the license, the default available license has been chosen by the user. License is Requested.
+*  <br><tt> License Number :</tt> a specific license number has been chosen by the user. License is Requested.
+*/
+  HRESULT GetLicense( in CATBSTR iLicense, 
+		      inout  /*IDLRETVAL*/ CATBSTR  oValue);
+
+
+/**
+* Sets the License.
+* <br><b>Role</b>: Sets the value of the license.
+* @param iLicense
+* the name of the License: "PMG.prd", "_MD2.slt+", "_MD2.slt+gSD" for example.
+* <br>"PMG.prd" represent the license of the product PMG
+* <br>"_MD2.slt+" represent the license of the solution MD2
+* <br>"_MD2.slt+GSD" represent the license of the solution MD2, with the
+*  AddOn product GSD
+* @param iValue
+* the value of the License:
+* <br><tt> Not requested :</tt>   License is not Requested.
+* <br><tt> key :</tt>  the name of the license, the default available license has been chosen by the user. License is Requested.
+* <br><tt> License Number :</tt> a specific license number has been chosen by the user. License is Requested.
+*/
+ HRESULT SetLicense( in CATBSTR iLicense, 
+		      in CATBSTR iValue);
+
+
+/** 
+ * Retrieves information about the License setting parameter.
+ * <br>Refer to @href CATIASettingController for a detailed description.
+ */ 
+  HRESULT GetLicenseInfo (in  CATBSTR iLicense,
+			  inout CATBSTR ioAdminLevel,
+			  inout CATBSTR ioLocked,
+			  out /*IDLRETVAL*/ boolean oModified);
+  
+
+/** 
+ * Locks or unlocks the License setting parameter.
+ * <br>Refer to @href CATIASettingController for a detailed description.
+ */
+  HRESULT SetLicenseLock (in  CATBSTR iLicense,  
+			  in boolean iLock);
+
+
+ 
+  
+};
+
+// Interface Name : CATIALicenseSettingAtt
+#pragma ID CATIALicenseSettingAtt "DCE:f795b0aa-3c3b-42f6-b0c25f5a0cbdffa1"
+#pragma DUAL CATIALicenseSettingAtt
+
+// VB Object Name : LicenseSettingAtt
+#pragma ID LicenseSettingAtt "DCE:aace553b-3630-0000-028003110e000000"
+#pragma ALIAS CATIALicenseSettingAtt LicenseSettingAtt
+#endif
+
+
+
+

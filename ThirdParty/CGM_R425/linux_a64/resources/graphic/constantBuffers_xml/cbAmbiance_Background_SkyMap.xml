@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_Background</NAME>
+
+  <UNIFORM>
+    <NAME>u_Intensity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Offset</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>-1.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.001</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Matrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>
+

@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+// VCS 09/04/2014 Creation
+// Error description file for all errors happening during OMB operations, excepted Switch and Stream/Unstream operations
+//
+//    Please keep following glossary format when adding errors:
+//
+// ERR_OMB_<category>_nnn.Diagnostic=<A short and clear message>;
+// ERR_OMB_<category>_nnn.Request="<some more detail with helpful minimal context>;
+// ERR_OMB_<category>_nnn.Advice=<only when REALLY helpfull for final user, as a misuse correction or a by-pass>;
+
+// --> ERR_OMB_SD_001 to ERR_OMB_SD_099 : StreamDescriptor management in session
+
+SD_CREATE="Erzeugung";
+SD_DELETE="Löschen";
+SD_MOD_LR="Ändern des lokalen Speichers";
+SD_CREATE_LR="Erstellen des lokalen Speichers";
+SD_READ_LR="Lesen im lokalen Speicher";
+SD_LOCK_LR="Sperren des lokalen Speichers";
+SD_UNLOCK_LR="Entsperren des lokalen Speichers";
+SD_ULOCK_LR="(Ent-)Sperren des lokalen Speichers";
+SD_STREAM="Streaming";
+SD_IMPORT="Datenimport";
+SD_EXPORT="Datenexport";
+SD_OPERATE="Operation";
+SD_UPD_VISU="Darstellungsaktualisierung";
+SD_RESTORE="Wiederherstellen";
+
+SD_GET_SYNCHRO_CTX="Anforderung bezüglich anwendbarer Synchronisation fehlgeschlagen.\nDie Standardsynchronisation wurde angewendet.\n";
+SD_APPLI_SYNCHRO_CTX="Anwendbare Synchronisation fehlgeschlagen.\nDie Standardsynchronisation wurde angewendet.\n";
+
+ERR_OMB_SD_001.Request="Datenstromdeskriptor nicht gefunden.";
+ERR_OMB_SD_001.Diagnostic="Datenstromdeskriptor /p1 abgebrochen. SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5) nicht gefunden.";
+
+ERR_OMB_SD_002.Request="Datenstromdeskriptor existiert bereits.";
+ERR_OMB_SD_002.Diagnostic="Datenstromdeskriptor /p1 abgebrochen. SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5) existiert bereits.";
+
+ERR_OMB_SD_003.Request="Ungültiger Datenstromdeskriptor.";
+ERR_OMB_SD_003.Diagnostic="Datenstromdeskriptor /p1 verboten. Ungültige SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+
+ERR_OMB_SD_004.Request="Datenstromdeskriptor /p1 fehlgeschlagen.";
+ERR_OMB_SD_004.Diagnostic="Anforderung bzgl. Datenstromdeskriptor /p1 fehlgeschlagen. SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+
+ERR_OMB_SD_005.Request="Datenstromdeskriptor-Anfrage /p1 fehlgeschlagen, da Authoring-SD in der Sitzung nicht geladen wurde.";
+ERR_OMB_SD_005.Diagnostic="SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+ERR_OMB_SD_005.Advice="Authoring-SD hätte von einer früheren Data Switch-Operation geladen werden müssen.";
+
+ERR_OMB_SD_006.Request="Datenstromdeskriptor /p1 nicht zulässig.";
+ERR_OMB_SD_006.Diagnostic="Anforderung bzgl. Datenstromdeskriptor /p1 nicht zulässig. SD-Kennung (Format: /p2|Rolle: /p3|Name: /p4|Typ: /p5).";
+
+ERR_OMB_SD_007.Request="Anforderung bzgl. Datenstromdeskriptor /p1 ist fehlgeschlagen, da keine Haupt-AuthoringVisu-SD an der Komponente vorhanden ist.";
+ERR_OMB_SD_007.Diagnostic="SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+ERR_OMB_SD_007.Advice="Das Vorhandensein einer Haupt-AuthoringVisu-SD ist eine Voraussetzung für den aktuellen Betrieb.";
+
+ERR_OMB_SD_008.Request="Datenstromdeskriptor /p1 nicht unterstützt.";
+ERR_OMB_SD_008.Diagnostic="Datenstromdeskriptor /p1 wird in der aktuellen Version nicht unterstützt. SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+
+ERR_OMB_SD_009.Request="Datenstromdeskriptor /p1 nicht autorisiert.";
+ERR_OMB_SD_009.Diagnostic="/p1 ist auf dem geänderten Datenstromdeskriptor nicht autorisiert. SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+
+ERR_OMB_SD_010.Request="Datenstromdeskriptor /p1 nicht zulässig.";
+ERR_OMB_SD_010.Diagnostic="Anforderung bzgl. Datenstromdeskriptor /p1 nicht zulässig, da SD gelöscht wird. SD-Kennung (Format: /p2|Rolle: /p3|Name: /p4|Typ: /p5).";
+
+ERR_OMB_SD_011.Request="Datenstromdeskriptor /p1 nicht unterstützt.";
+ERR_OMB_SD_011.Diagnostic="Die Operation /p1 ist für diesen Stromdeskriptortyp bedeutungslos. SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+
+ERR_OMB_SD_012.Request="Datenstromdeskriptor /p1 fehlgeschlagen.";
+ERR_OMB_SD_012.Diagnostic="Die Operation /p1 ist nicht zulässig. Der eingegebene Visu Stream-Typ ist ungültig oder mit dem entsprechenden Datenstromdeskriptortyp nicht kompatibel. SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+
+ERR_OMB_SD_013.Request="Datenstromdeskriptor /p1 fehlgeschlagen.";
+ERR_OMB_SD_013.Diagnostic="Operation /p1 nicht zulässig. Persistenzname ungültig (muss im ASCII-Format ohne Sonderzeichen angegeben werden). SD-Kennung (Format:/p2 |Rolle:/p3 |Name:/p4 |Typ:/p5).";
+
+ERR_OMB_SD_014.Request="Warnung: Datenstromdeskriptor /p1 nicht abgeschlossen.";
+ERR_OMB_SD_014.Diagnostic="Anforderung bezüglich Datenstromdeskriptor /p1 nicht abgeschlossen. SD-Kennung (Format: /p2 |Rolle: /p3 |Name: /p4 |Typ: /p5).";
+
+// --> ERR_OMB_SWITCH_RULE_001 to ERR_OMB_SWITCH_RULE_099 : Switch Loading rule
+
+ERR_OMB_SWITCH_RULE_001.Request="Unbekannter Ziellademodus.";
+ERR_OMB_SWITCH_RULE_001.Diagnostic="'Zielmodus ändern' wurde beim Laden der Eingaberegel nicht gefunden.";
+
+ERR_OMB_SWITCH_RULE_002.Request="Undefinierter Ziellademodus.";
+ERR_OMB_SWITCH_RULE_002.Diagnostic="'Zielmodus ändern' wurde beim Laden der Eingaberegel nicht definiert.";

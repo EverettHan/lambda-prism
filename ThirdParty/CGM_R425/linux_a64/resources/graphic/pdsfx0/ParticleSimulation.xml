@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPSEmit</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPSTime</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>random</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER_STATE>
+    <NAME>RandomSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER> 
+  </SAMPLER_STATE>
+
+  <STRUCTURED_BUFFER>
+    <NAME>particles</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>ParticlePackedData</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>coherent</QUALIFIER>
+    </QUALIFIERS>
+    <INSTANCE_NAME>bParticles</INSTANCE_NAME>
+    <ALIGNMENT_RULES>std140</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>velocities</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>velo[]</NAME>
+        <TYPE>vec4</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>bVelocities</INSTANCE_NAME>
+    <ALIGNMENT_RULES>std140</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>counters</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>count</NAME>
+        <TYPE>int</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>numberOfParticle</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>spawnTime</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>microDT</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>coherent</QUALIFIER>
+    </QUALIFIERS>
+    <INSTANCE_NAME>bCounter</INSTANCE_NAME>
+    <ALIGNMENT_RULES>std140</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>forces</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>count</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>pad0</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>pad1</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>pad2</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>Force</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+    </QUALIFIERS>
+    <INSTANCE_NAME>bForces</INSTANCE_NAME>
+    <ALIGNMENT_RULES>std140</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <COMPUTE_PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>random</SAMPLER>
+          <STATES>RandomSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <NAME>Default</NAME>
+      <COMPUTE_STAGE>PSCommonCS particleSimulationCS</COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+
+</PDSFX>

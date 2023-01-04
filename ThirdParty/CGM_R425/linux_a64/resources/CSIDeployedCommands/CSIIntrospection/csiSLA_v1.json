@@ -1,0 +1,29 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns 0 if OK of 1 if KO and a text message",
+  "onCall": {
+    "in": {
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "status",
+          "desc": "The status",
+          "basic": "int32"
+        },
+        {
+          "label": "message",
+          "desc": "The message received",
+          "basic": "string"
+        }
+      ]
+    }
+  }
+}

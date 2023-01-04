@@ -1,0 +1,90 @@
+{
+  "parameters": [
+    {
+      "name": "diffuse",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+    {
+      "name": "diffuse_weight",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "refl_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+    {
+      "name": "reflectivity",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "refr_ior",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "refl_gloss",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "refr_gloss_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "refl_interpolate",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_grid_density",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_refl_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_refl_ddist_on",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_refl_ddist",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "emissive_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "emissive_intensity",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+
+    {
+      "name": "bump",
+      "type": "Texture",
+      "nbElements": 3
+    }
+
+  ]
+}

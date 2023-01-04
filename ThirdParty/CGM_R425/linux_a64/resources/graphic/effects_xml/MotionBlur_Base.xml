@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbMotionBlur_Base</NAME>
+  </CONSTANT_BUFFER>
+  
+  <SAMPLER>
+    <NAME>CurrentColorBuffer</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>MotionVectorMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>smpLinear</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+      <NAME>Pass0</NAME>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>CurrentColorBuffer</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>MotionVectorMap</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>ubos PostEffect_DeclarePS PostEffect_Helpers PostEffect_Texture_Helpers MotionBlur_Base</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</EFFECT>

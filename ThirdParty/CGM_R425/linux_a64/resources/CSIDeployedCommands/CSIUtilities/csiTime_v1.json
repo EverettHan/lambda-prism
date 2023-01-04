@@ -1,0 +1,26 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "This function return the current time",
+  "onCall": {
+    "in": {
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "time",
+          "basic": "string",
+          "desc": "The current UTC time with the following format 16:26:11"
+        }
+      ]
+    }
+  },
+  "throwError": {
+  }
+}

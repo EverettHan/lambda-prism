@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbWorldView</NAME>
+  </CONSTANT_BUFFER>
+  
+  
+  <STRUCTURED_BUFFER>
+    <NAME>worldBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_worldMatrix[]</NAME>
+        <TYPE>dmat4</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>worldViewBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_worldViewMatrix[]</NAME>
+        <TYPE>mat4</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>writeonly</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>worldVisibility</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_worldVisibility[]</NAME>
+        <TYPE>int</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+  
+  <TECHNIQUE>
+  <NAME>Default</NAME>
+    <COMPUTE_PASS>
+      <NAME>Default</NAME>
+      <COMPUTE_STAGE>
+        WorldView
+      </COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+    
+</EFFECT>

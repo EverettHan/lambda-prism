@@ -1,0 +1,24 @@
+<meta charset="UTF-8"/>
+//do not rename this file or the NLS keys (despite their stupid names), they are hardcodes in UI code...
+
+ERR_101.Request="Links können nicht geladen werden";
+ERR_101.Diagnostic="Die Links können aufgrund von Inkonsistenzen zwischen dem Autorendatenstrom und den Beziehungen nicht geladen werden.";
+ERR_101.Advice="Ein möglicher Grund für dieses Problem könnte eine gleichzeitige Änderung/Löschung der zugeordneten Komponente sein.
+Schließen Sie in einem solchen Fall die Sitzung und führen Sie den Vorgang erneut aus.
+Wenn das Problem weiterhin besteht, führen Sie das Werkzeug CATPLMComponentCheckerBatch (Werkzeuge/Dienstprogramm) auf /p2 aus.
+Wenn das Problem dadurch nicht behoben wird, führen Sie das Werkzeug Darstellungsprüfung (mit aktivierter Regel DOC_5) aus.\nTechnische Details: /p1.";
+
+ERR_103.Request="Links können nicht geladen werden";
+ERR_103.Diagnostic="Die Links können aufgrund von Inkonsistenzen zwischen dem Autorendatenstrom und den Beziehungen nicht geladen werden.";
+ERR_103.Advice="Wenden Sie sich an den Support.\nTechnische Details: /p1.";
+
+MISSING_RELATION="Keine Beziehung für IDRel=/p1 auf Komponente /p2";
+LINKS_INCONSISTENCY="Inkonsistente Links bei Komponente /p1";
+NO_LINK="Kein Link für IDRel=/p1 auf Komponente /p2";
+
+ERR_102.Request="Beziehungen können nicht geladen werden";
+ERR_102.Diagnostic="Die Beziehungen können wegen duplizierter Einträge nicht geladen werden.";
+ERR_102.Advice="Wenden Sie sich an den Support.\nTechnische Details: component=/p1, IDRel=/p2, IDRel=/p3.";
+
+
+

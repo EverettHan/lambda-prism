@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "function filter specified properties from a parameters",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "parameter",
+          "type": "Parameters",
+          "desc": "the parameters to filter"
+        },
+        {
+          "label": "filter",
+          "basicArray": "string",
+          "desc": "The list of property to remove"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "filteredParameters",
+          "type": "Parameters",
+          "desc": "Filtered parameters"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

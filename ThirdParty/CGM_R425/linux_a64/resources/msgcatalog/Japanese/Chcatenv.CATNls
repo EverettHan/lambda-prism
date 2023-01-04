@@ -1,0 +1,28 @@
+<meta charset="UTF-8"/>
+Help.Text="使用法:
+chcatenv   -e environment_name           環境の名前を指定します
+           -a user|global                環境の特性を指定します
+           -var   variable=value         変数の値を設定または更新します
+           [-new]                        -var オプションで指定されている変数を作成します
+           [-com]                        新規変数にコメントを追加します
+           [-del]                        -var オプションで指定されている変数を削除します。新しい変数のみ削除できます
+[-d storage_directory_name]   環境の格納ディレクトリを指定します";
+MustBeSystemAdmin.Text="グローバル環境を修正するには管理者権限が必要です。";
+NoCommentOnOfficialVar.Text="新しい変数にのみコメントできます。";
+BadFormatedVariable.Text="-var オプションに指定されている値は無効です。";
+UnableToWriteFile.Text="修正された環境ファイルを保存できません。";
+NoReadAccessInDir.Text="-d オプションに指定されているディレクトリは読み取りモードではアクセスできません。";
+NoWriteAccessInDir.Text="-d オプションに指定されているディレクトリは書き込みモードではアクセスできません。";
+DirDoesntExist.Text="-d オプションに指定されているディレクトリはアクセスできません。";
+EnvFileDoesntExist.Text="指定環境が見つかりません。";
+UnableToReadEnvFile.Text="chcatenv は環境ファイルを読み取れませんでした。";
+InvalidEnvNameOption.Text="環境名を \"-e\" オプションに指定する必要があります。";
+VariableNotFound.Text="この変数は環境ファイル内に見つかりませんでした。 ";
+CannotDelOfficalVar.Text="この変数は削除できません。削除できるのは新規変数だけです。";
+NoVarSpecified.Text="\"-var\" オプションを指定する必要があります。";
+NoDirModeOption.Text="\"-a\" オプションを \"user\" または \"global\" に設定するか、\"-d\" オプションを使ってストレージ ディレクトリを指定する必要あります。";
+InvalidEnvModeOption.Text="\"-a\" オプションを \"user\" または \"global\" に設定する必要があります。";
+GeneralFailure.Text="chcatenv 初期化中に問題が発生しました。";
+NoNewOfficialVariable.Text="/P1 はすでに存在します。別の変数名を選択してください。";
+
+

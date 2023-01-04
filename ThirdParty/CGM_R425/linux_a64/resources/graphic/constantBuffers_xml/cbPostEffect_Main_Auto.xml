@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_PostEffectAuto</NAME>
+  <RASTERIZER_UPDATE>PassThroughGenericUpdater</RASTERIZER_UPDATE>
+
+  <UNIFORM>
+    <NAME>u_ViewInverseMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>ViewInverseMatrix</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ProjectionMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>ProjMatrix</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ProjectionInverseMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>ProjInverseMatrix</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ViewpointSize</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>ViewpointSize</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ViewportToViewpointCoord</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>ViewportToViewpointCoord</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ViewpointToViewportCoord</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>ViewpointToViewportCoord</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_NearFar</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>NearFarExtended</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_NearFarLogZ</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>NearFarLogZ</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_BufferToViewNearPlane</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>BufferToViewNearPlane</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_PixelSize</NAME>
+    <TYPE>float2</TYPE>
+    <SEMANTIC>PixelSize</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ViewportSize</NAME>
+    <TYPE>float2</TYPE>
+    <SEMANTIC>ViewportSize</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ViewpointToViewportRatio</NAME>
+    <TYPE>float2</TYPE>
+    <SEMANTIC>ViewpointToViewportRatio</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ViewpointFixRatio</NAME>
+    <TYPE>float2</TYPE>
+    <SEMANTIC>ViewpointFixRatio</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ApertureFocalLength</NAME>
+    <TYPE>float2</TYPE>
+    <SEMANTIC>ApertureFocalLength</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_EyePosition</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>EyeWorldPos</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_SceneRadius</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>SceneRadius</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_FocusDistance</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>FocusDistance</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ProjectionMode</NAME>
+    <TYPE>int</TYPE>
+    <SEMANTIC>ProjectionMode</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+	<NAME>u_FrameIdx</NAME>
+	<TYPE>int</TYPE>
+	<SEMANTIC>HRTAO.FrameIndex</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+	<NAME>u_ViewProjInverseMatrix</NAME>
+	<TYPE>mat4x4</TYPE>
+	<SEMANTIC>ViewProjInverseMatrix</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+	<NAME>u_PrevViewProjMatrix</NAME>
+	<TYPE>mat4x4</TYPE>
+	<SEMANTIC>PrevViewProjMatrix</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+	<NAME>u_ViewProjMatrix</NAME>
+	<TYPE>mat4x4</TYPE>
+	<SEMANTIC>ViewProjMatrix</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+	<NAME>u_JitterOffset</NAME>
+	<TYPE>float2</TYPE>
+	<SEMANTIC>JitterOffset</SEMANTIC>
+  </UNIFORM>
+	
+</CONSTANT_BUFFER>

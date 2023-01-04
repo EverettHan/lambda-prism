@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+INVALID_SELECT_DEFAULT_PLMTYPE="语义错误：Select 条件属性 /p1 的 PLMType 不明确";
+INVALID_SELECT_DEFAULT_PLMTYPE_ERR_ADV="验证 SELECT 属性的 PLMType 别名";
+
+INVALID_SELECT_MISSING_PLMTYPE="语义错误：用于 SELECT 条件属性的 PLMType 别名 /p1 不明确，FROM 条件中缺少 PLMType 别名";
+INVALID_SELECT_MISSING_PLMTYPE_ERR_ADV="在 FROM 条件中添加上述 PLMType";
+
+INVALID_WHERE_MISSING_PLMTYPE="语义错误：用于 WHERE 条件属性的 PLMType 别名 /p1 不明确，FROM 条件中缺少 PLMType 别名";
+INVALID_WHERE_MISSING_PLMTYPE_ERR_ADV="在 FROM 条件中添加上述 PLMType";
+
+INVALID_FROM_PLMTYPE="语义错误：在 FROM 条件中，用于 PLMType \"'/p1'\" 的包/类标识符无效";
+INVALID_FROM_PLMTYPE_ERR_ADV="验证用于上述 PLMType 的包/类是否具有正确值";
+
+NVALID_FROM_PLMTYPEID="语义错误：在 FROM 条件中，用于 PLMType 的 \"'/p1'\" 标识符无效 ";
+INVALID_FROM_PLMTYPEID_ERR_ADV="验证用于上述 PLMType 的包/类是否具有正确值";
+
+INVALID_FROM_MULTIPLMTYPE="语义错误：在 From 条件中，多次使用 PLMType 别名 /p1";
+INVALID_FROM_MULTIPLMTYPE="验证 FROM 条件的 PLMType 别名";
+
+INVALID_SELECT_ATTRIBUTE="语义错误：在 SELECT 条件中，与 PLMType 别名 /p2 一起使用的属性 /p1 无效";
+INVALID_SELECT_ATTRIBUTE_ERR_ADV="验证受给定 PLMType 支持的属性是否有效";
+
+INVALID_WHERE_ATTRIBUTE="语义错误：在条件中，与 PLMType 别名 /p2 一起使用的属性 /p1 无效";
+INVALID_WHERE_ATTRIBUTE_ERR_ADV="验证受给定 PLMType 支持的属性是否有效";
+
+INVALID_CREATE_RELATION="语义错误：在 CREATE 语句中，使用的关系 /p1 无效";
+INVALID_CREATE_RELATION_ERR_ADV="验证关系是否受给定 PLMType 支持";
+
+INVALID_CREATE_ATTRIBUTE="语义错误：在 CREATE 语句中，与 PLMType 一起使用的属性 /p1 无效";
+INVALID_CREATE_ATTRIBUTE_ERR_ADV="验证受给定 PLMType 支持的属性是否有效";
+
+INVALID_CREATE_PLMTYPE="语义错误：在 CREATE 语句中，用于 PLMType \"'/p1'\" 的包/类标识符无效";
+INVALID_CREATE_PLMTYPE_ERR_ADV="验证用于上述 PLMType 的包/类是否具有正确值";
+
+UNMATCHED_ATTR_AND_ATTRVALUES=" 属性列表大小和属性的值列表大小不匹配";
+UNMATCHED_ATTR_AND_ATTRVALUES_ERR_ADV="验证属性列表大小和属性的值列表大小";
+
+ERROR_PLMQL_INTERFACE="PLMQLError：无法查询界面 CATIPLMQLbnfStatement";
+ERROR_PLMQL_INTERFACE_ERR_ADV="";
+
+ERROR_PLMQL_INVALID_STATEMENT="PLMQLError：PLMQL 语句无效，句法/语法中存在错误";
+ERROR_PLMQL_INTERFACE_ERR_ADV="验证语句的句法和语法";
+
+ERROR_PLMQL_MULTIPLE_QUERY="PLMQLError：不允许多个查询";
+ERROR_PLMQL_INTERFACE_ERR_ADV="请在单独的窗口中执行每个查询";
+
+ERROR_PLMQL_MULTIPLE_STATEMENTS="PLMQLError：混合了 CRUD、NV、CLONE、QUEOP 和 MATURITY";
+ERROR_PLMQL_MULTIPLE_STATEMENTS_ERR_ADV="确保多语句中不含多运算。";
+
+INVALID_EXT_ATTRIBUTE="语义错误：在 SELECT 条件中，与 PLMType 别名 /p2 一起使用的扩展名属性 /p1 无效";
+INVALID_EXT_ATTRIBUTE_ERR_ADV="验证受给定扩展名 PLMType 支持的属性是否有效";
+
+INVALID_EXT_PLMTYPE="语义错误：在 SELECT 条件中，用于 EXT PLMType \"'/p1'\" 的 [Custo]/Modeler/CoreType 标识符无效";
+INVALID_EXT_PLMTYPE_ERR_ADV="验证用于上述扩展名 PLMType 的 [Custo]/Modeler/CoreType 是否具有正确值";
+
+INVALID_PLMTYPE_USED="在元数据中找不到 PLMTYPE";
+INVALID_PLMTYPE_USED_ERR_REQ="在元数据中找不到 PLMTYPE";
+
+INVALID_PLMID_USED="用于连接的提供程序的 PLMID/资源库名称无效";
+INVALID_PLMID_USED_ERR_REQ="用于连接的提供程序的 PLMID/资源库名称无效";
+
+
+INVALID_SELECT_LIST_ERR_REQ="";
+INVALID_SELECT_LIST_ERR_DIAG="";
+INVALID_SELECT_LIST_ERR_ADV="";
+INVALID_SELECT_LIST_BQ="BuildQuery 中的 SELECT 属性列表无效";
+
+Err_PLMQL_STMT="输入语句中存在错误，某些参数错误";
+Err_PLMQL_STMT_ERR_REQ="输入语句中存在错误";
+Err_PLMQL_STMT_ERR_DIAG="输入语句中存在错误";
+Err_PLMQL_STMT_ERR_ADV="请参阅语言参考";
+
+INVALID_SELECT_LIST_SIZE_ZERO="列表大小为零的 SELECT 属性列表无效";
+
+APPLY_EVENT_ADAPTER_ERROR="输入标识符不表示属于与交易关联的 PDM 的某个对象。";
+APPLY_EVENT_ADAPTER_ERROR_ERR_REQ="输入标识符不表示属于与交易关联的 PDM 的某个对象。";
+APPLY_EVENT_ADAPTER_ERROR_ERR_ADV="请检查输入语句中的 PLMID。";
+
+COMMIT_STREAMS_ERROR="提交要存储的流时出现一些问题。";
+COMMIT_STREAMS_ERROR_ERR_REQ="无法将流从源传输到目标";
+COMMIT_STREAMS_ERROR_ERR_ADV="请检查流的适当设置或句法";

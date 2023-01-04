@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+    <Resources>
+    <ResourceDictionary Source="CATPLMUISignatureAddins.xml" />
+  </Resources>
+  <Template syp:name="CATAfrTopBarHeaders" Target="CATCAfrInclude">
+    <CATCmdHeadersList>
+      <!--PLM Bar Headers-->
+      <!-- 6W Tagger Header-->
+      <!--<CATCommandHeader ID = "CATAfrPLMBar6WHdr" ClassName = "CATPLM6WTaggerCmd" SharedLibraryName = "CATImmSearchRefine"
+               ResourceFile="CATAfrStatusBarHdr" Available = "1" Behavior="CATAfrHeaderCheck"/>-->
+      <CATCommandHeader ID = "CATAfrPLMBar6WHdr" ClassName = "CATPLM6WTaggerCmd" SharedLibraryName = "CATImmSearchRefine"
+               ResourceFile="CATAfrStatusBarHdr" Available = "1" Behavior="CATAfrHeaderCheck" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES AsyncTask=YES"/>
+      <!--User Name header-->
+      <CATCommandHeader ID = "CATAfrPLMBarUserNameHdr"
+                     ResourceFile="CATAfrStatusBarHdr" Available = "1" Visibility="0"/>      
+      
+      <!-- Me Menu Header-->
+      <!--<CATCommandHeader ID = "AfrCmpPLMBarUserHdr" 
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>-->      
+      <!--Enable these when X-Apps topbar is needed-->
+      <!-- Notification Menu Header--><!--
+      <CATCommandHeader ID = "CATAfrTopBarNotificationHdr"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>-->
+      <!-- Plus Menu Header-->
+      <CATCommandHeader ID = "CATAfrTopBarPlusHdr" 
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>            
+      
+      <!-- Share Menu Header-->
+      <CATCommandHeader ID = "CATAfrTopBarShareHdr" 
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>                  
+      
+
+      <!--Enable these when X-Apps topbar is needed-->
+      <!-- Content Menu Header--><!--
+      <CATCommandHeader ID = "CATAfrTopBarContentHdr"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+
+      --><!-- Communities Menu Header--><!--
+      <CATCommandHeader ID = "CATAfrTopBarCommunitiesHdr"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1" />-->
+                        
+      <!-- Home Header-->      
+      <!--<CATCommandHeader ID = "CATAfrPLMBarHomeHdr" ClassName = "" SharedLibraryName = ""
+                        ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES"/>-->
+
+      <!-- Help Header-->      
+      <CATCommandHeader ID = "CATAfrTopBarHelpHdr" ClassName = "CATHelpOnCurrentCommand" SharedLibraryName = "CATAfrFoundation"
+               ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+        <!--<CATAfrCommandHeaderArgs>
+          <CATCommandHeaderArg ID = "AfrCurrentArg" Value = "http://dsdoc" Mode = "In" />
+        </CATAfrCommandHeaderArgs>-->
+      </CATCommandHeader>     
+      
+      <!-- Exit Header-->      
+      <CATCommandHeader ID = "CATAfrTopBarCloudExitHdr" ClassName = "CATPLMExitCmd" SharedLibraryName = "CATPLMCloseExit"
+                        ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES"/>
+
+      <!-- Include template from CATPLMUISignatureAddins.xml-->
+      <CATCAfrInclude syp:Template="CATAfrTopBarAddinsHeaders" />
+
+      <!-- Show/NoShow header-->
+      <!-- RI - 318505
+           There is two different Command Headers for the command "Swap visible space": CATAfrStatusBarSeeShownHdr and SeeShown.
+           The only difference between them is the icon: CATAfrStatusBarSeeShownHdr is represented by the little "page corner" I_PLMCorner.png
+           in the bottom right corner of the viewer and SeeShown is represented by an icon that can be displayed inside the Action Bar.
+           To avoid trouble with Customize, the command header CATAfrStatusBarSeeShownHdr is no longer displayed in Customize.-->
+      <CATCommandHeader ID = "CATAfrStatusBarSeeShownHdr" ClassName = "CATCmdSwapShowSpace" SharedLibraryName = "CATVisCommands"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1" AvailabilityMode="CoReviewLeader=YES Offline=YES SmallScale=YES LargeScale=YES" Visibility="0"/>
+
+      <CATCommandHeader ID = "CATAfrSimulCompass3DXPPlayHdr" ClassName = "CATAfrTstCompassPlayExperiencesCmd" SharedLibraryName = "CATAfrPLMBarVID_UT"
+                        ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES"/>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayHdr" ClassName = "CATAfrCompassPlayCmd" SharedLibraryName = "CATAfrImmersiveRender"
+                        Visibility="0"
+                  ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES"/>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayStopHdr" ClassName = "CATAfrCompassStopPlayCmd" SharedLibraryName = "CATAfrImmersiveRender" Visibility="0"
+            ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES"/>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayerSpaceShortcutHdr"
+             ClassName = "CATAfrCompassPlayerSpaceShortcutCmd" 
+             SharedLibraryName = "CATAfrImmersiveRender"
+                        Visibility="1"
+             ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayerRightShortcutHdr"
+       ClassName = "CATAfrCompassPlayerRightArrowShortcutCmd"
+       SharedLibraryName = "CATAfrImmersiveRender" Visibility="1"
+       ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayerLeftShortcutHdr"
+ ClassName = "CATAfrCompassPlayerLeftArrowShortcutCmd"
+ SharedLibraryName = "CATAfrImmersiveRender" Visibility="1"
+ ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayerHomeShortcutHdr"
+ ClassName = "CATAfrCompassPlayerHomeShortcutCmd"
+ SharedLibraryName = "CATAfrImmersiveRender" Visibility="1"
+ ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayerEndShortcutHdr"
+ ClassName = "CATAfrCompassPlayerEndShortcutCmd"
+ SharedLibraryName = "CATAfrImmersiveRender" Visibility="1"
+ ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayerPlusShortcutHdr"
+ ClassName = "CATAfrCompassPlayerPlusShortcutCmd"
+ SharedLibraryName = "CATAfrImmersiveRender" Visibility="1"
+ ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrCompass3DXPPlayerMinusShortcutHdr"
+ ClassName = "CATAfrCompassPlayerMinusShortcutCmd"
+ SharedLibraryName = "CATAfrImmersiveRender" Visibility="1"
+ ResourceFile="CATAfrStatusBarHdr" AvailabilityMode="Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES">
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrDumpCAfr2"
+                        ClassName = "CATAfrDumpCAfrTstCmd"
+                        SharedLibraryName = "AfrComponentsTstServices"
+                        ResourceFile = "CATAfrStatusBarHdr"
+                        Available = "1"
+                        AvailabilityMode = "Normal=YES AsyncTask=YES CoReviewObserver=YES ReviewMode=YES CoReviewLeader=YES">
+        <CATAfrCommandHeaderArgs>
+          <CATCommandHeaderArg ID = "CAfrComponent"
+                               Value = "CATAfrSearchFieldMenu"
+                               Mode = "In" />
+        </CATAfrCommandHeaderArgs>
+      </CATCommandHeader>
+    </CATCmdHeadersList>
+
+    
+  </Template>
+
+</Styles>

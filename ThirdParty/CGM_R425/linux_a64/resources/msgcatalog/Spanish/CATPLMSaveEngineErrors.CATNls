@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic="Error del sistema.";
+SystemERR.Advice="Póngase en contacto con el servicio de asistencia técnica.";
+
+
+ServerInternalERR.Diagnostic="Error interno del servidor.";
+ServerInternalERR.Advice="Se ha realizado un guardado local para conservar los datos. Podrá restaurar la sesión si es necesario.";
+
+ServerInternalERRNoLS.Diagnostic="Error interno del servidor.";
+ServerInternalERRNoLs.Advice="No se ha podido guardar el archivo local. Vuelva a intentarlo más tarde.";
+
+VaultServerInternalERR.Diagnostic="Se han producido algunos errores durante la transferencia de secuencias.";
+VaultServerInternalERR.Advice="Se ha realizado un guardado local para conservar los datos. Podrá restaurar la sesión si es necesario.";
+
+VaultServerInternalERRNoLs.Diagnostic="Se han producido algunos errores durante la transferencia de secuencias.";
+VaultServerInternalERRNoLs.Advice="No se ha podido guardar el archivo local. Vuelva a intentarlo más tarde.";
+
+NoObjectToSaveWRN.Diagnostic="No hay ningún objeto para guardar.";
+NoObjectToSaveWRN.Advice="Asegúrese de que ha seleccionado realmente lo que ha modificado.";
+
+GenericSaveErrorWithCompo.Diagnostic="No se puede guardar el componente [/p1].";
+GenericSaveErrorWithCompo.Advice="La operación Guardar no puede tratar con el Componente /p1.\nSe recomienda reiniciar la aplicación.";
+
+PLMSaveEngineError_501.Diagnostic="No se puede realizar la operación de guardado.";
+PLMSaveEngineError_501.Advice="El componente /p1 no es un elemento afectado de la ECA actual.";
+
+ChangeLogInternalERR.Diagnostic="No se puede realizar la operación de guardado debido a los datos de ChangeLog.";
+ChangeLogInternalERR.Advice="Póngase en contacto con el soporte técnico con los últimos rastreos DebugChangeLog*.log en el directorio CATTemp.";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic="No se puede realizar la operación de guardado debido a la tabla de asignación de coexistencia.";
+SaveCoexMpgExchangeInternalERR.Advice="Póngase en contacto con el servicio de asistencia técnica.";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic="No se puede realizar la operación de guardado.";
+PLMSaveEngineError_601.Advice="La operación OfflineSave no puede tratar con el Componente /p1.\nEl componente se ha modificado fuera de un espacio de creación.";
+PLMSaveEngineError_602.Diagnostic="No se puede realizar la operación de guardado.";
+PLMSaveEngineError_602.Advice="La operación OfflineSave no puede tratar con el Componente /p1.\nComponente en una transacción de ciclo de vida.";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic="No se puede realizar la operación de guardado.";
+PLMSaveEngineError_701.Advice="La operación Guardar no puede tratar con el Componente /p1.\nEl componente se ha modificado fuera de un espacio de creación.";
+PLMSaveEngineError_702.Diagnostic="No se puede realizar la operación de guardado.";
+PLMSaveEngineError_702.Advice="La operación Guardar no puede tratar con el Componente /p1.\nComponente en una transacción de ciclo de vida.";

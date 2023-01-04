@@ -1,0 +1,36 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CVMImportExport.tst"/>
+  <attached name = "CVMGeometry_N2.tst"/>
+  <attached name = "CVMImportExport_N2.tst"/>
+  <attached name = "CVMNextGenModelingUI.tst"/>
+  <attached name = "zzPCS_CVMGeometry.tst"/>
+  <attached name = "NATPlantModeler.tst"/>
+  <attached name = "DeclarativeOperators.tst"/>
+  <prerequisite access = "Protected" name = "CATCDSUtilities"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AdvancedMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATCDS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CVMSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMModelInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "NewTopologicalObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" name = "TopologicalOperatorsLight"/>
+  <prerequisite access = "Protected" name = "AdvancedTopologicalOpeLight"/>
+  <authorize access = "Private" name = "CVMGeometry_N2.tst"/>
+  <authorize access = "Private" name = "CVMImportExport.tst"/>
+  <authorize access = "Private" name = "CVMImportExport_N2.tst"/>
+  <authorize access = "Private" name = "CVMNextGenModelingUI.tst"/>
+  <authorize access = "Private" name = "CVMTestCorruption.tst"/>
+  <authorize access = "Private" name = "zzPCS_CVMGeometry.tst"/>
+  <authorize access = "Private" name = "NextGenCVMBridge.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

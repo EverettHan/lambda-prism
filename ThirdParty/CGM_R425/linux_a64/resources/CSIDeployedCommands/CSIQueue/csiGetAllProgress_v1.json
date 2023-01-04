@@ -1,0 +1,52 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Get job progress",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "jobId",
+          "basic": "string"
+        },
+        {
+          "label": "limit",
+          "basic": "int32",
+          "desc": "maximum number of rows to return",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "offset",
+          "basic": "int32",
+          "desc": "offset of the first row to return.",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "progresses",
+          "typeArray": "Parameters"
+        },
+        {
+          "label": "timestamps",
+          "basicArray": "int32"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

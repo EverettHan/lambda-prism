@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+	<Template syp:name="AfrDashboardsPlusHeadersList" Target="CATCAfrInclude">
+		<CATCmdHeadersList>
+      <CATCommandHeader ID = "CATAfrAddDashboardHdr" ClassName = "CATAfr3DDashboardCmd" SharedLibraryName = "CATAfrFoundation" ResourceFile = "CATAfr3DDashboardHeader" Available = "1">
+        <CATAfrCommandHeaderArgs>
+          <CATCommandHeaderArg ID = "NewAction" Value = "Dashboard" Mode = "In" />
+        </CATAfrCommandHeaderArgs>
+      </CATCommandHeader>
+      <CATCommandHeader ID = "CATAfrAddDashboardTabHdr" ClassName = "CATAfr3DDashboardCmd" SharedLibraryName = "CATAfrFoundation" ResourceFile = "CATAfr3DDashboardHeader" Available = "1">
+        <CATAfrCommandHeaderArgs>
+          <CATCommandHeaderArg ID = "NewAction" Value = "DashboardTab" Mode = "In" />
+        </CATAfrCommandHeaderArgs>
+      </CATCommandHeader>
+     
+    </CATCmdHeadersList>
+	</Template>
+  <Template syp:name="AfrDashboardsPlusDashboardFrame" Target="CATAfrComponent">
+    <CATCAfrGroup>
+      <CATCmdStarter Name="CATAfrAddDashboardStr" Command="CATAfrAddDashboardHdr" />
+      <CATCmdStarter Name="CATAfrAddDashboardTabStr" Command="CATAfrAddDashboardTabHdr" />
+    </CATCAfrGroup>
+  </Template>
+
+	<Template syp:name="AfrDashboardsPlusElements" Target="CATCAfrInclude">
+    <CATCAfrInclude Condition="GetEnv(DASHBOARD_FRAME)"
+                   Template="AfrDashboardsPlusDashboardFrame" />
+	</Template>
+
+</Styles>
+

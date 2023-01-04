@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt=" 
+Per creare o eliminare tutti i collegamenti alle applicazioni sul desktop, nel menu o agli strumenti collegati a un file ambiente specifico:
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+Per creare o eliminare un collegamento personalizzato sul desktop, collegato soltanto a un file ambiente specifico:
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create o -del           : per creare o eliminare tutti i collegamenti alle applicazioni sul desktop, nel menu o agli strumenti o per creare o eliminare un collegamento personalizzato.
+  -desktop|menu|tools       : per creare o eliminare tutti i collegamenti alle applicazioni sul desktop, nel menu o agli strumenti. Il valore predefinito è desktop. Non utilizzabile in modalità personalizzata.
+  -e EnvName                : nome del file ambiente. Non utilizzabile per eliminare un collegamento personalizzato.
+  -d EnvDir                 : cartella di archiviazione del file ambiente (facoltativa). Non utilizzabile in modalità di eliminazione.
+                              se non è specificato e non si utilizza -a, il valore predefinito sarà: EnvDir  = \"/p1\"
+                              se non è specificato ma si utilizza -a global, il valore predefinito sarà: EnvDir = \"/p2\"
+                              se non è specificato ma si utilizza -a user, il valore predefinito sarà: EnvDir =  \"/p1\"
+  -a global|user            : per creare o eliminare collegamenti per tutti gli utenti o solo per l'utente corrente (facoltativo). Il valore predefinito è -a user.
+                              Specifica posizione e tipo dei collegamenti.
+                             -a global: i collegamenti saranno visibili a tutti gli utenti. Questa opzione può essere utilizzata solo da utenti con diritti di amministratore.
+                             -a user: i collegamenti saranno visibili solo all'utente corrente.
+  -name DesktopShortcutName : per creare o eliminare un collegamento personalizzato sul desktop denominato DesktopshortcutName per lanciare il comando Cmd.
+  -cmd Cmd                  : per creare un collegamento personalizzato sul desktop denominato DesktopshortcutName con destinazione = CATSTART -run Cmd env EnvName -direnv EnvDir.
+  -h                        : questa guida.";
+
+MissingOption_e="L'opzione -e è obbligatoria per assegnare il nome del file ambiente.\n";
+MissingValue_e="L'opzione -e deve essere seguita dal nome del file ambiente.\n";
+MissingValue_d="L'opzione -d deve essere seguita dal nome del percorso del file ambiente.\n";
+MissingValue_a="L'opzione -a deve essere seguita da global o user.\n";
+MissingValue_Cmd="L'opzione -Cmd deve essere seguita dal comando lanciato dal collegamento.";
+MissingValue_name="L'opzione -name deve essere seguita dal nome del collegamento sul desktop da creare.";
+MissingOption_cmd="L'opzione -name deve essere utilizzata insieme all'opzione -cmd.\n";
+MissingOption_name="L'opzione -cmd deve essere utilizzata insieme all'opzione -name.\n";
+BadOptions_menutools="I collegamenti personalizzati possono essere creati solo sul desktop.\n";
+BadOptions_TypeShortcut="Le opzioni -desktop, -tools o -menu non possono essere utilizzate insieme.\n";
+Option_aMustAdmin="Solo gli utenti con diritti di amministratore possono utilizzare l'opzione -a per creare collegamenti per tutti gli utenti.\n";
+BadValue_a="L'opzione -a deve essere seguita da global o user.\n";
+MissingOptions_createordel="Un'opzione tra -create e -del è obbligatoria.";
+MissingOption_typeshortcut="Un'opzione tra -desktop, -tools e -menu è obbligatoria.\n";
+InvalidArg="L'opzione /p1 non è ammessa.";
+BadOptions_createdel="Le opzioni -create e -del non possono essere utilizzate insieme.";
+EnvnameNotFound="Il file di ambiente /p1 non è stato trovato. Controllare l'opzione -e\n";
+CreateShortcutsIn="Creazione dei collegamenti in : \"/p1\" in corso\n";
+DeleteShortcutsIn="Eliminazione dei collegamenti in : \"/p1\" in corso\n";
+CreateShortcutsDesktop="Creazione dei collegamenti sul desktop in corso...\n";
+CreateShortcutsDesktopOK="La creazione dei collegamenti sul desktop è andata a buon fine.\n";
+CreateShortcutsDesktopKO="La creazione dei collegamenti sul desktop non è andata a buon fine.\n";
+CreateShortcutDesktop="Creazione del collegamento /p1 sul desktop in corso...\n";
+CreateShortcutDesktopOK="La creazione del collegamento sul desktop è andata a buon fine.\n";
+CreateShortcutDesktopKO="La creazione del collegamento sul desktop non è andata a buon fine.\n";
+CreateShortcutsTools="Creazione dei collegamenti agli strumenti in corso...\n";
+CreateShortcutsToolsOK="La creazione dei collegamenti agli strumenti è andata a buon fine.\n";
+CreateShortcutsToolsKO="La creazione dei collegamenti agli strumenti non è andata a buon fine.\n";
+CreateShortcutsMenu="Creazione dei collegamenti nel menu Start in corso...\n";
+CreateShortcutsMenuOK="La creazione dei collegamenti nel menu Start è andata a buon fine.\n";
+CreateShortcutsMenuKO="La creazione dei collegamenti nel menu Start non è andata a buon fine.\n";
+CreateDirFailed="Impossibile creare la directory \"/P1\".\n";
+DeleteShortcutsDesktop="Eliminazione dei collegamenti sul desktop in corso...\n";
+DeleteShortcutsDesktopOK="L'eliminazione dei collegamenti sul desktop è andata a buon fine.\n";
+DeleteShortcutsDesktopKO="L'eliminazione dei collegamenti sul desktop non è andata a buon fine.\n";
+DeleteShortcutDesktop="Eliminazione del collegamento /p1 sul desktop in corso...\n";
+DeleteShortcutDesktopOK="L'eliminazione del collegamento sul desktop è andata a buon fine.\n";
+DeleteShortcutDesktopKO="L'eliminazione del collegamento sul desktop non è andata a buon fine.\n";
+DeleteShortcutsTools="Eliminazione dei collegamenti negli strumenti in corso...\n";
+DeleteShortcutsToolsOK="L'eliminazione dei collegamenti agli strumenti è andata a buon fine.\n";
+DeleteShortcutsToolsKO="L'eliminazione dei collegamenti agli strumenti non è andata a buon fine.\n";
+DeleteShortcutsMenu="Eliminazione dei collegamenti nel menu Start in corso...\n";
+DeleteShortcutsMenuOK="L'eliminazione dei collegamenti nel menu Start è andata a buon fine.\n";
+DeleteShortcutsMenuKO="L'eliminazione dei collegamenti nel menu Start non è andata a buon fine.\n";
+DeleteShortcutfailed="Impossibile eliminare il collegamento /p1.\n";
+ShortcutNotFound="Il collegamento /p1 non è stato trovato.\n";
+DeleteShortcutOK="Il collegamento /p1 è stato eliminato.\n";
+CreateShortcutOK="Il collegamento /p1 è stato creato.\n";
+CreateShortcutKO="Impossibile creare il collegamento /p1.\n";
+BadStartInFolder_MissingPourcent="Il valore di Start nella cartella: /p1 è stato ignorato perché contiene caratteri % non bilanciati.\n";
+BadStartInFolder_BadEnv="La variabile di ambiente /p1 non è stata impostata.\n";
+BadStartInFolder_BadDir="Il valore di Start nella cartella: /p1 è stato ignorato perché il percorso non esiste.\n";
+NoModuleName="Impossibile recuperare il modulo Name.\n";
+CustomexeNotFound="Exe /p1 non trovato nella concatenazione PATH.\n";
+Customexe2NotFound="/p1.exe o /p1.bat non trovati nella concatenazione PATH.\n";
+NoShortcuts="Impossibile recuperare l'elenco dei collegamenti da creare. File /p1 non trovato. \n";
+ErrGetRootPath="Impossibile recuperare il valore della cartella per /p1.\n";
+DeleteDirKO="Impossibile eliminare la cartella /p1: /p2\n";
+InvalidDiskPathFormat="Il percorso '/p1' inizia con un'unità disco non valida.";
+InvalidUNCPathFormat="'/p1' è un percorso UNC non valido.";
+InvalidPathFormat="'/p1' è un percorso non valido.";
+rootpathnotExist="Il percorso radice '/p1' non esiste e pertanto non è possibile creare la cartella.";

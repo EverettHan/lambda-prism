@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template Target="CATDiscoverSliderWidget" syp:name="Default">
+   <!--CATVidLaySideAttach IgnoreChildrenMinimumDimensionFlag="0"-->
+     <!--CATVidLayGrid Name="MainGrid0" CellSpacing="5" CATVidLaySideAttach.IndexedConstraints="leftPercent=50 topPercent=50"  RequestedMinimumDimension="60 36" -->
+     <CATVidLayGrid Name="MainGrid0" CellSpacing="5"  >
+
+     <CATVidCtlGroupBox Name="GroupBox" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RTLB" FontWeight="1" Label="@SphereSettingsLabel">
+     <CATVidLayGrid Name="MainGrid1"  VisibleFlag="1" CellSpacing="5" GridWeight="col0=0 col1=1 " >
+     
+       
+           <CATDiscoverSliderCtlForLabel 
+               syp:name="RadiusSliderLabel" 
+               Name="RadiusSliderLabel"
+               CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB"
+               RequestedMinimumDimension="30 15"
+           />
+       
+          <CATVidCtlSlider  
+               syp:name="RadiusSlider" 
+               Name="RadiusSlide"
+               CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LRTB"  
+               TickInterval="10" 
+               TickPosition="TicksBelow" 
+               RequestedMinimumDimension="100 36" 
+             />
+      </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+    </CATVidLayGrid>
+   <!--/CATVidLaySideAttach-->
+  </Template>
+</Styles>

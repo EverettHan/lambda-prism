@@ -1,0 +1,26 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Systemfehler";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Eine neue Komponente kann nicht geklont werden.";
+PLMc_ForbiddenScenario1.Advice="Bitte speichern Sie diese Komponente und versuchen Sie danach, sie zu klonen.";
+
+PLMc_ForbiddenScenario2.Diagnostic="Dieses Klonszenario ist unzulässig : Zwischen zwei Klonaufrufen muss eine vollständige Sicherung erfolgen";
+PLMc_ForbiddenScenario2.Advice="Sichern Sie Ihre Sitzung, bevor Sie den Klon erneut aufrufen.";
+
+PLMc_ForbiddenScenario3.Diagnostic="Zurücksetzen der Konfiguration ist nicht möglich, wenn eine Auswirkung auf den Sitzungsinhalt notwendig ist.";
+PLMc_ForbiddenScenario3.Advice="Sicherstellen, dass das Klonmodul mit sicheren Absichten initialisiert wurde.";
+
+ERR_05.Diagnostic="Die Komponenten wurden dupliziert, aber die Konfiguration konnte in der duplizierten Struktur nicht zurückgesetzt werden";
+ERR_05.Advice="Vor der Auswahl, die Konfiguration zurückzusetzen, sicherstellen, dass die duplizierte Struktur verändert werden kann";
+
+ERR_06.Diagnostic="Ungültige Eingaben für Duplizierungsoperation: /p";
+ERR_06.Advice="Prüfen Sie die in den Eingaben für die Duplizierungsoperation verwendeten Attribute.";
+
+ERR_07.Diagnostic="Ungültige Eingaben für Duplizierungsoperation: /p";
+ERR_07.Advice="Prüfen Sie die in den Eingaben für die Duplizierungsoperation verwendeten Erweiterungen";
+
+ERR_08.Diagnostic="Sitzung konnte nach der Duplizierung nicht aktualisiert werden";
+ERR_08.Advice="Prüfen Sie, ob andere Fehler vorliegen, die die Aktualisierung der Sitzung während des Duplizierungsvorgangs verhindern";
+

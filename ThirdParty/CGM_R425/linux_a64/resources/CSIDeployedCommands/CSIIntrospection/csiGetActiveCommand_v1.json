@@ -1,0 +1,44 @@
+{
+  "grammarVersion": 3,
+  "desc": "Returns the definition of a command running on the node running this function",
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pool",
+          "basic": "string",
+          "desc": "Pool of the command to retrieve"
+        },
+        {
+          "label": "command",
+          "basic": "string",
+          "desc": "Name of the command to retrieve"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "desc": "Version of the command to retrieve"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "command",
+          "type": "CSIDeclarativeCommandDefinition",
+          "desc": "Definition of the retrieved command"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

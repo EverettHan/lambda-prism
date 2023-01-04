@@ -1,0 +1,25 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Cancel Job Execution",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "id",
+          "basic": "int64"
+        }
+      ]
+    },
+    "out": {}
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

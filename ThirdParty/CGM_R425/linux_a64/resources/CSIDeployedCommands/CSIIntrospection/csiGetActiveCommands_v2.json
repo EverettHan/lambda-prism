@@ -1,0 +1,38 @@
+{
+  "grammarVersion": 2,
+  "desc": "Returns active commands on the node running this command. Retrieves declarative and native commands for the current pool and declarative commands for its imported pools",
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {},
+    "answers": {}
+  },
+  "onCommandParameters": {
+    "in": {},
+    "answers": {
+      "parameters": [
+        {
+          "label": "pool",
+          "basic": "string",
+          "desc": "Name of the pool of the node containing these commands"
+        },
+        {
+          "label": "declarativeCommands",
+          "typeArray": "CSIDeclarativeCommandDefinition",
+          "desc": "List of commands uploaded on the selected node"
+        },
+        {
+          "label": "nativeCommands",
+          "typeArray": "CSIDeclarativeCommandDefinition",
+          "desc": "List of commands uploaded on the selected node"
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {},
+    "answers": {}
+  }
+}

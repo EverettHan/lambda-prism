@@ -1,0 +1,30 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationEngines"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "RenderEngine"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGCoreUtils"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Protected" comment = "AZX: indirectly used by V_ASSERT. If removed, causes link error when building with -dev option." export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <authorize access = "Private" comment = "This fw is tighly locked for now" name = "Dummy.tst"/>
+  <authorize access = "Protected" comment = "This fw is tighly locked for now" name = "Dummy.tst"/>
+  <authorize access = "Public" comment = "This fw is tighly locked for now" name = "Dummy.tst"/>
+  <authorize access = "Protected" comment = "09.12.2021 AZX/H53: Private access for Globe" name = "GlobeExposition"/>
+  <authorize access = "Protected" comment = "04.07.2017 AZX/FBJ: Private access for Globe" name = "GlobeEngine"/>
+  <authorize access = "Protected" comment = "04.07.2017 AZX/FBJ: Private access for Globe" name = "GlobeEditor"/>
+  <authorize access = "Protected" comment = "07.08.2017 AZX/XCZ: Private access for Globe" name = "CAT3DExpGlobe"/>
+  <authorize access = "Protected" comment = "04.07.2017 AZX/FBJ: Globe Test" name = "GlobeEngine.tst"/>
+  <authorize access = "Protected" comment = "04.07.2017 AZX/FBJ: Globe Test" name = "XCTStellarTranslator"/>
+  <authorize access = "Protected" comment = "15.10.21 AZX/PBI PixelStreaming" name = "TECPixelStreaming"/>
+  <authorize access = "Protected" comment = "15.10.21 AZX/PBI PixelStreaming" name = "TECPixelStreaming.tst"/>
+  <authorize access = "Protected" comment = "15.10.21 AZX/PBI PixelStreaming" name = "VisStreamCSI.tst"/>
+  <authorize access = "Protected" comment = "04.07.2017 AZX/FBJ: Visu test" name = "Visualization.tst"/>
+  <authorize access = "Protected" comment = "17.05.2019 AZX/GJT1: Visu test" name = "VisualizationNRE.tst"/>
+  <authorize access = "Protected" comment = "22.05.2019 AZX/LVA: D3D texture for Hololens" name = "IVDeviceCore"/>
+  <attached name = "Visualization.tst"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

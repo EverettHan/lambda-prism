@@ -1,0 +1,24 @@
+struct fragment_out
+{
+	float4 color	: COLOR;
+	float depth : DEPTH;
+};
+
+struct fragment_in
+{
+	float4 color	: COLOR;
+	float4 position : WPOS;
+};
+
+fragment_out main(fragment_in IN,
+                  uniform samplerRECT samplerZ)
+{
+	fragment_out OUT;	
+
+	float4 newz = texRECT(samplerZ,IN.position.xy);			
+	
+	OUT.color=IN.color;
+	OUT.depth=newz.r;
+	
+	return OUT;
+}

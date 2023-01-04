@@ -1,0 +1,35 @@
+//
+// Give the definition for the three base class PLMEntity, BusinessType and RelationType
+//
+
+NEWATTRDEF::OfflineContentForAllIRPC
+  SpAttr::V_StrongRelations        
+  SpAttr::SD
+  SpAttr::SR
+  SpAttr::AllExtensionsAtt
+  CATPLMMask::CATPLMMaskDefault
+  PhysAttr::V_discipline
+END_NEWATTRDEF::OfflineContentForAllIRPC
+
+NEWTYPEDEF::PLMEntity::#ALL#
+  AttrDefName::OfflineContentForAllIRPC
+END_NEWTYPEDEF::PLMEntity::#ALL#
+
+NEWTYPEDEF::PLMInstance::#ALL#
+  AttrDefName::OfflineContentForAllIRPC
+END_NEWTYPEDEF::PLMInstance::#ALL#
+
+NEWATTRDEF::OfflineContentForAllBPC
+  SpAttr::SD
+  SpAttr::V_StrongRelations        
+  SpAttr::AllExtensionsAtt
+  CATPLMMask::CATPLMMaskDefault
+END_NEWATTRDEF::OfflineContentForAllBPC
+
+NEWTYPEDEF::BusinessType::#ALL#
+  AttrDefName::OfflineContentForAllBPC
+END_NEWTYPEDEF::BusinessType::#ALL#
+
+NEWTYPEDEF::RelationType::#ALL#
+  AttrDefName::OfflineContentForAllBPC
+END_NEWTYPEDEF::RelationType::#ALL#

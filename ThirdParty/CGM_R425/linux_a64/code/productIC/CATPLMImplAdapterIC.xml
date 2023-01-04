@@ -1,0 +1,112 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" name = "PLMDictionaryInterfaces"/>
+  <prerequisite access = "Protected" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentification"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" name = "Mathematics"/>
+  <prerequisite access = "Protected" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMCommunication"/>
+  <prerequisite access = "Protected" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" name = "CATPLMKweDictionaryServices"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMPosBaseInterfaces"/>
+  <attached name = "CATPLMImplAdapter.tst"/>
+  <attached name = "CATPLMImplAdapterMQL.tst"/>
+  <attached name = "CATPLMServices_Unit.tst"/>
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMImplEV5.tst"/>
+  <attached name = "CATPLMImplAdapterQL.tst"/>
+  <attached name = "CATPLMIntegrationAccess.tst"/>
+  <attached name = "CATEnoviaVaultSystem.tst"/>
+  <attached name = "CATPLMIntegrationAsync.tst"/>
+  <attached name = "CATPLMCommunication.tst"/>
+  <authorize comment = "MRU = CATPLMID Persistancy " name = "CATVPMNavPLMIntegrationAccess"/>
+  <authorize comment = "YWE= Use Query persistancy " name = "CATImmWtpUI"/>
+  <authorize comment = "CATPLMID_String_Specific pour la creation des Meeting 3D. " name = "CATInstantCollabService"/>
+  <authorize comment = "XJT : For itf implementation " name = "CATPLMSessionDebug"/>
+  <authorize comment = "Pour implémentation de CATIPLMMessageStream " name = "CATPLMImplEV5Replication"/>
+  <authorize access = "Private" comment = "It implements the RunTime dependency on SSOS " name = "CATPLMAdapterProxy"/>
+  <authorize name = "CATPLMImplGRD"/>
+  <authorize access = "Private" name = "CATPLMImplDebug"/>
+  <authorize name = "CATPLMTestProviderDebug"/>
+  <authorize name = "CATPLMImplEV5"/>
+  <authorize name = "CATPLMImplIPD"/>
+  <authorize name = "CATPLMImplVPMV4"/>
+  <authorize name = "CATPLMImplSmarTeam1"/>
+  <authorize name = "CATPLMProviderDebug"/>
+  <authorize access = "Private" name = "CATPLMQLInEKLBinding"/>
+  <authorize name = "CATPLMImplMx"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterQL"/>
+  <authorize name = "CATPLMImplEV5Connectivity"/>
+  <authorize name = "CATPLMImplEV5Replication.tst"/>
+  <authorize name = "ENOVIALiveDesktopProvider"/>
+  <authorize name = "ENOVIALiveDesktopProvider.tst"/>
+  <authorize name = "CATPLMImplDataExchange"/>
+  <authorize access = "Private" name = "CATPLMPXn"/>
+  <authorize access = "Private" name = "CATPLMQL"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess"/>
+  <authorize name = "PLMCommandInfraDebug"/>
+  <authorize name = "CATPLMIdentification.tst"/>
+  <authorize name = "CATPLMImplAdapter.tst"/>
+  <authorize access = "Private" name = "CATPLMServices_Unit.tst"/>
+  <authorize comment = "HHM " name = "CATPLMClientCore.tst"/>
+  <authorize name = "CATPLMStreamDescriptor.tst"/>
+  <authorize access = "Private" name = "CATEnoviaVaultSystem.tst"/>
+  <authorize name = "CATPLMImplGRD.tst"/>
+  <authorize access = "Private" name = "CATPLMImplDebug.tst"/>
+  <authorize name = "CATPLMImplDebug_Unit.tst"/>
+  <authorize name = "CATPLMImplEV5.tst"/>
+  <authorize name = "CATPLMImplVPMV4.tst"/>
+  <authorize name = "CATPLMImplSmarTeam1.tst"/>
+  <authorize name = "CATPLMImplMx.tst"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterQL.tst"/>
+  <authorize name = "DNBPPRNavigatorBase.tst"/>
+  <authorize name = "CATFavoritesDBPersistency"/>
+  <authorize name = "CATFavoritesFilePersistency"/>
+  <authorize name = "CATFavoritesPersistency.tst"/>
+  <authorize name = "DELMHubMigration"/>
+  <authorize name = "VIA3DSAProviderImpl"/>
+  <authorize name = "CATPLMPXn.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationBase"/>
+  <authorize access = "Private" name = "CATPLMIntegration"/>
+  <authorize name = "CATPLMIntegration_Unit.tst"/>
+  <authorize name = "CAT3DXMLPlayerSetup"/>
+  <authorize name = "NextGenInstaller"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess.tst"/>
+  <authorize access = "Private" name = "CATPLMIndexAdapter"/>
+  <authorize name = "CATPLMPXn.tst"/>
+  <authorize name = "V5V6CoexistenceBatch"/>
+  <authorize name = "CATMX13DLiveImpl.tst"/>
+  <authorize name = "CATImmVPMNavigator"/>
+  <authorize name = "CATPLMIndexItfImpl"/>
+  <authorize name = "CATPLMModelerLanguageBase"/>
+  <authorize name = "CATPLMModelerLanguage.tst"/>
+  <authorize comment = "CMO  provider " name = "VXVImportExport"/>
+  <authorize access = "Private" name = "CATPLMCommunication"/>
+  <authorize access = "Protected" name = "VPMMultiProvider"/>
+  <authorize access = "Protected" name = "VPMMultiProvider.tst"/>
+  <authorize access = "Protected" name = "PLMPCSToolkit"/>
+  <authorize access = "Protected" name = "CATPLMImpactGraph"/>
+  <authorize access = "Private" name = "CATPLMImplUIDebug"/>
+  <authorize access = "Private" name = "CATPLMImplUIDebug.tst"/>
+  <authorize access = "Protected" name = "BBDV6Crawler"/>
+  <authorize access = "Protected" name = "CATPLMOpenUI"/>
+  <authorize access = "Private" name = "CATPLMIntegration.tst"/>
+  <authorize access = "Private" name = "CATPLMAdapterOdtBase.tst"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterMQL.tst"/>
+  <authorize access = "Private" name = "CATPLMAdapterDebug.tst"/>
+  <authorize access = "Protected" name = "ObjectModelerBase_PLM.tst"/>
+  <authorize access = "Protected" name = "zzPCS_ObjectModelerBase.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentification_PLM.tst"/>
+  <authorize access = "Protected" name = "CATPLMImplVPMV5.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

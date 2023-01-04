@@ -1,0 +1,17 @@
+<meta charset="UTF-8"/>
+DebugTreeIndicator= "$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
+RootNodeNoCreat= "Failed creating rootNode in CATKweDebugTreeImplDebugTreeExt constructor";
+NewNodeNoCrerat ="Failed creating new node ";
+CurrNodeNULL ="Encountered a NULL current root";
+EndFail ="Failed ending current node.Current node was not initialized";
+AddInfoFail="Failed adding info.Current node was not initialized";
+StartEndMismatch="Attempting to end an operation that does not match the one currently being executed.Probably forgot a Start or End somewhere";
+NullParent="Cannot return to a parent.Null pointer detected.This suggests that somehow you managed to bypass the Start/End mismatch check..or some other random error";
+PreReqFailedMsg="The operation does not have all its prerequisites satisfied.Check that all the fields have been filled correctly.This will stop the engine";
+SubPreReqFailed="The operation could not be started because one of its sub-operations is corrupt.Check the sub operation for more details";
+EntryPoint="Start of operation";
+OperSuspend="Operation suspended due to an error.Check that you have correctly filled all fields of the behavior";
+CycleDetect="Operation failed.A cycle has been detected in the succession of CALL behaviors";
+NegIter="Number of iterations is negative in Loop behavior.";
+
+

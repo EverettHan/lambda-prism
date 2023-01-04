@@ -1,0 +1,73 @@
+<meta charset="UTF-8"/>
+DELExecTimeConstraintModel="Execution Time Constraints";
+  DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation="Execution Time constraint relation";
+    DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType="Dependency type";
+		DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.FinishToStart = "Finish to Start";
+		DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.StartToStart = "Start to Start";
+		DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.FinishToFinish = "Finish to Finish";
+    DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_Delay="Delay";
+    DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_MaterialNeed="Material Need";
+    DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_OptionalTimeConstraint="Optional";
+    DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.PLM_ExternalID="Title";
+	DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_IsActive="Active";
+	DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_Overlap="Overlap";
+
+    DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode="Delay mode";
+      DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.MinDelay = "Minimum Delay";
+      DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.MaxDelay = "Maximum Delay";
+      DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.Synchro = "Synchronization";
+
+    DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint="Resource constraint";
+      DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.None = "None";
+      DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.SameResources = "Same resources";
+      DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.SameResourcesWithReservation = "Same resources with reservation";
+      DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.DifferentResources = "Different resources";
+
+	DELExecTimeConstraintModel.DELLmiExecTimeConstraintCategoryAbstract="Category abstract";
+		DELExecTimeConstraintModel.DELLmiExecTimeConstraintCategoryAbstract.V_ExecutionReturnCode="Reason code";
+
+	DELExecTimeConstraintModel.DELLmiExecTimeConstraintFailed="Failed";
+		DELExecTimeConstraintModel.DELLmiExecTimeConstraintFailed.V_MaximumRetries="Maximum number of retries";
+
+	DELExecTimeConstraintModel.DELLmiExecTimeConstraintAlternative="Alternative";
+
+	DELExecTimeConstraintModel.DELLmiExecTimeConstraintScrapped="Scrapped";
+  
+	DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract="Overlap Quantity abstract";
+		DELExecTimeConstraintModel.DELExecLmiTCOverlapQty_Abstract.V_OverlapQuantityMode="Overlap quantity mode";
+			DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MinQuantity="Minimum quantity";
+			DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MaxQuantity="Maximum quantity";
+			DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.Synchro="Synchronization";
+
+	DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Each="Overlap quantity Each";
+		DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Each.V_OverlapQty="Send ahead quantity";
+
+	DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Area="Overlap quantity Area";
+		DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Area.V_OverlapQty="Send ahead quantity";
+
+	DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Length="Overlap quantity Length";
+		DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Length.V_OverlapQty="Send ahead quantity";
+
+	DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Weight="Overlap quantity Weight";
+	 DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Weight.V_OverlapQty="Send ahead quantity";
+    
+	DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Volume="Overlap quantity Volume";
+		DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Volume.V_OverlapQty="Send ahead quantity";
+
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Abstract="Transfer Quantity abstract";
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Abstract.V_Order="Order";
+
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Each="Transfer quantity Each";
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Each.V_TransferQty="Transferred quantity";
+
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Area="Transfer quantity Area";
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Area.V_TransferQty="Transferred quantity";
+
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Length="Transfer quantity Length";
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Length.V_TransferQty="Transferred quantity";
+
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Weight="Transfer quantity Weight";
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Weight.V_TransferQty="Transferred quantity";
+    
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Volume="Transfer quantity Volume";
+	DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Volume.V_TransferQty="Transferred quantity";

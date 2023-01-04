@@ -1,0 +1,103 @@
+<meta charset="UTF-8"/>
+ERR_LINK_0="要求されたサイズが大きすぎるためリンクを作成できません。";
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2009
+//=================================================================
+//
+// Usage Notes:    This is the OmbLink Document Unstream Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to OMB Document Unstream
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :   
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error. 
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters : 
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms 
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use. 
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+//=================   DURING OPEN OR FBDI PROCESS  ===========================================
+
+// To be interpreted by the client open engine and the FBDI engine
+OMBLink_Missing_Catalog_Error.Diagnostic="必要なフィーチャー定義を含む以下のリソース /p が見つかりません。開いたデータが正しくない可能性があります。";
+OMBLink_Missing_Catalog_Error.Advice="インストール環境にすべての必要なリソースが含まれることを確認してください。";
+OMBLink_Missing_Catalog_Error.Request="";
+
+//=================   DURING SAVE  ===========================================
+
+ERR_LINK_1.Diagnostic="リンク テーブルを保存できません: ULRComplementaryData に不整合があります。 ";
+ERR_LINK_1.Advice="";
+ERR_LINK_1.Request="";
+
+ERR_REL_1.Request="";
+ERR_REL_1.Diagnostic="この構成要素には、同じ ID の関係が 2 つあります";
+ERR_REL_1.Advice="サポート担当者に連絡してください。\n技術詳細: 構成要素=/p1、IDRel=/p2。";
+
+ERR_REL_2.Diagnostic="この構成要素からの 1 つ以上の関係により、関係の完全性が損なわれています ";
+ERR_REL_2.Advice="";
+ERR_REL_2.Request="";
+
+CannotSaveCorruptedSRMetadata.Diagnostic="リンクが破損しているため、データを保存できません。";
+CannotSaveCorruptedSRMetadata.Advice="技術詳細: 構成要素=/p1。タイプ SR=/p2。理由=/p3。";
+CannotSaveCorruptedSRMetadata.Request="";
+
+CannotOpenCorruptedSRMetadata.Diagnostic="リンクが破損しているため、データを開けません。";
+CannotOpenCorruptedSRMetadata.Advice="技術詳細: 構成要素=/p1。タイプ SR=/p2。理由=/p3。";
+CannotOpenCorruptedSRMetadata.Request="";
+
+CannotOpenCATLnk.Request="リンクを開く";
+CannotOpenCATLnk.Diagnostic="構成要素のリンク情報を含んだファイルを開けません";
+CannotOpenCATLnk.Advice="この問題の原因は、ダウンロードの問題、ファイル システムのエラー、または関連付けられている構成要素の同時変更/削除によるものと思われます。\nセッションを閉じ、/p1 のキャッシュを消去し、操作を再試行します。\n問題が解決しない場合は、サポート担当者に連絡してください。詳細:\n/p2";
+
+CannotUnstreamLinks.Request="リンクを開く";
+CannotUnstreamLinks.Diagnostic="リンクをアンストリームできません";
+CannotUnstreamLinks.Advice="サポート担当者に連絡してください";
+
+CtxLinkInfo_01.Request="コンテキスト リンク作成の候補についての情報を取得";
+CtxLinkInfo_01.Diagnostic="入力引数には参照オブジェクトが含まれている必要があります。";
+CtxLinkInfo_01.Advice="";
+
+CtxLinkInfo_02.Request="コンテキスト リンク作成の候補についての情報を取得";
+CtxLinkInfo_02.Diagnostic="参照オブジェクトからリプレゼンテーション リファレンスを検出できません。";
+CtxLinkInfo_02.Advice="";
+
+CtxLinkInfo_03.Request="コンテキスト リンク作成の候補についての情報を取得";
+CtxLinkInfo_03.Diagnostic="選択したコンテキストにリプレゼンテーション リファレンスが見つかりません。";
+CtxLinkInfo_03.Advice="";
+
+CtxLinkInfo_04.Request="コンテキスト リンク作成の候補についての情報を取得";
+CtxLinkInfo_04.Diagnostic="プロダクトのポート上の内部リンクが無効です。";
+CtxLinkInfo_04.Advice="";
+
+CtxLinkInfo_05.Request="すでにコンテキストを持つリプレゼンテーションに対して新しいコンテキストを定義しようとしています。";
+CtxLinkInfo_05.Diagnostic="この新しいコンテキストはリプレゼンテーションの既存コンテキストの拡張でもサブオカレンスでもないため、この操作は許可されません。\n\n既存のコンテキスト: /p1\n";
+CtxLinkInfo_05.Advice="このリプレゼンテーションで、提案されたコンテキストを新しいコンテキストとして定義するには、([リンクおよび関係を編集] を使用して) 次のいずれかを実行します。\n- このコンテキスト リプレゼンテーションを分離します。現在の関連性は失われます。\n- このリプレゼンテーションのコンテキストを新しいコンテキストに変更します。現在の関連性は保持されます。";
+
+CtxLinkInfo_06.Request="すでにコンテキストを持つリプレゼンテーションに対して新しいコンテキストを定義しようとしています。";
+CtxLinkInfo_06.Diagnostic="この操作は許可されません。リプレゼンテーションの既存のコンテキストがあり、現在壊れているため、提案されている新しいコンテキストと比較することは不可能です。\n";
+CtxLinkInfo_06.Advice="このリプレゼンテーションで、提案されたコンテキストを新しいコンテキストとして定義するには、([リンクおよび関係を編集] を使用して) 次のいずれかを実行します。\n リプレゼンテーションの現在のコンテキストを修復し、やり直してください。\n- このコンテキスト リプレゼンテーションを分離します。現在の関連性は失われます。\n- このリプレゼンテーションのコンテキストを新しいコンテキストに変更します。現在の関連性は保持されます。";

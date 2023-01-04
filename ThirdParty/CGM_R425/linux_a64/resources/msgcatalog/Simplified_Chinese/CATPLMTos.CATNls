@@ -1,0 +1,53 @@
+<meta charset="UTF-8"/>
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Request="在执行可逆交易期间返回了无效代码。";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Diagnostic="/P1事务在执行期间生成了无效返回代码。系统将中止事务，并恢复先前会话。";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Advice="针对完整方案的会话服务 (TOS)，请联系支持人员。";
+
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Request="回滚可逆交易时出现严重故障。";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Diagnostic="/P1可逆事务已失败，并且未完成回滚。系统已中止会话，因为内容不再受控制。";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Advice="针对完整方案的会话服务 (TOS)，请联系支持人员。";
+
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Request="缺少牢固关系。";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Diagnostic="/P1事务已检测到缺少所有权或实例参考关系。系统将中止事务，并恢复先前会话。";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Advice="针对完整方案的会话服务 (TOS)，请联系支持人员。";
+
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Request="网络循环性。";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Diagnostic="/P1事务已检测到循环性。系统将中止事务，并恢复先前会话。";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Advice="针对完整方案的会话服务 (TOS)，请联系支持人员。";
+
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Request="并发导入交易仍在运行。";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Diagnostic="/P1导入事务是互斥的。拒绝并发或互连事务。";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Advice="针对完整方案的会话服务 (TOS)，请联系支持人员。";
+
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Request="仍已加载等效次版本。";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Diagnostic="/P1事务检测到 MajorId 冲突。已中止事务，并已恢复上一个会话。";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Advice="针对完整方案的会话服务 (TOS)，请联系支持人员。";
+
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Request="加载。";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Diagnostic="有些组件无法加载，因为其流丢失或无效。";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Advice="检查其他错误。";
+
+CATPLMUnexpectedExceptionRaised_ERR_105.Request="已引发意外异常（强烈建议您关闭会话）。";
+CATPLMUnexpectedExceptionRaised_ERR_105.Diagnostic="已捕获 /P1，并且再次引发意外异常。";
+CATPLMUnexpectedExceptionRaised_ERR_105.Advice="强烈建议您关闭会话且不保存工作，然后重新启动新会话。";
+
+CATPLMTosDataCorruption_ERR_107.Request="数据已损坏。";
+CATPLMTosDataCorruption_ERR_107.Diagnostic="内部检测已识别出远程数据损坏。";
+CATPLMTosDataCorruption_ERR_107.Advice="针对完整方案的会话服务 (TOS)，请联系支持人员。";
+
+CATPLMTosStreamFileAccessRead_ERR_108.Request="文件访问/读取失败。";
+CATPLMTosStreamFileAccessRead_ERR_108.Diagnostic="访问/读取 /P1失败。";
+CATPLMTosStreamFileAccessRead_ERR_108.Advice="检查指定的文件名（或二进制/ASCII FTP 协议）。";
+
+CATPLMTosStreamFileAccessWrite_ERR_109.Request="文件访问/写入失败。";
+CATPLMTosStreamFileAccessWrite_ERR_109.Diagnostic="访问/写入 /P1失败。";
+CATPLMTosStreamFileAccessWrite_ERR_109.Advice="检查与指定文件名关联的访问控制以及磁盘是否已满。";
+
+CATPLMTosReadStreamInvalidData_ERR_111="无法读取流：数据格式无效。";
+
+CATPLMTosReadStreamImpossibleAccess_ERR_112="无法读取流：无法访问文件。";
+
+CATPLMTosReadOnlyStreamInvalidWrite_ERR_114="流只读，不可写。";
+
+CATPLMTosWriteOnlyStreamInvalidRead_ERR_115="流只写，不可读回。";
+

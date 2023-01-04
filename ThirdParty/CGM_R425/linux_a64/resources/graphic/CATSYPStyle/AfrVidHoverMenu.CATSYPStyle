@@ -1,0 +1,513 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidHoverMenu"  >
+    <CATVidLayLayer>
+
+      <!-- Presenter -->
+      <CATVidLayLayer MouseEnter="@HandlePresenterMouseEnter" MouseLeave="@HandlePresenterMouseLeave">
+        <CATVidGPSquare UseManipulatorFlag="1" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1"/>
+        <CATVidCtl PresenterContent="@PresenterIconContent" syp:name="Presenter"/>
+      </CATVidLayLayer>
+      <!-- / Presenter -->
+
+      <!-- Popup -->
+      <CATVidCtlPopup syp:name="Popup" AutoHideFlag="0" VisibleFlag="@PopupVisibleFlag Mode=TwoWays" SnapSide="@IconBoxDirection" SnapAlignment="@IconBoxSnapAlignment" ConsumeMouseEventFlag="0" PopupCompactFlag="1" SnapFlag="1">
+        <CATAfrVidHoverMenuContainer syp:name="RootContainer" MouseEnter="@HandlePopupContentMouseEnter" MouseLeave="@HandlePopupContentMouseLeave">
+        </CATAfrVidHoverMenuContainer>
+      </CATVidCtlPopup>
+      <!-- / Popup -->
+
+    </CATVidLayLayer>
+  </Template>
+
+  <Template syp:name="Default_old" Target="CATAfrVidHoverMenu"  >
+    <CATVidLayLayer>
+
+      <!-- Presenter -->
+      <CATVidLayLayer MouseEnter="@HandlePresenterMouseEnter" MouseLeave="@HandlePresenterMouseLeave">
+        <CATVidGPSquare UseManipulatorFlag="1" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1"/>
+        <CATVidCtl PresenterContent="@PresenterIconContent" syp:name="Presenter"/>
+      </CATVidLayLayer>
+      <!-- / Presenter -->
+
+      <!-- Popup -->
+      <CATVidCtlPopup syp:name="Popup" AutoHideFlag="0" VisibleFlag="@PopupVisibleFlag Mode=TwoWays" SnapSide="@IconBoxDirection" SnapAlignment="@IconBoxSnapAlignment" ConsumeMouseEventFlag="0" PopupCompactFlag="1" SnapFlag="1">
+        <CATVidLayLayer syp:name="RootContainer" MouseEnter="@HandlePopupContentMouseEnter" MouseLeave="@HandlePopupContentMouseLeave">
+          <CATVidGPSquare Name="PopupBackground" UseManipulatorFlag="1" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1"/>
+          <CATVidLayGrid GridWeight="col1=1 row1=1">
+            <CATVidLayLayer syp:name="CommunCollection" Name="@Name" CATVidLayGrid.IndexedConstraints="x=1 y=1">
+              <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder" StackAttachmentAppendPolicy="StretchAttachmentPolicy"  />
+            </CATVidLayLayer>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+      <!-- / Popup -->
+
+    </CATVidLayLayer>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Rounded" Target="CATAfrVidHoverMenu"  >
+    <CATVidLayLayer>
+
+      <!-- Presenter -->
+      <CATVidLayLayer MouseEnter="@HandlePresenterMouseEnter" MouseLeave="@HandlePresenterMouseLeave">
+        <CATVidLayLayer>
+          <CATVidLayLayer syp:name="TopBackground">
+            <CATVidGPNinePatchSquare syp:name="Background" UseManipulatorFlag="1" VisibleFlag="0" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1" 
+                                     ScalableAreaBorder="3" Texture="PLMBar/IP_TopBarMenuButtonBackground.png" TextureAlpha="230"/>
+          </CATVidLayLayer>
+        </CATVidLayLayer>
+
+
+        <CATVidCtl PresenterContent="@PresenterIconContent" syp:name="Presenter"/>
+      </CATVidLayLayer>
+      <!-- / Presenter -->
+
+        <!-- Popup -->
+      <CATVidCtlPopup syp:name="Popup" AutoHideFlag="0" VisibleFlag="@PopupVisibleFlag Mode=TwoWays" SnapSide="@IconBoxDirection" SnapAlignment="@IconBoxSnapAlignment" ConsumeMouseEventFlag="0" PopupCompactFlag="1" SnapFlag="1">
+        <CATAfrVidHoverMenuContainer syp:name="RootContainer" ExtractedFlag="@ExtractedFlag" MouseEnter="@HandlePopupContentMouseEnter" MouseLeave="@HandlePopupContentMouseLeave">
+        </CATAfrVidHoverMenuContainer>
+      </CATVidCtlPopup>
+      <!-- / Popup -->
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="HasItems" Value="1">
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="PopupBackground" Value="1"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBackground" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="HasItems" Value="0">
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="PopupBackground" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBackground" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Background" Value="255"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Background" Value="230"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                           Hover Menu only on Click                                                       -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Rounded_OnClick" Target="CATAfrVidHoverMenu"  >
+    <CATVidLayLayer>
+
+      <!-- Presenter -->
+      <CATVidLayLayer MouseLeave="@HandlePresenterMouseLeave">
+        <CATVidLayLayer>
+          <CATVidLayLayer syp:name="TopBackground">
+            <CATVidGPSquare syp:name="Background" UseManipulatorFlag="1" VisibleFlag="0" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1"
+                                      Color="255 255 255 230" />
+          </CATVidLayLayer>
+        </CATVidLayLayer>
+
+
+        <CATVidCtl PresenterContent="@PresenterIconContent" syp:name="Presenter"/>
+      </CATVidLayLayer>
+      <!-- / Presenter -->
+
+      <!-- Popup -->
+      <CATVidCtlPopup syp:name="Popup" Name="Popup" AutoHideFlag="0" VisibleFlag="@PopupVisibleFlag Mode=TwoWays" SnapSide="@IconBoxDirection" SnapAlignment="@IconBoxSnapAlignment" ConsumeMouseEventFlag="0" PopupCompactFlag="1" SnapFlag="1">
+        <CATAfrVidHoverMenuContainer syp:name="RootContainer" ContainerLifeCyclePolicy="@ContainerLifeCyclePolicy" RequestedMinimumDimension="@ContentDimension" ExtractedFlag="@ExtractedFlag" MouseEnter="@HandlePopupContentMouseEnter" MouseLeave="@HandlePopupContentMouseLeave">
+        </CATAfrVidHoverMenuContainer>
+      </CATVidCtlPopup>
+      <!-- / Popup -->
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="HasItems" Value="1">
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="PopupBackground" Value="1"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBackground" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="HasItems" Value="0">
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="PopupBackground" Value="0"/>-->
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBackground" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="1">
+        <CATSYPSetter Property="Color" TargetName="Background" Value="255 255 255 255"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="0">
+        <CATSYPSetter Property="Color" TargetName="Background" Value="255 255 255 230"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Rounded_old" Target="CATAfrVidHoverMenu"  >
+    <CATVidLayLayer>
+
+      <!-- Presenter -->
+      <CATVidLayLayer MouseEnter="@HandlePresenterMouseEnter" MouseLeave="@HandlePresenterMouseLeave">
+        <CATVidLayLayer>
+          <CATVidLayLayer syp:name="TopBackground">
+            <CATVidGPNinePatchSquare syp:name="Background" UseManipulatorFlag="1" VisibleFlag="@PopupVisibleFlag" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1" 
+                                     ScalableAreaBorder="3" Texture="PLMBar/IP_TopBarMenuButtonBackground.png" TextureAlpha="230"/>
+          </CATVidLayLayer>
+        </CATVidLayLayer>
+
+
+        <CATVidCtl PresenterContent="@PresenterIconContent" syp:name="Presenter"/>
+      </CATVidLayLayer>
+      <!-- / Presenter -->
+
+      <!-- Popup -->
+      <!--<CATVidCtlPopup syp:name="Popup" AutoHideFlag="0" VisibleFlag="@PopupVisibleFlag Mode=TwoWays" SnapSide="@IconBoxDirection" SnapAlignment="@IconBoxSnapAlignment"  ConsumeMouseEventFlag="0" PopupCompactFlag="1" SnapFlag="1">
+        <CATVidLayLayer syp:name="PopupContent" MouseEnter="@HandlePopupContentMouseEnter" MouseLeave="@HandlePopupContentMouseLeave">
+          <CATVidLayLayer>
+            <CATVidLayLayer  syp:name="PopupBackground" >
+              <CATVidGPSquare syp:name="PopupBackgroundNoExtract" Color="239 239 239 255" UseManipulatorFlag="0" TextureAlpha="230"/>
+              <CATVidGPNinePatchSquare syp:name="PopupBackgroundExtract" VisibleFlag="0" ScalableAreaBorder="10 6 15 15" RequestedMinimumDimension="105 1" TextureAlpha="230" Texture="signature-pop-over.png" UseManipulatorFlag="0"/>
+            </CATVidLayLayer>
+          </CATVidLayLayer>
+     
+        <CATVidLayGrid GridWeight="row1=1 col1=1">
+            <CATVidLayGrid  GridWeight="col1=1 row1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+              <CATVidLayLayer syp:name="CommunCollection" Name="@Name" CATVidLayGrid.IndexedConstraints="x=1 y=1">
+                <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder" StackAttachmentAppendPolicy="StretchAttachmentPolicy"  />
+              </CATVidLayLayer>
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>-->
+      <!-- / Popup -->
+      <!-- Popup -->
+      <CATVidCtlPopup syp:name="Popup" AutoHideFlag="0" VisibleFlag="@PopupVisibleFlag Mode=TwoWays" SnapSide="@IconBoxDirection" SnapAlignment="@IconBoxSnapAlignment" ConsumeMouseEventFlag="0" PopupCompactFlag="1" SnapFlag="1" >
+        <CATVidLayLayer syp:name="RootContainer" MouseEnter="@HandlePopupContentMouseEnter" MouseLeave="@HandlePopupContentMouseLeave">
+          <CATVidGPSquare  Name="PopupBackground" UseManipulatorFlag="1" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1"/>
+
+          <CATVidLayGrid GridWeight="col1=1 row1=1">
+            <CATVidLayLayer syp:name="CommunCollection" Name="@Name" CATVidLayGrid.IndexedConstraints="x=1 y=1">
+              <CATVidLayLayer>
+                <CATVidLayLayer  syp:name="PopupBackground" >
+                  <CATVidGPSquare syp:name="PopupBackgroundNoExtract" Color="239 239 239 255" UseManipulatorFlag="0" TextureAlpha="230"/>
+                  <CATVidGPNinePatchSquare syp:name="PopupBackgroundExtract" VisibleFlag="0" ScalableAreaBorder="10 6 15 15" TextureAlpha="230" Texture="signature-pop-over.png" UseManipulatorFlag="0"/>
+                </CATVidLayLayer>
+              </CATVidLayLayer>
+              <CATVidLayGrid  GridWeight="col1=1 row1=1">
+                <CATVidSpacer syp:name="TLSpace" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+
+                <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder"
+                                StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"  />
+                <CATVidSpacer syp:name="BRSpace"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" />
+
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+      <!-- / Popup -->
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="HasItems" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackground" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBackground" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="HasItems" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackground" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="TopBackground" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundNoExtract" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundExtract" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="Background" Value="255"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TLSpace" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BRSpace" Value="0 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundNoExtract" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundExtract" Value="1"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="Background" Value="230"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TLSpace" Value="10 10"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BRSpace" Value="0 15"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+<!--*************************************************************************************************************************-->
+  <!--                                           Hover Containaer       (old version)                                                 -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidHoverMenuContainer" >
+    <CATVidLayLayer syp:name="PopupContent" >
+      <CATVidGPSquare Name="PopupBackground" UseManipulatorFlag="1" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1"/>
+      <CATVidLayLayer  syp:name="PopupBackground" >
+        <CATVidGPSquare syp:name="PopupBackgroundNoExtract" Color="255 255 255 255" UseManipulatorFlag="0" TextureAlpha="230"/>
+        <CATVidGPNinePatchSquare syp:name="PopupBackgroundExtract" VisibleFlag="0" ScalableAreaBorder="10 6 15 15" TextureAlpha="255" Texture="signature-pop-over.png" UseManipulatorFlag="0"/>
+      </CATVidLayLayer>
+      <CATVidLayGrid  GridWeight="col1=1 row1=1">
+        <CATVidSpacer syp:name="TLSpace" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer RequestedMinimumDimension="110 1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" >
+          <CATVidLayStack syp:name="Collection" Orientation="Vertical" CellBorder="@CellBorder"
+                        StackAttachmentAppendPolicy="StretchAttachmentPolicy" />
+          <CATVidLayLayer syp:name="SharedLayer" />
+        </CATVidLayLayer>
+        
+        <CATVidSpacer syp:name="BRSpace"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" />
+
+      </CATVidLayGrid>
+      
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ExtractedFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundNoExtract" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundExtract" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TLSpace" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BRSpace" Value="0 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundNoExtract" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundExtract" Value="1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TLSpace" Value="10 10"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BRSpace" Value="0 15"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           Hover Containaer                                                       -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidHoverMenuContainer" syp:version="1">
+    <CATVidLayLayer syp:name="PopupContent" >
+      <CATVidGPSquare Name="PopupBackground" UseManipulatorFlag="1" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1"/>
+
+      <CATVidLayLayer  syp:name="PopupBackground" >
+        <CATVidGPSquare syp:name="PopupBackgroundNoExtract" Color="255 255 255 255" UseManipulatorFlag="0" TextureAlpha="230"/>
+        <CATVidGPNinePatchSquare syp:name="PopupBackgroundExtract" VisibleFlag="0" ScalableAreaBorder="10 6 15 15" TextureAlpha="255" Texture="dropdown_body.png" UseManipulatorFlag="0"/>
+      </CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1">
+        <CATVidCtlButton Name="TopScrollButton"
+                         syp:Template="BlueButton"
+                         syp:name="TopScrollButton"
+                         Icon="Top_Scroll_Icon.png"
+                         GiveFocusOnDragFlag="1"
+                         AcceptFocusOnDropFlag="1"
+                         BackgroundColor="255 255 255 230"
+                         IconDimension="44 44"
+                         RequestedMinimumDimension="30 30"
+                         LayoutWhenUnvisibleFlag="0"
+                         VisibleFlag="0"
+                         ClickMode="0"
+                         MouseEnter="@HandleEnterTop"
+                         MouseLeave="@HandleLeaveTop"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                         />
+        <CATVidCtlScrollableArea syp:name="Scrollable" HScrollbarPolicy="AlwaysHidden" HStretchPolicy="NoStretchFit"
+                                     VStretchPolicy="NoStretchFit" RequestedMinimumDimension="110 1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+          <CATVidLayGrid  GridWeight="col1=1 row1=1">
+            <CATVidSpacer syp:name="TLSpace" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidLayLayer RequestedMinimumDimension="110 1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" >
+              <CATVidLayStack syp:name="Collection" Orientation="Vertical" CellBorder="@CellBorder"
+                            StackAttachmentAppendPolicy="StretchAttachmentPolicy" />
+              <CATVidLayLayer syp:name="SharedLayer" />
+            </CATVidLayLayer>
+
+            <CATVidSpacer syp:name="BRSpace"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" />
+
+          </CATVidLayGrid>
+
+
+
+        </CATVidCtlScrollableArea>
+        <CATVidLayGrid syp:name="BottomScrollButton" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="30 30">
+          <CATVidGPSquare Color="226 227 228 255" RequestedMinimumDimension="1 1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtlButton Name="BottomScrollButton"
+                         syp:Template="BlueButton"
+                         
+                         Icon="Bottom_Scroll_Icon.png"
+                         GiveFocusOnDragFlag="1"
+                         AcceptFocusOnDropFlag="1"
+                         BackgroundColor="255 255 255 230"
+                         IconDimension="44 44"
+                         RequestedMinimumDimension="30 30"
+                         
+                         ClickMode="0"
+                         MouseEnter="@HandleEnterBottom"
+                         MouseLeave="@HandleLeaveBottom"
+                         
+                         CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"
+                         />
+      </CATVidLayGrid>
+      
+      </CATVidLayGrid>
+      
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ExtractedFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundNoExtract" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundExtract" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TLSpace" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BRSpace" Value="0 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtractedFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundNoExtract" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="PopupBackgroundExtract" Value="1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TLSpace" Value="9 0 "/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BRSpace" Value="5 5"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           Hover Sub Container  [Default]                                                     -->
+  <!--  The view of a sub container is just a button                                                       -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidHoverSubMenuContainer" >
+    <CATVidCtlButton syp:name="HeaderButton" syp:Template="TopBarSubMenuLabelRightArrow"
+                            Name="ShowButton"
+                            IconDimension="25 25"
+                            BackgroundColor="255 255 255 230"
+                            ForegroundColor="61 61 61 255"
+                            RequestedMinimumDimension="110 29"
+                GiveFocusOnDragFlag="1"
+                            AcceptFocusOnDropFlag="1"
+                            Icon="@Icon"
+                            Label="@Title"
+                            Tooltip="@Tooltip"
+                            CropPolicy="CropWithDots"
+                            KeyboardManipulationFlag="1"
+                            Click="@HandleShow"/>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                           Hover Sub Container [ActivableHeader]                                                      -->
+  <!--  The view of a sub container is two button : one for the header title and another to shown the content                                                     -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="ActivableHeader" Target="CATAfrVidHoverSubMenuContainer" >
+    <CATVidLayLayer syp:name="MainLayer">
+      <CATVidLayGrid GridWeight="col0=1" >
+        <CATAfrVidCtlActionButton Name="ShowButton"
+               syp:name="HeaderButton"
+               syp:Template="PLMBarMenuButton"
+               ClickMode="0"
+               CropPolicy="CropWithDots"
+               GiveFocusOnDragFlag="1"
+               AcceptFocusOnDropFlag="1"
+               IconDimension="25 25"
+               BackgroundColor="255 255 255 230"
+               ForegroundColor="61 61 61 255"
+               RequestedMinimumDimension="110 29"
+               ActivatedFlag="@HeaderActivatedFlag Mode=TwoWays"
+               EnableFlag="@HeaderEnableFlag"
+               Tooltip="@Tooltip"
+               Icon="@Icon"
+               Label="@Title"
+               KeyboardManipulationFlag="1"
+               LayoutWhenUnvisibleFlag="0"
+               CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                     /><!--Click="@HandleHeaderClick"-->
+        <CATVidGPSquare RequestedMinimumDimension="1 1" Color="226 228 227 255" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidCtlButton Name="SplitButton"
+                         syp:Template="BlueButton"
+                         syp:name="SplitButton"
+                         Icon="Next_Icon.png"
+                         GiveFocusOnDragFlag="1"
+                         AcceptFocusOnDropFlag="1"
+                         BackgroundColor="255 255 255 230"
+                         IconDimension="30 30"
+                         RequestedMinimumDimension="30 30"
+                         ClickMode="0"
+                         Click="@HandleShow"
+                         CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="MainLayer">
+        <CATSYPSetter TargetName="HeaderButton" Property="BackgroundColor" Value="241 241 241 155"/>
+        <CATSYPSetter TargetName="SplitButton" Property="BackgroundColor" Value="241 241 241 155"/><!--13-->
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="MainLayer">
+        <CATSYPSetter TargetName="HeaderButton" Property="BackgroundColor" Value="255 255 255 230"/>
+        <CATSYPSetter TargetName="SplitButton" Property="BackgroundColor" Value="255 255 255 230"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                           Hover Sub Container [HeaderWithIcon]                                                      -->
+  <!--  The view of a sub container is one button with an overrideable icon                                                    -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="HeaderWithIcon" Target="CATAfrVidHoverSubMenuContainer" >
+    <CATVidLayLayer syp:name="MainLayer">
+      <CATVidGPSquare syp:name="Background" Color="255 255 255 230" />
+      <CATVidLayGrid GridWeight="col1=1" >
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+       
+          <CATVidCtl syp:name="IconPresenter" 
+                   />
+          <CATVidGPSquare Name="PickZone" Texture="@Icon" RequestedMinimumDimension="@IconDimension" UseManipulatorFlag="1" PickFlag="1" Release="@HandleShow"/>
+        </CATVidLayLayer>
+        
+        
+        <CATVidCtlButton syp:name="HeaderButton" syp:Template="TopBarSubMenuLabelRightArrow"
+                        Name="ShowButton"
+                        IconDimension="25 25"
+                        BackgroundColor="255 255 255 230"
+                        ForegroundColor="61 61 61 255"
+                        RequestedMinimumDimension="110 29"
+                        GiveFocusOnDragFlag="1"
+                        AcceptFocusOnDropFlag="1"
+                        Icon="@Icon"
+                        Label="@Title"
+                        Tooltip="@Tooltip"
+                        CropPolicy="CropWithDots"
+                        KeyboardManipulationFlag="1"
+                        Click="@HandleShow"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="MainLayer">
+        <CATSYPSetter TargetName="HeaderButton" Property="BackgroundColor" Value="241 241 241 230"/>
+        <CATSYPSetter TargetName="Background" Property="Color" Value="241 241 241 230"/>
+        <!--13-->
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="MainLayer">
+        <CATSYPSetter TargetName="HeaderButton" Property="BackgroundColor" Value="255 255 255 230"/>
+        <CATSYPSetter TargetName="Background" Property="Color" Value="255 255 255 230"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                         Content Hover Sub Container  [Default]                                              -->
+  <!--  The content of a sub container : a back button and a collection                                                      -->
+  <!--*************************************************************************************************************************-->
+  <DataTemplate syp:name="ContentHoverMenuSubContainer">
+    <CATVidLayLayer>
+      <CATVidGPSquare Name="BackgroundCommunLayer" Color="255 255 255 230" UseManipulatorFlag="1" PickFlag="1"/>
+      <CATVidLayGrid  GridWeight="col0=1 row2=1">
+        <CATVidCtlButton syp:name="BackButton"
+        Name="BackButton"
+        syp:Template="TopBarSubMenuLabelLeftArrow"
+        CheckMode="0"
+        ClickMode="0"
+        CropPolicy="CropWithDots"
+        IconDimension="13 13"
+        BackgroundColor="255 255 255 230"
+        ForegroundColor="61 61 61 255"
+        GiveFocusOnDragFlag="1"
+        AcceptFocusOnDropFlag="1"
+        RequestedMinimumDimension="@MinItemDimension"
+        Label="@Title"
+        KeyboardManipulationFlag="1"
+        LayoutWhenUnvisibleFlag="0"
+        Click="@HandleBack" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                   />
+        <CATVidGPSquare Color="180 182 186 255" RequestedMinimumDimension="1 2" CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 attach=RLTB"/>
+        <CATVidLayStack syp:name="Collection" ChildrenLifeCyclePolicy="@ContainerLifeCyclePolicy" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </DataTemplate>
+</Styles>

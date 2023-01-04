@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+
+    <title>CATVidCtlCodeEditor</title>
+
+    <link rel="stylesheet" href="../external_lib/CodeMirrorPackage2/lib/codemirror.css">
+    <link rel="stylesheet" href="../external_lib/CodeMirrorPackage2/doc/docs.css">
+    
+    <script src="../external_lib/CodeMirrorPackage2/lib/codemirror.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/lib/util/runmode.js"></script>
+    <!--script src="../external_lib/CodeMirrorPackage2/lib/util/search.js"></script-->
+    <!-- search customized version for V6 integration -->
+    <script src="CATVidCtlCodeEditorSearch.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/lib/util/searchcursor.js"></script>
+
+    <!-- temp to test find, to replace with wid search bar -->
+    <script src="../external_lib/CodeMirrorPackage2/lib/util/dialog.js"></script>
+    <link rel="stylesheet" href="../external_lib/CodeMirrorPackage2/lib/util/dialog.css">
+
+    <script src="../external_lib/CodeMirrorPackage2/mode/css/css.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/mode/htmlembedded/htmlembedded.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/mode/javascript/javascript.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/mode/xml/xml.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/mode/clike/clike.js"></script>
+    <script src="../external_lib/CodeMirrorPackage2/mode/python/python.js"></script>
+
+    <link rel="stylesheet" href="CATVidCtlCodeEditor.css">
+    <script src="CodeMirror.webruntime.js"></script>
+</head>
+  
+<body>
+ 
+<div id="window_input">
+    <form>
+        <textarea id="textarea_input" name="CATVidCtlCodeEditorTextArea"></textarea>
+    </form>
+</div>
+
+<script src="CATVidCtlCodeEditor.js"></script>
+
+</body>
+</html>

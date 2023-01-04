@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <!-- ======================================================================-->
+  <!-- ===============            ContextBarContextMENU         =======================-->
+  <!-- ======================================================================-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrContextMenu">
+    <CATAfrSYPModelViewMetaData syp:name="MetaData" RegisteredFlag="1" NameBis="@Name" SypNamePosition="ContainerForAction">
+      <CATAfrVidActionGroup WillShowActions="@HandleEventMenuDeployed"
+                      syp:name="Container"/>
+      <!--<CATAfrVidIconBoxCtl  syp:Template="SignatureContextMenu" 
+                            Name="@NameBis ElementName=MetaData" 
+                            Orientation="Vertical" 
+                            syp:name="Container"
+                            PopupVisibleFlag="@ContentVisibleFlag Mode=TwoWays" 
+                            VisibleArrowFlag="0"
+                            UsePresenterIconContentFlag="0"
+                            IconBoxHidePolicy="AutoHide"
+                            IconBoxShowPolicy="ShowOnClick" 
+                            ForceSnapFlag="0"
+                            IconBoxDirection="Bottom" 
+                            PopupCenteredFlag="0"
+                            PopupShown="@HandleEventMenuDeployed"  
+                            PresenterClick="@HandleActionEvent" 
+                            PopupHidden="@HandleEventMenuHidden"
+                            InitialOffset="-7 0">
+        <CATVidCtl syp:name="SmartContainer"  >
+            <CATVidCtlButton syp:Template="Toolbar" 
+                             Name="@Name"
+                             CheckMode="1"
+                             IconDimension="8 8"
+                             ForegroundColor="255 255 255 255"
+                             ClickMode="0"
+                             CheckState="@ContentVisibleFlag"
+                             UnderlineFlag="@HasChildsFlag"
+                             Icon="AfrToolbarButtonArrow.png"
+                             Tooltip=""
+                             Click="@HandleShowEvent ElementName=Container"
+                             RequestedMinimumDimension="0 16"/>
+        </CATVidCtl>
+      </CATAfrVidIconBoxCtl>-->
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+  
+  
+  <!--<DataTemplate syp:name="CATCAfrMenu_AfrContextBarContextSubMenu">
+    <CATAfrSYPModelViewMetaData syp:name="MetaData" RegisteredFlag="1" NameBis="@Name">
+      <CATAfrVidIconBoxCtl  syp:Template="TestCtxBarSubMenu"  
+                            Name="@NameBis ElementName=MetaData" 
+                            Orientation="Vertical" 
+                            syp:name="Container"
+                            PopupVisibleFlag="@ContentVisibleFlag Mode=TwoWays" 
+                            VisibleArrowFlag="0"
+                            UsePresenterIconContentFlag="0"
+                            IconBoxHidePolicy="AutoHide"
+                            IconBoxShowPolicy="ShowOnClick" 
+                            ForceSnapFlag="1"
+                            IconBoxDirection="Right" 
+                            PopupCenteredFlag="0"
+                            PopupShown="@HandleEventMenuDeployed"  
+                            PresenterClick="@HandleActionEvent" 
+                            PopupHidden="@HandleEventMenuHidden">
+        <CATVidCtl syp:name="SmartContainer"  >
+            <CATVidCtlButton syp:Template="ButtonContextBarContextSubMenu" 
+                             Name="@Name"
+                             CheckMode="1"
+                             IconDimension="22 22"
+                             ForegroundColor="255 255 255 255"
+                             ClickMode="0"
+                             CheckState="@ContentVisibleFlag"
+                             Icon="Sub_Menu_Icon_Off.png"
+                             Tooltip="@Tooltip"
+                             Label="@Title"
+                             Click="@HandleShowEvent ElementName=Container"
+                             GiveFocusOnDragFlag="1"
+                             AcceptFocusOnDropFlag="1"
+                             RequestedMinimumDimension="0 34"/>
+        </CATVidCtl>
+      </CATAfrVidIconBoxCtl>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>-->
+
+  <Template syp:name="AfrContextBarContextSubMenu" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData syp:name="MetaData" RegisteredFlag="1" NameBis="@Name" IconBoxFlag="1">
+      <CATAfrVidIconBoxCtl  syp:Template="TestCtxBarSubMenu"
+                            Name="@NameBis ElementName=MetaData"
+                            Orientation="Vertical"
+                            syp:name="Container"
+                            PopupVisibleFlag="@WidgetsPanelVisibility Mode=TwoWays"
+                            VisibleArrowFlag="0"
+                            UsePresenterIconContentFlag="0"
+                            IconBoxHidePolicy="AutoHide"
+                            IconBoxShowPolicy="ShowOnClick"
+                            ForceSnapFlag="1"
+                            IconBoxDirection="Right"
+                            PopupCenteredFlag="0"
+                            PopupShown="@CreateSubContainerEvent"
+                            PopupHidden="@DeleteSubContainerEvent"
+                            PopupItems="@ToolsItems Mode=OneWayToSource">
+        <CATVidCtl syp:name="SmartContainer"  >
+          <CATVidCtlButton syp:Template="ButtonContextBarContextSubMenu"
+                           Name="@Name"
+                           CheckMode="1"
+                           IconDimension="22 22"
+                           ForegroundColor="255 255 255 255"
+                           ClickMode="0"
+                           CheckState="@WidgetsPanelVisibility"
+                           Icon="Sub_Menu_Icon_Off.png"
+                           Tooltip="@ShortHelp"
+                           Label="@Title"
+                           Click="@HandleShowEvent ElementName=Container"
+                           GiveFocusOnDragFlag="1"
+                           AcceptFocusOnDropFlag="1"
+                           RequestedMinimumDimension="0 34"/>
+        </CATVidCtl>
+      </CATAfrVidIconBoxCtl>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <!--############################################################################################################################-->
+  <!--                                          AfrImmersiveContextBar                                                         -->
+  <!--############################################################################################################################-->
+  <!--===================================-->
+  <!--Toolbar for ContextBar-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_AfrImmersiveContextBar">
+    <CATAfrSYPModelViewMetaData SypNamePosition="AccessToolbarLeft">
+      <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility">
+        <CATVidLayGrid GridWeight="col1=1">
+          <CATVidLayGrid syp:name="Container"
+                         GridAppendPolicy="@Orientation"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation AfrImmersiveContextBar                                                         -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrImmersiveContextBar" Target="CATAfrSYPStarterView">
+      <CATAfrSYPStarterViewMetaData syp:name="MetaData" AllowNormalIconAsLargeIcon="1" >
+          <CATVidCtlButton Name="@Name"
+                   syp:Template="ButtonContextBar"
+                   CheckMode="1"
+                   ClickMode="1"
+                   CheckState="@ActivationWidget Mode=TwoWays"
+                   EnableFlag="@EnableWidget"
+                   CropPolicy="NoCrop"
+                   Icon="@LargeIcon"
+                   Label="@TitleIfNoIcon"
+                   LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                   TooltipTitle="@LongHelpTitle"
+                   TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                   TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                   LongHelpId="@LongHelpId"
+                   Click="@ActionEvent"
+                   DoubleClick="@RepeatActionEvent"
+                   VisibleFlag="@VisibleFlag"
+                   RequestedMinimumDimension="34 34"
+                   IconDimension="32 32"
+                   LayoutWhenUnvisibleFlag="0"
+                   Entry="@FocusInEvent"
+                   Leave="@FocusOutEvent"
+                   MouseHoveringState="@MouseHoveringState Mode=OneWayToSource"/>
+      </CATAfrSYPStarterViewMetaData>
+  </Template>
+
+  <DataTemplate syp:name="AfrImmersiveContextBarPopoverDataTemplate" >
+    <CATVidCtlButton Name="@Name"
+                syp:Template="CATAfrPropertyButtonIconBox"
+                CheckMode="1"
+                ClickMode="0"
+                CheckState="@ActivationWidget Mode=TwoWays"
+                EnableFlag="@EnableWidget"
+                CropPolicy="NoCrop"
+                Icon="@LargeIcon"
+                Label="@TitleIfNoIcon"
+                LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+                TooltipTitle="@LongHelpTitle"
+                TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+                TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+                LongHelpId="@LongHelpId"
+                Click="@ActionEvent"
+				DoubleClick="@RepeatActionEvent"
+                VisibleFlag="@VisibleFlag"
+                RequestedMinimumDimension="34 36"
+                IconDimension="32 32"
+                LayoutWhenUnvisibleFlag="0"
+                MouseHoveringState="@MouseHoveringState Mode=OneWayToSource"/>
+  </DataTemplate>
+
+  <Template syp:name="AfrImmersiveContextBarPopover" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="@Name"
+               syp:Template="CATAfrPropertyButton"
+               CheckMode="1"
+               ClickMode="0"
+               CheckState="@ActivationWidget Mode=TwoWays"
+               EnableFlag="@EnableWidget"
+               CropPolicy="NoCrop"
+               Icon="@LargeIcon"
+               Label="@TitleIfNoIcon"
+               LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="StandardTooltip"
+               TooltipTitle="@LongHelpTitle"
+               TooltipShortHelp="@ShortHelp" TooltipShortHelpImage="@ShortHelpIconName" TooltipShortHelpImageDimension="@ShortHelpIconDimension"
+               TooltipLongHelp="@LongHelp" TooltipLongHelpImage="@LongHelpIconName" TooltipLongHelpImageDimension="@LongHelpIconDimension"
+               LongHelpId="@LongHelpId"
+               Click="@ActionEvent"
+			   DoubleClick="@RepeatActionEvent"
+               VisibleFlag="@VisibleFlag"
+               RequestedMinimumDimension="34 34"
+               IconDimension="32 32"
+               LayoutWhenUnvisibleFlag="0"
+               MouseHoveringState="@MouseHoveringState Mode=OneWayToSource"/>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            SubContainer creation AfrImmersiveContextBar                                                         -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrImmersiveContextBarPopover" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" PersistenceSelectedStarterFlag="1" IconBoxFlag="1">
+      <CATAfrVidIconBoxCtl syp:Template="CtxBarAndPanelsIconBox"
+                           Orientation="Vertical"
+                           IconBoxHidePolicy="AutoHide"
+                           IconBoxShowPolicy="ShowOnClickOnArrow"
+                           PopupVisibleFlag="@WidgetsPanelVisibility"
+                           PresenterIconContent="@SelectedStarter"
+                           ForceSnapFlag="1"
+                           PopupItems="@ToolsItems Mode=OneWayToSource"
+                           PopupShown="@CreateSubContainerEvent"
+                           PresenterDataTemplate="AfrImmersiveContextBarPopoverDataTemplate"
+                           PresenterStyleSheet="AfrRepresentationTypes\VIAImmersiveToolBar.CATSYPStyle"
+                           LayoutWhenUnvisibleFlag="0"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separators creation AfrImmersiveContextBar                                                         -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrImmersiveContextBar" Target="CATAfrSYPSeparatorView">
+    <CATVidGPSquare RequestedMinimumDimension="1 28"
+                    Texture="I_VIAImmersiveToolBar_Sep.png"
+                     LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+
+
+
+  <!-- ================================================================================================-->
+  <!--==================================== AFR CONTEXT MENU  ==========================================-->
+  <!-- ================================================================================================-->
+
+
+  <!-- **************************************************************-->
+  <!--************************ CONTAINER AND SUB CONTAINER REPS ***********************-->
+  <!--****************************************************************-->
+
+  <!--      AfrContextMenu      -->
+  <Template syp:name="AfrContextMenu" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData  AlwaysVisibleFlag="1" >
+      <CATAfrVidActionGroup Parent="@Parent"
+                            Items="@ToolsItems Mode=OneWayToSource"/>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <!--      AfrContextSubMenu      -->
+  <Template syp:name="AfrContextSubMenu" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData  AlwaysVisibleFlag="1" >
+      <CATAfrVidSubMenuAction RecordName="@Name"
+                              Icon="@IconContainer"
+                              Text="@Title"
+                              Title="@Title"
+                              Items="@ToolsItems Mode=OneWayToSource"
+							  EnableFlag="@HasChildsFlag"
+                      />
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+
+  <!-- **************************************************************-->
+  <!--************************ STARTER REPS ***********************-->
+  <!--****************************************************************-->
+  <Template syp:name="AfrContextMenu" Target="CATAfrSYPStarterView">
+	<CATAfrSYPStarterViewMetaData syp:name="MetaData" AllowNormalIconAsLargeIcon="1" >
+    <CATAfrVidAction RecordName="@Name"
+                     CheckableFlag="@CheckableFlag"
+                     CheckState="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     Icon="@LargeIcon"
+                     Text="@Title"
+                     Activated="@ActionEvent"
+                     ActivateWidgetState ="@ActivationWidget Mode=TwoWays"
+					 AcceleratorLabel="@Accelerator"
+                     />
+	</CATAfrSYPStarterViewMetaData>
+  </Template>
+
+  <!-- **************************************************************-->
+  <!--************************ SEPARATOR REPS ***********************-->
+  <!--****************************************************************-->
+  <Template syp:name="AfrContextMenu" Target="CATAfrSYPSeparatorView">
+    <CATVidGPSquare/>
+  </Template>
+  
+  <Template syp:name="AfrContextMenuHeader" Target="CATAfrSYPSeparatorView">
+    <CATVidGPLabel Name ="@Name"
+                   Text ="@Title"/>
+  </Template>
+
+
+  <!-- **************************************************************-->
+  <!--************************ CONTAINER AND SUB CONTAINER REPS ***********************-->
+  <!--****************************************************************-->
+
+  <!--      AfrLegacyMenu      -->
+  <Template syp:name="AfrLegacyMenu" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData  syp:name="MetaData" AlwaysVisibleFlag="1" NormalIcon="@Icon"  >
+      <CATAfrSmartCtl ViewParent="@Parent" CreateDialogBoxFlag="@CreateDialogBoxFlag" ConstraintsDialogBox="leftPercent=50 topPx=0" UpdateFlag="@WidgetsPanelVisibility">
+        <CATVidLayLayer>
+          <CATVidCtlButton Name="@Name"
+                          syp:name="ButtonMenu"
+                          syp:Template="Button"
+                          ClickMode="0"
+                          CropPolicy="CropWithDots"
+                           GiveFocusOnDragFlag="1"
+                          AcceptFocusOnDropFlag="1"
+                          IconDimension="28 28"
+                          RequestedMinimumDimension="28 28"
+                          Icon="@ConvertedNormalIcon ElementName=MetaData"
+                 
+                          FocusableFlag="0"
+                          KeyboardManipulationFlag="0"
+                          LayoutWhenUnvisibleFlag="0"
+                          Click="@HandleShowEvent ElementName=ActionGroup"
+                        
+                     />
+          <!--
+                                  OffTexture="@ConvertedNormalIcon ElementName=MetaData"
+                        OnTexture="@ConvertedFocusedIcon ElementName=MetaData"
+                        OverTexture="@ConvertedFocusedIcon ElementName=MetaData"
+          -->
+          <CATAfrVidWidgetNoLayout>
+            <CATAfrVidActionGroup syp:name="ActionGroup" MenuPresenter="@Item ElementName=ButtonMenu"
+                              Items="@ToolsItems Mode=OneWayToSource"/>
+          </CATAfrVidWidgetNoLayout>
+        </CATVidLayLayer>
+      </CATAfrSmartCtl>
+
+
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+</Styles>

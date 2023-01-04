@@ -1,0 +1,694 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+    <Template syp:name="CATStatisticsPreferencesettings" Target="CATAfrComponent">
+
+    <preferencepage Name="StatisticsPreference" Resource="CATStatisticsPreference">
+        <preferencegroup Name="GeneralSubTab" RepositoryName="CATStatisticsGlobal">
+            <preferenceitem Name="Overall_BufferSize" />
+            <preferenceitem syp:name="Overall_MaxPerFile" Name="Overall_MaxPerFile" />
+            <preferenceitem syp:name="Overall_MaxPerFile_PH" Name="Overall_MaxPerFile_PH" UserDefinedCtr="Spinner" MoreInfo="PlaceHolderControl" Visibility="0" />
+            <preferenceitem syp:name="Overall_NbCopies" Name="Overall_NbCopies" />
+            <preferenceitem syp:name="Overall_CopyDirWin" Name="Overall_CopyDirWin" UserDefinedCtr="FolderChooser"/>
+            <preferenceitem Name="Overall_StatsScheduling" UserDefinedCtr="Bool"/>
+        </preferencegroup>
+        
+        <preferencegroup Name="StatisticThemSubTab">
+            <preferencegroup Name="StatisticThemSubTab.AppStat" RepositoryName="CATStatisticsWorkbench">
+                <preferenceitem syp:name="WORKBENCH_Activation" Name="WORKBENCH_Activation" UserDefinedCtr="Bool"/>
+                <morepreferences Name="StatisticThemSubTab.AppStat.MoreDisplay">
+                    <preferencegroup Name="StatisticThemSubTab.GeneralOuput" Border="1">
+                        <preferenceitem syp:name="WORKBENCH_OutputType" Name="WORKBENCH_OutputType" UserDefinedCtr="Combo"/>
+                        <preferenceitem syp:name="WORKBENCH_OutputFile" Name="WORKBENCH_OutputFile"/>
+                        <preferenceitem syp:name="WORKBENCH_OutputDirectory" Name="WORKBENCH_OutputDirectory" UserDefinedCtr="FolderChooser"/>
+                        <preferenceitem syp:name="WORKBENCH_Cumulate" Name="WORKBENCH_Cumulate"/>
+                        <preferenceitem syp:name="WORKBENCH_Formating" Name="WORKBENCH_Formating" UserDefinedCtr="Combo"/>
+                    </preferencegroup>
+                    <preferencegroup Name="StatisticThemSubTab.OptionalFields" Border="1">
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Time" Align="1" Border="0">
+                            <preferenceitem syp:name="WORKBENCH_TIME" Name="WORKBENCH_TIME"/>
+                            <preferenceitem syp:name="WORKBENCH_DateFormat" Name="WORKBENCH_DateFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Them" Align="1" Border="0">
+                            <preferenceitem syp:name="WORKBENCH_THEM" Name="WORKBENCH_THEM"/>
+                            <preferenceitem syp:name="WORKBENCH_OutputFormat" Name="WORKBENCH_OutputFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.TimeOutputed" Align="1" Border="0">
+                            <preferenceitem syp:name="WORKBENCH_ELPS" Name="WORKBENCH_ELPS"/>
+                            <preferenceitem syp:name="WORKBENCH_RTIM" Name="WORKBENCH_RTIM"/>
+                            <preferenceitem syp:name="WORKBENCH_CPUS" Name="WORKBENCH_CPUS"/>
+                            <preferenceitem syp:name="WORKBENCH_TimeUnit" Name="WORKBENCH_TimeUnit" UserDefinedCtr="Combo"/>
+                            <preferenceitem syp:name="WORKBENCH_TimeUnit_PH" Name="WORKBENCH_TimeUnit_PH" UserDefinedCtr="Spinner" MoreInfo="PlaceHolderControl" Visibility="0"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc1" Align="1" Border="0">
+                            <preferenceitem syp:name="WORKBENCH_USER" Name="WORKBENCH_USER"/>
+                            <preferenceitem syp:name="WORKBENCH_HOST" Name="WORKBENCH_HOST"/>
+                            <preferenceitem syp:name="WORKBENCH_UPID" Name="WORKBENCH_UPID"/>
+                        </preferencegroup>
+                    </preferencegroup>
+                </morepreferences>
+            </preferencegroup>
+
+            <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+            <preferencegroup Name="StatisticThemSubTab.CommandStat" RepositoryName="CATStatisticsCommand">
+                <preferenceitem syp:name="COMMAND_Activation" Name="COMMAND_Activation" UserDefinedCtr="Bool"/>
+                <morepreferences Name="StatisticThemSubTab.AppStat.MoreDisplay">
+                    <preferencegroup Name="StatisticThemSubTab.GeneralOuput" Border="1">
+                        <preferenceitem syp:name="COMMAND_OutputType" Name="COMMAND_OutputType" UserDefinedCtr="Combo"/>
+                        <preferenceitem syp:name="COMMAND_OutputFile" Name="COMMAND_OutputFile"/>
+                        <preferenceitem syp:name="COMMAND_OutputDirectory" Name="COMMAND_OutputDirectory" UserDefinedCtr="FolderChooser"/>
+                        <preferenceitem syp:name="COMMAND_Cumulate" Name="COMMAND_Cumulate"/>
+                        <preferenceitem syp:name="COMMAND_Formating" Name="COMMAND_Formating" UserDefinedCtr="Combo"/>
+                    </preferencegroup>
+                    <preferencegroup Name="StatisticThemSubTab.OptionalFields" Border="1">
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Time" Align="1" Border="0">
+                            <preferenceitem syp:name="COMMAND_TIME" Name="COMMAND_TIME"/>
+                            <preferenceitem syp:name="COMMAND_DateFormat" Name="COMMAND_DateFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Them" Align="1" Border="0">
+                            <preferenceitem syp:name="COMMAND_THEM" Name="COMMAND_THEM"/>
+                            <preferenceitem syp:name="COMMAND_OutputFormat" Name="COMMAND_OutputFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.TimeOutputed" Align="1" Border="0">
+                            <preferenceitem syp:name="COMMAND_ELPS" Name="COMMAND_ELPS"/>
+                            <preferenceitem syp:name="COMMAND_RTIM" Name="COMMAND_RTIM"/>
+                            <preferenceitem syp:name="COMMAND_CPUS" Name="COMMAND_CPUS"/>
+                            <preferenceitem syp:name="COMMAND_TimeUnit" Name="COMMAND_TimeUnit" UserDefinedCtr="Combo"/>
+                            <preferenceitem syp:name="COMMAND_TimeUnit_PH" Name="COMMAND_TimeUnit_PH" UserDefinedCtr="Spinner" MoreInfo="PlaceHolderControl" Visibility="0"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc1" Align="1" Border="0">
+                            <preferenceitem syp:name="COMMAND_USER" Name="COMMAND_USER"/>
+                            <preferenceitem syp:name="COMMAND_HOST" Name="COMMAND_HOST"/>
+                            <preferenceitem syp:name="COMMAND_UPID" Name="COMMAND_UPID"/>
+                        </preferencegroup>
+                    </preferencegroup>
+                </morepreferences>
+            </preferencegroup>
+
+            <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+            <preferencegroup Name="StatisticThemSubTab.SessionStat" RepositoryName="CATStatisticsSession">
+                <preferenceitem syp:name="SESSION_Activation" Name="SESSION_Activation" UserDefinedCtr="Bool"/>
+                <morepreferences Name="StatisticThemSubTab.AppStat.MoreDisplay">
+                    <preferencegroup Name="StatisticThemSubTab.GeneralOuput" Border="1">
+                        <preferenceitem syp:name="SESSION_OutputType" Name="SESSION_OutputType" UserDefinedCtr="Combo"/>
+                        <preferenceitem syp:name="SESSION_OutputFile" Name="SESSION_OutputFile"/>
+                        <preferenceitem syp:name="SESSION_OutputDirectory" Name="SESSION_OutputDirectory" UserDefinedCtr="FolderChooser"/>
+                        <preferenceitem syp:name="SESSION_Cumulate" Name="SESSION_Cumulate"/>
+                        <preferenceitem syp:name="SESSION_Formating" Name="SESSION_Formating" UserDefinedCtr="Combo"/>
+                    </preferencegroup>
+                    <preferencegroup Name="StatisticThemSubTab.OptionalFields" Border="1">
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Time" Align="1" Border="0">
+                            <preferenceitem syp:name="SESSION_TIME" Name="SESSION_TIME"/>
+                            <preferenceitem syp:name="SESSION_DateFormat" Name="SESSION_DateFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Them" Align="1" Border="0">
+                            <preferenceitem syp:name="SESSION_THEM" Name="SESSION_THEM"/>
+                            <preferenceitem syp:name="SESSION_OutputFormat" Name="SESSION_OutputFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.TimeOutputed" Align="1" Border="0">
+                            <preferenceitem syp:name="SESSION_ELPS" Name="SESSION_ELPS"/>
+                            <preferenceitem syp:name="SESSION_RTIM" Name="SESSION_RTIM"/>
+                            <preferenceitem syp:name="SESSION_CPUS" Name="SESSION_CPUS"/>
+                            <preferenceitem syp:name="SESSION_TimeUnit" Name="SESSION_TimeUnit" UserDefinedCtr="Combo"/>
+                            <preferenceitem syp:name="SESSION_TimeUnit_PH" Name="SESSION_TimeUnit_PH" UserDefinedCtr="Spinner" MoreInfo="PlaceHolderControl" Visibility="0"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc1" Align="1" Border="0">
+                            <preferenceitem syp:name="SESSION_USER" Name="SESSION_USER"/>
+                            <preferenceitem syp:name="SESSION_HOST" Name="SESSION_HOST"/>
+                            <preferenceitem syp:name="SESSION_UPID" Name="SESSION_UPID"/>
+                        </preferencegroup>
+                    </preferencegroup>
+                </morepreferences>
+            </preferencegroup>
+
+            <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+            <preferencegroup Name="StatisticThemSubTab.ErrorsStat" RepositoryName="CATStatisticsErrorlog">
+                <preferenceitem syp:name="ERRORLOG_Activation" Name="ERRORLOG_Activation" UserDefinedCtr="Bool"/>
+                <morepreferences Name="StatisticThemSubTab.AppStat.MoreDisplay">
+                    <preferencegroup Name="StatisticThemSubTab.GeneralOuput" Border="1">
+                        <preferenceitem syp:name="ERRORLOG_OutputType" Name="ERRORLOG_OutputType" UserDefinedCtr="Combo"/>
+                        <preferenceitem syp:name="ERRORLOG_OutputFile" Name="ERRORLOG_OutputFile"/>
+                        <preferenceitem syp:name="ERRORLOG_OutputDirectory" Name="ERRORLOG_OutputDirectory" UserDefinedCtr="FolderChooser"/>
+                        <preferenceitem syp:name="ERRORLOG_Cumulate" Name="ERRORLOG_Cumulate"/>
+                        <preferenceitem syp:name="ERRORLOG_Formating" Name="ERRORLOG_Formating" UserDefinedCtr="Combo"/>
+                    </preferencegroup>
+                    <preferencegroup Name="StatisticThemSubTab.OptionalFields" Border="1">
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Time" Align="1" Border="0">
+                            <preferenceitem syp:name="ERRORLOG_TIME" Name="ERRORLOG_TIME"/>
+                            <preferenceitem syp:name="ERRORLOG_DateFormat" Name="ERRORLOG_DateFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Them" Align="1" Border="0">
+                            <preferenceitem syp:name="ERRORLOG_THEM" Name="ERRORLOG_THEM"/>
+                            <preferenceitem syp:name="ERRORLOG_OutputFormat" Name="ERRORLOG_OutputFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.TimeOutputed" Align="1" Border="0">
+                            <preferenceitem syp:name="ERRORLOG_ELPS" Name="ERRORLOG_ELPS"/>
+                            <preferenceitem syp:name="ERRORLOG_RTIM" Name="ERRORLOG_RTIM"/>
+                            <preferenceitem syp:name="ERRORLOG_CPUS" Name="ERRORLOG_CPUS"/>
+                            <preferenceitem syp:name="ERRORLOG_TimeUnit" Name="ERRORLOG_TimeUnit" UserDefinedCtr="Combo"/>
+                            <preferenceitem syp:name="ERRORLOG_TimeUnit_PH" Name="ERRORLOG_TimeUnit_PH" UserDefinedCtr="Spinner" MoreInfo="PlaceHolderControl" Visibility="0"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc" Align="1" Border="0">
+                            <preferenceitem syp:name="ERRORLOG_USER" Name="ERRORLOG_USER"/>
+                            <preferenceitem syp:name="ERRORLOG_HOST" Name="ERRORLOG_HOST"/>
+                            <preferenceitem syp:name="ERRORLOG_UPID" Name="ERRORLOG_UPID"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc" Align="1" Border="0">
+                            <preferenceitem syp:name="ERRORLOG_WKBN" Name="ERRORLOG_WKBN"/>
+                            <preferenceitem syp:name="ERRORLOG_CMND" Name="ERRORLOG_CMND"/>
+                            <preferenceitem syp:name="ERRORLOG_MSGE" Name="ERRORLOG_MSGE"/>
+                        </preferencegroup>
+                    </preferencegroup>
+                    <preferencegroup Name="StatisticThemSubTab.SecurityLevels" Border="1">
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc" Align="1" Border="0">
+                            <preferenceitem syp:name="ERRORLOG_ABND" Name="ERRORLOG_ABND"/>
+                            <preferenceitem syp:name="ERRORLOG_CERR" Name="ERRORLOG_CERR"/>
+                            <preferenceitem syp:name="ERRORLOG_WARN" Name="ERRORLOG_WARN"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc" Align="1" Border="0">
+                            <preferenceitem syp:name="ERRORLOG_COMT" Name="ERRORLOG_COMT"/>
+                            <preferenceitem syp:name="ERRORLOG_UREP" Name="ERRORLOG_UREP"/>
+                        </preferencegroup>
+                    </preferencegroup>
+                </morepreferences>
+            </preferencegroup>
+
+            <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+            <preferencegroup Name="StatisticThemSubTab.PCSStat" RepositoryName="CATStatisticsPCS">
+                <preferenceitem syp:name="PCS_Activation" Name="PCS_Activation" UserDefinedCtr="Bool"/>
+                <morepreferences Name="StatisticThemSubTab.AppStat.MoreDisplay">
+                    <preferencegroup Name="StatisticThemSubTab.GeneralOuput" Border="1">
+                        <preferenceitem syp:name="PCS_OutputType" Name="PCS_OutputType" UserDefinedCtr="Combo"/>
+                        <preferenceitem syp:name="PCS_OutputFile" Name="PCS_OutputFile"/>
+                        <preferenceitem syp:name="PCS_OutputDirectory" Name="PCS_OutputDirectory" UserDefinedCtr="FolderChooser"/>
+                        <preferenceitem syp:name="PCS_Cumulate" Name="PCS_Cumulate"/>
+                        <preferenceitem syp:name="PCS_Formating" Name="PCS_Formating" UserDefinedCtr="Combo"/>
+                    </preferencegroup>
+                    <preferencegroup Name="StatisticThemSubTab.OptionalFields" Border="1">
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Time" Align="1" Border="0">
+                            <preferenceitem syp:name="PCS_TIME" Name="PCS_TIME"/>
+                            <preferenceitem syp:name="PCS_DateFormat" Name="PCS_DateFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Them" Align="1" Border="0">
+                            <preferenceitem syp:name="PCS_THEM" Name="PCS_THEM"/>
+                            <preferenceitem syp:name="PCS_OutputFormat" Name="PCS_OutputFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.TimeOutputed" Align="1" Border="0">
+                            <preferenceitem syp:name="PCS_ELPS" Name="PCS_ELPS"/>
+                            <preferenceitem syp:name="PCS_RTIM" Name="PCS_RTIM"/>
+                            <preferenceitem syp:name="PCS_CPUS" Name="PCS_CPUS"/>
+                            <preferenceitem syp:name="PCS_TimeUnit" Name="PCS_TimeUnit" UserDefinedCtr="Combo"/>
+                            <preferenceitem syp:name="PCS_TimeUnit_PH" Name="PCS_TimeUnit_PH" UserDefinedCtr="Spinner" MoreInfo="PlaceHolderControl" Visibility="0"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc1" Align="1" Border="0">
+                            <preferenceitem syp:name="PCS_USER" Name="PCS_USER"/>
+                            <preferenceitem syp:name="PCS_HOST" Name="PCS_HOST"/>
+                            <preferenceitem syp:name="PCS_UPID" Name="PCS_UPID"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc2" Align="1" Border="0">
+                            <preferenceitem syp:name="PCS_MEMU" Name="PCS_MEMU"/>
+                        </preferencegroup>
+                    </preferencegroup>
+                </morepreferences>
+            </preferencegroup>
+
+            <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+            <preferencegroup Name="StatisticThemSubTab.NetworkStat" RepositoryName="CATStatisticsNetwork">
+                <preferenceitem syp:name="NETWORK_Activation" Name="NETWORK_Activation" UserDefinedCtr="Bool"/>
+                <morepreferences Name="StatisticThemSubTab.AppStat.MoreDisplay">
+                    <preferencegroup Name="StatisticThemSubTab.GeneralOuput" Border="1">
+                        <preferenceitem syp:name="NETWORK_OutputType" Name="NETWORK_OutputType" UserDefinedCtr="Combo"/>
+                        <preferenceitem syp:name="NETWORK_OutputFile" Name="NETWORK_OutputFile"/>
+                        <preferenceitem syp:name="NETWORK_OutputDirectory" Name="NETWORK_OutputDirectory" UserDefinedCtr="FolderChooser"/>
+                        <preferenceitem syp:name="NETWORK_Cumulate" Name="NETWORK_Cumulate"/>
+                        <preferenceitem syp:name="NETWORK_Formating" Name="NETWORK_Formating" UserDefinedCtr="Combo"/>
+                    </preferencegroup>
+                    <preferencegroup Name="StatisticThemSubTab.OptionalFields" Border="1">
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Time" Align="1" Border="0">
+                            <preferenceitem syp:name="NETWORK_TIME" Name="NETWORK_TIME"/>
+                            <preferenceitem syp:name="NETWORK_DateFormat" Name="NETWORK_DateFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Them" Align="1" Border="0">
+                            <preferenceitem syp:name="NETWORK_THEM" Name="NETWORK_THEM"/>
+                            <preferenceitem syp:name="NETWORK_OutputFormat" Name="NETWORK_OutputFormat" UserDefinedCtr="Combo"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.TimeOutputed" Align="1" Border="0">
+                            <preferenceitem syp:name="NETWORK_ELPS" Name="NETWORK_ELPS"/>
+                            <preferenceitem syp:name="NETWORK_RTIM" Name="NETWORK_RTIM"/>
+                            <preferenceitem syp:name="NETWORK_CPUS" Name="NETWORK_CPUS"/>
+                            <preferenceitem syp:name="NETWORK_TimeUnit" Name="NETWORK_TimeUnit" UserDefinedCtr="Combo"/>
+                            <preferenceitem syp:name="NETWORK_TimeUnit_PH" Name="NETWORK_TimeUnit_PH" UserDefinedCtr="Spinner" MoreInfo="PlaceHolderControl" Visibility="0"/>
+                        </preferencegroup>
+                        <preferencegroup Name="StatisticThemSubTab.AppStat.Misc1" Align="1" Border="0">
+                            <preferenceitem syp:name="NETWORK_USER" Name="NETWORK_USER"/>
+                            <preferenceitem syp:name="NETWORK_HOST" Name="NETWORK_HOST"/>
+                            <preferenceitem syp:name="NETWORK_UPID" Name="NETWORK_UPID"/>
+                        </preferencegroup>
+                    </preferencegroup>
+                </morepreferences>
+            </preferencegroup>
+        </preferencegroup>
+    </preferencepage>
+
+
+    <CATSYPTriggerCollection>
+
+    <CATSYPTrigger Property="ValueChanged" TargetName="Overall_MaxPerFile" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="Overall_MaxPerFile_PH" Value="InputValue:Overall_MaxPerFile" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="Overall_MaxPerFile_PH" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="Overall_NbCopies" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="Overall_CopyDirWin" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="Overall_MaxPerFile_PH" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="Overall_NbCopies" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="Overall_CopyDirWin" Value="0" />
+    </CATSYPTrigger>
+
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_OutputType" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFile" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_OutputType" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFile" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_TIME" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_DateFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_TIME" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_DateFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="WORKBENCH_ELPS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="WORKBENCH_TimeUnit_PH" Value="InputValue:WORKBENCH_ELPS InputValue:WORKBENCH_RTIM InputValue:WORKBENCH_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="WORKBENCH_RTIM" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="WORKBENCH_TimeUnit_PH" Value="InputValue:WORKBENCH_ELPS InputValue:WORKBENCH_RTIM InputValue:WORKBENCH_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="WORKBENCH_CPUS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="WORKBENCH_TimeUnit_PH" Value="InputValue:WORKBENCH_ELPS InputValue:WORKBENCH_RTIM InputValue:WORKBENCH_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_TimeUnit_PH" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_TimeUnit" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_TimeUnit_PH" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_TimeUnit" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_THEM" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_THEM" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_Activation" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputType" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFile" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputDirectory" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_Cumulate" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_Formating" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_TIME" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_DateFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_THEM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_ELPS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_RTIM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_CPUS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_TimeUnit" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_USER" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_HOST" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_UPID" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="WORKBENCH_Activation" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputType" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFile" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputDirectory" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_Cumulate" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_Formating" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_TIME" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_DateFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_THEM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_OutputFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_ELPS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_RTIM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_CPUS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_TimeUnit" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_USER" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_HOST" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="WORKBENCH_UPID" Value="0" />
+    </CATSYPTrigger>
+
+    <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_OutputType" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFile" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_OutputType" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFile" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_TIME" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_DateFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_TIME" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_DateFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="COMMAND_ELPS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="COMMAND_TimeUnit_PH" Value="InputValue:COMMAND_ELPS InputValue:COMMAND_RTIM InputValue:COMMAND_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="COMMAND_RTIM" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="COMMAND_TimeUnit_PH" Value="InputValue:COMMAND_ELPS InputValue:COMMAND_RTIM InputValue:COMMAND_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="COMMAND_CPUS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="COMMAND_TimeUnit_PH" Value="InputValue:COMMAND_ELPS InputValue:COMMAND_RTIM InputValue:COMMAND_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_TimeUnit_PH" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_TimeUnit" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_TimeUnit_PH" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_TimeUnit" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_THEM" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_THEM" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_Activation" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputType" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFile" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputDirectory" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_Cumulate" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_Formating" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_TIME" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_DateFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_THEM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_ELPS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_RTIM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_CPUS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_TimeUnit" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_USER" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_HOST" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_UPID" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="COMMAND_Activation" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputType" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFile" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputDirectory" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_Cumulate" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_Formating" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_TIME" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_DateFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_THEM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_OutputFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_ELPS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_RTIM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_CPUS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_TimeUnit" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_USER" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_HOST" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="COMMAND_UPID" Value="0" />
+    </CATSYPTrigger>
+
+    <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_OutputType" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFile" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_OutputType" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFile" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_TIME" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_DateFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_TIME" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_DateFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="SESSION_ELPS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="SESSION_TimeUnit_PH" Value="InputValue:SESSION_ELPS InputValue:SESSION_RTIM InputValue:SESSION_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="SESSION_RTIM" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="SESSION_TimeUnit_PH" Value="InputValue:SESSION_ELPS InputValue:SESSION_RTIM InputValue:SESSION_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="SESSION_CPUS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="SESSION_TimeUnit_PH" Value="InputValue:SESSION_ELPS InputValue:SESSION_RTIM InputValue:SESSION_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_TimeUnit_PH" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_TimeUnit" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_TimeUnit_PH" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_TimeUnit" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_THEM" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_THEM" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_Activation" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputType" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFile" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputDirectory" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_Cumulate" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_Formating" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_TIME" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_DateFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_THEM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_ELPS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_RTIM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_CPUS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_TimeUnit" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_USER" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_HOST" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_UPID" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="SESSION_Activation" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputType" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFile" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputDirectory" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_Cumulate" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_Formating" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_TIME" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_DateFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_THEM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_OutputFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_ELPS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_RTIM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_CPUS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_TimeUnit" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_USER" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_HOST" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="SESSION_UPID" Value="0" />
+    </CATSYPTrigger>
+
+    <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_OutputType" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFile" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_OutputType" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFile" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_TIME" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_DateFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_TIME" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_DateFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="ERRORLOG_ELPS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="ERRORLOG_TimeUnit_PH" Value="InputValue:ERRORLOG_ELPS InputValue:ERRORLOG_RTIM InputValue:ERRORLOG_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="ERRORLOG_RTIM" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="ERRORLOG_TimeUnit_PH" Value="InputValue:ERRORLOG_ELPS InputValue:ERRORLOG_RTIM InputValue:ERRORLOG_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="ERRORLOG_CPUS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="ERRORLOG_TimeUnit_PH" Value="InputValue:ERRORLOG_ELPS InputValue:ERRORLOG_RTIM InputValue:ERRORLOG_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_TimeUnit_PH" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_TimeUnit" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_TimeUnit_PH" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_TimeUnit" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_THEM" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_THEM" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_Activation" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputType" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFile" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputDirectory" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_Cumulate" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_Formating" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_TIME" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_DateFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_THEM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_ELPS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_RTIM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_CPUS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_TimeUnit" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_USER" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_HOST" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_UPID" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="ERRORLOG_Activation" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputType" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFile" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputDirectory" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_Cumulate" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_Formating" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_TIME" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_DateFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_THEM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_OutputFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_ELPS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_RTIM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_CPUS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_TimeUnit" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_USER" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_HOST" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="ERRORLOG_UPID" Value="0" />
+    </CATSYPTrigger>
+
+    <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_OutputType" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFile" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_OutputType" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFile" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_TIME" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_DateFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_TIME" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_DateFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="NETWORK_ELPS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="NETWORK_TimeUnit_PH" Value="InputValue:NETWORK_ELPS InputValue:NETWORK_RTIM InputValue:NETWORK_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="NETWORK_RTIM" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="NETWORK_TimeUnit_PH" Value="InputValue:NETWORK_ELPS InputValue:NETWORK_RTIM InputValue:NETWORK_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="NETWORK_CPUS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="NETWORK_TimeUnit_PH" Value="InputValue:NETWORK_ELPS InputValue:NETWORK_RTIM InputValue:NETWORK_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_TimeUnit_PH" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_TimeUnit" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_TimeUnit_PH" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_TimeUnit" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_THEM" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_THEM" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_Activation" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputType" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFile" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputDirectory" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_Cumulate" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_Formating" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_TIME" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_DateFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_THEM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_ELPS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_RTIM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_CPUS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_TimeUnit" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_USER" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_HOST" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_UPID" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="NETWORK_Activation" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputType" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFile" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputDirectory" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_Cumulate" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_Formating" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_TIME" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_DateFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_THEM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_OutputFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_ELPS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_RTIM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_CPUS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_TimeUnit" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_USER" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_HOST" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="NETWORK_UPID" Value="0" />
+    </CATSYPTrigger>
+
+    <!-- Because templates with CATCAfrInclude doesn't allow for now variadics parameters, a big copy/past is necessary for each thematics statistics -->
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_OutputType" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFile" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_OutputType" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFile" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_TIME" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_DateFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_TIME" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_DateFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="PCS_ELPS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="PCS_TimeUnit_PH" Value="InputValue:PCS_ELPS InputValue:PCS_RTIM InputValue:PCS_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="PCS_RTIM" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="PCS_TimeUnit_PH" Value="InputValue:PCS_ELPS InputValue:PCS_RTIM InputValue:PCS_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ValueChanged" TargetName="PCS_CPUS" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="PCS_TimeUnit_PH" Value="InputValue:PCS_ELPS InputValue:PCS_RTIM InputValue:PCS_CPUS" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_TimeUnit_PH" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_TimeUnit" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_TimeUnit_PH" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_TimeUnit" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_THEM" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFormat" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_THEM" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFormat" Value="0" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_Activation" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputType" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFile" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputDirectory" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_Cumulate" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_Formating" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_TIME" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_DateFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_THEM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFormat" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_ELPS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_RTIM" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_CPUS" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_TimeUnit" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_USER" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_HOST" Value="1" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_UPID" Value="1" />
+    </CATSYPTrigger>
+    <CATSYPTrigger Property="ControlValue" TargetName="PCS_Activation" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputType" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFile" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputDirectory" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_Cumulate" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_Formating" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_TIME" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_DateFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_THEM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_OutputFormat" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_ELPS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_RTIM" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_CPUS" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_TimeUnit" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_USER" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_HOST" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="PCS_UPID" Value="0" />
+    </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+    </Template>
+</Styles>

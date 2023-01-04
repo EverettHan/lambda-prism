@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                 AfrPLMCompassWestToolbar representation                                                            -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Container creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="AfrPLMCompassWestToolbar" Target="CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData RegisteredFlag="1" RegisteredId="AfrPLMCompassWestToolbar_CATAfrSYPContainerView">
+       <CATVidCtlBorder syp:Template="AfrPLMCompassBackground"  VisibleFlag="@WidgetsPanelVisibility" >
+        <CATVidLayStack CellBorder="4" Orientation="Horizontal"
+                          Items="@ToolsItems Mode=OneWayToSource"/>
+      </CATVidCtlBorder>
+    </CATAfrSYPContainerViewMetaData>
+
+     
+  </Template>
+
+  <Template syp:name="AfrPLMCompassWestToolbarNoBackground" Target="CATAfrSYPContainerView" RegisteredId="AfrPLMCompassWestToolbarNoBackground_CATAfrSYPContainerView">
+    <CATAfrSYPContainerViewMetaData RegisteredFlag="1">
+      <CATVidLayGrid GridWeight="col0=1">
+        <CATVidCtlBorder syp:Template="ToolbarTouchBackground" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" VisibleFlag="@WidgetsPanelVisibility" >
+          <CATVidLayStack CellBorder="4" Orientation="Horizontal"
+                            Items="@ToolsItems Mode=OneWayToSource"/>
+        </CATVidCtlBorder>
+        <CATVidSpacer RequestedMinimumDimension="40 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+  <Template syp:name="AfrPLMCompassWestToolbar" Target="CATAfrSYPStarterView">
+
+    <CATAfrSYPStarterViewMetaData ComputedIconNameAndDimensionFlag="1">
+        <CATVidCtlButtonIcon Name="@Name"
+                         syp:name="MyNewRepresentationButton"
+                     syp:Template="Icon"
+                     CheckMode="1"
+                     ClickMode="0"
+                         AcceptFocusOnDropFlag="1"
+                         GiveFocusOnDragFlag="1"
+                     CheckState="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     CropPolicy="NoCrop"
+                     RequestedMinimumDimension="@IconDimension"
+                     IconDimension="@IconDimension"
+                     OffTexture="@NormalIcon"                         
+                     OnTexture="@SelectedIcon"
+                     OverTexture="@FocusedIcon"
+                     DisabledTexture="@DisabledIcon"
+                     FocusableFlag="0"
+                     KeyboardManipulationFlag="0"
+                     LayoutWhenUnvisibleFlag="0"
+                     Tooltip="@Help"
+                     Click="@ActionEvent"
+                         DoubleClick="@RepeatActionEvent"/>
+    </CATAfrSYPStarterViewMetaData>
+
+  
+
+    <CATSYPTriggerCollection>
+
+      <!-- Mode Selection -->
+      <CATSYPTrigger Property="NoIconFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MyNewRepresentationButton" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="NoIconFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MyNewRepresentationButton" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+  <Template syp:name="AfrPLMCompassWestToolbarNoBackground" Target="CATAfrSYPStarterView">
+
+
+    <CATVidCtlButtonIcon Name="@Name"
+                         syp:name="MyNewRepresentationButton"
+                     syp:Template="Icon"
+                     CheckMode="1"
+                     ClickMode="1"
+                     CheckState="@ActivationWidget Mode=TwoWays"
+                     EnableFlag="@EnableWidget"
+                     CropPolicy="NoCrop"
+                     RequestedMinimumDimension="@IconDimension"
+                     IconDimension="@IconDimension"
+                     OffTexture="@NormalIcon"                         
+                     OnTexture="@SelectedIcon"
+                     OverTexture="@FocusedIcon"
+                     DisabledTexture="@DisabledIcon"
+                     FocusableFlag="0"
+                     KeyboardManipulationFlag="0"
+                     LayoutWhenUnvisibleFlag="0"
+                     Tooltip="@Help"
+                     LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                     LongHelpId="@LongHelpId"
+                     Click="@ActionEvent"
+                     DoubleClick="@RepeatActionEvent"/>
+
+    <CATSYPTriggerCollection>
+
+      <!-- Mode Selection -->
+      <CATSYPTrigger Property="NoIconFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MyNewRepresentationButton" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="NoIconFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MyNewRepresentationButton" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+
+  <!--End  AfrPLMCompassWestToolbar representation                                                            -->
+
+</Styles>

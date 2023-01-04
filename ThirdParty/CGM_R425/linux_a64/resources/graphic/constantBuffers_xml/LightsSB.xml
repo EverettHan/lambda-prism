@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbLightsSB</NAME>
+
+  <!--To Check-->
+  <USAGE>Stream</USAGE>
+  
+  <!--POINT LIGHT-->
+  <STRUCT>
+    <NAME>PointLight</NAME>
+    <UNIFORM>
+      <NAME>Position</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Power</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Color</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>padding1</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Attenuation</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>padding2</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <SIZE>48</SIZE>
+  </STRUCT>
+  
+  <!--DIRECTIONAL LIGHT-->
+  <STRUCT>
+    <NAME>DirectionalLight</NAME>
+    <UNIFORM>
+      <NAME>Direction</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>PowerPerArea</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Color</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>padding</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <SIZE>32</SIZE>
+  </STRUCT>
+
+  <!--SPOT LIGHT-->
+  <STRUCT>
+    <NAME>SpotLight</NAME>
+    <UNIFORM>
+      <NAME>Color</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Power</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Position</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Phi</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Direction</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>invThetaMinusPhi</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>Attenuation</NAME>
+      <TYPE>float3</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>padding</NAME>
+      <TYPE>float</TYPE>
+    </UNIFORM>
+    <SIZE>64</SIZE>
+  </STRUCT>
+
+  <UNIFORM>
+    <NAME>PointLightCount</NAME>    
+    <TYPE>int</TYPE> <!--to move to uint-->
+    <SEMANTIC>PointLightCount</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>DirectionalLightCount</NAME>
+    <TYPE>int</TYPE>
+    <SEMANTIC>DirectionalLightCount</SEMANTIC>
+    <!--to move to uint-->
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>SpotLightCount</NAME>
+    <TYPE>int</TYPE>
+    <SEMANTIC>SpotLightCount</SEMANTIC>
+    <!--to move to uint-->
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>Padding</NAME>
+    <!--offset 12-->
+    <TYPE>int</TYPE>    
+    <!--to move to uint-->
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>PointLights</NAME>    
+    <TYPE>struct</TYPE>    
+    <USER_TYPE>PointLight</USER_TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>            
+    <SEMANTIC>PointLights</SEMANTIC>    
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>DirectionalLights</NAME>
+    <TYPE>struct</TYPE>
+    <USER_TYPE>DirectionalLight</USER_TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>DirectionalLights</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>SpotLights</NAME>
+    <TYPE>struct</TYPE>
+    <USER_TYPE>SpotLight</USER_TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>SpotLights</SEMANTIC>
+  </UNIFORM>    
+    
+</CONSTANT_BUFFER>
+
+<!--{
+    "Name" : "cbLights", 
+    "Parameters" : 
+    [
+        {"Semantic" : "Lights", "Size" : 1040 }
+    ]
+}-->

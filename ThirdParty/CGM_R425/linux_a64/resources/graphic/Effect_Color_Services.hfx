@@ -1,0 +1,72 @@
+//
+// FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM
+//
+
+			
+float4 ConvertToHSL(float4 iCol)
+{
+  float colMax = max(max(iCol.x, iCol.y), iCol.z);
+	float colMin = min(min(iCol.x, iCol.y), iCol.z);
+	
+	float v = colMax;
+	
+	float s = 0;
+	if (colMax!=0) s = 1.f-colMin/colMax;
+	
+	float t = 0;
+	float deltaCol = colMax-colMin;
+	if (deltaCol)
+	{
+	  if (colMax==iCol.x)      t = 60.f*(iCol.y-iCol.z)/deltaCol+360.f;
+	  else if (colMax==iCol.y) t = 60.f*(iCol.z-iCol.x)/deltaCol+120.f;
+	  else if (colMax==iCol.z) t = 60.f*(iCol.x-iCol.y)/deltaCol+240.f;
+	}
+	t = fmod(t,360.f);
+	
+	return float4(t,s,v, iCol.w);
+}			
+
+float4 ConvertToRGB(float4 iCol)
+{
+  float t = iCol.x;
+  float s = iCol.y;
+  float v = iCol.z;
+  
+	int ti = ((int)t/60) % 6;
+	
+	float f = t/60-ti;
+	float l = v*(1-s);
+	float m = v*(1-f*s);
+	float n = v*(1-(1-f)*s);
+	
+	float4 col = float4(0,0,0,0);
+	switch (ti)
+	{
+	  case 0:
+	    col = float4(v, n, l, iCol.w);
+	    break;
+	    
+	  case 1:
+	    col = float4(m, v, l, iCol.w);
+	    break;
+	    
+	  case 2:
+	    col = float4(l, v, n, iCol.w);
+	    break;
+	    
+	  case 3:
+	    col = float4(l, m, v, iCol.w);
+	    break;
+	    
+	  case 4:
+	    col = float4(n, l, v, iCol.w);
+	    break;
+	    
+	  case 5:
+	    col = float4(v, l, m, iCol.w);
+	    break;
+	}
+	
+	return col;
+}			
+									  

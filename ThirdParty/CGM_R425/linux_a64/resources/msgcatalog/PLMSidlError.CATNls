@@ -1,0 +1,228 @@
+<meta charset="UTF-8"/>
+//*------------------------*//
+//* PLMSidlErrors messages *//
+//*------------------------*//
+ERR_SidlInvalidStream_141001 = "Invalid Stream";
+ERR_SidlInvalidStream_141001.Request = "Communication layer is not ready to process request or answer already fully read";
+ERR_SidlInvalidStream_141001.Advice = "Request can be retried";
+
+ERR_SidlInvalidParam_141002 = "Invalid Parameter";
+ERR_SidlInvalidParam_141002.Request = "Invalid parameter in communication layer /p1";
+ERR_SidlInvalidParam_141002.Advice = "reconfigure communication parameter or contact your administrator";
+
+ERR_SidlNoMemory_141003 = "Not enough memory";
+ERR_SidlNoMemory_141003.Request = "Not enough memory";
+ERR_SidlNoMemory_141003.Advice = "Request can be try later or other application can be closed";
+
+ERR_SidlUnsupportedServerLevel_141004 = "Unsupported server level";
+ERR_SidlUnsupportedServerLevel_141004.Request = "Server level is different from client and not compatible";
+ERR_SidlUnsupportedServerLevel_141004.Advice = "Configure client to use compatible server or upgrade client level";
+
+ERR_SidlTruncatedAnswer_141005 = "Truncated server answer";
+ERR_SidlTruncatedAnswer_141005.Request = "Server reply has been truncated";
+ERR_SidlTruncatedAnswer_141005.Advice = "Retry request or contact your administor to check network environment";
+
+ERR_SidlInvalidHeader_141006 = "Invalid communication header";
+ERR_SidlInvalidHeader_141006.Request = "Wrong data in communication header";
+ERR_SidlInvalidHeader_141006.Advice = "Retry request or Contact your administor to check network environment";
+
+ERR_SidlCompressFailed_141007 = "Compress failed";
+ERR_SidlCompressFailed_141007.Request = "Client has not been able to compress request";
+ERR_SidlCompressFailed_141007.Advice = "Retry request or reinstall software";
+
+ERR_SidlUnCompressFailed_141008 = "Uncompress failed";
+ERR_SidlUnCompressFailed_141008.Request = "Client is unable to uncompress data sent by server";
+ERR_SidlUnCompressFailed_141008.Advice = "Retry request or check installation on server and client";
+
+ERR_SidlInternalError_141009 = "Internal error";
+ERR_SidlInternalError_141009.Request = "Internal communication error on client";
+ERR_SidlInternalError_141009.Advice = "Configure server connection and retry";
+
+ERR_SidlUnknownError_141010 = "Unknown error";
+ERR_SidlUnknownError_141010.Request = "Unknown error has occured";
+ERR_SidlUnknownError_141010.Advice = "Configure server connection or contact your administrator";
+
+ERR_SidlSocketConnectionFailed_141021 = "Connection failed";
+ERR_SidlSocketConnectionFailed_141021.Request = "Unable to connect to server";
+ERR_SidlSocketConnectionFailed_141021.Advice = "Configure server connection, check firewall rules or contact your administrator";
+
+ERR_SidlSocketSendFailed_141022 = "Send request failed";
+ERR_SidlSocketSendFailed_141022.Request = "Unable to send request to server";
+ERR_SidlSocketSendFailed_141022.Advice = "Configure server connection, check firewall rules or contact your administrator";
+
+ERR_SidlSocketRecievedFailed_141023 = "Recieve answer failed";
+ERR_SidlSocketRecievedFailed_141023.Request = "Unable to recieve server answer";
+ERR_SidlSocketRecievedFailed_141023.Advice = "Retry request and contact your administrator if problem persist";
+
+ERR_SidlSocketUnknownError_141024 = "Unknown socket error";
+ERR_SidlSocketUnknownError_141024.Request = "Unknown socket error has occured";
+ERR_SidlSocketUnknownError_141024.Advice = "Check your rigth, your network configuration or contact your administrator";
+
+ERR_SidlHTTPBadRequest_141031 = "HTTP Bad request";
+ERR_SidlHTTPBadRequest_141031.Request = "HTTP Bad request";
+ERR_SidlHTTPBadRequest_141031.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPUnauthorized_141032 = "HTTP Unauthorized";
+ERR_SidlHTTPUnauthorized_141032.Request = "HTTP Unauthorized";
+ERR_SidlHTTPUnauthorized_141032.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPPaymentRequired_141033 = "HTTP Payment Required";
+ERR_SidlHTTPPaymentRequired_141033.Request = "HTTP Payment Required";
+ERR_SidlHTTPPaymentRequired_141033.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPForbidden_141034 = "HTTP Forbidden";
+ERR_SidlHTTPForbidden_141034.Request = "HTTP Forbidden";
+ERR_SidlHTTPForbidden_141034.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPNotFound_141035 = "HTTP Not found";
+ERR_SidlHTTPNotFound_141035.Request = "HTTP Not found";
+ERR_SidlHTTPNotFound_141035.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPMethodNotAllowed_141036 = "HTTP Method Not allowed";
+ERR_SidlHTTPMethodNotAllowed_141036.Request = "HTTP Method Not allowed";
+ERR_SidlHTTPMethodNotAllowed_141036.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPNotAcceptable_141036 = "HTTP Not Acceptable";
+ERR_SidlHTTPNotAcceptable_141036.Request = "HTTP Not Acceptable";
+ERR_SidlHTTPNotAcceptable_141036.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPProxyAuthFailed_141037 = "HTTP Proxy authentication failed";
+ERR_SidlHTTPProxyAuthFailed_141037.Request = "HTTP Proxy authentication failed";
+ERR_SidlHTTPProxyAuthFailed_141037.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPServerTimeout_141038 = "HTTP Server timeout";
+ERR_SidlHTTPServerTimeout_141038.Request = "HTTP Server timeout";
+ERR_SidlHTTPServerTimeout_141038.Advice = "Retry request or contact your administor to check network environment";
+
+ERR_SidlHTTPConflict_141039 = "HTTP Conflict";
+ERR_SidlHTTPConflict_141039.Request = "HTTP Conflict";
+ERR_SidlHTTPConflict_141039.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPGone_141039 = "HTTP Gone";
+ERR_SidlHTTPGone_141039.Request = "HTTP Gone";
+ERR_SidlHTTPGone_141039.Advice = "The requested resource is no longer available at the server and no forwarding address is known (Contact your administrator).";
+
+ERR_SidlHTTPLengthRequired_141039 = "HTTP Length Required";
+ERR_SidlHTTPLengthRequired_141039.Request = "HTTP Length Required";
+ERR_SidlHTTPLengthRequired_141039.Advice = "The server refuses to accept the request without a defined Content-Length (Contact your administrator).";
+
+ERR_SidlHTTPPreconditionFailed_141039 = "HTTP Precondition Failed";
+ERR_SidlHTTPPreconditionFailed_141039.Request = "HTTP Precondition Failed";
+ERR_SidlHTTPPreconditionFailed_141039.Advice = "The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server (Contact your administrator).";
+
+ERR_SidlHTTPRequestEntityTooLarge_141039 = "HTTP Request Entity Too Large";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Request = "HTTP Request Entity Too Large";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Advice = "The server is refusing to process a request because the request entity is larger (Contact your administrator).";
+
+ERR_SidlHTTPRequestURITooLong_141039 = "HTTP Request-URI Too Long";
+ERR_SidlHTTPRequestURITooLong_141039.Request = "HTTP Request-URI Too Long";
+ERR_SidlHTTPRequestURITooLong_141039.Advice = "The server is refusing to service the request because the Request-URI is too long (Contact your administrator).";
+
+ERR_SidlHTTPUnsupportedMediaType_141039 = "HTTP Unsupported Media Type";
+ERR_SidlHTTPUnsupportedMediaType_141039.Request = "HTTP Unsupported Media Type";
+ERR_SidlHTTPUnsupportedMediaType_141039.Advice = "The server is refusing to service the request because the entity of the request is in an unsupported format (Contact your administrator).";
+
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039 = "HTTP Requested Range Not Satisfiable";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Request = "HTTP Requested Range Not Satisfiable";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPExpectationFailed_141039 = "HTTP Expectation Failed";
+ERR_SidlHTTPExpectationFailed_141039.Request = "HTTP Expectation Failed";
+ERR_SidlHTTPExpectationFailed_141039.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPMalformedRequest_141040 = "HTTP Malformed request";
+ERR_SidlHTTPMalformedRequest_141040.Request = "HTTP Malformed request";
+ERR_SidlHTTPMalformedRequest_141040.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPExpectationFailed_141041 = "HTTP Unexpectation failed";
+ERR_SidlHTTPExpectationFailed_141041.Request = "HTTP Unexpectation failed";
+ERR_SidlHTTPExpectationFailed_141041.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPInternalServerError_141042 = "HTTP Internal server error";
+ERR_SidlHTTPInternalServerError_141042.Request = "HTTP Internal server error";
+ERR_SidlHTTPInternalServerError_141042.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPNotImplemented_141043 = "HTTP Not implemented";
+ERR_SidlHTTPNotImplemented_141043.Request = "HTTP Not implemented";
+ERR_SidlHTTPNotImplemented_141043.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPBadGateway_141043 = "HTTP Bad Gateway";
+ERR_SidlHTTPBadGateway_141043.Request = "HTTP Bad Gateway";
+ERR_SidlHTTPBadGateway_141043.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPGatewayTimeout_141044 = "HTTP Gateway Timeout";
+ERR_SidlHTTPGatewayTimeout_141044.Request = "HTTP Gateway Timeout";
+ERR_SidlHTTPGatewayTimeout_141044.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlUnSupportedHTTPLevel_141045 = "HTTP Unsupported level";
+ERR_SidlUnSupportedHTTPLevel_141045.Request = "HTTP Unsupported level";
+ERR_SidlUnSupportedHTTPLevel_141045.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlUnknownHTTPError_141046 = "HTTP Unknown error";
+ERR_SidlUnknownHTTPError_141046.Request = "HTTP Unknown error";
+ERR_SidlUnknownHTTPError_141046.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPServiceUnavailable_141047 = "HTTP Service unavailable";
+ERR_SidlHTTPServiceUnavailable_141047.Request = "HTTP Service unavailable";
+ERR_SidlHTTPServiceUnavailable_141047.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPVersionNotSupported_141047 = "HTTP Version Not Supported";
+ERR_SidlHTTPVersionNotSupported_141047.Request = "HTTP Version Not Supported";
+ERR_SidlHTTPVersionNotSupported_141047.Advice = "Contact your administrator to check HTTP server configuration";
+
+ERR_SidlHTTPServerSessionTimeout_141048 = "HTTP Server session timeout";
+ERR_SidlHTTPServerSessionTimeout_141048.Request = "HTTP Server session timeout";
+ERR_SidlHTTPServerSessionTimeout_141048.Advice = "Retry request or contact your administor to check network environment";
+
+ERR_SidlServerRecieveFailed_141061 = "Server recieved failed";
+ERR_SidlServerRecieveFailed_141061.Request = "Server has not been able to recieve request";
+ERR_SidlServerRecieveFailed_141061.Advice = "Check network configuration or application server configuration";
+
+ERR_SidlServerSendFailed_141062 = "Server send failed";
+ERR_SidlServerSendFailed_141062.Request = "Server has not been able to send the answer";
+ERR_SidlServerSendFailed_141062.Advice = "Check network configuration or application server configuration";
+
+ERR_SidlLevelUnsupported_141063 = "Unsupported client level";
+ERR_SidlLevelUnsupported_141063.Request = "Client level is different from server and not compatible";
+ERR_SidlLevelUnsupported_141063.Advice = "Configure client to use compatible server or upgrade your server";
+
+ERR_SidlServerTruncatedRequest_141064 = "Truncated request";
+ERR_SidlServerTruncatedRequest_141064.Request = "Client request has been truncated";
+ERR_SidlServerTruncatedRequest_141064.Advice = "Check network configuration or application server configuration";
+
+ERR_SidlServerInvalidHeader_141065 = "Invalid communication header";
+ERR_SidlServerInvalidHeader_141065.Request = "Server: Data in communication header are wrong";
+ERR_SidlServerInvalidHeader_141065.Advice = "Contact your administor to check network environment";
+
+ERR_SidlServerCompressFailed_141066 = "Server Compress failed";
+ERR_SidlServerCompressFailed_141066.Request = "Server have not been able to compress answer";
+ERR_SidlServerCompressFailed_141066.Advice = "Retry request or reinstall software on server";
+
+ERR_SidlServerUnCompressFailed_141067 = "Server Uncompress failed";
+ERR_SidlServerUnCompressFailed_141067.Request = "Server is unable to uncompress client request data";
+ERR_SidlServerUnCompressFailed_141067.Advice = "Retry request or reinstall software on server";
+
+ERR_SidlServerUnknownError_141068 = "Server Unknown error";
+ERR_SidlServerUnknownError_141068.Request = "Unknown server error has occured";
+ERR_SidlServerUnknownError_141068.Advice = "Contact your administrator to check server logs";
+
+ERR_SidlServerUnavailable_141071 = "Communication error between SDAM and server";
+ERR_SidlServerUnavailable_141071.Request = "Communication error between SDAM and server";
+ERR_SidlServerUnavailable_141071.Advice = "Retry request or restart server";
+
+ERR_SidlServerLostDuringRq_141072 = "Communication error between server and SDAM";
+ERR_SidlServerLostDuringRq_141072.Request = "Communication error between server and SDAM before answer";
+ERR_SidlServerLostDuringRq_141072.Advice = "Retry request or restart server";
+
+ERR_SidlServerLostDuringAnswer_141073 = "Communication error between server and SDAM";
+ERR_SidlServerLostDuringAnswer_141073.Request = "Communication error between server and SDAM";
+ERR_SidlServerLostDuringAnswer_141073.Advice = "Retry request or restart server";
+
+ERR_SidlNoHttpstatusCode_141074 = "Communication error between client and server";
+ERR_SidlNoHttpstatusCode_141074.Request = "Communication error: No HTTP status code in answer";
+ERR_SidlNoHttpstatusCode_141074.Advice = "Configure server connection or contact your administrator (Activate HTTP traces or use a network capture tool)";
+
+ERR_SidlUnsupportedHttpStatus_141075 = "Unsupported HTTP response";
+ERR_SidlUnsupportedHttpStatus_141075.Request = "Unsupported HTTP response";
+ERR_SidlUnsupportedHttpStatus_141075.Advice = "Configure server connection or contact your administrator (Activate HTTP traces or use a network capture tool)";
+

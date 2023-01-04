@@ -1,0 +1,48 @@
+//
+// FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM
+//
+
+//--------------------------------
+// Tweakables
+//--------------------------------
+
+samplerRECT Auto_ZMap
+<
+>;
+
+//--------------------------------
+// Structure
+//--------------------------------
+
+struct pixelInput
+{
+    float4 HPosition    : POSITION;
+    float3 texCoord		  : TEXCOORD0;
+};
+
+
+//-----------------------------------------------------------------------------------------
+//  Pixel Shader
+//-----------------------------------------------------------------------------------------
+						  
+float4 DumpZMap(pixelInput IN) : COLOR 
+{
+  int2 screenCoord  = IN.texCoord.xy; 
+  return texRECT(Auto_ZMap, screenCoord); 
+}
+
+//-----------------------------------------------------------------------------------------
+//  Techniques
+//-----------------------------------------------------------------------------------------
+
+technique Effect_DOFX_GLSL
+{
+    pass p0 
+    {		
+        FragmentProgram = compile glslf DumpZMap();
+    }
+}
+
+
+
+

@@ -1,0 +1,310 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for input topological objects errors 
+// En_EN
+//================================================================
+//                           INPUT
+// THM  2016/05/12  error 4508 suppress highlighted from the text
+//================================================================
+//----------------------------------Null or invalid input
+//
+TopObInNullPointer="入力したデータ /P1 へのポインタが NULL です。
+ このデータを定義、またはポインタが割り当て解除されていないことをチェックしてください。";
+//
+TopObInNullData="入力したデータ /P1 が NULL です。";
+//
+TopObInEmptyObject="オブジェクト /P1 が空です。";
+//
+TopObInInvalidType="/p1 は入力したデータ /p2 の無効なタイプです。代わりに /p3 タイプを使用してください。";
+//
+TopObInIndex="インデックス /p1 は範囲外です。最大値: /p2";
+//
+TopObInMixPolyExactInputs="この演算子では、多面体の入力と正確な入力は混在できません。正確な入力を多面体データに変換して演算子を実行します。";
+//----------------------------------Orientation
+//
+TopObInBadOrientation="無効な方向値: /p1 は /p2 に対して有効な方向ではありません。";
+//
+TopObInBadMatterSideValue="無効なマター サイド値: /P1 は /p2 に対して有効なマター サイドではありません。";
+//
+TopObInBadLocationValue="無効なロケーション値: /P1 は /p2 に対して有効なロケーション値ではありません。";
+//
+TopObInBadSideValue="無効なサイド値: /P1 は /p2 に対して有効なサイド値ではありません。";
+//
+//----------------------------------Invalid dimension
+//                               /p1 = cell, domain, .. /p2= good dimension
+TopObInInvalidDimension="/p1 寸法は無効です。寸法 /p2 の /p1 を使用してください。";
+//
+TopObInTooSmallDimension="/p1 寸法は小さすぎます。寸法は最小で /p2 である必要があります。";
+//
+TopObInTooLargeDimension="/p1 寸法は大きすぎます。寸法は最大で /p2 である必要があります。";
+//
+TopObInIncompatibleElement=" /p1 は /p2 と非互換です。";
+//  
+//----------------------------------invalid element                          
+//
+TopObInNonModifiableElement=" /p1 は修正できません。";
+//
+TopObInNoGeometry=" /p1 は関連付けられた形状を持ちません。";
+//
+TopObInIncomplete=" /p1 は不完全です。";
+//
+TopObInIncompleteSplit=" 分割操作: 分割フェースはボディーを完全にカットしていません。
+他のフェースを選択してください。";
+//
+TopObInSurSurUndetectedConfusion=" 2 つのフェース間に形状の不整合は検出されませんでした。
+ボディー間の接触をチェックしてください。";
+//
+//----------------------------------All topological objects
+//
+TopObInCell="セル";
+//
+TopObInDomain="ドメイン";
+//
+TopObInBody="ボディー";
+//
+TopObInVertex="頂点";
+//
+TopObInEdge="エッジ";
+//
+TopObInFace="フェース";
+//
+TopObInVolume="ボリューム";
+//
+TopObInLoop="ループ";
+//
+TopObInLump="ランプ";
+//
+TopObInVertexInVolume="ボリューム中の頂点";
+//
+TopObInVertexInFace="フェース中の頂点";
+//
+TopObInWire="ワイヤー";
+//================================================================
+//                           INTERNAL
+//================================================================
+//----------------------------------Unvailable
+//
+TopObIntUnvailable="オブジェクト /P2 に対するメソッド /P1 はまだ利用できません。";
+//
+TopObIntobjectCreationFailed="/p1 クラスのオブジェクトは作成できません。";
+//
+TopObIntInterfaceFailed="/p2 インターフェースへの /p1 実装のバインドに失敗しました。
+      辞書をチェックしてください。";
+//
+TopObIntImplFailed="/p2 実装への /p1 インターフェースのバインドに失敗しました。
+      辞書をチェックしてください。";
+//
+TopObIntMethodCallOrder="無効なメソッド呼び出し順序。メソッド /p1 は /p2 の後に呼び出す必要があります。";
+//
+TopObIntObjectType="値 /p1 のタイプとマッチするクラスがありません。";
+//
+TopObIntBadTopology="無効なトポロジー構成が検出されました。";
+//
+TopObIntImpossibleWriting="オブジェクト /p1 は書き込みできません。";
+//
+TopObIntAllocation="メモリを割り当てできません。";
+//
+TopObIntNoSubd="/p1 エレメントに /p2 サブドメインがありません。";
+//
+TopObIntSubd="内部エラー /p1 、/p2";
+//
+TopObIntBadGeometry="内部エラー /p1 により、正しくない形状構成になります。";
+//
+TopObIntMath="数学パッケージでのエラー /p1 です。";
+//
+// Topological model error 4000-4499
+//
+TopObInCheckJournal_ERR_4000.Request="トポロジー ジャーナル チェックが失敗しました。";
+TopObInCheckJournal_ERR_4000.Diagnostic="ジャーナルの順序を入力したボディーから出力ボディーに導くことはできません。";
+TopObInCheckJournal_ERR_4000.Advice="ジャーナルの順序またはコピー/非コピー入力ボディーをチェックしてください。";
+//
+TopObInLyingOnAmbiguousGeometry_ERR_4100.Request="あいまいな LyingOn 形状サポート。";
+TopObInLyingOnAmbiguousGeometry_ERR_4100.Diagnostic="/P2 上の /P1 にあいまいなサポート /P3 および /P4 が使用されています。";
+TopObInLyingOnAmbiguousGeometry_ERR_4100.Advice="あいまいな LyingOn 形状は使用しないでください。";
+//
+//
+// Boolean Operators 4500-4999
+//
+TopObInBoolIncompleteSplit_ERR_4500.Request="ブーリアン演算子: スキンごとに分割します。";
+TopObInBoolIncompleteSplit_ERR_4500.Diagnostic="スキンはボリュームの 1 つを横切ってカットしません: 分割が計算できません。";
+TopObInBoolIncompleteSplit_ERR_4500.Advice="ボディーの 1 つのボリュームを完全にカットするスキンを選択してください。";
+//
+TopObInBoolImpossibleSplit_ERR_4501.Request="ブーリアン演算子: スキンごとに分割します。";
+TopObInBoolImpossibleSplit_ERR_4501.Diagnostic="スキンに穴があり、この穴はボリュームの内側にあります: 分割が計算できません。";
+TopObInBoolImpossibleSplit_ERR_4501.Advice="穴 (もしあれば) がボディーのボリュームの内側にないスキンを選択してください。";
+//
+TopObInBoolUnresolvedSpec_ERR_4502.Request="ブーリアン演算子: 仕様が未解決です。";
+TopObInBoolUnresolvedSpec_ERR_4502.Diagnostic="仕様は解決できません。トリム操作は実行できません。";
+TopObInBoolUnresolvedSpec_ERR_4502.Advice="フェースの選択を修正してください。";
+//
+TopObInBoolIncompleteCut_ERR_4503.Request="ブーリアン演算子: カットできません。";
+TopObInBoolIncompleteCut_ERR_4503.Diagnostic="あるボディーは他のボディーを完全に横切ってカットしません: 分割が計算できません。";
+TopObInBoolIncompleteCut_ERR_4503.Advice="互いに完全にカットするようにボディーの接触を修正してください。";
+//
+TopObInBoolIncompleteLayDown_ERR_4504.Request="ブーリアン演算子: 境界配置が不完全です。";
+TopObInBoolIncompleteLayDown_ERR_4504.Diagnostic="スキン境界がトリミング ボディー上に完全に配置されていません。";
+TopObInBoolIncompleteLayDown_ERR_4504.Advice="スキン境界の接触を修正して、境界が完全に配置されるようにしてください。いくつかの拘束を追加してみてください。";
+//
+TopObInBoolImpossibleSewing_ERR_4505.Request="ソーイング演算子: 方向が非互換のため計算できません。";
+TopObInBoolImpossibleSewing_ERR_4505.Diagnostic="ソーイング スキンの方向によって結果が無効になります。";
+TopObInBoolImpossibleSewing_ERR_4505.Advice="ソーイング スキンの方向を反転してください。";
+//
+TopObInBoolImpossibleReport_ERR_4506.Request="ブーリアン演算子: エッジの周囲では形状交差を計算できません。";
+TopObInBoolImpossibleReport_ERR_4506.Diagnostic="形状を計算できません: 接するエレメントまたは小さなエレメントは交差の品質を低下させます。";
+TopObInBoolImpossibleReport_ERR_4506.Advice="ボディーの接触を修正してください (拘束を使用し、ボディーの 1 つを分割するか押し出す)。";
+//
+TopObInBoolMissedConfusion_ERR_4507.Request="ブーリアン演算子: 接する設計が検出されました。";
+TopObInBoolMissedConfusion_ERR_4507.Diagnostic="接する領域を解決できません。";
+TopObInBoolMissedConfusion_ERR_4507.Advice="ボディーの接触を修正してください (ボディーの 1 つを分割するかソーイングする)。";
+//
+TopObInBoolFaceFaceFailed_ERR_4508.Request="ブーリアン演算子: フェース/フェースが交差しませんでした。";
+TopObInBoolFaceFaceFailed_ERR_4508.Diagnostic="フェース間の交差を解決できません。";
+TopObInBoolFaceFaceFailed_ERR_4508.Advice="接触の品質を修正してください (拘束を使用)。";
+//
+TopObInBoolNoLayDown_ERR_4509.Request="ブーリアン演算子: 境界がありません。";
+TopObInBoolNoLayDown_ERR_4509.Diagnostic="スキン境界がトリムするボディーにありません。";
+TopObInBoolNoLayDown_ERR_4509.Advice="スキン境界の接触を修正して、境界が完全に配置されるようにしてください。 ";
+//
+TopObInBoolTwistedVolume_ERR_4510.Request="ブーリアン演算子: ねじれたボリュームが生成されました。";
+TopObInBoolTwistedVolume_ERR_4510.Diagnostic="各ボディーの相対位置およびその接触位置があいまいです。";
+TopObInBoolTwistedVolume_ERR_4510.Advice="操作順序を変更してください。";
+//
+TopObInBoolInaccurateContact_ERR_4511.Request="ブーリアン演算子: フェース接触が不正確です。";
+TopObInBoolInaccurateContact_ERR_4511.Diagnostic="フェース間の交差を解決できません。";
+TopObInBoolInaccurateContact_ERR_4511.Advice="接触の品質を修正するか、もう一方のボディーのソーイングを試行してください。";
+//
+TopObInBoolImpossibleCut_ERR_4512.Request="ブーリアン演算子: エレメントをカットできません。";
+TopObInBoolImpossibleCut_ERR_4512.Diagnostic="エレメントをカットできません: 接線接触をチェックしてください。";
+TopObInBoolImpossibleCut_ERR_4512.Advice="ボディーの接触を修正してください (ボディーの 1 つを分割するか押し出す)。";
+//
+TopObInSmartProjIncompleteSolution_ERR_4513.Request="スマート投影演算子";
+TopObInSmartProjIncompleteSolution_ERR_4513.Diagnostic="ワイヤーの投影を完了できません";
+TopObInSmartProjIncompleteSolution_ERR_4513.Advice="オリジナルのシェルを押し出すか、投影を使用して正しい部分を選択してください。";
+//
+TopObInSmartProjNoInitialisation_ERR_4514.Request="スマート投影演算子";
+TopObInSmartProjNoInitialisation_ERR_4514.Diagnostic="ワイヤーの投影を開始できません";
+TopObInSmartProjNoInitialisation_ERR_4514.Advice="投影の結果が点のみであるか、解がないか、選択できない多数の解があります。";
+//
+TopObInSmartProjCheckDistance_ERR_4515.Request="スマート投影演算子";
+TopObInSmartProjCheckDistance_ERR_4515.Diagnostic="ワイヤーのスマート投影に複数の解があります";
+TopObInSmartProjCheckDistance_ERR_4515.Advice="スマート投影が常に一番近い投影を提供するとは限りません。投影を使用して、正しい解を選択してください";
+//
+TopObInBoolImpossibleSplit_ERR_4516.Request="ブーリアン演算子: スキンごとに分割します。";
+TopObInBoolImpossibleSplit_ERR_4516.Diagnostic="分割するスキンが無効です: 相互に交差するドメインから構成されています。";
+TopObInBoolImpossibleSplit_ERR_4516.Advice="いくつかの分割操作を行うか、トリム演算子を使用してスキンを解決してください。";
+//
+TopObInBoolImpossibleMultiTrim_ERR_4517.Request="ブーリアン演算子: 断片モード トリム";
+TopObInBoolImpossibleMultiTrim_ERR_4517.Diagnostic="無効なボディーの入力";
+TopObInBoolImpossibleMultiTrim_ERR_4517.Advice="入力したボディーには、1 つのドメインのみが含まれていなければなりません。";
+//
+TopObInBoolImpossibleMultiTrim_ERR_4518.Request="ブーリアン演算子: 断片モード トリム";
+TopObInBoolImpossibleMultiTrim_ERR_4518.Diagnostic="無効な選択: エレメント (入力番号 /p1 ) は /p2 個の部分にカットされました。部分 /p3 は保持できません。";
+TopObInBoolImpossibleMultiTrim_ERR_4518.Advice="この入力を置換してください。";
+//
+TopObInBoolPositionComputation_ERR_4519.Request="ブーリアン演算子: ボリュームを再構成できません";
+TopObInBoolPositionComputation_ERR_4519.Diagnostic="1 つの入力したボディーが不要な薄いボリュームから構成されている可能性があります。それを保持するかどうかを決定できません。";
+TopObInBoolPositionComputation_ERR_4519.Advice="[GSD/分解] フィーチャーを使用してボディー構成をチェックし、[ランプを除去] フィーチャーを使用して使用可能なドメインのみを保持してから、操作を再試行してください。";
+//
+TopObInSmartProjEqualSolution_ERR_4520.Request="スマート投影演算子";
+TopObInSmartProjEqualSolution_ERR_4520.Diagnostic="2 つの解の最大距離が同じです";
+TopObInSmartProjEqualSolution_ERR_4520.Advice="投影を使用して、適切な結果を選択してください。";
+//
+TopObInBoolLayDownBadOrientation_ERR_4521.Request="配置演算子";
+TopObInBoolLayDownBadOrientation_ERR_4521.Diagnostic="複数の結合されたワイヤーを正しくない方向に配置しています。";
+TopObInBoolLayDownBadOrientation_ERR_4521.Advice="ワイヤーごとに 1 つのボディーを作成し、これらを配置して結果を結合してください。";
+//
+TopObInSmartProjIncompleteSolution_ERR_4522.Request="スマート投影演算子";
+TopObInSmartProjIncompleteSolution_ERR_4522.Diagnostic="初期ワイヤーはシェル上に完全に投影できません。";
+TopObInSmartProjIncompleteSolution_ERR_4522.Advice="スマート投影のオプションを変更して部分解を許可するか、初期ワイヤーを分割します。"; // @validatedUse CRE 10:11:13 option
+//
+TopObInBoolFullResult_ERR_4523.Request="互換性演算子";
+TopObInBoolFullResult_ERR_4523.Diagnostic="結果にフル エッジまたはフル頂点が含まれています。";
+TopObInBoolFullResult_ERR_4523.Advice="入力したボディーからフル エレメントを除去してください。";
+//
+TopObInBoolFullResult_ERR_4524.Request="互換性演算子";
+TopObInBoolFullResult_ERR_4524.Diagnostic="入力ボディーが等しい";
+TopObInBoolFullResult_ERR_4524.Advice="異なるボディーを選択してください。";
+//
+TopObInProjNoOrientedResult_ERR_4525.Request="投影演算子";
+TopObInProjNoOrientedResult_ERR_4525.Diagnostic="投影結果は方向付けできません。";
+TopObInProjNoOrientedResult_ERR_4525.Advice="入力の選択を修正してください。";
+//
+TopObInTopoInaccurateContact_ERR_4526.Request="トポロジー演算: 接触が不正確です。";
+TopObInTopoInaccurateContact_ERR_4526.Diagnostic="エレメントの交差を解決できません。";
+TopObInTopoInaccurateContact_ERR_4526.Advice="ボディーの妥当性をチェックするか、接触の品質を修正してください。";
+//
+TopObInTopoInaccurateContact_ERR_4527.Request="投影演算子";
+TopObInTopoInaccurateContact_ERR_4527.Diagnostic="エッジの投影はマージできません。";
+TopObInTopoInaccurateContact_ERR_4527.Advice="投影を個別に実行し、結果をマージします。";
+//
+TopObInTopoEdgeError_ERR_4528.Request="投影演算子";
+TopObInTopoEdgeError_ERR_4528.Diagnostic="エッジを投影できません。";
+TopObInTopoEdgeError_ERR_4528.Advice="投影を行うために分離します。";
+//
+TopObIntCellNotInBody_ERR_4600.Request="/p1 : セルがボディーに属していません。";
+TopObIntCellNotInBody_ERR_4600.Diagnostic="セル /p1 はボディー /p2 に属していません。要求された操作は実行できません。";
+TopObIntCellNotInBody_ERR_4600.Advice="入力の選択を修正してください";
+//
+TopObIntCATGeoClean_ERR_4601.Request="形状チェッカーが異常を検出しました。";
+TopObIntCATGeoClean_ERR_4601.Diagnostic="/p2 で /p1 が検出されました。";
+TopObIntCATGeoClean_ERR_4601.Advice="入力したドキュメントを消去し、演算子を訂正してください。";
+//
+TopObIntCATGeoClean_ERR_4602.Request="形状チェッカーは打ち切られました。";
+TopObIntCATGeoClean_ERR_4602.Diagnostic="チェック時に想定外のエラーが発生しました。";
+TopObIntCATGeoClean_ERR_4602.Advice="サポート担当員に連絡してください。";
+//
+TopObIntImpossibleSituation_ERR_4603.Request="アルゴリズムのローカル データが無効です。";
+TopObIntImpossibleSituation_ERR_4603.Diagnostic="操作によって不可能な状態が発生します。";
+TopObIntImpossibleSituation_ERR_4603.Advice="入力の選択を修正してください";
+//
+TopObInBoolWarningStabilization_ERR_4700.Request="一部の結果曲線の方向を安定させることができません。";
+TopObInBoolWarningStabilization_ERR_4700.Diagnostic="赤い曲線の方向を安定させることができません。これは複数の入力曲線によるか単一の入力曲線の複数の投影の結果だからです。(入力曲線は青色で高輝度表示されています)。";
+TopObInBoolWarningStabilization_ERR_4700.Advice="投影方向を使用するか、サポートから有用なフェースだけを抽出してください。";
+//
+TopObInBoolWarningBoundaryHealing_ERR_4701.Request="いくつかの無効な曲線がプロファイルの自動交差を作成します。";
+TopObInBoolWarningBoundaryHealing_ERR_4701.Diagnostic="高輝度表示された曲線が無効です。そのためにプロファイルを修復できません。";
+TopObInBoolWarningBoundaryHealing_ERR_4701.Advice="これらの曲線を再作成してください。";
+//
+TopObInBoolWarningRegularizator_ERR_4702.Request="選択された一部のフェースが相互に交差しています。正規化できません。";
+TopObInBoolWarningRegularizator_ERR_4702.Diagnostic="高輝度表示されたフェースは接していません。したがってボディーは正規化できません。";
+TopObInBoolWarningRegularizator_ERR_4702.Advice="ボディーの設計を再検討してください。";
+//
+TopObInBoolWarningInaccurateContact_ERR_4703.Request="ボディー間の不正確な接触は非結合の結果につながります。";
+TopObInBoolWarningInaccurateContact_ERR_4703.Diagnostic="高輝度表示フェースは接していますが、マージできません。結果は複数のドメインから構成されています。";
+TopObInBoolWarningInaccurateContact_ERR_4703.Advice="ボディーの設計を再検討するか、ランプを除去フィーチャーを使用して一部のドメインを除去してください。";
+//
+TopObInBoolWarningNonManifoldEdges_ERR_4704.Request="ブーリアン演算中に接線構成が作成されました。";
+TopObInBoolWarningNonManifoldEdges_ERR_4704.Diagnostic="接線構成によって、ボディー間の不明確な接触が現れる可能性があります。";
+TopObInBoolWarningNonManifoldEdges_ERR_4704.Advice="ボディーの設計をチェックしてください。";
+//
+TopObInBoolWarningClosedWirePositionning_ERR_4705.Request="閉じたワイヤーの位置が不明確です。";
+TopObInBoolWarningClosedWirePositionning_ERR_4705.Diagnostic="結果は、高輝度表示された閉じた点と交差ロケーションの位置関係によって変わります。選択が更新中に変化することがあります。";
+TopObInBoolWarningClosedWirePositionning_ERR_4705.Advice="安定した結果を得るには、保持/除去オプションを使用してください。"; // @validatedUse CRE 10:11:13 option
+//
+TopObInBoolWarningGapInMissing_ERR_4706.Request="ギャップが作成されました。";
+TopObInBoolWarningGapInMissing_ERR_4706.Diagnostic="エッジには、/p1 mm の内部ギャップがあります。";
+TopObInBoolWarningGapInMissing_ERR_4706.Advice="2 つのボディーの間の接触が十分に正確ではありません。";
+//
+TopObInBoolWarningKeepAndDelete_ERR_4707.Request="ボリュームが保持および除去されました。";
+TopObInBoolWarningKeepAndDelete_ERR_4707.Diagnostic="保持されたフェースと除去されたフェースが同じボリューム内にあります。";
+TopObInBoolWarningKeepAndDelete_ERR_4707.Advice="フェースは、ボリュームの他のフェースとしては保持されません。";
+//
+TopObInBoolWarningToleranceValue_ERR_4708.Request="公差値が 0.1 を超えています";
+TopObInBoolWarningToleranceValue_ERR_4708.Diagnostic="0.1 より大きな値は、後続のテストおよび演算子と互換性がありません。";
+TopObInBoolWarningToleranceValue_ERR_4708.Advice="0.1 より小さい公差値を使用してください。";
+//
+TopObInBoolWarningIndexingOfSolutions_ERR_4709.Request="結果のシェルのインデックス付けがあいまいです。";
+TopObInBoolWarningIndexingOfSolutions_ERR_4709.Diagnostic="入力として閉じたワイヤーが存在するため、結果のインデックス付けが不安定です。";
+TopObInBoolWarningIndexingOfSolutions_ERR_4709.Advice="ワイヤーを 2 つに分割してください。";
+//
+TopObInBoolConfusedWiresInSplitShellByWires_ERR_4710.Request="2 つの入力ワイヤーが混在しています。";
+TopObInBoolConfusedWiresInSplitShellByWires_ERR_4710.Diagnostic="2 つの入力ワイヤーが混在している場合、方向の計算を実行できません。";
+TopObInBoolConfusedWiresInSplitShellByWires_ERR_4710.Advice="入力として、混在していないワイヤーを使用してください。";
+//
+TopObInvalidCurve_ERR_4711.Request="トポロジー演算に対する無効な入力曲線です。";
+TopObInvalidCurve_ERR_4711.Diagnostic="高輝度表示されたエッジは、無効な曲線上で定義されています。";
+TopObInvalidCurve_ERR_4711.Advice="入力を変更し、無効性を除去してください。";
+//
+TopObSimplifyTSInputToleranceIsNotSupported_ERR_4800.Request="サポートされていない公差です。";
+TopObSimplifyTSInputToleranceIsNotSupported_ERR_4800.Diagnostic="入力された公差は、サポートされている公差の範囲外です。";
+TopObSimplifyTSInputToleranceIsNotSupported_ERR_4800.Advice="公差を調整してください。";

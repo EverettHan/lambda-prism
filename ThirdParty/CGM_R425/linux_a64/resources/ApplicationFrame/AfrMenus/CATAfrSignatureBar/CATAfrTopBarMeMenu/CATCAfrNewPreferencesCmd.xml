@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+	<Template syp:name="CATCAfrNewPreferencesCmdHeadersList" Target="CATCAfrInclude">
+		<CATCmdHeadersList>
+			<!--Add here your command header-->
+			      <CATCommandHeader ID = "CATMyMenuNewPreferencesHdr"
+                        ClassName = "CATCAfrPreferencesCmd"
+                        SharedLibraryName = "CATAfrPrferenceOptions"
+                        ResourceFile="CATCAfrPreferencesCmd"
+                        Available = "1"
+                        AvailabilityMode = "Offline=YES"/>
+		</CATCmdHeadersList>
+	</Template>
+
+
+	<Template syp:name="CATCAfrNewPreferencesCmdElements" Target="CATCAfrInclude">
+		<CATCAfrGroup>
+			<!--Add here your new elements-->
+			 <CATCAfrInclude Condition="GetEnv(ADL_ODT_IN)" Template="MyPreference" />
+			<!-- <CATCmdStarter Name="NewPreferenceMenu" Command="CATMyMenuNewPreferencesHdr" />  -->
+		</CATCAfrGroup>
+	</Template>
+	
+	<Template syp:name="MyPreference" Target="CATAfrComponent">
+	  <CATCmdStarter Name="NewPreferenceMenu" Command="CATMyMenuNewPreferencesHdr" /> 
+	</Template>
+
+</Styles>
+

@@ -1,0 +1,27 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "Visualization.tst"/>
+  <attached name = "GeometryVisualization.tst"/>
+  <attached name = "CATIAModelVisu.tst"/>
+  <attached name = "VisualizationApplication.tst"/>
+  <attached name = "VisualizationCommands.tst"/>
+  <attached name = "GraphicEditor.tst"/>
+  <prerequisite access = "Protected" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationController"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SGManager"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "SGCoreUtils"/>
+  <prerequisite access = "Protected" name = "MultimediaPixelImage"/>
+  <authorize access = "Private" comment = "AZX/NSI 2019.04.02 moving the visu commands from CATIAApplicationFrame to VisualizationCommandsUI" name = "VisualizationCommandsUI"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

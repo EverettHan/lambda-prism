@@ -1,0 +1,57 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "CATPLMIntegrationAccess"/>
+  <prerequisite access = "Protected" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMPosBaseInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" name = "SystemTS"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <authorize access = "Protected" name = "PLMMultiDisciplineEnv.tst"/>
+  <authorize access = "Protected" name = "PLMDictionaryNavServices"/>
+  <authorize access = "Protected" name = "FeatureModelerExt"/>
+  <authorize access = "Protected" name = "CATComponentsFamilyUI"/>
+  <authorize access = "Protected" name = "CATComponentsFamilyUI.tst"/>
+  <authorize access = "Protected" name = "PLMCatalogViewer"/>
+  <authorize access = "Protected" name = "CATInstantCollabDesignUI"/>
+  <authorize access = "Protected" name = "BusinessRulesWintopUI"/>
+  <authorize access = "Protected" name = "BusinessRulesModeler"/>
+  <authorize access = "Protected" name = "CATVPMNavPLMIntegrationAccess"/>
+  <authorize access = "Protected" name = "CATPLMNavBaseUI"/>
+  <authorize access = "Protected" name = "CATPLMCompassBase"/>
+  <authorize access = "Protected" name = "CATImmVPMSearch"/>
+  <authorize access = "Protected" name = "CATImmVPMNavCmd"/>
+  <authorize access = "Protected" name = "CATImmVPMModel"/>
+  <authorize access = "Protected" name = "CATImmVPMBaseUI"/>
+  <authorize access = "Protected" name = "CATPLMIndexItfImpl"/>
+  <authorize access = "Protected" name = "PLMPosManagementServices"/>
+  <authorize access = "Protected" name = "PLM3DSearchServices"/>
+  <authorize access = "Protected" name = "CAT3DXMLPlayerSetup"/>
+  <authorize access = "Protected" name = "CATPLMTransitionEngine"/>
+  <authorize access = "Protected" name = "VIALivePlayerSetup"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior " name = "PLMManagementServicesUI"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior " name = "PLMCopyUI"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior " name = "CATPLMCollabDesignModeler"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior " name = "PLMNavigationServices"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior " name = "KnowledgeSharedUI"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior " name = "CATImmWtpDocMgmt"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior " meta = "TOREMOVE" name = "CATPLMDDManager"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetPLMContext " name = "PLMSessionInterfaces"/>
+  <authorize access = "Protected" comment = "ENOSTParameter::StrictLockingPolicyForDefinition " name = "CATPLMUIImpl"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior; retrait de la toolbar lifecycle dans le contexte de nav " name = "CATPSMNavFoundationUI"/>
+  <authorize access = "Protected" comment = "PLMManageContext::GetTeamBehavior; retrait de la fonction add subtask du postit VPM" name = "CATPLMChangeBaseUI"/>
+  <authorize access = "Protected" name = "CATPLMTemplates"/>
+  <authorize access = "Protected" name = "PLMFolderViewer"/>
+  <authorize access = "Protected" name = "XPGBatchUtility"/>
+  <authorize access = "Protected" name = "PLMDesignWorkspaceUI"/>
+  <authorize access = "Protected" comment = "ENOSTParameter" name = "CATPLMCollabSpaceUI"/>
+  <authorize access = "Private" comment = "Friend For Split" name = "ENOSTMultiDiscipline"/>
+  <authorize access = "Protected" name = "CATPLMImplDebug"/>
+  <authorize access = "Protected" name = "CATPLMAdapterOdtBase.tst"/>
+  <authorize access = "Protected" name = "CATComponentsFamily"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

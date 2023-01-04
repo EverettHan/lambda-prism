@@ -1,0 +1,12 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <built comment = "NSI/AZX 12.11.2021 Short term. To be reviewed." meta = "NEVER" value = "false"/>
+  <attached name = "RenderEngine.tst"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" comment = "AZX: indirectly used by V_ASSERT. If removed, causes link error when building with -dev option." export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENOpenXR"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGCoreUtils"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "RenderEngine"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

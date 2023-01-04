@@ -1,0 +1,138 @@
+<meta charset="UTF-8"/>
+//** WARNING: YWE 16:095:02 SINGLE-CODE 2013x => NO LOCAL CHANGE EXPECTED - USE IMPORT **/
+// Messages for batches
+// MODULE :  PLMBatchxxx
+// US Version
+//=====================================================================
+
+//====================================================================
+//  Messages for Batches
+//  US Version
+//====================================================================
+ErrorDummy="Erreur interne - Code= /p1";
+LicenseKO1="/p1 non disponible";
+LicenseKO2="La configuration n'autorise pas l'utilisation de ce batch";
+//====================================================================
+// Directory
+//====================================================================
+
+Directory.NotExist="Le texte entré dans le champ \"/p1\" n'est pas un répertoire.";
+Directory.NoWritePermission="Le répertoire \"/p1\" n'a pas le droit d'accès en écriture. Changez le droit d'accès";
+Directory.NoReadPermission="Le répertoire \"/p1\" n'a pas de droit d'accès en lecture. Changez le droit d'accès";
+Directory.Undefined="Répertoire \"/p1\" n'est pas défini.";
+Directory.NotSelected="Changez le répertoire invalide et relancez l'opération.";
+Directory.IsaFile="Le Champ \"/p1\" n'est pas un répertoire mais un fichier.";
+Directory.Conflict="Conflit entre le fichier \"/p1\" et le répertoire \"-id /p2 \"";
+
+//====================================================================
+// Document
+//====================================================================
+Document.NoDomain="Aucun type d'objet accessible. Aucun objet ne peut être sélectionné sur le site... Vérifiez votre environnement. Interruption du traitement.";
+Document.NoDocEnv="La sélection d'objet n'est pas possible dans l'environnement actuel.";
+Document.NoSuppEnv="L'environnement pris en charge n'est pas disponible.";
+Document.IsaDir="\"/p1\" n'est pas un fichier mais un répertoire.";
+
+Document.NotADoc="L'objet \"/p1\" n'est pas un document CATIA V5 valide";
+Document.NotACatiaDoc="Les objets de la liste ci-après ne sont pas des documents CATIA V5 et ne sont pas pris en charge par le batch :";
+Document.DocNotFound="L'objet \"/p1\" n'existe pas ou est introuvable. ";
+Document.NoReadPermission="Aucun accès en lecture pour l'objet /p1";
+Document.AlreadySelected="L'objet \"/p1\" est déjà sélectionné";
+Document.BadExtension="Le type de l'objet \"/p1\" n'est pas valide";
+Document.GoodExtension="\t  Les types d'objet admis sont :";
+Document.ProcessKo="L'objet ne peut pas être traité....";
+Document.ProcessoK="L'objet a été traité....";
+Document.ProcessWg="Objet /p1 partiellement traité....";
+Document.NoWritePermission="Aucun accès en écriture pour l'objet /p1";
+Document.InUse="L'objet \"/p1\" est déjà utilisé par un autre batch";
+Document.NoDoc="Aucun objet ne répond aux critères de sélection";
+Document.ReadError="L'objet \"/p1\" ne peut pas être lu";
+Document.WriteError="L'objet \"/p1\" ne peut pas être écrit";
+Document.Write="Objet \"/p1\" écrit";
+Document.NotModified="L'objet \"/p1\" n'a pas été modifié par l'opération";
+Document.AlreadyExist="L'objet \"/p1\" existe déjà et ne peut pas être remplacé.
+Déplacez-le ou sélectionnez l'option de remplacement.";
+Document.AlreadyExistDocNoReplace="L'objet \"/p1\" existe déjà et ne peut pas être remplacé. Déplacez-le.";
+Document.Overwritten="L'objet \"/p1\" existe déjà et a été remplacé";
+Document.WillBeOverwritten="L'objet \"/p1\" existe déjà et sera remplacé selon l'option de sortie sélectionnée.";
+Document.BackUpCreated="La sauvegarde de l'objet \"/p1\" a été créée.";
+Document.CreationError="L'objet \"/p1\" ne peut pas être créé.
+Vérifiez que son nom ne contient aucun caractère non admis.";
+
+Object.LateTypeUnSupported="Avertissement : l'objet sélectionné \"/p1\" ne peut pas être traité par le batch.";
+Object.LateTypeUnSupported2="L'objet de type Late \"/p1\" n'est pas pris en charge.";
+
+Object.ExtentionTypeUnSupported="L'objet de type Extension \"/p1\" n'est pas pris en charge.";
+/////////////////////////////////////////////////////////////////////////////////
+// New documents ////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+Document.NewDocNoRefOverwrite="Le nouvel objet \"/p1\" ne peut pas remplacer sa référence.
+Changez de répertoire cible ou renommez le nouvel objet.";
+Document.NewDocAlreadyExist="Le nouvel objet \"/p1\" existe déjà dans le répertoire cible et ne peut pas être remplacé.
+       Changez de répertoire cible,
+       renommez le nouvel objet,
+       sélectionnez l'option de remplacement ou
+       renommez l'objet précédent ou déplacez-le dans un autre répertoire.";
+
+Document.NewDocNoWritePermission="Le nouvel objet /p1 ne peut pas être créé dans le répertoire cible
+	Vérifiez les droits d'accès en écriture pour ce répertoire cible";
+Document.NewDocOverwritten="Le nouvel objet \"/p1\" existe déjà et a été remplacé";
+Document.NewDocBackuped="La version précédente de l'objet a été sauvegardée dans  \"/p1\" ";
+Document.NewDocBackupAbort="La version précédente de l'objet n'a pas pu être sauvegardée dans \"/p1\"";
+Document.NewDocPowerCopied="Une copie optimisée de l'objet non modifié \"/p1\" a été créée";
+Document.NewDocWrite="L'objet \"/p1\" a été créé";
+Document.NewDocWriteError="L'objet \"/p1\" ne peut pas être créé";
+// ----------------------------------------------------------------------------
+// Messages for Input File  ---------------------------------------------------
+// ----------------------------------------------------------------------------
+InputFile.Inexistant="Avertissement : le fichier d'entrée \"/p1\" n'existe pas.";
+InputFile.NoReadAccess="Avertissement : pas de droit d'accès en lecture sur le fichier d'entrée /p1
+\t  Impossible d'ouvrir ce fichier.";
+
+// ----------------------------------------------------------------------------
+// Messages for Parameters ----------------------------------------------------
+// ----------------------------------------------------------------------------
+Parameter.Invalid="Avertissement : le paramètre \"/p1\" n'est pas valide.";
+Parameter.Doubly="\t Paramètre déjà défini, ou combinaison non valide de paramètres.";
+Parameter.Unknown="Avertissement : le paramètre \"/p1\" est inconnu
+\t Utilisez l'argument '-h' pour connaître la liste des paramètres autorisés";
+Parameter.Skipped="\t   information ignorée";
+Parameter.Missing="Erreur : le paramètre \"/p1\" n'est pas renseigné
+\t  Un paramètre obligatoire est manquant ou n'a pas été correctement renseigné
+\t  Utilisez l'argument '-h' pour connaître la liste des paramètres obligatoires";
+
+//====================================================================
+// Messages for ReportFile ----------------------------------------------------
+//====================================================================
+ReportFile.Exist="Avertissement : le fichier de résultat \"/p1\" existe déjà et sera écrasé.";
+ReportFile.NoWriteAccess="Avertissement : Le fichier de Rapport \"/p1\" existe déjà en lecture seule
+\t  Le rapport sera écrit dans le répertoire standard";
+ReportFile.NoDir="Avertissement : Le fichier de rapport \"/p1\" ne peut être créé.
+\t  Le répertoire /p2 n'existe pas.
+\t  Instruction ignorée - Le rapport sera écrit dans le répertoire standard.";
+ReportFile.DirNoWriteAccess="Avertissement : Le fichier de rapport \"/p1\" ne peut être créé.
+\t  Le répertoire /p2 existe en lecture seule.
+\t  Instruction ignorée - Le rapport sera écrit dans le répertoire standard.";
+ReportFile.CurDirNoWriteAccess="Avertissement : Le fichier de rapport \"/p1\" ne peut être créé.
+\t  Le répertoire en cours existe mais est en lecture seule.
+\t  Instruction ignorée - Le rapport sera écrit dans le répertoire standard.";
+
+//====================================================================
+// XmlFile
+//====================================================================
+XmlFile.IsaDir="Le champ \"/p1\" n'est pas un fichier XmlFile mais un répertoire.";
+XmlFile.XmlFileNotFound="XmlFile \"/p1\" n'existe pas ou est introuvable. ";
+XmlFile.NoReadPermission="Aucun accès en lecture sur XmlFile /p1";
+XmlFile.NoWritePermission="Aucun accès en écriture sur XmlFile /p1";
+XmlFile.XmlFileReadError="XmlFile \"/p1\" ne peut être lu";
+XmlFile.XmlFileWriteError="XmlFile \"/p1\" ne peut être écrit";
+XmlFile.BadExtension="Le type de XmlFile \"/p1\" n'est pas valide.";
+XmlFile.InUse="XmlFile \"/p1\" déjà utilisé par un autre batch";
+XmlFile.AlreadySelected="XmlFile était déjà défini. La sélection de XmlFile \"/p1\" précédemment défini est écrasé.";
+XmlFile.NotSelected="XmlFile ne peut être sélectionné...";
+XmlFile.NoSelection="Aucun XmlFile sélectionné...";
+XmlFile.Overwritten="XmlFile \"/p1\" existe déjà et sera écrasé.";
+XmlFile.MoreObjects="\nLe nombre d'objets sélectionnés dans le fichier XML ne peut pas être traité par le batch. Un seul objet peut être sélectionné et traité";
+
+
+
+

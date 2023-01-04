@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+HelpDSYEnvMgt.txt=" 
+DSYEnvMgt -create|-del [-e EnvName] [-d EnvDirPath|INSTALL] [-p ConcatPath] [-from Env|EnvFullPath [-append]] -h
+  -create oder -del: Erstellt oder löscht die Umgebungsdatei.
+  -e EnvName: Name der Umgebungsdatei zum Erstellen oder Löschen (optional).
+                          Standardname ist Env.
+  -d EnvDirPath|INSTALL: Speicherordner der Umgebungsdatei (optional).
+                          Falls nicht verwendet, EnvDir = \"/p1\".
+                          Falls -d INSTALL, EnvDir = \"/p2\".
+                          Falls -d EnvDirPath, EnvDir = EnvDirPath.
+  -p ConcatPath: Verkettungspfad. Es können mehrere Pfade angegeben werden (nur zur Erstellung, optional).
+                          Standardwert: \"/p3\".
+                          Bei Verwendung von -from wird ConcatPath am Anfang des Installationspfads hinzugefügt.
+  -from Env|EnvFullPath: Erstellt eine neue Umgebungsdatei aus der bereits vorhandenen Umgebungsdatei (nur zur Erstellung, optional).
+                          Sie können den Namen der Umgebung oder den vollständigen Pfad verwenden.
+                          Beispiel: 
+                             DSYEnvMgt -create -e Env2 -from \"/p2\Env.txt\" erstellt Env2.txt in \"/p1\"
+                          oder 
+                             DSYEnvMgt -create -e Env2 -from Env -d INSTALL erstellt Env2.txt in \"/p2\".
+  -append: Bei Verwendung mit den Optionen -from und -p wird der ConcatPath am Ende der Verkettung hinzugefügt.
+                          Wenn nicht verwendet und bei Verwendung der Optionen -from und -p wird ConcatPath am Anfang der Verkettung hinzugefügt.
+  -h: Diese Hilfe.";
+
+MissingValue_e="Auf Option -e muss der Name der Umgebungsdatei folgen.";
+MissingValue_d="Auf Option -d muss der Name des Pfades folgen, in dem die Umgebungsdatei erstellt wird..";
+MissingValue_p="Auf Option -p muss der Verkettungspfad folgen.";
+MissingValue_from="Auf Option -from muss der Name oder der Pfad der Umgebungsdatei folgen, die kopiert werden soll.";
+InvalidArg="Option /p1 ist nicht berechtigt.";
+BadOptions_createdel="Die Optionen -create und -del können nicht gemeinsam verwendet werden.";
+MissingOptions_createordel="Eine der Optionen -create oder -del ist erforderlich.";
+MissingConcatPath="Der standardmäßige Verkettungspfad kann nicht abgerufen werden. Verwenden Sie die Option -p, um den Verkettungspfad zuzuweisen.";
+DirNotExist="Verzeichnis \"/p1\" ist nicht vorhanden.";
+NotAdmin="Sie müssen über erweiterte Berechtigungen verfügen, um die Umgebungsdatei in \"/p1\" erstellen zu können.";
+BadFrom_NotExist="Die Option -from ist nicht gültig: Der Pfad /p1 ist nicht vorhanden.\n";
+CreateEnvOK="Die Umgebungsdatei \"/p1.txt\" wurde erfolgreich erstellt.\n";
+CreateEnvKO="DSYEnvMgt konnte \"/p1.txt\" nicht erstellen.\n";
+CreateEnv="Umgebungsdatei \"/p1.txt\" wird erstellt.\n";
+CreateDirFailed="DSYEnvMgt konnte \"/p1.txt\" nicht erstellen.";
+CreateDirFailedNotAdmin="DSYEnvMgt konnte \"/p1.txt\" nicht erstellen.\nPrüfen Sie, ob Sie Administratorrechte haben.";
+DeleteEnv="Umgebungsdatei \"/p1.txt\" wird gelöscht.";
+DeleteEnvOK="Umgebungsdatei \"/p1.txt\" wurde erfolgreich gelöscht.";
+DeleteEnvKO="DSYEnvMgt konnte \"/p1.txt\" nicht löschen.";
+CreateFromEnv="Umgebungsdatei \"/p1.txt\" wird aus \"/p2\" erstellt.";
+BadOptiond="Die Option -d ist nicht gültig:\nAuf -d muss INSTALL oder ein gültiger Pfad folgen.";
+BadOptione="Die Option -e ist nicht gültig:\nAuf -e muss der Name einer Umgebung folgen.";
+BadOptionp="Die Option -p ist nicht gültig:\nAuf -p muss ein Pfad folgen.";
+BadOptionfrom="Die Option -from ist nicht gültig:\nAuf -from muss ein gültiger Umgebungsname oder der vollständige Pfad eines Umgebungsnamens folgen.";
+MissingArgs="Optionen fehlen.\n";
+NotAdmin2="Sie benötigen erweiterte Berechtigungen, um die Option /p1 verwenden zu können.\n";

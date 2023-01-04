@@ -1,0 +1,55 @@
+#-- les Packages probablement incontournables ! 
+PRODUCTCFG
+PLMPosProjectResourceMngt
+PeopleAndOrganization
+
+
+#-- Convergence: les Packages qu'à terme il faudrait ne pas devoir charger 
+
+#-- [11.04.2017] les Packages dont on constate qu'ils sont demandés au login (peut être pas pour une bonne raison)
+DELFmiFunctionalModel
+CATMCXAssembly
+CATMCXAssemblyAbstract
+PLMResourceSetRep
+Product
+ManufacturingPlan
+Configuration
+Task
+Document
+Requirement
+EBOM
+# R422 [21.11.2019]
+#ChangeManagement
+
+
+#-- [25.04.2017] ceux là c'est pour afficher "New Content"
+PRODUCTDiscipline
+CATDraftingDiscipline
+RFLPLMFunctional
+RFLPLMFunctionalAbstract
+CATSysBehaviorLibraryDiscipline
+CATSysBehaviorLibrary
+RFLPLMFunctionalSubRep
+RFLVPMLogicalSubRep
+RFLVPMLogical
+RFLVPMLogicalAbstract
+PLMSIMULIADisciplines2
+DMUValidationBase
+DMUValidationAbstract
+EXPERIMENT_ENUMS
+DMUValidationReview
+PLMKbaAppliConfig
+PLMKbaAppliComponent
+PLMKbaAppliElement
+PLMKbaApplication
+
+#-- [01.08.2017] celui là permet de résoudre le RI-525835: l'Extension "Configuration.Applicability Expression" qui référence "Issue.Change", n'est pas résolue si on ne charge pas le Package. 
+#-- or en mode incremental, il faut encore un peu de code pour qu'un Package manquant soit chargé à la volée (via getScopes) 
+Issue 
+
+#-- [17.10.2017] celui là permet de résoudre le RI-553053: pour charger les procedures declarees dans EXE_Procedures.proc 
+EXE_Procedures_Ressource
+
+#-- [09.04.2018] IR-593398: pour charger les procedures declarees dans PRMDeploymentProcedure.proc 
+PRMDeployment 
+

@@ -1,0 +1,72 @@
+<meta charset="UTF-8"/>
+//=======================================================================================
+// WARNING: YWE 18:09:24 SINGLE-CODE 2015x => NO LOCAL CHANGE EXPECTED - USE IMPORT  
+//=======================================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2013-2014
+// Messages for utilities to generate XML reports
+//
+//==================================================================================
+// January 2013  NLS declaration for PLM Briefcase report generation utilities        Jean-Luc Medioni
+//==================================================================================
+
+// -------------------------------------------------
+// --- PLMGeneratePLMBriefcaseReport utility messages
+// -------------------------------------------------
+
+UtilityInput.Prolog="***** パラメーター *****\n";
+UtilityInput.InputBriefcaseFile=" *** PLMBriefcase ファイルを入力: /p1\n";
+UtilityInput.InputBriefcaseFolder=" *** PLMBriefcase フォルダーを入力: /p1\n";
+UtilityInput.OutputReportFile=" *** XML レポート ファイルを出力: /p1\n";
+UtilityInput.XslReportFile=" *** XSL 代替ファイル:        /p1\n";
+UtilityInput.SummaryReportFile=" *** 要約テキスト レポート ファイル:  /p1\n";
+UtilityInput.Epilog="**********************\n\n";
+UtilityInput.Extension=" *** 表示される拡張子\n";
+UtilityInput.AllAttributes=" *** 表示されるすべての DS 属性\n";
+UtilityInput.CustoAttributes=" *** 表示されるカスタマー属性\n";
+UtilityInput.OtherOid=" *** 表示されるメジャー ID および論理 ID\n";
+UtilityInput=" *** パラメーターを /p2\n に設定した状態で /p1 フィルタリングを活動化します";
+UtilityInput.Other=" *** /p1: /p2\n";
+UtilityInput.Check=" *** 一部のチェックが実行されます。\n";
+UtilityInput.Iteration=" *** CD & EE イテレーション回数が表示されます。\n";
+UtilityInput.JsonOutputFormat=" *** JSON 出力形式。\n";
+UtilityInput.XmlOutputFormat=" *** XML 出力形式。\n";
+
+PR_HELP_GENERAL_REPORT="使用法: PLMGeneratePLMBriefcaseReport  <以下に説明されているフラッグ>\n";
+PR_HELP_OUTPUT="-output <ReportFileName>        <ReportFileName> は XML レポートの出力ファイルです (必須)。\n";
+PR_HELP_INPUT="-input <BriefcaseFileName>      <BriefcaseFileName> は、解析対象の PLMBriefcase 入力ファイルです。これは、3dxml ファイルまたは PLMBriefcase ファイルのいずれかです。\n(2 つのオプション -input または -inFolder のいずれか一方が必須)\n";
+PR_HELP_INPUT_FOLDER="-inFolder <BriefcaseFolderName> <BriefcaseFolderName> は、すべての PLMBriefcase ファイルを解析対象とした入力フォルダーです。このオプションは、-input と互換性がありません。\n";
+PR_HELP_XSL="-xsl <XslFileName>              <XslFileName> は XML レポートで使用される XSL ファイルです。\n";
+PR_HELP_SUMMARY="-summary <TextFileName>         <TextFileName> はサマリー テキスト レポートの出力ファイルです (オプション)。\n";
+PR_HELP_FILTER_BY="-filterBy <Type> <Value>        ここで <Type> は使用するフィルタリング オプションを定義し、値はフィルタリング操作のパラメーターを表します。\n";
+PR_HELP_EXTENSION="-extension                      拡張子情報を表示します (オプション)。\n";
+PR_HELP_DS_ATTRIBUTES="-cd                             基本属性だけでなく、すべてのコア データ属性を表示します (オプション)。\n";
+PR_HELP_CUSTO_ATTRIBUTES="-ee                             公開されたすべての拡張エンタープライズ属性を表示します (オプション)。\n";
+PR_HELP_OTHER_OID="-oid                            メジャー ID および論理 ID を属性として表示します (オプション)。\n";
+PR_HELP_CHECK="-check                          PLMBriefcase のチェックを活動化します。\n";
+PR_HELP_ITERATION="-iteration                      関係する CD & EE パーツのイテレーション回数を表示します。\n";
+PR_HELP_JSON="-json                           JSON 出力形式を使用してレポートを生成します。\n";
+PR_HELP_XML="-xml                            XML 出力形式を使用してレポートを生成します。\n";
+PR_HELP_HELP="-h                              ヘルプ\n";
+
+PR_REPORT_FAILED="エラー: PLMGeneratePLMBriefcaseReport の実行に失敗しました\n";
+PR_REPORT_SUCCEEDED="PLMGeneratePLMBriefcaseReport の実行に成功しました\n";
+
+//PR_LOGIN_SUCCESS        = "** Login Successful\n" ;
+//PR_REP_PACKAGES_SUCCESS = "** Successfully obtained replication packages. Number of packages being processed: /p1.\n" ;
+
+PR_DUPLICATE_PARAM="パラメーター /p1 が複数回使用されています。失敗します。";
+PR_MISSING_INPUT="少なくとも 1 つの値が必要な /p1 キーワードが指定されていません。失敗します。\n";
+PR_MISSING_PARAM="必要なパラメーター /p1 が指定されていませんでした。失敗します。\n";
+PR_NO_INPUT_DEFINED="解析対象の PLMBriefcase を定義するには、2 つのキーワード -input または -inFolder の少なくとも 1 つが必要です。失敗です。\n";
+PR_INCOMPATIBLE_INPUT="キーワード /p1 および /p2 の 2 つは互換性がありません。一方のみを選択し、実行を再開してください。失敗です。\n";
+PR_PLMBRIEFCASE_FOUND="エラー: ディレクトリ /p1 には PLMBriefcase が含まれていないため、レポートは空になります。\n";
+
+// ---> Error messages
+
+UtilityInput.FileNotFound="エラー: /p2 キーワードに関連付けられたファイル /p1 が見つかりませんでした。\n";
+UtilityInput.NotPLMBriefcase="エラー: ファイル /p1 は PLMBriefcase ファイルとして認識されません (拡張子は .3dxml または .PLMBriefcase に設定されている必要があります)。\n";
+UtilityInput.NoPLMBriefcaseIn3dxml="エラー: 3dxml ファイル /p1 を開くことができなかったか、3dxml ファイルにオーサリング データが含まれていません。\n";
+UtilityInput.NotXslFileType="エラー: ファイル /p1 は XSL ファイルとして認識されません (拡張子は .xsl に設定されている必要があります)。\n";
+UtilityInput.FileWriteAccessFail="エラー: /p1 に書き込むことができません。\n";
+UtilityInput.NotValidFilterOption="警告: /p1 は有効なフィルタ オプションとして認識されていません (値は /p2 に設定されました)。\n";
+

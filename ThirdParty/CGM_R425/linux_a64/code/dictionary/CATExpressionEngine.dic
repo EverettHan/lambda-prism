@@ -1,0 +1,257 @@
+#======================================================================
+# C++ factory (unfortunately, implements CATICkeRelationFactory)
+CATCkeUsrFactory	    CATICkeExpressionFactory     libCATExpressionEngine
+
+# C++ expression (created by the factory)
+CATCkeExpressionVol     CATICkeExpression            libCATExpressionEngine
+CATCkeExpressionVol     CATICkeEvaluator             libCATExpressionEngine
+CATCkeExpressionVol     CATICkeFunction              libCATExpressionEngine  
+CATCkeExpressionVol     CATICkeExpressionTree        libCATExpressionEngine
+CATCkeExpressionVol     CATICkeNaming                libCATExpressionEngine
+CATCkeExpressionVol     CATIAllowUserInfo            libCATExpressionEngine
+
+# C++ rule (created by the factory)
+CATCkeRuleVol           CATICkeExpression            libCATExpressionEngine
+CATCkeRuleVol           CATICkeEvaluator             libCATExpressionEngine
+CATCkeRuleVol           CATICkeFunction              libCATExpressionEngine  
+CATCkeRuleVol           CATICkeExpressionTree        libCATExpressionEngine
+CATCkeRuleVol           CATICkeNaming                libCATExpressionEngine
+CATCkeRuleVol		    CATIAllowUserInfo            libCATExpressionEngine
+
+# C++ check (created by the factory)
+CATCkeCheckVol          CATICkeExpression            libCATExpressionEngine
+CATCkeCheckVol          CATICkeEvaluator             libCATExpressionEngine
+CATCkeCheckVol          CATICkeFunction              libCATExpressionEngine  
+CATCkeCheckVol          CATICkeExpressionTree        libCATExpressionEngine
+CATCkeCheckVol          CATICkeNaming                libCATExpressionEngine
+CATCkeCheckVol		    CATIAllowUserInfo            libCATExpressionEngine
+
+
+# feature expression (because code is shared between C++ expression and feature expression)
+Expression              CATICkeExpression            libCATExpressionEngine
+Expression              CATICkeExpressionTree        libCATExpressionEngine
+Expression              CATICkeEvaluator             libCATExpressionEngine
+Expression              CATICkeFunction              libCATExpressionEngine
+Expression              CATICkeNaming                libCATExpressionEngine
+Expression			    CATIAllowUserInfo            libCATExpressionEngine
+
+
+# feature program (because code is shared between C++ rule and feature program)
+Program                 CATICkeExpression            libCATExpressionEngine
+Program                 CATICkeExpressionTree        libCATExpressionEngine
+Program	                CATICkeEvaluator             libCATExpressionEngine
+Program                 CATICkeFunction              libCATExpressionEngine
+Program                 CATICkeNaming                libCATExpressionEngine
+Program				    CATIAllowUserInfo            libCATExpressionEngine
+
+ 
+# feature check (because code is shared between C++ rule and feature check)
+Check                   CATICkeExpression            libCATExpressionEngine
+Check	                CATICkeExpressionTree        libCATExpressionEngine
+Check                   CATICkeEvaluator             libCATExpressionEngine
+Check                   CATICkeFunction              libCATExpressionEngine
+Check                   CATICkeNaming                libCATExpressionEngine
+Check				    CATIAllowUserInfo            libCATExpressionEngine
+
+# C++ formal var expressional, part of the expression tree
+CATCkeFvar	            CATICkeTerm		             libCATExpressionEngine
+CATCkeFvar	            CATICkeFvar		             libCATExpressionEngine
+CATCkeFvar	            CATICkeTermAnalysis          libCATExpressionEngine
+
+# C++ basic expressional class, part of the expression tree
+CATCkeTerm              CATICkeTerm                  libCATExpressionEngine
+
+# C++ evaluators, part of the expression tree, evaluator of functions
+CATCkeEvaluatorFct      CATICkeEvalTerm              libCATExpressionEngine
+CATCkeEvaluatorFct      CATICkeEvalFunction          libCATExpressionEngine
+CATCkeEvaluatorBase     CATICkeEvalTerm              libCATExpressionEngine
+CATCkeEvaluatorBase     CATICkeEvalFunction          libCATExpressionEngine
+CATCkeEvaluatorMath     CATICkeEvalTerm              libCATExpressionEngine
+CATCkeEvaluatorMath     CATICkeEvalFunction          libCATExpressionEngine
+CATCkeEvaluatorSubFunction     CATICkeEvalTerm              libCATExpressionEngine
+CATCkeEvaluatorSubFunction     CATICkeEvalFunction          libCATExpressionEngine
+CATCkeEvaluatorSubTerm  CATICkeEvalTerm              libCATExpressionEngine
+CATCkeEvaluatorSubTerm  CATICkeEvalFunction          libCATExpressionEngine
+
+# C++ evaluators, part of the expression tree, evaluator of root expressions
+CATCkeEvaluatorExp      CATICkeEvaluator             libCATExpressionEngine
+CATCkeEvaluatorExp      CATICkeEvalFunction          libCATExpressionEngine
+
+# C++ argument, part of the expression tree 
+CATCkeArg	            CATICkeArg		             libCATExpressionEngine
+
+# result output of an attribute expression, part of the expression tree 
+CATCkeParmAttr          CATIParmVariable             libCATExpressionEngine
+
+# C++ Signature, part of the expression tree
+CATCkeSignature	        CATICkeSignature             libCATExpressionEngine
+CATCkeSignature	        CATICkeFunction              libCATExpressionEngine
+
+# C++ pointer on anything, part of the expression tree
+CATCkeParmPointerVolatile				CATIInstance			libCATExpressionEngine
+CATCkeParmPointerVolatile				CATICkeObject			libCATExpressionEngine
+CATCkeParmPointerVolatile				CATIParmEvents			libCATExpressionEngine
+CATCkeParmPointerVolatile				CATIParmAsStored		libCATExpressionEngine
+CATCkeParmPointerVolatile				CATICkeMKS			    libCATExpressionEngine
+CATCkeParmPointerVolatile				CATICkeParm			    libCATExpressionEngine
+CATCkeParmPointerVolatile               CATInterfaceEvents		libCATExpressionEngine
+CATCkeParmPointerVolatile				CATIParmVariable		libCATExpressionEngine
+CATCkeParmPointerVolatile				CATIVolatileInstance	libCATExpressionEngine
+CATCkeParmPointerVolatile				CATIAllowUserInfo		libCATExpressionEngine
+
+# C++ List, created by the parameter factory...
+CATCkeList					CATICkeObject					libCATExpressionEngine
+CATCkeList					CATIInstance					libCATExpressionEngine
+CATCkeList					CATIValue						libCATExpressionEngine
+
+CATKweLightList				CATICkeObject  					libCATExpressionEngine
+CATKweLightList				CATIValue  					libCATExpressionEngine
+CATKweLightList				CATIInstance  					libCATExpressionEngine
+
+CATKweLightList CATIList libCATExpressionEngine
+CATKweLightList CATICkeParm libCATExpressionEngine
+CATKweLightList CATICkeInst libCATExpressionEngine
+CATKweLightList CATIParmVariable libCATExpressionEngine
+
+# function dictionary (used also to implement other singletons)
+CATCkeUsrFactory		CATICkeFunctionFactory		 libCATExpressionEngine  
+CATCkeUsrFactory		CATIKweErrorManager			 libCATExpressionEngine  
+CATCkeRuse				CATICkeFunctionFactory		 libCATExpressionEngine
+CATCkeRuse				CATIKweErrorManager			 libCATExpressionEngine
+
+# Bacic Packages
+CATCkeDicoLibraryUserType CATIAddTypeLibrary		 libCATExpressionEngine
+CATCkeDicoBaseMath        CATIAddTypeLibrary		 libCATExpressionEngine
+
+# redirection to access standard attributes
+CATLifAttributeAccess CATIAttributeAccess	libCATExpressionEngine
+CATBRAttributeAccess CATIAttributeAccess	libCATExpressionEngine
+CATLifComputedAttribute CATIAttributeComputed	libCATExpressionEngine
+
+# visitors
+CATKweQueryVisitor			CATIVisitor						libCATExpressionEngine
+CATKwePathVisitor			CATIVisitor						libCATExpressionEngine
+
+# Volatile Instance, created by the expression factory
+CATCkeVolatileInstance				CATIInstance				libCATExpressionEngine
+CATCkeVolatileInstance				CATICkeObject				libCATExpressionEngine
+CATCkeVolatileInstance				CATIAlias					libCATExpressionEngine
+CATCkeVolatileInstance				CATIDynamicAttributes		libCATExpressionEngine
+CATCkeVolatileInstance				CATIAttributesDescription	libCATExpressionEngine
+CATCkeVolatileInstance				CATIChildrenAccess			libCATExpressionEngine
+CATCkeVolatileInstance				CATIVolatileInstance		libCATExpressionEngine
+CATCkeVolatileInstance				CATIKbeObject				libCATExpressionEngine
+CATCkeVolatileInstance				CATIInstanceModifiedAttributes   libCATExpressionEngine
+
+# PLM Proxy, created by the expression factory
+CATCkePLMProxy				CATIInstance				libCATExpressionEngine
+CATCkePLMProxy				CATICkeObject				libCATExpressionEngine
+CATCkePLMProxy				CATIAlias					libCATExpressionEngine
+CATCkePLMProxy				CATIDynamicAttributes		libCATExpressionEngine
+CATCkePLMProxy				CATIAttributesDescription	libCATExpressionEngine
+CATCkePLMProxy				CATIChildrenAccess			libCATExpressionEngine
+CATCkePLMProxy				CATIVolatileInstance		libCATExpressionEngine
+CATCkePLMProxy				CATIKbeObject				libCATExpressionEngine
+CATCkePLMProxy				CATIInstanceModifiedAttributes   libCATExpressionEngine
+
+# Object federating attribute access
+CATCkeInstanceFederation	CATIInstance				libCATExpressionEngine
+CATCkeInstanceFederation	CATICkeObject				libCATExpressionEngine
+CATCkeInstanceFederation	CATIAlias					libCATExpressionEngine
+CATCkeInstanceFederation	CATIVolatileInstance		libCATExpressionEngine
+
+# Objects that can be debugged
+CATCkeFctExpr          CATIDebugEvaluation  libCATExpressionEngine
+CATCkeParm             CATIDebugEvaluation  libCATExpressionEngine
+CATCkeProc             CATIDebugEvaluation  libCATExpressionEngine
+Expression             CATIDebugEvaluation  libCATExpressionEngine
+CATLifEvaluationError  CATIDebugEvaluation  libCATExpressionEngine
+CATCkeDebugInfoExt     CATIDebugEvaluation  libCATExpressionEngine
+
+# Business Rules (proto) 
+CATCkeUsrFactory	    CATIBRExecutionServices libCATExpressionEngine
+
+#BUD 03/05/2006: nouveaux venus : les settings version C++
+CATLieLanguageSheetSettingCtrl			CATISysSettingController				libCATExpressionEngine
+CATLieLanguageSheetSettingCtrl			CATICreateInstance						libCATExpressionEngine
+CATLieLanguageSheetSettingCtrl			CATILieLanguageSheetSettingAtt			libCATExpressionEngine
+
+# Business rules
+CATBRFamily		CATISAXErrorHandler			libCATExpressionEngine
+CATBRFamily		CATISAXContentHandler		libCATExpressionEngine
+
+# CATPathElementInstance
+CATPathElementAsInstance  CATIInstance  libCATExpressionEngine  
+CATPathElementAsInstance  CATICkeObject libCATExpressionEngine  
+
+# parser d'index
+monDocHandler  CATISAXContentHandler  libCATExpressionEngine  
+monDocHandler  CATISAXErrorHandler  libCATExpressionEngine 
+
+myDictIndexVisitorDocHandler  CATISAXContentHandler  libCATExpressionEngine  
+myDictIndexVisitorDocHandler  CATISAXErrorHandler  libCATExpressionEngine 
+
+#
+# Type manipulated as objects to access properties (Introspection)
+#------------------------
+CATCkeTypeAsInstance  CATIAlias  libCATExpressionEngine    
+CATCkeTypeAsInstance  CATICkeObject  libCATExpressionEngine   
+CATCkeTypeAsInstance  CATIInstance  libCATExpressionEngine  
+#
+# KWD Preference object that implements CATIInstance
+#------------------------
+CATCkePreferenceInstance  CATIAlias  libCATExpressionEngine    
+CATCkePreferenceInstance  CATICkeObject  libCATExpressionEngine   
+CATCkePreferenceInstance  CATIDynamicAttributes  libCATExpressionEngine    
+CATCkePreferenceInstance  CATIInstance  libCATExpressionEngine  
+
+CATCkeSettingInstance  CATIAlias  libCATExpressionEngine    
+CATCkeSettingInstance  CATICkeObject  libCATExpressionEngine   
+CATCkeSettingInstance  CATIDynamicAttributes  libCATExpressionEngine    
+CATCkeSettingInstance  CATIInstance  libCATExpressionEngine  
+
+#
+
+myXMLtraversal  CATISAXContentHandler  libCATExpressionEngine   
+myXMLtraversal  CATISAXErrorHandler  libCATExpressionEngine  
+
+
+
+CATCkeParm  CATIAllowUserInfo  libCATExpressionEngine
+CATKweNodeInfoDPCImpl CATIKweDebugTreeNodeInfoDPC libCATExpressionEngine
+ 
+CATKweDebugTreeNodeImpl CATIKweDebugTreeNode libCATExpressionEngine 
+CATKweDebugTreeImpl CATIKweDebugTree libCATExpressionEngine
+
+ 
+CATKweDebugTreeImpl  CATIKweDebugTreeForViewer  libCATExpressionEngine  
+CATKweNodeInfoDPCImpl  CATIKweDebugTreeNodeInfoGeneric  libCATExpressionEngine   
+CATPLMRECkePLMProxy  CATIAlias  libCATExpressionEngine    
+CATPLMRECkePLMProxy  CATIAttributesDescription  libCATExpressionEngine    
+CATPLMRECkePLMProxy  CATIChildrenAccess  libCATExpressionEngine    
+CATPLMRECkePLMProxy  CATICkeObject  libCATExpressionEngine   
+CATPLMRECkePLMProxy  CATIDynamicAttributes  libCATExpressionEngine    
+CATPLMRECkePLMProxy  CATIInstance  libCATExpressionEngine    
+CATPLMRECkePLMProxy  CATIInstanceModifiedAttributes  libCATExpressionEngine    
+CATPLMRECkePLMProxy  CATIKbeObject  libCATExpressionEngine    
+CATPLMRECkePLMProxy  CATIVolatileInstance  libCATExpressionEngine  
+
+CATRetrieveXMLHandler  CATISAXContentHandler  libCATExpressionEngine  
+CATRetrieveXMLHandler  CATISAXErrorHandler  libCATExpressionEngine 
+
+ 
+CATLifErrorInstance CATIInstance libCATExpressionEngine
+CATLifErrorInstance CATICkeObject libCATExpressionEngine
+
+CATTextFileInstance  CATIInstance  libCATExpressionEngine
+CATTextFileInstance  CATICkeObject  libCATExpressionEngine 
+
+CATKweIncludesSourceGeneric CATIKweIncludesSource libCATExpressionEngine
+ 
+CATCkeArgWithInfo CATICkeArgWithInfo libCATExpressionEngine
+
+CATCkeFctExpr     CATICkeTermAnalysis          libCATExpressionEngine
+
+CATCkeParmUndefined CATICkeParm libCATExpressionEngine
+CATCkeParmUndefined CATIParmVariable libCATExpressionEngine
+

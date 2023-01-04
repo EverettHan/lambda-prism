@@ -1,0 +1,556 @@
+<?xml version='1.0' ?>
+<product xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <description>SOLIDWORKS Home Web User Interface</description>
+  <packageInfo name = "TechnicalProduct"/>
+  <scale value = "P2"/>
+  <includedComponent name = "AdvancedMathematics"/>
+  <authorizedComponent name = "AdvancedMathematics" scale = "P2"/>
+  <includedComponent name = "CATMathExactPredicates"/>
+  <authorizedComponent name = "CATMathExactPredicates" scale = "P2"/>
+  <includedComponent name = "CATMathStream"/>
+  <authorizedComponent name = "CATMathStream" scale = "P2"/>
+  <includedComponent name = "CATSubdivisionApproximation"/>
+  <authorizedComponent name = "CATSubdivisionApproximation" scale = "P2"/>
+  <includedComponent name = "CATSubdivisionMeshOperators"/>
+  <authorizedComponent name = "CATSubdivisionMeshOperators" scale = "P2"/>
+  <includedComponent name = "CATSubdivisionObjects"/>
+  <authorizedComponent name = "CATSubdivisionObjects" scale = "P2"/>
+  <includedComponent name = "CDMBaseInterfaces"/>
+  <authorizedComponent name = "CDMBaseInterfaces" scale = "P2"/>
+  <includedComponent name = "ExperienceKernel"/>
+  <authorizedComponent name = "ExperienceKernel" scale = "P2"/>
+  <includedComponent name = "GMModelInterfaces"/>
+  <authorizedComponent name = "GMModelInterfaces" scale = "P2"/>
+  <includedComponent name = "GMOperatorsInterfaces"/>
+  <authorizedComponent name = "GMOperatorsInterfaces" scale = "P2"/>
+  <includedComponent name = "GeometricObjects"/>
+  <authorizedComponent name = "GeometricObjects" scale = "P2"/>
+  <includedComponent name = "GeometricObjectsCGM"/>
+  <authorizedComponent name = "GeometricObjectsCGM" scale = "P2"/>
+  <includedComponent name = "GeometricOperators"/>
+  <authorizedComponent name = "GeometricOperators" scale = "P2"/>
+  <includedComponent name = "LCCommon"/>
+  <authorizedComponent name = "LCCommon" scale = "P2"/>
+  <includedComponent name = "Mathematics"/>
+  <authorizedComponent name = "Mathematics" scale = "P2"/>
+  <includedComponent name = "NewTopologicalObjects"/>
+  <authorizedComponent name = "NewTopologicalObjects" scale = "P2"/>
+  <includedComponent name = "OpDataInterfaces"/>
+  <authorizedComponent name = "OpDataInterfaces" scale = "P2"/>
+  <includedComponent name = "PolyhedralInterfaces"/>
+  <authorizedComponent name = "PolyhedralInterfaces" scale = "P2"/>
+  <includedComponent name = "PolyhedralMathematics"/>
+  <authorizedComponent name = "PolyhedralMathematics" scale = "P2"/>
+  <includedComponent name = "PolyhedralObjects"/>
+  <authorizedComponent name = "PolyhedralObjects" scale = "P2"/>
+  <includedComponent name = "SGMOperatorsInterfaces"/>
+  <authorizedComponent name = "SGMOperatorsInterfaces" scale = "P2"/>
+  <includedComponent name = "SpecialAPI"/>
+  <authorizedComponent name = "SpecialAPI" scale = "P2"/>
+  <includedComponent name = "System"/>
+  <authorizedComponent name = "System" scale = "P2"/>
+  <includedComponent name = "SystemTS"/>
+  <authorizedComponent name = "SystemTS" scale = "P2"/>
+  <includedComponent name = "AdvancedTopologicalOpe"/>
+  <includedComponent name = "AdvancedTopologicalOpeLight"/>
+  <includedComponent name = "CGMV5Interoperability"/>
+  <includedComponent name = "FreeFormOperators"/>
+  <includedComponent name = "TopologicalOperators"/>
+  <includedComponent name = "TopologicalOperatorsLight"/>
+  <includedComponent name = "GMOperatorsInterfaces"/>
+  <includedComponent name = "CVMGeometry"/>
+  <includedComponent name = "CVMSystem"/>
+  <includedComponent name = "BasicTopologicalOpe"/>
+  <includedComponent name = "SGMOperatorsInterfaces"/>
+  <includedComponent name = "SurfacicGeoOperators"/>
+  <includedComponent name = "SurfacicInfrastructure"/>
+  <includedComponent name = "SurfacicMathematics"/>
+  <includedComponent name = "SurfacicTopoOperators"/>
+  <includedComponent name = "GMPolyOperators"/>
+  <includedComponent name = "LatticeOperators"/>
+  <includedComponent name = "GMScalarFieldsOperators"/>
+  <includedComponent name = "AdvancedMathematics"/>
+  <includedComponent name = "GeometricObjects"/>
+  <authorizedComponent comment = " JCS, 3/7/2006 = authorization requested by JLN : NC !: calcul de trajectoire Impossible sur install de DELMIA_Pilot only  " name = "GeometricObjects" scale = "P2"/>
+  <includedComponent name = "GeometricObjectsCGM"/>
+  <includedComponent name = "NewTopologicalObjects"/>
+  <includedComponent name = "NewTopologicalObjectsCGM"/>
+  <includedComponent name = "Tessellation"/>
+  <includedComponent name = "GeometricOperators"/>
+  <includedComponent name = "GMModelInterfaces"/>
+  <includedComponent name = "CATSubdivisionApproximation"/>
+  <includedComponent name = "PolyhedralOperatorsInterfaces"/>
+  <includedComponent name = "PolyhedralOperatorsAdv"/>
+  <includedComponent name = "PolyhedralOperatorsRvs"/>
+  <includedComponent name = "CDMBaseInterfaces"/>
+  <includedComponent name = "GMPolyObjects"/>
+  <includedComponent name = "GMPolyUtilities"/>
+  <includedComponent name = "GMScalarFieldsObjects"/>
+  <authorizedComponent name = "GMScalarFieldsObjects" scale = "P2"/>
+  <includedComponent name = "GMScalarFieldsUtilities"/>
+  <includedComponent name = "Mathematics"/>
+  <includedComponent name = "OpDataInterfaces"/>
+  <includedComponent name = "SystemTS"/>
+  <authorizedComponent name = "SystemTS" scale = "P2"/>
+  <includedComponent name = "SpecialAPI"/>
+  <authorizedComponent name = "SpecialAPI" scale = "P2"/>
+  <includeComponentFile name = "INFRA_OSAbstractionTS"/>
+  <includedComponent name = "System"/>
+  <authorizedComponent name = "System" scale = "P2"/>
+  <includedComponent name = "InsVCpreq"/>
+  <includedComponent name = "LCCommon"/>
+  <authorizedComponent comment = "Depending on Mobile Licensing model" name = "LCCommon" scale = "P2"/>
+  <includedComponent name = "XMLParserItf"/>
+  <authorizedComponent name = "XMLParserItf" scale = "P2"/>
+  <includeComponentFile comment = "System split" name = "INFRA_OSAbstractionMobile"/>
+  <includeComponentFile comment = "Mathematics " name = "GM_Foundation"/>
+  <includedComponent name = "CATMathStream"/>
+  <includeComponentFile comment = "CATMathStream " name = "GM_System"/>
+  <includedComponent name = "CATMathExactPredicates"/>
+  <includeComponentFile comment = "CATMathExactPredicates " name = "GM_ExactArith"/>
+  <includedComponent name = "CATSubdivisionObjects"/>
+  <includeComponentFile comment = "CATSubdivisionObjects " name = "GM_Subdivision"/>
+  <includedComponent name = "CATSubdivisionMeshOperators"/>
+  <includeComponentFile comment = "CATSubdivisionMeshOperators " name = "GM_SubdivisionOperators"/>
+  <includedComponent name = "PolygonalTools"/>
+  <includedComponent name = "PolyhedralMathematics"/>
+  <includedComponent name = "PolyhedralInterfaces"/>
+  <includedComponent name = "PolyhedralObjects"/>
+  <includedComponent name = "PolyhedralOperators"/>
+  <includedComponent name = "PolyhedralBodyOperators"/>
+  <includedComponent name = "PolyhedralVisualization"/>
+  <includedComponent name = "PolyhedralVisuOperators"/>
+  <includedComponent name = "PolyhedralEK"/>
+  <includedComponent name = "CATFuzzyOperators"/>
+  <includedComponent name = "CATFuzzyOperatorsAdv"/>
+  <includedComponent name = "CATCloudBasicResources"/>
+  <includedComponent name = "Lattice"/>
+  <includedComponent name = "ScalarFields"/>
+  <includedComponent name = "ScalarFieldsOperators"/>
+  <includedComponent comment = "As VENBoost is exposed at same time than Lattice, see CAA_GM_Operators.xml" name = "VENBoost"/>
+  <includedComponent name = "R2VSurfaceReconstruction"/>
+  <includedComponent name = "VENCGAL"/>
+  <includedComponent name = "SGManager"/>
+  <authorizedComponent name = "SGManager" scale = "P2"/>
+  <includedComponent name = "SGInfra"/>
+  <authorizedComponent name = "SGInfra" scale = "P2"/>
+  <includedComponent comment = "16.04.21 AZX/OXQ libtess split from SGInfra" name = "VENSGILibTess"/>
+  <authorizedComponent name = "VENSGILibTess" scale = "P2"/>
+  <includedComponent name = "VisualizationCG"/>
+  <authorizedComponent comment = "Enable the CG visualization effects " name = "VisualizationCG" scale = "P2"/>
+  <includedComponent name = "VisualizationFreeType"/>
+  <authorizedComponent comment = "Font rendering libray Free Type interfaces " name = "VisualizationFreeType" scale = "P2"/>
+  <includedComponent name = "VisualizationSceneGraph"/>
+  <authorizedComponent comment = "Visualization Scene Graph Abstraction " name = "VisualizationSceneGraph" scale = "P2"/>
+  <includedComponent name = "VENLittleCMS"/>
+  <authorizedComponent comment = "CMS " name = "VENLittleCMS" scale = "P2"/>
+  <includedComponent name = "VENwmf"/>
+  <authorizedComponent comment = "Windows Media File " name = "VENwmf" scale = "P2"/>
+  <includedComponent name = "MultimediaPixelImage"/>
+  <authorizedComponent comment = "Pixel Image " name = "MultimediaPixelImage" scale = "P2"/>
+  <includedComponent comment = "AZX/GJT1 20.01.2020 Basis texture dev" name = "VENBasisUniversal"/>
+  <authorizedComponent name = "VENBasisUniversal" scale = "P2"/>
+  <includedComponent name = "SpecialAPI"/>
+  <authorizedComponent name = "SpecialAPI" scale = "P2"/>
+  <includedComponent name = "WebappsUtils"/>
+  <authorizedComponent name = "WebappsUtils" scale = "P2"/>
+  <includeComponentFile comment = "AZX/AJN17 10.05.2022 VENBasisUniversal preqs WebappsUtils" name = "i3DX_WebAppsUtils"/>
+  <includeComponentFile comment = "AZX/AJN17 10.05.2022 VENBasisUniversal" name = "VEN_BasisUniversal"/>
+  <includedComponent name = "SGCoreUtils"/>
+  <authorizedComponent comment = "ODM (27/04/2017): migration from INFRA_VisulizationBase and renaming from RenderEngineKernel to SGCoreUtils" name = "SGCoreUtils" scale = "P2"/>
+  <includedComponent name = "VisualizationInterfaces"/>
+  <authorizedComponent name = "VisualizationInterfaces" scale = "P2"/>
+  <includedComponent name = "VisualizationCore"/>
+  <authorizedComponent name = "VisualizationCore" scale = "P2"/>
+  <includedComponent name = "IVInterfaces"/>
+  <authorizedComponent name = "IVInterfaces" scale = "P2"/>
+  <includedComponent name = "UIVCoreTools"/>
+  <authorizedComponent name = "UIVCoreTools" scale = "P2"/>
+  <includeComponentFile comment = "R216 CDT" name = "INFRA_CoreTools"/>
+  <includeComponentFile name = "INFRA_VisualizationInterfaces"/>
+  <includedComponent name = "OOCInterfaces"/>
+  <authorizedComponent name = "OOCInterfaces" scale = "P2"/>
+  <includeComponentFile name = "GM_OOCItf"/>
+  <includedComponent comment = "Intel TBB 4.3.2015.408" name = "VENIntelTBB"/>
+  <authorizedComponent name = "VENIntelTBB" scale = "P2"/>
+  <includeComponentFile name = "VEN_IntelTBB"/>
+  <includeComponentFile comment = "SGInfra " name = "INFRA_SceneGraph"/>
+  <includedComponent name = "ExperienceKernel"/>
+  <authorizedComponent name = "ExperienceKernel" scale = "P2"/>
+  <includedComponent name = "ExperienceKernelAddins"/>
+  <authorizedComponent name = "ExperienceKernelAddins" scale = "P2"/>
+  <includedComponent name = "CSICommandBinder"/>
+  <authorizedComponent name = "CSICommandBinder" scale = "P2"/>
+  <includedComponent name = "VENNvml"/>
+  <authorizedComponent name = "VENNvml" scale = "P2"/>
+  <includeComponentFile comment = "VENNvml" name = "VEN_Nvml"/>
+  <includeComponentFile comment = "ExperienceKernel " name = "GM_3DXPKernel"/>
+  <includeComponentFile comment = "PolyhedralInterfaces " name = "GM_Polyhedric"/>
+  <includeComponentFile comment = "AdvancedMathematics, GeometricObjects, GeometricObjectsCGM, GeometricOperators, NewTopologicalObjects, Tessellation " name = "GM_Model"/>
+  <includedComponent name = "CATCDS"/>
+  <includedComponent name = "CATCDSUtilities"/>
+  <includedComponent name = "CATWBx"/>
+  <includeComponentFile comment = "CATWbx " name = "GM_Wbx"/>
+  <includeComponentFile comment = "CATCDS " name = "GM_CDS"/>
+  <includedComponent meta = "CAA" name = "KnowledgeInterfaces"/>
+  <includedComponent meta = "TOREMOVE" name = "ObjectModelerSystem"/>
+  <includedComponent meta = "TOREMOVE" name = "VisuContentAccessClient"/>
+  <includedComponent meta = "TOREMOVE" name = "ObjectModelerCollection"/>
+  <includedComponent meta = "TOREMOVE" name = "CATVirtualVaultSystem"/>
+  <includedComponent comment = "plt, Sep 13 2019" meta = "TOREMOVE" name = "SystemExtensions"/>
+  <includedComponent comment = "plt, Sep 13 2019" meta = "TOREMOVE" name = "CATFileVaultSystem"/>
+  <authorizedComponent comment = "CAA " meta = "CAA" name = "KnowledgeInterfaces" scale = "P2"/>
+  <includedComponent meta = "" name = "PLMDictionaryInterfaces"/>
+  <includeComponentFile name = "INFRA_PLMDictionaryInterfaces"/>
+  <includeComponentFile comment = "CATUnicornLevel" name = "INFRA_KnowledgeEnabler"/>
+  <includedComponent name = "CATPLMIdentificationAccess"/>
+  <authorizedComponent name = "CATPLMIdentificationAccess" scale = "P2"/>
+  <includedComponent name = "CATPLMIdentification"/>
+  <authorizedComponent name = "CATPLMIdentification" scale = "P2"/>
+  <includedComponent name = "ObjectModelerSystem"/>
+  <authorizedComponent comment = "TBL 07/06 = DROP 8  " name = "ObjectModelerSystem" scale = "P2"/>
+  <includedComponent name = "CATFileVaultSystem"/>
+  <authorizedComponent name = "CATFileVaultSystem" scale = "P2"/>
+  <includedComponent name = "CATVirtualVaultSystem"/>
+  <authorizedComponent comment = "JDP 11/05/2004 Added to support Virtual Vault System (needed for Selective Loading in LCA and Unload of dirty Documents) " name = "CATVirtualVaultSystem" scale = "P2"/>
+  <includedComponent name = "PLMFactoryHeader"/>
+  <authorizedComponent comment = "TBL 26/10/2006 Added to support ServerIntegration " name = "PLMFactoryHeader" scale = "P2"/>
+  <includedComponent name = "ObjectModelerCollection"/>
+  <authorizedComponent name = "ObjectModelerCollection" scale = "P2"/>
+  <includedComponent name = "ObjectModelerEngines"/>
+  <authorizedComponent name = "ObjectModelerEngines" scale = "P2"/>
+  <includedComponent name = "VisuContentAccessClient"/>
+  <authorizedComponent name = "VisuContentAccessClient" scale = "P2"/>
+  <includeComponentFile comment = "ObjectModelerSystem (LifeCycleObject) " name = "INFRA_ObjectModelerSystem"/>
+  <includedComponent name = "DataCommonProtocolUse"/>
+  <authorizedComponent name = "DataCommonProtocolUse" scale = "P2"/>
+  <includedComponent name = "ObjectModelerBase"/>
+  <authorizedComponent name = "ObjectModelerBase" scale = "P2"/>
+  <includedComponent name = "DataCommonProtocolExt"/>
+  <authorizedComponent name = "DataCommonProtocolExt" scale = "P2"/>
+  <includedComponent name = "ObjectModelerContBase"/>
+  <authorizedComponent name = "ObjectModelerContBase" scale = "P2"/>
+  <includedComponent name = "ObjectModelerNavigator"/>
+  <authorizedComponent name = "ObjectModelerNavigator" scale = "P2"/>
+  <includedComponent name = "ObjectModelerInterfaces"/>
+  <authorizedComponent name = "ObjectModelerInterfaces" scale = "P2"/>
+  <includedComponent name = "PLMModelerBaseStreamContentItf"/>
+  <authorizedComponent name = "PLMModelerBaseStreamContentItf" scale = "P2"/>
+  <includedComponent name = "CATPLMIntegrationAccessItf"/>
+  <authorizedComponent name = "CATPLMIntegrationAccessItf" scale = "P2"/>
+  <includedComponent name = "CATPLMIntegrationInterfaces"/>
+  <authorizedComponent name = "CATPLMIntegrationInterfaces" scale = "P2"/>
+  <includedComponent name = "CATPLMComponentInterfaces"/>
+  <authorizedComponent name = "CATPLMComponentInterfaces" scale = "P2"/>
+  <includedComponent comment = "ObjectModelerBase" name = "PLMModelerBaseInterfaces"/>
+  <authorizedComponent name = "PLMModelerBaseInterfaces" scale = "P2"/>
+  <includedComponent name = "Magnitude"/>
+  <authorizedComponent name = "Magnitude" scale = "P2"/>
+  <includeComponentFile comment = " RUNTIME  " meta = "" name = "INFRA_Magnitude"/>
+  <includedComponent name = "PLMDictionaryPlayer"/>
+  <authorizedComponent comment = "usefull for 3DLive client dico " name = "PLMDictionaryPlayer" scale = "P2"/>
+  <includedComponent name = "PLMDictionaryNavigation"/>
+  <authorizedComponent comment = "usefull for 3DLive client dico " name = "PLMDictionaryNavigation" scale = "P2"/>
+  <includedComponent name = "PLMDictionaryNLS"/>
+  <authorizedComponent comment = "uselfull for VPM client " name = "PLMDictionaryNLS" scale = "P2"/>
+  <includedComponent name = "CATPLMDictionary"/>
+  <authorizedComponent name = "CATPLMDictionary" scale = "P2"/>
+  <includedComponent name = "CATPLMKweDictionaryServices"/>
+  <authorizedComponent name = "CATPLMKweDictionaryServices" scale = "P2"/>
+  <includeComponentFile name = "INFRA_PLMDictionary"/>
+  <includeComponentFile comment = "ObjectModelerBase " name = "INFRA_ObjectModeler"/>
+  <includedComponent name = "CATDataCompatibilityInfra"/>
+  <authorizedComponent name = "CATDataCompatibilityInfra" scale = "P2"/>
+  <includedComponent name = "PLMExchangeServices"/>
+  <authorizedComponent comment = "Enable to access to basic Exchange such as reporting, file access for exchange and global services." name = "PLMExchangeServices" scale = "P2"/>
+  <includedComponent name = "PLMExchangeInterfaces"/>
+  <authorizedComponent comment = "" name = "PLMExchangeInterfaces" scale = "P2"/>
+  <includedComponent name = "CATPLMServices"/>
+  <authorizedComponent name = "CATPLMServices" scale = "P2"/>
+  <includedComponent name = "CATPLMIntegration"/>
+  <authorizedComponent name = "CATPLMIntegration" scale = "P2"/>
+  <includedComponent name = "CATPLMIntegrationAccess"/>
+  <authorizedComponent name = "CATPLMIntegrationAccess" scale = "P2"/>
+  <includedComponent name = "CATPLMIntegrationBase"/>
+  <authorizedComponent name = "CATPLMIntegrationBase" scale = "P2"/>
+  <includedComponent name = "CATPLMDocEnv"/>
+  <authorizedComponent name = "CATPLMDocEnv" scale = "P2"/>
+  <includedComponent name = "CATPLMStreamDescriptor"/>
+  <authorizedComponent comment = "Ajoute par JDP le 31/10/2005 pour integration Factory de stream " name = "CATPLMStreamDescriptor" scale = "P2"/>
+  <includedComponent name = "CATPLMImpactGraph"/>
+  <authorizedComponent comment = "Ajoute par JDP le 27/11/2005 pour integration Infra ImpactGraph " name = "CATPLMImpactGraph" scale = "P2"/>
+  <includedComponent name = "CATPLMImplAdapter"/>
+  <authorizedComponent name = "CATPLMImplAdapter" scale = "P2"/>
+  <includedComponent name = "CATPLMModelerLanguageBase"/>
+  <authorizedComponent name = "CATPLMModelerLanguageBase" scale = "P2"/>
+  <includedComponent name = "CATPLMModelerLanguage"/>
+  <authorizedComponent name = "CATPLMModelerLanguage" scale = "P2"/>
+  <includedComponent name = "CATPLMPXn"/>
+  <authorizedComponent name = "CATPLMPXn" scale = "P2"/>
+  <includedComponent name = "CATPLMCommunication"/>
+  <authorizedComponent name = "CATPLMCommunication" scale = "P2"/>
+  <includedComponent name = "CATPLMQLInEKLBinding"/>
+  <authorizedComponent name = "CATPLMQLInEKLBinding" scale = "P2"/>
+  <includedComponent name = "CATPLMQL"/>
+  <authorizedComponent name = "CATPLMQL" scale = "P2"/>
+  <includedComponent name = "CATOmbLinkNavigationAccess"/>
+  <authorizedComponent name = "CATOmbLinkNavigationAccess" scale = "P2"/>
+  <includedComponent name = "InfModelInterfaces"/>
+  <authorizedComponent comment = "HEB R423 creation Split InfInterfaces" name = "InfModelInterfaces" scale = "P2"/>
+  <includeComponentFile comment = "05:10:2020 HEB R424 creation Split InfInterfaces" name = "INFRA_InfModelInterfaces"/>
+  <includedComponent name = "SystemAdvanced"/>
+  <authorizedComponent comment = "Admin tools" name = "SystemAdvanced" scale = "P2"/>
+  <includedComponent name = "SystemExtensions"/>
+  <authorizedComponent comment = "Settings and WatchDog" name = "SystemExtensions" scale = "P2"/>
+  <includedComponent name = "Communications"/>
+  <authorizedComponent comment = "backbone" name = "Communications" scale = "P2"/>
+  <includedComponent name = "InfInterfaces"/>
+  <authorizedComponent comment = "Basic IDL interfaces for automation " name = "InfInterfaces" scale = "P2"/>
+  <includedComponent name = "InfOSIDLItf"/>
+  <authorizedComponent comment = "Basic IDL interfaces for automation " name = "InfOSIDLItf" scale = "P2"/>
+  <includedComponent name = "InfInterfacesTLB"/>
+  <authorizedComponent comment = "Basic typelib for automation " name = "InfInterfacesTLB" scale = "P2"/>
+  <includeComponentFile name = "INFRA_OSAbstraction"/>
+  <includedComponent name = "CATPLMIndexInterfaces"/>
+  <authorizedComponent name = "CATPLMIndexInterfaces" scale = "P2"/>
+  <includeComponentFile name = "INFRA_VPLM3DIndexInterfaces"/>
+  <includedComponent name = "PLMPosBaseInterfaces"/>
+  <authorizedComponent name = "PLMPosBaseInterfaces" scale = "P2"/>
+  <includedComponent name = "PLMPosBase"/>
+  <authorizedComponent name = "PLMPosBase" scale = "P2"/>
+  <includedComponent name = "PLMCommandInfraCommon"/>
+  <authorizedComponent name = "PLMCommandInfraCommon" scale = "P2"/>
+  <includedComponent name = "PLMCommunicationHelpers"/>
+  <authorizedComponent name = "PLMCommunicationHelpers" scale = "P2"/>
+  <includeComponentFile name = "INFRA_PLMCommands"/>
+  <includeComponentFile name = "INFRA_PLMPosEngineBase"/>
+  <includeComponentFile name = "INFRA_PLMIntegration"/>
+  <includedComponent name = "PLMDictionaryNavServices"/>
+  <authorizedComponent name = "PLMDictionaryNavServices" scale = "P2"/>
+  <includedComponent meta = "TOREMOVE" name = "PLMSessionInterfaces"/>
+  <includedComponent meta = "TOREMOVE" name = "PLMBusinessLogicInterfaces"/>
+  <includedComponent name = "CATExpressionEngine"/>
+  <authorizedComponent comment = "Dictionnaire de methode (couple au modeler d'expression C++, langage Knowledge) " name = "CATExpressionEngine" scale = "P2"/>
+  <includeComponentFile name = "INFRA_ExpressionEngine"/>
+  <includedComponent name = "PLMMultiDisciplineEnv"/>
+  <authorizedComponent name = "PLMMultiDisciplineEnv" scale = "P2"/>
+  <includeComponentFile name = "PLMAccessMultidisciplineServices"/>
+  <includeComponentFile name = "INFRA_PLMDictionaryNavServices"/>
+  <includedComponent name = "CATFmuFileAccessInterfaces"/>
+  <authorizedComponent name = "CATFmuFileAccessInterfaces" scale = "P2"/>
+  <includedComponent name = "CATFmuFileAccessUI"/>
+  <authorizedComponent name = "CATFmuFileAccessUI" scale = "P2"/>
+  <includedComponent name = "Dialog"/>
+  <authorizedComponent comment = "Wintop dialogs     " name = "Dialog" scale = "P2"/>
+  <includedComponent name = "PictoGraphicBase"/>
+  <authorizedComponent comment = "Basic icons and backgrounds for simple dialogs  " name = "PictoGraphicBase" scale = "P2"/>
+  <includedComponent name = "VENMOTIF"/>
+  <authorizedComponent comment = "Linux build DBE/HEB R419 " name = "VENMOTIF" scale = "P2"/>
+  <includedComponent name = "IntrospectionInfrastructure"/>
+  <authorizedComponent name = "IntrospectionInfrastructure" scale = "P2"/>
+  <includedComponent name = "CATStyleProcessor"/>
+  <authorizedComponent name = "CATStyleProcessor" scale = "P2"/>
+  <includedComponent comment = "2014.06.12 EFM/HEB Exposition JS API Intro Infra" name = "UIScriptBase"/>
+  <authorizedComponent comment = "2014.06.12 EFM/HEB Exposition JS API Intro Infra" name = "UIScriptBase" scale = "P2"/>
+  <includedComponent name = "ECMAScriptEngine"/>
+  <includedComponent name = "VIAMPFoundation"/>
+  <includedComponent name = "VENV8"/>
+  <includedComponent name = "ExperienceKernel"/>
+  <authorizedComponent name = "ExperienceKernel" scale = "P2"/>
+  <includedComponent name = "CSICommandBinder"/>
+  <authorizedComponent name = "CSICommandBinder" scale = "P2"/>
+  <includeComponentFile comment = "ExperienceKernel" name = "GM_3DXPKernel_NoSSL"/>
+  <includeComponentFile comment = "2014.06.12 EFM/HEB Exposition JS API Intro Infra" name = "GM_Scripting"/>
+  <includeComponentFile comment = "CDT/JOV R216 new CoreIntrospection comp" name = "INFRA_CoreIntrospection"/>
+  <includedComponent name = "CATJavaBridge"/>
+  <authorizedComponent comment = "Bridge Java=C++ " name = "CATJavaBridge" scale = "P2"/>
+  <includedComponent name = "AutomationInterfaces"/>
+  <authorizedComponent comment = "Automation interfaces for launching VB scripts " name = "AutomationInterfaces" scale = "P2"/>
+  <includedComponent name = "InfOSIDLImpl"/>
+  <authorizedComponent comment = "Basic IDL implementations for automation " name = "InfOSIDLImpl" scale = "P2"/>
+  <includeComponentFile name = "INFRA_LanguageInterop"/>
+  <includedComponent name = "VBA"/>
+  <authorizedComponent comment = "VBA support " name = "VBA" scale = "P2"/>
+  <includeComponentFile name = "INFRA_VBASupport"/>
+  <includeComponentFile name = "INFRA_Dialog"/>
+  <includedComponent name = "DialogEngine"/>
+  <authorizedComponent comment = "statecharts   " name = "DialogEngine" scale = "P2"/>
+  <includedComponent name = "AfrFoundation"/>
+  <authorizedComponent comment = "Frame infrastructure " name = "AfrFoundation" scale = "P2"/>
+  <includedComponent name = "AfrProperties"/>
+  <authorizedComponent comment = "Tools/Options &amp; Edit Properties infrastructure " name = "AfrProperties" scale = "P2"/>
+  <includedComponent name = "AfrECMASImpl"/>
+  <authorizedComponent comment = "Tools/Options JS Exposition " name = "AfrECMASImpl" scale = "P2"/>
+  <includedComponent name = "InteractiveInterfaces"/>
+  <authorizedComponent comment = "Interfaces for the search  " name = "InteractiveInterfaces" scale = "P2"/>
+  <includedComponent name = "CATGraphicProperties"/>
+  <authorizedComponent comment = "Read and write graphic properties in model                       " name = "CATGraphicProperties" scale = "P2"/>
+  <includedComponent name = "Afr3DCompass"/>
+  <authorizedComponent name = "Afr3DCompass" scale = "P2"/>
+  <includedComponent name = "AfrSelection"/>
+  <authorizedComponent name = "AfrSelection" scale = "P2"/>
+  <includedComponent name = "AfrStandard"/>
+  <authorizedComponent name = "AfrStandard" scale = "P2"/>
+  <includedComponent name = "AfrComponentsModel"/>
+  <authorizedComponent name = "AfrComponentsModel" scale = "P2"/>
+  <includedComponent name = "UserAssistance"/>
+  <authorizedComponent name = "UserAssistance" scale = "P2"/>
+  <includedComponent name = "VisuImmersiveFrame"/>
+  <authorizedComponent name = "VisuImmersiveFrame" scale = "P2"/>
+  <includedComponent name = "VisualizationCommands"/>
+  <includedComponent name = "DialogEngineAdapters"/>
+  <authorizedComponent comment = "D2E Adapters" name = "DialogEngineAdapters" scale = "P2"/>
+  <authorizedComponent comment = "Visualization commands (show/no show...) " name = "VisualizationCommands" scale = "P2"/>
+  <includedComponent comment = "AZX/SFN6 09.04.2020 ray-tracing logging infra" name = "VisuRayTracingTools"/>
+  <authorizedComponent name = "VisuRayTracingTools" scale = "P2"/>
+  <includedComponent name = "CATWebViewDialog"/>
+  <authorizedComponent comment = "alternative CATDlgHtmlView" name = "CATWebViewDialog" scale = "P2"/>
+  <includedComponent name = "VisualizationFoundation"/>
+  <authorizedComponent comment = "Enable the visualization of tesselated models (from CGR)                       " name = "VisualizationFoundation" scale = "P2"/>
+  <includedComponent name = "VisualizationController"/>
+  <authorizedComponent comment = "Higher level of visualization enabling application to build a MVC component " name = "VisualizationController" scale = "P2"/>
+  <includedComponent name = "VisualizationUI"/>
+  <authorizedComponent comment = "Small dialog box provided by visualization (color, thicknesses) " name = "VisualizationUI" scale = "P2"/>
+  <includedComponent name = "MultimediaRasterFormats_SB"/>
+  <authorizedComponent comment = "Rastermaster Snowbound " name = "MultimediaRasterFormats_SB" scale = "P2"/>
+  <includedComponent name = "MultimediaRasterFormats_IM"/>
+  <authorizedComponent comment = "Rastermaster ImageMagick (JFS: 26/06/2017)" name = "MultimediaRasterFormats_IM" scale = "P2"/>
+  <includedComponent name = "VENImageMagick"/>
+  <authorizedComponent comment = "Rastermaster ImageMagick (JFS: 26/06/2017)" name = "VENImageMagick" scale = "P2"/>
+  <includedComponent name = "MultimediaRasterProcessor"/>
+  <authorizedComponent comment = "Tools for raster image edition " name = "MultimediaRasterProcessor" scale = "P2"/>
+  <includedComponent name = "VisualizationRenderer"/>
+  <authorizedComponent comment = "Visualization Rendering interfaces " name = "VisualizationRenderer" scale = "P2"/>
+  <includedComponent name = "VisualizationEngines"/>
+  <authorizedComponent comment = "New Render Engine middleware" name = "VisualizationEngines" scale = "P2"/>
+  <includedComponent name = "RenderEngine"/>
+  <authorizedComponent comment = "New Render Engine back-end" name = "RenderEngine" scale = "P2"/>
+  <includedComponent name = "RenderEngineD3D11"/>
+  <authorizedComponent comment = "D3D11 integration" name = "RenderEngineD3D11" scale = "P2"/>
+  <includedComponent name = "RenderEngineVulkan"/>
+  <authorizedComponent comment = "Vulkan dev" name = "RenderEngineVulkan" scale = "P2"/>
+  <includedComponent name = "VENVulkanLoader"/>
+  <authorizedComponent comment = "Vulkan dev" name = "VENVulkanLoader" scale = "P2"/>
+  <includedComponent name = "VENVMA"/>
+  <authorizedComponent comment = "Vulkan dev" name = "VENVMA" scale = "P2"/>
+  <includedComponent name = "GlslangAbstraction"/>
+  <authorizedComponent comment = "Vulkan dev" name = "GlslangAbstraction" scale = "P2"/>
+  <includedComponent name = "VENShaderc"/>
+  <authorizedComponent comment = "Vulkan dev" name = "VENShaderc" scale = "P2"/>
+  <includedComponent name = "VENRobinHoodHashing"/>
+  <authorizedComponent comment = "12.01.22 GF8/AZX Performance hash map" name = "VENRobinHoodHashing" scale = "P2"/>
+  <includedComponent name = "VENDLSS"/>
+  <authorizedComponent comment = "20.10.2022 NER2/AZX DLSS dev" name = "VENDLSS" scale = "P2"/>
+  <includedComponent name = "VENGlew"/>
+  <authorizedComponent comment = "management of OpenGL extensions" name = "VENGlew" scale = "P2"/>
+  <includedComponent name = "VENnvAPI"/>
+  <authorizedComponent comment = "management of Nvidia graphics information" name = "VENnvAPI" scale = "P2"/>
+  <includedComponent name = "VENOpenVR"/>
+  <authorizedComponent comment = "NSI/ODM : Added on 05/09/2016" name = "VENOpenVR" scale = "P2"/>
+  <includedComponent name = "VENOpenXR"/>
+  <authorizedComponent comment = "NSI/AZX 19.01.2021" name = "VENOpenXR" scale = "P2"/>
+  <includedComponent name = "VisuDirectAccessItf"/>
+  <authorizedComponent comment = "ODM : Added on 25/01/2017" name = "VisuDirectAccessItf" scale = "P2"/>
+  <includedComponent name = "VisSphericalMedia"/>
+  <authorizedComponent comment = "AZX : Added on 07.09.2017" name = "VisSphericalMedia" scale = "P2"/>
+  <includedComponent name = "UIVCoreAutomationInterfaces"/>
+  <authorizedComponent comment = "AZX/NCT 21.01.2021 WinAppDriver dev" name = "UIVCoreAutomationInterfaces" scale = "P2"/>
+  <includedComponent name = "VisuProductLoader"/>
+  <authorizedComponent comment = "AZX/FDT1 15.11.2021 new product loader access" name = "VisuProductLoader" scale = "P2"/>
+  <includedComponent name = "VENOpenCL"/>
+  <authorizedComponent comment = "Enable to write OpenCL programs" name = "VENOpenCL" scale = "P2"/>
+  <includeComponentFile name = "INFRA_OpenCL"/>
+  <includedComponent name = "MultimediaH264"/>
+  <authorizedComponent name = "MultimediaH264" scale = "P2"/>
+  <includedComponent name = "VENFFMPEG"/>
+  <authorizedComponent name = "VENFFMPEG" scale = "P2"/>
+  <includedComponent name = "VENFFmpegTranscoder"/>
+  <authorizedComponent name = "VENFFmpegTranscoder" scale = "P2"/>
+  <includedComponent name = "VENOggVorbis"/>
+  <includeComponentFile name = "VEN_OggVorbis"/>
+  <includeComponentFile name = "INFRA_FFMPEG"/>
+  <includeComponentFile comment = "AZX: Added on 07.09.2017 for Video360" name = "INFRA_H264"/>
+  <includeComponentFile name = "INFRA_VisualizationBase"/>
+  <includedComponent name = "VisuImmersiveDialog"/>
+  <authorizedComponent name = "VisuImmersiveDialog" scale = "P2"/>
+  <includedComponent name = "VENCodeMirror"/>
+  <authorizedComponent name = "VENCodeMirror" scale = "P2"/>
+  <includedComponent name = "CATView"/>
+  <authorizedComponent name = "CATView" scale = "P2"/>
+  <includedComponent name = "VisuImmersiveUI"/>
+  <authorizedComponent name = "VisuImmersiveUI" scale = "P2"/>
+  <includedComponent name = "VisuImmersiveDialogEx"/>
+  <authorizedComponent name = "VisuImmersiveDialogEx" scale = "P2"/>
+  <includedComponent comment = "2013.01.17 JV8/HEB R215 new 3D manip" name = "VisuImmersive3D"/>
+  <authorizedComponent comment = "201 3.01.17 JV8/HEB R215 new 3D manip" name = "VisuImmersive3D" scale = "P2"/>
+  <includedComponent comment = "2014.06.12 EFM/HEB Exposition JS API VID" name = "UIScriptVID"/>
+  <authorizedComponent comment = "2014.06.12 EFM/HEB Exposition JS API VID" name = "UIScriptVID" scale = "P2"/>
+  <includedComponent comment = "2014.07.11 CMG/CDT Webpage renderer for CID" name = "ChromiumEmbedded"/>
+  <authorizedComponent comment = "2014.07.11 CMG/CDT Webpage renderer for CID" name = "ChromiumEmbedded" scale = "P2"/>
+  <includedComponent comment = "FDN/JBX : split ChromiumEmbedded - isolation Plugin" name = "ChromiumEmbeddedPlugin"/>
+  <authorizedComponent comment = "FDN/JBX : split ChromiumEmbedded - isolation Plugin" name = "ChromiumEmbeddedPlugin" scale = "P2"/>
+  <includedComponent name = "MultimediaInterfaces"/>
+  <authorizedComponent name = "MultimediaInterfaces" scale = "P2"/>
+  <includeComponentFile comment = "CDT/CMG R216 new INFRA_MultimediaInterfaces comp" name = "INFRA_MultimediaInterfaces"/>
+  <includedComponent name = "AfrInterfaces"/>
+  <authorizedComponent name = "AfrInterfaces" scale = "P2"/>
+  <includedComponent name = "IntrospectionInfrastructure"/>
+  <authorizedComponent name = "IntrospectionInfrastructure" scale = "P2"/>
+  <includedComponent name = "CATStyleProcessor"/>
+  <authorizedComponent name = "CATStyleProcessor" scale = "P2"/>
+  <includedComponent comment = "2014.06.12 EFM/HEB Exposition JS API Intro Infra" name = "UIScriptBase"/>
+  <authorizedComponent comment = "2014.06.12 EFM/HEB Exposition JS API Intro Infra" name = "UIScriptBase" scale = "P2"/>
+  <includeComponentFile comment = "CDT/JOV R216 new INFRA_CoreIntrospection comp" name = "INFRA_CoreIntrospection"/>
+  <includedComponent name = "UIModelInterfaces"/>
+  <authorizedComponent name = "UIModelInterfaces" scale = "P2"/>
+  <includeComponentFile comment = "15:04:2020 HEB R423 creation Split AfrInterfaces" name = "INFRA_UIModelInterfaces"/>
+  <includeComponentFile name = "INFRA_AfrInterfaces"/>
+  <includedComponent name = "ExperienceKernelBindings"/>
+  <authorizedComponent name = "ExperienceKernelBindings" scale = "P2"/>
+  <includeComponentFile comment = "2014.012.12 CMG/CDT support of C++/JS bindings within CEF" name = "GM_3DXPKernelBindings"/>
+  <includedComponent name = "VENCEF"/>
+  <authorizedComponent name = "VENCEF" scale = "P2"/>
+  <includeComponentFile comment = "ChromiumEmbedded" name = "VEN_Cef"/>
+  <includedComponent name = "DSYAdmEnvMgt"/>
+  <authorizedComponent name = "DSYAdmEnvMgt" scale = "P2"/>
+  <includedComponent name = "DSYInsInfra"/>
+  <authorizedComponent name = "DSYInsInfra" scale = "P2"/>
+  <includedComponent name = "DSYInsListInstalls"/>
+  <authorizedComponent name = "DSYInsListInstalls" scale = "P2"/>
+  <includeComponentFile comment = "JBX/PTO : lie au plugin ChromiumEmbedded" name = "INFRA_Adm_EnvironmentMgt"/>
+  <includeComponentFile name = "INFRA_View"/>
+  <includedComponent name = "GraphicsOptimizer"/>
+  <authorizedComponent comment = "Graphics Optimizer " name = "GraphicsOptimizer" scale = "P2"/>
+  <includeComponentFile comment = "TOREMOVE " meta = "TOREMOVE" name = "INFRA_GraphicsOptimizer"/>
+  <includedComponent name = "AfrImmersiveRender"/>
+  <authorizedComponent name = "AfrImmersiveRender" scale = "P2"/>
+  <includeComponentFile name = "INFRA_ImmersiveFrame"/>
+  <includedComponent name = "AfrCore"/>
+  <authorizedComponent comment = "05:08:2015 Q62/HEB Creation - Undo-redo management on CS     " name = "AfrCore" scale = "P2"/>
+  <includedComponent name = "AfrComputeServer"/>
+  <authorizedComponent comment = "05:08:2015 Q62/HEB Creation - CSICommand infrastructure" name = "AfrComputeServer" scale = "P2"/>
+  <includeComponentFile comment = "HEB R420 CS Isolation symbole sur Unix, R425 suppression osConstraint=_DS_COMPUTE_SERVER" name = "INFRA_AfrCore"/>
+  <includeComponentFile name = "INFRA_DialogEngine"/>
+  <includeComponentFile comment = "Enable to access to DLNAME." name = "ENOWin_FileAccess"/>
+  <includeComponentFile name = "PLM_Exchange_Infra"/>
+  <includeComponentFile comment = "ObjectModelerBase " name = "INFRA_DataCompatibility"/>
+  <includedComponent name = "ObjectModelerCATIA"/>
+  <authorizedComponent name = "ObjectModelerCATIA" scale = "P2"/>
+  <includedComponent name = "CATIADataBasics"/>
+  <authorizedComponent name = "CATIADataBasics" scale = "P2"/>
+  <includedComponent name = "CATIADataMacFortran"/>
+  <authorizedComponent name = "CATIADataMacFortran" scale = "P2"/>
+  <includedComponent name = "CATV4DataAdmin"/>
+  <authorizedComponent name = "CATV4DataAdmin" scale = "P2"/>
+  <includedComponent name = "CATV4System"/>
+  <authorizedComponent name = "CATV4System" scale = "P2"/>
+  <includedComponent name = "VENFORTRAN"/>
+  <authorizedComponent name = "VENFORTRAN" scale = "P2"/>
+  <includeComponentFile name = "VEN_FORTRAN"/>
+  <includeComponentFile comment = "ObjectModelerCATIA " name = "INFRA_ObjectModelerContainer"/>
+  <includedComponent name = "CATElfiniOpenSoftware"/>
+  <authorizedComponent comment = " " name = "CATElfiniOpenSoftware" scale = "P2"/>
+  <includeComponentFile comment = "CATElfiniOpenSoftware " name = "SIMULIA_NumericalAnalysis"/>
+  <includeComponentFile name = "GM_Operators"/>
+  <buildtimeOnlyPrereq name = "ComponentsDefinition.cmp"/>
+</product>

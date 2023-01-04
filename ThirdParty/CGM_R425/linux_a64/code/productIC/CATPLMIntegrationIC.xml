@@ -1,0 +1,76 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMImplEV5Replication.tst"/>
+  <attached name = "CATPLMIntegrationAccess.tst"/>
+  <attached name = "CATPLMPXn.tst"/>
+  <attached name = "CATPLMIntegrationAsync.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "ObjectModelerEngines"/>
+  <prerequisite access = "Protected" name = "ObjectModelerInterfaces"/>
+  <prerequisite access = "Private" name = "CATPLMComponentInterfaces"/>
+  <prerequisite access = "Protected" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIntegrationAccessItf"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMIntegrationBase"/>
+  <prerequisite access = "Protected" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Private" name = "CATPLMIntegrationAccess"/>
+  <prerequisite access = "Private" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Private" name = "CATPLMIdentification"/>
+  <prerequisite access = "Public" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" name = "CATOmbLinkNavigationAccess"/>
+  <prerequisite access = "Private" name = "CATPLMImplAdapter"/>
+  <prerequisite access = "Protected" name = "CATPLMCommunication"/>
+  <prerequisite access = "Protected" name = "CATPLMModelerLanguage"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMStreamDescriptor"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMModelerBaseInterfaces"/>
+  <authorize name = "CATPLMIntegrationUI"/>
+  <authorize access = "Protected" name = "CATPLMIntegrationUse"/>
+  <authorize comment = "CATPLMScopeLinkableAdaptor.h " name = "CATPLMDocument"/>
+  <authorize comment = "CATPLMScopeLinkableAdaptor.h, CATVolatileDocManager.h " name = "CATPLMPrdIntegration"/>
+  <authorize comment = "CATPLMScopeLinkableAdaptor.h, CATVolatileDocManager.h " name = "DELPLMFunctionIntegration"/>
+  <authorize comment = "TO BE REMOVED " name = "ObjectSpecsModeler"/>
+  <authorize comment = "CATPLMFactoryWalker " name = "CATPLMSpecsModeler"/>
+  <authorize name = "LogicalStructureModeler"/>
+  <authorize access = "Private" name = "CATPLMSessionDebug"/>
+  <authorize comment = "CATPLMCompleteServices.h  " name = "CATPLMUIImpl"/>
+  <authorize name = "CATPLMOpenUI"/>
+  <authorize name = "CATPLMCompletionUI"/>
+  <authorize name = "CATImmVPMNavigator"/>
+  <authorize name = "CATPLMNavTechnoRepresentation"/>
+  <authorize name = "CATImmVPMBaseUI"/>
+  <authorize name = "CATPLMTransitionEngine"/>
+  <authorize name = "CATPLMTransitionAuthoring"/>
+  <authorize name = "CATPLMServerDebug"/>
+  <authorize name = "PLMExport_EV5_DXPAUT_ADV"/>
+  <authorize name = "CATPLMIntegration.tst"/>
+  <authorize name = "CATPLMIdentification.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentification_PLM.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegration_Unit.tst"/>
+  <authorize name = "CATPLMImplEV5Replication.tst"/>
+  <authorize name = "ObjectModelerBase_PLM.tst"/>
+  <authorize name = "CATPLMSpecsModeler.tst"/>
+  <authorize name = "ObjectSpecsModeler.tst"/>
+  <authorize name = "zzPCS_PLMIntegration.tst"/>
+  <authorize access = "Private" comment = "Coverage of CATIPLMImportInputOutputPrivate" name = "CATPLMPXn.tst"/>
+  <authorize access = "Protected" name = "CATDataflowTools.tst"/>
+  <authorize name = "CAT3DXMLPlayerSetup"/>
+  <authorize access = "Protected" name = "CATImmVPMFrame"/>
+  <authorize access = "Protected" name = "CATImmVPMModel"/>
+  <authorize access = "Protected" name = "CATPLMIdentificationTools"/>
+  <authorize access = "Protected" name = "CATPLMIntegrationAccessX"/>
+  <authorize access = "Protected" name = "CATPLMItgXPDMLog"/>
+  <authorize access = "Protected" name = "CATPLMItgXOpener"/>
+  <authorize access = "Protected" name = "CATPLMItgXPVSMS"/>
+  <authorize access = "Protected" name = "Cleaner"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://tempuri.org/XMLSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="Profiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Profile" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--OldTypingSupport-->
+  <xs:simpleType name="Boolean" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y"/>
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Definition profile-->
+  <xs:element name="Profile">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Type" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element ref="Query" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="RemoveType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="Transition" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="Level" minOccurs="3" maxOccurs="3"/>
+        <xs:element ref="LoadPointed" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="Alternates" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <!--attribut du profile : name -->
+      <xs:attribute name="name" type="xs:string" use="required"/>
+      <!--attribut du profile : OldTypingSupport -->
+      <xs:attribute name="OldTypingSupport" type="Boolean"/>
+	  <!--attribut du profile : PathSupport -->
+	  <xs:attribute name="PathSupport" type="Boolean"/>
+	  <!--attribut du profile : ReversePath -->
+	  <xs:attribute name="ReversePath" type="Boolean"/>
+    </xs:complexType>
+  </xs:element>
+
+  
+  <!--Definition element du profile-->
+  <!--Type-->
+  <xs:element name="Type" type="xs:string"/>
+
+  <!--QueryType-->
+  <xs:simpleType name="QueryType" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Expand"/>
+      <xs:enumeration value="ReverseExpand"/>
+	  <xs:enumeration value="Navigate"/>
+      <xs:enumeration value="ML"/>
+	  <xs:enumeration value="xMQLProcedure"/>
+	</xs:restriction>
+  </xs:simpleType>
+
+  <!--Query-->
+  <xs:element name="Query">
+    <xs:complexType mixed ="true">
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="AddType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="Path" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="RemoveType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <!--attribut de query-->
+      <xs:attribute name="type" type="QueryType" use="required"/>
+      <xs:attribute name="file" type="xs:string" use="optional"/>
+	  <xs:attribute name="name" type="xs:string" use="optional"/>
+      <xs:attribute name="version" type="xs:string" use="optional"/>
+	</xs:complexType>
+  </xs:element>
+
+  <!--LevelState-->
+  <xs:simpleType name="LevelState" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Light"/>
+      <xs:enumeration value="Navigation"/>
+      <xs:enumeration value="Full"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--OptionName-->
+  <xs:simpleType name="OptionName" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="documents"/>
+      <xs:enumeration value="fasteners"/>
+      <xs:enumeration value="layouts"/>
+      <xs:enumeration value="materials"/>
+      <xs:enumeration value="reps"/>
+      <xs:enumeration value="reviews"/>
+      <xs:enumeration value="dmu_monocontext"/>
+      <xs:enumeration value="test_case"/>
+      <xs:enumeration value="test_exec"/>
+      <xs:enumeration value="integrity_reps"/>
+      <xs:enumeration value="3dshape_reps"/>
+      <xs:enumeration value="custom_reps"/>
+      <xs:enumeration value="all_reps"/>
+      <xs:enumeration value="filter_mappings"/>
+      <xs:enumeration value="with_ports_and_cnxs"/>
+      <xs:enumeration value="filter_effectivities"/>
+      <xs:enumeration value="filter_broken_effectivities"/>
+      <xs:enumeration value="no_effectivities"/>
+      <xs:enumeration value="filter_rfl_implement_links"/>
+	  <xs:enumeration value="filter_mfg_implement_links"/>
+	  <xs:enumeration value="no_rfl_implement_links"/>
+	  <xs:enumeration value="filter_allocated_resource_links"/>
+	  <xs:enumeration value="filter_time_constraint_links"/>
+	  <xs:enumeration value="filter_process_prerequisite_links"/>
+	  <xs:enumeration value="time_analysis"/>
+      <xs:enumeration value="aec_object_type"/>
+      <xs:enumeration value="plm_parameters"/>
+      <xs:enumeration value="config_context"/>
+	  <xs:enumeration value="remove_fasteners_oldtyping"/>
+	  <xs:enumeration value="remove_fasteners_newtyping"/>
+	  <xs:enumeration value="no_type_retriever"/>
+	</xs:restriction>
+  </xs:simpleType>
+  
+  <!--element contenu dans query-->
+  <!--AddType-->
+  <xs:element name="AddType">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ExtraAttribute" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="FilterOnSRs" minOccurs="0" maxOccurs="1"/>
+		<xs:element ref="FilterOnAttrs" minOccurs="0" maxOccurs="1"/>
+		<xs:element ref="FilterOnDependencies" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="PointedRetriever" minOccurs="0" maxOccurs="1"/>
+      </xs:choice>
+      <!--attribut de AddType-->
+      <xs:attribute name="level" type="LevelState" use="optional"/>
+      <xs:attribute name="type" type="xs:string" use="optional"/>
+      <xs:attribute name="option" type="OptionName" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--PointedRetriever-->
+  <xs:element name="PointedRetriever">
+    <xs:complexType mixed="true">
+      <xs:attribute name="option" type="OptionName" use="optional"/>
+      <xs:attribute name="role" type="xs:string" use="optional"/>
+      <xs:attribute name="category" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--ExtraAtrribute-->
+  <xs:element name="ExtraAttribute" type="xs:string"/>
+
+  <!--ExcludedSubType-->
+	<xs:element name="ExcludedSubType">
+		<xs:complexType mixed="true">
+			<xs:attribute name="discipline" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+  <!--FilterOnSRsState-->
+  <xs:simpleType name="FilterOnSRsState" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Broken"/>
+      <xs:enumeration value="NotOpened"/>
+      <xs:enumeration value="Opened"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+	<!--condOp-->
+	<xs:simpleType name="condOp" final="restriction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AND"/>
+			<xs:enumeration value="OR"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--iterativeMode-->
+	<xs:simpleType name="iterativeMode" final="restriction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Keep"/>
+			<xs:enumeration value="Remove"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!--relOp-->
+	<xs:simpleType name="relOp" final="restriction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LIKE"/>
+			<xs:enumeration value="NOT_LIKE"/>
+			<xs:enumeration value="GT"/>
+			<xs:enumeration value="GE"/>
+			<xs:enumeration value="LT"/>
+			<xs:enumeration value="LE"/>
+			<xs:enumeration value="EQ"/>
+			<xs:enumeration value="NOT_EQ"/>
+			<xs:enumeration value="IN"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--attrKind-->
+	<xs:simpleType name="attrKind" final="restriction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="boolean"/>
+			<xs:enumeration value="integer"/>
+			<xs:enumeration value="string"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+  <!--FilterOnSRsBehavior-->
+  <xs:simpleType name="FilterOnSRsBehavior" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Keep"/>
+      <xs:enumeration value="Remove"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--FilterOnSRs-->
+  <xs:element name="FilterOnSRs">
+    <xs:complexType mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="ExcludedSubType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+      <xs:attribute name="state" type="FilterOnSRsState" use="required"/>
+      <xs:attribute name="option" type="OptionName" use="optional"/>
+	  <xs:attribute name="discipline" type="xs:string" use="optional"/>
+	  <xs:attribute name="behavior" type="FilterOnSRsBehavior" use="required"/>
+      <xs:attribute name="role" type="xs:string" use="optional"/>
+      <xs:attribute name="category" type="xs:string" use="optional"/>
+      <xs:attribute name="addBrokenSRsToFilter" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--FilterOnAttrs-->
+  <xs:element name="FilterOnAttrs">
+	  <xs:complexType mixed="true">
+		  <xs:choice minOccurs="0" maxOccurs="unbounded">
+			  <xs:element ref="FilterOnAttr" minOccurs="1" maxOccurs="unbounded"/>
+		  </xs:choice>
+		  <xs:attribute name="condOp" type="condOp" use="optional"/>
+		  <xs:attribute name="behavior" type="iterativeMode" use="optional"/>
+	  </xs:complexType>
+  </xs:element>
+
+  <!--FilterOnAttr-->
+	<xs:element name="FilterOnAttr">
+		<xs:complexType mixed="true">
+			<xs:attribute name="relOp" type="relOp" use="required"/>
+			<xs:attribute name="attrKind" type="attrKind" use="required"/>
+			<xs:attribute name="attrName" type="xs:string" use="required"/>
+			<xs:attribute name="option" type="OptionName" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<!--FilterOnDependencies-->
+  <xs:element name="FilterOnDependencies">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Path-->
+  <xs:element name="Path">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="Step" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="from" type="xs:string" use="optional"/>
+      <xs:attribute name="to" type="xs:string" use="optional"/>
+      <xs:attribute name="role" type="xs:string" use="optional"/>
+      <xs:attribute name="category" type="xs:string" use="optional"/>
+      <xs:attribute name="through" type="xs:string" use="optional"/>
+      <xs:attribute name="direct" type="xs:boolean" use="optional"/>
+      <xs:attribute name="minorSensitivity" type="xs:boolean" use="optional"/>
+      <xs:attribute name="specialTagForFastener" type="xs:boolean" use="optional"/>
+      <xs:attribute name="option" type="OptionName" use="optional"/>
+	</xs:complexType>
+  </xs:element>
+
+  <!--Step-->
+  <xs:element name="Step">
+    <xs:complexType mixed="true">
+      <xs:attribute name="from" type="xs:string" use="required"/>
+      <xs:attribute name="to" type="xs:string" use="required"/>
+      <xs:attribute name="role" type="xs:string" use="optional"/>
+      <xs:attribute name="category" type="xs:string" use="optional"/>
+      <xs:attribute name="direct" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Remove-->
+  <xs:element name="RemoveType">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ExcludedSubType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <xs:attribute name="option" type="OptionName" use="optional"/>
+      <xs:attribute name="type" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--LevelDepth-->
+  <xs:simpleType name="LevelDepth">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+           <xs:enumeration value="None"/>
+           <xs:enumeration value="Inherited"/>
+           <xs:enumeration value="Self"/>
+           <xs:enumeration value="All"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:positiveInteger">
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <!--Level-->
+  <xs:element name="Level">	
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="LevelDepth">
+          <xs:attribute name="state" type="LevelState" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <!--ContextType-->
+  <xs:simpleType name="ContextType" final="restriction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="results"/>
+      <xs:enumeration value="roots"/>
+      <xs:enumeration value="lca"/>
+      <xs:enumeration value="LCA"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!--LoadPointed-->
+  <xs:element name="LoadPointed">
+    <xs:complexType mixed="true">
+      <xs:attribute name="from" type="xs:string" use="optional"/>
+      <xs:attribute name="to" type="xs:string" use="optional"/>
+      <xs:attribute name="option" type="OptionName" use="optional"/>
+      <xs:attribute name="prereq" type="xs:boolean" use="optional"/>
+      <xs:attribute name="result" type="xs:boolean" use="optional"/>
+      <xs:attribute name="id" type="xs:string" use="optional"/>
+      <xs:attribute name="role" type="xs:string" use="optional"/>
+      <xs:attribute name="category" type="xs:string" use="optional"/>
+      <xs:attribute name="context" type="ContextType" use="optional"/>
+      <xs:attribute name="compactable" type="xs:boolean" use="optional"/>
+	  <xs:attribute name="optimizable" type="xs:boolean" use="optional"/>
+	  <xs:attribute name="minorSensitivity" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Transition-->
+  <xs:element name="Transition">
+    <xs:complexType mixed="true">
+      <xs:all/>
+      <xs:attribute name="from" type="xs:string" use="optional"/>
+      <xs:attribute name="option" type="OptionName" use="optional"/>
+      <xs:attribute name="prereq" type="xs:boolean" use="optional"/>
+      <xs:attribute name="result" type="xs:boolean" use="optional"/>
+      <xs:attribute name="id" type="xs:string" use="optional"/>
+      <xs:attribute name="compactable" type="xs:boolean" use="optional"/>
+      <xs:attribute name="optimizable" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Alternate-->
+  <xs:element name="Alternates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Alternate" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <!--attribute de Alternates-->
+      <xs:attribute name="from" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Alternate">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="Condition" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="Transition" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="LoadPointed" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+      <!--Attribut de alternate-->
+      <xs:attribute name="order" type="xs:int"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Condition-->
+  <xs:element name="Condition">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="hasSR" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="hasAttr" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <!--hasSR-->
+  <xs:element name="hasSR">
+    <xs:complexType mixed="true">
+      <xs:attribute name="role" type="xs:string" use="required"/>
+      <xs:attribute name="category" type="xs:string" use="optional"/>
+      <xs:attribute name="to" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--hasAttr-->
+  <xs:element name="hasAttr">
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" use="optional"/>
+      <xs:attribute name="value" type="xs:boolean" use="optional"/>
+      <xs:attribute name="type" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

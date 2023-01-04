@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="AfrRepresentationTypes/VIAImmersiveToolBar.CATSYPStyle"/>
+  </Resources>
+  
+  <!--===================================-->
+  <!--Main -->
+  <!--===================================-->
+  <Template syp:name="CompassLabel" Target="CATAfrSYPViewLabel">
+    <CATVidLayGrid Name = "GridFrame" GridWeight="col2=1" CellSpacing = "0">
+      <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel RequestedMinimumDimension = "@MiniLabel" 
+                     Dimension = "@DimLabel" Name = "@Id" 
+                     UseManipulatorFlag = "0" PickFlag = "0" 
+                     Text = "@Label" LayoutWhenUnvisibleFlag = "0" 
+                     TextColor="0.65 200" 
+                     TextHeight = "16" 
+                     FontName = "Arial" CaptionFontFlag = "0" 
+                     ItalicFlag = "1" BoldFlag = "0" 
+                     CropPolicy = "CropWithDots" 
+                     CATVidLayGrid.IndexedConstraints = "x=1 y=0 xSpan=1 ySpan=1 attach=LTB"/>
+      <CATVidLayLayer RequestedMinimumDimension = "@MiniEditor" Dimension = "@DimEditor" CATVidLayGrid.IndexedConstraints = "x=2 y=0 xSpan=1 ySpan=1 attach=RLTB">
+        <!--<CATVidCtlEditor VisibleFlag = "@EditorLayVisible" 
+                         Line="@EnterText Mode=TwoWays" 
+                         ReadOnlyFlag="@ReadEditor" 
+                         Modify = "@OnEditorTextValidation" 
+                         Name = "CreatedText" 
+                         DataType = "0" MultilineFlag = "0"/>-->
+        <CATVidCtlLineEditor VisibleFlag = "@EditorLayVisible" 
+                             Text = "@EnterText Mode=TwoWays" 
+                             ReadOnlyFlag = "@ReadEditor" 
+                             EditingFinished = "@OnEditorTextValidation"
+                             RequestedMinimumDimension = "@MiniEditor"
+                             Name = "CreatedEditorText" 
+                             BoldFlag = "0" 
+                             BackgroundColor = "255 255 255 220"
+                             ForegroundColor = "0 0 0 254" 
+                             CursorColor = "255 0 0 155" 
+                             SelectionColor = "0 0 255 155"
+                             LayoutWhenUnvisibleFlag = "0"/>
+        <CATVidGPText VisibleFlag = "@TextLayVisible" 
+                      UseManipulatorFlag = "@TextPick" 
+                      Color = "@TextColor" Text = "@Text" 
+                      Press = "@HandleEvent" 
+                      Name = "Text" Bold = "0" 
+                      FontHeight = "16" Interline = "0" 
+                      LeftMargin = "0" RightMargin = "5" 
+                      TopMargin = "2" BottomMargin = "2"
+                      LayoutWhenUnvisibleFlag = "0"/>
+        <CATVidCtlButton  Name="CreatedText"
+                          syp:name="HyperLink"
+                          syp:Template="HyperLinkText"
+                          CursorShape="NorthHandCursor"
+                          Label="@Text"
+                          Tooltip="@TooltipText"
+                          Click="@HandleEvent"
+                          VisibleFlag="@HyperLinkLayVisible"
+                          LayoutWhenUnvisibleFlag = "0"/>
+      </CATVidLayLayer>
+      <CATVidGPSquare VisibleFlag = "@VisibleIcon" RequestedMinimumDimension = "16 16" Dimension = "16 16" Name = "SquareIcon" UseManipulatorFlag = "0" PickFlag = "0" GiveFocusOnDragFlag = "0" AcceptFocusOnDropFlag = "0" LayoutWhenUnvisibleFlag = "0" Color = "255 255 255 0" BorderColor = "255 255 255 0" PixelImage = "@IconAtt" TextureFilter = "0" TextureAlpha = "255" UseColorizeFlag = "1" CATVidLayGrid.IndexedConstraints = "x=3 y=0 xSpan=1 ySpan=1 attach=R"/>
+      <CATVidCtlButton VisibleFlag = "@VisibleCmd" Click = "@HandleEvent" IconPixelImage = "@IconPixelCmd" Tooltip = "@TooltipText" RequestedMinimumDimension = "16 16" Dimension = "16 16" Name = "ButtonCmd" Label = "" IconDimension = "16 16" LayoutWhenUnvisibleFlag = "0" ForegroundColor = "0.8 255" BackgroundColor = "0.1 255" ShortHelpAttachmentSide = "1" FontHeight = "16" FontWeight = "0" CropPolicy = "NoCrop" AllowMultiplePressFlag = "0" ShortHelpBeginTime = "0" DefaultFlag = "0" AutoDefaultFlag = "0" UnderlineFlag = "0" GiveFocusOnDragFlag = "0" AcceptFocusOnDropFlag = "0" syp:Template = "Toolbar" CATVidLayGrid.IndexedConstraints = "x=4 y=0 xSpan=1 ySpan=1 attach=RTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--===================================-->
+  <!--Title -->
+  <!--===================================-->
+  <Template syp:name="CompassTitle" Target="CATAfrSYPViewLabelTitle">
+    <CATVidLayGrid GridWeight="col2=1" Name = "GridFrameTitle" CellSpacing = "0">
+      <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPSquare RequestedMinimumDimension = "18 14" Dimension = "16 16" PixelImage = "@IconTitle" Name = "SquareTitle" LayoutWhenUnvisibleFlag = "0" UseManipulatorFlag = "0" PickFlag = "0" GiveFocusOnDragFlag = "0" AcceptFocusOnDropFlag = "0" Color = "255 255 255 0" BorderColor = "255 255 255 0" TextureFilter = "0" TextureAlpha = "255" UseColorizeFlag = "1" CATVidLayGrid.IndexedConstraints = "x=1 y=0"/>
+      <CATVidGPLabel RequestedMinimumDimension = "@MiniLabel" Dimension = "@DimLabel" Text = "@TitleLabel" Name = "TitleLabel" UseManipulatorFlag = "0" PickFlag = "0" TextColor = "0.8 255" TextHeight = "16" CaptionFontFlag = "1" ItalicFlag = "1" BoldFlag = "1" CropPolicy = "NoCrop" CATVidLayGrid.IndexedConstraints = "x=2 y=0 attach=RL"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--===================================-->
+  <!--Expander -->
+  <!--===================================-->
+  <Template syp:name="LabelExpander" Target="CATAfrSYPViewLabel">
+    <CATVidLayGrid Name = "GridExpand" CellSpacing = "0">
+      <CATVidCtlExpander Label = "@Title" ExpandedFlag = "@ExpandedFlag" 
+                         Icon = "" LayoutWhenUnvisibleFlag = "0" 
+                         Name = "CreatedExpander" 
+                         VisibilityPolicy = "ScaleAnimation" 
+                         ColorizeIconBlackPixelTo = "1 255" 
+                         IconDimension = "0 0" 
+                         ForegroundColor = "0.8 255" 
+                         BackgroundColor = "0.1 255" FontHeight = "16" FontWeight = "0" CropPolicy = "NoCrop" ExclusiveFlag = "0" syp:Template = "Expander" CATVidLayGrid.IndexedConstraints = "x=0 y=0 xSpan=1 ySpan=1 attach=RLTB">
+        <CATVidLayGrid Name = "GridContent" CellSpacing = "0" LayoutWhenUnvisibleFlag = "0">
+          <CATVidCtl PresenterContent="@Content Mode=TwoWays" VisibilityPolicy = "BlindAnimation" LayoutWhenUnvisibleFlag = "0" syp:name="Presenter" CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlExpander>
+    </CATVidLayGrid>
+  </Template>
+</Styles>

@@ -1,0 +1,1017 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="CATAfrBasicStyle.CATSYPStyle"/>
+    
+  </Resources>
+
+  <!--===================================-->
+  <!--Here you define your components view @BackgroundColor-->
+  <!--===================================-->
+
+  <Template syp:name="Default" Target="CATAfrSpiderChartCtl">
+    <CATVidLayGrid  GridWeight="row0=1 col0=1">
+      
+      <CATVidLayGrid GridWeight="row1=1 row3=1 col1=1 col3=1"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <!--<CATVidGPLabel CropPolicy="CropWithDots" Text="@Title" HorizontalAlignment="1" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=4 attach=RLTB"/> -->
+        <CATVidGPSquare  RequestedMinimumDimension="@MarginDimension" Dimension="@ComputedMarginDimension Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB" Dimension="@SpiderDimension Mode=OneWayToSource">
+          <CATVidGPSquare  syp:name="Background" ColorizeBlackPixelTo="0.6 150" />
+          <CATVidCtl syp:name="SpiderLayersCtl" RequestedMinimumDimension="180 180" />
+        </CATVidLayLayer>
+        <CATVidGPSquare RequestedMinimumDimension="@MarginDimension"  CATVidLayGrid.IndexedConstraints="x=3 y=3 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLayGrid GridWeight="row0=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <!--<CATVidCtlButton syp:Template="Button" syp:name="LegendButtonUp" LayoutWhenUnvisibleFlag="0" Name="LegendButtonUp" IconDimension="8 8" Icon="AfrToolbarButtonArrowUp.png" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        <CATVidCtlButton syp:Template="Button" Border syp:Template="ThinBorder"BackgroundColor="0.2 250"syp:name="LegendButtonDown" LayoutWhenUnvisibleFlag="0" Name="LegendButtonDown" IconDimension="8 8" Icon="AfrToolbarButtonArrow.png" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>-->        
+      </CATVidLayGrid>
+       <!--<CATVidCtl  syp:name="CtlSpiderHandlerSeries" VisibilityPolicy="SlideBToTAnimation" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+         <CATVidLayGrid>
+                             <CATVidLayStack syp:name="SpiderHandlerSeries" CellBorder="4" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=TB"/>
+         </CATVidLayGrid>
+
+        </CATVidCtl>-->
+ 
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+
+
+      <!--<CATSYPTrigger Property="VisibleSeriesFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CtlSpiderHandlerSeries" Value="1"/>
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisibleSeriesFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CtlSpiderHandlerSeries" Value="0"/>
+      </CATSYPTrigger>-->      
+      <CATSYPTrigger Property="CategoriesCount" Value="3">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider3.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CategoriesCount" Value="4">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider4.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CategoriesCount" Value="5">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider5.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CategoriesCount" Value="6">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider6.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CategoriesCount" Value="7">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider7.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CategoriesCount" Value="8">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider8.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CategoriesCount" Value="9">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider9.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CategoriesCount" Value="10">
+        <CATSYPSetter Property="Texture" TargetName="Background" Value="Spider/AfrSpider10.png"/>
+      </CATSYPTrigger>      
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidPolygonSide">
+    <CATVidLayLayer>
+      <CATVidGPLine Color="@Color"
+                    UseManipulatorFlag="@UseManipulatorFlagOnPoint"
+                    VisibleFlag="@VisibleLineFlag"
+                    FirstPoint="@InitialPoint"
+                    SecondPoint="@FinalPoint"
+                    OutlineColor="@OutlineColor"
+                    LineType="@LineType"
+                    Offset="@Offset"
+                    OutlineLineType="@OutlineLineType"
+                    DesaturatedFlag="@DesaturatedFlag"
+                    Entry="@HandleEvent"
+                    Leave="@HandleEvent"/>
+      <CATVidGPLine Color="@Color"
+                    UseManipulatorFlag="0"
+                    VisibleFlag="@VisibleLineToCenterFlag"
+                    FirstPoint="@InitialPoint"
+                    SecondPoint="@Center"
+                    OutlineColor="@OutlineColor"
+                    LineType="@LineType"
+                    Offset="@Offset"
+                    OutlineLineType="@OutlineLineType"
+                    DesaturatedFlag="@DesaturatedFlag"
+                    LayoutWhenUnvisibleFlag="0"/>
+      <CATVidLaySideAttach>
+        <CATVidLayLayer CATVidLaySideAttach.IndexedConstraints="@PointAttachConstraints">
+           <CATVidCtlButtonIcon syp:Template="ColorizedIcon"
+                             syp:name="Point"
+                             Dimension="@PointDimension Mode=OneWayToSource"
+                             RequestedMinimumDimension="24 24"
+                             
+                             OffTexture="Spider/spider_chart_point.png"
+                             OnTexture="Spider/spider_chart_point.png"
+                             OverTexture="Spider/spider_chart_point.png"
+                             Tooltip="@Tooltip"
+                             ColorizeIconBlackPixelTo="@Color"
+                             VisibleFlag="@PointVisibleFlag"
+                             AlphaFilterValue="@TextureAlphaPoint"
+                             Entry="@HandleEvent"
+                             Leave="@HandleEvent"
+                             Press="@HandleEvent"
+                             Release="@HandleEvent"
+                             />
+            <CATVidGPSquare syp:name="ErrorPopup" Texture="Spider/spider_chart_point.png" ColorizeBlackPixelTo="250 0 0 200"  RequestedMinimumDimension="24 24"/>
+        </CATVidLayLayer>
+       
+        <!--GridWeight="row1=1 col1=1"Color=@LabelColorRequestedMinimumDimension="@MaximumLabelDimension"RequestedMinimumDimension="@RequestedLabelDimension"RequestedMinimumDimension="@MaximumLabelDimension"-->
+        
+        <!--<CATVidLayGrid Color="0 100 100 100" VisibleFlag="@VisibleLabelFlag"   CATVidLaySideAttach.IndexedConstraints="@LabelAttachConstraints">
+          <CATVidCtl TooltipShortHelp="@Tooltip" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <CATVidGPText syp:name="Label"
+                 WordWrapFlag="1" 
+                 WordWrapPolicy="Threshold"
+                 WordWrapThreshold="@MaximumLabelHeight"
+                 UseManipulatorFlag="@UseManipulatorFlagOnLabel"
+                 Underline="@UseManipulatorFlagOnLabel"
+                 Dimension="@LabelDimension Mode=OneWayToSource"
+                 Text="@Label"
+                 RequestedMinimumDimension="@MaximumLabelDimension"
+                 Entry="@HandleEvent"
+                 Leave="@HandleEvent"
+                 Release="@HandleEvent"
+                             />
+
+          </CATVidCtl>      
+
+          --><!--<CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=1 y=0 ySpan=2 attach=RLTB"/>
+          <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>--><!--
+        </CATVidLayGrid>-->
+          <CATVidCtl TooltipShortHelp="@Tooltip" VisibleFlag="@VisibleLabelFlag"   CATVidLaySideAttach.IndexedConstraints="@LabelAttachConstraints">
+            
+            <CATVidLayLayer>
+              <CATVidCtlXRect syp:Template="HandleCompass" CursorShape="NorthHandCursor" FocusableFlag="0" VisibleFlag="@UseManipulatorFlagOnLabel"  Entry="@HandleEvent" Leave="@HandleEvent" Release="@HandleEvent"/>
+              <CATVidGPText syp:name="Label"
+                 WordWrapFlag="1" 
+                 WordWrapPolicy="Threshold"
+                 WordWrapThreshold="@MaximumLabelHeight"
+              
+                 Underline="@UseManipulatorFlagOnLabel" 
+                 Dimension="@LabelDimension Mode=OneWayToSource"
+                 Text="@Label"
+                 RequestedMinimumDimension="@MaximumLabelDimension"
+                 Entry="@HandleEvent"
+                 Leave="@HandleEvent"
+                 Release="@HandleEvent"
+                             />
+            </CATVidLayLayer>
+           
+
+          </CATVidCtl>
+
+
+
+      </CATVidLaySideAttach>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ErrorOnPercentValueFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ErrorPopup" Value="1"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:6">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="ErrorPopup" Duration="0:0:1" From="250" To="0" />
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="ErrorPopup" BeginTime="0:0:1" Duration="0:0:1" From="0" To="250" />            
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="ErrorPopup" BeginTime="0:0:2" Duration="0:0:1" From="250" To="0" />
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="ErrorPopup" BeginTime="0:0:3" Duration="0:0:1" From="0" To="250" />
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="ErrorPopup" BeginTime="0:0:4" Duration="0:0:1" From="250" To="0" />
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="ErrorPopup" BeginTime="0:0:5" Duration="0:0:1" From="0" To="250" />
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ErrorOnPercentValueFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ErrorPopup" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="UseManipulatorFlagOnLabel" Value="0">
+        <CATSYPSetter Property="Color" TargetName="Label" Value="0.8 255"/>
+      </CATSYPTrigger>      
+      <CATSYPTrigger Property="UseManipulatorFlagOnLabel" Value="1">
+        <CATSYPSetter Property="Color" TargetName="Label" Value="0 0 255 255"/>
+      </CATSYPTrigger>            
+    </CATSYPTriggerCollection>
+
+  </Template>
+  <Template syp:name="Default" Target="CATAfrVidSeriesHandler">
+    <CATVidLayGrid>
+          <CATVidCtlCheckBox syp:Template="Default" 
+                       CheckState="@VisibleSeriesState Mode=TwoWays" 
+                       Label="@Label" 
+                       Dimension="@LabelDimension Mode=OneWayToSource"
+                       TooltipShortHelp="@Tooltip" 
+                       CropPolicy="@CropPolicy"
+                       ForegroundColor="@Color"
+                       CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+    </CATVidLayGrid>
+
+  </Template>
+  
+  
+  
+  <!--**********************************************************************************************************-->
+  <!--                              Templates For Bar Chart Views                                               -->
+  <!--**********************************************************************************************************-->
+  
+  
+  
+  
+  <Template syp:name="Default" Target="CATAfrVidCtlBarChart">
+    <CATVidLayGrid GridWeight="row0=1 row2=1">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <!--Border syp:Template="ThinBorder"BackgroundColor="0.2 250"-->
+      <CATVidLayStack syp:name="CategoriesCollection" Orientation="@Orientation" CellBorder="5" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+    </CATVidLayGrid>
+    
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidCtlBarChartCategory">
+    <CATVidLayGrid GridWeight="col0=1 col1=3">
+      
+      <CATVidCtl TooltipShortHelp="@Tooltip" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidLayGrid  GridWeight="row1=1">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="0 5"/>
+          <CATVidGPLabel syp:name="Label" CropPolicy="CropWithDots"  
+                          UseManipulatorFlag="@UseManipulatorFlagOnLabel" 
+             UnderlineFlag="@UseManipulatorFlagOnLabel" RequestedMinimumDimension="50 16"
+                          TextHeight="16" VerticalAlignment="1"  
+                          Text="@Label"  Entry="@HandleEvent"
+                 Leave="@HandleEvent"
+                 Release="@HandleEvent" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+           <!--<CATVidGPText syp:name="Label"
+             WordWrapFlag="1"
+             UseManipulatorFlag="@UseManipulatorFlagOnLabel"
+             Underline="@UseManipulatorFlagOnLabel"
+                      RequestedMinimumDimension="50 16"
+                         Color="@Color"
+             Text="@Label"
+             Entry="@HandleEvent"
+             Leave="@HandleEvent"
+             Release="@HandleEvent"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"
+                             />-->
+        </CATVidLayGrid>
+       
+
+      </CATVidCtl>
+      <CATVidLayStack Items="@Items Mode=OneWayToSource" StackAttachmentAppendPolicy="StretchAttachmentPolicy"  CellBorder="3" Orientation="@Orientation" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="UseManipulatorFlagOnLabel" Value="0">
+        <CATSYPSetter Property="TextColor" TargetName="Label" Value="0.8 255"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="UseManipulatorFlagOnLabel" Value="1">
+        <CATSYPSetter Property="TextColor" TargetName="Label" Value="0 0 255 255"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidCtlBarChartValue">
+    <CATVidLayGrid  GridWeight="col3=1" >
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="10 0"/>
+      <CATVidLayGrid syp:name="ExtraLabel" LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="30 16" VisibleFlag="1" GridWeight="col3=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPLabel  CropPolicy="NoCrop"  TextHeight="16" VerticalAlignment="1" TextColor="0.8 255" Text="@StrPercentValue"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"/>
+      </CATVidLayGrid>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="10 0"/>
+      <!--<CATAfrBarChartCtl syp:Template="ButtonBar" syp:name="BarChart" ButtonSize="16 16" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" PercentValue="@PercentValue" ColorBar="@Color" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=R"/>-->
+      <CATVidCtlProgressBar syp:Template="Default" syp:name="BarChart" RequestedMinimumDimension="160 16"
+                            
+                            VisibleFlag="1" 
+                            MinimumValue="0" MaximumValue="100" Value="@PercentValue" 
+                            ForegroundColor="@Color"  CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RL"/>
+    </CATVidLayGrid>
+
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidCtlScrollViews">
+    <!--<CATVidLayGrid>  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" Scroll="@ScrollCB"-->
+    <CATVidLayLayer>
+      <CATVidCtlScrollableArea syp:Template="NoScrollbars" syp:name="Scrollable" VScrollbarPolicy="AlwaysHidden" VStretchPolicy="Stretch" HStretchPolicy="Stretch" InertiaFlag="0" MouseScrollFlag="1" >
+        <CATVidLayGrid GridWeight="col1=1">
+          <CATVidLayGrid syp:name="Stack" GridAppendPolicy="2" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+          <CATVidLayGrid  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"  LayoutWhenUnvisibleFlag="0" VisibleFlag="@OnVisibleProgressTask">
+            <!--<CATVidSpacer RequestedMinimumDimension="@SpaceBeforeProgressBar" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>-->
+            <CATVidGPSquare syp:name="ProgressSquare" Texture="I_Loading_Wheel.mng" LayoutWhenUnvisibleFlag="0"  RequestedMinimumDimension="48 48" CATVidLayGrid.IndexedConstraints="x=1 y=0 " />
+          </CATVidLayGrid>
+          
+        </CATVidLayGrid>
+      </CATVidCtlScrollableArea>
+      <CATVidLaySideAttach syp:name="ArrowsLayer" >
+        <CATVidGPSquare syp:name="Left"  UseManipulatorFlag="1" Texture="Spider/ScrollArrowLeft.png" RequestedMinimumDimension="32 32"  TextureAlpha="255" CATVidLaySideAttach.IndexedConstraints="leftPx=0 topPercent=50" Release="@GoToLeftCB"/>
+        <CATVidGPSquare syp:name="Right" UseManipulatorFlag="1" Texture="Spider/ScrollArrowRight.png" RequestedMinimumDimension="32 32"  TextureAlpha="255" CATVidLaySideAttach.IndexedConstraints="rightPx=0 topPercent=50" Release="@GoToRightCB"/>
+      </CATVidLaySideAttach>
+    </CATVidLayLayer>
+      
+    <!--</CATVidLayGrid>-->
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="LastViewFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Right"  Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LastViewFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Right"  Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="FirstViewFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Left"  Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="FirstViewFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Left"  Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPEventTrigger RoutedEvent="Leave" TargetName="Left">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="Left" BeginTime="0:0:1" Duration="0:0:1" From="255" To="80" />
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="Right" BeginTime="0:0:1" Duration="0:0:1" From="255" To="80" />
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="Leave" TargetName="Right">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="Left" BeginTime="0:0:1" Duration="0:0:1" From="255" To="80" />
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="TextureAlpha" CATSYPStoryboard.TargetName="Right" BeginTime="0:0:1" Duration="0:0:1" From="255" To="80" />
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="Entry" TargetName="Right">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Left" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="Right" Value="255"/>        
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="Entry" TargetName="Left">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Left" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="Right" Value="255"/>        
+      </CATSYPEventTrigger>      
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--**********************************************************************************************************-->
+  <!--                              CATAfrVidCtlListView                                               -->
+  <!--**********************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidCtlListView" >
+    <CATVidCtlListView syp:name="ListView" 
+                       syp:Template="Default" 
+                       LayoutWhenUnvisibleFlag="0"
+                       UniformItemSizes="1"
+                       ItemsFlow="@ItemsFlow"
+                       ViewMode="@ViewMode"
+                       KeyboardManipulationFlag="1"
+                       TooltipProvider="@TooltipProvider"
+                       PreHighlightBorderColor="13 97 150 200"
+                       PreHighlightColor="13 97 150 200"
+                       SelectionBorderColor="13 97 150 255"
+                       SelectionColor="13 97 150 255"
+                       CurrentItemBorderColor="13 97 150 255"
+                       ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                       ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                       ItemsScrollMode="@ItemsScrollMode"
+                       TooltipWrapPolicy="@TooltipWrapPolicy"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="Stretch"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="Stretch"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--**********************************************************************************************************-->
+  <!--                              CATAfrVidCtlListView                                               -->
+  <!--**********************************************************************************************************-->
+  <Template syp:name="DefaultThumbnails" Target="CATAfrVidCtlListView" >
+    <CATVidCtlListView syp:name="ListView"
+                       syp:Template="Default"
+                       LayoutWhenUnvisibleFlag="0"
+                       UniformItemSizes="1"
+                       ItemsFlow="@ItemsFlow"
+                       ViewMode="@ViewMode"
+                       KeyboardManipulationFlag="1"
+                       TooltipProvider="@TooltipProvider"
+                       PreHighlightBorderColor="0 0"
+                       PreHighlightColor="0 0"
+                       SelectionBorderColor="0 0"
+                       SelectionColor="0 0"
+                       CurrentItemBorderColor="0 0"
+                       ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                       ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                       ItemsScrollMode="@ItemsScrollMode"
+                       TooltipWrapPolicy="@TooltipWrapPolicy"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="Stretch"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="Stretch"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+  <!--**********************************************************************************************************-->
+  <!--                              CATAfrVidCtlTreeView                                               -->
+  <!--**********************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidCtlTreeView" >
+    <CATVidCtlTreeView syp:name="TreeView"
+                       syp:Template="Default"
+                       UniformItemSizes="1"
+                       KeyboardManipulationFlag="1"
+                       ExpanderLook="@ExpanderLook"
+                       RootDecorationFlag="@RootDecorationFlag"
+                       TooltipProvider="@TooltipProvider"
+                       ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                       ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                       ItemsScrollMode="@ItemsScrollMode"
+                       ViewMode="@ViewMode"
+                       DisplayOnHeader="@DisplayOnHeader"
+                       SelectionMode="@SelectionMode"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="TreeView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="TreeView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="TreeView" Value="Stretch"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="TreeView" Value="Stretch"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PreSelectionColorFlag" Value="0">
+        <CATSYPSetter Property="PreHighlightBorderColor" TargetName="TreeView" Value="0 0"/>
+        <CATSYPSetter Property="PreHighlightColor" TargetName="TreeView" Value="0 0"/>
+        <CATSYPSetter Property="SelectionBorderColor" TargetName="TreeView" Value="0 0"/>
+        <CATSYPSetter Property="SelectionColor" TargetName="TreeView" Value="0 0"/>
+        <CATSYPSetter Property="CurrentItemBorderColor" TargetName="TreeView" Value="0 0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+  <!--===================================-->
+  <!--CAfrTree included Tree_CAfrComponent-->
+  <!--===================================-->
+  <Template syp:name="CAfrComponent" Target="CATAfrVidCtlTreeView" >
+    <CATVidCtlTreeView syp:name="TreeView"
+                       syp:Template="Default"
+                       MouseScrollFlag="1"
+                       InertiaFlag="1"
+                       Indentation="0"
+                       UniformItemSizes="0"
+                       KeyboardManipulationFlag="1"
+                       RootChildrenBackgroundVisibleFlag="1"
+                       ExpanderLook="@ExpanderLook"
+                       RootDecorationFlag="@RootDecorationFlag"
+                       TooltipProvider="@TooltipProvider"
+                       ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                       ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                       ItemsScrollMode="@ItemsScrollMode"
+					   VUnitScrollPixelsValue="@VUnitScrollPixelsValue"
+					   HUnitScrollPixelsValue="@HUnitScrollPixelsValue"
+					   DynamicCellsSizeFlag="@DynamicCellsSizeFlag"
+                       SelectionMode="@SelectionMode"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="TreeView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="0">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="TreeView" Value="StretchFit"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="HStretchPolicy" TargetName="TreeView" Value="Stretch"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ScrollableFlag" Value="1">
+        <CATSYPSetter Property="VStretchPolicy" TargetName="TreeView" Value="Stretch"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PreSelectionColorFlag" Value="0">
+        <CATSYPSetter Property="PreHighlightBorderColor" TargetName="TreeView" Value="0 0 0 0"/>
+        <CATSYPSetter Property="PreHighlightColor" TargetName="TreeView" Value="0 0 0 0"/>
+        <CATSYPSetter Property="SelectionBorderColor" TargetName="TreeView" Value="0 0 0 0"/>
+        <CATSYPSetter Property="SelectionColor" TargetName="TreeView" Value="0 0 0 0"/>
+        <CATSYPSetter Property="CurrentItemBorderColor" TargetName="TreeView" Value="0 0 0 0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+    <Template syp:name="ListV1" Target="CATAfrVidCtlListView" >
+      <CATVidCtlListView syp:name="ListView"
+                        syp:Template="Default"
+                        LayoutWhenUnvisibleFlag="0"
+                        UniformItemSizes="1"
+                        ItemsFlow="@ItemsFlow"
+                        ViewMode="@ViewMode"
+                        KeyboardManipulationFlag="1"
+                        TooltipProvider="@TooltipProvider"
+                        PreHighlightBorderColor="13 97 150 255"
+                        PreHighlightColor="13 97 150 255"
+                        CurrentItemBorderColor="13 97 150 255"
+                        SelectionBorderColor="0 0"
+                        SelectionColor="0 0"
+                        ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                        ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                        ItemsScrollMode="@ItemsScrollMode"
+                        TooltipWrapPolicy="@TooltipWrapPolicy"/>
+      <CATSYPTriggerCollection>
+        <CATSYPTrigger Property="ScrollableFlag" Value="0">
+          <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="ScrollableFlag" Value="0">
+          <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="ScrollableFlag" Value="1">
+          <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="Stretch"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="ScrollableFlag" Value="1">
+          <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="Stretch"/>
+        </CATSYPTrigger>
+      </CATSYPTriggerCollection>
+  </Template>
+
+
+    <Template syp:name="ListV2" Target="CATAfrVidCtlListView" >
+
+      <CATVidCtlListView syp:name="ListView"
+                            syp:Template="Default"
+                            UniformItemSizes="1"
+                            ItemsFlow="@ItemsFlow"
+                            SelectOnReleaseFlag="1"
+                            ViewMode="@ViewMode" CurrentItemBorderColor="13 97 150 255"
+                            TooltipProvider="@TooltipProvider" SelectionFeedback="NoFeedback"
+                            ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                            ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                            ItemsScrollMode="@ItemsScrollMode"
+                            TooltipWrapPolicy="@TooltipWrapPolicy"/>
+      <CATSYPTriggerCollection>
+        <CATSYPTrigger Property="ScrollableFlag" Value="0">
+          <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+          <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="StretchFit"/>
+        </CATSYPTrigger>
+        <CATSYPTrigger Property="ScrollableFlag" Value="1">
+          <CATSYPSetter Property="HStretchPolicy" TargetName="ListView" Value="Stretch"/>
+          <CATSYPSetter Property="VStretchPolicy" TargetName="ListView" Value="Stretch"/>
+        </CATSYPTrigger>
+      </CATSYPTriggerCollection>
+
+
+  </Template>
+<!-- ******************************************************************************************-->
+<!--==================    CATAfrVidCtlMessagePublisher Template ===============================-->
+<!-- ******************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidCtlMessagePublisher">
+    <CATVidCtlBorder syp:Template="Rounded"  BackgroundColor="0.8 255" >
+      <CATVidLayGrid GridWeight="row0=1">
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+          <CATVidCtlTextEditor Name="TextEditor" syp:name="TextEditor"  RequestedMinimumDimension="100 100"  />
+          <CATVidLayGrid>
+            <!--<CATVidGPText WordWrapPolicy="Auto"/>-->
+            <CATVidGPLabel syp:name="PlaceHolderGPLabel" TextHeight="13" TextColor="0.9 255" LayoutWhenUnvisibleFlag="0" ItalicFlag="1" PickFlag="1" VisibleFlag="1"  CropPolicy="NoCrop" Text="@PlaceHolderText" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+        
+        <CATVidCtlButton Name="PublishButton" syp:name="PublishButton" Label="@PublishText" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" syp:Template="Button" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+    </CATVidCtlBorder>
+  </Template>
+
+  <!--===================================-->
+  <!--Layer for thumbnail with text-->
+  <!--===================================-->
+  <Template syp:name="Default" Target="CATAfrVidCtlForThumbnail">
+    <CATVidLayLayer VisibleFlag="@VisibleFlag"
+                    LayoutWhenUnvisibleFlag="@LayoutWhenUnvisibleFlag">
+      <CATAfrVidCtlForThumbnailOver syp:name="Thumbnail"
+                                    syp:Template="Default"
+                                    RequestedMinimumDimension = "@RequestedMinimumDimension"
+                                    Display = "@Display"
+                                    FontHeight = "@FontHeight"
+                                    EditorFlag = "@EditorFlag Mode=TwoWays"
+                                    ActivateTextFlag = "@ActivateTextFlag Mode=TwoWays"
+                                    VisibleFlag="@VisibleFlag"/>
+      <CATVidGPSquare syp:name="TextLabelSquare"
+                      Name="SquareSelection"
+                      UseManipulatorFlag="1"
+                      RequestedMinimumDimension = "@RequestedMinimumDimension"
+                      Press="@HandleEvent"/>
+    </CATVidLayLayer>
+  </Template>
+  
+  <Template syp:name="Default_Over" Target="CATAfrVidCtlForThumbnailOver">
+    <CATVidCtlScrollableArea syp:Template="NoScrollbars"
+                             syp:name="TextContent"
+                             Name="TextContent"
+                             VScrollbarPolicy="AlwaysHidden"
+                             HScrollbarPolicy="AlwaysHidden"
+                             InertiaFlag="0"
+                             MouseScrollFlag="0"
+                             UseViewportFilter="1">
+        <CATVidLayLayer>
+          <CATVidLayLayer syp:name="LayerTextLabel"
+                          VisibleFlag="1">
+            <CATVidGPText syp:name="TextLabel"
+                          RequestedMinimumDimension = "@RequestedMinimumDimension"
+                          Text = "@Display"
+                          FontHeight = "14"
+                          WordWrapFlag="1"
+                          WordWrapPolicy="Auto"
+                          Color="65 110 138 255"
+                          VisibleFlag="@VisibleFlag"
+                          UseManipulatorFlag="0"
+                          FontFamily="3ds"/>
+          </CATVidLayLayer>
+            <CATVidLayLayer syp:name="LayerTextEditor"
+                            VisibleFlag="0">
+              <CATVidCtlTextEditor syp:Template="TextEditor"
+                                   syp:name="TextEditor"
+                                   BackgroundColor="0 255"
+                                   Text="@Display"
+                                   EditingFinished="@HandleEditingFinishedEvent"
+                                   VScrollbarPolicy="AlwaysHidden"
+                                   HScrollbarPolicy="AlwaysHidden"
+                                   InertiaFlag="0"
+                                   MouseScrollFlag="0"
+                                   RequestedMinimumDimension="@RequestedMinimumDimension"/>
+          </CATVidLayLayer>
+        </CATVidLayLayer>
+      </CATVidCtlScrollableArea>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ActivateTextFlag" Value="0">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="MinimumViewportHeight" CATSYPStoryboard.TargetName="TextContent" Duration="0:0:0.2" To="21" />
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ActivateTextFlag" Value="1">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="MinimumViewportHeight" CATSYPStoryboard.TargetName="TextContent" Duration="0:0:0.2" To="65" />
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ActivateTextFlag" Value="3">
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetProperty="MinimumViewportHeight" CATSYPStoryboard.TargetName="TextContent" Duration="0:0:0.2" To="40" />
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EditorFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EditorFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="1"/>
+        <CATSYPSetter Property="MinimumViewportHeight" TargetName="TextContent" Value="21"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidCtlForThumbnailOver">
+    <!--<CATVidGPText syp:name="TextLabel"
+                  RequestedMinimumDimension = "@RequestedMinimumDimension"
+                  Text = "@Display"
+                  FontHeight = "@FontHeight"
+                  WordWrapFlag="1"
+                  WordWrapPolicy="Auto"
+                  Color="65 110 138 255"
+                  VisibleFlag="@VisibleFlag"
+                  UseManipulatorFlag="0"
+                  FontFamily="3ds"/>-->
+    <CATVidGPLabel RequestedMinimumDimension = "@RequestedMinimumDimension"
+                   FontName="3ds"
+                   FontSize="@FontHeight"
+                   HorizontalAlignment="0"
+                   VerticalAlignment="0"
+                   CropPolicy="CropWithDots"
+                   LeftMargin="5"
+                   RightMargin="0"
+                   TopMargin="0"
+                   Text = "@Display"
+                   TextColor="65 110 138 255"/>
+  </Template>
+  
+  <!--===================================-->
+  <!--Layer for tile with text-->
+  <!--===================================-->
+  <Template syp:name="Tile" Target="CATAfrVidCtlForThumbnail">
+    <CATVidLayLayer VisibleFlag="@VisibleFlag"
+                    LayoutWhenUnvisibleFlag="@LayoutWhenUnvisibleFlag">
+      <CATAfrVidCtlForThumbnailOver syp:name="Thumbnail"
+                                    syp:Template="Tile"
+                                    RequestedMinimumDimension = "@RequestedMinimumDimension"
+                                    Display = "@Display"
+                                    FontHeight = "@FontHeight"
+                                    EditorFlag = "@EditorFlag Mode=TwoWays"
+                                    ActivateTextFlag = "@ActivateTextFlag Mode=TwoWays"
+                                    VisibleFlag="@VisibleFlag"/>
+      <CATVidGPSquare syp:name="TextLabelSquare"
+                      Name="SquareSelection"
+                      UseManipulatorFlag="1"
+                      RequestedMinimumDimension = "@RequestedMinimumDimension"
+                      Press="@HandleEvent"/>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template syp:name="Tile" Target="CATAfrVidCtlForThumbnailOver">
+    <CATVidGPLabel RequestedMinimumDimension = "@RequestedMinimumDimension"
+                   FontName="3ds"
+                   FontSize="@FontHeight"
+                   HorizontalAlignment="0"
+                   VerticalAlignment="0"
+                   CropPolicy="CropWithDots"
+                   LeftMargin="5"
+                   RightMargin="0"
+                   TopMargin="0"
+                   Text = "@Display"
+                   TextColor="65 110 138 255"/>
+  </Template>
+
+  <Template syp:name="Tile_Over" Target="CATAfrVidCtlForThumbnailOver">
+    <CATVidLayLayer>
+        <CATVidLayLayer syp:name="LayerTextLabel"
+                        VisibleFlag="1">
+          <CATVidGPLabel RequestedMinimumDimension = "@RequestedMinimumDimension"
+                         FontName="3ds"
+                         FontSize="@FontHeight"
+                         HorizontalAlignment="0"
+                         VerticalAlignment="0"
+                         CropPolicy="CropWithDots"
+                         LeftMargin="5"
+                         RightMargin="0"
+                         TopMargin="0"
+                         Text = "@Display"
+                         TextColor="65 110 138 255"/>
+        </CATVidLayLayer>
+        <CATVidLayLayer syp:name="LayerTextEditor"
+                        VisibleFlag="0">
+          <CATVidCtlTextEditor syp:Template="TextEditor"
+                               syp:name="TextEditor"
+                               BackgroundColor="0 255"
+                               Text="@Display Mode=TwoWays"
+                               EditingFinished="@HandleEditingFinishedEvent"
+                               VScrollbarPolicy="AlwaysHidden"
+                               HScrollbarPolicy="AlwaysHidden"
+                               InertiaFlag="0"
+                               MouseScrollFlag="0"
+                               RequestedMinimumDimension="@RequestedMinimumDimension"/>
+        </CATVidLayLayer>
+      </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="EditorFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EditorFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextEditor" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerTextLabel" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+  <!--===================================-->
+  <!--Layer for tile with text-->
+  <!--===================================-->
+  <Template syp:name="Default" Target="CATAfrVidCtlForTextTile" >
+    <CATVidLayGrid CellSpacing = "0"
+                   VisibleFlag="@VisibleFlag"
+                   LayoutWhenUnvisibleFlag="@LayoutWhenUnvisibleFlag"
+                   RequestedMinimumDimension = "@RequestedMinimumDimension">
+      <CATVidGPLabel RequestedMinimumDimension = "284 14"
+                     FontName="3ds"
+                     FontSize="@FontSize"
+                     HorizontalAlignment="0"
+                     VerticalAlignment="0"
+                     LeftMargin="5"
+                     RightMargin="0"
+                     TopMargin="0"
+                     Text = "@DisplayLine1"
+                     TextColor="142 142 142 255"
+                     CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel RequestedMinimumDimension = "284 14"
+                     FontName="3ds"
+                     FontSize="@FontSize"
+                     HorizontalAlignment="0"
+                     VerticalAlignment="0"
+                     CropPolicy="CropWithDots"
+                     LeftMargin="5"
+                     RightMargin="0"
+                     TopMargin="0"
+                     Text = "@DisplayLine2"
+                     TextColor="142 142 142 255"
+                     CATVidLayGrid.IndexedConstraints = "x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATAfrColor-->
+  <!--===================================-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATAfrColor">
+    <CATVidLayGrid>
+      <CATVidLayLayer RequestedMinimumDimension="20 20" 
+                      CATVidLayGrid.IndexedConstraints="attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" 
+                         syp:Template="ButtonColor" 
+                         CheckMode="1" 
+                         BackgroundColor="@ValueAsVidColor"/>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" 
+                        SnapFlag="1" SnapSide="Bottom" 
+                        PopupCompactFlag="1" 
+                        VisibleFlag="@CheckState Mode=TwoWays ElementName=check" 
+                        VisibleStateChanged="@OnDetailedViewVisibleStateChanged" 
+                        ModalFlag="1" AutoHideFlag="1">
+          <CATVidCtlColorCompositePicker RGBAColor="@VidRGBAValue Mode=TwoWays" 
+                                         ColorEditingStarted="@OnEditingStarted" 
+                                         ColorEditingFinished="@OnEditingFinished"
+                                         ColorPickers="@ColorPickers Mode=TwoWays"
+                                         ShowHexEditorFlag="1" 
+                                         ShowColorComparatorFlag="1" 
+                                         ShowReferenceColorFlag="1" 
+                                         ShowAlphaEditorFlag="1"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+  
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATAfrColor-->
+  <!--===================================-->
+  <Template syp:name="FormLineStd_Std" Target="CATVidCtlTweakerCATAfrColor">
+    <CATVidLayGrid>
+      <CATVidLayLayer RequestedMinimumDimension="20 20" 
+                      CATVidLayGrid.IndexedConstraints="attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" 
+                         syp:Template="ButtonColor" 
+                         CheckMode="1" 
+                         BackgroundColor="@ValueAsVidColor"/>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" 
+                        SnapFlag="1" SnapSide="Bottom" 
+                        PopupCompactFlag="1" 
+                        VisibleFlag="@CheckState Mode=TwoWays ElementName=check" 
+                        VisibleStateChanged="@OnDetailedViewVisibleStateChanged" 
+                        ModalFlag="1" AutoHideFlag="1">
+          <CATVidCtlColorCompositePicker RGBAColor="@VidRGBAValue Mode=TwoWays" 
+                                         ColorEditingStarted="@OnEditingStarted" 
+                                         ColorEditingFinished="@OnEditingFinished"
+                                         ColorPickers="@ColorPickers Mode=TwoWays"
+                                         ShowHexEditorFlag="1" 
+                                         ShowColorComparatorFlag="1" 
+                                         ShowReferenceColorFlag="1" 
+                                         ShowAlphaEditorFlag="1"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATAfrColor-->
+  <!--===================================-->
+  <Template syp:name="FormLineReadOnly" Target="CATVidCtlTweakerCATAfrColor">
+    <CATVidLayGrid>
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" 
+                         syp:name="check" 
+                         syp:Template="ButtonColor" 
+                         CheckMode="1"
+                         BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" 
+                          RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATAfrColor-->
+  <!--===================================-->
+  <Template syp:name="ColorCompositePicker" Target="CATVidCtlTweakerCATAfrColor">
+    <CATVidCtlColorCompositePicker RGBAColor="@VidRGBAValue Mode=TwoWays"
+                                   ColorEditingStarted="@OnEditingStarted"
+                                   ColorEditingFinished="@OnEditingFinished"
+                                   ColorPickers="@ColorPickers Mode=TwoWays"
+                                   ShowHexEditorFlag="1"
+                                   ShowColorComparatorFlag="1"
+                                   ShowReferenceColorFlag="1"
+                                   ShowAlphaEditorFlag="0"/>
+  </Template>
+  
+  <!--===================================-->
+  <!--CATAfrHtmlView with CATVidCtlWebViewer-->
+  <!--===================================-->
+  <Template syp:name="WebViewer" Target="CATAfrHtmlView">
+    <CATVidCtlWebViewer syp:name="WebViewer"
+                        Name="AfrWebViewer"
+                        PopupWindowsFlag="@NoPopup"
+                        UseJavaScriptFlag="1"
+                        UseContextMenuFlag="@UseContextMenuFlag"
+                        AutoLoadFlag="0"
+                        CustomSchemes="@CustomSchemes"
+                        Start ="@WebEventCB"
+                        TitleUpdate ="@WebEventCB"
+                        URLUpdate ="@WebEventCB"
+                        LoadStart ="@WebEventCB"
+                        LoadEnd ="@WebEventCB"
+                        LoadError ="@WebEventCB"
+                        DOMReady ="@WebEventCB"
+                        CustomScheme ="@WebEventCB"
+                        Auth ="@WebEventCB"
+                        JSMessage="@WebEventCB"
+                        ConsoleMessage ="@WebEventCB"
+                        SameOriginPolicyFlag="@SameOriginPolicyFlag"
+                        AllowBackForwardFlag="@AllowBackForwardFlag"
+                        AllowReloadFlag="@AllowReloadFlag"
+						AllowInsecureContentFlag="@AllowInsecureContentFlag"
+                        RequestedMinimumDimension="@RequestedMinimumDimension"
+                        NavigationURL="@Url"
+                        DragMode="@DragMode"
+                        DropMode="@DropMode">
+    </CATVidCtlWebViewer>
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrHtmlView">
+    <CATVidCtl>
+      <CATAfrHtmlView syp:name="HtmlView"
+                      VisibleFlag="@VisibleFlag"
+                      NoPopup="@NoPopup"
+                      Silent="@Silent"
+                      JavaScript="@JavaScript"
+                      ErrorHtmlPage="@ErrorHtmlPage"
+                      RequestedMinimumDimension="@Dimension"
+                      Url="@Url">
+    </CATAfrHtmlView>
+    </CATVidCtl>
+  </Template>
+
+  <!--===================================-->
+  <!--Tweaker Text editor-->
+  <!--===================================-->
+  <Template syp:name="Std" Target="CATAfrCtlTweakerTextEditor">
+    <CATVidCtlTextEditor syp:Template="TextEditor"
+                         Name="TextEditor"
+                         BackgroundColor="0 255"
+                         Text="@Value"
+                         EditingFinished="@OnEditorEditingFinished"
+                         TextActivated="@OnEditingStarted"
+                         TextChanged="@OnEditorTextEdited"
+                         VScrollbarPolicy="AlwaysHidden"
+                         HScrollbarPolicy="AlwaysHidden"
+                         InertiaFlag="0"
+                         MouseScrollFlag="1"
+                         RequestedMinimumDimension="35 21">
+    </CATVidCtlTextEditor>
+  </Template>
+  
+  <!--===================================-->
+  <!--Tweaker Text -->
+  <!--===================================-->
+  <Template syp:name="Std" Target="CATAfrCtlTweakerText">
+    <CATVidGPText syp:name="TextLabel"
+                  RequestedMinimumDimension = "35 21"
+                  Text = "@Value"
+                  FontHeight = "16"
+                  Bold="0"
+                  WordWrapFlag="1"
+                  WordWrapPolicy="Auto"
+                  Color="0.85 200"
+                  UseManipulatorFlag="0"
+                  FontFamily="3ds"/>
+  </Template>
+  
+  <!--===================================-->
+  <!--CATAfrVidViewsStack -->
+  <!--===================================-->
+  <Template syp:name="Default" Target="CATAfrVidViewsStack">
+    <CATVidLayStack syp:name="Container" Orientation="@Orientation" LayoutWhenUnvisibleFlag="0" StackAttachmentAppendPolicy="StretchAttachmentPolicy" />
+  </Template>
+
+  <!--===================================-->
+  <!--CATAfrVidCtlComboView -->
+  <!--===================================-->
+  <Template syp:name="Default" Target="CATAfrVidCtlComboView" >
+    <CATVidCtlCustomCombo syp:name="ComboView"
+                          LayoutWhenUnvisibleFlag="0"
+                          KeyboardManipulationFlag="1"
+                          TooltipProvider="@TooltipProvider"
+                          ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                          ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                          TooltipWrapPolicy="@TooltipWrapPolicy"/>
+  </Template>
+  
+</Styles>

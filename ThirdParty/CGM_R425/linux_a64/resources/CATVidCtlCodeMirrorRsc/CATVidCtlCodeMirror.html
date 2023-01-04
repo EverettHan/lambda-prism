@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+
+    <title>CATVidCtlCodeEditor</title>
+
+    <link rel="stylesheet" href="dsrtv://webapps/CodeMirrorV5.47/lib/codemirror.css">
+    <link rel="stylesheet" href="dsrtv://webapps/CodeMirrorV5.47/doc/docs.css">
+
+    <script src="dsrtv://webapps/CodeMirrorV5.47/lib/codemirror.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/addon/runmode/runmode.js"></script>
+    <!-- script src="dsrtv://webapps/CodeMirrorV5.47/addon/search/search.js"></script -->
+    <!-- search customized version for V6 integration -->
+    <script src="CATVidCtlCodeMirrorSearch.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/addon/search/searchcursor.js"></script>
+
+    <!-- temp to test find, to replace with wid search bar -->
+    <script src="dsrtv://webapps/CodeMirrorV5.47/addon/dialog/dialog.js"></script>
+    <link rel="stylesheet" href="dsrtv://webapps/CodeMirrorV5.47/addon/dialog/dialog.css">
+
+    <script src="dsrtv://webapps/CodeMirrorV5.47/mode/css/css.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/mode/htmlembedded/htmlembedded.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/mode/javascript/javascript.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/mode/xml/xml.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/mode/clike/clike.js"></script>
+    <script src="dsrtv://webapps/CodeMirrorV5.47/mode/python/python.js"></script>
+
+    <link rel="stylesheet" href="CATVidCtlCodeMirror.css">
+    <script src="CodeMirror.webruntime.js"></script>
+  </head>
+
+  <body>
+    <div id="window_input">
+      <form>
+        <textarea id="textarea_input" name="CATVidCtlCodeMirrorTextArea"></textarea>
+      </form>
+    </div>
+
+    <script src="CATVidCtlCodeMirror.js"></script>
+  </body>
+</html>

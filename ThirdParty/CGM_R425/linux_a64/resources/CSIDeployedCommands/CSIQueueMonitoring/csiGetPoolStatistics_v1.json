@@ -1,0 +1,25 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Get the pool statistics in the queue",
+  "onCall": {
+    "in": {},
+    "out": {
+      "parameters": [
+        {
+          "label": "poolStats",
+          "typeArray": "CSIPoolStats"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

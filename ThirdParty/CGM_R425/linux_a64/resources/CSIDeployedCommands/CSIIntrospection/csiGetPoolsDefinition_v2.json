@@ -1,0 +1,81 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns the Definition (V2) of the wanted Pools",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "poolsName",
+          "desc": "Pools to get the Definition from, if not specified or empty all available Pools Definition are retrieved",
+          "basicArray": "string",
+          "optional": {
+            "default_value": "[]"
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "poolsDefinition",
+          "desc": "Definition of the wanted Pools",
+          "parametersArray": [
+            {
+              "label": "poolName",
+              "desc": "Name of the Pool",
+              "basic": "string"
+            },
+            {
+              "label": "poolDefinition",
+              "desc": "Pool Definition of one wanted Pool",
+              "type": "CSIDeclarativePoolDefinitionV2",
+              "optional": {
+                "isOptional": true
+              }
+            },
+            {
+              "label": "poolDefinitionError",
+              "desc": "Error message of one wanted Pool",
+              "basic": "string",
+              "optional": {
+                "isOptional": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "progress": {
+    "parameters": [
+      {
+        "label": "poolName",
+        "desc": "Name of the Pool",
+        "basic": "string"
+      },
+      {
+        "label": "poolDefinition",
+        "desc": "Pool Definition of one wanted Pool",
+        "type": "CSIDeclarativePoolDefinitionV2",
+        "optional": {
+          "isOptional": true
+        }
+      },
+      {
+        "label": "poolDefinitionError",
+        "desc": "Error message of one wanted Pool",
+        "basic": "string",
+        "optional": {
+          "isOptional": true
+        }
+      }
+    ]
+  }
+}

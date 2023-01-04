@@ -1,0 +1,314 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Private" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "ObjectModelerEngines"/>
+  <attached name = "CATPLMIdentification.tst"/>
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "ObjectLinksModeler.tst"/>
+  <attached name = "ObjectModelerBase_Unit.tst"/>
+  <attached name = "CATPLMIdentification_PLM.tst"/>
+  <attached name = "CATPLMIdentificationUI.tst"/>
+  <attached name = "ObjectModelerBase_PLM.tst"/>
+  <authorize name = "CATPLMImplAdapter"/>
+  <authorize name = "CATPLMImplIPD"/>
+  <authorize name = "CATPLMImplDataExchange"/>
+  <authorize name = "StepPDMDataExchangeBatch"/>
+  <authorize access = "Protected" comment = "JBB, 20220905, use of CATTosOsmComponent/CATComponentId, due to CATPLMStreamDescriptor/CATIOmbExportScopeHelper use, should be removed in R425FDx" name = "DataExchangeUnifiedExperience"/>
+  <authorize name = "CATPLMImplMx"/>
+  <authorize name = "CATPLMImplSmarTeam1"/>
+  <authorize name = "CATPLMPXn"/>
+  <authorize name = "CATPLMSmartOpenEngine"/>
+  <authorize name = "CATPLMSmartOpenEngine.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationBase"/>
+  <authorize access = "Private" name = "CATPLMIntegration"/>
+  <authorize access = "Protected" name = "CATPLMIntegrationUse"/>
+  <authorize access = "Private" comment = "CATOxEntity::SwitchRelation - temporary" name = "CATPLMIntegrationAccess"/>
+  <authorize access = "Protected" name = "CATPLMIntegrationAccessX"/>
+  <authorize access = "Protected" name = "CATPLMItgXPDMLog"/>
+  <authorize access = "Protected" name = "CATPLMItgXPVSMS"/>
+  <authorize access = "Protected" name = "CATPLMItgXOpener"/>
+  <authorize access = "Protected" name = "PLMDesignerWorkspaceX"/>
+  <authorize access = "Private" name = "CATPLMIdentificationTools"/>
+  <authorize access = "Private" name = "ObjectModelerBase"/>
+  <authorize access = "Private" name = "ObjectModelerDebug"/>
+  <authorize access = "Protected" name = "ObjectModelerDebugger"/>
+  <authorize name = "ObjectModelerBaseUI"/>
+  <authorize name = "ObjectSpecsModeler"/>
+  <authorize name = "CATPLMSpecsModeler"/>
+  <authorize name = "CATPLMServices"/>
+  <authorize name = "CATPLMImpactGraph"/>
+  <authorize name = "CATPLMDocEnv"/>
+  <authorize name = "CATPLMTransitionEngine"/>
+  <authorize name = "CATDXPImporterExporterImpl"/>
+  <authorize name = "CATPLMXmlSpecsExporter"/>
+  <authorize name = "CATMmrPLMIntegration"/>
+  <authorize comment = "NLS + Display Tree " name = "PLMNavigationServices"/>
+  <authorize name = "CATPLMIndexer"/>
+  <authorize name = "CATPLMIndexItfImpl"/>
+  <authorize name = "CATPLMIndexActivexDebug"/>
+  <authorize name = "CATPLMIndexer.tst"/>
+  <authorize name = "CATPLMIndexInterfaces.tst"/>
+  <authorize name = "CATPLMIndexPropEditor"/>
+  <authorize name = "CATOmbLinkAccess"/>
+  <authorize name = "CATPLMLinksUI"/>
+  <authorize name = "CATOmbMigrationAccess"/>
+  <authorize name = "CATFbdImportModeler"/>
+  <authorize name = "CATFbdImportModeler.tst"/>
+  <authorize access = "Protected" name = "CATFbdImportDebug"/>
+  <authorize access = "Protected" comment = "split from Fbdi " name = "CATDbdImportModeler"/>
+  <authorize access = "Protected" comment = "split from Fbdi " name = "CATDbdImportModeler.tst"/>
+  <authorize name = "CATMappingInfraStructure"/>
+  <authorize name = "DELIPDController"/>
+  <authorize name = "CATIAPLMCommunicationHelpers"/>
+  <authorize name = "PLMCommunicationHelpers"/>
+  <authorize name = "CATPLMStreamDescriptor"/>
+  <authorize name = "CATPLMDocument"/>
+  <authorize name = "CAT3DPhysicalRepModel"/>
+  <authorize access = "Protected" name = "ProductStructureExposition"/>
+  <authorize name = "CATPLMPrdIntegration"/>
+  <authorize name = "CATPrdFileLegacy"/>
+  <authorize access = "Private" name = "V5MiscellaneousDebug"/>
+  <authorize name = "CATPLMSessionDebug"/>
+  <authorize name = "CATPLMBrowserDebug"/>
+  <authorize name = "CATPLMTestProviderDebug"/>
+  <authorize name = "PLMCommandInfraDebug"/>
+  <authorize name = "CATPLMServerDebug"/>
+  <authorize name = "CATPLMAdapterDebug"/>
+  <authorize name = "CATPLMIdentification.tst"/>
+  <authorize name = "CATPLMImplAdapterMQL.tst"/>
+  <authorize name = "CATPLMImplAdapter.tst"/>
+  <authorize name = "CATPLMImplDebug.tst"/>
+  <authorize name = "CATPLMImplIPD.tst"/>
+  <authorize name = "CATPLMImplMx.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegration.tst"/>
+  <authorize name = "CATPLMIntegrationAccess.tst"/>
+  <authorize name = "CATPLMIntegration_Unit.tst"/>
+  <authorize name = "ObjectModelerBase.tst"/>
+  <authorize name = "ObjectModelerBase_Unit.tst"/>
+  <authorize name = "CATPLMDocEnv.tst"/>
+  <authorize name = "CATOmbLinkAccess.tst"/>
+  <authorize access = "Private" name = "ObjectModelerBase_PLM.tst"/>
+  <authorize name = "ObjectLinksModeler.tst"/>
+  <authorize access = "Private" name = "CATPLMSpecsModeler.tst"/>
+  <authorize name = "PLMCommunicationHelpers.tst"/>
+  <authorize name = "PLMCommandInfraClient.tst"/>
+  <authorize name = "PLMCommandInfraServer.tst"/>
+  <authorize name = "CATPLMStreamDescriptor.tst"/>
+  <authorize name = "CATPLMImpactGraph.tst"/>
+  <authorize name = "CATPLMTransitionEngine.tst"/>
+  <authorize name = "CATPLMImplDataExchange.tst"/>
+  <authorize name = "ImpactGraphValidation.tst"/>
+  <authorize name = "CATDXPImporterExporterImpl.tst"/>
+  <authorize name = "ProductStructure.tst"/>
+  <authorize name = "ProductStructureAccess.tst"/>
+  <authorize name = "ObjectSpecsModeler.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentification_PLM.tst"/>
+  <authorize name = "CATPLMDictionary.tst"/>
+  <authorize access = "Private" name = "CATPLMPXn.tst"/>
+  <authorize name = "PLMModelerBase.tst"/>
+  <authorize name = "PLMModelerBaseTestServices.tst"/>
+  <authorize name = "PLMModelerBaseStreamCont.tst"/>
+  <authorize name = "zzPCS_PLMIntegration.tst"/>
+  <authorize access = "Private" name = "zzPCS_CATPLMIdentification.tst"/>
+  <authorize name = "CATDCMappingTable.tst"/>
+  <authorize name = "CATMmrPLMIntegration.tst"/>
+  <authorize access = "Protected" name = "ObjectSpecsModeler.tst"/>
+  <authorize access = "Protected" name = "FeatureModelerExt.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentificationUI.tst"/>
+  <authorize access = "Private" name = "CATDataflowTools.tst"/>
+  <authorize access = "Private" name = "CATOmbLinkAccess.tst"/>
+  <authorize name = "zzPCS_EV53DIndex.tst"/>
+  <authorize name = "zzPCS_ObjectModelerBase.tst"/>
+  <authorize name = "zzIndusPerfo_PRDUnit.tst"/>
+  <authorize name = "CATPLMNavRepServices"/>
+  <authorize name = "CATPLMMngtBase"/>
+  <authorize name = "CATImmVPMModel"/>
+  <authorize name = "CATImmLifeCycleUI"/>
+  <authorize name = "CATImmVPMBaseUI"/>
+  <authorize name = "CATPLMNavBaseUI"/>
+  <authorize name = "CATPLMCloseExit"/>
+  <authorize name = "CATPLMNavTechnoRepresentation"/>
+  <authorize name = "CATImmVPMImpactGraphModel"/>
+  <authorize name = "CATImmVPMImpactGraph"/>
+  <authorize name = "CATImmVPMInterfacesExt"/>
+  <authorize access = "Protected" name = "CATImmVPMNavBaseUI"/>
+  <authorize access = "Protected" name = "CATImmVPMFrame"/>
+  <authorize access = "Protected" name = "CATImmVPMCommands"/>
+  <authorize name = "ENOVSendDataToUser"/>
+  <authorize name = "ENOVBriefcaseExchange"/>
+  <authorize name = "CATPLMReplicationEngine"/>
+  <authorize name = "CATPLMReplicationEngine.tst"/>
+  <authorize access = "Protected" name = "PLMCoexistenceServices"/>
+  <authorize access = "Protected" name = "CATPLMImportExportUI"/>
+  <authorize access = "Protected" comment = "JBB, 20190401, DO management, cestamp retrieval on Rep (CATTosOsmComponent/CATComponentId)" name = "PLMDerivedFormatGeneration"/>
+  <authorize comment = "Split CATImmPPRNavigator " meta = "TOREMOVE" name = "CATImmPPRNavigator"/>
+  <authorize access = "Protected" comment = "Split CATImmPPRNavigator " name = "CATImmPPRNavigatorServices"/>
+  <authorize access = "Protected" comment = "Split CATImmPPRNavigator " name = "CATImmPPRNavigatorImpl"/>
+  <authorize name = "CATImmVPMNavigator"/>
+  <authorize name = "CATImmVPMNavigator.tst"/>
+  <authorize name = "CATImmWtpUI"/>
+  <authorize name = "CATVPMNavPLMIntegrationAccess"/>
+  <authorize name = "CATImmWtpDocMgmt"/>
+  <authorize name = "CATImmWtpCfgMgmt"/>
+  <authorize name = "CATImmWtpChgMgmt"/>
+  <authorize name = "CATPLMVPMNavApps"/>
+  <authorize name = "CATVPMNavDebug"/>
+  <authorize name = "CATImmVPMNavCmd"/>
+  <authorize name = "PLM3DNavServices"/>
+  <authorize name = "CATPLMConfigNavUI"/>
+  <authorize name = "CATPLMConfigNavUI.tst"/>
+  <authorize name = "CATPLMCfgMgmtAlternateFct"/>
+  <authorize name = "PLMManagementServices"/>
+  <authorize name = "PLMManagementServicesUI"/>
+  <authorize name = "PLMModelerBaseConfig"/>
+  <authorize name = "CATInstantCollabService"/>
+  <authorize name = "CATInstantCollabDesign"/>
+  <authorize access = "Protected" name = "PLMModelerBase"/>
+  <authorize name = "PLMOccurrenceBase"/>
+  <authorize name = "LogicalStructureModeler"/>
+  <authorize name = "ProductStructure"/>
+  <authorize name = "ProductStructureModel"/>
+  <authorize name = "ProductStructureClientModel"/>
+  <authorize name = "ProductStructureDebug"/>
+  <authorize access = "Protected" comment = "JBB, 20220630, use of CATComponentId (PMRPGP migration batch)" name = "ProductStructureTestUtils.tst"/>
+  <authorize access = "Protected" comment = "JBB, 20220630, use of CATComponentId (PMRPGP migration batch)" name = "ProductStructureBatchMigr"/>
+  <authorize name = "CATPLMClientCore"/>
+  <authorize name = "CATPLMConfigBridge"/>
+  <authorize name = "LogicalStructureModeler.tst"/>
+  <authorize name = "PLMImplementLinkModeler"/>
+  <authorize name = "ProductStructure3DPartImpl"/>
+  <authorize name = "PLMPosModeler"/>
+  <authorize name = "DELPLMResourceModelIntegration"/>
+  <authorize name = "DELPLMFunctionModel.tst"/>
+  <authorize name = "DELPLMFunctionModelClient.tst"/>
+  <authorize comment = "factory " name = "DELPLMPPRContextModelInteg"/>
+  <authorize name = "DELMHubMigration"/>
+  <authorize name = "DELMHubMigration.tst"/>
+  <authorize name = "CATPLMConfigModel.tst"/>
+  <authorize name = "CATPLMConfigModel"/>
+  <authorize name = "CATPLMConfigAccess"/>
+  <authorize name = "CATPLMConfigAccess.tst"/>
+  <authorize access = "Protected" name = "CATConfigBrowseImpl"/>
+  <authorize name = "CATPLMActionClientCore"/>
+  <authorize comment = "JDP 12/09/2005 pour PUA " name = "Assembly"/>
+  <authorize name = "CATPLMFstOpenSaveIntegration"/>
+  <authorize name = "CATEnsExtServices"/>
+  <authorize name = "CATPLMCBDIntegration"/>
+  <authorize comment = "use of CATComponentId and CATIPLMLogState " name = "CATPLMMoldDesignIntegration"/>
+  <authorize name = "ProductStructure_UseCases.tst"/>
+  <authorize name = "ProductStructure_Unit.tst"/>
+  <authorize name = "CATVPMNavPLMServices.tst"/>
+  <authorize name = "CATWorkspaceModelClient"/>
+  <authorize name = "CATWorkspaceModelClient.tst"/>
+  <authorize name = "CATWorkspacePLMIntegration"/>
+  <authorize name = "CATPLMSpecification"/>
+  <authorize name = "CATPLMSpecification.tst"/>
+  <authorize name = "CATWorkspaceUI.tst"/>
+  <authorize name = "PLMSessionServices"/>
+  <authorize name = "CATPLMOpenUI"/>
+  <authorize name = "CATPLMCompletionUI"/>
+  <authorize name = "CATPLMUIImpl"/>
+  <authorize comment = "Split into the following. To be removed? " name = "CATPLMUI"/>
+  <authorize name = "PLMImportExportBaseUI"/>
+  <authorize name = "PLMExportBaseUI"/>
+  <authorize name = "PLMImport_EV5_DXPAUT"/>
+  <authorize name = "PLMExport_EV5_DXPAUT_ADV"/>
+  <authorize name = "CATPLMUIImpl.tst"/>
+  <authorize name = "CATIAPLMCommunicationHelpe.tst"/>
+  <authorize name = "CATPLMClientCore.tst"/>
+  <authorize name = "CATMetaModelerProtocol.tst"/>
+  <authorize name = "CATAuthoringCompassBase"/>
+  <authorize name = "CATPLMCompassBase"/>
+  <authorize name = "PLM3DSearchServices"/>
+  <authorize name = "PLM3DSearchBatchServices"/>
+  <authorize name = "CATAssemblyUpdateEngine"/>
+  <authorize name = "DNBPPRNavigatorBase.tst"/>
+  <authorize name = "CATPLMDispatcherMxImpl"/>
+  <authorize name = "PLMRTCAuthService"/>
+  <authorize name = "CATPLMDDManager"/>
+  <authorize name = "PLMEditorToolkit"/>
+  <authorize name = "PLMFolderViewer"/>
+  <authorize name = "PLMFolderModel"/>
+  <authorize name = "PLMEditorToolkit.tst"/>
+  <authorize name = "PLMFolderModelAuthoring"/>
+  <authorize name = "KnowHowPLMPersistency"/>
+  <authorize name = "CATPLMServerMnt"/>
+  <authorize name = "CATPLMTemplates"/>
+  <authorize name = "CATAsmFunctionalModeler"/>
+  <authorize name = "CAT3DXMLPlayer"/>
+  <authorize name = "CATBackUpSessionUI"/>
+  <authorize name = "CATComponentsFamily"/>
+  <authorize name = "CATMcxAssemblyModeler"/>
+  <authorize name = "CATFavoritesAuthoringImpl"/>
+  <authorize name = "CATFavoritesDBPersistency"/>
+  <authorize name = "CATFavoritesFilePersistency"/>
+  <authorize name = "CATFavoritesNavigationImpl"/>
+  <authorize name = "CATFavoritesModel.tst"/>
+  <authorize name = "CAT2DFluidSysTechImpl"/>
+  <authorize name = "PLMSiteMngtUI"/>
+  <authorize name = "CAT3DXMLPlayerSetup"/>
+  <authorize name = "NextGenInstaller"/>
+  <authorize name = "CATPLMChangeBaseUI"/>
+  <authorize name = "PLMChangeBaseModelerImpl"/>
+  <authorize name = "PLMChangeBaseModelerImpl.tst"/>
+  <authorize name = "CATMappingModeler"/>
+  <authorize name = "DwCompatibility"/>
+  <authorize name = "PLMSRMServices"/>
+  <authorize name = "PLMSupplyChainUI"/>
+  <authorize name = "PLMExportScope"/>
+  <authorize name = "CATPLMCfgChangeUI"/>
+  <authorize name = "PLMDmtDocumentViewer"/>
+  <authorize name = "CATPLMCfgMgmtAlterFctNavig"/>
+  <authorize name = "KnowledgeIndexer"/>
+  <authorize name = "PLMCatalogViewer"/>
+  <authorize name = "Navigator4DBase"/>
+  <authorize name = "CATPLMCollabDesignModeler"/>
+  <authorize name = "ProductStructureUI"/>
+  <authorize name = "CATPLMUIChooserImpl"/>
+  <authorize name = "PLMDesignWorkspaceAuthoring"/>
+  <authorize name = "CATPLMFstRelations"/>
+  <authorize name = "PLMModelerBaseConfig"/>
+  <authorize access = "Protected" name = "CATImmVPMNavPCC"/>
+  <authorize access = "Protected" name = "CATImmVPMNavPCC.tst"/>
+  <authorize access = "Protected" name = "Cleaner"/>
+  <authorize access = "Protected" name = "CATPLMModelerLanguage"/>
+  <authorize access = "Protected" name = "CATPLMModelerLanguageBase"/>
+  <authorize access = "Protected" name = "CATPLMUpdateServices"/>
+  <authorize access = "Protected" name = "CATPLMUpdateGenericActors"/>
+  <authorize access = "Protected" name = "CATPLMUpdateProductActors"/>
+  <authorize access = "Protected" name = "CATPLMUpdateRelationActors"/>
+  <authorize access = "Protected" name = "CAT3DXMLStreamEngineImpl"/>
+  <authorize access = "Protected" name = "MechanicalModeler"/>
+  <authorize access = "Protected" name = "ENOUniversalCommands"/>
+  <authorize access = "Protected" name = "ENOUniversalBase"/>
+  <authorize access = "Protected" name = "ScriptingPersistency"/>
+  <authorize access = "Protected" name = "CATPLMBOMIntegration"/>
+  <authorize access = "Protected" name = "CATPLMTagModeler"/>
+  <authorize access = "Protected" name = "SWXAssemblyModeler"/>
+  <authorize access = "Protected" name = "SWXCSAssemblyModeler"/>
+  <authorize access = "Protected" name = "SWXAssemblyUtilities"/>
+  <authorize access = "Protected" name = "SWXCSAssemblyUtilities"/>
+  <authorize access = "Protected" name = "SWXConfigurations"/>
+  <authorize access = "Protected" name = "PLMModelerBaseStreamContent"/>
+  <authorize access = "Protected" name = "CATPLMCompassUNIImpl"/>
+  <authorize access = "Protected" name = "CATTPSLightModelBase"/>
+  <authorize access = "Protected" name = "CATPLMFstIntegrationBase"/>
+  <authorize access = "Protected" name = "CATAuthoringBaseUI"/>
+  <authorize access = "Protected" name = "ENOUniversalEditor"/>
+  <authorize access = "Protected" name = "XPGInfrastructure"/>
+  <authorize access = "Protected" name = "CATConfigBrowseImpl"/>
+  <authorize access = "Protected" name = "DraftingGenModeler"/>
+  <authorize access = "Protected" name = "ProductStructureCATIAUI"/>
+  <authorize access = "Protected" name = "DELMfgContextBuilderCmds"/>
+  <authorize access = "Protected" comment = "JBB, 20180703, for dataRep prototype cestamps access, only for test fw" name = "XCTRecipeProductStructOps.tst"/>
+  <authorize access = "Protected" comment = "JBB, 20191126, for fastening use due to specific API given by links team (FRG) exposing CATComponentId, to be removed when official API is available" name = "CATFsxModeler"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

@@ -1,0 +1,95 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" comment = "shared between dictionaries " export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMDictionaryInterfaces"/>
+  <attached name = "CATPLMDictionary.tst"/>
+  <attached name = "CATPLMDictionaryUsage.tst"/>
+  <attached name = "PLMDictionaryNavServices.tst"/>
+  <attached name = "PLMDictionaryExploitation.tst"/>
+  <attached name = "PLMDictionaryValidation.tst"/>
+  <attached name = "CATPLMDictionaryUtils.tst"/>
+  <attached name = "PLMDicRACE2.tst"/>
+  <attached comment = "EnoDicAttribute::SetAuthorizedValues" name = "DELPLMMachiningFBDI.tst"/>
+  <attached comment = "EnoDicGenericClass::GetAttributeNamesUsedForDisplayName, EnoDicAttributeMask::SetHelpValue" name = "BusinessRulesModeler.tst"/>
+  <attached comment = "EnoDicGenericClass::GetAttributeNamesUsedForDisplayName" name = "CATExpressionEngineClient.tst"/>
+  <attached comment = "EnoDicXMLSAX2Handler::DisplayMsgBoxAndAssert" name = "PLMDmtDocumentViewer.tst"/>
+  <authorize access = "Protected" name = "PLMDictionaryValidation.tst"/>
+  <authorize access = "Protected" name = "PLMDictionaryExploitation.tst"/>
+  <authorize name = "CAT3DXMLPlayerSetup"/>
+  <authorize name = "CATPLMAdapterDebug"/>
+  <authorize name = "CATPLMAdmin"/>
+  <authorize name = "CATPLMAdmin.tst"/>
+  <authorize name = "CATPLMDictionary.tst"/>
+  <authorize name = "CATPLMDownloadMetadata"/>
+  <authorize name = "CATPLMImplAdapter"/>
+  <authorize name = "CATPLMImplAdapter.tst"/>
+  <authorize name = "CATPLMImplAdapterQL"/>
+  <authorize name = "CATPLMImplDataExchange"/>
+  <authorize name = "CATPLMImplDataExchange.tst"/>
+  <authorize name = "CAT3DXMLEngineImpl"/>
+  <authorize name = "CAT3DXMLEngineImpl.tst"/>
+  <authorize name = "CATPLMImplDebug"/>
+  <authorize name = "CATPLMImplDebug.tst"/>
+  <authorize name = "CATPLMImplDebug_Unit.tst"/>
+  <authorize name = "CATPLMImplIPD"/>
+  <authorize name = "CATPLMImplIPD.tst"/>
+  <authorize name = "CATPLMImplMx"/>
+  <authorize name = "CATPLMImplSmarTeam1"/>
+  <authorize name = "CATVP53DLiveImpl"/>
+  <authorize name = "CATPLMImplVPMV4"/>
+  <authorize name = "CATPLMIntegration"/>
+  <authorize name = "CATPLMIntegration.tst"/>
+  <authorize name = "CATPLMIntegrationAccess"/>
+  <authorize name = "CATPLMKweDicoServices.tst"/>
+  <authorize name = "CATPLMKweDictionaryServices"/>
+  <authorize name = "CATPLMLinksUI"/>
+  <authorize name = "CATPLMReplicationEngine"/>
+  <authorize name = "CATPLMReplicationEngine.tst"/>
+  <authorize name = "CATPLMServerDebug"/>
+  <authorize name = "CATPLMServerMnt"/>
+  <authorize name = "CATPLMServices"/>
+  <authorize name = "CATPLMServices_Unit.tst"/>
+  <authorize name = "CATPLMSessionDebug"/>
+  <authorize name = "CATPLMTestProviderDebug"/>
+  <authorize name = "DELMHubMigration"/>
+  <authorize name = "ENOVIALiveDesktopProvider"/>
+  <authorize name = "EnoviaDMC"/>
+  <authorize name = "NextGenInstaller"/>
+  <authorize name = "ObjectModelerBase"/>
+  <authorize name = "ObjectModelerBase_PLM.tst"/>
+  <authorize name = "ObjectModelerBase_Unit.tst"/>
+  <authorize name = "PLMCommandInfraClient.tst"/>
+  <authorize name = "PLMCommandInfraDebug"/>
+  <authorize name = "PLMCommandInfraServer.tst"/>
+  <authorize name = "PLMCommunicationHelpers"/>
+  <authorize name = "PLMPosBase"/>
+  <authorize name = "PLMServerTestToolsDebug"/>
+  <authorize name = "SDMRuntime"/>
+  <authorize name = "SDMRuntime.tst"/>
+  <authorize name = "VIA3DSAProviderImpl"/>
+  <authorize name = "VPLMStructureGenerator.tst"/>
+  <authorize name = "PLMDictionaryNavServices"/>
+  <authorize name = "PLMDictionaryServices"/>
+  <authorize name = "DELMHubMigrationBase"/>
+  <authorize access = "Private" name = "CATTypesCustomizationDebug"/>
+  <authorize name = "PLMDictionaryNavServices.tst"/>
+  <authorize name = "PLMDictionaryServices.tst"/>
+  <authorize name = "zzPCS_KWE.tst"/>
+  <authorize name = "PLMFolderUIAuthoring"/>
+  <authorize name = "x3DSpaceCommonRessources.tst"/>
+  <authorize name = "PLMExportScope"/>
+  <authorize name = "PLMExportScope.tst"/>
+  <authorize name = "VPMMultiProvider"/>
+  <authorize name = "CATPLMDictionaryUsage.tst"/>
+  <authorize access = "Private" name = "CATPLMDictionaryUtils"/>
+  <authorize name = "CATPLMImplAdapterQL.tst"/>
+  <authorize name = "CATPLMServices.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

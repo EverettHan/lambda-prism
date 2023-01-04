@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "AutomationInfrastructure.tst"/>
+  <attached name = "System.tst"/>
+  <attached name = "CATIAApplicationFrame.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" name = "SystemTS"/>
+  <prerequisite access = "Protected" name = "AutomationInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "InfOSIDLItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <authorize comment = " at least for CATIAApplicationImpl " name = "CATIAApplicationFrame"/>
+  <authorize comment = " at least for CATIASettingControllersImpl coverage " name = "CATIAApplicationFrame.tst"/>
+  <authorize comment = " +qay 2008:09:02 ERS request  " name = "InfUIIDLImpl"/>
+  <authorize comment = " +qay 2008:09:02 ERS request  " name = "InfUIIDLImpl.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

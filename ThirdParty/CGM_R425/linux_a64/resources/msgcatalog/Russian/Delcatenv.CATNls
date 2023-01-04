@@ -1,0 +1,46 @@
+<meta charset="UTF-8"/>
+HelpNT.text="Синтаксис команды deltaxv
+[-e environment_name      ] Обязательный параметр. Нет значения по умолчанию.
+[-d storage_directory_name]	По умолчанию: CSIDL_APPDATA\STRUCTV
+[-a user|global]	Тип среды. По умолчанию: user
+[-server                  ] Активирует режим сервера. По умолчанию: не активирован (interactif)
+[-desktop yes|no          ] Удаляет представление рабочего стола для среды. По умолчанию: yes
+[-v yes|no                ]	Активирует режим расширенного вывода. По умолчанию: yes
+[-tools                   ]	Удаляет ярлыки инструментов (исключающая команда)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ]  Укажите ProductLine для представления среды (по умолчанию: CATIA)
+[-h|-help]			Эта справка.";
+
+HelpUNIX.text="Синтаксис команды deltaxv
+[-e environment_name      ] Обязательный параметр. Нет значения по умолчанию.
+[-d storage_directory_name] По умолчанию: $HOME/CATEnv
+[-a user|global           ] Тип среды. По умолчанию: user
+[-server                  ] Активирует режим сервера. По умолчанию: не активирован (interactif)
+[-desktop yes|no          ] Удаляет представление рабочего стола для среды. По умолчанию: yes
+[-v yes|no                ] Активирует режим расширенного вывода. По умолчанию: yes
+[-unregserver             ] Отменяет регистрацию CATIA на рабочем столе (исключающая команда)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ]  Укажите ProductLine для представления среды (по умолчанию: CATIA)
+[-h|-help]                  Эта справка.";
+
+ErrDelEnvUsr.Text="Не удалось удалить представление среды";
+ErrDelEnv.Text="Не удалось удалить среду.";
+ErrUnset.Text="Не удалось отменить настройку рабочей станции";
+MustBeSystemAdmin.text="Для использования этой функции необходимы права системного администратора";
+EnvNameNotSpecified.Text="Необходимо указать имя среды";
+DefaultFolderNotFound.Text="Папка по умолчанию для среды не найдена";
+SpecifiedFolderNotFound.Text="Указанный каталог хранения не найден";
+EnvFileNotFound.Text="Файл среды не найден";
+AccessPb.Text="Невозможно создать или открыть файл.]
+							   [Проверьте, есть ли у вас разрешение на запись в каталоге хранения.]";
+NonValidType.Text="Тип (user или global) должен быть указан с помощью параметра \"-a\".";
+InitFolderFailed.Text="------------------ Предупреждение ----------------
+Папка хранения по умолчанию не найдена.
+Задана новая папка хранения:
+";
+NoHome.Text="Переменная среды HOME не задана";
+UnknownProductLine.Text="/P1 не является допустимой линейкой продуктов. Авторизованные значения для параметра -cs: CATIA, ENOVIA, DELMIA, ENOVIA_3D_Live, DELMIA.";

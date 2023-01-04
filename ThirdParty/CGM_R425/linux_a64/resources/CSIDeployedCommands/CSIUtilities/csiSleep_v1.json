@@ -1,0 +1,26 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Sleep during the specified time",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "waitingTime",
+          "basic": "int32",
+          "desc": "The time to wait in ms",
+          "optional": {
+            "default_value": "0"
+          }
+        }
+      ]
+    },
+    "out": {}
+  }
+}

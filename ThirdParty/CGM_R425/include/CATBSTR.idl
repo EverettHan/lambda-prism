@@ -1,0 +1,22 @@
+#ifndef CATBSTR_idl
+#define CATBSTR_idl
+
+// COPYRIGHT DASSAULT SYSTEMES 2000
+
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+#include "IUnknown.idl"
+
+/*IDLNOGEN*/
+/** @nodoc */
+typedef unsigned short WCHAR;
+#pragma ID CATBSTR "DCE:f4eb10fe-1325-11d1-a117080009dc6436"
+/** 
+ * Defines the string type to be used by Automation interfaces.
+ */
+typedef sequence<WCHAR> CATBSTR;
+
+#endif

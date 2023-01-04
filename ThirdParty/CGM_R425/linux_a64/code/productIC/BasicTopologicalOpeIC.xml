@@ -1,0 +1,112 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "AdvancedTopologicalOpe.tst"/>
+  <attached name = "FreeFormOperators.tst"/>
+  <attached name = "CGMShapeTests.tst"/>
+  <attached name = "CGMSurfacicTests.tst"/>
+  <attached name = "CGMOldTopology.tst"/>
+  <attached name = "CGMTopologyTests.tst"/>
+  <attached name = "CGMGeometryTests.tst"/>
+  <attached name = "TopologicalOperators.tst"/>
+  <attached name = "CATFuzzySurfaceOffset.tst"/>
+  <attached name = "CurveBasedTopoOperators.tst"/>
+  <attached name = "SurfacicAdvancedTopoOpe.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AdvancedMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "FreeFormOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "NewTopologicalObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "TopologicalOperatorsLight"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "TopologicalOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AdvancedTopologicalOpe"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Tessellation"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SurfacicTopoOperators"/>
+  <prerequisite access = "Protected" name = "CATFuzzyOperators"/>
+  <prerequisite access = "Protected" name = "PolyhedralInterfaces"/>
+  <prerequisite access = "Protected" name = "PolyhedralObjects"/>
+  <prerequisite access = "Protected" name = "PolyhedralOperators"/>
+  <prerequisite access = "Protected" name = "PolygonalTools"/>
+  <prerequisite access = "Protected" name = "PolyhedralMathematics"/>
+  <prerequisite access = "Protected" name = "SurfacicMathematics"/>
+  <prerequisite access = "Protected" name = "SurfacicGeoOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMModelInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMOperatorsInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SGMOperatorsInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMPolyOperators"/>
+  <authorize access = "Public" comment = "-> The default mode is public " name = "CGMInterfaces.tst"/>
+  <authorize name = "BasicTopologicalOpe.tst"/>
+  <authorize name = "A_CGM_REGKiller.tst"/>
+  <authorize name = "CAABasicTopoOpe.edu"/>
+  <authorize name = "CAABasicTopoOpe.tst"/>
+  <authorize name = "CAATopologicalOpe_edu.tst"/>
+  <authorize name = "CAATopologicalOperators.tst"/>
+  <authorize name = "CAAAdvancedTopoOpe_edu.tst"/>
+  <authorize name = "CAABasicTopoOpe_edu.tst"/>
+  <authorize name = "CAT3DControl.tst"/>
+  <authorize name = "CATGem.tst"/>
+  <authorize access = "Private" name = "CAT3DDsp2.tst"/>
+  <authorize name = "CAT3DSurfacic.tst"/>
+  <authorize name = "CAT3DTopology.tst"/>
+  <authorize name = "CAT3DTopoMec.tst"/>
+  <authorize name = "CATClassATopoOperators"/>
+  <authorize name = "CATFuzzySurfaceOffset.tst"/>
+  <authorize name = "CATSubdivisionAdvTopOper.tst"/>
+  <authorize name = "CATSubdivisionMeshGen.tst"/>
+  <authorize name = "CATSubdivisionTopOperators.tst"/>
+  <authorize name = "CATSubdivisionTopTopoOpe.tst"/>
+  <authorize name = "CGMFastRunTests.tst"/>
+  <authorize name = "CGMOldTopology.tst"/>
+  <authorize name = "CGMShapeTests.tst"/>
+  <authorize name = "CGMSurfacicDSP.tst"/>
+  <authorize name = "CGMSurfacicTests.tst"/>
+  <authorize name = "CGMTestToolkit.tst"/>
+  <authorize access = "Private" name = "CGMTopologyTests.tst"/>
+  <authorize name = "DeclarativeOperators.tst"/>
+  <authorize name = "FIXPART.tst"/>
+  <authorize name = "FromSolidV4toPart"/>
+  <authorize name = "FromSolidV4toPartIndus.tst"/>
+  <authorize name = "FunctionalTopologicalOpe"/>
+  <authorize name = "NewTopologicalObjects.tst"/>
+  <authorize name = "TopologicalOperators.tst"/>
+  <authorize name = "A_CGMRunTime_Compatibility.tst"/>
+  <authorize name = "CGMFastRunTests.tst"/>
+  <authorize name = "CurveBasedTopoOperators.tst"/>
+  <authorize name = "CGMComponentImpl"/>
+  <authorize access = "Private" name = "SurfacicAdvancedTopoOpe.tst"/>
+  <authorize name = "CATNaturalSketchOperators"/>
+  <authorize comment = "DON'T REMOVE: FOR MSI " name = "CATLiveShapeInstaller"/>
+  <authorize name = "CATBIWDesignModel"/>
+  <authorize comment = "Cf note de Cyrille Masseret du 7/1/2008 " name = "CATClassACoreResources"/>
+  <authorize name = "CATCompositesLightModel"/>
+  <authorize name = "CATCompositesModel"/>
+  <authorize name = "CATCompositesServices"/>
+  <authorize name = "CATCompositesUI"/>
+  <authorize name = "CATCompositesReviewUI"/>
+  <authorize name = "CATCoreCavityFeatures"/>
+  <authorize name = "CATSmModel"/>
+  <authorize name = "CATSmaDFeature"/>
+  <authorize name = "CATSmdDFeature"/>
+  <authorize name = "CATSpdFunctionalModeler"/>
+  <authorize name = "DNBIgpArcCommands"/>
+  <authorize name = "FreeStyleResources"/>
+  <authorize name = "FreeStyleShapeModel"/>
+  <authorize name = "FreeStyleShapeUI"/>
+  <authorize name = "MeasureGeometry"/>
+  <authorize name = "PartDesignFeature"/>
+  <authorize name = "ICMUtilities"/>
+  <authorize name = "ICMGeometry"/>
+  <authorize name = "ICMGeometry.tst"/>
+  <authorize name = "CATLivePhotoStandaloneiOS"/>
+  <authorize name = "CATCrtModel"/>
+  <authorize name = "CATCrtInterfaces"/>
+  <authorize name = "CATCrtOperator"/>
+  <authorize name = "CATCrtUI"/>
+  <authorize name = "CATCrtModel.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

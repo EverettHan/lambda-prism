@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SCENE_EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns ="urn:dsfx0">
+
+  
+  <!--  ########################################################### -->
+  <!--                Depth Stencil States                          -->
+  <!--  ########################################################### -->
+  
+  <DST_STATE_GROUP>
+    <NAME>DSS_NoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_OnlyTest</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_StencilWrite</NAME>
+    <STENCIL_ENABLE>true</STENCIL_ENABLE>
+    <STENCIL_READ_MASK>255</STENCIL_READ_MASK>
+    <STENCIL_REF>0</STENCIL_REF>
+    <FRONT_FACE>
+      <DEPTH_FAIL_OP>IncrementSat</DEPTH_FAIL_OP>
+      <STENCIL_FUNC>Always</STENCIL_FUNC>
+      <STENCIL_FAIL_OP>IncrementSat</STENCIL_FAIL_OP>
+      <STENCIL_PASS_OP>IncrementSat</STENCIL_PASS_OP>
+      <STENCIL_WRITE_MASK>255</STENCIL_WRITE_MASK>
+    </FRONT_FACE>
+  </DST_STATE_GROUP>
+
+  <!-- Depth Stencil Test States moduler -->
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_StencilTestGreaterThanZero</NAME>
+    <STENCIL_ENABLE>true</STENCIL_ENABLE>
+    <STENCIL_READ_MASK>255</STENCIL_READ_MASK>
+    <STENCIL_REF>0</STENCIL_REF>
+    <FRONT_FACE>
+      <DEPTH_FAIL_OP>Keep</DEPTH_FAIL_OP>
+      <STENCIL_FUNC>Greater</STENCIL_FUNC>
+      <STENCIL_FAIL_OP>Keep</STENCIL_FAIL_OP>
+      <STENCIL_PASS_OP>Keep</STENCIL_PASS_OP>
+      <STENCIL_WRITE_MASK>255</STENCIL_WRITE_MASK>
+    </FRONT_FACE>
+  </DST_STATE_GROUP>
+
+  <DST_STATE_GROUP>
+    <NAME>DSS_StencilTestEqualToZero</NAME>
+    <STENCIL_ENABLE>true</STENCIL_ENABLE>
+    <STENCIL_READ_MASK>255</STENCIL_READ_MASK>
+    <STENCIL_REF>0</STENCIL_REF>
+    <FRONT_FACE>
+      <DEPTH_FAIL_OP>Keep</DEPTH_FAIL_OP>
+      <STENCIL_FUNC>Equal</STENCIL_FUNC>
+      <STENCIL_FAIL_OP>Keep</STENCIL_FAIL_OP>
+      <STENCIL_PASS_OP>Keep</STENCIL_PASS_OP>
+      <STENCIL_WRITE_MASK>255</STENCIL_WRITE_MASK>
+    </FRONT_FACE>
+    <BACK_FACE>
+      <DEPTH_FAIL_OP>Keep</DEPTH_FAIL_OP>
+      <STENCIL_FUNC>Equal</STENCIL_FUNC>
+      <STENCIL_FAIL_OP>Keep</STENCIL_FAIL_OP>
+      <STENCIL_PASS_OP>Keep</STENCIL_PASS_OP>
+      <STENCIL_WRITE_MASK>255</STENCIL_WRITE_MASK>
+    </BACK_FACE>
+  </DST_STATE_GROUP>
+
+  
+
+  <!--  ########################################################### -->
+  <!--                        Blend States                          -->
+  <!--  ########################################################### -->
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_AlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_AlphaBlendingPreMultiplied</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>One</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+  
+  <BLEND_STATE_GROUP>
+    <NAME>BS_Replace</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>One</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>Zero</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>Zero</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_GroundShadow_Transpar</NAME>
+    <TARGET>
+      <ID>0</ID>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <ALPHA_DST_BLEND>One</ALPHA_DST_BLEND>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <COLOR_DST_BLEND>DstAlpha</COLOR_DST_BLEND>
+      <COLOR_SRC_BLEND>OneMinusDstAlpha</COLOR_SRC_BLEND>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_GroundShadow_SpotBlurRGBA8</NAME>
+    <TARGET>
+      <ID>0</ID>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <COLOR_DST_BLEND>SrcAlpha</COLOR_DST_BLEND>
+      <COLOR_SRC_BLEND>Zero</COLOR_SRC_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <ALPHA_DST_BLEND>SrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_SRC_BLEND>Zero</ALPHA_SRC_BLEND>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BS_GroundShadow_SpotBlurA8</NAME>
+    <TARGET>
+      <ID>0</ID>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <COLOR_DST_BLEND>SrcAlpha</COLOR_DST_BLEND>
+      <COLOR_SRC_BLEND>Zero</COLOR_SRC_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <ALPHA_DST_BLEND>SrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_SRC_BLEND>Zero</ALPHA_SRC_BLEND>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <!-- Blend States modulers -->
+
+
+
+  <!--  ########################################################### -->
+  <!--                    Rasterizer States                         -->
+  <!--  ########################################################### -->
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_Solid</NAME>
+    <CULL_MODE>None</CULL_MODE>
+    <FILL_MODE>Solid</FILL_MODE>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_Ground</NAME>
+    <CULL_MODE>None</CULL_MODE>
+    <FILL_MODE>Solid</FILL_MODE>
+    <DEPTH_BIAS>0</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR>0.0</DEPTH_SLOPE_FACTOR>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <SCISSOR_ENABLE>false</SCISSOR_ENABLE>
+    <DEPTH_CLIP_ENABLE>false</DEPTH_CLIP_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <!-- Rasterizer States modulers -->
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_LightDir</NAME>
+    <DEPTH_CLIP_ENABLE>true</DEPTH_CLIP_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_LightSpot</NAME>
+    <DEPTH_CLIP_ENABLE>false</DEPTH_CLIP_ENABLE>
+  </RAST_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>RS_LightPoint</NAME>
+    <DEPTH_CLIP_ENABLE>false</DEPTH_CLIP_ENABLE>
+  </RAST_STATE_GROUP>
+
+  
+  
+  <!--  ########################################################### -->
+  <!--                    Post Process                              -->
+  <!--  ########################################################### -->
+
+  <!-- TECHNIQUE Modulators -->
+  
+  <TECHNIQUE>
+    <NAME>StencilWrite</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <BLEND_STATE>DSS_StencilWrite</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>StencilTestGreaterThanZero</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_StencilTestGreaterThanZero</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>StencilTestEqualToZero</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_StencilTestEqualToZero</DEPTH_STENCIL_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AlphaBlend</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>AlphaBlendPreMultiplied</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <BLEND_STATE>BS_AlphaBlendingPreMultiplied</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Replace</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <BLEND_STATE>BS_Replace</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <!-- TECHNIQUE Post Process -->
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <DEPTH_STENCIL_STATE>DSS_NoTestNoWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_AlphaBlending</BLEND_STATE>
+      <RASTERIZER_STATE>RS_Solid</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlend</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlendPreMultiplied</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.Replace</DECLARE_NAME></TECHNIQUE>
+  
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlend.StencilWrite</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlendPreMultiplied.StencilWrite</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.Replace.StencilWrite</DECLARE_NAME></TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlend.StencilTestGreaterThanZero</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlendPreMultiplied.StencilTestGreaterThanZero</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.Replace.StencilTestGreaterThanZero</DECLARE_NAME></TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlend.StencilTestEqualToZero</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.AlphaBlendPreMultiplied.StencilTestEqualToZero</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>PostProcess.Replace.StencilTestEqualToZero</DECLARE_NAME></TECHNIQUE>
+
+  
+  
+  <!--  ########################################################### -->
+  <!--                    Post Process Ground Shadow                -->
+  <!--  ########################################################### -->
+
+  <!-- TECHNIQUE Modulators -->
+  
+  <TECHNIQUE>
+    <NAME>LightDir</NAME>
+    <PASS>
+      <NAME>Clip</NAME>
+      <RASTERIZER_STATE>RS_LightDir</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>LightSpot</NAME>
+    <PASS>
+      <NAME>Clip</NAME>
+      <RASTERIZER_STATE>RS_LightSpot</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>LightPoint</NAME>
+    <PASS>
+      <NAME>Clip</NAME>
+      <RASTERIZER_STATE>RS_LightPoint</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <!-- TECHNIQUE  -->
+  
+  <TECHNIQUE>
+    <NAME>GroundShadow</NAME>
+    <PASS>
+      <NAME>Clip</NAME>
+      <DEPTH_STENCIL_STATE>DSS_OnlyTest</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_Replace</BLEND_STATE>
+      <RASTERIZER_STATE>RS_Ground</RASTERIZER_STATE>
+    </PASS>
+    <PASS>
+      <NAME>Transparent</NAME>
+      <DEPTH_STENCIL_STATE>DSS_NoTestNoWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_GroundShadow_Transpar</BLEND_STATE>
+      <RASTERIZER_STATE>RS_Ground</RASTERIZER_STATE>
+    </PASS>
+    <PASS>
+      <NAME>SpotBlurRGBA8</NAME>
+      <DEPTH_STENCIL_STATE>DSS_NoTestNoWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_GroundShadow_SpotBlurRGBA8</BLEND_STATE>
+      <RASTERIZER_STATE>RS_Ground</RASTERIZER_STATE>
+    </PASS>
+    <PASS>
+      <NAME>SpotBlurA8</NAME>
+      <DEPTH_STENCIL_STATE>DSS_NoTestNoWrite</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>BS_GroundShadow_SpotBlurA8</BLEND_STATE>
+      <RASTERIZER_STATE>RS_Ground</RASTERIZER_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE><DECLARE_NAME>GroundShadow.LightSpot</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>GroundShadow.LightDir</DECLARE_NAME></TECHNIQUE>
+  <TECHNIQUE><DECLARE_NAME>GroundShadow.LightPoint</DECLARE_NAME></TECHNIQUE>
+  
+</SCENE_EFFECT>
+

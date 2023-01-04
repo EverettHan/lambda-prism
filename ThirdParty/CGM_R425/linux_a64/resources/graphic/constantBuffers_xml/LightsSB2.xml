@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbLightsSB2</NAME>
+
+  <!--To Check-->
+  <USAGE>Stream</USAGE>
+
+  <UNIFORM>
+    <NAME>PointLightCount</NAME>    
+    <TYPE>int</TYPE> <!--to move to uint-->
+    <SEMANTIC>PointLightCount</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>DirectionalLightCount</NAME>
+    <TYPE>int</TYPE>
+    <SEMANTIC>DirectionalLightCount</SEMANTIC>
+    <!--to move to uint-->
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>SpotLightCount</NAME>
+    <TYPE>int</TYPE>
+    <SEMANTIC>SpotLightCount</SEMANTIC>
+    <!--to move to uint-->
+  </UNIFORM>
+
+
+  <!--POINT LIGHT-->
+  <UNIFORM>
+    <NAME>PointPosition</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Point.Position</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>PointPower</NAME>
+    <TYPE>float</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Point.Power</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>PointColor</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Point.Color</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>PointAttenuation</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Point.Attenuation</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>PointShadowLayer</NAME>
+    <TYPE>int</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Point.ShadowLayer</SEMANTIC>
+  </UNIFORM>
+  
+  <!--DIRECTIONAL LIGHT-->
+  <UNIFORM>
+    <NAME>DirDirection</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Dir.Direction</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>DirPowerPerAreaUnit</NAME>
+    <TYPE>float</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Dir.PowerPerAreaUnit</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>DirColor</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Dir.Color</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>DirShadowLayer</NAME>
+    <TYPE>int</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Dir.ShadowLayer</SEMANTIC>
+  </UNIFORM>
+
+  <!--SPOT LIGHT-->
+  <UNIFORM>
+    <NAME>SpotColor</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Spot.Color</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>SpotPower</NAME>
+    <TYPE>float</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Spot.Power</SEMANTIC>
+  </UNIFORM>
+    
+  <UNIFORM>
+    <NAME>SpotPosition</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Spot.Position</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>SpotPhi</NAME>
+    <TYPE>float</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Spot.Phi</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>SpotDirection</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Spot.Direction</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>SpotTheta</NAME>
+    <TYPE>float</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+  <SEMANTIC>Spot.Theta</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>SpotAttenuation</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Spot.Attenuation</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>SpotShadowLayer</NAME>
+    <TYPE>int</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Spot.ShadowLayer</SEMANTIC>
+  </UNIFORM>
+
+
+  <!--GLOBAL-->
+  <UNIFORM>
+    <NAME>AmbientColor</NAME>
+    <TYPE>float3</TYPE>    
+    <SEMANTIC>AmbientLighting</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>LowlightColor</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>Lowlighting</SEMANTIC>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>
+
+<!--{
+    "Name" : "cbLights", 
+    "Parameters" : 
+    [
+        {"Semantic" : "Lights", "Size" : 1040 }
+    ]
+}-->

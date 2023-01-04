@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbLdhBoxImpostor</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>TextureGeometry</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>BasicSamplerState</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <MAKE_ALPHA_TEST>true</MAKE_ALPHA_TEST>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>TextureGeometry</SAMPLER>
+          <STATES>BasicSamplerState</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vNormal</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      
+      <LIGHTING>true</LIGHTING>
+      <VERTEX_STAGE>LdhBoxImpostorVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>LdhBoxImpostorPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</PDSFX>

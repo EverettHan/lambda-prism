@@ -1,0 +1,33 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type to return an execution graph progress",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "port",
+      "type": "CSIExecGraphPort",
+      "desc": "Port of this event"
+    },
+    {
+      "label": "description",
+      "basic": "string",
+      "desc": "description of the event"
+    },
+    {
+      "label": "data",
+      "type": "Parameters",
+      "desc": "generic data associated to this event",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "timestamp",
+      "basic": "double",
+      "desc": "timestamp associated to this event",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

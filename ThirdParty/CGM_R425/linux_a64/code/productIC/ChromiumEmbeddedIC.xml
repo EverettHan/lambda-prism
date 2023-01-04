@@ -1,0 +1,21 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "ChromiumEmbedded.tst"/>
+  <attached name = "ChromiumEmbeddedPlugin.tst"/>
+  <attached name = "VisuImmersiveDialog.tst"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "ExperienceKernel"/>
+  <prerequisite access = "Protected" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "MultimediaInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "ODM/D6K 03032014 : CATMutex access for CEF data management" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "ChromiumEmbeddedPlugin"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "DSYInsInfra"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "DSYInsListInstalls"/>
+  <authorize access = "Private" name = "ChromiumEmbedded.tst"/>
+  <authorize access = "Private" name = "ChromiumEmbeddedPlugin.tst"/>
+  <authorize access = "Private" name = "ECMAScriptEngine"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

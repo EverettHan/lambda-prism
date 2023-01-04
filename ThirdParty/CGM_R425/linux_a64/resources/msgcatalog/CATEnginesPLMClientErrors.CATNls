@@ -1,0 +1,32 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+NotFirstVersionNotModifiable_F_1.Diagnostic = "References are not first revision references, so their identifier attributes set cannot be modified. Concerned References: \n/p1";
+NotFirstVersionNotModifiable_F_1.Advice     = "";
+NotFirstVersionNotModifiable_F_1.Request     = "You can modify identifier attributes set only on the first revision of a reference.";
+
+
+BlockingOwnerMaturity1_F_0.Diagnostic = "/p instances cannot be created because their owner reference are not editable: \nTheir owner references are not editable because of their maturity status.";
+BlockingOwnerMaturity1_F_0.Advice     = "Modify the maturity status of the owner object.";
+BlockingOwnerMaturity1_F_0.Request   =  "";  
+
+
+//  In Diagnostic's /p : Precision on which system problem occurs: this is DEBUG information
+PLMc_ServerSystemPb_F_1.Diagnostic  = "System problem in the server \n(Debug information : \n/p)" ;
+PLMc_ServerSystemPb_F_1.Advice      = "";
+PLMc_ServerSystemPb_F_1.Request     = "";

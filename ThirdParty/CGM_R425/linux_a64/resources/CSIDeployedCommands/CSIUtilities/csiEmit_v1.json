@@ -1,0 +1,32 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "emits a CSIUtilitiesEvent event",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "arguments",
+          "type": "Parameters",
+          "desc": "the event arguments, must have a field 'value' of type 'Parameters'"
+        }
+      ]
+    },
+    "out": {}
+  },
+  "emit": [
+    {
+      "event": "CSIUtilitiesEvent",
+      "desc": "utility event"
+    }
+  ],
+  "throwError": {
+    "type": "CSIError"
+  }
+}

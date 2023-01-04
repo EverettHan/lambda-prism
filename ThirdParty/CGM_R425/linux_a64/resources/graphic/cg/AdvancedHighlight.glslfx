@@ -1,0 +1,163 @@
+// UniformGroup internal TL: no more UniformGroup... only ConstantBuffer if needed for UBO
+//{        
+    uniform mat4 matw.WVP : WORLDVIEWPROJECTION;        		
+//}
+
+//UniformGroup user_data
+//{
+	uniform vec4 outlineColor = {0.0,1.0,0.0,1.0}; // TL: now only {} accepted
+	uniform vec4 haloColor = {0.0,0.0,1.0,1.0};
+	uniform float haloIntensity = 1.0;
+	uniform float haloSize = 3.0;
+	uniform vec4 scanEffectColor = {0.0,0.0,1.0,1.0};
+	uniform float scanEffectIntensity = 1;
+	uniform float height;
+	uniform float width;	
+//}
+
+GLSLShader CommonPreShaderBlock
+{
+#version 330 compatibility
+#extension GL_ARB_separate_shader_objects : enable
+}
+
+SamplerState Auto_EyeMap_State // sampler_state now is SamplerState
+{
+    TEXTURE_MIN_FILTER = LINEAR_MIPMAP_LINEAR;// TL: TEXTURE_ needed. No more GL_
+    TEXTURE_MAG_FILTER = LINEAR;
+}
+
+
+GLSLShader VSAdvancedHighlight
+{
+	//inputs
+	layout(location=0) in vec4 ScreenPosition;		
+
+	//outputs
+	layout(location=0) out vec2 OUTTexCoord;
+
+	void main()
+	{		
+		OUTTexCoord = 0.5*(vec2(1,1)+ScreenPosition.xy); //rescaling the frame between 0,1
+		OUTTexCoord.x =  OUTTexCoord.x*width;
+		OUTTexCoord.y =  OUTTexCoord.y*height;		
+		gl_Position = ScreenPosition; //nothing to do in the vertex shader
+	}
+}
+
+uniform sampler2DRect Auto_EyeMap;
+
+
+GLSLShader PSAdvancedHighlight
+{		
+	layout(location=0) in vec2 ScreenPosition;	    
+
+
+	
+
+	//-----------------------------------------------------------------------------------------
+	//  Pixel Shader
+	//-----------------------------------------------------------------------------------------
+
+	vec4 ScanEffectAndOutline(
+		vec4		  iColor,
+		vec2		  iScreenCoord,
+		vec4      iOutlineColor,
+		float       iScanEffectIntensity,
+		vec4      iScanEffectColor,
+		samplerRect iInputTexture)
+		
+	{
+		vec4 result = iColor;
+		float red = 0;
+		vec2 screenCoord = iScreenCoord;
+
+		screenCoord.y -= 1;
+		red += (texture(iInputTexture, screenCoord.xy)).x;
+		screenCoord.y += 2;
+		red += (texture(iInputTexture, screenCoord.xy)).x;
+		screenCoord.y -= 1;
+		screenCoord.x -= 1;
+		red += (texture(iInputTexture, screenCoord.xy)).x;
+		screenCoord.x += 2;
+		red += (texture(iInputTexture, screenCoord.xy)).x;
+
+		// outline interne
+		if (red!=0)
+		{
+			result = iOutlineColor;
+		}
+		// effect scan
+		else
+		{
+			red = (1-result.y);
+			red *= red;
+
+			result = vec4(
+				iScanEffectColor.xyz, 
+				(0.6*red+0.2)*iScanEffectIntensity);
+		}
+
+		return result;
+	}	
+	
+
+
+	void main()
+	{
+		vec2 FILTERBLURDATA[12];
+		FILTERBLURDATA[0]  = vec2(-0.326212, -0.405805);
+		FILTERBLURDATA[1]  = vec2(-0.840144, -0.07358);
+		FILTERBLURDATA[2]  = vec2(-0.695914, 0.457137);
+		FILTERBLURDATA[3]  = vec2(-0.203345, 0.620716);
+		FILTERBLURDATA[4]  = vec2(0.96234,   -0.194983);
+		FILTERBLURDATA[5]  = vec2(0.473434,  -0.480026);
+		FILTERBLURDATA[6]  = vec2(0.519456, 0.767022);
+		FILTERBLURDATA[7]  = vec2(0.185461, -0.893124);
+		FILTERBLURDATA[8]  = vec2(0.507431, 0.064425);
+		FILTERBLURDATA[9]  = vec2(0.530992,  0.412458);
+		FILTERBLURDATA[10] = vec2(-0.32194, -0.871945);
+		FILTERBLURDATA[11]=  vec2(-0.791559, 0.597705);		
+
+		vec4 result = vec4(0,0,0,1); 
+		vec2 screenCoord = ScreenPosition;                  
+		result += (texture(Auto_EyeMap, screenCoord.xy));
+
+		// cas du halo
+		if (result.x != 0)
+		{
+			result   = haloColor;
+
+			result.w = 0;
+			for(int i=0; i<12; i++)
+			{
+				vec2 coord = screenCoord.xy + haloSize * FILTERBLURDATA[i];
+				result.w += (texture(Auto_EyeMap, coord)).x;
+			}
+			result.w = (1-result.w*0.0833333333333333)*haloIntensity;
+		}
+		// object en higlight
+		else
+		{
+			result = ScanEffectAndOutline(result, screenCoord, outlineColor, scanEffectIntensity, scanEffectColor, Auto_EyeMap);
+		}		
+		gl_FragColor =  result;								
+	}
+}
+////////////////////////////////////////////////////////////////////
+/// TECHNIQUES /////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+Technique GraphicMaterial_Bump
+{
+  Pass p0
+  {         	
+      SamplerState(Auto_EyeMap) = Auto_EyeMap_State; //TL: SamplerResource instead of samplerResource
+	  // TL: Warning, there was a bug here : Auto_EyeMap is wrong. Auto_EyeMapSampler instead :
+      SamplerTexUnit(Auto_EyeMap) = 0;	      //TL: SamplerTexUnit instead of samplerTexUnit
+	    VertexProgram = VSAdvancedHighlight;
+      FragmentProgram = PSAdvancedHighlight;	              
+  }
+}
+
+
+

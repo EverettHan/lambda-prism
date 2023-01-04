@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "SGInfra"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "P3.tst"/>
+  <authorize access = "Private" name = "CATIAApplicationFrame.tst"/>
+  <authorize access = "Private" name = "VisualizationController"/>
+  <authorize access = "Private" name = "GraphicsTestSuite"/>
+  <authorize access = "Private" name = "VisualizationSG.tst"/>
+  <authorize access = "Private" name = "CSISceneBinder"/>
+  <attached name = "VisualizationRSW.tst"/>
+  <attached name = "Visualization.tst"/>
+  <attached comment = "09.01.2012 SVQ/CDT R213 Testing Batch prereq VisuController" name = "VisualizationBase.tst"/>
+  <attached name = "CATGraphicProperties.tst"/>
+  <attached name = "GeometryVisualization.tst"/>
+  <attached name = "CATIAModelVisu.tst"/>
+  <attached name = "CATIAApplicationFrame.tst"/>
+  <attached name = "P3.tst"/>
+  <attached name = "CATImmersiveUI.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

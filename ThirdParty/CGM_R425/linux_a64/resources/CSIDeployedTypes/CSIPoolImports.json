@@ -1,0 +1,31 @@
+{
+  "grammarVersion": 3,
+  "desc": "Definition of a CSI Declarative Pool",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "pool",
+      "basic": "string",
+      "desc": "name of the pool to import"
+    },
+    {
+      "label": "callables",
+      "desc": "list of functions or commands to import. if unspecified, then whole pool is imported",
+      "optional": {
+        "isOptional": true
+      },
+      "parametersArray": [
+        {
+          "label": "name",
+          "basic": "string",
+          "desc": "function or command name"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "desc": "version"
+        }
+      ]
+    }
+  ]
+}

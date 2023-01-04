@@ -1,0 +1,36 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "HiddenLineRemover.tst"/>
+  <attached name = "HLRComponents.tst"/>
+  <attached name = "H_Preview.tst"/>
+  <attached name = "CGMMeshFitter.tst"/>
+  <attached name = "CGMMeshRefiner.tst"/>
+  <attached name = "Data_CacheUV.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AdvancedMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolygonalTools"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMModelInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralMathematics"/>
+  <authorize access = "Private" name = "A_Preview.tst"/>
+  <authorize access = "Private" name = "H_Preview.tst"/>
+  <authorize access = "Private" name = "CATechMesh.tst"/>
+  <authorize access = "Private" name = "CAT3DControl.tst"/>
+  <authorize access = "Private" name = "CAT3DDsp2.tst"/>
+  <authorize access = "Private" name = "FIXPART.tst"/>
+  <authorize access = "Private" name = "HiddenLineRemover.tst"/>
+  <authorize access = "Private" name = "SurfacicAdvancedTopoOpe.tst"/>
+  <authorize access = "Private" name = "TessellationV4"/>
+  <authorize access = "Private" name = "TessellationV4.tst"/>
+  <authorize access = "Private" name = "zzPCS_CVMGeometry.tst"/>
+  <authorize access = "Private" name = "CGMCATech"/>
+  <authorize access = "Private" name = "CGMCATech.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

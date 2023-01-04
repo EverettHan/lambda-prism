@@ -1,0 +1,45 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Return a random number between min and max",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "min",
+          "basic": "int32",
+          "desc": "The minimum value",
+          "optional": {
+            "default_value": "0"
+          }
+        },
+        {
+          "label": "max",
+          "basic": "int32",
+          "desc": "The Maximum value",
+          "optional": {
+            "default_value": "10"
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "value",
+          "basic": "int32",
+          "desc": "The Random value between min and max"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

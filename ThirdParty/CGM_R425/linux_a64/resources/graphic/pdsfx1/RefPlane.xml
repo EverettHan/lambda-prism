@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+	<VERSION>1</VERSION>
+
+	<CONSTANT_BUFFER>
+		<NAME>cbFixedSize</NAME>
+	</CONSTANT_BUFFER>
+
+	  <SAMPLER>
+		<NAME>atlasTexture</NAME>
+		<SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+	  </SAMPLER>
+
+	  <SAMPLER_STATE>
+		<NAME>atlasSampler</NAME>
+		<MAG_FILTER>Linear</MAG_FILTER>
+		<MIN_FILTER>Linear</MIN_FILTER>
+		<MIP_FILTER>None</MIP_FILTER>
+		<WRAP_U>ClampToBorder</WRAP_U>
+		<WRAP_V>ClampToBorder</WRAP_V>
+		<WRAP_W>ClampToBorder</WRAP_W>
+		<BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+	  </SAMPLER_STATE>
+
+	<TECHNIQUE>		
+		<NAME>Default</NAME>	 
+		<PASS>
+			<NAME>Default</NAME>
+		
+			<LIGHTING>false</LIGHTING>
+			<TRANSPARENT_MANUAL_ZTEST>true</TRANSPARENT_MANUAL_ZTEST>
+
+			<SAMPLER_ASSIGNMENT_LIST>
+				<SAMPLER_ASSIGNMENT>
+					<SAMPLER>atlasTexture</SAMPLER>
+					<STATES>atlasSampler</STATES>
+				</SAMPLER_ASSIGNMENT>
+			</SAMPLER_ASSIGNMENT_LIST>
+
+			<STREAMS>
+				<STREAM>
+					<STAGES>Vertex_Fragment</STAGES>
+					<VARYING>
+						<NAME>vColorToUse</NAME>
+						<TYPE>float3</TYPE>
+						<QUALIFIER>flat</QUALIFIER>
+					</VARYING>
+				</STREAM>	
+			</STREAMS>		
+		
+			<VERTEX_STAGE>RefPlaneVS</VERTEX_STAGE>			
+			<FRAGMENT_STAGE>RefPlaneFS</FRAGMENT_STAGE>
+		
+		</PASS>
+	</TECHNIQUE>
+
+</PDSFX>

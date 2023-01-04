@@ -1,0 +1,143 @@
+<meta charset="UTF-8"/>
+//** WARNING: YWE 16:095:02 SINGLE-CODE 2013x => NO LOCAL CHANGE EXPECTED - USE IMPORT **/
+// Messages for batches
+// MODULE :  PLMBatchxxx
+// US Version
+//=====================================================================
+
+//====================================================================
+//  Messages for Batches
+//  US Version
+//====================================================================
+ErrorDummy="Interner Fehler - Code = /p1";
+LicenseKO1="/p1 nicht verfügbar";
+LicenseKO2="Die aktuelle Konfiguration lässt die Verwendung dieser Stapelverarbeitung nicht zu";
+//====================================================================
+// Directory
+//====================================================================
+
+Directory.NotExist="Verzeichnis \"/p1\" ist nicht vorhanden";
+Directory.NoWritePermission="Verzeichnis \"/p1\" entspricht keinem Verzeichnis mit Schreibzugriff.
+          Die Zugriffsberechtigung ändern";
+Directory.NoReadPermission="Verzeichnis \"/p1\" entspricht keinem Verzeichnis mit Lesezugriff.
+          Die Zugriffsberechtigung ändern";
+Directory.Undefined="Verzeichnis \"/p1\" nicht definiert.";
+Directory.NotSelected="Es muss geändert werden, und die Operation muss neu gestartet werden.";
+Directory.IsaFile="Feld \"/p1\" ist kein Verzeichnis, sondern eine Datei.";
+Directory.Conflict="Konflikt zwischen Datei \"/p1\" und Verzeichnis \"-id /p2 \"";
+
+//====================================================================
+// Document
+//====================================================================
+Document.NoDomain="Es ist kein Objekttyp verfügbar.
+Am Standort kann kein Objekt ausgewählt werden ... Überprüfen Sie Ihre Umgebung.
+Stapelverarbeitung abgebrochen.";
+Document.NoDocEnv="In der aktuellen Umgebung ist keine Objektauswahl möglich";
+Document.NoSuppEnv="Unterstützte Umgebung ist nicht verfügbar";
+Document.IsaDir="\"/p1\" ist keine Datei, sondern ein Verzeichnis.";
+
+Document.NotADoc="Objekt \"/p1\" ist kein gültiges CATIA V5-Dokument";
+Document.NotACatiaDoc="Bei der folgenden Liste von Objekten handelt es sich nicht um CATIA V5-Dokumente. Sie werden von der Stapelverarbeitung nicht unterstützt:";
+Document.DocNotFound="Das Objekt \"/p1\" gibt es nicht oder wurde nicht gefunden. ";
+Document.NoReadPermission="Kein Lesezugriff auf das Objekt /p1.";
+Document.AlreadySelected="Das Objekt \"/p1\" ist bereits ausgewählt.";
+Document.BadExtension="Das Objekt \"/p1\" hat einen ungültigen Objekttyp.";
+Document.GoodExtension="\t  Unterstützte Objekttypen sind:";
+Document.ProcessKo="Das Objekt kann nicht verarbeitet werden ....";
+Document.ProcessoK="Das Objekt wurde erfolgreich verarbeitet ....";
+Document.ProcessWg="Objekt /p1 teilweise verarbeitet...";
+Document.NoWritePermission="Kein Schreibzugriff auf das Objekt /p1.";
+Document.InUse="Das Objekt \"/p1\" wird bereits von einer anderen Stapelverarbeitung verwendet.";
+Document.NoDoc="Kein Objekt erfüllt die Auswahlkriterien";
+Document.ReadError="Das Objekt \"/p1\" kann nicht gelesen werden.";
+Document.WriteError="Das Objekt \"/p1\" kann nicht geschrieben werden.";
+Document.Write="Das Objekt \"/p1\" wurde erfolgreich geschrieben.";
+Document.NotModified="Das Objekt \"/p1\" wurde von der Operation nicht geändert.";
+Document.AlreadyExist="Das Objekt \"/p1\" ist bereits vorhanden und kann nicht überschrieben werden.
+Das Objekt verschieben oder die Option 'Ersetzen' auswählen.";
+Document.AlreadyExistDocNoReplace="Das Objekt \"/p1\" ist bereits vorhanden und kann nicht überschrieben werden. Das Objekt in eine andere Speicherposition verschieben.";
+Document.Overwritten="Das Objekt \"/p1\" ist bereits vorhanden und wurde überschrieben.";
+Document.WillBeOverwritten="Das Objekt \"/p1\" ist bereits vorhanden und wird gemäß der ausgewählten Ausgabeoption überschrieben.";
+Document.BackUpCreated="Es wurde eine Sicherung des Objekts \"/p1\" erzeugt.";
+Document.CreationError="Das Objekt \"/p1\" kann nicht erzeugt werden.
+Überprüfen, ob der Name des Objekts nicht unterstützte Zeichen enthält.";
+
+Object.LateTypeUnSupported="Warnung: Das ausgewählte Objekt \"/p1\" kann von der Stapelverarbeitung nicht verarbeitet werden.";
+Object.LateTypeUnSupported2="Objekt des Late-Typs \"/p1\" wird nicht unterstützt.";
+
+Object.ExtentionTypeUnSupported="Objekt des Extension-Typs \"/p1\" wird nicht unterstützt.";
+/////////////////////////////////////////////////////////////////////////////////
+// New documents ////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+Document.NewDocNoRefOverwrite="Das neue Objekt \"/p1\" kann seinen Verweis nicht überschreiben.
+Das Zielverzeichnis ändern oder das neue Objekt umbenennen.";
+Document.NewDocAlreadyExist="Das neue Objekt \"/p1\" ist bereits im Zielverzeichnis vorhanden und kann nicht überschrieben werden.
+       Das Zielverzeichnis ändern oder
+       das neue Objekt umbenennen oder
+       die Option für Ersetzen auswählen oder
+       das vorherige Objekt umbenennen oder in ein anderes Verzeichnis verschieben.";
+
+Document.NewDocNoWritePermission="Das neue Objekt /p1 kann im Zielverzeichnis nicht erzeugt werden.
+Überprüfen Sie die Schreibberechtigung für das Zielverzeichnis.";
+Document.NewDocOverwritten="Das neue Objekt \"/p1\" ist bereits vorhanden und wurde überschrieben.";
+Document.NewDocBackuped="Eine frühere Version des Objekts wurde in \"/p1\" gesichert. ";
+Document.NewDocBackupAbort="Eine frühere Version des Objekts kann nicht in \"/p1\" gesichert werden.";
+Document.NewDocPowerCopied="Für das nicht geänderte Objekt \"/p1\" wurde erfolgreich eine Powercopy erzeugt.";
+Document.NewDocWrite="Das neue Objekt \"/p1\" wurde erfolgreich erzeugt.";
+Document.NewDocWriteError="Das neue Objekt \"/p1\" kann nicht erzeugt werden.";
+// ----------------------------------------------------------------------------
+// Messages for Input File  ---------------------------------------------------
+// ----------------------------------------------------------------------------
+InputFile.Inexistant="Warnung: Eingabedatei \"/p1\" existiert nicht";
+InputFile.NoReadAccess="Warnung: Kein Lesezugriff auf die Eingabedatei /p1
+\t  Datei kann nicht geöffnet werden";
+
+// ----------------------------------------------------------------------------
+// Messages for Parameters ----------------------------------------------------
+// ----------------------------------------------------------------------------
+Parameter.Invalid="Warnung: Parameter \"/p1\" ist ungültig";
+Parameter.Doubly="\t  Parameter bereits definiert oder ungültige Kombination";
+Parameter.Unknown="Achtung: Parameter \"/p1\" ist unbekannt
+\t  Verwenden Sie das Argument '-h', um die Liste der bekannten Parameter aufzurufen";
+Parameter.Skipped="\t  Anweisung übersprungen";
+Parameter.Missing="Fehler: Parameter \"/p1\" fehlt
+\t  Obligatorischer Parameter fehlt oder gibt nur unzureichende Informationen
+\t  Verwenden Sie das Argument '-h', um die Liste der obligatorischen Parameter aufzurufen";
+
+//====================================================================
+// Messages for ReportFile ----------------------------------------------------
+//====================================================================
+ReportFile.Exist="Warnung: Berichtsdatei \"/p1\" existiert bereits und wird überschrieben";
+ReportFile.NoWriteAccess="Warnung: Berichtsdatei \"/p1\" existiert bereits, es ist jedoch nur Lesezugriff
+darauf möglich\t  Bericht wird in der Standardausgabe geschrieben";
+ReportFile.NoDir="Warnung: Berichtsdatei \"/p1\" kann nicht erzeugt werden
+\t  Verzeichnis /p2 existiert nicht
+\t  Anweisung übersprungen - Bericht wird in der Standardausgabe geschrieben";
+ReportFile.DirNoWriteAccess="Warnung: Berichtsdatei \"/p1\" kann nicht erzeugt werden
+\t  Verzeichnis /p2 existiert, es ist jedoch nur Lesezugriff darauf möglich
+\t  Anweisung übersprungen - Bericht wird in der Standardausgabe geschrieben";
+ReportFile.CurDirNoWriteAccess="Warnung: Berichtsdatei \"/p1\" kann nicht erzeugt werden
+\t  Aktuelles Verzeichnis existiert, es ist jedoch nur Lesezugriff darauf möglich
+\t  Anweisung übersprungen - Bericht wird in der Standardausgabe geschrieben";
+
+//====================================================================
+// XmlFile
+//====================================================================
+XmlFile.IsaDir="Feld \"/p1\" ist kein Verzeichnis, sondern eine Datei.";
+XmlFile.XmlFileNotFound="XML-Datei \"/p1\" existiert nicht oder kann nicht gefunden werden ";
+XmlFile.NoReadPermission="Kein Lesezugriff auf XML-Datei /p1";
+XmlFile.NoWritePermission="Kein Schreibzugriff auf XML-Datei /p1";
+XmlFile.XmlFileReadError="XML-Datei \"/p1\" kann nicht gelesen werden";
+XmlFile.XmlFileWriteError="XML-Datei \"/p1\" kann nicht geschrieben werden";
+XmlFile.BadExtension="XML-Datei \"/p1\" weist ungültigen XML-Dateityp auf";
+XmlFile.InUse="XML-Datei \"/p1\" wird bereits von einer anderen Stapelverarbeitung verwendet.";
+XmlFile.AlreadySelected="XML-Datei wurde bereits definiert
+Auswahl der zuvor definierten XML-Datei \"/p1\" wird übersprungen";
+XmlFile.NotSelected="XML-Datei kann nicht ausgewählt werden ....";
+XmlFile.NoSelection="Keine XML-Datei ausgewählt ....";
+XmlFile.Overwritten="XML-Datei \"/p1\" ist bereits vorhanden und wird überschrieben";
+XmlFile.MoreObjects="\nDie Anzahl der ausgewählten Objekte in der XML-Datei kann nicht von der Stapelverarbeitung verarbeitet werden. Es kann nur ein Objekt ausgewählt und verarbeitet werden.";
+
+
+
+

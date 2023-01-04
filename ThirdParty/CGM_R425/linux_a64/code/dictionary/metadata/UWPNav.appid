@@ -1,0 +1,268 @@
+
+//================================
+// Attributes definitions for IRPC
+//================================
+
+NEWATTRDEF::NavigatePLMEntity
+  CATPLMMask::CATPLMMaskTree
+  SpAttr::ReservedBy
+  SpAttr::IsReserved
+  SpAttr::StrongRelations
+  SpAttr::ListIdentifiers
+  PhysAttr::V_discipline
+END_NEWATTRDEF::NavigatePLMEntity
+
+NEWATTRDEF::AttrVUsage
+  PhysAttr::V_usage
+END_NEWATTRDEF::AttrVUsage
+
+NEWATTRDEF::SRs
+  SpAttr::SR
+END_NEWATTRDEF::SRs
+
+NEWATTRDEF::SDs
+  SpAttr::SD
+END_NEWATTRDEF::SDs
+
+NEWATTRDEF::AttrOnceInstanciable
+  PhysAttr::V_isOnceInstantiable
+END_NEWATTRDEF::AttrOnceInstanciable
+
+NEWATTRDEF::AttrVNature
+  PhysAttr::V_nature
+END_NEWATTRDEF::AttrVNature
+
+NEWATTRDEF::AttrVMatrix
+  PhysAttr::V_matrix_1
+  PhysAttr::V_matrix_2
+  PhysAttr::V_matrix_3
+  PhysAttr::V_matrix_4
+  PhysAttr::V_matrix_5
+  PhysAttr::V_matrix_6
+  PhysAttr::V_matrix_7
+  PhysAttr::V_matrix_8
+  PhysAttr::V_matrix_9
+  PhysAttr::V_matrix_10
+  PhysAttr::V_matrix_11
+  PhysAttr::V_matrix_12
+END_NEWATTRDEF::AttrVMatrix
+
+NEWATTRDEF::AttrVVolume
+  PhysAttr::V_volume_x1
+  PhysAttr::V_volume_y1
+  PhysAttr::V_volume_z1
+  PhysAttr::V_volume_x2
+  PhysAttr::V_volume_y2
+  PhysAttr::V_volume_z2
+END_NEWATTRDEF::AttrVVolume
+
+NEWATTRDEF::instance_ID
+  PhysAttr::V_instance_ID
+END_NEWATTRDEF::instance_ID
+
+NEWATTRDEF::SpatialLocation
+  PhysAttr::V_SpatialLocation
+END_NEWATTRDEF::SpatialLocation
+
+NEWATTRDEF::HostID
+  PhysAttr::V_HostID
+END_NEWATTRDEF::HostID
+
+NEWATTRDEF::BatchID
+  PhysAttr::V_BatchID
+END_NEWATTRDEF::BatchID
+
+NEWATTRDEF::SimObj_CategoryType
+  PhysAttr::V_SimObj_CategoryType
+END_NEWATTRDEF::SimObj_CategoryType
+
+NEWATTRDEF::Internal_NonCatiaDocMimeType
+  PhysAttr::Internal_NonCatiaDocMimeType
+END_NEWATTRDEF::Internal_NonCatiaDocMimeType
+
+NEWATTRDEF::PrimaryMimetype
+  PhysAttr::V_PrimaryMimetype
+END_NEWATTRDEF::PrimaryMimetype
+
+NEWATTRDEF::BriefcaseStatus
+  PhysAttr::V_BriefcaseStatus
+END_NEWATTRDEF::BriefcaseStatus
+
+NEWATTRDEF::progress
+  PhysAttr::V_progress
+END_NEWATTRDEF::progress
+
+NEWATTRDEF::ENOCLG_LibraryReference
+  PhysAttr::V_description
+  PhysAttr::V_usage
+  PhysAttr::organization
+  PhysAttr::project
+  PhysAttr::current
+  PhysAttr::V_AuthoringProfile
+  PhysAttr::V_isVPLMControlled
+END_NEWATTRDEF::ENOCLG_LibraryReference
+
+NEWATTRDEF::ENOCLG_ClassReference
+  PhysAttr::V_description
+  PhysAttr::V_usage
+  PhysAttr::organization
+  PhysAttr::project
+  PhysAttr::current
+  PhysAttr::V_AuthoringProfile
+  PhysAttr::V_isVPLMControlled
+  PhysAttr::V_HasDescriptions
+  PhysAttr::V_NbItems
+END_NEWATTRDEF::ENOCLG_ClassReference
+
+NEWATTRDEF::ENOCLG_Item
+  PhysAttr::organization
+  PhysAttr::V_ComponentType
+END_NEWATTRDEF::ENOCLG_Item
+
+NEWATTRDEF::PPR_BSF
+  PhysAttr::isbestsofar
+  PhysAttr::minororder
+  PhysAttr::ispublished
+END_NEWATTRDEF::PPR_BSF
+
+NEWATTRDEF::PathDirection
+  PhysAttr::V_PathDirection
+END_NEWATTRDEF::PathDirection
+
+NEWATTRDEF::WorkspaceID
+  PhysAttr::workspaceid
+END_NEWATTRDEF::WorkspaceID
+
+//===============================
+// Attributes definitions for CBP
+//===============================
+
+NEWATTRDEF::NavigateBPC
+  CATPLMMask::CATPLMMaskTree
+  SpAttr::ReservedBy
+  SpAttr::IsReserved
+  SpAttr::StrongRelations
+  SpAttr::ListIdentifiers
+END_NEWATTRDEF::NavigateBPC
+
+//==============================================
+// Common attributes definitions to IRPC and CBP
+//==============================================
+
+NEWATTRDEF::NavigateSortingOrder
+  SpAttr::SortingOrder
+END_NEWATTRDEF::NavigateSortingOrder
+
+//=================================================
+// Set the Attribute definitions for each IRPC type 
+//=================================================
+
+NEWTYPEDEF::PLMEntity
+  AttrDefName::NavigatePLMEntity
+  AttrDefName::WorkspaceID
+END_NEWTYPEDEF::PLMEntity
+
+NEWTYPEDEF::PLMInstance
+  AttrDefName::NavigateSortingOrder
+  AttrDefName::NavigatePLMEntity
+  AttrDefName::WorkspaceID
+END_NEWTYPEDEF::PLMInstance
+
+NEWTYPEDEF::PLMReference
+  AttrDefName::AttrVUsage
+END_NEWTYPEDEF::PLMReference
+
+NEWTYPEDEF::PLMCoreRepReference
+  AttrDefName::AttrOnceInstanciable
+  AttrDefName::AttrVNature
+  AttrDefName::SDs
+END_NEWTYPEDEF::PLMCoreRepReference
+
+NEWTYPEDEF::PLMConnection
+  AttrDefName::SRs
+END_NEWTYPEDEF::PLMConnection
+
+NEWTYPEDEF::VPMPort
+  AttrDefName::SRs
+END_NEWTYPEDEF::VPMPort
+
+NEWTYPEDEF::VPMInstance
+  AttrDefName::AttrVMatrix
+END_NEWTYPEDEF::VPMInstance
+
+NEWTYPEDEF::VPMDECInstance
+  AttrDefName::instance_ID
+  AttrDefName::SpatialLocation
+END_NEWTYPEDEF::VPMDECInstance
+
+NEWTYPEDEF::ENOCLG_Item
+  AttrDefName::ENOCLG_Item
+END_NEWTYPEDEF::ENOCLG_Item
+
+NEWTYPEDEF::ENOCLG_ClassReference
+  AttrDefName::ENOCLG_ClassReference
+END_NEWTYPEDEF::ENOCLG_ClassReference
+
+NEWTYPEDEF::ENOCLG_LibraryReference
+  AttrDefName::ENOCLG_LibraryReference
+END_NEWTYPEDEF::ENOCLG_LibraryReference
+
+NEWTYPEDEF::PLMTaskCollab
+  AttrDefName::progress
+END_NEWTYPEDEF::PLMTaskCollab
+
+NEWTYPEDEF::PLMTaskChildCollab
+  AttrDefName::progress
+END_NEWTYPEDEF::PLMTaskChildCollab
+
+NEWTYPEDEF::PLMCCDBriefcaseRepInst
+  AttrDefName::BriefcaseStatus
+END_NEWTYPEDEF::PLMCCDBriefcaseRepInst
+
+NEWTYPEDEF::PLMDMTDocument
+  AttrDefName::PrimaryMimetype
+END_NEWTYPEDEF::PLMDMTDocument
+
+NEWTYPEDEF::PLMELDRepReference
+  AttrDefName::Internal_NonCatiaDocMimeType
+END_NEWTYPEDEF::PLMELDRepReference
+
+NEWTYPEDEF::DELFmiFunctionInstance
+  AttrDefName::instance_ID
+END_NEWTYPEDEF::DELFmiFunctionInstance
+
+NEWTYPEDEF::DELFmiFunctionReference
+  AttrDefName::PPR_BSF
+END_NEWTYPEDEF::DELFmiFunctionReference
+
+NEWTYPEDEF::SIMObjSimulationCategoryReference
+  AttrDefName::SimObj_CategoryType
+END_NEWTYPEDEF::SIMObjSimulationCategoryReference
+
+NEWTYPEDEF::SIMObjSimulationObjectGeneric
+  AttrDefName::HostID
+  AttrDefName::BatchID
+END_NEWTYPEDEF::SIMObjSimulationObjectGeneric
+
+NEWTYPEDEF::DELLmiProdSystemIOPort
+  AttrDefName::PathDirection
+END_NEWTYPEDEF::DELLmiProdSystemIOPort
+
+NEWTYPEDEF::CATMCXMechanicalConnection
+  AttrDefName::WorkspaceID
+END_NEWTYPEDEF::CATMCXMechanicalConnection
+
+//=================================================
+// Set the Attribute definitions for each CBP type 
+//=================================================
+
+NEWTYPEDEF::BusinessType
+  AttrDefName::NavigateBPC
+  AttrDefName::SDs
+END_NEWTYPEDEF::BusinessType
+
+NEWTYPEDEF::RelationType
+  AttrDefName::NavigateBPC
+  AttrDefName::NavigateSortingOrder
+END_NEWTYPEDEF::RelationType
+

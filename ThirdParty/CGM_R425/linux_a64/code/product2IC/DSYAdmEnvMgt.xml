@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IC xmlns="http://DSYV6Install.3ds.com/XMLSchema">
+  <Add insTypeCond="CODE">
+    <PathVariable name="Path_Catenv" value="^e(TARGET_PATH)/CATEnv" createNonExistingDir="true"  setType="fixed"  type="dir" checkExistence="false"/>
+    <CreateDirAction id="CreatePathCatenv" targetDir="Path_Catenv"/>
+    <!--Creation environment file Env.txt in DIR_INSTALL\CATEnv-->
+    <TextVariable name="ArgsDsyEnvMgt" doNotShow="true" setType="fixed" value="-create -d INSTALL -type ^it(id)" type="normal"/>
+    <LaunchAppAction exe="^e(TARGET_PATH)\|{CUR_OS}|\code\bin\DSYEnvMgt" arguments='^e(ArgsDsyEnvMgt)' wait="true" id="EnvCreation" msgCatalog="Inst_Administration">
+      <setenv key="LIBPATH" value="^e(TARGET_PATH)/|{CUR_OS}|/code/bin"/>
+      <setenv key="LD_LIBRARY_PATH" value="^e(TARGET_PATH)/|{CUR_OS}|/code/bin"/>
+      <setenv key="LD_LIBRARYN32_PATH" value="^e(TARGET_PATH)/|{CUR_OS}|/code/bin"/>
+      <setenv key="DYLD_LIBRARY_PATH" value="^e(TARGET_PATH)/|{CUR_OS}|/code/bin"/>
+      <setenv key="CATReffilesPath" value=""/>
+      <setenv key="CATInstallPath" value=""/>
+      <ReturnCode neq="0" msgKey="EnvCreationFailed" type="fail">
+        <Param value="SPE_RC"/>
+        <Param value="SPE_OUT"/>
+        <Button action="ok"/>
+      </ReturnCode>
+    </LaunchAppAction>
+
+ 
+    <DeleteFileAction name="CATEnv\Env.txt" id="EnvDeletion" whenFirstInstall="never" whenDelete="atTheEnd" type="file" whenAdditional="never" whenUpgrade="never" actPathDoesNotExist="notAnError"/>
+    <DeleteFileAction name="SetupEnv.log" id="del_SetupEnvLog" whenFirstInstall="never" whenDelete="atTheEnd" type="file" whenAdditional="never" whenUpgrade="never" actPathDoesNotExist="notAnError"/>
+  </Add>
+
+  <Add osCond="UNIX">
+    <DeleteFileAction name="CATEnv/Env.sh" id="EnvShDeletion" whenFirstInstall="never" whenDelete="atTheEnd" type="file" whenAdditional="never" whenUpgrade="never"/>
+  </Add>
+
+</IC>

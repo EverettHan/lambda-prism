@@ -1,0 +1,76 @@
+<meta charset="UTF-8"/>
+// COPYRIGHT DASSAULT SYSTEMES 2007
+
+// VSTA Warnings
+VSTANotActivatedMissingDLL = "VSTA is not activated on this machine since CATVSTAIntegration.dll cannot be found in the concatenation (check CATDLLPath in the environment).";
+
+VSTANotActivatedMissingReg = "VSTA is not activated on this machine (registry check).";
+
+VSTAIDENotAvailable = "VSTA IDE is not available since it is not installed on this machine (registry check).";
+
+// VSTA Errors
+
+VSTAGetInternalPIAsFailed = "Cannot retrieve the list of internal PIAs.";
+
+VSTAMscoreeLoadFailed = "Cannot load mscoree DLL.";
+
+VSTALoadLibraryShimGetProcAddressFailed = "Cannot get address of LoadLibraryShim function inside mscoree DLL.";
+
+VSTAFusionLoadFailed = "Cannot load fusion DLL.";
+
+VSTACreateAssemblyCacheGetProcAddressFailed = "Cannot get address of CreateAssemblyCache function inside fusion DLL.";
+
+VSTACreateAssemblyCacheFailed = "Cannot create an assembly cache.";
+
+VSTAInstallAssemblyFailed = "Cannot install a PIA.";
+
+VSTAMissingProjectTemplatesDir = "Project templates directory not found.";
+
+VSTAMissingCSharpProjectTemplate = "C# project template not found.";
+
+VSTAMissingVBNETProjectTemplate = "VB.NET project template not found.";
+
+VSTAMissingExecutable = "Cannot find VSTA executable.";
+
+VSTARegistryCompromised = "VSTA registry entries compromised.";
+
+VSTACannotCreateRegKey = "Cannot create one of VSTA needed registry keys.";
+
+VSTAHostIDSetupFailed = "vsta.exe /HostID CATIA /setup has failed.";
+
+VSTAIPHRegFailed = "In-Process Host registration has failed.";
+
+VSTACreateAssemblyNameObjectGetProcAddressFailed = "Cannot get address of CreateAssemblyNameObject function inside fusion DLL.";
+
+VSTACreateAssemblyNameObjectFailed = "Cannot create an assembly name object.";
+
+VSTACreateAssemblyEnumGetProcAddressFailed = "Cannot get address of CreateAssemblyEnum function inside fusion DLL.";
+
+VSTACreateAssemblyEnumFailed = "Cannot create an assembly enum.";
+
+VSTAGetAssemblyVersion = "Failed to retrieve the PIA's version.";
+
+VSTAGetDisplayNameFailed = "Cannot get display name of a PIA.";
+
+VSTAUninstallAssemblyFailed = "Cannot uninstall a PIA.";
+
+VSTAOpenExtractBuildZipFailed = "Cannot open or extract or build one of VSTA add-in zip files.";
+
+VSTAReadWriteProjectFailed = "Cannot read or write one of VSTA add-in project files.";
+
+VSTACreateTempDirFailed = "Cannot create one of VSTA needed temporary directories.";
+
+VSTAAppTypeLibProxyInPipelingFailed = "VSTA pipeline registering (AddInUtil.exe) of CATIAAppTypeLibProxy.dll has failed.";
+VSTAAppTypeLibProxyInPipelingSucceeded = "VSTA pipeline registering (AddInUtil.exe) of CATIAAppTypeLibProxy.dll has succeeded.";
+
+
+VSTAAppRegAsmOfVSTAIntegrationFailed = "RegAsm.exe of CATVSTAIntegration.dll has failed.";
+VSTAAppRegAsmOfVSTAIntegrationSucceeded = "RegAsm.exe of CATVSTAIntegration.dll  has succeeded.";
+
+// VSTA Reg/UnReg Success
+VSTARegSuccess = "Successfully registered CATIA as a VSTA host.";
+VSTAUnRegSuccess = "Successfully unregistered CATIA as a VSTA host.";
+
+// VSTA Reg/UnReg Success
+VSTARegFailed = "In-Process Host registration has failed.";
+VSTAUnRegFailed = "In-Process Host unregistration has failed.";

@@ -1,0 +1,70 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of Components concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each component 
+// This parameter has to be documented
+
+GenericMediatorErrorWithCompo.Diagnostic="Impossible d'ouvrir le composant [/p1]";
+GenericMediatorErrorWithCompo.Advice="Impossible d'ouvrir le composant /p1.\nRedémarrez le processus.\nActivez les statistiques du journal d'erreurs pour aider votre administrateur à résoudre ce problème.\nEssayez d'exécuter le vérificateur de composants.";
+
+GenericMediatorError.Diagnostic="Une erreur inattendue s'est produite lors de la création de la session.";
+GenericMediatorError.Advice="Il est vivement conseillé de redémarrer le processus. Vous pouvez essayer d'exécuter le vérificateur de composants.";
+
+BulkSessionManagementIntegrityFailure.Diagnostic="Une erreur inattendue s'est produite lors de la création de la session. Impossible de garantir l'intégrité de la session.";
+BulkSessionManagementIntegrityFailure.Advice="Redémarrez le processus.\nLes composants d'intégrité pourraient être inaccessibles sur le serveur. Vérifiez les règles P et O sur votre serveur et contactez votre administrateur.";
+
+//Copy-pasted from PLM_NotRetrievedComponent@PLMServerActionErrors.CATNls
+ComponentUnavailabilityInDatabase.Diagnostic="Le composant n'a pas pu être interrogé à partir de la base de données.";
+ComponentUnavailabilityInDatabase.Advice="Il se peut que le composant n'existe plus ou que sa stratégie de sécurité vous empêche de le lire.";
+
+AnotherMinorInSession.Diagnostic="/p : une autre version mineure provenant de la même famille de versions majeures est présente dans la session et empêche ainsi toute ouverture";
+AnotherMinorInSession.Advice="Décharger la version mineure pour effectuer l'ouverture";
+
+AnotherMinorInInput.Diagnostic="/p : Une autre version mineure provenant de la même famille de versions majeures est présente dans la session et empêche ainsi toute ouverture";
+AnotherMinorInInput.Advice="Prenez contact avec votre administrateur local";
+
+ConcurrencyInSessionOfflineContent.Diagnostic="/p : cet élément a été modifié dans le contenu hors ligne et dans la session.";
+ConcurrencyInSessionOfflineContent.Advice="Certains éléments dans un état différent sont déjà chargés dans la session.\n Fermez les onglets qui les contiennent avant d'ouvrir le contenu hors ligne.";
+
+NoElement.Diagnostic="Aucun élément envoyé au moteur d'ouverture";
+NoElement.Advice="Vérifiez la disponibilité des données sur le serveur";
+
+NoEltToOpen.Diagnostic="Tous les composants répertoriés pour l'ouverture sont déjà chargés dans la session mais il se peut que les données ne soient pas à jour. Aucune actualisation n'est effectuée à l'ouverture";
+NoEltToOpen.Advice="Pour charger la dernière mise à jour, vous devez d'abord fermer la session de création actuelle.";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+AdapterCom.Diagnostic="Problème survenu lors de la tentative de récupération des informations figurant sur le serveur";
+AdapterCom="La connexion avec le serveur est peut-être hors service";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// (correspond a une err systeme, donc a un abend)
+Internal.Diagnostic="Erreur interne du moteur d'ouverture";
+Internal.Advice="Prenez contact avec votre administrateur local";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+MessageStructure.Diagnostic="Les données récupérées sur le serveur  ne sont pas cohérentes";
+MessageStructure.Advice="Les données décrivant un composant peuvent être incomplètes";
+
+AlreadyOpened_F_0.Diagnostic="/p Les composants répertoriés pour l'ouverture sont déjà dans la session mais il se peut que les données ne soient pas à jour. Aucune actualisation n'est effectuée à l'ouverture";
+AlreadyOpened_F_0.Advice="Pour charger la dernière mise à jour, vous devez d'abord fermer la session de création actuelle.";
+
+UnstreamPb.Diagnostic="Un ou plusieurs flux de données n'ont pas pu être chargés";
+UnstreamPb.Advice="Veuillez vérifier l'état de votre coffre-fort";
+
+FactoryNotFound.Diagnostic="Un composant de type /p n'a pas pu être créé dans la session en raison d'une fabrique manquante.";
+FactoryNotFound.Advice="Contactez votre administrateur : il se peut qu'un module ou des licences manquent pour le type /p.";
+
+ReentranceForbidden.Diagnostic="Impossible d'exécuter une nouvelle opération '/p1' maintenant, car une autre opération est en cours.";
+ReentranceForbidden.Advice="Contactez l'assistance technique.";

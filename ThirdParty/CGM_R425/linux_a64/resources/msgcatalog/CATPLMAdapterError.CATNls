@@ -1,0 +1,36 @@
+PLMADAPTER_ERR_CONNECT_0001.Request    = "Connection to Provider /p1.";
+PLMADAPTER_ERR_CONNECT_0001.Diagnostic = "Wrong Connection parameters. Error:/p2";
+PLMADAPTER_ERR_CONNECT_0001.Advice     = "Check your credentials.";
+
+PLMADAPTER_ERR_CONNECT_PARAMNOTFOUND_0002.Request    = "Connection to Provider /p1.";
+PLMADAPTER_ERR_CONNECT_PARAMNOTFOUND_0002.Diagnostic = "Parameter [/p2] not found.";
+PLMADAPTER_ERR_CONNECT_PARAMNOTFOUND_0002.Advice     = "Check your credentials.";
+
+PLMADAPTER_ERR_CMD_SRVUNAVAILABLE_0003.Request    = "Command execution failed on Provider /p1.";
+PLMADAPTER_ERR_CMD_SRVUNAVAILABLE_0003.Diagnostic = "Unable to contact the requested server.";
+PLMADAPTER_ERR_CMD_SRVUNAVAILABLE_0003.Advice     = "Contact the servers administrator.";
+
+PLMADAPTER_ERR_BAD_INPUT_0004.Request    = "Input element invalid.";
+PLMADAPTER_ERR_BAD_INPUT_0004.Diagnostic = "An element used as an input for a command is invalid.";
+PLMADAPTER_ERR_BAD_INPUT_0004.Advice     = "Check the input of the command.";
+
+PLMADAPTER_WARN_ELEMNOTFOUND_0001.Request    = "Element not found.";
+PLMADAPTER_WARN_ELEMNOTFOUND_0001.Diagnostic = "Some Components were not found in the Persistency repository.";
+PLMADAPTER_WARN_ELEMNOTFOUND_0001.Advice     = "Check your Persistency repository content before querying for Components.";
+
+PLMADAPTER_WARN_NO_EXPAND_ON_ROOT_WITH_INVALID_CTX.Request    = "Root with invalid context.";
+PLMADAPTER_WARN_NO_EXPAND_ON_ROOT_WITH_INVALID_CTX.Diagnostic = "Some elements of the context have been deleted or cannot be accessed.";
+PLMADAPTER_WARN_NO_EXPAND_ON_ROOT_WITH_INVALID_CTX.Advice     = "Check that elements of the context are still valid.";
+
+PLMADAPTER_WARN_ELEM_NOTFOUND_ON_EXPAND.Request    = "Element not found.";
+PLMADAPTER_WARN_ELEM_NOTFOUND_ON_EXPAND.Diagnostic = "Some Components were not found in the Persistency repository on an expand request.";
+PLMADAPTER_WARN_ELEM_NOTFOUND_ON_EXPAND.Advice     = "The element may have been deleted by another user.";
+
+
+PLMADAPTER_WARN_QUERY_PARTIAL_FAILURE_0001.Request    = "A sub part of the query failed. Results may be questionable";
+PLMADAPTER_WARN_QUERY_PARTIAL_FAILURE_0001.Diagnostic = "While the query is globaly successful, a sub part of the query failed.\nIt may be due to a faulty server if you are connected to many server at the same time.\nThe results may be questionable.";
+PLMADAPTER_WARN_QUERY_PARTIAL_FAILURE_0001.Advice     = "Contact the servers administrator.";
+
+PLMADAPTER_ERR_PROCEDURE.Request    = "Connection to Provider";
+PLMADAPTER_ERR_PROCEDURE.Diagnostic = "Adequate version of procedure /p1 not found";
+PLMADAPTER_ERR_PROCEDURE.Advice     = "Use another provider";

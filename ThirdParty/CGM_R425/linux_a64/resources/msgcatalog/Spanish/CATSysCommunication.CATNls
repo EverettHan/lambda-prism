@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="No se puede encontrar el puerto /p1 en el host /p2 .";
+CATSysComPortFailure_150002.Request="No se puede declarar en el puerto /p1 en el host /p2.";
+CATSysComPortAcceptFailed_150003.Request="No se puede aceptar el puerto /p1.";
+CATSysComPortAcceptFailed_150004.Request="Se produjo un error durante la espera del puerto /p1.";
+CATSysComInitSocketError_150102.Request="Se produjo un error en el funcionamiento del socket. Es posible que se haya perdido la conexión con la red troncal.";
+CATSysComSendSocketError_150103.Request="Se produjo un error en una operación de envío del socket. Es posible que se haya perdido la conexión con la red troncal.";
+CATSysComRecvSocketError_150104.Request="Se produjo un error en una operación de recepción del socket. Es posible que se haya perdido la conexión con la red troncal.";
+CATSysComMsgClassError_151001.Request="No se encontró la clase de mensaje \p1.";
+CATSysComMsgStreamError_151002.Request="Se produjo un error durante la transmisión por secuencias de datos de clase \p1.";
+CATSysComMsgUnstreamError_151003.Request="Se produjo un error durante la cancelación de la transmisión por secuencias de datos de clase \p1.";
+CATSysComMsgClassInvalid_152001.Request="La clase de mensaje \p1 debe implementar CATIStreamMsg.";
+CATSysComMsgClassInvalid_152002.Request="La clase de mensaje \p1 debe implementar CATICommMsg.";
+CATSysComMsgInvalid_152003.Request="El mensaje no necesita una respuesta.";
+CATSysComInstanciationError_152004.Request="No se puede crear una instancia del objeto de mensaje de clase \p1.";
+CATSysComReentranceError_152005.Request="Error interno: Se encontró un estado de repetición de entrada.";
+CATSysComTimeoutOccurred_152006.Request="Se agotó un tiempo de espera.";
+CATSysComApplicationNotFound_152007.Request="La aplicación de destino \p1 no está presente.";

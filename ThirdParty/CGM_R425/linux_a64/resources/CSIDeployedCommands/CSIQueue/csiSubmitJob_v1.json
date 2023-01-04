@@ -1,0 +1,25 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Submit a job",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "jobId",
+          "basic": "string"
+        }
+      ]
+    },
+    "out": {}
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

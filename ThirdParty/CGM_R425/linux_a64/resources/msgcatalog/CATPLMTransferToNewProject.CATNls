@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+TTNP_Dirty.Diagnostic = "Cannot process /p1 because it needs to be saved";
+TTNP_Dirty.Advice = "Save modifications";
+
+TTNP_Light.Diagnostic = "Cannot process /p1 because it is not fully loaded";
+TTNP_Light.Advice = "Open /p1";
+
+TTNP_NoProject.Diagnostic = "Cannot retrieve collaborative space of /p1";
+TTNP_NoProject.Advice = "";
+
+TTNP_CurrentProject.Diagnostic = "Cannot process /p1 because it belongs to current collaborative space";
+TTNP_CurrentProject.Advice = "Check selection";
+
+TTNP_MutipleProjects.Diagnostic = "Cannot handle several collaborative spaces: /p1 and /p2";
+TTNP_MutipleProjects.Advice = "Check selection";
+
+TTNP_Parent.Diagnostic = "Cannot process /p1 without its parent /p2";
+TTNP_Parent.Advice = "Add /p1 to the selection or unload it";
+
+TTNP_Child.Diagnostic = "Cannot process /p1 because its child /p2 belongs to another collaborative space";
+TTNP_Child.Advice = "Check structure";
+
+TTNP_ParentAlreadyCloned.Diagnostic = "Cannot process /p1 because its parent /p2 has already been cloned";
+TTNP_ParentAlreadyCloned.Advice = "Launch the operation in a window containing the clone of /p1";
+
+TTNP_ChildLost.Diagnostic = "Cannot process /p1 because it has been created after cloning of its parent /p2";
+TTNP_ChildLost.Advice = "";
+
+TTNP_PointingOutsideScope.Diagnostic = "Cannot process /p1 because it is referenced by /p2 which has not been created through cloning process";
+TTNP_PointingOutsideScope.Advice = "Unload /p1 or launch the operation in a session where it is not opened.\nNotice that server will not reroute /p1 to the clone of /p2";
+
+TTNP_QueryMapping.Diagnostic = "Mapping table query failed";
+TTNP_QueryMapping.Advice = "Contact support";
+
+TTNP_QueryAttributes.Diagnostic = "Failed to retrieve attributes from server";
+TTNP_QueryAttributes.Advice = "Contact support";
+
+TTNP_Open.Diagnostic = "Failed to open data already cloned in /p1";
+TTNP_Open.Advice = "Check subsequent error messages. Contact support";
+
+TTNP_NothingToDo.Diagnostic = "All objects have already been cloned";
+TTNP_NothingToDo.Advice = "Open cloned structure";
+
+TTNP_ServerFork.Diagnostic = "Server-side cloning operation failed";
+TTNP_ServerFork.Advice = "Check subsequent error messages. Close window";
+
+TTNP_CannotStartTask.Diagnostic = "Server-side cloning operation could not be started";
+TTNP_CannotStartTask.Advice = "Close window";
+
+TTNP_RefreshSessionMessage = "Refresh the session (press F5) to make server and your session consistent";
+
+TTNP_MissingForkRecord.Diagnostic = "Duplication has completed successfully but /p1 has not been cloned on server";
+TTNP_MissingForkRecord.Advice = "A possible explanation could be that it has been deleted.\nClose window and open cloned data";
+
+TTNP_MissingForkImpactRecord.Diagnostic = "Duplication has completed successfully but /p1 has not been rerouted on server";
+TTNP_MissingForkImpactRecord.Advice  = "A possible explanation could be that it has been deleted.\n/p1";
+
+TTNP_MissedImpact.Diagnostic = "Duplication has completed successfully but /p1 has not been rerouted in session";
+TTNP_MissedImpact.Advice  = "A possible explanation could be that it has been opened after start of cloning.\n/p1";
+
+TTNP_ConcurrentModification.Diagnostic = "Duplication has completed successfully but a concurrent modification has been detected on /p1";
+TTNP_ConcurrentModification.Advice = "/p1";
+
+TTNP_Internal1.Diagnostic = "An internal error has occured while processing /p1";
+TTNP_Internal1.Advice  = "Contact support (/p1)";
+
+TTNP_Internal2.Diagnostic = "An internal error has occured";
+TTNP_Internal2.Advice  = "Contact support (/p1)";
+
+TTNP_SessionPreview.Diagnostic = "Session preview could not be generated";
+TTNP_SessionPreview.Advice = "Check error log";

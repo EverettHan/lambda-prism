@@ -1,0 +1,72 @@
+<meta charset="UTF-8"/>
+DELExecTimeConstraintModel="Ограничения по времени выполнения";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation="Взаимосвязь ограничений по времени выполнения";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType="Тип зависимости";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.FinishToStart="Финиш-старт";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.StartToStart="Старт-старт";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DependencyType.FinishToFinish="Финиш-финиш";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_Delay="Задержка";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_MaterialNeed="Потребность в материалах";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_OptionalTimeConstraint="Дополнительно";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.PLM_ExternalID="Заголовок";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_IsActive="Активный";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode="Режим задержки";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.MinDelay="Минимальная задержка";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.MaxDelay="Максимальная задержка";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_DelayMode.Range.Equal.Synchro="Синхронизация";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint="Ограничение ресурса";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.None="Нет";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.SameResources="Одни и те же ресурсы";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.SameResourcesWithReservation="Те же ресурсы с резервированием";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintRelation.V_ResourceConstraint.Range.Equal.DifferentResources="Различные ресурсы";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintCategoryAbstract="Абстрактная категория";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintCategoryAbstract.V_ExecutionReturnCode="Код причины";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintFailed="Сбой";
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintFailed.V_MaximumRetries="Максимальное количество попыток";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintAlternative="Альтернативный";
+
+DELExecTimeConstraintModel.DELLmiExecTimeConstraintScrapped="Списано";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract="Абстрактное количество перекрытий";
+DELExecTimeConstraintModel.DELExecLmiTCOverlapQty_Abstract.V_OverlapQuantityMode="Код возврата выполнения";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MinQuantity="Минимальное количество";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MaxQuantity="Максимальное количество";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.Synchro="Синхронизация";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Each="Количество перекрытий для каждого";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Each.V_OverlapQty="Количество перекрытий";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Area="Количество перекрытий для площади";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Area.V_OverlapQty="Количество перекрытий";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Length="Количество перекрытий для длины";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Length.V_OverlapQty="Количество перекрытий";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Weight="Количество перекрытий для веса";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Weight.V_OverlapQty="Количество перекрытий";
+
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Volume="Количество перекрытий для объема";
+DELExecTimeConstraintModel.DELLmiExecTCOverlapQty_Volume.V_OverlapQty="Количество перекрытий";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Abstract="Абстрактное количество передач";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Abstract.V_Order="Порядок";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Each="Количество передач для каждого";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Each.V_TransferQty="Количество завершенных передач";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Area="Количество передач для площади";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Area.V_TransferQty="Количество завершенных передач";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Length="Количество передач для длины";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Length.V_TransferQty="Количество завершенных передач";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Weight="Количество передач для веса";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Weight.V_TransferQty="Количество завершенных передач";
+
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Volume="Количество передач для объема";
+DELExecTimeConstraintModel.DELLmiExecTCTransferQty_Volume.V_TransferQty="Количество завершенных передач";

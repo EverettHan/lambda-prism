@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbCbLightsWithProfile</NAME>
+
+  <!--To Check-->
+  <USAGE>Stream</USAGE>
+
+	<!-- Lights count disabled because there is a shader option instead -->
+  <!--UNIFORM>
+    <NAME>Count</NAME>    
+    <TYPE>int</TYPE>
+    <SEMANTIC>ProfileLightCount</SEMANTIC>
+  </UNIFORM-->
+
+  <UNIFORM>
+    <NAME>WorldMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Profile.WorldMatrix</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>Color</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Profile.Color</SEMANTIC>
+  </UNIFORM>
+
+	<UNIFORM>
+    <NAME>PowerFactor</NAME>
+    <TYPE>float</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Profile.PowerFactor</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>MapIndex</NAME>
+    <TYPE>int</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Profile.MapIndex</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

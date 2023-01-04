@@ -1,0 +1,213 @@
+<meta charset="UTF-8"/>
+//----------------------------------------------------------
+// Main Window
+Title=" 環境エディター";
+//***************************************
+//*      Menu Bar                       *
+//***************************************
+MenuBar.MenuFile.Title=" 環境";
+MenuBar.MenuFile.ItemCreate.Title="新規作成 ";
+MenuBar.MenuFile.ItemCreateFrom.Title="既存から新規作成 ...";
+MenuBar.MenuFile.ItemDelete.Title="削除 ";
+MenuBar.MenuFile.ItemEdit.Title="編集 ";
+MenuBar.MenuFile.ItemSortByDate.Title="日付順ソート";
+MenuBar.MenuFile.ItemSortByMode.Title="モード順ソート";
+MenuBar.MenuFile.ItemSortByName.Title="名前順ソート";
+MenuBar.MenuFile.ItemExit.Title="終了";
+//
+MenuBar.MenuOptions.Title=" オプション";
+MenuBar.MenuHelp.Title=" ヘルプ";
+MenuBar.MenuHelp.ItemHelp.Title=" ヘルプ";
+MenuBar.MenuOptions.ItemSetUserDir.Title="ユーザー格納ディレクトリをセット";
+MenuBar.MenuOptions.ItemSetGlobalDir.Title="グローバル格納ディレクトリをセット";
+//
+//
+//***************************************
+//*      Environment Frame      *
+//***************************************
+main.FrEnv.TxtListEnv.Title=" 環境";
+LstEnv.NameTitle=" 名前";
+LstEnv.ModeTitle=" モード";
+LstEnv.PathTitle=" パス";
+LstEnv.DateTitle=" 更新日時";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemCreate.Title="新規作成 ";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemCreateFrom.Title="既存から新規作成 ...";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemDelete.Title="削除 ";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemEdit.Title="編集 ";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemSortByDate.Title="日付順ソート";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemSortByMode.Title="モード順ソート";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemSortByName.Title="名前順ソート";
+
+main.ItemSplitter.FrVar.CtxMnuVar.ItemVarCreate.Title="新規変数";
+main.ItemSplitter.FrVar.CtxMnuVar.ItemVarEdit.Title="変数を編集 ";
+main.ItemSplitter.FrVar.CtxMnuVar.ItemVarDelete.Title="変数を削除";
+main.ItemSplitter.FrVar.CtxMnuVar.ItemSaveModif.Title="保存";
+
+FrInfo.Title=" 環境格納ディレクトリ";
+FrInfo.GlobalDirectoryText.Title=" グローバル環境: ";
+FrInfo.UserDirectoryText.Title=" ユーザー環境: ";
+FrInfo.CtxMnuInfo.ItemSetUserDir.Title="ユーザー格納ディレクトリをセット";
+FrInfo.CtxMnuInfo.ItemSetGlobalDir.Title="グローバル格納ディレクトリをセット";
+
+Popup.Title=" 環境エディター メッセージ";
+//
+//
+//***************************************
+//*      Variables Frame      *
+//***************************************
+main.FrVar.TxtListVar.Title=" 環境変数";
+LstVar.NameTitle=" 名前";
+LstVar.ValueTitle=" 値";
+LstVar.CommentTitle=" コメント";
+//
+//
+//***************************************
+//*      Variable Edit Frame      *
+//***************************************
+main.FrVar.FrEdt.Key.Title=" 名前:   ";
+main.FrVar.FrEdt.Value.Title=" 値:   ";
+main.FrVar.FrEdt.ModVar.Title=" 修正 ";
+//
+//***************************************
+//*      New Environment Window         *
+//***************************************
+Create.Title=" 新規の環境";
+Create.Name.Title=" 名前: ";
+Create.Path.Title=" インストール パス: ";
+Create.Mode.Title=" モード: ";
+Create.Prod.Title=" 製品ライン: ";
+Create.CopyFrom.Title=" 次から作成:";
+Create.CbRepresentation.Title=" デスクトップ アイコンの追加";
+Create.CbDesktopIcon.Title=" デスクトップ アイコンの追加";
+Create.CbMenuIcon.Title=" [スタート] メニューにショートカットを追加";
+Create.CbServer.Title=" サーバー";
+Create.CbDeleteOld.Title=" 既存の環境に上書き";
+Create.BOK=" OK";
+Create.BCancel=" キャンセル";
+Create.UserMode.Text=" ユーザー";
+Create.GlobalMode.Text=" グローバル";
+Create.SelectUserDir.Text=" 環境を選択してください";
+Create.DefaultName.Text="Env001";
+Create.DefaultPath.Text=" インストール パス";
+Create.EnvList_Label.Text=" 環境タイプ: ";
+//***************************************
+//*      New Environment From Window         *
+//***************************************
+CreateFrom.Title="/P1 から環境を作成";
+CreateFrom.Name.Title="名前: ";
+CreateFrom.Path.Title="インストール パス: ";
+CreateFrom.Mode.Title="モード: ";
+CreateFrom.Prod.Title="製品ライン: ";
+CreateFrom.CbRepresentation.Title="デスクトップ アイコンの追加";
+CreateFrom.CbDesktopIcon.Title="デスクトップ ショートカットを追加";
+CreateFrom.CbMenuIcon.Title=" [スタート] メニューにショートカットを追加";
+CreateFrom.CbDeleteOld.Title="既存の環境に上書き";
+CreateFrom.BOK="OK";
+CreateFrom.BCancel="キャンセル";
+CreateFrom.UserMode.Text="ユーザー";
+CreateFrom.GlobalMode.Text="グローバル";
+CreateFrom.DefaultName.Text="Env001";
+CreateFrom.DefaultPath.Text="インストール パス";
+CreateFrom.EnvList_Label.Text="環境タイプ: ";
+CreateFrom.CopyOf.Text="Copy_of_";
+CreateFrom.RBFrame.RBBefore.Title="インストール パスの前に新規のパスを挿入";
+CreateFrom.RBFrame.RBAfter.Title="インストール パスの前に新規のパスを追加";
+CreateFrom.AddNewPath.Title="この環境に新規パスを追加 :";
+CreateFrom.NewPath.Title="新規パス :";
+//
+//***************************************
+//*      Variable Window          *
+//***************************************
+ModifyVar.Title="変数エディター";
+ModifyVar.Name.Title="名前:     ";
+ModifyVar.Value.Title="値:    ";
+ModifyVar.Comment.Title="コメント:  ";
+ModifyVar.NoEmptyName.Text="変数名を指定する必要があります。";
+ModifyVar.NoEnvToModify.Text="環境を取得できません!";
+ModifyVar.PopupTitle="環境エディター メッセージ";
+//
+//***************************************
+//*      Error and warning messages     *
+//***************************************
+AdminWarning.Text=" 警告: 管理者として、グローバル環境を作成、修正、および削除できます";
+AskDefaultEnv.Text=" この環境は CATIAENV により使用されています。\n修正しますか ?";
+AskDeleteDefaultEnv.Text=" この環境は CATIAENV により使用されています。\n削除すると、次回に CATIAENV を実行できなくなる可能性があります。\nこの環境を削除しますか ?";
+AskDeleteVariable.Text=" この環境の /P1 を削除しますか? ";
+AskModifyVar.Text=" /P1 を変更しますか?";
+AskSaveEnv.Text=" /P1 は変更されています。変更を保存しますか? ";
+CATIAENV_Error_Title.txt=" エラー メッセージ";
+CATIAENV_Help_Title.txt=" CATIAENV 情報";
+CannotWriteDefFolder.Text=" エラー: 格納フォルダーにデータを書き込めません";
+Create.AskIrix.Text=" 警告:\nこの環境に関連付けられたグラフィック表現を作成するには \nデスクトップを再コンパイルする必要があります。\n時間がかかりますが、このまま続行しますか?";
+Create.DataCreationFailed.Text=" エラー: 環境データを作成できません";
+Create.IrixIsNotAdmin.Text=" 警告: \nアイコンは作成されません。\nroot でないと Magic Desktop を再コンパイルできません。 ";
+Create.NoBlank.Text=" 環境名にブランクはサポートされません";
+Create.ForbiddenChar.Text=" 文字 [/P1] を環境ファイルの名前に使用することは禁止されています。";
+Create.RepCreationFailed.Text=" デスクトップ ショートカットが作成されていません。\nインストール ディレクトリ内に /P1 があるか確認してください。";
+CreateVar.VarAlreadyExist.Text=" /P1 は存在します。別の変数名を選択してください。";
+Create.WrongPath.Text=" 指定ファイルが見つかりません。";
+CreateDefUserDir.Text=" ユーザー環境のデフォルト格納ディレクトリが作成されました ";
+CreateDefUserDirFailed.Text=" エラー: CATIAENV がユーザー環境用のデフォルト格納ディレクトリを作成できませんでした。\n[オプション]->[ユーザー格納ディレクトリを選択] で他の格納ディレクトリを選択してください。";
+DataDeleteFailed.Text=" 環境データの削除に失敗しました";
+DefaultFolderNotFound.Text=" デフォルトのストレージ ディレクトリが見つかりません。 ";
+DeleteFailed.Text=" 環境データおよび環境グラフィック レプレゼンテーション データの削除に失敗しました。";
+DiskFull.Text=" 環境ファイルに書き込めません: ディスクがフルです。";
+EnvFileNotFound.Text=" 環境ファイルが見つかりません。";
+EnvNameNotSpecified.Text=" 環境名を指定する必要があります";
+ErrorDeleteVariable.Text=" エラー: この変数を削除できません";
+FileAlreadyExist.Text=" この環境名はすでに使用されています";
+GlobalCreationFailed.Text=" 管理者環境の設定に失敗しました";
+GlobalDeleteAsk.Text=" 選択したグローバル環境を削除しますか ?";
+GlobalDeleteNotAllowed.Text=" グローバル環境を削除しようとしていますが、あなたは管理者ではありません";
+ModifyVarFailed.Text=" 環境の修正に失敗しました";
+NoConcatenationSpecified.Text=" 連結パスを指定する必要があります";
+NotValidDirectory.txt=" ディレクトリにアクセスできません:";
+NoVariableFound.Text=" この環境に変数が見つかりませんでした。 ";
+ReadFailed.Text=" このファイルを読み込めません";
+RefFileCannotBeOpened.Text=" 参照ファイルを開く際に問題が発生しました。";
+RefFileNotFound.Text=" 参照ファイルがありません。";
+RepDeleteFailed.Text=" 環境グラフィック リプレゼンテーション データの削除に失敗しました";
+SpecifiedFolderNotFound.Text=" ストレージ ディレクトリが見つかりません。";
+UnableToOpenEnvFile.Text=" 環境ファイルを開けません";
+UnableToWriteEnvFile.Text=" 環境ファイルに書き込む際に問題が発生しました。";
+UnknownError.Text=" この環境を処理中にエラーが発生しました。";
+UserCreationFailed.Text=" ユーザー環境の設定に失敗しました";
+UserDeleteAsk.Text=" 選択したユーザー環境を削除しますか ?";
+VariableNotFound.Text=" エラー: 変数が見つかりません。 ";
+NoDeleteOffVariable.Text=" /P1 は公式の変数です。\nこれは削除できません。";
+EnvAlreadyExist.Text="環境ファイル /P1 はすでに存在します。\n上書きしますか?\n";
+AccessDeniedStorageDirectory.Text=" 格納ディレクトリ /P1 でアクセスが拒否されました。";
+//
+//
+//***************************************
+//*      Help messages                  *
+//***************************************
+ItemCreate.Help=" 新規環境を作成します";
+ItemDelete.Help=" 選択した環境を削除します";
+ItemEdit.Help=" 選択した環境を表示します";
+ItemExit.Help=" CATIAENV を終了します";
+ItemSaveModif.Help=" すべての修正を保存します";
+ItemSetUserDir.Help=" ユーザー格納ディレクトリをセットします";
+ItemSetGlobalDir.Help=" グローバル格納ディレクトリをセットします";
+ItemVarCreate.Help=" 新しい変数を作成します ";
+ItemVarDelete.Help=" 選択した変数を削除します ";
+ItemVarEdit.Help=" 選択した変数を編集します ";
+LstEnv.Help=" 環境を選択してください";
+LstVar.Help=" 変数の値をクリックして、修正します";
+LstVar.ShortHelp=" 修正する値をクリック";
+LstVarDisable.ShortHelp=" グローバル環境の修正はできません";
+SaveEnvKO.ShortText=" 環境ファイルが保存されませんでした。問題が発生しました。 ";
+SaveEnvOK.ShortText=" 環境ファイルが保存されました。";
+SelectGlobalDir.Text=" 格納ディレクトリを選択 - グローバル環境";
+SelectUserDir.Text=" 格納ディレクトリを選択 - ユーザー環境";
+//
+CATIAENV_NT.Help=" 
+CATIAENV    [-userdir  C:\my_user_dir  ]
+
+-userdir: ユーザー環境の格納ディレクトリを指定します。";
+//
+CATIAENV_UNIX.Help="
+CATIAENV     [-userdir  $HOME/my_user_dir  ] 
+
+-userdir:  ユーザー環境の格納ディレクトリを指定します。";
+

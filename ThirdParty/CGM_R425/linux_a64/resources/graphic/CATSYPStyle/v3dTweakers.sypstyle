@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="basicTweakers.sypstyle"/>
+  </Resources>
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATV3DAdjustment">
+    <CATVidLayGrid>
+      <CATVidGPLabel Text="X alignment " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidCtlTweakerEnum Name="XAlign" SelectedIndex="@XAlign Mode=TwoWays" EnumType="CATV3DAdjustment::Alignment" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidGPLabel Text="Y alignment " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidCtlTweakerEnum Name="YAlign" SelectedIndex="@YAlign Mode=TwoWays" EnumType="CATV3DAdjustment::Alignment" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidGPLabel Text="Z alignment " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+      <CATVidCtlTweakerEnum Name="ZAlign" SelectedIndex="@ZAlign Mode=TwoWays" EnumType="CATV3DAdjustment::Alignment" CATVidLayGrid.IndexedConstraints="x=1 y=2"/>
+      <CATVidGPLabel Text=" UseVectorFlag: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+      <CATVidCtlCheckBox Name="UseVectorFlag" CheckMode="1" CheckState="@UseVectorFlag Mode=TwoWays" syp:Template="Default" CATVidLayGrid.IndexedConstraints="x=1 y=3"/>
+      <CATVidGPLabel Text="Vector " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=4 attach=RLTB"/>
+      <CATVidCtlTweakerCATMathVectorf syp:Template="Std" XAsDouble="@VectorX Mode=TwoWays" YAsDouble="@VectorY Mode=TwoWays" ZAsDouble="@VectorZ Mode=TwoWays" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=4"/>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATV3DOrientation">
+    <CATVidLayGrid>
+      <CATVidCtlTweakerEnum Name="Orientation" SelectedIndex="@Orientation Mode=TwoWays" EnumType="CATV3DOrientation::Orientation" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+    </CATVidLayGrid>
+  </Template>
+  <!--<Template syp:name="Std" Target="CATVidCtlTweakerCATV3DManipulatorParameters">
+    <CATVidLayGrid>
+      <CATVidCtlTweakerEnum Name="ManipulationType" SelectedIndex="@ManipulationType Mode=TwoWays" EnumType="CATV3DManipulatorParameters::ManipulationType" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+    </CATVidLayGrid>
+  </Template>-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATV3DLay3DConstraints">
+    <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+      <CATVidGPLabel Text="Translation " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidCtlTweakerCATMathVectorf syp:Template="Std" XAsDouble="@TranslationX Mode=TwoWays" YAsDouble="@TranslationY Mode=TwoWays" ZAsDouble="@TranslationZ Mode=TwoWays" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Rotation (in Degree) " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidCtlTweakerCATMathVectorf syp:Template="Std" XAsDouble="@XAngleInDegree Mode=TwoWays" YAsDouble="@YAngleInDegree Mode=TwoWays" ZAsDouble="@ZAngleInDegree Mode=TwoWays" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      
+      <CATVidGPLabel Text="AngleAbsoluteLimits" TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" RequestedMinimumDimension="35 17" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+      <CATVidGPLabel Text=" Limit1: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=4 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox syp:Template="Default" Name="XAngleInDegreeAbsoluteLimit1" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@XAngleInDegreeAbsoluteLimit1 Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=4 attach=RLTB"/>
+      <CATVidGPLabel Text=" Limit2: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=5 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox syp:Template="Default"  Name="XAngleInDegreeAbsoluteLimit2" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@XAngleInDegreeAbsoluteLimit2 Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=5 attach=RLTB"/>
+      <CATVidGPLabel Text=" UseFlag: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=6 attach=RLTB"/>
+      <CATVidCtlCheckBox Name="UseXAngleAbsoluteLimitsFlag" CheckMode="1" CheckState="@UseXAngleAbsoluteLimitsFlag Mode=TwoWays" syp:Template="Default" CATVidLayGrid.IndexedConstraints="x=1 y=6 attach=RLTB"/>
+      <CATVidGPLabel Text=" KeepDimensionPxFlag : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=7 attach=RLTB"/>
+      <CATVidCtlCheckBox Name="KeepDimensionPxFlag" CheckMode="1" CheckState="@KeepDimensionPxFlag Mode=TwoWays" syp:Template="Default" CATVidLayGrid.IndexedConstraints="x=1 y=7 attach=RLTB"/>
+
+      <!--<CATVidGPLabel Text="ResetFathersRotationsFlag: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=7 attach=RLTB"/>
+      <CATVidCtlCheckBox Name="ResetFathersRotationsFlag" CheckMode="1" CheckState="@ResetFathersRotationsFlag Mode=TwoWays" syp:Template="Default" CATVidLayGrid.IndexedConstraints="x=1 y=7 attach=RLTB"/>-->
+      <CATVidGPLabel Text="BoundingSphereRadius (in MM): " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=8 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox syp:Template="Default"  Name="RadiusInMM" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@BoundingSphereRadiusInMM Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=8 attach=RLTB"/>
+      <CATVidGPLabel Text="Zoom Scaling: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=9 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox syp:Template="Default"  Name="ZoomScaling" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@ZoomScaling Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=9 attach=RLTB"/>
+      <CATVidGPLabel Text="Orientation Policy: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=10 attach=RLTB"/>
+      <CATVidCtlTweakerCATV3DOrientation syp:Template="Std" Orientation="@Orientation Mode=TwoWays" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=10 attach=RLTB"/>
+      <!--<CATVidGPLabel Text="Absolute Axis " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=10 attach=RLTB"/>
+      <CATVidCtlTweakerCATMathAxis syp:Template="Std" OriginX="@AxisOriginX Mode=TwoWays" OriginY="@AxisOriginY Mode=TwoWays" OriginZ="@AxisOriginZ Mode=TwoWays" FirstDirectionX="@AxisFirstDirectionX Mode=TwoWays" FirstDirectionY="@AxisFirstDirectionY Mode=TwoWays" FirstDirectionZ="@AxisFirstDirectionZ Mode=TwoWays" SecondDirectionX="@AxisSecondDirectionX Mode=TwoWays" SecondDirectionY="@AxisSecondDirectionY Mode=TwoWays" SecondDirectionZ="@AxisSecondDirectionZ Mode=TwoWays" ThirdDirectionX="@AxisThirdDirectionX Mode=TwoWays" ThirdDirectionY="@AxisThirdDirectionY Mode=TwoWays" ThirdDirectionZ="@AxisThirdDirectionZ Mode=TwoWays" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=11 xSpan=2 attach=RLTB"/>-->
+    </CATVidLayGrid>
+  </Template>
+
+</Styles>

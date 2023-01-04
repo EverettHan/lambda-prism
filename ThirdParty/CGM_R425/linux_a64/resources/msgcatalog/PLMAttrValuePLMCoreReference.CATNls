@@ -1,0 +1,100 @@
+<meta charset="UTF-8"/>
+//  NLS File for gathering NLS Value of attribute PLMCoreReference (from KW Dicitionary). 
+//Notice on KW Dictionnary attribute of PLMReference are  only available through the Public PLMCoreRepReference or PLMCoreReference (this is why file may be translated twice)
+//take care that the meaning of value  may be different (depending on site deployment) 
+//Below meaning is entered for OOTB RACE IRPC deployment and would defaulty apply for  any of the PLMEntity derivative type
+//to ensure the Same NLS could be deployed both win and web; 
+//Do not forget to ask for updating Web accordingly to the translation of this in emxFrameworkStringResource.properties
+//when appropriate the emxFramework pattern is mentioned
+//----------------------------------------
+//-------------------------------- Policy section below; 
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type 
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.VPLM_SMB_Definition = Global Design Definition
+
+policy.VPLM_SMB_Definition ="Engineering Definition Classic";
+policy.VPLM_SMB_Definition_MajorRev ="Engineering Definition";
+policy.VPLM_SMB_Definition_Document="Engineering Definition Document Classic";
+policy.VPLM_SMB_Definition_Document_MajorRev="Engineering Definition Document";
+policy.VPLM_SMB_Evaluation="Engineering Evaluation Classic";
+policy.VPLM_SMB_Evaluation_MajorRev="Engineering Evaluation";
+policy.VPLM_SMB_Resource="Engineering Resource Classic";
+policy.VPLM_SMB_Resource_MajorRev="Engineering Resource";
+policy.VPLM_SMB_Management="Personal Engineering";
+policy.VPLM_SMB_CoDesignRepRef="Global Co Design";
+policy.VPLM_SMB_CoDesignRef="Global Co Design";
+policy.VPLM_SMB_PostIt_Management="Postit";
+policy.VPLM_SMB_Task_Management="Global Design Task";
+policy.VPLM_SMB_DesignPrj="Global Design Project";
+policy.VPLM_SMB_DesignWS="Global Design Workspace";
+policy.VPLM_SMB_Action="Global Design Action";
+policy.VPLM_SMB_Operation_Execution="Operation Execution";
+policy.VPLM_SMB_Production_Plan="Production Plan";
+policy.VPLM_SMB_Serialized_Item="Serialized";
+
+
+
+//emxFramework.Policy.VPLM_SMB = Global Sample Policy
+policy.VPLM_SMB ="Global Sample Policy";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.VPLM_SMB_Definition.IN_WORK = Under Collaborative Design
+V_maturity.IN_WORK ="In Work";
+V_maturity.FROZEN = "Frozen";
+V_maturity.RELEASED = "Released";
+V_maturity.OBSOLETE = "Obsolete";
+V_maturity.PRIVATE = "Private";
+V_maturity.REMOVED = "Deprecated";
+V_maturity.DEFAULT = "Unspecified";
+ 
+V_maturity.Unspec = "Under Specification";
+V_maturity.In_work = "On Going Activity";
+V_maturity.Completed = "Completed";
+V_maturity.Unspecified = "Under Specification";
+V_maturity.WIP_Active = "Active";
+V_maturity.WIP_Run = "On Going Activity";
+V_maturity.WIP_Suspended = "Suspended";
+V_maturity.WaitApproval = "Under Validation";
+V_maturity.Obsolete = "Obsolete";
+V_maturity.Create = "Create";
+V_maturity.DesignWork = "DesignWork";
+V_maturity.Review = "Review";
+V_maturity.Rejected = "Rejected";
+V_maturity.PLANNED = "Planned";
+V_maturity.FIRM = "Firm";
+V_maturity.READY_FOR_EXECUTION="Ready for execution";
+V_maturity.WORK_IN_PROGRESS="Work in progress";
+V_maturity.COMPLETED="Completed";
+V_maturity.ACTIVE="Active";
+V_maturity.INACTIVE="Inactive";
+
+current.IN_WORK ="In Work";
+current.FROZEN = "Frozen";
+current.RELEASED = "Released";
+current.OBSOLETE = "Obsolete";
+current.PRIVATE = "Private";
+current.REMOVED = "Deprecated";
+current.DEFAULT = "Unspecified"; 
+
+current.Unspec = "Under Specification";
+current.In_work = "On Going Activity";
+current.Completed = "Completed";
+current.Unspecified = "Under Specification";
+current.WIP_Active = "Active";
+current.WIP_Run = "On Going Activity";
+current.WIP_Suspended = "Suspended";
+current.WaitApproval = "Under Validation";
+current.Obsolete = "Obsolete";
+current.Create = "Create";
+current.DesignWork = "DesignWork";
+current.Review = "Review";
+current.Rejected = "Rejected";
+
+current.PLANNED = "Planned";
+current.FIRM = "Firm";
+current.READY_FOR_EXECUTION="Ready for execution";
+current.WORK_IN_PROGRESS="Work in progress";
+current.COMPLETED="Completed";
+current.ACTIVE="Active";
+current.INACTIVE="Inactive";

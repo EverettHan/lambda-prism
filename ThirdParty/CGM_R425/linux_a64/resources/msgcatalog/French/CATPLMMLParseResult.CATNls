@@ -1,0 +1,60 @@
+<meta charset="UTF-8"/>
+DeclareAliasRelationMissing.Request="Message incorrect, erreur d'analyse.";
+DeclareAliasRelationMissing.Diagnostic="/p1 [/p2,/p3] utilisé dans le bloc [NAVIGATES] introuvable dans le bloc [RELATIONDECLARATION].";
+DeclareAliasRelationMissing.Advice="Veuillez vérifier votre entrée.";
+
+RoleAggregation.Request="Message incorrect, erreur d'analyse.";
+RoleAggregation.Diagnostic="***ERROR*** une relation /p1 [/p2,/p3] dont le rôle==agrégation a été trouvée. C'est interdit.";
+RoleAggregation.Advice="Veuillez vérifier votre entrée.";
+
+RoleOwner.Request="Message incorrect, erreur d'analyse.";
+RoleOwner.Diagnostic="***ERROR*** une relation /p1 [/p2,/p3] dont le rôle==propriétaire a été trouvée. C'est interdit.";
+RoleOwner.Advice="Veuillez vérifier votre entrée.";
+
+RoleInstOf.Request="Message incorrect, erreur d'analyse.";
+RoleInstOf.Diagnostic="***ERROR*** une relation /p1 [/p2,/p3] dont le rôle==instOf a été trouvée. C'est interdit.";
+RoleInstOf.Advice="Veuillez vérifier votre entrée.";
+
+AliasReDeclared.Request="Message incorrect, erreur d'analyse.";
+AliasReDeclared.Diagnostic="***ERROR*** L'alias utilisé dans le bloc [NODEDECLARATION] appelé /p1 [/p2,/p3] a déjà été déclaré précédemment, veuillez utiliser un autre nom.";
+AliasReDeclared.Advice="Veuillez vérifier votre entrée.";
+
+ExtNotAuthorized.Request="Message incorrect, erreur d'analyse.";
+ExtNotAuthorized.Diagnostic="***ERREUR*** Extension utilisée dans le bloc [NODEDECLARATION] appelé /p1 [/p2,/p3] ne peut être utilisé avec le moteur actuel. Veuillez ne pas utiliser l'extension du moteur actuel ou utilisez un autre moteur.";
+ExtNotAuthorized.Advice="Veuillez vérifier votre entrée.";
+
+LinesIsNotUsed.Request="Message incorrect, erreur d'analyse.";
+LinesIsNotUsed.Diagnostic="***ERREUR*** Le bloc [LIGNES] ne peut être utilisé pour le moteur actuel. Veuillez ne pas l'utiliser pour le moteur actuel ou utilisez un autre moteur.";
+LinesIsNotUsed.Advice="Veuillez vérifier votre entrée.";
+
+SrAliasReDeclared.Request="Message incorrect, erreur d'analyse.";
+SrAliasReDeclared.Diagnostic="***ERROR*** L'alias Sr utilisé dans le bloc [RELATIONDECLARATION] appelé /p1 [/p2,/p3] a déjà été déclaré précédemment, veuillez utiliser un autre nom.";
+SrAliasReDeclared.Advice="Veuillez vérifier votre entrée.";
+
+IdentifierUsedPreviously.Request="Message incorrect, erreur d'analyse.";
+IdentifierUsedPreviously.Diagnostic="***ERROR*** L'identifiant /p1 [/p2,/p3] utilisé dans le bloc [NAVIGATES] a déjà été utilisé précédemment dans la navigation.";
+IdentifierUsedPreviously.Advice="utilisez un autre identifiant.";
+
+IdentifierNeverUserBefore.Request="Message incorrect, erreur d'analyse.";
+IdentifierNeverUserBefore.Diagnostic="***ERROR*** L'identifiant /p1 [/p2,/p3] utilisé dans le bloc [NAVIGATES] n'a jamais été utilisé dans une navigation précédente.";
+IdentifierNeverUserBefore.Advice="Le premier identifiant de la Nème navigation (N>1) doit être un alias précédemment utilisé.";
+
+SyntaxError.Request="Message incorrect, erreur d'analyse.";
+SyntaxError.Diagnostic="/p1";
+SyntaxError.Advice="Veuillez vérifier votre entrée.";
+
+NavInGraphOptionsNotRecognized.Request="Message incorrect, erreur d'analyse.";
+NavInGraphOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] doit être égal à CyclicityDetected ou CyclicityNotDetected.";
+NavInGraphOptionsNotRecognized.Advice="Veuillez vérifier votre entrée.";
+
+SrLoadingOptionsNotRecognized.Request="Message incorrect, erreur d'analyse.";
+SrLoadingOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] doit être égal à CATPLMMLStandard ou CATPLMLIntercalarySr";
+SrLoadingOptionsNotRecognized.Advice="Veuillez vérifier votre entrée.";
+
+moreThanOneLine.Request="Message incorrect, erreur d'analyse.";
+moreThanOneLine.Diagnostic="***ERREUR*** Il ne doit pas y avoir plus d'une ligne dans ml.";
+moreThanOneLine.Advice="Veuillez vérifier votre entrée.";
+
+ParsingError7.Request="Message incorrect, erreur d'analyse.";
+ParsingError7.Diagnostic="ligne /p1 colonne /p2. Relation \"/p3\" introuvable. /p4.";
+ParsingError7.Advice="Veuillez vérifier votre entrée.";

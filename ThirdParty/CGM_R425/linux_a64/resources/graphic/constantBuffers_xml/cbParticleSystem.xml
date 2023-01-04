@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_cbParticleSystem</NAME>
+
+  <UNIFORM>
+    <NAME>numberParticle</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>10000.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>HaveTexure</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>isLocal</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>TransformMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

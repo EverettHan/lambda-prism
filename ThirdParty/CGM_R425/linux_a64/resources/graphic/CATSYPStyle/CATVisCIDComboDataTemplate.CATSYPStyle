@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <DataTemplate syp:name="ComboLineThicknessView">
+    <CATVidLayGrid CellSpacing="1">
+      <CATVidGPLine lin />
+        <CATVidGPSquare PixelImage="@Image" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=1 ySpan=2 attach=RTLB" RequestedMinimumDimension="51 64" />
+        <CATVidGPLabel syp:name="NameLabel" Text="@Name" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L" TextHeight="16" TextColor="110 110 110 255" CropPolicy="NoCrop"/>
+        <CATVidGPLabel syp:name="TrigramLabel" Text="@Trigram" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=L" TextHeight="16" TextColor="110 110 110 255" CropPolicy="NoCrop"/>
+      </CATVidLayGrid>
+      <CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RTLB" CellSpacing="3">
+        <CATVidGPSquare Texture="building.png" RequestedMinimumDimension="16 16" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=L" />
+        <CATVidGPLabel syp:name="OfficeLabel" Text="@Office" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=L" TextHeight="16" TextColor="110 110 110 255" CropPolicy="NoCrop"/>
+        <CATVidGPSquare Texture="phone.png" RequestedMinimumDimension="16 16" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=L" />
+        <CATVidGPLabel syp:name="PhoneLabel" Text="@PhoneNumber" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=L" TextHeight="16" TextColor="110 110 110 255" CropPolicy="NoCrop"/>
+        <CATVidGPSquare Texture="at.png" RequestedMinimumDimension="16 16" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=L" />
+        <CATVidGPLabel syp:name="MailLabel" Text="@Mail" CATVidLayGrid.IndexedConstraints="x=1 y=3 attach=L" TextHeight="16" TextColor="110 110 110 255" CropPolicy="NoCrop"/>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="SelectedFlag" Value="1">
+        <CATSYPSetter TargetName="NameLabel" Property="TextColor" Value="255 255 255 255" />
+        <CATSYPSetter TargetName="TrigramLabel" Property="TextColor" Value="255 255 255 255" />
+        <CATSYPSetter TargetName="OfficeLabel" Property="TextColor" Value="255 255 255 255" />
+        <CATSYPSetter TargetName="PhoneLabel" Property="TextColor" Value="255 255 255 255" />
+        <CATSYPSetter TargetName="MailLabel" Property="TextColor" Value="255 255 255 255" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SelectedFlag" Value="0">
+        <CATSYPSetter TargetName="NameLabel" Property="TextColor" Value="110 110 110 255" />
+        <CATSYPSetter TargetName="TrigramLabel" Property="TextColor" Value="110 110 110 255" />
+        <CATSYPSetter TargetName="OfficeLabel" Property="TextColor" Value="110 110 110 255" />
+        <CATSYPSetter TargetName="PhoneLabel" Property="TextColor" Value="110 110 110 255" />
+        <CATSYPSetter TargetName="MailLabel" Property="TextColor" Value="110 110 110 255" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+</Styles>

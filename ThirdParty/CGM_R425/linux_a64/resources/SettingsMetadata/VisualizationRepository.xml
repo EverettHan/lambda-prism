@@ -1,0 +1,1242 @@
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<st:Description name="VisualizationRepository" PrimaryTabpage="/General/Display/Visualization" >
+		<st:role>Setting to handle the visualization options</st:role>
+		<st:RepositoryFile>VisualizationRepository</st:RepositoryFile>
+		<st:version>2</st:version>
+		<st:compatibility>
+			<st:FullCompatibilityfromLevel>1</st:FullCompatibilityfromLevel>
+			<st:UpwardCompatibilityfromLevel>1</st:UpwardCompatibilityfromLevel>
+		</st:compatibility>
+		<st:DedicatedController>
+			<st:Framework_CPP>VisualizationFoundation</st:Framework_CPP>
+			<st:Interface_CPP>CATIVizVisualizationSettingAtt</st:Interface_CPP>
+			<st:Framework_IDL>VisualizationOptions</st:Framework_IDL>
+			<st:Interface_IDL>CATIAVisualizationSettingAtt</st:Interface_IDL>
+			<st:LateType>CATVizVisualizationSettingCtrl</st:LateType>
+		</st:DedicatedController>
+	</st:Description>
+	
+	<st:attributes>
+	
+<!-- ================= -->
+<!-- ==Visualization== -->
+<!-- ================= -->
+	
+<!-- Color frame -->
+		<st:attribute Name="BGMode">
+			<st:role>Graduated color background mode</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="Background">
+			<st:role>Color of background</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:value>235</st:value>
+					<st:value>235</st:value>
+					<st:value>235</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="NoShowBackgroundRGB">
+			<st:role>Color of background for Noshow space</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:value>34</st:value>
+					<st:value>34</st:value>
+					<st:value>34</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="Highlight">
+			<st:role>Selected elements color</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:value>0</st:value>
+					<st:value>200</st:value>
+					<st:value>200</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+    <st:attribute Name="AdvancedHighlightColor">
+      <st:role>Advanced Selected elements color</st:role>
+      <st:uint size="3">
+        <st:min>0</st:min>
+        <st:max>255</st:max>
+        <st:default size="3">
+          <st:value>0</st:value>
+          <st:value>155</st:value>
+          <st:value>255</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+		
+		<st:attribute Name="EdgeHighlight">
+			<st:role>Selected edges color</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:value>255</st:value>
+					<st:value>0</st:value>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="PrehighlightColor">
+			<st:role>Preselected elements color</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:value>247</st:value>
+					<st:value>247</st:value>
+					<st:value>247</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+    <st:attribute Name="AdvancedPreHighlightColor">
+      <st:role>Advanced Preselected elements color</st:role>
+      <st:uint size="3">
+        <st:min>0</st:min>
+        <st:max>255</st:max>
+        <st:default size="3">
+          <st:value>247</st:value>
+          <st:value>247</st:value>
+          <st:value>247</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+		
+		<st:attribute Name="PreHighlight">
+			<st:role>Preselected elements linetype</st:role>
+			<st:uint>
+				<st:min>1</st:min>
+				<st:max>7</st:max>
+				<st:default>
+					<st:value>4</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="Lowlight">
+			<st:role>Low-intensity elements color</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:value>67</st:value>
+					<st:value>102</st:value>
+					<st:value>85</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="UpdateNeeded">
+			<st:role>Update needed color</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:value>255</st:value>
+					<st:value>0</st:value>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="Handle">
+			<st:role>Handles color</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:role>Default color in RGB order</st:role>
+						<st:value>0</st:value>
+						<st:value>255</st:value>
+						<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="BorderEdgesMode">
+			<st:role>Border edges mode</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="BorderEdgesRGB">
+			<st:role>Border edges color</st:role>
+			<st:uint size="3">
+				<st:min>0</st:min>
+				<st:max>255</st:max>
+				<st:default size="3">
+					<st:role>Default color in RGB order</st:role>
+						<st:value>0</st:value>
+						<st:value>255</st:value>
+						<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="BorderEdgesThickness">
+			<st:role>Border edges thickness</st:role>
+			<st:uint>
+				<st:min>1</st:min>
+				<st:max>55</st:max>
+				<st:default>
+					<st:value>3</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+		<!-- Highlight mode, values are declared in "CATHighlightFrame.h" -->
+		<st:attribute Name="HighlightMode">
+			<st:role>Highlight mode</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>3</st:max>
+				<st:default>
+					<st:value>3</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+		<!-- PreHighlight mode, values are declared in "CATPreHighlightFrame.h" -->
+		<st:attribute Name="PreHighlightMode">
+			<st:role>PreHighlight mode</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>3</st:max>
+				<st:default>
+					<st:value>3</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+<!-- Depth frame -->
+		<st:attribute Name="AllZBufferElementMode">
+			<st:role>Display all elements using Z-buffer depth</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+<!-- Antialiasing frame -->
+		<st:attribute Name="AntiAliasing">
+			<st:role>Anti-aliasing mode</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="AntiAliasingOffset">
+			<st:role>Anti-aliasing offset value</st:role>
+			<st:float>
+				<st:default>	
+					<st:value>0.2</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+
+      <st:attribute Name="FullSceneAntiAliasingMode">
+         <st:role>Full scene anti-aliasing mode</st:role>
+         <st:uint>
+            <st:min>0</st:min>
+            <st:max>5</st:max>
+            <st:default>
+               <st:value>3</st:value>
+            </st:default>
+         </st:uint>
+      </st:attribute>
+
+    <st:attribute Name="AAOnSSAO">
+      <st:role>AAOnSSAO mode</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <st:attribute Name="AADynamic">
+      <st:role>AADynamic mode</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <!-- High Curvature Step Threshold for Smooth Edges -->
+    <st:attribute Name="EdgeHighCurvatureStepThresholdActivated">
+      <st:role>Activate Curvature Step Detection Mode</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <st:attribute Name="EdgeHighCurvatureStepThreshold">
+      <st:role>Curvature Step Threshold</st:role>
+      <st:float>
+        <st:default>
+          <st:value>0.02</st:value>
+        </st:default>
+      </st:float>
+    </st:attribute>
+
+    <!-- Outlines shown during dynamic draw -->
+    <st:attribute Name="OutlinesDynamic">
+      <st:role>OutlinesDynamic mode</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>true</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    
+
+    <!-- Opaque Faces -->
+    <st:attribute Name="OpaqueFaces">
+      <st:role>Display transparent faces as opaque in HRD mode</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+		
+<!-- Display option frame -->
+		<st:attribute Name="DisplayCurrentScale">
+			<st:role>Display current scale in parallel mode</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+
+    <st:attribute Name="SLIMode">
+      <st:role>Activate SLI for virtual reality</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <st:attribute Name="StaticBatchingMode">
+      <st:role>Activate Stactic Batching</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+
+<!-- ================= -->
+<!-- ==Navigation===== -->
+<!-- ================= -->
+
+<!-- Selection frame -->
+		<st:attribute Name="PreSelection">
+			<st:role>Activate preselection in geometry view</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="Selection">
+			<st:role>Activate preselection navigator</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="Delay">
+			<st:role>Delay for activate preselection navigator</st:role>
+			<st:float>
+				<st:min>0.1</st:min>
+				<st:max>10.0</st:max>
+				<st:default>	
+					<st:value>2.0</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+
+		<st:attribute Name="PreSelNavigatorStartedByArrowKeys" alias="PreSelNavigatorStartedByArrowKeys">
+			<st:role>Pre selection navigator started by arrow keys wherever the focus is</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+
+		<st:attribute Name="HighlightActivation" alias="HighlightActivation">
+			<st:role>Highlight's activation in geometry view</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+
+		<st:attribute Name="HighlightFace" alias="ZBuffer">
+			<st:role>Highlight faces and edges</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="Bounding Box">
+			<st:role>Display manipulation bounding box</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="MaxSelectionMove">
+			<st:role>Maximum manipulators to display</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>10000000</st:max>
+				<st:default>
+					<st:value>50</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+		<st:attribute Name="DrillListDisplay">
+			<st:role>Display immersive list for preselection navigator</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="AuxiliaryDrillViewer">
+			<st:role>Display auxiliary viewer for preselection navigator</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="FaceHLDrill">
+			<st:role>Prehighlight faces for preselection navigator</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="DisplayImmersiveDrillViewer">
+			<st:role>Display immersive viewer for preselection navigator</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		<!--// FUN085229 prehighlight of hidden objects -->
+		<st:attribute Name="HighlightHiddenObjects">
+			<st:role>Activate highlight of hidden objects</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="PreHighlightHiddenObjects">
+			<st:role>Activate prehighlight of hidden objects</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+    <!--// FUN085229 prehighlight of hidden objects -->
+		
+<!-- Navigation frame -->
+		<st:attribute Name="Gravity">
+			<st:role>Gravitational effects during navigation</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="GravityAxis">
+			<st:role>Gravity axis</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>2</st:max>
+				<st:default>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="FollowGroundMode">
+			<st:role>Follow ground mode</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="FollowGroundAltitude">
+			<st:role>Follow ground at altitude (in mm)</st:role>
+			<st:float>
+				<st:min>0.0</st:min>
+				<st:max>10000000.0</st:max>
+				<st:default>	
+					<st:value>0.0</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="Viewpoint">
+			<st:role>Animation during viewpoint modification</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="RotationSphereMode">
+			<st:role>Disable the rotation sphere display</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+
+    <st:attribute Name="SWNavigationMode">
+      <st:role>Enable Solid Works mouse navigation</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+    
+<!-- Fly and walk frame -->
+    <st:attribute Name="MouseFreeMode">
+      <st:role>Enable Mouse Free Navigation</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>          
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+    
+        <st:attribute Name="NavigIconMode">
+      <st:role>Show Navigation Icon</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>          
+          <st:value>true</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+    
+		<st:attribute Name="FlyCollisionMode">
+			<st:role>Enable collision detection</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="FlyCollisionType">
+			<st:role>Collision type</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>1</st:max>
+				<st:default>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="FlyCollisionSphereRadius">
+			<st:role>Collision sphere radius (in mm)</st:role>
+			<st:float>
+				<st:min>0.0</st:min>
+				<st:max>1000000.0</st:max>
+				<st:default>	
+					<st:value>1000.0</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="FlySensitivity">
+			<st:role>Mouse sensitivity when fly</st:role>
+			<st:uint>
+				<st:min>1</st:min>
+				<st:max>255</st:max>
+				<st:default>
+					<st:value>100</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+		<st:attribute Name="FlySpeedMode">
+			<st:role>Fly speed mode</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>1</st:max>
+				<st:default>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+		<st:attribute Name="FlySpeed">
+			<st:role>Customized fly speed</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>1000</st:max>
+				<st:default>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+<!-- Mouse speed frame -->
+		<st:attribute Name="MouseSpeedValue">
+			<st:role>Mouse Speed</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>100</st:max>
+				<st:default>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+<!-- Rotation angle frame -->
+		<st:attribute Name="KeyboardRotationAngleValue">
+			<st:role>Angle value for keyboard rotations</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>360</st:max>
+				<st:default>
+					<st:value>9</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+<!-- Tight Reframe Frame -->
+    <st:attribute Name="TightReframeMode">
+      <st:role>Activate Tight Reframe All</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+    
+ <!-- Transparency For Ghosted Parts -->
+    <st:attribute Name="GhostedTransparencyValue">
+      <st:role>Transparency</st:role>
+      <st:uint>
+        <st:min>0</st:min>
+        <st:max>100</st:max>
+        <st:default>
+          <st:value>90</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+    
+    <!-- AdaptiveQualityTessellation -->
+    <st:attribute Name="AdaptiveQualityTessellation">
+      <st:role>AdaptiveQualityTessellation</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+<!-- ================= -->
+<!-- ==Performances=== -->
+<!-- ================= -->
+
+<!-- Occlusion frame -->
+		<st:attribute Name="OcclusionCullingMode">
+			<st:role>Activates/deactivates occlusion culling</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+<!-- Accuracy frame -->
+		<st:attribute Name="3DAccuracy">
+			<st:role>3D accuracy mode</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>2</st:max>
+				<st:default>
+					<st:value>1</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="3DPpAccuracy">
+			<st:role>3D proportionnal accuracy</st:role>
+			<st:float>
+				<st:min>0.01</st:min>
+				<st:max>1.0</st:max>
+				<st:default>	
+					<st:value>0.2</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="3DFxAccuracy">
+			<st:role>3D fixed accuracy</st:role>
+			<st:float>
+				<st:min>0.01</st:min>
+				<st:max>10.0</st:max>
+				<st:default>	
+					<st:value>0.2</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="3DCvAccuracyRatio">
+			<st:role>3D curve accuracy ratio</st:role>
+			<st:float>
+				<st:min>0.1</st:min>
+				<st:max>1.0</st:max>
+				<st:default>	
+					<st:value>1.0</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="2DAccuracy">
+			<st:role>2D accuracy mode</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="2DPpAccuracy">
+			<st:role>2D proportionnal accuracy</st:role>
+			<st:float>
+				<st:min>0.01</st:min>
+				<st:max>1.0</st:max>
+				<st:default>	
+					<st:value>0.02</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="2DFxAccuracy">
+			<st:role>2D fixed accuracy</st:role>
+			<st:float>
+				<st:min>0.01</st:min>
+				<st:max>10.0</st:max>
+				<st:default>	
+					<st:value>0.02</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+
+    <!-- //AZX, new option, "Optimize meshes for texturing" -->
+    <st:attribute Name="OptimizedMeshMode">
+      <st:role>Optimize meshes for texturing</st:role>
+      <st:uint>
+        <st:min>0</st:min>
+        <st:max>2</st:max>
+        <st:default>
+          <st:value>0</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+    
+<!-- LOD frame -->
+		<st:attribute Name="StaticLOD">
+			<st:role>Level of detail for static objects</st:role>
+			<st:float>
+				<st:min>0.0</st:min>
+				<st:max>40.0</st:max>
+				<st:default>	
+					<st:value>0.5</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="DynamicLOD">
+			<st:role>Level of detail for moving objects</st:role>
+			<st:float>
+				<st:min>0.0</st:min>
+				<st:max>40.0</st:max>
+				<st:default>	
+					<st:value>3.0</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="GenerateLODsOnSave">
+			<st:role>Generate LODs when saving through the Propagate command</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+<!-- Culling frame -->
+		<st:attribute Name="StaticCull">
+			<st:role>Minimum pixel size to display static object</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>400</st:max>
+				<st:default>
+					<st:value>2</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		
+		<st:attribute Name="DynamicCull">
+			<st:role>Minimum pixel size to display moving object</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>400</st:max>
+				<st:default>
+					<st:value>3</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+		<st:attribute Name="CullVanishingRatio">
+			<st:role>Never cull objects which size is greater than ratio * scene size</st:role>
+			<st:float>
+				<st:min>0.0</st:min>
+				<st:max>100.0</st:max>
+				<st:default>
+					<st:value>100.0</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+<!-- Transparency frame -->
+		<st:attribute Name="Transparency">
+			<st:role>Transparency quality</st:role>
+			<st:uint>
+				<st:enum>
+					<st:role>Low (Screen Door)</st:role>
+					<st:value>0</st:value>
+					<st:role>Medium (Alpha Blending)</st:role>
+					<st:value>1</st:value>
+					<st:role>High (Weighted Average)</st:role>
+					<st:value>2</st:value>
+          <st:role>Very High (Depth Peeling)</st:role>
+          <st:value>3</st:value>
+          <st:role>Very High (OIT)</st:role>
+          <st:value>4</st:value>
+          <st:role>Low (Alpha Blending Without Sort)</st:role>
+          <st:value>5</st:value>
+        </st:enum>
+				<st:default>	
+					<st:role>By default transparency quality is set to Medium</st:role>
+					<st:value>1</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+<!-- FPS frame -->
+		<st:attribute Name="FPSMode">
+			<st:role>Activates/deactivates frame per second</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="NumberFPS">
+			<st:role>Minimum number of frames per second</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>30</st:max>
+				<st:default>
+					<st:value>10</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+<!-- Space FPS frame -->
+		<st:attribute Name="SpaceFPSMode">
+			<st:role>Activates/deactivates frame per second for 3Dx devices</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="NumberSpaceFPS">
+			<st:role>Minimum number of frames per second when using 3Dx devices</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>30</st:max>
+				<st:default>
+					<st:value>20</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+<!-- Miscellaneous frame -->
+		<st:attribute Name="Isopar Generation">
+			<st:role>Activates/deactivates isoparametrics generation</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="NbIsopars">
+			<st:role>Number of isoparametrics in U and V</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>10</st:max>
+				<st:default>
+					<st:value>1</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="TwoSideLightingMode">
+			<st:role>Enable two side lighting for faces and surfaces</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="LightViewerMode">
+			<st:role>Enable OpenGL local viewer lighting</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="LineicCgr">
+			<st:role>Enable Lineic CGR Mode</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="ShaderMode">
+			<st:role>Enable OpenGL Shader</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+<!-- Backface culling frame -->
+		<st:attribute Name="BackFaceCullingMode">
+			<st:role>Enable back face culling</st:role>
+			<st:uint>
+				<st:enum>
+					<st:role>Backface culling on solids only</st:role>
+					<st:value>0</st:value>
+					<st:role>Backface culling on solids and on stand alone faces</st:role>
+					<st:value>1</st:value>
+					<st:role>Backface culling on stand alone faces only</st:role>
+					<st:value>2</st:value>
+					<st:role>Backface culling on no faces</st:role>
+					<st:value>3</st:value>
+				</st:enum>
+				<st:default>	
+					<st:role>By default backface culling is on solids only</st:role>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+
+<!-- Halo frame -->
+		<st:attribute Name="HaloMode">
+			<st:role>Enable halo when displaying the geometry with hidden lines removed</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+
+<!-- Accurate Picking frame -->
+		<st:attribute Name="PickingWindowSize">
+			<st:role>Window size for picking</st:role>
+			<st:uint>
+				<st:min>1</st:min>
+				<st:max>100</st:max>
+				<st:default>
+					<st:value>4</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		
+		<st:attribute Name="AccuratePickingMode">
+			<st:role>Enable accurate picking</st:role>
+			<st:boolean StorageType="uint">
+				<st:default>  
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="AccuratePickingWindowSize">
+			<st:role>Window size for accurate picking</st:role>
+			<st:uint>
+				<st:min>1</st:min>
+				<st:max>100</st:max>
+				<st:default>
+					<st:value>1</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+    <st:attribute Name="GPUPicking">
+      <st:role>Enable GPU picking</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <st:attribute Name="FastGPUPicking">
+      <st:role>Enable Fast GPU picking</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <!-- Mouse Double Clic frame -->
+		<st:attribute Name="MouseDoubleClicDelay">
+			<st:role>Double clic latency</st:role>
+			<st:uint>
+				<st:min>1</st:min>
+				<st:max>2000</st:max>
+				<st:default>
+					<st:value>500</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+    <!-- Video Memory Managment  -->
+    <st:attribute Name="MeshCompressionNormalEnable">
+      <st:role>Enable normal compression</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <!-- GPU Unloading frame -->
+    <st:attribute Name="UnloadMemoryFromGPU">
+      <st:role>Video memory unloading activation</st:role>
+      <st:boolean StorageType="uint">
+        <st:default>
+          <st:value>false</st:value>
+        </st:default>
+      </st:boolean>
+    </st:attribute>
+
+    <!-- LDH frame -->
+    <st:attribute Name="LDHTargetFramerate">
+      <st:role>Target framerate for LDH navigation</st:role>
+      <st:uint>
+        <st:min>0</st:min>
+        <st:max>30</st:max>
+        <st:default>
+          <st:value>15</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+
+    <!-- View Mode -->
+    <st:attribute Name="ViewModeUIVersion">
+      <st:role>Parameter to define view mode UI's version</st:role>
+      <st:uint>
+        <st:enum>
+          <st:role>V1</st:role>
+          <st:value>0</st:value>
+          <st:role>V2 with Appearances</st:role>
+          <st:value>1</st:value>
+        </st:enum>
+        <st:default>
+          <st:value>1</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+
+    <!-- ===================== -->
+<!-- ==Default material=== -->
+<!-- ===================== -->
+
+		<st:attribute Name="AmbientActivation">
+			<st:role>Ambient Activation</st:role>
+			<st:uint>
+				<st:min>0</st:min>
+				<st:max>1</st:max>
+				<st:default>
+					<st:value>1</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+
+		<st:attribute Name="DefaultDiffuseAmbientCoefficient">
+			<st:role>Default Diffuse Ambient Coefficient</st:role>
+			<st:float>
+        <st:min>0.0</st:min>
+        <st:max>1.0</st:max>
+        <st:step>0.1</st:step>
+				<st:default>
+          <st:value>0.8</st:value>
+        </st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="DefaultSpecularCoefficient">
+			<st:role>Default Specular Coefficient</st:role>
+			<st:float>
+        <st:min>0.0</st:min>
+        <st:max>1.0</st:max>
+        <st:step>0.1</st:step>
+				<st:default>	
+					<st:value>1.0</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+		
+		<st:attribute Name="DefaultShininess">
+			<st:role>Default Shininess</st:role>
+			<st:float>
+        <st:min>0.0</st:min>
+        <st:max>1.0</st:max>
+        <st:step>0.1</st:step>
+				<st:default>	
+					<st:value>0.66</st:value>
+				</st:default>
+			</st:float>
+		</st:attribute>
+
+    <st:attribute Name="GraphicsAPI">
+      <st:role>Graphics API for visu engine</st:role>
+      <st:uint>
+        <st:enum>
+          <st:role>OpenGL</st:role>
+          <st:value>0</st:value>
+          <st:role>DirectX</st:role>
+          <st:value>1</st:value>
+        </st:enum>
+        <st:default>
+          <st:role>By default graphics API is set to OpenGL</st:role>
+          <st:value>0</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+	
+<!-- ==================================================== -->
+<!-- == Infrastructure/3DShape Infrastructure/Display === -->
+<!-- ==================================================== -->
+	<st:attribute Name="AxisSystemLength">
+		<st:role>Axis system display size</st:role>
+		<st:uint>
+			<st:min>1</st:min>
+			<st:max>100</st:max>
+			<st:default>
+				<st:value>10</st:value>
+			</st:default>
+		</st:uint>
+	</st:attribute>
+<!-- ===================== -->
+<!-- ==Viewpoint View Angle-->
+<!-- ===================== -->
+  <st:attribute Name="ViewpointViewAngle">
+    <st:role>View Angle for 3DViewpoint</st:role>
+      <st:float>
+      <st:min>0.10</st:min>
+      <st:max>85.00</st:max>
+        <st:default>
+          <st:value>15.0</st:value>
+        </st:default>
+    </st:float>
+  </st:attribute>
+    
+<!-- ================= -->
+<!-- =======End======= -->
+<!-- ================= -->
+		
+	</st:attributes>
+ 
+</st:repository>

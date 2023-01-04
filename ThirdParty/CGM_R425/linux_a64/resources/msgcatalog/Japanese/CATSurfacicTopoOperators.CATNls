@@ -1,0 +1,180 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for SurfacicTopoOperators  errors 
+// En_EN
+//----------------------------------invalid input
+//
+//8000->8099 **** Fill && PowerFill *************
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Request="フィル オペレータ:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Diagnostic="計算されたフェースは自己交差します。";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Advice="作成に使用した入力またはオブジェクトを修正してください。";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Diagnostic="点とその投影点の距離に関して初期サーフェス上の投影点がフィルするワイヤーに近すぎます。";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Advice="点を修正してください。";
+//
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Diagnostic="フィルするワイヤー曲線が小さすぎ、フィル計算中に点になります。";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Advice="この曲線を除去してワイヤーを消去してください。";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8003.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Diagnostic="ワイヤーが縮退しています。";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Advice="ワイヤーを修正してください。";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Diagnostic="接線拘束で定義されている法線のセットは過度に分散しており、通過点があります。";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Advice="作成に使用した入力またはオブジェクトを修正するか、通過点を抑止してください。";
+//
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Request="フィル オペレータ:";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Diagnostic="フィルすべきワイヤーをチェーンできません。";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Advice="ワイヤーをチェックしてください。";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Request="フィル オペレータ:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Diagnostic="フィルするワイヤー曲線がサポート上にありません。";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Advice="ワイヤーをチェックしてください";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Request="フィル オペレータ:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Diagnostic="フィルするワイヤーが自己交差しているので計算されたフェースは自己交差します。 ";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Advice="ワイヤーを除去してください。";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Request="フィル オペレータ:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Diagnostic="フィル計算により自己交差するフェースが作成されます。";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Advice="作成に使用した入力またはオブジェクトを修正してください。";
+//
+// **** 8009 a deplacer en 8209 dans Healing && HealGaps *************
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Request="修復オペレータ:";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Diagnostic="修復によるインパクトを受けるエッジ上の非多様トポロジー";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Advice="作成に使用した入力またはオブジェクトを修正してください。";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8009.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Diagnostic="フィルするワイヤーの 2 つのエッジ間のギャップが、これらエッジの最小長さよりも大きい。";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Advice="ワイヤーを除去してください。";
+//
+// **** 8011 a deplacer en 8211 dans Healing && HealGaps *************
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Request="修復オペレータ:";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Diagnostic="無効な形状。";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Advice="作成に使用した入力またはオブジェクトを修正してください。";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Diagnostic="初期サーフェスへの投影点が、フィルするワイヤーの外にあります。";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Advice="点を修正してください。";
+//
+// **** 8013 a deplacer en 8213 dans Healing && HealGaps *************
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Request="修復オペレータ:";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Diagnostic="警告: 頂点に検出されたギャップが大きすぎます";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Advice="マージ距離を小さくするか、入力サーフェスを修正してから修復を適用してください";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Request="フィル オペレータ:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Diagnostic="フィルするワイヤーの曲線が、完全にはサポート上にありません。";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Advice="ワイヤーをチェックしてください";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Request="フィル オペレータ:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Diagnostic="この操作の前後のトポロジーに互換性がないため、サポート上での曲線の配置操作が失敗しました。";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Advice="事前にサポート上に投影してください。";
+//
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Request="フィル オペレータ:";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Diagnostic="境界が閉じていません。";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Advice="形状を修正してみてください。";
+
+//
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Request="フィル オペレータ:";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Diagnostic="ギャップがフィル サーフェスの境界上に残っています。";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Advice="公差を大きくしてください。";
+
+SurfacicTopOpInFillPartialResult_ERR_8018.Request="フィル オペレータ:";
+SurfacicTopOpInFillPartialResult_ERR_8018.Diagnostic="次の内部拘束が考慮されないために、結果は部分的です。";
+SurfacicTopOpInFillPartialResult_ERR_8018.Advice="内部拘束を修正してください。";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Diagnostic="接線拘束で定義されている法線のセットが過度に分散しているため、結果が得られません。";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Advice="接線拘束を削除してください。";
+//
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Request="フィル オペレータ:";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Diagnostic="入力データに互換性がないためフィルに失敗しました。";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Advice="入力データを修正してください。";
+//
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Request="フィル オペレータ:";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Diagnostic="内側境界は、他の境界の内側にある境界です。";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Advice="内側境界を修正してください。";
+//
+
+//
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Request="PowerFill オペレータ:";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Diagnostic="オペレータの登録に失敗しました。";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Advice="入力データを修正してください。";
+//
+SurfacicTopOpInFillPartialResult_ERR_8023.Request="フィルの警告:";
+SurfacicTopOpInFillPartialResult_ERR_8023.Diagnostic="G2 拘束は反映されません (拘束同士に互換性がありません)。";
+SurfacicTopOpInFillPartialResult_ERR_8023.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8024.Request="フィルの警告:";
+SurfacicTopOpInFillPartialResult_ERR_8024.Diagnostic="入力ワイヤーは自己交差しています。プロファイルは正常に修復されました。";
+SurfacicTopOpInFillPartialResult_ERR_8024.Advice="";
+//
+
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Request="フィル オペレータ";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Diagnostic="この操作には解がありません。";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8026.Request="フィル オペレータ:";
+SurfacicTopOpInFillPartialResult_ERR_8026.Diagnostic="G2 拘束は G1 拘束によって置換されたため、結果は部分的です。";
+SurfacicTopOpInFillPartialResult_ERR_8026.Advice="G2 拘束を除去します。";
+
+//
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Request="フィル オペレータ:";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Diagnostic="1 つのカーブに複数のサポート サーフェスがあります。";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Advice="接線または曲率の拘束を必要とするサポート サーフェスを抽出します。";
+
+
+//
+//8100->8199 **** Deformation && Unbend *************
+//
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Request="変形オペレータ:";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Diagnostic="入力したボディーの一部が曲げ軸に近すぎます。";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Advice="曲げ演算子と曲げ解除演算子は、R = 20x のモデル解像度の場合、曲げ軸の半径 R 内にあるマテリアルを変形できません。";
+
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Request="曲げ解除操作:";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Diagnostic="曲げ (解除) 角度が大きすぎます。";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Advice="曲げ角度は 0 ～ 120 度の間である必要があります。複数の操作に分割してください。";
+
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Request="変形オペレータ:";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Diagnostic="入力ボディーのパーティションの分類中に内部エラーが発生しました。";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Advice="";
+
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Request="変形オペレータ:";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Diagnostic="マップの評価中に内部エラーが発生しました。";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Advice="";
+
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Request="変形オペレータ:";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Diagnostic="入力ボディーをパーティションに分割中に内部エラーが発生しました。";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Advice="";
+
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Request="変形オペレータ:";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Diagnostic="入力ボディー ボックスが空です。";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Advice="入力ボディーが存在することを確認してください。";
+
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Request="変形オペレータ:";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Diagnostic="非均質性のボディーは現在サポートされていません。";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Advice="";
+
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Request="変形演算:";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Diagnostic="選択した領域は曲げたり、曲げ解除したりできません。";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Advice="入力ボディーのトポロジーを保持している間は、曲げ/曲げ解除操作を実行できません。";
+
+//
+
+//
+//8200->8299 **** Healing && HealGaps *************
+//
+SurfacicTopOpHealGaps_ERR_8200.Request="ギャップ修復オペレータ:";
+SurfacicTopOpHealGaps_ERR_8200.Diagnostic="未修復のギャップが残っています。";
+SurfacicTopOpHealGaps_ERR_8200.Advice="GetGaps 方式を使用してギャップのあるセルを取得し、これらのセルへの修復を制限してみてください。";
+//
+SurfacicTopOpHealingTopHealError_ERR_8220.Request="修復オペレータ:";
+SurfacicTopOpHealingTopHealError_ERR_8220.Diagnostic="トポロジーの修復に失敗しました";
+SurfacicTopOpHealingTopHealError_ERR_8220.Advice="シェイプ変形を許可";
+//
+
+
+

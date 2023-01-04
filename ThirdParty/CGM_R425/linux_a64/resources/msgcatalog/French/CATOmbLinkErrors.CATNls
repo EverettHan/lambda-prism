@@ -1,0 +1,103 @@
+<meta charset="UTF-8"/>
+ERR_LINK_0="Le lien ne peut être créé car la taille nécessaire est trop importante.";
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2009
+//=================================================================
+//
+// Usage Notes:    This is the OmbLink Document Unstream Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to OMB Document Unstream
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :   
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error. 
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters : 
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms 
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use. 
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+//=================   DURING OPEN OR FBDI PROCESS  ===========================================
+
+// To be interpreted by the client open engine and the FBDI engine
+OMBLink_Missing_Catalog_Error.Diagnostic="La ressource /p suivante est introuvable alors qu'elle contient des définitions de composant requises. Il se peut que des données n'aient pas été ouvertes correctement.";
+OMBLink_Missing_Catalog_Error.Advice="Vérifiez que votre installation contient toutes les ressources nécessaires.";
+OMBLink_Missing_Catalog_Error.Request="";
+
+//=================   DURING SAVE  ===========================================
+
+ERR_LINK_1.Diagnostic="Impossible d'enregistrer cette table de liens : incohérence dans ULRComplementaryData. ";
+ERR_LINK_1.Advice="";
+ERR_LINK_1.Request="";
+
+ERR_REL_1.Request="";
+ERR_REL_1.Diagnostic="Ce composant a deux relations ayant le même ID";
+ERR_REL_1.Advice="Contactez le support.\nDétails techniques : composant=/p1, IDRel=/p2.";
+
+ERR_REL_2.Diagnostic="Une ou plusieurs relations de composant rompt l'intégrité relationnelle. ";
+ERR_REL_2.Advice="";
+ERR_REL_2.Request="";
+
+CannotSaveCorruptedSRMetadata.Diagnostic="Impossible d'enregistrer les données en raison d'un lien corrompu.";
+CannotSaveCorruptedSRMetadata.Advice="Détails techniques : composant=/p1. type SR=/p2. raison='/p3'.";
+CannotSaveCorruptedSRMetadata.Request="";
+
+CannotOpenCorruptedSRMetadata.Diagnostic="Impossible d'ouvrir les données en raison d'un lien corrompu.";
+CannotOpenCorruptedSRMetadata.Advice="Détails techniques : composant=/p1. type SR=/p2. raison='/p3'.";
+CannotOpenCorruptedSRMetadata.Request="";
+
+CannotOpenCATLnk.Request="Ouvrir les liens";
+CannotOpenCATLnk.Diagnostic="Impossible d'ouvrir le fichier contenant les informations sur les liens vers les composants";
+CannotOpenCATLnk.Advice="Il peut s'agir d'un problème de téléchargement, une erreur du système de fichiers ou une modification/suppression simultanée du composant associé.\nFermez la session, effacez le cache situé sous /p1 et retentez l'opération.\nSi le problème persiste, contactez le support ; détails :\n/p2";
+
+CannotUnstreamLinks.Request="Ouvrir les liens";
+CannotUnstreamLinks.Diagnostic="Impossible d'annuler la diffusion des liens";
+CannotUnstreamLinks.Advice="Support de contact";
+
+CtxLinkInfo_01.Request="Obtention d'informations sur la possibilité de créer un lien contextuel";
+CtxLinkInfo_01.Diagnostic="Les arguments d'entrée doivent avoir un objet pointé.";
+CtxLinkInfo_01.Advice="";
+
+CtxLinkInfo_02.Request="Obtention d'informations sur la possibilité de créer un lien contextuel";
+CtxLinkInfo_02.Diagnostic="Impossible de récupérer la référence de la représentation à partir de l'objet pointé.";
+CtxLinkInfo_02.Advice="";
+
+CtxLinkInfo_03.Request="Obtention d'informations sur la possibilité de créer un lien contextuel";
+CtxLinkInfo_03.Diagnostic="Aucune référence de représentation trouvée dans le contexte sélectionné.";
+CtxLinkInfo_03.Advice="";
+
+CtxLinkInfo_04.Request="Obtention d'informations sur la possibilité de créer un lien contextuel";
+CtxLinkInfo_04.Diagnostic="Un lien interne sur le port d'un produit est incorrect.";
+CtxLinkInfo_04.Advice="";
+
+CtxLinkInfo_05.Request="Tentative de définition d'un nouveau contexte pour une représentation qui en a déjà une.";
+CtxLinkInfo_05.Diagnostic="Cette opération n'est pas autorisée, car ce nouveau contexte n'est pas une extension ni une sous-occurrence du contexte existant de la représentation.\n\nContexte existant : /p1\n";
+CtxLinkInfo_05.Advice="Pour définir le contexte proposé en tant que nouveau contexte de cette représentation (via Editer les liens et les relations) :\n- Isolez cette représentation contextuelle. L'associativité actuelle sera perdue.\n- Remplacez le contexte de cette représentation par un nouveau contexte. L'associativité actuelle sera conservée.";
+
+CtxLinkInfo_06.Request="Tentative de définition d'un nouveau contexte pour une représentation qui en a déjà une.";
+CtxLinkInfo_06.Diagnostic="Cette opération n'est pas autorisée, car il existe déjà un contexte de la représentation mais celui-ci est actuellement rompu. Il est donc impossible de le comparer au nouveau contexte proposé.\n";
+CtxLinkInfo_06.Advice="Pour définir le contexte proposé en tant que nouveau contexte de cette représentation (via Editer les liens et les relations) :\n- Réparez le contexte actuel de la représentation et réessayez.\n- Isolez cette représentation contextuelle. L'associativité actuelle sera perdue.\n- Remplacez le contexte de cette représentation par un nouveau contexte. L'associativité actuelle sera conservée.";

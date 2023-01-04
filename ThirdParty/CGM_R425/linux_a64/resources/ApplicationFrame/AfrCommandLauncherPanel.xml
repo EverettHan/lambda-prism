@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+<Template syp:name="CATCAfrCmdListInPanel" Target="CATAfrComponent">
+
+  <CATCAfrWindow Name = "CATCAfrCommandListPanel"
+      Title                       = "Command Launcher"
+      ResizableFlag               = "1"
+      Visibility                  = "1"
+      HorizontallyStretchableFlag = "1"
+      VerticallyStretchableFlag   = "1"
+      RepresentationType          = "AfrFraPanel"
+      MinimumDimension   = "180 100"
+      ResourceFile                = "CATCAfrCmdList">
+
+    <CATCAfrForm Name="ParentForm" Visibility="1" RepresentationType="AfrFullSpace">
+
+      <CATCAfrForm Name="SearchForm" Visibility="1">
+      </CATCAfrForm>
+
+      <CATCAfrList
+        Name = "CATCAfrCmdList"
+        Visibility = "1"
+        RepresentationType = "Multi"
+        SelectionMode = "SingleElement"
+        ResourceFile = "CATCAfrCmdList">
+        <CATCAfrList.Categories>
+          <CATAfrListHeader Name = "App" Type = "CATUnicodeString" Width="200" Visibility="1"/>
+          <CATAfrListHeader Name = "Command" Width="200" Type = "CATUnicodeString" Visibility="1"/>
+          <CATAfrListHeader Name = "Description" Width="200" Type = "CATUnicodeString" Visibility="1"/>
+          <CATAfrListHeader Name = "HeaderID" Type = "CATUnicodeString" Visibility="0"/>
+        </CATCAfrList.Categories>
+      </CATCAfrList>
+    </CATCAfrForm>
+  </CATCAfrWindow>
+</Template>
+
+</Styles>

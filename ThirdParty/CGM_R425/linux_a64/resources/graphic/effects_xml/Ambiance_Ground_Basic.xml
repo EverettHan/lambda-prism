@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"        
+        xmlns ="urn:dsfx0"
+        >    
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Ground</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Ground_Matrix</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Ground_Shadow_Auto</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbViewTransition</NAME>
+    <NEEDS_OPTION>PassThroughTransition</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbSinglePassStereo</NAME>
+    <NEEDS_OPTION>MultiviewSinglePass</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbShadow</NAME>
+    <NEEDS_OPTION>GROUND_SHADOW ShadowMap</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbMultiShadow</NAME>
+    <NEEDS_OPTION>MultiShadow</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>ShadowBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_shadowBuffer[]</NAME>
+        <TYPE>ShadowData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>GROUND_SHADOW MultiShadow</OPTION_GRAMMAR>
+    <OPTION_GRAMMAR>GROUND_SHADOW PointGroundShadows</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <SAMPLER>
+    <EXTERNAL_NAME>shadowMapTex2</EXTERNAL_NAME>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <EXTERNAL_NAME>mirrorMapTex</EXTERNAL_NAME>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>RTAOOutput</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO !IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMSArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO !IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>RTAOGlossyOutput</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS !IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMSArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS !IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>samplerStateClamp</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 0.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>samplerShadow</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 0.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Ground</NAME>
+    <PASS>
+      <NAME>Pass0</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapTex2</SAMPLER>
+          <STATES>samplerShadow</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>mirrorMapTex</SAMPLER>
+          <STATES>samplerStateClamp</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>RTAOOutput</SAMPLER>
+          <STATES>samplerStateClamp</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>RTAOGlossyOutput</SAMPLER>
+          <STATES>samplerStateClamp</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+          
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vViewPosition</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>vWorldPosition</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>vLocalPosition</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>vWorldNormal</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>     
+
+      <COMMONS>streams varyings ubos Ambiance_Ground_Helpers ShadowsData</COMMONS>
+      <VERTEX_STAGE>GroundShadowsVS Ambiance_Ground_MainVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>RayOriginOffset GroundShadowsPS Ambiance_Ground_DeclarePS Ambiance_Ground_BasicPS Ambiance_Ground_MainPS</FRAGMENT_STAGE>
+    </PASS>        
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Grid</NAME>
+    <PASS>
+      <NAME>Pass0</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vViewPosition</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>vWorldPosition</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>vLocalPosition</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>vWorldNormal</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      
+      <COMMONS>streams varyings ubos Ambiance_Ground_Helpers ShadowsData</COMMONS>
+      <VERTEX_STAGE>GroundShadowsVS Ambiance_Ground_MainVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>RayOriginOffset GroundShadowsPS Ambiance_Ground_DeclarePS Ambiance_Ground_BasicPS Ambiance_Ground_MainPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+</EFFECT>

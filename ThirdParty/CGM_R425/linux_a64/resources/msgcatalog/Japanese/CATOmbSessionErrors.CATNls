@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+// VCS 09/04/2014 Creation
+// Error description file for all errors happening during OMB operations, excepted Switch and Stream/Unstream operations
+//
+//    Please keep following glossary format when adding errors:
+//
+// ERR_OMB_<category>_nnn.Diagnostic=<A short and clear message>;
+// ERR_OMB_<category>_nnn.Request="<some more detail with helpful minimal context>;
+// ERR_OMB_<category>_nnn.Advice=<only when REALLY helpfull for final user, as a misuse correction or a by-pass>;
+
+// --> ERR_OMB_SD_001 to ERR_OMB_SD_099 : StreamDescriptor management in session
+
+SD_CREATE="作成";
+SD_DELETE="削除";
+SD_MOD_LR="ローカル ストレージ変更";
+SD_CREATE_LR="ローカル ストレージ作成";
+SD_READ_LR="ローカル ストレージ読み取り";
+SD_LOCK_LR="ローカル ストレージ ロック";
+SD_UNLOCK_LR="ローカル ストレージ アンロック";
+SD_ULOCK_LR="ローカル ストレージ (アン) ロック";
+SD_STREAM="ストリーミング";
+SD_IMPORT="データ インポート";
+SD_EXPORT="データ エクスポート";
+SD_OPERATE="操作";
+SD_UPD_VISU="表示を更新";
+SD_RESTORE="復元";
+
+SD_GET_SYNCHRO_CTX="適用可能同期化要求が失敗しました。\nデフォルト同期化が適用されました。\n";
+SD_APPLI_SYNCHRO_CTX="適用可能同期化が失敗しました。\nデフォルト同期化が適用されました。\n";
+
+ERR_OMB_SD_001.Request="ストリーム記述子が見つかりません。";
+ERR_OMB_SD_001.Diagnostic="ストリーム記述子の /p1 が中止されました。SD の識別子 (フォーマット: /p2 | 役割: /p3 | 名前: /p4 | タイプ: /p5) が見つかりません。";
+
+ERR_OMB_SD_002.Request="ストリーム記述子はすでに存在します。";
+ERR_OMB_SD_002.Diagnostic="ストリーム記述子の /p1 が中止されました。SD の識別子 (フォーマット: /p2 | 役割: /p3 | 名前: /p4 | タイプ: /p5) はすでに存在します。";
+
+ERR_OMB_SD_003.Request="ストリーム記述子は無効です。";
+ERR_OMB_SD_003.Diagnostic="ストリーム記述子の /p1 は禁止されています。SD の識別子 (フォーマット: /p2 | 役割: /p3 | 名前: /p4 | タイプ: /p5) が無効です。";
+
+ERR_OMB_SD_004.Request="ストリーム記述子の /p1 は失敗しました。";
+ERR_OMB_SD_004.Diagnostic="ストリーム記述子の /p1 の要求は失敗しました。SD の識別子 (フォーマット:/p2 | 役割:/p3 | 名前:/p4 | タイプ:/p5)。";
+
+ERR_OMB_SD_005.Request="ストリーム記述子 /p1 の要求が失敗しました。オーサリング SD がセッションにロードされていません。";
+ERR_OMB_SD_005.Diagnostic="SD 識別子 (フォーマット:/p2 |役割:/p3 |名前:/p4 |タイプ:/p5)。";
+ERR_OMB_SD_005.Advice="前のデータ切り替え操作によってオーサリング SD がロードされている必要があります。";
+
+ERR_OMB_SD_006.Request="ストリーム記述子 /p1 は禁止されています。";
+ERR_OMB_SD_006.Diagnostic="ストリーム記述子 /p1 の要求は禁止されています。SD の識別子 (フォーマット:/p2 | 役割:/p3 | 名前:/p4 | タイプ:/p5)。";
+
+ERR_OMB_SD_007.Request="ストリーム記述子 /p1 の要求は失敗しました。メインの AuthoringVisu SD が構成要素に存在するためです。";
+ERR_OMB_SD_007.Diagnostic="SD 識別子 (フォーマット:/p2 |役割:/p3 |名前:/p4 |タイプ:/p5)。";
+ERR_OMB_SD_007.Advice="メインの AuthoringVisu SD が存在することが、現行の操作の前提条件です。";
+
+ERR_OMB_SD_008.Request="ストリーム記述子 /p1 はサポートされていません。";
+ERR_OMB_SD_008.Diagnostic="ストリーム記述子 /p1 は現在のバージョンでサポートされていません。SD の識別子 (フォーマット:/p2 |役割:/p3 |名前:/p4 |タイプ:/p5)。";
+
+ERR_OMB_SD_009.Request="ストリーム記述子 /p1 は許可されていません。";
+ERR_OMB_SD_009.Diagnostic="/p1 は修正済みストリーム記述子で許可されていません。SD の識別子 (フォーマット: /p2 | 役割: /p3 | 名前: /p4 | タイプ: /p5)。";
+
+ERR_OMB_SD_010.Request="ストリーム記述子 /p1 は禁止されています。";
+ERR_OMB_SD_010.Diagnostic="ストリーム記述子は現在削除されているため、SD /p1 リクエストは禁止されています。SD 識別子 (フォーマット:/p2 |役割:/p3 |名前:/p4 |タイプ:/p5)。";
+
+ERR_OMB_SD_011.Request="ストリーム記述子 /p1 はサポートされていません。";
+ERR_OMB_SD_011.Diagnostic="このストリーム記述子タイプに対する /p1 操作は意味がありません。SD の識別子 (フォーマット: /p2 | 役割: /p3 | 名前: /p4 | タイプ: /p5)。";
+
+ERR_OMB_SD_012.Request="ストリーム記述子の /p1 は失敗しました。";
+ERR_OMB_SD_012.Diagnostic="/p1 操作は許可されません。入力表示ストリーム タイプが無効であるか、関連するストリーム記述子タイプに準拠していません。SD の識別子 (フォーマット: /p2 | 役割: /p3 | 名前: /p4 | タイプ: /p5)。";
+
+ERR_OMB_SD_013.Request="ストリーム記述子の /p1 は失敗しました。";
+ERR_OMB_SD_013.Diagnostic="/p1 操作は許可されません。持続性の名前が無効です (特殊文字を含まない ascii 文字にする必要があります)。SD 識別子 (フォーマット:/p2 |役割:/p3 |名前:/p4 |タイプ:/p5)。";
+
+ERR_OMB_SD_014.Request="警告: ストリーム記述子 /p1 が完了していません。";
+ERR_OMB_SD_014.Diagnostic="ストリーム記述子 /p1 の要求が完了していません。SD の識別子 (フォーマット:/p2 | 役割:/p3 | 名前:/p4 | タイプ:/p5)。";
+
+// --> ERR_OMB_SWITCH_RULE_001 to ERR_OMB_SWITCH_RULE_099 : Switch Loading rule
+
+ERR_OMB_SWITCH_RULE_001.Request="ターゲットのロード モードが不明です。";
+ERR_OMB_SWITCH_RULE_001.Diagnostic="切り替えターゲット モードが入力ロード ルールに見つかりません。";
+
+ERR_OMB_SWITCH_RULE_002.Request="ターゲットのロード モードが未定義です。";
+ERR_OMB_SWITCH_RULE_002.Diagnostic="切り替えターゲット モードが入力ロード ルールに定義されていません。";

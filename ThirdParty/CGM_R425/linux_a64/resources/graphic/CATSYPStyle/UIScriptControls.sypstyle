@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <!--======================================-->
+  <!-- UIScriptCtl_Calculator               -->
+  <!--======================================-->
+  <Template syp:name="UIScriptCtl_Calculator" Target="CATVidCtl">
+    <CATVidLayGrid GridWeight="row1=1" CellSpacing = "0">
+      <CATVidCtlBorder syp:Template = "Shadow" CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=RLTB">
+        <CATVidLayGrid KeyboardManipulationFlag = "1">
+          <CATVidCtlLineEditor syp:name="Result" RequestedMinimumDimension = "60 40" Text="0" BoldFlag = "1" ReadOnlyFlag = "0" Alignment = "AlignRight" FontHeight = "20" syp:Template = "Default" CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlBorder>
+      <CATVidCtlBorder syp:Template = "Shadow" CATVidLayGrid.IndexedConstraints = "x=0 y=1 attach=RLTB">
+        <CATVidLayGrid CellSpacing = "10" KeyboardManipulationFlag = "1">
+          <CATVidCtlButton syp:name="Btn0"  Label="0" CATVidLayGrid.IndexedConstraints = "x=1 y=3 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn1"  Label="1" CATVidLayGrid.IndexedConstraints = "x=0 y=2 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn2"  Label="2" CATVidLayGrid.IndexedConstraints = "x=1 y=2 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn3"  Label="3" CATVidLayGrid.IndexedConstraints = "x=2 y=2 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn4"  Label="4" CATVidLayGrid.IndexedConstraints = "x=0 y=1 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn5"  Label="5" CATVidLayGrid.IndexedConstraints = "x=1 y=1 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn6"  Label="6" CATVidLayGrid.IndexedConstraints = "x=2 y=1 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn7"  Label="7" CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=RLTB" RequestedMinimumDimension = "30 20"/>
+          <CATVidCtlButton syp:name="Btn8"  Label="8" CATVidLayGrid.IndexedConstraints = "x=1 y=0 attach=RLTB" RequestedMinimumDimension = "30 20"/>
+          <CATVidCtlButton syp:name="Btn9"  Label="9" CATVidLayGrid.IndexedConstraints = "x=2 y=0 attach=RLTB" RequestedMinimumDimension = "30 20"/>
+          <CATVidCtlButton syp:name="Btn10" Label="." CATVidLayGrid.IndexedConstraints = "x=2 y=3 attach=RLTB"/>
+          <CATVidCtlButton syp:name="Btn11" Label="/" CATVidLayGrid.IndexedConstraints = "x=3 y=0 attach=RLTB" FontWeight="25" FontHeight = "25" BackgroundColor="0 60 100 255" ForegroundColor="150 200 255 255" RequestedMinimumDimension = "30 20"/>
+          <CATVidCtlButton syp:name="Btn12" Label="*" CATVidLayGrid.IndexedConstraints = "x=3 y=1 attach=RLTB" FontWeight="25" FontHeight = "25" BackgroundColor="0 60 100 255" ForegroundColor="150 200 255 255"/>
+          <CATVidCtlButton syp:name="Btn13" Label="-" CATVidLayGrid.IndexedConstraints = "x=3 y=2 attach=RLTB" FontWeight="30" FontHeight = "30" BackgroundColor="0 60 100 255" ForegroundColor="150 200 255 255"/>
+          <CATVidCtlButton syp:name="Btn14" Label="+" CATVidLayGrid.IndexedConstraints = "x=3 y=3 xSpan=1 ySpan=2 attach=RLTB" FontWeight="25" FontHeight = "25" BackgroundColor="0 60 100 255" ForegroundColor="150 200 255 255" />
+          <CATVidCtlButton syp:name="BtnReset"  Label="C" CATVidLayGrid.IndexedConstraints = "x=0 y=3 attach=RLTB" FontWeight="20" FontHeight = "20" BackgroundColor="150 20 0 255" ForegroundColor="255 160 150 255"/>
+          <CATVidCtlButton syp:name="BtnResult" Label="=" CATVidLayGrid.IndexedConstraints = "x=0 y=4 xSpan=3 ySpan=1 attach=RLTB" FontWeight="25" FontHeight = "25" BackgroundColor="150 20 0 255" ForegroundColor="255 160 150 255"/>
+        </CATVidLayGrid>
+      </CATVidCtlBorder>
+    </CATVidLayGrid>
+  </Template>
+  
+  <!--======================================-->
+  <!-- UIScriptCtl_Calendar                 -->
+  <!--======================================-->
+  <Template syp:name="UIScriptCtl_Calendar" Target="UIScriptCtl">
+    <CATVidLayStack Orientation="Vertical">
+      <CATVidLayGrid CellSpacing="2">
+        <CATVidCtlButton syp:name="prevMonth" RequestedMinimumDimension="15 15" IconDimension="9 9" ColorizeIconBlackPixelTo="0.8 255" Icon="vidLeftScrollingArrow.png" CATVidLayGrid.IndexedConstraints = "x=0 y=0 attach=LTB"/>
+        <CATVidGPLabel   syp:name="monthLabel" Text="" CATVidLayGrid.IndexedConstraints = "x=1 y=0 xSpan=5 attach=LRTB" CropPolicy="NoCrop" VerticalAlignment="1" HorizontalAlignment="1"/>
+        <CATVidCtlButton syp:name="nextMonth" RequestedMinimumDimension="15 15" IconDimension="9 9" ColorizeIconBlackPixelTo="0.8 255" Icon="vidRightScrollingArrow.png" CATVidLayGrid.IndexedConstraints = "x=6 y=0 attach=RTB"/>
+        <CATVidGPLabel   Text="Su" BoldFlag="1" CATVidLayGrid.IndexedConstraints = "x=0 y=1 attach=LRTB" RequestedMinimumDimension="30 25" VerticalAlignment="1" HorizontalAlignment="1"/>
+        <CATVidGPLabel   Text="Mo" BoldFlag="1" CATVidLayGrid.IndexedConstraints = "x=1 y=1 attach=LRTB" RequestedMinimumDimension="30 25" VerticalAlignment="1" HorizontalAlignment="1"/>
+        <CATVidGPLabel   Text="Tu" BoldFlag="1" CATVidLayGrid.IndexedConstraints = "x=2 y=1 attach=LRTB" RequestedMinimumDimension="30 25" VerticalAlignment="1" HorizontalAlignment="1"/>
+        <CATVidGPLabel   Text="We" BoldFlag="1" CATVidLayGrid.IndexedConstraints = "x=3 y=1 attach=LRTB" RequestedMinimumDimension="30 25" VerticalAlignment="1" HorizontalAlignment="1"/>
+        <CATVidGPLabel   Text="Th" BoldFlag="1" CATVidLayGrid.IndexedConstraints = "x=4 y=1 attach=LRTB" RequestedMinimumDimension="30 25" VerticalAlignment="1" HorizontalAlignment="1"/>
+        <CATVidGPLabel   Text="Fr" BoldFlag="1" CATVidLayGrid.IndexedConstraints = "x=5 y=1 attach=LRTB" RequestedMinimumDimension="30 25" VerticalAlignment="1" HorizontalAlignment="1"/>
+        <CATVidGPLabel   Text="Sa" BoldFlag="1" CATVidLayGrid.IndexedConstraints = "x=6 y=1 attach=LRTB" RequestedMinimumDimension="30 25" VerticalAlignment="1" HorizontalAlignment="1"/>
+      </CATVidLayGrid>
+      <CATVidLayGrid syp:name="daysLayout" CellSpacing="2"/>
+    </CATVidLayStack>
+  </Template>
+
+  <!--======================================-->
+  <!-- UIScriptCtl_Caroussel                -->
+  <!--======================================-->
+  <Template syp:name="UIScriptCtl_Caroussel" Target="CATVidCtl">
+    <CATVidLayGrid syp:name="topContainer">
+      <CATVidCtlScrollableArea syp:name="scrollable" HScrollbarPolicy="AlwaysHidden" VScrollbarPolicy="AlwaysHidden" CATVidLayGrid.IndexedConstraints="x=0 y=0  attach=RLTB">
+        <CATVidLayGrid syp:name="content" />
+      </CATVidCtlScrollableArea>
+      <CATVidLayStack syp:name="buttonsContainer" Orientation="Horizontal" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--======================================-->
+  <!-- UIScriptCtl_RegisterForm             -->
+  <!--======================================-->
+  <Template syp:name="UIScriptCtl_RegisterForm" Target="CATVidCtl">
+    <CATVidLayGrid GridWeight="col1=1" CellSpacing="10">
+      <CATVidGPSquare Texture="splashscreens/3DExperienceSplash.png" RequestedMinimumDimension="400 400" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+      <CATVidLayGrid GridWeight="row1=1" CellSpacing="10" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LRTB">
+        <CATVidGPLabel Text="Please complete your details" TextColor="0.7 255" BoldFlag="1" FontSize="24" HorizontalAlignment="1" RequestedMinimumDimension="400 50" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidLayGrid CellSpacing="3" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LR">
+          <CATVidCtlLineEditor syp:name="email" PlaceholderText="Your email address" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LR"/>
+          <CATVidGPSquare syp:name="emailValidate" VisibleFlag="0" RequestedMinimumDimension="22 22" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+          <CATVidGPLabel  syp:name="emailValidateMsg" VisibleFlag="0" Text="This email address is not valid!" FontSize="12" TextColor="200 0 0 255" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=1" />
+          <CATVidCtlLineEditor syp:name="username" PlaceholderText="Create a username" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=LR"/>
+          <CATVidGPSquare syp:name="usernameValidate" VisibleFlag="0" RequestedMinimumDimension="22 22" CATVidLayGrid.IndexedConstraints="x=1 y=2"/>
+          <CATVidGPLabel syp:name="usernameValidateMsg" VisibleFlag="0" Text="This username is not valid! Please enter a username with at least 3 characters." FontSize="12" TextColor="200 0 0 255" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=3" />
+          <CATVidCtlLineEditor syp:name="password" PlaceholderText="Create a password" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=4 attach=LR"/>
+          <CATVidGPSquare syp:name="passwordValidate" VisibleFlag="0"  RequestedMinimumDimension="22 22" CATVidLayGrid.IndexedConstraints="x=1 y=4"/>
+          <CATVidGPLabel syp:name="passwordValidateMsg" VisibleFlag="0" Text="Password must contain 6 characters including uppercase and number." FontSize="12" TextColor="200 0 0 255" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=5" />
+          <CATVidCtlLineEditor syp:name="confirmPass" PlaceholderText="Confirm your password" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=6 attach=LR"/>
+          <CATVidGPSquare syp:name="confirmPassValidate" VisibleFlag="0" RequestedMinimumDimension="22 22" CATVidLayGrid.IndexedConstraints="x=1 y=6"/>
+          <CATVidGPLabel syp:name="confirmPassValidateMsg" VisibleFlag="0" Text="Password does not match." FontSize="12" TextColor="200 0 0 255" RequestedMinimumDimension="400 20" CATVidLayGrid.IndexedConstraints="x=0 y=7" />
+          <CATVidCtlButton Label="Complete Sign-Up" FontHeight="18" RequestedMinimumDimension="150 40" CATVidLayGrid.IndexedConstraints="x=0 y=8 xSpan=2"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--======================================-->
+  <!-- UIScriptCtl_TimePicker               -->
+  <!--======================================-->
+  <Template syp:name="UIScriptCtl_TimePicker" Target="CATVidCtl">
+    <CATVidLayLayer>
+      <CATVidCtlSimpleCombo syp:name="InternalCombo"/>
+    </CATVidLayLayer>
+  </Template>
+
+</Styles> 

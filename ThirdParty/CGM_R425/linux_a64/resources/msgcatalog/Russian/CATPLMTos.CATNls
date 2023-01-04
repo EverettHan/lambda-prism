@@ -1,0 +1,53 @@
+<meta charset="UTF-8"/>
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Request="Во время обратимой транзакции возвращен недопустимый код.";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Diagnostic="Транзакция /P1 имеет недопустимый код возврата во время выполнения. Транзакция прервана, и восстанавливается предыдущий сеанс.";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Advice="Обратитесь в службу поддержки по службам сеансов (TOS) с полным сценарием.";
+
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Request="Откатите критический сбой в обратимой транзакции.";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Diagnostic="Обратимая транзакция /P1 не выполнена, и откат не завершен. Сеанс прерван, так как содержимое больше не контролируется.";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Advice="Обратитесь в службу поддержки по службам сеансов (TOS) с полным сценарием.";
+
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Request="Отсутствует сильная взаимосвязь.";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Diagnostic="Транзакция /P1 обнаружила отсутствующее право владения или взаимосвязь между экземпляром и ссылкой. Транзакция прервана, и восстанавливается предыдущий сеанс.";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Advice="Обратитесь в службу поддержки по службам сеансов (TOS) с полным сценарием.";
+
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Request="Цикличность сети.";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Diagnostic="Транзакция /P1 обнаружила цикличность. Транзакция прервана, и восстанавливается предыдущий сеанс.";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Advice="Обратитесь в службу поддержки по службам сеансов (TOS) с полным сценарием.";
+
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Request="Все еще выполняется параллельная транзакция импорта.";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Diagnostic="Транзакция импорта транзакции /P1 — исключительная операция. Параллельная или взаимосвязанная транзакция отклонена.";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Advice="Обратитесь в службу поддержки по службам сеансов (TOS) с полным сценарием.";
+
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Request="Все еще загружена эквивалентная упрощенная.";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Diagnostic="Транзакция /P1 обнаруживает конфликт MajorId. Транзакция прервана, и восстанавливается предыдущий сеанс.";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Advice="Обратитесь в службу поддержки по службам сеансов (TOS) с полным сценарием.";
+
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Request="Загрузка.";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Diagnostic="Некоторые компоненты не могут быть загружены, так как их поток отсутствует или не допустим.";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Advice="Проверьте дополнительные ошибки.";
+
+CATPLMUnexpectedExceptionRaised_ERR_105.Request="Возникло непредвиденное исключение (настоятельно рекомендуется закрыть сеанс).";
+CATPLMUnexpectedExceptionRaised_ERR_105.Diagnostic="/P1 перехватил и повторно выдал непредвиденное исключение.";
+CATPLMUnexpectedExceptionRaised_ERR_105.Advice="Настоятельно рекомендуется закрыть сеанс без сохранения результатов работы и перезапустить новый сеанс.";
+
+CATPLMTosDataCorruption_ERR_107.Request="Повреждены данные.";
+CATPLMTosDataCorruption_ERR_107.Diagnostic="Внутренняя проверка выявила повреждение удаленных данных.";
+CATPLMTosDataCorruption_ERR_107.Advice="Обратитесь в службу поддержки по службам сеансов (TOS) с полным сценарием.";
+
+CATPLMTosStreamFileAccessRead_ERR_108.Request="Ошибка доступа к файлу/чтения файла.";
+CATPLMTosStreamFileAccessRead_ERR_108.Diagnostic="Сбой доступа/чтения в /P1.";
+CATPLMTosStreamFileAccessRead_ERR_108.Advice="Проверьте указанное имя файла (или режим binary/ascii для протокола ftp).";
+
+CATPLMTosStreamFileAccessWrite_ERR_109.Request="Сбой доступа к файлу/записи в файл.";
+CATPLMTosStreamFileAccessWrite_ERR_109.Diagnostic="Сбой доступа/записи в /P1.";
+CATPLMTosStreamFileAccessWrite_ERR_109.Advice="Проверьте управление доступом, диск, связанный с указанным именем файла.";
+
+CATPLMTosReadStreamInvalidData_ERR_111="Поток не может быть прочитан: недопустимый формат данных.";
+
+CATPLMTosReadStreamImpossibleAccess_ERR_112="Поток не может быть прочитан: невозможно получить доступ к файлу.";
+
+CATPLMTosReadOnlyStreamInvalidWrite_ERR_114="Поток предназначен только для чтения, запись невозможна.";
+
+CATPLMTosWriteOnlyStreamInvalidRead_ERR_115="Поток предназначен только для записи, невозможно считать обратно.";
+

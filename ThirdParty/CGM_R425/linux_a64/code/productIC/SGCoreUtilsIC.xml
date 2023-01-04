@@ -1,0 +1,47 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "SGCoreUtils.tst"/>
+  <attached name = "VisuIOSSamples.tst"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENIntelTBB"/>
+  <prerequisite access = "Protected" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Private" comment = "AZX/GJT1 14.01.2020 Basis texture dev" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENBasisUniversal"/>
+  <authorize access = "Private" comment = "02.06.2022 AZX/NJ3 VARJO/OpenXR" name = "VENOpenXR"/>
+  <authorize access = "Private" comment = "19.02.2022 AZX/NJ3 D3D11 integration" name = "RenderEngineD3D11"/>
+  <authorize access = "Private" comment = "16.04.21 AZX/LMA9 acces to vJsonParser" name = "VisualizationDebugCSI"/>
+  <authorize access = "Private" name = "VisuIOSSamples.tst"/>
+  <authorize access = "Private" name = "RenderEngine"/>
+  <authorize access = "Private" name = "RenderEngineMesa"/>
+  <authorize access = "Private" name = "RenderEngine.tst"/>
+  <authorize access = "Private" comment = "19.03.2021 AZX/OXQ" name = "RenderEngineMesa.tst"/>
+  <authorize access = "Private" name = "VisualizationOpenCL"/>
+  <authorize access = "Private" name = "VisualizationCuda"/>
+  <authorize access = "Private" name = "VisualizationEngines"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" name = "VisualizationProfiling.tst"/>
+  <authorize access = "Private" name = "zzPCS_Visualization.tst"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "VisualizationNRE.tst"/>
+  <authorize access = "Private" name = "V6MobileNRESamples.tst"/>
+  <authorize access = "Private" name = "VisualizationFoundation"/>
+  <authorize access = "Private" name = "SGInfra"/>
+  <authorize access = "Private" name = "GeomVisu"/>
+  <authorize access = "Private" name = "VisuDirectAccessItf"/>
+  <authorize access = "Private" comment = "08.08.2017 AZX/NJ3 video 360" name = "VisSphericalMedia"/>
+  <authorize access = "Private" comment = "06.11.2018 AZX/NJ3 Vulkan integration" name = "RenderEngineVulkan"/>
+  <authorize access = "Private" comment = "11.07.2018 OU4" name = "EVisuConsistency.tst"/>
+  <authorize access = "Private" comment = "18.07.2018 OU4" name = "XCTStellarTranslator"/>
+  <authorize access = "Private" comment = "18.07.2018 OU4" name = "XCTTranslators.tst"/>
+  <authorize access = "Private" comment = "2018.09.10 AZX/CX2 Occlusion bounding volume display" name = "VisuDebugTools"/>
+  <authorize access = "Private" comment = "06.11.2019 AZX/NJ3 Vulkan integration" name = "GlslangAbstraction"/>
+  <authorize access = "Private" comment = "23.010.2019 PTO/OXQ Service cloud visu" name = "VisualizationCSIHelpers"/>
+  <authorize access = "Private" comment = "12.11.2020 AZX/NJ3" name = "VisAnimGine.tst"/>
+  <authorize access = "Private" comment = "19.01.2021 AZX/Q6Q VisJSON APIs" name = "Vis3DXM.tst"/>
+  <authorize access = "Private" comment = "19.11.2021 AZX/FDT1 New FW for product loader access" name = "VisuProductLoader"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

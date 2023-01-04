@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="AfrCompass/CATAfrPLMCompass.CATSYPStyle"/>
+  </Resources>
+
+
+  <Template syp:name="Signature2" Target="CATAfr3DXPCompass" >
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidSpacer RequestedMinimumDimension="35 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="CompassGrid" Color="234 235 235 255" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLayGrid GridWeight="row1=1 col2=1">
+        <!--Spacer for 3DS and its margin-->
+        <CATVidSpacer RequestedMinimumDimension="53 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="CompassLayer" VisibilityPolicy="ScaleAnimation"  RequestedMinimumDimension="81 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidLayLayer syp:name="LayerForCompass70">
+
+            <CATVidLayGrid  >
+              <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" VisibleFlag="@VisibleFlag ElementName=defaultCompassCentral" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+            </CATVidLayGrid>
+
+            <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  >
+              <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATAfrVidCompassWidget  Name ="miniCompassCentral" syp:name="miniCompassCentral"
+                                  Mode="@ModeApps"
+                                  SimulationMode="@PlayStatus Mode=TwoWays"
+                                  LayoutWhenUnvisibleFlag="1"
+                                  VisibleFlag="1"
+                                  Action="@HandleCompassEvent"
+                                  CompassLook="Mini"
+                                  PreventChangeActionOnTouchFlag="1"
+                                  RequestedMinimumDimension="64 64"
+                                  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+            </CATVidLayGrid>
+
+
+          </CATVidLayLayer>
+        </CATVidCtl>
+      
+        <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLaySideAttach syp:name="SideAttach" IgnoreChildrenMinimumDimensionFlag="0">
+        <CATVidCtl syp:name="BigCompassGrid" VisibilityPolicy="ScaleAnimation" CATVidLaySideAttach.IndexedConstraints="topPx=6 leftPx=10">
+          <CATAfrVidCompassWidget  Name ="defaultCompassCentral" syp:name="defaultCompassCentral"
+                                   CompassLook="Big"
+                                   Mode="@ModeApps"
+                                   SimulationMode="@PlayStatus Mode=TwoWays"
+                                   LayoutWhenUnvisibleFlag="0"
+   
+                                   VisibleFlag="1"
+                                   Action="@HandleCompassEvent"
+                                   RequestedMinimumDimension="64 64" />
+        </CATVidCtl>
+      </CATVidLaySideAttach>
+      
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="Touch" TargetName="miniCompassCentral">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="0"/> <!--Value="0"-->
+        <!--<CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="0"/>-->
+        <CATSYPSetter IndexName="BigCompassGrid" TargetName="SideAttach" Property="IndexedConstraints" Value="topPx=6 leftPx=33"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/> <!--Value="1"-->
+
+      </CATSYPEventTrigger>
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/>
+        <!--<CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="1"/>-->
+        <CATSYPSetter IndexName="BigCompassGrid" TargetName="SideAttach" Property="IndexedConstraints" Value="topPx=6 leftPx=33"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="0"/>
+
+        <!--<CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:1">
+            <CATVidLaySideAttachConstraintsAnimation CATSYPStoryboard.TargetName="SideAttach" CATSYPStoryboard.IndexName="BigCompassGrid" CATSYPStoryboard.TargetProperty="IndexedConstraints"  
+            Duration="0:0:0.7" To="topPx=6 leftPx=10" Easing="QuintInOut"/>
+
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="BigCompassGrid" CATSYPStoryboard.TargetProperty="AlphaFilterValue"  Duration="0:0:0.7" To="0" Easing="QuadOut"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="BigCompassGrid" CATSYPStoryboard.TargetProperty="VisibleFlag" BeginTime="0:0:0.7" Duration="0:0:0.1" To="0" Easing="QuadOut"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassLayer" CATSYPStoryboard.TargetProperty="AlphaFilterValue"   Duration="0:0:0.80" To="255" Easing="ExpoOut"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>-->
+
+
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="ContentVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="BigCompassGrid"  Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>-->
+
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="0"/> <!--Value="0"-->
+        <!--<CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="0"/>-->
+        <CATSYPSetter IndexName="BigCompassGrid" TargetName="SideAttach" Property="IndexedConstraints" Value="topPx=6 leftPx=33"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/> <!--Value="1"-->
+        <!--<CATSYPSetter TargetName="BigCompassGrid" Property="AlphaFilterValue" Value="0"/>
+
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="1"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:1" >
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassLayer" CATSYPStoryboard.TargetProperty="AlphaFilterValue" BeginTime="0:0:0.10" Duration="0:0:0.9" From="255" To="0" Easing="QuadOut"/>
+            --><!--<CATSYPIntAnimation CATSYPStoryboard.TargetName="miniCompassCentral" CATSYPStoryboard.TargetProperty="VisibleFlag" BeginTime="0:0:0.40" Duration="0:0:0.20" To="0" Easing="QuadOut"/>--><!--
+            <CATVidLaySideAttachConstraintsAnimation CATSYPStoryboard.TargetName="SideAttach" CATSYPStoryboard.IndexName="BigCompassGrid" BeginTime="0:0:0.10"
+                                                     CATSYPStoryboard.TargetProperty="IndexedConstraints"  Duration="0:0:0.6" From="topPx=6 leftPx=10" To="topPx=6 leftPx=33" Easing="ExpoOut"/>
+
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="BigCompassGrid" CATSYPStoryboard.TargetProperty="AlphaFilterValue" BeginTime="0:0:0.10"   Duration="0:0:0.6" To="255" Easing="ExpoOut"/>
+          </CATSYPStoryboard> 
+          
+          
+        </CATSYPBeginStoryboard>-->
+
+      </CATSYPTrigger>
+
+      
+    </CATSYPTriggerCollection>
+  </Template>
+
+  
+  <Template syp:name="Signature2_WebCompass" Target="CATAfr3DXPCompass" >
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1" >
+        <CATVidSpacer RequestedMinimumDimension="35 42" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPSquare syp:name="CompassGrid" Color="234 235 235 255" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLayGrid GridWeight="row1=1 col2=1">
+        <!--Spacer for 3DS and its margin-->
+        <CATVidSpacer RequestedMinimumDimension="53 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="CompassLayer" VisibilityPolicy="ScaleAnimation"  RequestedMinimumDimension="81 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidLayLayer syp:name="LayerForCompass70">
+
+            <CATVidLayGrid  >
+              <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" VisibleFlag="@VisibleFlag ElementName=defaultCompassCentral" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+            </CATVidLayGrid>
+
+            <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  >
+              <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATAfrVidCompassWidget  Name ="miniCompassCentral" syp:name="miniCompassCentral"
+                                  Mode="@ModeApps"
+                                  SimulationMode="@PlayStatus Mode=TwoWays"
+                                  LayoutWhenUnvisibleFlag="1"
+                                  VisibleFlag="1"
+                                  Action="@HandleCompassEvent"
+                                  CompassLook="Mini"
+                                  RequestedMinimumDimension="64 64"
+                                  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+            </CATVidLayGrid>
+
+
+          </CATVidLayLayer>
+        </CATVidCtl>
+
+        <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <CATVidLaySideAttach syp:name="SideAttach" IgnoreChildrenMinimumDimensionFlag="0">
+        <CATVidCtl syp:name="BigCompassGrid" VisibilityPolicy="ScaleAnimation" CATVidLaySideAttach.IndexedConstraints="topPx=6 leftPx=10">
+          <CATAfrVidCompassWidget  Name ="defaultCompassCentral" syp:name="defaultCompassCentral"
+                                   CompassLook="Big"
+                                   Mode="@ModeApps"
+                                   SimulationMode="@PlayStatus Mode=TwoWays"
+                                   LayoutWhenUnvisibleFlag="0"
+   
+                                   VisibleFlag="1"
+                                   Action="@HandleCompassEvent"
+                                   RequestedMinimumDimension="64 64" />
+        </CATVidCtl>
+      </CATVidLaySideAttach>
+
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="Touch" TargetName="miniCompassCentral">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/> <!--Value="0"-->
+        <!--<CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="0"/>-->
+        <CATSYPSetter IndexName="BigCompassGrid" TargetName="SideAttach" Property="IndexedConstraints" Value="topPx=6 leftPx=33"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="0"/> <!--Value="1"-->
+
+      </CATSYPEventTrigger>
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/>
+        <!--<CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="1"/>-->
+        <CATSYPSetter IndexName="BigCompassGrid" TargetName="SideAttach" Property="IndexedConstraints" Value="topPx=6 leftPx=33"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="0"/>
+
+        <!--<CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:1">
+            <CATVidLaySideAttachConstraintsAnimation CATSYPStoryboard.TargetName="SideAttach" CATSYPStoryboard.IndexName="BigCompassGrid" CATSYPStoryboard.TargetProperty="IndexedConstraints"  
+            Duration="0:0:0.7" To="topPx=6 leftPx=10" Easing="QuintInOut"/>
+
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="BigCompassGrid" CATSYPStoryboard.TargetProperty="AlphaFilterValue"  Duration="0:0:0.7" To="0" Easing="QuadOut"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="BigCompassGrid" CATSYPStoryboard.TargetProperty="VisibleFlag" BeginTime="0:0:0.7" Duration="0:0:0.1" To="0" Easing="QuadOut"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassLayer" CATSYPStoryboard.TargetProperty="AlphaFilterValue"   Duration="0:0:0.80" To="255" Easing="ExpoOut"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>-->
+
+
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="ContentVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="BigCompassGrid"  Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>-->
+
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/> <!--Value="0"-->
+        <!--<CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="0"/>-->
+        <CATSYPSetter IndexName="BigCompassGrid" TargetName="SideAttach" Property="IndexedConstraints" Value="topPx=6 leftPx=33"/>
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="0"/> <!--Value="1"-->
+        <!--<CATSYPSetter TargetName="BigCompassGrid" Property="AlphaFilterValue" Value="0"/>
+
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="miniCompassCentral" Property="VisibleFlag" Value="1"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:1" >
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassLayer" CATSYPStoryboard.TargetProperty="AlphaFilterValue" BeginTime="0:0:0.10" Duration="0:0:0.9" From="255" To="0" Easing="QuadOut"/>
+            -->
+        <!--<CATSYPIntAnimation CATSYPStoryboard.TargetName="miniCompassCentral" CATSYPStoryboard.TargetProperty="VisibleFlag" BeginTime="0:0:0.40" Duration="0:0:0.20" To="0" Easing="QuadOut"/>-->
+        <!--
+            <CATVidLaySideAttachConstraintsAnimation CATSYPStoryboard.TargetName="SideAttach" CATSYPStoryboard.IndexName="BigCompassGrid" BeginTime="0:0:0.10"
+                                                     CATSYPStoryboard.TargetProperty="IndexedConstraints"  Duration="0:0:0.6" From="topPx=6 leftPx=10" To="topPx=6 leftPx=33" Easing="ExpoOut"/>
+
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="BigCompassGrid" CATSYPStoryboard.TargetProperty="AlphaFilterValue" BeginTime="0:0:0.10"   Duration="0:0:0.6" To="255" Easing="ExpoOut"/>
+          </CATSYPStoryboard> 
+          
+          
+        </CATSYPBeginStoryboard>-->
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLogoState" Value="1">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLogoState" Value="0">
+        <CATSYPSetter TargetName="CompassLayer" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+
+
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+</Styles>

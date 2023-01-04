@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <DST_STATE_GROUP>
+    <NAME>NoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>AlphaBlending</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>OneMinusSrcAlpha</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>SrcAlpha</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>OneMinusSrcAlpha</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Main_Auto</NAME>
+  </CONSTANT_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>DecalTransparData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_DecalTransparData[]</NAME>
+        <TYPE>DecalTransparData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>restrict</QUALIFIER>
+      <QUALIFIER>coherent</QUALIFIER>
+      <QUALIFIER>readonly</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <STAGES>FragmentStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <SAMPLER>
+    <NAME>backBuffer</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>s_Tail</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>s_TailDepth</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>DecalTransparZMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>smpLinear</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+  </SAMPLER_STATE>
+  
+  <SAMPLER_STATE>
+    <NAME>DecalZMapSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>backBufferSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+    <PASS>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <NAME>Pass0</NAME>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>backBuffer</SAMPLER>
+          <STATES>backBufferSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_Tail</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_TailDepth</SAMPLER>
+          <STATES>smpLinear</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <BLEND_STATE>AlphaBlending</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_DecalTranspar</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+    
+</EFFECT>

@@ -1,0 +1,286 @@
+<meta charset="UTF-8"/>
+//--------------------------------------
+// Resource file 
+// En_EN
+//--------------------------------------
+VMTitle="Настройка режима просмотра";
+//-----------------------------------------------------------------------------
+// Edges frame
+//-----------------------------------------------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.HeaderFrame.Global.Title="Линии и точки";
+
+//--------------------------------------
+// Edges
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeFrame.edgeBtn.Title="Кромки и точки";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeFrame.edgeBtn.LongHelp="Отображает геометрию в режиме \"Затенение\" с точками и кромками.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeFrame.edgeBtn.ShortHelp="Отображает геометрию в режиме \"Затенение\" с точками и кромками.";
+//--------------------------------------
+// All Edges
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.allEdgeBtn.Title="Все кромки";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.allEdgeBtn.LongHelp="Отображает геометрию со всеми кромками вне зависимости от типа (сглаженные или нет).
+Данный режим эквивалентен режиму \"Затенение с кромками\", который доступен в разделе вида.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.allEdgeBtn.ShortHelp="Отображает геометрию со всеми кромками вне зависимости от типа (сглаженные или нет).
+Данный режим эквивалентен режиму \"Затенение с кромками\", который доступен в разделе вида.";
+
+
+//--------------------------------------
+//  withHalfLightedSmoothEdges
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.halfLightedSmoothEdgeBtn.Title="Наполовину сглаженные кромки";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.halfLightedSmoothEdgeBtn.LongHelp="Частично отображает сглаженные кромки, которые нарисованы менее видимыми,
+чем острые кромки.
+Данный режим не имеет воздействия, если параметр \"Затенение\" отключен.
+Цвет, применяемый к кромкам, является определенным в графических свойствах тела детали.
+Для объектов с несколькими цветами к кромкам применяется цвет грани, которой они принадлежат.
+Параметр \"Материал\" не имеет воздействия на примененный к кромкам цвет. По-прежнему используется цвет,
+который определен в графических свойствах тела детали.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.halfLightedSmoothEdgeBtn.ShortHelp="Частично отображает сглаженные кромки, которые нарисованы менее видимыми,
+чем острые кромки.
+Данный режим не имеет воздействия, если параметр \"Затенение\" отключен.
+Цвет, применяемый к кромкам, является определенным в графических свойствах тела детали.
+Для объектов с несколькими цветами к кромкам применяется цвет грани, которой они принадлежат.
+Параметр \"Материал\" не имеет воздействия на примененный к кромкам цвет. По-прежнему используется цвет,
+который определен в графических свойствах тела детали.";
+//--------------------------------------
+// WithoutSmoothEdges 
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmoothEdgeBtn.Title="Без сглаженных кромок";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmoothEdgeBtn.LongHelp="Скрывает сглаженные грани на геометрии.
+Данный режим эквивалентен режиму \"Затенение с кромками без сглаженных кромок\", который доступен в разделе вида.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmoothEdgeBtn.ShortHelp="Скрывает сглаженные грани на геометрии.
+Данный режим эквивалентен режиму \"Затенение с кромками без сглаженных кромок\", который доступен в разделе вида.";
+//------------------------------------------
+// Without Small Curvature Step Smooth Edges
+//------------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmallCurvatureEdgeBtn.Title="Без малых сглаженных кромок шагов кривизны";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmallCurvatureEdgeBtn.LongHelp="Скрывает малые сглаженные кромки шагов кривизны на геометрии.
+Скрывает кромки между двумя поверхностями с одинаковой кривизной.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.edgeRadioFrame.withoutSmallCurvatureEdgeBtn.ShortHelp="Скрывает малые сглаженные кромки шагов кривизны на геометрии.
+Скрывает кромки между двумя поверхностями с одинаковыми параметрами кривизны.";
+//--------------------------------------
+//  All points
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.allPointBtn.Title="Все точки";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.allPointBtn.LongHelp="Отображает кромки и все их точки, включая вершины.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.allPointBtn.ShortHelp="Отображает кромки и все их точки, включая вершины.";
+
+//--------------------------------------
+//  Without vertices
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.withoutVertexBtn.Title="Без вершин";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.withoutVertexBtn.LongHelp="Деактивирует отображение вершин для кромок.
+Отображаются только свободные точки для выбора.
+Это улучшает возможность чтения сложных моделей в целом
+и положительно влияет на производительность.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.pointRadioFrame.withoutVertexBtn.ShortHelp="Деактивирует отображение вершин для кромок.
+Отображаются только свободные точки для выбора.
+Это улучшает возможность чтения сложных моделей в целом
+и положительно влияет на производительность.";
+
+//--------------------------------------
+//  ColoredEdgesFromFaces
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.ColoredEdgesFromFacesFrame.ColoredEdgesFromFacesBtn.Title="Окрашенные кромки от граней";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.ColoredEdgesFromFacesFrame.ColoredEdgesFromFacesBtn.LongHelp="Кромки цветов (граничные кромки, внутренние сглаженные
+кромки или острые кромки) применяются к граням геометрии в соответствии с цветом.
+Для внутренних кромок при наличии у двух прилегающих граней разного цвета
+грань раскрашивается в соответствии с цветом грани с самым маленьким
+радиусом граничной сферы. Настоящая поверхность не учитывается.
+В зависимости от лежащего в основе элемента существует две возможности:
+- граничная сфера представляет собой самую маленькую сферу с гранью (самый последний случай);
+- граничная сфера больше самой маленькой окружающей сферы.
+Объем используемой памяти увеличивается с целью вычисления цвета для каждой грани в объекте.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.ColoredEdgesFromFacesFrame.ColoredEdgesFromFacesBtn.ShortHelp="Кромки цветов (граничные кромки, внутренние сглаженные
+кромки или острые кромки) применяются к граням геометрии в соответствии с цветом.
+Для внутренних кромок при наличии у двух прилегающих граней разного цвета
+грань раскрашивается в соответствии с цветом грани с самым маленьким
+радиусом граничной сферы. Настоящая поверхность не учитывается.
+В зависимости от лежащего в основе элемента существует две возможности:
+- граничная сфера представляет собой самую маленькую сферу с гранью (самый последний случай);
+- граничная сфера больше самой маленькой окружающей сферы.
+Объем используемой памяти увеличивается с целью вычисления цвета для каждой грани в объекте.";
+
+//--------------------------------------
+//  outline
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.outlineFrame.outlineBtn.Title="Контуры";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.outlineFrame.outlineBtn.LongHelp="Определяет необходимость отображения кромок.
+Данный режим особенно полезен при работе с поверхностями
+вращения (например, стержни или цилиндры).
+При работе в данном режиме возможно понижение производительности.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.outlineFrame.outlineBtn.ShortHelp="Определяет необходимость отображения кромок.
+Данный режим особенно полезен при работе с поверхностями
+вращения (например, стержни или цилиндры).
+При работе в данном режиме возможно понижение производительности.";
+
+//--------------------------------------
+//  line-on-line
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.lineOnLineFrame.lineOnLineBtn.Title="Линия на линии";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.lineOnLineFrame.lineOnLineBtn.LongHelp="Позволяет визуализировать наложенные друг на друга линии путем их отображения
+разными цветами.
+Для лучшей наглядности рекомендуется установить черный цвет фона.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.lineOnLineFrame.lineOnLineBtn.ShortHelp="Позволяет визуализировать наложенные друг на друга линии путем их отображения
+разными цветами.
+Для лучшей наглядности рекомендуется установить черный цвет фона.";
+
+//--------------------------------------
+// Isopar
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.isoparFrame.isoparBtn.Title="Изопараметрические";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.isoparFrame.isoparBtn.LongHelp="Отображает топологические элементы, определенные как изопараметрические.
+Для использования этого режима сначала выберите параметр \"Включить формирование изопараметрических элементов\"
+в меню \"Мое > Настройки > Общие > Отображение > Производительность\"."; // @validatedUsage AJT 13:11:05 option
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.isoparFrame.isoparBtn.ShortHelp="Отображает топологические элементы, определенные как изопараметрические.
+Для использования этого режима сначала выберите параметр \"Включить формирование изопараметрических элементов\"
+в меню \"Мое > Настройки > Общие > Отображение > Производительность\".";
+
+//--------------------------------------
+//  Nowire
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutwiresFrame.withoutwiresBtn.Title="Без проводов";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutwiresFrame.withoutwiresBtn.LongHelp="Деактивирует отображение проводов.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutwiresFrame.withoutwiresBtn.ShortHelp="Деактивирует отображение проводов.";
+
+//--------------------------------------
+//  Noaxis
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutaxisFrame.withoutaxisBtn.Title="Без осей и плоскостей";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutaxisFrame.withoutaxisBtn.LongHelp="Отключает отображение осей, систем координат и плоскостей.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutaxisFrame.withoutaxisBtn.ShortHelp="Отключает отображение осей, систем координат и плоскостей.";
+
+//--------------------------------------
+//  NoPoints
+//--------------------------------------
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutpointsFrame.withoutpointsBtn.Title="Без точек";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutpointsFrame.withoutpointsBtn.LongHelp="Деактивирует отображение точек.";
+mainFrame.optionFrame.edgeOptionFrame.IconAndOptionsFrame.OptionsFrame.withoutpointsFrame.withoutpointsBtn.ShortHelp="Деактивирует отображение точек.";
+
+//-----------------------------------------------------------------------------
+// Mesh frame
+//-----------------------------------------------------------------------------
+mainFrame.optionFrame.meshOptionFrame.HeaderFrame.Global.Title="Сетка";
+
+//--------------------------------------
+//  SimpleShading
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.simpleShadingFrame.simpleShadingBtn.Title="Затенение";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.simpleShadingFrame.simpleShadingBtn.LongHelp="Определяет тип используемого затенения для отображения геометрии.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.simpleShadingFrame.simpleShadingBtn.ShortHelp="Определяет тип используемого затенения для отображения геометрии.";
+
+//--------------------------------------
+//  Gouraud
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.shadingFrame.shadingBtn.Title="Гуро";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.shadingFrame.shadingBtn.LongHelp="Отображает геометрию с затенением Гуро.
+Данная техника затенения поверхности линейно вводит цвет или тень вдоль
+многоугольника, чтобы сделать геометрию более сглаженной.
+Данный режим является режимом визуализации по умолчанию и эквивалентен режиму \"Затенение\",
+доступному в разделе вида.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.shadingFrame.shadingBtn.ShortHelp="Отображает геометрию с затенением Гуро.
+Данная техника затенения поверхности линейно вводит цвет или тень вдоль
+многоугольника, чтобы сделать геометрию более сглаженной.
+Данный режим является режимом визуализации по умолчанию и эквивалентен режиму \"Затенение\",
+доступному в разделе вида.";
+
+//--------------------------------------
+// Material 
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.materialFrame.materialBtn.Title="Материал";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.materialFrame.materialBtn.LongHelp="Отображает материал, примененный к геометрии.
+Данный режим эквивалентен режиму \"Затенение материалом\", доступному в разделе вида.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.materialFrame.materialBtn.ShortHelp="Отображает материал, примененный к геометрии.
+Данный режим эквивалентен режиму \"Затенение материалом\", доступному в разделе вида.";
+
+//--------------------------------------
+// Polygons
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.polygonFrame.polygonBtn.Title="Треугольники";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.polygonFrame.polygonBtn.LongHelp="Отображает треугольники на гранях геометрии.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.polygonFrame.polygonBtn.ShortHelp="Отображает треугольники на гранях геометрии.";
+
+//--------------------------------------
+// Transparent 
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.transparentFrame.transparentBtn.Title="Прозрачный";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.transparentFrame.transparentBtn.LongHelp="Отображает всю геометрию полностью в режиме прозрачности,
+ если режим \"Затенение\" активен.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.transparentFrame.transparentBtn.ShortHelp="Отображает всю геометрию полностью в режиме прозрачности,
+ если режим \"Затенение\" активен.";
+
+//--------------------------------------
+// HiddenEdges & points 
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hedgeFrame.hedgeBtn.Title="Скрытые кромки и точки";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hedgeFrame.hedgeBtn.LongHelp="Отображает геометрию в режиме \"Затенение\" с точками и кромками вне зависимости от их скрытия или отображения.
+Данный режим эквивалентен режиму \"Затенение с кромками и скрытыми кромками\", доступному в разделе вида.";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hedgeFrame.hedgeBtn.ShortHelp="Отображает геометрию в режиме \"Затенение\" с точками и кромками вне зависимости от их скрытия или отображения.
+Данный режим эквивалентен режиму \"Затенение с кромками и скрытыми кромками\", доступному в разделе вида.";
+
+//--------------------------------------
+//  hrd
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hrdFrame.hrdBtn.Title="Динамическое удаление скрытой линии";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hrdFrame.hrdBtn.LongHelp="Отображает геометрию в режиме быстрого динамического удаления скрытой линии.
+В данном режиме 3D-грани визуально делают нечеткими любой элемент, расположенный за ним,
+включая 1D-элементы (например, элементы каркаса).";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.hrdFrame.hrdBtn.ShortHelp="Отображает геометрию в режиме быстрого динамического удаления скрытой линии.
+В данном режиме 3D-грани визуально делают нечеткими любой элемент, расположенный за ним,
+включая 1D-элементы (например, элементы каркаса).";
+
+//--------------------------------------
+//  toon
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.toonFrame.toonBtn.Title="Мультик";
+
+//--------------------------------------
+//  Options
+//--------------------------------------
+mainFrame.optionFrame.optionsOptionFrame.HeaderFrame.Global.Title="Параметры"; // @validatedUsage AJT 13:10:10 Options
+
+//--------------------------------------
+//  ObjectViewMode
+//--------------------------------------
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.objectViewModeBtn.Title="Стиль отрисовки по объектам";
+RSPOEnabledMessage="Учитывает стили отрисовки,
+определенные в диалоговом окне \"Свойства\" или на панели свойств объекта
+при визуализации объектов на вкладке.";
+
+RSPODisabledMessageStart="Параметр \"Стиль отрисовки по объектам\" не может быть активирован,
+т.к. ";
+
+RSPODisabledMessageEndOne=" параметр несовместим.";
+RSPODisabledMessageEndMany=" параметры несовместимы.";
+
+//--------------------------------------
+// Rep View Mode Related 
+//--------------------------------------
+RVMTitle="Настроить стиль";
+
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.noDisplayBtn.Title="Прозрачный";
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.noDisplayBtn.LongHelp="Делает объекты невидимыми, но доступными для выбора. Объект выделяется цветом при нажатии кнопки мыши.";
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.objectViewModeFrame.noDisplayBtn.ShortHelp="Делает объекты невидимыми, но доступными для выбора. Объект выделяется цветом при нажатии кнопки мыши.";
+
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.IconViewModeFrame.statuslbl.Title="Совместимость со средством просмотра:  ";
+
+
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.IconViewModeFrame.updateViewerBtn.ShortHelp="Активирует необходимые режимы в средстве просмотра для совместимости.";
+mainFrame.optionFrame.optionsOptionFrame.IconAndOptionsFrame.OptionsFrame.IconViewModeFrame.updateViewerBtn.LongHelp="Активирует необходимые режимы в средстве просмотра для совместимости.";
+
+RVMBlockedIconMessage="Текущие режимы не будут применены, т.к. параметр \"Стиль отрисовки по объектам\" не может быть активирован в средстве просмотра.";
+RVMWarnIconMessageRspo="Текущие режимы будут применены, если параметр \"Стиль отрисовки по объектам\" будет активирован в средстве просмотра.";
+RVMWarnIconMessageOl="Текущие режимы будут применены, если параметр \"Контур\" будет активирован в средстве просмотра.";
+RVMWarnIconMessageRspoOl="Текущие режимы будут применены, если параметр \"Стиль отрисовки по объектам\" и \"Контур\" будут активированы в средстве просмотра.";
+RVMWarnIconMessageDefault="Невозможно применить текущие режимы желаемым образом.";
+
+//--------------------------------------
+//  Raytracing
+//--------------------------------------
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.rayTracingFrame.rayTracingBtn.Title="Трассировка лучей";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.rayTracingFrame.rayTracingBtn.LongHelp="Отображает геометрию с помощью трассировки лучей";
+mainFrame.optionFrame.meshOptionFrame.IconAndOptionsFrame.OptionsFrame.shadingRadioFrame.rayTracingFrame.rayTracingBtn.ShortHelp="Отображает геометрию с помощью трассировки лучей";
+
+
+

@@ -1,0 +1,413 @@
+{
+  "comment": [
+    "- This model corresponds to old `CATIPhysicalMaterial` class.",
+    "- To be backward compatible, this model expose UVTransform per texturable parameters.",
+    "- Whereas global UV transform, object transform and GPU mapping is taken from mapping info corresponding to `eUVSlot_Default` of `CATMaterialApplication`",
+    "- Thus `CATIPhysicalMaterial::SetUvTransformation` can be achieved by,",
+    "   `CATMaterialApplicationOperations::SetUVTransform(..., VisMaterialEnum::eUVSlot_Default, UVTransformation iTransf)`",
+    "- And `CATIPhysicalMaterial::SetMappingOperator` and `CATIPhysicalMaterial::SetObjectTransformation` can be achieved by,",
+    "   `CATMaterialApplicationOperations::SetGPUMapping(..., VisMaterialEnum::eUVSlot_Default, VisMaterialEnum::MappingOperator iMOP, CAT4x4Matrix iObjTransf)`"
+  ],
+
+  "parameters": [
+    {
+      "name": "UseAlphaDiffuseChannel",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "DiffuseAlphaMultiplier",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "glossiness",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "glossinessUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "diffuse",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "MADSupported": true
+    },
+    {
+      "name": "diffuseUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "fresnelCoefficient",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "MADSupported": true
+    },
+    {
+      "name": "fresnelCoefficientUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "emissive",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "MADSupported": true
+    },
+    {
+      "name": "emissiveUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "edgeColor",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "MADSupported": true
+    },
+    {
+      "name": "edgeColorUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "edgeColorBias",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "edgeColorBiasUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "transparency",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "transparencyUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "opacity",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "opacityUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "anisotropy",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "anisotropyUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "anisotropyAngle",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "anisotropyAngleUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "bumpScale",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "bumpScaleUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "displacement",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "displacementUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "RepeatU",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "RepeatV",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "Flakes",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "flakesColor",
+      "type": "Float",
+      "nbElements": 3,
+      "MADSupported": true
+    },
+
+    {
+      "name": "flakesWeight",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "flakesStrength",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "flakesScale",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "flakesBump",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "flakesRoughness",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "flakesDensity",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "pearlFlakesColor",
+      "type": "Float",
+      "nbElements": 3,
+      "MADSupported": true
+    },
+
+    {
+      "name": "pearlFlakesBump",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "pearlFlakesDensity",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "Coating",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "ProceduralCoating",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "coatingFresnelCoefficient",
+      "type": "Float",
+      "nbElements": 3,
+      "MADSupported": true
+    },
+
+    {
+      "name": "coatingGlossiness",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "coatingBump",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "coatingScale",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "NormalMapConventionPositiveY",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "normalMap",
+      "type": "Texture"
+    },
+    {
+      "name": "normalMapUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "heightMap",
+      "type": "Texture"
+    },
+    {
+      "name": "heightMapUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "coatingNormalMap",
+      "type": "Texture"
+    },
+    {
+      "name": "coatingNormalMapUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    },
+
+    {
+      "name": "occlusionMap",
+      "type": "Texture"
+    },
+    {
+      "name": "occlusionMapUvTransform",
+      "type": "Float",
+      "nbElements": 6,
+      "range": {
+        "min":  -9.99999996e+11,
+        "max":  9.99999996e+11
+      },
+      "comment": "In the form (U.x, U.y), (V.x, V.y), (T.x, T.y). Will be used to construct CAT3x3Matrix using function SetComponents."
+    }
+
+  ]
+}

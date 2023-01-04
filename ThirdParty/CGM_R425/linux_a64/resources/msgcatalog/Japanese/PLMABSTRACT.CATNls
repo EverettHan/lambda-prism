@@ -1,0 +1,74 @@
+<meta charset="UTF-8"/>
+PLMABSTRACT="抽象モデル";
+
+PLMABSTRACT.PLMEntity="PLMエンティティ";
+//-- Simple de PLMEntity --
+PLMABSTRACT.PLMEntity.PLM_ExternalID="名前";
+PLMABSTRACT.PLMEntity.V_CustoDiscipline="お客様の分野";
+PLMABSTRACT.PLMEntity.V_Name="タイトル";
+PLMABSTRACT.PLMEntity.V_description="説明";
+PLMABSTRACT.PLMEntity.V_discipline="分野";
+PLMABSTRACT.PLMEntity.V_isUptodate="最新の状態";
+PLMABSTRACT.PLMEntity.V_nature="特性";
+PLMABSTRACT.PLMEntity.V_sec_level="セキュリティ レベル";
+PLMABSTRACT.PLMEntity.V_usage="用途";
+PLMABSTRACT.PLMEntity.workspaceid="ワークスペース ID";
+//-- Simple de BusinessType --
+PLMABSTRACT.PLMEntity.majorid="メジャー ID";
+PLMABSTRACT.PLMEntity.modified="最終更新日";
+PLMABSTRACT.PLMEntity.originated="作成日";
+PLMABSTRACT.PLMEntity.owner="所有者";
+PLMABSTRACT.PLMEntity.reserved="ロック済み";
+PLMABSTRACT.PLMEntity.reservedby="ロックしたユーザー";
+PLMABSTRACT.PLMEntity.updatestamp="同期化スタンプ";
+//-- Volatile de PLMEntity --- 
+PLMABSTRACT.PLMEntity.C_created="作成日";
+PLMABSTRACT.PLMEntity.C_modified="最終更新日";
+PLMABSTRACT.PLMEntity.LOCKSTATUS="ロック済み";
+PLMABSTRACT.PLMEntity.LOCKUSER="ロックしたユーザー";
+PLMABSTRACT.PLMEntity.V_confidentiality="機密性";
+PLMABSTRACT.PLMEntity.V_organization="組織";
+PLMABSTRACT.PLMEntity.V_project="コラボレーション スペース";
+PLMABSTRACT.PLMEntity.V_user="所有者";
+
+PLMABSTRACT.PLMStreamDescriptor="PLMStreamDescriptor";
+PLMABSTRACT.PLMStreamDescriptor.LOCKSTATUS="ロック済み";
+PLMABSTRACT.PLMStreamDescriptor.LOCKUSER="ロック所有者";
+PLMABSTRACT.PLMStreamDescriptor.V_format="V_format";
+PLMABSTRACT.PLMStreamDescriptor.V_isMandatory="V_isMandatory";
+PLMABSTRACT.PLMStreamDescriptor.V_markstamp="V_markstamp";
+PLMABSTRACT.PLMStreamDescriptor.V_phaseOrigin="V_phaseOrigin";
+PLMABSTRACT.PLMStreamDescriptor.V_role="V_role";
+PLMABSTRACT.PLMStreamDescriptor.V_size="V_size";
+PLMABSTRACT.PLMStreamDescriptor.V_typelate="V_typelate";
+
+PLMABSTRACT.PLMEvtOccurrence="PLMEvtOccurrence";
+PLMABSTRACT.PLMEvtOccurrence.LOCKSTATUS="ロック済み";
+PLMABSTRACT.PLMEvtOccurrence.LOCKUSER="ロック所有者";
+PLMABSTRACT.PLMEvtOccurrence.V_ContextData="V_ContextData";
+PLMABSTRACT.PLMEvtOccurrence.V_OccurrenceId="V_OccurrenceId";
+PLMABSTRACT.PLMEvtOccurrence.V_Service="V_Service";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetDataDomain="V_TargetDataDomain";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetLId="V_TargetLId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetPId="V_TargetPId";
+PLMABSTRACT.PLMEvtOccurrence.V_TargetType="V_TargetType";
+PLMABSTRACT.PLMEvtOccurrence.V_TransactionId="V_TransactionId";
+PLMABSTRACT.PLMEvtOccurrence.V_user="V_user";
+
+PLMABSTRACT.V_NatureEnum="V_NatureEnum";
+PLMABSTRACT.V_NatureEnum.Definition="定義";
+PLMABSTRACT.V_NatureEnum.Presentation="プレゼンテーション";
+PLMABSTRACT.V_NatureEnum.Specification="仕様";
+
+PLMABSTRACT.V_isUptodateEnum="V_isUptodateEnum";
+PLMABSTRACT.V_isUptodateEnum.MustBeRebuilt="MustBeRebuilt";
+PLMABSTRACT.V_isUptodateEnum.NotApplicable="NotApplicable";
+PLMABSTRACT.V_isUptodateEnum.UpdateToDate="UpdateToDate";
+
+PLMABSTRACT.V_FormatEnum="V_FormatEnum";
+PLMABSTRACT.V_FormatEnum.Authoring="オーサリング";
+PLMABSTRACT.V_FormatEnum.AuthoringVisu="AuthoringVisu";
+PLMABSTRACT.V_FormatEnum.IndexRep="IndexRep";
+PLMABSTRACT.V_FormatEnum.JpegThumbnail="JpegThumbnail";
+PLMABSTRACT.V_FormatEnum.NavRep="NavRep";
+PLMABSTRACT.V_FormatEnum.VisuRep="VisuRep";

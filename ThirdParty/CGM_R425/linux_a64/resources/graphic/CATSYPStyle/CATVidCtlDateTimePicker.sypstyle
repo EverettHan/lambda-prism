@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template Target="CATVidCtlDateTimePicker" syp:name="DateTimePicker">
+    <CATVidLayStack syp:name="calendarStack" Name="CalendarStack" Orientation="Horizontal" HAlignment="AlignCenter" VAlignment="VAlignCenter">
+      <CATVidLayGrid>
+        <CATVidCtlLineEditor Name="DateTimeEditor" syp:name="Editor" RequestedMinimumDimension="205 24"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LR"  FontIconButtonEnableFlag="1" FontIconButtonVisibleFlag="1" FontIconName="calendar" ReadOnlyFlag="@ReadOnlyFlag" TextActivated="@OnTextActivated" EditingFinished="@OnEditingFinished" FontIconButtonPressed="@OnCalendarButtonPressed"> </CATVidCtlLineEditor>
+        <CATVidCtlPopup Name="CalendarPopUp" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=L" syp:name="PopupForCalendar" RequestedMinimumDimension="0 0" VisibleFlag="0" LayoutWhenUnvisibleFlag="0" AutoHide="@OnCalendarPopupAutoHide"/>
+      </CATVidLayGrid>
+    </CATVidLayStack>
+  </Template>
+</Styles>

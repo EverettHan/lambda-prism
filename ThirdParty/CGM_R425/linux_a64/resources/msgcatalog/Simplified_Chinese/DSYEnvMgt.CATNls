@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+HelpDSYEnvMgt.txt=" 
+DSYEnvMgt -create|-del [-e EnvName] [-d EnvDirPath|INSTALL] [-p ConcatPath] [-from Env|EnvFullPath [-append]] -h
+  -create 或 -del       ：创建或删除环境文件
+  -e EnvName            ：要创建或删除的环境的名称（可选）。
+                          默认名称为 Env。
+  -d EnvDirPath|INSTALL：环境文件存储文件夹（可选）。
+                          如果未使用，则 EnvDir = \"/p1\"
+                          如果使用 -d INSTALL，则 EnvDir = \"/p2\"
+                          如果使用 -d EnvDirPath，则 EnvDir = EnvDirPath
+  -p ConcatPath         ：连接路径。可以指定多个路径（仅适用于创建，可选）。
+                          默认值：\"/p3\"
+                          与 -from 一起使用时，会将 ConcatPath 添加到安装路径的开始位置。
+  -from Env|EnvFullPath：从现有环境文件中创建新的环境文件。（仅适用于创建，可选）
+                          您可以提供环境名称或其完整路径
+                          例如：
+                             DSYEnvMgt -create -e Env2 -from \"/p2\Env.txt\" 将在 \"/p1\" 中创建 Env2.txt
+                          或 
+                             DSYEnvMgt -create -e Env2 -from Env -d INSTALL 将在 \"/p2\" 中创建 Env2.txt
+  -append               ：如果与 -from 和 -p 选项一起使用，则会将 ConcatPath 添加在连接末尾
+                          如果未使用此选项，但使用了 -from 和 -p 选项，则会将 ConcatPath 添加在连接开始
+   -h                   ：此帮助。";
+
+MissingValue_e="-e 选项后必须跟环境文件的名称。";
+MissingValue_d="-d 选项后必须跟路径名称，将在该路径中创建环境文件。";
+MissingValue_p="-p 选项后必须跟连接路径。";
+MissingValue_from="-from 选项后必须跟要复制的环境文件的名称或路径。";
+InvalidArg="未授权选项 /p1。";
+BadOptions_createdel="不能同时使用选项 -create 和 -del。";
+MissingOptions_createordel="以下选项 -create 或 -del 中的一个为必需项。";
+MissingConcatPath="不能检索默认连接路径。请使用 -p 选项给出连接路径。";
+DirNotExist="目录 \"/p1\" 不存在。";
+NotAdmin="您需要更高权限才能在 \"/p1\" 中创建环境文件。";
+BadFrom_NotExist="选项 -from 无效。路径 /p1不存在。\n";
+CreateEnvOK="已成功创建环境文件 \"/p1.txt\"。\n";
+CreateEnvKO="DSYEnvMgt 无法创建 \"/p1.txt\".。\n";
+CreateEnv="创建环境文件 \"/p1.txt\"。\n";
+CreateDirFailed="DSYEnvMgt 无法创建 \"/p1.txt\".";
+CreateDirFailedNotAdmin="DSYEnvMgt 无法创建 \"/p1.txt\"。\n请检查您的管理员权限。";
+DeleteEnv="删除环境文件 \"/p1.txt\"。";
+DeleteEnvOK="已成功删除环境文件 \"/p1.txt\"。";
+DeleteEnvKO="DSYEnvMgt 无法删除 \"/p1.txt\"。";
+CreateFromEnv="从 \"/p2\" 创建环境文件 \"/p1.txt\"。";
+BadOptiond="选项 -d 无效：\n-d 必须后跟 INSTALL 或有效路径。";
+BadOptione="选项 -e 无效：\n-e 必须后跟环境的名称。";
+BadOptionp="选项 -p 无效：\n-p 必须后跟路径。";
+BadOptionfrom="选项 -from 无效：\n-from 必须后跟有效的环境名称或环境名称的有效路径。";
+MissingArgs="选项缺失。\n";
+NotAdmin2="您需要更高权限才能使用 /p1选项。";

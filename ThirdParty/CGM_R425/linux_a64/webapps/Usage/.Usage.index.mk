@@ -1,0 +1,17 @@
+m|WebappsUtils/Usage.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.0.22264|3.2
+r|/u/lego/R425rel/BSF/.
+t|linux_a64/webapps/Usage/Usage.js|1663790122|17146
+s|WebappsUtils/Usage.mweb/src/AbstractTracker.js|1518076729|2309
+t|linux_a64/webapps/Usage/assets/dist/ds-analytics.js|1630145556|28094
+s|WebappsUtils/Usage.mweb/src/assets/dist/ds-analytics.js|1629725826|28094
+u|WebappsUtils/Usage.mweb/src/ActionTracker.js|1542125984|765
+u|WebappsUtils/Usage.mweb/src/Events.js|1575624579|766
+u|WebappsUtils/Usage.mweb/src/GDPR.js|1663249951|3795
+u|WebappsUtils/Usage.mweb/src/TrackerAPI.js|1611737897|19160
+u|WebappsUtils/Usage.mweb/src/UsageManager.js|1582736903|735
+u|WebappsUtils/Usage.mweb/src/UsageShardingManager.js|1629725825|30713
+u|linux_a64/code/toolcmds/mkwebconcat.sh|1625160842|342
+u|linux_a64/code/toolcmds/terser.sh|1625160842|343

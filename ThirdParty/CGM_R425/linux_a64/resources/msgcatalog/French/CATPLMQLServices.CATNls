@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+INVALID_SELECT_DEFAULT_PLMTYPE="Erreur sémantique : type PLM ambigu pour l'attribut de condition SELECT /p1";
+INVALID_SELECT_DEFAULT_PLMTYPE_ERR_ADV="Vérifiez l'alias du type PLM pour les attributs SELECT";
+
+INVALID_SELECT_MISSING_PLMTYPE="Erreur sémantique : un alias de type PLM ambigu /p1 est utilisé pour l'attribut de condition SELECT ; alias de type PLM manquant dans la condition FROM";
+INVALID_SELECT_MISSING_PLMTYPE_ERR_ADV="Ajoutez le type PLM ci-dessus dans la condition FROM";
+
+INVALID_WHERE_MISSING_PLMTYPE="Erreur sémantique : un alias de type PLM ambigu /p1 est utilisé pour l'attribut de condition WHERE ; alias de type PLM manquant dans la condition FROM";
+INVALID_WHERE_MISSING_PLMTYPE_ERR_ADV="Ajoutez le type PLM ci-dessus dans la condition FROM";
+
+INVALID_FROM_PLMTYPE="Erreur sémantique : identifiants de classe/package non valides utilisés dans la condition FROM pour le type PLM \"'/p1'\"";
+INVALID_FROM_PLMTYPE_ERR_ADV="Vérifiez que des valeurs correctes sont utilisées pour la classe/le package pour le type PLM ci-dessus";
+
+NVALID_FROM_PLMTYPEID="Erreur sémantique : identifiants \"'/p1'\" non valides dans la condition FROM utilisés pour le type PLM ";
+INVALID_FROM_PLMTYPEID_ERR_ADV="Vérifiez que des valeurs correctes sont utilisées pour la classe/le package pour le type PLM ci-dessus";
+
+INVALID_FROM_MULTIPLMTYPE="Erreur sémantique : l'alias de type PLM /p1 est utilisé plusieurs fois dans la condition FROM";
+INVALID_FROM_MULTIPLMTYPE="Vérifiez l'alias de type PLM dans la condition FROM";
+
+INVALID_SELECT_ATTRIBUTE="Erreur sémantique : l'attribut non valide /p1 est utilisé avec l'alias de type PLM /p2 dans la condition SELECT";
+INVALID_SELECT_ATTRIBUTE_ERR_ADV="Vérifiez que les attributs utilisés sont valides et pris en charge par le type PLM donné";
+
+INVALID_WHERE_ATTRIBUTE="Erreur sémantique : l'attribut non valide /p1 est utilisé avec l'alias de type PLM /p2 dans la condition";
+INVALID_WHERE_ATTRIBUTE_ERR_ADV="Vérifiez que les attributs utilisés sont valides et pris en charge par le type PLM donné";
+
+INVALID_CREATE_RELATION="Erreur sémantique : la relation non valide /p1 est utilisée dans l'instruction CREATE";
+INVALID_CREATE_RELATION_ERR_ADV="Vérifiez que les relations sont prises en charge par le type PLM donné";
+
+INVALID_CREATE_ATTRIBUTE="Erreur sémantique : l'attribut non valide /p1 est utilisé avec le type PLM dans l'instruction CREATE";
+INVALID_CREATE_ATTRIBUTE_ERR_ADV="Vérifiez que les attributs utilisés sont valides et pris en charge par le type PLM donné";
+
+INVALID_CREATE_PLMTYPE="Erreur sémantique : identifiants de classe/package non valides dans l'instruction CREATE utilisés pour le type PLM \"'/p1'\"";
+INVALID_CREATE_PLMTYPE_ERR_ADV="Vérifiez que des valeurs correctes sont utilisées pour la classe/le package pour le type PLM ci-dessus";
+
+UNMATCHED_ATTR_AND_ATTRVALUES=" La taille de la liste des attributs et la taille de la liste des valeurs d'attribut ne correspondent pas";
+UNMATCHED_ATTR_AND_ATTRVALUES_ERR_ADV="Vérifiez la taille de la liste des attributs et la taille de la liste des valeurs d'attribut";
+
+ERROR_PLMQL_INTERFACE="Erreur PLMQL : échec de l'interrogation de l'interface CATIPLMQLbnfStatement";
+ERROR_PLMQL_INTERFACE_ERR_ADV="";
+
+ERROR_PLMQL_INVALID_STATEMENT="Erreur PLMQL : instruction PLMQL non valide ; erreur dans la syntaxe/grammaire";
+ERROR_PLMQL_INTERFACE_ERR_ADV="Vérifiez la syntaxe et la grammaire de l'instruction";
+
+ERROR_PLMQL_MULTIPLE_QUERY="PLMQLError : les requêtes multiples ne sont pas autorisées";
+ERROR_PLMQL_INTERFACE_ERR_ADV="Exécutez chaque requête dans une fenêtre séparée";
+
+ERROR_PLMQL_MULTIPLE_STATEMENTS="Erreur PLMQL : CRUD, NV, CLONE, QUEOP et MATURITY sont mélangés";
+ERROR_PLMQL_MULTIPLE_STATEMENTS_ERR_ADV="Vérifiez que plusieurs opérations n'appartiennent pas à plusieurs instructions";
+
+INVALID_EXT_ATTRIBUTE="Erreur sémantique : l'attribut d'extension non valide /p1 est utilisé avec l'alias de type PLM /p2 dans la condition SELECT";
+INVALID_EXT_ATTRIBUTE_ERR_ADV="Vérifiez que les attributs utilisés sont valides et pris en charge par le type PLM d'extension donné";
+
+INVALID_EXT_PLMTYPE="Erreur sémantique : identifiants [personnalisation]/modeleur/type fondamental non valides dans la condition SELECT utilisés pour le type PLM d'extension \"'/p1'\"";
+INVALID_EXT_PLMTYPE_ERR_ADV="Vérifiez que les valeurs de type fondamental/de modeleur/personnalisé sont correctes pour le type PLM d'extension ci-dessus";
+
+INVALID_PLMTYPE_USED="Le type PLM est introuvable dans les métadonnées";
+INVALID_PLMTYPE_USED_ERR_REQ="Le type PLM est introuvable dans les métadonnées";
+
+INVALID_PLMID_USED="ID PLM/nom du référentiel non valide pour le fournisseur connecté";
+INVALID_PLMID_USED_ERR_REQ="ID PLM/nom du référentiel non valide pour le fournisseur connecté";
+
+
+INVALID_SELECT_LIST_ERR_REQ="";
+INVALID_SELECT_LIST_ERR_DIAG="";
+INVALID_SELECT_LIST_ERR_ADV="";
+INVALID_SELECT_LIST_BQ="Liste d'attributs SELECT non valide dans la demande de génération";
+
+Err_PLMQL_STMT="Erreur dans l'instruction en entrée ; paramètres incorrects";
+Err_PLMQL_STMT_ERR_REQ="Erreur dans l'instruction en entrée";
+Err_PLMQL_STMT_ERR_DIAG="Erreur dans l'instruction en entrée";
+Err_PLMQL_STMT_ERR_ADV="Consultez la référence sur le langage";
+
+INVALID_SELECT_LIST_SIZE_ZERO="Liste d'attributs SELECT non valide avec taille de liste ZERO";
+
+APPLY_EVENT_ADAPTER_ERROR="L'identificateur en entrée ne représente pas un objet appartenant à l'ID PLM associé à la transaction.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_REQ="L'identificateur en entrée ne représente pas un objet appartenant à l'ID PLM associé à la transaction.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_ADV="Vérifiez l'ID PLM dans l'instruction en entrée.";
+
+COMMIT_STREAMS_ERROR="Il existe des incidents liés à la validation des flux dans le magasin.";
+COMMIT_STREAMS_ERROR_ERR_REQ="Les flux ne peuvent pas être transférés de la source vers la cible";
+COMMIT_STREAMS_ERROR_ERR_ADV="Assurez-vous que les paramètres sont appropriés ou vérifiez la syntaxe du flux";

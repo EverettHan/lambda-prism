@@ -1,0 +1,26 @@
+// Declarative file for all Entity types able to raise low level errors 
+// during any PLM sub-component treatment
+//----------------------------------------------------------------------
+//
+// Global Cute IO warning/error  (no component attached to this kind of error)
+CIO_GLOBAL_ERROR           = "CATUnicodeString";
+
+// Global Selective Loading warning/error  (no component attached to this kind of error)
+SL_GLOBAL_ERROR            = "CATUnicodeString";
+
+// Cute IO URL
+URL_VAULT_ERROR            = "CATUnicodeString";
+
+// Document unstream error
+DOCUMENT_UNSTREAM_ERROR    = "CATBaseUnknown";
+
+// When Error solved at Integration interfacing level PLM component
+PLM_COMPONENT_ERROR        = "CATBaseUnknown";
+
+// Document V6ToV5 compliance error : a component can be attached to this kind of error
+DOCUMENT_V6TOV5_COMPLIANCE_ERROR  = "CATBaseUnknown";
+// Liens et relations
+OPEN_LINKS_AND_RELATIONS_ERROR  = "CATUnicodeString";
+
+// MCX error
+MCX_ERROR           = "CATBaseUnknown";

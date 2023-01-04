@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_VoxelAO_Auto</NAME>
+  
+  <UNIFORM>
+    <NAME>u_ViewBoundingBox</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>ViewVoxelBoundingBox</SEMANTIC>
+    <SECONDARY_TYPE>value</SECONDARY_TYPE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_TransfoViewToVoxel</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>VoxelTransfoViewToVoxel</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ViewInverseTranspose</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>ViewInverseTransposeMatrix</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

@@ -1,0 +1,16 @@
+m|WebappsUtils/AmdLoader.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.0.22071|3.2
+r|/u/lego/R425rel/BSF/.
+t|linux_a64/webapps/AmdLoader/AmdLoader.js|1625184967|25451
+s|WebappsUtils/AmdLoader.mweb/src/1.preconfigureRequire.js|1461239016|3854
+u|WebappsUtils/AmdLoader.mweb/src/2.require.js|1562136494|83063
+u|WebappsUtils/AmdLoader.mweb/src/3.setupRequire.js|1584354644|17843
+u|WebappsUtils/AmdLoader.mweb/src/4.requireDs.js|1530684067|5544
+u|WebappsUtils/AmdLoader.mweb/src/5.requireCss.js|1461239018|1455
+u|WebappsUtils/AmdLoader.mweb/src/6.requireText.js|1480329050|2530
+u|WebappsUtils/AmdLoader.mweb/src/7.requireI18n.js|1538117291|13929
+u|WebappsUtils/AmdLoader.mweb/src/8.requireWebRecord.js|1549557198|853
+u|linux_a64/code/toolcmds/mkwebconcat.sh|1625160842|342
+u|linux_a64/code/toolcmds/terser.sh|1625160842|343

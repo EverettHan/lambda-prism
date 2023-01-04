@@ -1,0 +1,105 @@
+{
+  "grammarVersion": 3,
+  "desc": "Definition of a CSI declarative function",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Function name"
+    },
+    {
+      "label": "version",
+      "basic": "uint32",
+      "desc": "Function version"
+    },
+    {
+      "label": "pool",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function pool"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "desc": "Description of the function"
+    },
+    {
+      "label": "filename",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function filename"
+    },
+    {
+      "label": "filepath",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function install path"
+    },
+    {
+      "label": "implementation",
+      "parameters": [
+        {
+          "label": "library",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Library name exporting implementation code. Only compatible with debugLibrary implementation"
+        },
+        {
+          "label": "debugLibrary",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Library name exporting debug implementation code. Only compatible with library implementation"
+        },
+        {
+          "label": "javaClassPath",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Full class path of the Java implementation. Incompatible with other implementation"
+        }
+      ]
+    },
+    {
+      "label": "onCall",
+      "parameters": [
+        {
+          "label": "in",
+          "type": "CSICommandSignatureDefinition"
+        },
+        {
+          "label": "out",
+          "type": "CSICommandSignatureDefinition"
+        }
+      ],
+      "desc": "Function input and output signature"
+    },
+    {
+      "label": "progress",
+      "type": "CSICommandSignatureDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function progress message format"
+    },
+    {
+      "label": "throwError",
+      "type": "CSICommandSignatureDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function error message format"
+    }
+  ]
+}

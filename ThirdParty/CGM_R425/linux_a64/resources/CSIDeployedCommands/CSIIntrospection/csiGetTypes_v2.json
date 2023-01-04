@@ -1,0 +1,23 @@
+{
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "desc": "Returns a list of type definition for given categories if specified",
+  "onBeginParameters": "none",
+  "onCommandParameters": {
+    "in": {
+      "categories": {
+        "type": "string[]",
+        "defaultValue": [
+
+        ]
+      }
+    },
+    "answers": {
+      "types": "CSIDeclarativeTypeDefinition[]",
+      "errors": "string"
+    }
+  },
+  "onEndParameters": "none"
+}

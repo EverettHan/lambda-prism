@@ -1,0 +1,30 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Extend a job TTK",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "jobId",
+          "basic": "string"
+        },
+        {
+          "label": "ttk",
+          "basic": "int32",
+          "desc": "Time To Keep value in hours"
+        }
+      ]
+    },
+    "out": {}
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

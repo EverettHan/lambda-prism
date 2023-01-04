@@ -1,0 +1,19 @@
+
+InheritsFrom = "CATIA_ShaderV5";
+
+/// BEGIN - DATA MODEL SEMANTIC
+
+MappingScale.ParameterValue    = "BraidingBumpScale BraidingBumpScale";
+
+/// END - DATA MODEL SEMANTIC
+
+/// BEGIN - NRE Configuration
+
+Normal.DefaultValue                  = "CATIA_Normal_2DMap_Scratches_1024.dds";
+Normal.ParameterValue                = "BraidingNormal2DMap";
+bumpScale.ParameterUniform           = "BraidingBumpHeight";
+
+anisotropy.ParameterUniform          = "BraidingAnisotropy2DMap";
+anisotropy.ParameterM1               = "BraidingAnisotropyHeight";
+
+/// END - NRE Configuration

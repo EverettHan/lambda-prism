@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_Ground_Auto</NAME>
+
+  <UNIFORM>
+    <NAME>u_GroundPosition</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>GroundPosition</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GroundNormal</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>GroundNormal</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_GroundViewPosition</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>GroundViewPosition</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GroundViewNormal</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>GroundViewNormal</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GroundRadius</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>GroundRadius</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GroundHeight</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>GroundHeight</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_UnitRatio</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>UnitRatio</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_GroundMatrixViewToPlanet</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>GroundMatrixViewToPlanet</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

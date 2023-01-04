@@ -1,0 +1,459 @@
+#!/bin/ksh
+#set -x
+#############################################################################
+#                                                                           #
+#                                                                           #
+# COPYRIGHT DASSAULT SYSTEMES 1998                                          #
+# CATIA V6 for UNIX                                                         #
+# Licensed Material Program Property of IBM                                 #
+#                                                                           #
+#       Component Class : Shell Script command to start CATIA V6            #
+#                                                                           #
+#       Component Name  : catstart                                          #
+#                                                                           #
+#       Input           : Transmit all                                      #
+#                                                                           #
+#       Output          : stdout                                            #
+#                                                                           #
+#                                                                           #
+#############################################################################
+
+
+
+#-------------------------------------------------------------------------#
+# Initialization
+#-------------------------------------------------------------------------#
+
+get_environment_name=0
+get_environment_directory=0
+get_environment_directory_old=0
+get_object=0
+get_server_envname=0
+get_server_envdir=0
+get_program_name=0
+get_remote=0
+get_user=0
+get_port=0
+get_server=0
+silent_mode=0
+is_shell=0
+unset PANELV2ODOTOP
+
+Sys=`uname` || exit 1
+export Sys
+
+#-------------------------------------------------------------------------#
+# Help shell
+#-------------------------------------------------------------------------#
+
+useshell()
+{
+    echo " +--------------------------------------------------------------+"
+    echo " | GOAL : - start V6 applications                         |" 
+    echo " +--------------------------------------------------------------+" 
+    echo " | SYNTAX :                                                     |" 
+    echo " |                                                              |"
+    echo " | catstart [ -env  environment_name ]                          |"
+    echo " |          [ -direnv environment_directory ]                   |"
+    echo " |          [ -object object ]                                  |"
+    echo " |          [ -remote host_name ]                               |"
+    echo " |          [ -run program_name ]                               |"
+    echo " |          [ -user user_name ]                                 |"
+    echo " |          [ -s ]                                              |"
+    echo " |          [ -h ]                                              |"
+    echo " |                                                              |"
+    echo " |    -> env: followed by environment name                      |"
+    echo " |                                                              |"
+    echo " |    -> direnv: followed by environment directory              |"
+    echo " |               CATIA V6                                       |"
+    echo " |                                                              |"
+    echo " |    -> object: followed by object to load when starting       |"
+    echo " |               or followed by arguments between \"\"          |"
+    echo " |               (-object \"arg1 arg2    argn\")                |"
+    echo " |                                                              |"
+    echo " |    -> remote: followed by the name of the remote machine     |"
+    echo " |               on which the program is run                    |"
+    echo " |                                                              |"
+    echo " |    -> run: followed by program to start(DMU, ENOVIA, Delmia, |"
+    echo " |             CATSoftwareMgt)                                  |"
+    echo " |            without run argument CATIA V6 is started          |"
+    echo " |                                                              |"
+    echo " |    -> user: followed by the name of the user                 |"
+    echo " |             (only with -remote argument)                     |"
+    echo " |                                                              |"
+    echo " |    -> s: silent mode (no messages)                           |"
+    echo " |                                                              |"
+    echo " |    -> h:   get info on the shell                             |"
+    echo " |                                                              |"
+    echo " +--------------------------------------------------------------+"
+}
+
+#-------------------------------------------------------------------------#
+# analyse input parameters
+#-------------------------------------------------------------------------#
+for opt in "$@"
+  do
+  case "$opt" in
+      '-h' ) # option help #
+	  useshell
+	  exit 1;;
+
+      '-env' ) #environment name option #
+	  get_environment_name=1;;
+
+      '-direnv' ) #environment directory option #
+	  get_environment_directory=1;;
+
+      '-senv' ) #server environment name option #
+	  get_server_envname=1;;
+
+      '-sdirenv' ) #server environment directory option #
+	  get_server_envdir=1;;
+
+      '-d' ) #environment directory option #
+	  get_environment_directory_old=1;;
+
+      '-object' ) #CATIA V6 object#
+	  get_object=1;;
+
+      '-run' ) #program_name option #
+	  get_program_name=1;;
+
+      '-remote' ) #remote option #
+	  get_remote=1;;
+
+      '-s' ) #silent mode option #
+	  silent_mode=1;;
+
+      '-serv' ) #server name option for enovia only#
+	  get_server=1;;
+
+      '-port' ) #orbix port option for enovia only#
+	  get_port=1;;
+
+      '-user' ) #user name option (only with remote option)#
+	  get_user=1;;
+
+
+      * ) # other options #
+        if [ $get_environment_name = 1 ]
+			then
+				environment_name=$opt
+				get_environment_name=0
+
+        elif [ $get_environment_directory = 1 ]
+			then
+				environment_directory=$opt
+				get_environment_directory=0
+
+        elif [ $get_server_envname = 1 ]
+			then
+				server_envname=$opt
+				get_server_envname=0
+
+        elif [ $get_server_envdir = 1 ]
+			then
+				server_envdir=$opt
+				get_server_envdir=0
+
+		elif [ $get_environment_directory_old = 1 ]
+	      then
+			environment_directory=$opt
+			get_environment_directory_old=0
+
+        elif [ $get_object = 1 ]
+			then
+				object=$opt
+				get_object=0
+
+        elif [ $get_server = 1 ]
+			then
+				server=$opt
+				get_server=0
+
+        elif [ $get_port = 1 ]
+			then
+				port=$opt
+				get_port=0
+
+        elif [ $get_remote = 1 ]
+			then
+				remote_machine=$opt
+				get_remote=0
+
+        elif [ $get_user = 1 ]
+			then
+				remote_user=$opt
+				get_user=0
+
+        elif [ $get_program_name = 1 ]
+			then
+				program_name=$opt
+				get_program_name=0
+
+        fi;;
+  esac
+done
+
+#-------------------------------------------------------------------------#l
+
+# set  Program Name and Official Program Name
+#-------------------------------------------------------------------------#
+if [ -z "$program_name" ]
+    then
+		program_name="CNEXT"
+fi
+official_program_name=$program_name 
+
+#-------------------------------------------------------------------------#
+# Remote running 
+#-------------------------------------------------------------------------#
+if [ -n "$remote_machine" ]
+    then
+		if [ -z "$remote_user" ]
+			then
+				useshell
+				exit 1
+		fi
+
+# RemoteArg="catstart " 
+		RemoteArg="" 
+
+		if [ -n "$environment_name" ] 
+			then
+				RemoteArg=$RemoteArg" -env "$environment_name 
+		fi
+
+		if [ -n "$environment_directory" ]
+			then
+				RemoteArg=$RemoteArg" -d "$environment_directory
+		fi
+
+    if [ -n "$object" ]
+		then
+			RemoteArg=$RemoteArg" -object "$object
+    fi
+
+    if [ -n "$program_name" ]
+		then
+			RemoteArg=$RemoteArg" -run "$program_name
+    fi
+
+    if [ "$silent_mode" = 1 ]  
+		then
+			RemoteArg=$RemoteArg" -s "
+    fi
+fi
+
+environment_directory=$(echo "$environment_directory"  | sed -e 's/\"//g' ) 
+
+  #--------------------------------------------------------------------------#
+  # set CATIA V6 root directory
+  #--------------------------------------------------------------------------#
+if [  -n "${0##/*}" ]
+    then
+		if [  -n "${0##.*}" ]
+			then
+				CATIAV5starter_path=`dirname \`whence catstart\`` 
+			else
+				CATIAV5starter_path=`pwd`/`dirname $0`
+		fi
+	else
+		CATIAV5starter_path=`dirname $0`
+fi 
+
+CATIAV5starter_path=$(echo "$CATIAV5starter_path"  | sed -e 's+/\./+/+g' ) 
+CATIAV5_root_directory=${CATIAV5starter_path%code/command*} 
+
+if [ -z "$CATIAV5_root_directory" ]
+    then
+		if [ $silent_mode = 0 ]
+			then
+				echo " Can not set $official_program_name Environment Variables" >&2
+				echo " Fatal error ==> procedure is aborted   " >&2
+		fi
+		exit 1
+fi
+
+
+  #-------------------------------------------------------------------------#
+  # set CATIA V6 environment name
+  #-------------------------------------------------------------------------#
+[[ -n "$CATEnvName" && -z "$environment_name" ]] && environment_name=$CATEnvName
+if [ -n "$environment_name" ]
+    then
+		CATIAV5_environment_name=`basename ${environment_name%\.txt}`
+		CATIAV5_environment_directory=`dirname ${environment_name}`
+		if [ "$CATIAV5_environment_directory" = "." ]
+			then
+				unset CATIAV5_environment_directory
+		fi  
+	else
+		if [ -f $CATIAV5_root_directory/../CATEnv/Env.txt ]
+			then
+				CATIAV5_environment_name=Env 
+			else
+				CATIAV5_environment_name=DefaultEnvironment
+		fi
+fi
+
+echo $CATIAV5_environment_name|grep ".txt"
+rc=$?
+if test $rc -eq 1
+    then
+		CATIAV5_environment_name=$CATIAV5_environment_name.txt
+fi
+
+#-------------------------------------------------------------------------#
+# set CATIA V6 environment directory
+#-------------------------------------------------------------------------#
+if [ -z "$CATIAV5_environment_directory" ]
+	then
+		if [ -n "$environment_directory" ]  
+			then
+				CATIAV5_environment_directory=$environment_directory
+			else
+				if [ -f "$HOME/CATEnv/$CATIAV5_environment_name" ]
+					then
+						CATIAV5_environment_directory=$HOME/CATEnv
+					else
+						if [ -f $CATIAV5_root_directory/../CATEnv/$CATIAV5_environment_name ]
+							then
+								CATIAV5_environment_directory=$CATIAV5_root_directory/../CATEnv 
+							else
+								if [ -f "/CATEnv/$CATIAV5_environment_name" ]
+									then
+										CATIAV5_environment_directory=/CATEnv
+									else
+										if [ $silent_mode = 0 ]
+											then
+												echo " Can not set CATIA V6 Environment Directory" >&2
+												echo " Fatal error ==> procedure is aborted   " >&2
+										fi
+										exit 1
+								fi
+						fi
+				fi
+		fi
+fi
+
+if [ ! -f $CATIAV5_environment_directory/$CATIAV5_environment_name ]
+    then
+		if [ $silent_mode = 0 ]
+			then
+				echo " Can not find Environment File: $CATIAV5_environment_directory/$CATIAV5_environment_name" >&2
+				echo " Fatal error ==> procedure is aborted   " >&2
+		fi
+		exit 1
+fi
+
+  #-------------------------------------------------------------------------#
+  # set CATIA V6 environment and start CATIA V6
+  #-------------------------------------------------------------------------#
+export CATEnvName=$CATIAV5_environment_directory/$CATIAV5_environment_name
+DIR=$(whence $0)
+DSUSER_ID=`PATH=$PATH:/usr/ucb whoami`
+GetOSDSPath=${DIR%/catstart*}/GetOSDS
+if [ -f $GetOSDSPath ]
+    then
+		export OSDS=`$GetOSDSPath`
+		TMP=0
+		for i in $(<$CATIAV5_environment_directory/$CATIAV5_environment_name) ; do
+			if [[ -n ${i%%\!*} && $i = *=* ]] ; then
+				while [[ $i = *DSKEY_USERID* ]] ; do
+					i=${i%DSKEY_USERID*}$DSUSER_ID${i##*DSKEY_USERID}
+				done
+				while [[ $i = *DSKEY_RELEASE_LEVEL* ]] ; do
+					i=${i%DSKEY_RELEASE_LEVEL*}R425${i##*DSKEY_RELEASE_LEVEL}
+				done
+				eval eval export  $i
+				continue
+			fi
+
+			if [[ $i = TMSTMP ]] ; then
+				TMP=1
+				continue
+			fi
+			if [[ $TMP -gt 0 ]] ; then
+				if [[ $TMP -eq 2 ]] ; then
+					CATSTART_TMSTMP=$i
+					TMP=0
+					continue
+				fi
+				TMP=2
+			fi
+		done
+	else
+		echo "ERROR: GetOSDS shell not found in code/command directory." 
+		exit 1
+fi
+export CATSTART_TMSTMP=$CATSTART_TMSTMP
+
+  #-------------------------------------------------------------------------#
+  # Start CATIA V6 Program
+  #-------------------------------------------------------------------------#
+if [ $silent_mode = 0 ]
+    then
+		echo "Starting $official_program_name program. Please wait..."
+fi
+
+  #-------------------------------------------------------------------------#
+  # Start Remote Program
+  #-------------------------------------------------------------------------#
+if [ -n "$remote_machine" ]
+    then
+		#CATRemoteRunner $remote_machine $remote_user \""$RemoteArg"\"
+		if [ $remote_machine = "." ] ; then
+				CATRemoteRunner $remote_machine $remote_user $RemoteArg &
+			else
+				CATRemoteRunner $remote_machine $remote_user $RemoteArg 
+		fi
+		rc=$?
+		if [ $rc -ne 0 ]
+			then
+				if [ $silent_mode = 0 ]
+					then
+						echo "$official_program_name Remote Program aborted" >&2
+				fi
+		fi
+		exit $rc
+fi
+
+
+#-------------------------------------------------------------------------#
+# Check if the second launcher is needed
+#-------------------------------------------------------------------------#
+if [ -n "$DSY_SECOND_LAUNCHER" ]
+	then
+		if [ -n "$object" ]
+			then
+				eval "DSYSysLogger -run $program_name $object"
+			else
+				eval "DSYSysLogger -run $program_name" 
+		fi
+	else
+		if [ -n "$object" ]
+			then
+				eval "$program_name $object"
+			else
+				eval "$program_name" 
+		fi
+fi
+rc=$?
+
+if [ $rc -ne 0 ]
+	then
+		if [ $silent_mode = 0 ]
+			then
+				echo "$official_program_name Program aborted" >&2
+		fi
+fi
+
+
+
+#-------------------------------------------------------------------------#
+# That's all folks
+#-------------------------------------------------------------------------#
+
+exit $rc
+

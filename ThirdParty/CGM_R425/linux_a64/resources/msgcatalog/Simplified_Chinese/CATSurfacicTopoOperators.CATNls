@@ -1,0 +1,180 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for SurfacicTopoOperators  errors 
+// En_EN
+//----------------------------------invalid input
+//
+//8000->8099 **** Fill && PowerFill *************
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Request="填充运算:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Diagnostic="计算出的面自相交。";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Advice="修改该输入或修改生成它所使用的对象。";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Request="填充运算:";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Diagnostic="初始曲面上的投影点太接近线框以至于不能相对于点与其投影之间的距离进行填充。";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Advice="请修改点。";
+//
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Request="填充运算:";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Diagnostic="要填充的线框曲线太小，在填充计算过程中变成点。";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Advice="请通过移除此曲线来清除线框。";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8003.Request="填充运算:";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Diagnostic="线框已退化。";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Advice="请修改线框。";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Request="填充运算:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Diagnostic="相切约束所定义的法线集合太分散，存在穿越点。";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Advice="修改该输入或修改生成它所使用的对象，或压缩穿越点。";
+//
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Request="填充运算:";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Diagnostic="无法系住要填充的线框。";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Advice="请检查线框。";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Request="填充运算:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Diagnostic="要填充的线框曲线不在其支持面上。";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Advice="请检查线框";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Request="填充运算:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Diagnostic="计算出的面自相交，因为要填充的线框是自相交的。 ";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Advice="请清除线框。";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Request="填充运算:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Diagnostic="填充计算提供了自相交的面。";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Advice="修改该输入或修改生成它所使用的对象。";
+//
+// **** 8009 a deplacer en 8209 dans Healing && HealGaps *************
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Request="修复运算:";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Diagnostic="受修复影响的边线上的非流形拓扑。";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Advice="修改该输入或修改生成它所使用的对象。";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8009.Request="填充运算:";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Diagnostic="要填充线框的边线之间的间隔大于这些边线的最小长度。";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Advice="请清除线框。";
+//
+// **** 8011 a deplacer en 8211 dans Healing && HealGaps *************
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Request="修复运算:";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Diagnostic="无效几何图形。";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Advice="修改该输入或修改生成它所使用的对象。";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Request="填充运算:";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Diagnostic="初始曲面上的投影点落在要填充的线框之外。";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Advice="请修改点。";
+//
+// **** 8013 a deplacer en 8213 dans Healing && HealGaps *************
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Request="修复运算:";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Diagnostic="警告: 在顶点上检测到过大间隔";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Advice="先减小合并距离或修改输入曲面，再执行修复。";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Request="填充运算:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Diagnostic="要填充的线框曲线不完全在其支持面上。";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Advice="请检查线框";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Request="填充运算:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Diagnostic="在曲线支持面上放置曲线的操作失败，原因是此操作之前和之后的拓扑不兼容。";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Advice="预先将其投影到支持面上。";
+//
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Request="填充运算:";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Diagnostic="边界未闭合。";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Advice="尝试改进几何图形。";
+
+//
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Request="填充运算:";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Diagnostic="在填充曲面边界上保留间隔。";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Advice="增加公差值。";
+
+SurfacicTopOpInFillPartialResult_ERR_8018.Request="填充运算:";
+SurfacicTopOpInFillPartialResult_ERR_8018.Diagnostic="结果是部分的，因为未考虑以下内部约束。";
+SurfacicTopOpInFillPartialResult_ERR_8018.Advice="修改内部约束。";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Request="填充运算:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Diagnostic="无结果，因为相切约束所定义的法线集合太分散。";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Advice="删除相切约束。";
+//
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Request="填充运算:";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Diagnostic="由于输入数据不兼容，填充失败。";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Advice="修改输入数据。";
+//
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Request="填充运算:";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Diagnostic="内部边界是位于另一边界中的边界。";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Advice="修改内部边界。";
+//
+
+//
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Request="PowerFill 运算符：";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Diagnostic="操作员注册失败。";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Advice="修改输入数据。";
+//
+SurfacicTopOpInFillPartialResult_ERR_8023.Request="填充警告：";
+SurfacicTopOpInFillPartialResult_ERR_8023.Diagnostic="没有考虑 G2 约束（约束间相互不兼容）。";
+SurfacicTopOpInFillPartialResult_ERR_8023.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8024.Request="填充警告：";
+SurfacicTopOpInFillPartialResult_ERR_8024.Diagnostic="输入线自相交。已成功修复轮廓。";
+SurfacicTopOpInFillPartialResult_ERR_8024.Advice="";
+//
+
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Request="填充运算";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Diagnostic="此运算没有任何解法。";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8026.Request="填充运算：";
+SurfacicTopOpInFillPartialResult_ERR_8026.Diagnostic="由于 G2 约束已被 G1 约束替代，因此结果是局部的。";
+SurfacicTopOpInFillPartialResult_ERR_8026.Advice="移除 G2 约束。";
+
+//
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Request="填充运算：";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Diagnostic="一条曲线有多个支持曲面。";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Advice="提取需要相切或曲率约束的支持曲面。";
+
+
+//
+//8100->8199 **** Deformation && Unbend *************
+//
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Request="变形运算：";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Diagnostic="输入实体的零件太靠近弯曲轴。";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Advice="弯曲和伸直运算符不能变形处于弯曲轴半径 R 范围内的材料，其中 R = 20 倍模型分辨率。";
+
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Request="伸直运算：";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Diagnostic="（伸直）弯曲角度过大。";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Advice="弯曲角度必须介于 0 度和 120 度之间。将此运算分成多个运算。";
+
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Request="变形运算：";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Diagnostic="对输入几何体中的分区进行分类时出现内部错误。";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Advice="";
+
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Request="变形运算：";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Diagnostic="评估映射时出现内部错误。";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Advice="";
+
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Request="变形运算：";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Diagnostic="将输入几何体分成多个分区时出现内部错误。";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Advice="";
+
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Request="变形运算：";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Diagnostic="输入几何体框为空。";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Advice="检查输入几何体是否存在。";
+
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Request="变形运算：";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Diagnostic="目前不支持不均匀的几何体。";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Advice="";
+
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Request="变形运算符：";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Diagnostic="所选区域不能弯曲或伸直。";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Advice="保留输入实体的拓扑时，无法执行弯曲/伸直操作。";
+
+//
+
+//
+//8200->8299 **** Healing && HealGaps *************
+//
+SurfacicTopOpHealGaps_ERR_8200.Request="HealGaps 运算符：";
+SurfacicTopOpHealGaps_ERR_8200.Diagnostic="存在未修复的间隙。";
+SurfacicTopOpHealGaps_ERR_8200.Advice="使用 GetGaps 方法来检索带有间隙的单元格，然后尝试限制对这些单元格进行修复。";
+//
+SurfacicTopOpHealingTopHealError_ERR_8220.Request="修复运算符：";
+SurfacicTopOpHealingTopHealError_ERR_8220.Diagnostic="拓扑修复失败";
+SurfacicTopOpHealingTopHealError_ERR_8220.Advice="允许形状变形";
+//
+
+
+

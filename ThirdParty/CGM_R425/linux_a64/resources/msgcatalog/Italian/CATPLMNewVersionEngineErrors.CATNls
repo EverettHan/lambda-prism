@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Errore di sistema";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Impossibile rivedere un nuovo componente";
+PLMc_ForbiddenScenario1.Advice="Salvare questo componente e provare a rivederlo in seguito";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="Questo nuovo scenario di revisione non è consentito: è necessario effettuare un salvataggio totale tra 2 nuove richieste di revisione";
+PLMc_ForbiddenScenario2.Advice="Salvare la sessione prima di richiamare la nuova revisione";
+
+PLMc_ForbiddenScenario3.Diagnostic="Impossibile rivedere questo componente nella sessione";
+PLMc_ForbiddenScenario3.Advice="Il componente è stato modificato da un'altra sessione. Provare a salvare le modifiche locali come nuova revisione.";
+
+InvalidAncestor.Diagnostic="Il duplicato non può essere utilizzato per eseguire un'operazione di revisione";
+InvalidAncestor.Advice="Scegliere un duplicato coerente con la famiglia di revisioni che si desidera evolvere";
+
+InvalidComponentState.Diagnostic="Il componente non può essere rivisto perché non è mai stato salvato in una repository";
+InvalidComponentState.Advice="Salvare il componente nella repository prima di rivederlo";
+
+InvalidTypeOfComponent.Diagnostic="La revisione non è consentita su questo tipo di componente";
+InvalidTypeOfComponent.Advice="Fornire componenti conformi per la revisione";
+
+InvalidComponentForDWS.Diagnostic="La revisione non è consentita in quest'area di lavoro su questo tipo di componente";
+InvalidComponentForDWS.Advice="Fornire i componenti per i quali è consentita la revisione in quest'area di lavoro";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="La versione non è consentita a causa della sostituzione nella sessione con la duplicazione delle istanze parziali";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="Non specificare istanze parziali da duplicare durante la sostituzione degli elementi nella sessione (riutilizzo)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="La versione non è consentita a causa del trasferimento delle modifiche nella sessione con duplicazione delle istanze parziali";
+TransferModificationsForbiddenForPartialDuplicate.Advice="Non specificare istanze parziali da duplicare durante il trasferimento delle modifiche";
+
+InvalidIntent.Diagnostic="Grafico della versione chiamato con questo intento non valido: /p";
+InvalidIntent.Advice="Scegliere un intento valido per la creazione delle versioni";
+
+InstanceWithoutOwner.Diagnostic="Questa istanza non è nell'ambito della duplicazione e verrà ignorata: /p";
+InstanceWithoutOwner.Advice="L'operazione potrebbe causare una duplicazione indesiderata. Se possibile, provare a escludere le istanze problematiche.";
+
+RefreshFailed.Diagnostic="Aggiornamento sessione non riuscito.";
+RefreshFailed.Advice="Eseguire un aggiornamento globale o caricare nuovamente i componenti con versione.";
+
+NotRefreshedNoReidentification.Diagnostic="L'oggetto è stato modificato nel database, ma la sessione non è stata aggiornata.";
+NotRefreshedNoReidentification.Advice="Eseguire un aggiornamento globale per recuperare il componente aggiornato.";
+
+NotRefreshedAfterReidentification.Diagnostic="L'oggetto è stato sottoposto correttamente a controllo della versione nel database, ma la nuova versione non è nella sessione. Potrebbe non essere possibile salvare la sessione.";
+NotRefreshedAfterReidentification.Advice="Provare un aggiornamento globale. Se non è possibile aggiornare, sarà necessario scaricare questo componente ed eliminare le modifiche locali per poter salvare.";

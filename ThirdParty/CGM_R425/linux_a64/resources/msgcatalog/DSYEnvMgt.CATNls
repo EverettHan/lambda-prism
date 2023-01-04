@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+HelpDSYEnvMgt.txt =" 
+DSYEnvMgt -create|-del [-e EnvName] [-d EnvDirPath|INSTALL] [-p ConcatPath] [-from Env|EnvFullPath [-append]] -h
+  -create or -del       : To create or delete an environment file.
+  -e EnvName            : Name of the environment to create or to delete (optional).
+                          Default name is Env.
+  -d EnvDirPath|INSTALL : Environment file storage folder (optional).
+                          If not used, EnvDir = \"/p1\".
+                          If -d INSTALL, EnvDir = \"/p2\".
+                          If -d EnvDirPath, EnvDir = EnvDirPath.
+  -p ConcatPath         : Concatenation path. Multiple paths can be specified (for creation only, optional).
+                          Default value: \"/p3\".
+                          When used with -from, adds ConcatPath to the installation path at the beginning.
+  -from Env|EnvFullPath : To create a new environment file from an existing one (for creation only, optional).
+                          You can give either the name of the environment or its full path.
+                          For example: 
+                             DSYEnvMgt -create -e Env2 -from \"/p2\Env.txt\" will create Env2.txt in \"/p1\".
+                          or 
+                             DSYEnvMgt -create -e Env2 -from Env -d INSTALL will create Env2.txt in \"/p2\".
+  -append               : If used with -from and -p options, will add the ConcatPath at the end of the concatenation.
+                          If not used, and -from and -p options are used, the ConcatPath will be added at the beginning of the concatenation.
+  -h                    : This help.";
+
+MissingValue_e = "-e option must be followed by the name of the environment file.";
+MissingValue_d = "-d option must be followed by the name of the path where the environment file will be created.";
+MissingValue_p = "-p option must be followed by the concatenation path.";
+MissingValue_from = "-from option must be followed by the name or the path of the environment file you want to copy.";
+InvalidArg = "Option /p1 is not authorized.";
+BadOptions_createdel = "Options -create and -del cannot be used together.";
+MissingOptions_createordel = "One of the following options -create or -del is mandatory.";
+MissingConcatPath = "Default concatenation path cannot be retrieved. Use the -p option to give the concatenation path.";
+DirNotExist = "Directory \"/p1\" does not exist.";
+NotAdmin ="You need the elevated privileges to create the environment file in \"/p1\".";
+BadFrom_NotExist="Option -from is not valid: the path /p1 does not exist.\n";
+CreateEnvOK ="The environment file \"/p1.txt\" was successfully created.\n";
+CreateEnvKO ="DSYEnvMgt failed to create \"/p1.txt\".\n";
+CreateEnv = "Creating the environment file \"/p1.txt\".\n";
+CreateDirFailed = "DSYEnvMgt failed to create \"/p1.txt\".";
+CreateDirFailedNotAdmin ="DSYEnvMgt failed to create \"/p1.txt\".\nCheck your administrator privileges.";
+DeleteEnv = "Deleting the environment file \"/p1.txt\".";
+DeleteEnvOK ="The environment file \"/p1.txt\" was successfully deleted.";
+DeleteEnvKO ="DSYEnvMgt failed to delete \"/p1.txt\".";
+CreateFromEnv = "Creating the environment file \"/p1.txt\" from \"/p2\".";
+BadOptiond="Option -d is not valid:\n-d must be followed by INSTALL or by a valid path.";
+BadOptione="Option -e is not valid:\n-e must be followed by the name of an environment.";
+BadOptionp="Option -p is not valid:\n-p must be followed by a path.";
+BadOptionfrom="Option -from is not valid:\n-from must be followed by a valid environment name or by a full path of an environment name.";
+MissingArgs = "Options are missing.\n";
+NotAdmin2 = "You need the elevated privileges to use the /p1 option.\n";

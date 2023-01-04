@@ -1,0 +1,95 @@
+{
+  "grammarVersion": 3,
+  "desc": "Full description of a Job",
+  "category": "CSIQueue",
+  "definition": [
+    {
+      "label": "jobId",
+      "basic": "string"
+    },
+    {
+      "label": "tenantId",
+      "basic": "string"
+    },
+    {
+      "label": "pool",
+      "basic": "string"
+    },
+    {
+      "label": "functionName",
+      "basic": "string"
+    },
+    {
+      "label": "functionVersion",
+      "basic": "int32"
+    },
+    {
+      "label": "nodeIdentifier",
+      "basic": "string"
+    },
+    {
+      "label": "casUser",
+      "basic": "string"
+    },
+    {
+      "label": "casUserUUID",
+      "basic": "string"
+    },
+    {
+      "label": "ttk",
+      "basic": "int32",
+      "desc": "Time To Keep value in hours"
+    },
+    {
+      "label": "ttl",
+      "basic": "int32",
+      "desc": "Time To Live value in minutes"
+    },
+    {
+      "label": "status",
+      "basic": "int32"
+    },
+    {
+      "label": "priority",
+      "basic": "int32"
+    },
+    {
+      "label": "keepProgress",
+      "basic": "bool"
+    },
+    {
+      "label": "retryCount",
+      "basic": "int16"
+    },
+    {
+      "label": "creationTime",
+      "basic": "int64"
+    },
+    {
+      "label": "submissionTime",
+      "basic": "int64"
+    },
+    {
+      "label": "startingTime",
+      "basic": "int64"
+    },
+    {
+      "label": "completionTime",
+      "basic": "int64"
+    },
+    {
+      "label": "customProperties",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "jobData",
+      "type": "CSIJobData",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

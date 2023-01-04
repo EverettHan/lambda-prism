@@ -1,0 +1,44 @@
+<meta charset="UTF-8"/>
+ASYNC_Process_Death_NormalEnd.Diagnostic="Erfolgreicher Abschluss.";
+ASYNC_Process_Death_NormalEnd.Advice="";
+ASYNC_Process_Death_NormalEnd.Request="";
+
+ASYNC_Process_Death_KilledByCATIA.Diagnostic="Operation wurde vom Benutzer abgebrochen.";
+ASYNC_Process_Death_KilledByCATIA.Advice="";
+ASYNC_Process_Death_KilledByCATIA.Request="";
+
+ASYNC_Process_Death_KilledByTimeOut.Diagnostic="Operation wurde durch eine Zeitlimitüberschreitung bei der Serverantwort abgebrochen.";
+ASYNC_Process_Death_KilledByTimeOut.Advice="";
+ASYNC_Process_Death_KilledByTimeOut.Request="";
+
+ASYNC_Process_Death_KilledByUser.Diagnostic="Operation wurde abgebrochen, da der asynchrone Prozess durch eine externe app beendet wurde.";
+ASYNC_Process_Death_KilledByUser.Advice="Sicherstellen, dass keine andere app die asynchronen Prozesse beenden kann.";
+ASYNC_Process_Death_KilledByUser.Request="";
+
+ASYNC_Process_Death_SystemError.Diagnostic="Operation wurde aufgrund eines internen Fehlers abgebrochen.";
+ASYNC_Process_Death_SystemError.Advice="Rufen Sie die abend-Datei ab, und wenden Sie sich an die Anwenderunterstützung.";
+ASYNC_Process_Death_SystemError.Request="";
+
+ASYNC_Process_Death_Unknown.Diagnostic="Operation wurde aufgrund eines unerwarteten Fehlers abgebrochen.";
+ASYNC_Process_Death_Unknown.Advice="Rufen Sie die abend-Datei ab, und wenden Sie sich an die Anwenderunterstützung.";
+ASYNC_Process_Death_Unknown.Request="";
+
+ASYNC_Task_End_CanceledByUser.Diagnostic="Operation wurde vom Benutzer abgebrochen.";
+ASYNC_Task_End_CanceledByUser.Advice="";
+ASYNC_Task_End_CanceledByUser.Request="";
+
+ASYNC_Task_End_AsyncPlatformError.Diagnostic="Operation wurde aufgrund eines internen Fehlers abgebrochen.";
+ASYNC_Task_End_AsyncPlatformError.Advice="Asynchrone Befehle sind deaktiviert.";
+ASYNC_Task_End_AsyncPlatformError.Request="";
+
+ASYNC_Process_Death_At_Connect.Diagnostic="Alle Befehle erfolgen synchron.";
+ASYNC_Process_Death_At_Connect.Advice="Suchen Sie in der Dokumentation nach weiteren Informationen zur Asynchronität. Sie können normal weiterarbeiten.";
+ASYNC_Process_Death_At_Connect.Request="Asynchronität";
+
+ASYNC_Process_Death_At_Connect_DevStage.Diagnostic="Ein Prozess, der asynchrone Anforderungen unterstützt, wurde während der Verbindung unerwartet außer Betrieb gesetzt.\nDie asynchronen Anforderungen sind jetzt deaktiviert. Alle Anforderungen erfolgen synchron.";
+ASYNC_Process_Death_At_Connect_DevStage.Advice="Prüfen Sie die Verbindungsparameter, und informieren Sie den Inhaber von CATPLMxProviderConnection::Connect über dieses Problem.";
+ASYNC_Process_Death_At_Connect_DevStage.Request="Prozess außer Betrieb - Verbindungsfehler";
+
+ASYNC_Platform_Deactivated.Diagnostic="Die asynchronen Anforderungen sind jetzt deaktiviert. Alle Anforderungen erfolgen synchron.";
+ASYNC_Platform_Deactivated.Advice="";
+ASYNC_Platform_Deactivated.Request="";

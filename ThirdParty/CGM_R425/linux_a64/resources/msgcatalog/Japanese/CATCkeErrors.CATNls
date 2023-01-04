@@ -1,0 +1,89 @@
+<meta charset="UTF-8"/>
+CATCkeNullPtrAccess="NULL ポインタ アクセス";
+CATCkeAssertFailed="アサーションに失敗しました。";
+CATCkeInvalidType="無効なタイプ";
+CATCkeInvalidName=" 名前: /P1";
+CATCkeNotYetImplemented="まだインストールされていません。";
+CATCkeBoundError="/P1 は範囲外です、範囲は /P2 .. /P3 です。";
+CATCkeConstObject="定数オブジェクト";
+CATCkeUnderlyingError="基本的なモデラ エラー";
+CATCkeWrongFormat="正しくない書式";
+
+CATCkeInvalidArg="無効な引数: /P1";
+CATCkeUnsetParameter="パラメーターが設定されていません: /P1";
+
+CATCkeNotEvaluable="評価できません: /P1";
+CATCkeNotApplyable="適用できません: /P1";
+CATCkeUnrecognisedUnit="単位が認識されません: /P1";
+CATCkeBadUnit="正しくない単位: /P1";
+CATCkeNotYetEvaluated="まだ評価されていません。";
+CATCkeWrongNumberArg="正しくない引数の数";
+CATCkeWrongTypesArg="正しくない引数のタイプ";
+CATCkeNoCurrentParmFactory="現行パラメーター ファクトリがありません: CATCkeCreateParmFactory を使用してください。";
+CATCkeValueOutOfRangeGT="値 /P1 は範囲外です: /P2 より大きくしてください。\nこの値を入力する場合は、範囲を編集してください。";
+CATCkeValueOutOfRangeLW="値 /P1 は範囲外です: /P2 より小さくしてください。\nこの値を入力する場合は、範囲を編集してください。";
+CATCkeValueNotInEnum="値 /P1 は許可リストにありません。";
+CATCkeValueNotAuthorized="値 /P1 は許可されていません";
+
+ParseErrorTitle="構文エラー";
+ParseError="構文エラー行 /P2 : \n /P1";
+ParseWarningTitle="構文警告";
+ParseWarning="構文警告: \n /P1";
+CATCkeNotParsable=" 無効な構造: /P1 ";
+NearToken=" /P1 (次のトークンの付近: < /P2 >)";
+ActionOrPredicate="動作または述部";
+PredicateOrConstraint="述部または拘束";
+Predicate="述部";
+Block="ブロック";
+FunctionalExpression="関数式";
+CATCkeNonExistingType=" 無効なタイプ名: /P1 ";
+CATCkeNonExistingUnit=" 無効な単位名: /P1";
+CATCkeTypeConflict=" タイプの矛盾 /P1 は /P2 と同類ではありません。";
+CATCkeInvalidExpression=" 無効な種類の式: /P1 でなければなりません。";
+CATCkeNonExistingVariable=" パラメーター /P1 はこのコンテキストでは使用できません。";
+CATCkeNonExistingMethod=" 無効な /P1 が使用されました: /P2";
+CATCkeStringNotFinished=" 文字列 /P1 の終わりには \" が必要です。";
+CATCkeNameNotFinished=" パラメーター名 /P1 の終わりには ` が必要です。";
+CATCkeCommentNotFinished=" コメントの終わりには */ が必要です。";
+CATCkeNonExistingAttribute=" 無効な属性が使用されています: /P1";
+CATCkeBadNbArg1=" /P1 : /P2 の引数の数が正しくありません (/P4 ではなく /P3)";
+CATCkeBadNbArg2=" /P1 : /P2 の引数の数が正しくありません";
+CATCkeBadKindOfArg1=" /P2 /P3 の引数番号 /P1 の種類が正しくありません\n",
+" (/P5 ではなく /P4 にする必要があります)";
+CATCkeBadKindOfArg2=" /P2 /P3  の引数番号 /P1 の種類が正しくありません";
+CATCkeConstantModified=" /P2 /P3 の引数番号 /P1 が修正されています\n",
+" (これは定数にすることはできません)";
+
+CATCkeAssignMKS="単位が同種ではありません (/P2 に /P1)。\n",
+"定数には正確な単位を指定してください。\n指定がなければ国際システム単位がデフォルト値となります。\n(例: 10->10mm または MyRealParameter->MyRealParameter*1mm)\n";
+CATCkeAssignFctMKS="関数 /P3 への単位が同種ではありません (/P2 に /P1)。\n",
+"定数には正確な単位を指定してください。\n指定がなければ国際システム単位がデフォルト値となります。\n(例: 10->10mm または MyRealParameter->MyRealParameter*1mm)\n";
+CATCkeCompareMKS="単位が同種ではありません (/P2 と /P3 の間のオペレータ /P1)。\n",
+"定数には正確な単位を指定してください。\n指定がなければ国際システム単位がデフォルト値となります。\n(例: 10->10mm または MyRealParameter->MyRealParameter*1mm)\n";
+CATCkePowerMKS="/P2 と同種の値にオペレータ ^ /P1 を使用しようとしました。";
+
+CATKWELifInParamWarning="関係 /P1 の入力でパラメーターを削除しようとしています。\n",
+"複製が作成されます。";
+CATKWELifInParamWarningHd="パラメーター削除のインパクト";
+CATKWELifInParamDeleteFailed="パラメーターの削除に失敗しました";
+
+CATKWELifInFeatWarning="関係 /P1 の入力にあるフィーチャーを削除しようとしています。\n",
+"関係は分断されます。";
+CATCkeMeasureInProduct="フィーチャーが同じコンテナにない場合は、フィーチャーをプロダクト レベルに関連して使用できません。";
+
+CATCkeBadLawNbFormal="ローは必ず 1 つだけ仮パラメーターを入力として使用する必要があります。";
+
+CATCkeNotFormalLawOutput="ローは必ず 1 つだけ仮パラメーターを計算する必要があります。";
+CATCkeTypeNeeded2="関数 /P1 の最初の引数は、オブジェクトのタイプを定義する文字定数です。";
+CATCkeTypeNeeded="関数 /P1 の /P2 はオブジェクトの既存のタイプである必要があります。";
+
+CATCkeLawBadFormalName="仮パラメーター /P1 は既存のパラメーターと同じ名前を持つため、名前を変更する必要があります";
+
+CATCkeBoundErrorSimpleMessage="/P1 パラメーター値は範囲外です。";
+PublicationType="ナレッジ";
+
+CATCkeMultipleValueErrorSimpleMessage="/P1 パラメーター値は複数の値のリストを満たさない可能性があります。";
+CATCkeLexOverflow="関係に長いコメントが含まれないかチェックし、そのサイズを小さくしてください。";
+
+CATCkeImpossibleConversion="角度には、この単位では変換できない値モジュロ (pi/2) が含まれています";
+CATCkeGenericParseError="/P1";

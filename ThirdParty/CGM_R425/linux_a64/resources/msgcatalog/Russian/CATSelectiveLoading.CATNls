@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+// General switch messages format 
+// Key.Diag=Switch Diagnostic Value. /p1  where /p1 = 1rst internal error Diagnostic
+// Key.Advice=/p1                         where /p1 = [1rst internal error Key/Catalog] + its Advice 
+
+// ------- Validate a switch operation ------
+
+// WARNING
+ERR_OMB_SWITCH_PENDING.Diagnostic="В настоящее время для данного компонента запущено другое переключение.";
+ERR_OMB_SWITCH_PENDING.Advice="Дождитесь завершения текущего переключения и повторите команду.";
+
+// SEVERE ERROR -> Factory can decide to use a different loading mode 
+ERR_OMB_SWITCH_TARGET_ACCESS.Diagnostic="Целевой режим загрузки не может быть достигнут.";
+ERR_OMB_SWITCH_TARGET_ACCESS.Advice="Возможно, данные для загрузки отсутствуют или не доступны в целевом режиме.";
+
+// ------- Message d'erreur BATCH_StartTransition ------
+
+// SEVERE ERROR -> unknown case -> better to cancel and to analyze the problem
+// Unknown error while performing the start transition step. 
+ERR_OMB_SWITCH_START.Diagnostic="Проблема при запуске операций переключения. /p1";
+ERR_OMB_SWITCH_START.Advice="/p1";
+
+// WARNING (This problem only arises when switching from a mode1 to a mode2)
+// The SD in the Vault are more recent than the one retrieved in the session
+ERR_OMB_SWITCH_SYNCHRO.Diagnostic="Компонент изменен извне этого сеанса. /p1";
+ERR_OMB_SWITCH_SYNCHRO.Advice="Выполните команду \"Обновить\" в редакторе VPM или закройте и снова откройте данный компонент.";
+
+ERR_OMB_SWITCH_COMPID.Diagnostic="Проверка записей переключения выявила проблему. /p1";
+ERR_OMB_SWITCH_COMPID.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Unload 
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_UNLOAD.Diagnostic="проблема при выгрузке данных. /p1";
+ERR_OMB_SWITCH_UNLOAD.Advice="/p1";
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_STREAM_REP.Diagnostic="Проблема при потоковой передаче данных в кэш-память. /p1";
+ERR_OMB_SWITCH_STREAM_REP.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Load 
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_LOAD.Diagnostic="Проблема при загрузке данных. /p1";
+ERR_OMB_SWITCH_LOAD.Advice="/p1";
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_DOWNLOAD.Diagnostic="Проблема при скачивании данных в кэш сеансов. /p1";
+ERR_OMB_SWITCH_DOWNLOAD.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Close 
+// SEVERE ERROR
+ERR_OMB_SWITCH_CLOSE.Diagnostic="Проблема при завершении переключения. /p1";
+ERR_OMB_SWITCH_CLOSE.Advice="/p1";
+
+// ------- Messages additionnels RevertSwitch
+// ADDITIONAL WARNING
+WARN_OMB_SWITCH_REVERT="Компонент остается в текущем режиме загрузки.";
+
+// ADDITIONAL ERROR
+ERR_OMB_SWITCH_REVERT="Компонент не может вернуться к предыдущему режиму загрузки.";
+
+// -------- Message d'erreur divers --------------
+ERR_OMB_SWITCH_CSA_REENTRANCE="Операция переключения отклонена, так как на этом компоненте уже выполняется другая операция переключения (SwitchSDs)";
+ERR_OMB_SWITCH_0001="Целевой режим '/p1' не соответствует режиму ограничения по умолчанию '/p2'. Сохранение целевого режима";
+
+// ------- Messages additionnels pour test error management
+// ADDITIONAL TEST WARNINGS
+INFO_OMB_TEST_SWITCH_EXECUTE="Созданы фиктивные сведения о выполнении для тестирования.";
+WARN_OMB_TEST_SWITCH_EXECUTE="Создано фиктивное предупреждение выполнения для тестирования.";
+

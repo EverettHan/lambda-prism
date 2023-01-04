@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  
+  <NAME>cb_ToneMapping</NAME>
+
+  <UNIFORM>
+    <NAME>u_CrushBlacks</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.75</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_BurnHighlights</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.25</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Saturation</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ColorCorrection</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>
+

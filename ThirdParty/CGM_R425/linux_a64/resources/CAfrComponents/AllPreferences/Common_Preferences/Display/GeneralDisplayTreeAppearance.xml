@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="GeneralDisplayTreeAppearancesettings" Target="CATAfrComponent">
+
+    <preferencepage Name="TreeAppearance" Resource="CommonDisplayMePreferences" RepositoryName="Tree">
+    
+      <preferenceitem Name="TreeVizCB" syp:name="TreeVizCB" MoreInfo="PlaceHolderControl RuntimeValues" UserDefinedCtr="Label" Visibility="0"/>
+      
+      <preferencegroup Name="TreeType">
+        <preferenceitem Name="StructState" UserDefinedCtr="Radio" syp:name="StructState"/>
+      </preferencegroup>
+
+      <preferencegroup Name="TreeOrientation" >
+        <preferenceitem Name="Orientation" UserDefinedCtr="Radio"  syp:name="Orientation" />
+      </preferencegroup>
+
+      <preferencegroup Name="TreeItemSize" Align="1">
+        <preferenceitem Name="LeavesDependant"  syp:name="LeavesDependant" UserDefinedCtr="Radio"/>
+        <preferenceitem Name="LeavesSize"  syp:name="LeavesSize" Lock="0"/>
+      </preferencegroup>
+
+      <preferencegroup Name="TreeShowNoShow"  Align="1">
+        <preferenceitem syp:name="ShowNoShow" Name="ShowNoShow" UserDefinedCtr="CheckBox"/>
+        <preferenceitem syp:name="WarningLabelShowNoShow" Name="WarningLabelShowNoShow"  IconName="I_WarningMsgFrameSet" MoreInfo="PlaceHolderControl" UserDefinedCtr="Label"  Visibility="0" />
+      </preferencegroup>
+
+      <preferencegroup Name="Open Tree Window Expanded"  Align="1">
+        <preferenceitem syp:name="OpenTreeWindowExpanded" Name="OpenTreeWindowExpanded" UserDefinedCtr="CheckBox"/>
+      </preferencegroup>
+      
+      <preferencegroup Name="Subtree Position and Dimension"  Align="1">
+        <preferenceitem syp:name="SubTreePositionDimension" Name="SubTreePositionDimension" UserDefinedCtr="CheckBox"/>
+      </preferencegroup>
+      
+    </preferencepage>
+
+
+    <CATSYPTriggerCollection>
+     
+      <CATSYPTrigger Property="ChangeAfterLoad" TargetName="ShowNoShow" Value="1">
+        <CATSYPSetter Property="Visibility" TargetName="WarningLabelShowNoShow" Value="1" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="StructState" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="Orientation" Value="0" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="StructState" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="Orientation" Value="0" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="StructState" Value="3">
+        <CATSYPSetter Property="EnableFlag" TargetName="Orientation" Value="1" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="StructState" Value="4">
+        <CATSYPSetter Property="EnableFlag" TargetName="Orientation" Value="1" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="LeavesDependant" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="LeavesSize" Value="1" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="LeavesDependant" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="LeavesSize" Value="0" />
+      </CATSYPTrigger>
+
+     
+ 
+    </CATSYPTriggerCollection>
+  </Template>
+</Styles>

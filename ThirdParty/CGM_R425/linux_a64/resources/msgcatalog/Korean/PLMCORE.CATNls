@@ -1,0 +1,94 @@
+<meta charset="UTF-8"/>
+PLMCORE="코어 모델";
+
+//--------------------------------------------------------
+PLMCORE.PLMReference="PLMReference";
+//-- Simple from PLMReference --
+PLMCORE.PLMReference.V_ApplicabilityDate="적용 가능일";
+PLMCORE.PLMReference.V_AuthorityControl="권한 제어";
+PLMCORE.PLMReference.V_DerivedFrom="파생 위치:";
+PLMCORE.PLMReference.V_EffectivityKind="유효성 종류";
+PLMCORE.PLMReference.V_ProjectApplicability="프로젝트에 적용 가능";
+PLMCORE.PLMReference.V_VersionID="버전 ID";
+PLMCORE.PLMReference.V_fromExternalID="작성 원본";
+PLMCORE.PLMReference.V_hasConfigContext="구성 가능";
+PLMCORE.PLMReference.V_isLastMinorVersion="최근 마이너 리비전";
+PLMCORE.PLMReference.V_isLastVersion="최근 리비전";
+PLMCORE.PLMReference.V_isVPLMControlled="실제 제어";
+PLMCORE.PLMReference.V_order="순서";
+PLMCORE.PLMReference.V_versionComment="리비전 코멘트";
+//-- Simple from BusinessType (but which are "internal" ? -- 
+PLMCORE.PLMReference.majororder="메이저의 순서";
+PLMCORE.PLMReference.minororder="마이너의 순서";
+PLMCORE.PLMReference.versionid="버전 ID";
+//-- Volatile from PLMReference --
+PLMCORE.PLMReference.InstantiatedBy="다음에 의해 인스턴스화됨";
+PLMCORE.PLMReference.IsExported="내보냄";
+PLMCORE.PLMReference.V_maturity="성숙도";
+PLMCORE.PLMReference.V_version="리비전";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreReference="PLMCoreReference";
+//-- Simple from PLMCoreReference --
+PLMCORE.PLMCoreReference.V_ChangeHistory="변경 이력";
+PLMCORE.PLMCoreReference.V_isTerminal="Is Terminal";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepReference="PLMCoreRepReference";
+//-- Simple from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.V_isOnceInstantiable="OnceInstantiable";
+PLMCORE.PLMCoreRepReference.V_markstamp="마크스탬프";
+//-- Volatile from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.AggregatingReference="참조 집계";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMConnection="PLMConnection";
+//-- Simple from PLMConnection --
+PLMCORE.PLMConnection.V_isVPLMControlled="PLM 제어 적용";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMPort="PLMPort";
+//-- Simple from PLMPort --
+PLMCORE.PLMPort.V_isVPLMControlled="PLM 제어 적용";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMInstance="PLMInstance";
+//-- Simple from PLMInstance --
+PLMCORE.PLMInstance.PLM_ExternalID="이름";
+PLMCORE.PLMInstance.V_CustoDiscipline="사용자 지정 분야";
+PLMCORE.PLMInstance.V_EffectivityCompiledForm="유효성 컴파일된 양식";
+PLMCORE.PLMInstance.V_Name="제목";
+PLMCORE.PLMInstance.V_TreeOrder="트리 순서";
+PLMCORE.PLMInstance.V_description="설명";
+PLMCORE.PLMInstance.V_discipline="분야";
+PLMCORE.PLMInstance.V_hasConfigEffectivity="사양됨";
+PLMCORE.PLMInstance.V_hasConfigStaticMapping="사양이 매핑됨";
+PLMCORE.PLMInstance.V_isVPLMControlled="PLM 제어 적용";
+PLMCORE.PLMInstance.V_nature="Nature";
+PLMCORE.PLMInstance.V_sec_level="보안 레벨";
+PLMCORE.PLMInstance.V_usage="사용";
+//-- Simple from RelationType --
+PLMCORE.PLMInstance.modified="최근 수정";
+PLMCORE.PLMInstance.originated="생성일";
+PLMCORE.PLMInstance.owner="소유자";
+//-- Volatile from PLMInstance --
+PLMCORE.PLMInstance.C_created="생성일";
+PLMCORE.PLMInstance.C_modified="최근 수정";
+PLMCORE.PLMInstance.LOCKSTATUS="잠김";
+PLMCORE.PLMInstance.LOCKUSER="잠근 사람";
+PLMCORE.PLMInstance.V_confidentiality="기밀";
+PLMCORE.PLMInstance.V_organization="조직";
+PLMCORE.PLMInstance.V_project="협업 공간";
+PLMCORE.PLMInstance.V_user="소유자";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreInstance="PLMCoreInstance";
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepInstance="PLMCoreRepInstance";

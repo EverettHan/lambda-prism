@@ -1,0 +1,18 @@
+<meta charset="UTF-8"/>
+CATPLMBusinessLogicUpgrade.Alias="用于支持数据升级的 PLM 业务逻辑";
+CATPLMBusinessLogicUpgrade.Description="用于升级数据的开口的定义（如有必要）。";
+
+INFRA_UnifiedTypingMigration.Alias="统一类型确定系统迁移：类型和属性映射";
+INFRA_UnifiedTypingMigration.Description="启用以采用表示从之前的类型确定系统将数据迁移到统一类型确定系统时使用的类型和属性映射的业务规则。若要升级 PVS（产品视图过滤器）和保存的查询";
+INFRA_UnifiedTypingMigration.ThisObject.Alias="键入 PVS 或查询的输入";
+INFRA_UnifiedTypingMigration.ThisObject.Description="保存在需要映射的查询或 PVS 中的之前的类型确定系统类型的假对象。";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Alias="要用于查询中的默认类型的名称";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Description="输入中的默认目标类型。";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Alias="属性名称列表";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Description="属于要升级的查询的输入中的属性名称列表。";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Alias="要用于查询中的类型的名称";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Description="如果查询类型必须更改，则填写此类型名称。";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="属性名称列表（潜在映射）";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="列表大小必须与输入中的 SavedAttributes 相同。如果属性被保留且未映射，则使用相同名称；否则，使用新名称。如果要忽略属性，则名称可为空。";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="迁移之后属性所在的扩展名称列表";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="列表大小必须与输出中的 MappedAttributes 相同。如果在迁移之后，属性保留在类型上，则使用空名称；如果属性在扩展上，则使用扩展名称。";

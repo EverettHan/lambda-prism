@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "2011.12.19 ERS/CDT R213 C-Afr" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" comment = "2012.03.23 TPC/CDT R214 C-Afr" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Protected" comment = "2020.10.27 ERS/HEB R424 Move Interfaces" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIModelInterfaces"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" comment = "2021.05.12 HEB R424 Suppression Split AfrCore" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrCore"/>
+  <authorize access = "Private" name = "AfrComponentsModel.tst"/>
+  <authorize access = "Private" comment = "25.07.2012 LD3/CDT R214 C-Afr (AfrComponentsModel is private to AfrFoundation)" name = "AfrFoundation"/>
+  <authorize access = "Private" comment = "07.11.2013 LD3/HEB R216 Test My APPS" name = "AfrImmersiveRender.tst"/>
+  <authorize access = "Private" comment = "11.06.2015 ZBJ/HEB R418 New MePreferences" name = "AfrProperties"/>
+  <attached name = "AfrComponentsModel.tst"/>
+  <attached name = "AfrProperties.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

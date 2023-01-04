@@ -1,0 +1,26 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Systémová chyba";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Nelze klonovat novou součást.";
+PLMc_ForbiddenScenario1.Advice="Uložte tuto součást a poté ji zkuste klonovat.";
+
+PLMc_ForbiddenScenario2.Diagnostic="Tento scénář klonování je zakázán: je nutné provést celkové uložení mezi 2 voláními klonů";
+PLMc_ForbiddenScenario2.Advice="Před opětovným voláním klonu uložte relaci.";
+
+PLMc_ForbiddenScenario3.Diagnostic="Možnost Obnovit konfiguraci není k dispozici, pokud je vyžadován vliv na obsah relace.";
+PLMc_ForbiddenScenario3.Advice="Ujistěte se, že je modul klonování inicializován se spolehlivými záměry.";
+
+ERR_05.Diagnostic="Součásti byly duplikovány, ale konfiguraci nebylo možné obnovit v duplikované struktuře";
+ERR_05.Advice="Před obnovením konfigurace byste se měli ujistit, že budete moci duplikované struktury upravit";
+
+ERR_06.Diagnostic="Neplatný vstup pro operaci duplikace: /p";
+ERR_06.Advice="Zkontrolujte atributy uvedené na vstupu operace duplikace";
+
+ERR_07.Diagnostic="Neplatný vstup pro operaci duplikace: /p";
+ERR_07.Advice="Zkontrolujte rozšíření uvedená na vstupu operace duplikace";
+
+ERR_08.Diagnostic="Obnovení relace po duplikaci se nezdařilo";
+ERR_08.Advice="Zkontrolujte, zda se nevyskytují další chyby, které brání obnovení relace během operace duplikace";
+

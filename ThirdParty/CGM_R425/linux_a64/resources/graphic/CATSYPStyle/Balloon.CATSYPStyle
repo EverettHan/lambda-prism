@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  
+
+  <!--===================================-->
+  <!--Here you define your components view -->
+  <!--===================================-->
+ 
+
+
+  <!--===================================-->
+  <!--
+  -->
+  <!--Balloon rep -->
+  <!--
+  -->
+  <!--===================================-->
+  <!--
+      <DataTemplate syp:name="CATAfrBalloon_AfrLegacyV6">
+    <CATAfrVidCtlBalloon 
+                    BalloonParent="@ViewParent"
+                    ConnectionPoint="@BalloonConnectionPoint"
+                    AnchorPoint="@BalloonAnchorPoint"
+                    DiscretionFlag="@Discretion"
+                    ActiveFlag="@Active"
+                    DockableFlag="@Dockable"
+                    BalloonVisibleFlag="@Visibility"
+                    Items="@Items  Mode=OneWayToSource">
+      
+    
+    </CATAfrVidCtlBalloon>
+    </DataTemplate>-->
+  
+     <!--===================================-->
+  <!--CATAfrBalloon -->
+  <!--===================================-->  
+  <DataTemplate syp:name="CATAfrBalloon_AfrLegacyV6">
+    <CATAfrSmartCtl TitleDialogBox="@Title"
+                 BalloonFlag="1"
+                 ViewParent="@ViewParent"
+                 CreateDialogBoxFlag="@RootFlag"
+                 PanelDeleted="@ViewDeletedCB"
+                 ConnectionPoint="@BalloonConnectionPoint Mode=TwoWays"
+                 AnchorPoint="@BalloonAnchorPoint"
+                 VisibleFlag="@Visibility">
+      <CATVidLayStack syp:name="Container"  VisibleFlag="@Visibility" LayoutWhenUnvisibleFlag="0"/>
+    </CATAfrSmartCtl>
+    
+  </DataTemplate>
+  
+  <DataTemplate syp:name="CATAfrBalloonFamily_AfrBalloonV6">
+    <CATVidLayStack syp:name="Container"  VisibleFlag="@Visibility" LayoutWhenUnvisibleFlag="0"/>
+  </DataTemplate>
+  <!--***************************************************************************************************************************************-->
+  <!--                                 AfrBalloonV6 Representation                                                            -->
+  <!--***************************************************************************************************************************************-->
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Container creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrBalloonV6" Target="CATAfrSYPContainerView">
+    <CATVidLayStack Items="@ToolsItems Mode=OneWayToSource" VisibleFlag="@WidgetsPanelVisibility" LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+  <Template syp:name="AfrSubBalloonV6" Target="CATAfrSYPContainerView">
+    <CATAfrVidIconBoxCtl syp:Template="Balloon" Orientation="Vertical" InitialOffset="0 -5" PresenterDataTemplate="AfrBalloonV6DataTemplate" PresenterStyleSheet="AfrRepresentationTypes/AfrPrototypes.CATSYPStyle" PositionLastItem="@SelectedStarterIndex" IconBoxCenteredOnLastItemFlag="1" IconBoxHidePolicy="HideOnTimer" IconBoxShowPolicy="ShowOnMoveOver" VisibleFlag="@WidgetsPanelVisibility" PresenterIconContent="@SelectedStarter"
+                   PopupItems="@ToolsItems Mode=OneWayToSource" PopupShown="@CreateSubContainerEvent" PopupHidden="@DeleteSubContainerEvent" />
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starter creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrBalloonV6" Target="CATAfrSYPStarterView">
+
+
+    <CATVidCtlButtonIcon Name="@Name"
+                   syp:name="BalloonButton"
+               syp:Template="Icon"
+               CheckMode="1"
+               CheckState="@ActivationWidget Mode=TwoWays"
+               EnableFlag="@EnableWidget"
+               OffTexture="@NormalIcon"
+               OnTexture="@SelectedIcon"
+               OverTexture="@FocusedIcon"
+               RequestedMinimumDimension="32 32"
+               IconDimension="32 32"
+               DisabledTexture="@DisabledIcon"
+               Tooltip="@Help"
+               Click="@ActionEvent"
+               VisibleFlag="1"
+
+                     />
+    <!-- CATAfrVidCtlBalloonButtonMode Selection DoubleClick="@RepeatActionEvent"-->
+
+    <!-- Mode Selection -->
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="NoIconFlag" Value="1">
+        <CATSYPSetter Property="OffTexture" TargetName="BalloonButton" Value="phylactery-touch-icon-Missing.png"/>
+        <CATSYPSetter Property="OnTexture" TargetName="BalloonButton" Value="phylactery-touch-icon-Missing.png"/>
+        <CATSYPSetter Property="OverTexture" TargetName="BalloonButton" Value="phylactery-touch-icon-Missing.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <DataTemplate syp:name="AfrBalloonV6DataTemplate">
+    <CATVidCtlButtonIcon Name="@Name"
+                   syp:name="BalloonButton"
+               syp:Template="Icon"
+               CheckMode="1"
+               CheckState="@ActivationWidget Mode=TwoWays"
+               EnableFlag="@EnableWidget"
+               OffTexture="@NormalIcon"
+               OnTexture="@SelectedIcon"
+               OverTexture="@FocusedIcon"
+               RequestedMinimumDimension="32 32"
+               IconDimension="32 32"
+               DisabledTexture="@DisabledIcon"
+               Tooltip="@Help"
+               Click="@ActionEvent"
+               VisibleFlag="1"/>
+
+    <!-- Mode Selection -->
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="NoIconFlag" Value="1">
+        <CATSYPSetter Property="OffTexture" TargetName="BalloonButton" Value="phylactery-touch-icon-Missing.png"/>
+        <CATSYPSetter Property="OnTexture" TargetName="BalloonButton" Value="phylactery-touch-icon-Missing.png"/>
+        <CATSYPSetter Property="OverTexture" TargetName="BalloonButton" Value="phylactery-touch-icon-Missing.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--***************************************************************************************************************************************-->
+  <!--                               End   AfrBalloonV6 Representation                                                            -->
+  <!--***************************************************************************************************************************************-->
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Balloon icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Balloon" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+
+      <CATVidCtl syp:name="Presenter" />
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag">
+        <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" >
+          <CATVidGPSmartSquare syp:name="VerticalBackground"  GridWeight="row1=1"
+                                    Texture="phylactere-popup-v.png" RequestedMinimumDimension="34 15">
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+
+          <CATVidGPSmartSquare syp:name="HorizontalBackground" VisibleFlag="0"  GridWeight="col1=1" Texture="phylactere-popup-h.png" RequestedMinimumDimension="34 15">
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+          <CATVidGPSquare  Name="PickZone"  PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" />
+          <CATVidLayGrid>
+            <CATVidSpacer syp:name="Spacer1" RequestedMinimumDimension="34 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+            <CATVidSpacer syp:name="Spacer2" RequestedMinimumDimension="34 5" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="1">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="StretchAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="0">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="NoAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Vertical">
+        <CATSYPSetter Property="VisibleFlag" TargetName="VerticalBackground" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HorizontalBackground" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="34 5"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="34 5"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Horizontal">
+        <CATSYPSetter Property="VisibleFlag" TargetName="VerticalBackground" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HorizontalBackground" Value="1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="5 34"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="5 34"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <Template Target="l_CATAfrTouchPhylactery" syp:name="PhylacteryDialogBox">
+    <CATVidLayGrid GridWeight="col1=1 row1=1">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidCtlXRect Name="Move" BackgroundColor="0 0" CursorShape="PanCursor" syp:Template="Handle" Press="@DragCB" Drag="@DragCB" Release="@DropCB" />
+        <!--<CATVidLayGrid GridWeight="row1=1 col1=1">-->
+        <CATVidLayGrid>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+          <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+            <CATVidCtlBorder syp:name="BalloonBorder" syp:Template="PhylacteryBackground" Content="@ApplicativePhylacteryWidget"/>
+            <!--<CATVidCtl PresenterContent="@PhylacteryHandleWidget"/>
+            <CATVidCtl PresenterContent="@ApplicativePhylacteryWidget"/>-->
+            <CATVidGPLine PickFlag="0" FirstPoint="@LabelAttached2DPoint" SecondPoint="@Label3D_2DPoint" Color="204 220 236 100" OutlineColor="204 220 236 55" LineType="1" OutlineLineType="1" VisibleFlag="@VisibilityLine"/>
+          </CATVidLayLayer>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+          <CATVidSpacer RequestedMinimumDimension="@BorderDimension" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+
+
+  <Template Target="CATVidCtl" syp:name="PhylacteryBackground" >
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare GridWeight="col1=1" Texture="phylactere-h.png">
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="201 44" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=0 y=2 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <!--<CATVidLayGrid GridWeight="col1=1">
+        <CATVidGPSquare Texture="v6Theme/phylactere-left-h.png" RequestedMinimumDimension="5 44" CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+        <CATVidGPSquare Texture="v6Theme/phylactere-center-h.png" RequestedMinimumDimension="50 44" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" />
+        <CATVidGPSquare Texture="v6Theme/phylactere-right-h.png" RequestedMinimumDimension="5 44" CATVidLayGrid.IndexedConstraints="x=2 y=0" />
+      </CATVidLayGrid>-->
+      <!--<CATVidGPSmartSquare syp:name="PhylacteryLayer" GridWeight="col1=1" Texture="phylactere-h.png">
+        <CATVidSpacer RequestedMinimumDimension="5 5" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="206 34" CATVidGPSmartSquare.GPConstraints="x=1 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 5" CATVidGPSmartSquare.GPConstraints="x=2 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 25" CATVidGPSmartSquare.GPConstraints="x=0 y=1"/>
+        <CATVidSpacer RequestedMinimumDimension="206 34" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 25" CATVidGPSmartSquare.GPConstraints="x=2 y=1 "/>
+        <CATVidSpacer RequestedMinimumDimension="5 5" CATVidGPSmartSquare.GPConstraints="x=0 y=2 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="206 34" CATVidGPSmartSquare.GPConstraints="x=1 y=2 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 5" CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RL"/>
+      </CATVidGPSmartSquare>-->
+    </CATVidLayLayer>
+
+  </Template>
+
+  <Template Target="CATVidCtl" syp:name="PhylacteryBackground" syp:Variation="Horizontal48x48">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="PhylacteryLayer48" GridWeight="col1=1" Texture="phylactere-48-horizontal.png">
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="314 12" CATVidGPSmartSquare.GPConstraints="x=1 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=2 y=0 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=0 y=1"/>
+        <CATVidSpacer RequestedMinimumDimension="314 44" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="5 44" CATVidGPSmartSquare.GPConstraints="x=2 y=1 "/>
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=0 y=2 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="314 12" CATVidGPSmartSquare.GPConstraints="x=1 y=2 attach=RL"/>
+        <CATVidSpacer RequestedMinimumDimension="5 12" CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RL"/>
+      </CATVidGPSmartSquare>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template Target="CATVidCtl" syp:name="PhylacteryBackground" syp:Variation="Vertical">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="OffLayer2" GridWeight="row1=1 col1=1" Texture="phylactere-docked-v.png">
+        <CATVidSpacer RequestedMinimumDimension="44 5" CATVidGPSmartSquare.GPConstraints="x=0 y=0"/>
+        <CATVidSpacer RequestedMinimumDimension="44 201" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=TB"/>
+        <CATVidSpacer RequestedMinimumDimension="44 5" CATVidGPSmartSquare.GPConstraints="x=0 y=2 "/>
+      </CATVidGPSmartSquare>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template Target="CATVidCtl" syp:name="PhylacteryBackground" syp:Variation="Vertical48x48">
+    <CATVidLayLayer>
+      <CATVidGPSmartSquare syp:name="OffLayer48" GridWeight="row1=1 col1=1" Texture="phylactere-48-docked-v.png">
+        <CATVidSpacer RequestedMinimumDimension="68 5" CATVidGPSmartSquare.GPConstraints="x=0 y=0"/>
+        <CATVidSpacer RequestedMinimumDimension="68 314" CATVidGPSmartSquare.GPConstraints="x=0 y=1 attach=TB"/>
+        <CATVidSpacer RequestedMinimumDimension="68 5" CATVidGPSmartSquare.GPConstraints="x=0 y=2 "/>
+      </CATVidGPSmartSquare>
+    </CATVidLayLayer>
+  </Template>
+
+
+</Styles>

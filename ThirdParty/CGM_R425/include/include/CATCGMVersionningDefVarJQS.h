@@ -1,0 +1,26 @@
+#ifndef CATCGMVersionningDefVarJQS_h
+#define CATCGMVersionningDefVarJQS_h
+
+#ifndef CGM_Versionning_AutoFilletOnPlies_JunctionLine
+#define CGM_Versionning_AutoFilletOnPlies_JunctionLine 32000
+#endif
+
+#ifndef CGM_Versionning_Fillet_VariableJoint_StopOnCorner
+#define CGM_Versionning_Fillet_VariableJoint_StopOnCorner 32000
+#endif
+
+#ifndef CGM_Versionning_Fillet_RibbonsReorder_VRO_StopOnCorner
+#define CGM_Versionning_Fillet_RibbonsReorder_VRO_StopOnCorner 32000
+#endif
+
+#ifndef CGM_Versionning_Fillet_VRO_Apply4EdgesVertexPatch
+#define CGM_Versionning_Fillet_VRO_Apply4EdgesVertexPatch 32000
+#endif
+
+#ifndef CGM_Versionning_Fillet_KeepFeatureWithLimitingElement
+#define CGM_Versionning_Fillet_KeepFeatureWithLimitingElement 10359 //value defined by REN
+#endif
+
+#endif 
+
+

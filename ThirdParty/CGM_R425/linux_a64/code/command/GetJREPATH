@@ -1,0 +1,163 @@
+#!/bin/ksh
+#set -x
+#######################################################################################
+#                                                                                     #
+#                                                                                     #
+# COPYRIGHT DASSAULT SYSTEMES 2002                                                    #
+# Licensed Material Program Property of IBM                                           #
+#    - Set the JREPATH variable                                                       #
+#    - Check  CLASSPATH  for jre libs                                                 #
+#                                                                                     #
+#######################################################################################
+
+
+#-----------------------------------
+# Check if $JAVE_HOME contains jre 
+# or java ( for compatibility with jdk 1.1.3)
+#-----------------------------------
+if [[ -a "$JAVA_HOME/bin/jre"  ||  -a "$JAVA_HOME/bin/java" ]]
+then
+   JREPATH=$JAVA_HOME/bin
+else
+   JAVA_HOME_SYMBPATH=`ls -l $JAVA_HOME | awk '{print $11}'`
+   # test if jre path is a synbolic link
+    if [ -n "$JAVA_HOME_SYMBPATH" ]
+    then
+       # JAVA_HOME is a symbolic link
+       if [[ -f "$JAVA_HOME_SYMBPATH/bin/jre"  || -f "$JAVA_HOME_SYMBPATH/bin/java" ]]
+       then
+          # the link is an absolute path
+          JREPATH=$JAVA_HOME_SYMBPATH/bin
+       elif [[ -f JAVA_HOME/$JAVA_HOME_SYMBPATH/bin/jre  ||  -f JAVA_HOME/$JAVA_HOME_SYMBPATH/bin/java ]]
+       then
+          # the link is a relative path
+          JREPATH=$JAVA_HOME/$JAVA_HOME_SYMBPATH/bin
+       else
+          #this link is invalid
+          JAVA_HOME_SAVE=$JAVA_HOME
+          unset JAVA_HOME
+       fi
+    else
+       # `which jre` is not a symbolic link
+       # check JAVA_HOME refers to something valid
+      if [[ -f $JAVA_HOME/bin/jre ||  -f $JAVA_HOME/bin/java ]]
+      then 
+         JREPATH=$JAVA_HOME/bin   
+      else
+         JAVA_HOME_SAVE=$JAVA_HOME
+         unset JAVA_HOME
+      fi
+   fi
+fi
+
+
+
+#------------------------------------
+#Is JAVA_HOME defined ?
+#------------------------------------
+if  [ -z "$JAVA_HOME" ] 
+then
+   # search in path
+   whence jre > /dev/null
+   rc=$?
+
+   if [ $rc -ne 0 ]
+   then
+      # Search in the default locations 
+      if [[ -f  /usr/java/bin/jre ||  -f $JAVA_HOME/bin/java ]]
+      then
+         # default location SunOS and IRIX and SunOS
+         # try to search a jre in /usr/java
+         JREPATH=/usr/java/bin 
+         JAVA_HOME=/usr/java
+      elif [[ -f /usr/jdk_base/bin/jre ||  -f $JAVA_HOME/bin/java ]]
+      then 
+         # default location on AIX
+         # try to search a jre in /usr/jdk_base 
+         JREPATH=/usr/jdk_base/bin		
+         JAVA_HOME=/usr/jdk_base
+      elif [[ -f /opt/java/bin/jre ||  -f $JAVA_HOME/bin/java ]]
+      then
+         # default location on HP
+         # try to search a jre in /opt/java 
+         JREPATH=/opt/java/bin
+         JAVA_HOME=/opt/java
+       else
+         echo "Error - Unable to find jre. Please check if jre is in your PATH variable. "  
+         return -1 
+       fi
+   else
+      JREFULLPATH=`whence jre` 
+      if [ $? -ne 0 ]
+      then
+         # jre is unknown, try java
+         JREFULLPATH=`whence java`
+      fi
+      JRESYMBPATH=`ls -l $JREFULLPATH | awk '{print $11}'`
+      # test if jre path is a synbolic link
+      if [ -n "$JRESYMBPATH" ]
+      then
+         # `which jre` is a symbolic link
+         if [ -f "$JRESYMBPATH" ]
+         then
+            # the link is an absolute path
+            JAVA_HOME=`dirname $JRESYMBPATH`/..
+         else
+            # the link is a relative path
+            JAVA_HOME=`dirname $JREFULLPATH`/`dirname $JRESYMBPATH`/..
+         fi
+      elif [ -n $JREFULLPATH ]
+      then
+         # `which jre` is not a symbolic link
+         JAVA_HOME=`dirname $JREFULLPATH`/..
+      fi
+      JREPATH=`dirname $JREFULLPATH`
+   fi
+fi
+
+
+#------------------------------------
+# Set JREPATH if not yet done
+#------------------------------------
+if  [ -z "$JREPATH" ] 
+then
+   JREPATH=$JAVA_HOME/bin
+fi
+
+#-----------------------------
+# Check CLASSPATH for jre lib
+#-----------------------------
+if [ -z "$CLASSPATH" ]
+then
+  # valuate classpath from JAVA_HOME
+  if [ -f $JAVA_HOME/lib/classes.zip ]
+  then 
+     CLASSPATH=$JAVA_HOME/classes:$JAVA_HOME/lib/rt.jar:$JAVA_HOME/lib/i18n.jar:$JAVA_HOME/lib/classes.zip
+  else 
+     CLASSPATH=$JREPATH/../classes:$JREPATH/../lib/rt.jar:$JREPATH/../lib/i18n.jar:$JREPATH/../lib/classes.zip
+  fi
+
+  export CLASSPATH=$CLASSPATH    
+fi
+
+if [ -n "$JAVA_HOME_SAVE" ]
+then
+   export JAVA_HOME=$JAVA_HOME
+   export JAVA_HOME_SAVE=$JAVA_HOME_SAVE
+fi 
+
+export JREPATH=$JREPATH
+
+
+
+
+
+
+
+
+
+
+
+
+
+

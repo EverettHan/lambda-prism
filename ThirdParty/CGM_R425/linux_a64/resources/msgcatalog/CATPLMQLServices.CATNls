@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+INVALID_SELECT_DEFAULT_PLMTYPE = "Semantic Error: Ambiguous PLMType for the Select Condition Attibute /p1";
+INVALID_SELECT_DEFAULT_PLMTYPE_ERR_ADV = "Verify PLMType alias for SELECT attributes";
+
+INVALID_SELECT_MISSING_PLMTYPE = "Semantic Error: Ambiguous PLMType alias /p1 is used for SELECT Condition Attribute, PLMType alias Missing in the FROM Condition";
+INVALID_SELECT_MISSING_PLMTYPE_ERR_ADV = "Add above PLMType in the FROM Condition";
+
+INVALID_WHERE_MISSING_PLMTYPE = "Semantic Error: Ambiguous PLMType alias /p1 is used for WHERE Condition Attribute, PLMType alias Missing in the FROM Condition";
+INVALID_WHERE_MISSING_PLMTYPE_ERR_ADV = "Add above PLMType in the FROM Condition";
+
+INVALID_FROM_PLMTYPE = "Semantic Error: In FROM condition invalid Package/Class identifiers used for the PLMType \"'/p1'\"";
+INVALID_FROM_PLMTYPE_ERR_ADV = "Verify correct values of Package/Class for above PLMType";
+
+NVALID_FROM_PLMTYPEID = "Semantic Error: In FROM condition invalid \"'/p1'\" identifiers is used for the PLMType ";
+INVALID_FROM_PLMTYPEID_ERR_ADV = "Verify correct values of Package/Class for above PLMType";
+
+INVALID_FROM_MULTIPLMTYPE = "Semantic Error: In From Condition PLMType alias /p1 is used more than once";
+INVALID_FROM_MULTIPLMTYPE = "Verify your FROM condition PLMType alias";
+
+INVALID_SELECT_ATTRIBUTE = "Semantic Error: In SELECT condition invalid attribute /p1 is used with the PLMType alias /p2";
+INVALID_SELECT_ATTRIBUTE_ERR_ADV = "Verify for valid attributes supported by given PLMType";
+
+INVALID_WHERE_ATTRIBUTE = "Semantic Error: In condition invalid attribute /p1 is used with the PLMType alias /p2";
+INVALID_WHERE_ATTRIBUTE_ERR_ADV = "Verify for valid attributes supported by given PLMType";
+
+INVALID_CREATE_RELATION = "Semantic Error: In CREATE statement invalid Relation /p1 is used";
+INVALID_CREATE_RELATION_ERR_ADV = "Verify that Relations is supported by given PLMType";
+
+INVALID_CREATE_ATTRIBUTE = "Semantic Error: In CREATE statement invalid attribute /p1 is used with PLMType";
+INVALID_CREATE_ATTRIBUTE_ERR_ADV = "Verify for valid attributes supported by given PLMType";
+
+INVALID_CREATE_PLMTYPE = "Semantic Error: In CREATE statement invalid Package/Class identifiers used for the PLMType \"'/p1'\"";
+INVALID_CREATE_PLMTYPE_ERR_ADV = "Verify correct values of Package/Class for above PLMType";
+
+UNMATCHED_ATTR_AND_ATTRVALUES	= " Attribute list size and Attributes Valuelist size are Not Matching";
+UNMATCHED_ATTR_AND_ATTRVALUES_ERR_ADV	= "Varify Attribute List Size and AttributeValue List Size";
+
+ERROR_PLMQL_INTERFACE = "PLMQLError: Failed to QueryInterface CATIPLMQLbnfStatement";
+ERROR_PLMQL_INTERFACE_ERR_ADV = "";
+
+ERROR_PLMQL_INVALID_STATEMENT ="PLMQLError: Invalid PLMQL statement,Error in syntax/grammar";
+ERROR_PLMQL_INTERFACE_ERR_ADV = "Verify syntax and grammar of the statement";
+
+ERROR_PLMQL_MULTIPLE_QUERY ="PLMQLError: Multiple queries are not allowed";
+ERROR_PLMQL_INTERFACE_ERR_ADV = "Please execute each query in separate window";
+
+ERROR_PLMQL_MULTIPLE_STATEMENTS = "PLMQLError: CRUD, NV, CLONE, QUEOP, MATURITY are mixed up";
+ERROR_PLMQL_MULTIPLE_STATEMENTS_ERR_ADV = "Ensure that multiple operations are not part of the multiple statements";
+
+INVALID_EXT_ATTRIBUTE		= "Semantic Error: In SELECT condition invalid Extension attribute /p1 is used with the PLMType alias /p2";
+INVALID_EXT_ATTRIBUTE_ERR_ADV= "Verify for valid attributes supported by given Extension PLMType";
+
+INVALID_EXT_PLMTYPE= "Semantic Error: In SELECT condition invalid [Custo]/Modeler/CoreType identifiers used for the EXT PLMType \"'/p1'\"";
+INVALID_EXT_PLMTYPE_ERR_ADV="Verify correct values of [Custo]/Modeler/CoreType for above Extension PLMType";
+
+INVALID_PLMTYPE_USED =	"The PLMTYPE is NOT FOUND IN THE METADATA";
+INVALID_PLMTYPE_USED_ERR_REQ =	"The PLMTYPE is NOT FOUND IN THE METADATA";
+
+INVALID_PLMID_USED =	"InValid PLMID /Repository Name for the Connected Provider";
+INVALID_PLMID_USED_ERR_REQ =	"InValid PLMID /Repository Name for the Connected Provider";
+
+
+INVALID_SELECT_LIST_ERR_REQ = "";
+INVALID_SELECT_LIST_ERR_DIAG = "";
+INVALID_SELECT_LIST_ERR_ADV = "";
+INVALID_SELECT_LIST_BQ = "InValid SELECT Attribute List in BuildQuery";
+
+Err_PLMQL_STMT = "ERROR IN THE INPUT STATEMENT,SOME WRONG Parameters";
+Err_PLMQL_STMT_ERR_REQ = "Error In the input statement";
+Err_PLMQL_STMT_ERR_DIAG = "Error In the input statement";
+Err_PLMQL_STMT_ERR_ADV = "Please Refer Langauge reference";
+
+INVALID_SELECT_LIST_SIZE_ZERO = "InValid SELECT Attribute List With List Size ZERO";
+
+APPLY_EVENT_ADAPTER_ERROR	= "The input Identifier does not represent an object belonging to the PDM associated to the transaction.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_REQ	= "The input Identifier does not represent an object belonging to the PDM associated to the transaction.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_ADV 	= "Please check PLMID in Input statement.";
+
+COMMIT_STREAMS_ERROR	= "There is some issue with the commit of streams to the store.";
+COMMIT_STREAMS_ERROR_ERR_REQ	= "Streams could not be transferred from source to target";
+COMMIT_STREAMS_ERROR_ERR_ADV 	= "Please check appropriate settings or syntax of streams";

@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <!--===================================-->
+  <!--Toolbar VIAImmersive -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_VIAImmersiveToolBar">
+    <CATAfrSYPModelViewMetaData SypNamePosition="AccessToolbar">
+      <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility">
+        <CATVidLayLayer syp:name="VIABorder"
+                        VisibleFlag="1">
+          <CATVidGPSmartSquare syp:name="VIABorderSquare"
+                               VisibleFlag="1"
+                               GridWeight="col1=1 row1=1"
+                               Texture="I_VIAImmersiveToolBar.png">
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="1 22" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 3" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+          <CATVidLayGrid syp:name="Container"
+                         GridAppendPolicy="@Orientation"/>
+        </CATVidLayLayer>
+      </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--Toolbar VIAImmersive -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_VIAImmersiveToolBarLeft">
+    <CATAfrSYPModelViewMetaData SypNamePosition="AccessToolbarLeft">
+      <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility">
+        <CATVidLayGrid>
+          <CATVidCtlBorder syp:Template="ThinBorder"
+                           VisibleFlag="1"
+                           CATVidLayGrid.IndexedConstraints="x=1 y=0" >
+            <CATVidLayGrid syp:name="Container"
+                           GridAppendPolicy="@Orientation"/>
+          </CATVidCtlBorder>
+        </CATVidLayGrid>
+      </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="VIAImmersiveToolBar" Target="CATAfrSYPStarterView">
+    <CATVidLayGrid GridWeight="col1=1 row1=1">
+      <CATVidSpacer  LayoutWhenUnvisibleFlag="0"
+                     RequestedMinimumDimension="3 3"
+                    CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB"/>
+      <CATVidCtlButton Name="@Name"
+                       syp:Template="Button"
+                       CheckMode="1"
+                       ClickMode="0"
+                       CheckState="@ActivationWidget Mode=TwoWays"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="22 22"
+                       IconDimension="22 22"
+                       Icon="@NormalIcon"
+                       Label="@TitleIfNoIcon"
+                       Tooltip="@Help"
+                       Click="@ActionEvent"
+                       VisibleFlag="@VisibleFlag"
+                       LayoutWhenUnvisibleFlag="0"
+                       CATVidLayGrid.IndexedConstraints="y=1 x=1 attach=RLTB"/>
+      <CATVidSpacer LayoutWhenUnvisibleFlag="0"
+                    RequestedMinimumDimension="3 3"
+                    VisibleFlag="@VisibleFlag"
+                    CATVidLayGrid.IndexedConstraints="y=2 x=2 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="VIAImmersiveToolBarView" Target="CATAfrSYPStarterView">
+    <!--<CATVidLayGrid GridWeight="col1=1 row1=1">
+      <CATVidSpacer  LayoutWhenUnvisibleFlag="0"
+                     RequestedMinimumDimension="3 3"
+                    CATVidLayGrid.IndexedConstraints="y=0 x=0 attach=RLTB"/>-->
+
+      <CATAfrVidCtlToggleButton Name="@Name" syp:name="Button"
+                       syp:Template="Icon"
+                       CheckMode="1"
+                       CheckState="@ActivationWidget Mode=OneWayToSource"
+                       ClickMode="0"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="22 22"
+                       IconDimension="22 22"
+                       OffTexture="@NormalIcon"
+                       OnTexture="@SelectedIcon"
+                       OverTexture="@FocusedIcon"
+                       Label="@Title"
+                       Tooltip="@Help"
+                       Click="@ActionEvent"
+                       VisibleFlag="@VisibleFlag"
+                       LayoutWhenUnvisibleFlag="0"/>
+ 
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ActivationWidget" Value="1">
+        <CATSYPSetter Property="CheckState" TargetName="Button" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+ 
+  <!--===================================-->
+  <!--HyperLink -->
+  <!--===================================-->
+  <Template syp:name="HyperLinkText" Target="CATVidCtlButton">
+    <CATVidGPLabel Name="TextLabel"
+                   syp:name="Label"
+                   UseManipulatorFlag="1"
+                   CropPolicy="CropWithDots"
+                   TextHeight="16"
+                   VerticalAlignment="1"
+                   TextColor="0 0 255 255"
+                   Text="@Label"
+                   Release="@HandleEvent" Entry="@HandleEvent"
+                   Leave="@HandleEvent" DoubleClick="@HandleEvent"
+                   Press="@HandleEvent" Drag="@HandleEvent"
+                   RightClick="@HandleEvent" BeginPreDrop="@HandleEvent"
+                   PreDrop="@HandleEvent" EndPreDrop="@HandleEvent"
+                   Drop="@HandleEvent" EndContext="@HandleEvent"/>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="OverFlag" Value="1">
+        <CATSYPSetter Property="UnderlineFlag" TargetName="Label" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="0">
+        <CATSYPSetter Property="UnderlineFlag" TargetName="Label" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--===================================-->
+  <!--HyperLink -->
+  <!--===================================-->
+  <Template syp:name="VIAImmersiveUrlStarter" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton  Name="@Name"
+                      syp:name="HyperLink"
+                      syp:Template="HyperLinkText"
+                      CursorShape="NorthHandCursor"
+                      Label="@TitleIfNoIcon"
+                      Tooltip="@Help"
+                      RequestedMinimumDimension = "100 17"
+                      Click="@ActionEvent"
+                      VisibleFlag="@VisibleFlag"
+                      LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="VIAImmersiveToolBar" Target="CATAfrSYPSeparatorView">
+    <CATVidGPSquare RequestedMinimumDimension="1 22"
+                    Texture="I_VIAImmersiveToolBar_Sep.png"
+                     LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!-- icone dans un carré bleu, Cf Toolbar 3D Composer Presentation -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrBlueIconView" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton syp:name="Button"
+                     syp:Template="AfrBlueIcon"
+                     CheckMode="1"
+                     CheckState="@ActivationWidget Mode=TwoWays"
+                     ClickMode="0"
+                     IconDimension="22 22"
+                     RequestedMinimumDimension="24 24"
+                     Icon="@NormalIcon"
+                     Tooltip="@Help"
+                     Click="@ActionEvent"
+                     VisibleFlag="@VisibleFlag"
+                     EnableFlag="@EnableWidget"
+                     LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+</Styles>

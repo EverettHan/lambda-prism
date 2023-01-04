@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+
+  <DST_STATE_GROUP>
+    <NAME>DepthActivate</NAME>
+    <DEPTH_ENABLE>true</DEPTH_ENABLE>
+    <DEPTH_WRITE>true</DEPTH_WRITE>
+    <DEPTH_FUNC>LessEqual</DEPTH_FUNC>
+    <STENCIL_ENABLE>true</STENCIL_ENABLE>
+    <STENCIL_READ_MASK>33</STENCIL_READ_MASK>
+    <FRONT_FACE>
+      <STENCIL_WRITE_MASK>12</STENCIL_WRITE_MASK>
+      <STENCIL_FAIL_OP>Keep</STENCIL_FAIL_OP>
+      <DEPTH_FAIL_OP>Zero</DEPTH_FAIL_OP>
+      <STENCIL_PASS_OP>Replace</STENCIL_PASS_OP>
+      <STENCIL_FUNC>Equal</STENCIL_FUNC>
+    </FRONT_FACE>
+    <BACK_FACE>
+      <STENCIL_WRITE_MASK>14</STENCIL_WRITE_MASK>
+      <STENCIL_FAIL_OP>DecrementSat</STENCIL_FAIL_OP>
+      <DEPTH_FAIL_OP>Invert</DEPTH_FAIL_OP>
+      <STENCIL_PASS_OP>IncrementSat</STENCIL_PASS_OP>
+      <STENCIL_FUNC>GreaterEqual</STENCIL_FUNC>
+    </BACK_FACE>
+  </DST_STATE_GROUP>
+
+  <!-- Camera \\RenderEngine.tst\CNext\resouces\graphics\rasterizer\constantBuffers_xml\cbCamera.xml-->
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbViewport</NAME>
+  </CONSTANT_BUFFER>
+  
+  <!--Node \\RenderEngine.tst\CNext\resouces\graphics\rasterizer\constantBuffers_xml\cbNode.xml-->
+  <CONSTANT_BUFFER>
+    <NAME>cbNode</NAME>
+  </CONSTANT_BUFFER>
+
+  <!--Volatile material \\VisualizationEngines\CNext\resouces\graphics\rasterizer\constantBuffers_xml\cbVolImagePixelMaterial.xml -->
+  <CONSTANT_BUFFER>
+    <NAME>cbVolImagePixelMaterial</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>LightsSB2</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbMultiShadow</NAME>
+    <NEEDS_OPTION>MultiShadow</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+
+  <CONSTANT_BUFFER>
+    <NAME>cbGroundClipping</NAME>
+    <NEEDS_OPTION>GroundClipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbFog</NAME>
+    <NEEDS_OPTION>Fog LowLight</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVolMaterial</NAME>
+  </CONSTANT_BUFFER>
+
+  <UNIFORM>
+    <NAME>PushConstants</NAME>
+    <TYPE>float4</TYPE>
+  </UNIFORM>
+
+  <SAMPLER>
+    <NAME>imageTexture</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>pdsfxZMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ZMapAccess !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ManualZTest !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ZMapAccess IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ManualZTest IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>GPUPickingImage</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPickingImage</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>sampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>Nearest</MIP_FILTER>
+    <CMP_FUNC>Never</CMP_FUNC>
+    <CMP_MODE>None</CMP_MODE>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <!--Completely arbitrary-->
+    <LOD_BIAS>2.3</LOD_BIAS>
+    <MIN_LOD>2.63</MIN_LOD>
+    <MAX_LOD>3.28</MAX_LOD>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Depth</NAME>
+    <PASS>
+      <NAME>Default</NAME>      
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>pdsfxZMap</SAMPLER>
+          <STATES>sampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>imageTexture</SAMPLER>
+          <STATES>sampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <DEPTH_STENCIL_STATE>DepthActivate</DEPTH_STENCIL_STATE>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+        <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <COMMONS>streams varyings ubos volPointShaderHelpers prototypes pdsfxCommons commonHelpers ShadowsData</COMMONS>
+      <VERTEX_STAGE>ShadowsVS lightingHelpers lighting volDefaultPipelineImagePixeVS_1.1 ShaderBuilderUberVertexProcessing_1.2 ShaderBuilderUberVS_1.1</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PoissonDisk ShadowsPS lightingHelpers lighting glossiness volDefaultPipelineImagePixePS_1.1 compositing LogDepth ShaderBuilderUberPS_1.2</FRAGMENT_STAGE>    
+    </PASS>
+  </TECHNIQUE>
+</EFFECT>

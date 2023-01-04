@@ -1,0 +1,3 @@
+#include "CATCGMVirtualItfImplDefine.h"
+
+// ---------- CATICGMVirtual

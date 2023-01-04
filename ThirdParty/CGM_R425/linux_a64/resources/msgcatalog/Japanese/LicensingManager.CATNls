@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+Popup.AdmTitle="管理モード";
+Popup.AdminModeOK="管理モードで実行中";
+Popup.AdminModeKO="要求された管理モードに失敗しました。
+CATReferenceSettingPath = /P01
+ご使用の環境で CATReferenceSettingPath 変数とディレクトリのアクセス権を
+確認してください。";
+// CXR3
+Popup.Title=" ライセンス管理プログラム";
+// CXR3
+// CXR4
+Popup.Title4=" ライセンス管理プログラム";
+Popup.RSPNotDefined="要求された管理モードに失敗しました。
+
+
+ご使用の環境 (/P01) には CATReferenceSettingPath 変数が設定されていません
+
+CATReferenceSettingPath 変数を環境に設定してください。";
+Popup.RSPBadConcatenationAsAdmin="要求した管理モードは失敗しました
+
+
+ユーザー環境の変数 CATReferenceSettingPath が正しくありません。
+                   環境 = /P01
+CATReferenceSettingPath = /P02
+最後のディレクトリに書き込みアクセスができません。
+
+環境の CATReferenceSettingPath 変数をチェックしてください。";
+Popup.RSPBadConcatenation="ユーザー環境の変数 CATReferenceSettingPath が正しくありません。
+                   環境 = /P01
+CATReferenceSettingPath = /P02
+ディレクトリの 1 つに読み取りアクセスができません。
+
+環境の CATReferenceSettingPath 変数をチェックしてください。";
+Popup.USPBadDirectory="ユーザー環境の変数 CATUserSettingPath が正しくありません。
+              環境 = /P01
+CATUserSettingPath = /P02
+ディレクトリに書き込みアクセスができません。
+
+環境の CATUserSettingPath 変数をチェックしてください。";
+// CXR4
+Popup.EnvironnementNotSet="環境 /P01 が設定されていないか、正しくありません。
+
+[setcatenv] コマンドを使用して環境を設定してください。";
+Popup.EnvironmentBad="環境 /P01 が正しくありません。
+
+[setcatenv] コマンドを使用して有効な環境を設定してください。";
+Popup.NoProduct="使用可能な構成パッケージ/アプリケーションがありません。
+
+CATICPath 環境変数が参照する、構成パッケージまたは
+アプリケーションのリストを表示するのに必要な情報を
+含むパスが正しくないか、この情報が
+不完全です。
+
+[setcatenv] コマンドを使用して有効な環境を設定するか、
+または管理者に連絡してください。";
+Popup.NoProductRequested="構成パッケージまたはアプリケーションのライセンスを要求していません。
+
+[OK] をクリックし、ライセンス管理プログラムのダイアログ ボックスを使用して
+少なくとも 1 つの構成パッケージのライセンスを選択してください。";
+Popup.NoConfigRequested="1 つ以上のアプリケーション ライセンスを要求しましたが、構成パッケージのライセンスを要求していません。
+
+[OK] をクリックし、ライセンス管理プログラムのダイアログ ボックスを使用して
+少なくとも 1 つの構成パッケージのライセンスを選択してください。";
+Popup.NoConfigAvailable="要求した構成パッケージに使用可能なライセンスがありません。
+
+[OK] をクリックし、ライセンス管理プログラムのダイアログ ボックスを使用して
+少なくとも 1 つの有効な構成パッケージのライセンスを選択してください。";
+Popup.NotAllLicenseAvailable="すべてのライセンスが使用可能というわけではありません
+
+管理者に連絡してください。";
+Popup.DemoModeKO="デモ モードを使用できません";
+Popup.DemoModeOK="デモ モードで実行中";
+Popup.SetupForNextStart="修正した内容は次のセッションのスタートアップで有効となります";
+
+Popup.UserSettingsTitle="ユーザー プリファレンス";
+Popup.UserSettingsKO="ユーザー プリファレンスに書き込めません。
+CATUserSettingPath = /P01
+ご使用の環境で CATUserSettingPath 変数とディレクトリへの
+アクセス権限を確認してください。";
+
+ResetButton.Title="リセット";

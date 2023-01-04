@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic = "System error";
+SystemERR.Advice     = "";
+
+PLMc_ForbiddenScenario1.Diagnostic = "Impossible to revise a new component" ;
+PLMc_ForbiddenScenario1.Advice = "Please save this component and try to revise it afterwards" ;
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : A total save have to be performed between 2 new revision calls" ;
+PLMc_ForbiddenScenario2.Advice = "Save your session before calling again the new revision" ;
+
+PLMc_ForbiddenScenario3.Diagnostic = "Impossible to revise this component in session" ;
+PLMc_ForbiddenScenario3.Advice = "Component has been modified by another session. Try to save your local modifications as new revision." ;
+
+InvalidAncestor.Diagnostic = "The ancestor cannot be used to perform a revise operation" ;
+InvalidAncestor.Advice = "Choose an ancestor which is consistent with the revision family you want to make evolve" ;
+
+InvalidComponentState.Diagnostic = "The component cannot be revised because it has never been saved into a repository" ;
+InvalidComponentState.Advice = "Save the component into the repository before revising it" ;
+
+InvalidTypeOfComponent.Diagnostic = "Revision is not allowed on this type of Component" ;
+InvalidTypeOfComponent.Advice = "Provide compliant components for revision" ;
+
+InvalidComponentForDWS.Diagnostic = "Revision is not allowed in this workspace on this type of Component" ;
+InvalidComponentForDWS.Advice = "Provide Components for which revision is allowed in this workspace" ;
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic = "Version is not allowed due to replace in session with partial instances duplication";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice = "Do not specify partial instances to be duplicated while replacing elements in session (reuse)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic = "Version is not allowed due to transfer modifications in session with partial instances duplication";
+TransferModificationsForbiddenForPartialDuplicate.Advice = "Do not specify partial instances to be duplicated while tranferring modifications";
+
+InvalidIntent.Diagnostic = "Version graph called with this invalid intent : /p";
+InvalidIntent.Advice = "Please choose a valid intent for versioning";
+
+InstanceWithoutOwner.Diagnostic = "This instance is not in duplication scope and will be ignored : /p";
+InstanceWithoutOwner.Advice = "Operation could lead to undesired duplication. Try to exclude problematic instances if possible.";
+
+RefreshFailed.Diagnostic = "Session refresh has failed.";
+RefreshFailed.Advice = "Do a global refresh, or load again the versioned components.";
+
+NotRefreshedNoReidentification.Diagnostic = "Object was modified in database, but the session has not been updated.";
+NotRefreshedNoReidentification.Advice = "Do a global refresh to fetch the updated component.";
+
+NotRefreshedAfterReidentification.Diagnostic = "Object was successfully versioned in database, but the new version is not in session. You may not be able to save your session.";
+NotRefreshedAfterReidentification.Advice = "Try a global refresh. If you can't refresh, you will have to unload this component and loose the local modifications to be able to save.";

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <st:Description name="DSYCPUResourceManager" PrimaryTabpage="/General/General/Statistics" ConnectionBehavior="Reloadable">
+	<st:role visibility="LA">Manage CPU ressources usage</st:role>
+    <st:detailedRole>Control CPU resources usage for CPU intensive and non CPU bound threads and processes</st:detailedRole>    
+	<st:RepositoryFile>CPUResourceManager</st:RepositoryFile>    
+    <st:version>1</st:version>
+    <st:compatibility>
+      <st:FullCompatibilityfromLevel>1</st:FullCompatibilityfromLevel>
+      <st:UpwardCompatibilityfromLevel>1</st:UpwardCompatibilityfromLevel>
+    </st:compatibility>
+  </st:Description>
+  <st:attributes>
+    <st:attribute Name="CPUIntensiveUsage">
+	<st:role>Limit to the maximum number of CPU intensive threads and processes</st:role>
+    <st:detailedRole>Maximum value for the number of CPU bound (or declared as such) threads and processes</st:detailedRole>
+	<st:int size="1">
+       <st:enum>
+          <st:role>MinCPUUsage</st:role>
+          <st:value>0</st:value>
+          <st:role>MidCPUUsage</st:role>
+          <st:value>50</st:value>
+          <st:role>MaxCPUUsage</st:role>
+          <st:value>100</st:value>
+        </st:enum>
+        <st:default>
+          <st:value>0</st:value>
+        </st:default>
+    </st:int>
+    </st:attribute>
+    <st:attribute Name="GeneralNBThreadsLimit">
+    <st:role>Limit to the maximum number of non CPU intensive threads</st:role>
+      <st:detailedRole>Maximum value for the number of non CPU bound (or declared as such) threads and processes</st:detailedRole>
+      <st:uint size="1">
+        <st:default>
+          <st:value>50</st:value>
+        </st:default>
+      </st:uint>
+    </st:attribute>
+  </st:attributes>
+</st:repository>

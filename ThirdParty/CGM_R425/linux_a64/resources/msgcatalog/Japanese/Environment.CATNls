@@ -1,0 +1,203 @@
+<meta charset="UTF-8"/>
+//===================================================================================
+//XX  XX   XXXXXXX  XXXX     XXXXXX            XX   XX   XXXXXX    XXXX
+//XX  XX    XX   X   XX       XX  XX           XXX XXX  XX    X   XX  X
+//XX  XX    XX X     XX       XX  XX           XXXXXXX  XX       XX
+//XXXXXX    XXXX     XX       XXXXX            XX X XX   XXXXX   XX
+//XX  XX    XX X     XX       XX               XX   XX       XX  XX  XXX
+//XX  XX    XX   X   XX  XX   XX               XX   XX  X    XX   XX  XX
+//XX  XX   XXXXXXX  XXXXXXX  XXXX              XX   XX  XXXXXX     XXX X
+//====================================================================================
+SETCATENV_HELP.text="新しい環境ファイルを作成します。
+
+setcatenv -e name [-d directory][-p concatenation ][-a user|global][-new yes|no][-server][-cf path][-v yes|no]
+
+一般オプション:
+    -e environment_name : 環境名。必須オプション。
+    -d directory        : 環境ファイル ストレージ フォルダー。
+                          デフォルト値: \"/P1\"。
+    -p concatenation    : インストール パス。複数のパスを指定可能 (\":\" でパスを区切る)。
+                          デフォルト値: \"/P2\"
+    -a user|global      : 環境のタイプ。-d が指定された場合には無効。
+                          user:   環境ファイルは \"/P3\" に保存されます。
+                          global: 環境ファイルは \"/P4\" に保存されます。
+                          デフォルト値: user
+    -new     yes|no     : 同じ名前の環境がある場合にそれをオーバーライドします。
+                          デフォルト値: yes
+    -server             : サーバー モードを活動化します。
+    -cf    file_path    : 新しい環境の作成元になる既存の環境の名前またはパスを指定します。
+                          例: \"setcatenv -e MyNewEnv -cf MyFirstEnv\" というコマンドでは、
+                          MyFirstEnv のコピーから新しい環境 MyNewEnv が作成されます。
+                          これによって、以前のカスタマイズを、新しい環境で再作成することなく継承できます。
+    -v yes|no           : 冗長モードを活動化します。デフォルト: yes
+    -h|-help            : このヘルプです。";
+
+//***************************************************************************************************************************************    
+DELCATENV_HELP.text="環境ファイルを削除します。
+
+delcatenv -e name [-d directory][-a user|global][-desktop yes|no][-v yes|no]
+
+一般オプション:
+    -e environment_name : 環境名。必須オプション。
+    -d directory        : 環境ファイル ストレージ フォルダー。
+                          デフォルト値: \"/P1\"。
+    -a user|global      : 環境のタイプ。-d が指定された場合には無効。
+                          user:   環境ファイルは \"/P2\" に保存されます。
+                          global: 環境ファイルは \"/P3\" に保存されます。
+                          デフォルト値: user
+    -v yes|no           : 冗長モードを活動化します。デフォルト: yes
+    -h|-help            : このヘルプです。";
+
+//***************************************************************************************************************************************    
+
+LSCATENV_HELP.text="利用できる環境のリストを作成します。
+
+lscatenv   [-a user|global] [-d storage_directory_name]
+
+オプション:
+    -d directory        : 環境ファイル ストレージ フォルダー。
+                          デフォルト値: \" /P1 \"
+    -a user|global      : 環境のタイプ。-d が指定された場合には無効。
+                          user:   環境ファイルは \" /P2 \"に保存されます。
+                          global: 環境ファイルは \" /P3 \"に保存されます。
+                          デフォルト値: user";
+//***************************************************************************************************************************************
+READCATENV_HELP.text="環境ファイルの内容を表示します。
+
+readcatenv -e name [-d directory][-a user|global][-var variable][-short][-l]
+
+オプション:
+    -e environment_name : 環境名。必須オプション。
+    -d directory        : 環境ファイル ストレージ フォルダー。
+                          デフォルト値: \" /P1 \"
+    -a user|global      : 環境のタイプ。-d が指定された場合には無効。
+                          user:   環境ファイルは \" /P2 \"に保存されます。
+                          global: 環境ファイルは \" /P3 \"に保存されます。
+                          デフォルト値: user
+    -var varname        : 指定された変数の値だけを表示します。このオプションが設定されない場合、
+                          readcatenv は、環境ファイル内のすべての変数の値を表示します。
+    -short              : 変数の値だけを表示します。
+    -l                  : 変数の値を展開しません。";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_NT.text="環境ファイルの変数を編集します。
+
+chcatenv -e name -var variable=value [-d directory][-a user|global][-new][-com][-del]
+
+オプション:
+    -e environment_name : 環境名。必須オプション。 
+    -d directory        : 環境ファイルの格納フォルダー。  
+                          -a オプションが指定されていない場合は必須。
+    -a user|global      : 環境のタイプ。 
+                          -d が指定された場合には無効、-d が指定されていない場合は必須。
+                          user:   環境ファイルは \"/P2\" に保存されます。
+                          global: 環境ファイルは \"/P3\" に保存されます。 
+                          -d オプションが指定された場合、デフォルト値は user です。
+    -var var1=new_value : 変数 var1 に新しい値を設定します。この引数を囲むには \" を使用します。
+                          例: chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\MyData\"
+                          または  chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\My Data\"
+                          変数を更新しない場合は、次のようなコマンドを実行します:
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=%CATInstallPath%;C:\Temp\MyNewPath\"                           
+                          または 
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=C:\Temp\MyNewPath\;%CATInstallPath%\"                            
+    -new                : -var オプションに指定された変数が存在しない場合は、作成します。
+                          例: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new 
+                          望ましくない動作が起きるのを防ぐため、変数名に空白文字は使わないようにします。
+    -com \"Comment\"      : 環境ファイルの指定の変数にコメントを付加します。
+                          ユーザーに作成された変数にのみ有効です。
+                          例: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"Add some comment here\"
+    -del                : -var オプションに指定された変数を削除します (ユーザーによって作成された変数のみ)。
+                          例: chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_UNIX.text="環境ファイルの変数を編集します。
+
+chcatenv -e name -var variable=value [-d directory][-a user|global][-new][-com][-del]
+オプション:
+    -e environment_name : 環境名。必須オプション。
+    -d directory        : 環境ファイル ストレージ フォルダー。
+                          デフォルト値: \" /P1 \"
+    -a user|global      : 環境のタイプ。-d が指定された場合には無効。
+                          user:   環境ファイルは \" /P2 \"に保存されます。
+                          global: 環境ファイルは \" /P3 \"に保存されます。
+                          デフォルト値: user
+    -var var1=new_value : 変数 var1 に新しい値を設定します。この引数を囲むには \"を使用します。
+                          例: chcatenv -e MyEnv -a user -var \"CATTemp=/tmp/MyData\"
+                          変数を更新する場合には、このコマンドを以下のように実行します:
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=\$CATInstallPath:/tmp/MyNewPath\"
+                          または
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=/tmp/MyNewPath:\$CATInstallPath\"
+    -new                : -var オプションに指定された変数が存在しない場合には、作成します。
+                          例: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new.
+                          望ましくない動作が起きるのを防ぐため、変数名に空白文字は使わないようにします。
+    -com \"Comment\"      : 環境ファイルの指定の変数にコメントを付加します。
+                           ユーザーに作成された変数にのみ有効です。
+                          例: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"Add some comment here\"
+    -del                : -var オプションに指定された変数を削除します (ユーザーによって作成された変数のみ)。
+                          例: chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+//***************************************************************************************************************************************
+
+
+//***************************************************************************************************************************************
+
+
+//====================================================================================
+//XXXXXXX  XXXXXX   XXXXXX    XXXXX   XXXXXX            XX   XX   XXXXXX    XXXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XXX XXX  XX    X   XX  X
+// XX X     XX  XX   XX  XX  XX   XX   XX  XX           XXXXXXX  XX       XX
+// XXXX     XXXXX    XXXXX   XX   XX   XXXXX            XX X XX   XXXXX   XX
+// XX X     XX XX    XX XX   XX   XX   XX XX            XX   XX       XX  XX  XXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XX   XX  X    XX   XX  XX
+//XXXXXXX  XXX  XX  XXX  XX   XXXXX   XXX  XX           XX   XX  XXXXXX     XXX X
+//====================================================================================
+
+AccessPb.Text="環境ファイルを \" /P1 \"に保存できませんでした。";
+BadFormatedVariable.Text="-var オプションに指定されている値は無効です。";
+BadOptions.Text="引き数が正しくありません。コマンド行をチェックしてください";
+CannotDelOfficalVar.Text="この変数は削除できません。削除できるのは新規変数だけです。";
+DefaultFolderNotFound.Text="デフォルトの環境格納フォルダー ( /P1 ) にアクセスできません";
+DirDoesntExist.Text="ディレクトリ /P1 にアクセスできません。";
+DiskFull.Text="環境ファイルを保存できません: ディスクがフルです";
+EnvCreationFailed.text="環境を作成できませんでした";
+EnvFileDoesntExist.Text="指定環境が見つかりません。";
+EnvFileNotFound.Text="環境ファイルが見つかりませんでした";
+EnvNameNotSpecified.Text="環境名を \"-e \"オプションに指定する必要があります。";
+ErrDelEnv.Text="環境を削除できませんでした";
+ErrDelEnvUsr.Text="環境リプレゼンテーションを削除できませんでした";
+ErrUnset.Text="ワークステーションを設定解除できませんでした";
+FileAlreadyExist.Text="環境ファイルはすでに存在します";
+GeneralFailure.Text="chcatenv 初期化中に問題が発生しました。";
+IconeCreationFailed.text="環境アイコンを作成できませんでした";
+IconeCreationFailed2.text="デスクトップ ショートカットが作成されていません。インストール ディレクトリ内に /P1 があるかどうか確認してください。";
+InitFolderFailed.Text="デフォルト ストレージ フォルダーが見つかりませんでした。\n環境は、/P1 に保存されました。";
+InvalidEnvModeOption.Text="\"-a \"オプションを \"user \"または \"global \"に設定する必要があります。";
+InvalidEnvNameOption.Text="環境名を \"-e \"オプションに指定する必要があります。";
+ModifyVariableFailed.text="環境変数の修正ができませんでした。";
+MustBeSystemAdmin.Text="このアクションを実行するには、管理者の権限が必要です。";
+NoBlankInEnvName.text="環境名にブランク文字は使用できません";
+NoCommentOnOfficialVar.Text="新しい変数にのみコメントできます。";
+NoConcatSpecified.Text="連結を指定する必要があります";
+NoDirModeOption.Text="\"-a \"オプションを \"user \"または \"global \"に設定するか、\"-d \"オプションを使用してストレージ ディレクトリを指定する必要あります。";
+NoHome.text="\$HOME 環境変数が見つかりません";
+NoNewOfficialVariable.Text="/P1 はすでに存在します。別の変数名を選択してください。";
+NoReadAccessInDir.Text="ディレクトリ /P1 は読み取りモードではアクセスできません";
+NoSuchVariable.text="環境ファイルに変数が見つかりません。";
+NoVarSpecified.Text="\"-var \" オプションを指定する必要があります。";
+NoWriteAccessInDir.Text="ディレクトリ /P1 オプションは、書き込みモードではアクセスできません";
+NonValidType.Text="タイプ (ユーザーまたはグローバル) は、-a オプションを経由して指定する必要があります。";
+ReadFailed.text="この環境を読み込めません";
+ReadFailed.text="この環境を読み込めません";
+RefFileNotFound.Text="参照ファイル記述子が見つかりませんでした。";
+SpecifiedFolderNotFound.Text="ディレクトリ \" /P1 \" にアクセスできません。";
+ToolsSetupFailed.text="ツールをインストールできませんでした";
+UnableToReadEnvFile.Text="環境ファイルを読み取ることができません。";
+UnableToWriteFile.Text="修正された環境ファイルを保存できません。";
+UnknownOption.Text="無効なオプション: /P1 。 ";
+UnknownProductLine.Text="/P1 は有効な製品ラインではありません。\n-cs オプションの許可された値: /P2";
+UnknownError.Text="エラーが発生しました: /P1。";
+UpdateVariableFailed.text="環境変数の更新ができませんでした。";
+VariableNotFound.Text="変数 /P1 が環境ファイルに見つかりませんでした。 ";
+VariableNotValued.Text="変数 /P1 に値がありません。空ストリングを新規値として設定する場合は、記号=の後に何も追加しないようにしてください。\n例: chcatenv -e MyEnv -a user -var\"MyNewVar=\" ";
+WSSsetupFailed.text="ワークステーションをセットアップできませんでした";
+
+

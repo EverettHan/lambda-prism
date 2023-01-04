@@ -1,0 +1,38 @@
+<meta charset="UTF-8"/>
+//-------------------------------- Policy section below;
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.Use_Case = Use Case
+
+policy.Use_Case="ユース ケース";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.Use_Case.InWork = In Work
+
+V_maturity.Plan="非公開";
+V_maturity.Private="非公開";
+V_maturity.Working="作業中";
+V_maturity.InWork="作業中";
+V_maturity.Draft="凍結";
+V_maturity.Frozen="凍結";
+V_maturity.Review="リリース";
+V_maturity.Release="リリース";
+V_maturity.Complete="廃版";
+V_maturity.Obsolete="廃版";
+
+current.Plan="非公開";
+current.Private="非公開";
+current.Working="作業中";
+current.InWork="作業中";
+current.Draft="凍結";
+current.Frozen="凍結";
+current.Review="リリース";
+current.Release="リリース";
+current.Complete="廃版";
+current.Obsolete="廃版";
+
+
+
+
+

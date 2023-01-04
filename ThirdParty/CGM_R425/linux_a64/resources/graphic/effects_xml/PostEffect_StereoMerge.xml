@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">    
+
+  <DST_STATE_GROUP>
+    <NAME>DepthNoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>NoBlend</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbStereoMerge</NAME>
+  </CONSTANT_BUFFER>
+  
+  <SAMPLER>
+    <NAME>s_LeftEyeMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>s_RightEyeMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>smpPoint</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+  </SAMPLER_STATE>
+
+  
+  <TECHNIQUE>
+    <NAME>ColorMode</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_LeftEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RightEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_StereoMerge_DeclarePS PostEffect_StereoMerge_Color PostEffect_StereoMerge_MainPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>OptimizedMode</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_LeftEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RightEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_StereoMerge_DeclarePS PostEffect_StereoMerge_Optimized PostEffect_StereoMerge_MainPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>GrayMode</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_LeftEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RightEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_StereoMerge_DeclarePS PostEffect_StereoMerge_Gray PostEffect_StereoMerge_MainPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>HalfColorMode</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_LeftEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RightEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_StereoMerge_DeclarePS PostEffect_StereoMerge_HalfColor PostEffect_StereoMerge_MainPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>SideBySideMode</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_LeftEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_RightEyeMap</SAMPLER>
+          <STATES>smpPoint</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <NAME>Pass0</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+      <COMMONS>streams</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PostEffect_DeclarePS PostEffect_StereoMerge_DeclarePS PostEffect_StereoSideBySide_MainPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+</EFFECT>

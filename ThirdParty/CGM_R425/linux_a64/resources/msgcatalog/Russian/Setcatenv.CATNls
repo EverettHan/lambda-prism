@@ -1,0 +1,62 @@
+<meta charset="UTF-8"/>
+HelpNT.text="Синтаксис sethangev
+[-e environment_name      ]   Обязательный параметр. Нет значения по умолчанию
+[-d storage_directory_name]   По умолчанию: CSIDL_APPDATA\STRUCTV
+[-p concatenation path    ]   По умолчанию: путь установки в корне
+[-a user|global           ]   Тип среды. По умолчанию: user
+[-server                  ]   Активирует режим сервера. По умолчанию: не активирован (interactif)
+[-new yes|no              ]   Принудительно создает среду. По умолчанию: yes
+[-icon  yes|no            ]   Создает значок на рабочем столе Windows  По умолчанию: yes
+[-menu yes|no             ]   Создает ярлык в меню \"Пуск\"      По умолчанию: yes
+[-desktop yes|no          ]   Создает представление для рабочего стола. По умолчанию: yes (эквивалентно варианту -icon yes -menu yes)
+[-cf path_of_environment  ]   Обновляет значения переменных со средой, указанной параметром path_of_environment
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ]   Укажите ProductLine для представления среды (по умолчанию: CATIA)
+[-v yes|no                ]   Включает режим подробного протоколирования. По умолчанию: yes
+[-regserver               ]   Регистрирует CATIA на рабочем столе (эксклюзивная команда)
+[-tools                   ]   Настройка ярлыков инструментов (эксклюзивная команда)
+[-h|-help                 ]   Эта справка.";
+HelpUNIX.text="Синтаксис sethangev
+[-e environment_name      ]   Обязательный параметр. Нет значения по умолчанию
+[-d storage_directory_name] По умолчанию: $HOME/CATEnv
+[-p concatenation path]     По умолчанию: корневой путь установки (/usr/catia/DassaultSystemes/B06)
+[-a user|global]            Тип среды. По умолчанию: user
+[-server]                   Активирует режим сервера. По умолчанию: не активирован (interactif)
+[-new yes|no]               Принудительно создает среду. По умолчанию: yes
+[-desktop yes|no]           Создает представление для рабочего стола для среды. По умолчанию: yes, кроме IRIX
+[-cf path_of_environment  ]   Обновляет значения переменных в среде, заданной параметром path_of_environment
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ]   Укажите ProductLine для представления среды (по умолчанию: CATIA)
+[-v yes|no]                 Включает режим подробного протоколирования. По умолчанию: yes
+[-regserver]                Регистрирует CATIA на рабочем столе (эксклюзивная команда)
+[-h|-help]                  Это справка.";
+NoBlankInEnvName.text="В имени среды не допускается использование пробелов";
+NoHome.text="Невозможно найти переменную среды \"HOME\"";
+EnvCreationFailed.text="Сбой при создании среды";
+IconeCreationFailed.text="Сбой при создании значка среды";
+IconeCreationFailed2.text="Ярлык на рабочем столе не создан. Проверьте наличие /P1 в каталоге установки.";
+ModifyVariableFailed.text="Сбой при изменении переменной среды.";
+UpdateVariableFailed.text="Сбой при обновлении переменной среды.";
+NoSuchVariable.text="Переменная не существует";
+WSSsetupFailed.text="Сбой настройки рабочей станции";
+ToolsSetupFailed.text="Сбой установки инструментов";
+MustBeSystemAdmin.text="Для использования этой функции необходимы права системного администратора";
+RefFileNotFound.Text="Дескриптор справочного файла не найден";
+EnvNameNotSpecified.Text="Необходимо указать имя среды";
+DefaultFolderNotFound.Text="Папка по умолчанию для среды не найдена";
+SpecifiedFolderNotFound.Text="Каталог \"/P1\" не найден.";
+EnvFileNotFound.Text="Файл среды не найден";
+AccessPb.Text="Невозможно сохранить файл среды в \"/P1\".";
+FileAlreadyExist.Text="Файл среды уже существует";
+NoConcatSpecified.Text="Необходимо указать объединение";
+DiskFull.Text="Невозможно сохранить файл среды: диск заполнен";
+InitFolderFailed.Text="------------------ Предупреждение ----------------
+Папка хранения по умолчанию не найдена.
+Среды была сохранена в:
+";
+UnknownProductLine.Text="/P1 не является допустимой линейкой продуктов. Авторизованные значения для параметра -cs:";
+UnknownOption.Text="Недопустимый параметр: /P1. ";

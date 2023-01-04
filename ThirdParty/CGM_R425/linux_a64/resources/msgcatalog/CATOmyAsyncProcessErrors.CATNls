@@ -1,0 +1,44 @@
+<meta charset="UTF-8"/>
+ASYNC_Process_Death_NormalEnd.Diagnostic = "Successful completion.";
+ASYNC_Process_Death_NormalEnd.Advice = "";
+ASYNC_Process_Death_NormalEnd.Request = "";
+
+ASYNC_Process_Death_KilledByCATIA.Diagnostic = "Operation has been canceled by user.";
+ASYNC_Process_Death_KilledByCATIA.Advice = "";
+ASYNC_Process_Death_KilledByCATIA.Request = "";
+
+ASYNC_Process_Death_KilledByTimeOut.Diagnostic = "Operation has been canceled, server's answer has timed-out.";
+ASYNC_Process_Death_KilledByTimeOut.Advice = "";
+ASYNC_Process_Death_KilledByTimeOut.Request = "";
+
+ASYNC_Process_Death_KilledByUser.Diagnostic = "Operation has been canceled, asynchronous process has been killed by an external app.";
+ASYNC_Process_Death_KilledByUser.Advice = "Make sure any other app can't kill the asynchronous processes.";
+ASYNC_Process_Death_KilledByUser.Request = "";
+
+ASYNC_Process_Death_SystemError.Diagnostic = "Operation has been canceled, internal error.";
+ASYNC_Process_Death_SystemError.Advice = "Retrieve abend file and contact your local support.";
+ASYNC_Process_Death_SystemError.Request = "";
+
+ASYNC_Process_Death_Unknown.Diagnostic = "Operation has been canceled, unexpected error.";
+ASYNC_Process_Death_Unknown.Advice = "Retrieve abend file and contact your local support.";
+ASYNC_Process_Death_Unknown.Request = "";
+
+ASYNC_Task_End_CanceledByUser.Diagnostic = "Operation has been canceled by user.";
+ASYNC_Task_End_CanceledByUser.Advice = "";
+ASYNC_Task_End_CanceledByUser.Request = "";
+
+ASYNC_Task_End_AsyncPlatformError.Diagnostic = "Operation has been canceled, internal error.";
+ASYNC_Task_End_AsyncPlatformError.Advice = "Asynchronous commands are deactivated.";
+ASYNC_Task_End_AsyncPlatformError.Request = "";
+
+ASYNC_Process_Death_At_Connect.Diagnostic = "All commands will be performed synchronously.";
+ASYNC_Process_Death_At_Connect.Advice = "Search Asynchronism in documentation for more details. You can continue to work.";
+ASYNC_Process_Death_At_Connect.Request = "Asynchronism";
+
+ASYNC_Process_Death_At_Connect_DevStage.Diagnostic = "A process supporting asynchronism requests is dead unexpectedly during its connection.\nThe asynchrounous requests are now deactivated, all requests will be performed synchronously.";
+ASYNC_Process_Death_At_Connect_DevStage.Advice = "Please check your connection parameters and contact the owner of CATPLMxProviderConnection::Connect about this issue.";
+ASYNC_Process_Death_At_Connect_DevStage.Request = "Process Death - Connection Error";
+
+ASYNC_Platform_Deactivated.Diagnostic = "The asynchrounous requests are now deactivated, all requests will be performed synchronously";
+ASYNC_Platform_Deactivated.Advice = "";
+ASYNC_Platform_Deactivated.Request = "";

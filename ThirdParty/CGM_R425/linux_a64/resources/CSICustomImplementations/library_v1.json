@@ -1,0 +1,20 @@
+{
+  "grammarVersion": 1,
+  "desc": "Definition for the library implementation of a function",
+  "library": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "release",
+      "basic": "string",
+      "desc": "Specify the name of the library to use to retrieve the function factory in release mode"
+    },
+    {
+      "label": "debug",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Specify the name of the library to use to retrieve the function factory in debug mode"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "desc": "Uploads a specified function on the node running this current function, and return name and version on success; if name or version are unspecified in \"definition\", then they will be provided.",
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "definition",
+          "type": "CSIDeclarativeFunctionDefinitionV3",
+          "desc": "function definition to upload."
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "name",
+          "basic": "string",
+          "desc": "uploaded function name, name is provided if unspecified in \"definition\""
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "desc": "uploaded function verszion, version is provided if unspecified in \"definition\""
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

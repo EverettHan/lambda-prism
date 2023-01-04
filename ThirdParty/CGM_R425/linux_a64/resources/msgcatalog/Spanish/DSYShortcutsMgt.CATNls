@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt=" 
+Para crear o eliminar todos los accesos directos de aplicaciones del escritorio, el menú o las herramientas vinculados con un archivo de entorno determinado:
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+Para crear o eliminar un acceso directo personalizado del escritorio que esté vinculado solamente a un archivo de entorno determinado:
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create o -del           : para crear o eliminar todos los accesos directos de aplicaciones del escritorio, el menú o las herramientas, o para crear o eliminar un acceso directo personalizado.
+  -desktop|menu|tools       : para crear o eliminar todos los accesos directos de aplicaciones del escritorio, el menú o las herramientas. La opción por defecto es el escritorio. No es útil en el modo Personalizado.
+  -e EnvName                : Nombre del archivo de entorno. No es útil para eliminar un acceso directo personalizado.
+  -d EnvDir                 : Carpeta del archivo de entorno (opcional). No es útil en el modo Eliminar.
+                              si no se especifica, y -a no se usa, la opción por defecto será: EnvDir  = \"/p1\"
+                              si no se especifica, pero -a global se usa, la opción por defecto será: EnvDir = \"/p2\"
+                              si no se especifica, pero -a user se usa, la opción por defecto será: EnvDir =  \"/p1\"
+  -a global|user            : Para crear o eliminar accesos directos para todos los usuarios o solamente para el usuario actual (opcional). La opción por defecto es -a user.
+                              Especifica la ubicación y el tipo de accesos directos.
+                             -a global: los accesos directos serán visibles para todos los usuarios. Debe tener derechos de administrador para usar esta opción.
+                             -a user: los accesos directos serán visibles solamente para el usuario actual.
+  -name DesktopShortcutName : para crear o eliminar un acceso directo de escritorio personalizado llamado DesktopshortcutName para ejecutar el comando Cmd.
+  -cmd Cmd                  : para crear un acceso directo de escritorio personalizado llamado DesktopshortcutName con Target = CATSTART -run Cmd env EnvName -direnv EnvDir.
+  -h                        : Esto es la ayuda.";
+
+MissingOption_e="La opción -e es obligatoria para nombrar el archivo de entorno.\n";
+MissingValue_e="La opción -e debe ir seguida del nombre del archivo de entorno.\n";
+MissingValue_d="La opción -d debe ir seguida del nombre de la ruta del archivo de entorno.\n";
+MissingValue_a="La opción -a debe ir seguida de global o user.\n";
+MissingValue_Cmd="La opción -Cmd debe ir seguida del comando que se ejecute a través del acceso directo.";
+MissingValue_name="La opción -name debe ir seguida del nombre del acceso directo de escritorio que se va a crear.";
+MissingOption_cmd="La opción -name se debe usar con la opción -cmd.\n";
+MissingOption_name="La opción -cmd se debe usar con la opción -name.\n";
+BadOptions_menutools="Los accesos directos personalizados solo se pueden crear en el escritorio.\n";
+BadOptions_TypeShortcut="Las opciones -desktop , -tools o -menu no se pueden usar juntas.\n";
+Option_aMustAdmin="La opción -a requiere derechos de administrador para crear accesos directos para todos los usuarios.\n";
+BadValue_a="La opción -a debe ir seguida de global o user.\n";
+MissingOptions_createordel="Una de las siguientes opciones, -create o -del, es obligatoria.";
+MissingOption_typeshortcut="Una de las siguientes opciones, -desktop, -tools o -menu, es obligatoria.\n";
+InvalidArg="La opción /p1 no está autorizada.";
+BadOptions_createdel="Las opciones -create y -del no se pueden usar juntas.";
+EnvnameNotFound="No se ha encontrado el archivo de entorno /p1. Compruebe la opción -e\n";
+CreateShortcutsIn="Creando accesos directos en: \"/p1\"\n";
+DeleteShortcutsIn="Eliminando accesos directos en: \"/p1\"\n";
+CreateShortcutsDesktop="Creando accesos directos en el escritorio...\n";
+CreateShortcutsDesktopOK="Los accesos directos se han creado en el escritorio correctamente.\n";
+CreateShortcutsDesktopKO="No se han podido crear los accesos directos en el escritorio.\n";
+CreateShortcutDesktop="Creando el acceso directo de escritorio /p1...\n";
+CreateShortcutDesktopOK="El acceso directo de escritorio se ha creado correctamente.\n";
+CreateShortcutDesktopKO="No se ha podido crear el acceso directo de escritorio.\n";
+CreateShortcutsTools="Creando accesos directos de herramientas...\n";
+CreateShortcutsToolsOK="Los accesos directos de herramientas se han creado correctamente.\n";
+CreateShortcutsToolsKO="No se han podido crear los accesos directos de herramientas.\n";
+CreateShortcutsMenu="Creando accesos directos en el menú de inicio...\n";
+CreateShortcutsMenuOK="Los accesos directos se han creado en el menú de inicio correctamente.\n";
+CreateShortcutsMenuKO="No se han podido crear los accesos directos en el menú de inicio.\n";
+CreateDirFailed="No se ha podido crear el directorio \"/P1\".\n";
+DeleteShortcutsDesktop="Eliminando accesos directos del escritorio...\n";
+DeleteShortcutsDesktopOK="Los accesos directos del escritorio se han eliminado correctamente.\n";
+DeleteShortcutsDesktopKO="No se han podido eliminar los accesos directos del escritorio.\n";
+DeleteShortcutDesktop="Eliminando el acceso directo de escritorio /p1...\n";
+DeleteShortcutDesktopOK="El acceso directo del escritorio se ha eliminado correctamente.\n";
+DeleteShortcutDesktopKO="No se ha podido eliminar el acceso directo del escritorio.\n";
+DeleteShortcutsTools="Eliminando accesos directos de herramientas del escritorio...\n";
+DeleteShortcutsToolsOK="Los accesos directos de herramientas se han eliminado correctamente.\n";
+DeleteShortcutsToolsKO="No se han podido eliminar los accesos directos de herramientas.\n";
+DeleteShortcutsMenu="Eliminando accesos directos del menú de inicio...\n";
+DeleteShortcutsMenuOK="Los accesos directos del menú de inicio se han eliminado correctamente.\n";
+DeleteShortcutsMenuKO="No se han podido eliminar los accesos directos del menú de inicio.\n";
+DeleteShortcutfailed="No se ha podido eliminar el acceso directo /p1.\n";
+ShortcutNotFound="No se ha encontrado el acceso directo /p1.\n";
+DeleteShortcutOK="Se ha eliminado el acceso directo /p1.\n";
+CreateShortcutOK="Se ha creado correctamente el acceso directo /p1.\n";
+CreateShortcutKO="No se ha podido crear el acceso directo /p1.\n";
+BadStartInFolder_MissingPourcent="Se ha ignorado el valor de inicio en la carpeta /p1 porque contiene caracteres % desequilibrados.\n";
+BadStartInFolder_BadEnv="No se ha establecido la variable de entorno /p1.\n";
+BadStartInFolder_BadDir="Se ha ignorado el valor de Inicio en la carpeta /p1 porque la ruta no existe.\n";
+NoModuleName="No se ha encontrado el nombre del módulo.\n";
+CustomexeNotFound="No se ha encontrado el ejecutable /p1 en la concatenación de ruta.\n";
+Customexe2NotFound="No se ha encontrado /p1.exe ni /p1.bat en la concatenación de ruta.\n";
+NoShortcuts="No se puede recuperar la lista de los accesos directos que se desean crear. No se ha encontrado el archivo /p1. \n";
+ErrGetRootPath="No se puede recuperar el valor de la carpeta de /p1.\n";
+DeleteDirKO="No se ha podido eliminar la carpeta /p1: /p2\n";
+InvalidDiskPathFormat="La ruta de acceso '/p1' comienza con una unidad de disco no válida.";
+InvalidUNCPathFormat="'/p1' es una ruta de acceso de UNC no válida.";
+InvalidPathFormat="'/p1' es una ruta de acceso no válida.";
+rootpathnotExist="La ruta de acceso raíz '/p1' no existe; por lo tanto, no se puede crear la carpeta.";

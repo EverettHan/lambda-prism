@@ -1,0 +1,19 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "CATFuzzyOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralInterfaces"/>
+  <prerequisite access = "Protected" comment = "Since R18. " name = "PolyhedralObjects"/>
+  <prerequisite access = "Protected" comment = "Since R18. " name = "PolyhedralMathematics"/>
+  <prerequisite access = "Protected" comment = "Since R28 or Since R420. " name = "PolyhedralOperators"/>
+  <prerequisite access = "Protected" comment = "Since R420" name = "Lattice"/>
+  <prerequisite access = "Private" comment = "Since R422" name = "ScalarFields"/>
+  <prerequisite access = "Private" comment = "Since R422" name = "ScalarFieldsOperators"/>
+  <attached name = "CATFuzzyOperators.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

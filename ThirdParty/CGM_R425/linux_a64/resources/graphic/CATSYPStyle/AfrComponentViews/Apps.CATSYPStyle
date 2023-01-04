@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="AfrCompass/CATAfrPLMCompass.CATSYPStyle"/>
+    <ResourceDictionary Source="CATAfrPLMCompassWidgets.CATSYPStyle"/>
+    <ResourceDictionary Source="CATAfrCustomStyles.CATSYPStyle"/>
+    <ResourceDictionary Source="AfrApps.CATSYPStyle"/>
+  </Resources>
+  <!--======================================================-->
+  <!-- CATCAfrMenu_Afr3DS_Compass : view of a compass   -->
+  <!--======================================================-->
+
+  <DataTemplate syp:name="CATCAfrMenu_Afr3DS_Compass"  >
+
+    <CATAfrSYPStarterViewMetaData syp:name="MetaData" SypNamePosition="SupraContainerCompassPosition" NameBis="@Name">
+      <!--<CATAfrSYPStarterViewMetaData.ControllerPresenter>
+        <CATAfrSYPAppsController FilteredSource="@FilterEditor ElementName=Container" />
+      </CATAfrSYPStarterViewMetaData.ControllerPresenter>-->
+      <CATAfrSmartCtl syp:name="MainControl"  Name="@Name" InitialDockArea="TopDockArea"  UpdateFlag="0"
+            DoNotDispatchTunnelInformationFlag="1"
+            ConstraintsDialogBox="widthPercent=100 topPercent=0">
+        <CATVidLayLayer>
+          <!-- Backround for this separated -->
+          <!--Retire car en mode normal on retrouve le degradé-->
+          <!--<CATVidGPNinePatchSquare TextureFilter="1" MinificationFilter="Nearest" ScalableAreaBorder="42 0 0 0" Texture="PLMBar/top-bg.png"/>-->
+          <CATVidLayGrid GridWeight="row1=1">
+            <CATVidGPNinePatchSquare syp:name="Background" ScalableAreaBorder="1 1 2 1" TextureFilter="1" MinificationFilter="Nearest" RequestedMinimumDimension="42 44" Texture="PLMBar/top-bg.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+         
+          <!--<CATVidGPSmartSquare  GridWeight="row1=1" Texture="PLMBar/top-bg.png" TextureAlpha="255">
+            <CATVidSpacer syp:name="BackgroundTop" RequestedMinimumDimension="3 44" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="3 32" CATVidGPSmartSquare.GPConstraints="x=0  y=1 attach=RLTB"/>
+          </CATVidGPSmartSquare>-->
+
+          <!-- ** END ** Layer for :Copy of 3DS Icon + Mini Compass + Text-->
+          <CATVidLayGrid GridWeight="row2=1 col2=1">
+            <CATVidSpacer RequestedMinimumDimension="16 44" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidCtl syp:name="ContainerForLegacyMenu" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+            <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+
+
+          <!-- Layer for 3DS Icon-->
+          <CATVidLayGrid GridWeight="col2=1 row1=1">
+            <CATVidSpacer RequestedMinimumDimension="14 1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="3 42">
+              <CATVidGPSquare Texture="PLMBar/3ds_Logo.png" RequestedMinimumDimension="32 32" CATVidLayGrid.IndexedConstraints="x=1 y=0"  />
+            </CATVidLayGrid>
+         
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+
+          <!-- Layer for 3DXP Compass-->
+          <CATAfr3DXPCompass  syp:name="Container" TopBarModel="@TopBar" OnPanelDisplayed="@HandleEventMenuDeployed" OnPanelHidden="@HandleEventMenuHidden" />
+
+
+          <CATVidGPSquare syp:name="BlockingSquareForRecord" Name="BlockingSquareForRecordCompass" UseManipulatorFlag="1" VisibleFlag="0"/>
+        </CATVidLayLayer>
+
+      </CATAfrSmartCtl>
+
+    </CATAfrSYPStarterViewMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="InsideViewerFlag" TargetName="Container" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Background" Value="0" />
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag" TargetName="Container" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="Background" Value="255" />
+      </CATSYPTrigger>
+
+    </CATSYPTriggerCollection>
+
+  </DataTemplate>
+
+
+  <!--======================================================-->
+  <!-- CATCAfrList_ContainerApps : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrPanelApps_ContainerApps">
+    <CATAfrVidCtlPanelApps HasEnoughApps="@HasEnoughApps" LoadingVisibleFlag="@LoadingVisibleFlag" syp:name="Container" PlaceholderSearch="@Title" VisibleFlag="@Visibility Mode=TwoWays" AddToFavorite="@OnAddToFavoriteCB" RemoveToFavorite="@OnRemoveToFavoriteCB" Information="@ViewErrorsMsg">
+      
+    </CATAfrVidCtlPanelApps>
+      
+      
+
+
+  </DataTemplate>
+  <!--======================================================-->
+  <!-- CATCAfrList_ContainerApps : DEPRECATED -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrPanelApps_AfrMenu">
+    <CATVidLayGrid GridWeight="row1=1" VisibleFlag="@Visibility" LayoutWhenUnvisibleFlag="0">
+      <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+
+
+
+
+  </DataTemplate>
+
+  <!--SRO3-START-->
+  <DataTemplate syp:name="CATCAfrList_GroupListAppsNew" >
+    <CATAfrVidCtlGroupSectionsApps  syp:name="Container" syp:Template="DefaultNew" ActiveFlag="@Visibility" Name="@Name" Icon="@Icon" Title="@Title" ListEvent="@HandleListEvent"
+                                    ExpandedFlag="@ExpandedFlag Mode=TwoWays" />
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrList_ListAppsNew" >
+    <CATAfrSYPModelViewMetaData AppendAllAtFinalizeView="0">
+      <CATAfrVidCtlSectionApps Name="@Name" Icon="@IconName" Title="@Title" InformationWhenEmpty="@Tooltip" syp:name="Container" VisibleFlag="@Visibility"
+                               HeaderTemplate="HeaderSectionAppsNew" DnDFlag="@DragFlag" ListEvent="@HandleListEvent" ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                               ListTooltipProvider="@TooltipProvider"/>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrList_ListRolesNew" >
+    <CATAfrSYPModelViewMetaData >
+      <CATAfrVidCtlSectionRoles VisibleFlag="@Visibility"
+                                Name="@Name"
+                                Icon="@IconName"
+                                Title="@Title"
+                                syp:name="Container"
+                                HeaderTemplate="HeaderSectionAppsNew"
+                                DnDFlag="FALSE"
+                                ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                                SelectionFeedback="NoFeedback"
+                                SelectionMode="MultiToggle"
+                                ListEvent="@HandleListEvent"
+                                SelectedElements="@SelectedElements"
+                                ListTooltipProvider="@TooltipProvider"
+                                InformationWhenEmpty="@Tooltip"/>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+  <!--SRO3-END-->
+
+  <!--======================================================-->
+  <!-- CATCAfrList_ListApps : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_GroupListApps" >
+
+    <CATAfrVidCtlGroupSectionsApps  syp:name="Container" ActiveFlag="@Visibility"
+                               />
+
+
+
+  </DataTemplate>
+  <!--======================================================-->
+  <!-- CATCAfrList_ListApps : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_ListApps" >
+    <CATAfrSYPModelViewMetaData AppendAllAtFinalizeView="0">
+      <CATAfrVidCtlSectionApps Name="@Name" Icon="@IconName" Title="@Title" InformationWhenEmpty="@Tooltip" syp:name="Container"  
+                               DnDFlag="@DragFlag" ListEvent="@HandleListEvent" ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                               ListTooltipProvider="@TooltipProvider"/>
+    </CATAfrSYPModelViewMetaData>
+
+
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- CATCAfrList_ListApps : special view for a section of apps -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_ListPlayExperience" >
+    <CATAfrSYPModelViewMetaData AppendAllAtFinalizeView="0">
+      <CATAfrVidCtlSectionApps Name="@Name" Icon="@IconName" Title="@Title" InformationWhenEmpty="@Tooltip" syp:name="Container"
+                               DnDFlag="@DragFlag" ListEvent="@HandleListEvent" ExpandedFlag="@ExpandedFlag Mode=TwoWays" FilteredPropertyName="Display"
+                               ListTooltipProvider="@TooltipProvider"/>
+    </CATAfrSYPModelViewMetaData>
+
+
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- CATCAfrList_SubGroupListApps : view of an list to display a group of Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_SubGroupListApps" >
+    <CATAfrSYPModelViewMetaData >
+      <CATAfrVidCtlSectionApps Name="@Name" 
+                               Icon="@IconName" 
+                               Title="@Title" 
+                               syp:name="Container" 
+                               syp:Template="AfrGroupApps"
+                               DnDFlag="@DragFlag" 
+                               ListEvent="@HandleListEvent"
+                               ListTooltipProvider="@TooltipProvider"/>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+  <!--======================================================-->
+  <!-- CATCAfrList_ListRoles : view of an list to display all Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_ListRoles" >
+    <CATAfrSYPModelViewMetaData >
+      <CATAfrVidCtlSectionRoles VisibleFlag="@Visibility"
+                                Name="@Name" 
+                                Icon="@IconName" 
+                                Title="@Title" 
+                                syp:name="Container"
+                                DnDFlag="FALSE"
+                                ExpandedFlag="@ExpandedFlag Mode=TwoWays"
+                                SelectionFeedback="NoFeedback"
+                                SelectionMode="MultiToggle"
+                                ListEvent="@HandleListEvent"
+                                SelectedElements="@SelectedElements"
+                                ListTooltipProvider="@TooltipProvider"
+                                InformationWhenEmpty="@Tooltip"/>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+  
+  <!--======================================================-->
+  <!-- CATCAfrList_AppOptionList : view of an list to display all options close to an Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrOptionsMenu" >
+    <CATAfrSmartCtl Name="@Name"
+                   TitleDialogBox="@Title"
+                   SnappableFlag="1"
+                   ViewParent="@ViewParent"
+                   CreateDialogBoxFlag="0"
+                   ContentPanelVisibleFlag="1"
+                   ResizableDialogBoxFlag="1"
+                   CompactDialogBoxFlag="1"
+                   AutoCloseDialogBoxFlag="1"
+                   DiscretionFlag="1"
+                   LayoutWhenUnvisibleFlag="0"
+                    VisibleFlag="@HasChildsFlag"
+                   >
+      <CATAfrVidIconBoxCtl syp:Template="AppOption" Name="@Name" Orientation="Vertical" syp:name="IconBoxFather"
+                           UsePresenterIconContentFlag="1"
+                           IconBoxHidePolicy="AutoHide"
+                           IconBoxShowPolicy="ShowOnClickOnArrow"
+                           PopupVisibleFlag="@ContentVisibleFlag Mode=TwoWays"
+                           PopupShown="@HandleEventMenuDeployed"
+                           IconBoxDirection="Bottom" IconBoxSnapAlignment="SnapAlignLeft"
+                           >
+        <CATVidLayGrid GridWeight="row1=1" LayoutWhenUnvisibleFlag="0">
+          <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+        <!--<CATAfrVidCtlListView syp:Template="ListV2" syp:name="Container" VisibleFlag="@Visibility" MaxItemsVisibles="@MaximumItemsVisible"
+                           SourceDataTemplateName="CATAfrListItem_AppOptionList"
+                           SelectionMode="SingleElement"
+                           SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                           ScrollableFlag="0"
+                           LayoutWhenUnvisibleFlag="0"
+                           TooltipProvider="@TooltipProvider"
+                           ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                           ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                           ListEvent="@HandleListEvent"
+                           SelectionChanged="@HandleHideEvent ElementName=IconBoxFather"
+                           DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>-->
+
+      </CATAfrVidIconBoxCtl>
+
+    </CATAfrSmartCtl>
+
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- CATCAfrList_AppOptionList : view of an list to display all options close to an Apps  -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrList_AppOptionList">
+    <CATAfrSmartCtl Name="@Name"
+                   TitleDialogBox="@Title"
+                   SnappableFlag="1"
+                   ViewParent="@ViewParent"
+                   CreateDialogBoxFlag="0"
+                   ContentPanelVisibleFlag="1"
+                   ResizableDialogBoxFlag="1"
+                   CompactDialogBoxFlag="1"
+                   AutoCloseDialogBoxFlag="1"
+                   DiscretionFlag="1"
+                   LayoutWhenUnvisibleFlag="0"
+                   >
+
+      <CATAfrVidCtlListView syp:Template="ListV2" syp:name="Container" VisibleFlag="@Visibility" MaxItemsVisibles="@MaximumItemsVisible"
+                         SourceDataTemplateName="CATAfrListItem_AppOptionList"
+                         SelectionMode="SingleElement"
+                         SelectedIndexString="@ListSelectedObjectInString"
+                         SourceStyleSheet="CATAfrComponentViews.CATSYPStyle"
+                         ScrollableFlag="0"
+                         LayoutWhenUnvisibleFlag="0"
+                         TooltipProvider="@TooltipProvider"
+                         ShortTooltipTemplateName="@ShortTooltipTemplateName"
+                         ShortTooltipStyleSheet="@ShortTooltipStyleSheet"
+                         ListEvent="@HandleListEvent"
+                           
+                         DispatchSelectionChangedEvent="@DispatchSelectionChangedEvent"/>
+
+
+    </CATAfrSmartCtl>
+
+  </DataTemplate>
+
+ 
+  <!--======================================================-->
+  <!-- CATAfrListItem_AppOptionList : view of an option list (used in the list CATCAfrList_AppOptionList) -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATAfrListItem_AppOptionList">
+    <CATVidLayGrid GridWeight="col2=1" CellSpacing="5">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="9 7">
+        <CATVidGPSquare syp:name="CheckSign"  />
+      </CATVidLayLayer>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=L">
+        <CATVidGPLabel syp:name="Label" Text="@Display" FontName="3ds"  CropPolicy="NoCrop" TextColor="0 0 0 255"  />
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+
+      <CATSYPTrigger Property="SelectedFlag" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="CheckSign" Value="AfrOptionAppCheck.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SelectedFlag" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="CheckSign" Value=""/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- l_CATAfrApp_Default -->
+  <!--======================================================-->
+  <DataTemplate syp:name="l_CATAfrApp_Default">
+    <CATAfrSYPModelViewMetaData Child="@Data"/>
+  </DataTemplate>
+
+
+  
+
+  <!--======================================================-->
+  <!-- CATAfrAppPlatform_Default -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATAfrAppPlatform_Default">
+    <CATAfrSYPModelViewMetaData Child="@Data"/>
+  </DataTemplate>
+
+  <!--======================================================-->
+  <!-- CATAfrRole_Default -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATAfrRole_Default">
+    <CATAfrSYPModelViewMetaData Child="@Data"/>
+  </DataTemplate>
+</Styles>
+
+

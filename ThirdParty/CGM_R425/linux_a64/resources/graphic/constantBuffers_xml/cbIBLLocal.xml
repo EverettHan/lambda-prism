@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_IBLLocal</NAME>
+
+  <STRUCT>
+    <NAME>IBLLocalParams</NAME>
+
+    <UNIFORM>
+      <NAME>TransfoMatrix</NAME>
+      <TYPE>mat4x4</TYPE>
+      <DEFAULT_VALUE>
+        1.0 0.0 0.0 0.0
+        0.0 1.0 0.0 0.0
+        0.0 0.0 1.0 0.0
+        0.0 0.0 0.0 1.0
+      </DEFAULT_VALUE>
+    </UNIFORM>
+    
+    <UNIFORM>
+      <NAME>DiffuseScaleFactor</NAME>
+      <TYPE>float</TYPE>
+      <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    </UNIFORM>
+
+    <UNIFORM>
+      <NAME>padding1</NAME>
+      <TYPE>float</TYPE>
+      <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    </UNIFORM>
+    
+    <UNIFORM>
+      <NAME>SpecularScaleFactor</NAME>
+      <TYPE>float</TYPE>
+      <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    </UNIFORM>
+    
+    <UNIFORM>
+      <NAME>padding2</NAME>
+      <TYPE>float</TYPE>
+      <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    </UNIFORM>
+    
+    <SIZE>80</SIZE>
+  </STRUCT>
+  
+  <UNIFORM>
+    <NAME>Params</NAME>
+    <TYPE>struct</TYPE>
+    <USER_TYPE>IBLLocalParams</USER_TYPE>
+    <ARRAY_SIZE>1</ARRAY_SIZE>
+    <SEMANTIC>IBLLocal</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <VERSION>1</VERSION>
+
+  <SAMPLER>
+    <NAME>markerTexture</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>markerSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>Nearest</MIP_FILTER>
+    <CMP_FUNC>Never</CMP_FUNC>
+    <CMP_MODE>None</CMP_MODE>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <!--Completely arbitrary-->
+    <LOD_BIAS>2.3</LOD_BIAS>
+    <MIN_LOD>2.63</MIN_LOD>
+    <MAX_LOD>3.28</MAX_LOD>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>markerTexture</SAMPLER>
+          <STATES>markerSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vColor</NAME>
+            <TYPE>float4</TYPE>
+            <OPTION>VertexColor</OPTION>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      <LIGHTING>true</LIGHTING>
+      <COMMONS>BasePointShaderHelpers</COMMONS>
+      <VERTEX_STAGE>BasePoint_VS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>BasePoint_PS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</PDSFX>

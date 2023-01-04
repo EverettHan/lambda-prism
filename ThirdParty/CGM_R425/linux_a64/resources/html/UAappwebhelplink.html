@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Assistance Panel">
+    <title>No Panel Help</title>
+
+    <link href="../css/UAmain.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        function displayFullURL() {
+            var myurl=document.location.search.substr(7);
+            dscef.sendString('FullURL',myurl);
+        }
+    </script>
+</head>
+<body>	
+    <div id="info">
+        <div id="info-icon"><img src="../graphic/icons/I_UAPOpenUAPortal.png"/></div>
+        <div id="info-text">
+            <p>No help is available for this command. See the  <a href='#' onclick='displayFullURL();'>User's Guide</a> for additional information about this app.</p>
+        </div>			
+    </div>
+</body>
+</html>

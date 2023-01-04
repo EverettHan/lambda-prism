@@ -1,0 +1,67 @@
+{
+  "desc": "Run a Debugger on an Execution Graph given as input of this function",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "debugId",
+          "basic": "uint32",
+          "optional": {
+            "isOptional": false
+          }
+        },
+        {
+          "label": "contextId",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "debugRequest",
+          "basic": "string",
+          "enum": ["breakPoints", "breakBlockData", "continue", "breakAll", "stepOver", "stepInto", "stepOut"],
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "breakPoints",
+          "parametersArray": [
+            {
+              "label": "blockId",
+              "basic": "string"
+            }
+          ],
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "breakBlockData",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "type": "Parameters"
+    }
+  },
+  "progress": {
+    "type": "CSIExecGraphProgress"
+  },
+  "throwError": {
+    "type": "CSIExecGraphError"
+  }
+}

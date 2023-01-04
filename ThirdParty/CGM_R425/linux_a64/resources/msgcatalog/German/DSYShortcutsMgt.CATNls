@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt=" 
+Erzeugt oder löscht alle Anwendungsverknüpfungen auf dem Desktop, im Menü oder in den Tools zu einer gegebenen Umgebungsdatei:
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+Erzeugt oder löscht eine benutzerdefinierte Verknüpfung nur auf dem Desktop zu einer gegebenen Umgebungsdatei:
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create oder -del           : Erzeugt oder löscht alle Anwendungsverknüpfungen auf dem Desktop, im Menü oder in den Tools oder erzeugt oder löscht eine benutzerdefinierte Verknüpfung.
+  -desktop|menu|tools       : Erzeugt oder löscht alle Anwendungsverknüpfungen auf dem Desktop, im Menü oder in den Tools. Desktop ist der Standard. Im benutzerdefinierten Modus unnötig.
+  -e EnvName                : Name der Umgebungsdatei. Löschen einer benutzerdefinierten Verknüpfung unnötig.
+  -d EnvDir                 : Speicherordner für die Umgebungsdatei (optional). Löschen des Modus unnötig.
+                              wenn nicht angegeben und -a nicht verwendet wird, ist der Standard: EnvDir  = \"/p1\"
+                              wenn nicht angegeben, aber -a global verwendet wird, ist der Standard: EnvDir = \"/p2\"
+                              wenn nicht angegeben, aber der Benutzer -a verwendet wird, ist der Standard: EnvDir =  \"/p1\"
+  -a global|user            : Erstellt oder löscht Verknüpfungen für alle Benutzer oder nur für den aktuellen Benutzer (optional). Der Standard ist Benutzer -a.
+                              Gibt den Ort und den Typ der Verknüpfungen an.
+                             -a global: die Verknüpfungen sind für alle Benutzer sichtbar. Sie müssen über Administratorrechte verfügen, um diese Option nutzen zu können.
+                             -a user: Die Verknüpfungen sind nur für den aktuellen Benutzer sichtbar.
+  -name DesktopShortcutName : Erstellt oder löscht eine benutzerdefinierte Desktop-Verknüpfung mit dem Namen DesktopshortcutName zum Starten des Befehls Cmd.
+  -cmd Cmd                  : Erstellt eine benutzerdefinierte Desktop-Verknüpfung mit dem Namen DesktopshortcutName mit Ziel = CATSTART -run Cmd env EnvName -direnv EnvDir.
+  -h                        : Diese Hilfe.";
+
+MissingOption_e="Die Option -e ist erforderlich, um den Namen der Umgebungsdatei anzugeben.\n";
+MissingValue_e="Auf die Option -e muss der Name der Umgebungsdatei folgen.\n";
+MissingValue_d="Auf die Option -d muss der Pfadname der Umgebungsdatei folgen.\n";
+MissingValue_a="Auf die Option -a muss \"global\" oder \"user\" folgen.\n";
+MissingValue_Cmd="Auf die Option -Cmd muss der Befehl zum Starten über die Verknüpfung folgen.";
+MissingValue_name="Nach der Option -name muss der Name der Desktop-Verknüpfung folgen, die erstellt werden soll.";
+MissingOption_cmd="Die Option -name muss mit der Option -cmd verwendet werden.\n";
+MissingOption_name="Die Option -cmd muss mit der Option -name verwendet werden.\n";
+BadOptions_menutools="Benutzerdefinierte Verknüpfungen können nur auf dem Desktop erstellt werden.\n";
+BadOptions_TypeShortcut="Die Optionen -desktop, -tools oder -menu können nicht gemeinsam verwendet werden.\n";
+Option_aMustAdmin="Für die Option -a sind Administratorrechte erforderlich, um Verknüpfungen für alle Benutzer zu erstellen.\n";
+BadValue_a="Auf die Option -a darf nur \"global\" oder \"user\" folgen.\n";
+MissingOptions_createordel="Eine der Optionen -create oder -del ist erforderlich.";
+MissingOption_typeshortcut="Eine der Optionen -desktop, -tools oder -menu ist erforderlich.\n";
+InvalidArg="Option /p1 ist nicht berechtigt";
+BadOptions_createdel="Die Optionen -create und -del können nicht gemeinsam verwendet werden.";
+EnvnameNotFound="Umgebungsdatei /p1 wurde nicht gefunden. Option -e prüfen.\n";
+CreateShortcutsIn="Verknüpfungen erstellen in: \"/p1\".\n";
+DeleteShortcutsIn="Verknüpfungen löschen in: \"/p1\".\n";
+CreateShortcutsDesktop="Verknüpfungen auf dem Desktop werden erstellt...\n";
+CreateShortcutsDesktopOK="Die Verknüpfungen auf dem Desktop wurden erstellt.\n";
+CreateShortcutsDesktopKO="Die Verknüpfungen auf dem Desktop konnten nicht erstellt werden.\n";
+CreateShortcutDesktop="Erstellen der Desktop-Verknüpfung /p1...\n";
+CreateShortcutDesktopOK="Die Desktop-Verknüpfung auf dem Desktop wurde erstellt.\n";
+CreateShortcutDesktopKO="Die Desktop-Verknüpfung konnte nicht erstellt werden.\n";
+CreateShortcutsTools="Verknüpfung zu Tools erzeugen...\n";
+CreateShortcutsToolsOK="Die Werkzeugverknüpfungen auf dem Desktop wurden erstellt.\n";
+CreateShortcutsToolsKO="Die Werkzeugverknüpfungen konnten nicht erstellt werden.\n";
+CreateShortcutsMenu="Verknüpfungen im Startmenü werden erstellt...\n";
+CreateShortcutsMenuOK="Die Verknüpfungen im Startmenü wurden erstellt.\n";
+CreateShortcutsMenuKO="Die Verknüpfungen im Startmenü konnten nicht erstellt werden.\n";
+CreateDirFailed="Verzeichnis \"/P1\" konnte nicht erzeugt werden.\n";
+DeleteShortcutsDesktop="Verknüpfungen auf dem Desktop werden gelöscht...\n";
+DeleteShortcutsDesktopOK="Die Verknüpfungen auf dem Desktop wurden gelöscht.\n";
+DeleteShortcutsDesktopKO="Die Verknüpfungen auf dem Desktop konnten nicht gelöscht werden.\n";
+DeleteShortcutDesktop="Löschen der Desktop-Verknüpfung /p1...\n";
+DeleteShortcutDesktopOK="Die Desktop-Verknüpfung auf dem Desktop wurde gelöscht.\n";
+DeleteShortcutDesktopKO="Die Desktop-Verknüpfung konnte nicht gelöscht werden.\n";
+DeleteShortcutsTools="Werkzeugverknüpfungen auf dem Desktop werden gelöscht...\n";
+DeleteShortcutsToolsOK="Die Werkzeugverknüpfungen wurden gelöscht.\n";
+DeleteShortcutsToolsKO="Die Werkzeugverknüpfungen konnten nicht gelöscht werden.\n";
+DeleteShortcutsMenu="Verknüpfungen im Startmenü werden gelöscht...\n";
+DeleteShortcutsMenuOK="Die Verknüpfungen im Startmenü wurden gelöscht.\n";
+DeleteShortcutsMenuKO="Die Verknüpfungen im Startmenü konnten nicht gelöscht werden.\n";
+DeleteShortcutfailed="Verknüpfung /p1 konnte nicht gelöscht werden.\n";
+ShortcutNotFound="Verknüpfung /p1 wurde nicht gefunden\n";
+DeleteShortcutOK="Verknüpfung /p1 wurde gelöscht\n";
+CreateShortcutOK="Verknüpfung /p1 wurde erfolgreich erzeugt\n";
+CreateShortcutKO="Verknüpfung  /p1 konnte nicht erstellt werden.\n";
+BadStartInFolder_MissingPourcent="Wert für Start in Ordner: /p1 wird ignoriert, weil es unpaarige %-Zeichen enthält.\n";
+BadStartInFolder_BadEnv="Umgebungsvariable /p1 ist nicht festgelegt.\n";
+BadStartInFolder_BadDir="Wert für Start in Ordner: /p1 wird ignoriert, weil der Pfad nicht existiert.\n";
+NoModuleName="Der Name des Moduls konnte nicht abgerufen werden.\n";
+CustomexeNotFound="Exe /p1 konnte in der PFAD-Verkettung nicht gefunden werden.\n";
+Customexe2NotFound="/p1.exe oder /p1.bat konnten in der PFAD-Verkettung nicht gefunden werden.\n";
+NoShortcuts="Die Liste der zu erstellenden Verknüpfungen konnte nicht abgerufen werden. Die Datei /p1 wurde nicht gefunden. \n";
+ErrGetRootPath="Ordnerwert für /p1 kann nicht abgerufen werden.\n";
+DeleteDirKO="Ordner /p1 kann nicht gelöscht werden: /p2\n";
+InvalidDiskPathFormat="Pfad '/p1' beginnt mir einem ungültigen Laufwerk.";
+InvalidUNCPathFormat="'/p1' ist ein kein gültiger UNC-Pfad.";
+InvalidPathFormat="Pfad '/p1' ist ungültig.";
+rootpathnotExist="Der Stammverzeichnispfad '/p1' existiert nicht. Daher kann der Ordner nicht erzeugt werden.";

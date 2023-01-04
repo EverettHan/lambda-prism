@@ -1,0 +1,29 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "GMPolyUtilities.tst"/>
+  <attached name = "GMPolyObjects.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMModelInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "NewTopologicalObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMPolyObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Tessellation"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralBodyOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralOperators"/>
+  <authorize access = "Private" name = "GMPolyUtilities.tst"/>
+  <authorize access = "Private" name = "GMPolyObjects.tst"/>
+  <authorize access = "Private" name = "PolyhedralVisuToolkit.tst"/>
+  <authorize access = "Private" name = "PolyhedralVisuAppli.tst"/>
+  <authorize access = "Private" name = "CAT3DTopology.tst"/>
+  <authorize access = "Protected" name = "GMPolyOperators"/>
+  <authorize access = "Protected" name = "HybridSceneServices"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

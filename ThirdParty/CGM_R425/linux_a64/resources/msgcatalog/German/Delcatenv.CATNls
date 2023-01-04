@@ -1,0 +1,46 @@
+<meta charset="UTF-8"/>
+HelpNT.text = "Syntax von delcatenv
+[-e umgebungsname          ] Obligatorische Option. Kein Standardwert
+[-d speicherverzeichnisname]	Standardwert: CSIDL_APPDATA\CATEnv
+[-a user|global            ]	Typ der Umgebung. Standardwert: user
+[-server                   ] Aktiviert den Servermodus. Standardwert: nicht aktiviert (interaktiv)
+[-desktop yes|no           ] Entfernt eine Darstellung der Umgebung auf dem Desktop. Standardwert: yes
+[-v yes|no                 ]	Aktiviert den ausführlichen Modus. Standardwert: yes
+[-tools                    ]	Entfernt die Direktaufrufe für die Werkzeuge (exklusiver Befehl)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live     ] Gibt eine Produktlinie für die Darstellung der Umgebung an (Standardwert: CATIA)
+[-h|-help]			Diese Hilfe." ;
+
+HelpUNIX.text = "Syntax von delcatenv
+[-e umgebungsname          ] Obligatorische Option. Kein Standardwert
+[-d speicherverzeichnisname] Standardwert: $HOME/CATEnv
+[-a user|global            ] Typ der Umgebung. Standardwert: user
+[-server                   ] Aktiviert den Servermodus. Standardwert: nicht aktiviert (interaktiv)
+[-desktop yes|no           ] Entfernt eine Darstellung der Umgebung auf dem Desktop. Standardwert: yes
+[-v yes|no                 ] Aktiviert den ausführlichen Modus. Standardwert: yes
+[-unregserver              ] Widerruft die Registrierung von CATIA auf dem Desktop (exklusiver Befehl)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live     ] Gibt eine Produktlinie für die Darstellung der Umgebung an (Standardwert: CATIA)
+[-h|-help]                   Diese Hilfe." ;
+
+ErrDelEnvUsr.Text      = "Löschen der Umgebungsdarstellung fehlgeschlagen" ;
+ErrDelEnv.Text         = "Löschen der Umgebung fehlgeschlagen" ;
+ErrUnset.Text          = "Zurücknehmen der Festlegung der Workstation fehlgeschlagen" ;
+MustBeSystemAdmin.text = "Administratorberechtigung erforderlich zur Verwendung dieser Option\n" ;
+EnvNameNotSpecified.Text	= "Ein Name für die Umgebung muss angegeben werden";
+DefaultFolderNotFound.Text	= "Der Standardordner für die Umgebung wurde nicht gefunden";
+SpecifiedFolderNotFound.Text= "Das angegebene Speicherverzeichnis wurde nicht gefunden";
+EnvFileNotFound.Text		= "Die Umgebungsdatei wurde nicht gefunden";
+AccessPb.Text				= "Erzeugen oder Öffnen einer Datei nicht möglich.]
+							   [Prüfen, ob Schreibzugriff auf das Speicherverzeichnis besteht.]";
+NonValidType.Text			= "Ein Typ (Benutzer oder global) muss über die Option -a angegeben werden.";
+InitFolderFailed.Text		= "------------------ Warnung ---------------- Der
+Standardspeicherordner wurde nicht gefunden.
+Der neue Speicherordner wurde festgelegt in:
+";
+NoHome.Text               = "Umgebungsvariable 'HOME' ist nicht festgelegt" ;
+UnknownProductLine.Text    ="/P1 ist keine gültige Produktlinie. Zulässige Werte für die Option -cs sind: CATIA, ENOVIA, DELMIA, ENOVIA_3D_Live, DELMIA.";

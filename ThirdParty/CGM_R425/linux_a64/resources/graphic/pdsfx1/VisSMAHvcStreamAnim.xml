@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Warning: This PDSFX is meant to be used by Simulia only. Its content may change depending on Simulia needs.-->
+
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVisSMAResultsData</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVisSMATravelTimeData</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>ContourMap1D</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>ContourMap2D</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>defaultSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_travelTime</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_clip</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates1</ATTRIBUTE>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <LIGHTING>false</LIGHTING>
+      <VERTEX_STAGE>VisSMAHvcStreamVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcStreamFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Color</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_travelTime</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_clip</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates1</ATTRIBUTE>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <LIGHTING>false</LIGHTING>
+      <VERTEX_STAGE>VisSMAHvcStreamColorVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcStreamFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Flat</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>flat</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>f_travelTime</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_clip</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates1</ATTRIBUTE>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <LIGHTING>false</LIGHTING>
+      <VERTEX_STAGE>VisSMAHvcStreamVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcStreamFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Lit</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_travelTime</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_clip</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates1</ATTRIBUTE>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <VERTEX_STAGE>VisSMAHvcStreamVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcStreamFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>ColorLit</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_travelTime</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_clip</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates1</ATTRIBUTE>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <VERTEX_STAGE>VisSMAHvcStreamColorVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcStreamFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>FlatLit</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+            <QUALIFIER>flat</QUALIFIER>
+          </VARYING>
+          <VARYING>
+            <NAME>f_travelTime</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_clip</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates1</ATTRIBUTE>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <VERTEX_STAGE>VisSMAHvcStreamVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcStreamFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+</PDSFX>

@@ -1,0 +1,100 @@
+<meta charset="UTF-8"/>
+//  NLS File for gathering NLS Value of attribute PLMCoreReference (from KW Dicitionary). 
+//Notice on KW Dictionnary attribute of PLMReference are  only available through the Public PLMCoreRepReference or PLMCoreReference (this is why file may be translated twice)
+//take care that the meaning of value  may be different (depending on site deployment) 
+//Below meaning is entered for OOTB RACE IRPC deployment and would defaulty apply for  any of the PLMEntity derivative type
+//to ensure the Same NLS could be deployed both win and web; 
+//Do not forget to ask for updating Web accordingly to the translation of this in emxFrameworkStringResource.properties
+//when appropriate the emxFramework pattern is mentioned
+//----------------------------------------
+//-------------------------------- Policy section below; 
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type 
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.VPLM_SMB_Definition = Global Design Definition
+
+policy.VPLM_SMB_Definition="エンジニアリング定義クラシック";
+policy.VPLM_SMB_Definition_MajorRev="エンジニアリング定義";
+policy.VPLM_SMB_Definition_Document="エンジニアリング定義ドキュメント クラシック";
+policy.VPLM_SMB_Definition_Document_MajorRev="エンジニアリング定義ドキュメント";
+policy.VPLM_SMB_Evaluation="エンジニアリング評価クラシック";
+policy.VPLM_SMB_Evaluation_MajorRev="エンジニアリング評価";
+policy.VPLM_SMB_Resource="エンジニアリング リソース クラシック";
+policy.VPLM_SMB_Resource_MajorRev="エンジニアリング リソース";
+policy.VPLM_SMB_Management="パーソナル エンジニアリング";
+policy.VPLM_SMB_CoDesignRepRef="グローバル コラボレーション設計";
+policy.VPLM_SMB_CoDesignRef="グローバル コラボレーション設計";
+policy.VPLM_SMB_PostIt_Management="Postit";
+policy.VPLM_SMB_Task_Management="グローバル設計タスク";
+policy.VPLM_SMB_DesignPrj="グローバル設計プロジェクト";
+policy.VPLM_SMB_DesignWS="グローバル設計ワークスペース";
+policy.VPLM_SMB_Action="グローバル設計アクション";
+policy.VPLM_SMB_Operation_Execution="操作実行";
+policy.VPLM_SMB_Production_Plan="生産計画";
+policy.VPLM_SMB_Serialized_Item="シリアル化";
+
+
+
+//emxFramework.Policy.VPLM_SMB = Global Sample Policy
+policy.VPLM_SMB="グローバル サンプル ポリシー";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.VPLM_SMB_Definition.IN_WORK = Under Collaborative Design
+V_maturity.IN_WORK="作業中";
+V_maturity.FROZEN="凍結";
+V_maturity.RELEASED="リリース済み";
+V_maturity.OBSOLETE="廃版";
+V_maturity.PRIVATE="非公開";
+V_maturity.REMOVED="廃止";
+V_maturity.DEFAULT="指定なし";
+
+V_maturity.Unspec="仕様検討中";
+V_maturity.In_work="進行中のアクティビティ";
+V_maturity.Completed="完了";
+V_maturity.Unspecified="仕様検討中";
+V_maturity.WIP_Active="アクティブ";
+V_maturity.WIP_Run="進行中のアクティビティ";
+V_maturity.WIP_Suspended="中断";
+V_maturity.WaitApproval="検証中";
+V_maturity.Obsolete="廃版";
+V_maturity.Create="作成";
+V_maturity.DesignWork="設計作業";
+V_maturity.Review="レビュー";
+V_maturity.Rejected="却下";
+V_maturity.PLANNED="計画済み";
+V_maturity.FIRM="やや堅い";
+V_maturity.READY_FOR_EXECUTION="実行の準備完了";
+V_maturity.WORK_IN_PROGRESS="処理中";
+V_maturity.COMPLETED="完了済み";
+V_maturity.ACTIVE="アクティブ";
+V_maturity.INACTIVE="非アクティブ";
+
+current.IN_WORK="作業中";
+current.FROZEN="凍結";
+current.RELEASED="リリース済み";
+current.OBSOLETE="廃版";
+current.PRIVATE="非公開";
+current.REMOVED="廃止";
+current.DEFAULT="指定なし";
+
+current.Unspec="仕様検討中";
+current.In_work="進行中のアクティビティ";
+current.Completed="完了";
+current.Unspecified="仕様検討中";
+current.WIP_Active="アクティブ";
+current.WIP_Run="進行中のアクティビティ";
+current.WIP_Suspended="中断";
+current.WaitApproval="検証中";
+current.Obsolete="廃版";
+current.Create="作成";
+current.DesignWork="設計作業";
+current.Review="レビュー";
+current.Rejected="却下";
+
+current.PLANNED="計画済み";
+current.FIRM="やや堅い";
+current.READY_FOR_EXECUTION="実行の準備完了";
+current.WORK_IN_PROGRESS="処理中";
+current.COMPLETED="完了済み";
+current.ACTIVE="アクティブ";
+current.INACTIVE="非アクティブ";

@@ -1,0 +1,152 @@
+//--------------------------------
+// Tweakables
+//--------------------------------
+
+float u_NormalStrength
+<	
+float UIMin = 0.0f;
+float UIMax = 100.0f;
+> = 1.f;
+
+float u_NormalMin
+<	
+float UIMin = 0.0f;
+float UIMax = 1.0f;
+float UIStep = 0.01f;
+> = 0.1f;
+
+float u_NormalMax
+<	
+float UIMin = 0.0f;
+float UIMax = 1.0f;
+float UIStep = 0.01f;
+> = 1.f;
+
+float u_NormalStrength2
+<	
+float UIMin = 0.0f;
+float UIMax = 100.0f;
+float UIStep = 0.01f;
+> = 24.f;
+
+
+
+float u_ZStrength
+<	
+float UIMin = 0.0f;
+float UIMax = 100.0f;
+float UIStep = 0.01f;
+> = 21.57f;
+
+float u_ZMin
+<	
+float UIMin = 0.0f;
+float UIMax = 1.0f;
+float UIStep = 0.01f;
+> = 0.1f;
+
+float u_ZMax
+<	
+float UIMin = 0.0f;
+float UIMax = 1.0f;
+float UIStep = 0.01f;
+> = 1.f;
+
+float u_ZStrength2
+<	
+float UIMin = 0.0f;
+float UIMax = 100.0f;
+float UIStep = 0.01f;
+> = 40.f;
+
+float u_ZFilterLimit
+<	
+float UIMin = 0.0f;
+float UIMax = 1.0f;
+float UIStep = 0.01f;
+> = 0.2f;
+
+
+//-----------------------------------------------------------------------------------------
+//  Pixel Shader
+//-----------------------------------------------------------------------------------------
+
+#include "Effect_NormalZServices.hfx"
+
+float GetNormalRatio(float4 iN1, float4 iN2)		
+{
+  return (1.f-dot(iN1.xyz, iN2.xyz));
+}
+
+float ComputeOutline(float2 iScreenCoord)
+{ 
+  float ratio = 0;
+  unsigned int curSample = 0;
+
+#ifdef MSAA
+  for(curSample = 0 ; curSample <Auto_NbAASamples  ; ++curSample)
+  {
+#endif
+    float4 n  = GetNormal(Auto_NormalMap_WithTransparency, iScreenCoord, curSample);
+    float4 n1 = GetNormal(Auto_NormalMap_WithTransparency, iScreenCoord+float2(1.f,0.f), curSample);
+    float4 n2 = GetNormal(Auto_NormalMap_WithTransparency, iScreenCoord+float2(0.f,1.f), curSample);
+    float4 n3 = GetNormal(Auto_NormalMap_WithTransparency, iScreenCoord+float2(1.f,1.f), curSample);
+
+    //-------------------
+    // Silhouette
+
+    int alphaFlag = (int)n.w;
+    if ((alphaFlag!=(int)n1.w) || (alphaFlag!=(int)n2.w) || (alphaFlag!=(int)n3.w))
+    {
+      ratio += 1.f;
+    }
+    else if (alphaFlag)
+    {
+      //-------------------
+      // Normal
+
+      float ratioN  = GetNormalRatio(n, n1);
+      float ratioN2 = GetNormalRatio(n, n2);
+      float ratioN3 = GetNormalRatio(n, n3);
+
+      ratioN = max(ratioN, ratioN2);
+      ratioN = max(ratioN, ratioN3);
+
+      ratioN = clamp(ratioN*u_NormalStrength, u_NormalMin, u_NormalMax) - u_NormalMin;
+      ratioN *= u_NormalStrength2;
+
+      //-------------------
+      // Z
+
+      float z  = GetZ(Auto_ZMap_WithTransparency, iScreenCoord, curSample);
+      float z1 = GetZ(Auto_ZMap_WithTransparency, iScreenCoord+float2(1.f,0.f), curSample);
+      float z2 = GetZ(Auto_ZMap_WithTransparency, iScreenCoord+float2(0.f,1.f), curSample);
+      float z3 = GetZ(Auto_ZMap_WithTransparency, iScreenCoord+float2(1.f,1.f), curSample);
+
+      float ratioZ  = abs(z-z1);
+      ratioZ  = max(abs(z-z2), ratioZ);
+      ratioZ  = max(abs(z-z3), ratioZ);
+
+      ratioZ = clamp(ratioZ*u_ZStrength, u_ZMin, u_ZMax) - u_ZMin;
+      ratioZ *= u_ZStrength2;
+
+      // supprime l'effet bande noir quand on se trouve sur un face rasante
+      float filterZ = (clamp(abs(n.z), u_ZFilterLimit, 1.f) - u_ZFilterLimit)/(1.f - u_ZFilterLimit);
+      ratioZ *= filterZ; 
+
+      //-------------------
+      // Mix
+
+      ratio += saturate(max(ratioZ, ratioN));	
+    }
+#ifdef MSAA
+  }
+
+  ratio *= 1f/(float)Auto_NbAASamples;
+#endif
+
+  return ratio;
+}
+
+
+

@@ -1,0 +1,70 @@
+// This interface is an interface which could be used to generate macros
+/*IDLNOGEN*/
+
+// COPYRIGHT DASSAULT SYSTEMES 2000
+
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+#ifndef __CATBaseUnknownIDLDescription
+#define __CATBaseUnknownIDLDescription
+
+
+#include "CATBSTR.idl"
+#include "IDispatch.idl"
+//
+// Definition of CATBaseUnknown
+//
+#pragma ID CATBaseUnknown "DCE:7bf8be41-8074-0000-0280020bcb000000"
+
+/**
+ * Base class for creating interfaces and for implementing interfaces.
+ * <b>Role</b>: CATBaseUnknown supplies the infrastructure and the basic mechanisms
+ * to create interface abstract classes and to manage interface pointers.
+ * It is also the base class for classes which implements interfaces
+ * and for their extension classes because it supplies the code for 
+ * the interface methods @href #QueryInterface, @href #AddRef and @href #Release.
+ */
+
+interface CATBaseUnknown : IDispatch
+{
+/** @nodoc*/
+HRESULT Destructor();
+
+// methods that returns the meta object of the class
+/** @nodoc*/
+HRESULT  GetMetaObject();
+
+// methods that identifies a class
+/** @nodoc*/
+HRESULT  IsA();
+/** @nodoc*/
+HRESULT  IsAKindOf();
+/** @nodoc*/
+HRESULT  GetImpl();
+/** @nodoc*/
+HRESULT  SetImpl();
+      
+/** @nodoc*/
+HRESULT  IsNull();
+/** @nodoc*/
+HRESULT  IsEqual();
+
+/** @nodoc*/
+HRESULT  SurChargeQI();
+
+/** @nodoc*/
+HRESULT  ChangeComponentState();
+};
+
+#endif //__CATBaseUnknownIDLDescription
+//
+
+
+
+
+
+
+

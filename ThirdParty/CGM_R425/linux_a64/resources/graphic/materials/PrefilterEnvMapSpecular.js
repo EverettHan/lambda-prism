@@ -1,0 +1,4 @@
+{
+    "Effect" : "PrefilterEnvMap", 
+    "Technique" : "Specular"
+}

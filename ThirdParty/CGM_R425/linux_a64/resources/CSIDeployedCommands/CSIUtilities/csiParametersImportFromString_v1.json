@@ -1,0 +1,28 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Returns a CSI Parameters imported from a string",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "string",
+          "basic": "string",
+          "desc": "The string to import"
+        }
+      ]
+    },
+    "out": {
+      "type": "Parameters"
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

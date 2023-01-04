@@ -1,0 +1,45 @@
+{
+  "grammarVersion": 2,
+  "desc": "Starts recording of requests received on the node.",
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  },
+  "onCommandParameters": {
+    "in": {
+      "parameters": [
+        {
+          "desc": "DEPRECATED",
+          "label": "useTranslatedParametersDuringRecord",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "answers": {
+      "parameters": [
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  }
+}

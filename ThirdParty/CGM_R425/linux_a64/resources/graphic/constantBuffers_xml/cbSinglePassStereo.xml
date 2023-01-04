@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbCbSinglePassStereo</NAME>
+  <RASTERIZER_UPDATE>PassThroughCameraUpdater</RASTERIZER_UPDATE>
+
+  <STRUCT>
+    <NAME>SinglePassCamera</NAME>
+
+    <UNIFORM>
+      <NAME>View</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ViewInv</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ViewInvTransp</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ViewTransition</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ViewInvTransition</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ViewInvTranspTransition</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+
+    <UNIFORM>
+      <NAME>Proj</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ProjInv</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ViewProj</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>ViewProjInv</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>PrevViewProj</NAME>
+      <TYPE>mat4x4</TYPE>
+    </UNIFORM>
+    
+    <UNIFORM>
+      <NAME>WorldEyePos</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>WorldEyePosLow</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>WorldEyePosOffset</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+    
+    <UNIFORM>
+      <NAME>NearFarLogFactor</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>NearFarExtended</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>NearFarLogZ</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+    <UNIFORM>
+      <NAME>BufferToViewNearPlane</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+
+    <UNIFORM>
+      <NAME>padding</NAME>
+      <TYPE>float4</TYPE>
+    </UNIFORM>
+
+    <SIZE>832</SIZE>
+  </STRUCT>
+
+  <UNIFORM>
+    <NAME>Cameras</NAME>
+    <TYPE>struct</TYPE>
+    <USER_TYPE>SinglePassCamera</USER_TYPE>
+    <ARRAY_SIZE>2</ARRAY_SIZE>
+    <SEMANTIC>SinglePassCameras</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

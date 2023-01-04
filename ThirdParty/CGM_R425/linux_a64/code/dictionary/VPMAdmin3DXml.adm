@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AdminObjects xmlns="VPMAdmin">
+<PROJECT Oid="ENOP_default" Name="DefaultProject">
+<DATARDB Oid="ENODR_PLMPRODUCT" Name="PLMProductDS" AliasName="PLMProductDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMPRODUCT" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_ARCHITECTU" Name="ArchitectureReference" AliasName="ArchitectureReference" OwnerDico="VPMADM" BusinessDomain="ENOBD_ARCHITECTU" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CAT3DINSIG" Name="CAT3DInsightRep" AliasName="CAT3DInsightRep" OwnerDico="VPMADM" BusinessDomain="ENOBD_CAT3DINSIG" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATDISTILL" Name="CATDistillerDiscipline" AliasName="CATDistillerDiscipline" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATDISTILL" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATDRAFTIN" Name="CATDraftingDiscipline" AliasName="CATDraftingDiscipline" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATDRAFTIN" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATFSKDISC" Name="CATFSKDiscipline" AliasName="CATFSKDiscipline" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATFSKDISC" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMATERIA" Name="CATMaterialDisciplines" AliasName="CATMaterialDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMATERIA" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMATER_1" Name="CATMaterial" AliasName="CATMaterial" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMATER_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMATER_2" Name="CATMaterialRefDS" AliasName="CATMaterialRefDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMATER_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMATER_3" Name="CATMaterialRefElementDS" AliasName="CATMaterialRefElementDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMATER_3" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMATER_4" Name="CATMaterialRefElement" AliasName="CATMaterialRefElement" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMATER_4" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMATER_5" Name="CATMaterialRef" AliasName="CATMaterialRef" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMATER_5" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMCXASSE" Name="CATMCXAssemblyAbstract" AliasName="CATMCXAssemblyAbstract" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMCXASSE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMCXAS_1" Name="CATMCXAssembly" AliasName="CATMCXAssembly" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMCXAS_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMCXIASS" Name="CATMCXIAssembly" AliasName="CATMCXIAssembly" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMCXIASS" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATMECHANI" Name="CATMechanism" AliasName="CATMechanism" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATMECHANI" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_CATREPIMAG" Name="CATRepImage" AliasName="CATRepImage" OwnerDico="VPMADM" BusinessDomain="ENOBD_CATREPIMAG" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_COEXV5NATI" Name="COEXV5Native" AliasName="COEXV5Native" OwnerDico="VPMADM" BusinessDomain="ENOBD_COEXV5NATI" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_COMMONNOTI" Name="CommonNotion" AliasName="CommonNotion" OwnerDico="VPMADM" BusinessDomain="ENOBD_COMMONNOTI" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELASMASSE" Name="DELAsmAssemblyModelCnx" AliasName="DELAsmAssemblyModelCnx" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELASMASSE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELASMAS_1" Name="DELAsmAssemblyModelDisciplines" AliasName="DELAsmAssemblyModelDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELASMAS_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELASMAS_2" Name="DELAsmAssemblyModel" AliasName="DELAsmAssemblyModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELASMAS_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELFMIFUNC" Name="DELFmiFunctionalModelImplementCnx" AliasName="DELFmiFunctionalModelImplementCnx" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELFMIFUNC" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELFMIFU_1" Name="DELFmiFunctionalModel" AliasName="DELFmiFunctionalModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELFMIFU_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELFMIFU_2" Name="DELFmiFunctionalModelQuantity" AliasName="DELFmiFunctionalModelQuantity" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELFMIFU_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELFMIFU_3" Name="DELFmiFunctionalModelSubRep" AliasName="DELFmiFunctionalModelSubRep" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELFMIFU_3" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELFMIPROC" Name="DELFmiProcessSample" AliasName="DELFmiProcessSample" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELFMIPROC" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELHUMANMO" Name="DELHumanModel" AliasName="DELHumanModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELHUMANMO" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELMACHINI" Name="DELMachiningProcessModel" AliasName="DELMachiningProcessModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELMACHINI" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELMACHI_1" Name="DELMachiningResourceModelISO" AliasName="DELMachiningResourceModelISO" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELMACHI_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELMACHI_2" Name="DELMachiningResourceModel" AliasName="DELMachiningResourceModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELMACHI_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELPPRCONT" Name="DELPPRContextModelDisciplines" AliasName="DELPPRContextModelDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELPPRCONT" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELPPRCO_1" Name="DELPPRContextModel" AliasName="DELPPRContextModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELPPRCO_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELPPRCO_2" Name="DELPPRContextModelProcessCnx" AliasName="DELPPRContextModelProcessCnx" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELPPRCO_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELPPRCO_3" Name="DELPPRContextModelSystemCnx" AliasName="DELPPRContextModelSystemCnx" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELPPRCO_3" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRESOURC" Name="DELResourcePlanningModel" AliasName="DELResourcePlanningModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRESOURC" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMIFLOW" Name="DELRmiFlow" AliasName="DELRmiFlow" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMIFLOW" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMIRESO" Name="DELRmiResourceModelCnx" AliasName="DELRmiResourceModelCnx" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMIRESO" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMIRE_1" Name="DELRmiResourceModelDisciplines" AliasName="DELRmiResourceModelDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMIRE_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMIRE_2" Name="DELRmiResourceModelImplCnx" AliasName="DELRmiResourceModelImplCnx" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMIRE_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMIRE_3" Name="DELRmiResourceModel" AliasName="DELRmiResourceModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMIRE_3" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMIRE_4" Name="DELRmiResourceModelProdSysImplCnx" AliasName="DELRmiResourceModelProdSysImplCnx" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMIRE_4" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMIRE_5" Name="DELRmiResourceSignalModel" AliasName="DELRmiResourceSignalModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMIRE_5" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELRMISHIF" Name="DELRmiShiftModel" AliasName="DELRmiShiftModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELRMISHIF" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DELUNITMOD" Name="DELUnitModel" AliasName="DELUnitModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_DELUNITMOD" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMTDOCUMEN" Name="DMTDocumentDS" AliasName="DMTDocumentDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMTDOCUMEN" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUMARKUP" Name="DMUMarkup" AliasName="DMUMarkup" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUMARKUP" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUREVIEWD" Name="DMUReviewDisciplines" AliasName="DMUReviewDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUREVIEWD" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALIDAT" Name="DMUValidationAbstract" AliasName="DMUValidationAbstract" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALIDAT" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALID_1" Name="DMUValidationBase" AliasName="DMUValidationBase" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALID_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALID_2" Name="DMUValidationContext" AliasName="DMUValidationContext" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALID_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALID_3" Name="DMUValidationDS" AliasName="DMUValidationDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALID_3" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALID_4" Name="DMUValidationParticipants" AliasName="DMUValidationParticipants" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALID_4" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALID_5" Name="DMUValidationReviewDS" AliasName="DMUValidationReviewDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALID_5" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALID_6" Name="DMUValidationReview" AliasName="DMUValidationReview" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALID_6" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALID_7" Name="DMUValidationValidated" AliasName="DMUValidationValidated" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALID_7" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_DMUVALREVI" Name="DMUVALReviewDisciplines" AliasName="DMUVALReviewDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_DMUVALREVI" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_ENTERPRISE" Name="EnterpriseReference" AliasName="EnterpriseReference" OwnerDico="VPMADM" BusinessDomain="ENOBD_ENTERPRISE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_ERCOREMODE" Name="ERCoreModeler" AliasName="ERCoreModeler" OwnerDico="VPMADM" BusinessDomain="ENOBD_ERCOREMODE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_EXPERIMENT" Name="EXPERIMENT_ENUMS" AliasName="EXPERIMENT_ENUMS" OwnerDico="VPMADM" BusinessDomain="ENOBD_EXPERIMENT" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_FIXED3DPOS" Name="Fixed3DPositionOfInstanceExtension" AliasName="Fixed3DPositionOfInstanceExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_FIXED3DPOS" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_HISTORY" Name="HISTORY" AliasName="HISTORY" OwnerDico="VPMADM" BusinessDomain="ENOBD_HISTORY" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_ITERATIONE" Name="IterationExtension" AliasName="IterationExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_ITERATIONE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_LPABSTRACT" Name="LPABSTRACT3DREP" AliasName="LPABSTRACT3DREP" OwnerDico="VPMADM" BusinessDomain="ENOBD_LPABSTRACT" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_LPABSTRA_1" Name="LPABSTRACT" AliasName="LPABSTRACT" OwnerDico="VPMADM" BusinessDomain="ENOBD_LPABSTRA_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_LPPRIVATER" Name="LPPRIVATEREPDisciplines" AliasName="LPPRIVATEREPDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_LPPRIVATER" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_LPPRIVAT_1" Name="LPPRIVATEREP" AliasName="LPPRIVATEREP" OwnerDico="VPMADM" BusinessDomain="ENOBD_LPPRIVAT_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_MANUFACTUR" Name="ManufacturerEquivalentReference" AliasName="ManufacturerEquivalentReference" OwnerDico="VPMADM" BusinessDomain="ENOBD_MANUFACTUR" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_NOTMIGRATE" Name="NotMigrated" AliasName="NotMigrated" OwnerDico="VPMADM" BusinessDomain="ENOBD_NOTMIGRATE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_OOTBANDSAM" Name="OOTBAndSampleCompletionProcedures" AliasName="OOTBAndSampleCompletionProcedures" OwnerDico="VPMADM" BusinessDomain="ENOBD_OOTBANDSAM" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PATHTYPESF" Name="PathTypesForLinksAndLegacy" AliasName="PathTypesForLinksAndLegacy" OwnerDico="VPMADM" BusinessDomain="ENOBD_PATHTYPESF" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PATHTYPE_1" Name="PathTypesForLinks" AliasName="PathTypesForLinks" OwnerDico="VPMADM" BusinessDomain="ENOBD_PATHTYPE_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PHYSICALAB" Name="PHYSICALABSTRACT" AliasName="PHYSICALABSTRACT" OwnerDico="VPMADM" BusinessDomain="ENOBD_PHYSICALAB" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMABSTRAC" Name="PLMABSTRACT" AliasName="PLMABSTRACT" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMABSTRAC" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMAECSEMA" Name="PLMAECSemantic" AliasName="PLMAECSemantic" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMAECSEMA" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMCATIASY" Name="PLMCATIASystemsDisciplines" AliasName="PLMCATIASystemsDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMCATIASY" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMCATIATO" Name="PLMCATIAToolingDisciplines" AliasName="PLMCATIAToolingDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMCATIATO" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMCOEXIST" Name="PLMCoexistenceModel" AliasName="PLMCoexistenceModel" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMCOEXIST" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMCORE" Name="PLMCORE" AliasName="PLMCORE" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMCORE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMDELMIAD" Name="PLMDELMIADisciplines" AliasName="PLMDELMIADisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMDELMIAD" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMDMTDOCU" Name="PLMDmtDocument" AliasName="PLMDmtDocument" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMDMTDOCU" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMDOCCONN" Name="PLMDocConnectionDiscipline" AliasName="PLMDocConnectionDiscipline" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMDOCCONN" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMDOCCO_1" Name="PLMDocConnection" AliasName="PLMDocConnection" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMDOCCO_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMKNOWLED" Name="PLMKnowledgewareDiscipline" AliasName="PLMKnowledgewareDiscipline" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMKNOWLED" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMNAVREPD" Name="PLMNavRepDisciplines" AliasName="PLMNavRepDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMNAVREPD" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMPRDSHEL" Name="PLMPrdShellExtension" AliasName="PLMPrdShellExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMPRDSHEL" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMSIMULIA" Name="PLMSIMULIADisciplines2" AliasName="PLMSIMULIADisciplines2" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMSIMULIA" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PLMSLAVEEX" Name="PLMSlaveExposeExtension" AliasName="PLMSlaveExposeExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_PLMSLAVEEX" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PRODUCTCFG" Name="PRODUCTCFG" AliasName="PRODUCTCFG" OwnerDico="VPMADM" BusinessDomain="ENOBD_PRODUCTCFG" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PRODUCTDEF" Name="PRODUCTDeformable" AliasName="PRODUCTDeformable" OwnerDico="VPMADM" BusinessDomain="ENOBD_PRODUCTDEF" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PRODUCTDIS" Name="PRODUCTDiscipline" AliasName="PRODUCTDiscipline" OwnerDico="VPMADM" BusinessDomain="ENOBD_PRODUCTDIS" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_PRODUCTPGP" Name="PRODUCTPGPPMR" AliasName="PRODUCTPGPPMR" OwnerDico="VPMADM" BusinessDomain="ENOBD_PRODUCTPGP" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RELATION" Name="RELATION" AliasName="RELATION" OwnerDico="VPMADM" BusinessDomain="ENOBD_RELATION" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RENDERING" Name="Rendering" AliasName="Rendering" OwnerDico="VPMADM" BusinessDomain="ENOBD_RENDERING" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFLOW" Name="RFLPLMFlowAbstract" AliasName="RFLPLMFlowAbstract" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFLOW" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFL_1" Name="RFLPLMFlowExposition" AliasName="RFLPLMFlowExposition" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFL_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFL_2" Name="RFLPLMFlow" AliasName="RFLPLMFlow" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFL_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFUNC" Name="RFLPLMFunctionalAbstract" AliasName="RFLPLMFunctionalAbstract" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFUNC" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFU_1" Name="RFLPLMFunctionalCommunication" AliasName="RFLPLMFunctionalCommunication" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFU_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFU_2" Name="RFLPLMFunctionalContract" AliasName="RFLPLMFunctionalContract" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFU_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFU_3" Name="RFLPLMFunctional" AliasName="RFLPLMFunctional" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFU_3" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLPLMFU_4" Name="RFLPLMFunctionalSubRep" AliasName="RFLPLMFunctionalSubRep" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLPLMFU_4" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLVPMLOGI" Name="RFLVPMLogical3DRepDS" AliasName="RFLVPMLogical3DRepDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLVPMLOGI" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLVPMLO_1" Name="RFLVPMLogical3DRep" AliasName="RFLVPMLogical3DRep" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLVPMLO_1" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLVPMLO_2" Name="RFLVPMLogicalAbstract" AliasName="RFLVPMLogicalAbstract" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLVPMLO_2" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLVPMLO_3" Name="RFLVPMLogicalDS" AliasName="RFLVPMLogicalDS" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLVPMLO_3" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLVPMLO_4" Name="RFLVPMLogical" AliasName="RFLVPMLogical" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLVPMLO_4" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_RFLVPMLO_5" Name="RFLVPMLogicalSubRep" AliasName="RFLVPMLogicalSubRep" OwnerDico="VPMADM" BusinessDomain="ENOBD_RFLVPMLO_5" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_SUBSTITUTE" Name="SubstituteExtension" AliasName="SubstituteExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_SUBSTITUTE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_SYNCHROEBO" Name="SynchroEBOMExtension" AliasName="SynchroEBOMExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_SYNCHROEBO" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_UNIFIEDTYP" Name="UnifiedTypingMigration" AliasName="UnifiedTypingMigration" OwnerDico="VPMADM" BusinessDomain="ENOBD_UNIFIEDTYP" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_VPMEXPOSED" Name="VPMExposedDataDisciplines" AliasName="VPMExposedDataDisciplines" OwnerDico="VPMADM" BusinessDomain="ENOBD_VPMEXPOSED" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_VPMPOINTCL" Name="VPMPointCloud" AliasName="VPMPointCloud" OwnerDico="VPMADM" BusinessDomain="ENOBD_VPMPOINTCL" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_WCGWEIGHTE" Name="WCGWeightEquivalent" AliasName="WCGWeightEquivalent" OwnerDico="VPMADM" BusinessDomain="ENOBD_WCGWEIGHTE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_WSPMAPPING" Name="WSPMAPPING" AliasName="WSPMAPPING" OwnerDico="VPMADM" BusinessDomain="ENOBD_WSPMAPPING" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_XCADASSEMB" Name="XCADAssembly" AliasName="XCADAssembly" OwnerDico="VPMADM" BusinessDomain="ENOBD_XCADASSEMB" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_XCADEMBEDD" Name="XCADEmbeddedComponent" AliasName="XCADEmbeddedComponent" OwnerDico="VPMADM" BusinessDomain="ENOBD_XCADEMBEDD" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_XCADEXTENS" Name="XCADExtension" AliasName="XCADExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_XCADEXTENS" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_XCADMODELA" Name="XCADModelAndItemsModeler" AliasName="XCADModelAndItemsModeler" OwnerDico="VPMADM" BusinessDomain="ENOBD_XCADMODELA" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_XCADMODELE" Name="XCADModeler" AliasName="XCADModeler" OwnerDico="VPMADM" BusinessDomain="ENOBD_XCADMODELE" DataServer="ENODS_COMMON"/>
+<DATARDB Oid="ENODR_XCADORIENT" Name="XCADOrientationExtension" AliasName="XCADOrientationExtension" OwnerDico="VPMADM" BusinessDomain="ENOBD_XCADORIENT" DataServer="ENODS_COMMON"/>
+</PROJECT>
+<DOMAIN Oid="ENOD_ARCHITECTUR" Name="ArchitectureReference" Visible="Y" RootBusinessDomain="ENOBD_ARCHITECTU">
+      <BUSINESSDOMAIN Oid="ENOBD_ARCHITECTU" Name="ArchitectureReference" MetaDataName="ArchitectureReference" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CAT3DINSIGH" Name="CAT3DInsightRep" Visible="Y" RootBusinessDomain="ENOBD_CAT3DINSIG">
+      <BUSINESSDOMAIN Oid="ENOBD_CAT3DINSIG" Name="CAT3DInsightRep" MetaDataName="CAT3DInsightRep" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATDISTILLE" Name="CATDistillerDiscipline" Visible="Y" RootBusinessDomain="ENOBD_CATDISTILL">
+      <BUSINESSDOMAIN Oid="ENOBD_CATDISTILL" Name="CATDistillerDiscipline" MetaDataName="CATDistillerDiscipline" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATDRAFTING" Name="CATDraftingDiscipline" Visible="Y" RootBusinessDomain="ENOBD_CATDRAFTIN">
+      <BUSINESSDOMAIN Oid="ENOBD_CATDRAFTIN" Name="CATDraftingDiscipline" MetaDataName="CATDraftingDiscipline" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATFSKDISCI" Name="CATFSKDiscipline" Visible="Y" RootBusinessDomain="ENOBD_CATFSKDISC">
+      <BUSINESSDOMAIN Oid="ENOBD_CATFSKDISC" Name="CATFSKDiscipline" MetaDataName="CATFSKDiscipline" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMATERIAL" Name="CATMaterialDisciplines" Visible="Y" RootBusinessDomain="ENOBD_CATMATERIA">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMATERIA" Name="CATMaterialDisciplines" MetaDataName="CATMaterialDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMATERI_1" Name="CATMaterial" Visible="Y" RootBusinessDomain="ENOBD_CATMATER_1">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMATER_1" Name="CATMaterial" MetaDataName="CATMaterial" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMATERI_2" Name="CATMaterialRefElement" Visible="Y" RootBusinessDomain="ENOBD_CATMATER_4">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMATER_4" Name="CATMaterialRefElement" MetaDataName="CATMaterialRefElement" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_CATMATER_3" Name="CATMaterialRefElementDS" MetaDataName="CATMaterialRefElementDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMATERI_3" Name="CATMaterialRef" Visible="Y" RootBusinessDomain="ENOBD_CATMATER_5">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMATER_5" Name="CATMaterialRef" MetaDataName="CATMaterialRef" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_CATMATER_2" Name="CATMaterialRefDS" MetaDataName="CATMaterialRefDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMCXASSEM" Name="CATMCXAssemblyAbstract" Visible="Y" RootBusinessDomain="ENOBD_CATMCXASSE">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMCXASSE" Name="CATMCXAssemblyAbstract" MetaDataName="CATMCXAssemblyAbstract" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMCXASS_1" Name="CATMCXAssembly" Visible="Y" RootBusinessDomain="ENOBD_CATMCXAS_1">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMCXAS_1" Name="CATMCXAssembly" MetaDataName="CATMCXAssembly" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMCXIASSE" Name="CATMCXIAssembly" Visible="Y" RootBusinessDomain="ENOBD_CATMCXIASS">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMCXIASS" Name="CATMCXIAssembly" MetaDataName="CATMCXIAssembly" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATMECHANIS" Name="CATMechanism" Visible="Y" RootBusinessDomain="ENOBD_CATMECHANI">
+      <BUSINESSDOMAIN Oid="ENOBD_CATMECHANI" Name="CATMechanism" MetaDataName="CATMechanism" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_CATREPIMAGE" Name="CATRepImage" Visible="Y" RootBusinessDomain="ENOBD_CATREPIMAG">
+      <BUSINESSDOMAIN Oid="ENOBD_CATREPIMAG" Name="CATRepImage" MetaDataName="CATRepImage" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_COEXV5NATIV" Name="COEXV5Native" Visible="Y" RootBusinessDomain="ENOBD_COEXV5NATI">
+      <BUSINESSDOMAIN Oid="ENOBD_COEXV5NATI" Name="COEXV5Native" MetaDataName="COEXV5Native" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_COMMONNOTIO" Name="CommonNotion" Visible="Y" RootBusinessDomain="ENOBD_COMMONNOTI">
+      <BUSINESSDOMAIN Oid="ENOBD_COMMONNOTI" Name="CommonNotion" MetaDataName="CommonNotion" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELASMASSEM" Name="DELAsmAssemblyModelCnx" Visible="Y" RootBusinessDomain="ENOBD_DELASMASSE">
+      <BUSINESSDOMAIN Oid="ENOBD_DELASMASSE" Name="DELAsmAssemblyModelCnx" MetaDataName="DELAsmAssemblyModelCnx" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELASMASS_1" Name="DELAsmAssemblyModelDisciplines" Visible="Y" RootBusinessDomain="ENOBD_DELASMAS_1">
+      <BUSINESSDOMAIN Oid="ENOBD_DELASMAS_1" Name="DELAsmAssemblyModelDisciplines" MetaDataName="DELAsmAssemblyModelDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELASMASS_2" Name="DELAsmAssemblyModel" Visible="Y" RootBusinessDomain="ENOBD_DELASMAS_2">
+      <BUSINESSDOMAIN Oid="ENOBD_DELASMAS_2" Name="DELAsmAssemblyModel" MetaDataName="DELAsmAssemblyModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELFMIFUNCT" Name="DELFmiFunctionalModelImplementCnx" Visible="Y" RootBusinessDomain="ENOBD_DELFMIFUNC">
+      <BUSINESSDOMAIN Oid="ENOBD_DELFMIFUNC" Name="DELFmiFunctionalModelImplementCnx" MetaDataName="DELFmiFunctionalModelImplementCnx" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PROCESS" Name="PROCESS" Visible="Y" RootBusinessDomain="ENOBD_DELFMIFU_1">
+      <BUSINESSDOMAIN Oid="ENOBD_DELFMIFU_1" Name="DELFmiFunctionalModel" MetaDataName="DELFmiFunctionalModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_DELFMIPROC" Name="DELFmiProcessSample" MetaDataName="DELFmiProcessSample" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELFMIFUN_1" Name="DELFmiFunctionalModelQuantity" Visible="Y" RootBusinessDomain="ENOBD_DELFMIFU_2">
+      <BUSINESSDOMAIN Oid="ENOBD_DELFMIFU_2" Name="DELFmiFunctionalModelQuantity" MetaDataName="DELFmiFunctionalModelQuantity" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELFMIFUN_2" Name="DELFmiFunctionalModelSubRep" Visible="Y" RootBusinessDomain="ENOBD_DELFMIFU_3">
+      <BUSINESSDOMAIN Oid="ENOBD_DELFMIFU_3" Name="DELFmiFunctionalModelSubRep" MetaDataName="DELFmiFunctionalModelSubRep" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELHUMANMOD" Name="DELHumanModel" Visible="Y" RootBusinessDomain="ENOBD_DELHUMANMO">
+      <BUSINESSDOMAIN Oid="ENOBD_DELHUMANMO" Name="DELHumanModel" MetaDataName="DELHumanModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELMACHININ" Name="DELMachiningProcessModel" Visible="Y" RootBusinessDomain="ENOBD_DELMACHINI">
+      <BUSINESSDOMAIN Oid="ENOBD_DELMACHINI" Name="DELMachiningProcessModel" MetaDataName="DELMachiningProcessModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELMACHIN_1" Name="DELMachiningResourceModelISO" Visible="Y" RootBusinessDomain="ENOBD_DELMACHI_1">
+      <BUSINESSDOMAIN Oid="ENOBD_DELMACHI_1" Name="DELMachiningResourceModelISO" MetaDataName="DELMachiningResourceModelISO" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELMACHIN_2" Name="DELMachiningResourceModel" Visible="Y" RootBusinessDomain="ENOBD_DELMACHI_2">
+      <BUSINESSDOMAIN Oid="ENOBD_DELMACHI_2" Name="DELMachiningResourceModel" MetaDataName="DELMachiningResourceModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELPPRCONTE" Name="DELPPRContextModelDisciplines" Visible="Y" RootBusinessDomain="ENOBD_DELPPRCONT">
+      <BUSINESSDOMAIN Oid="ENOBD_DELPPRCONT" Name="DELPPRContextModelDisciplines" MetaDataName="DELPPRContextModelDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELPPRCON_1" Name="DELPPRContextModel" Visible="Y" RootBusinessDomain="ENOBD_DELPPRCO_1">
+      <BUSINESSDOMAIN Oid="ENOBD_DELPPRCO_1" Name="DELPPRContextModel" MetaDataName="DELPPRContextModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELPPRCON_2" Name="DELPPRContextModelProcessCnx" Visible="Y" RootBusinessDomain="ENOBD_DELPPRCO_2">
+      <BUSINESSDOMAIN Oid="ENOBD_DELPPRCO_2" Name="DELPPRContextModelProcessCnx" MetaDataName="DELPPRContextModelProcessCnx" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELPPRCON_3" Name="DELPPRContextModelSystemCnx" Visible="Y" RootBusinessDomain="ENOBD_DELPPRCO_3">
+      <BUSINESSDOMAIN Oid="ENOBD_DELPPRCO_3" Name="DELPPRContextModelSystemCnx" MetaDataName="DELPPRContextModelSystemCnx" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRESOURCE" Name="DELResourcePlanningModel" Visible="Y" RootBusinessDomain="ENOBD_DELRESOURC">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRESOURC" Name="DELResourcePlanningModel" MetaDataName="DELResourcePlanningModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMIFLOW" Name="DELRmiFlow" Visible="Y" RootBusinessDomain="ENOBD_DELRMIFLOW">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMIFLOW" Name="DELRmiFlow" MetaDataName="DELRmiFlow" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMIRESOU" Name="DELRmiResourceModelCnx" Visible="Y" RootBusinessDomain="ENOBD_DELRMIRESO">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMIRESO" Name="DELRmiResourceModelCnx" MetaDataName="DELRmiResourceModelCnx" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMIRES_1" Name="DELRmiResourceModelDisciplines" Visible="Y" RootBusinessDomain="ENOBD_DELRMIRE_1">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMIRE_1" Name="DELRmiResourceModelDisciplines" MetaDataName="DELRmiResourceModelDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMIRES_2" Name="DELRmiResourceModelImplCnx" Visible="Y" RootBusinessDomain="ENOBD_DELRMIRE_2">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMIRE_2" Name="DELRmiResourceModelImplCnx" MetaDataName="DELRmiResourceModelImplCnx" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMIRES_3" Name="DELRmiResourceModel" Visible="Y" RootBusinessDomain="ENOBD_DELRMIRE_3">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMIRE_3" Name="DELRmiResourceModel" MetaDataName="DELRmiResourceModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMIRES_4" Name="DELRmiResourceModelProdSysImplCnx" Visible="Y" RootBusinessDomain="ENOBD_DELRMIRE_4">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMIRE_4" Name="DELRmiResourceModelProdSysImplCnx" MetaDataName="DELRmiResourceModelProdSysImplCnx" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMIRES_5" Name="DELRmiResourceSignalModel" Visible="Y" RootBusinessDomain="ENOBD_DELRMIRE_5">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMIRE_5" Name="DELRmiResourceSignalModel" MetaDataName="DELRmiResourceSignalModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELRMISHIFT" Name="DELRmiShiftModel" Visible="Y" RootBusinessDomain="ENOBD_DELRMISHIF">
+      <BUSINESSDOMAIN Oid="ENOBD_DELRMISHIF" Name="DELRmiShiftModel" MetaDataName="DELRmiShiftModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DELUNITMODE" Name="DELUnitModel" Visible="Y" RootBusinessDomain="ENOBD_DELUNITMOD">
+      <BUSINESSDOMAIN Oid="ENOBD_DELUNITMOD" Name="DELUnitModel" MetaDataName="DELUnitModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUMARKUP" Name="DMUMarkup" Visible="Y" RootBusinessDomain="ENOBD_DMUMARKUP">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUMARKUP" Name="DMUMarkup" MetaDataName="DMUMarkup" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUREVIEWDI" Name="DMUReviewDisciplines" Visible="Y" RootBusinessDomain="ENOBD_DMUREVIEWD">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUREVIEWD" Name="DMUReviewDisciplines" MetaDataName="DMUReviewDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUVALIDATI" Name="DMUValidationAbstract" Visible="Y" RootBusinessDomain="ENOBD_DMUVALIDAT">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALIDAT" Name="DMUValidationAbstract" MetaDataName="DMUValidationAbstract" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUVALIDA_1" Name="DMUValidationBase" Visible="Y" RootBusinessDomain="ENOBD_DMUVALID_1">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALID_1" Name="DMUValidationBase" MetaDataName="DMUValidationBase" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALID_3" Name="DMUValidationDS" MetaDataName="DMUValidationDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUVALIDA_2" Name="DMUValidationContext" Visible="Y" RootBusinessDomain="ENOBD_DMUVALID_2">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALID_2" Name="DMUValidationContext" MetaDataName="DMUValidationContext" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUVALIDA_3" Name="DMUValidationParticipants" Visible="Y" RootBusinessDomain="ENOBD_DMUVALID_4">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALID_4" Name="DMUValidationParticipants" MetaDataName="DMUValidationParticipants" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUVALIDA_4" Name="DMUValidationReview" Visible="Y" RootBusinessDomain="ENOBD_DMUVALID_6">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALID_6" Name="DMUValidationReview" MetaDataName="DMUValidationReview" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALID_5" Name="DMUValidationReviewDS" MetaDataName="DMUValidationReviewDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUVALIDA_5" Name="DMUValidationValidated" Visible="Y" RootBusinessDomain="ENOBD_DMUVALID_7">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALID_7" Name="DMUValidationValidated" MetaDataName="DMUValidationValidated" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_DMUVALREVIE" Name="DMUVALReviewDisciplines" Visible="Y" RootBusinessDomain="ENOBD_DMUVALREVI">
+      <BUSINESSDOMAIN Oid="ENOBD_DMUVALREVI" Name="DMUVALReviewDisciplines" MetaDataName="DMUVALReviewDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_ENTERPRISER" Name="EnterpriseReference" Visible="Y" RootBusinessDomain="ENOBD_ENTERPRISE">
+      <BUSINESSDOMAIN Oid="ENOBD_ENTERPRISE" Name="EnterpriseReference" MetaDataName="EnterpriseReference" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_ERCOREMODEL" Name="ERCoreModeler" Visible="Y" RootBusinessDomain="ENOBD_ERCOREMODE">
+      <BUSINESSDOMAIN Oid="ENOBD_ERCOREMODE" Name="ERCoreModeler" MetaDataName="ERCoreModeler" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_EXPERIMENT_" Name="EXPERIMENT_ENUMS" Visible="Y" RootBusinessDomain="ENOBD_EXPERIMENT">
+      <BUSINESSDOMAIN Oid="ENOBD_EXPERIMENT" Name="EXPERIMENT_ENUMS" MetaDataName="EXPERIMENT_ENUMS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_FIXED3DPOSI" Name="Fixed3DPositionOfInstanceExtension" Visible="Y" RootBusinessDomain="ENOBD_FIXED3DPOS">
+      <BUSINESSDOMAIN Oid="ENOBD_FIXED3DPOS" Name="Fixed3DPositionOfInstanceExtension" MetaDataName="Fixed3DPositionOfInstanceExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_HISTORY" Name="HISTORY" Visible="Y" RootBusinessDomain="ENOBD_HISTORY">
+      <BUSINESSDOMAIN Oid="ENOBD_HISTORY" Name="HISTORY" MetaDataName="HISTORY" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_ITERATIONEX" Name="IterationExtension" Visible="Y" RootBusinessDomain="ENOBD_ITERATIONE">
+      <BUSINESSDOMAIN Oid="ENOBD_ITERATIONE" Name="IterationExtension" MetaDataName="IterationExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_LPABSTRACT3" Name="LPABSTRACT3DREP" Visible="Y" RootBusinessDomain="ENOBD_LPABSTRACT">
+      <BUSINESSDOMAIN Oid="ENOBD_LPABSTRACT" Name="LPABSTRACT3DREP" MetaDataName="LPABSTRACT3DREP" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_LPABSTRACT" Name="LPABSTRACT" Visible="Y" RootBusinessDomain="ENOBD_LPABSTRA_1">
+      <BUSINESSDOMAIN Oid="ENOBD_LPABSTRA_1" Name="LPABSTRACT" MetaDataName="LPABSTRACT" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_LPPRIVATERE" Name="LPPRIVATEREPDisciplines" Visible="Y" RootBusinessDomain="ENOBD_LPPRIVATER">
+      <BUSINESSDOMAIN Oid="ENOBD_LPPRIVATER" Name="LPPRIVATEREPDisciplines" MetaDataName="LPPRIVATEREPDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_LPPRIVATE_1" Name="LPPRIVATEREP" Visible="Y" RootBusinessDomain="ENOBD_LPPRIVAT_1">
+      <BUSINESSDOMAIN Oid="ENOBD_LPPRIVAT_1" Name="LPPRIVATEREP" MetaDataName="LPPRIVATEREP" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_MANUFACTURE" Name="ManufacturerEquivalentReference" Visible="Y" RootBusinessDomain="ENOBD_MANUFACTUR">
+      <BUSINESSDOMAIN Oid="ENOBD_MANUFACTUR" Name="ManufacturerEquivalentReference" MetaDataName="ManufacturerEquivalentReference" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_NOTMIGRATED" Name="NotMigrated" Visible="Y" RootBusinessDomain="ENOBD_NOTMIGRATE">
+      <BUSINESSDOMAIN Oid="ENOBD_NOTMIGRATE" Name="NotMigrated" MetaDataName="NotMigrated" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_OOTBANDSAMP" Name="OOTBAndSampleCompletionProcedures" Visible="Y" RootBusinessDomain="ENOBD_OOTBANDSAM">
+      <BUSINESSDOMAIN Oid="ENOBD_OOTBANDSAM" Name="OOTBAndSampleCompletionProcedures" MetaDataName="OOTBAndSampleCompletionProcedures" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PATHTYPESFO" Name="PathTypesForLinksAndLegacy" Visible="Y" RootBusinessDomain="ENOBD_PATHTYPESF">
+      <BUSINESSDOMAIN Oid="ENOBD_PATHTYPESF" Name="PathTypesForLinksAndLegacy" MetaDataName="PathTypesForLinksAndLegacy" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PATHTYPES_1" Name="PathTypesForLinks" Visible="Y" RootBusinessDomain="ENOBD_PATHTYPE_1">
+      <BUSINESSDOMAIN Oid="ENOBD_PATHTYPE_1" Name="PathTypesForLinks" MetaDataName="PathTypesForLinks" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PHYSICALABS" Name="PHYSICALABSTRACT" Visible="Y" RootBusinessDomain="ENOBD_PHYSICALAB">
+      <BUSINESSDOMAIN Oid="ENOBD_PHYSICALAB" Name="PHYSICALABSTRACT" MetaDataName="PHYSICALABSTRACT" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMABSTRACT" Name="PLMABSTRACT" Visible="Y" RootBusinessDomain="ENOBD_PLMABSTRAC">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMABSTRAC" Name="PLMABSTRACT" MetaDataName="PLMABSTRACT" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMAECSEMAN" Name="PLMAECSemantic" Visible="Y" RootBusinessDomain="ENOBD_PLMAECSEMA">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMAECSEMA" Name="PLMAECSemantic" MetaDataName="PLMAECSemantic" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMCATIASYS" Name="PLMCATIASystemsDisciplines" Visible="Y" RootBusinessDomain="ENOBD_PLMCATIASY">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMCATIASY" Name="PLMCATIASystemsDisciplines" MetaDataName="PLMCATIASystemsDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMCATIATOO" Name="PLMCATIAToolingDisciplines" Visible="Y" RootBusinessDomain="ENOBD_PLMCATIATO">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMCATIATO" Name="PLMCATIAToolingDisciplines" MetaDataName="PLMCATIAToolingDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMCOEXISTE" Name="PLMCoexistenceModel" Visible="Y" RootBusinessDomain="ENOBD_PLMCOEXIST">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMCOEXIST" Name="PLMCoexistenceModel" MetaDataName="PLMCoexistenceModel" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMCORE" Name="PLMCORE" Visible="Y" RootBusinessDomain="ENOBD_PLMCORE">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMCORE" Name="PLMCORE" MetaDataName="PLMCORE" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMDELMIADI" Name="PLMDELMIADisciplines" Visible="Y" RootBusinessDomain="ENOBD_PLMDELMIAD">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMDELMIAD" Name="PLMDELMIADisciplines" MetaDataName="PLMDELMIADisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMDMTDOCUM" Name="PLMDmtDocument" Visible="Y" RootBusinessDomain="ENOBD_PLMDMTDOCU">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMDMTDOCU" Name="PLMDmtDocument" MetaDataName="PLMDmtDocument" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_DMTDOCUMEN" Name="DMTDocumentDS" MetaDataName="DMTDocumentDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMDOCCONNE" Name="PLMDocConnectionDiscipline" Visible="Y" RootBusinessDomain="ENOBD_PLMDOCCONN">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMDOCCONN" Name="PLMDocConnectionDiscipline" MetaDataName="PLMDocConnectionDiscipline" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMDOCCON_1" Name="PLMDocConnection" Visible="Y" RootBusinessDomain="ENOBD_PLMDOCCO_1">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMDOCCO_1" Name="PLMDocConnection" MetaDataName="PLMDocConnection" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMKNOWLEDG" Name="PLMKnowledgewareDiscipline" Visible="Y" RootBusinessDomain="ENOBD_PLMKNOWLED">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMKNOWLED" Name="PLMKnowledgewareDiscipline" MetaDataName="PLMKnowledgewareDiscipline" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMNAVREPDI" Name="PLMNavRepDisciplines" Visible="Y" RootBusinessDomain="ENOBD_PLMNAVREPD">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMNAVREPD" Name="PLMNavRepDisciplines" MetaDataName="PLMNavRepDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMPRDSHELL" Name="PLMPrdShellExtension" Visible="Y" RootBusinessDomain="ENOBD_PLMPRDSHEL">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMPRDSHEL" Name="PLMPrdShellExtension" MetaDataName="PLMPrdShellExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMSIMULIAD" Name="PLMSIMULIADisciplines2" Visible="Y" RootBusinessDomain="ENOBD_PLMSIMULIA">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMSIMULIA" Name="PLMSIMULIADisciplines2" MetaDataName="PLMSIMULIADisciplines2" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PLMSLAVEEXP" Name="PLMSlaveExposeExtension" Visible="Y" RootBusinessDomain="ENOBD_PLMSLAVEEX">
+      <BUSINESSDOMAIN Oid="ENOBD_PLMSLAVEEX" Name="PLMSlaveExposeExtension" MetaDataName="PLMSlaveExposeExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PRODUCT" Name="PRODUCT" Visible="Y" RootBusinessDomain="ENOBD_PRODUCTCFG">
+      <BUSINESSDOMAIN Oid="ENOBD_PRODUCTCFG" Name="PRODUCTCFG" MetaDataName="PRODUCTCFG" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_PLMPRODUCT" Name="PLMProductDS" MetaDataName="PLMProductDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PRODUCTDEFO" Name="PRODUCTDeformable" Visible="Y" RootBusinessDomain="ENOBD_PRODUCTDEF">
+      <BUSINESSDOMAIN Oid="ENOBD_PRODUCTDEF" Name="PRODUCTDeformable" MetaDataName="PRODUCTDeformable" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PRODUCTDISC" Name="PRODUCTDiscipline" Visible="Y" RootBusinessDomain="ENOBD_PRODUCTDIS">
+      <BUSINESSDOMAIN Oid="ENOBD_PRODUCTDIS" Name="PRODUCTDiscipline" MetaDataName="PRODUCTDiscipline" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_PRODUCTPGPP" Name="PRODUCTPGPPMR" Visible="Y" RootBusinessDomain="ENOBD_PRODUCTPGP">
+      <BUSINESSDOMAIN Oid="ENOBD_PRODUCTPGP" Name="PRODUCTPGPPMR" MetaDataName="PRODUCTPGPPMR" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RELATION" Name="RELATION" Visible="Y" RootBusinessDomain="ENOBD_RELATION">
+      <BUSINESSDOMAIN Oid="ENOBD_RELATION" Name="RELATION" MetaDataName="RELATION" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RENDERING" Name="Rendering" Visible="Y" RootBusinessDomain="ENOBD_RENDERING">
+      <BUSINESSDOMAIN Oid="ENOBD_RENDERING" Name="Rendering" MetaDataName="Rendering" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFLOWA" Name="RFLPLMFlowAbstract" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFLOW">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFLOW" Name="RFLPLMFlowAbstract" MetaDataName="RFLPLMFlowAbstract" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFLOWE" Name="RFLPLMFlowExposition" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFL_1">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFL_1" Name="RFLPLMFlowExposition" MetaDataName="RFLPLMFlowExposition" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFLOW" Name="RFLPLMFlow" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFL_2">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFL_2" Name="RFLPLMFlow" MetaDataName="RFLPLMFlow" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFUNCT" Name="RFLPLMFunctionalAbstract" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFUNC">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFUNC" Name="RFLPLMFunctionalAbstract" MetaDataName="RFLPLMFunctionalAbstract" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFUN_1" Name="RFLPLMFunctionalCommunication" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFU_1">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFU_1" Name="RFLPLMFunctionalCommunication" MetaDataName="RFLPLMFunctionalCommunication" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFUN_2" Name="RFLPLMFunctionalContract" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFU_2">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFU_2" Name="RFLPLMFunctionalContract" MetaDataName="RFLPLMFunctionalContract" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFUN_3" Name="RFLPLMFunctional" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFU_3">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFU_3" Name="RFLPLMFunctional" MetaDataName="RFLPLMFunctional" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLPLMFUN_4" Name="RFLPLMFunctionalSubRep" Visible="Y" RootBusinessDomain="ENOBD_RFLPLMFU_4">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLPLMFU_4" Name="RFLPLMFunctionalSubRep" MetaDataName="RFLPLMFunctionalSubRep" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLVPMLOGIC" Name="RFLVPMLogical3DRep" Visible="Y" RootBusinessDomain="ENOBD_RFLVPMLO_1">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLVPMLO_1" Name="RFLVPMLogical3DRep" MetaDataName="RFLVPMLogical3DRep" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_RFLVPMLOGI" Name="RFLVPMLogical3DRepDS" MetaDataName="RFLVPMLogical3DRepDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLVPMLOG_1" Name="RFLVPMLogicalAbstract" Visible="Y" RootBusinessDomain="ENOBD_RFLVPMLO_2">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLVPMLO_2" Name="RFLVPMLogicalAbstract" MetaDataName="RFLVPMLogicalAbstract" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLVPMLOG_2" Name="RFLVPMLogical" Visible="Y" RootBusinessDomain="ENOBD_RFLVPMLO_4">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLVPMLO_4" Name="RFLVPMLogical" MetaDataName="RFLVPMLogical" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+      <BUSINESSDOMAIN Oid="ENOBD_RFLVPMLO_3" Name="RFLVPMLogicalDS" MetaDataName="RFLVPMLogicalDS" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_RFLVPMLOG_3" Name="RFLVPMLogicalSubRep" Visible="Y" RootBusinessDomain="ENOBD_RFLVPMLO_5">
+      <BUSINESSDOMAIN Oid="ENOBD_RFLVPMLO_5" Name="RFLVPMLogicalSubRep" MetaDataName="RFLVPMLogicalSubRep" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_SUBSTITUTEE" Name="SubstituteExtension" Visible="Y" RootBusinessDomain="ENOBD_SUBSTITUTE">
+      <BUSINESSDOMAIN Oid="ENOBD_SUBSTITUTE" Name="SubstituteExtension" MetaDataName="SubstituteExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_SYNCHROEBOM" Name="SynchroEBOMExtension" Visible="Y" RootBusinessDomain="ENOBD_SYNCHROEBO">
+      <BUSINESSDOMAIN Oid="ENOBD_SYNCHROEBO" Name="SynchroEBOMExtension" MetaDataName="SynchroEBOMExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_UNIFIEDTYPI" Name="UnifiedTypingMigration" Visible="Y" RootBusinessDomain="ENOBD_UNIFIEDTYP">
+      <BUSINESSDOMAIN Oid="ENOBD_UNIFIEDTYP" Name="UnifiedTypingMigration" MetaDataName="UnifiedTypingMigration" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_VPMEXPOSEDD" Name="VPMExposedDataDisciplines" Visible="Y" RootBusinessDomain="ENOBD_VPMEXPOSED">
+      <BUSINESSDOMAIN Oid="ENOBD_VPMEXPOSED" Name="VPMExposedDataDisciplines" MetaDataName="VPMExposedDataDisciplines" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_VPMPOINTCLO" Name="VPMPointCloud" Visible="Y" RootBusinessDomain="ENOBD_VPMPOINTCL">
+      <BUSINESSDOMAIN Oid="ENOBD_VPMPOINTCL" Name="VPMPointCloud" MetaDataName="VPMPointCloud" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_WCGWEIGHTEQ" Name="WCGWeightEquivalent" Visible="Y" RootBusinessDomain="ENOBD_WCGWEIGHTE">
+      <BUSINESSDOMAIN Oid="ENOBD_WCGWEIGHTE" Name="WCGWeightEquivalent" MetaDataName="WCGWeightEquivalent" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_WSPMAPPING" Name="WSPMAPPING" Visible="Y" RootBusinessDomain="ENOBD_WSPMAPPING">
+      <BUSINESSDOMAIN Oid="ENOBD_WSPMAPPING" Name="WSPMAPPING" MetaDataName="WSPMAPPING" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_XCADASSEMBL" Name="XCADAssembly" Visible="Y" RootBusinessDomain="ENOBD_XCADASSEMB">
+      <BUSINESSDOMAIN Oid="ENOBD_XCADASSEMB" Name="XCADAssembly" MetaDataName="XCADAssembly" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_XCADEMBEDDE" Name="XCADEmbeddedComponent" Visible="Y" RootBusinessDomain="ENOBD_XCADEMBEDD">
+      <BUSINESSDOMAIN Oid="ENOBD_XCADEMBEDD" Name="XCADEmbeddedComponent" MetaDataName="XCADEmbeddedComponent" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_XCADEXTENSI" Name="XCADExtension" Visible="Y" RootBusinessDomain="ENOBD_XCADEXTENS">
+      <BUSINESSDOMAIN Oid="ENOBD_XCADEXTENS" Name="XCADExtension" MetaDataName="XCADExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_XCADMODELAN" Name="XCADModelAndItemsModeler" Visible="Y" RootBusinessDomain="ENOBD_XCADMODELA">
+      <BUSINESSDOMAIN Oid="ENOBD_XCADMODELA" Name="XCADModelAndItemsModeler" MetaDataName="XCADModelAndItemsModeler" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_XCADMODELER" Name="XCADModeler" Visible="Y" RootBusinessDomain="ENOBD_XCADMODELE">
+      <BUSINESSDOMAIN Oid="ENOBD_XCADMODELE" Name="XCADModeler" MetaDataName="XCADModeler" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<DOMAIN Oid="ENOD_XCADORIENTA" Name="XCADOrientationExtension" Visible="Y" RootBusinessDomain="ENOBD_XCADORIENT">
+      <BUSINESSDOMAIN Oid="ENOBD_XCADORIENT" Name="XCADOrientationExtension" MetaDataName="XCADOrientationExtension" Editor="VDefault" EnoviaFlag="Y" DataModeler="SDM"/>
+</DOMAIN>
+<SERVER>
+     <DATASERVER Oid="ENODS_ADMIN" Name="VPMADMIN" DBMS="NotUsed" Authentication="SERVER" ConnectionString="NotUsed"/>
+     <DATASERVER Oid="ENODS_PEOPLE" Name="VPMPEOPLE" DBMS="NotUsed" Authentication="SERVER" ConnectionString="NotUsed"/>
+     <DATASERVER Oid="ENODS_COMMON" Name="ENOCOMMON" DBMS="NotUsed" Authentication="SERVER" ConnectionString="NotUsed"/>
+</SERVER>
+<LOCALSITE Oid="DEFAULT_SITE_OID" Name="Site Local"/>
+<ENVIRONMENT Oid="ENO3_3DXML" Name="3DXml">
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PRODUCTCFG" Name="3D.PRODUCTCFG" Domain="ENOD_PRODUCT">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMPRODUCT"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMPRODUCT"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PRODUCTCFG"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUVALIDAT" Name="3D.DMUValidationValidated" Domain="ENOD_DMUVALIDA_5">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUVALID_7"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALID_7"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUVALID_1" Name="3D.DMUValidationParticipants" Domain="ENOD_DMUVALIDA_3">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUVALID_4"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALID_4"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLVPMLOGI" Name="3D.RFLVPMLogical3DRep" Domain="ENOD_RFLVPMLOGIC">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLVPMLOGI"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLVPMLOGI"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLVPMLO_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMATERIA" Name="3D.CATMaterialRef" Domain="ENOD_CATMATERI_3">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMATER_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMATER_5"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMATER_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMATER_1" Name="3D.CATMaterialRefElement" Domain="ENOD_CATMATERI_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMATER_3"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMATER_4"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMATER_3"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUVALID_2" Name="3D.DMUValidationBase" Domain="ENOD_DMUVALIDA_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUVALID_3"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALID_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALID_3"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELFMIFUNC" Name="3D.DELFmiFunctionalModel" Domain="ENOD_PROCESS">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELFMIPROC"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELFMIFU_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELFMIPROC"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMDMTDOCU" Name="3D.PLMDmtDocument" Domain="ENOD_PLMDMTDOCUM">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMTDOCUMEN"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMDMTDOCU"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMTDOCUMEN"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUVALID_3" Name="3D.DMUValidationReview" Domain="ENOD_DMUVALIDA_4">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUVALID_5"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALID_6"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALID_5"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLVPMLO_1" Name="3D.RFLVPMLogical" Domain="ENOD_RFLVPMLOG_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLVPMLO_3"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLVPMLO_4"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLVPMLO_3"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELASMASSE" Name="3D.DELAsmAssemblyModelDisciplines" Domain="ENOD_DELASMASS_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELASMAS_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELASMAS_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELPPRCONT" Name="3D.DELPPRContextModelDisciplines" Domain="ENOD_DELPPRCONTE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELPPRCONT"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELPPRCONT"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_ARCHITECTU" Name="3D.ArchitectureReference" Domain="ENOD_ARCHITECTUR">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_ARCHITECTU"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_ARCHITECTU"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CAT3DINSIG" Name="3D.CAT3DInsightRep" Domain="ENOD_CAT3DINSIGH">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CAT3DINSIG"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CAT3DINSIG"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATDISTILL" Name="3D.CATDistillerDiscipline" Domain="ENOD_CATDISTILLE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATDISTILL"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATDISTILL"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATDRAFTIN" Name="3D.CATDraftingDiscipline" Domain="ENOD_CATDRAFTING">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATDRAFTIN"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATDRAFTIN"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATFSKDISC" Name="3D.CATFSKDiscipline" Domain="ENOD_CATFSKDISCI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATFSKDISC"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATFSKDISC"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMATER_2" Name="3D.CATMaterialDisciplines" Domain="ENOD_CATMATERIAL">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMATERIA"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMATERIA"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMATER_3" Name="3D.CATMaterial" Domain="ENOD_CATMATERI_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMATER_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMATER_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMCXASSE" Name="3D.CATMCXAssemblyAbstract" Domain="ENOD_CATMCXASSEM">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMCXASSE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMCXASSE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMCXAS_1" Name="3D.CATMCXAssembly" Domain="ENOD_CATMCXASS_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMCXAS_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMCXAS_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMCXIASS" Name="3D.CATMCXIAssembly" Domain="ENOD_CATMCXIASSE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMCXIASS"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMCXIASS"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATMECHANI" Name="3D.CATMechanism" Domain="ENOD_CATMECHANIS">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATMECHANI"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATMECHANI"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_CATREPIMAG" Name="3D.CATRepImage" Domain="ENOD_CATREPIMAGE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_CATREPIMAG"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_CATREPIMAG"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_COEXV5NATI" Name="3D.COEXV5Native" Domain="ENOD_COEXV5NATIV">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_COEXV5NATI"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_COEXV5NATI"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_COMMONNOTI" Name="3D.CommonNotion" Domain="ENOD_COMMONNOTIO">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_COMMONNOTI"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_COMMONNOTI"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELASMAS_1" Name="3D.DELAsmAssemblyModelCnx" Domain="ENOD_DELASMASSEM">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELASMASSE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELASMASSE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELASMAS_2" Name="3D.DELAsmAssemblyModel" Domain="ENOD_DELASMASS_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELASMAS_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELASMAS_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELFMIFU_1" Name="3D.DELFmiFunctionalModelImplementCnx" Domain="ENOD_DELFMIFUNCT">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELFMIFUNC"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELFMIFUNC"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELFMIFU_2" Name="3D.DELFmiFunctionalModelQuantity" Domain="ENOD_DELFMIFUN_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELFMIFU_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELFMIFU_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELFMIFU_3" Name="3D.DELFmiFunctionalModelSubRep" Domain="ENOD_DELFMIFUN_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELFMIFU_3"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELFMIFU_3"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELHUMANMO" Name="3D.DELHumanModel" Domain="ENOD_DELHUMANMOD">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELHUMANMO"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELHUMANMO"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELMACHINI" Name="3D.DELMachiningProcessModel" Domain="ENOD_DELMACHININ">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELMACHINI"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELMACHINI"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELMACHI_1" Name="3D.DELMachiningResourceModelISO" Domain="ENOD_DELMACHIN_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELMACHI_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELMACHI_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELMACHI_2" Name="3D.DELMachiningResourceModel" Domain="ENOD_DELMACHIN_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELMACHI_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELMACHI_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELPPRCO_1" Name="3D.DELPPRContextModel" Domain="ENOD_DELPPRCON_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELPPRCO_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELPPRCO_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELPPRCO_2" Name="3D.DELPPRContextModelProcessCnx" Domain="ENOD_DELPPRCON_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELPPRCO_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELPPRCO_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELPPRCO_3" Name="3D.DELPPRContextModelSystemCnx" Domain="ENOD_DELPPRCON_3">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELPPRCO_3"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELPPRCO_3"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRESOURC" Name="3D.DELResourcePlanningModel" Domain="ENOD_DELRESOURCE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRESOURC"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRESOURC"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMIFLOW" Name="3D.DELRmiFlow" Domain="ENOD_DELRMIFLOW">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMIFLOW"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMIFLOW"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMIRESO" Name="3D.DELRmiResourceModelCnx" Domain="ENOD_DELRMIRESOU">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMIRESO"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMIRESO"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMIRE_1" Name="3D.DELRmiResourceModelDisciplines" Domain="ENOD_DELRMIRES_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMIRE_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMIRE_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMIRE_2" Name="3D.DELRmiResourceModelImplCnx" Domain="ENOD_DELRMIRES_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMIRE_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMIRE_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMIRE_3" Name="3D.DELRmiResourceModel" Domain="ENOD_DELRMIRES_3">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMIRE_3"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMIRE_3"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMIRE_4" Name="3D.DELRmiResourceModelProdSysImplCnx" Domain="ENOD_DELRMIRES_4">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMIRE_4"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMIRE_4"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMIRE_5" Name="3D.DELRmiResourceSignalModel" Domain="ENOD_DELRMIRES_5">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMIRE_5"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMIRE_5"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELRMISHIF" Name="3D.DELRmiShiftModel" Domain="ENOD_DELRMISHIFT">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELRMISHIF"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELRMISHIF"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DELUNITMOD" Name="3D.DELUnitModel" Domain="ENOD_DELUNITMODE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DELUNITMOD"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DELUNITMOD"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUMARKUP" Name="3D.DMUMarkup" Domain="ENOD_DMUMARKUP">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUMARKUP"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUMARKUP"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUREVIEWD" Name="3D.DMUReviewDisciplines" Domain="ENOD_DMUREVIEWDI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUREVIEWD"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUREVIEWD"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUVALID_4" Name="3D.DMUValidationAbstract" Domain="ENOD_DMUVALIDATI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUVALIDAT"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALIDAT"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUVALID_5" Name="3D.DMUValidationContext" Domain="ENOD_DMUVALIDA_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUVALID_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALID_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_DMUVALREVI" Name="3D.DMUVALReviewDisciplines" Domain="ENOD_DMUVALREVIE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_DMUVALREVI"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_DMUVALREVI"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_ENTERPRISE" Name="3D.EnterpriseReference" Domain="ENOD_ENTERPRISER">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_ENTERPRISE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_ENTERPRISE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_EXPERIMENT" Name="3D.EXPERIMENT_ENUMS" Domain="ENOD_EXPERIMENT_">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_EXPERIMENT"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_EXPERIMENT"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_FIXED3DPOS" Name="3D.Fixed3DPositionOfInstanceExtension" Domain="ENOD_FIXED3DPOSI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_FIXED3DPOS"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_FIXED3DPOS"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_ITERATIONE" Name="3D.IterationExtension" Domain="ENOD_ITERATIONEX">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_ITERATIONE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_ITERATIONE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_LPABSTRACT" Name="3D.LPABSTRACT3DREP" Domain="ENOD_LPABSTRACT3">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_LPABSTRACT"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_LPABSTRACT"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_LPABSTRA_1" Name="3D.LPABSTRACT" Domain="ENOD_LPABSTRACT">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_LPABSTRA_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_LPABSTRA_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_LPPRIVATER" Name="3D.LPPRIVATEREPDisciplines" Domain="ENOD_LPPRIVATERE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_LPPRIVATER"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_LPPRIVATER"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_LPPRIVAT_1" Name="3D.LPPRIVATEREP" Domain="ENOD_LPPRIVATE_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_LPPRIVAT_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_LPPRIVAT_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_MANUFACTUR" Name="3D.ManufacturerEquivalentReference" Domain="ENOD_MANUFACTURE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_MANUFACTUR"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_MANUFACTUR"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_NOTMIGRATE" Name="3D.NotMigrated" Domain="ENOD_NOTMIGRATED">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_NOTMIGRATE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_NOTMIGRATE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_OOTBANDSAM" Name="3D.OOTBAndSampleCompletionProcedures" Domain="ENOD_OOTBANDSAMP">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_OOTBANDSAM"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_OOTBANDSAM"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PATHTYPESF" Name="3D.PathTypesForLinksAndLegacy" Domain="ENOD_PATHTYPESFO">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PATHTYPESF"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PATHTYPESF"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PATHTYPE_1" Name="3D.PathTypesForLinks" Domain="ENOD_PATHTYPES_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PATHTYPE_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PATHTYPE_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PHYSICALAB" Name="3D.PHYSICALABSTRACT" Domain="ENOD_PHYSICALABS">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PHYSICALAB"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PHYSICALAB"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMAECSEMA" Name="3D.PLMAECSemantic" Domain="ENOD_PLMAECSEMAN">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMAECSEMA"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMAECSEMA"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMCATIASY" Name="3D.PLMCATIASystemsDisciplines" Domain="ENOD_PLMCATIASYS">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMCATIASY"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMCATIASY"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMCATIATO" Name="3D.PLMCATIAToolingDisciplines" Domain="ENOD_PLMCATIATOO">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMCATIATO"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMCATIATO"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMCOEXIST" Name="3D.PLMCoexistenceModel" Domain="ENOD_PLMCOEXISTE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMCOEXIST"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMCOEXIST"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMDELMIAD" Name="3D.PLMDELMIADisciplines" Domain="ENOD_PLMDELMIADI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMDELMIAD"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMDELMIAD"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMDOCCONN" Name="3D.PLMDocConnectionDiscipline" Domain="ENOD_PLMDOCCONNE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMDOCCONN"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMDOCCONN"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMDOCCO_1" Name="3D.PLMDocConnection" Domain="ENOD_PLMDOCCON_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMDOCCO_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMDOCCO_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMKNOWLED" Name="3D.PLMKnowledgewareDiscipline" Domain="ENOD_PLMKNOWLEDG">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMKNOWLED"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMKNOWLED"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMNAVREPD" Name="3D.PLMNavRepDisciplines" Domain="ENOD_PLMNAVREPDI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMNAVREPD"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMNAVREPD"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMPRDSHEL" Name="3D.PLMPrdShellExtension" Domain="ENOD_PLMPRDSHELL">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMPRDSHEL"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMPRDSHEL"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMSIMULIA" Name="3D.PLMSIMULIADisciplines2" Domain="ENOD_PLMSIMULIAD">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMSIMULIA"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMSIMULIA"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PLMSLAVEEX" Name="3D.PLMSlaveExposeExtension" Domain="ENOD_PLMSLAVEEXP">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PLMSLAVEEX"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PLMSLAVEEX"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PRODUCTDEF" Name="3D.PRODUCTDeformable" Domain="ENOD_PRODUCTDEFO">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PRODUCTDEF"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PRODUCTDEF"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PRODUCTDIS" Name="3D.PRODUCTDiscipline" Domain="ENOD_PRODUCTDISC">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PRODUCTDIS"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PRODUCTDIS"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_PRODUCTPGP" Name="3D.PRODUCTPGPPMR" Domain="ENOD_PRODUCTPGPP">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_PRODUCTPGP"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_PRODUCTPGP"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RENDERING" Name="3D.Rendering" Domain="ENOD_RENDERING">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RENDERING"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RENDERING"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFLOW" Name="3D.RFLPLMFlowAbstract" Domain="ENOD_RFLPLMFLOWA">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFLOW"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFLOW"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFL_1" Name="3D.RFLPLMFlowExposition" Domain="ENOD_RFLPLMFLOWE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFL_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFL_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFL_2" Name="3D.RFLPLMFlow" Domain="ENOD_RFLPLMFLOW">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFL_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFL_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFUNC" Name="3D.RFLPLMFunctionalAbstract" Domain="ENOD_RFLPLMFUNCT">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFUNC"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFUNC"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFU_1" Name="3D.RFLPLMFunctionalCommunication" Domain="ENOD_RFLPLMFUN_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFU_1"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFU_1"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFU_2" Name="3D.RFLPLMFunctionalContract" Domain="ENOD_RFLPLMFUN_2">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFU_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFU_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFU_3" Name="3D.RFLPLMFunctional" Domain="ENOD_RFLPLMFUN_3">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFU_3"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFU_3"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLPLMFU_4" Name="3D.RFLPLMFunctionalSubRep" Domain="ENOD_RFLPLMFUN_4">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLPLMFU_4"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLPLMFU_4"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLVPMLO_2" Name="3D.RFLVPMLogicalAbstract" Domain="ENOD_RFLVPMLOG_1">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLVPMLO_2"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLVPMLO_2"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_RFLVPMLO_3" Name="3D.RFLVPMLogicalSubRep" Domain="ENOD_RFLVPMLOG_3">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_RFLVPMLO_5"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_RFLVPMLO_5"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_SUBSTITUTE" Name="3D.SubstituteExtension" Domain="ENOD_SUBSTITUTEE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_SUBSTITUTE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_SUBSTITUTE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_SYNCHROEBO" Name="3D.SynchroEBOMExtension" Domain="ENOD_SYNCHROEBOM">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_SYNCHROEBO"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_SYNCHROEBO"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_UNIFIEDTYP" Name="3D.UnifiedTypingMigration" Domain="ENOD_UNIFIEDTYPI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_UNIFIEDTYP"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_UNIFIEDTYP"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_VPMEXPOSED" Name="3D.VPMExposedDataDisciplines" Domain="ENOD_VPMEXPOSEDD">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_VPMEXPOSED"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_VPMEXPOSED"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_VPMPOINTCL" Name="3D.VPMPointCloud" Domain="ENOD_VPMPOINTCLO">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_VPMPOINTCL"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_VPMPOINTCL"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_WCGWEIGHTE" Name="3D.WCGWeightEquivalent" Domain="ENOD_WCGWEIGHTEQ">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_WCGWEIGHTE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_WCGWEIGHTE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_XCADASSEMB" Name="3D.XCADAssembly" Domain="ENOD_XCADASSEMBL">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_XCADASSEMB"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_XCADASSEMB"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_XCADEMBEDD" Name="3D.XCADEmbeddedComponent" Domain="ENOD_XCADEMBEDDE">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_XCADEMBEDD"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_XCADEMBEDD"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_XCADEXTENS" Name="3D.XCADExtension" Domain="ENOD_XCADEXTENSI">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_XCADEXTENS"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_XCADEXTENS"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_XCADMODELA" Name="3D.XCADModelAndItemsModeler" Domain="ENOD_XCADMODELAN">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_XCADMODELA"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_XCADMODELA"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_XCADMODELE" Name="3D.XCADModeler" Domain="ENOD_XCADMODELER">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_XCADMODELE"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_XCADMODELE"/>
+     </ENVIRONMENT.DOMAIN>
+     <ENVIRONMENT.DOMAIN Oid="ENO3D_XCADORIENT" Name="3D.XCADOrientationExtension" Domain="ENOD_XCADORIENTA">
+          <ENVIRONMENT.DOMAIN.AUTHORING DataDomain="ENODR_XCADORIENT"/>
+          <ENVIRONMENT.DOMAIN.USABLE DataDomain="ENODR_XCADORIENT"/>
+     </ENVIRONMENT.DOMAIN>
+</ENVIRONMENT>
+</AdminObjects>

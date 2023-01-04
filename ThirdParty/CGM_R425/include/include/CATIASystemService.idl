@@ -1,0 +1,266 @@
+#ifndef CATIASystemService_idl
+#define CATIASystemService_idl
+
+/*IDLREP*/
+
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+// COPYRIGHT DASSAULT SYSTEMES 1997
+//
+//=================================================================
+//								   
+// CATIASystemService:						   
+//
+//								   
+//=================================================================
+//								   
+// This interface provides system services
+//								   
+//=================================================================
+//								   
+//    Dec 97 - BGE 
+//								   
+//=================================================================
+#include "CATBaseDispatch.idl"
+#include "CATIABase.idl"
+#include "CATBSTR.idl"
+#include "CATVariant.idl"
+#include "CatScriptLibraryType.idl"
+#include "CATSafeArray.idl"
+#include "CATScriptLanguage.idl"
+
+/**
+* Represents an object which provides system services.
+*
+*/ 
+interface CATIASystemService : CATIABase
+{
+    /**
+     * Returns the value of an environment variable.
+     * @param iEnvString
+     *   The name of the environment variable
+     * <!-- @sample -->
+     * </dl>
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example retrieves the value of the <tt>PATH</tt> variable
+     * in the <tt>Value</tt> string.
+     * <pre>
+     * Value = CATIA.SystemService.<font color="red">Environ</font>("PATH")
+     * </pre>
+     * </dl>
+     */
+  HRESULT Environ(in CATBSTR iEnvString, inout /*IDLRETVAL*/ CATBSTR oValue);
+  
+    /**
+	 * @deprecated R213
+	 * Use  @href CATIASystemService#PrintToStdout instead.
+	 * <br><b>Precondition</b>: Print is a reserved keyword of VBA then this method cannot be used in a VBA macro.
+     * Prints a string on stdout.
+     * @param iString
+     *   The string to print
+     * <!-- @sample -->
+     * </dl>
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example prints the string "Hello world!".
+     * <pre>
+     * CATIA.SystemService.<font color="red">Print</font>("Hello world!")
+     * </pre>
+     * </dl>
+   */
+  HRESULT Print(in CATBSTR iString); 
+
+		/**
+		* Executes a synchronous process. If this process is succesfully launched,
+		* <tt>ExecuteProcessus</tt> waits for it to  terminate and returns the process return code.
+		* If the executable to run needs a specific environment to works correctly (for example
+		* environment variables like PATH or LD_LIBRARY_PATH correctly set), this environment must
+		* have been set in order to make this method succeed. If this executable needs to be launched 
+		* from a window, this method will fail.
+		* @param iExecutablePath
+		*   The path of the executable to run and its arguments.
+		*       If the executable is not present in the PATH environment variable, you must specify its complete absolute path.
+		*       If this executable path contains blanks, you must enclose it with the simple quote character ''' : 
+		*            for example CATIA.SystemService.ExecuteProcessus "'C:\Program Files\myApp\myApp.exe' myArg".
+		*       On Windows, to run a batch file you must execute the command interpreter :
+		*            set the executable to cmd.exe 
+		*            set the arguments to the following ones : /c plus the name of the batch file. 
+		*            For example CATIA.SystemService.ExecuteProcessus "cmd.exe /c E:\MyBatchFile.bat"
+		*       On Windows, an argument that contains a blank must be doubly enclosed ; first with the single quote character then,
+		*            inside the single enclosing quote, with the double quote character.
+		*            For example CATIA.SystemService.ExecuteProcessus "cmd.exe /c '" & Chr$(34) & "E:\My Bat File.bat" & Chr$(34) & "'" 
+		* @return
+		*   The synchronous process return code
+		* <!-- @sample -->
+		* </dl>
+		* <dt><b>Example:</b>
+		* <dd>
+		* This example executes the command located at 
+		* <pre><executable path></pre>
+		* waits for it to end, and returns its return code.
+		* <pre>
+		* ReturnCode = CATIA.SystemService.<font color="red">ExecuteProcessus</font>("<executable path>")
+		* </pre>
+		* </dl>
+		*/
+
+  HRESULT ExecuteProcessus(in CATBSTR iExecutablePath,  out /*IDLRETVAL*/ long  oReturnCode);
+
+		/**
+		* Executes an asynchronous process. This process is launched in background and
+		* <tt>ExecuteBackgroundProcess</tt> doesn't wait for it to complete.
+		* If the executable to run needs a specific environment to works correctly (for example
+		* environment variables like PATH or LD_LIBRARY_PATH correctly set), this environment must
+		* have been set in order to make this method succeed. If this executable needs to be launched 
+		* from a window, this method will fail.
+		* @param iExecutablePath
+		*   The path of the executable to run and its arguments
+		*		If the executable is not present in the PATH environment variable, you must specify its
+		* 	complete absolute path. If this path contains blanks, you must enclose it with the simple
+		*		quote character ''' : 
+		*		for example CATIA.SystemService.ExecuteBackgroundProcess "'C:\Program Files\myApp\myApp.exe' myArg".
+		* @return
+		*   Non significative return code. It's never the asynchronous process return code
+		* <!-- @sample -->
+		* </dl>
+		* <dt><b>Example:</b>
+		* <dd>
+		* This example executes the command located at 
+		* <pre><executable path></pre>
+		* and doesn't wait the end of its execution.
+		* <pre>
+		* CATIA.SystemService.<font color="red">ExecuteBackgroundProcessus</font> "<executable path>"
+		* </pre>
+		* </dl>
+		*/
+  HRESULT ExecuteBackgroundProcessus(in CATBSTR iExecutablePath , out /*IDLRETVAL*/ long  oReturnCode);
+
+  /**
+   * @nodoc   
+   * Executes a scripted function.
+   * @param iLibraryName
+   * The library in which the script is contained.
+   * Note that the library name can contain environment variables (ie "${MyPath}/subDir")
+   * or a DLName (ie CATDLN://MyDLName).
+   * @param iLibraryType
+   * The type of the library
+   * @param iProgramName
+   * The name of the program in the library
+   * @param iFunctionName
+   * The name of the function to invoke
+   * @param iParameters
+   * An array of parameters for the function
+   * @param oResult
+   * The value returned by the function (if any)
+   * <!-- @sample -->
+   * </dl>
+   * <dt><b>Example:</b>
+   * <dd>
+   * This example executes the function CATMain in the program Macro1.catvbs contained by Part1.CATPart
+   * <pre>
+   * Dim params()
+   * CATIA.SystemService.<font color="red">ExecuteScript</font>"Part1.CATPart", catScriptLibraryTypeDocument, "Macro1.catvbs", "CATMain", params
+   * </pre>
+   * </dl>
+   */
+   HRESULT /*IDLHIDDEN*/ ExecuteScript(in CATBSTR iLibraryName, in CatScriptLibraryType iType, in CATBSTR iProgramName, in CATBSTR iFunctionName, in CATSafeArrayVariant iParameters,	inout /*IDLRETVAL*/ CATVariant oResult);
+
+  /**
+   * Evaluates a scripted function.
+   * @param iScriptText
+   * The program text
+   * @param iLanguage
+   * The language the program is written in
+   * @param iFunctionName
+   * The name of the function to invoke
+   * @param iParameters
+   * An array of parameters for the function
+   * @param oResult
+   * The value returned by the function (if any)
+   * <!-- @sample -->
+   * </dl>
+   * <dt><b>Example:</b>
+   * <dd>
+   * This example executes the function CATMain from the CodeToEvaluate string
+   * <pre>
+   * Dim params()
+   * Dim codeToEvaluate
+   * CodeToEvaluate = "Sub CATMain()" & vbNewLine & _
+   *                  "MsgBox " & chr(34) & "Hello World" & chr(34) & vbNewLine & _
+   *                  "End Sub"
+   * CATIA.SystemService.<font color="red">Evaluate</font> CodeToEvaluate, CATVBScriptLanguage, "CATMain", params
+   * </pre>
+   * </dl>
+   */
+  HRESULT Evaluate(in CATBSTR iScriptText, in CATScriptLanguage iLanguage, in CATBSTR iFunctionName, in CATSafeArrayVariant iParameters,	inout /*IDLRETVAL*/ CATVariant oResult);
+  
+  /**
+     * Prints a string on stdout.
+     * @param iString
+     *   The string to print
+     * <!-- @sample -->
+     * </dl>
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example prints the string "Hello world!".
+     * <pre>
+     * CATIA.SystemService.<font color="red">PrintToStdout</font>("Hello world!")
+     * </pre>
+     * </dl>
+   */
+  HRESULT PrintToStdout(in CATBSTR iString);
+
+  /**
+     * Computes a alphanumeric string from a message from a message 
+     * catalog using the catalog name, the message key, the message 
+     * parameters and a default NLS message.
+     * @param iCatalogName
+     *   Name of the catalog containing the message, without the .CATNls suffix.
+     *   This catalog will be searched in the directories from the environment 
+     *   variable CATMsgCatalogPath.
+     * @param iMessageKey
+     *   Key of the message to be retrieved
+     * @param iMsgParameters
+     *   Array giving to the method possible parameter values
+     *   which the method will integrate into the parameterized
+     *   message. 
+     *   The parameter value count should correspond to the message 
+     *   parameter highest index (this is not exactly the parameter count: 
+     *   the software authorizes parameter indices that are not
+     *   consecutive, which would distinguish the message 
+     *   parameters highest index from the parameter count).
+     *   If the input parameter value count is not sufficient, a default 
+     *   behaviour is foreseen: "?" characters are introduced into the
+     *   computed output resource string.      
+     * @param iDefaultMsg
+     *   Message to be used if a problem occured while accessing the message 
+     *   catalog file or the key. You may, for example, put in this message 
+     *   an information about an access problem. 
+     * @param oMessage
+     *   The built message.
+     * <dt><b>Example:</b>
+     * <dd>
+     * This example computes in MyErrorMessage the message associated to the couple 
+     * catalog CATSysCommunication / key CATSysComReentranceError_152005.Request
+     * <pre>
+     * Dim MsgParams()
+     * Dim MyErrorMessage
+     * MyErrorMessage = CATIA.SystemService.<font color="red">GetMessage</font>("CATSysCommunication", "CATSysComReentranceError_152005.Request", MsgParams, "MsgCatalogError")
+     * </pre>
+     * </dl>
+     */
+  HRESULT GetMessage(in CATBSTR iCatalogName, in CATBSTR iMessageKey, in CATSafeArrayVariant iMsgParameters, in CATBSTR iDefaultMsg, out /*IDLRETVAL*/ CATBSTR oMessage);
+};
+
+#pragma ID CATIASystemService "DCE:010508c6-7218-11d1-a5ee00a0c9575177"
+#pragma DUAL CATIASystemService
+
+#pragma ID SystemService "DCE:010508c7-7218-11d1-a5ee00a0c9575177"
+#pragma ALIAS CATIASystemService SystemService
+
+#endif // CATIASystemService_idl
+

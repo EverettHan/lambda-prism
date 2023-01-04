@@ -1,0 +1,41 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Get memory usage",
+  "onCall": {
+    "in": {},
+    "out": {
+      "parameters": [
+        {
+          "label": "availablePhysicalMemory",
+          "basic": "uint64",
+          "desc": "The amount of physical memory currently available in bytes"
+        },
+        {
+          "label": "totalPhysicalMemory",
+          "basic": "uint64",
+          "desc": "The amount of actual physical memory in bytes"
+        },
+        {
+          "label": "physicalMemoryLoadInPercent",
+          "basic": "double",
+          "desc": "The approximate percentage of physical memory that is in use"
+        },
+        {
+          "label": "processMemory",
+          "basic": "uint64",
+          "desc": "The amount of memory in bytes for the process running this function"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

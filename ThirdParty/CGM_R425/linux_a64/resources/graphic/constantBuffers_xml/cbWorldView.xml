@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_worldView</NAME>
+  <RASTERIZER_UPDATE>PassThroughOcclusionWorldView</RASTERIZER_UPDATE>
+  <FULL_SEMANTIC>OcclusionWorldView</FULL_SEMANTIC>
+  <UNIFORM>
+    <NAME>ViewMatrix</NAME>
+    <TYPE>mat4x4d</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>batchSize</NAME>
+    <TYPE>int</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>nbMatrices</NAME>
+    <TYPE>int</TYPE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

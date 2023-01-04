@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapContribsBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMap[]</NAME>
+        <TYPE>HashRecordContribSlots</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapKeysBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMapKeys[]</NAME>
+        <TYPE>HashRecordKey</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>changeListABuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>changeListA[]</NAME>
+        <TYPE>HASH_CHANGE_LIST_BASE_TYPE</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>changeListBBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>changeListB[]</NAME>
+        <TYPE>HASH_CHANGE_LIST_BASE_TYPE</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>headsListBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>headsList[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <SAMPLER>
+    <NAME>cellIndices</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>usampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>usampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>smp</NAME>
+  </SAMPLER_STATE>
+  
+ 
+  <TECHNIQUE>
+    <NAME>R</NAME>
+    <COMPUTE_PASS>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>cellIndices</SAMPLER>
+          <STATES>smp</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <NAME>Default</NAME>
+      <COMPUTE_STAGE>
+        PostEffect_HRTAO_Incl_Common
+        PostEffect_HRTAO_Incl_CommonSpatialHash
+        PostEffect_HRTAO_Incl_HashDataType_Shadows
+        PostEffect_HRTAO_Incl_HashKeyAccess
+        PostEffect_HRTAO_Incl_HashDataAccess_Shadows
+        PostEffect_HRTAO_Incl_ChangelistAccess
+        PostEffect_HRTAO_Incl_PropagateChangelistCommon
+        PostEffect_HRTAO_PropagateChangelist_Shadows
+      </COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>RGB</NAME>
+    <COMPUTE_PASS>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>cellIndices</SAMPLER>
+          <STATES>smp</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      
+      <NAME>Default</NAME>
+      <COMPUTE_STAGE>
+        PostEffect_HRTAO_Incl_Common
+        PostEffect_HRTAO_Incl_CommonSpatialHash
+        PostEffect_HRTAO_Incl_HashDataType_Color
+        PostEffect_HRTAO_Incl_HashKeyAccess
+        PostEffect_HRTAO_Incl_HashDataAccess_Color
+        PostEffect_HRTAO_Incl_ChangelistAccess
+        PostEffect_HRTAO_Incl_PropagateChangelistCommon
+        PostEffect_HRTAO_PropagateChangelist_Color
+      </COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+</EFFECT>

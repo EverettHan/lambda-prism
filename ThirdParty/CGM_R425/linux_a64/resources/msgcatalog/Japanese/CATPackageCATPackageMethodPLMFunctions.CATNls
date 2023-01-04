@@ -1,0 +1,10 @@
+<meta charset="UTF-8"/>
+PackageName="PLM 関数";
+CATKnowledge.ListInstances.Description="特定のコンテキストで特定のリファレンスの既存のインスタンスをリストします。\nそのコンテキストで同じインスタンスのオカレンスがいくつか存在する場合は、1 つのインスタンスのみが返されます。\nListOccurrences も参照してください。 ";
+CATKnowledge.ListInstances.Sample="let root(VPMReference)\nlet searchInstancesOf(VPMReference)\nlet lInstances(List)\let currentInstance(VPMInstance)\n\n[...]\n\nlInstances = searchInstancesOf->ListInstances(root) \nfor currentInstance inside lInstances\n{ \n	/* Treatment on each instance */ \n}\n";
+
+CATKnowledge.ListOccurrences.Description="特定のコンテキストで特定のリファレンスのすべてのオカレンスをリストします。\nListInstances も参照してください。 ";
+CATKnowledge.ListOccurrences.Sample="let root(VPMReference)\nlet searchOccurrencesOf(VPMReference)\nlet lInstances(List)\let currentOccurrence(ProductOccurrence)\n\n[...]\n\nlInstances = searchOccurrencesOf->ListOccurrences(root) \nfor currentOccurrence inside lOccurrences\n{ \n	/* Treatment on each occurrence */ \n}\n";
+
+CATKnowledge.RefreshEntities.Description="<p><span style=\"font-weight:bold;font-size:12px;\">RefreshEntities</span><span style=\"font-size:12px;\"> は、選択的リフレッシュを実行します。</span><//p><p><span style=\"font-weight:bold;font-size:12px;\">入力:</span><//p><p> - <span style=\"font-weight:bold;font-size:12px;\">iPLMEntitylist</span> (リスト) : リフレッシュするエンティティのリストを指定します。<//p><p> - <span style=\"font-weight:bold;font-size:12px;\">iIsRecursive</span> (ブール値) : リフレッシュ モードが再帰的かどうかを指定します (指定されたエンティティとその子孫に適用されます)。<br/> <//p><p>入力エンティティは次のいずれかになります。<br/> - VPMReferences、VPMInstances、VPMRepReferences および VPMRepInstances (再帰モードの場合)。<br/> - VPMReferences および VPMRepReferences (それ以外の場合)。<//p><p>プライベート VPMRep は、リフレッシュ プロセスから除外されます。<//p>";
+CATKnowledge.RefreshEntities.Sample="/*Whole assembly refresh */ \nLet lEntities(List) \nlet oRoot,oPrd (VPMReference) \nset oRoot = GetEditorRoots(\"VPMReference\")->GetItem(1) \nlEntities.Append(oRoot) \nRefreshEntities(lEntities,true)\n";

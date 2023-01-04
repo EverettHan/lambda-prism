@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="GeneralGeneralsettings" Target="CATAfrComponent">
+
+    <preferencepage Name="GeneralGeneral" Resource="CommonGeneralMePreferences" RepositoryName="GeneralGeneral">
+
+      <preferencegroup Name="DragAndDropGroup" >
+        <preferenceitem Name="DragAndDrop"   RepositoryName="GeneralGeneral"/>
+      </preferencegroup>
+	  
+      <preferencegroup Name="MemoryWarningGroup" Align="1" >
+        <preferenceitem syp:name="MemWarningActive" Name="MemWarningActive"  RepositoryName="CATMemWarning" />
+        <preferenceitem syp:name="UsageLimit" Name="UsageLimit"  RepositoryName="CATMemWarning" WithoutLockAndIcon="1" />
+      </preferencegroup>
+	  
+    </preferencepage>
+    
+    <CATSYPTriggerCollection>
+    
+      <CATSYPTrigger Property="ControlValue" TargetName="MemWarningActive" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="UsageLimit" Value="0" />
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="ControlValue" TargetName="MemWarningActive" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="UsageLimit" Value="1" />
+      </CATSYPTrigger>
+    
+    </CATSYPTriggerCollection>	
+  
+  </Template>
+</Styles>

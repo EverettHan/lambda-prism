@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <NAME>cb_EVisuPBR</NAME>
+
+  <!-- The order of uniforms might look chaotic, but it is actually done intentionally so
+       to ensure tight bytes packing -->
+
+  <!-- albedo 10 + thinWalled 1 + ior 1 = 12 -->
+  <UNIFORM>
+    <NAME>albedo</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.15 0.3 0.6</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>albedo_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>albedo_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>thinWalled</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>albedo_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>ior</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.4</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- specularTint 10 + UseGASColor 1 + IsAlphaTestEnabled 1 = 12 -->
+  <UNIFORM>
+    <NAME>specularTint</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>specularTint_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>specularTint_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>UseGASColor</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>specularTint_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>IsAlphaTestEnabled</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- roughness 4 -->
+  <UNIFORM>
+    <NAME>roughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.5</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>roughness_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>roughness_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>roughness_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- anisotropy 4 -->
+  <UNIFORM>
+    <NAME>anisotropy</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropy_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropy_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropy_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- anisotropyRotation 4 -->
+  <UNIFORM>
+    <NAME>anisotropyRotation</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropyRotation_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropyRotation_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropyRotation_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- metallic 4 -->
+  <UNIFORM>
+    <NAME>metallic</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>metallic_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>metallic_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>metallic_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- specular 4 -->
+  <UNIFORM>
+    <NAME>specular</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>specular_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>specular_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>specular_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- transparency 4 -->
+  <UNIFORM>
+    <NAME>transparency</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>transparency_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>transparency_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>transparency_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- attenuation 4 -->
+  <UNIFORM>
+    <NAME>attenuationColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>attenuationDistance</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- sheen 4 -->
+  <UNIFORM>
+    <NAME>sheen</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheen_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheen_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheen_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- sheenColor 10 + emissionValue 1 + emissionMode 1 = 12 -->
+  <UNIFORM>
+    <NAME>sheenColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheenColor_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheenColor_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>emissionValue</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheenColor_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>emissionMode</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- sheenRoughness 4 -->
+  <UNIFORM>
+    <NAME>sheenRoughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.3</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheenRoughness_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheenRoughness_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>sheenRoughness_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- clearcoat 4 -->
+  <UNIFORM>
+    <NAME>clearcoat</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoat_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoat_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoat_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- clearcoatRoughness 4 -->
+  <UNIFORM>
+    <NAME>clearcoatRoughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoatRoughness_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoatRoughness_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoatRoughness_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- clearcoatNormal 7 + IsPostOpaque 1 = 8 -->
+  <UNIFORM>
+    <NAME>clearcoatNormal_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoatNormal_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>clearcoatNormal_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>IsPostOpaque</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- normal 7 + emissionEnergyNormalization 1 = 8 -->
+  <UNIFORM>
+    <NAME>normal_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>normal_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>normal_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>emissionEnergyNormalization</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- displacement 10 + cutoutOpacity 1 + cutoutOpacity_slot 1 = 12 -->
+  <UNIFORM>
+    <NAME>displacement</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>displacement_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>displacement_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>cutoutOpacity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>displacement_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>cutoutOpacity_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- emissionColor 10 + cutoutOpacity_m 1 + cutoutOpacity_a 1 = 12 -->
+  <UNIFORM>
+    <NAME>emissionColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>emissionColor_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>emissionColor_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>cutoutOpacity_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>emissionColor_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>cutoutOpacity_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- flakeColor 10 + flakeCoverage 1 + flakeCoverage_slot 1 = 12 -->
+  <UNIFORM>
+    <NAME>flakeColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeColor_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeColor_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeCoverage</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeColor_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeCoverage_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- flakeSize 4 -->
+  <UNIFORM>
+    <NAME>flakeSize</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1000.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1.0</UI_STEP_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeSize_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeSize_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeSize_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- flakeRoughness 4 -->
+  <UNIFORM>
+    <NAME>flakeRoughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeRoughness_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeRoughness_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeRoughness_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- translucency 4 -->
+  <UNIFORM>
+    <NAME>translucency</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>translucency_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>translucency_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>translucency_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- flake flip-flop and flip-flop color = 12 -->
+  <UNIFORM>
+    <NAME>flipFlopColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flipFlop</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flipFlopColor_m</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flipFlop_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flipFlopColor_a</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flipFlop_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- flakeCoverage MADD 2 + flake flip-flop slots 2 -->
+  <UNIFORM>
+    <NAME>flakeCoverage_m</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flakeCoverage_a</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>	
+  <UNIFORM>
+    <NAME>flipFlop_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>flipFlopColor_slot</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>	
+  <!-- subsurfaceColor 3 -->
+  <UNIFORM>
+    <NAME>subsurfaceColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

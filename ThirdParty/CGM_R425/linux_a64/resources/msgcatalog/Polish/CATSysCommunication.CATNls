@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="Nie można znaleźć portu /p1 na hoście /p2 ";
+CATSysComPortFailure_150002.Request="Nie można zadeklarować na porcie /p1 na hoście /p2";
+CATSysComPortAcceptFailed_150003.Request="Nie można zaakceptować portu /p1";
+CATSysComPortAcceptFailed_150004.Request="Wystąpił błąd podczas oczekiwania na port /p1";
+CATSysComInitSocketError_150102.Request="Wystąpił błąd podczas operacji gniazda. Prawdopodobnie utracono połączenie z siecią szkieletową.";
+CATSysComSendSocketError_150103.Request="Wystąpił błąd podczas operacji wysyłania gniazda. Prawdopodobnie utracono połączenie z siecią szkieletową.";
+CATSysComRecvSocketError_150104.Request="Wystąpił błąd podczas operacji odbierania gniazda. Prawdopodobnie utracono połączenie z siecią szkieletową.";
+CATSysComMsgClassError_151001.Request="Nie znaleziono komunikatu klasy \p1.";
+CATSysComMsgStreamError_151002.Request="Błąd podczas przesyłania danych klasy \p1.";
+CATSysComMsgUnstreamError_151003.Request="Błąd podczas usuwania danych klasy \p1 ze strumienia.";
+CATSysComMsgClassInvalid_152001.Request="Klasa komunikatu \p1 musi implementować CATIStreamMsg.";
+CATSysComMsgClassInvalid_152002.Request="Klasa komunikatu \p1 musi implementować CATICommMsg.";
+CATSysComMsgInvalid_152003.Request="Komunikat nie wymaga odpowiedzi.";
+CATSysComInstanciationError_152004.Request="Nie można utworzyć obiektu komunikatu klasy \p1.";
+CATSysComReentranceError_152005.Request="Błąd wewnętrzny. Znaleziono warunek ponownego wejścia.";
+CATSysComTimeoutOccurred_152006.Request="Przekroczono limit czasu.";
+CATSysComApplicationNotFound_152007.Request="Brak aplikacji docelowej \p1.";

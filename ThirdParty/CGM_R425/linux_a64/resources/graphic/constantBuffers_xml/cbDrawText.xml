@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  
+  <NAME>cb_cbDrawText</NAME>
+  
+  <UNIFORM>
+    <NAME>u_ViewportSize</NAME>
+    <TYPE>float2</TYPE>
+  </UNIFORM>
+  
+  
+  <UNIFORM>
+    <NAME>u_FontAtlasSize</NAME>
+    <TYPE>float2</TYPE>
+  </UNIFORM>
+  
+  <!-- Position is between [-1; +1] -->
+  <UNIFORM>
+    <NAME>u_Position</NAME>
+    <TYPE>float2</TYPE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_Scale</NAME>
+    <TYPE>float</TYPE>
+  </UNIFORM>
+  
+  <!-- Text color -->
+  <UNIFORM>
+    <NAME>u_Color</NAME>
+    <TYPE>float4</TYPE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  
+  <!-- Text background color -->
+  <UNIFORM>
+    <NAME>u_BackgroundColor</NAME>
+    <TYPE>float4</TYPE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>
+

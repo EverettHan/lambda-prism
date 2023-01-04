@@ -1,0 +1,30 @@
+#ifndef CatScriptLibraryType_idl
+#define CatScriptLibraryType_idl
+
+// COPYRIGHT DASSAULT SYSTEMES 2002
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U1
+ */
+
+/**
+ * Types of macro libraries defined in the V5 architecture.
+ * @param catScriptLibraryTypeDocument
+ * The library physically stores its macros in a V5 document.
+ * @param catScriptLibraryTypeDirectory
+ * The library physically stores its macros in a filesystem directory.
+ * @param catScriptLibraryTypeVBAProject
+ * The library physically stores its macros in a VBA project file (with the .catvba extension).
+ * @param catScriptLibraryTypeVSTAProject
+ * The library physically stores its macros in a VSTA project file (with the .csproj or .vbproj extension).
+ */
+enum CatScriptLibraryType
+{
+  catScriptLibraryTypeDocument,
+  catScriptLibraryTypeDirectory,
+  catScriptLibraryTypeVBAProject,
+  catScriptLibraryTypeVSTAProject
+};
+
+#endif // CatScriptLibraryType_idl
+

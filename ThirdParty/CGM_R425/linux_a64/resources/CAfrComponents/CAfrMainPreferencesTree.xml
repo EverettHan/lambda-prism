@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <!--======================================-->
+  <!-- CATCAfrTree_Imp-->
+  <!--======================================-->
+  <Template syp:name="CATCAfrTree_Imp" Target="CATCAfrInclude">
+
+    <CATCAfrForm Name ="MyPreferencesTree1"
+                 Title ="Main Preferences"
+                 Visibility ="1"
+                 RepresentationType="AfrFullSpace"
+                 IconName = "Preferences\\Options_Customize_Small.png"
+				 ResourceFile = "CATCMainPreferencesTree">
+
+      <CATCAfrTree Name="MainPreferences"
+                   Visibility ="1"
+                   RepresentationType="Classic"
+                   SelectionMode="MultiRange"
+                   RootDecorationFlag="0"
+                   ExpanderLook="Arrow"
+                   ExpandedFlag="1"
+                   RegisterFlag="1"
+                   MinimumDimension="200 325"
+				   ResourceFile = "CATCMainPreferencesTree">
+
+        <CATCAfrTree Name="General" Icon="Preferences\\Parameter_Small.png" Display="General" Tooltip="General preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1"/>
+
+        <CATCAfrTree Name="Display" Icon="Preferences\\I_Display_On.png" Display="Display" Tooltip="Display preferences for all apps " ExpanderLook="Arrow" RootDecorationFlag="1"/>
+
+        <CATCAfrTree Name="Modeling" Icon="Preferences\\I_Modeling.png" Display="Modeling" Tooltip="Modeling preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1"/>
+
+      </CATCAfrTree>
+
+    </CATCAfrForm>
+
+  </Template>
+
+</Styles>

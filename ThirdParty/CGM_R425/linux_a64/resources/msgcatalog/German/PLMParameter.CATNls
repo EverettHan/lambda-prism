@@ -1,0 +1,2650 @@
+<meta charset="UTF-8"/>
+// ==============
+// PACKAGE
+// ==============
+PLMParameter="Parameter";
+//
+// ==============
+// BUSINESS TYPES
+// ==============
+PLMParameter.PARParameter="Parameter";
+PLMParameter.PARParameter.ParameterPriority="Priorität";
+//
+PLMParameter.PlmParameter="Parameter";
+PLMParameter.PlmParameter.name="Name";
+PLMParameter.PlmParameter.Title="Titel";
+PLMParameter.PlmParameter.ispublished="Ist veröffentlicht";
+PLMParameter.PlmParameter.isbestsofar="Ist bisher das Beste";
+PLMParameter.PlmParameter.locker="Sperreneigner";
+PLMParameter.PlmParameter.locked="Gesperrt";
+//
+PLMParameter.ComposedParameter="Zusammengesetzter Parameter";
+PLMParameter.ComposedParameter.name="Name";
+PLMParameter.ComposedParameter.Title="Titel";
+PLMParameter.ComposedParameter.ispublished="Ist veröffentlicht";
+PLMParameter.ComposedParameter.isbestsofar="Ist bisher das Beste";
+PLMParameter.ComposedParameter.locker="Sperreneigner";
+PLMParameter.ComposedParameter.locked="Gesperrt";
+//
+PLMParameter.ComputedParameter="Berechneter Parameter";
+PLMParameter.ComputedParameter.name="Name";
+PLMParameter.ComputedParameter.Title="Titel";
+PLMParameter.ComputedParameter.ispublished="Ist veröffentlicht";
+PLMParameter.ComputedParameter.isbestsofar="Ist bisher das Beste";
+PLMParameter.ComputedParameter.locker="Sperreneigner";
+PLMParameter.ComputedParameter.locked="Gesperrt";
+//
+// ==========
+// RELATIONS
+// ==========
+PLMParameter.ParameterUsage="Parameterverwendung";
+PLMParameter.ParameterUsage.ParameterUsageDescription="Beschreibung der Parameterbeziehung";
+PLMParameter.ParameterUsage.Sequence_Order="Sequenzreihenfolge";
+PLMParameter.ParameterUsage.TreeOrder="Strukturbaumanordnung";
+PLMParameter.ParameterUsage.isbestsofar="Ist bisher das Beste";
+//
+PLMParameter.ParameterAggregation="Parameterzusammenfassung";
+PLMParameter.ParameterAggregation.ParameterUsageDescription="Beschreibung der Parameterbeziehung";
+PLMParameter.ParameterAggregation.Sequence_Order="Sequenzreihenfolge";
+PLMParameter.ParameterAggregation.TreeOrder="Strukturbaumanordnung";
+PLMParameter.ParameterAggregation.isbestsofar="Ist bisher das Beste";
+//
+PLMParameter.ParameterComposition="Parameterzusammensetzung";
+PLMParameter.ParameterComposition.TreeOrder="Strukturbaumanordnung";
+PLMParameter.ParameterComposition.isbestsofar="Ist bisher das Beste";
+//
+PLMParameter.ParameterAssignment="Parameterzuordnung";
+PLMParameter.ParameterAssignment.ParameterUsageDescription="Beschreibung der Parameterbeziehung";
+PLMParameter.ParameterAssignment.isbestsofar="Ist bisher das Beste";
+//
+// ==========
+// EXTENSIONS
+// ==========
+// Common
+PLMParameter.PlmParameterMagnitude.PlmParamRole="Rolle";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType="Bewertung";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType.Range.Equal.0="Keine";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType.Range.Equal.1="Einfacher Wert";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType.Range.Equal.2="Mehreren Werten";
+PLMParameter.PlmParameterMagnitude.ValueSet="Festgelegter Sollwert";
+//
+PLMParameter.PlmParameterWithRange.MinRangeProperty="Untere Grenze";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.0="Zurücknehmen";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.1="Festgelegt und erreichbar";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.2="Festgelegt und nicht erreichbar";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.3="Nicht zutreffend";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.4="Nicht zutreffend";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty="Obere Grenze";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.0="Zurücknehmen";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.1="Festgelegt und erreichbar";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.2="Festgelegt und nicht erreichbar";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.3="Nicht zutreffend";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.4="Nicht zutreffend";
+//
+PLMParameter.PlmParameterDimensionned.PlmParamDisplayUnit="Anzeigeeinheit";
+PLMParameter.PlmParameterDimensionned.PlmParamToleranceMin="Minimaltoleranz";
+PLMParameter.PlmParameterDimensionned.PlmParamToleranceMax="Maximaltoleranz";
+PLMParameter.PlmParameterDimensionned.PlmParamToleranceSet="Ist Toleranz festgelegt";
+PLMParameter.PlmParameterDimensionned.PlmParamPrecisionMin="Minimale Präzision";
+PLMParameter.PlmParameterDimensionned.PlmParamPrecisionMax="Maximale Präzision";
+PLMParameter.PlmParameterDimensionned.PlmParamPrecisionSet="Ist Präzision festgelegt";
+//
+PLMParameter.StringParameter="Länge";
+PLMParameter.StringParameter.StringParameterValue="Wert";
+PLMParameter.StringParameter.StringMultiValue="Werte";
+//
+PLMParameter.BooleanParameter="Boolescher Wert";
+PLMParameter.BooleanParameter.BooleanParameterValue="Wert";
+PLMParameter.BooleanParameter.BooleanParameterValue.Range.Equal.TRUE="Wahr";
+PLMParameter.BooleanParameter.BooleanParameterValue.Range.Equal.FALSE="Unwahr";
+//
+PLMParameter.IntegerParameter="Ganze Zahl";
+PLMParameter.IntegerParameter.IntegerParameterValue="Wert";
+PLMParameter.IntegerParameter.IntegerMultiValue="Werte";
+PLMParameter.IntegerParameter.IntegerMinValue="Mindestwert";
+PLMParameter.IntegerParameter.IntegerMaxValue="Höchstwert";
+//
+PLMParameter.RealParameter="Reelle Zahl";
+PLMParameter.RealParameter.RealParameterValue="Wert";
+PLMParameter.RealParameter.RealMultiValue="Werte";
+PLMParameter.RealParameter.RealMinValue="Mindestwert";
+PLMParameter.RealParameter.RealMaxValue="Höchstwert";
+PLMParameter.RealParameter.PlmParamToleranceMin="Minimaltoleranz";
+PLMParameter.RealParameter.PlmParamToleranceMax="Maximaltoleranz";
+PLMParameter.RealParameter.PlmParamToleranceSet="Ist Toleranz festgelegt";
+PLMParameter.RealParameter.PlmParamPrecisionMin="Minimale Präzision";
+PLMParameter.RealParameter.PlmParamPrecisionMax="Maximale Präzision";
+PLMParameter.RealParameter.PlmParamPrecisionSet="Ist Präzision festgelegt";
+//
+PLMParameter.ABSOLUTEVISCOSITYParameter="Absolute Viskosität";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYParameterValue="Wert";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYMultiValue="Werte";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYMinValue="Mindestwert";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYMaxValue="Höchstwert";
+//
+PLMParameter.ABSORBEDDOSEParameter="Energiedosis";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEParameterValue="Wert";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEMultiValue="Werte";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEMinValue="Mindestwert";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEMaxValue="Höchstwert";
+//
+PLMParameter.ABSORBEDDOSERATEParameter="Energiedosisleistung";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEParameterValue="Wert";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEMultiValue="Werte";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEMinValue="Mindestwert";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATION_OVER_FORCEParameter="Beschleunigung über Kraft";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEParameterValue="Wert";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEMultiValue="Werte";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATION_OVER_MOMENTParameter="Beschleunigung über Moment";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTParameterValue="Wert";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTMultiValue="Werte";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter="Beschleunigung über Druck";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter="Beschleunigung über Spannung";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEParameterValue="Wert";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEMultiValue="Werte";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEMinValue="Mindestwert";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter="Beschleunigung über Volumenbeschleunigung";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter="Beschleunigung über Volumenschnelle";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATIONXFORCEParameter="Beschleunigung x Kraft";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEParameterValue="Wert";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEMultiValue="Werte";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEMinValue="Mindestwert";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATIONXPRESSUREParameter="Beschleunigung x Druck";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREParameterValue="Wert";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREMultiValue="Werte";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREMinValue="Mindestwert";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter="Beschleunigung x Volumenbeschleunigung";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.ACCELRTNParameter="Beschleunigung";
+PLMParameter.ACCELRTNParameter.ACCELRTNParameterValue="Wert";
+PLMParameter.ACCELRTNParameter.ACCELRTNMultiValue="Werte";
+PLMParameter.ACCELRTNParameter.ACCELRTNMinValue="Mindestwert";
+PLMParameter.ACCELRTNParameter.ACCELRTNMaxValue="Höchstwert";
+//
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter="Akustische Dipolamplitude";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameterValue="Wert";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEMultiValue="Werte";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEMinValue="Mindestwert";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEMaxValue="Höchstwert";
+//
+PLMParameter.ACOUSTIC_INTENSITYParameter="Intensität der Akustik";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYParameterValue="Wert";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYMultiValue="Werte";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYMinValue="Mindestwert";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYMaxValue="Höchstwert";
+//
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter="Akustische Monopolamplitude";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameterValue="Wert";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEMultiValue="Werte";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEMinValue="Mindestwert";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEMaxValue="Höchstwert";
+//
+PLMParameter.ACOUSTIC_POWERParameter="Akustische Leistung";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERParameterValue="Wert";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERMultiValue="Werte";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERMinValue="Mindestwert";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERMaxValue="Höchstwert";
+//
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter="Akustische Quadrupolamplitude";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameterValue="Wert";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEMultiValue="Werte";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEMinValue="Mindestwert";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEMaxValue="Höchstwert";
+//
+PLMParameter.ACOUSTICIMPEDANCEParameter="Schallimpedanz";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEParameterValue="Wert";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEMultiValue="Werte";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEMinValue="Mindestwert";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEMaxValue="Höchstwert";
+//
+PLMParameter.AFFINITYParameter="Affinität";
+PLMParameter.AFFINITYParameter.AFFINITYParameterValue="Wert";
+PLMParameter.AFFINITYParameter.AFFINITYMultiValue="Werte";
+PLMParameter.AFFINITYParameter.AFFINITYMinValue="Mindestwert";
+PLMParameter.AFFINITYParameter.AFFINITYMaxValue="Höchstwert";
+//
+PLMParameter.ANGACCELRTNParameter="Winkelbeschleunigung";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNParameterValue="Wert";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNMultiValue="Werte";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNMinValue="Mindestwert";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNMaxValue="Höchstwert";
+//
+PLMParameter.ANGLEParameter="Winkel";
+PLMParameter.ANGLEParameter.ANGLEParameterValue="Wert";
+PLMParameter.ANGLEParameter.ANGLEMultiValue="Werte";
+PLMParameter.ANGLEParameter.ANGLEMinValue="Mindestwert";
+PLMParameter.ANGLEParameter.ANGLEMaxValue="Höchstwert";
+//
+PLMParameter.ANGULAR_VELOCITYParameter="Winkelgeschwindigkeit";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYParameterValue="Wert";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYMultiValue="Werte";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYMinValue="Mindestwert";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.ANGULARCROSSSECTIONParameter="Raumwinkelbezogener Wirkungsquerschnitt";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONParameterValue="Wert";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONMultiValue="Werte";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONMinValue="Mindestwert";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONMaxValue="Höchstwert";
+//
+PLMParameter.ANGULARFEEDRATEParameter="Winkelvorschub";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEParameterValue="Wert";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEMultiValue="Werte";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEMinValue="Mindestwert";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEMaxValue="Höchstwert";
+//
+PLMParameter.ANGULARJERKParameter="Winkelsprung";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKParameterValue="Wert";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKMultiValue="Werte";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKMinValue="Mindestwert";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKMaxValue="Höchstwert";
+//
+PLMParameter.ANGULARMOMENTUMParameter="Drehimpuls";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMParameterValue="Wert";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMMultiValue="Werte";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMMinValue="Mindestwert";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMMaxValue="Höchstwert";
+//
+PLMParameter.ANGULARMOMENTUMFLUXParameter="Drehimpulsfluss";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXParameterValue="Wert";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXMultiValue="Werte";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXMinValue="Mindestwert";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXMaxValue="Höchstwert";
+//
+PLMParameter.ANGULARSPINDLESPEEDParameter="Winkelgeschwindigkeit der Spindel";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDParameterValue="Wert";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDMultiValue="Werte";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDMinValue="Mindestwert";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDMaxValue="Höchstwert";
+//
+PLMParameter.APPARENTPOWERParameter="Scheinleistung";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERParameterValue="Wert";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERMultiValue="Werte";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERMinValue="Mindestwert";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERMaxValue="Höchstwert";
+//
+PLMParameter.ARC_LENGTHParameter="Bogenlänge";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHParameterValue="Wert";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHMultiValue="Werte";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHMinValue="Mindestwert";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHMaxValue="Höchstwert";
+//
+PLMParameter.AREAParameter="Bereich";
+PLMParameter.AREAParameter.AREAParameterValue="Wert";
+PLMParameter.AREAParameter.AREAMultiValue="Werte";
+PLMParameter.AREAParameter.AREAMinValue="Mindestwert";
+PLMParameter.AREAParameter.AREAMaxValue="Höchstwert";
+//
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter="Atomarer Dämpfungskoeffizient";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTParameterValue="Wert";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTMultiValue="Werte";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.ATTENUATIONCOEFFICIENTParameter="Dämpfungskoeffizient";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTParameterValue="Wert";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTMultiValue="Werte";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.BOHRMAGNETONParameter="Bohr-Magneton";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONParameterValue="Wert";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONMultiValue="Werte";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONMinValue="Mindestwert";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONMaxValue="Höchstwert";
+//
+PLMParameter.CAPACITANCEParameter="Kapazität";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEParameterValue="Wert";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEMultiValue="Werte";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEMinValue="Mindestwert";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEMaxValue="Höchstwert";
+//
+PLMParameter.CHEMICALPOTENTIALParameter="Chemisches Potenzial";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALParameterValue="Wert";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALMultiValue="Werte";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALMinValue="Mindestwert";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALMaxValue="Höchstwert";
+//
+PLMParameter.CIRCULARWAVENUMBERParameter="Anzahl kreisförmiger Wellen";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERParameterValue="Wert";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERMultiValue="Werte";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERMinValue="Mindestwert";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERMaxValue="Höchstwert";
+//
+PLMParameter.COMPRESSIBILITYParameter="Komprimierbarkeit";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYParameterValue="Wert";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYMultiValue="Werte";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYMinValue="Mindestwert";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYMaxValue="Höchstwert";
+//
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter="Fluss mit konzentrierter Ionenkonzentration";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameterValue="Wert";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXMultiValue="Werte";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXMinValue="Mindestwert";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXMaxValue="Höchstwert";
+//
+PLMParameter.CONDUCTANCEParameter="Leitwert";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEParameterValue="Wert";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEMultiValue="Werte";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEMinValue="Mindestwert";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEMaxValue="Höchstwert";
+//
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter="Konvektiver Filmkoeffizient";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTParameterValue="Wert";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTMultiValue="Werte";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTMinValue="Mindestwert";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.COURANTParameter="Stromstärke";
+PLMParameter.COURANTParameter.COURANTParameterValue="Wert";
+PLMParameter.COURANTParameter.COURANTMultiValue="Werte";
+PLMParameter.COURANTParameter.COURANTMinValue="Mindestwert";
+PLMParameter.COURANTParameter.COURANTMaxValue="Höchstwert";
+//
+PLMParameter.CUMULATIVE_MOMENTParameter="Kumulatives Moment";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTParameterValue="Wert";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTMultiValue="Werte";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTMinValue="Mindestwert";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.CURRENT_DENSITYParameter="Stromdichte";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYParameterValue="Wert";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYMultiValue="Werte";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYMinValue="Mindestwert";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYMaxValue="Höchstwert";
+//
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter="Teilchenstromdichte";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESParameterValue="Wert";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESMultiValue="Werte";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESMinValue="Mindestwert";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESMaxValue="Höchstwert";
+//
+PLMParameter.CURRENTSLOPEParameter="Stromänderung";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEParameterValue="Wert";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEMultiValue="Werte";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEMinValue="Mindestwert";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEMaxValue="Höchstwert";
+//
+PLMParameter.CURVATUREParameter="Krümmung";
+PLMParameter.CURVATUREParameter.CURVATUREParameterValue="Wert";
+PLMParameter.CURVATUREParameter.CURVATUREMultiValue="Werte";
+PLMParameter.CURVATUREParameter.CURVATUREMinValue="Mindestwert";
+PLMParameter.CURVATUREParameter.CURVATUREMaxValue="Höchstwert";
+//
+PLMParameter.DAMPINGCOEFFICIENTParameter="Dämpfungskoeffizient";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTParameterValue="Wert";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTMultiValue="Werte";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.DECAYCONSTANTParameter="Zerfallskonstante";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTParameterValue="Wert";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTMultiValue="Werte";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTMinValue="Mindestwert";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTMaxValue="Höchstwert";
+//
+PLMParameter.DENSITYParameter="Dichte";
+PLMParameter.DENSITYParameter.DENSITYParameterValue="Wert";
+PLMParameter.DENSITYParameter.DENSITYMultiValue="Werte";
+PLMParameter.DENSITYParameter.DENSITYMinValue="Mindestwert";
+PLMParameter.DENSITYParameter.DENSITYMaxValue="Höchstwert";
+//
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter="Dichte x Winkelgeschwindigkeit";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDParameterValue="Wert";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDMultiValue="Werte";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDMinValue="Mindestwert";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDMaxValue="Höchstwert";
+//
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter="Dichte x Winkelgeschwindigkeit im Quadrat";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameterValue="Wert";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDMultiValue="Werte";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDMinValue="Mindestwert";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDMaxValue="Höchstwert";
+//
+PLMParameter.DENSITYOFHEATFLOWRATEParameter="Dichte des Wärmestroms";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEParameterValue="Wert";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEMultiValue="Werte";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEMinValue="Mindestwert";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEMaxValue="Höchstwert";
+//
+PLMParameter.DENSITYOFSTATESParameter="Zustandsdichte";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESParameterValue="Wert";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESMultiValue="Werte";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESMinValue="Mindestwert";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESMaxValue="Höchstwert";
+//
+PLMParameter.DERDENSITYBYENTHALPYParameter="Ableitung der Dichte nach der Enthalpie";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYParameterValue="Wert";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYMultiValue="Werte";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYMinValue="Mindestwert";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYMaxValue="Höchstwert";
+//
+PLMParameter.DERDENSITYBYPRESSUREParameter="Ableitung der Dichte nach dem Druck";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREParameterValue="Wert";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREMultiValue="Werte";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREMinValue="Mindestwert";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.DERDENSITYBYTEMPERATUREParameter="Ableitung der Dichte nach der Temperatur";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREParameterValue="Wert";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREMultiValue="Werte";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREMinValue="Mindestwert";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREMaxValue="Höchstwert";
+//
+PLMParameter.DERENERGYBYDENSITYParameter="Ableitung der Energie nach der Dichte";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYParameterValue="Wert";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYMultiValue="Werte";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYMinValue="Mindestwert";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.DERENERGYBYPRESSUREParameter="Ableitung der Energie nach dem Druck";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREParameterValue="Wert";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREMultiValue="Werte";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREMinValue="Mindestwert";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.DERENTHALPYBYPRESSUREParameter="Ableitung der Enthalpie nach dem Druck";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREParameterValue="Wert";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREMultiValue="Werte";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREMinValue="Mindestwert";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.DIMENSIONLESSParameter="Keine Bemaßung";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSParameterValue="Wert";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSMultiValue="Werte";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSMinValue="Mindestwert";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENTParameter="Verschiebung";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTParameterValue="Wert";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTMultiValue="Werte";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter="Abweichung über Kraft";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEParameterValue="Wert";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEMultiValue="Werte";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter="Abweichung über Moment";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTParameterValue="Wert";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTMultiValue="Werte";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter="Abweichung über Druck";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter="Abweichung über Spannung";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEParameterValue="Wert";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEMultiValue="Werte";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEMinValue="Mindestwert";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter="Abweichung über Volumenbeschleunigung";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter="Abweichung über Volumenschnelle";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter="Abweichung x Kraft über Frequenz ";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameterValue="Wert";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYMultiValue="Werte";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYMinValue="Mindestwert";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter="Abweichung x Volumenbeschleunigung";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter="Abweichung x Volumenschnelle";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter="Körperfluss mit verteilter Ionenkonzentration";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameterValue="Wert";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXMultiValue="Werte";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXMinValue="Mindestwert";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXMaxValue="Höchstwert";
+//
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter="Flächenfluss mit verteilter Ionenkonzentration";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameterValue="Wert";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXMultiValue="Werte";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXMinValue="Mindestwert";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXMaxValue="Höchstwert";
+//
+PLMParameter.DOSEEQUIVALENTParameter="Äquivalentdosis";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTParameterValue="Wert";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTMultiValue="Werte";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTMinValue="Mindestwert";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTMaxValue="Höchstwert";
+//
+PLMParameter.DYNAMICVISCOSITYParameter="Dynamische Viskosität";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYParameterValue="Wert";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYMultiValue="Werte";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYMinValue="Mindestwert";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter="Elektrische Leitfähigkeit";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYParameterValue="Wert";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYMultiValue="Werte";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYMinValue="Mindestwert";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICALTORQUECONSTANTParameter="Elektrische Drehmomentkonstante";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTParameterValue="Wert";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTMultiValue="Werte";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTMinValue="Mindestwert";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICCHARGEParameter="Elektrische Ladung";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEParameterValue="Wert";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEMultiValue="Werte";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEMinValue="Mindestwert";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICDIPOLEMOMENTParameter="Elektrisches Dipolmoment";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTParameterValue="Wert";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTMultiValue="Werte";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTMinValue="Mindestwert";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICFIELDSTRENGTHParameter="Elektrische Feldstärke";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHParameterValue="Wert";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHMultiValue="Werte";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHMinValue="Mindestwert";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICFLUXDENSITYParameter="Elektrische Flussdichte";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYParameterValue="Wert";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYMultiValue="Werte";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYMinValue="Mindestwert";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter="Elektrische Polarisation eines Moleküls";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameterValue="Wert";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEMultiValue="Werte";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEMinValue="Mindestwert";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRICPOLARIZATIONParameter="Elektrische Polarisation";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONParameterValue="Wert";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONMultiValue="Werte";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONMinValue="Mindestwert";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONMaxValue="Höchstwert";
+//
+PLMParameter.ELECTRIZATIONParameter="Elektrisierung";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONParameterValue="Wert";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONMultiValue="Werte";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONMinValue="Mindestwert";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONMaxValue="Höchstwert";
+//
+PLMParameter.ELECTROMAGNETICMOMENTParameter="Elektromagnetisches Moment";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTParameterValue="Wert";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTMultiValue="Werte";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTMinValue="Mindestwert";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTMaxValue="Höchstwert";
+//
+PLMParameter.ENERGYParameter="Energie";
+PLMParameter.ENERGYParameter.ENERGYParameterValue="Wert";
+PLMParameter.ENERGYParameter.ENERGYMultiValue="Werte";
+PLMParameter.ENERGYParameter.ENERGYMinValue="Mindestwert";
+PLMParameter.ENERGYParameter.ENERGYMaxValue="Höchstwert";
+//
+PLMParameter.ENERGY_PER_AREAParameter="Energie pro Bereich";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAParameterValue="Wert";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAMultiValue="Werte";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAMinValue="Mindestwert";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAMaxValue="Höchstwert";
+//
+PLMParameter.ENERGY_RELEASE_RATEParameter="Energieabgaberate";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEParameterValue="Wert";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEMultiValue="Werte";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEMinValue="Mindestwert";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEMaxValue="Höchstwert";
+//
+PLMParameter.ENERGYDENSITYParameter="Energiedichte";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYParameterValue="Wert";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYMultiValue="Werte";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYMinValue="Mindestwert";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.ENERGYFLUENCEParameter="Energiefluenz";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEParameterValue="Wert";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEMultiValue="Werte";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEMinValue="Mindestwert";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEMaxValue="Höchstwert";
+//
+PLMParameter.ENERGYMECParameter="Spannung";
+PLMParameter.ENERGYMECParameter.ENERGYMECParameterValue="Wert";
+PLMParameter.ENERGYMECParameter.ENERGYMECMultiValue="Werte";
+PLMParameter.ENERGYMECParameter.ENERGYMECMinValue="Mindestwert";
+PLMParameter.ENERGYMECParameter.ENERGYMECMaxValue="Höchstwert";
+//
+PLMParameter.ENTHALPYParameter="Wärmefunktion";
+PLMParameter.ENTHALPYParameter.ENTHALPYParameterValue="Wert";
+PLMParameter.ENTHALPYParameter.ENTHALPYMultiValue="Werte";
+PLMParameter.ENTHALPYParameter.ENTHALPYMinValue="Mindestwert";
+PLMParameter.ENTHALPYParameter.ENTHALPYMaxValue="Höchstwert";
+//
+PLMParameter.ENTROPYParameter="Entropie";
+PLMParameter.ENTROPYParameter.ENTROPYParameterValue="Wert";
+PLMParameter.ENTROPYParameter.ENTROPYMultiValue="Werte";
+PLMParameter.ENTROPYParameter.ENTROPYMinValue="Mindestwert";
+PLMParameter.ENTROPYParameter.ENTROPYMaxValue="Höchstwert";
+//
+PLMParameter.ENTROPY_SIParameter="Entropie SI";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIParameterValue="Wert";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIMultiValue="Werte";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIMinValue="Mindestwert";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIMaxValue="Höchstwert";
+//
+PLMParameter.ENTROPYFLOWRATEParameter="Entropiestromdichte";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEParameterValue="Wert";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEMultiValue="Werte";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEMinValue="Mindestwert";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEMaxValue="Höchstwert";
+//
+PLMParameter.ExothermyParameter="Exothermie";
+PLMParameter.ExothermyParameter.ExothermyParameterValue="Wert";
+PLMParameter.ExothermyParameter.ExothermyMultiValue="Werte";
+PLMParameter.ExothermyParameter.ExothermyMinValue="Mindestwert";
+PLMParameter.ExothermyParameter.ExothermyMaxValue="Höchstwert";
+//
+PLMParameter.EXPOSUREParameter="Exposition";
+PLMParameter.EXPOSUREParameter.EXPOSUREParameterValue="Wert";
+PLMParameter.EXPOSUREParameter.EXPOSUREMultiValue="Werte";
+PLMParameter.EXPOSUREParameter.EXPOSUREMinValue="Mindestwert";
+PLMParameter.EXPOSUREParameter.EXPOSUREMaxValue="Höchstwert";
+//
+PLMParameter.EXPOSURERATEParameter="Standard-Ionendosisleistung";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEParameterValue="Wert";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEMultiValue="Werte";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEMinValue="Mindestwert";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEMaxValue="Höchstwert";
+//
+PLMParameter.FARADAYCONSTANTParameter="Faraday-Konstante";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTParameterValue="Wert";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTMultiValue="Werte";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTMinValue="Mindestwert";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTMaxValue="Höchstwert";
+//
+PLMParameter.FERMIENERGYParameter="Fermienergie";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYParameterValue="Wert";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYMultiValue="Werte";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYMinValue="Mindestwert";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYMaxValue="Höchstwert";
+//
+PLMParameter.FLATNESSParameter="Ebenheit";
+PLMParameter.FLATNESSParameter.FLATNESSParameterValue="Wert";
+PLMParameter.FLATNESSParameter.FLATNESSMultiValue="Werte";
+PLMParameter.FLATNESSParameter.FLATNESSMinValue="Mindestwert";
+PLMParameter.FLATNESSParameter.FLATNESSMaxValue="Höchstwert";
+//
+PLMParameter.FLOW_RESISTIVITYParameter="Flusswiderstand";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYParameterValue="Wert";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYMultiValue="Werte";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYMinValue="Mindestwert";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.FLUXIODQUANTUMParameter="Flussquant";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMParameterValue="Wert";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMMultiValue="Werte";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMMinValue="Mindestwert";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMMaxValue="Höchstwert";
+//
+PLMParameter.FORCEParameter="Kraft";
+PLMParameter.FORCEParameter.FORCEParameterValue="Wert";
+PLMParameter.FORCEParameter.FORCEMultiValue="Werte";
+PLMParameter.FORCEParameter.FORCEMinValue="Mindestwert";
+PLMParameter.FORCEParameter.FORCEMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_ACCELERATIONParameter="Kraft über Beschleunigung";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONParameterValue="Wert";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONMultiValue="Werte";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter="Kraft über Verschiebung";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTParameterValue="Wert";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTMultiValue="Werte";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_PRESSUREParameter="Kraft über Druck";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_PULSATIONParameter="Kraft über Pulsation";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONParameterValue="Wert";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONMultiValue="Werte";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_ROTATIONParameter="Kraft über Rotation";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONParameterValue="Wert";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONMultiValue="Werte";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter="Kraft über Drehbeschleunigung";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameterValue="Wert";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONMultiValue="Werte";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_VELOCITYParameter="Dämpfungskonstante";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYParameterValue="Wert";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYMultiValue="Werte";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter="Kraft über Volumenbeschleunigung";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter="Kraft über Volumenschnelle";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.FORCE_PER_LENGTHParameter="Kraft pro Länge";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHParameterValue="Wert";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHMultiValue="Werte";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHMinValue="Mindestwert";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHMaxValue="Höchstwert";
+//
+PLMParameter.FREQUENCYParameter="Frequenz";
+PLMParameter.FREQUENCYParameter.FREQUENCYParameterValue="Wert";
+PLMParameter.FREQUENCYParameter.FREQUENCYMultiValue="Werte";
+PLMParameter.FREQUENCYParameter.FREQUENCYMinValue="Mindestwert";
+PLMParameter.FREQUENCYParameter.FREQUENCYMaxValue="Höchstwert";
+//
+PLMParameter.FREQUENCY_NOISEParameter="Frequenz (Rauschen)";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEParameterValue="Wert";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEMultiValue="Werte";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEMinValue="Mindestwert";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEMaxValue="Höchstwert";
+//
+PLMParameter.FUGACITYParameter="Fugazität";
+PLMParameter.FUGACITYParameter.FUGACITYParameterValue="Wert";
+PLMParameter.FUGACITYParameter.FUGACITYMultiValue="Werte";
+PLMParameter.FUGACITYParameter.FUGACITYMinValue="Mindestwert";
+PLMParameter.FUGACITYParameter.FUGACITYMaxValue="Höchstwert";
+//
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter="Gyromagnetischer Koeffizient";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTParameterValue="Wert";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTMultiValue="Werte";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.HALLCOEFFICIENTParameter="Hallkoeffizient";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTParameterValue="Wert";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTMultiValue="Werte";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.HARDNESSParameter="Härte";
+PLMParameter.HARDNESSParameter.HARDNESSParameterValue="Wert";
+PLMParameter.HARDNESSParameter.HARDNESSMultiValue="Werte";
+PLMParameter.HARDNESSParameter.HARDNESSMinValue="Mindestwert";
+PLMParameter.HARDNESSParameter.HARDNESSMaxValue="Höchstwert";
+//
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter="Wärmestrom pro Volumen";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEParameterValue="Wert";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEMultiValue="Werte";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEMinValue="Mindestwert";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEMaxValue="Höchstwert";
+//
+PLMParameter.HEAT_FLUXParameter="Wärmestrom";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXParameterValue="Wert";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXMultiValue="Werte";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXMinValue="Mindestwert";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXMaxValue="Höchstwert";
+//
+PLMParameter.HEAT_FLUX_AREAParameter="Wärmestrombereich";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAParameterValue="Wert";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAMultiValue="Werte";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAMinValue="Mindestwert";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAMaxValue="Höchstwert";
+//
+PLMParameter.HEAT_GENERATION_DENSITYParameter="Erzeugte Energie pro Volumeneinheit";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYParameterValue="Wert";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYMultiValue="Werte";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYMinValue="Mindestwert";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYMaxValue="Höchstwert";
+//
+PLMParameter.HEAT_GENERATION_RATEParameter="Wärmeentwicklungsrate";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEParameterValue="Wert";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEMultiValue="Werte";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEMinValue="Mindestwert";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEMaxValue="Höchstwert";
+//
+PLMParameter.HEAT_RATEParameter="Wärmerate";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEParameterValue="Wert";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEMultiValue="Werte";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEMinValue="Mindestwert";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEMaxValue="Höchstwert";
+//
+PLMParameter.HEATCAPACITYParameter="Wärmekapazität";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYParameterValue="Wert";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYMultiValue="Werte";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYMinValue="Mindestwert";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYMaxValue="Höchstwert";
+//
+PLMParameter.HEATCAPACITY_SIParameter="Wärmekapazität SI";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIParameterValue="Wert";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIMultiValue="Werte";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIMinValue="Mindestwert";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIMaxValue="Höchstwert";
+//
+PLMParameter.HEATTRANSFERParameter="Wärmeübertragung";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERParameterValue="Wert";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERMultiValue="Werte";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERMinValue="Mindestwert";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERMaxValue="Höchstwert";
+//
+PLMParameter.HEATTRANSFERRESISTANCEParameter="Wärmeübergangswiderstand";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEParameterValue="Wert";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEMultiValue="Werte";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEMinValue="Mindestwert";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEMaxValue="Höchstwert";
+//
+PLMParameter.HERTZCUBEParameter="Frequenz hoch drei";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEParameterValue="Wert";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEMultiValue="Werte";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEMinValue="Mindestwert";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEMaxValue="Höchstwert";
+//
+PLMParameter.HERTZSQUAREParameter="Frequenz hoch zwei";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREParameterValue="Wert";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREMultiValue="Werte";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREMinValue="Mindestwert";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREMaxValue="Höchstwert";
+//
+PLMParameter.HYGROMETRYParameter="Hygrometrie";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYParameterValue="Wert";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYMultiValue="Werte";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYMinValue="Mindestwert";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYMaxValue="Höchstwert";
+//
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter="Koeffizient für hydrodynamischen Widerstand";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameterValue="Wert";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTMultiValue="Werte";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTMinValue="Mindestwert";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.ILLUMINANCEParameter="Lichtintensität";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEParameterValue="Wert";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEMultiValue="Werte";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEMinValue="Mindestwert";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEMaxValue="Höchstwert";
+//
+PLMParameter.ILLUMINATIONParameter="Luminanz";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONParameterValue="Wert";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONMultiValue="Werte";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONMinValue="Mindestwert";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONMaxValue="Höchstwert";
+//
+PLMParameter.INDUCTANCEParameter="Induktivität";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEParameterValue="Wert";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEMultiValue="Werte";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEMinValue="Mindestwert";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEMaxValue="Höchstwert";
+//
+PLMParameter.INERTIAParameter="Trägheit";
+PLMParameter.INERTIAParameter.INERTIAParameterValue="Wert";
+PLMParameter.INERTIAParameter.INERTIAMultiValue="Werte";
+PLMParameter.INERTIAParameter.INERTIAMinValue="Mindestwert";
+PLMParameter.INERTIAParameter.INERTIAMaxValue="Höchstwert";
+//
+PLMParameter.INERTIAMOMENTParameter="Trägheitsprodukt";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTParameterValue="Wert";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTMultiValue="Werte";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTMinValue="Mindestwert";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTMaxValue="Höchstwert";
+//
+PLMParameter.INTENSITYParameter="Intensität";
+PLMParameter.INTENSITYParameter.INTENSITYParameterValue="Wert";
+PLMParameter.INTENSITYParameter.INTENSITYMultiValue="Werte";
+PLMParameter.INTENSITYParameter.INTENSITYMinValue="Mindestwert";
+PLMParameter.INTENSITYParameter.INTENSITYMaxValue="Höchstwert";
+//
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter="Inverser Quadratdruck";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREParameterValue="Wert";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREMultiValue="Werte";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREMinValue="Mindestwert";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.INVERSE_TEMPRTREParameter="Inverse Temperatur";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREParameterValue="Wert";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREMultiValue="Werte";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREMinValue="Mindestwert";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREMaxValue="Höchstwert";
+//
+PLMParameter.INVERSE_VELOCITYParameter="Umgekehrte Geschwindigkeit";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYParameterValue="Wert";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYMultiValue="Werte";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYMinValue="Mindestwert";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.INVERSEPOTENTIALParameter="Inverses Potenzial";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALParameterValue="Wert";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALMultiValue="Werte";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALMinValue="Mindestwert";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALMaxValue="Höchstwert";
+//
+PLMParameter.IONICSTRENGTHParameter="Ionenstärke";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHParameterValue="Wert";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHMultiValue="Werte";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHMinValue="Mindestwert";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHMaxValue="Höchstwert";
+//
+PLMParameter.IRRADIANCEParameter="Beleuchtungsdichte";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEParameterValue="Wert";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEMultiValue="Werte";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEMinValue="Mindestwert";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEMaxValue="Höchstwert";
+//
+PLMParameter.JERKParameter="Sprung";
+PLMParameter.JERKParameter.JERKParameterValue="Wert";
+PLMParameter.JERKParameter.JERKMultiValue="Werte";
+PLMParameter.JERKParameter.JERKMinValue="Mindestwert";
+PLMParameter.JERKParameter.JERKMaxValue="Höchstwert";
+//
+PLMParameter.JOULE_HEATINGParameter="Widerstandswärme";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGParameterValue="Wert";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGMultiValue="Werte";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGMinValue="Mindestwert";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGMaxValue="Höchstwert";
+//
+PLMParameter.KERMAParameter="Kerma";
+PLMParameter.KERMAParameter.KERMAParameterValue="Wert";
+PLMParameter.KERMAParameter.KERMAMultiValue="Werte";
+PLMParameter.KERMAParameter.KERMAMinValue="Mindestwert";
+PLMParameter.KERMAParameter.KERMAMaxValue="Höchstwert";
+//
+PLMParameter.KERMARATEParameter="Kermaleistung";
+PLMParameter.KERMARATEParameter.KERMARATEParameterValue="Wert";
+PLMParameter.KERMARATEParameter.KERMARATEMultiValue="Werte";
+PLMParameter.KERMARATEParameter.KERMARATEMinValue="Mindestwert";
+PLMParameter.KERMARATEParameter.KERMARATEMaxValue="Höchstwert";
+//
+PLMParameter.KINEMATICVISCOSITYParameter="Kinematische Viskosität";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYParameterValue="Wert";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYMultiValue="Werte";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYMinValue="Mindestwert";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYMaxValue="Höchstwert";
+//
+PLMParameter.LENGTHParameter="Länge";
+PLMParameter.LENGTHParameter.LENGTHParameterValue="Wert";
+PLMParameter.LENGTHParameter.LENGTHMultiValue="Werte";
+PLMParameter.LENGTHParameter.LENGTHMinValue="Mindestwert";
+PLMParameter.LENGTHParameter.LENGTHMaxValue="Höchstwert";
+//
+PLMParameter.LEVELWIDTHParameter="Niveaubreite";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHParameterValue="Wert";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHMultiValue="Werte";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHMinValue="Mindestwert";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHMaxValue="Höchstwert";
+//
+PLMParameter.LIGHTEXPOSUREParameter="Belichtung";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREParameterValue="Wert";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREMultiValue="Werte";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREMinValue="Mindestwert";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREMaxValue="Höchstwert";
+//
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter="Lineare Massendichte der Fasern";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameterValue="Wert";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSMultiValue="Werte";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSMinValue="Mindestwert";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSMaxValue="Höchstwert";
+//
+PLMParameter.LINEARCURRENTDENSITYParameter="Lineare Stromdichte";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYParameterValue="Wert";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYMultiValue="Werte";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYMinValue="Mindestwert";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.LINEARENERGYTRANSFERParameter="Lineares Energieübertragungsvermögen";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERParameterValue="Wert";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERMultiValue="Werte";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERMinValue="Mindestwert";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERMaxValue="Höchstwert";
+//
+PLMParameter.LINEARFEEDRATEParameter="Vorschub";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEParameterValue="Wert";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEMultiValue="Werte";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEMinValue="Mindestwert";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEMaxValue="Höchstwert";
+//
+PLMParameter.LINEARIONIZATIONParameter="Lineare Ionisierung";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONParameterValue="Wert";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONMultiValue="Werte";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONMinValue="Mindestwert";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONMaxValue="Höchstwert";
+//
+PLMParameter.LINEARSPINDLESPEEDParameter="Lineare Spindelgeschwindigkeit";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDParameterValue="Wert";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDMultiValue="Werte";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDMinValue="Mindestwert";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDMaxValue="Höchstwert";
+//
+PLMParameter.LINEIC_ABSORPTIONParameter="Absorptionsbelag";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONParameterValue="Wert";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONMultiValue="Werte";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONMinValue="Mindestwert";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONMaxValue="Höchstwert";
+//
+PLMParameter.LINEMASSParameter="Streckenlast";
+PLMParameter.LINEMASSParameter.LINEMASSParameterValue="Wert";
+PLMParameter.LINEMASSParameter.LINEMASSMultiValue="Werte";
+PLMParameter.LINEMASSParameter.LINEMASSMinValue="Mindestwert";
+PLMParameter.LINEMASSParameter.LINEMASSMaxValue="Höchstwert";
+//
+PLMParameter.LOGARITHMICDECREMENTParameter="Logarithmisches Dekrement";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTParameterValue="Wert";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTMultiValue="Werte";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTMinValue="Mindestwert";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTMaxValue="Höchstwert";
+//
+PLMParameter.LORENZCOEFFICIENTParameter="Lorenzkoeffizient";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTParameterValue="Wert";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTMultiValue="Werte";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.LOUNDNESSParameter="Lautstärke";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSParameterValue="Wert";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSMultiValue="Werte";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSMinValue="Mindestwert";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSMaxValue="Höchstwert";
+//
+PLMParameter.LOUNDNESSLEVELParameter="Lautstärkepegel";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELParameterValue="Wert";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELMultiValue="Werte";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELMinValue="Mindestwert";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELMaxValue="Höchstwert";
+//
+PLMParameter.LUMENParameter="Leuchtintensität";
+PLMParameter.LUMENParameter.LUMENParameterValue="Wert";
+PLMParameter.LUMENParameter.LUMENMultiValue="Werte";
+PLMParameter.LUMENParameter.LUMENMinValue="Mindestwert";
+PLMParameter.LUMENParameter.LUMENMaxValue="Höchstwert";
+//
+PLMParameter.LUMINOUS_FLUXParameter="Lichtstrom";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXParameterValue="Wert";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXMultiValue="Werte";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXMinValue="Mindestwert";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXMaxValue="Höchstwert";
+//
+PLMParameter.LUMINOUS_INTENSITYParameter="Leuchtintensität";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYParameterValue="Wert";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYMultiValue="Werte";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYMinValue="Mindestwert";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYMaxValue="Höchstwert";
+//
+PLMParameter.LUMINOUSEFFICACYParameter="Lichtausbeute";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYParameterValue="Wert";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYMultiValue="Werte";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYMinValue="Mindestwert";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYMaxValue="Höchstwert";
+//
+PLMParameter.LUMINOUSEXITANCEParameter="Spezifische Lichtausstrahlung";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEParameterValue="Wert";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEMultiValue="Werte";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEMinValue="Mindestwert";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEMaxValue="Höchstwert";
+//
+PLMParameter.MACROSCOPICCROSSSECTIONParameter="Makroskopischer Wirkungsquerschnitt";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONParameterValue="Wert";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONMultiValue="Werte";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONMinValue="Mindestwert";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETIC_PERMEABILITYParameter="Magnetische Permeabilität";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYParameterValue="Wert";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYMultiValue="Werte";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYMinValue="Mindestwert";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETICDIPOLEMOMENTParameter="Magnetisches Dipolmoment";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTParameterValue="Wert";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTMultiValue="Werte";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTMinValue="Mindestwert";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETICFIELDSTRENGTHParameter="Magnetische Feldstärke";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHParameterValue="Wert";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHMultiValue="Werte";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHMinValue="Mindestwert";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETICFLUXParameter="Magnetischer Fluss";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXParameterValue="Wert";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXMultiValue="Werte";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXMinValue="Mindestwert";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETICFLUXDENSITYParameter="Magnetische Flussdichte";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYParameterValue="Wert";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYMultiValue="Werte";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYMinValue="Mindestwert";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETICPOLARIZATIONParameter="Magnetische Polarisation";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONParameterValue="Wert";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONMultiValue="Werte";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONMinValue="Mindestwert";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETICVECTORPOTENTIALParameter="Magnetisches Vektorpotenzial";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALParameterValue="Wert";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALMultiValue="Werte";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALMinValue="Mindestwert";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALMaxValue="Höchstwert";
+//
+PLMParameter.MAGNETIZATIONParameter="Magnetisierung";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONParameterValue="Wert";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONMultiValue="Werte";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONMinValue="Mindestwert";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONMaxValue="Höchstwert";
+//
+PLMParameter.MASSParameter="Gewicht";
+PLMParameter.MASSParameter.MASSParameterValue="Wert";
+PLMParameter.MASSParameter.MASSMultiValue="Werte";
+PLMParameter.MASSParameter.MASSMinValue="Mindestwert";
+PLMParameter.MASSParameter.MASSMaxValue="Höchstwert";
+//
+PLMParameter.MASS_DIFFUSIVITYParameter="Massendiffusion";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYParameterValue="Wert";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYMultiValue="Werte";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYMinValue="Mindestwert";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYMaxValue="Höchstwert";
+//
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter="Massenfluss pro Volumen";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEParameterValue="Wert";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEMultiValue="Werte";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEMinValue="Mindestwert";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEMaxValue="Höchstwert";
+//
+PLMParameter.MASS_FLUXParameter="Größe des Massenkonzentrations-Flussvektors (Fluss pro Flächeneinheit)";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXParameterValue="Wert";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXMultiValue="Werte";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXMinValue="Mindestwert";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXMaxValue="Höchstwert";
+//
+PLMParameter.MASS_FRACTIONParameter="Massenbruchteil";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONParameterValue="Wert";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONMultiValue="Werte";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONMinValue="Mindestwert";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONMaxValue="Höchstwert";
+//
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter="Massen-Dämpfungskoeffizient";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTParameterValue="Wert";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTMultiValue="Werte";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter="Massen-Energieumwandlungskoeffizient";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTParameterValue="Wert";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTMultiValue="Werte";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.MASSFLOWParameter="Massenfluss";
+PLMParameter.MASSFLOWParameter.MASSFLOWParameterValue="Wert";
+PLMParameter.MASSFLOWParameter.MASSFLOWMultiValue="Werte";
+PLMParameter.MASSFLOWParameter.MASSFLOWMinValue="Mindestwert";
+PLMParameter.MASSFLOWParameter.MASSFLOWMaxValue="Höchstwert";
+//
+PLMParameter.MASSICFLOWParameter="Massenfluss";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWParameterValue="Wert";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWMultiValue="Werte";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWMinValue="Mindestwert";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWMaxValue="Höchstwert";
+//
+PLMParameter.MEANMASSRANGEParameter="Mittlere Reichweite";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEParameterValue="Wert";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEMultiValue="Werte";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEMinValue="Mindestwert";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEMaxValue="Höchstwert";
+//
+PLMParameter.MECHANICALIMPEDANCEParameter="Mechanische Impedanz";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEParameterValue="Wert";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEMultiValue="Werte";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEMinValue="Mindestwert";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEMaxValue="Höchstwert";
+//
+PLMParameter.MOBILITYParameter="Mobilität";
+PLMParameter.MOBILITYParameter.MOBILITYParameterValue="Wert";
+PLMParameter.MOBILITYParameter.MOBILITYMultiValue="Werte";
+PLMParameter.MOBILITYParameter.MOBILITYMinValue="Mindestwert";
+PLMParameter.MOBILITYParameter.MOBILITYMaxValue="Höchstwert";
+//
+PLMParameter.MODAL_DAMPINGParameter="Modale Dämpfung";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGParameterValue="Wert";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGMultiValue="Werte";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGMinValue="Mindestwert";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGMaxValue="Höchstwert";
+//
+PLMParameter.MODAL_MASSParameter="Modale Masse";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSParameterValue="Wert";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSMultiValue="Werte";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSMinValue="Mindestwert";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSMaxValue="Höchstwert";
+//
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter="Faktor der Modalanteile";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORParameterValue="Wert";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORMultiValue="Werte";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORMinValue="Mindestwert";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORMaxValue="Höchstwert";
+//
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter="Molarer Absorptionskoeffizient";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTParameterValue="Wert";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTMultiValue="Werte";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.MOLARCONCENTRATIONParameter="Molare Konzentration";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONParameterValue="Wert";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONMultiValue="Werte";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONMinValue="Mindestwert";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONMaxValue="Höchstwert";
+//
+PLMParameter.MOLARCONDUCTIVITYParameter="Molare Leitfähigkeit";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYParameterValue="Wert";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYMultiValue="Werte";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYMinValue="Mindestwert";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.MOLARHEATCAPACITYParameter="Molare Wärmekapazität";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYParameterValue="Wert";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYMultiValue="Werte";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYMinValue="Mindestwert";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYMaxValue="Höchstwert";
+//
+PLMParameter.MOLARINTERNALENERGYParameter="Molare innere Energie";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYParameterValue="Wert";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYMultiValue="Werte";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYMinValue="Mindestwert";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYMaxValue="Höchstwert";
+//
+PLMParameter.MOLARVOLUMEParameter="Molares Volumen";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEParameterValue="Wert";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEMultiValue="Werte";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEMinValue="Mindestwert";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEMaxValue="Höchstwert";
+//
+PLMParameter.MOLEParameter="Mol";
+PLMParameter.MOLEParameter.MOLEParameterValue="Wert";
+PLMParameter.MOLEParameter.MOLEMultiValue="Werte";
+PLMParameter.MOLEParameter.MOLEMinValue="Mindestwert";
+PLMParameter.MOLEParameter.MOLEMaxValue="Höchstwert";
+//
+PLMParameter.MOLE_PER_MASSParameter="Mol pro Masse";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSParameterValue="Wert";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSMultiValue="Werte";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSMinValue="Mindestwert";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSMaxValue="Höchstwert";
+//
+PLMParameter.MOLECULARDENSITYParameter="Molekulardichte";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYParameterValue="Wert";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYMultiValue="Werte";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYMinValue="Mindestwert";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.MOLECULARENTHALPYParameter="Molekulare Wärmefunktion";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYParameterValue="Wert";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYMultiValue="Werte";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYMinValue="Mindestwert";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYMaxValue="Höchstwert";
+//
+PLMParameter.MOLECULARENTROPYParameter="Molekulare Entropie";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYParameterValue="Wert";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYMultiValue="Werte";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYMinValue="Mindestwert";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYMaxValue="Höchstwert";
+//
+PLMParameter.MOLECULARFLOWParameter="Molekularströmung";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWParameterValue="Wert";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWMultiValue="Werte";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWMinValue="Mindestwert";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWMaxValue="Höchstwert";
+//
+PLMParameter.MOLECULARWEIGHTParameter="Molekulargewicht";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTParameterValue="Wert";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTMultiValue="Werte";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTMinValue="Mindestwert";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTMaxValue="Höchstwert";
+//
+PLMParameter.MOMENTParameter="Moment";
+PLMParameter.MOMENTParameter.MOMENTParameterValue="Wert";
+PLMParameter.MOMENTParameter.MOMENTMultiValue="Werte";
+PLMParameter.MOMENTParameter.MOMENTMinValue="Mindestwert";
+PLMParameter.MOMENTParameter.MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter="Moment über Beschleunigung";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONParameterValue="Wert";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONMultiValue="Werte";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter="Moment über Abweichung";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTParameterValue="Wert";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTMultiValue="Werte";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_PRESSUREParameter="Moment über Druck";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_PULSATIONParameter="Winkeldämpfung";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONParameterValue="Wert";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONMultiValue="Werte";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_ROTATIONParameter="Moment über Rotation";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONParameterValue="Wert";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONMultiValue="Werte";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter="Moment über Drehbeschleunigung";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameterValue="Wert";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONMultiValue="Werte";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_VELOCITYParameter="Moment über Geschwindigkeit";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYParameterValue="Wert";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYMultiValue="Werte";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter="Moment über Volumenbeschleunigung";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter="Moment über Volumenschnelle";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.MOMENT_PER_LENGTHParameter="Moment pro Länge";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHParameterValue="Wert";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHMultiValue="Werte";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHMinValue="Mindestwert";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHMaxValue="Höchstwert";
+//
+PLMParameter.MOMENTUMParameter="Impuls";
+PLMParameter.MOMENTUMParameter.MOMENTUMParameterValue="Wert";
+PLMParameter.MOMENTUMParameter.MOMENTUMMultiValue="Werte";
+PLMParameter.MOMENTUMParameter.MOMENTUMMinValue="Mindestwert";
+PLMParameter.MOMENTUMParameter.MOMENTUMMaxValue="Höchstwert";
+//
+PLMParameter.NEUTRONFLUENCERATEParameter="Neutronenflussdichte";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEParameterValue="Wert";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEMultiValue="Werte";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEMinValue="Mindestwert";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEMaxValue="Höchstwert";
+//
+PLMParameter.NUCLEARMAGNETONParameter="Kernmagneton";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONParameterValue="Wert";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONMultiValue="Werte";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONMinValue="Mindestwert";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONMaxValue="Höchstwert";
+//
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter="Kernquadrupolmoment";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTParameterValue="Wert";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTMultiValue="Werte";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTMinValue="Mindestwert";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTMaxValue="Höchstwert";
+//
+PLMParameter.NUMBERDENSITYParameter="Teilchendichte";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYParameterValue="Wert";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYMultiValue="Werte";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYMinValue="Mindestwert";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.NUMBEROFMOLECULESParameter="Anzahl der Moleküle";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESParameterValue="Wert";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESMultiValue="Werte";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESMinValue="Mindestwert";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESMaxValue="Höchstwert";
+//
+PLMParameter.OMEGA_SQUAREDParameter="Vibrationseigenwert";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDParameterValue="Wert";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDMultiValue="Werte";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDMinValue="Mindestwert";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDMaxValue="Höchstwert";
+//
+PLMParameter.OSMOTICPRESSUREParameter="Osmotischer Druck";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREParameterValue="Wert";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREMultiValue="Werte";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREMinValue="Mindestwert";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.PARTICLEFLUENCEParameter="Teilchenfluenz";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEParameterValue="Wert";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEMultiValue="Werte";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEMinValue="Mindestwert";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEMaxValue="Höchstwert";
+//
+PLMParameter.PARTICLEFLUENCERATEParameter="Teilchenflussdichte";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEParameterValue="Wert";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEMultiValue="Werte";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEMinValue="Mindestwert";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEMaxValue="Höchstwert";
+//
+PLMParameter.PER_ANGLEParameter="Pro Winkel";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEParameterValue="Wert";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEMultiValue="Werte";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEMinValue="Mindestwert";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEMaxValue="Höchstwert";
+//
+PLMParameter.PER_ANGLE_SQUAREParameter="Pro Winkel im Quadrat";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREParameterValue="Wert";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREMultiValue="Werte";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREMinValue="Mindestwert";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREMaxValue="Höchstwert";
+//
+PLMParameter.PERMEANCEParameter="Permeanz";
+PLMParameter.PERMEANCEParameter.PERMEANCEParameterValue="Wert";
+PLMParameter.PERMEANCEParameter.PERMEANCEMultiValue="Werte";
+PLMParameter.PERMEANCEParameter.PERMEANCEMinValue="Mindestwert";
+PLMParameter.PERMEANCEParameter.PERMEANCEMaxValue="Höchstwert";
+//
+PLMParameter.PERMITTIVITYParameter="Permittivität";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYParameterValue="Wert";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYMultiValue="Werte";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYMinValue="Mindestwert";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.PHASECOEFFICIENTParameter="Phasenkoeffizient";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTParameterValue="Wert";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTMultiValue="Werte";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTMinValue="Mindestwert";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.POWERParameter="Elektrische Kraft";
+PLMParameter.POWERParameter.POWERParameterValue="Wert";
+PLMParameter.POWERParameter.POWERMultiValue="Werte";
+PLMParameter.POWERParameter.POWERMinValue="Mindestwert";
+PLMParameter.POWERParameter.POWERMaxValue="Höchstwert";
+//
+PLMParameter.POWER_DENSITYParameter="Leistungsdichte";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYParameterValue="Wert";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYMultiValue="Werte";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYMinValue="Mindestwert";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITYParameter="Spektrale Leistungsdichte";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter="Spektraldichte der Leistung - Beschleunigung";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter="Spektraldichte der Leistung - Abweichung";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter="Spektraldichte der Leistung - Kraft";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter="Spektraldichte der Leistung - Moment";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter="Spektraldichte der Leistung - Druck";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter="Spektraldichte der Leistung - Drehung";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter="Spektraldichte der Leistung - Drehbeschleunigung";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter="Spektraldichte der Leistung - Drehgeschwindigkeit";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter="Spektraldichte der Leistung - Geschwindigkeit";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameterValue="Wert";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYMultiValue="Werte";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYMinValue="Mindestwert";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.POWERbisParameter="Antrieb";
+PLMParameter.POWERbisParameter.POWERbisParameterValue="Wert";
+PLMParameter.POWERbisParameter.POWERbisMultiValue="Werte";
+PLMParameter.POWERbisParameter.POWERbisMinValue="Mindestwert";
+PLMParameter.POWERbisParameter.POWERbisMaxValue="Höchstwert";
+//
+PLMParameter.POYNTINGVECTORParameter="Poynting-Vektor";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORParameterValue="Wert";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORMultiValue="Werte";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORMinValue="Mindestwert";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORMaxValue="Höchstwert";
+//
+PLMParameter.PRESSUREParameter="Druck";
+PLMParameter.PRESSUREParameter.PRESSUREParameterValue="Wert";
+PLMParameter.PRESSUREParameter.PRESSUREMultiValue="Werte";
+PLMParameter.PRESSUREParameter.PRESSUREMinValue="Mindestwert";
+PLMParameter.PRESSUREParameter.PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_GRADIENTParameter="Druckgradient";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTParameterValue="Wert";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTMultiValue="Werte";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTMinValue="Mindestwert";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter="Druck über Beschleunigung";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_AREAParameter="Druck über Bereich";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter="Druck über Abweichung";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_FORCEParameter="Druck über Kraft";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_MOMENTParameter="Druck über Moment";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter="Druck über normaler Geschwindigkeit";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_PULSATIONParameter="Druck über Pulsation";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_ROTATIONParameter="Druck über Rotation";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter="Druck über Drehbeschleunigung";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter="Druck über Zeit im Quadrat";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_TIMEParameter="Druck über Zeit";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter="Druck über Spannung";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter="Druck über Volumenbeschleunigung";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter="Druck über Volumenschnelle";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.PRESSURECOEFFICIENTParameter="Druckkoeffizient";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTParameterValue="Wert";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTMultiValue="Werte";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTMinValue="Mindestwert";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.PRESSUREXFORCEParameter="Druck x Kraft";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEParameterValue="Wert";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEMultiValue="Werte";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEMinValue="Mindestwert";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEMaxValue="Höchstwert";
+//
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter="Druck x Kraft über Frequenz ";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYParameterValue="Wert";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYMultiValue="Werte";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYMinValue="Mindestwert";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYMaxValue="Höchstwert";
+//
+PLMParameter.PROPAGATIONCOEFFICIENTParameter="Ausbreitungskoeffizient";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTParameterValue="Wert";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTMultiValue="Werte";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.PULSATIONParameter="Pulsation";
+PLMParameter.PULSATIONParameter.PULSATIONParameterValue="Wert";
+PLMParameter.PULSATIONParameter.PULSATIONMultiValue="Werte";
+PLMParameter.PULSATIONParameter.PULSATIONMinValue="Mindestwert";
+PLMParameter.PULSATIONParameter.PULSATIONMaxValue="Höchstwert";
+//
+PLMParameter.PULSATION_OVER_FORCEParameter="Pulsation über Kraft";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEParameterValue="Wert";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEMultiValue="Werte";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.PULSATION_OVER_MOMENTParameter="Pulsation über Moment";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTParameterValue="Wert";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTMultiValue="Werte";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.PULSATION_OVER_PRESSUREParameter="Pulsation über Druck";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter="Pulsation über Volumenbeschleunigung";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter="Pulsation über Volumenschnelle";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter="Quadratischer Temperaturkoeffizient";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTParameterValue="Wert";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTMultiValue="Werte";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTMinValue="Mindestwert";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.QUANTITYOFLIGHTParameter="Lichtmenge";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTParameterValue="Wert";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTMultiValue="Werte";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTMinValue="Mindestwert";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTMaxValue="Höchstwert";
+//
+PLMParameter.QUIETNESS_INDEXParameter="Stilleindex";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXParameterValue="Wert";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXMultiValue="Werte";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXMinValue="Mindestwert";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXMaxValue="Höchstwert";
+//
+PLMParameter.RADIANCEParameter="Strahldichte";
+PLMParameter.RADIANCEParameter.RADIANCEParameterValue="Wert";
+PLMParameter.RADIANCEParameter.RADIANCEMultiValue="Werte";
+PLMParameter.RADIANCEParameter.RADIANCEMinValue="Mindestwert";
+PLMParameter.RADIANCEParameter.RADIANCEMaxValue="Höchstwert";
+//
+PLMParameter.RADIANT_FLUXParameter="Strahlungsfluss";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXParameterValue="Wert";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXMultiValue="Werte";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXMinValue="Mindestwert";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXMaxValue="Höchstwert";
+//
+PLMParameter.RADIANT_INTENSITYParameter="Strahlstärke";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYParameterValue="Wert";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYMultiValue="Werte";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYMinValue="Mindestwert";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYMaxValue="Höchstwert";
+//
+PLMParameter.RADIANTENERGYParameter="Strahlungsenergie";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYParameterValue="Wert";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYMultiValue="Werte";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYMinValue="Mindestwert";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYMaxValue="Höchstwert";
+//
+PLMParameter.RADIANTENERGYFLUENCERATEParameter="Strahlungsenergieflussdichte";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEParameterValue="Wert";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEMultiValue="Werte";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEMinValue="Mindestwert";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEMaxValue="Höchstwert";
+//
+PLMParameter.RADIOACTIVITYParameter="Radioaktivität";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYParameterValue="Wert";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYMultiValue="Werte";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYMinValue="Mindestwert";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.RATEParameter="Frequenz";
+PLMParameter.RATEParameter.RATEParameterValue="Wert";
+PLMParameter.RATEParameter.RATEMultiValue="Werte";
+PLMParameter.RATEParameter.RATEMinValue="Mindestwert";
+PLMParameter.RATEParameter.RATEMaxValue="Höchstwert";
+//
+PLMParameter.RatioParameter="Faktor";
+PLMParameter.RatioParameter.RatioParameterValue="Wert";
+PLMParameter.RatioParameter.RatioMultiValue="Werte";
+PLMParameter.RatioParameter.RatioMinValue="Mindestwert";
+PLMParameter.RatioParameter.RatioMaxValue="Höchstwert";
+//
+PLMParameter.REACTIVEPOWERParameter="Blindleistung";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERParameterValue="Wert";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERMultiValue="Werte";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERMinValue="Mindestwert";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERMaxValue="Höchstwert";
+//
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter="Rekombinationskoeffizient";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTParameterValue="Wert";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTMultiValue="Werte";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.RELUCTANCEParameter="Reluktanz";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEParameterValue="Wert";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEMultiValue="Werte";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEMinValue="Mindestwert";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEMaxValue="Höchstwert";
+//
+PLMParameter.RESISTANCEParameter="Elektrischer Widerstand";
+PLMParameter.RESISTANCEParameter.RESISTANCEParameterValue="Wert";
+PLMParameter.RESISTANCEParameter.RESISTANCEMultiValue="Werte";
+PLMParameter.RESISTANCEParameter.RESISTANCEMinValue="Mindestwert";
+PLMParameter.RESISTANCEParameter.RESISTANCEMaxValue="Höchstwert";
+//
+PLMParameter.RESISTIVITYParameter="Resistivität";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYParameterValue="Wert";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYMultiValue="Werte";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYMinValue="Mindestwert";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.RICHARDSONCONSTANTParameter="Richardsonkonstante";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTParameterValue="Wert";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTMultiValue="Werte";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTMinValue="Mindestwert";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTMaxValue="Höchstwert";
+//
+PLMParameter.ROTATION_OVER_FORCEParameter="Rotation über Kraft";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEParameterValue="Wert";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEMultiValue="Werte";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.ROTATION_OVER_MOMENTParameter="Rotation über Moment";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTParameterValue="Wert";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTMultiValue="Werte";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.ROTATION_OVER_PRESSUREParameter="Rotation über Druck";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter="Rotation über Volumenbeschleunigung";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter="Rotation über Volumenschnelle";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter="Drehbeschleunigung über Kraft";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameterValue="Wert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEMultiValue="Werte";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter="Drehbeschleunigung über Moment";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameterValue="Wert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTMultiValue="Werte";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter="Drehbeschleunigung über Druck";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter="Drehbeschleunigung über Volumenbeschleunigung";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter="Drehbeschleunigung über Volumenschnelle";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.ROUGHNESSParameter="Rauigkeit";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSParameterValue="Wert";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSMultiValue="Werte";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSMinValue="Mindestwert";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSMaxValue="Höchstwert";
+//
+PLMParameter.RPMParameter="Satz pro Minute";
+PLMParameter.RPMParameter.RPMParameterValue="Wert";
+PLMParameter.RPMParameter.RPMMultiValue="Werte";
+PLMParameter.RPMParameter.RPMMinValue="Mindestwert";
+PLMParameter.RPMParameter.RPMMaxValue="Höchstwert";
+//
+PLMParameter.RSTIFNESParameter="Winkelsteifigkeit";
+PLMParameter.RSTIFNESParameter.RSTIFNESParameterValue="Wert";
+PLMParameter.RSTIFNESParameter.RSTIFNESMultiValue="Werte";
+PLMParameter.RSTIFNESParameter.RSTIFNESMinValue="Mindestwert";
+PLMParameter.RSTIFNESParameter.RSTIFNESMaxValue="Höchstwert";
+//
+PLMParameter.SECTIONMODULUSParameter="Widerstandsmoment";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSParameterValue="Wert";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSMultiValue="Werte";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSMinValue="Mindestwert";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSMaxValue="Höchstwert";
+//
+PLMParameter.SEEBECKCOEFFICIENTParameter="Seebeckkoeffizient";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTParameterValue="Wert";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTMultiValue="Werte";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.SLOWINGDOWNDENSITYParameter="Bremsdichte";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYParameterValue="Wert";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYMultiValue="Werte";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYMinValue="Mindestwert";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.SOLID_ANGLEParameter="Raumwinkel";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEParameterValue="Wert";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEMultiValue="Werte";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEMinValue="Mindestwert";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEMaxValue="Höchstwert";
+//
+PLMParameter.SOUND_PRESSURE_LEVELParameter="Schalldruckebene";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELParameterValue="Wert";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELMultiValue="Werte";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELMinValue="Mindestwert";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELMaxValue="Höchstwert";
+//
+PLMParameter.SOUNDPOWERLEVELParameter="Schalleistungspegel";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELParameterValue="Wert";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELMultiValue="Werte";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELMinValue="Mindestwert";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter="Spezifische Absorptionsrate für elektrische Energie";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEParameterValue="Wert";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEMultiValue="Werte";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEMinValue="Mindestwert";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter="Spezifische Wärmekapazität - Temperatur (kubischer Abschnitt)";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameterValue="Wert";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTMultiValue="Werte";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTMinValue="Mindestwert";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter="Spezifische Wärmekapazität - Temperatur (linearer Abschnitt)";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameterValue="Wert";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTMultiValue="Werte";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTMinValue="Mindestwert";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter="Spezifische Wärmekapazität - Temperatur (quadratischer Abschnitt)";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameterValue="Wert";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTMultiValue="Werte";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTMinValue="Mindestwert";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter="Spezifische Wärme pro Volumeneinheit";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameterValue="Wert";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEMultiValue="Werte";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEMinValue="Mindestwert";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFIC_SURFACE_AREAParameter="Bestimmter Flächenbereich";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAParameterValue="Wert";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAMultiValue="Werte";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAMinValue="Mindestwert";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter="Feldimpedanz";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEParameterValue="Wert";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEMultiValue="Werte";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEMinValue="Mindestwert";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFICACTIVITYParameter="Spezifische Aktivität";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYParameterValue="Wert";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYMultiValue="Werte";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYMinValue="Mindestwert";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFICENERGYParameter="Spezifische Energie";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYParameterValue="Wert";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYMultiValue="Werte";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYMinValue="Mindestwert";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFICENERGYIMPARTEDParameter="Übertragene spezifische Energie";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDParameterValue="Wert";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDMultiValue="Werte";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDMinValue="Mindestwert";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFICVOLUMEParameter="Spezifisches Volumen";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEParameterValue="Wert";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEMultiValue="Werte";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEMinValue="Mindestwert";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEMaxValue="Höchstwert";
+//
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter="Spezifisches Volumen über Temperatur";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameterValue="Wert";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREMultiValue="Werte";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREMinValue="Mindestwert";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREMaxValue="Höchstwert";
+//
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter="Doppeltdifferenzieller Wirkungsquerschnitt";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONParameterValue="Wert";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONMultiValue="Werte";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONMinValue="Mindestwert";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONMaxValue="Höchstwert";
+//
+PLMParameter.SPECTRALCONCENTRATIONParameter="Spektrale Dichte";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONParameterValue="Wert";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONMultiValue="Werte";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONMinValue="Mindestwert";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONMaxValue="Höchstwert";
+//
+PLMParameter.SPECTRALCROSSSECTIONParameter="Spektraler Wirkungsquerschnitt";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONParameterValue="Wert";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONMultiValue="Werte";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONMinValue="Mindestwert";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONMaxValue="Höchstwert";
+//
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter="Spektrale Strahlungsenergiedichte";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYParameterValue="Wert";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYMultiValue="Werte";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYMinValue="Mindestwert";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.SPEEDParameter="Geschwindigkeit";
+PLMParameter.SPEEDParameter.SPEEDParameterValue="Wert";
+PLMParameter.SPEEDParameter.SPEEDMultiValue="Werte";
+PLMParameter.SPEEDParameter.SPEEDMinValue="Mindestwert";
+PLMParameter.SPEEDParameter.SPEEDMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_ACCELERATIONParameter="Quadrat der Beschleunigung";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONParameterValue="Wert";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONMultiValue="Werte";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_DISPLACEMENTParameter="Quadrat der Abweichung";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTParameterValue="Wert";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTMultiValue="Werte";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_FORCEParameter="Quadrat der Kraft";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEParameterValue="Wert";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEMultiValue="Werte";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEMinValue="Mindestwert";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_MOMENTParameter="Quadrat des Moments";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTParameterValue="Wert";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTMultiValue="Werte";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTMinValue="Mindestwert";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_PRESSUREParameter="Druck im Quadrat";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREParameterValue="Wert";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREMultiValue="Werte";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREMinValue="Mindestwert";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_PULSATIONParameter="Quadrat der Schwingung";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONParameterValue="Wert";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONMultiValue="Werte";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONMinValue="Mindestwert";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_ROTATIONParameter="Quadrat der Drehung";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONParameterValue="Wert";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONMultiValue="Werte";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONMinValue="Mindestwert";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter="Quadrat der Drehbeschleunigung";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONParameterValue="Wert";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONMultiValue="Werte";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_TIMEParameter="Quadrat der Zeit";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEParameterValue="Wert";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEMultiValue="Werte";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEMinValue="Mindestwert";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_VELOCITYParameter="Quadrat der Geschwindigkeit";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYParameterValue="Wert";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYMultiValue="Werte";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYMinValue="Mindestwert";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter="Quadrat der Volumenbeschleunigung";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter="Quadrat der Volumenbeschleunigung über Frequenz";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameterValue="Wert";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYMultiValue="Werte";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYMinValue="Mindestwert";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter="Quadrat der Volumenschnelle";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter="Quadrat der Volumenschnelle über Frequenz";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameterValue="Wert";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYMultiValue="Werte";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYMinValue="Mindestwert";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYMaxValue="Höchstwert";
+//
+PLMParameter.STRAIN_RATEParameter="Dehnungsrate";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEParameterValue="Wert";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEMultiValue="Werte";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEMinValue="Mindestwert";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEMaxValue="Höchstwert";
+//
+PLMParameter.STRESSParameter="Spannung";
+PLMParameter.STRESSParameter.STRESSParameterValue="Wert";
+PLMParameter.STRESSParameter.STRESSMultiValue="Werte";
+PLMParameter.STRESSParameter.STRESSMinValue="Mindestwert";
+PLMParameter.STRESSParameter.STRESSMaxValue="Höchstwert";
+//
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter="Spannung über Temperatur im Quadrat";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSParameterValue="Wert";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSMultiValue="Werte";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSMinValue="Mindestwert";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSMaxValue="Höchstwert";
+//
+PLMParameter.SURFACE_POWER_DENSITYParameter="Flächenleistungsdichte";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYParameterValue="Wert";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYMultiValue="Werte";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYMinValue="Mindestwert";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYMaxValue="Höchstwert";
+//
+PLMParameter.SURFACEDENSITYOFCHARGEParameter="Oberflächendichte der Ladung";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEParameterValue="Wert";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEMultiValue="Werte";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEMinValue="Mindestwert";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEMaxValue="Höchstwert";
+//
+PLMParameter.SURFACETENSIONParameter="Oberflächenspannung";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONParameterValue="Wert";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONMultiValue="Werte";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONMinValue="Mindestwert";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONMaxValue="Höchstwert";
+//
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter="Oberflächen-Dämpferkonstante";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTParameterValue="Wert";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTMultiValue="Werte";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTMinValue="Mindestwert";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTMaxValue="Höchstwert";
+//
+PLMParameter.SURFACICMASSParameter="Masse der Fläche";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSParameterValue="Wert";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSMultiValue="Werte";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSMinValue="Mindestwert";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSMaxValue="Höchstwert";
+//
+PLMParameter.SURFACICSPINDLESPEEDParameter="Spindelgeschwindigkeit auf Flächen";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDParameterValue="Wert";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDMultiValue="Werte";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDMinValue="Mindestwert";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDMaxValue="Höchstwert";
+//
+PLMParameter.TEMPERATURE_GRADIENTParameter="Temperaturgradient";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTParameterValue="Wert";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTMultiValue="Werte";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTMinValue="Mindestwert";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTMaxValue="Höchstwert";
+//
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter="Temperatur über Druck";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.TEMPERATUREDIFFERENCEParameter="Temperaturdifferenz";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEParameterValue="Wert";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEMultiValue="Werte";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEMinValue="Mindestwert";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEMaxValue="Höchstwert";
+//
+PLMParameter.TEMPERATURESLOPEParameter="Temperaturänderung";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEParameterValue="Wert";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEMultiValue="Werte";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEMinValue="Mindestwert";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEMaxValue="Höchstwert";
+//
+PLMParameter.TEMPRTREParameter="Temperatur";
+PLMParameter.TEMPRTREParameter.TEMPRTREParameterValue="Wert";
+PLMParameter.TEMPRTREParameter.TEMPRTREMultiValue="Werte";
+PLMParameter.TEMPRTREParameter.TEMPRTREMinValue="Mindestwert";
+PLMParameter.TEMPRTREParameter.TEMPRTREMaxValue="Höchstwert";
+//
+PLMParameter.THERMALCONDUCTANCEParameter="Thermischer Leitwert";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEParameterValue="Wert";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEMultiValue="Werte";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEMinValue="Mindestwert";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEMaxValue="Höchstwert";
+//
+PLMParameter.THERMALCONDUCTIVITYParameter="Wärmeleitfähigkeit";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYParameterValue="Wert";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYMultiValue="Werte";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYMinValue="Mindestwert";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYMaxValue="Höchstwert";
+//
+PLMParameter.THERMALDIFFUSIVITYParameter="Temperaturleitfähigkeit";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYParameterValue="Wert";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYMultiValue="Werte";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYMinValue="Mindestwert";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYMaxValue="Höchstwert";
+//
+PLMParameter.THERMALINSULANCEParameter="Thermische Isolierung";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEParameterValue="Wert";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEMultiValue="Werte";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEMinValue="Mindestwert";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEMaxValue="Höchstwert";
+//
+PLMParameter.THERMALRESISTANCEParameter="Thermischer Widerstand";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEParameterValue="Wert";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEMultiValue="Werte";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEMinValue="Mindestwert";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEMaxValue="Höchstwert";
+//
+PLMParameter.THERMALTRANSMITTANCEParameter="Wärmedurchgangswert";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEParameterValue="Wert";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEMultiValue="Werte";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEMinValue="Mindestwert";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEMaxValue="Höchstwert";
+//
+PLMParameter.THICKNESSParameter="Dicke";
+PLMParameter.THICKNESSParameter.THICKNESSParameterValue="Wert";
+PLMParameter.THICKNESSParameter.THICKNESSMultiValue="Werte";
+PLMParameter.THICKNESSParameter.THICKNESSMinValue="Mindestwert";
+PLMParameter.THICKNESSParameter.THICKNESSMaxValue="Höchstwert";
+//
+PLMParameter.THOMSONCOEFFICIENTParameter="Thomsonkoeffizient";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTParameterValue="Wert";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTMultiValue="Werte";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTMinValue="Mindestwert";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.TIMEParameter="Zeit";
+PLMParameter.TIMEParameter.TIMEParameterValue="Wert";
+PLMParameter.TIMEParameter.TIMEMultiValue="Werte";
+PLMParameter.TIMEParameter.TIMEMinValue="Mindestwert";
+PLMParameter.TIMEParameter.TIMEMaxValue="Höchstwert";
+//
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter="Zeitintegral elektrischer Strom pro Fläche";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameterValue="Wert";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAMultiValue="Werte";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAMinValue="Mindestwert";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAMaxValue="Höchstwert";
+//
+PLMParameter.TORQUEParameter="Drehmoment";
+PLMParameter.TORQUEParameter.TORQUEParameterValue="Wert";
+PLMParameter.TORQUEParameter.TORQUEMultiValue="Werte";
+PLMParameter.TORQUEParameter.TORQUEMinValue="Mindestwert";
+PLMParameter.TORQUEParameter.TORQUEMaxValue="Höchstwert";
+//
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter="Atomares Bremsvermögen";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERParameterValue="Wert";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERMultiValue="Werte";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERMinValue="Mindestwert";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERMaxValue="Höchstwert";
+//
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter="Lineares Bremsvermögen";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERParameterValue="Wert";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERMultiValue="Werte";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERMinValue="Mindestwert";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERMaxValue="Höchstwert";
+//
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter="Massenbremsvermögen";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERParameterValue="Wert";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERMultiValue="Werte";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERMinValue="Mindestwert";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERMaxValue="Höchstwert";
+//
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter="Gesamtneutronenquelldichte";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYParameterValue="Wert";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYMultiValue="Werte";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYMinValue="Mindestwert";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYMaxValue="Höchstwert";
+//
+PLMParameter.TRANSCONDUCTANCEParameter="Transkonduktanz";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEParameterValue="Wert";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEMultiValue="Werte";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEMinValue="Mindestwert";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEMaxValue="Höchstwert";
+//
+PLMParameter.TRANSMISSIONParameter="Übertragung";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONParameterValue="Wert";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONMultiValue="Werte";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONMinValue="Mindestwert";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONMaxValue="Höchstwert";
+//
+PLMParameter.TSTIFNESParameter="Versteifungskonstante";
+PLMParameter.TSTIFNESParameter.TSTIFNESParameterValue="Wert";
+PLMParameter.TSTIFNESParameter.TSTIFNESMultiValue="Werte";
+PLMParameter.TSTIFNESParameter.TSTIFNESMinValue="Mindestwert";
+PLMParameter.TSTIFNESParameter.TSTIFNESMaxValue="Höchstwert";
+//
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter="Dissipationsrate der Turbulenzenergie";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameterValue="Wert";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEMultiValue="Werte";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEMinValue="Mindestwert";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEMaxValue="Höchstwert";
+//
+PLMParameter.TWISTParameter="Verwindung";
+PLMParameter.TWISTParameter.TWISTParameterValue="Wert";
+PLMParameter.TWISTParameter.TWISTMultiValue="Werte";
+PLMParameter.TWISTParameter.TWISTMinValue="Mindestwert";
+PLMParameter.TWISTParameter.TWISTMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITY_OVER_FORCEParameter="Geschwindigkeit über Kraft";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEParameterValue="Wert";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEMultiValue="Werte";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITY_OVER_MOMENTParameter="Geschwindigkeit über Moment";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTParameterValue="Wert";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTMultiValue="Werte";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITY_OVER_PRESSUREParameter="Geschwindigkeit über Druck";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter="Geschwindigkeit über Spannung";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEParameterValue="Wert";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEMultiValue="Werte";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEMinValue="Mindestwert";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter="Geschwindigkeit über Volumenbeschleunigung";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter="Geschwindigkeit über Volumenschnelle";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITY_POTENTIALParameter="Potenzial der Schallschnelle";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALParameterValue="Wert";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALMultiValue="Werte";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALMinValue="Mindestwert";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITYXFORCEParameter="Geschwindigkeit x Kraft";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEParameterValue="Wert";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEMultiValue="Werte";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEMinValue="Mindestwert";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITYXPRESSUREParameter="Geschwindigkeit x Druck";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREParameterValue="Wert";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREMultiValue="Werte";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREMinValue="Mindestwert";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter="Geschwindigkeit x Volumenbeschleunigung";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VISCOUS_DAMPINGParameter="Proportionale Dämpfung";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGParameterValue="Wert";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGMultiValue="Werte";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGMinValue="Mindestwert";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGMaxValue="Höchstwert";
+//
+PLMParameter.VOL_FLOWParameter="Volumenfluss";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWParameterValue="Wert";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWMultiValue="Werte";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWMinValue="Mindestwert";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWMaxValue="Höchstwert";
+//
+PLMParameter.VOLFORCEParameter="Volumetrische Kraft";
+PLMParameter.VOLFORCEParameter.VOLFORCEParameterValue="Wert";
+PLMParameter.VOLFORCEParameter.VOLFORCEMultiValue="Werte";
+PLMParameter.VOLFORCEParameter.VOLFORCEMinValue="Mindestwert";
+PLMParameter.VOLFORCEParameter.VOLFORCEMaxValue="Höchstwert";
+//
+PLMParameter.VOLTAGEParameter="Elektrische Spannung";
+PLMParameter.VOLTAGEParameter.VOLTAGEParameterValue="Wert";
+PLMParameter.VOLTAGEParameter.VOLTAGEMultiValue="Werte";
+PLMParameter.VOLTAGEParameter.VOLTAGEMinValue="Mindestwert";
+PLMParameter.VOLTAGEParameter.VOLTAGEMaxValue="Höchstwert";
+//
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter="Spannung über Beschleunigung";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONParameterValue="Wert";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONMultiValue="Werte";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter="Spannung über Verschiebung";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTParameterValue="Wert";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTMultiValue="Werte";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter="Spannung über Druck";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREParameterValue="Wert";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREMultiValue="Werte";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREMinValue="Mindestwert";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREMaxValue="Höchstwert";
+//
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter="Spannung über Geschwindigkeit";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYParameterValue="Wert";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYMultiValue="Werte";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYMinValue="Mindestwert";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.VOLTAGESLOPEParameter="Spannungsänderung";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEParameterValue="Wert";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEMultiValue="Werte";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEMinValue="Mindestwert";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEMaxValue="Höchstwert";
+//
+PLMParameter.VOLUMEParameter="Volumen";
+PLMParameter.VOLUMEParameter.VOLUMEParameterValue="Wert";
+PLMParameter.VOLUMEParameter.VOLUMEMultiValue="Werte";
+PLMParameter.VOLUMEParameter.VOLUMEMinValue="Mindestwert";
+PLMParameter.VOLUMEParameter.VOLUMEMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATIONParameter="Volumenbeschleunigung";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter="Volumenbeschleunigung über Beschleunigung";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter="Volumenbeschleunigung über Abweichung";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter="Volumenbeschleunigung über Kraft";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter="Volumenbeschleunigung über Moment";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter="Volumenbeschleunigung über Pulsation";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter="Volumenbeschleunigung über Rotation";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter="Volumenbeschleunigung über Drehbeschleunigung";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter="Volumenbeschleunigung über Geschwindigkeit";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameterValue="Wert";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYMultiValue="Werte";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYMinValue="Mindestwert";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITYParameter="Volumenschnelle";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter="Volumenschnelle über Beschleunigung";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter="Volumenschnelle über Abweichung";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter="Volumenschnelle über Kraft";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter="Volumenschnelle über Moment";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter="Volumenschnelle über Pulsation";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter="Volumenschnelle über Rotation";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter="Volumenschnelle über Drehbeschleunigung";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONMaxValue="Höchstwert";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter="Volumenschnelle über Geschwindigkeit";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYParameterValue="Wert";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYMultiValue="Werte";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYMinValue="Mindestwert";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYMaxValue="Höchstwert";
+//
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter="Volumendichte der Ladung";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEParameterValue="Wert";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEMultiValue="Werte";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEMinValue="Mindestwert";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEMaxValue="Höchstwert";
+//
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter="Volumendichte des Stroms";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTParameterValue="Wert";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTMultiValue="Werte";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTMinValue="Mindestwert";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTMaxValue="Höchstwert";
+//
+PLMParameter.WARPING_COEFFICIENTParameter="Krümmungskoeffizient";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTParameterValue="Wert";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTMultiValue="Werte";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTMinValue="Mindestwert";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTMaxValue="Höchstwert";
+//
+PLMParameter.WAVE_FRONT_ERRORParameter="Wellenfrontfehler";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORParameterValue="Wert";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORMultiValue="Werte";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORMinValue="Mindestwert";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORMaxValue="Höchstwert";
+//
+PLMParameter.WAVE_LENGTHParameter="Wellenlänge";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHParameterValue="Wert";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHMultiValue="Werte";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHMinValue="Mindestwert";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHMaxValue="Höchstwert";
+//
+PLMParameter.WAVENUMBERParameter="Wellenanzahl";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERParameterValue="Wert";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERMultiValue="Werte";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERMinValue="Mindestwert";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERMaxValue="Höchstwert";
+//
+PLMParameter.FormattedStringParameter="Formatierte Zeichenfolge";
+PLMParameter.FormattedStringParameter.FormmattedStringMinValue="Mindestwert";
+PLMParameter.FormattedStringParameter.FormmattedStringMaxValue="Höchstwert";
+//
+PLMParameter.RGBFormattedStringParameter="RGB formatierte Zeichenfolge";
+//
+PLMParameter.CMYKFormattedStringParameter="CMYK formatierte Zeichenfolge";
+//
+PLMParameter.HEXFormattedStringParameter="Hexadezimal formatierte Zeichenfolge";
+//
+PLMParameter.SubjectivityParameter="Subjektivität";
+PLMParameter.SubjectivityParameter.SubjectivityReference="Subjektivitätsreferenz";

@@ -1,0 +1,55 @@
+//
+// FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM
+//
+
+#include "Effect_General.hfx"
+
+//--------------------------------
+// Tweakables
+//--------------------------------
+
+samplerRECT Auto_EyeMap                     <>;
+#ifdef MSAA
+sampler2DMS Auto_ZMap_WithTransparency      <>;
+sampler2DMS Auto_NormalMap_WithTransparency <>;
+float       Auto_NbAASamples                <>;
+#else
+samplerRECT Auto_ZMap_WithTransparency      <>;
+samplerRECT Auto_NormalMap_WithTransparency <>;
+#endif
+float4      Auto_Size                       <>;
+float4      Auto_NearFar                    <>;
+float       Auto_ProjectionMode             <>;
+
+#include "Effect_Outline.hfx"
+
+float u_RatioVisibility
+<
+  float UIMin		= 0;
+	float UIMax		= 1.f;
+	float UIStep	= 0.01f;
+> = 1.f;
+
+
+//-----------------------------------------------------------------------------------------
+//  Pixel Shader
+//-----------------------------------------------------------------------------------------
+				  
+float4 Effect_OutLineMS_PS(pixelInput IN) : COLOR 
+{  
+  float ratio = ComputeOutline(IN.texCoord.xy)*u_RatioVisibility;
+  
+  return float4(0,0,0, ratio);
+}
+
+//-----------------------------------------------------------------------------------------
+//  Techniques
+//-----------------------------------------------------------------------------------------
+
+technique Effect_OutLineMS_GLSL
+{
+    pass p0 
+    {		
+        FragmentProgram = compile glslf Effect_OutLineMS_PS();
+    }
+} 

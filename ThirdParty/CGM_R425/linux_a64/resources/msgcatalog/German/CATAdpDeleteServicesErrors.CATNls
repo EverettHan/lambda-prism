@@ -1,0 +1,51 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+UndefinedServerError.Diagnostic="Interner Serverfehler.";
+UndefinedServerError.Advice="Wenden Sie sich an den Support.";
+
+ERR_01.Diagnostic="Die Komponente ist in der Sitzung geöffnet.";
+ERR_01.Advice="Löschen ist OK, aber beachten Sie, dass das Widerrufprotokoll durch die Löschaktion ebenfalls gelöscht wird.";
+
+ERR_02.Diagnostic="Es gibt noch immer ein Exemplar der Referenz außerhalb des Löschbereichs.";
+ERR_02.Advice="Sie müssen möglicherweise die vorhandenen Exemplare löschen, bevor Sie die Referenz löschen.";
+
+ERR_03.Diagnostic="Die Referenz wird nicht von VPLM gesteuert.";
+ERR_03.Advice="Sie haben nicht die Berechtigung, die Referenz zu löschen. Der Server ist für den Lebenszyklus der Referenz zuständig.";
+
+ERR_04.Diagnostic="Die Referenz ist gesperrt.";
+ERR_04.Advice="Sie müssen möglicherweise die Sperre löschen, bevor Sie die Referenz löschen.";
+
+ERR_05.Diagnostic="Die Komponente ist in der Sitzung geöffnet. Die Komponente kann entladen werden, aber einige verbundene Änderungen in der Sitzung gehen verloren.";
+ERR_05.Advice="Löschen ist OK, aber beachten Sie, dass Änderungen und das Widerrufprotokoll bei der Löschaktion verloren gehen.";
+
+ERR_06.Diagnostic="Die Komponente ist in der Sitzung geöffnet und kann nicht aus der Sitzung entladen werden.";
+ERR_06.Advice="Das Löschen schlägt fehl. Die Komponente ist wahrscheinlich in einem Editor gebunden.";
+
+ERR_07.Diagnostic="Die Komponente ist in der Sitzung geöffnet. Sie kann aus der Sitzung entladen werden, aber mindestens eine andere Komponente befindet sich in der Sitzung. ";
+ERR_07.Advice="Das Löschen schlägt fehl. Die verbundene Komponente in der Sitzung ist wahrscheinlich in einem Editor gebunden.";
+
+ERR_08.Diagnostic="Die Komponente wird in der Sitzung geöffnet. Sie kann nicht automatisch aus der Sitzung entfernt werden, weil die Komponente eine ER-Typ ist. ";
+ERR_08.Advice="Löschen kann nicht durchgeführt werden. Entladen Sie diese Komponente aus verbundenen Editoren.";
+
+ERR_09.Diagnostic="Die Referenz wird außerhalb des Löschbereichs instanziiert. Sie verfügen jedoch für den Zugriff auf die Instanz nicht über ausreichende Berechtigungen. ";
+ERR_09.Advice="Versuchen Sie nicht, diese Referenz zu löschen. Wenden Sie sich an Ihren Administrator.";
+
+ERR_10.Diagnostic="Die zusammenfassende Referenz dieser Darstellungsreferenz mit einem Exemplar kann nicht gelöscht werden, also kann diese Darstellungsreferenz ebenfalls nicht gelöscht werden. ";
+ERR_10.Advice="Versuchen Sie nicht, diese Darstellungsreferenz zu löschen. Wenden Sie sich an Ihren Administrator.";
+
+

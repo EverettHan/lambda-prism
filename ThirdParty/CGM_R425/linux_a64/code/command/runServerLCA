@@ -1,0 +1,125 @@
+#!/bin/ksh
+#set -x
+##########################################################################
+#                                                                        #
+#                                                                        #
+# COPYRIGHT DASSAULT SYSTEMES 2002                                       #
+# Licensed Material Program Property of IBM                              #
+#                                                                        #
+#     Component Class : Shell Script command to start LCA Server         #
+#                                                                        #
+#                                                                        #
+##########################################################################
+
+#-------------------------------------------------------------------------#
+# Analyse input parameters
+#-------------------------------------------------------------------------#
+get_environment_name=0
+get_environment_directory=0
+unset environment_name
+unset environment_directory
+
+for opt in "$@"
+  do
+  case "$opt" in
+		'-env' ) #environment name option #
+			 get_environment_name=1;;
+
+		'-direnv' ) #environment directory option #
+			 get_environment_directory=1;;
+		* ) # other options #
+          if [ $get_environment_name = 1 ]
+				  then
+				  environment_name="-env $opt"
+				  get_environment_name=0
+
+          elif [ $get_environment_directory = 1 ]
+				  then
+				  environment_directory="-direnv $opt"
+				  get_environment_directory=0
+
+         fi;;
+    esac
+done
+#-------------------------------------------------------------------------#
+# Initialization
+#-------------------------------------------------------------------------#
+
+
+#-------------------------------------------------------------------------#
+# Dump the command line  
+#-------------------------------------------------------------------------#
+export trace=/tmp/runServerLCA.$$
+echo ">>n>>"$# >  $trace
+echo ">>1>>"$1 >> $trace
+echo ">>2>>"$2 >> $trace
+echo ">>3>>"$3 >> $trace
+echo ">>4>>"$4 >> $trace
+echo ">>5>>"$5 >> $trace
+echo ">>6>>"$6 >> $trace
+
+
+
+
+#-------------------------------------------------------------------------#
+# Check the environment 
+#-------------------------------------------------------------------------#
+export trace=/tmp/$USER.$$.plmsrv
+echo "====================================================="  >> $trace 2>&1
+
+if test -f $HOME/CustomEnv
+then
+   echo "*****************************************************"  >> $trace 2>&1
+   echo "** CustomEnv is DEPRECATED and will not be used    **"  >> $trace 2>&1
+   echo "** Please use the official tools to customize your **"  >> $trace 2>&1
+   echo "** environment (ie:CATIAENV, chcatenv, ...)        **"  >> $trace 2>&1
+   echo "*****************************************************"  >> $trace 2>&1
+
+fi ;
+
+echo "*****************************************************"  >> $trace 2>&1
+echo "**           ENOVIA RunTime Environment            **"  >> $trace 2>&1
+echo "*****************************************************"  >> $trace 2>&1
+   catstart -run "env" $environment_name $environment_directory | sort                     >> $trace 2>&1
+rc=$?
+
+#-------------------------------------------------------------------------#
+# Start LCA Server
+#-------------------------------------------------------------------------#
+echo "=== START LCA SERVER [$environment_name] [$environment_directory] [args=$*]"      >> $trace 2>&1
+   catstart -run VDO0OrbServer -object "$*"  $environment_name $environment_directory   >> $trace 2>&1
+rc=$?
+echo "=== EXITING LCA SERVER : code = $rc" >> $trace 2>&1
+
+#-------------------------------------------------------------------------#
+# Exit
+#-------------------------------------------------------------------------#
+
+exit $rc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "DialogEngine.tst"/>
+  <attached name = "DialogEngineRSW.tst"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AfrFoundation"/>
+  <prerequisite access = "Protected" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" name = "AfrComponentsModel"/>
+  <prerequisite access = "Protected" comment = "11.03.2013 VR2/CDT R216 Declarative DialogEngine" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Protected" comment = "15.06.2012 JFS/CDT fixing BAD004 - exposing Prereq" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" name = "SGInfra"/>
+  <prerequisite access = "Protected" name = "VisualizationController"/>
+  <prerequisite access = "Protected" name = "SGManager"/>
+  <prerequisite access = "Protected" comment = "02.12.2021 HEB/ERS R425 Suppression split AfrCore" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrCore"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATImmVPMBaseUI.tst"/>
+  <authorize access = "Private" name = "CATInteractiveTestDesigner"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATLiveShapeManageReferent.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATLiveShapeUI.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATPLMNavBaseUI.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CATRulerUI.tst"/>
+  <authorize access = "Private" name = "PLMQualityCheck.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

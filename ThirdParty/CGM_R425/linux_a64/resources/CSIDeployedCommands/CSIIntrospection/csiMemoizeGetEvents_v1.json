@@ -1,0 +1,98 @@
+{
+  "desc": "Memoized version of csiGetEvents_v1",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "executionGraph",
+    "version": 1,
+    "settings": {
+      "displayName": "Memoized csiGetEvents_v1",
+      "id": "$ref:$",
+      "type": "ExecutionGraph",
+      "implementation": {
+        "blocks": [
+          {
+            "displayName": "csiMemoize_v2",
+            "id": "blocks[0]",
+            "type": "Function",
+            "implementation": {
+              "pool": "CSIIntrospection",
+              "function": "csiMemoize",
+              "version": 2,
+              "nodeIdSelector": "_"
+            }
+          }
+        ],
+        "controlFlows": [
+          {
+            "from": "$ref:$.call",
+            "to": "blocks[0].call"
+          },
+          {
+            "from": "blocks[0].success",
+            "to": "$ref:$.success"
+          },
+          {
+            "from": "blocks[0].progress",
+            "to": "$ref:$.progress"
+          },
+          {
+            "from": "blocks[0].error",
+            "to": "$ref:$.error"
+          }
+        ],
+        "dataFlows": [
+          {
+            "from": "$ref:$.localData.function",
+            "to": "blocks[0].call.function"
+          },
+          {
+            "from": "$ref:$.localData.version",
+            "to": "blocks[0].call.version"
+          },
+          {
+            "from": "$ref:$.call",
+            "to": "blocks[0].call.inputs"
+          },
+          {
+            "from": "blocks[0].success",
+            "to": "$ref:$.success"
+          },
+          {
+            "from": "blocks[0].progress",
+            "to": "$ref:$.progress"
+          },
+          {
+            "from": "blocks[0].error",
+            "to": "$ref:$.error"
+          }
+        ],
+        "localDataPorts": [
+          {
+            "id": "function",
+            "value": "{\"basic\":\"string\",\"value\":\"csiGetEvents\"}"
+          },
+          {
+            "id": "version",
+            "value": "{\"basic\":\"int32\",\"value\":1}"
+          }
+        ],
+        "nodeIdSelectors": [],
+        "progressEvents": {}
+      }
+    }
+  },
+  "onCall": {
+    "in": {
+      "type": "Parameters"
+    },
+    "out": {
+      "type": "Parameters"
+    }
+  },
+  "progress": {
+    "type": "CSIExecGraphProgress"
+  },
+  "throwError": {
+    "type": "CSIExecGraphError"
+  }
+}

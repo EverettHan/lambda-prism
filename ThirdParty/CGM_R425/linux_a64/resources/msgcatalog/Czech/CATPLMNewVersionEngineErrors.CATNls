@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic="Systémová chyba";
+SystemERR.Advice="";
+
+PLMc_ForbiddenScenario1.Diagnostic="Nelze revidovat novou součást";
+PLMc_ForbiddenScenario1.Advice="Uložte tuto součást a zkuste ji revidovat později";
+
+//PLMc_ForbiddenScenario2.Diagnostic = "This new revision scenario is forbidden : The data you want to revise are in relation with modifications due to the previous new revision" ;
+//PLMc_ForbiddenScenario2.Advice = "Make sure to save your session after the previous new revision" ;
+
+PLMc_ForbiddenScenario2.Diagnostic="Tento nový scénář opravy je zakázán: Je nutné provést celkové uložení mezi 2 voláními nové opravy";
+PLMc_ForbiddenScenario2.Advice="Před opětovným voláním nové verze relaci uložte";
+
+PLMc_ForbiddenScenario3.Diagnostic="Tuto součást nelze v relaci revidovat";
+PLMc_ForbiddenScenario3.Advice="Součást byla upravena jinou relací. Pokuste se uložit místní úpravy jako novou opravu.";
+
+InvalidAncestor.Diagnostic="Předka nelze použít k provedení operace opravy";
+InvalidAncestor.Advice="Vyberte předka, který je v souladu s rodinou oprav, kterou chcete vyvinout";
+
+InvalidComponentState.Diagnostic="Součást nelze opravit, protože nebyla nikdy uložena do úložiště";
+InvalidComponentState.Advice="Uložte součást před její opravou do úložiště";
+
+InvalidTypeOfComponent.Diagnostic="Verze není u tohoto typu součásti povolena";
+InvalidTypeOfComponent.Advice="Poskytněte vyhovujících součásti pro opravu";
+
+InvalidComponentForDWS.Diagnostic="Verze není v tomto pracovním prostoru u tohoto typu součásti povolena";
+InvalidComponentForDWS.Advice="Poskytněte součásti, pro které je povolena oprava v tomto pracovním prostoru";
+
+ReplaceInSessionForbiddenForPartialDuplicate.Diagnostic="Verze není povolena z důvodu nahrazení v relaci duplikovanými částečnými instancemi";
+ReplaceInSessionForbiddenForPartialDuplicate.Advice="Nezadávejte částečné instance, které se mají duplikovat při výměně prvků v relaci (opakované použití)";
+
+TransferModificationsForbiddenForPartialDuplicate.Diagnostic="Verze není povolena kvůli úpravám přenosu v relaci s duplikovanými částečnými instancemi";
+TransferModificationsForbiddenForPartialDuplicate.Advice="Nezadávejte částečné instance, které mají být duplikovány při úpravách přenosu";
+
+InvalidIntent.Diagnostic="Byl volán graf verze s tímto neplatným záměrem: /p";
+InvalidIntent.Advice="Vyberte platný záměr pro vytváření verzí";
+
+InstanceWithoutOwner.Diagnostic="Tato instance není v rozsahu duplikace a bude ignorována: /p";
+InstanceWithoutOwner.Advice="Operace by mohla vést k nežádoucí duplikaci. Pokud je to možné, zkuste vyloučit problematické instance.";
+
+RefreshFailed.Diagnostic="Obnovení relace se nezdařilo.";
+RefreshFailed.Advice="Proveďte globální obnovení nebo znovu načtěte součásti s verzemi.";
+
+NotRefreshedNoReidentification.Diagnostic="Objekt byl změněn v databázi, ale relace nebyla aktualizována.";
+NotRefreshedNoReidentification.Advice="Proveďte globální aktualizaci a načtěte aktualizovanou součást.";
+
+NotRefreshedAfterReidentification.Diagnostic="U objektu byly úspěšně vytvořeny verze v databázi, ale nová verze není v relaci. Možná nebudete moci uložit relaci.";
+NotRefreshedAfterReidentification.Advice="Zkuste globální obnovení. Pokud nemůžete obnovení provést, budete muset uvolnit tuto součást a uvolnit místní úpravy, aby bylo možné provést uložení.";

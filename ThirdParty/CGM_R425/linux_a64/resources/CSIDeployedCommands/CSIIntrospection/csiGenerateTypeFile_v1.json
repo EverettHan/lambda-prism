@@ -1,0 +1,51 @@
+{
+  "grammarVersion": 2,
+  "desc": "Generates the JSON content for the declarative file of the specified type",
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {},
+    "answers": {}
+  },
+  "onCommandParameters": {
+    "in": {
+      "parameters": [
+        {
+          "label": "csiType",
+          "type": "CSIDeclarativeTypeDefinition"
+        }
+      ]
+    },
+    "answers": {
+      "parameters": [
+        {
+          "label": "filename",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "content",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {},
+    "answers": {}
+  }
+}

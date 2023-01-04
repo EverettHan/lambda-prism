@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <!--===================================-->
+ <!--Tweaker Date Time Chooser-->
+ <!--===================================-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerCATDateTime">
+   <CATVidLayGrid syp:name="syp_MainGrid" Name="MainGrid" RequestedMinimumDimension="10 20">
+
+    <CATVidLayStack CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRTB" Orientation="Horizontal">
+      <CATVidCtlSpinBox syp:name="DateSpinner" Name="DateSpinner" Value="@Value Mode=TwoWays" VisibleFlag="0"/>
+
+      <CATVidGPLabel Text="@Label" CropPolicy="NoCrop"/>
+      <CATVidCtlSimpleCombo syp:name="DateHourSimpleCombo" Name="DateHourSimpleCombo"/>
+
+      <CATVidGPLabel Text=" : "  CropPolicy="NoCrop"/>
+      <CATVidCtlSimpleCombo syp:name="DateMinuteSimpleCombo" Name="DateMinuteSimpleCombo"/>
+
+      <CATVidGPLabel Text=" : "  CropPolicy="NoCrop"  VisibleFlag="0"/>
+      <CATVidCtlSimpleCombo syp:name="DateSecondSimpleCombo" Name="DateSecondSimpleCombo" VisibleFlag="0"/>
+
+      <CATVidCtlTweakerCATTime syp:name="DateTweaker" Name="DateTweaker" />
+    </CATVidLayStack>
+
+    </CATVidLayGrid>
+ </Template>
+ </Styles>

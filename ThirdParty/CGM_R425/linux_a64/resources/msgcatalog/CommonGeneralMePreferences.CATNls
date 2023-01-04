@@ -1,0 +1,88 @@
+<meta charset="UTF-8"/>
+//General -General
+GeneralGeneral.Title="General";
+
+//General-Help
+GeneralHelp.Title="Help";
+DragAndDropGroup.Title="Drag and Drop";
+DragAndDrop.Title="Enable Drag-Drop for Cut, Copy, Paste use.";
+
+DragAndDrop.ShortHelp="Drag & Drop for Cut, Copy, Paste use."; 
+DragAndDrop.LongHelp="Enables Drag & Drop for Cut, Copy, Paste use."; 
+
+MemoryWarningGroup.Title="Memory Warning";
+//Activation.Title="Trigger Memory warning at";
+MemWarningActive.Title="Trigger Memory warning at";
+UsageLimit.Title="% of memory use";
+
+MemWarningActive.ShortHelp="Activation of a warning when an excessive memory consumptions is detected.";
+MemWarningActive.LongHelp="Activation of a warning when the memory consumptions exceeds a given threshold.
+There is no need to restart the session, for this change to be taken into account.";
+UsageLimit.ShortHelp="Limit which defines when the memory warning must be triggered.";
+UsageLimit.LongHelp="Gives the percentage of memory consumption above which a warning is triggered.";
+
+//General-Find
+GeneralFind.Title="Find";
+
+PrefixGroup.Title="Default Prefix for Power Input";
+Prefix.Title = "Search Prefix";
+Prefix0.Title="none";
+Prefix1.Title="last";
+Prefix2.Title="Command c:";
+Prefix3.Title="favorite f:";
+Prefix4.Title="type t:";
+Prefix5.Title="name n:";
+Prefix6.Title="name case sensitive- Name_CAP";
+Prefix7.Title="name in graph- graph:";
+Prefix8.Title="name in graph case sensitive- NameInGraph_CAP";
+Prefix9.Title="set s:";
+Prefix10.Title="SET (set case sensitive)- Set_CAP";
+Prefix11.Title="color- col:";
+Prefix12.Title="visibility vis:";
+Prefix13.Title="layer l:";
+Prefix14.Title="dashed d:";
+Prefix15.Title="weight w:";
+Prefix16.Title="symbol symb:";
+
+Prefix.ShortHelp="Default Prefix for Power Input";
+Prefix.LongHelp="Defines the prefix to be used by default at the beginning of the string entered in the Power Input
+if none has been explicitly typed.
+For example, choose c: if you use Power Input mainly to start commands,
+this will avoid typing \"c:\" before each command name.";
+
+ContextPriorityGroup.Title="Default Search Scope for Power Input";
+ContextScope.Title="Context Scope";
+ContextScope0.Title="all as Everywhere";
+ContextScope1.Title="in as In the element";
+ContextScope2.Title="from as From the element to bottom";
+ContextScope3.Title="sel as From current selection";
+ContextScope4.Title="scr as Visible on screen";
+ContextPriority.Title = "Replace scope defined in favorite queries";
+
+ContextScope.ShortHelp="Default search scope implicitely used in Power Input";
+ContextScope.LongHelp="Defines the context scope to be used by default for search queries entered in the Power Input
+if none has been explicitly typed.";
+ContextPriority.ShortHelp="Default scope is used when a favorite query is used in Power Input";
+ContextPriority.LongHelp="Check this option if you want the default context scope to be used with
+favorite queries used in the Power Input."; 
+
+DeepSearchGroup.Title="Deep Search";
+DeepSearch.Title = "Deep search activation";
+
+DeepSearch.ShortHelp="Activates the Deep search.";
+DeepSearch.LongHelp="Check this option to activate the Deep search option when performing a search.
+In that case, documents in visualization mode will be transiently loaded in order to find internal elements."; // @validatedUsage AJT 13:11:04 option
+
+MaxDisplay.Title = "Maximum Display Result";
+MaxPSO.Title= "Maximum Prehighligted Elements";
+
+MaxDisplay.ShortHelp="Defines the maximum number of elements that can be displayed in the Search results page.";
+MaxDisplay.LongHelp="Displaying too many lines can slow down the result list so it is recommended not to set a too high number.
+Set this number to 0 if you do not want any limitation and always want all the elements to be displayed.";
+
+MaxDisplayGroup.Title="Maximum Display Result";
+MaxPSOGroup.Title="Maximum Prehighligted Elements";
+
+MaxPSO.ShortHelp="Defines the maximum number of elements that can be prehighlighted.";
+MaxPSO.LongHelp="Prehighlighting too many elements can slow down the session so it is strongly recommended not to set a too high number.
+Set this number to 0 if you do not want any limitation and always want all the elements to be prehighlighted.";

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">    
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbVoxelMapClear_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <STORAGE_IMAGE>
+    <NAME>i_SourceImage</NAME>
+    <DECLARATION>
+      <TYPE>image3D</TYPE>
+      <FORMAT>r8</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+
+    <COMPUTE_PASS>
+      <NAME>Clear</NAME>
+      <COMPUTE_STAGE>PostEffect_VoxelMapClear</COMPUTE_STAGE>
+    </COMPUTE_PASS>
+    
+  </TECHNIQUE>
+    
+</EFFECT>

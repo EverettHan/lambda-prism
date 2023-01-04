@@ -1,0 +1,34 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Reverse the given parameters array",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "array",
+          "typeArray": "Parameters",
+          "desc": "The parameters array"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "result",
+          "typeArray": "Parameters",
+          "desc": "The array reversed"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

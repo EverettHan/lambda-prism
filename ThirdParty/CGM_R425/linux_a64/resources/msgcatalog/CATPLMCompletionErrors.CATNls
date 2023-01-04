@@ -1,0 +1,15 @@
+<meta charset="UTF-8"/>
+AnotherMinorInSessionWarn.Diagnostic = "/p : object has not been opened because another minor revision is already available in the Session";
+AnotherMinorInSessionWarn.Advice = "Unload the previously opened minor to achieve open";
+
+ComponentNotSaved.Diagnostic = "This object can't be opened since it has never been saved after its creation in the authoring Session";
+ComponentNotSaved.Advice = "You don't need to open it as it should already be in Session";
+
+AnotherMinorInInputWarn.Diagnostic = "/p : object has not been opened because another minor revision is already present in input";
+AnotherMinorInInputWarn.Advice = "Please use any way available to load only one minor at a time";
+
+AnotherMinorInInputOccurrenceWarn.Diagnostic = "/p : minor revision conflict detected in input, other minor is used for this occurrence";
+AnotherMinorInInputOccurrenceWarn.Advice = "Please use any way available to load only one minor at a time";
+
+AnotherMinorInSessionOccurrenceWarn.Diagnostic = "/p : minor revision conflict detected in Session, minor available in Session is used for this occurrence";
+AnotherMinorInSessionOccurrenceWarn.Advice = "Please use any way available to load only one minor at a time";

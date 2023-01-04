@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="AfrRepresentationTypes/VIAImmersiveToolBar.CATSYPStyle"/>
+  </Resources>
+  
+  <!--===================================-->
+  <!--Toolbar VIAImmersive Empty-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_EmptyDecorationToolBar">
+    <CATAfrSYPModelViewMetaData SypNamePosition="AccessToolbar">
+      <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility">
+        <CATVidLayGrid>
+            <CATVidLayGrid syp:name="Container"
+                           GridAppendPolicy="@Orientation"
+                           CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        </CATVidLayGrid>
+      </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="EmptyDecorationToolBar" Target="CATAfrSYPStarterView">
+    <CATVidCtlButton Name="@Name"
+                       syp:Template="Button"
+                       CheckMode="1"
+                       ClickMode="0"
+                       CheckState="@ActivationWidget Mode=TwoWays"
+                       EnableFlag="@EnableWidget"
+                       CropPolicy="NoCrop"
+                       RequestedMinimumDimension="22 22"
+                       IconDimension="22 22"
+                       Icon="@NormalIcon"
+                       Label="@TitleIfNoIcon"
+                       Tooltip="@Help"
+                       Click="@ActionEvent"
+                       VisibleFlag="@VisibleFlag"
+                       LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="EmptyDecorationToolBar" Target="CATAfrSYPSeparatorView">
+    <CATVidGPSquare RequestedMinimumDimension="1 22"
+                    Texture="I_VIAImmersiveToolBar_Sep.png"
+                     LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--===================================-->
+  <!--Toolbar for PropertiesPanels-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_AfrModesAndProperties">
+    <CATAfrSYPModelViewMetaData SypNamePosition="AccessToolbar">
+      <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ViewParent="@ViewParent"
+                      RequestedMinimumDimension="@MinimumDimension"
+                      VisibleFlag="@Visibility">
+          <CATVidLayFlow syp:name="Container"
+                         CellSpacing="2"
+                         RequestedMinimumDimension="@MinimumDimension"
+                         UniformCellSizesFlag="0"/>
+      </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Toolbar CATCAfrToolbar_EmptyDecorationToolBarLeft -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_EmptyDecorationToolBarLeft">
+    <CATAfrSYPModelViewMetaData SypNamePosition="AccessToolbarLeft">
+      <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility">
+        <CATVidLayGrid>
+          <CATVidLayGrid syp:name="Container"
+                         GridAppendPolicy="@Orientation"
+                         CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        </CATVidLayGrid>
+      </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Separator creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="EmptyDecorationToolBarLeft" Target="CATAfrSYPSeparatorView">
+    <CATVidGPSquare RequestedMinimumDimension="1 22"
+                    Texture="I_VIAImmersiveToolBar_Sep.png"
+                     LayoutWhenUnvisibleFlag="0"/>
+  </Template>
+
+  <!--==============================================================================================================================================================-->
+  <!--Toolbar  views                     -->
+  <!--==============================================================================================================================================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_Default">
+    <CATAfrSYPModelViewMetaData SypNamePosition="BrowserAccessToolbar">
+      <CATVidLayStack syp:name="Container"  Orientation="Horizontal"/>
+    </CATAfrSYPModelViewMetaData>
+  </DataTemplate>
+
+
+  
+    <!--======================================================-->
+  <!-- CATCAfrToolbar_AfrTopBarMenu -->
+  <!--======================================================-->
+  <DataTemplate syp:name="CATCAfrToolbar_DefaultVertical" >
+     <CATVidLayStack syp:name="Container" Orientation="Vertical" StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+  </DataTemplate>
+
+
+  <Template syp:name="Default" Target="CATAfrSYPStarterView">
+
+    <CATVidCtlButton Name="@Name"
+                 syp:Template="Toolbar"
+                 CheckMode="1"
+                 ClickMode="0"
+                 CheckState="@ActivationWidget Mode=TwoWays"
+                 EnableFlag="@EnableWidget"
+                 CropPolicy="NoCrop"
+                 IconDimension="21 21"
+                 Icon="@NormalIcon"
+                 Tooltip="@Help"
+                 Click="@ActionEvent"/>
+  </Template>
+</Styles>

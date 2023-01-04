@@ -1,0 +1,2650 @@
+<meta charset="UTF-8"/>
+// ==============
+// PACKAGE
+// ==============
+PLMParameter="Параметр";
+//
+// ==============
+// BUSINESS TYPES
+// ==============
+PLMParameter.PARParameter="Параметр";
+PLMParameter.PARParameter.ParameterPriority="Приоритет";
+//
+PLMParameter.PlmParameter="Параметр";
+PLMParameter.PlmParameter.name="Имя";
+PLMParameter.PlmParameter.Title="Название";
+PLMParameter.PlmParameter.ispublished="Опубликовано";
+PLMParameter.PlmParameter.isbestsofar="До сих пор лучший";
+PLMParameter.PlmParameter.locker="Блокирует";
+PLMParameter.PlmParameter.locked="Заблокировано";
+//
+PLMParameter.ComposedParameter="Составной параметр";
+PLMParameter.ComposedParameter.name="Имя";
+PLMParameter.ComposedParameter.Title="Заголовок";
+PLMParameter.ComposedParameter.ispublished="Опубликовано";
+PLMParameter.ComposedParameter.isbestsofar="До сих пор лучший";
+PLMParameter.ComposedParameter.locker="Блокирует";
+PLMParameter.ComposedParameter.locked="Заблокировано";
+//
+PLMParameter.ComputedParameter="Расчетный параметр";
+PLMParameter.ComputedParameter.name="Имя";
+PLMParameter.ComputedParameter.Title="Название";
+PLMParameter.ComputedParameter.ispublished="Опубликовано";
+PLMParameter.ComputedParameter.isbestsofar="До сих пор лучший";
+PLMParameter.ComputedParameter.locker="Блокирует";
+PLMParameter.ComputedParameter.locked="Заблокировано";
+//
+// ==========
+// RELATIONS
+// ==========
+PLMParameter.ParameterUsage="Использование параметра";
+PLMParameter.ParameterUsage.ParameterUsageDescription="Описание взаимосвязи параметров";
+PLMParameter.ParameterUsage.Sequence_Order="Порядок последовательности";
+PLMParameter.ParameterUsage.TreeOrder="Порядок дерева";
+PLMParameter.ParameterUsage.isbestsofar="До сих пор лучший";
+//
+PLMParameter.ParameterAggregation="Агрегирование параметров";
+PLMParameter.ParameterAggregation.ParameterUsageDescription="Описание взаимосвязи параметров";
+PLMParameter.ParameterAggregation.Sequence_Order="Порядок последовательности";
+PLMParameter.ParameterAggregation.TreeOrder="Порядок дерева";
+PLMParameter.ParameterAggregation.isbestsofar="До сих пор лучший";
+//
+PLMParameter.ParameterComposition="Состав параметра";
+PLMParameter.ParameterComposition.TreeOrder="Порядок дерева";
+PLMParameter.ParameterComposition.isbestsofar="До сих пор лучший";
+//
+PLMParameter.ParameterAssignment="Назначение параметров";
+PLMParameter.ParameterAssignment.ParameterUsageDescription="Описание взаимосвязи параметров";
+PLMParameter.ParameterAssignment.isbestsofar="До сих пор лучший";
+//
+// ==========
+// EXTENSIONS
+// ==========
+// Common
+PLMParameter.PlmParameterMagnitude.PlmParamRole="Роль";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType="Оценка";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType.Range.Equal.0="Нет";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType.Range.Equal.1="Простое значение";
+PLMParameter.PlmParameterMagnitude.PlmParamValuationType.Range.Equal.2="Несколько значений";
+PLMParameter.PlmParameterMagnitude.ValueSet="Задано значение";
+//
+PLMParameter.PlmParameterWithRange.MinRangeProperty="Нижний предел";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.0="Возврат в исходное состояние";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.1="Установлено и доступно";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.2="Установлено и недоступно";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.3="Н/Д";
+PLMParameter.PlmParameterWithRange.MinRangeProperty.Range.Equal.4="Н/Д";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty="Верхний предел";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.0="Возврат в исходное состояние";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.1="Установлено и доступно";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.2="Установлено и недоступно";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.3="Н/Д";
+PLMParameter.PlmParameterWithRange.MaxRangeProperty.Range.Equal.4="Н/Д";
+//
+PLMParameter.PlmParameterDimensionned.PlmParamDisplayUnit="Единица отображения";
+PLMParameter.PlmParameterDimensionned.PlmParamToleranceMin="Минимальный допуск";
+PLMParameter.PlmParameterDimensionned.PlmParamToleranceMax="Максимальный допуск";
+PLMParameter.PlmParameterDimensionned.PlmParamToleranceSet="Задан допуск";
+PLMParameter.PlmParameterDimensionned.PlmParamPrecisionMin="Минимальная точность";
+PLMParameter.PlmParameterDimensionned.PlmParamPrecisionMax="Максимальная точность";
+PLMParameter.PlmParameterDimensionned.PlmParamPrecisionSet="Задана точность";
+//
+PLMParameter.StringParameter="Строка";
+PLMParameter.StringParameter.StringParameterValue="Значение";
+PLMParameter.StringParameter.StringMultiValue="Значения";
+//
+PLMParameter.BooleanParameter="Логическое значение";
+PLMParameter.BooleanParameter.BooleanParameterValue="Значение";
+PLMParameter.BooleanParameter.BooleanParameterValue.Range.Equal.TRUE="True";
+PLMParameter.BooleanParameter.BooleanParameterValue.Range.Equal.FALSE="False";
+//
+PLMParameter.IntegerParameter="Целое число";
+PLMParameter.IntegerParameter.IntegerParameterValue="Значение";
+PLMParameter.IntegerParameter.IntegerMultiValue="Значения";
+PLMParameter.IntegerParameter.IntegerMinValue="Минимальное значение";
+PLMParameter.IntegerParameter.IntegerMaxValue="Максимальное значение";
+//
+PLMParameter.RealParameter="Действительный";
+PLMParameter.RealParameter.RealParameterValue="Значение";
+PLMParameter.RealParameter.RealMultiValue="Значения";
+PLMParameter.RealParameter.RealMinValue="Минимальное значение";
+PLMParameter.RealParameter.RealMaxValue="Максимальное значение";
+PLMParameter.RealParameter.PlmParamToleranceMin="Минимальный допуск";
+PLMParameter.RealParameter.PlmParamToleranceMax="Максимальный допуск";
+PLMParameter.RealParameter.PlmParamToleranceSet="Задан допуск";
+PLMParameter.RealParameter.PlmParamPrecisionMin="Минимальная точность";
+PLMParameter.RealParameter.PlmParamPrecisionMax="Максимальная точность";
+PLMParameter.RealParameter.PlmParamPrecisionSet="Задана точность";
+//
+PLMParameter.ABSOLUTEVISCOSITYParameter="Абсолютная вязкость";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYParameterValue="Значение";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYMultiValue="Значения";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYMinValue="Минимальное значение";
+PLMParameter.ABSOLUTEVISCOSITYParameter.ABSOLUTEVISCOSITYMaxValue="Максимальное значение";
+//
+PLMParameter.ABSORBEDDOSEParameter="Поглощенная доза";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEParameterValue="Значение";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEMultiValue="Значения";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEMinValue="Минимальное значение";
+PLMParameter.ABSORBEDDOSEParameter.ABSORBEDDOSEMaxValue="Максимальное значение";
+//
+PLMParameter.ABSORBEDDOSERATEParameter="Мощность поглощенной дозы";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEParameterValue="Значение";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEMultiValue="Значения";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEMinValue="Минимальное значение";
+PLMParameter.ABSORBEDDOSERATEParameter.ABSORBEDDOSERATEMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATION_OVER_FORCEParameter="Ускорение на силу";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEParameterValue="Значение";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEMultiValue="Значения";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.ACCELERATION_OVER_FORCEParameter.ACCELERATION_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATION_OVER_MOMENTParameter="Ускорение на момент";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTParameterValue="Значение";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTMultiValue="Значения";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.ACCELERATION_OVER_MOMENTParameter.ACCELERATION_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter="Ускорение на давление";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.ACCELERATION_OVER_PRESSUREParameter.ACCELERATION_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter="Ускорение на напряжение";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEParameterValue="Значение";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEMultiValue="Значения";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEMinValue="Минимальное значение";
+PLMParameter.ACCELERATION_OVER_VOLTAGEParameter.ACCELERATION_OVER_VOLTAGEMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter="Ускорение на объемное ускорение";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ACCELERATION_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter="Ускорение на объемную скорость";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.ACCELERATION_OVER_VOLUME_VELOCITYParameter.ACCELERATION_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATIONXFORCEParameter="Ускорение x сила";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEParameterValue="Значение";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEMultiValue="Значения";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEMinValue="Минимальное значение";
+PLMParameter.ACCELERATIONXFORCEParameter.ACCELERATIONXFORCEMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATIONXPRESSUREParameter="Ускорение x давление";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREParameterValue="Значение";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREMultiValue="Значения";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREMinValue="Минимальное значение";
+PLMParameter.ACCELERATIONXPRESSUREParameter.ACCELERATIONXPRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter="Ускорение x объемное ускорение";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.ACCELERATIONXVOLUME_ACCELERATIONParameter.ACCELERATIONXVOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.ACCELRTNParameter="Ускорение";
+PLMParameter.ACCELRTNParameter.ACCELRTNParameterValue="Значение";
+PLMParameter.ACCELRTNParameter.ACCELRTNMultiValue="Значения";
+PLMParameter.ACCELRTNParameter.ACCELRTNMinValue="Минимальное значение";
+PLMParameter.ACCELRTNParameter.ACCELRTNMaxValue="Максимальное значение";
+//
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter="Амплитуда акустического диполя";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameterValue="Значение";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEMultiValue="Значения";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEMinValue="Минимальное значение";
+PLMParameter.ACOUSTIC_DIPOLE_AMPLITUDEParameter.ACOUSTIC_DIPOLE_AMPLITUDEMaxValue="Максимальное значение";
+//
+PLMParameter.ACOUSTIC_INTENSITYParameter="Интенсивность звука";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYParameterValue="Значение";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYMultiValue="Значения";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYMinValue="Минимальное значение";
+PLMParameter.ACOUSTIC_INTENSITYParameter.ACOUSTIC_INTENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter="Амплитуда акустического монополя";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameterValue="Значение";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEMultiValue="Значения";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEMinValue="Минимальное значение";
+PLMParameter.ACOUSTIC_MONOPOLE_AMPLITUDEParameter.ACOUSTIC_MONOPOLE_AMPLITUDEMaxValue="Максимальное значение";
+//
+PLMParameter.ACOUSTIC_POWERParameter="Акустическая мощность";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERParameterValue="Значение";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERMultiValue="Значения";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERMinValue="Минимальное значение";
+PLMParameter.ACOUSTIC_POWERParameter.ACOUSTIC_POWERMaxValue="Максимальное значение";
+//
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter="Амплитуда акустического квадруполя";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameterValue="Значение";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEMultiValue="Значения";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEMinValue="Минимальное значение";
+PLMParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEParameter.ACOUSTIC_QUADRUPOLE_AMPLITUDEMaxValue="Максимальное значение";
+//
+PLMParameter.ACOUSTICIMPEDANCEParameter="Акустическое сопротивление";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEParameterValue="Значение";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEMultiValue="Значения";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEMinValue="Минимальное значение";
+PLMParameter.ACOUSTICIMPEDANCEParameter.ACOUSTICIMPEDANCEMaxValue="Максимальное значение";
+//
+PLMParameter.AFFINITYParameter="Аффинное преобразование";
+PLMParameter.AFFINITYParameter.AFFINITYParameterValue="Значение";
+PLMParameter.AFFINITYParameter.AFFINITYMultiValue="Значения";
+PLMParameter.AFFINITYParameter.AFFINITYMinValue="Минимальное значение";
+PLMParameter.AFFINITYParameter.AFFINITYMaxValue="Максимальное значение";
+//
+PLMParameter.ANGACCELRTNParameter="Угловое ускорение";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNParameterValue="Значение";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNMultiValue="Значения";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNMinValue="Минимальное значение";
+PLMParameter.ANGACCELRTNParameter.ANGACCELRTNMaxValue="Максимальное значение";
+//
+PLMParameter.ANGLEParameter="Угол";
+PLMParameter.ANGLEParameter.ANGLEParameterValue="Значение";
+PLMParameter.ANGLEParameter.ANGLEMultiValue="Значения";
+PLMParameter.ANGLEParameter.ANGLEMinValue="Минимальное значение";
+PLMParameter.ANGLEParameter.ANGLEMaxValue="Максимальное значение";
+//
+PLMParameter.ANGULAR_VELOCITYParameter="Угловая скорость";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYParameterValue="Значение";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYMultiValue="Значения";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYMinValue="Минимальное значение";
+PLMParameter.ANGULAR_VELOCITYParameter.ANGULAR_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.ANGULARCROSSSECTIONParameter="Угловое сечение";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONParameterValue="Значение";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONMultiValue="Значения";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONMinValue="Минимальное значение";
+PLMParameter.ANGULARCROSSSECTIONParameter.ANGULARCROSSSECTIONMaxValue="Максимальное значение";
+//
+PLMParameter.ANGULARFEEDRATEParameter="Скорость угловой подачи";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEParameterValue="Значение";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEMultiValue="Значения";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEMinValue="Минимальное значение";
+PLMParameter.ANGULARFEEDRATEParameter.ANGULARFEEDRATEMaxValue="Максимальное значение";
+//
+PLMParameter.ANGULARJERKParameter="Угловой рывок";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKParameterValue="Значение";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKMultiValue="Значения";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKMinValue="Минимальное значение";
+PLMParameter.ANGULARJERKParameter.ANGULARJERKMaxValue="Максимальное значение";
+//
+PLMParameter.ANGULARMOMENTUMParameter="Угловой момент";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMParameterValue="Значение";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMMultiValue="Значения";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMMinValue="Минимальное значение";
+PLMParameter.ANGULARMOMENTUMParameter.ANGULARMOMENTUMMaxValue="Максимальное значение";
+//
+PLMParameter.ANGULARMOMENTUMFLUXParameter="Поток угловых моментов";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXParameterValue="Значение";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXMultiValue="Значения";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXMinValue="Минимальное значение";
+PLMParameter.ANGULARMOMENTUMFLUXParameter.ANGULARMOMENTUMFLUXMaxValue="Максимальное значение";
+//
+PLMParameter.ANGULARSPINDLESPEEDParameter="Угловая скорость шпинделя";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDParameterValue="Значение";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDMultiValue="Значения";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDMinValue="Минимальное значение";
+PLMParameter.ANGULARSPINDLESPEEDParameter.ANGULARSPINDLESPEEDMaxValue="Максимальное значение";
+//
+PLMParameter.APPARENTPOWERParameter="Полная мощность";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERParameterValue="Значение";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERMultiValue="Значения";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERMinValue="Минимальное значение";
+PLMParameter.APPARENTPOWERParameter.APPARENTPOWERMaxValue="Максимальное значение";
+//
+PLMParameter.ARC_LENGTHParameter="Длина дуги";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHParameterValue="Значение";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHMultiValue="Значения";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHMinValue="Минимальное значение";
+PLMParameter.ARC_LENGTHParameter.ARC_LENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.AREAParameter="Область";
+PLMParameter.AREAParameter.AREAParameterValue="Значение";
+PLMParameter.AREAParameter.AREAMultiValue="Значения";
+PLMParameter.AREAParameter.AREAMinValue="Минимальное значение";
+PLMParameter.AREAParameter.AREAMaxValue="Максимальное значение";
+//
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter="Коэффициент атомного затухания";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTParameterValue="Значение";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTMultiValue="Значения";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.ATOMICATTENUATIONCOEFFICIENTParameter.ATOMICATTENUATIONCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.ATTENUATIONCOEFFICIENTParameter="Коэффициент затухания";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTParameterValue="Значение";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTMultiValue="Значения";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.ATTENUATIONCOEFFICIENTParameter.ATTENUATIONCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.BOHRMAGNETONParameter="Магнетон Бора";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONParameterValue="Значение";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONMultiValue="Значения";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONMinValue="Минимальное значение";
+PLMParameter.BOHRMAGNETONParameter.BOHRMAGNETONMaxValue="Максимальное значение";
+//
+PLMParameter.CAPACITANCEParameter="Емкость";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEParameterValue="Значение";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEMultiValue="Значения";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEMinValue="Минимальное значение";
+PLMParameter.CAPACITANCEParameter.CAPACITANCEMaxValue="Максимальное значение";
+//
+PLMParameter.CHEMICALPOTENTIALParameter="Химический потенциал";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALParameterValue="Значение";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALMultiValue="Значения";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALMinValue="Минимальное значение";
+PLMParameter.CHEMICALPOTENTIALParameter.CHEMICALPOTENTIALMaxValue="Максимальное значение";
+//
+PLMParameter.CIRCULARWAVENUMBERParameter="Круговое волновое число";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERParameterValue="Значение";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERMultiValue="Значения";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERMinValue="Минимальное значение";
+PLMParameter.CIRCULARWAVENUMBERParameter.CIRCULARWAVENUMBERMaxValue="Максимальное значение";
+//
+PLMParameter.COMPRESSIBILITYParameter="Сжимаемость";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYParameterValue="Значение";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYMultiValue="Значения";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYMinValue="Минимальное значение";
+PLMParameter.COMPRESSIBILITYParameter.COMPRESSIBILITYMaxValue="Максимальное значение";
+//
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter="Сконцентрированный поток концентрации ионов";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameterValue="Значение";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXMultiValue="Значения";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXMinValue="Минимальное значение";
+PLMParameter.CONCENTRATED_ION_CONCENTRATION_FLUXParameter.CONCENTRATED_ION_CONCENTRATION_FLUXMaxValue="Максимальное значение";
+//
+PLMParameter.CONDUCTANCEParameter="Проводимость";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEParameterValue="Значение";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEMultiValue="Значения";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEMinValue="Минимальное значение";
+PLMParameter.CONDUCTANCEParameter.CONDUCTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter="Конвективный коэффициент теплоотдачи";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTParameterValue="Значение";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTMultiValue="Значения";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTMinValue="Минимальное значение";
+PLMParameter.CONVECTIVE_FILM_COEFFICIENTParameter.CONVECTIVE_FILM_COEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.COURANTParameter="Напряженность электрического поля";
+PLMParameter.COURANTParameter.COURANTParameterValue="Значение";
+PLMParameter.COURANTParameter.COURANTMultiValue="Значения";
+PLMParameter.COURANTParameter.COURANTMinValue="Минимальное значение";
+PLMParameter.COURANTParameter.COURANTMaxValue="Максимальное значение";
+//
+PLMParameter.CUMULATIVE_MOMENTParameter="Суммарный момент";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTParameterValue="Значение";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTMultiValue="Значения";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTMinValue="Минимальное значение";
+PLMParameter.CUMULATIVE_MOMENTParameter.CUMULATIVE_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.CURRENT_DENSITYParameter="Плотность тока";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYParameterValue="Значение";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYMultiValue="Значения";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYMinValue="Минимальное значение";
+PLMParameter.CURRENT_DENSITYParameter.CURRENT_DENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter="Текущая плотность частиц";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESParameterValue="Значение";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESMultiValue="Значения";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESMinValue="Минимальное значение";
+PLMParameter.CURRENTDENSITYOFPARTICLESParameter.CURRENTDENSITYOFPARTICLESMaxValue="Максимальное значение";
+//
+PLMParameter.CURRENTSLOPEParameter="Текущий наклон";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEParameterValue="Значение";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEMultiValue="Значения";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEMinValue="Минимальное значение";
+PLMParameter.CURRENTSLOPEParameter.CURRENTSLOPEMaxValue="Максимальное значение";
+//
+PLMParameter.CURVATUREParameter="Кривизна";
+PLMParameter.CURVATUREParameter.CURVATUREParameterValue="Значение";
+PLMParameter.CURVATUREParameter.CURVATUREMultiValue="Значения";
+PLMParameter.CURVATUREParameter.CURVATUREMinValue="Минимальное значение";
+PLMParameter.CURVATUREParameter.CURVATUREMaxValue="Максимальное значение";
+//
+PLMParameter.DAMPINGCOEFFICIENTParameter="Коэффициент демпфирования";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTParameterValue="Значение";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTMultiValue="Значения";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.DAMPINGCOEFFICIENTParameter.DAMPINGCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.DECAYCONSTANTParameter="Константа распада";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTParameterValue="Значение";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTMultiValue="Значения";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTMinValue="Минимальное значение";
+PLMParameter.DECAYCONSTANTParameter.DECAYCONSTANTMaxValue="Максимальное значение";
+//
+PLMParameter.DENSITYParameter="Плотность";
+PLMParameter.DENSITYParameter.DENSITYParameterValue="Значение";
+PLMParameter.DENSITYParameter.DENSITYMultiValue="Значения";
+PLMParameter.DENSITYParameter.DENSITYMinValue="Минимальное значение";
+PLMParameter.DENSITYParameter.DENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter="Плотность x угловая скорость";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDParameterValue="Значение";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDMultiValue="Значения";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDMinValue="Минимальное значение";
+PLMParameter.DENSITY_ANGULAR_SPEEDParameter.DENSITY_ANGULAR_SPEEDMaxValue="Максимальное значение";
+//
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter="Плотность x угловая скорость в квадрате";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameterValue="Значение";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDMultiValue="Значения";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDMinValue="Минимальное значение";
+PLMParameter.DENSITY_SQUARE_ANGULAR_SPEEDParameter.DENSITY_SQUARE_ANGULAR_SPEEDMaxValue="Максимальное значение";
+//
+PLMParameter.DENSITYOFHEATFLOWRATEParameter="Плотность теплового потока";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEParameterValue="Значение";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEMultiValue="Значения";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEMinValue="Минимальное значение";
+PLMParameter.DENSITYOFHEATFLOWRATEParameter.DENSITYOFHEATFLOWRATEMaxValue="Максимальное значение";
+//
+PLMParameter.DENSITYOFSTATESParameter="Плотность состояний";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESParameterValue="Значение";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESMultiValue="Значения";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESMinValue="Минимальное значение";
+PLMParameter.DENSITYOFSTATESParameter.DENSITYOFSTATESMaxValue="Максимальное значение";
+//
+PLMParameter.DERDENSITYBYENTHALPYParameter="Плотность по энтальпии";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYParameterValue="Значение";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYMultiValue="Значения";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYMinValue="Минимальное значение";
+PLMParameter.DERDENSITYBYENTHALPYParameter.DERDENSITYBYENTHALPYMaxValue="Максимальное значение";
+//
+PLMParameter.DERDENSITYBYPRESSUREParameter="Плотность по давлению";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREParameterValue="Значение";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREMultiValue="Значения";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREMinValue="Минимальное значение";
+PLMParameter.DERDENSITYBYPRESSUREParameter.DERDENSITYBYPRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.DERDENSITYBYTEMPERATUREParameter="Плотность по температуре";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREParameterValue="Значение";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREMultiValue="Значения";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREMinValue="Минимальное значение";
+PLMParameter.DERDENSITYBYTEMPERATUREParameter.DERDENSITYBYTEMPERATUREMaxValue="Максимальное значение";
+//
+PLMParameter.DERENERGYBYDENSITYParameter="Энергия по плотности";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYParameterValue="Значение";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYMultiValue="Значения";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYMinValue="Минимальное значение";
+PLMParameter.DERENERGYBYDENSITYParameter.DERENERGYBYDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.DERENERGYBYPRESSUREParameter="Энергия по давлению";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREParameterValue="Значение";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREMultiValue="Значения";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREMinValue="Минимальное значение";
+PLMParameter.DERENERGYBYPRESSUREParameter.DERENERGYBYPRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.DERENTHALPYBYPRESSUREParameter="Энтальпия по давлению";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREParameterValue="Значение";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREMultiValue="Значения";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREMinValue="Минимальное значение";
+PLMParameter.DERENTHALPYBYPRESSUREParameter.DERENTHALPYBYPRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.DIMENSIONLESSParameter="Без размеров";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSParameterValue="Значение";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSMultiValue="Значения";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSMinValue="Минимальное значение";
+PLMParameter.DIMENSIONLESSParameter.DIMENSIONLESSMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENTParameter="Перемещение";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTParameterValue="Значение";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTMultiValue="Значения";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENTParameter.DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter="Перемещение на силу";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEParameterValue="Значение";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEMultiValue="Значения";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENT_OVER_FORCEParameter.DISPLACEMENT_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter="Перемещение на момент";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTParameterValue="Значение";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTMultiValue="Значения";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENT_OVER_MOMENTParameter.DISPLACEMENT_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter="Перемещение на давление";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENT_OVER_PRESSUREParameter.DISPLACEMENT_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter="Перемещение на напряжение";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEParameterValue="Значение";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEMultiValue="Значения";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENT_OVER_VOLTAGEParameter.DISPLACEMENT_OVER_VOLTAGEMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter="Перемещение на объемное ускорение";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONParameter.DISPLACEMENT_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter="Перемещение на объемную скорость";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYParameter.DISPLACEMENT_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter="Перемещение x сила на частоту ";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameterValue="Значение";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYMultiValue="Значения";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYParameter.DISPLACEMENTXFORCE_OVER_FREQUENCYMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter="Перемещение x объемное ускорение";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENTXVOLUME_ACCELERATIONParameter.DISPLACEMENTXVOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter="Перемещение x объемная скорость";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.DISPLACEMENTXVOLUME_VELOCITYParameter.DISPLACEMENTXVOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter="Распределенный массовый поток концентрации ионов";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameterValue="Значение";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXMultiValue="Значения";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXMinValue="Минимальное значение";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_BODY_FLUXMaxValue="Максимальное значение";
+//
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter="Распределенный поверхностный поток концентрации ионов";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameterValue="Значение";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXMultiValue="Значения";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXMinValue="Минимальное значение";
+PLMParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXParameter.DISTRIBUTED_ION_CONCENTRATION_SURFACE_FLUXMaxValue="Максимальное значение";
+//
+PLMParameter.DOSEEQUIVALENTParameter="Эквивалентная доза";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTParameterValue="Значение";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTMultiValue="Значения";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTMinValue="Минимальное значение";
+PLMParameter.DOSEEQUIVALENTParameter.DOSEEQUIVALENTMaxValue="Максимальное значение";
+//
+PLMParameter.DYNAMICVISCOSITYParameter="Динамическая вязкость";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYParameterValue="Значение";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYMultiValue="Значения";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYMinValue="Минимальное значение";
+PLMParameter.DYNAMICVISCOSITYParameter.DYNAMICVISCOSITYMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter="Электрическая проводимость";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYParameterValue="Значение";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYMultiValue="Значения";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYMinValue="Минимальное значение";
+PLMParameter.ELECTRICAL_CONDUCTIVITYParameter.ELECTRICAL_CONDUCTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICALTORQUECONSTANTParameter="Постоянная электрического момента";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTParameterValue="Значение";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTMultiValue="Значения";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTMinValue="Минимальное значение";
+PLMParameter.ELECTRICALTORQUECONSTANTParameter.ELECTRICALTORQUECONSTANTMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICCHARGEParameter="Электрический заряд";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEParameterValue="Значение";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEMultiValue="Значения";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEMinValue="Минимальное значение";
+PLMParameter.ELECTRICCHARGEParameter.ELECTRICCHARGEMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICDIPOLEMOMENTParameter="Электрический дипольный момент";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTParameterValue="Значение";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTMultiValue="Значения";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTMinValue="Минимальное значение";
+PLMParameter.ELECTRICDIPOLEMOMENTParameter.ELECTRICDIPOLEMOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICFIELDSTRENGTHParameter="Напряженность электрического поля";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHParameterValue="Значение";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHMultiValue="Значения";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHMinValue="Минимальное значение";
+PLMParameter.ELECTRICFIELDSTRENGTHParameter.ELECTRICFIELDSTRENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICFLUXDENSITYParameter="Электрическая индукция";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYParameterValue="Значение";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYMultiValue="Значения";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYMinValue="Минимальное значение";
+PLMParameter.ELECTRICFLUXDENSITYParameter.ELECTRICFLUXDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter="Электрическая поляризуемость молекулы";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameterValue="Значение";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEMultiValue="Значения";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEMinValue="Минимальное значение";
+PLMParameter.ELECTRICPOLARIZABILITYOFAMOLECULEParameter.ELECTRICPOLARIZABILITYOFAMOLECULEMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRICPOLARIZATIONParameter="Электрическая поляризация";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONParameterValue="Значение";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONMultiValue="Значения";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONMinValue="Минимальное значение";
+PLMParameter.ELECTRICPOLARIZATIONParameter.ELECTRICPOLARIZATIONMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTRIZATIONParameter="Электризация";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONParameterValue="Значение";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONMultiValue="Значения";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONMinValue="Минимальное значение";
+PLMParameter.ELECTRIZATIONParameter.ELECTRIZATIONMaxValue="Максимальное значение";
+//
+PLMParameter.ELECTROMAGNETICMOMENTParameter="Электромагнитный момент";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTParameterValue="Значение";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTMultiValue="Значения";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTMinValue="Минимальное значение";
+PLMParameter.ELECTROMAGNETICMOMENTParameter.ELECTROMAGNETICMOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.ENERGYParameter="Энергия";
+PLMParameter.ENERGYParameter.ENERGYParameterValue="Значение";
+PLMParameter.ENERGYParameter.ENERGYMultiValue="Значения";
+PLMParameter.ENERGYParameter.ENERGYMinValue="Минимальное значение";
+PLMParameter.ENERGYParameter.ENERGYMaxValue="Максимальное значение";
+//
+PLMParameter.ENERGY_PER_AREAParameter="Энергия на площадь";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAParameterValue="Значение";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAMultiValue="Значения";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAMinValue="Минимальное значение";
+PLMParameter.ENERGY_PER_AREAParameter.ENERGY_PER_AREAMaxValue="Максимальное значение";
+//
+PLMParameter.ENERGY_RELEASE_RATEParameter="Скорость высвобождения энергии";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEParameterValue="Значение";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEMultiValue="Значения";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEMinValue="Минимальное значение";
+PLMParameter.ENERGY_RELEASE_RATEParameter.ENERGY_RELEASE_RATEMaxValue="Максимальное значение";
+//
+PLMParameter.ENERGYDENSITYParameter="Плотность энергии";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYParameterValue="Значение";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYMultiValue="Значения";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYMinValue="Минимальное значение";
+PLMParameter.ENERGYDENSITYParameter.ENERGYDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.ENERGYFLUENCEParameter="Поток энергии";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEParameterValue="Значение";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEMultiValue="Значения";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEMinValue="Минимальное значение";
+PLMParameter.ENERGYFLUENCEParameter.ENERGYFLUENCEMaxValue="Максимальное значение";
+//
+PLMParameter.ENERGYMECParameter="Энергия деформации";
+PLMParameter.ENERGYMECParameter.ENERGYMECParameterValue="Значение";
+PLMParameter.ENERGYMECParameter.ENERGYMECMultiValue="Значения";
+PLMParameter.ENERGYMECParameter.ENERGYMECMinValue="Минимальное значение";
+PLMParameter.ENERGYMECParameter.ENERGYMECMaxValue="Максимальное значение";
+//
+PLMParameter.ENTHALPYParameter="Энтальпия";
+PLMParameter.ENTHALPYParameter.ENTHALPYParameterValue="Значение";
+PLMParameter.ENTHALPYParameter.ENTHALPYMultiValue="Значения";
+PLMParameter.ENTHALPYParameter.ENTHALPYMinValue="Минимальное значение";
+PLMParameter.ENTHALPYParameter.ENTHALPYMaxValue="Максимальное значение";
+//
+PLMParameter.ENTROPYParameter="Энтропия";
+PLMParameter.ENTROPYParameter.ENTROPYParameterValue="Значение";
+PLMParameter.ENTROPYParameter.ENTROPYMultiValue="Значения";
+PLMParameter.ENTROPYParameter.ENTROPYMinValue="Минимальное значение";
+PLMParameter.ENTROPYParameter.ENTROPYMaxValue="Максимальное значение";
+//
+PLMParameter.ENTROPY_SIParameter="Энтропия СИ";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIParameterValue="Значение";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIMultiValue="Значения";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIMinValue="Минимальное значение";
+PLMParameter.ENTROPY_SIParameter.ENTROPY_SIMaxValue="Максимальное значение";
+//
+PLMParameter.ENTROPYFLOWRATEParameter="Скорость потока энтропии";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEParameterValue="Значение";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEMultiValue="Значения";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEMinValue="Минимальное значение";
+PLMParameter.ENTROPYFLOWRATEParameter.ENTROPYFLOWRATEMaxValue="Максимальное значение";
+//
+PLMParameter.ExothermyParameter="Экзотермия";
+PLMParameter.ExothermyParameter.ExothermyParameterValue="Значение";
+PLMParameter.ExothermyParameter.ExothermyMultiValue="Значения";
+PLMParameter.ExothermyParameter.ExothermyMinValue="Минимальное значение";
+PLMParameter.ExothermyParameter.ExothermyMaxValue="Максимальное значение";
+//
+PLMParameter.EXPOSUREParameter="Экспозиция";
+PLMParameter.EXPOSUREParameter.EXPOSUREParameterValue="Значение";
+PLMParameter.EXPOSUREParameter.EXPOSUREMultiValue="Значения";
+PLMParameter.EXPOSUREParameter.EXPOSUREMinValue="Минимальное значение";
+PLMParameter.EXPOSUREParameter.EXPOSUREMaxValue="Максимальное значение";
+//
+PLMParameter.EXPOSURERATEParameter="Мощность экспозиционной дозы";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEParameterValue="Значение";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEMultiValue="Значения";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEMinValue="Минимальное значение";
+PLMParameter.EXPOSURERATEParameter.EXPOSURERATEMaxValue="Максимальное значение";
+//
+PLMParameter.FARADAYCONSTANTParameter="Постоянная Фарадея";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTParameterValue="Значение";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTMultiValue="Значения";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTMinValue="Минимальное значение";
+PLMParameter.FARADAYCONSTANTParameter.FARADAYCONSTANTMaxValue="Максимальное значение";
+//
+PLMParameter.FERMIENERGYParameter="Энергия Ферми";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYParameterValue="Значение";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYMultiValue="Значения";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYMinValue="Минимальное значение";
+PLMParameter.FERMIENERGYParameter.FERMIENERGYMaxValue="Максимальное значение";
+//
+PLMParameter.FLATNESSParameter="Плоскостность";
+PLMParameter.FLATNESSParameter.FLATNESSParameterValue="Значение";
+PLMParameter.FLATNESSParameter.FLATNESSMultiValue="Значения";
+PLMParameter.FLATNESSParameter.FLATNESSMinValue="Минимальное значение";
+PLMParameter.FLATNESSParameter.FLATNESSMaxValue="Максимальное значение";
+//
+PLMParameter.FLOW_RESISTIVITYParameter="Сопротивление потока";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYParameterValue="Значение";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYMultiValue="Значения";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYMinValue="Минимальное значение";
+PLMParameter.FLOW_RESISTIVITYParameter.FLOW_RESISTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.FLUXIODQUANTUMParameter="Квант магнитного потока";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMParameterValue="Значение";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMMultiValue="Значения";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMMinValue="Минимальное значение";
+PLMParameter.FLUXIODQUANTUMParameter.FLUXIODQUANTUMMaxValue="Максимальное значение";
+//
+PLMParameter.FORCEParameter="Сила";
+PLMParameter.FORCEParameter.FORCEParameterValue="Значение";
+PLMParameter.FORCEParameter.FORCEMultiValue="Значения";
+PLMParameter.FORCEParameter.FORCEMinValue="Минимальное значение";
+PLMParameter.FORCEParameter.FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_ACCELERATIONParameter="Сила на ускорение";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONParameterValue="Значение";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONMultiValue="Значения";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_ACCELERATIONParameter.FORCE_OVER_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter="Сила на перемещение";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTParameterValue="Значение";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTMultiValue="Значения";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_DISPLACEMENTParameter.FORCE_OVER_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_PRESSUREParameter="Сила на давление";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_PRESSUREParameter.FORCE_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_PULSATIONParameter="Сила на пульсацию";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONParameterValue="Значение";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONMultiValue="Значения";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_PULSATIONParameter.FORCE_OVER_PULSATIONMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_ROTATIONParameter="Сила на вращение";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONParameterValue="Значение";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONMultiValue="Значения";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_ROTATIONParameter.FORCE_OVER_ROTATIONMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter="Сила на ускорение вращения";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameterValue="Значение";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONMultiValue="Значения";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONParameter.FORCE_OVER_ROTATIONAL_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_VELOCITYParameter="Постоянная демпфирования";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYParameterValue="Значение";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYMultiValue="Значения";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_VELOCITYParameter.FORCE_OVER_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter="Сила на объемное ускорение";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_VOLUME_ACCELERATIONParameter.FORCE_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter="Сила на объемную скорость";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.FORCE_OVER_VOLUME_VELOCITYParameter.FORCE_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.FORCE_PER_LENGTHParameter="Сила на длину";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHParameterValue="Значение";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHMultiValue="Значения";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHMinValue="Минимальное значение";
+PLMParameter.FORCE_PER_LENGTHParameter.FORCE_PER_LENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.FREQUENCYParameter="Частота";
+PLMParameter.FREQUENCYParameter.FREQUENCYParameterValue="Значение";
+PLMParameter.FREQUENCYParameter.FREQUENCYMultiValue="Значения";
+PLMParameter.FREQUENCYParameter.FREQUENCYMinValue="Минимальное значение";
+PLMParameter.FREQUENCYParameter.FREQUENCYMaxValue="Максимальное значение";
+//
+PLMParameter.FREQUENCY_NOISEParameter="Частота (шум)";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEParameterValue="Значение";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEMultiValue="Значения";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEMinValue="Минимальное значение";
+PLMParameter.FREQUENCY_NOISEParameter.FREQUENCY_NOISEMaxValue="Максимальное значение";
+//
+PLMParameter.FUGACITYParameter="Летучесть";
+PLMParameter.FUGACITYParameter.FUGACITYParameterValue="Значение";
+PLMParameter.FUGACITYParameter.FUGACITYMultiValue="Значения";
+PLMParameter.FUGACITYParameter.FUGACITYMinValue="Минимальное значение";
+PLMParameter.FUGACITYParameter.FUGACITYMaxValue="Максимальное значение";
+//
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter="Гиромагнитный коэффициент";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTParameterValue="Значение";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTMultiValue="Значения";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.GYROMAGNETICCOEFFICIENTParameter.GYROMAGNETICCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.HALLCOEFFICIENTParameter="Коэффициент Холла";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTParameterValue="Значение";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTMultiValue="Значения";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.HALLCOEFFICIENTParameter.HALLCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.HARDNESSParameter="Твердость";
+PLMParameter.HARDNESSParameter.HARDNESSParameterValue="Значение";
+PLMParameter.HARDNESSParameter.HARDNESSMultiValue="Значения";
+PLMParameter.HARDNESSParameter.HARDNESSMinValue="Минимальное значение";
+PLMParameter.HARDNESSParameter.HARDNESSMaxValue="Максимальное значение";
+//
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter="Поток тепла на объем";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEParameterValue="Значение";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEMultiValue="Значения";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEMinValue="Минимальное значение";
+PLMParameter.HEAT_FLOW_PER_VOLUMEParameter.HEAT_FLOW_PER_VOLUMEMaxValue="Максимальное значение";
+//
+PLMParameter.HEAT_FLUXParameter="Тепловой поток";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXParameterValue="Значение";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXMultiValue="Значения";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXMinValue="Минимальное значение";
+PLMParameter.HEAT_FLUXParameter.HEAT_FLUXMaxValue="Максимальное значение";
+//
+PLMParameter.HEAT_FLUX_AREAParameter="Площадь теплового потока";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAParameterValue="Значение";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAMultiValue="Значения";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAMinValue="Минимальное значение";
+PLMParameter.HEAT_FLUX_AREAParameter.HEAT_FLUX_AREAMaxValue="Максимальное значение";
+//
+PLMParameter.HEAT_GENERATION_DENSITYParameter="Энергия, генерируемая на единицу объема";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYParameterValue="Значение";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYMultiValue="Значения";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYMinValue="Минимальное значение";
+PLMParameter.HEAT_GENERATION_DENSITYParameter.HEAT_GENERATION_DENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.HEAT_GENERATION_RATEParameter="Скорость теплообразования";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEParameterValue="Значение";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEMultiValue="Значения";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEMinValue="Минимальное значение";
+PLMParameter.HEAT_GENERATION_RATEParameter.HEAT_GENERATION_RATEMaxValue="Максимальное значение";
+//
+PLMParameter.HEAT_RATEParameter="Тепловая мощность";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEParameterValue="Значение";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEMultiValue="Значения";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEMinValue="Минимальное значение";
+PLMParameter.HEAT_RATEParameter.HEAT_RATEMaxValue="Максимальное значение";
+//
+PLMParameter.HEATCAPACITYParameter="Теплоемкость";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYParameterValue="Значение";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYMultiValue="Значения";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYMinValue="Минимальное значение";
+PLMParameter.HEATCAPACITYParameter.HEATCAPACITYMaxValue="Максимальное значение";
+//
+PLMParameter.HEATCAPACITY_SIParameter="Теплоемкость СИ";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIParameterValue="Значение";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIMultiValue="Значения";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIMinValue="Минимальное значение";
+PLMParameter.HEATCAPACITY_SIParameter.HEATCAPACITY_SIMaxValue="Максимальное значение";
+//
+PLMParameter.HEATTRANSFERParameter="Теплообмен";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERParameterValue="Значение";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERMultiValue="Значения";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERMinValue="Минимальное значение";
+PLMParameter.HEATTRANSFERParameter.HEATTRANSFERMaxValue="Максимальное значение";
+//
+PLMParameter.HEATTRANSFERRESISTANCEParameter="Тепловое сопротивление";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEParameterValue="Значение";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEMultiValue="Значения";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEMinValue="Минимальное значение";
+PLMParameter.HEATTRANSFERRESISTANCEParameter.HEATTRANSFERRESISTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.HERTZCUBEParameter="Куб частот";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEParameterValue="Значение";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEMultiValue="Значения";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEMinValue="Минимальное значение";
+PLMParameter.HERTZCUBEParameter.HERTZCUBEMaxValue="Максимальное значение";
+//
+PLMParameter.HERTZSQUAREParameter="Квадрат частот";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREParameterValue="Значение";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREMultiValue="Значения";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREMinValue="Минимальное значение";
+PLMParameter.HERTZSQUAREParameter.HERTZSQUAREMaxValue="Максимальное значение";
+//
+PLMParameter.HYGROMETRYParameter="Гигрометрия";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYParameterValue="Значение";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYMultiValue="Значения";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYMinValue="Минимальное значение";
+PLMParameter.HYGROMETRYParameter.HYGROMETRYMaxValue="Максимальное значение";
+//
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter="Коэффициент гидродинамического сопротивления";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameterValue="Значение";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTMultiValue="Значения";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTMinValue="Минимальное значение";
+PLMParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTParameter.HYDRODYNAMIC_RESISTANCE_COEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.ILLUMINANCEParameter="Освещенность";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEParameterValue="Значение";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEMultiValue="Значения";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEMinValue="Минимальное значение";
+PLMParameter.ILLUMINANCEParameter.ILLUMINANCEMaxValue="Максимальное значение";
+//
+PLMParameter.ILLUMINATIONParameter="Яркость";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONParameterValue="Значение";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONMultiValue="Значения";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONMinValue="Минимальное значение";
+PLMParameter.ILLUMINATIONParameter.ILLUMINATIONMaxValue="Максимальное значение";
+//
+PLMParameter.INDUCTANCEParameter="Индуктивность";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEParameterValue="Значение";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEMultiValue="Значения";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEMinValue="Минимальное значение";
+PLMParameter.INDUCTANCEParameter.INDUCTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.INERTIAParameter="Инерция";
+PLMParameter.INERTIAParameter.INERTIAParameterValue="Значение";
+PLMParameter.INERTIAParameter.INERTIAMultiValue="Значения";
+PLMParameter.INERTIAParameter.INERTIAMinValue="Минимальное значение";
+PLMParameter.INERTIAParameter.INERTIAMaxValue="Максимальное значение";
+//
+PLMParameter.INERTIAMOMENTParameter="Произведение инерции";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTParameterValue="Значение";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTMultiValue="Значения";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTMinValue="Минимальное значение";
+PLMParameter.INERTIAMOMENTParameter.INERTIAMOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.INTENSITYParameter="Интенсивность";
+PLMParameter.INTENSITYParameter.INTENSITYParameterValue="Значение";
+PLMParameter.INTENSITYParameter.INTENSITYMultiValue="Значения";
+PLMParameter.INTENSITYParameter.INTENSITYMinValue="Минимальное значение";
+PLMParameter.INTENSITYParameter.INTENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter="Обратное давление в квадрате";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREParameterValue="Значение";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREMultiValue="Значения";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREMinValue="Минимальное значение";
+PLMParameter.INVERSE_SQUARE_PRESSUREParameter.INVERSE_SQUARE_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.INVERSE_TEMPRTREParameter="Обратная температура";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREParameterValue="Значение";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREMultiValue="Значения";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREMinValue="Минимальное значение";
+PLMParameter.INVERSE_TEMPRTREParameter.INVERSE_TEMPRTREMaxValue="Максимальное значение";
+//
+PLMParameter.INVERSE_VELOCITYParameter="Обратная скорость";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYParameterValue="Значение";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYMultiValue="Значения";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYMinValue="Минимальное значение";
+PLMParameter.INVERSE_VELOCITYParameter.INVERSE_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.INVERSEPOTENTIALParameter="Обратный потенциал";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALParameterValue="Значение";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALMultiValue="Значения";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALMinValue="Минимальное значение";
+PLMParameter.INVERSEPOTENTIALParameter.INVERSEPOTENTIALMaxValue="Максимальное значение";
+//
+PLMParameter.IONICSTRENGTHParameter="Ионная сила";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHParameterValue="Значение";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHMultiValue="Значения";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHMinValue="Минимальное значение";
+PLMParameter.IONICSTRENGTHParameter.IONICSTRENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.IRRADIANCEParameter="Энергетическая освещенность";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEParameterValue="Значение";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEMultiValue="Значения";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEMinValue="Минимальное значение";
+PLMParameter.IRRADIANCEParameter.IRRADIANCEMaxValue="Максимальное значение";
+//
+PLMParameter.JERKParameter="Рывок";
+PLMParameter.JERKParameter.JERKParameterValue="Значение";
+PLMParameter.JERKParameter.JERKMultiValue="Значения";
+PLMParameter.JERKParameter.JERKMinValue="Минимальное значение";
+PLMParameter.JERKParameter.JERKMaxValue="Максимальное значение";
+//
+PLMParameter.JOULE_HEATINGParameter="Джоулев нагрев";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGParameterValue="Значение";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGMultiValue="Значения";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGMinValue="Минимальное значение";
+PLMParameter.JOULE_HEATINGParameter.JOULE_HEATINGMaxValue="Максимальное значение";
+//
+PLMParameter.KERMAParameter="Керма";
+PLMParameter.KERMAParameter.KERMAParameterValue="Значение";
+PLMParameter.KERMAParameter.KERMAMultiValue="Значения";
+PLMParameter.KERMAParameter.KERMAMinValue="Минимальное значение";
+PLMParameter.KERMAParameter.KERMAMaxValue="Максимальное значение";
+//
+PLMParameter.KERMARATEParameter="Мощность кермы";
+PLMParameter.KERMARATEParameter.KERMARATEParameterValue="Значение";
+PLMParameter.KERMARATEParameter.KERMARATEMultiValue="Значения";
+PLMParameter.KERMARATEParameter.KERMARATEMinValue="Минимальное значение";
+PLMParameter.KERMARATEParameter.KERMARATEMaxValue="Максимальное значение";
+//
+PLMParameter.KINEMATICVISCOSITYParameter="Кинематическая вязкость";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYParameterValue="Значение";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYMultiValue="Значения";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYMinValue="Минимальное значение";
+PLMParameter.KINEMATICVISCOSITYParameter.KINEMATICVISCOSITYMaxValue="Максимальное значение";
+//
+PLMParameter.LENGTHParameter="Длина";
+PLMParameter.LENGTHParameter.LENGTHParameterValue="Значение";
+PLMParameter.LENGTHParameter.LENGTHMultiValue="Значения";
+PLMParameter.LENGTHParameter.LENGTHMinValue="Минимальное значение";
+PLMParameter.LENGTHParameter.LENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.LEVELWIDTHParameter="Ширина уровня";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHParameterValue="Значение";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHMultiValue="Значения";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHMinValue="Минимальное значение";
+PLMParameter.LEVELWIDTHParameter.LEVELWIDTHMaxValue="Максимальное значение";
+//
+PLMParameter.LIGHTEXPOSUREParameter="Оптическое экспонирование";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREParameterValue="Значение";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREMultiValue="Значения";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREMinValue="Минимальное значение";
+PLMParameter.LIGHTEXPOSUREParameter.LIGHTEXPOSUREMaxValue="Максимальное значение";
+//
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter="Линейная массовая плотность волокон";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameterValue="Значение";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSMultiValue="Значения";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSMinValue="Минимальное значение";
+PLMParameter.LINEAR_MASS_DENSITY_OF_FIBERSParameter.LINEAR_MASS_DENSITY_OF_FIBERSMaxValue="Максимальное значение";
+//
+PLMParameter.LINEARCURRENTDENSITYParameter="Плотность линейного тока";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYParameterValue="Значение";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYMultiValue="Значения";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYMinValue="Минимальное значение";
+PLMParameter.LINEARCURRENTDENSITYParameter.LINEARCURRENTDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.LINEARENERGYTRANSFERParameter="Линейная передача энергии";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERParameterValue="Значение";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERMultiValue="Значения";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERMinValue="Минимальное значение";
+PLMParameter.LINEARENERGYTRANSFERParameter.LINEARENERGYTRANSFERMaxValue="Максимальное значение";
+//
+PLMParameter.LINEARFEEDRATEParameter="Линейная скорость подачи";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEParameterValue="Значение";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEMultiValue="Значения";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEMinValue="Минимальное значение";
+PLMParameter.LINEARFEEDRATEParameter.LINEARFEEDRATEMaxValue="Максимальное значение";
+//
+PLMParameter.LINEARIONIZATIONParameter="Линейная ионизация";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONParameterValue="Значение";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONMultiValue="Значения";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONMinValue="Минимальное значение";
+PLMParameter.LINEARIONIZATIONParameter.LINEARIONIZATIONMaxValue="Максимальное значение";
+//
+PLMParameter.LINEARSPINDLESPEEDParameter="Линейная скорость шпинделя";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDParameterValue="Значение";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDMultiValue="Значения";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDMinValue="Минимальное значение";
+PLMParameter.LINEARSPINDLESPEEDParameter.LINEARSPINDLESPEEDMaxValue="Максимальное значение";
+//
+PLMParameter.LINEIC_ABSORPTIONParameter="Линейное поглощение";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONParameterValue="Значение";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONMultiValue="Значения";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONMinValue="Минимальное значение";
+PLMParameter.LINEIC_ABSORPTIONParameter.LINEIC_ABSORPTIONMaxValue="Максимальное значение";
+//
+PLMParameter.LINEMASSParameter="Линейная масса";
+PLMParameter.LINEMASSParameter.LINEMASSParameterValue="Значение";
+PLMParameter.LINEMASSParameter.LINEMASSMultiValue="Значения";
+PLMParameter.LINEMASSParameter.LINEMASSMinValue="Минимальное значение";
+PLMParameter.LINEMASSParameter.LINEMASSMaxValue="Максимальное значение";
+//
+PLMParameter.LOGARITHMICDECREMENTParameter="Логарифмический декремент";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTParameterValue="Значение";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTMultiValue="Значения";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTMinValue="Минимальное значение";
+PLMParameter.LOGARITHMICDECREMENTParameter.LOGARITHMICDECREMENTMaxValue="Максимальное значение";
+//
+PLMParameter.LORENZCOEFFICIENTParameter="Коэффициент Лоренца";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTParameterValue="Значение";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTMultiValue="Значения";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.LORENZCOEFFICIENTParameter.LORENZCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.LOUNDNESSParameter="Громкость";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSParameterValue="Значение";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSMultiValue="Значения";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSMinValue="Минимальное значение";
+PLMParameter.LOUNDNESSParameter.LOUNDNESSMaxValue="Максимальное значение";
+//
+PLMParameter.LOUNDNESSLEVELParameter="Уровень громкости";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELParameterValue="Значение";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELMultiValue="Значения";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELMinValue="Минимальное значение";
+PLMParameter.LOUNDNESSLEVELParameter.LOUNDNESSLEVELMaxValue="Максимальное значение";
+//
+PLMParameter.LUMENParameter="Сила света";
+PLMParameter.LUMENParameter.LUMENParameterValue="Значение";
+PLMParameter.LUMENParameter.LUMENMultiValue="Значения";
+PLMParameter.LUMENParameter.LUMENMinValue="Минимальное значение";
+PLMParameter.LUMENParameter.LUMENMaxValue="Максимальное значение";
+//
+PLMParameter.LUMINOUS_FLUXParameter="Световой поток";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXParameterValue="Значение";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXMultiValue="Значения";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXMinValue="Минимальное значение";
+PLMParameter.LUMINOUS_FLUXParameter.LUMINOUS_FLUXMaxValue="Максимальное значение";
+//
+PLMParameter.LUMINOUS_INTENSITYParameter="Сила света";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYParameterValue="Значение";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYMultiValue="Значения";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYMinValue="Минимальное значение";
+PLMParameter.LUMINOUS_INTENSITYParameter.LUMINOUS_INTENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.LUMINOUSEFFICACYParameter="Световая эффективность";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYParameterValue="Значение";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYMultiValue="Значения";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYMinValue="Минимальное значение";
+PLMParameter.LUMINOUSEFFICACYParameter.LUMINOUSEFFICACYMaxValue="Максимальное значение";
+//
+PLMParameter.LUMINOUSEXITANCEParameter="Светимость";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEParameterValue="Значение";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEMultiValue="Значения";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEMinValue="Минимальное значение";
+PLMParameter.LUMINOUSEXITANCEParameter.LUMINOUSEXITANCEMaxValue="Максимальное значение";
+//
+PLMParameter.MACROSCOPICCROSSSECTIONParameter="Макроскопическое сечение";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONParameterValue="Значение";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONMultiValue="Значения";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONMinValue="Минимальное значение";
+PLMParameter.MACROSCOPICCROSSSECTIONParameter.MACROSCOPICCROSSSECTIONMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETIC_PERMEABILITYParameter="Магнитная проницаемость";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYParameterValue="Значение";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYMultiValue="Значения";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYMinValue="Минимальное значение";
+PLMParameter.MAGNETIC_PERMEABILITYParameter.MAGNETIC_PERMEABILITYMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETICDIPOLEMOMENTParameter="Магнитный дипольный момент";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTParameterValue="Значение";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTMultiValue="Значения";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTMinValue="Минимальное значение";
+PLMParameter.MAGNETICDIPOLEMOMENTParameter.MAGNETICDIPOLEMOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETICFIELDSTRENGTHParameter="Напряженность магнитного поля";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHParameterValue="Значение";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHMultiValue="Значения";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHMinValue="Минимальное значение";
+PLMParameter.MAGNETICFIELDSTRENGTHParameter.MAGNETICFIELDSTRENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETICFLUXParameter="Магнитный поток";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXParameterValue="Значение";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXMultiValue="Значения";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXMinValue="Минимальное значение";
+PLMParameter.MAGNETICFLUXParameter.MAGNETICFLUXMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETICFLUXDENSITYParameter="Плотность магнитного потока";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYParameterValue="Значение";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYMultiValue="Значения";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYMinValue="Минимальное значение";
+PLMParameter.MAGNETICFLUXDENSITYParameter.MAGNETICFLUXDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETICPOLARIZATIONParameter="Магнитная поляризация";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONParameterValue="Значение";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONMultiValue="Значения";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONMinValue="Минимальное значение";
+PLMParameter.MAGNETICPOLARIZATIONParameter.MAGNETICPOLARIZATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETICVECTORPOTENTIALParameter="Векторный магнитный потенциал";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALParameterValue="Значение";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALMultiValue="Значения";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALMinValue="Минимальное значение";
+PLMParameter.MAGNETICVECTORPOTENTIALParameter.MAGNETICVECTORPOTENTIALMaxValue="Максимальное значение";
+//
+PLMParameter.MAGNETIZATIONParameter="Намагниченность";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONParameterValue="Значение";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONMultiValue="Значения";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONMinValue="Минимальное значение";
+PLMParameter.MAGNETIZATIONParameter.MAGNETIZATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MASSParameter="Масса";
+PLMParameter.MASSParameter.MASSParameterValue="Значение";
+PLMParameter.MASSParameter.MASSMultiValue="Значения";
+PLMParameter.MASSParameter.MASSMinValue="Минимальное значение";
+PLMParameter.MASSParameter.MASSMaxValue="Максимальное значение";
+//
+PLMParameter.MASS_DIFFUSIVITYParameter="Коэффициент диффузии массы";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYParameterValue="Значение";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYMultiValue="Значения";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYMinValue="Минимальное значение";
+PLMParameter.MASS_DIFFUSIVITYParameter.MASS_DIFFUSIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter="Массовый расход на объем";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEParameterValue="Значение";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEMultiValue="Значения";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEMinValue="Минимальное значение";
+PLMParameter.MASS_FLOW_PER_VOLUMEParameter.MASS_FLOW_PER_VOLUMEMaxValue="Максимальное значение";
+//
+PLMParameter.MASS_FLUXParameter="Величина вектора потока концентрации массы (поток на единицу площади)";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXParameterValue="Значение";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXMultiValue="Значения";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXMinValue="Минимальное значение";
+PLMParameter.MASS_FLUXParameter.MASS_FLUXMaxValue="Максимальное значение";
+//
+PLMParameter.MASS_FRACTIONParameter="Массовая доля";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONParameterValue="Значение";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONMultiValue="Значения";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONMinValue="Минимальное значение";
+PLMParameter.MASS_FRACTIONParameter.MASS_FRACTIONMaxValue="Максимальное значение";
+//
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter="Коэффициент массового затухания";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTParameterValue="Значение";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTMultiValue="Значения";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.MASSATTENUATIONCOEFFICIENTParameter.MASSATTENUATIONCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter="Массовый коэффициент передачи энергии";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTParameterValue="Значение";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTMultiValue="Значения";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.MASSENERGYTRANSFERCOEFFICIENTParameter.MASSENERGYTRANSFERCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.MASSFLOWParameter="Массовый расход";
+PLMParameter.MASSFLOWParameter.MASSFLOWParameterValue="Значение";
+PLMParameter.MASSFLOWParameter.MASSFLOWMultiValue="Значения";
+PLMParameter.MASSFLOWParameter.MASSFLOWMinValue="Минимальное значение";
+PLMParameter.MASSFLOWParameter.MASSFLOWMaxValue="Максимальное значение";
+//
+PLMParameter.MASSICFLOWParameter="Массовый расход";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWParameterValue="Значение";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWMultiValue="Значения";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWMinValue="Минимальное значение";
+PLMParameter.MASSICFLOWParameter.MASSICFLOWMaxValue="Максимальное значение";
+//
+PLMParameter.MEANMASSRANGEParameter="Средний массовый пробег";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEParameterValue="Значение";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEMultiValue="Значения";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEMinValue="Минимальное значение";
+PLMParameter.MEANMASSRANGEParameter.MEANMASSRANGEMaxValue="Максимальное значение";
+//
+PLMParameter.MECHANICALIMPEDANCEParameter="Механическое сопротивление";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEParameterValue="Значение";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEMultiValue="Значения";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEMinValue="Минимальное значение";
+PLMParameter.MECHANICALIMPEDANCEParameter.MECHANICALIMPEDANCEMaxValue="Максимальное значение";
+//
+PLMParameter.MOBILITYParameter="Мобильность";
+PLMParameter.MOBILITYParameter.MOBILITYParameterValue="Значение";
+PLMParameter.MOBILITYParameter.MOBILITYMultiValue="Значения";
+PLMParameter.MOBILITYParameter.MOBILITYMinValue="Минимальное значение";
+PLMParameter.MOBILITYParameter.MOBILITYMaxValue="Максимальное значение";
+//
+PLMParameter.MODAL_DAMPINGParameter="Модальное демпфирование";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGParameterValue="Значение";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGMultiValue="Значения";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGMinValue="Минимальное значение";
+PLMParameter.MODAL_DAMPINGParameter.MODAL_DAMPINGMaxValue="Максимальное значение";
+//
+PLMParameter.MODAL_MASSParameter="Модальная масса";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSParameterValue="Значение";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSMultiValue="Значения";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSMinValue="Минимальное значение";
+PLMParameter.MODAL_MASSParameter.MODAL_MASSMaxValue="Максимальное значение";
+//
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter="Модальный коэффициент участия";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORParameterValue="Значение";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORMultiValue="Значения";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORMinValue="Минимальное значение";
+PLMParameter.MODAL_PARTICIPATION_FACTORParameter.MODAL_PARTICIPATION_FACTORMaxValue="Максимальное значение";
+//
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter="Молярный коэффициент поглощения";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTParameterValue="Значение";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTMultiValue="Значения";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.MOLARABSORPTIONCOEFFICIENTParameter.MOLARABSORPTIONCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.MOLARCONCENTRATIONParameter="Молярная концентрация";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONParameterValue="Значение";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONMultiValue="Значения";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONMinValue="Минимальное значение";
+PLMParameter.MOLARCONCENTRATIONParameter.MOLARCONCENTRATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MOLARCONDUCTIVITYParameter="Молярная электропроводность";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYParameterValue="Значение";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYMultiValue="Значения";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYMinValue="Минимальное значение";
+PLMParameter.MOLARCONDUCTIVITYParameter.MOLARCONDUCTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.MOLARHEATCAPACITYParameter="Молярная теплоемкость";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYParameterValue="Значение";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYMultiValue="Значения";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYMinValue="Минимальное значение";
+PLMParameter.MOLARHEATCAPACITYParameter.MOLARHEATCAPACITYMaxValue="Максимальное значение";
+//
+PLMParameter.MOLARINTERNALENERGYParameter="Молярная внутренняя энергия";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYParameterValue="Значение";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYMultiValue="Значения";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYMinValue="Минимальное значение";
+PLMParameter.MOLARINTERNALENERGYParameter.MOLARINTERNALENERGYMaxValue="Максимальное значение";
+//
+PLMParameter.MOLARVOLUMEParameter="Молярный объем";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEParameterValue="Значение";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEMultiValue="Значения";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEMinValue="Минимальное значение";
+PLMParameter.MOLARVOLUMEParameter.MOLARVOLUMEMaxValue="Максимальное значение";
+//
+PLMParameter.MOLEParameter="Моль";
+PLMParameter.MOLEParameter.MOLEParameterValue="Значение";
+PLMParameter.MOLEParameter.MOLEMultiValue="Значения";
+PLMParameter.MOLEParameter.MOLEMinValue="Минимальное значение";
+PLMParameter.MOLEParameter.MOLEMaxValue="Максимальное значение";
+//
+PLMParameter.MOLE_PER_MASSParameter="Моль на массу";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSParameterValue="Значение";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSMultiValue="Значения";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSMinValue="Минимальное значение";
+PLMParameter.MOLE_PER_MASSParameter.MOLE_PER_MASSMaxValue="Максимальное значение";
+//
+PLMParameter.MOLECULARDENSITYParameter="Молекулярная плотность";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYParameterValue="Значение";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYMultiValue="Значения";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYMinValue="Минимальное значение";
+PLMParameter.MOLECULARDENSITYParameter.MOLECULARDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.MOLECULARENTHALPYParameter="Молекулярная энтальпия";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYParameterValue="Значение";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYMultiValue="Значения";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYMinValue="Минимальное значение";
+PLMParameter.MOLECULARENTHALPYParameter.MOLECULARENTHALPYMaxValue="Максимальное значение";
+//
+PLMParameter.MOLECULARENTROPYParameter="Молекулярная энтропия";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYParameterValue="Значение";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYMultiValue="Значения";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYMinValue="Минимальное значение";
+PLMParameter.MOLECULARENTROPYParameter.MOLECULARENTROPYMaxValue="Максимальное значение";
+//
+PLMParameter.MOLECULARFLOWParameter="Молекулярный поток";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWParameterValue="Значение";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWMultiValue="Значения";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWMinValue="Минимальное значение";
+PLMParameter.MOLECULARFLOWParameter.MOLECULARFLOWMaxValue="Максимальное значение";
+//
+PLMParameter.MOLECULARWEIGHTParameter="Молекулярная масса";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTParameterValue="Значение";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTMultiValue="Значения";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTMinValue="Минимальное значение";
+PLMParameter.MOLECULARWEIGHTParameter.MOLECULARWEIGHTMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENTParameter="Момент";
+PLMParameter.MOMENTParameter.MOMENTParameterValue="Значение";
+PLMParameter.MOMENTParameter.MOMENTMultiValue="Значения";
+PLMParameter.MOMENTParameter.MOMENTMinValue="Минимальное значение";
+PLMParameter.MOMENTParameter.MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter="Момент на ускорение";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONParameterValue="Значение";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONMultiValue="Значения";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_ACCELERATIONParameter.MOMENT_OVER_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter="Момент на перемещение";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTParameterValue="Значение";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTMultiValue="Значения";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_DISPLACEMENTParameter.MOMENT_OVER_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_PRESSUREParameter="Момент на давление";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_PRESSUREParameter.MOMENT_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_PULSATIONParameter="Угловое демпфирование";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONParameterValue="Значение";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONMultiValue="Значения";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_PULSATIONParameter.MOMENT_OVER_PULSATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_ROTATIONParameter="Момент на вращение";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONParameterValue="Значение";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONMultiValue="Значения";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_ROTATIONParameter.MOMENT_OVER_ROTATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter="Момент на ускорение вращения";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameterValue="Значение";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONMultiValue="Значения";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONParameter.MOMENT_OVER_ROTATIONAL_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_VELOCITYParameter="Момент на скорость";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYParameterValue="Значение";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYMultiValue="Значения";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_VELOCITYParameter.MOMENT_OVER_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter="Момент на объемное ускорение";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_VOLUME_ACCELERATIONParameter.MOMENT_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter="Момент на объемную скорость";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.MOMENT_OVER_VOLUME_VELOCITYParameter.MOMENT_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENT_PER_LENGTHParameter="Момент на длину";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHParameterValue="Значение";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHMultiValue="Значения";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHMinValue="Минимальное значение";
+PLMParameter.MOMENT_PER_LENGTHParameter.MOMENT_PER_LENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.MOMENTUMParameter="Импульс";
+PLMParameter.MOMENTUMParameter.MOMENTUMParameterValue="Значение";
+PLMParameter.MOMENTUMParameter.MOMENTUMMultiValue="Значения";
+PLMParameter.MOMENTUMParameter.MOMENTUMMinValue="Минимальное значение";
+PLMParameter.MOMENTUMParameter.MOMENTUMMaxValue="Максимальное значение";
+//
+PLMParameter.NEUTRONFLUENCERATEParameter="Плотность потока нейтронов";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEParameterValue="Значение";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEMultiValue="Значения";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEMinValue="Минимальное значение";
+PLMParameter.NEUTRONFLUENCERATEParameter.NEUTRONFLUENCERATEMaxValue="Максимальное значение";
+//
+PLMParameter.NUCLEARMAGNETONParameter="Ядерный магнетон";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONParameterValue="Значение";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONMultiValue="Значения";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONMinValue="Минимальное значение";
+PLMParameter.NUCLEARMAGNETONParameter.NUCLEARMAGNETONMaxValue="Максимальное значение";
+//
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter="Квадрупольный момент ядра";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTParameterValue="Значение";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTMultiValue="Значения";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTMinValue="Минимальное значение";
+PLMParameter.NUCLEARQUADRUPOLEMOMENTParameter.NUCLEARQUADRUPOLEMOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.NUMBERDENSITYParameter="Численная плотность";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYParameterValue="Значение";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYMultiValue="Значения";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYMinValue="Минимальное значение";
+PLMParameter.NUMBERDENSITYParameter.NUMBERDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.NUMBEROFMOLECULESParameter="Количество молекул";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESParameterValue="Значение";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESMultiValue="Значения";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESMinValue="Минимальное значение";
+PLMParameter.NUMBEROFMOLECULESParameter.NUMBEROFMOLECULESMaxValue="Максимальное значение";
+//
+PLMParameter.OMEGA_SQUAREDParameter="Собственное значение вибрации";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDParameterValue="Значение";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDMultiValue="Значения";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDMinValue="Минимальное значение";
+PLMParameter.OMEGA_SQUAREDParameter.OMEGA_SQUAREDMaxValue="Максимальное значение";
+//
+PLMParameter.OSMOTICPRESSUREParameter="Осмотическое давление";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREParameterValue="Значение";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREMultiValue="Значения";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREMinValue="Минимальное значение";
+PLMParameter.OSMOTICPRESSUREParameter.OSMOTICPRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.PARTICLEFLUENCEParameter="Поток частиц";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEParameterValue="Значение";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEMultiValue="Значения";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEMinValue="Минимальное значение";
+PLMParameter.PARTICLEFLUENCEParameter.PARTICLEFLUENCEMaxValue="Максимальное значение";
+//
+PLMParameter.PARTICLEFLUENCERATEParameter="Плотность потока частиц";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEParameterValue="Значение";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEMultiValue="Значения";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEMinValue="Минимальное значение";
+PLMParameter.PARTICLEFLUENCERATEParameter.PARTICLEFLUENCERATEMaxValue="Максимальное значение";
+//
+PLMParameter.PER_ANGLEParameter="На угол";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEParameterValue="Значение";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEMultiValue="Значения";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEMinValue="Минимальное значение";
+PLMParameter.PER_ANGLEParameter.PER_ANGLEMaxValue="Максимальное значение";
+//
+PLMParameter.PER_ANGLE_SQUAREParameter="На угол в квадрате";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREParameterValue="Значение";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREMultiValue="Значения";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREMinValue="Минимальное значение";
+PLMParameter.PER_ANGLE_SQUAREParameter.PER_ANGLE_SQUAREMaxValue="Максимальное значение";
+//
+PLMParameter.PERMEANCEParameter="Магнитная проводимость";
+PLMParameter.PERMEANCEParameter.PERMEANCEParameterValue="Значение";
+PLMParameter.PERMEANCEParameter.PERMEANCEMultiValue="Значения";
+PLMParameter.PERMEANCEParameter.PERMEANCEMinValue="Минимальное значение";
+PLMParameter.PERMEANCEParameter.PERMEANCEMaxValue="Максимальное значение";
+//
+PLMParameter.PERMITTIVITYParameter="Диэлектрическая проницаемость";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYParameterValue="Значение";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYMultiValue="Значения";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYMinValue="Минимальное значение";
+PLMParameter.PERMITTIVITYParameter.PERMITTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.PHASECOEFFICIENTParameter="Фазовый коэффициент";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTParameterValue="Значение";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTMultiValue="Значения";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.PHASECOEFFICIENTParameter.PHASECOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.POWERParameter="Электрическая мощность";
+PLMParameter.POWERParameter.POWERParameterValue="Значение";
+PLMParameter.POWERParameter.POWERMultiValue="Значения";
+PLMParameter.POWERParameter.POWERMinValue="Минимальное значение";
+PLMParameter.POWERParameter.POWERMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_DENSITYParameter="Плотность мощности";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYParameterValue="Значение";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYMultiValue="Значения";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYMinValue="Минимальное значение";
+PLMParameter.POWER_DENSITYParameter.POWER_DENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITYParameter="Спектральная плотность мощности";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITYParameter.POWER_SPECTRAL_DENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter="Ускорение спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter="Смещение спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTParameter.POWER_SPECTRAL_DENSITY_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter="Сила спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_FORCEParameter.POWER_SPECTRAL_DENSITY_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter="Момент спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_MOMENTParameter.POWER_SPECTRAL_DENSITY_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter="Давление спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_PRESSUREParameter.POWER_SPECTRAL_DENSITY_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter="Вращение спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter="Ускорение вращения спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter="Скорость вращения спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYParameter.POWER_SPECTRAL_DENSITY_ROTATIONAL_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter="Скорость спектральной плотности мощности";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameterValue="Значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYMultiValue="Значения";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYMinValue="Минимальное значение";
+PLMParameter.POWER_SPECTRAL_DENSITY_VELOCITYParameter.POWER_SPECTRAL_DENSITY_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.POWERbisParameter="Мощность";
+PLMParameter.POWERbisParameter.POWERbisParameterValue="Значение";
+PLMParameter.POWERbisParameter.POWERbisMultiValue="Значения";
+PLMParameter.POWERbisParameter.POWERbisMinValue="Минимальное значение";
+PLMParameter.POWERbisParameter.POWERbisMaxValue="Максимальное значение";
+//
+PLMParameter.POYNTINGVECTORParameter="Вектор Умова-Пойнтинга";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORParameterValue="Значение";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORMultiValue="Значения";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORMinValue="Минимальное значение";
+PLMParameter.POYNTINGVECTORParameter.POYNTINGVECTORMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSUREParameter="Давление";
+PLMParameter.PRESSUREParameter.PRESSUREParameterValue="Значение";
+PLMParameter.PRESSUREParameter.PRESSUREMultiValue="Значения";
+PLMParameter.PRESSUREParameter.PRESSUREMinValue="Минимальное значение";
+PLMParameter.PRESSUREParameter.PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_GRADIENTParameter="Градиент давления";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTParameterValue="Значение";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTMultiValue="Значения";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTMinValue="Минимальное значение";
+PLMParameter.PRESSURE_GRADIENTParameter.PRESSURE_GRADIENTMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter="Давление на ускорение";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_ACCELERATIONParameter.PRESSURE_OVER_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_AREAParameter="Давление на площадь";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_AREAParameter.PRESSURE_OVER_AREAMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter="Давление на перемещение";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_DISPLACEMENTParameter.PRESSURE_OVER_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_FORCEParameter="Давление на силу";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_FORCEParameter.PRESSURE_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_MOMENTParameter="Давление на момент";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_MOMENTParameter.PRESSURE_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter="Давление на нормальную скорость";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_NORMAL_VELOCITYParameter.PRESSURE_OVER_NORMAL_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_PULSATIONParameter="Давление на пульсацию";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_PULSATIONParameter.PRESSURE_OVER_PULSATIONMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_ROTATIONParameter="Давление на вращение";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_ROTATIONParameter.PRESSURE_OVER_ROTATIONMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter="Давление на ускорение вращения";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONParameter.PRESSURE_OVER_ROTATIONAL_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter="Давление на время в квадрате";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_SQUARE_TIMEParameter.PRESSURE_OVER_SQUARE_TIMEMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_TIMEParameter="Давление на время";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_TIMEParameter.PRESSURE_OVER_TIMEMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter="Давление на напряжение";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_VOLTAGEParameter.PRESSURE_OVER_VOLTAGEMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter="Давление на объемное ускорение";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_VOLUME_ACCELERATIONParameter.PRESSURE_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter="Давление на объемную скорость";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.PRESSURE_OVER_VOLUME_VELOCITYParameter.PRESSURE_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSURECOEFFICIENTParameter="Коэффициент давления";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTParameterValue="Значение";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTMultiValue="Значения";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.PRESSURECOEFFICIENTParameter.PRESSURECOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSUREXFORCEParameter="Давление x сила";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEParameterValue="Значение";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEMultiValue="Значения";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEMinValue="Минимальное значение";
+PLMParameter.PRESSUREXFORCEParameter.PRESSUREXFORCEMaxValue="Максимальное значение";
+//
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter="Давление x сила на частоту ";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYParameterValue="Значение";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYMultiValue="Значения";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYMinValue="Минимальное значение";
+PLMParameter.PRESSUREXFORCE_OVER_FREQUENCYParameter.PRESSUREXFORCE_OVER_FREQUENCYMaxValue="Максимальное значение";
+//
+PLMParameter.PROPAGATIONCOEFFICIENTParameter="Коэффициент распространения";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTParameterValue="Значение";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTMultiValue="Значения";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.PROPAGATIONCOEFFICIENTParameter.PROPAGATIONCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.PULSATIONParameter="Пульсация";
+PLMParameter.PULSATIONParameter.PULSATIONParameterValue="Значение";
+PLMParameter.PULSATIONParameter.PULSATIONMultiValue="Значения";
+PLMParameter.PULSATIONParameter.PULSATIONMinValue="Минимальное значение";
+PLMParameter.PULSATIONParameter.PULSATIONMaxValue="Максимальное значение";
+//
+PLMParameter.PULSATION_OVER_FORCEParameter="Пульсация на силу";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEParameterValue="Значение";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEMultiValue="Значения";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.PULSATION_OVER_FORCEParameter.PULSATION_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.PULSATION_OVER_MOMENTParameter="Пульсация на момент";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTParameterValue="Значение";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTMultiValue="Значения";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.PULSATION_OVER_MOMENTParameter.PULSATION_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.PULSATION_OVER_PRESSUREParameter="Пульсация на давление";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.PULSATION_OVER_PRESSUREParameter.PULSATION_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter="Пульсация на объемное ускорение";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.PULSATION_OVER_VOLUME_ACCELERATIONParameter.PULSATION_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter="Пульсация на объемную скорость";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.PULSATION_OVER_VOLUME_VELOCITYParameter.PULSATION_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter="Квадратичный температурный коэффициент";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTParameterValue="Значение";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTMultiValue="Значения";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.QUADRATICTEMPERATURECOEFFICIENTParameter.QUADRATICTEMPERATURECOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.QUANTITYOFLIGHTParameter="Количество света";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTParameterValue="Значение";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTMultiValue="Значения";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTMinValue="Минимальное значение";
+PLMParameter.QUANTITYOFLIGHTParameter.QUANTITYOFLIGHTMaxValue="Максимальное значение";
+//
+PLMParameter.QUIETNESS_INDEXParameter="Индекс тишины";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXParameterValue="Значение";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXMultiValue="Значения";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXMinValue="Минимальное значение";
+PLMParameter.QUIETNESS_INDEXParameter.QUIETNESS_INDEXMaxValue="Максимальное значение";
+//
+PLMParameter.RADIANCEParameter="Энергетическая яркость";
+PLMParameter.RADIANCEParameter.RADIANCEParameterValue="Значение";
+PLMParameter.RADIANCEParameter.RADIANCEMultiValue="Значения";
+PLMParameter.RADIANCEParameter.RADIANCEMinValue="Минимальное значение";
+PLMParameter.RADIANCEParameter.RADIANCEMaxValue="Максимальное значение";
+//
+PLMParameter.RADIANT_FLUXParameter="Поток излучения";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXParameterValue="Значение";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXMultiValue="Значения";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXMinValue="Минимальное значение";
+PLMParameter.RADIANT_FLUXParameter.RADIANT_FLUXMaxValue="Максимальное значение";
+//
+PLMParameter.RADIANT_INTENSITYParameter="Интенсивность излучения";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYParameterValue="Значение";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYMultiValue="Значения";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYMinValue="Минимальное значение";
+PLMParameter.RADIANT_INTENSITYParameter.RADIANT_INTENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.RADIANTENERGYParameter="Энергия излучения";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYParameterValue="Значение";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYMultiValue="Значения";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYMinValue="Минимальное значение";
+PLMParameter.RADIANTENERGYParameter.RADIANTENERGYMaxValue="Максимальное значение";
+//
+PLMParameter.RADIANTENERGYFLUENCERATEParameter="Плотность потока энергии излучения";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEParameterValue="Значение";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEMultiValue="Значения";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEMinValue="Минимальное значение";
+PLMParameter.RADIANTENERGYFLUENCERATEParameter.RADIANTENERGYFLUENCERATEMaxValue="Максимальное значение";
+//
+PLMParameter.RADIOACTIVITYParameter="Радиоактивность";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYParameterValue="Значение";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYMultiValue="Значения";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYMinValue="Минимальное значение";
+PLMParameter.RADIOACTIVITYParameter.RADIOACTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.RATEParameter="Показатель";
+PLMParameter.RATEParameter.RATEParameterValue="Значение";
+PLMParameter.RATEParameter.RATEMultiValue="Значения";
+PLMParameter.RATEParameter.RATEMinValue="Минимальное значение";
+PLMParameter.RATEParameter.RATEMaxValue="Максимальное значение";
+//
+PLMParameter.RatioParameter="Соотношение";
+PLMParameter.RatioParameter.RatioParameterValue="Значение";
+PLMParameter.RatioParameter.RatioMultiValue="Значения";
+PLMParameter.RatioParameter.RatioMinValue="Минимальное значение";
+PLMParameter.RatioParameter.RatioMaxValue="Максимальное значение";
+//
+PLMParameter.REACTIVEPOWERParameter="Реактивная мощность";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERParameterValue="Значение";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERMultiValue="Значения";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERMinValue="Минимальное значение";
+PLMParameter.REACTIVEPOWERParameter.REACTIVEPOWERMaxValue="Максимальное значение";
+//
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter="Коэффициент рекомбинации";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTParameterValue="Значение";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTMultiValue="Значения";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.RECOMBINATIONCOEFFICIENTParameter.RECOMBINATIONCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.RELUCTANCEParameter="Магнитное сопротивление";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEParameterValue="Значение";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEMultiValue="Значения";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEMinValue="Минимальное значение";
+PLMParameter.RELUCTANCEParameter.RELUCTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.RESISTANCEParameter="Электрическое сопротивление";
+PLMParameter.RESISTANCEParameter.RESISTANCEParameterValue="Значение";
+PLMParameter.RESISTANCEParameter.RESISTANCEMultiValue="Значения";
+PLMParameter.RESISTANCEParameter.RESISTANCEMinValue="Минимальное значение";
+PLMParameter.RESISTANCEParameter.RESISTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.RESISTIVITYParameter="Удельное сопротивление";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYParameterValue="Значение";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYMultiValue="Значения";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYMinValue="Минимальное значение";
+PLMParameter.RESISTIVITYParameter.RESISTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.RICHARDSONCONSTANTParameter="Константа Ричардсона";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTParameterValue="Значение";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTMultiValue="Значения";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTMinValue="Минимальное значение";
+PLMParameter.RICHARDSONCONSTANTParameter.RICHARDSONCONSTANTMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATION_OVER_FORCEParameter="Вращение на силу";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEParameterValue="Значение";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEMultiValue="Значения";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.ROTATION_OVER_FORCEParameter.ROTATION_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATION_OVER_MOMENTParameter="Вращение на момент";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTParameterValue="Значение";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTMultiValue="Значения";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.ROTATION_OVER_MOMENTParameter.ROTATION_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATION_OVER_PRESSUREParameter="Вращение на давление";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.ROTATION_OVER_PRESSUREParameter.ROTATION_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter="Вращение на объемное ускорение";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.ROTATION_OVER_VOLUME_ACCELERATIONParameter.ROTATION_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter="Вращение на объемную скорость";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.ROTATION_OVER_VOLUME_VELOCITYParameter.ROTATION_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter="Ускорение вращения на силу";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameterValue="Значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEMultiValue="Значения";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_FORCEParameter.ROTATIONAL_ACCELERATION_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter="Ускорение вращения на момент";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameterValue="Значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTMultiValue="Значения";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTParameter.ROTATIONAL_ACCELERATION_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter="Ускорение вращения на давление";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREParameter.ROTATIONAL_ACCELERATION_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter="Ускорение вращения на объемное ускорение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter="Ускорение вращения на объемную скорость";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYParameter.ROTATIONAL_ACCELERATION_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.ROUGHNESSParameter="Шероховатость";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSParameterValue="Значение";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSMultiValue="Значения";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSMinValue="Минимальное значение";
+PLMParameter.ROUGHNESSParameter.ROUGHNESSMaxValue="Максимальное значение";
+//
+PLMParameter.RPMParameter="Расход в минуту";
+PLMParameter.RPMParameter.RPMParameterValue="Значение";
+PLMParameter.RPMParameter.RPMMultiValue="Значения";
+PLMParameter.RPMParameter.RPMMinValue="Минимальное значение";
+PLMParameter.RPMParameter.RPMMaxValue="Максимальное значение";
+//
+PLMParameter.RSTIFNESParameter="Угловая жесткость";
+PLMParameter.RSTIFNESParameter.RSTIFNESParameterValue="Значение";
+PLMParameter.RSTIFNESParameter.RSTIFNESMultiValue="Значения";
+PLMParameter.RSTIFNESParameter.RSTIFNESMinValue="Минимальное значение";
+PLMParameter.RSTIFNESParameter.RSTIFNESMaxValue="Максимальное значение";
+//
+PLMParameter.SECTIONMODULUSParameter="Момент сопротивления сечения";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSParameterValue="Значение";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSMultiValue="Значения";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSMinValue="Минимальное значение";
+PLMParameter.SECTIONMODULUSParameter.SECTIONMODULUSMaxValue="Максимальное значение";
+//
+PLMParameter.SEEBECKCOEFFICIENTParameter="Коэффициент термоэдс";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTParameterValue="Значение";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTMultiValue="Значения";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.SEEBECKCOEFFICIENTParameter.SEEBECKCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.SLOWINGDOWNDENSITYParameter="Плотность замедления";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYParameterValue="Значение";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYMultiValue="Значения";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYMinValue="Минимальное значение";
+PLMParameter.SLOWINGDOWNDENSITYParameter.SLOWINGDOWNDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.SOLID_ANGLEParameter="Телесный угол";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEParameterValue="Значение";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEMultiValue="Значения";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEMinValue="Минимальное значение";
+PLMParameter.SOLID_ANGLEParameter.SOLID_ANGLEMaxValue="Максимальное значение";
+//
+PLMParameter.SOUND_PRESSURE_LEVELParameter="Уровень звукового давления";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELParameterValue="Значение";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELMultiValue="Значения";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELMinValue="Минимальное значение";
+PLMParameter.SOUND_PRESSURE_LEVELParameter.SOUND_PRESSURE_LEVELMaxValue="Максимальное значение";
+//
+PLMParameter.SOUNDPOWERLEVELParameter="Уровень звуковой мощности";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELParameterValue="Значение";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELMultiValue="Значения";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELMinValue="Минимальное значение";
+PLMParameter.SOUNDPOWERLEVELParameter.SOUNDPOWERLEVELMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter="Скорость поглощения удельной электрической энергии";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEParameterValue="Значение";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEMultiValue="Значения";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEMinValue="Минимальное значение";
+PLMParameter.SPECIFIC_E_ABSORPTION_RATEParameter.SPECIFIC_E_ABSORPTION_RATEMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter="Удельная теплоемкость по сравнению с температурой (кубическая часть)";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameterValue="Значение";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTMultiValue="Значения";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTMinValue="Минимальное значение";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_CUBIC_PARTMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter="Удельная теплоемкость и температура (линейная часть)";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameterValue="Значение";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTMultiValue="Значения";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTMinValue="Минимальное значение";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTParameter.SPECIFIC_HEAT_CAPACITY_LINEAR_PARTMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter="Удельная теплоемкость по сравнению с температурой (квадратичная часть)";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameterValue="Значение";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTMultiValue="Значения";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTMinValue="Минимальное значение";
+PLMParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTParameter.SPECIFIC_HEAT_CAPACITY_QUADRATIC_PARTMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter="Объемная удельная теплоемкость";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameterValue="Значение";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEMultiValue="Значения";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEMinValue="Минимальное значение";
+PLMParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEParameter.SPECIFIC_HEAT_PER_UNIT_VOLUMEMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFIC_SURFACE_AREAParameter="Удельная площадь поверхности";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAParameterValue="Значение";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAMultiValue="Значения";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAMinValue="Минимальное значение";
+PLMParameter.SPECIFIC_SURFACE_AREAParameter.SPECIFIC_SURFACE_AREAMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter="Удельное акустическое сопротивление";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEParameterValue="Значение";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEMultiValue="Значения";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEMinValue="Минимальное значение";
+PLMParameter.SPECIFICACOUSTICIMPEDANCEParameter.SPECIFICACOUSTICIMPEDANCEMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFICACTIVITYParameter="Удельная активность";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYParameterValue="Значение";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYMultiValue="Значения";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYMinValue="Минимальное значение";
+PLMParameter.SPECIFICACTIVITYParameter.SPECIFICACTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFICENERGYParameter="Удельная энергия";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYParameterValue="Значение";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYMultiValue="Значения";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYMinValue="Минимальное значение";
+PLMParameter.SPECIFICENERGYParameter.SPECIFICENERGYMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFICENERGYIMPARTEDParameter="Удельная переданная энергия";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDParameterValue="Значение";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDMultiValue="Значения";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDMinValue="Минимальное значение";
+PLMParameter.SPECIFICENERGYIMPARTEDParameter.SPECIFICENERGYIMPARTEDMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFICVOLUMEParameter="Удельный объем";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEParameterValue="Значение";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEMultiValue="Значения";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEMinValue="Минимальное значение";
+PLMParameter.SPECIFICVOLUMEParameter.SPECIFICVOLUMEMaxValue="Максимальное значение";
+//
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter="Удельный объем на температуру";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameterValue="Значение";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREMultiValue="Значения";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREMinValue="Минимальное значение";
+PLMParameter.SPECIFICVOLUME_OVER_TEMPERATUREParameter.SPECIFICVOLUME_OVER_TEMPERATUREMaxValue="Максимальное значение";
+//
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter="Спектральное угловое сечение";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONParameterValue="Значение";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONMultiValue="Значения";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONMinValue="Минимальное значение";
+PLMParameter.SPECTRALANGULARCROSSSECTIONParameter.SPECTRALANGULARCROSSSECTIONMaxValue="Максимальное значение";
+//
+PLMParameter.SPECTRALCONCENTRATIONParameter="Спектральная плотность";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONParameterValue="Значение";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONMultiValue="Значения";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONMinValue="Минимальное значение";
+PLMParameter.SPECTRALCONCENTRATIONParameter.SPECTRALCONCENTRATIONMaxValue="Максимальное значение";
+//
+PLMParameter.SPECTRALCROSSSECTIONParameter="Спектральное сечение";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONParameterValue="Значение";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONMultiValue="Значения";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONMinValue="Минимальное значение";
+PLMParameter.SPECTRALCROSSSECTIONParameter.SPECTRALCROSSSECTIONMaxValue="Максимальное значение";
+//
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter="Спектральная плотность энергии излучения";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYParameterValue="Значение";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYMultiValue="Значения";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYMinValue="Минимальное значение";
+PLMParameter.SPECTRALRADIANTENERGYDENSITYParameter.SPECTRALRADIANTENERGYDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.SPEEDParameter="Скорость";
+PLMParameter.SPEEDParameter.SPEEDParameterValue="Значение";
+PLMParameter.SPEEDParameter.SPEEDMultiValue="Значения";
+PLMParameter.SPEEDParameter.SPEEDMinValue="Минимальное значение";
+PLMParameter.SPEEDParameter.SPEEDMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_ACCELERATIONParameter="Ускорение в квадрате";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONParameterValue="Значение";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONMultiValue="Значения";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.SQUARE_ACCELERATIONParameter.SQUARE_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_DISPLACEMENTParameter="Перемещение в квадрате";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTParameterValue="Значение";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTMultiValue="Значения";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.SQUARE_DISPLACEMENTParameter.SQUARE_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_FORCEParameter="Сила в квадрате";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEParameterValue="Значение";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEMultiValue="Значения";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEMinValue="Минимальное значение";
+PLMParameter.SQUARE_FORCEParameter.SQUARE_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_MOMENTParameter="Момент в квадрате";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTParameterValue="Значение";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTMultiValue="Значения";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTMinValue="Минимальное значение";
+PLMParameter.SQUARE_MOMENTParameter.SQUARE_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_PRESSUREParameter="Давление в квадрате";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREParameterValue="Значение";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREMultiValue="Значения";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREMinValue="Минимальное значение";
+PLMParameter.SQUARE_PRESSUREParameter.SQUARE_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_PULSATIONParameter="Пульсация в квадрате";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONParameterValue="Значение";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONMultiValue="Значения";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONMinValue="Минимальное значение";
+PLMParameter.SQUARE_PULSATIONParameter.SQUARE_PULSATIONMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_ROTATIONParameter="Вращение в квадрате";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONParameterValue="Значение";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONMultiValue="Значения";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONMinValue="Минимальное значение";
+PLMParameter.SQUARE_ROTATIONParameter.SQUARE_ROTATIONMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter="Ускорение вращения в квадрате";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONParameterValue="Значение";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONMultiValue="Значения";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.SQUARE_ROTATIONAL_ACCELERATIONParameter.SQUARE_ROTATIONAL_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_TIMEParameter="Время в квадрате";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEParameterValue="Значение";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEMultiValue="Значения";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEMinValue="Минимальное значение";
+PLMParameter.SQUARE_TIMEParameter.SQUARE_TIMEMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_VELOCITYParameter="Скорость в квадрате";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYParameterValue="Значение";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYMultiValue="Значения";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYMinValue="Минимальное значение";
+PLMParameter.SQUARE_VELOCITYParameter.SQUARE_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter="Объемное ускорение в квадрате";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.SQUARE_VOLUME_ACCELERATIONParameter.SQUARE_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter="Объемное ускорение в квадрате на частоту";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameterValue="Значение";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYMultiValue="Значения";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYMinValue="Минимальное значение";
+PLMParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYParameter.SQUARE_VOLUME_ACCELERATION_OVER_FREQUENCYMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter="Объемная скорость в квадрате";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.SQUARE_VOLUME_VELOCITYParameter.SQUARE_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter="Объемная скорость в квадрате на частоту";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameterValue="Значение";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYMultiValue="Значения";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYMinValue="Минимальное значение";
+PLMParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYParameter.SQUARE_VOLUME_VELOCITY_OVER_FREQUENCYMaxValue="Максимальное значение";
+//
+PLMParameter.STRAIN_RATEParameter="Скорость деформации";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEParameterValue="Значение";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEMultiValue="Значения";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEMinValue="Минимальное значение";
+PLMParameter.STRAIN_RATEParameter.STRAIN_RATEMaxValue="Максимальное значение";
+//
+PLMParameter.STRESSParameter="Напряжение";
+PLMParameter.STRESSParameter.STRESSParameterValue="Значение";
+PLMParameter.STRESSParameter.STRESSMultiValue="Значения";
+PLMParameter.STRESSParameter.STRESSMinValue="Минимальное значение";
+PLMParameter.STRESSParameter.STRESSMaxValue="Максимальное значение";
+//
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter="Напряжение на температуру в квадрате";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSParameterValue="Значение";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSMultiValue="Значения";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSMinValue="Минимальное значение";
+PLMParameter.STRESS_OVER_SQUARE_TEMPERATUREParameter.STRESSMaxValue="Максимальное значение";
+//
+PLMParameter.SURFACE_POWER_DENSITYParameter="Плотность поверхностной мощности";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYParameterValue="Значение";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYMultiValue="Значения";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYMinValue="Минимальное значение";
+PLMParameter.SURFACE_POWER_DENSITYParameter.SURFACE_POWER_DENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.SURFACEDENSITYOFCHARGEParameter="Поверхностная плотность заряда";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEParameterValue="Значение";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEMultiValue="Значения";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEMinValue="Минимальное значение";
+PLMParameter.SURFACEDENSITYOFCHARGEParameter.SURFACEDENSITYOFCHARGEMaxValue="Максимальное значение";
+//
+PLMParameter.SURFACETENSIONParameter="Поверхностное натяжение";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONParameterValue="Значение";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONMultiValue="Значения";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONMinValue="Минимальное значение";
+PLMParameter.SURFACETENSIONParameter.SURFACETENSIONMaxValue="Максимальное значение";
+//
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter="Постоянная демпфирования поверхности";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTParameterValue="Значение";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTMultiValue="Значения";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTMinValue="Минимальное значение";
+PLMParameter.SURFACIC_DAMPING_CONSTANTParameter.SURFACIC_DAMPING_CONSTANTMaxValue="Максимальное значение";
+//
+PLMParameter.SURFACICMASSParameter="Масса поверхности";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSParameterValue="Значение";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSMultiValue="Значения";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSMinValue="Минимальное значение";
+PLMParameter.SURFACICMASSParameter.SURFACICMASSMaxValue="Максимальное значение";
+//
+PLMParameter.SURFACICSPINDLESPEEDParameter="Скорость шпинделя поверхности";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDParameterValue="Значение";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDMultiValue="Значения";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDMinValue="Минимальное значение";
+PLMParameter.SURFACICSPINDLESPEEDParameter.SURFACICSPINDLESPEEDMaxValue="Максимальное значение";
+//
+PLMParameter.TEMPERATURE_GRADIENTParameter="Градиент температур";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTParameterValue="Значение";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTMultiValue="Значения";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTMinValue="Минимальное значение";
+PLMParameter.TEMPERATURE_GRADIENTParameter.TEMPERATURE_GRADIENTMaxValue="Максимальное значение";
+//
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter="Температура на давление";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.TEMPERATURE_OVER_PRESSUREParameter.TEMPERATURE_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.TEMPERATUREDIFFERENCEParameter="Разница температур";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEParameterValue="Значение";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEMultiValue="Значения";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEMinValue="Минимальное значение";
+PLMParameter.TEMPERATUREDIFFERENCEParameter.TEMPERATUREDIFFERENCEMaxValue="Максимальное значение";
+//
+PLMParameter.TEMPERATURESLOPEParameter="Кривая температуры";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEParameterValue="Значение";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEMultiValue="Значения";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEMinValue="Минимальное значение";
+PLMParameter.TEMPERATURESLOPEParameter.TEMPERATURESLOPEMaxValue="Максимальное значение";
+//
+PLMParameter.TEMPRTREParameter="Температура";
+PLMParameter.TEMPRTREParameter.TEMPRTREParameterValue="Значение";
+PLMParameter.TEMPRTREParameter.TEMPRTREMultiValue="Значения";
+PLMParameter.TEMPRTREParameter.TEMPRTREMinValue="Минимальное значение";
+PLMParameter.TEMPRTREParameter.TEMPRTREMaxValue="Максимальное значение";
+//
+PLMParameter.THERMALCONDUCTANCEParameter="Теплопроводность";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEParameterValue="Значение";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEMultiValue="Значения";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEMinValue="Минимальное значение";
+PLMParameter.THERMALCONDUCTANCEParameter.THERMALCONDUCTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.THERMALCONDUCTIVITYParameter="Теплопроводность";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYParameterValue="Значение";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYMultiValue="Значения";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYMinValue="Минимальное значение";
+PLMParameter.THERMALCONDUCTIVITYParameter.THERMALCONDUCTIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.THERMALDIFFUSIVITYParameter="Тепловая диффузия";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYParameterValue="Значение";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYMultiValue="Значения";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYMinValue="Минимальное значение";
+PLMParameter.THERMALDIFFUSIVITYParameter.THERMALDIFFUSIVITYMaxValue="Максимальное значение";
+//
+PLMParameter.THERMALINSULANCEParameter="Термическая изоляция";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEParameterValue="Значение";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEMultiValue="Значения";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEMinValue="Минимальное значение";
+PLMParameter.THERMALINSULANCEParameter.THERMALINSULANCEMaxValue="Максимальное значение";
+//
+PLMParameter.THERMALRESISTANCEParameter="Тепловое сопротивление";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEParameterValue="Значение";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEMultiValue="Значения";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEMinValue="Минимальное значение";
+PLMParameter.THERMALRESISTANCEParameter.THERMALRESISTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.THERMALTRANSMITTANCEParameter="Коэффициент теплопередачи";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEParameterValue="Значение";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEMultiValue="Значения";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEMinValue="Минимальное значение";
+PLMParameter.THERMALTRANSMITTANCEParameter.THERMALTRANSMITTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.THICKNESSParameter="Толщина";
+PLMParameter.THICKNESSParameter.THICKNESSParameterValue="Значение";
+PLMParameter.THICKNESSParameter.THICKNESSMultiValue="Значения";
+PLMParameter.THICKNESSParameter.THICKNESSMinValue="Минимальное значение";
+PLMParameter.THICKNESSParameter.THICKNESSMaxValue="Максимальное значение";
+//
+PLMParameter.THOMSONCOEFFICIENTParameter="Коэффициент Томсона";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTParameterValue="Значение";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTMultiValue="Значения";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTMinValue="Минимальное значение";
+PLMParameter.THOMSONCOEFFICIENTParameter.THOMSONCOEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.TIMEParameter="Время";
+PLMParameter.TIMEParameter.TIMEParameterValue="Значение";
+PLMParameter.TIMEParameter.TIMEMultiValue="Значения";
+PLMParameter.TIMEParameter.TIMEMinValue="Минимальное значение";
+PLMParameter.TIMEParameter.TIMEMaxValue="Максимальное значение";
+//
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter="Время интегрирования электрического тока на площадь";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameterValue="Значение";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAMultiValue="Значения";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAMinValue="Минимальное значение";
+PLMParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAParameter.TIME_INTEGRATED_ELECTRIC_CURRENT_PER_AREAMaxValue="Максимальное значение";
+//
+PLMParameter.TORQUEParameter="Момент затяжки";
+PLMParameter.TORQUEParameter.TORQUEParameterValue="Значение";
+PLMParameter.TORQUEParameter.TORQUEMultiValue="Значения";
+PLMParameter.TORQUEParameter.TORQUEMinValue="Минимальное значение";
+PLMParameter.TORQUEParameter.TORQUEMaxValue="Максимальное значение";
+//
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter="Полная атомная тормозная способность";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERParameterValue="Значение";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERMultiValue="Значения";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERMinValue="Минимальное значение";
+PLMParameter.TOTALATOMICSTOPPINGPOWERParameter.TOTALATOMICSTOPPINGPOWERMaxValue="Максимальное значение";
+//
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter="Общая линейная тормозная способность";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERParameterValue="Значение";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERMultiValue="Значения";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERMinValue="Минимальное значение";
+PLMParameter.TOTALLINEARSTOPPINGPOWERParameter.TOTALLINEARSTOPPINGPOWERMaxValue="Максимальное значение";
+//
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter="Полная массовая тормозная способность";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERParameterValue="Значение";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERMultiValue="Значения";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERMinValue="Минимальное значение";
+PLMParameter.TOTALMASSSTOPPINGPOWERParameter.TOTALMASSSTOPPINGPOWERMaxValue="Максимальное значение";
+//
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter="Общая плотность источника нейтронов";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYParameterValue="Значение";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYMultiValue="Значения";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYMinValue="Минимальное значение";
+PLMParameter.TOTALNEUTRONSOURCEDENSITYParameter.TOTALNEUTRONSOURCEDENSITYMaxValue="Максимальное значение";
+//
+PLMParameter.TRANSCONDUCTANCEParameter="Активная межэлектродная проводимость";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEParameterValue="Значение";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEMultiValue="Значения";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEMinValue="Минимальное значение";
+PLMParameter.TRANSCONDUCTANCEParameter.TRANSCONDUCTANCEMaxValue="Максимальное значение";
+//
+PLMParameter.TRANSMISSIONParameter="Передача";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONParameterValue="Значение";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONMultiValue="Значения";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONMinValue="Минимальное значение";
+PLMParameter.TRANSMISSIONParameter.TRANSMISSIONMaxValue="Максимальное значение";
+//
+PLMParameter.TSTIFNESParameter="Постоянная жесткости";
+PLMParameter.TSTIFNESParameter.TSTIFNESParameterValue="Значение";
+PLMParameter.TSTIFNESParameter.TSTIFNESMultiValue="Значения";
+PLMParameter.TSTIFNESParameter.TSTIFNESMinValue="Минимальное значение";
+PLMParameter.TSTIFNESParameter.TSTIFNESMaxValue="Максимальное значение";
+//
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter="Скорость диссипации энергии турбулентного движения";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameterValue="Значение";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEMultiValue="Значения";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEMinValue="Минимальное значение";
+PLMParameter.TURBULENT_ENERGY_DISSIPATION_RATEParameter.TURBULENT_ENERGY_DISSIPATION_RATEMaxValue="Максимальное значение";
+//
+PLMParameter.TWISTParameter="Скручивание";
+PLMParameter.TWISTParameter.TWISTParameterValue="Значение";
+PLMParameter.TWISTParameter.TWISTMultiValue="Значения";
+PLMParameter.TWISTParameter.TWISTMinValue="Минимальное значение";
+PLMParameter.TWISTParameter.TWISTMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITY_OVER_FORCEParameter="Скорость на силу";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEParameterValue="Значение";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEMultiValue="Значения";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.VELOCITY_OVER_FORCEParameter.VELOCITY_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITY_OVER_MOMENTParameter="Скорость на момент";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTParameterValue="Значение";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTMultiValue="Значения";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.VELOCITY_OVER_MOMENTParameter.VELOCITY_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITY_OVER_PRESSUREParameter="Скорость на давление";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.VELOCITY_OVER_PRESSUREParameter.VELOCITY_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter="Скорость на напряжение";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEParameterValue="Значение";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEMultiValue="Значения";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEMinValue="Минимальное значение";
+PLMParameter.VELOCITY_OVER_VOLTAGEParameter.VELOCITY_OVER_VOLTAGEMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter="Скорость на объемное ускорение";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VELOCITY_OVER_VOLUME_ACCELERATIONParameter.VELOCITY_OVER_VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter="Скорость на объемную скорость";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.VELOCITY_OVER_VOLUME_VELOCITYParameter.VELOCITY_OVER_VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITY_POTENTIALParameter="Потенциал скорости";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALParameterValue="Значение";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALMultiValue="Значения";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALMinValue="Минимальное значение";
+PLMParameter.VELOCITY_POTENTIALParameter.VELOCITY_POTENTIALMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITYXFORCEParameter="Скорость x сила";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEParameterValue="Значение";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEMultiValue="Значения";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEMinValue="Минимальное значение";
+PLMParameter.VELOCITYXFORCEParameter.VELOCITYXFORCEMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITYXPRESSUREParameter="Скорость x давление";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREParameterValue="Значение";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREMultiValue="Значения";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREMinValue="Минимальное значение";
+PLMParameter.VELOCITYXPRESSUREParameter.VELOCITYXPRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter="Скорость x объемное ускорение";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VELOCITYXVOLUME_ACCELERATIONParameter.VELOCITYXVOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VISCOUS_DAMPINGParameter="Вязкостное демпфирование";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGParameterValue="Значение";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGMultiValue="Значения";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGMinValue="Минимальное значение";
+PLMParameter.VISCOUS_DAMPINGParameter.VISCOUS_DAMPINGMaxValue="Максимальное значение";
+//
+PLMParameter.VOL_FLOWParameter="Объемный расход";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWParameterValue="Значение";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWMultiValue="Значения";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWMinValue="Минимальное значение";
+PLMParameter.VOL_FLOWParameter.VOL_FLOWMaxValue="Максимальное значение";
+//
+PLMParameter.VOLFORCEParameter="Объемная сила";
+PLMParameter.VOLFORCEParameter.VOLFORCEParameterValue="Значение";
+PLMParameter.VOLFORCEParameter.VOLFORCEMultiValue="Значения";
+PLMParameter.VOLFORCEParameter.VOLFORCEMinValue="Минимальное значение";
+PLMParameter.VOLFORCEParameter.VOLFORCEMaxValue="Максимальное значение";
+//
+PLMParameter.VOLTAGEParameter="Напряжение";
+PLMParameter.VOLTAGEParameter.VOLTAGEParameterValue="Значение";
+PLMParameter.VOLTAGEParameter.VOLTAGEMultiValue="Значения";
+PLMParameter.VOLTAGEParameter.VOLTAGEMinValue="Минимальное значение";
+PLMParameter.VOLTAGEParameter.VOLTAGEMaxValue="Максимальное значение";
+//
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter="Напряжение на ускорение";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONParameterValue="Значение";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONMultiValue="Значения";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VOLTAGE_OVER_ACCELERATIONParameter.VOLTAGE_OVER_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter="Напряжение на перемещение";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTParameterValue="Значение";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTMultiValue="Значения";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.VOLTAGE_OVER_DISPLACEMENTParameter.VOLTAGE_OVER_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter="Напряжение на давление";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREParameterValue="Значение";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREMultiValue="Значения";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREMinValue="Минимальное значение";
+PLMParameter.VOLTAGE_OVER_PRESSUREParameter.VOLTAGE_OVER_PRESSUREMaxValue="Максимальное значение";
+//
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter="Напряжение на скорость";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYParameterValue="Значение";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYMultiValue="Значения";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYMinValue="Минимальное значение";
+PLMParameter.VOLTAGE_OVER_VELOCITYParameter.VOLTAGE_OVER_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.VOLTAGESLOPEParameter="Наклон напряжения";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEParameterValue="Значение";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEMultiValue="Значения";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEMinValue="Минимальное значение";
+PLMParameter.VOLTAGESLOPEParameter.VOLTAGESLOPEMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUMEParameter="Объем";
+PLMParameter.VOLUMEParameter.VOLUMEParameterValue="Значение";
+PLMParameter.VOLUMEParameter.VOLUMEMultiValue="Значения";
+PLMParameter.VOLUMEParameter.VOLUMEMinValue="Минимальное значение";
+PLMParameter.VOLUMEParameter.VOLUMEMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATIONParameter="Объемное ускорение";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATIONParameter.VOLUME_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter="Объемное ускорение на ускорение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter="Объемное ускорение на перемещение";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTParameter.VOLUME_ACCELERATION_OVER_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter="Объемное ускорение на силу";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_FORCEParameter.VOLUME_ACCELERATION_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter="Объемное ускорение на момент";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_MOMENTParameter.VOLUME_ACCELERATION_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter="Объемное ускорение на пульсацию";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_PULSATIONParameter.VOLUME_ACCELERATION_OVER_PULSATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter="Объемное ускорение на вращение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter="Объемное ускорение на ускорение вращения";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_ACCELERATION_OVER_ROTATIONAL_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter="Объемное ускорение на скорость";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameterValue="Значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYMultiValue="Значения";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYMinValue="Минимальное значение";
+PLMParameter.VOLUME_ACCELERATION_OVER_VELOCITYParameter.VOLUME_ACCELERATION_OVER_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITYParameter="Объемная скорость";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITYParameter.VOLUME_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter="Объемная скорость на ускорение";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter="Объемная скорость на перемещение";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTParameter.VOLUME_VELOCITY_OVER_DISPLACEMENTMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter="Объемная скорость на силу";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_FORCEParameter.VOLUME_VELOCITY_OVER_FORCEMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter="Объемная скорость на момент";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_MOMENTParameter.VOLUME_VELOCITY_OVER_MOMENTMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter="Объемная скорость на пульсацию";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_PULSATIONParameter.VOLUME_VELOCITY_OVER_PULSATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter="Объемная скорость на вращение";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter="Объемная скорость на ускорение вращения";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONParameter.VOLUME_VELOCITY_OVER_ROTATIONAL_ACCELERATIONMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter="Объемная скорость на скорость";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYParameterValue="Значение";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYMultiValue="Значения";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYMinValue="Минимальное значение";
+PLMParameter.VOLUME_VELOCITY_OVER_VELOCITYParameter.VOLUME_VELOCITY_OVER_VELOCITYMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter="Объемная плотность заряда";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEParameterValue="Значение";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEMultiValue="Значения";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEMinValue="Минимальное значение";
+PLMParameter.VOLUMEDENSITYOFCHARGEParameter.VOLUMEDENSITYOFCHARGEMaxValue="Максимальное значение";
+//
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter="Объемная плотность тока";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTParameterValue="Значение";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTMultiValue="Значения";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTMinValue="Минимальное значение";
+PLMParameter.VOLUMEDENSITYOFCURRENTParameter.VOLUMEDENSITYOFCURRENTMaxValue="Максимальное значение";
+//
+PLMParameter.WARPING_COEFFICIENTParameter="Коэффициент деформации";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTParameterValue="Значение";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTMultiValue="Значения";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTMinValue="Минимальное значение";
+PLMParameter.WARPING_COEFFICIENTParameter.WARPING_COEFFICIENTMaxValue="Максимальное значение";
+//
+PLMParameter.WAVE_FRONT_ERRORParameter="Ошибка волнового фронта";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORParameterValue="Значение";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORMultiValue="Значения";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORMinValue="Минимальное значение";
+PLMParameter.WAVE_FRONT_ERRORParameter.WAVE_FRONT_ERRORMaxValue="Максимальное значение";
+//
+PLMParameter.WAVE_LENGTHParameter="Длина волны";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHParameterValue="Значение";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHMultiValue="Значения";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHMinValue="Минимальное значение";
+PLMParameter.WAVE_LENGTHParameter.WAVE_LENGTHMaxValue="Максимальное значение";
+//
+PLMParameter.WAVENUMBERParameter="Волновое число";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERParameterValue="Значение";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERMultiValue="Значения";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERMinValue="Минимальное значение";
+PLMParameter.WAVENUMBERParameter.WAVENUMBERMaxValue="Максимальное значение";
+//
+PLMParameter.FormattedStringParameter="Отформатированная строка";
+PLMParameter.FormattedStringParameter.FormmattedStringMinValue="Минимальное значение";
+PLMParameter.FormattedStringParameter.FormmattedStringMaxValue="Максимальное значение";
+//
+PLMParameter.RGBFormattedStringParameter="Отформатированная строка RGB";
+//
+PLMParameter.CMYKFormattedStringParameter="Отформатированная строка CMYK";
+//
+PLMParameter.HEXFormattedStringParameter="Отформатированная строка в шестнадцатеричном формате";
+//
+PLMParameter.SubjectivityParameter="Субъективность";
+PLMParameter.SubjectivityParameter.SubjectivityReference="Ссылка на субъективность";

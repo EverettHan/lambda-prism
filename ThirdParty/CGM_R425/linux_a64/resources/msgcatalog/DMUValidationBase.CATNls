@@ -1,0 +1,43 @@
+<meta charset="UTF-8"/>
+DMUValidationBase="Review";
+  DMUValidationBase.DMUValidationValidation="Review";
+
+    DMUValidationBase.DMUValidationValidation.V_Validation_Type="Context type";
+    
+    DMUValidationBase.DMUValidationValidation.V_experimentStatus="Experiment Status";
+
+    DMUValidationBase.DMUValidationValidation.V_ValidationState="Validation";
+      DMUValidationBase.DMUValidationValidation.V_ValidationState.Range.Equal.InProgress="In Progress";
+      DMUValidationBase.DMUValidationValidation.V_ValidationState.Range.Equal.Passed="Passed";
+      DMUValidationBase.DMUValidationValidation.V_ValidationState.Range.Equal.Failed="Failed";
+  
+  DMUValidationBase.DMUValidationCheck="Check";
+    DMUValidationBase.DMUValidationCheck.V_Validation_Checkstate="Status";
+
+  DMUValidationBase.DMUValidationExposedPresentation="Highlight";
+    DMUValidationBase.DMUValidationExposedPresentation.V_Validation_Presentationrating="Rating";
+
+  DMUValidationBase.DMUValidationType="Review Types enumeration";
+    DMUValidationBase.DMUValidationType.Product="Product";
+    DMUValidationBase.DMUValidationType.Simulation="Simulation";
+    DMUValidationBase.DMUValidationType.Image="Image";
+    DMUValidationBase.DMUValidationType.RFL="RFL";
+    DMUValidationBase.DMUValidationType.PPR="PPR";
+    DMUValidationBase.DMUValidationType.Shape="3DShape";
+
+  DMUValidationBase.DMUValidationCheckstate="DMUValidationCheckstate";
+    DMUValidationBase.DMUValidationCheckstate.Unknown="In Progress";
+    DMUValidationBase.DMUValidationCheckstate.OK="Passed";
+    DMUValidationBase.DMUValidationCheckstate.KO="Failed";
+
+  DMUValidationBase.DMUValidationPresentationrating="DMUValidationPresentationrating";
+    DMUValidationBase.DMUValidationPresentationrating.Undefined="To be assessed";
+    DMUValidationBase.DMUValidationPresentationrating.Low="Low Priority";
+    DMUValidationBase.DMUValidationPresentationrating.Medium="Medium Priority";
+    DMUValidationBase.DMUValidationPresentationrating.High="High Priority";
+    DMUValidationBase.DMUValidationPresentationrating.Verified="Processed";
+
+	DMUValidationBase.DMUValidationCheck.V_Validation_Check="Checked Requirement";
+DMUValidationBase.DMUValidationCheck.V_Validation_Chklval="Impacted Validation";
+DMUValidationBase.DMUValidationCheck.V_Validation_Concern="Involved Concern";
+DMUValidationBase.DMUValidationExposedPresentation.V_Validation_Presentation="Exposed Presentation";

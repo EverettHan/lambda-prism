@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbXRiteCarPaint2</NAME>
+  </CONSTANT_BUFFER>
+  <CONSTANT_BUFFER>
+    <NAME>cbVisMapping</NAME>
+  </CONSTANT_BUFFER>
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLDirLightsApprox</NAME>
+    <NEEDS_OPTION>ImageBasedLighting</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>clearcoat_normal_map</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  <SAMPLER>
+    <NAME>brdf_colors_map</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+  <SAMPLER>
+    <NAME>btf_flakes_map</NAME>
+    <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>clearcoat_normal_map_sampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+  <SAMPLER_STATE>
+    <NAME>brdf_colors_map_sampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+  <SAMPLER_STATE>
+    <NAME>btf_flakes_map_sampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Mirror</WRAP_U>
+    <WRAP_V>Mirror</WRAP_V>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>clearcoat_normal_map</SAMPLER>
+          <STATES>clearcoat_normal_map_sampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>brdf_colors_map</SAMPLER>
+          <STATES>brdf_colors_map_sampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>btf_flakes_map</SAMPLER>
+          <STATES>btf_flakes_map_sampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <LIGHTING>true</LIGHTING>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>XRiteCarPaint2_vLocalPosition</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>XRiteCarPaint2_vLocalNormal</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      <VERTEX_STAGE>
+        XriteCarPaint2_VS
+      </VERTEX_STAGE>
+      <FRAGMENT_STAGE>
+        XriteCarPaint2_FS
+      </FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+</PDSFX>

@@ -1,0 +1,15 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Public" name = "WebappsUtils"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <authorize access = "Private" name = "SGCoreUtils"/>
+  <authorize access = "Private" name = "XCTRecipeExperienceOps"/>
+  <authorize access = "Private" name = "VisualizationNRE.tst"/>
+  <authorize access = "Private" name = "SGInfra"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <attached name = "Visualization.tst"/>
+  <attached name = "RenderEngine.tst"/>
+  <attached name = "SGCoreUtils.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

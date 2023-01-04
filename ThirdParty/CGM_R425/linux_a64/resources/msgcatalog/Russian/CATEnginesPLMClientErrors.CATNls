@@ -1,0 +1,32 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+NotFirstVersionNotModifiable_F_1.Diagnostic="Ссылки не являются ссылками на первую редакцию, поэтому набор атрибутов идентификаторов нельзя изменить. Рассматриваемые ссылки: \n/p1";
+NotFirstVersionNotModifiable_F_1.Advice="";
+NotFirstVersionNotModifiable_F_1.Request="Набор атрибутов идентификаторов можно изменить только в первой редакции ссылки.";
+
+
+BlockingOwnerMaturity1_F_0.Diagnostic="Невозможно создать экземпляры /p, так как их ссылка на владельца не редактируется: \nСсылки владельца нельзя отредактировать из-за статуса готовности.";
+BlockingOwnerMaturity1_F_0.Advice="Измените статус готовности объекта владельца.";
+BlockingOwnerMaturity1_F_0.Request="";
+
+
+//  In Diagnostic's /p : Precision on which system problem occurs: this is DEBUG information
+PLMc_ServerSystemPb_F_1.Diagnostic="Проблема системы сервера \n(отладочная информация: \n/p)";
+PLMc_ServerSystemPb_F_1.Advice="";
+PLMc_ServerSystemPb_F_1.Request="";

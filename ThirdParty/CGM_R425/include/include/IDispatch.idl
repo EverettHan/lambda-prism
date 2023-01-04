@@ -1,0 +1,42 @@
+#ifndef IDispatch_idl
+#define IDispatch_idl
+
+/* COPYRIGHT DASSAULT SYSTEMES 2000 */
+
+#include "IUnknown.idl"
+
+/*IDLNOGEN*/
+
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+#pragma ID IDispatch "DCE:00020400-0000-0000-C000000000000046"
+/**
+ * Base interface for all Automation interfaces.
+ * <b>Role</b>: All Automation interfaces derive from <tt>IDispatch</tt> which replaces for UNIX the
+ * native Microsoft(R) <tt>IDispatch</tt> interface.
+ * This interface supplies basic methods to be Microsoft(R) Automation compliant.
+ */
+interface IDispatch : IUnknown
+{
+/**
+* @nodoc 
+*/
+	HRESULT GetTypeInfoCount();
+/**
+* @nodoc 
+*/
+	HRESULT GetTypeInfo();
+/**
+* @nodoc 
+*/
+	HRESULT GetIDsOfNames();
+/**
+* @nodoc 
+*/
+	HRESULT Invoke();
+};
+
+#endif

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbCbAreaLights</NAME>
+
+  <!--To Check-->
+  <USAGE>Stream</USAGE>
+
+	<!-- Area lights count disabled because there is a shader option instead -->
+  <!-- UNIFORM>
+    <NAME>Count</NAME>    
+    <TYPE>int</TYPE>
+    <SEMANTIC>AreaLightCount</SEMANTIC>
+  </UNIFORM -->
+
+	<!-- == ALL LIGHTS PARAMETERS == -->
+
+  <UNIFORM>
+    <NAME>Position</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Area.Position</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>Type</NAME>
+    <TYPE>int</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Area.Type</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>Color</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Area.Color</SEMANTIC>
+  </UNIFORM>
+
+	<UNIFORM>
+    <NAME>PowerPerAreaUnit</NAME>
+    <TYPE>float</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Area.PowerPerAreaUnit</SEMANTIC>
+  </UNIFORM>
+
+  <!-- == SPHAPE SPECIFIC PARAMETERS == -->
+
+	<!-- Normal for planar lights (disk and rectangle) -->
+  <UNIFORM>
+    <NAME>MainDirection</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Area.MainDirection</SEMANTIC>
+  </UNIFORM>
+
+	<!-- Other direction for shape define (tube neutral axis or rectangle up direction) -->
+  <UNIFORM>
+    <NAME>OtherDirection</NAME>
+    <TYPE>float3</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Area.OtherDirection</SEMANTIC>
+  </UNIFORM>
+
+	<!-- Size parameters (x: sphere, disk and tube radius; y: tube length; xy: rectangle size) -->
+  <UNIFORM>
+    <NAME>Size</NAME>
+    <TYPE>float2</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <SEMANTIC>Area.Size</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

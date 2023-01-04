@@ -1,0 +1,94 @@
+<meta charset="UTF-8"/>
+PLMCORE="Core Model";
+
+//--------------------------------------------------------
+PLMCORE.PLMReference="PLMReference";
+//-- Simple from PLMReference --
+PLMCORE.PLMReference.V_ApplicabilityDate="Applicability Date";
+PLMCORE.PLMReference.V_AuthorityControl="Authority Control";
+PLMCORE.PLMReference.V_DerivedFrom="Derived From";
+PLMCORE.PLMReference.V_EffectivityKind="Effectivity Kind";
+PLMCORE.PLMReference.V_ProjectApplicability="Applicable in Projects";
+PLMCORE.PLMReference.V_VersionID="Version ID";
+PLMCORE.PLMReference.V_fromExternalID="Created From"; 
+PLMCORE.PLMReference.V_hasConfigContext="Is Configurable";
+PLMCORE.PLMReference.V_isLastMinorVersion="Is Last Minor Revision"; 
+PLMCORE.PLMReference.V_isLastVersion="Is Last Revision";
+PLMCORE.PLMReference.V_isVPLMControlled="Physical Control";
+PLMCORE.PLMReference.V_order="Order";
+PLMCORE.PLMReference.V_versionComment="Revision Comment"; 
+//-- Simple from BusinessType (but which are "internal" ? -- 
+PLMCORE.PLMReference.majororder="Order Of The Major"; 
+PLMCORE.PLMReference.minororder="Order Of The Minor"; 
+PLMCORE.PLMReference.versionid="Version ID";
+//-- Volatile from PLMReference --
+PLMCORE.PLMReference.InstantiatedBy="Is Instantiated By";
+PLMCORE.PLMReference.IsExported="Is Exported";
+PLMCORE.PLMReference.V_maturity="Maturity";
+PLMCORE.PLMReference.V_version="Revision";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreReference="PLMCoreReference";
+//-- Simple from PLMCoreReference --
+PLMCORE.PLMCoreReference.V_ChangeHistory="Change History";
+PLMCORE.PLMCoreReference.V_isTerminal="Is Terminal";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepReference="PLMCoreRepReference";
+//-- Simple from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.V_isOnceInstantiable="Is OnceInstantiable";
+PLMCORE.PLMCoreRepReference.V_markstamp="Markstamp";
+//-- Volatile from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.AggregatingReference="Aggregating reference";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMConnection="PLMConnection";
+//-- Simple from PLMConnection --
+PLMCORE.PLMConnection.V_isVPLMControlled="Is PLM Controlled";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMPort="PLMPort";
+//-- Simple from PLMPort --
+PLMCORE.PLMPort.V_isVPLMControlled="Is PLM Controlled";
+
+ 
+//--------------------------------------------------------
+PLMCORE.PLMInstance="PLMInstance";
+//-- Simple from PLMInstance --
+PLMCORE.PLMInstance.PLM_ExternalID="Name";
+PLMCORE.PLMInstance.V_CustoDiscipline="Custo Discipline";
+PLMCORE.PLMInstance.V_EffectivityCompiledForm="Effectivity Compiled Form";
+PLMCORE.PLMInstance.V_Name="Title";
+PLMCORE.PLMInstance.V_TreeOrder="Tree Order";
+PLMCORE.PLMInstance.V_description="Description";
+PLMCORE.PLMInstance.V_discipline="Discipline";
+PLMCORE.PLMInstance.V_hasConfigEffectivity="Is Configured";
+PLMCORE.PLMInstance.V_hasConfigStaticMapping="Is Configuration Mapped";
+PLMCORE.PLMInstance.V_isVPLMControlled="Is PLM Controlled";
+PLMCORE.PLMInstance.V_nature="Nature";
+PLMCORE.PLMInstance.V_sec_level="Security Level";
+PLMCORE.PLMInstance.V_usage="Usage";
+//-- Simple from RelationType --
+PLMCORE.PLMInstance.modified="Last modification";
+PLMCORE.PLMInstance.originated="Creation date";
+PLMCORE.PLMInstance.owner="Owner";
+//-- Volatile from PLMInstance --
+PLMCORE.PLMInstance.C_created="Creation date";
+PLMCORE.PLMInstance.C_modified="Last modification";
+PLMCORE.PLMInstance.LOCKSTATUS="Locked";
+PLMCORE.PLMInstance.LOCKUSER="Locked By";
+PLMCORE.PLMInstance.V_confidentiality="Confidentiality";
+PLMCORE.PLMInstance.V_organization="Organization";
+PLMCORE.PLMInstance.V_project="Collaborative Space";
+PLMCORE.PLMInstance.V_user="Owner";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreInstance="PLMCoreInstance";
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepInstance="PLMCoreRepInstance";

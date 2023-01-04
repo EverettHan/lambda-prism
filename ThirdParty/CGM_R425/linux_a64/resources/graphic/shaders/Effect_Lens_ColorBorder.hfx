@@ -1,0 +1,58 @@
+//
+// FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM FRAGMENT PROGRAM
+//
+
+#include "Effect_General.hfx"
+
+//--------------------------------
+// Tweakables
+//--------------------------------
+
+float4 Auto_Size<>;
+float4 Auto_Position<>;
+
+float u_Size
+<
+float UIMin		= 0;
+float UIMax		= 1.f;
+float UIStep	= 0.01f;
+> = 1.f;
+
+float4 u_Color
+<
+> = float4(0,0,0,1.f);
+
+//-----------------------------------------------------------------------------------------
+//  Pixel Shader
+//-----------------------------------------------------------------------------------------
+
+float4 Effect_Lens_ColorBorder_PS(pixelInput IN) : COLOR 
+{
+  float2 screenCoord = IN.texCoord.xy;
+
+#ifdef HORIZONTAL
+  float alpha = abs(2.f*(screenCoord.x+Auto_Position.x-Auto_Size.x*0.5f)*Auto_Size.z);
+#else
+  float alpha = abs(2.f*(screenCoord.y+Auto_Position.y-Auto_Size.y*0.5f)*Auto_Size.w);
+#endif
+  alpha = saturate((alpha-1+u_Size)/u_Size);
+  alpha *= alpha;
+  alpha *= alpha;
+
+  return float4(u_Color.xyz, alpha*u_Color.w);
+}
+
+//-----------------------------------------------------------------------------------------
+//  Techniques
+//-----------------------------------------------------------------------------------------
+
+technique Effect_Lens_ColorBorder_GLSL
+{
+  pass p0 
+  {		
+    FragmentProgram = compile glslf Effect_Lens_ColorBorder_PS();
+  }
+}
+
+
+

@@ -1,0 +1,44 @@
+<meta charset="UTF-8"/>
+ASYNC_Process_Death_NormalEnd.Diagnostic="成功完成。";
+ASYNC_Process_Death_NormalEnd.Advice="";
+ASYNC_Process_Death_NormalEnd.Request="";
+
+ASYNC_Process_Death_KilledByCATIA.Diagnostic="用户已取消操作。";
+ASYNC_Process_Death_KilledByCATIA.Advice="";
+ASYNC_Process_Death_KilledByCATIA.Request="";
+
+ASYNC_Process_Death_KilledByTimeOut.Diagnostic="已取消操作，服务器回复超时。";
+ASYNC_Process_Death_KilledByTimeOut.Advice="";
+ASYNC_Process_Death_KilledByTimeOut.Request="";
+
+ASYNC_Process_Death_KilledByUser.Diagnostic="已取消操作，外部应用程序导致异步过程终止";
+ASYNC_Process_Death_KilledByUser.Advice="确保任何其他应用程序无法终止异步过程。";
+ASYNC_Process_Death_KilledByUser.Request="";
+
+ASYNC_Process_Death_SystemError.Diagnostic="已取消错误，内部错误。";
+ASYNC_Process_Death_SystemError.Advice="检索异常文件并联系您的本地支持。";
+ASYNC_Process_Death_SystemError.Request="";
+
+ASYNC_Process_Death_Unknown.Diagnostic="已取消操作，意外错误。";
+ASYNC_Process_Death_Unknown.Advice="检索异常文件并联系您的本地支持。";
+ASYNC_Process_Death_Unknown.Request="";
+
+ASYNC_Task_End_CanceledByUser.Diagnostic="用户已取消操作。";
+ASYNC_Task_End_CanceledByUser.Advice="";
+ASYNC_Task_End_CanceledByUser.Request="";
+
+ASYNC_Task_End_AsyncPlatformError.Diagnostic="已取消错误，内部错误。";
+ASYNC_Task_End_AsyncPlatformError.Advice="将取消激活异步命令。";
+ASYNC_Task_End_AsyncPlatformError.Request="";
+
+ASYNC_Process_Death_At_Connect.Diagnostic="所有命令将同步执行。";
+ASYNC_Process_Death_At_Connect.Advice="搜索文档中异步以获得更多详情。您可以继续操作。";
+ASYNC_Process_Death_At_Connect.Request="异步";
+
+ASYNC_Process_Death_At_Connect_DevStage.Diagnostic="支持不同步请求的流程在连接期间意外终止。\n不同步请求现已停用，所有请求将同步执行。";
+ASYNC_Process_Death_At_Connect_DevStage.Advice="请检查您的连接参数，并就此问题联系 CATPLMxProviderConnection::Connect。";
+ASYNC_Process_Death_At_Connect_DevStage.Request="流程终止 - 连接错误";
+
+ASYNC_Platform_Deactivated.Diagnostic="不同步请求现已停用，所有请求将同步执行";
+ASYNC_Platform_Deactivated.Advice="";
+ASYNC_Platform_Deactivated.Request="";

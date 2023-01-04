@@ -1,0 +1,25 @@
+<meta charset="UTF-8"/>
+UnknownModelerAttr.Request="Parameter error.";
+UnknownModelerAttr.Diagnostic="Error Message: [/p1,/p2] attr /p3 not found on type /p4.";
+UnknownModelerAttr.Advice="Please, check attribute associated to the PLMType.";
+
+PlmidOwnerInstOfAttrForbidden.Request="Parameter error.";
+PlmidOwnerInstOfAttrForbidden.Diagnostic="Error Message: [/p1,/p2] attr /p3 is not a displayable attribute /p4.";
+PlmidOwnerInstOfAttrForbidden.Advice="Please, use only free, user or external attributes.";
+
+InternalModelerAttrForbidden.Request="Parameter error.";
+InternalModelerAttrForbidden.Diagnostic="Error Message: [/p1,/p2] attr /p3 is an internal attribute /p4.";
+InternalModelerAttrForbidden.Advice="Please, use only free, user or external attributes in [COLUMNS] block.";
+
+InternalModelerAttrMandatory.Request="Parameter error.";
+InternalModelerAttrMandatory.Diagnostic="Error Message: [/p1,/p2] attr /p3 is not an internal attribute /p4.";
+InternalModelerAttrMandatory.Advice="Please, use only internal attributes in [INTERNALCOLUMNS] block.";
+
+CustoTypeError.Request="Parameter error.";
+CustoTypeError.Diagnostic="Error Message: custo type /p1 doesn t inherit from base type /p2.";
+CustoTypeError.Advice="Please, check attribute associated to the PLMType.";
+
+UnknownCustoAttr.Request="Parameter error.";
+UnknownCustoAttr.Diagnostic="Error Message: /p1 attr not found on type /p2.";
+UnknownCustoAttr.Advice="Please, check attribute associated to the PLMType.";
+

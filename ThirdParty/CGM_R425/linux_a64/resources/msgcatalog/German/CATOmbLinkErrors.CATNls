@@ -1,0 +1,103 @@
+<meta charset="UTF-8"/>
+ERR_LINK_0="Verknüpfung kann nicht erzeugt werden, da die angeforderte Größe einen zu hohen Wert aufweist.";
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2009
+//=================================================================
+//
+// Usage Notes:    This is the OmbLink Document Unstream Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to OMB Document Unstream
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :   
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error. 
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters : 
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms 
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use. 
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+//=================   DURING OPEN OR FBDI PROCESS  ===========================================
+
+// To be interpreted by the client open engine and the FBDI engine
+OMBLink_Missing_Catalog_Error.Diagnostic="Die Ressource /p enthält erforderliche Komponentendefinitionen, wurde aber nicht gefunden. Die Daten wurden möglicherweise fehlerhaft geöffnet.";
+OMBLink_Missing_Catalog_Error.Advice="Prüfen, ob die Installation alle erforderlichen Ressourcen enthält";
+OMBLink_Missing_Catalog_Error.Request="";
+
+//=================   DURING SAVE  ===========================================
+
+ERR_LINK_1.Diagnostic="Verknüpfungstabelle kann nicht gespeichert werden: Inkonsistenz in ULRComplementaryData. ";
+ERR_LINK_1.Advice="";
+ERR_LINK_1.Request="";
+
+ERR_REL_1.Request="";
+ERR_REL_1.Diagnostic="Diese Komponente hat zwei Beziehungen zu derselben ID";
+ERR_REL_1.Advice="Wenden Sie sich an den Support.\nTechnische Details: component=/p1, IDRel=/p2.";
+
+ERR_REL_2.Diagnostic="Eine oder mehrere Beziehungen von dieser Komponente löst relationale Integrität auf ";
+ERR_REL_2.Advice="";
+ERR_REL_2.Request="";
+
+CannotSaveCorruptedSRMetadata.Diagnostic="Daten können wegen beschädigter Verknüpfung nicht gespeichert werden.";
+CannotSaveCorruptedSRMetadata.Advice="Technische Details: Komponente=/p1. Typ SR=/p2. Grund=\"/p3“.";
+CannotSaveCorruptedSRMetadata.Request="";
+
+CannotOpenCorruptedSRMetadata.Diagnostic="Daten können wegen beschädigter Verknüpfung nicht geöffnet werden.";
+CannotOpenCorruptedSRMetadata.Advice="Technische Details: Komponente=/p1. Typ SR=/p2. Grund=\"/p3“.";
+CannotOpenCorruptedSRMetadata.Request="";
+
+CannotOpenCATLnk.Request="Verknüpfungen öffnen";
+CannotOpenCATLnk.Diagnostic="Datei mit Informationen zu Komponentenverknüpfungen kann nicht geöffnet werden";
+CannotOpenCATLnk.Advice="Dieses Problem kann durch ein Problem beim Herunterladen, einen Fehler im Dateisystem oder gleichzeitiges Ändern/Löschen der zugeordneten Komponente verursacht werden.\nSchließen Sie die Sitzung, löschen Sie den Cache unter /p1 und wiederholen Sie den Vorgang.\nWenn das Problem weiterhin besteht, wenden Sie sich an den Support. Details:\n/p2";
+
+CannotUnstreamLinks.Request="Verknüpfungen öffnen";
+CannotUnstreamLinks.Diagnostic="Unstreamen von Verknüpfungen nicht möglich";
+CannotUnstreamLinks.Advice="Support kontaktieren";
+
+CtxLinkInfo_01.Request="Informationen zur Möglichkeit der Erzeugung einer Kontextverknüpfung werden abgerufen";
+CtxLinkInfo_01.Diagnostic="Die Eingabeargumente müssen ein Objekt aufweisen, auf das verwiesen wird.";
+CtxLinkInfo_01.Advice="";
+
+CtxLinkInfo_02.Request="Informationen zur Möglichkeit der Erzeugung einer Kontextverknüpfung werden abgerufen";
+CtxLinkInfo_02.Diagnostic="Die Darstellungsreferenz kann nicht von dem Objekt abgerufen werden, auf das verwiesen wird.";
+CtxLinkInfo_02.Advice="";
+
+CtxLinkInfo_03.Request="Informationen zur Möglichkeit der Erzeugung einer Kontextverknüpfung werden abgerufen";
+CtxLinkInfo_03.Diagnostic="Es wurde keine Darstellungsreferenz im ausgewählten Kontext gefunden.";
+CtxLinkInfo_03.Advice="";
+
+CtxLinkInfo_04.Request="Informationen zur Möglichkeit der Erzeugung einer Kontextverknüpfung werden abgerufen";
+CtxLinkInfo_04.Diagnostic="Eine interne Verknüpfung an einem Anschluss des Produkts ist ungültig.";
+CtxLinkInfo_04.Advice="";
+
+CtxLinkInfo_05.Request="Versuchen Sie, einen neuen Kontext für eine Darstellung zu definieren, die bereits einen solchen aufweist.";
+CtxLinkInfo_05.Diagnostic="Diese Operation ist nicht zulässig, da dieser neue Kontext weder eine Erweiterung noch ein Untervorkommen des vorhandenen Kontexts der Darstellung ist.\n\nVorhandener Kontext: /p1\n";
+CtxLinkInfo_05.Advice="Wenn Sie den vorgeschlagenen Kontext als neuen Kontext für diese Darstellung definieren möchten, haben Sie zwei Möglichkeiten (über „Verknüpfungen und Beziehungen bearbeiten“):\n- Isolieren Sie diese Kontextdarstellung. Die aktuelle Assoziativität geht verloren.\n- Ändern Sie den Kontext dieser Darstellung auf den neuen Kontext. Die derzeitige Assoziativität wird beibehalten.";
+
+CtxLinkInfo_06.Request="Versuchen Sie, einen neuen Kontext für eine Darstellung zu definieren, die bereits einen solchen aufweist.";
+CtxLinkInfo_06.Diagnostic="Diese Operation ist nicht zulässig, da bereits ein Kontext für die Darstellung vorhanden und dieser derzeit fehlerhaft ist, sodass ein Vergleich mit dem neuen vorgeschlagenen Kontext nicht möglich ist.\n";
+CtxLinkInfo_06.Advice="Um den vorgeschlagenen Kontext als neuen Kontext für diese Darstellung zu definieren, haben Sie drei Möglichkeiten (über „Verknüpfungen und Beziehungen bearbeiten“):\n- Versuchen Sie, den aktuellen Kontext für die Darstellung zu reparieren, und versuchen Sie es erneut. \n- Isolieren Sie diese Kontextdarstellung. Die aktuelle Assoziativität geht verloren.\n- Ändern Sie den Kontext dieser Darstellung auf den neuen Kontext. Die derzeitige Assoziativität wird beibehalten.";

@@ -1,0 +1,70 @@
+#!/bin/ksh
+#############################################################################
+# COPYRIGHT DASSAULT SYSTEMES 2001                                          #
+#                                                                           #
+#                                                                           #
+#                 DO NOT MODIFY THIS FILE                                   #
+#                                                                           #
+# This file is generated for backward                                       #
+# compatibility with old applications                                       #
+#############################################################################
+
+CURRENTENVNAME=
+CURRENTENVDIR=
+whence $0>/dev/null
+if [[ $? = 0 && -f `dirname \`whence $0\``/GetOSDS ]]
+then
+   . `dirname \`whence $0\``/GetOSDS
+else
+   if [ -z "$OSDS" ]
+   then
+      case `uname` in
+         AIX)
+           OSDS="aix_a"
+           export OSDS
+            ;;
+         HP-UX)
+           OSDS="hpux_b"
+           export OSDS
+            ;;
+         IRIX*)
+           OSDS="irix_a"
+           export OSDS
+           alias -x awk=nawk
+            ;;
+         SunOS)
+           OSDS="solaris_a"
+           export OSDS
+            ;;
+         Linux)
+           OSDS="linux_a64"
+           export OSDS
+            ;;
+      esac
+   fi
+fi
+
+if [ -f $CATIAV5_environment_directory/$CATIAV5_environment_name.sh ]
+then
+   TXTFILE=$CATIAV5_environment_directory/$CATIAV5_environment_name.txt
+elif [ -f /CATEnv/$CATIAV5_environment_name.sh ]
+then
+   TXTFILE=/CATEnv/$CATIAV5_environment_name.txt
+elif [ -f $CURRENTENVDIR/$CURRENTENVNAME.txt ]
+then
+   TXTFILE=$CURRENTENVDIR/$CURRENTENVNAME.txt
+else
+   return 2
+fi
+USER_ID=`PATH=$PATH:/usr/ucb whoami`
+for i in $(<$TXTFILE) 
+  do
+  if [[ -n ${i%%\!*} && $i = *=* ]] ; then
+		while [[ $i = *DSKEY_USERID* ]] ; do
+			 i=${i%DSKEY_USERID*}$USER_ID${i##*DSKEY_USERID}
+		done
+		eval eval export  $i
+		continue
+  fi
+done
+

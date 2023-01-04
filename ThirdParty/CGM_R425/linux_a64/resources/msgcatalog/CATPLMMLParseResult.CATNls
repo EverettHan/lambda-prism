@@ -1,0 +1,60 @@
+<meta charset="UTF-8"/>
+DeclareAliasRelationMissing.Request="Bad message, parsing error.";
+DeclareAliasRelationMissing.Diagnostic="/p1 [/p2,/p3] used in the [NAVIGATES] block not found in the [RELATIONDECLARATION] block.";
+DeclareAliasRelationMissing.Advice="Please, check your input.";
+
+RoleAggregation.Request="Bad message, parsing error.";
+RoleAggregation.Diagnostic="***ERROR*** we have found a relation /p1 [/p2,/p3] which role==aggregation. It is forbidden.";
+RoleAggregation.Advice="Please, check your input.";
+
+RoleOwner.Request="Bad message, parsing error.";
+RoleOwner.Diagnostic="***ERROR*** we have found a relation /p1 [/p2,/p3] which role==owner. It is forbidden.";
+RoleOwner.Advice="Please, check your input.";
+
+RoleInstOf.Request="Bad message, parsing error.";
+RoleInstOf.Diagnostic="***ERROR*** we have found a relation /p1 [/p2,/p3] which role==instOf. It is forbidden.";
+RoleInstOf.Advice="Please, check your input.";
+
+AliasReDeclared.Request="Bad message, parsing error.";
+AliasReDeclared.Diagnostic="***ERROR*** Alias used in [NODEDECLARATION] block called /p1 [/p2,/p3] has already been declared previously, please use another name.";
+AliasReDeclared.Advice="Please, check your input.";
+
+ExtNotAuthorized.Request="Bad message, parsing error.";
+ExtNotAuthorized.Diagnostic="***ERROR*** Extension used in [NODEDECLARATION] block called /p1 [/p2,/p3] cannot be used with current engine, please don't use extension for current engine or use another engine.";
+ExtNotAuthorized.Advice="Please, check your input.";
+
+LinesIsNotUsed.Request="Bad message, parsing error.";
+LinesIsNotUsed.Diagnostic="***ERROR*** [LINES] block cannot be used with current engine, please don't use [LINES] block for current engine or use another engine.";
+LinesIsNotUsed.Advice="Please, check your input.";
+
+SrAliasReDeclared.Request="Bad message, parsing error.";
+SrAliasReDeclared.Diagnostic="***ERROR*** Sr Alias used in [RELATIONDECLARATION] block called /p1 [/p2,/p3] has already been declared previously, please use another name.";
+SrAliasReDeclared.Advice="Please, check your input.";
+
+IdentifierUsedPreviously.Request="Bad message, parsing error.";
+IdentifierUsedPreviously.Diagnostic="***ERROR*** Identifer /p1 [/p2,/p3] used in [NAVIGATES] block has already been used previously in the navigation.";
+IdentifierUsedPreviously.Advice="please use another identifier.";
+
+IdentifierNeverUserBefore.Request="Bad message, parsing error.";
+IdentifierNeverUserBefore.Diagnostic="***ERROR*** Identifer /p1 [/p2,/p3] used in [NAVIGATES] block has never been used in a previous navigation.";
+IdentifierNeverUserBefore.Advice="The firt identifier of the Nth navigation (N>1) should be an alias previously used.";
+
+SyntaxError.Request="Bad message, parsing error.";
+SyntaxError.Diagnostic="/p1";
+SyntaxError.Advice="Please, check your input.";
+
+NavInGraphOptionsNotRecognized.Request="Bad message, parsing error.";
+NavInGraphOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] shoud be equal to CyclicityDetected or CyclicityNotDetected.";
+NavInGraphOptionsNotRecognized.Advice="Please, check your input.";
+
+SrLoadingOptionsNotRecognized.Request="Bad message, parsing error.";
+SrLoadingOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] shoud be equal to CATPLMMLStandard or CATPLMLIntercalarySr";
+SrLoadingOptionsNotRecognized.Advice="Please, check your input.";
+
+moreThanOneLine.Request="Bad message, parsing error.";
+moreThanOneLine.Diagnostic="***ERROR*** You cannot have more than one line in ml.";
+moreThanOneLine.Advice="Please, check your input.";
+
+ParsingError7.Request="Bad message, parsing error.";
+ParsingError7.Diagnostic="line /p1 column /p2. Relation \"/p3\" not found. /p4.";
+ParsingError7.Advice="Please, check your input.";

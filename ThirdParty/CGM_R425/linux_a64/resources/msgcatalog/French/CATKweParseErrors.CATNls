@@ -1,0 +1,40 @@
+<meta charset="UTF-8"/>
+CATCkeBadNbArg1=" nombre d'arguments incorrect dans /P1 /P2 : /P3 au lieu de /P4";
+CATCkeBadNbArg2=" nombre d'arguments incorrect dans /P1 /P2";
+CATCkeBadKindOfArg1=" type de l'argument numéro /P1 dans /P2 /P3 incorrect \n",
+" (/P4 attendu au lieu de /P5)";
+CATCkeBadKindOfArg2=" Numéro d'argument /P1 incorrect dans /P2 /P3 ";
+CATCkeBadKindOfArg3=" impossible de comparer une variable de type /P1 avec une variable de type /P2 ";
+CATCkeBadKindOfArg4=" impossible d'affecter une variable de type /P2 dans une variable de type /P1. \n Vous pouvez utiliser la syntaxe <set x=y> si vous envisagez d'effectuer un cast entre 2 variables  ";
+CATCkeBadKindOfArg5=" opération /P1 impossible entre une variable de type /P2 et une variable de type /P3 ";
+CATCkeBadKindOfArg6=" opération /P1 impossible entre une variable de type /P2 ";
+CATCkeNonExistingMethod=" /P1 non valide : /P2";
+CATCkeNonExistingMethod2=" Utilisation de /P1 incorrect : /P2 \n (/P1 /P2 existe, mais sur un type /P3 et non /P4)";
+CATCkeInvalidExpression2=" une formule renvoyant un /P1 ne peut pas être utilisée pour calculer un paramètre de type /P2";
+CATCkeInvalidExpression=" type d'expression non valide : /P1 est attendu";
+CATCkeNonExistingType=" Nom de type non valide : /P1 ";
+CATCkeUndeterminableUnit=" impossible de déterminer la magnitude de /P1";
+CATCkeBadType=" le type /P1 ne peut pas être utilisé pour déclarer une variable locale";
+CATCkeDoublyDefinedVariable=" La variable /P1 est déjà définie";
+CATCkeParseMultiLevel=" Arguments incorrects : /P1";
+CATCkeParseRestrictMethod=" la méthode /P1 n'est pas autorisée dans un /P2";
+CATCkeParseRestrictFunction=" la fonction /P1 ne peut pas être utilisée dans le contexte d'un /P2";
+CATCkeParseRestrictOperator=" l'opérateur /P1 ne peut pas être utilisé dans le contexte d'un /P2";
+CATCkeParseRestrictKeyword=" le mot clé /P1 ne peut pas être utilisé dans le contexte d'un /P2";
+CATCkeParseRestrictType=" le type /P1 ne peut pas être utilisé dans le contexte d'un /P2";
+CATCkeSyntaxError="erreur de syntaxe";
+
+ExprIsNotAnOptConstraint="L'expression n'est pas une contrainte d'optimisation. Il doit s'agir d'une expression booléenne.";
+ExprIsNotACheck="L'expression n'est pas une vérification. Il doit s'agir d'une expression booléenne.";
+IncludesDefError="Erreur de syntaxe dans la définition Includes. La syntaxe correcte est \"Include <Library name>;\".";
+MissingSemicolonInclude="\";\" manquant à la fin de la définition Include.";
+IncludesRetrieveError="Impossible d'extraire la bibliothèque inclue /P1. Vérifiez Data Setup ou la table des ressources dans le contexte actuel.";
+IncludesRetrieveErrorTitle="Inclusion non valide";
+AlreadyIncludedLibTitle="Bibliothèque incluse plusieurs fois.";
+AlreadyIncludedLib="La bibliothèque /P1 a déjà été incluse sous le nom /P2. Veuillez enlever l'une des deux.";
+InvalidLibName="Aucune bibliothèque de fonctions nommée /P1 n'a été inclue. Vérifiez la section des inclusions de la règle.";
+InvalidReusableFunctionName="Aucune fonction nommée /P2 n'a été trouvée dans la bibliothèque /P1 ou avec des arguments incompatibles. Recherchez cette fonction dans la bibliothèque.";
+UnprotectedInteger="Nom de type non valide dans la déclaration de variable. Si vous envisagez d'utiliser un nom de type commençant par un entier, entourez-le de cotes ` (par ex. : let arc(`2DArc`))";
+
+AttributesOnIncompatibleTypes="Un attribut est requis pour la deuxième fois sur le même objet mais sur un type différent et incompatible. Veuillez utiliser une autre variable avec le type exact ou utiliser une fonction qui extrait le type dynamiquement (GetAttribute...).";
+ExprIsNotAffectationForWithInit="L'expression ne contient pas une affectation simple.";

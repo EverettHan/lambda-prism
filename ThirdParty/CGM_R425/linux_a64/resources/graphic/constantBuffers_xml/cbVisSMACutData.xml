@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_cbSMACutData</NAME>
+
+  <!-- CutType: 0=None, 1=Plane, 2=Cylinder, 3=Sphere-->
+  <UNIFORM>
+    <NAME>CutType</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>3.0</UI_MAX_VALUE>
+    <!--UI_STEP_VALUE>1.0</UI_STEP_VALUE-->
+  </UNIFORM>
+  
+  <!-- CutParam: Computed clipping paramater based on CutType-->
+  <UNIFORM>
+    <NAME>CutParam</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- CutNormal: Vector normal to the cut plane-->
+  <UNIFORM>
+    <NAME>CutNormal</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.0 1.0 0.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- CutFlags: Back shaded, Back contour, Front shaded, Front contour-->
+  <UNIFORM>
+    <NAME>CutFlags</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.0 1.0 0.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>
+

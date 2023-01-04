@@ -1,0 +1,45 @@
+<meta charset="UTF-8"/>
+CATLifBRStandardMessage="The customization of your last operation failed due to a bad environment. Contact your administrator.";
+CATLifBRTraceInitExecution="Business Rules execution: </P1> on object </P2>.";
+CATLifBRTraceInitValidation="Business Rules validation: </P1> on object </P2>.";
+CATLifBRTraceInitComputation="Business Rules computation: </P1> on object </P2>.";
+CATLifBRTraceInitHasOpening="Business Rules testing opening: </P1> on object </P2>.";
+CATLifBRTraceInitExecutionWithType="Business Rules execution: </P1> on object </P2> of type </P3>.";
+CATLifBRTraceInitValidationWithType="Business Rules validation: </P1> on object </P2> of type </P3>.";
+CATLifBRTraceInitComputationWithType="Business Rules computation: </P1> on object </P2> of type </P3>.";
+CATLifBRTraceInitHasOpeningWithType="Business Rules testing opening: </P1> on object </P2> of type </P3>.";
+CATLifBRTraceScriptNotFound="Business Rules execution failed because script </P1> was not found in the runtime environment.";
+CATLifBRTraceScriptSyntaxError="Business Rules execution failed for opening </P1> because the syntax of the script is invalid: /P2.";
+CATLifBRTraceScriptEvaluationError="Business Rules execution failed for opening </P1> because script execution produced an evaluation error: /P2.";
+CATLifBRTraceScriptRedirection="Business Rules execution re-directed to script </P1>.";
+CATLifBRTraceContext="The context of the business rules is (name=/P1, user=/P2, security=/P3).";
+CATLifBRTestingOpeningSuccess="Business Rules testing opening: </P1> succeeded.";
+CATLifBRTestingOpeningFailure="Business Rules testing opening: </P1> failed.";
+CATLifBRTraceEndValidationOK="Operation validated.";
+CATLifBRTraceEndValidationKO="Operation not validated.";
+CATLifBRTraceEndValidationMessage="Additional message added within the script: </P1>.";
+CATLifBRTraceRuleExitFound="Redirection file read : </P1>.";
+CATLifBRTraceRuleFound="Script file read : </P1>.";
+CATLifBRTraceRuleNotFound="Script file not found or readable : </P1>.";
+CATLifBRTraceRuleExitMisplacedConditionTagSyntaxError="Misplaced condition in redirection file </P1>.";
+CATLifBRTraceRuleExitInvalidTagSyntaxError="Invalid tag </P1> in redirection file </P2>."; // @validatedUsage JPI 13:10:11
+CATLifBRTraceRuleExitInvalidAttributeSyntaxError="Invalid attribute(s) for tag </P1> in redirection file </P2>."; // @validatedUsage JPI 13:10:11
+CATLifBRTraceRedirectionWithConditionEligible="Opening </P1> for type </P2> to script </P3> with condition </P4> is eligible.";
+CATLifBRTraceRedirectionWithConditionRejected="Opening </P1> for type </P2> to script </P3> with condition </P4> has been rejected.";
+CATLifBRTraceRedirectionWithConditionSelected="Opening </P1> with condition </P2> has been selected because of greater accuracy (= /P3).";
+CATLifBRTraceRedirectionConflict="Conflict between redirections.";
+CATLifBRTraceRedirectionConflictWithRules="Conflict between redirections to the following rules /P1.";
+CATLifBRTraceFactInInput="Dumping Fact in input:";
+CATLifBRTraceParameterInInput="Dumping Parameters in input:";
+CATLifBRTraceFactInOutput="Dumping Fact in output:";
+CATLifBRTraceParameterInOutput="Dumping Parameters in output:";
+CATLifBRPopUpWarningTitle="Warning during operation due to customer rules infringement";
+CATLifBRPopUpErrorTitle="Operation canceled due to customer rules infringement";
+CATLifBRPopUpWarningMessage="Some customer rules, with a low severity have been violated during this operation on object /P1";
+CATLifBRPopUpErrorMessage="Some customer rules, with a high severity have been violated during this operation on object /P1. \n The operation is cancelled";
+CATLifBRNoSecurityParameters="ERROR: Security parameters are not available on the Parameter object provided to the business rules";
+CATLifBRElapsedTime="[Elapsed time = %H::%M::%S (hours::minutes::seconds)]";
+CATLifBRUnexpectedError="ERROR: Something unexpected occurred preventing openings from working";
+
+CATLifBRTraceHeader="************************";
+CATLifBRTraceDirectoryNotReadable="ERROR: Unreadable directory in Knowledge path concatenation /P1";

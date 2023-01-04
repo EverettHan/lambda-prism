@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbParticleSystem</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>ParticleTexture</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>ParticleSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ParticleTexture</SAMPLER>
+          <STATES>ParticleSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>isLife</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>texCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates1</ATTRIBUTE>
+      </ATTRIBUTES>
+      <NAME>Default</NAME>
+      <LIGHTING>false</LIGHTING>
+      <VERTEX_STAGE>PSDefaultShadingVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PSDefaultShadingPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</PDSFX>

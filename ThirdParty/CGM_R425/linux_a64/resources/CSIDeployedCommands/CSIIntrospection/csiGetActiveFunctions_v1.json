@@ -1,0 +1,30 @@
+{
+  "grammarVersion": 3,
+  "desc": "Returns active functions on the node running this function. Retrieves uploaded, declarative functions for the current pool and declarative functions for its imported pools",
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {},
+    "out": {
+      "parameters": [
+        {
+          "label": "pool",
+          "basic": "string"
+        },
+        {
+          "label": "uploadedFunctions",
+          "typeArray": "CSIDeclarativeFunctionDefinition"
+        },
+        {
+          "label": "declarativeFunctions",
+          "typeArray": "CSIDeclarativeFunctionDefinition"
+        }
+      ]
+    }
+  }
+}

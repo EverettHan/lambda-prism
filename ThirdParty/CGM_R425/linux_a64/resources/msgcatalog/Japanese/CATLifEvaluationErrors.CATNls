@@ -1,0 +1,65 @@
+<meta charset="UTF-8"/>
+MainMessageFormula="式 /P1 の評価エラー";
+MainMessageRule="ルール /P1 の評価エラー";
+MainMessageCheck="チェック /P1 の評価エラー";
+MainMessageRelation="関係 /P1 の評価エラー";
+MainMessageNeutral="評価エラー";
+MainMessageNeutral2="/P1 の評価エラー";
+CallingMessage="(/P1  の呼び出し時)";
+MainMessageFormulaInformation="式 /P1 内の情報";
+MainMessageRuleInformation="ルール /P1 内の情報";
+MainMessageCheckInformation="チェック /P1 の情報";
+MainMessageRelationInformation="関係 /P1 内の情報";
+MainMessageNeutralInformation="情報";
+MainMessageFormulaWarning="式 /P1 内の警告";
+MainMessageRuleWarning="ルール /P1 内の警告";
+MainMessageCheckWarning="チェック /P1 内の警告";
+MainMessageRelationWarning="関係 /P1 内の警告";
+MainMessageNeutralWarning="警告";
+UnknownError="不明なエラー";
+OutOfBounds="引数は範囲外です: 評価できません ";
+DividedBy0="ゼロ除算: 評価できません ";
+Unset="未設定の値が操作で使用されています。\n結果は予測できません。";
+ReadAttributeBadKind="タイプ /P3 のオブジェクト /P2 の属性 /P1 を /P4 として読み取ることができません";
+WriteAttributeBadKind="タイプ /P3 のオブジェクト /P2 の属性 /P1 を /P4 として書き込むことができません";
+InexistingAttribute="オブジェクト /P2 の存在しない属性 /P1 です";
+ReadOnlyAttribute="オブジェクト /P2 の属性 /P1 を修正できません";
+Update="更新に失敗しました";
+SetValueOnParmWithFormula="属性 /P1 は関係 /P2 のために値設定できません";
+VBNotSupported="オブジェクト /P1 は、VB スクリプトでは使用できません";
+EnableErrors="一致する DisableErors 呼び出しがない状態で EnableErrors が呼び出されました";
+SilentErrorsMismatch="DisableErrors と EnableErrors の呼び出された回数が一致しません。\nこれにより、エラーがユーザーに表示されない可能性があります。";
+
+
+BadTypeError="引数のタイプが誤りです";
+BadTypeOfExpressionError="式のタイプが誤りです。";
+SelfAddedListError="リストをリスト自体に追加することはできません";
+StringNotAReal="文字列 /P1 は実数に変換できません";
+StringNotADimension="文字列 /P1 は寸法として解析できません";
+BadAssignementInLoop="リストの /P1 番目のエレメントのタイプはループの変数と互換性がありません ( /P3 でなく /P2 )。";
+
+
+NotMagnitude="/P1 は既存の単位ではありません";
+NotGoodMagnitude="/P1 は有効な単位ではありません";
+nbDecError="精度は正の整数でなければなりません";
+MethodOnNullObject="NULL 変数 /P2 で、メソッド /P1 が呼び出されました。";
+ArgumentNULL="関数 /P2 の引数番号 /P1 は NULL です。これは無効な呼び出しです。";
+
+LineNumber="行 /P1 : ";
+Update2="更新が失敗しました: \n/P1";
+
+UnsetValueInOperation="未設定の値が操作 /P1 で使用されています。\n結果は予測できません。";
+DeleteImpossible="オブジェクト /P1 を削除できません。";
+UseMethodForbiddenInContext="関数またはメソッド /P1 の使用はこのコンテキストは無効です。";
+ValueNotAuthorizedAsArgument="/P1 /P2 にエラーがあります。引数 /P3 は< /P4 >と同等にできません";
+NoLicenseToExecute="必要なライセンス (/P3)がないので /P1 /P2 の実行は許可されません";
+EvaluationCycle="評価スタックが最大サイズに達しました。式の循環を確認するか、使用された再帰を制限するよう試みてください";
+AttributeNotAccessible="オブジェクト /P2 で属性 /P1 にアクセスできません。";
+
+OnlyOneDeploymentExtension="オブジェクトにはデプロイメント拡張を複数追加することはできません";
+CannotExtend="オブジェクト タイプ /P1 を拡張タイプ /P2 で拡張することはできません";
+ReusableFunctionNotFoundAtEvaluation="ライブラリー /P1 の再使用可能な関数またはメソッド /P2 が式の評価時に見つかりませんでした。同じ引数を持つそのような関数がライブラリーに存在することを確認してください。";
+ReusableFunctionSignatureChanged="再使用可能な関数またはメソッド /P1 のシグネチャは、呼び出し元の式が前回検証された後に変更され、互換性がなくなりました。再使用可能な関数または呼び出し元のスクリプトを変更してください。";
+BreakOutsideLoop="Break ステートメントがループの外側で呼び出されました。";
+ContinueOutsideLoop="Continue ステートメントがループの外側で呼び出されました。";
+

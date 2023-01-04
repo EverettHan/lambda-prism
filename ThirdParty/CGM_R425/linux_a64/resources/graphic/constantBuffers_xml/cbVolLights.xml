@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_cbVolLights</NAME>
+  <UNIFORM>
+    <NAME>LightPosition</NAME>
+    <TYPE>float4</TYPE>
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>LightPosition</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>SpotDirection</NAME>
+    <TYPE>float4</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>SpotDirection</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>LightAttenuationFactors</NAME>
+    <TYPE>float4</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>LightAttenuationFactors</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>SpotParam</NAME>
+    <TYPE>float4</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>SpotParam</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>LightSourceAmbientColor</NAME>
+    <TYPE>float4</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>LightSourceAmbientColor</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>LightSourceDiffuseColor</NAME>
+    <TYPE>float4</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>LightSourceDiffuseColor</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>LightSourceSpecularColor</NAME>
+    <TYPE>float4</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>LightSourceSpecularColor</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>LightType</NAME>
+    <TYPE>int</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+    <SEMANTIC>LightType</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>LightAttenuationEnable</NAME>
+    <TYPE>int</TYPE>    
+    <ARRAY_SIZE>8</ARRAY_SIZE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+    <SEMANTIC>LightAttenuationEnable</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>GlobalAmbientColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SEMANTIC>GlobalAmbientColor</SEMANTIC>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>NumLight</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+    <SEMANTIC>NumLight</SEMANTIC>
+  </UNIFORM>
+</CONSTANT_BUFFER>

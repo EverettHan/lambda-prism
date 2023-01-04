@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+
+	<Template syp:name="CATAfrTopBarMeMenuHeadersList" Target="CATCAfrInclude">
+		<CATCmdHeadersList>
+      <CATCommandHeader ID="CATAfrTBMeMenuMyPreferencesHdr" ClassName="OpenSettings2" SharedLibraryName="CATAfrProperties" ResourceFile="AfrPLMBar" AvailabilityMode = "Normal=YES SmallScale=YES LargeScale=YES Editability=YES Offline=YES"/>
+      <CATCommandHeader ID="CATAfrTouchAwareHdr" ClassName="CATAfrTouchAwareCmd" SharedLibraryName="CATAfrFoundation" ResourceFile="AfrPLMBar" AvailabilityMode = "Normal=YES SmallScale=YES LargeScale=YES Editability=YES Offline=YES"/>
+      <CATCommandHeader ID = "CATMyMenuNewPreferencesHdr" ClassName = "CATCAfrPreferencesCmd" SharedLibraryName= "CATAfrPrferenceOptions" ResourceFile="CATCAfrPreferencesCmd" AvailabilityMode = "Normal=YES SmallScale=YES LargeScale=YES Editability=YES Offline=YES"/>
+    </CATCmdHeadersList>
+	</Template>
+  
+  <Template syp:name="CATAfrTouchAwareTemplate" Target="CATAfrComponent">
+    <CATCmdStarter Name="CATAfrTouchAwareStr"  Command="CATAfrTouchAwareHdr"/>
+  </Template>
+
+  <!-- Template to have Me-Menu with LegacyPreferences. Will be shown in ODT mode-->
+  <Template syp:name="CATAfrTouchAwareTemplate_LegecyPreferenceMenu" Target="CATAfrComponent">
+      <CATCAfrMenu Name="CATAfrMyPreferencesMenu" ContainerCommand="CATAfrTBMeMenuMyPreferencesHdr" RegisteredFlag="1" ResourceFile="AfrPLMBar">
+        <CATCmdStarter Name="CATAfrCustomizeStr" Command="DragDropCustomize"/>
+        <CATCmdStarter Name="CATAfrStandardStr"  Command="OpenStandard"/>
+      </CATCAfrMenu>
+  </Template>
+  
+  <!-- Template to have Me-Menu with NewPreferences. Will be shown in Normal mode-->
+  <Template syp:name="CATAfrTouchAwareTemplate_NewPreferenceActivation" Target="CATAfrComponent">
+      <CATCAfrMenu Name="CATAfrMyPreferencesMenu" ContainerCommand="CATMyMenuNewPreferencesHdr" RegisteredFlag="1" ResourceFile="CATCAfrPreferencesCmd">
+        <CATCmdStarter Name="NewPreferenceMenu"  Command="CATAfrTBMeMenuMyPreferencesHdr"/>
+        <CATCmdStarter Name="CATAfrCustomizeStr" Command="DragDropCustomize"/>
+        <CATCmdStarter Name="CATAfrStandardStr"  Command="OpenStandard"/>
+      </CATCAfrMenu>
+  </Template>
+
+  <!-- Template to have Me-Menu with NewPreferences without Legacy Preferences-->
+  <Template syp:name="CATAfrTouchAwareTemplate_NewPrefWithoutLegacy" Target="CATAfrComponent">
+      <CATCAfrMenu Name="CATAfrMyPreferencesMenu" ContainerCommand="CATMyMenuNewPreferencesHdr" RegisteredFlag="1" ResourceFile="CATCAfrPreferencesCmd">
+        <!--CATCmdStarter Name="NewPreferenceMenu"  Command="CATAfrTBMeMenuMyPreferencesHdr"/-->
+        <CATCmdStarter Name="CATAfrCustomizeStr" Command="DragDropCustomize"/>
+        <CATCmdStarter Name="CATAfrStandardStr"  Command="OpenStandard"/>
+      </CATCAfrMenu>
+  </Template>
+
+
+  <Template syp:name="CATAfrRolesMenuInNative" Target="CATAfrComponent">
+    <CATCAfrMenu Name="CATAfrRolesMenu" RegisteredFlag="1" ResourceFile="AfrPLMBar">
+    </CATCAfrMenu>
+  </Template>
+  
+	<Template syp:name="CATAfrTopBarMeMenuElements" Target="CATCAfrInclude">
+		<CATCAfrGroup>
+
+      <CATCAfrInclude Condition="GetEnv(ADL_ODT_IN)"
+             Template="CATAfrTouchAwareTemplate_LegecyPreferenceMenu" />
+
+       <CATCAfrInclude Condition="!GetEnv(ADL_ODT_IN) &amp;&amp; !GetEnv(MePref_LegacyPanel)"
+             Template="CATAfrTouchAwareTemplate_NewPrefWithoutLegacy" />
+
+       <CATCAfrInclude Condition="GetEnv(MePref_LegacyPanel)"
+             Template="CATAfrTouchAwareTemplate_NewPreferenceActivation" />
+
+      <CATCAfrInclude Condition="!($IsCAfrWebCompass)"
+             Template="CATAfrRolesMenuInNative" />
+      <!--<CATCAfrMenu Name="CATAfrRolesMenu" RegisteredFlag="1" ResourceFile="AfrPLMBar">
+      </CATCAfrMenu>-->
+      
+      <CATCAfrInclude Condition="GetEnv(AfrTouchAware)"
+             Template="CATAfrTouchAwareTemplate" />
+    </CATCAfrGroup>
+	</Template>
+
+</Styles>
+

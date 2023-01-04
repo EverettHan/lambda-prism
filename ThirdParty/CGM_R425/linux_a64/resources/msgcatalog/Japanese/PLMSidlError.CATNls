@@ -1,0 +1,228 @@
+<meta charset="UTF-8"/>
+//*------------------------*//
+//* PLMSidlErrors messages *//
+//*------------------------*//
+ERR_SidlInvalidStream_141001="無効なストリーム";
+ERR_SidlInvalidStream_141001.Request="通信レイヤーで要求処理の準備ができていないか、すでに応答が完全に読み取られています";
+ERR_SidlInvalidStream_141001.Advice="要求を再試行してください";
+
+ERR_SidlInvalidParam_141002="無効なパラメーター";
+ERR_SidlInvalidParam_141002.Request="通信レイヤーのパラメーターが無効です /p1";
+ERR_SidlInvalidParam_141002.Advice="通信パラメーターを再構成するか、管理者にお問い合わせください";
+
+ERR_SidlNoMemory_141003="メモリが不足しています";
+ERR_SidlNoMemory_141003.Request="メモリが不足しています";
+ERR_SidlNoMemory_141003.Advice="後で要求を試行するか、別のアプリケーションを閉じてください";
+
+ERR_SidlUnsupportedServerLevel_141004="サポートされないサーバー レベル";
+ERR_SidlUnsupportedServerLevel_141004.Request="サーバー レベルがクライアントと異なり、互換性がありません";
+ERR_SidlUnsupportedServerLevel_141004.Advice="互換性のあるサーバーを使用するようクライアントを構成するか、クライアント レベルをアップグレードしてください";
+
+ERR_SidlTruncatedAnswer_141005="サーバー応答の切り捨て";
+ERR_SidlTruncatedAnswer_141005.Request="サーバー応答が切り捨てられました";
+ERR_SidlTruncatedAnswer_141005.Advice="要求を再試行するか、管理者に問い合わせてネットワーク環境をチェックしてください";
+
+ERR_SidlInvalidHeader_141006="無効な通信ヘッダー";
+ERR_SidlInvalidHeader_141006.Request="通信ヘッダーの無効なデータ";
+ERR_SidlInvalidHeader_141006.Advice="要求を再試行するか、管理者に問い合わせてネットワーク環境をチェックしてください";
+
+ERR_SidlCompressFailed_141007="圧縮に失敗しました";
+ERR_SidlCompressFailed_141007.Request="クライアントで要求を圧縮できません";
+ERR_SidlCompressFailed_141007.Advice="要求を再試行するか、ソフトウェアを再インストールしてください";
+
+ERR_SidlUnCompressFailed_141008="圧縮を解除できません";
+ERR_SidlUnCompressFailed_141008.Request="クライアントでサーバーから送られたデータを圧縮解除できません";
+ERR_SidlUnCompressFailed_141008.Advice="要求を再試行するか、サーバーとクライアントのインストールを確認してください";
+
+ERR_SidlInternalError_141009="内部エラー";
+ERR_SidlInternalError_141009.Request="クライアントの内部通信エラー";
+ERR_SidlInternalError_141009.Advice="サーバー接続を構成して再試行してください";
+
+ERR_SidlUnknownError_141010="不明なエラー";
+ERR_SidlUnknownError_141010.Request="不明なエラーが発生しました";
+ERR_SidlUnknownError_141010.Advice="サーバー接続を構成するか、管理者にお問い合わせください";
+
+ERR_SidlSocketConnectionFailed_141021="接続に失敗しました";
+ERR_SidlSocketConnectionFailed_141021.Request="サーバーに接続できません";
+ERR_SidlSocketConnectionFailed_141021.Advice="サーバー接続を構成するか、ファイアウォール ルールを確認してください。または管理者にお問い合わせください";
+
+ERR_SidlSocketSendFailed_141022="要求の送信に失敗しました";
+ERR_SidlSocketSendFailed_141022.Request="サーバーに要求を送信できません";
+ERR_SidlSocketSendFailed_141022.Advice="サーバー接続を構成するか、ファイアウォール ルールを確認してください。または管理者にお問い合わせください";
+
+ERR_SidlSocketRecievedFailed_141023="応答の受信に失敗しました";
+ERR_SidlSocketRecievedFailed_141023.Request="サーバー応答を受信できません";
+ERR_SidlSocketRecievedFailed_141023.Advice="要求を再試行してください。問題が解決しない場合は管理者にお問い合わせください";
+
+ERR_SidlSocketUnknownError_141024="不明なソケット エラー";
+ERR_SidlSocketUnknownError_141024.Request="不明なソケット エラーが発生しました";
+ERR_SidlSocketUnknownError_141024.Advice="権限またはネットワーク構成を確認するか、管理者にお問い合わせください";
+
+ERR_SidlHTTPBadRequest_141031="HTTP 要求の誤り";
+ERR_SidlHTTPBadRequest_141031.Request="HTTP 要求の誤り";
+ERR_SidlHTTPBadRequest_141031.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPUnauthorized_141032="HTTP 認証されません";
+ERR_SidlHTTPUnauthorized_141032.Request="HTTP 認証されません";
+ERR_SidlHTTPUnauthorized_141032.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPPaymentRequired_141033="HTTP 支払いが必要です";
+ERR_SidlHTTPPaymentRequired_141033.Request="HTTP 支払いが必要です";
+ERR_SidlHTTPPaymentRequired_141033.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPForbidden_141034="HTTP 禁止されています";
+ERR_SidlHTTPForbidden_141034.Request="HTTP 禁止されています";
+ERR_SidlHTTPForbidden_141034.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPNotFound_141035="HTTP 見つかりません";
+ERR_SidlHTTPNotFound_141035.Request="HTTP 見つかりません";
+ERR_SidlHTTPNotFound_141035.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPMethodNotAllowed_141036="HTTP メソッドが許可されません";
+ERR_SidlHTTPMethodNotAllowed_141036.Request="HTTP メソッドが許可されません";
+ERR_SidlHTTPMethodNotAllowed_141036.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPNotAcceptable_141036="HTTP は使用できません";
+ERR_SidlHTTPNotAcceptable_141036.Request="HTTP は使用できません";
+ERR_SidlHTTPNotAcceptable_141036.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPProxyAuthFailed_141037="HTTP プロキシ認証に失敗しました";
+ERR_SidlHTTPProxyAuthFailed_141037.Request="HTTP プロキシ認証に失敗しました";
+ERR_SidlHTTPProxyAuthFailed_141037.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPServerTimeout_141038="HTTP サーバーのタイムアウト";
+ERR_SidlHTTPServerTimeout_141038.Request="HTTP サーバーのタイムアウト";
+ERR_SidlHTTPServerTimeout_141038.Advice="要求を再試行するか、管理者に問い合わせてネットワーク環境をチェックしてください";
+
+ERR_SidlHTTPConflict_141039="HTTP 競合";
+ERR_SidlHTTPConflict_141039.Request="HTTP 競合";
+ERR_SidlHTTPConflict_141039.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPGone_141039="HTTP がありません";
+ERR_SidlHTTPGone_141039.Request="HTTP がありません";
+ERR_SidlHTTPGone_141039.Advice="必要なリソースはサーバーで利用できず、転送アドレスが不明です (管理者にお問い合わせください)。";
+
+ERR_SidlHTTPLengthRequired_141039="HTTP 長さが必要です";
+ERR_SidlHTTPLengthRequired_141039.Request="HTTP 長さが必要です";
+ERR_SidlHTTPLengthRequired_141039.Advice="サーバーは、定義された Content-Length のない要求の受け入れは拒否します (管理者にお問い合わせください)。";
+
+ERR_SidlHTTPPreconditionFailed_141039="HTTP 前提条件が失敗しました";
+ERR_SidlHTTPPreconditionFailed_141039.Request="HTTP 前提条件が失敗しました";
+ERR_SidlHTTPPreconditionFailed_141039.Advice="サーバーでのテスト中に、要求ヘッダー フィールドの 1 つ以上で与えられた前提条件が失敗と判定されました (管理者にお問い合わせください)。";
+
+ERR_SidlHTTPRequestEntityTooLarge_141039="HTTP 要求エンティティが大きすぎます";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Request="HTTP 要求エンティティが大きすぎます";
+ERR_SidlHTTPRequestEntityTooLarge_141039.Advice="サーバーは、要求エンティティが大きいため要求の処理を拒否しています (管理者にお問い合わせください)。";
+
+ERR_SidlHTTPRequestURITooLong_141039="HTTP Request-URI が長すぎます";
+ERR_SidlHTTPRequestURITooLong_141039.Request="HTTP Request-URI が長すぎます";
+ERR_SidlHTTPRequestURITooLong_141039.Advice="サーバーは、Request-URI が長すぎるため要求の対応を拒否しています (管理者にお問い合わせください)。";
+
+ERR_SidlHTTPUnsupportedMediaType_141039="HTTP 非対応メディア タイプ";
+ERR_SidlHTTPUnsupportedMediaType_141039.Request="HTTP 非対応メディア タイプ";
+ERR_SidlHTTPUnsupportedMediaType_141039.Advice="サーバーは、要求のエンティティが非対応の形式であるため要求の対応を拒否しています (管理者にお問い合わせください)。";
+
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039="HTTP 要求された範囲は満たせません";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Request="HTTP 要求された範囲は満たせません";
+ERR_SidlHTTPRequestedRangeNotSatisfiable_141039.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPExpectationFailed_141039="HTTP 予測の失敗";
+ERR_SidlHTTPExpectationFailed_141039.Request="HTTP 予測の失敗";
+ERR_SidlHTTPExpectationFailed_141039.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPMalformedRequest_141040="HTTP 要求形式の誤り";
+ERR_SidlHTTPMalformedRequest_141040.Request="HTTP 要求形式の誤り";
+ERR_SidlHTTPMalformedRequest_141040.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPExpectationFailed_141041="HTTP 不測の失敗";
+ERR_SidlHTTPExpectationFailed_141041.Request="HTTP 不測の失敗";
+ERR_SidlHTTPExpectationFailed_141041.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPInternalServerError_141042="HTTP 内部サーバー エラー";
+ERR_SidlHTTPInternalServerError_141042.Request="HTTP 内部サーバー エラー";
+ERR_SidlHTTPInternalServerError_141042.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPNotImplemented_141043="HTTP 実装されていません";
+ERR_SidlHTTPNotImplemented_141043.Request="HTTP 実装されていません";
+ERR_SidlHTTPNotImplemented_141043.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPBadGateway_141043="HTTP ゲートウェイの誤り";
+ERR_SidlHTTPBadGateway_141043.Request="HTTP ゲートウェイの誤り";
+ERR_SidlHTTPBadGateway_141043.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPGatewayTimeout_141044="HTTP ゲートウェイのタイムアウト";
+ERR_SidlHTTPGatewayTimeout_141044.Request="HTTP ゲートウェイのタイムアウト";
+ERR_SidlHTTPGatewayTimeout_141044.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlUnSupportedHTTPLevel_141045="HTTP サポートされないレベル";
+ERR_SidlUnSupportedHTTPLevel_141045.Request="HTTP サポートされないレベル";
+ERR_SidlUnSupportedHTTPLevel_141045.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlUnknownHTTPError_141046="HTTP 不明なエラー";
+ERR_SidlUnknownHTTPError_141046.Request="HTTP 不明なエラー";
+ERR_SidlUnknownHTTPError_141046.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPServiceUnavailable_141047="HTTP サービスが利用できません";
+ERR_SidlHTTPServiceUnavailable_141047.Request="HTTP サービスが利用できません";
+ERR_SidlHTTPServiceUnavailable_141047.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPVersionNotSupported_141047="HTTP バージョンはサポートされていません";
+ERR_SidlHTTPVersionNotSupported_141047.Request="HTTP バージョンはサポートされていません";
+ERR_SidlHTTPVersionNotSupported_141047.Advice="管理者に問い合わせて HTTP サーバー構成をチェックしてください";
+
+ERR_SidlHTTPServerSessionTimeout_141048="HTTP サーバーのセッション タイムアウト";
+ERR_SidlHTTPServerSessionTimeout_141048.Request="HTTP サーバーのセッション タイムアウト";
+ERR_SidlHTTPServerSessionTimeout_141048.Advice="要求を再試行するか、管理者に問い合わせてネットワーク環境をチェックしてください";
+
+ERR_SidlServerRecieveFailed_141061="サーバーが受信に失敗しました";
+ERR_SidlServerRecieveFailed_141061.Request="サーバーが要求を受信できません";
+ERR_SidlServerRecieveFailed_141061.Advice="ネットワーク構成またはアプリケーション サーバー構成をチェックしてください";
+
+ERR_SidlServerSendFailed_141062="サーバーが送信に失敗しました";
+ERR_SidlServerSendFailed_141062.Request="サーバーが応答を送信できません";
+ERR_SidlServerSendFailed_141062.Advice="ネットワーク構成またはアプリケーション サーバー構成をチェックしてください";
+
+ERR_SidlLevelUnsupported_141063="サポートされないクライアント レベル";
+ERR_SidlLevelUnsupported_141063.Request="クライアント レベルがサーバーと異なり、互換性がありません";
+ERR_SidlLevelUnsupported_141063.Advice="互換性のあるサーバーを使用するようクライアントを構成するか、サーバーをアップグレードしてください";
+
+ERR_SidlServerTruncatedRequest_141064="切り捨てられた要求";
+ERR_SidlServerTruncatedRequest_141064.Request="クライアント要求が切り捨てられました";
+ERR_SidlServerTruncatedRequest_141064.Advice="ネットワーク構成またはアプリケーション サーバー構成をチェックしてください";
+
+ERR_SidlServerInvalidHeader_141065="無効な通信ヘッダー";
+ERR_SidlServerInvalidHeader_141065.Request="サーバー: 通信ヘッダーのデータに誤りがあります";
+ERR_SidlServerInvalidHeader_141065.Advice="管理者に問い合わせてネットワーク環境をチェックしてください";
+
+ERR_SidlServerCompressFailed_141066="サーバーが圧縮に失敗しました";
+ERR_SidlServerCompressFailed_141066.Request="サーバーが応答を圧縮できません";
+ERR_SidlServerCompressFailed_141066.Advice="要求を再試行するか、サーバーにソフトウェアを再インストールしてください";
+
+ERR_SidlServerUnCompressFailed_141067="サーバーが圧縮を解除できません";
+ERR_SidlServerUnCompressFailed_141067.Request="サーバーがクライアント要求データを圧縮解除できません";
+ERR_SidlServerUnCompressFailed_141067.Advice="要求を再試行するか、サーバーにソフトウェアを再インストールしてください";
+
+ERR_SidlServerUnknownError_141068="サーバーの不明なエラー";
+ERR_SidlServerUnknownError_141068.Request="不明なサーバー エラーが発生しました";
+ERR_SidlServerUnknownError_141068.Advice="管理者に問い合わせてサーバー ログをチェックしてください";
+
+ERR_SidlServerUnavailable_141071="SDAM とサーバーの通信エラー";
+ERR_SidlServerUnavailable_141071.Request="SDAM とサーバーの通信エラー";
+ERR_SidlServerUnavailable_141071.Advice="要求を再試行するか、サーバーを再起動してください";
+
+ERR_SidlServerLostDuringRq_141072="サーバーと SDAM の通信エラー";
+ERR_SidlServerLostDuringRq_141072.Request="応答前のサーバーと SDAM の通信エラー";
+ERR_SidlServerLostDuringRq_141072.Advice="要求を再試行するか、サーバーを再起動してください";
+
+ERR_SidlServerLostDuringAnswer_141073="サーバーと SDAM の通信エラー";
+ERR_SidlServerLostDuringAnswer_141073.Request="サーバーと SDAM の通信エラー";
+ERR_SidlServerLostDuringAnswer_141073.Advice="要求を再試行するか、サーバーを再起動してください";
+
+ERR_SidlNoHttpstatusCode_141074="クライアントとサーバーの通信エラー";
+ERR_SidlNoHttpstatusCode_141074.Request="通信エラー: 応答に HTTP ステータス コードがありません";
+ERR_SidlNoHttpstatusCode_141074.Advice="サーバー接続を構成するか、管理者にお問い合わせください (HTTP トレースをアクティブ化するか、ネットワーク キャプチャ ツールを使用してください)";
+
+ERR_SidlUnsupportedHttpStatus_141075="サポートされていない HTTP 応答";
+ERR_SidlUnsupportedHttpStatus_141075.Request="サポートされていない HTTP 応答";
+ERR_SidlUnsupportedHttpStatus_141075.Advice="サーバー接続を構成するか、管理者にお問い合わせください (HTTP トレースをアクティブ化するか、ネットワーク キャプチャ ツールを使用してください)";
+

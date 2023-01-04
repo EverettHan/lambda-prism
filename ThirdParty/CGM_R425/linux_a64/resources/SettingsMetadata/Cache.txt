@@ -1,0 +1,115 @@
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<st:Description name="Cache" PrimaryTabpage="/General/Cache">
+		<st:role  >Setting to handle the V5 cache parameters</st:role>
+		<st:RepositoryFile>CATIAV5Cache</st:RepositoryFile>
+		<st:version>1</st:version>
+		<st:compatibility>
+			<st:FullCompatibilityfromLevel>1</st:FullCompatibilityfromLevel>
+			<st:UpwardCompatibilityfromLevel>1</st:UpwardCompatibilityfromLevel>
+		</st:compatibility>
+		<st:DedicatedController>
+			<st:Framework_CPP>System</st:Framework_CPP>
+			<st:Interface_CPP>CATISysCacheSettingAtt</st:Interface_CPP>
+			<st:Framework_IDL>System</st:Framework_IDL>
+			<st:Interface_IDL>CATIACacheSttingAtt</st:Interface_IDL>
+			<st:LateType>CATSysCacheSettingCtrl</st:LateType>
+		</st:DedicatedController>
+	</st:Description>
+	<st:attributes>
+	
+		<st:attribute Name="CacheActivation">
+			<st:role>activation of persistent cache mode.</st:role>
+			<st:boolean>
+				<st:default>
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		
+		<st:attribute Name="LocalCachePath" alias="LocalCacheDir">
+			<st:role >Path to the Cache.</st:role>
+			<st:URN>
+				<st:defaultWindows>
+					<st:value>CSIDL_LOCAL_APPDATA\DassaultSystemes\CATCache</st:value>
+				</st:defaultWindows>
+				<st:defaultUnix>
+					<st:value>$HOME/CATCache</st:value>
+				</st:defaultUnix>
+			</st:URN>
+		</st:attribute>
+
+        	<st:attribute Name="SessionCachePath" alias="SessionCache">
+			<st:role >Path to the Session Cache.</st:role>
+			<st:URN>
+				<st:defaultWindows>
+					<st:value>CSIDL_LOCAL_APPDATA\DassaultSystemes\CATTemp</st:value>
+				</st:defaultWindows>
+				<st:defaultUnix>
+					<st:value>$HOME/CATTemp</st:value>
+				</st:defaultUnix>
+			</st:URN>
+		</st:attribute>
+
+
+		
+		<st:attribute Name="NbRealeaseDir">
+			<st:role visibility="LA" >Number of release cache directories</st:role>
+			<st:uint>
+				<st:default>
+					<st:value>0</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		<st:attribute Name="ReleasePath">
+			<st:role visibility="LA">Paths of the release cache directories</st:role>
+			<st:URN size="*">
+				<st:default size="0"/>
+			</st:URN>
+		</st:attribute>
+		<st:attribute Name="CacheSizeInMo" alias="MoSize">
+			<st:role>Size of the Cache in Mo</st:role>
+			<st:uint>
+				<st:default>
+					<st:value>500</st:value>
+				</st:default>
+			</st:uint>
+		</st:attribute>
+		<st:attribute Name="CacheSizeControl" alias="SizeControl">
+			<st:role>Activation of the cache size control. If it is turned off, the cache size has no limit.</st:role>
+			<st:boolean>
+				<st:default>
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		<st:attribute Name="TimeStampControl">
+			<st:role visibility="LA">If the timestamp control is turned on, the cache will verify if the cached object is uptodate with the master object. If not a new cached view will be generated. If the timestamp control is turned off, the cache will consider that the cached views are always uptodate with their master object.</st:role>
+			<st:boolean>
+				<st:default>
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		<st:attribute Name="TimeStampInUTC">
+			<st:role visibility="LA"> If set to true the timestamp used by the cache is expressed in UTC format (GMT), in the other case the local time is used.</st:role>
+			<st:boolean>
+				<st:default>
+					<st:value>false</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+		<st:attribute Name="LODMode" Tabpage="/ProductStructure/Cgr Management">
+			<st:role  visibility="LA">LOD mode</st:role>
+			<st:boolean>
+				<st:default>
+					<st:value>true</st:value>
+				</st:default>
+			</st:boolean>
+		</st:attribute>
+	</st:attributes>
+	<st:relations>
+		<st:role> description of relation</st:role>
+		<st:relation src="NbRealeaseDir" dest="ReleasePath" kind="dimensionOfArray"/>
+	</st:relations>
+
+</st:repository>

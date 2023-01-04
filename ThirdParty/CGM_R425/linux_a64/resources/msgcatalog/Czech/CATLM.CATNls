@@ -1,0 +1,158 @@
+<meta charset="UTF-8"/>
+//
+// CATIA License Manager Messages (low-level)
+//
+
+LicenseManager="Správce licencí";
+
+//
+// Messages    AS: Allow Save
+//
+CheckFailedEx="Kontrola licencí /P01 se nezdařila:\n/P03\nRelace se zastaví po dalších /P02 neúspěšných pokusech\nDůrazně doporučujeme uložit veškeré otevřené dokumenty";
+
+CheckFailedAS="Kontrola licencí /P01 se nezdařila:\n/P03\nPo dalších /P02 neúspěšných pokusech budou funkce relace nedostupné (kromě lokálního uložení a zavření)\nDůrazně doporučujeme uložit veškeré otevřené dokumenty.";
+
+CheckOK="Kontrola licencí proběhla úspěšně";
+
+TooManyChecksFailed="Po /P01 pokusech se nezdařilo zkontrolovat licence\nRelace se nyní zastaví";
+
+TooManyChecksFailedAS="Po /P01 pokusech se nezdařilo zkontrolovat licence\nFunkce relace (kromě místního uložení a zavření) jsou nyní nedostupné";
+
+TooManyChecksFailedAT="Kontrola licencí neproběhla podle očekávání.\nFunkce relace (kromě místního uložení a zavření) jsou nyní nedostupné";
+
+TooManyChecksFailedAT2="Kontrola licencí se nezdařila (chyba systému).\nFunkce relace (kromě místního uložení a zavření) jsou nyní nedostupné";
+
+TooManyChecksAfterRevoke="Funkce relace (kromě místního uložení a zavření) jsou nyní nedostupné";
+
+NoSuchProduct="Požadovaný produkt nebyl nalezen: /P01";
+
+MissingPreq="/P01 nelze použít, protože nemáte potřebná oprávnění (/P02)";
+
+InconpatibleEnvironment="Relaci nelze spustit v tomto prostředí";
+
+NoLicenseForDemo="Pro ukázkový režim /P01 není k dispozici žádná licence";
+
+LicenseRequestFailed="Licence nebyla udělena: /P01\nChyba: /P03 ";
+
+NULRequestFailed="Souběžná licence nebyla udělena: /P01\nChyba: /P02.";
+
+AllLicensesUsed="Všechny licence /P01 pro /P02 používá:\n/P03";
+
+LicenseReleaseFailed="Nepodařilo se uvolnit licenci pro /P01\nChyba /P02: /P03";
+
+LicenseCheckFailed="Nepodařilo se zkontrolovat licence pro /P01\nChyba /P02: /P03";
+
+LicenseRecovered="Licence pro /P01 úspěšně získána";
+
+ErrorLoadingProduct="Nepodařilo se načíst definici produktu pro /P01 (kód /P02)\nNainstalujte ji znovu";
+
+ProductInvalidVersion="Verze /P02 definice produktu /P01 je neplatná\nNainstalujte ji znovu";
+
+LicenseNotYetAvailable="Licence /P01 pro /P02 ještě není k dispozici";
+
+LicenseExpired="Platnost licence /P01 pro /P02 vypršela";
+
+BadHost="Licence nebyla udělena: /P01\nUživatel /P02 je již přihlášen na počítači /P03\n\nMůžete to zkusit znovu po odhlášení z jiného počítače nebo pokračovat v práci na druhém počítači";
+
+LicenseSoonExpired="Brzy vyprší platnost následujících udělených licencí:\n";
+
+LicenseExpIn="/P01 za ";
+
+ExpIn24h="méně než 24 hodin\n";
+
+ExpIn1day="1 den\n";
+
+ExpInndays="/P01 dní\n";
+
+NoLicenseForAlias="Pro splnění požadavku /P01 není k dispozici žádná vhodná licence";
+
+ProductNotShareable="Licenci pro /P01 nelze sdílet – obraťte se na zákaznickou službu";
+
+RetrieveLicenses="Počkejte, než /P01 načte licence z /P1";
+
+RetrieveLicensesFailed="Nepodařilo se získat licence z /P1.";
+
+RetrieveLicensesSucceded="Minimálně jedna místní licence chyběla, vypršela její platnost nebo její platnost brzy vyprší.\nMístní licence byly aktualizovány podle rozhodnutí správce.\nRestartujte relaci.";
+
+FirstLoginFailedRestartSession="Inicializace licencí se nezdařila.\nRestartujte relaci.";
+
+RetrieveLicensesURLKO="Nelze aktualizovat místní licence. Úložiště vzdálených licencí není přístupné.\nObraťte se na správce.";
+
+ProductNotAddon="Licence pro /P01 obsahuje neplatný doplňkový produkt /P02\nObraťte se na zákaznickou službu";
+
+AddonPreqNotPresent="Uživatelská konfigurace /P01 nesplňuje podmínky vyžadované doplňkovým produktem /P02\nObraťte se na zákaznickou službu";
+
+ConfigHasPrereq="Konfigurace /P01 by neměla obsahovat podmínky\nObraťte se na zákaznickou službu";
+
+InvalidScale="Produkt /P01 nelze požadovat, protože jeho měřítko /P02 je vyšší než aktuální konfigurace.";
+
+CannotStart="Aktuálně vybrané licence se nevztahují na tuto aplikaci.\nPomocí nástroje CATOptionsMgt (karta Obecné/Licencování) vyberte správné licence.";
+
+ProdDefNotFound="Licence /P01 byla úspěšně udělena, ale přidružený kód není nainstalován.\nNainstalujte jej.";
+
+NoConfigFound="Žádná z vašich licencí neodpovídá nainstalované konfiguraci.\nSeznam udělených licencí:\n/P01\nAktualizujte konfiguraci nebo se obraťte na správce.";
+
+NULRequestFailed="Licence nebyla udělena:\n/P01\n.";
+
+LicenseRevoked="Váš správce aktualizoval seznam vašich licencovaných produktů.\nNa základě aktuálních licencí již nelze tuto aplikaci spustit.\nZavřete relaci.";
+
+LicOverFailed="/P01 nebyl tomuto uživateli přiřazen.";
+
+NoLicAssigned="Uživateli /P01 (/P02) nebyla udělena žádná licence.";
+
+NoMCSLicAssigned="Pro /P01 (/P02) nebyla udělena licence MCS.";
+
+LicOverAuthFailed="Produkt nepovoluje žádná z vašich licencí /P01";
+
+LicOver="Přepisování /P01 pomocí /P02";
+
+LicOverIgnored="Přepsání licence se nezdařilo";
+
+PackagingMismatch="Balíček se neshoduje: Všechny požadované licence musí patřit do stejného balíčku.\n-/P01\n-/P02";
+
+CasualLicAssigned="Tato aplikace neumožňuje použití příležitostných licencí.\n/P03 - /P01 (/P02).";
+
+PlatformCasualLicMismatch="/P01 je deklarován jako příležitostný jmenovitý uživatel.\nNásledující požadované licence ale nejsou příležitostné: /P02.";
+
+//---------------------------------------------------------------------------
+// Offline mode specific errors
+//---------------------------------------------------------------------------
+GrantedLicenseExtractionFailed="Licenci /P01 nelze extrahovat.\n/P02";
+
+GrantedLicenseExtractionNotSupported="Tento operační systém nepodporuje extrahování offline licence.";
+
+LicenseExtractionKO_MaxDuration="Licenci /P01 nelze extrahovat po dobu /P02 dnů (maximální délka povolená licenčním serverem je /P03 dnů).";
+
+LicenseExtractionKO_LocalDirNotFound="Adresář offline licence neexistuje: /P01.";
+
+LicenseExtractionKO_LocalDirNotCreated="Nelze vytvořit adresář offline licence: /P01.";
+
+LicenseExtractionKO_LocalDirNotWriteable="Nepodařilo se vytvořit soubor v adresáři /P01.\nZkontrolujte přístupová práva současného uživatele k tomuto adresáři a dostupné místo na disku.";
+
+LicenseExtractionKO_AlreadyOffline="Licence /P01 již byla extrahována pro uživatele /P02 na hostiteli /P03.";
+
+LicenseExtractionKO_NoInitialLic="Prodloužení doby platnosti offline licence /P01 se nezdařilo. Chybí počáteční datum licence.";
+
+LicenseExtractionKO_NoKeyword="Extrahování offline licence /P01 se nezdařilo: chráněno klíčovým slovem.";
+
+LicenseExtractionKO_OfflineDisabled="Na licenčním serveru není povoleno extrahování offline licence.";
+
+LicenseExtractionKO_ExpiresBeforeEnd="Licenci /P01 nelze extrahovat po dobu /P02 dnů (licence vyprší za /P03 dnů).";
+
+LicenseExtractionKO_Token="Token /P01 nelze extrahovat.";
+
+LicenseExtractionKO_AuthFailed="Licenční server nepovoluje extrakci offline licence /P01.";
+
+LicenseExtractionKO_NoLic="Extrahování offline licence /P01 se nezdařilo. Licence nebyla na serveru nalezena.";
+
+WorkOfflineProdDefNotFound="Některé funkce mohou být v režimu offline nedostupné.\nLicence /P01 nebude požadována, protože její přidružený kód není nainstalován.\nNainstalujte jej.";
+
+UnsupportedOS="Nepodporovaná verze operačního systému";
+
+
+//
+// License Types
+//
+nodelock_or_concurrent="pro určitý počet uzlů nebo souběžná";
+nodelock="pro určitý počet uzlů";
+concurrent="souběžná";

@@ -1,0 +1,66 @@
+<meta charset="UTF-8"/>
+HelpNT.text = "Syntaxe de setcatenv
+[-e nom_environnement         ]   Option obligatoire. Aucune valeur par défaut
+[-d nom_répertoire_stockage   ]   Par défaut : CSIDL_APPDATA\CATEnv
+[-p chemin de concaténation   ]   Par défaut : chemin d'installation racine
+[-a user|global               ]   Type d'environnement. Par défaut : user
+[-server                      ]   Active le mode serveur. Par défaut : non activé (interactif)
+[-new yes|no                  ]   Force la création de l'environnement. Par défaut : yes
+[-icon  yes|no                ]   Création d'une icône sur le bureau Windows. Par défaut : yes
+[-menu yes|no                 ]   Création d'un raccourci dans le menu Démarrer. Par défaut : yes
+[-desktop yes|no              ]   Création d'une représentation de l'environnement. Par défaut : yes (équivaut à -icon yes -menu yes)
+[-cf chemin_de_l'environnement]   Met à jour les variables avec celles de l'environnement spécifié par chemin_de_l'environnement
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live        ]   Spécifie une gamme de produits pour la représentation de l'environnement (Par défaut : CATIA)
+[-v yes|no                    ]   Active le mode prolixe. Par défaut : yes
+[-regserver                   ]   Enregistre CATIA sur le bureau (commande exclusive)
+[-tools                       ]   Définit les raccourcis des outils (commande exclusive)
+[-h|-help                     ]   Affiche cette aide." ;
+HelpUNIX.text = "Spécifie une gamme de produits pour la représentation de l'environnement (Par défaut : CATIA)
+[-v yes|no                    ]   Active le mode prolixe. Par défaut : yes
+[-regserver                   ]   Enregistre CATIA sur le bureau (commande exclusive)
+[-tools                       ]   Définit les raccourcis des outils (commande exclusive)
+[-h|-help                     ]   Affiche cette aide.Syntaxe de setcatenv
+[-e nom_environnement         ]   Option obligatoire. Aucune valeur par défaut
+[-d nom_répertoire_stockage   ]   Par défaut : $HOME/CATEnv
+[-p chemin de concaténation   ]   Par défaut : chemin d'installation racine (/usr/catia/DassaultSystemes/B06)
+[-a user|global               ]   Type d'environnement. Par défaut : user
+[-server                      ]   Active le mode serveur. Par défaut : non activé (interactif)
+[-new yes|no                  ]   Force la création de l'environnement. Par défaut : yes
+[-desktop yes|no              ]   Création d'une représentation de l'environnement. Par défaut : yes sauf IRIX
+[-cf chemin_de_l'environnement]   Met à jour les valeurs des variables avec l'environnement spécifié par chemin_de_l'environnement
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live        ]  Spécifie une gamme de produits pour la représentation de l'environnement (Par défaut : CATIA)
+[-v yes|no                    ]   Active le mode prolixe. Par défaut : yes
+[-regserver                   ]   Enregistre CATIA sur le bureau (commande exclusive)
+[-h|-help                     ]   Affiche cette aide." ;
+NoBlankInEnvName.text        = "Caractères blancs non autorisés dans le nom d'environnement" ;
+NoHome.text                  = "Impossible de trouver la variable d'environnement 'HOME'" ;
+EnvCreationFailed.text       = "La création de l'environnement a échoué" ;
+IconeCreationFailed.text     = "La création de l'icône de l'environnement a échoué" ;
+IconeCreationFailed2.text    = "Aucun raccourci n'a pu être créé.  Vérifiez que /P1 est bien présent dans votre répertoire d'installation." ;
+ModifyVariableFailed.text    = "La modification de la variable d'environnement a échoué" ;
+UpdateVariableFailed.text    = "La mise à jour de la variable d'environnement a échoué" ;
+NoSuchVariable.text          = "La variable n'existe pas" ;
+WSSsetupFailed.text          = "L'initialisation de l'ordinateur a échoué" ;
+ToolsSetupFailed.text        = "L'installation des outils a échoué" ;
+MustBeSystemAdmin.text       = "Vous devez être Administrateur Système pour utiliser cette option" ;
+RefFileNotFound.Text         = "Le fichier de référence est introuvable";
+EnvNameNotSpecified.Text     = "Vous devez spécifier un nom pour l'environnement";
+DefaultFolderNotFound.Text   = "Le répertoire de stockage des environnements est introuvable";
+SpecifiedFolderNotFound.Text = "Le répertoire \"/P1\" est introuvable.";
+EnvFileNotFound.Text       = "Le fichier d'environnement est introuvable";
+AccessPb.Text              = "Impossible de sauvegarde le fichier d'environnement dans \"/P1\".";
+FileAlreadyExist.Text      = "Le fichier d'environnement déjà"; 
+NoConcatSpecified.Text     = "Une concaténation doit être spécifiée";
+DiskFull.Text              = "Pas d'espace disque pour sauvegarder le fichier d'environnement";
+InitFolderFailed.Text      = "------------------ Avertissement ----------------
+Le répertoire de stockage par défaut des environnements n'a pas été trouvé.
+L'environnement a été sauvegardé dans le répertoire suivant :
+";
+UnknownProductLine.Text    ="/P1 n'est pas une gamme de produits valide. Valeurs autorisées pour l'option -cs : .";
+UnknownOption.Text          ="Option incorrecte : /P1. ";

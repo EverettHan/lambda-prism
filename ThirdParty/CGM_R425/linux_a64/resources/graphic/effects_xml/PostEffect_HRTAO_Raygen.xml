@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <ACCELERATION_STRUCTURE>
+    <NAME>topLevelAS</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </ACCELERATION_STRUCTURE>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO_Auto</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO_SkydomeCutpoint</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbGlobalClipping</NAME>
+    <!--<NEEDS_OPTION>Clipping</NEEDS_OPTION>-->
+    <STAGES>RaygenStage</STAGES>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAreaLightsRT</NAME>
+    <STAGES>RaygenStage</STAGES>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBL</NAME>
+    <NEEDS_OPTION>ImageBasedLighting</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLDefaultCorrection</NAME>
+    <NEEDS_OPTION>IBLDefaultCorrection</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLCorrection</NAME>
+    <NEEDS_OPTION>IBLParallaxCorrection</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLCorrectionIndex</NAME>
+    <NEEDS_OPTION>IBLParallaxCorrection</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLLocal</NAME>
+    <NEEDS_OPTION>IBLLocal</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLLocalIndex</NAME>
+    <NEEDS_OPTION>IBLLocal</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>LightsSB2</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbLightsWithProfile</NAME>
+    <NEEDS_OPTION>NumberOfLightsWithProfile</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAreaLights</NAME>
+    <NEEDS_OPTION>NumberOfAreaLights</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbLightChannels</NAME>
+    <NEEDS_OPTION>LightChannels</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>Vertices</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_Vertices</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <IS_BUFFER_REFERENCE>true</IS_BUFFER_REFERENCE>
+    <OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</OPTION_GRAMMAR>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+	
+	<STRUCTURED_BUFFER>
+    <NAME>Indices16</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>uint16_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_Indices16</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <IS_BUFFER_REFERENCE>true</IS_BUFFER_REFERENCE>
+    <OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</OPTION_GRAMMAR>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>Indices32</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_Indices32</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <IS_BUFFER_REFERENCE>true</IS_BUFFER_REFERENCE>
+    <OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</OPTION_GRAMMAR>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+	
+  <STRUCTURED_BUFFER>
+    <NAME>ObjectDesc</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>uniformsAddr</NAME>
+        <TYPE>uint64_t</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>ObjectDesc_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_ObjectDesc</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</OPTION_GRAMMAR>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>ObjectFormat</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>ObjectFormat_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_ObjectFormat</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</OPTION_GRAMMAR>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+	
+	 <STRUCTURED_BUFFER>
+    <NAME>MaterialBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>MaterialBuffer_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_MaterialBuffer</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</OPTION_GRAMMAR>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>PerMatrixCbOffsets</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>PerMatrixCbOffsets_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_PerMatrixCbOffsets</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</OPTION_GRAMMAR>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMap[]</NAME>
+        <TYPE>HashRecordContribSlots</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    <STAGES>RaygenStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapBufferKey</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMapKeys[]</NAME>
+        <TYPE>HashRecordKey</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    <STAGES>RaygenStage</STAGES>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>changeListBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>changeList[]</NAME>
+        <TYPE>HASH_CHANGE_LIST_BASE_TYPE</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    <STAGES>RaygenStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>touchedCellsBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>touchedCells[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    <STAGES>RaygenStage</STAGES>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>cutPointBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>cutpoints[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>prefixSumOutputBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>cutpointsCdf[]</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>volatile</QUALIFIER>
+      <QUALIFIER>coherent</QUALIFIER>
+    </QUALIFIERS>
+    <!--<ALIGNMENT_RULES>scalar</ALIGNMENT_RULES> scalar does not exist in opengl !! -->
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>visibilityBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>visibility[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>metadataBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>metadata</NAME>
+        <TYPE>SkydomeCutpointMetadata</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <SAMPLER>
+    <NAME>cellIndices</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>utexture2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>utexture2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </SAMPLER>
+
+  <!--
+  <SAMPLER>
+    <NAME>primePermBuffer</NAME>
+    <SAMPLER_TYPE>utexture1D</SAMPLER_TYPE>
+    <STAGES>RaygenStage</STAGES>
+  </SAMPLER>
+  -->
+	<SAMPLER>
+    <NAME>GlobalTextures2D</NAME>
+    <!-- will get the highest binding -->
+    <IS_VARIABLE_SIZE>true</IS_VARIABLE_SIZE>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_DEBUG_REFLECTIONS</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>	
+		 <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </SAMPLER>
+	
+    <SAMPLER>
+    <NAME>IBLDiffuseTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>IBLSpecularTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting !MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCubeArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>AreaLightGGX</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR> NumberOfAreaLights </SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>LookUpTexture2D</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting !MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting IBLLocal !MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting IBLLocal MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </SAMPLER>
+	
+  <SAMPLER>
+    <NAME>hdrEnv</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR></SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </SAMPLER>
+  
+  <STORAGE_IMAGE>
+    <NAME>positionNormals</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>!IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DMS</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>gBufferAdditionalData</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>r16f</FORMAT>
+      <OPTION_GRAMMAR>!SO_USE_LEGACY_RAY_ORIGIN_OFFSET !IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>image2DMS</TYPE>
+      <FORMAT>r16f</FORMAT>
+      <OPTION_GRAMMAR>!SO_USE_LEGACY_RAY_ORIGIN_OFFSET IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>materialInfo1</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS !IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DMS</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>materialInfo2</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS !IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DMS</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>hdrEnvState</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+	
+	<SAMPLER_STATE>
+    <NAME>Lut2DSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 0.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>CubeSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>CubeSamplerNoMip</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+  <NAME>R</NAME>
+  <RAYTRACING_PASS>
+	  <NAME>Default</NAME>
+    <SAMPLER_ASSIGNMENT_LIST>
+      <SAMPLER_ASSIGNMENT>
+        <SAMPLER>hdrEnv</SAMPLER>
+        <STATES>hdrEnvState</STATES>
+      </SAMPLER_ASSIGNMENT>
+		<SAMPLER_ASSIGNMENT>
+			<SAMPLER>IBLDiffuseTexture</SAMPLER>
+			<STATES>CubeSamplerNoMip</STATES>
+		</SAMPLER_ASSIGNMENT>
+		<SAMPLER_ASSIGNMENT>
+			<SAMPLER>IBLSpecularTexture</SAMPLER>
+			<STATES>CubeSampler</STATES>
+		</SAMPLER_ASSIGNMENT>
+		<SAMPLER_ASSIGNMENT>
+			<SAMPLER>LookUpTexture2D</SAMPLER>
+			<STATES>Lut2DSampler</STATES>
+		</SAMPLER_ASSIGNMENT>
+    </SAMPLER_ASSIGNMENT_LIST>
+	  <SHADER_OPTIONS>
+		  <SHADER_OPTION>
+			  <NAME>HRTAO_GBUFFER_FETCH</NAME>
+			  <OPTION_VALUE>1</OPTION_VALUE>
+		  </SHADER_OPTION>
+	  </SHADER_OPTIONS>
+	  <RAYGEN_STAGE>
+      commonHelpers ubos
+      RayOriginOffset
+      PostEffect_Incl_Payload
+      PostEffect_HRTAO_Incl_Common
+      PostEffect_HRTAO_Incl_CommonSpatialHash
+      PostEffect_HRTAO_Incl_HashDataType_Shadows
+      PostEffect_HRTAO_Incl_Sampling
+      PostEffect_HRTAO_Incl_HashKeyAccess
+      PostEffect_HRTAO_Incl_HashDataAccess_Shadows
+      PostEffect_HRTAO_Raygen_Shadows
+    </RAYGEN_STAGE>
+	  <MISS_STAGE>
+      PostEffect_Incl_Payload
+      PostEffect_HRTAO_Miss
+    </MISS_STAGE>
+  </RAYTRACING_PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>RGB</NAME>
+    <RAYTRACING_PASS>
+      <NAME>Default</NAME>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>hdrEnv</SAMPLER>
+          <STATES>hdrEnvState</STATES>
+        </SAMPLER_ASSIGNMENT>
+	  <SAMPLER_ASSIGNMENT>
+        <SAMPLER>IBLDiffuseTexture</SAMPLER>
+        <STATES>CubeSamplerNoMip</STATES>
+      </SAMPLER_ASSIGNMENT>
+      <SAMPLER_ASSIGNMENT>
+        <SAMPLER>IBLSpecularTexture</SAMPLER>
+        <STATES>CubeSampler</STATES>
+      </SAMPLER_ASSIGNMENT>
+      <SAMPLER_ASSIGNMENT>
+        <SAMPLER>LookUpTexture2D</SAMPLER>
+        <STATES>Lut2DSampler</STATES>
+      </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>HRTAO_GBUFFER_FETCH</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <RAYGEN_STAGE>
+        commonHelpers ubos
+        RayOriginOffset
+        PostEffect_Incl_Payload
+        PostEffect_HRTAO_Incl_Common
+        PostEffect_HRTAO_Incl_CommonSpatialHash
+        PostEffect_HRTAO_Incl_HashDataType_Color
+        PostEffect_HRTAO_Incl_MetallicRoughnessCommon
+        PostEffect_HRTAO_Incl_MetallicRoughness
+        PostEffect_HRTAO_Incl_Sampling
+        PostEffect_HRTAO_Incl_HashKeyAccess
+        PostEffect_HRTAO_Incl_HashDataAccess_Color
+        PostEffect_HRTAO_Incl_SkydomeCutpointCommon
+        PostEffect_HRTAO_Incl_SkydomeEval
+        PostEffect_HRTAO_Raygen_Color
+      </RAYGEN_STAGE>
+      <MISS_STAGE>
+        PostEffect_Incl_Payload
+        PostEffect_HRTAO_Miss
+      </MISS_STAGE>
+    </RAYTRACING_PASS>
+  </TECHNIQUE>
+</EFFECT>

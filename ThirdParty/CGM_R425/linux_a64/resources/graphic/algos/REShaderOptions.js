@@ -1,0 +1,26 @@
+{
+	"ShaderOptions" : 
+	[
+        "DepthOnly",
+	    "OutputNormalMap", 
+        "ZMap",
+		"HighlightBasic", 
+		"HighlightAdvanced", 
+		"HighlightPolite", 
+        "ForwardPlus",
+        "WeightedAverage",
+        "StdLighting",
+        "VertexColor",
+        "WorldMatrixOnly",
+		"ShadowMap",
+   		"ImageBasedLighting",
+        "UseTexture",
+        "ZOnly",
+        "GLES2Platform",
+        "GLES3Platform",
+        "AlphaTest",
+        "ZLinear",
+        "MultiShadow",
+        "Instancing"
+	]
+}

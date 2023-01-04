@@ -1,0 +1,26 @@
+<meta charset="UTF-8"/>
+
+SystemERR.Diagnostic = "System error";
+SystemERR.Advice     = "";
+
+PLMc_ForbiddenScenario1.Diagnostic = "Impossible to clone a new component." ;
+PLMc_ForbiddenScenario1.Advice = "Please save this component and try to clone after." ;
+
+PLMc_ForbiddenScenario2.Diagnostic = "This clone scenario is forbidden : A total save has to be performed between 2 clone calls" ;
+PLMc_ForbiddenScenario2.Advice = "Save your session before calling clone again." ;
+
+PLMc_ForbiddenScenario3.Diagnostic = "Reset Configuration is unavailable if an impact on the Session content is required." ;
+PLMc_ForbiddenScenario3.Advice = "Ensure that Cloning Engine is initialized with reliable intents." ;
+
+ERR_05.Diagnostic = "The components were duplicated but Configuration could not be reset on the duplicated structure" ;
+ERR_05.Advice = "You should ensure that you will be allowed to modify the duplicated structure before choosing to reset the Configuration" ;
+
+ERR_06.Diagnostic = "Invalid input for duplicate operation: /p" ;
+ERR_06.Advice = "Check the attributes given in input of duplicate operation" ;
+
+ERR_07.Diagnostic = "Invalid input for duplicate operation: /p" ;
+ERR_07.Advice = "Check the extensions given in input of duplicate operation" ;
+
+ERR_08.Diagnostic = "Failed to refresh session after duplication" ;
+ERR_08.Advice = "Check for other errors preventing session refresh during duplication operation" ;
+

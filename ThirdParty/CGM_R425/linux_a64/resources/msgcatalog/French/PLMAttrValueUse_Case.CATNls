@@ -1,0 +1,38 @@
+<meta charset="UTF-8"/>
+//-------------------------------- Policy section below;
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.Use_Case = Use Case
+
+policy.Use_Case="Cas d'utilisation";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.Use_Case.InWork = In Work
+
+V_maturity.Plan="Privé";
+V_maturity.Private="Privé";
+V_maturity.Working="En traitement";
+V_maturity.InWork="En traitement";
+V_maturity.Draft="Figé";
+V_maturity.Frozen="Figé";
+V_maturity.Review="Distribué";
+V_maturity.Release="Distribué";
+V_maturity.Complete="Obsolète";
+V_maturity.Obsolete="Obsolète";
+
+current.Plan="Privé";
+current.Private="Privé";
+current.Working="En traitement";
+current.InWork="En traitement";
+current.Draft="Figé";
+current.Frozen="Figé";
+current.Review="Distribué";
+current.Release="Distribué";
+current.Complete="Obsolète";
+current.Obsolete="Obsolète";
+
+
+
+
+

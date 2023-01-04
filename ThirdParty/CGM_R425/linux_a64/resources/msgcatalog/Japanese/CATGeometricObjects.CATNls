@@ -1,0 +1,308 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for input geometric operators errors 
+// En_EN
+//================================================================
+//                           INPUT
+//================================================================
+//----------------------------------Null or invalid input
+//
+GeoObInInvalidPointer="/p1 ポインタが NULL です。";
+//
+GeoObInInvalidInput="/p1 が負です。";
+//
+GeoObInInvalidSupport="/p1 は CATPCurve サポートに有効なタイプではありません。";
+//
+GeoObInInvalidInputValueSmallerThan="/p1 の値は /p2 より小でなければなりません。";
+//
+GeoObInInvalidInputValueGreaterThan="/p1 の値は /p2 より大でなければなりません。";
+//
+GeoObInInvalidInputValueBetween="/p1 の値は /p2 より大で /p3 より小でなければなりません。";
+//
+GeoObInInvalidInputType="/p1 オブジェクトは許可されたタイプをもっていません。";
+//
+GeoObInNotInInfiniteBox="/p1 が無限ボックスより大です。";
+//
+GeoObInTypeNotSupported="/p1 は /p2 でなければなりません。";
+//
+GeoObInEmpty="/p1 オブジェクトが /p2 オブジェクトを含んでいません。";
+//
+GeoObInInvalidCoordinates="入力した座標 (/p1,/p2,/p3) は以前の座標 (/p4,/p5,/p6) と異なります。";
+//
+GeoObInNotOnSurface="入力した点 (/p1,/p2,/p3) はサーフェスに十分に近くはありません。";
+//
+GeoObInInvalidMacroElement="入力した複合形状オブジェクトは複数の 3D 構成要素を含みます。";
+//
+GeoObInImpossibleMerge="曲線をマージできません。十分な大きさの共通ゾーンがありません。";
+//
+GeoObInInvalidSurface="縮退した法線をもつサーフェスは許されません。";
+//
+GeoObInCannotBeReferredTo="入力するオブジェクトは基準とする CGM オブジェクトと同じコンテナにある CGM オブジェクトでなければなりません。";
+//
+GeoObInOpenEquation="方程式が開いている間はオブジェクトを修正できません。
+      このオブジェクトを使用する前に方程式を閉じてください。";
+//
+GeoObInInvalidOrientation="方向の値は 1 または-1 でなければなりません。";
+//
+GeoObInSeveralObjects="すでに /p3 に属している /p2 を /p1 に不正に書き込もうとしました";
+//
+GeoObInNotBelongToEdgeCurve="指定した CATCurve は CATEdgeCurve に属する必要があります。
+       CATEdgeCurve は Next メソッドでチェックしてください。";
+//
+GeoObInSeveralInEdgeCurve=" 入力した CATCurve はすでに CATEdgeCurve に属しています
+       CATCurve は CATEdgeCurve 内で複数回は使用できません。
+       新しい曲線を追加する前に NextThru メソッドを使用して CATEdgeCurve をチェックしてください。";
+//
+GeoObInCloudOfPointsNotDefined="ベクトルが定義されていない点群に対してベクトル値を不正にセットしようとしました。";
+//
+//GeoObInSelfIntersectingSurface =
+//    "Surface is self-intersecting. This /p1 surface cannot have /p2 /p3.";
+//
+GeoObInPointNotOnSurface="点 (/p1,/p2,/p3) はこの /p4 の上にありません。";
+//
+GeoObInBadOrder="引数の順序が適切ではありません。/p1 は /p2 の後に続く必要があります。";
+//
+GeoObInInvalidPeriodicConflict="間隔長 /p1 は期間 /p2 と互換性がありません。";
+//================================================================
+//                           INTernal
+//================================================================
+// 
+GeoObIntUnavailableMethod="/p2 オブジェクトに対して /p1 メソッドはまだ使用できません。";
+//
+GeoObIntBindingFailed="/p2 インターフェースへの /p1 インプリメントのバインドに失敗しました。
+      辞書をチェックしてください。";
+//
+GeoObIntObjectCreationFailed="クラス /p1 のオブジェクトは作成できません。";
+//
+GeoObIntMethodCallOrder="無効なメソッド呼び出し順序。メソッド /p1 は /p2 の後に呼び出す必要があります。";
+//
+GeoObIntInvalidParameterValue="パラメーターに対する数値が有効な範囲外です。";
+//
+GeoObIntObjectClass="オブジェクト タイプの値 /p1 にマッチするクラスはありません。";
+//
+GeoObIntShouldBeA="無効なオブジェクトのタイプです。/p1 は /p2 でなければなりません。";
+//
+GeoObIntMethodCall="メソッド /p1 はこのオブジェクト /p2 に対して呼び出せません。";
+//
+GeoObIntNotValuableParameter="曲線 (CATCrvParam) またはサーフェス (CATSurParam) 上のパラメーターが形状オブジェクトと関連付けられていません。";
+//
+GeoObIntGetLimitsOnEmptyBox="メソッド /p1 は /p2が空でないことを前提としています。 
+      メソッド IsEmpty を使用して /p2 が確実に空でないようにしてください";
+//
+GeoObIntSurfaceProjectionFailed="点 (/p1 , /p2 , /p3) はサーフェスに投影できません。";
+//
+GeoObIntUnavailableResult="複数評価の結果は得られません。
+      /p2 演算子に複数評価の結果 /p1 を求めるよう SetCommand メソッドで事前に指示されていません。";
+//
+GeoObIntUnsetObject="/p1 はまだ設定されていません。最初にこのオブジェクトを初期設定してください";
+//
+GeoObIntBadGeometry="内部エラー /p1 により、正しくない形状構成になります。";
+//
+GeoObIntMath="数学パッケージでのエラー /p1 です。";
+//
+GeoObIntCurveToSmall="曲線が小さすぎます。";
+//
+GeoObIntArcOfCurveToSmall="曲線の円弧番号 /p1 が小さすぎます。";
+//
+GeoObIntCurveNotC2="曲線は円弧 /p1 の先頭では C2 クラスではありません。";
+//
+GeoObIntNullTangentCurve="曲線の接線がグローバル パラメーター w=/p1 では小さすぎます。";
+//
+GeoObIntBadParametrization="曲線のパラメーター化とその折線近似パラメーター化の差が大きすぎます。";
+//
+GeoObIntCurvatureTooLarge="曲線の曲率がグローバル パラメーター w=/p1 では大きすぎます。";
+//
+GeoObIntCanonicalCurveDefTooFar="曲線の定義点が形状モデルの境界の外側にあります。";
+//
+GeoObIntCanonicalCurveDegenerated="正規曲線は縮退したフォームを持っています。";
+//
+GeoObIntControlPointsTooClose="互いに接近しすぎている制御点があります。";
+//
+GeoObIntGapTooLarge="エッジ曲線で、大きすぎるギャップが検出されました。";
+//
+//------------------- New
+//
+//  1000-1099- general
+//  1100-1149- cone
+//  1150-1199- torus
+//  1200-1249- Cl[ou]d entities
+//  1900-1999- Internal Error (general)
+//
+GeoObInParameterOutsideLimits_ERR_1000.Request="パラメーター評価:";
+GeoObInParameterOutsideLimits_ERR_1000.Diagnostic="入力パラメーターは曲線またはサーフェスの最大境界の外側です。";
+GeoObInParameterOutsideLimits_ERR_1000.Advice="- 境界の内側でパラメーターを選択してください。";
+//
+GeoObInDegeneratedSurface_ERR_1001="入力サーフェスは縮退しています:\n\nたとえば、ねじれているか、その長さの 1 つがファクトリ解像度より小です。\n\n容認されるケースについては、Encyclopedia を参照してください。 ";
+//
+GeoObInIncompatibleLimitAngles_ERR_1002.Request="円を作成:";
+GeoObInIncompatibleLimitAngles_ERR_1002.Diagnostic="開始角度値が終了角度値より大です。";
+GeoObInIncompatibleLimitAngles_ERR_1002.Advice="終了角度値より小さい開始角度値を選択してください。";
+//
+GeoObInNotSimilitude_ERR_1003.Request="形状を移動:";
+GeoObInNotSimilitude_ERR_1003.Diagnostic="入力された変換が相似ではありません。";
+GeoObInNotSimilitude_ERR_1003.Advice="相似を選択して、形状を変換してください。";
+//
+GeoObInCurveTooSmall_ERR_1004.Request="曲線の使用:";
+GeoObInCurveTooSmall_ERR_1004.Diagnostic="入力曲線長さは形状ファクトリ解像度より小です。";
+GeoObInCurveTooSmall_ERR_1004.Advice="- 形状ファクトリ解像度より大きな長さの曲線を選択してください";
+//
+GeoObInSurfaceTooSmall_ERR_1005.Request="サーフェスの使用:";
+GeoObInSurfaceTooSmall_ERR_1005.Diagnostic="入力サーフェス寸法は形状ファクトリ解像度より小です。";
+GeoObInSurfaceTooSmall_ERR_1005.Advice="- 形状ファクトリ解像度より大きな寸法のサーフェスを選択してください";
+//
+//
+GeoObInIncompatibleFactoryModelSize_ERR_1006.Request="互換性のない形状モデル サイズ:";
+GeoObInIncompatibleFactoryModelSize_ERR_1006.Diagnostic="ドキュメントに互換性のないモデル サイズ /P1 および /P2 があります。";
+GeoObInIncompatibleFactoryModelSize_ERR_1006.Advice="- 互換性のない形状公差のドキュメントのコピーや貼り付けは行わないでください。";
+//
+GeoObInIncompatibleFactoryInfinite_ERR_1007.Request="互換性のない形状無限:";
+GeoObInIncompatibleFactoryInfinite_ERR_1007.Diagnostic="ドキュメントに互換性のない無限の /P1 および /P2 があります。";
+GeoObInIncompatibleFactoryInfinite_ERR_1007.Advice="- 互換性のない形状公差のドキュメントのコピーや貼り付けは行わないでください。";
+//
+GeoObInIncompatibleFactoryTolerances_ERR_1008.Request="形状公差に互換性がありません:";
+GeoObInIncompatibleFactoryTolerances_ERR_1008.Diagnostic="2 つのドキュメントの形状公差には互換性がありません。\n\n比較される単位は  /P1 および /P2 (m) です。\n\n連続性解像度は /P3 および /P4 (単位) です。\n\n接線解像度は /P5 および /P6 (ラジアン) です。\n\n曲率解像度は /P7 および /P8 (単位) です。\n";
+GeoObInIncompatibleFactoryTolerances_ERR_1008.Advice="-同じ形状公差を使用してドキュメントを処理してください。";
+//
+//
+GeoObInDownwardStreamImpossible_ERR_1009.Request="下位互換性がありません:";
+GeoObInDownwardStreamImpossible_ERR_1009.Diagnostic="現行バージョン /P1 のドキュメントを旧バージョン /P2 で保存すると、/P3 が原因で損傷されます。";
+GeoObInDownwardStreamImpossible_ERR_1009.Advice="-ドキュメントの現行バージョンを使用して作業してください。";
+//
+//
+GeoObInDegeneratedCurve_ERR_1010="入力曲線は縮退しています:\n\nたとえば、ねじれているか、その長さがファクトリ解像度より小です。\n\n容認されるケースについては、Encyclopedia を参照してください。 ";
+//
+//
+GeoObInIncompatibleModelSize_ERR_1011.Request="新規ファクトリと互換性がない入力形状サイズ:";
+GeoObInIncompatibleModelSize_ERR_1011.Diagnostic="入力形状サイズ /P1 がドキュメント モデル サイズ /P2 に入りません。";
+GeoObInIncompatibleModelSize_ERR_1011.Advice="- ターゲット ドキュメントのモデル サイズ外の形状のコピーや貼り付けは行わないでください。";
+//
+//
+GeoObInIncompatibleModelSize_ERR_1012.Request="このタイプの無限の形状はコピーできません";
+GeoObInIncompatibleModelSize_ERR_1012.Diagnostic="このタイプの無限の形状は異なるモデル サイズまたは無限のファクトリ間で転送できません";
+GeoObInIncompatibleModelSize_ERR_1012.Advice="- 互換性のないファクトリ間でこのタイプの無限の形状のコピーや貼り付けは行わないでください。";
+//
+//
+GeoObInIncompatibleModelSize_ERR_1013.Request="新しいモデル サイズとの交差がありません";
+GeoObInIncompatibleModelSize_ERR_1013.Diagnostic="無限の形状と新しいモデル サイズ /P1 との間に交差がありません";
+GeoObInIncompatibleModelSize_ERR_1013.Advice="- 新しいモデル サイズとの交差がない無限の形状はコピーおよび貼り付けを行わないでください";
+//
+GeoObInCurveTooSmall_ERR_1014.Request="曲線の使用:";
+GeoObInCurveTooSmall_ERR_1014.Diagnostic="入力曲線長さが曲線フィッティングの最大偏差より小さいです。";
+GeoObInCurveTooSmall_ERR_1014.Advice="- 最大偏差より大きな長さの曲線を選択するか、最大偏差の設定を小さくしてください。";
+//
+GeoObImpossibleCreation_ERR_1015.Request="サポート上の楕円の作成に失敗しました:";
+GeoObImpossibleCreation_ERR_1015.Diagnostic="サイズ /P1 は、サポート /P2 ミリメートルの最大サイズを超えることはできません。";
+GeoObImpossibleCreation_ERR_1015.Advice="V5R14 よりも前に作成されたパーツについては、サポート サイズが増える可能性があるため、新しいパーツ内でコピー/貼り付けを行った後に同じ操作を行ってください。";
+//
+GeoObImpossibleCreation_ERR_1016.Request="サポート上の円の作成に失敗しました:";
+GeoObImpossibleCreation_ERR_1016.Diagnostic="サイズ /P1 は、サポート /P2 ミリメートルの最大サイズを超えることはできません。";
+GeoObImpossibleCreation_ERR_1016.Advice="V5R14 よりも前に作成されたパーツについては、サポート サイズが増える可能性があるため、新しいパーツ内でコピー/貼り付けを行った後に同じ操作を行ってください。";
+//
+//
+GeoObInDownwardStream_WARNING_1019.Request="下位互換性に関する警告:";
+GeoObInDownwardStream_WARNING_1019.Diagnostic="一部の形状オブジェクトは互換性の理由で変更されました";
+GeoObInDownwardStream_WARNING_1019.Advice="";
+//
+//
+GeoObInDownwardStream_ERR_1020.Request="多面体オブジェクトの下位互換性:";
+GeoObInDownwardStream_ERR_1020.Diagnostic="多面体オブジェクトはターゲット バージョンと互換性がありません";
+GeoObInDownwardStream_ERR_1020.Advice="";
+//
+//
+// the same way it's done in CATICkeScalesServicesAdaptor.CATNls 
+// In french, this should be translated by : Etendue normale, Etendue élargie, Etendue très élargie, Etendue petite,  Etendue très petite
+
+NanometricRange="範囲 (ナノメートル)";
+ExtraSmallRange="範囲 (極小)";
+SmallRange="範囲 (小)";
+NormalRange="範囲 (標準)";
+LargeRange="範囲 (大)";
+ExtraLargeRange="範囲 (特大)";
+
+//
+GeoObInIncompatibleFactoryRange_ERR_1051.Request="互換性のない形状設計限界:";
+GeoObInIncompatibleFactoryRange_ERR_1051.Diagnostic="形状データの設計限界: /P1 および /P2 は互換性がありません。";
+GeoObInIncompatibleFactoryRange_ERR_1051.Advice="設計限界が互換している形状データを使用してください。";
+//
+GeoObInIncompatibleFactoryRange_ERR_1052.Request="設計限界 /P2 から形状を /P1 にコピー:";
+GeoObInIncompatibleFactoryRange_ERR_1052.Diagnostic="ソース形状をターゲットの設計限界 /P1 に合わせようとしましたが、失敗しました";
+GeoObInIncompatibleFactoryRange_ERR_1052.Advice="ソース形状を修正";
+//
+//
+GeoObInConeSelfIntersecting_ERR_1100.Request="円錐を作成:";
+GeoObInConeSelfIntersecting_ERR_1100.Diagnostic="パラメーターは自己交差するサーフェスを定義します。";
+GeoObInConeSelfIntersecting_ERR_1100.Advice="- 円錐の角度または母線の長さ、あるいはその両方を減らしてください。";
+//
+//1150-torus
+GeoObInTorusSelfIntersecting_ERR_1150.Request="トーラスを作成:";
+GeoObInTorusSelfIntersecting_ERR_1150.Diagnostic="パラメーターは自己交差するサーフェスを定義します。";
+GeoObInTorusSelfIntersecting_ERR_1150.Advice="- 大半径の値を増やしてください。\n\n- 従円角の値を減らしてください。\n\n- 従円上の境界設定角度の定義を修正してください。";
+//
+//1200- Cl[ou]d entities
+GeoObInCldScanNotPlanar_ERR_1200.Request="スキャン平面を検索:";
+GeoObInCldScanNotPlanar_ERR_1200.Diagnostic="平面のスキャンではありません。";
+GeoObInCldScanNotPlanar_ERR_1200.Advice="平面のスキャンを使用してください。";
+GeoObInCldGridNoProbeAxis_ERR_1201.Request="グリッドのプローブ座標軸を検索:";
+GeoObInCldGridNoProbeAxis_ERR_1201.Diagnostic="グリッドにはプローブ座標軸がありません。";
+GeoObInCldGridNoProbeAxis_ERR_1201.Advice="プローブ座標軸があるグリッドを使用してください。";
+GeoObInCldGridAddPoints_ERR_1202.Request="グリッドに点を追加:";
+GeoObInCldGridAddPoints_ERR_1202.Diagnostic="点の数が初期のものと異なります。";
+GeoObInCldGridAddPoints_ERR_1202.Advice="同じ点の数を定義してください。";
+GeoObInCldVectors_AddVector_ERR_1203.Request="ベクトルを追加:";
+GeoObInCldVectors_AddVector_ERR_1203.Diagnostic="ベクトルを追加できません。";
+GeoObInCldVectors_AddVector_ERR_1203.Advice="問題はメモリ不足が原因である可能性があります。\n一部のオブジェクトを削除するか、パーツを保存して再び開いてください。";
+GeoObInCldVectors_Incoherence_ERR_1204.Request="ベクトルを編集:";
+GeoObInCldVectors_Incoherence_ERR_1204.Diagnostic="原点とベクトルの座標のアドレスが異なっています。\nまたは存在しない基準が指定されました。";
+GeoObInCldVectors_Incoherence_ERR_1204.Advice="後者の場合は該当するメソッドを呼び出してください。";
+// 
+// 1900-1999- Internal Error (general)
+//-----------------------------------------
+//
+GeoObIntValidObject_InvalidAddress_ERR_1920.Request="無効な形状ポインタ:";
+GeoObIntValidObject_InvalidAddress_ERR_1920.Diagnostic="形状オブジェクト /P1 のアドレスが、無効なメモリ領域を指しています。";
+GeoObIntValidObject_InvalidAddress_ERR_1920.Advice="シナリオを識別して、保守修正要求をサブミットします。";
+//
+GeoObIntValidObject_NotModelisation_ERR_1921.Request="無効な形状:";
+GeoObIntValidObject_NotModelisation_ERR_1921.Diagnostic="機能はネイティブ形状に制限されており、/P1 は許可されていません。";
+GeoObIntValidObject_NotModelisation_ERR_1921.Advice="ネイティブ実装の作業。";
+//
+GeoObIntValidObject_UnexpectedType_ERR_1922.Request="想定外の形状タイプ:";
+GeoObIntValidObject_UnexpectedType_ERR_1922.Diagnostic="形状オブジェクト /P1 は、想定されているタイプ /P2 ではありません。";
+GeoObIntValidObject_UnexpectedType_ERR_1922.Advice="適切なタイプを使用して作業。";
+//
+GeoObIntValidObject_RemovedObject_ERR_1923.Request="除去されるオブジェクト:";
+GeoObIntValidObject_RemovedObject_ERR_1923.Diagnostic="形状オブジェクト /P1 は使用できません。";
+GeoObIntValidObject_RemovedObject_ERR_1923.Advice="活動状態にあるオブジェクトを使用して作業。";
+//
+GeoObIntValidObject_IncompatibleContainer_ERR_1924.Request="非互換のコンテナ:";
+GeoObIntValidObject_IncompatibleContainer_ERR_1924.Diagnostic="形状オブジェクト /P1 および /P2 は同じコンテナに属していません。";
+GeoObIntValidObject_IncompatibleContainer_ERR_1924.Advice="同じ形状ファクトリを使用して作業。";
+//
+GeoObIntIncompatibleScale_SmallScaleContainer_ERR_1925.Request="形状コンテナ:";
+GeoObIntIncompatibleScale_SmallScaleContainer_ERR_1925.Diagnostic="形状コンテナをロードできません。現行セッションとスケールが異なる (小規模スケール) データが含まれています。";
+GeoObIntIncompatibleScale_SmallScaleContainer_ERR_1925.Advice="プリファレンスで現行セッションのスケールを変更してください。";
+//
+GeoObIntIncompatibleScale_StandardScaleContainer_ERR_1926.Request="形状コンテナ:";
+GeoObIntIncompatibleScale_StandardScaleContainer_ERR_1926.Diagnostic="形状コンテナをロードできません。現行セッションとスケールが異なる (標準スケール) データが含まれています。";
+GeoObIntIncompatibleScale_StandardScaleContainer_ERR_1926.Advice="プリファレンスで現行セッションのスケールを変更してください。";
+//
+GeoObIntIncompatibleScale_LargeScaleContainer_ERR_1927.Request="形状コンテナ:";
+GeoObIntIncompatibleScale_LargeScaleContainer_ERR_1927.Diagnostic="形状コンテナをロードできません。現行セッションとスケールが異なる (大規模スケール) データが含まれています。";
+GeoObIntIncompatibleScale_LargeScaleContainer_ERR_1927.Advice="プリファレンスで現行セッションのスケールを変更してください。";
+//
+GeoObIntUnsolvedForeignGeometrySoftware_ERR_1930.Request="外部形状ソフトウェア:";
+GeoObIntUnsolvedForeignGeometrySoftware_ERR_1930.Diagnostic="形状コンテナをロードできません。ドメイン /P2 の属性 /P1 にリンクした未解決の外部形状ソフトウェアが含まれています。";
+GeoObIntUnsolvedForeignGeometrySoftware_ERR_1930.Advice="外部アドインを含むランタイム ビューをチェックしてください。";
+//
+GeoObIntForbiddenApplicativeAttribute_ERR_1931.Request="禁止された適用属性:";
+GeoObIntForbiddenApplicativeAttribute_ERR_1931.Diagnostic="形状コンテナをロードできません。禁止適用属性 /P1 (ドメイン /P2) が含まれています。";
+GeoObIntForbiddenApplicativeAttribute_ERR_1931.Advice="特定の環境変数の想定値をチェックしてください。";
+//
+GeoObIntMandatoryApplicativeAttribute_ERR_1932.Request="必須の適用属性:";
+GeoObIntMandatoryApplicativeAttribute_ERR_1932.Diagnostic="形状コンテナをロードできません。必須の /P1 適用属性が含まれていません (最初は /P2 です)。";
+GeoObIntMandatoryApplicativeAttribute_ERR_1932.Advice="特定の環境変数の想定値をチェックしてください。";
+//
+GeoObIntFrozen_ERR_1966="/P1 は修正不能ですが、/P2 演算で定義を修正しようとしています。";
+//
+GeoObInInvalidInputValueGreaterThan.CurveLength="曲線の長さ";
+//

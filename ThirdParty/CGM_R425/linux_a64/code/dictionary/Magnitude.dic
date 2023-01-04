@@ -1,0 +1,110 @@
+# SGQ : pour l'index
+CATCkeDictionaryIndexFillTypesMethods					CATICkeDictionaryIndexFill				libCATMagnitude
+CATCkeDictionaryIndexElementAccessorCATICkeSignature	CATICkeDictionaryIndexElementAccessor	libCATMagnitude
+CATCkeDictionaryIndexElementAccessorCATIType			CATICkeDictionaryIndexElementAccessor	libCATMagnitude
+
+# C++ MKS Unit
+CATCkeMKSUnit           CATICkeMKSUnit               libCATMagnitude
+
+CATCkeParm              CATIParmEvents               libCATMagnitude
+CATCkeParm	            CATICkeParm		             libCATMagnitude
+CATCkeParm              CATICkeMKS                   libCATMagnitude
+CATCkeParm				CATInterfaceEvents			libCATMagnitude
+CATCkeParm 	CATIParmVariable 	libCATMagnitude
+
+# C++ parameter working as an object reference
+CATCkeParmSpec	        CATIParmAsStored             libCATMagnitude
+CATCkeParmSpec          CATIParmEvents               libCATMagnitude
+CATCkeParmSpec	        CATICkeParm					 libCATMagnitude
+CATCkeParmSpec          CATICkeMKS                   libCATMagnitude
+CATCkeParmSpec			CATInterfaceEvents			libCATMagnitude 
+CATCkeParmSpec	        CATIParmVariable             libCATMagnitude 
+
+# C++ value
+CATCkeUsrAny	        CATICkeInst                  libCATMagnitude
+
+# C++ type implementation
+CATCkeType 	CATICkeMagnitude 	libCATMagnitude
+CATCkeType 	CATICkeType 	libCATMagnitude
+CATCkeType 	CATIType 	libCATMagnitude
+
+CATCkeAttributesTypeImpl  CATIEnumereType             libCATMagnitude 
+CATCkeAttributesTypeImpl  CATIAttributesDescription   libCATMagnitude 
+CATCkeAttributesTypeImpl  CATICkeType                 libCATMagnitude 
+CATCkeAttributesTypeImpl  CATIInstanciation           libCATMagnitude 
+
+# C++ factory
+CATCkeUsrFactory        CATICkeParmFactory           libCATMagnitude
+CATCkeUsrFactory		CATIParmDictionary			 libCATMagnitude
+
+# Interfaces on feature unit   
+Unit                    CATICkeUnit  libCATMagnitude
+Unit                    CATIType     libCATMagnitude
+__FeatureUnit__         CATIType     libCATMagnitude
+Unit                    CATICkeType  libCATMagnitude
+__FeatureUnit__         CATICkeType  libCATMagnitude
+
+CATCkeUnitHogMinSec 	CATICkeUnit 	libCATMagnitude
+CATCkeUnitFIF 	CATICkeUnit 	libCATMagnitude
+CATCkeUnitGradient 	CATICkeUnit 	libCATMagnitude
+CATCkeUnitSlope	CATICkeUnit 	libCATMagnitude
+
+
+CATCkeRuse				CATIParmDictionary			 libCATMagnitude
+CATCkeRuse				CATITypeDictionary				libCATMagnitude  
+CATCkeRuse	CATIBrowseTypeDictionary	libCATMagnitude
+CATCkeRuse	CATITypeDictionaryInternal	libCATMagnitude
+CATCkeRuse	CATITypeDictionaryPrivate	libCATMagnitude
+CATCkeRuse  CATIFunctionDictionary  libCATMagnitude  
+
+CATCkeParmManipulator   CATIParmManipulator          libCATMagnitude
+
+CATStdRecursiveVisitor   CATIVisitor                  libCATMagnitude
+CATStdVisitor            CATIVisitor                  libCATMagnitude
+
+
+# Delegation pour le InitStartUps
+CATCkeInitializeEnvironmentMag		CATICkeInitializeEnvironment	libCATMagnitude
+
+
+#adhesions via CATECkeValue
+CATCkeParm CATIValue libCATMagnitude
+CATSpecNewLitt CATIValue libCATMagnitude
+CATProxyBaseParm CATIValue libCATMagnitude
+Literal CATIValue libCATMagnitude
+
+#adhesions via CATECkeEnumere
+CATSpecNewLitt CATIEnumere	libCATMagnitude	
+Enumere CATIEnumere	libCATMagnitude	
+CATCkeAttributesTypeImpl  CATIEnumere libCATMagnitude 
+
+#adhesions via CATECkeParmTolerance
+CATCkeParm CATIParmTolerance libCATMagnitude
+CATSpecNewLitt CATIParmTolerance libCATMagnitude
+Literal CATIParmTolerance libCATMagnitude
+CATProxyBaseParm CATIParmTolerance libCATMagnitude
+
+#CATCkeList
+CATCkeList CATICkeInst libCATMagnitude
+CATCkeList CATICkeParm libCATMagnitude
+CATCkeList CATIList libCATMagnitude
+CATCkeList CATIParmVariable libCATMagnitude
+
+CATCkeParm	      CATIParmAsStored  libCATMagnitude
+CATProxyBaseParm  CATIParmAsStored  libCATMagnitude
+Literal 	        CATIParmAsStored 	libCATMagnitude
+CATSpecNewLitt    CATIParmAsStored  libCATMagnitude
+
+CATCkeTypeExtensionReadOnlyProxy CATIType libCATMagnitude
+CATCkeTypeExtensionReadOnlyProxy CATITypeExtension libCATMagnitude
+
+CATLieCkeUnitsSheetSettingCtrl	CATICreateInstance	libCATMagnitude
+CATLieCkeUnitsSheetSettingCtrl	CATISysSettingController	libCATMagnitude
+CATLieUnitsSheetSettingCtrl	CATICreateInstance	libCATMagnitude
+CATLieUnitsSheetSettingCtrl	CATILieUnitsSheetSettingAtt	libCATMagnitude
+CATLieUnitsSheetSettingCtrl CATISysSettingController  libCATMagnitude
+
+CATCkeRuse CATICkeScaleServices libCATMagnitude
+CATCkeParm CATICkeParmContext libCATMagnitude
+
+CATCkeRuse CATICkeScalesServices libCATMagnitude

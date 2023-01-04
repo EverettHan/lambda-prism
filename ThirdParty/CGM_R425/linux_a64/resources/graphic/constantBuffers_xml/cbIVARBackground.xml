@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <!-- NOTE: The filename and name of the constant buffer must be different -->
+  <!-- NOTE: It is not possible to mix UNIFORM and SEMANTIC -->
+  
+  <NAME>cb_IVARBackground</NAME>
+
+  <!-- Flips the u or v coordinates of the texture, useful for magic mirror or to deal with upside down images. -->
+  <UNIFORM>
+    <NAME>u_Flip</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0 0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- Specifies the width and height of the texture:
+       depending on the platform, it is not always possible to retrieve from within the shader. -->
+  <UNIFORM>
+    <NAME>u_TextureSize</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0 0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- Fits the width and / or the height of the texture to the viewer.
+       By default, the height of the texture is made to fit the height of the viewer, no matter its width. -->
+  <UNIFORM>
+    <NAME>u_TextureFit</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0 1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>

@@ -1,0 +1,10 @@
+<meta charset="UTF-8"/>
+DELControlPlan="Manufacturing Control Plan";
+	DELControlPlan.DELControlPlanReference="Control Plan Reference";
+	DELControlPlan.DELControlPlanIsControlling="Control Plan Connection Is Controlling";
+		DELControlPlan.DELControlPlanIsControlling.Is_Controlling="Link to Planning Routine Reference";
+		DELControlPlan.DELControlPlanIsControlling.Is_Controlled="Link to Control Plan Reference";
+	DELControlPlan.DELControlRowCnx="Control Row Connection";
+		DELControlPlan.DELControlRowCnx.Is_referencing_ProductCharacteristic="Link to Product Characteristic Requirement";
+		DELControlPlan.DELControlRowCnx.Is_referencing_ProcessCharacteristic="Link to Process Characteristic Requirement";
+		DELControlPlan.DELControlRowCnx.Is_referencing_Operation="Link to Manufacturing Operation";

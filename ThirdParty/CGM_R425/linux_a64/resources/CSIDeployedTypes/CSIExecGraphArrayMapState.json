@@ -1,0 +1,17 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type returned by an ArrayMap block in CSI Execution Graph context giving the state of one of the vectorized execution",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "state",
+      "basic": "int32",
+      "desc": "current state of the execution: success 0, error 1, running 2"
+    },
+    {
+      "label": "outputIndex",
+      "basic": "int32",
+      "desc": "index in the corresponding output array (success or error according to the previous state, -1 if still running)"
+    }
+  ]
+}

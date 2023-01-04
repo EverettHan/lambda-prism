@@ -1,0 +1,65 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Get Runner health status",
+  "onCall": {
+    "in": {},
+    "out": {
+      "parameters": [
+        {
+          "label": "receivedJobsCount",
+          "basic": "uint64"
+        },
+        {
+          "label": "executedJobsCount",
+          "basic": "uint64"
+        },
+        {
+          "label": "disconnectedJobsCount",
+          "basic": "uint64"
+        },
+        {
+          "label": "circuitBreakerCount",
+          "basic": "uint32"
+        },
+        {
+          "label": "absoluteMaxJobs",
+          "basic": "uint16"
+        },
+        {
+          "label": "maxJobs",
+          "basic": "uint16"
+        },
+        {
+          "label": "pendingJobsCount",
+          "basic": "uint16"
+        },
+        {
+          "label": "runningJobsCount",
+          "basic": "uint16"
+        },
+        {
+          "label": "currentSuccessRate",
+          "basic": "uint8"
+        },
+        {
+          "label": "isPaused",
+          "basic": "bool"
+        },
+        {
+          "label": "isCircuitOpened",
+          "basic": "bool"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

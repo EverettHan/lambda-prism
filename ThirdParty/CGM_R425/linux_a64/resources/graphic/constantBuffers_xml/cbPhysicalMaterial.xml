@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>PMat</NAME>
+
+  <!--*****************************************************************************-->
+
+  <!--Mapping operator-->
+  <UNIFORM>
+    <NAME>world2Object</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--*****************************************************************************-->
+
+  <UNIFORM>
+    <NAME>uvTransformation</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--*****************************************************************************-->
+  <UNIFORM>
+    <NAME>diffuse</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>    
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>diffuseUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>emissive</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>emissiveUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>roughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.0001</UI_STEP_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>roughnessUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>glossiness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.0001</UI_STEP_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>glossinessUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>coatingGlossiness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.0001</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <!--*****************************************************************************-->
+
+  <UNIFORM>
+    <NAME>edgeColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>edgeColorUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>edgeColorBias</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>        
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>edgeColorBiasUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>displacement</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>displacementUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--*****************************************************************************-->
+  
+  <UNIFORM>
+    <NAME>fresnelCoefficient</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.24 0.24 0.24</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>fresnelCoefficientUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>coatingFresnelCoefficient</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.24 0.24 0.24</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>anisotropy</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropyUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+ 
+  <!--*****************************************************************************-->
+
+  <UNIFORM>
+    <NAME>uvRepeat</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>bumpScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>bumpScaleUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>transparency</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>transparencyUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>DiffuseAlphaMultiplier</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.</DEFAULT_VALUE>
+  </UNIFORM>
+
+  
+  
+  <!--*****************************************************************************-->
+  
+  <UNIFORM>
+    <NAME>opacity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>opacityUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>anisotropyAngle</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>anisotropyAngleUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  
+  <!--*****************************************************************************-->
+
+  <UNIFORM>
+    <NAME>flakesBump</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>flakesRoughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>pearlFlakesBump</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+	
+	<UNIFORM>
+    <NAME>coatingBump</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+		<NAME>coatingScale</NAME>
+		<TYPE>float</TYPE>
+		<DEFAULT_VALUE>0.1</DEFAULT_VALUE>
+	</UNIFORM>
+
+  <UNIFORM>
+    <NAME>flakesWeight</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>flakesStrength</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>flakesScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.7</DEFAULT_VALUE>
+  </UNIFORM>
+
+
+  <!--*****************************************************************************-->
+
+  <UNIFORM>
+    <NAME>flakesColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>pearlFlakesColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>flakesDensity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.7</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>pearlFlakesDensity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.7</DEFAULT_VALUE>
+  </UNIFORM>
+
+
+  <!--*****************************************************************************-->  
+
+  <UNIFORM>
+    <NAME>normalMapUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>heightMapUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>coatingNormalMapUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>bumpMapUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>normalMapBinormalScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>occlusionMapUvTransform</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>
+      1.0 0.0 0.0 0.0
+      0.0 1.0 0.0 0.0
+      0.0 0.0 1.0 0.0
+      0.0 0.0 0.0 1.0
+    </DEFAULT_VALUE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>
+

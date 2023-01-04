@@ -1,0 +1,30 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type to return an execution graph error",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "port",
+      "type": "CSIExecGraphPort",
+      "desc": "Port of this error"
+    },
+    {
+      "label": "code",
+      "basic": "int32",
+      "desc": "error code taking back the HTTP response status codes convention\n- 200 - Expected and well-managed Error\n- 417 - Missing or invalid Control Flows\n- 421 - Invalid Data Path\n- 423 - Control Flow dead-end\n- 428 - Inconsistent Data and Control\n- 499 - Interrupt request before end\n- 500 - CSISystemError of a Block\n- 504 - A Select has failed (timeout)\n- 520 - Missing Error Data Flow"
+    },
+    {
+      "label": "description",
+      "basic": "string",
+      "desc": "description of the error"
+    },
+    {
+      "label": "data",
+      "type": "Parameters",
+      "desc": "generic data associated to this error",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

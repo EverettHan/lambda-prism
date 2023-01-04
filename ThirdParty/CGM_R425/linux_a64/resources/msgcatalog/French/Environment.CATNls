@@ -1,0 +1,204 @@
+<meta charset="UTF-8"/>
+//===================================================================================
+//XX  XX   XXXXXXX  XXXX     XXXXXX            XX   XX   XXXXXX    XXXX
+//XX  XX    XX   X   XX       XX  XX           XXX XXX  XX    X   XX  X
+//XX  XX    XX X     XX       XX  XX           XXXXXXX  XX       XX
+//XXXXXX    XXXX     XX       XXXXX            XX X XX   XXXXX   XX
+//XX  XX    XX X     XX       XX               XX   XX       XX  XX  XXX
+//XX  XX    XX   X   XX  XX   XX               XX   XX  X    XX   XX  XX
+//XX  XX   XXXXXXX  XXXXXXX  XXXX              XX   XX  XXXXXX     XXX X
+//====================================================================================
+SETCATENV_HELP.text="Crée un fichier d'environnement 
+
+setcatenv -e name [-d directory][-p concatenation ][-a user|global][-new yes|no][-server][-cf path][-v yes|no]
+
+Options générales :
+    -e environment_name : nom de l'environnement. Option obligatoire. 
+    -d directory        : dossier de stockage du fichier d'environnement.  
+                          Valeur par défaut :\"/P1\".
+    -p concatenation    : chemin d'installation. Plusieurs chemins peuvent être spécifiés. Utilisez : comme séparateur de chemin. 
+                          Valeur par défaut : \"/P2\"
+    -a user|global      : type d'environnement. Inutile si -d est spécifié.
+                          utilisateur :   le fichier d'environnement est stocké dans \"/P3\".
+                          global : le fichier d'environnement est stocké dans \"/P4\" 
+                          Valeur par défaut : utilisateur
+    -new     yes|no     : si un environnement a le même nom, remplacez-le. 
+                          Valeur par défaut : yes
+    -server             : active le mode serveur.
+    -cf    file_path    : spécifie le nom ou le chemin d'un environnement existant, à partir duquel vous créez un nouvel environnement.
+                          Par exemple, la commande :   setcatenv -e MyNewEnv -cf MyFirstEnv
+                          crée le nouvel environnement MyNewEnv à partir d'une copie de MyFirstEnv.
+                          Ceci vous permet d'hériter de personnalisations précédentes sans avoir à les recréer dans le nouvel environnement.
+    -v yes|no           : active le mode prolixe. Par défaut : yes
+    -h|-help            : cette aide";
+
+//***************************************************************************************************************************************    
+DELCATENV_HELP.text="Supprime un fichier d'environnement. 
+
+delcatenv -e name [-d directory][-a user|global][-desktop yes|no][-v yes|no]
+
+Options générales :
+    -e environment_name : nom de l'environnement. Option obligatoire. 
+    -d directory        : dossier de stockage du fichier d'environnement.  
+                          Valeur par défaut :\"/P1\".
+    -a user|global      : type d'environnement. Inutile si -d est spécifié.
+                          utilisateur :   le fichier d'environnement est stocké dans \"/P2\".
+                          global : le fichier d'environnement est stocké dans \"/P3\" 
+                          Valeur par défaut : utilisateur
+    -v yes|no           : active le mode prolixe. Par défaut : yes
+    -h|-help            : cette aide.";
+
+//***************************************************************************************************************************************    
+
+LSCATENV_HELP.text="Énumère les environnements disponibles : 
+
+lscatenv   [-a user|global] [-d storage_directory_name]
+
+Options :
+    -d directory       : Dossier de stockage du fichier d'environnement.  
+                          Valeur par défaut : \"/P1\".
+    -a user|global      : Type de l'environnement. Inutile si l'option -d est définie.
+                          user : le fichier d'environnement est stocké dans \"/P2\".
+                          global : le fichier d'environnement est stocké dans \"/P3\" 
+                          Valeur par défaut : user";
+//***************************************************************************************************************************************
+READCATENV_HELP.text="Affiche le contenu du fichier d'environnement.
+
+readcatenv -e nom [-d répertoire][-a user|global][-var variable][-short][-l]
+
+Options :
+    -e environment_name : Nom de l'environnement. Option obligatoire. 
+    -d directory        : Dossier de stockage du fichier d'environnement.  
+                           Valeur par défaut : \"/P1\".
+    -a user|global       : Type de l'environnement. Inutile si le paramètre -d est défini.
+                           user : le fichier d'environnement est stocké dans \"/P2\".
+                           global : le fichier d'environnement est stocké dans \"/P3\" 
+                           Valeur par défaut : user
+    -var varname          : Affiche uniquement la valeur de la variable définie. Si cette option n'est pas définie
+                           readcatenv affiche toutes les variables disposant d'une valeur dans le fichier d'environnement.
+    -short               : Affiche uniquement la valeur de la variable.
+    -l                   : Ne pas développer la valeur de la variable.";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_NT.text="Modifier les variables dans les fichiers d'environnement.
+
+chcatenv -e name -var variable=value [-d directory][-a user|global][-new][-com][-del]
+
+Options :
+    -e environment_name : nom de l'environnement. Option obligatoire. 
+    -d directory        : dossier de stockage de fichiers d'environnement.  
+                          Obligatoire si l'option -a n'est pas spécifiée.
+    -a user|global      : type d'environnement. 
+                          Inutile si -d est spécifié et obligatoire si -d n'est pas spécifié.
+                          utilisateur :   le fichier d'environnement est stocké dans \"/P2\".
+                          global : le fichier d'environnement est stocké dans \"/P3\" 
+                         si l'option -d est spécifiée, la valeur par défaut est utilisateur
+    -var var1=new_value : attribue la valeur var1 à la variable new_value. Utilisez \" avant et après cet argument.
+                          Ex: chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\MyData\"
+                          ou  chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\My Data\"
+                          Si vous voulez mettre à jour une variable, exécutez cette commande comme suit :
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=%CATInstallPath%;C:\Temp\MyNewPath\"                           
+                          ou 
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=C:\Temp\MyNewPath\;%CATInstallPath%\"                            
+    -new                : si la variable spécifiée par l'option -var n'existe pas, créez-la.
+                          Ex: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new. 
+                          Pour prévenir tout comportement non souhaité, évitez les espaces dans le nom des variables.
+    -com \"Comment\"      : ajouter un commentaire dans le fichier d'environnement pour la variable spécifiée.
+                          Disponible uniquement pour les variables créées par l'utilisateur.
+                          Ex: chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"Ajouter un commentaire ici\" 
+    -del                : supprimer la variable spécifiée pour l'option -var (uniquement pour les variables créées par l'utilisateur).
+                          Ex: chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_UNIX.text="Modifie les variables dans des fichiers d'environnement.
+
+chcatenv -e nom -var variable=valeur [-d répertoire][-a user|global][-new][-com][-del]
+
+Options :
+    -e environment_name : Nom de l'environnement. Option obligatoire. 
+    -d directory        : Dossier de stockage du fichier d'environnement.  
+                          Valeur par défaut : \"/P1\".
+    -a user|global      : Type de l'environnement. Inutile si le paramètre -d est spécifié.
+                          user :   le fichier d'environnement est stocké dans \"/P2\".
+                          global : le fichier d'environnement est stocké dans \"/P3\" 
+                          Valeur par défaut : user
+    -var var1=new_value : Attribue la valeur new_value à la variable var1. Utilisez \" avant et après cet argument.
+                          Ex. : chcatenv -e MyEnv -a user -var \"CATTemp=/tmp/MyData\"
+                          Si vous voulez mettre à jour une variable, exécutez cette commande comme suit :
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=\$CATInstallPath:/tmp/MyNewPath\"                           
+                          ou 
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=/tmp/MyNewPath:\$CATInstallPath\"
+    -new                : Si la variable spécifiée par l'option -var n'existe pas, créez-la.
+                          Ex. : chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new. 
+                          Pour prévenir tout comportement non souhaité, évitez les espaces dans le nom des variables.
+    -com \"Comment\"      : Ajouter un commentaire dans le fichier d'environnement pour la variable spécifiée.
+                          Disponible uniquement pour les variables créées par l'utilisateur.
+                          Ex. : chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"Ajouter un commentaire ici\"
+    -del                : Supprime la variable spécifiée pour l'option -var (uniquement pour les variables créées par l'utilisateur).
+                          Ex. : chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+//***************************************************************************************************************************************
+
+
+//***************************************************************************************************************************************
+
+
+//====================================================================================
+//XXXXXXX  XXXXXX   XXXXXX    XXXXX   XXXXXX            XX   XX   XXXXXX    XXXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XXX XXX  XX    X   XX  X
+// XX X     XX  XX   XX  XX  XX   XX   XX  XX           XXXXXXX  XX       XX
+// XXXX     XXXXX    XXXXX   XX   XX   XXXXX            XX X XX   XXXXX   XX
+// XX X     XX XX    XX XX   XX   XX   XX XX            XX   XX       XX  XX  XXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XX   XX  X    XX   XX  XX
+//XXXXXXX  XXX  XX  XXX  XX   XXXXX   XXX  XX           XX   XX  XXXXXX     XXX X
+//====================================================================================
+
+AccessPb.Text="Impossible de sauvegarder le fichier d'environnement dans \"/P1\".";
+BadFormatedVariable.Text="La valeur spécifiée par l'option -var n'est pas valide.";
+BadOptions.Text="Impossible d'exécuter cette commande.  Vérifiez les arguments";
+CannotDelOfficalVar.Text="Cette variable ne peut pas être effacée. Seules les nouvelles variables peuvent être effacées.";
+DefaultFolderNotFound.Text="Le dossier de stockage de l'environnement par défaut (/P1) n'est pas accessible.";
+DirDoesntExist.Text="Le répertoire /P1 n'est pas accessible.";
+DiskFull.Text="Pas d'espace disque pour sauvegarder le fichier d'environnement";
+EnvCreationFailed.text="La création de l'environnement a échoué";
+EnvFileDoesntExist.Text="L'environnement spécifié n'a pas été trouvé";
+EnvFileNotFound.Text="Le fichier d'environnement est introuvable";
+EnvNameNotSpecified.Text="Le nom de l'environnement doit être spécifié dans l'option \"-e\".";
+ErrDelEnv.Text="Impossible de supprimer l'environnement";
+ErrDelEnvUsr.Text="Impossible de supprimer la représentation de l'environnement";
+ErrUnset.Text="Impossible de réinitialiser l'ordinateur";
+FileAlreadyExist.Text="Le fichier d'environnement déjà";
+GeneralFailure.Text="Un problème s'est produit durant l'initialisation de chcatenv.";
+IconeCreationFailed.text="La création de l'icône de l'environnement a échoué";
+IconeCreationFailed2.text="Aucun raccourci n'a pu être créé.  Vérifiez que /P1 est bien présent dans votre répertoire d'installation.";
+InitFolderFailed.Text="Le répertoire de stockage par défaut des environnements n'a pas été trouvé.\nL'environnement a été sauvegardé dans le répertoire suivant : /P1";
+InvalidEnvModeOption.Text="L'option \"-a\" doit être positionnée à \"user\" ou \"global\".";
+InvalidEnvNameOption.Text="Le nom de l'environnement doit être spécifié dans l'option \"-e\".";
+ModifyVariableFailed.text="La modification de la variable d'environnement a échoué.";
+MustBeSystemAdmin.Text="Les droits administrateur sont requis pour effectuer cette action.";
+NoBlankInEnvName.text="Caractères blancs non autorisés dans le nom d'environnement";
+NoCommentOnOfficialVar.Text="Vous ne pouvez commenter que les nouvelles variables";
+NoConcatSpecified.Text="Une concaténation doit être spécifiée";
+NoDirModeOption.Text="L'option \"-a\" doit être associée à la valeur \"user\" ou \"global\" ou spécifiez un répertoire de stockage via l'option \"-d\".";
+NoHome.text="Impossible de trouver la variable d'environnement \$HOME";
+NoNewOfficialVariable.Text="/P1 existe déjà, veuillez choisir un autre nom de variable.";
+NoReadAccessInDir.Text="Le répertoire /P1 n'est pas accessible en lecture";
+NoSuchVariable.text="La variable est absente du fichier d'environnement.";
+NoVarSpecified.Text="L'option \"-var\" doit être spécifiée.";
+NoWriteAccessInDir.Text="Le répertoire /P1 n'est pas accessible en mode écriture";
+NonValidType.Text="Un type d'environnement (user ou global) doit être spécifié via l'option -a.";
+ReadFailed.text="Problèmes à la lecture de l'environnement";
+ReadFailed.text="Problèmes à la lecture de l'environnement";
+RefFileNotFound.Text="Le fichier de référence est introuvable.";
+SpecifiedFolderNotFound.Text="Le répertoire \"/P1\" n'est pas accessible.";
+ToolsSetupFailed.text="L'installation des outils a échoué";
+UnableToReadEnvFile.Text="Impossible de lire le fichier d'environnement.";
+UnableToWriteFile.Text="Impossible de sauvegarder le fichier d'environnement modifié";
+UnknownOption.Text="Option incorrecte : /P1. ";
+UnknownProductLine.Text="/P1 n'est pas une ligne de produit valide.\nValeurs autorisées de l'option -cs : /P2";
+UnknownError.Text="Une erreur est survenue : /P1.";
+UpdateVariableFailed.text="La mise à jour de la variable d'environnement a échoué.";
+VariableNotFound.Text="La variable /P1 n'est pas dans le fichier d'environnement. ";
+VariableNotValued.Text="La valeur de la variable /P1 n'est pas définie. Si vous souhaitez définir une chaîne vide comme nouvelle valeur, n'ajoutez rien après le signe =.\nEx. : chcatenv -e MyEnv -a user -var\"MyNewVar=\" ";
+WSSsetupFailed.text="L'initialisation de l'ordinateur a échoué";
+
+

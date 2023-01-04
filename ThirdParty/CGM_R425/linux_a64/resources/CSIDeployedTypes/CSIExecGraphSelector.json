@@ -1,0 +1,95 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type defining a node id selector (which means the strategy to make the 'select' which gives the node on which the associated blocks will be executed)",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "displayName",
+      "basic": "string",
+      "desc": "The name of the Selector which is displayed into Editor and traces",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "id",
+      "basic": "string",
+      "desc": "Unique alphanumeric and camelCase identification",
+      "optional": {
+        "isOptional": false
+      }
+    },
+    {
+      "label": "pool",
+      "basic": "string",
+      "desc": "Pool of the Node the 'select' will target",
+      "optional": {
+        "isOptional": false
+      }
+    },
+    {
+      "label": "identifier",
+      "basic": "string",
+      "desc": "EK::Criterion Identifier of the Node the 'select' will target",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "noQueuing",
+      "basic": "bool",
+      "desc": "EK::Criterion corresponding to NoQueuing or WithoutQueuing APIs",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "onlyMyHypervisor",
+      "basic": "bool",
+      "desc": "EK::Criterion corresponding to OnlyMyHypervisor API",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "notMyHypervisor",
+      "basic": "bool",
+      "desc": "EK::Criterion corresponding to NotMyHypervisor API",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "preferMyHypervisor",
+      "basic": "bool",
+      "desc": "EK::Criterion corresponding to PreferMyHypervisor API",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "timeout",
+      "basic": "uint32",
+      "desc": "EK::Criterion corresponding to Timeout or WithTimeout APIs",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "maxInstanceCount",
+      "basic": "uint32",
+      "desc": "The max number of instances for this strategy of Select (by default is one), locks referencing this nodeIdSelector share this range of nodeIds",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "cmdLine",
+      "basic": "string",
+      "desc": "EK::Criterion corresponding to WithCmdLine API",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "Dialog.tst"/>
+  <attached name = "CAADialog.tst"/>
+  <attached name = "AfrProperties.tst"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VBA"/>
+  <prerequisite access = "Protected" comment = "20130417 R216 Declarative Dialog" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "20130417 R216 Declarative Dialog" expose = "ExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Protected" comment = "20130417 R216 Declarative Dialog" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "CATMathQuaternion" expose = "ExposePrereq" name = "Mathematics"/>
+  <authorize access = "Private" name = "VisuImmersiveDialog"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "VisualStudio"/>
+  <authorize access = "Private" name = "CATMkCheckArchiCommand"/>
+  <authorize access = "Private" comment = "20130417 CDT/DBE R216 Declarative Dialog" name = "DialogDeclarativeCatcher.tst"/>
+  <toolPrerequisite name = "VENMocCompiler"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

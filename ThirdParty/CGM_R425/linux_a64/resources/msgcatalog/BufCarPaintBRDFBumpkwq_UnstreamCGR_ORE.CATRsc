@@ -1,0 +1,47 @@
+
+/// BEGIN - NRE Configuration
+
+AlphaMode.DefaultValue               = "ePhysicalMaterial";
+
+Normal.DefaultValue                  = "CATRmaCpt_Normal_2DMap_OrangeSkin_1024.dds";
+Height.DefaultValue                  = "none";
+Coating.DefaultValue                 = "none";
+Flakes.DefaultValue                  = "on";
+
+glossiness.DefaultValue              = "0.85";
+anisotropy.DefaultValue              = "0.0";
+anisotropyAngle.DefaultValue         = "0.0";
+bumpScale.DefaultValue               = "0.0";
+transparency.DefaultValue            = "0.0";
+opacity.DefaultValue                 = "1.0";
+edgeColorBias.DefaultValue           = "0.0";
+displacement.DefaultValue            = "0.0";
+flakesWeight.DefaultValue            = "1.0";
+flakesStrength.DefaultValue          = "1.0";
+flakesScale.DefaultValue             = "1.0";
+diffuse.DefaultValue                 = "0.0 0.0 0.0";
+fresnelCoefficient.DefaultValue      = "0.0 0.0 0.0";
+edgeColor.DefaultValue               = "0.0 0.0 0.0";
+flakesColor.DefaultValue             = "1.0 1.0 1.0";
+
+bumpScale.ParameterUniform           = "CATRmaCptBumpHeight";
+
+diffuse.ParameterUniform             = "CATRmaCptDiffuseColor";
+diffuse.ParameterM1                  = "CATRmaCptDiffuseStrength";
+
+/// Strangely CATRmaCptFresnelReflectivityMin is the frensel coefficient when CATRmaCptFresnelReflectivityMax = 1.0 and CATRmaCptFresnelExpon = 5.0
+fresnelCoefficient.ParameterUniform  = "CATRmaCptFresnelReflectivityMin";
+fresnelCoefficient.ParameterM1       = "CATRmaCptSpecularColor";
+fresnelCoefficient.ParameterM2       = "CATRmaCptSpecularStrength";
+
+glossiness.ParameterSemantic         = "remap";
+glossiness.ParameterUniform          = "CATRmaCptSpecularExpon";
+glossiness.ParameterMin              = "0.0";
+glossiness.ParameterMax              = "250.0";
+
+flakesColor.ParameterUniform         = "CATRmaCptPaintMap";
+
+Sampler.texCoordUWrap.ParameterValue = "CATRmaCptBumpRepeatU";
+Sampler.texCoordVWrap.ParameterValue = "CATRmaCptBumpRepeatV";
+
+/// END - NRE Configuration

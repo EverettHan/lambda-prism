@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_PostEffect_HRTAO</NAME>
+
+  <UNIFORM>
+    <NAME>hashTableSize</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>maxSamplesPerCell</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>cellSizeInPixels</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>3.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>rayBudgetPerPixel</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.05</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>aoPower</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>aoRadius</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>10000.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>hashVisualizeMode</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>filterStep</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>cellLifespan</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>5</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>useVirtualSamples</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>dynamicAccumExponent</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>staticAccumFactor</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>minSampleCountPerCell</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>200</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>cleanupPass</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>displayCells</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>resX</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>resY</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>ambientFactor</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

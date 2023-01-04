@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template syp:name="AfrHelpStandardHeadersList" Target="CATCAfrInclude">
+    <CATCmdHeadersList>
+      <!--Add here your command headers-->
+      <CATCommandHeader ID = "AfrGetStartedHelpHdr"
+                        ClassName = "CATAfrGetStartedHelpCommand"
+                        SharedLibraryName = "CATAfrFoundation"
+                        ResourceFile = "CATAfrHelpHeaders"
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES"/>
+      <CATCommandHeader ID = "AfrContextualHelpHdr"
+                        ClassName = "CATHelpOnCurrentCommand"
+                        SharedLibraryName = "CATAfrFoundation"
+                        ResourceFile = "CATAfrHelpHeaders"
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES"/>
+      <CATCommandHeader ID = "AfrDocumentationHdr"
+                        ClassName = "CATAfrHelpCommand"
+                        SharedLibraryName = "CATAfrFoundation"
+                        ResourceFile = "CATAfrHelpHeaders"
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES">
+        <CATAfrCommandHeaderArgs>
+          <CATCommandHeaderArg ID = "LongHelpId" Value = ":MHURL:EXP3DBasicsUserMap/exp3dbasics-c-ov.htm" Mode = "In" />
+        </CATAfrCommandHeaderArgs>
+      </CATCommandHeader>
+      <CATCommandHeader ID = "AfrTutorialsHdr"
+                        ClassName = "CATInteractiveTutorialsCmd"
+                        SharedLibraryName = "CATInteractiveTutorial"
+                        ResourceFile = "CATAfrHelpHeaders"
+                        AvailabilityMode = "Normal=YES Editability=YES CoReviewObserver=YES"/>
+      <CATCommandHeader ID = "UADisplayAssistanceHdr"
+                        ClassName = "UADisplayAssistanceCommand"
+                        SharedLibraryName = "UACommands"
+                        ResourceFile = "UserAssistanceHeaders"
+                        Behavior = "CATAfrHeaderCheck"
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES"/>
+      <CATCommandHeader ID = "UAPanelHelpHdr"
+                        ClassName = "UAPanelHelpCommand"
+                        SharedLibraryName = "UACommands"
+                        ResourceFile = "UserAssistanceHeaders"
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES"/>
+      <CATCommandHeader ID = "UAUpdatePanelHelpHdr"
+                        ClassName = "UAUpdatePanelHelpCommand"
+                        SharedLibraryName = "UACommands"
+                        ResourceFile = "UserAssistanceHeaders"
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES"/>
+      <CATCommandHeader ID = "AfrUserCompanionHdr"
+                        ClassName = "CATCompanionStart"
+                        SharedLibraryName = "CATAfrFoundation"
+                        ResourceFile = "CATAfrHelpHeaders"
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES"/>
+      <!-- "CATHelpAboutCommand" defined in CATCreateGlobalHeaders because text was subject to depend on the application. Can be migrated now. -->
+      <CATCommandHeader ID = "CATAfrBadgeUpdateHdr"
+                        ClassName = "CATAfrHelpMenuBadgeUpdateCmd"
+                        SharedLibraryName = "CATAfrFoundation"
+                        ResourceFile = ""
+                        AvailabilityMode = "Normal=YES Editability=YES SmallScale=YES LargeScale=YES Offline=YES ReviewMode=YES CoReviewLeader=YES CoReviewObserver=YES"/>
+    </CATCmdHeadersList>
+  </Template>
+
+  <!-- Use UAPanels environment variable until some critical mass of panel topics has been reached-->
+  <Template syp:name="UAPanelsToInsert" Target="CATAfrComponent">
+    <CATCAfrGroup>
+      <CATCmdStarter Name="UADisplayAssistanceStr" Command="UADisplayAssistanceHdr" />
+    </CATCAfrGroup>
+  </Template>
+
+  <Template syp:name="AfrHelpStandardElements" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+      <!--Add here your new elements-->
+      <CATCmdContainer Name="HelpMenuUpdateCtn"  RepresentationType="VerticalFlat"  RegisteredFlag="1"/>
+      <CATCmdStarter Name="CATAfrGetStartedHelpStr" Command="AfrGetStartedHelpHdr" />
+      <CATCmdStarter Name="CATAfrContextualHelpStr" Command="AfrContextualHelpHdr" />
+      <CATCmdStarter Name="CATAfrDocumentationStr" Command="AfrDocumentationHdr" />
+      <CATCmdStarter Name="CATAfrTutorialsStr" Command="AfrTutorialsHdr" />
+      <CATCAfrInclude Condition="GetEnv(UAPanels)" Template="UAPanelsToInsert" />
+      <CATCmdStarter Name="CATAfrUserCompanionStr" Command="AfrUserCompanionHdr" />
+      <CATCmdStarter Name="CATAfrHelpAboutStr" Command="CATHelpAboutCommand" />
+    </CATCAfrGroup>
+  </Template>
+
+</Styles>
+

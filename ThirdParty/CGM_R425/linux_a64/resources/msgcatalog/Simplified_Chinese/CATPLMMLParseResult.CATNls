@@ -1,0 +1,60 @@
+<meta charset="UTF-8"/>
+DeclareAliasRelationMissing.Request="错误消息，解析错误。";
+DeclareAliasRelationMissing.Diagnostic="[RELATIONDECLARATION]  块中找不到 [NAVIGATES] 块中使用的 /p1 [/p2,/p3]。";
+DeclareAliasRelationMissing.Advice="请检查输入。";
+
+RoleAggregation.Request="错误消息，解析错误。";
+RoleAggregation.Diagnostic="***错误*** 找到角色==聚合的关系 /p1 [/p2,/p3]。这是禁止的。";
+RoleAggregation.Advice="请检查输入。";
+
+RoleOwner.Request="错误消息，解析错误。";
+RoleOwner.Diagnostic="***错误*** 找到角色==所有者的关系 /p1 [/p2,/p3]。这是禁止的。";
+RoleOwner.Advice="请检查输入。";
+
+RoleInstOf.Request="错误消息，解析错误。";
+RoleInstOf.Diagnostic="***错误*** 找到角色===instOf 的关系 /p1 [/p2,/p3]。这是禁止的。";
+RoleInstOf.Advice="请检查输入。";
+
+AliasReDeclared.Request="错误消息，解析错误。";
+AliasReDeclared.Diagnostic="***错误*** [NODEDECLARATION] 块中使用的名为 /p1 [/p2,/p3] 的别名先前已声明，请使用另一个名称。";
+AliasReDeclared.Advice="请检查输入。";
+
+ExtNotAuthorized.Request="错误消息，解析错误。";
+ExtNotAuthorized.Diagnostic="***错误*** [NODEDECLARATION] 块中使用的扩展（名为 /p1 [/p2,/p3]）不能用于当前的引擎，请不要将该扩展用于当前引擎，或者使用另一引擎。";
+ExtNotAuthorized.Advice="请检查输入。";
+
+LinesIsNotUsed.Request="错误消息，解析错误。";
+LinesIsNotUsed.Diagnostic="***错误*** [LINES] 块不能用于当前的引擎，请不要将 [LINES] 块用于当前引擎，或者使用另一个引擎。";
+LinesIsNotUsed.Advice="请检查输入。";
+
+SrAliasReDeclared.Request="错误消息，解析错误。";
+SrAliasReDeclared.Diagnostic="***错误*** [RELATIONDECLARATION] 块中使用的名为“/p1 [/p2,/p3]”的序号别名先前已声明，请使用另一个名称。";
+SrAliasReDeclared.Advice="请检查输入。";
+
+IdentifierUsedPreviously.Request="错误消息，解析错误。";
+IdentifierUsedPreviously.Diagnostic="***错误*** [NAVIGATES] 块中使用的标识符 /p1 [/p2,/p3] 先前在浏览中已使用。";
+IdentifierUsedPreviously.Advice="请使用另一个标识符。";
+
+IdentifierNeverUserBefore.Request="错误消息，解析错误。";
+IdentifierNeverUserBefore.Diagnostic="***错误*** [NAVIGATES] 块中使用标识符 /p1 [/p2,/p3] 从未用于前一个浏览。";
+IdentifierNeverUserBefore.Advice="第 N 个浏览的第 1 个标识符 (N>1) 应是先前使用的别名。";
+
+SyntaxError.Request="错误消息，解析错误。";
+SyntaxError.Diagnostic="/p1";
+SyntaxError.Advice="请检查输入。";
+
+NavInGraphOptionsNotRecognized.Request="错误消息，解析错误。";
+NavInGraphOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] 应等于 CyclicityDetected 或 CyclicityNotDetected。";
+NavInGraphOptionsNotRecognized.Advice="请检查输入。";
+
+SrLoadingOptionsNotRecognized.Request="错误消息，解析错误。";
+SrLoadingOptionsNotRecognized.Diagnostic="/p1 [/p2,/p3] 应等于 CATPLMMLStandard 或 CATPLMLIntercalarySr。";
+SrLoadingOptionsNotRecognized.Advice="请检查输入。";
+
+moreThanOneLine.Request="错误消息，解析错误。";
+moreThanOneLine.Diagnostic="***错误*** ml 中的行数不能超过一个。";
+moreThanOneLine.Advice="请检查输入。";
+
+ParsingError7.Request="错误消息，解析错误。";
+ParsingError7.Diagnostic="行 /p1 列 /p2。未找到关系“/p3”。/p4.";
+ParsingError7.Advice="请检查输入。";

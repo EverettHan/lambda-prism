@@ -1,0 +1,53 @@
+<meta charset="UTF-8"/>
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Request="Podczas transakcji odwracalnej zwracany jest nieprawidłowy kod.";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Diagnostic="Nieprawidłowy kod zwrotny transakcji /P1 podczas wykonywania. Transakcja została przerwana, a poprzednia sesja została przywrócona.";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Advice="Skontaktuj się z pomocą techniczną w zakresie usług sesji (TOS), przedstawiając pełny scenariusz.";
+
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Request="Krytyczny błąd wycofania transakcji odwracalnej.";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Diagnostic="Transakcja odwracalna /P1 nie powiodła się i wycofywanie nie zostało zakończone. Sesja została przerwana, ponieważ zawartość nie jest już pod kontrolą.";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Advice="Skontaktuj się z pomocą techniczną w zakresie usług sesji (TOS), przedstawiając pełny scenariusz.";
+
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Request="Brak silnych relacji.";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Diagnostic="Transakcja /P1 wykryła brak relacji własności lub relacji typu wystąpienie-odniesienie. Transakcja została przerwana, a poprzednia sesja została przywrócona.";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Advice="Skontaktuj się z pomocą techniczną w zakresie usług sesji (TOS), przedstawiając pełny scenariusz.";
+
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Request="Cykliczność sieci.";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Diagnostic="Transakcja /P1 wykryła cykliczność. Transakcja została przerwana, a poprzednia sesja została przywrócona.";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Advice="Skontaktuj się z pomocą techniczną w zakresie usług sesji (TOS), przedstawiając pełny scenariusz.";
+
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Request="Równoległa transakcja importu jest nadal w toku.";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Diagnostic="Transakcja /P1 jest wyłączna. Transakcje równoległe lub powiązane są odrzucane.";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Advice="Skontaktuj się z pomocą techniczną w zakresie usług sesji (TOS), przedstawiając pełny scenariusz.";
+
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Request="Równorzędna wersja pomocnicza jest nadal załadowana.";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Diagnostic="Transakcja /P1 wykryła kolizję identyfikatora MajorId. Transakcja została przerwana, a poprzednia sesja została przywrócona.";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Advice="Skontaktuj się z pomocą techniczną w zakresie usług sesji (TOS), przedstawiając pełny scenariusz.";
+
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Request="Załaduj.";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Diagnostic="Nie można załadować niektórych komponentów, ponieważ ich strumień jest nieobecny lub nieprawidłowy.";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Advice="Sprawdź dodatkowe błędy.";
+
+CATPLMUnexpectedExceptionRaised_ERR_105.Request="Wystąpił nieoczekiwany wyjątek (zdecydowanie zaleca się zamknięcie sesji).";
+CATPLMUnexpectedExceptionRaised_ERR_105.Diagnostic="Nieoczekiwany błąd został przechwycony i ponownie zgłoszony przez /P1.";
+CATPLMUnexpectedExceptionRaised_ERR_105.Advice="Zdecydowanie zaleca się zamknięcie sesji bez zapisywania pracy i ponowne uruchomienie nowej sesji.";
+
+CATPLMTosDataCorruption_ERR_107.Request="Uszkodzenie danych.";
+CATPLMTosDataCorruption_ERR_107.Diagnostic="Kontrola wewnętrzna zidentyfikowała zdalne uszkodzenie danych.";
+CATPLMTosDataCorruption_ERR_107.Advice="Skontaktuj się z pomocą techniczną w zakresie usług sesji (TOS), przedstawiając pełny scenariusz.";
+
+CATPLMTosStreamFileAccessRead_ERR_108.Request="Niepowodzenie uzyskiwania dostępu / odczytu.";
+CATPLMTosStreamFileAccessRead_ERR_108.Diagnostic="Niepowodzenie uzyskiwania dostępu / odczytu dla /P1.";
+CATPLMTosStreamFileAccessRead_ERR_108.Advice="Sprawdź podaną nazwę pliku (lub protokół binarny/ascii ftp).";
+
+CATPLMTosStreamFileAccessWrite_ERR_109.Request="Niepowodzenie uzyskiwania dostępu / zapisu.";
+CATPLMTosStreamFileAccessWrite_ERR_109.Diagnostic="Niepowodzenie uzyskiwania dostępu / zapisu dla /P1.";
+CATPLMTosStreamFileAccessWrite_ERR_109.Advice="Sprawdź kontrolę dostępu, miejsce na dysku i powiązanie z określoną nazwą pliku.";
+
+CATPLMTosReadStreamInvalidData_ERR_111="Nie można odczytać strumienia: nieprawidłowy format danych.";
+
+CATPLMTosReadStreamImpossibleAccess_ERR_112="Nie można odczytać strumienia: brak dostępu do pliku.";
+
+CATPLMTosReadOnlyStreamInvalidWrite_ERR_114="Strumień jest przeznaczony tylko do odczytu, brak możliwości zapisu.";
+
+CATPLMTosWriteOnlyStreamInvalidRead_ERR_115="Strumień jest przeznaczony tylko do zapisu, brak możliwości odczytu.";
+

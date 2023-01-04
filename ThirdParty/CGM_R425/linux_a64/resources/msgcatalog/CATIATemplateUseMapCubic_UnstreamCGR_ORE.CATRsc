@@ -1,0 +1,55 @@
+
+/// BEGIN - NRE Configuration
+    Sampler.minFilter.DefaultValue       = "eLinear";
+    Sampler.magFilter.DefaultValue       = "eLinear";
+    Sampler.mipFilter.DefaultValue       = "eLinear";
+    Sampler.texCoordUWrap.DefaultValue   = "eRepeat";
+    Sampler.texCoordVWrap.DefaultValue   = "eRepeat";
+
+    Sampler.texCoordUWrap.ParameterValue = "RepeatU";
+    Sampler.texCoordVWrap.ParameterValue = "RepeatV";
+ 
+    AlphaMode.DefaultValue               = "ePhysicalMaterial";
+    AlphaMode.ParameterSemantic          = "BasicMaterial";
+    AlphaMode.ParameterValue             = "KdText";
+                
+    Normal.DefaultValue                  = "none";
+    Height.DefaultValue                  = "none";
+    Coating.DefaultValue                 = "none";
+    Flakes.DefaultValue                  = "none";
+  
+    glossiness.DefaultValue              = "0.85";
+    anisotropy.DefaultValue              = "0.0";
+    anisotropyAngle.DefaultValue         = "0.0";
+    bumpScale.DefaultValue               = "0.0";
+    transparency.DefaultValue            = "0.0";
+    opacity.DefaultValue                 = "1.0";
+    edgeColorBias.DefaultValue           = "0.0";
+    displacement.DefaultValue            = "0.0";
+    flakesWeight.DefaultValue            = "0.0";
+    flakesStrength.DefaultValue          = "0.0";
+    flakesScale.DefaultValue             = "0.0";
+    diffuse.DefaultValue                 = "1.0 1.0 1.0";
+    fresnelCoefficient.DefaultValue      = "0.04 0.04 0.04";
+    edgeColor.DefaultValue               = "0.0 0.0 0.0";
+    flakesColor.DefaultValue             = "0.0 0.0 0.0";
+  
+    // NOTE U69 Bump Effect is not working properly
+    // Normal.ParameterValue                = "KdText";
+    // bumpScale.ParameterUniform             = "KbBump";
+  
+    diffuse.ParameterSemantic              = "tinted-texture";
+    diffuse.ParameterUniform               = "KdColor";
+    diffuse.ParameterSpatial               = "KdText";
+    diffuse.ParameterVariability           = "TextOperMapType";
+    diffuse.ParameterVariabilitySemantic   = "Basic";
+    diffuse.ParameterM1                    = "Kd";
+    
+    fresnelCoefficient.ParameterUniform    = "Kr";
+    fresnelCoefficient.ParameterM1         = "Ks";
+    fresnelCoefficient.ParameterM2         = "KsColor";
+
+    glossiness.ParameterUniform            = "KsShi";
+
+    transparency.ParameterUniform          = "Kt";
+/// END - NRE Configuration

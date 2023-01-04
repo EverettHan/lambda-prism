@@ -1,0 +1,55 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "VisuImmersiveDialogEx.tst"/>
+  <attached name = "VisuImmersiveDialog.tst"/>
+  <attached comment = "05.02.2016 CLE2/HEB R419 CID FRAME" name = "Afr_CID_FRAME.tst"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "MultimediaInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "25.07.2012 R214 CKO/CDT iVSensors" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "2011.09.02 JOV/CDT Export/Import CtlTextEditor" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Private" comment = "VisuImmersiveDialog shoud be friend of VisualizationFoundation" expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Private" comment = "VisuImmersiveDialog shoud be friend of VisualizationFoundation" expose = "ExposePrereq" name = "SGInfra"/>
+  <runtimeOnlyPrereq name = "VENCodeMirror"/>
+  <authorize access = "Private" name = "CATView"/>
+  <authorize access = "Private" name = "Graph"/>
+  <authorize access = "Private" name = "VisuImmersiveUI"/>
+  <authorize access = "Private" name = "DialogXMLUI.tst"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "VIDToolkit.tst"/>
+  <authorize access = "Private" name = "AfrImmersiveRender"/>
+  <authorize access = "Private" name = "AfrImmersiveRender.tst"/>
+  <authorize access = "Private" name = "VisuImmersiveDialogEx.tst"/>
+  <authorize access = "Private" name = "VisuImmersiveDialogEx"/>
+  <authorize access = "Private" comment = "2017.07.04 JFS/AKR15 Printers and Graphics Formats" name = "PublishingControllers"/>
+  <authorize access = "Private" comment = "2017.07.04 JFS/AKR15 Printers and Graphics Formats" name = "CATIAApplicationFrame"/>
+  <authorize access = "Private" name = "V6UserExperienceIOSApp.tst"/>
+  <authorize access = "Private" comment = "2011.11.18 VR2/CDT CID Designer" name = "DSxDevCIDDesigner"/>
+  <authorize access = "Private" comment = "2011.11.18 VR2/CDT CID Designer" name = "DSxDevCIDDesigner.tst"/>
+  <authorize access = "Private" comment = "2012.04.06 CKO/CDT CID Debug Tools" name = "CIDDebugTools"/>
+  <authorize access = "Private" comment = "2012.10.05 JV8/CDT 3D CID Manipulators" name = "VisuImmersive3D"/>
+  <authorize access = "Private" comment = "2021.10.11 GX2 CATV3DTstVisitor_Pick3D" name = "VisuImmersive3D.tst"/>
+  <authorize access = "Private" comment = "2022.07.12 GX2/UV4 Access to CATVidVisitors" name = "VisuImmersiveReality"/>
+  <authorize access = "Private" comment = "2014.05.23 EFM/HEB" name = "UIScriptVID"/>
+  <authorize access = "Private" comment = "2014.08.29 EFM/HEB Dashboard" name = "AfrVIDWindowManager"/>
+  <authorize access = "Private" comment = "2014.08.29 EFM/HEB JS Bindings Tests" name = "UIScript.tst"/>
+  <authorize access = "Private" comment = "2016.01.28 JOV/HEB Naming in CID_FRAME project" name = "Afr_CID_FRAME.tst"/>
+  <authorize access = "Private" comment = "2018.06.28 ZBJ/HEB New MePreferences project" name = "AfrProperties"/>
+  <authorize access = "Private" comment = "2021.03.12 BTY/JOV NCT test" name = "UIVCoreAutomation.tst"/>
+  <authorize access = "Private" comment = "2021.03.12 BTY/JOV NCT test" name = "UIVCoreAutomation"/>
+  <authorize access = "Private" comment = "2022.06.14 JBX/JOV/GX2 access l_CATVidCtlWebViewer from CATCefTestBehavior" name = "ChromiumEmbedded.tst"/>
+  <authorize access = "Private" comment = "2022.07.06 GX2/BFN1 Creation VisuImmersivePageObjects" name = "VisuImmersivePageObjects"/>
+  <authorize access = "Private" comment = "2022.09.22 K6C/HEB Link VID AFR" name = "VisuImmersiveA2X"/>
+  <authorize access = "Private" comment = "2022.09.27 K6C/HEB Link VID AFR" name = "VisuImmersiveA2X.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

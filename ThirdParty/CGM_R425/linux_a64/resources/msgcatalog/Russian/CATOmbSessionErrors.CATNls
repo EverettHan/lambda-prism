@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+// VCS 09/04/2014 Creation
+// Error description file for all errors happening during OMB operations, excepted Switch and Stream/Unstream operations
+//
+//    Please keep following glossary format when adding errors:
+//
+// ERR_OMB_<category>_nnn.Diagnostic=<A short and clear message>;
+// ERR_OMB_<category>_nnn.Request="<some more detail with helpful minimal context>;
+// ERR_OMB_<category>_nnn.Advice=<only when REALLY helpfull for final user, as a misuse correction or a by-pass>;
+
+// --> ERR_OMB_SD_001 to ERR_OMB_SD_099 : StreamDescriptor management in session
+
+SD_CREATE="создание";
+SD_DELETE="удаление";
+SD_MOD_LR="изменение локального хранилища";
+SD_CREATE_LR="создание локального хранилища";
+SD_READ_LR="чтение локального хранилища";
+SD_LOCK_LR="блокирование локального хранилища";
+SD_UNLOCK_LR="разблокирование локального хранилища";
+SD_ULOCK_LR="(раз)блокирование локального хранилища";
+SD_STREAM="потоковая передача";
+SD_IMPORT="импорт данных";
+SD_EXPORT="экспорт данных";
+SD_OPERATE="операция";
+SD_UPD_VISU="Обновление visu";
+SD_RESTORE="восстановить";
+
+SD_GET_SYNCHRO_CTX="Сбой запроса прикладной синхронизации.\nПрименяется синхронизация по умолчанию.\n";
+SD_APPLI_SYNCHRO_CTX="Сбой прикладной синхронизации.\nПрименяется синхронизация по умолчанию.\n";
+
+ERR_OMB_SD_001.Request="Дескриптор потока не найден.";
+ERR_OMB_SD_001.Diagnostic="Дескриптор потока /p1 прерван. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5) не найден.";
+
+ERR_OMB_SD_002.Request="Дескриптор потока уже существует.";
+ERR_OMB_SD_002.Diagnostic="Дескриптор потока /p1 прерван. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5) уже существует.";
+
+ERR_OMB_SD_003.Request="Недопустимый дескриптор потока.";
+ERR_OMB_SD_003.Diagnostic="Дескриптор потока /p1 запрещен. Недопустимый идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_004.Request="Сбой дескриптора потока /p1.";
+ERR_OMB_SD_004.Diagnostic="Сбой при запросе дескриптора потока /p1. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_005.Request="Сбой при запросе дескриптора потока /p1, так как Authoring SD не загружен в сеанс.";
+ERR_OMB_SD_005.Diagnostic="Идентификатор SD (формат:/p2 |роль/p3 : |имя:/p4 |тип:/p5).";
+ERR_OMB_SD_005.Advice="Authoring SD должен быть загружен в предыдущей операции переключения данных.";
+
+ERR_OMB_SD_006.Request="Дескриптор потока /p1 запрещен.";
+ERR_OMB_SD_006.Diagnostic="Запрос дескриптора потока /p1 запрещен. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_007.Request="Сбой при запросе дескриптора потока /p1, так как в компоненте отсутствует основной элемент AuthoringVisu SD.";
+ERR_OMB_SD_007.Diagnostic="Идентификатор SD (формат:/p2 |роль/p3 : |имя:/p4 |тип:/p5).";
+ERR_OMB_SD_007.Advice="Для текущей операции существование основного элемента AuthoringVisu SD — обязательное условие.";
+
+ERR_OMB_SD_008.Request="Дескриптор потока /p1 не поддерживается.";
+ERR_OMB_SD_008.Diagnostic="Дескриптор потока /p1 не поддерживается в текущей версии. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_009.Request="Дескриптор потока /p1 не авторизован.";
+ERR_OMB_SD_009.Diagnostic="/p1 не авторизован для измененного дескриптора потока. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_010.Request="Дескриптор потока /p1 запрещен.";
+ERR_OMB_SD_010.Diagnostic="Запрос дескриптора потока /p1 запрещен, так как в настоящее время SD находится в процессе удаления. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_011.Request="Дескриптор потока /p1 не поддерживается.";
+ERR_OMB_SD_011.Diagnostic="Операция /p1 не имеет смысла для данного типа дескриптора потока. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_012.Request="Сбой дескриптора потока /p1.";
+ERR_OMB_SD_012.Diagnostic="Операция /p1 не разрешена. Тип входного потока Visu не верен или не соответствует соответствующему типу дескриптора потока. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_013.Request="Сбой дескриптора потока /p1.";
+ERR_OMB_SD_013.Diagnostic="Операция /p1 не разрешена. Недопустимое имя долговременного хранения (должно состоять из символов Ascii без специальных символов). Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+ERR_OMB_SD_014.Request="Предупреждение. Дескриптор потока /p1 не завершен.";
+ERR_OMB_SD_014.Diagnostic="Запрос дескриптора потока /p1 не завершен. Идентификатор SD (формат:/p2 |роль:/p3 |имя:/p4 |тип:/p5).";
+
+// --> ERR_OMB_SWITCH_RULE_001 to ERR_OMB_SWITCH_RULE_099 : Switch Loading rule
+
+ERR_OMB_SWITCH_RULE_001.Request="Неизвестный целевой режим загрузки.";
+ERR_OMB_SWITCH_RULE_001.Diagnostic="Не удается найти целевой режим переключения в правиле загрузки входных данных.";
+
+ERR_OMB_SWITCH_RULE_002.Request="Неопределенный целевой режим загрузки.";
+ERR_OMB_SWITCH_RULE_002.Diagnostic="Целевой режим переключения не определяется правилом загрузки входных данных.";

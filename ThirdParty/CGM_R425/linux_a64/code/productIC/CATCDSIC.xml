@@ -1,0 +1,30 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATWBx"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATCDSUtilities"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <authorize access = "Private" name = "CATCDSGMInfra"/>
+  <authorize access = "Private" name = "CATCDSV5Driver"/>
+  <authorize access = "Private" name = "CATCDSNCGM.tst"/>
+  <authorize access = "Private" name = "CATCDS2D.tst"/>
+  <authorize access = "Private" name = "CATCDS.tst"/>
+  <authorize access = "Private" name = "CATCDSJS.tst"/>
+  <authorize access = "Private" name = "CATWBx.tst"/>
+  <authorize access = "Private" name = "CATWhiteBoxSolver"/>
+  <authorize access = "Private" name = "CATWhiteBoxSolverRSW.tst"/>
+  <authorize access = "Private" name = "CATCDSInterfaces"/>
+  <authorize access = "Private" name = "CATCDSInterfaces.tst"/>
+  <authorize access = "Private" name = "CATCDSPlayer.tst"/>
+  <authorize access = "Private" name = "CATCDSDynamics.tst"/>
+  <authorize access = "Private" name = "CATCDSDynamicsDebug.tst"/>
+  <authorize access = "Private" name = "CATCDSDynamics"/>
+  <authorize access = "Private" name = "CATCDSDynamicsConform"/>
+  <authorize access = "Private" name = "CATCDSInterfaces"/>
+  <authorize access = "Private" name = "CATCDSDebug.tst"/>
+  <attached name = "CATCDS2D.tst"/>
+  <attached name = "Z_CATCDS.tst"/>
+  <attached name = "CAACDS.tst"/>
+  <attached name = "zzCDSSketchTests.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

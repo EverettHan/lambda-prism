@@ -1,0 +1,50 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "This function calls a legacy csi command and returns what the csi command is returning. The CSI Command must answer only once and must not have any parameters in Begin and End sections.",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "command",
+          "basic": "string",
+          "desc": "The csi command's name that you want to call"
+        },
+        {
+          "label": "version",
+          "basic": "int32",
+          "optional": {
+            "isOptional": true,
+            "default_value": "1"
+          },
+          "desc": "The version of the csi command that you want to call"
+        },
+        {
+          "label": "doParameters",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "The parameters from the 'do' section's of the csi command that you want to call"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "answer",
+          "type": "Parameters",
+          "desc": "the answer from the 'do' section's of the csi command"
+        }
+      ]
+    }
+  },
+  "throwError": {
+  }
+}

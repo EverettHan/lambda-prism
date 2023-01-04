@@ -1,0 +1,39 @@
+
+##################################
+# Generic SAX 2.0 implementations
+##################################
+
+CATSAXDefaultHandler					CATISAXContentHandler			libCatXmlItfBase
+CATSAXDefaultHandler					CATISAXDTDHandler				libCatXmlItfBase
+CATSAXDefaultHandler					CATISAXEntityResolver			libCatXmlItfBase
+CATSAXDefaultHandler					CATISAXErrorHandler				libCatXmlItfBase
+
+CATSAXDefaultXMLFilter					CATISAXContentHandler			libCatXmlItfBase
+CATSAXDefaultXMLFilter					CATISAXDTDHandler				libCatXmlItfBase
+CATSAXDefaultXMLFilter					CATISAXEntityResolver			libCatXmlItfBase
+CATSAXDefaultXMLFilter					CATISAXErrorHandler				libCatXmlItfBase
+CATSAXDefaultXMLFilter					CATISAXXMLFilter				libCatXmlItfBase
+
+##################################
+# Generic PP implementations
+##################################
+
+CATXMLPPMemoryOutputSourceImpl				CATIXMLPPOutputSource			libCatXmlItfBase
+CATXMLPPFileOutputSourceImpl				CATIXMLPPOutputSource			libCatXmlItfBase
+CATXMLPPWriterImpl							CATIXMLPPWriter					libCatXmlItfBase
+ByteArrayInputSource						CATIXMLInputStream				libCatXmlItfExt
+ByteArrayOutputSource						CATIXMLPPOutputSource			libCatXmlItfExt
+
+ClassObjectCATXMLPPFactoryImpl				IClassFactory					libCatXmlItfBase
+
+CATXMLFileStream							CATIXMLInputStream				libCatXmlItfBase
+CATXMLUtils									CATISAXContentHandler			libCatXmlItfExt
+CATXMLUtils									CATISAXErrorHandler				libCatXmlItfExt
+CATXMLPPReaderStream						CATIXMLInputStream				libCatXmlItfBase
+CATXMLPPReaderStream						CATIXMLPPReader					libCatXmlItfBase
+
+##################################
+# Bundle
+##################################
+
+BundleInputSource							CATIXMLInputStream				libCatXmlItfBase

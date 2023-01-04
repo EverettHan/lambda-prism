@@ -1,0 +1,72 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "This function calls a legacy csi command and returns what the csi command is returning. Supports Begin, End and multiple answers.",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "command",
+          "basic": "string",
+          "desc": "The csi command's name that you want to call"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "optional": {
+            "isOptional": true,
+            "default_value": "1"
+          },
+          "desc": "The version of the csi command that you want to call"
+        },
+        {
+          "label": "begin",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "The parameters from the 'begin' section of the csi command that you want to call"
+        },
+        {
+          "label": "do",
+          "typeArray": "Parameters",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "The parameters from the 'do' section of the csi command that you want to call"
+        },
+        {
+          "label": "end",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "The parameters from the 'end' section of the csi command that you want to call"
+        },
+        {
+          "label": "replayMode",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Activate replay mode, in which \"translatable\" declarative parameters can be untranslated from the recorded translated version. Used by and for csi records only."
+        }
+      ]
+    },
+    "out": {}
+  },
+  "progress": {
+    "type": "Parameters",
+    "desc": "all begin, do(s) and end are forwarded through progress"
+  },
+  "throwError": {
+    "type": "Parameters",
+    "desc": "any command error is forwarded here"
+  }
+}

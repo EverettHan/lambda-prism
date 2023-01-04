@@ -1,0 +1,54 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for AdvancedTopologicalOpe errors 
+// En_EN
+
+CATATOVolSwpIncorrectPoints_ERR_1100.Request="Balayage volumétrique :";
+CATATOVolSwpIncorrectPoints_ERR_1100.Diagnostic="Le profil de balayage doit comporter au moins 4 points.";
+CATATOVolSwpIncorrectPoints_ERR_1100.Advice="Ajouter des points à la définition du profil";
+
+CATATOVolSwpProfileEndPerp_ERR_1200.Request="Balayage volumétrique :";
+CATATOVolSwpProfileEndPerp_ERR_1200.Diagnostic="Les premier et dernier segments linéaires du profil doivent être perpendiculaires à l'axe de révolution.";
+CATATOVolSwpProfileEndPerp_ERR_1200.Advice="Rendre les premier et dernier segments perpendiculaires à l'axe de révolution";
+
+CATATOVolSwpIncorrectRadii_ERR_1300.Request="Balayage volumétrique :";
+CATATOVolSwpIncorrectRadii_ERR_1300.Diagnostic="Le nombre de rayons d'entrée doit être d'1 ou 2 unités inférieur au nombre de points de profil";
+CATATOVolSwpIncorrectRadii_ERR_1300.Advice="Modifier le nombre de rayons d'entrée";
+
+CATATOVolSwpSmallRadii_ERR_1400.Request="Balayage volumétrique :";
+CATATOVolSwpSmallRadii_ERR_1400.Diagnostic="Un segment de profil a un petit rayon";
+CATATOVolSwpSmallRadii_ERR_1400.Advice="Augmenter le rayon du segment de profil";
+
+CATATOVolSwpNonPlanar_ERR_1500.Request="Balayage volumétrique :";
+CATATOVolSwpNonPlanar_ERR_1500.Diagnostic="Profil d'entrée non défini sur un plan";
+CATATOVolSwpNonPlanar_ERR_1500.Advice="Définir le profil d'entrée sur un plan";
+
+CATATOVolSwpNonStrCircular_ERR_1600.Request="Balayage volumétrique :";
+CATATOVolSwpNonStrCircular_ERR_1600.Diagnostic="Les arêtes dans le profil en entrée doivent être des droites ou des cercles";
+CATATOVolSwpNonStrCircular_ERR_1600.Advice="Créer le profil en utilisant seulement des arêtes droites ou circulaires";
+
+CATATOVolSwpNonCoPlanar_ERR_1700.Request="Balayage volumétrique :";
+CATATOVolSwpNonCoPlanar_ERR_1700.Diagnostic="Les sommets dans le profil en entrée ne sont pas coplanaires";
+CATATOVolSwpNonCoPlanar_ERR_1700.Advice="Définir le profil sur un plan";
+
+CATATOVolSwpLargeRadius_ERR_1800.Request="Balayage volumétrique :";
+CATATOVolSwpLargeRadius_ERR_1800.Diagnostic="Au moins une des valeurs de rayon est grande.";
+CATATOVolSwpLargeRadius_ERR_1800.Advice="Réduire la valeur du rayon";
+
+
+CATATOVolSwpSegNotPerp_ERR_1900.Request="Balayage volumétrique :";
+CATATOVolSwpSegNotPerp_ERR_1900.Diagnostic="Le segment se terminant sur l'axe de révolution du profil n'est pas perpendiculaire à l'axe.";
+CATATOVolSwpSegNotPerp_ERR_1900.Advice="Modifier un segment";
+
+CATATOVolSwpSegNotStraight_ERR_2000.Request="Balayage volumétrique :";
+CATATOVolSwpSegNotStraight_ERR_2000.Diagnostic="Le segment se terminant sur l'axe de révolution du profil n'est pas droit";
+CATATOVolSwpSegNotStraight_ERR_2000.Advice="Modifier un segment";
+
+CATATOVolSwpNoSolid_ERR_2100.Request="Balayage volumétrique :";
+CATATOVolSwpNoSolid_ERR_2100.Diagnostic="Impossible de combiner des solutions d'enveloppe individuelles dans un corps solide";
+CATATOVolSwpNoSolid_ERR_2100.Advice="Modifier le mouvement";
+
+TopOpInNestingTrayDimension_ERR_7200.Request="Imbrication de la configuration d'impression :";
+TopOpInNestingTrayDimension_ERR_7200.Diagnostic="Les dimensions de la feuille sont trop petites.";
+TopOpInNestingTrayDimension_ERR_7200.Advice="Modifiez les dimensions de la feuille.";
+

@@ -1,0 +1,101 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "PLMPosAdministration.tst"/>
+  <attached name = "PLMPosBase.tst"/>
+  <attached name = "PLMPosBaseInterfaces.tst"/>
+  <attached name = "PLMPosClient.tst"/>
+  <attached name = "PLMPosModeler.tst"/>
+  <attached name = "PLMPosServer.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <authorize access = "Protected" name = "CATPLMImplMx"/>
+  <authorize access = "Protected" name = "CATPLMDictionary.tst"/>
+  <authorize access = "Protected" name = "ENOCorPLMIndexClient"/>
+  <authorize access = "Protected" name = "PLMCommandInfraDebug"/>
+  <authorize access = "Protected" name = "CATPLMPosServices"/>
+  <authorize access = "Protected" name = "CATPLMPosServices.tst"/>
+  <authorize access = "Protected" name = "CATPLMPosManagementUI"/>
+  <authorize access = "Protected" name = "CATPLMPosManagementUI.tst"/>
+  <authorize access = "Protected" name = "PLMServerTestToolsDebug"/>
+  <authorize access = "Protected" name = "zzIndusPerfo_PLMCoreServer.tst"/>
+  <authorize access = "Protected" name = "PLMCommandInfraServer.tst"/>
+  <authorize access = "Protected" name = "zzPCS_EV53DIndex.tst"/>
+  <authorize access = "Protected" name = "PLMMultiDisciplineEnv"/>
+  <authorize access = "Protected" name = "CATPLMIndexItfImpl"/>
+  <authorize access = "Protected" name = "CATPLMImplAdapter"/>
+  <authorize access = "Private" name = "PLMPosAdministration"/>
+  <authorize access = "Private" name = "PLMPosAdministration.tst"/>
+  <authorize access = "Private" name = "PLMPosBaseInterfaces.tst"/>
+  <authorize access = "Private" name = "PLMPosBase"/>
+  <authorize access = "Private" name = "PLMPosBase.tst"/>
+  <authorize access = "Private" name = "PLMPosClient"/>
+  <authorize access = "Private" name = "PLMPosClient.tst"/>
+  <authorize access = "Private" name = "PLMPosClientInterfaces"/>
+  <authorize access = "Private" name = "PLMPosServer"/>
+  <authorize access = "Private" name = "PLMPosServer.tst"/>
+  <authorize access = "Private" name = "PLMPosModelerInterfaces"/>
+  <authorize access = "Private" name = "PLMPosModelerInterfaces.tst"/>
+  <authorize access = "Private" name = "PLMPosModeler"/>
+  <authorize access = "Private" name = "PLMPosModeler.tst"/>
+  <authorize access = "Private" name = "CATPLMIndexServices"/>
+  <authorize access = "Private" name = "CATPLMIndexServices.tst"/>
+  <authorize access = "Private" name = "ENOSTSecurity"/>
+  <authorize access = "Private" name = "ENOSTSecurity.tst"/>
+  <authorize access = "Protected" name = "PrintBase"/>
+  <authorize access = "Protected" name = "Print"/>
+  <authorize access = "Protected" name = "Print.tst"/>
+  <authorize access = "Protected" name = "CATPLMImplAdapterQL"/>
+  <authorize access = "Protected" name = "SWXPDMUI"/>
+  <authorize access = "Protected" name = "SWXPDMUI.tst"/>
+  <authorize access = "Protected" name = "SWXPDMCore"/>
+  <authorize access = "Protected" name = "SWXPDMCore.tst"/>
+  <authorize access = "Protected" name = "XPGBatchUtility"/>
+  <authorize access = "Protected" name = "SMAFeaDPUI"/>
+  <authorize access = "Protected" name = "SMAFeaDPUI.tst"/>
+  <authorize access = "Protected" name = "PLMDictionaryNavServices"/>
+  <authorize access = "Protected" name = "CATDataCompatibility"/>
+  <authorize access = "Protected" name = "SMAExeCAppServicesImpl"/>
+  <authorize access = "Protected" name = "SMAExeCAppServicesImpl.tst"/>
+  <authorize access = "Protected" name = "CATPLMCommunication"/>
+  <authorize access = "Protected" name = "CATPLMCommunication.tst"/>
+  <authorize access = "Protected" comment = "Split of PLMMultidisciplineEnv" name = "ENOSTMultiDiscipline"/>
+  <authorize access = "Protected" name = "CATPLMImplMx.tst"/>
+  <authorize access = "Protected" name = "ENOIEFBase"/>
+  <authorize access = "Protected" name = "ENOIEFClient"/>
+  <authorize access = "Protected" name = "XPGInfrastructure"/>
+  <authorize access = "Protected" name = "ENOIEF3DExpServices"/>
+  <authorize access = "Protected" name = "CATPLMCollabSpaceServices"/>
+  <authorize access = "Protected" name = "CATPLMClientCore"/>
+  <authorize access = "Protected" name = "CATPLMTestProviderPerformance"/>
+  <authorize access = "Protected" name = "CATPLMReplicationEngine"/>
+  <authorize access = "Protected" name = "PLMDesignWorkspaceUI"/>
+  <authorize access = "Protected" name = "SMASwxOneClickWorkflow"/>
+  <authorize access = "Protected" name = "PLMUnifiedChgActionImpl"/>
+  <authorize access = "Protected" name = "VPMEditorBatch"/>
+  <authorize access = "Protected" name = "VPMDeliveryCobot"/>
+  <authorize access = "Protected" name = "CATBackUpSessionUI"/>
+  <authorize access = "Protected" name = "CATConfigInfra"/>
+  <authorize access = "Protected" name = "CATConfigInfra.tst"/>
+  <authorize access = "Protected" name = "ProductStructureUI"/>
+  <authorize access = "Protected" name = "StudioModelCSI"/>
+  <authorize access = "Protected" name = "StudioModelCSI.tst"/>
+  <authorize access = "Protected" name = "PLMManagementServices"/>
+  <authorize access = "Protected" name = "ENOVersioning.tst"/>
+  <authorize access = "Protected" name = "XCTPlmUtils"/>
+  <authorize access = "Protected" name = "SMAWflExtensionEditors"/>
+  <authorize access = "Protected" name = "CATImmVPMBaseUI"/>
+  <authorize access = "Protected" name = "SMAPowerByNativeServices"/>
+  <authorize access = "Protected" name = "CATConfigBrowseImpl"/>
+  <authorize access = "Protected" name = "CATAuthoringBaseUI"/>
+  <authorize access = "Protected" name = "PLMManagementServicesUI"/>
+  <authorize access = "Protected" name = "PLMCopyUI"/>
+  <authorize access = "Protected" name = "CATConfigNavServices"/>
+  <authorize access = "Protected" name = "CATConfigCommonServices"/>
+  <authorize access = "Protected" name = "CATPLMUpdateGenericActors"/>
+  <authorize access = "Protected" name = "PrintEngine"/>
+  <authorize access = "Protected" name = "CATPLMServices"/>
+  <authorize access = "Protected" name = "CATSimModelBuild"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

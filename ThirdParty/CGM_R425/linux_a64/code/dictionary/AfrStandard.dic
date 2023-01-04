@@ -1,0 +1,23 @@
+CATApplicationFrame     CATIAfrPaletteSingleton libCATAfrPalette   
+CATApplicationFrame     CATITaskController      libCATAfrProgressTask
+CATIProgressTaskUIImpl  CATIProgressTaskUI      libCATAfrProgressTask
+CATIProgressTaskUIImpl  CATIProtectedProgressTaskUI      libCATAfrProgressTask
+
+CATInfProgressTask                 CATIProgressTask                  libCATAfrProgressTask
+CATInfProgressTask                 CATIProgressTaskUI                libCATAfrProgressTask
+CATInfProgressTask                 CATIProgressTaskCusto             libCATAfrProgressTask
+CATInfiniteProgressTask            CATIInfiniteProgressTask          libCATAfrProgressTask
+CATInfiniteProgressTask            CATICreateInstance                libCATAfrProgressTask
+
+CATAfrProgressTaskController       CATICAfrComponentController       libCATAfrProgressTask
+
+#-------------------------------------------------------------------------
+#  Workshop 
+CATApplicationFrame     CAAIAfrGeometryWksFactory	libCATAfrGeometryWshop
+CAAAfrGeometryWks       CATIWorkshop				libCATAfrGeometryWshop
+
+#-------------------------------------------------------------------------
+#  Workshop Transition
+CAAAfrGeometryWks_trans  CATIWorkbenchTransition	libCATAfrGeometryWshop
+
+CAAGeom		CATIEditor	libCATAfrGeometryWshop

@@ -1,0 +1,20 @@
+{
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "desc": "Returns 'ECHO' or the input specified value",
+  "onBeginParameters": "none",
+  "onCommandParameters": {
+    "in": {
+      "msg": {
+        "type": "string",
+        "defaultValue": ""
+      }
+    },
+    "answers": {
+      "msg": "string"
+    }
+  },
+  "onEndParameters": "none"
+}

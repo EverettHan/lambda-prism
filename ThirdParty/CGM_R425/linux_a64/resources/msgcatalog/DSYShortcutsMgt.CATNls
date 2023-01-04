@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt =" 
+To create or delete all applications shortcuts on desktop, menu or tools linked to a given environment file:
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+To create or delete a custom shortcut on desktop only linked to a given environment file:
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create or -del           : to create or delete all applications shortcuts on desktop, menu or tools, or to create or delete a custom shortcut.
+  -desktop|menu|tools       : to create or delete all applications shortcuts on desktop, menu or tools. The default is desktop. USeless in Custom mode.
+  -e EnvName                : Environment file name. Useless to delete a custom shortcut.
+  -d EnvDir                 : Environment file storage folder (optional). Useless in delete mode.
+                              if not specified, and -a not used, the default will be: EnvDir  = \"/p1\"
+                              if not specified, but -a global is used, the default will be: EnvDir = \"/p2\"
+                              if not specified, but -a user is used, the default will be: EnvDir =  \"/p1\"
+  -a global|user            : To create or delete shortcuts for All users or for the current user only (optional). The default is -a user.
+                              Specifies location and type of shortcuts.
+                             -a global: the shortcuts will be visible for all users. You must have administrator privileges to use this option.
+                             -a user: the shortcuts will be visible only for the current user.
+  -name DesktopShortcutName : to create or delete a custom desktop shortcut named DesktopshortcutName to launch Cmd command.
+  -cmd Cmd                  : to create a custom desktop shortcut named DesktopshortcutName with Target = CATSTART -run Cmd env EnvName -direnv EnvDir.
+  -h                        : This help.";
+
+MissingOption_e = "Option -e is mandatory to give the name of the environment file.\n";
+MissingValue_e = "-e option must be followed by the name of the environment file.\n";
+MissingValue_d = "-d option must be followed by the name of the path of the environment file.\n";
+MissingValue_a = "-a option must be followed by global or user.\n";
+MissingValue_Cmd = "-Cmd option must be followed by the command to by launched by the shortcut.";
+MissingValue_name = "-name option must be followed by the name of the desktop shortcut to be created.";
+MissingOption_cmd ="option -name must be used with -cmd option.\n";
+MissingOption_name ="option -cmd must be used with -name option.\n";
+BadOptions_menutools ="Custom shortcuts can be created only on the desktop.\n";
+BadOptions_TypeShortcut = "Options -desktop , -tools or -menu cannot be used together.\n";
+Option_aMustAdmin = "Option -a needs administrator privileges to create shortcuts for all users.\n";
+BadValue_a = "Option -a must be followed only by global or user.\n";
+MissingOptions_createordel = "One of the following options -create or -del is mandatory.";
+MissingOption_typeshortcut = "One of the following options -desktop, -tools or -menu is mandatory.\n";
+InvalidArg = "Option /p1 is not authorized.";
+BadOptions_createdel = "Options -create and -del cannot be used together.";
+EnvnameNotFound = "Environment file /p1 was not found.Check -e option\n";
+CreateShortcutsIn = "Creating shortcuts in : \"/p1\"\n";
+DeleteShortcutsIn = "Deleting shortcuts in : \"/p1\"\n";
+CreateShortcutsDesktop = "Creating shortcuts on the desktop...\n";
+CreateShortcutsDesktopOK = "Creation of the shortcuts on the desktop was successful.\n";
+CreateShortcutsDesktopKO = "Creation of the shortcuts on the desktop failed.\n";
+CreateShortcutDesktop = "Creating the desktop shortcut /p1 ...\n";
+CreateShortcutDesktopOK = "Creation of the desktop shortcut was successful.\n";
+CreateShortcutDesktopKO = "Creation of the desktop shortcut failed.\n";
+CreateShortcutsTools = "Creating Tools shortcuts...\n";
+CreateShortcutsToolsOK = "Creation of the Tools shortcuts was successful.\n";
+CreateShortcutsToolsKO = "Creation of the Tools shortcuts failed.\n";
+CreateShortcutsMenu = "Creating shortcuts in the Start menu...\n";
+CreateShortcutsMenuOK = "Creation of the shortcuts in the Start Menu was successful.\n";
+CreateShortcutsMenuKO = "Creation of the shortcuts in the Start Menu failed.\n";
+CreateDirFailed = "Failed to create directory \"/P1\".\n";
+DeleteShortcutsDesktop = "Deleting shortcuts on the desktop...\n";
+DeleteShortcutsDesktopOK = "Deletion of the shortcuts on the desktop was successful.\n";
+DeleteShortcutsDesktopKO = "Deletion of the shortcuts on the desktop failed.\n";
+DeleteShortcutDesktop = "Deleting the desktop shortcut /p1...\n";
+DeleteShortcutDesktopOK = "Deletion of the desktop shortcut was successful.\n";
+DeleteShortcutDesktopKO = "Deletion of the desktop shortcut failed.\n";
+DeleteShortcutsTools = "Deleting Tools shortcuts on the desktop...\n";
+DeleteShortcutsToolsOK = "Deletion of the Tools shortcuts was successful.\n";
+DeleteShortcutsToolsKO = "Deletion of the Tools shortcuts failed.\n";
+DeleteShortcutsMenu = "Deleting shortcuts in the Start menu...\n";
+DeleteShortcutsMenuOK = "Deletion of the shortcuts in the Start Menu was successful.\n";
+DeleteShortcutsMenuKO = "Deletion of the shortcuts in the Start Menu failed.\n";
+DeleteShortcutfailed = "Failed to delete shortcut /p1.\n";
+ShortcutNotFound = "Shortcut /p1 was not found.\n";
+DeleteShortcutOK = "Shortcut /p1 was deleted.\n";
+CreateShortcutOK = "Shortcut /p1 was successfully created.\n";
+CreateShortcutKO = "Failed to create shortcut /p1.\n";
+BadStartInFolder_MissingPourcent ="Value for Start In Folder: /p1 is ignored because it contains unbalanced % characters.\n";
+BadStartInFolder_BadEnv= "Environment variable /p1 is not set.\n";
+BadStartInFolder_BadDir= "Value for Start in folder: /p1 is ignored because the path does not exist.\n";
+NoModuleName = "Cannot get module Name.\n";
+CustomexeNotFound = "Exe /p1 was not found in PATH concatenation.\n";
+Customexe2NotFound = "/p1.exe or /p1.bat were not found in PATH concatenation.\n"; 
+NoShortcuts = "Cannot retrieve the list of shortcuts to create. File /p1 was not found. \n";
+ErrGetRootPath = "Cannot retrieve folder value for /p1.\n";
+DeleteDirKO = "Unable to delete folder /p1: /p2\n";
+InvalidDiskPathFormat = "'/p1' path starts with an invalid disk drive.";
+InvalidUNCPathFormat = "'/p1' is an invalid UNC path.";
+InvalidPathFormat =  "'/p1' is an invalid path.";
+rootpathnotExist = "The root path '/p1' does not exist and hence the folder cannot be created.\n";

@@ -1,0 +1,32 @@
+{
+  "grammarVersion": 2,
+  "desc": "Definition of a CSI custom implementation",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Name of the custom implementation"
+    },
+    {
+      "label": "version",
+      "basic": "uint32",
+      "desc": "Version of the custom implementation"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "desc": "Description of the custom implementation"
+    },
+    {
+      "label": "library",
+      "basic": "string",
+      "desc": "Name of the library that export entry points to create and delete functions factories for this implementation"
+    },
+    {
+      "label": "definition",
+      "typeArray": "CSIPropertyDefinition",
+      "desc": "Definition of the custom implementation settings"
+    }
+  ]
+}

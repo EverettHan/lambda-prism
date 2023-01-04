@@ -1,0 +1,213 @@
+<meta charset="UTF-8"/>
+//----------------------------------------------------------
+// Main Window
+Title=" Редактор среды";
+//***************************************
+//*      Menu Bar                       *
+//***************************************
+MenuBar.MenuFile.Title=" Среда";
+MenuBar.MenuFile.ItemCreate.Title="Новый ";
+MenuBar.MenuFile.ItemCreateFrom.Title="Новый с ...";
+MenuBar.MenuFile.ItemDelete.Title="Удалить ";
+MenuBar.MenuFile.ItemEdit.Title="Редактировать ";
+MenuBar.MenuFile.ItemSortByDate.Title="Сортировать по дате";
+MenuBar.MenuFile.ItemSortByMode.Title="Сортировать по режиму";
+MenuBar.MenuFile.ItemSortByName.Title="Сортировать по имени";
+MenuBar.MenuFile.ItemExit.Title="Выход";
+//
+MenuBar.MenuOptions.Title=" Параметры";
+MenuBar.MenuHelp.Title=" Справка";
+MenuBar.MenuHelp.ItemHelp.Title=" Справка";
+MenuBar.MenuOptions.ItemSetUserDir.Title="Задать каталог хранения данных пользователя";
+MenuBar.MenuOptions.ItemSetGlobalDir.Title="Задать глобальный каталог хранения";
+//
+//
+//***************************************
+//*      Environment Frame      *
+//***************************************
+main.FrEnv.TxtListEnv.Title=" Среды";
+LstEnv.NameTitle=" Имя";
+LstEnv.ModeTitle=" Режим";
+LstEnv.PathTitle=" Путь";
+LstEnv.DateTitle=" Последнее изменение";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemCreate.Title="Новый ";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemCreateFrom.Title="Новый с ...";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemDelete.Title="Удалить ";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemEdit.Title="Редактировать ";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemSortByDate.Title="Сортировать по дате";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemSortByMode.Title="Сортировать по режиму";
+main.ItemSplitter.FrEnv.CtxMnuEnv.ItemSortByName.Title="Сортировать по имени";
+
+main.ItemSplitter.FrVar.CtxMnuVar.ItemVarCreate.Title="Новая переменная";
+main.ItemSplitter.FrVar.CtxMnuVar.ItemVarEdit.Title="Редактировать переменную ";
+main.ItemSplitter.FrVar.CtxMnuVar.ItemVarDelete.Title="Удалить переменную";
+main.ItemSplitter.FrVar.CtxMnuVar.ItemSaveModif.Title="Сохранить";
+
+FrInfo.Title=" Каталоги хранения сред";
+FrInfo.GlobalDirectoryText.Title=" Глобальные среды: ";
+FrInfo.UserDirectoryText.Title=" Пользовательские среды: ";
+FrInfo.CtxMnuInfo.ItemSetUserDir.Title="Задать каталог хранения данных пользователя";
+FrInfo.CtxMnuInfo.ItemSetGlobalDir.Title="Задать глобальный каталог хранения";
+
+Popup.Title=" Сообщение редактора среды";
+//
+//
+//***************************************
+//*      Variables Frame      *
+//***************************************
+main.FrVar.TxtListVar.Title=" Переменные среды";
+LstVar.NameTitle=" Имя";
+LstVar.ValueTitle=" Значение";
+LstVar.CommentTitle=" Комментарий";
+//
+//
+//***************************************
+//*      Variable Edit Frame      *
+//***************************************
+main.FrVar.FrEdt.Key.Title=" Имя:   ";
+main.FrVar.FrEdt.Value.Title=" Значение:   ";
+main.FrVar.FrEdt.ModVar.Title=" Изменить ";
+//
+//***************************************
+//*      New Environment Window         *
+//***************************************
+Create.Title=" Создать новую среду";
+Create.Name.Title=" Имя: ";
+Create.Path.Title=" Путь установки: ";
+Create.Mode.Title=" Режим: ";
+Create.Prod.Title=" Линейка продуктов: ";
+Create.CopyFrom.Title=" Создать из:";
+Create.CbRepresentation.Title=" Добавить значок на рабочий стол";
+Create.CbDesktopIcon.Title=" Добавить значок на рабочий стол";
+Create.CbMenuIcon.Title=" Добавить ярлык в меню \"Пуск\"";
+Create.CbServer.Title=" Сервер";
+Create.CbDeleteOld.Title=" Переписать существующую среду";
+Create.BOK=" ОК";
+Create.BCancel=" Отмена";
+Create.UserMode.Text=" Пользователь";
+Create.GlobalMode.Text=" Глобальный";
+Create.SelectUserDir.Text=" Выберите среду";
+Create.DefaultName.Text="Env001";
+Create.DefaultPath.Text=" Путь установки";
+Create.EnvList_Label.Text=" Тип среды ";
+//***************************************
+//*      New Environment From Window         *
+//***************************************
+CreateFrom.Title="Создать среду из /P1";
+CreateFrom.Name.Title="Имя: ";
+CreateFrom.Path.Title="Путь установки: ";
+CreateFrom.Mode.Title="Режим: ";
+CreateFrom.Prod.Title="Линейка продуктов: ";
+CreateFrom.CbRepresentation.Title="Добавить значок на рабочий стол";
+CreateFrom.CbDesktopIcon.Title="Добавить ярлык на рабочий стол";
+CreateFrom.CbMenuIcon.Title=" Добавить ярлык в меню \"Пуск\"";
+CreateFrom.CbDeleteOld.Title="Переписать существующую среду";
+CreateFrom.BOK="ОК";
+CreateFrom.BCancel="Отмена";
+CreateFrom.UserMode.Text="Пользователь";
+CreateFrom.GlobalMode.Text="Глобальный";
+CreateFrom.DefaultName.Text="Env001";
+CreateFrom.DefaultPath.Text="Путь установки";
+CreateFrom.EnvList_Label.Text="Тип среды ";
+CreateFrom.CopyOf.Text="Copy_of_";
+CreateFrom.RBFrame.RBBefore.Title="Вставить новый путь перед путем установки";
+CreateFrom.RBFrame.RBAfter.Title="Добавить новый путь после пути установки";
+CreateFrom.AddNewPath.Title="Добавить новый путь к этой среде:";
+CreateFrom.NewPath.Title="Новый путь:";
+//
+//***************************************
+//*      Variable Window          *
+//***************************************
+ModifyVar.Title="Редактор переменных";
+ModifyVar.Name.Title="Имя:     ";
+ModifyVar.Value.Title="Значение:    ";
+ModifyVar.Comment.Title="Комментарий:  ";
+ModifyVar.NoEmptyName.Text="Необходимо указать имя переменной.";
+ModifyVar.NoEnvToModify.Text="Не удалось получить среду!";
+ModifyVar.PopupTitle="Сообщение редактора среды";
+//
+//***************************************
+//*      Error and warning messages     *
+//***************************************
+AdminWarning.Text=" ПРЕДУПРЕЖДЕНИЕ: как администратор, вы можете создавать, изменять и удалять глобальные среды";
+AskDefaultEnv.Text=" Эта среда используется CATIAENV.\nИзменить ее?";
+AskDeleteDefaultEnv.Text=" Эта среда используется CATIAENV.\nЕсли удалить ее, CATIAENV может не запуститься в следующий раз. \nУдалить среду?";
+AskDeleteVariable.Text=" Удалить /P1 в этой среде ? ";
+AskModifyVar.Text=" Изменить /P1 ?";
+AskSaveEnv.Text=" /P1 изменен. Сохранить изменения? ";
+CATIAENV_Error_Title.txt=" Сообщение об ошибке";
+CATIAENV_Help_Title.txt=" Информация о CATIAENV";
+CannotWriteDefFolder.Text=" ОШИБКА: не удается записать данные в папку хранения";
+Create.AskIrix.Text=" ПРЕДУПРЕЖДЕНИЕ:\nДля создания графического представления, связанного с этой средой,\nнеобходимо перекомпилировать рабочий стол. Этот процесс может занять много времени.\nПродолжить?";
+Create.DataCreationFailed.Text=" ОШИБКА: не удается создать данные среды";
+Create.IrixIsNotAdmin.Text=" ПРЕДУПРЕЖДЕНИЕ:\nЗначок не создан.\nВы должны использовать root, чтобы перекомпилировать Magic Desktop. ";
+Create.NoBlank.Text=" Имя среды не должно содержать пробелов";
+Create.ForbiddenChar.Text=" Символ [/P1] запрещен в имени файла среды";
+Create.RepCreationFailed.Text=" Ярлык на рабочем столе не создан.\n Проверьте наличие /P1 в каталоге установки.";
+CreateVar.VarAlreadyExist.Text=" /P1 существует, выберите другое имя переменной.";
+Create.WrongPath.Text=" Указанный файл не найден.";
+CreateDefUserDir.Text=" Каталог хранения данных по умолчанию для пользовательских сред был создан в ";
+CreateDefUserDirFailed.Text="  ОШИБКА: CATIAENV не удалось создать каталог хранения по умолчанию для пользовательских сред.\nВыберите другой каталог хранения в меню параметров: Параметры->Выбрать каталог хранения данных пользователя.";
+DataDeleteFailed.Text=" Не удалось удалить данные среды";
+DefaultFolderNotFound.Text=" Каталог хранения по умолчанию не найден. ";
+DeleteFailed.Text=" Не удалось удалить данные среды и данные графического представления среды";
+DiskFull.Text=" Невозможно записать файл среды: диск заполнен.";
+EnvFileNotFound.Text=" Файл среды не найден.";
+EnvNameNotSpecified.Text=" Необходимо указать имя среды";
+ErrorDeleteVariable.Text=" Ошибка: не удалось удалить эту переменную";
+FileAlreadyExist.Text=" Имя среды уже используется";
+GlobalCreationFailed.Text=" Не удалось задать среду администратора";
+GlobalDeleteAsk.Text=" Удалить выбранные глобальные среды?";
+GlobalDeleteNotAllowed.Text=" Вы собираетесь удалить глобальную среду, но вы не являетесь администратором";
+ModifyVarFailed.Text=" Не удалось изменить среду";
+NoConcatenationSpecified.Text=" Необходимо указать путь объединения.";
+NotValidDirectory.txt=" Невозможно получить доступ к каталогу:";
+NoVariableFound.Text=" В этой среде не найдена переменная. ";
+ReadFailed.Text=" Не удалось прочитать этот файл";
+RefFileCannotBeOpened.Text=" Возникла проблема при открытии файла ссылок.";
+RefFileNotFound.Text=" Отсутствует файл ссылок.";
+RepDeleteFailed.Text=" Не удалось удалить данные графического представления среды";
+SpecifiedFolderNotFound.Text=" Каталог хранения не найден.";
+UnableToOpenEnvFile.Text=" Не удалось открыть файл среды";
+UnableToWriteEnvFile.Text=" Возникла проблема при записи файла среды.";
+UnknownError.Text=" При обработке данных этой среды возникла ошибка.";
+UserCreationFailed.Text=" Не удалось задать пользовательскую среду";
+UserDeleteAsk.Text=" Удалить выбранные пользовательские среды?";
+VariableNotFound.Text=" Ошибка: переменная не найдена. ";
+NoDeleteOffVariable.Text=" /P1 является официальной переменной.\nЕе нельзя удалить.";
+EnvAlreadyExist.Text="Файл среды /P1 уже существует.\nПерезаписать его?\n";
+AccessDeniedStorageDirectory.Text=" Отказано в доступе к каталогу хранения /P1.";
+//
+//
+//***************************************
+//*      Help messages                  *
+//***************************************
+ItemCreate.Help=" Создать новую среду";
+ItemDelete.Help=" Удалить выбранную среду";
+ItemEdit.Help=" Отобразить выбранную среду";
+ItemExit.Help=" Выйти из Catiaenv";
+ItemSaveModif.Help=" Сохранить все изменения";
+ItemSetUserDir.Help=" Задать каталог хранения данных пользователя";
+ItemSetGlobalDir.Help=" Задать глобальный каталог хранения";
+ItemVarCreate.Help=" Создать новую переменную ";
+ItemVarDelete.Help=" Удалить выбранную переменную ";
+ItemVarEdit.Help=" Редактировать выбранную переменную ";
+LstEnv.Help=" Выберите среду";
+LstVar.Help=" Нажмите на значение переменной, чтобы изменить его";
+LstVar.ShortHelp=" Нажмите на значение, чтобы изменить его";
+LstVarDisable.ShortHelp=" Вы не можете изменять глобальную среду";
+SaveEnvKO.ShortText=" Файл среды не сохранен: возникла проблема! ";
+SaveEnvOK.ShortText=" Файл среды сохранен.";
+SelectGlobalDir.Text=" Выбрать каталог хранения - глобальные среды";
+SelectUserDir.Text=" Выбрать каталог хранения - пользовательские среды";
+//
+CATIAENV_NT.Help=" 
+CATIAENV    [-userdir  C:\my_user_dir  ]
+
+-userdir   : указывает каталог хранения пользовательских сред.";
+//
+CATIAENV_UNIX.Help="
+CATIAENV     [-userdir  $HOME/my_user_dir  ] 
+
+-userdir   :  указывает каталог хранения пользовательских сред.";
+

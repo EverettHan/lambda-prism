@@ -1,0 +1,134 @@
+CATCommand						                    	  CATDialogAgentExt				                    libCATDialogEngine 
+CATCommand						                	  	  CATICmdAgentEngine				                  libCATDialogEngine
+
+CATStateCommand		                	  				CATICmdCommandEngine	                      libCATDialogEngine  
+CATStateCommand		                	  				CATICmdAgentEngine                      		libCATDialogEngine
+CATStateCommand		                	  				CATICmdBuildCommand	                      	libCATDialogEngine 
+CATStateCommand		                	  				CATDialogAgentExt	                        	libCATDialogEngine  
+
+CATDialogAgent				                	  		CATICmdManageUndo		  	                    libCATDialogEngine 
+CATDialogAgent				                	  		CATICmdResource		                        	libCATDialogEngine
+
+CATAcquisitionAgent		                	  		CATICmdAcquisitionAgentEngine	              libCATDialogEngine  
+CATAcquisitionAgent		                	  		CATICmdAgentEngine	                      	libCATDialogEngine
+
+CATAgentSet					                	  	  	CATICmdAgentSetEngine		                    libCATDialogEngine 
+CATAgentSet					                	  	  	CATICmdAgentEngine			                    libCATDialogEngine
+CATAgentSet				                	  	  		CATDialogAgentExt				                    libCATDialogEngine
+
+CATStateCondition			                	  		CATICmdCondition				                    libCATDialogEngine 
+
+CATDecoderManagerImpl			                	  CATIDecoderManager				                  libCATDialogEngine
+	
+CATUndoTransActionImplement		                CATIUndoTransaction				                  libCATDialogEngine
+CATUndoTransActionImplement	                	CATIModelUndoRedoManager	                  libCATDialogEngine
+
+CATCmdEvent							                	    CATICmdEvent					                      libCATDialogEngine 
+
+CATEditAgent				                	  		  CATICmdEditAgentEngine		                  libCATDialogEngine
+CATEditAgent			                	  			  CATICmdCommandEngine		                    libCATDialogEngine
+CATEditAgent			                	  			  CATICmdAgentEngine			                    libCATDialogEngine
+
+CATCmdSwitchAgent		                	  			CATIAfrDialogForAgent		                    libCATDialogEngine
+CATCmdSwitchAgent		                	  			CATICmdDefaultDecoderAgent	                libCATDialogEngine
+CATCmdSwitchAgent		                	  			CATIDecoderManager			                    libCATDialogEngine
+CATCmdSwitchAgent	                	  				CATICmdSwitchAgentModel		                  libCATDialogEngine
+CATCmdSwitchAgent		                	  			CATICmdSwitchAgent			                    libCATDialogEngine
+CATCmdSwitchAgent		                	  			CATICmdSwitchAgentValuation		              libCATDialogEngine
+CATCmdSwitchAgent		                	  			CATIDecoderAgent			                    	libCATDialogEngine
+
+CATCmdStateCommand			                	  	CATDialogAgentExt			                    	libCATDialogEngine  
+CATCmdStateCommand		                	  		CATICmdAgentEngine			                    libCATDialogEngine  
+CATCmdStateCommand		                	  		CATICmdCommandEngine		                    libCATDialogEngine  
+
+CATDegDebugController		                	  	CATICmdEvent			                    		  libCATDialogEngine  
+
+MultiSelectionGlobalAddin		                	CATIAfrGeneralWksAddin	                    libCATDialogEngine
+MultiSelectionGlobalAddin		                	CATIWorkbenchAddin		                    	libCATDialogEngine  
+
+CATAcquisitionAgent				                	  CATDialogAgentExt			                    	libCATDialogEngine
+CATEditAgent						                	    CATDialogAgentExt			                    	libCATDialogEngine
+
+
+CATDE2BaseElement 					                  CATISYPIntrospectable						            libCATDialogEngine
+CATDE2SYPCollection 					                CATISYPIntrospectable						            libCATDialogEngine
+CATDE2StateCommand		                	  		CATISYPIntrospectable		                    libCATDialogEngine
+CATDE2View						                	  	  CATISYPIntrospectable		                    libCATDialogEngine
+CATDE2State					                	  		  CATISYPIntrospectable			                  libCATDialogEngine
+CATDE2AddContentToState	                      CATISYPIntrospectable	                  		libCATDialogEngine
+CATDE2AddDialogAgent			                	  CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2LeaveStateCondition		                	CATISYPIntrospectable	                  		libCATDialogEngine
+CATDE2EnterStateAction		                	  CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2LeaveStateAction		                	  CATISYPIntrospectable		                  	libCATDialogEngine
+
+CATDE2DialogAgent				                	  	CATISYPIntrospectable	                  		libCATDialogEngine
+CATDE2IndicationAgent		                	  	CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2PathElementAgent                	      CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2AddPathElementType		                	CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2OtherDocumentAgent		                	CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2EditAgent					                	  	CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2StackableCommand		                	  CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2AgentSet				                	  		CATISYPIntrospectable		                  	libCATDialogEngine
+
+CATDE2Filter					                	  	  CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2CompositeFilter		                	  	CATISYPIntrospectable		                  	libCATDialogEngine
+
+CATDE2Transition				                	  	CATISYPIntrospectable                  			libCATDialogEngine
+CATDE2SelfTransition		                	  	CATISYPIntrospectable	                  		libCATDialogEngine
+CATDE2FinalTransition	                	  		CATISYPIntrospectable	                  		libCATDialogEngine
+CATDE2CancelTransition	                	  	CATISYPIntrospectable	                  		libCATDialogEngine
+CATDE2AddInitialState		                	  	CATISYPIntrospectable	                  		libCATDialogEngine
+
+CATDE2Condition					                	  	CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2CompositeCondition	                	  CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2IsOutputSetCondition		                CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2IsLastModifiedAgentCondition            CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2ReceivedEventCondition		              CATISYPIntrospectable		                  	libCATDialogEngine
+
+CATDE2NotCondition				                	  CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2AndCondition		                	  		CATISYPIntrospectable		                  	libCATDialogEngine
+CATDE2OrCondition		                	  			CATISYPIntrospectable	                  		libCATDialogEngine
+
+CATDE2Action					                	  	  CATISYPIntrospectable		                  	libCATDialogEngine
+
+CATDE2BaseTarget                              CATISYPIntrospectable                       libCATDialogEngine
+
+CATDE2SYPCollection				                	  CATISYPCollection		                    		libCATDialogEngine
+CATDE2StateCommand				                	  CATISYPCollection		                    		libCATDialogEngine
+CATDE2State						                	  	  CATISYPCollection		                  	  	libCATDialogEngine
+CATDE2AddContentToState	                      CATISYPCollection			              	  		libCATDialogEngine
+
+CATDE2DialogAgent				                	  	CATISYPCollection		              	  			libCATDialogEngine
+CATDE2IndicationAgent		                	  	CATISYPCollection		              	  			libCATDialogEngine
+CATDE2PathElementAgent		                	  CATISYPCollection		              	  			libCATDialogEngine
+CATDE2OtherDocumentAgent	                 	  CATISYPCollection		              	  			libCATDialogEngine
+CATDE2EditAgent					                	  	CATISYPCollection		              	  			libCATDialogEngine
+CATDE2AgentSet					                	  	CATISYPCollection		              	  			libCATDialogEngine
+
+CATDE2CompositeFilter                	        CATISYPCollection			              	  		libCATDialogEngine
+
+CATDE2CompositeCondition		                	CATISYPCollection		              	  			libCATDialogEngine
+CATDE2LeaveStateCondition		                 	CATISYPCollection			              	  		libCATDialogEngine
+
+CATDE2AndCondition			                	  	CATISYPCollection			              	  		libCATDialogEngine
+CATDE2OrCondition				                	  	CATISYPCollection		              	  			libCATDialogEngine
+CATDE2NotCondition			                	  	CATISYPPresenter		              	  			libCATDialogEngine
+
+CATDE2Transition			                	  		CATISYPCollection			              	  		libCATDialogEngine
+CATDE2SelfTransition		                	  	CATISYPCollection			              	  		libCATDialogEngine
+CATDE2FinalTransition		                	  	CATISYPCollection		              	  			libCATDialogEngine
+CATDE2CancelTransition		                	 	CATISYPCollection		              	  			libCATDialogEngine
+
+CATDE2BaseTarget			                	  		CATISYPTemplate              	  	          libCATDialogEngine
+CATDE2BaseTarget                              CATISYPPresenter                            libCATDialogEngine
+
+CATAfrStyleProcessorServiceLateType	          CATAfrStyleProcessorService                 libCATDialogEngine
+
+CATBoxingOfCATDE2AcquisitionAgent__DE2Behaviors    CATISYPValues                  	  	  libCATDialogEngine
+CATBoxingOfCATDE2AgentSet__DE2Behaviors            CATISYPValues                 	  	    libCATDialogEngine
+CATBoxingOfCATDE2DialogAgent__DE2Behaviors         CATISYPValues                	  	    libCATDialogEngine
+CATBoxingOfCATDE2OtherDocumentAgent__DE2Behaviors  CATISYPValues                 	  	    libCATDialogEngine
+CATBoxingOfCATDE2StateCommand__DE2Behaviors        CATISYPValues                	  	    libCATDialogEngine
+CATEUserSelectionCurveFilterStatus				   CATIUserSelectionFilterStatus			libCATDialogEngine
+
+CATUserSelectionCurveFilterStatus CATIUserSelectionFilterStatus libCATDialogEngine

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_PostEffect</NAME>
+
+  <UNIFORM>
+    <NAME>u_Hue</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>360.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1.0</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Saturation</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>4.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.01</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Value</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.5</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.01</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_NumHue</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>255</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>255</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1</UI_STEP_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_NumSaturation</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>255</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>255</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_NumValue</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>14</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>255</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1</UI_STEP_VALUE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>

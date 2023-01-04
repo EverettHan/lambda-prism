@@ -1,0 +1,103 @@
+<meta charset="UTF-8"/>
+ERR_LINK_0="无法创建链接，因为请求的大小太大。";
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2009
+//=================================================================
+//
+// Usage Notes:    This is the OmbLink Document Unstream Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to OMB Document Unstream
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :   
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error. 
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters : 
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms 
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use. 
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+//=================   DURING OPEN OR FBDI PROCESS  ===========================================
+
+// To be interpreted by the client open engine and the FBDI engine
+OMBLink_Missing_Catalog_Error.Diagnostic="以下资源 /p 包含必需的“特征”定义，但找不到这些定义。可能已不正确地打开该数据。";
+OMBLink_Missing_Catalog_Error.Advice="请确保您的安装包含所有必需资源。";
+OMBLink_Missing_Catalog_Error.Request="";
+
+//=================   DURING SAVE  ===========================================
+
+ERR_LINK_1.Diagnostic="无法保存链接表：ULRComplementaryData 不一致。 ";
+ERR_LINK_1.Advice="";
+ERR_LINK_1.Request="";
+
+ERR_REL_1.Request="";
+ERR_REL_1.Diagnostic="此部件有两个具有相同 ID 的关系";
+ERR_REL_1.Advice="联系支持人员。\n技术详细信息：部件=/p1，IDRel=/p2。";
+
+ERR_REL_2.Diagnostic="一个或多个该部件的关系中断关系的完整性 ";
+ERR_REL_2.Advice="";
+ERR_REL_2.Request="";
+
+CannotSaveCorruptedSRMetadata.Diagnostic="由于链接损坏，无法保存数据。";
+CannotSaveCorruptedSRMetadata.Advice="技术详细信息：component=/p1，type SR=/p2，reason='/p3'。";
+CannotSaveCorruptedSRMetadata.Request="";
+
+CannotOpenCorruptedSRMetadata.Diagnostic="由于链接损坏，无法打开数据。";
+CannotOpenCorruptedSRMetadata.Advice="技术详细信息：component=/p1，type SR=/p2，reason='/p3'。";
+CannotOpenCorruptedSRMetadata.Request="";
+
+CannotOpenCATLnk.Request="打开链接";
+CannotOpenCATLnk.Diagnostic="无法打开包含部件链接信息的文件";
+CannotOpenCATLnk.Advice="该问题可能是由于下载问题、文件系统错误或关联部件的并发修改/删除。\n关闭会话，擦除位于 /p1的缓存并重试操作。\n如果问题仍然存在，请联系支持人员获取详细信息：\n/p2";
+
+CannotUnstreamLinks.Request="打开链接";
+CannotUnstreamLinks.Diagnostic="无法取消分流数据";
+CannotUnstreamLinks.Advice="联系支持人员";
+
+CtxLinkInfo_01.Request="获取有关创建上下文链接的可能性的信息";
+CtxLinkInfo_01.Diagnostic="输入参数应具有指向的对象。";
+CtxLinkInfo_01.Advice="";
+
+CtxLinkInfo_02.Request="获取有关创建上下文链接的可能性的信息";
+CtxLinkInfo_02.Diagnostic="无法从指向的对象中检索展示参考。";
+CtxLinkInfo_02.Advice="";
+
+CtxLinkInfo_03.Request="获取有关创建上下文链接的可能性的信息";
+CtxLinkInfo_03.Diagnostic="未在选定的上下文中找到展示参考。";
+CtxLinkInfo_03.Advice="";
+
+CtxLinkInfo_04.Request="获取有关创建上下文链接的可能性的信息";
+CtxLinkInfo_04.Diagnostic="产品端口上的内部链接无效。";
+CtxLinkInfo_04.Advice="";
+
+CtxLinkInfo_05.Request="尝试为已有上下文的展示定义新的上下文。";
+CtxLinkInfo_05.Diagnostic="不允许此操作，因为此新的上下文不是展示的现有上下文的扩展，也不是子匹配项。\n\n现有上下文：/p1\n";
+CtxLinkInfo_05.Advice="要对此展示将建议上下文定义为新的上下文，可以（通过“编辑链接和关系”）：\n- 隔离此上下文展示。当前的关联性将会丢失。\n- 将此展示的上下文更改为新的上下文。当前的关联性将会保留。";
+
+CtxLinkInfo_06.Request="尝试为已有上下文的展示定义新的上下文。";
+CtxLinkInfo_06.Diagnostic="不允许执行此操作，因为展示已有上下文，并且当前已断开，因此无法将其与新的建议上下文作比较。\n";
+CtxLinkInfo_06.Advice="要对此展示将建议上下文定义为新的上下文，可以（通过“编辑链接和关系”）：\n  尝试修复展示的当前上下文并重试。\n- 隔离此上下文展示。当前的关联性将会丢失。\n- 将此展示的上下文更改为新的上下文。当前的关联性将会保留。";

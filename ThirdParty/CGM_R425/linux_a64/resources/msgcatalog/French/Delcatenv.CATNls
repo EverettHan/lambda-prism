@@ -1,0 +1,46 @@
+<meta charset="UTF-8"/>
+HelpNT.text="Syntaxe de delcatenv
+[-e environment_name      ] Option obligatoire. Aucune valeur par défaut
+[-d storage_directory_name]	Par défaut : CSIDL_APPDATA\CATEnv
+[-a user|global            ]	Type d'environnement. Par défaut : user
+[-server                   ] Active le mode serveur. Par défaut : non activé (interactif)
+[-desktop yes|no           ] Supprime une représentation de bureau pour l'environnement. Par défaut : yes
+[-v yes|no                 ]	Active le mode prolixe. Par défaut : yes
+[-tools                    ]	Supprime les raccourcis d'outils (commande exclusive)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live     ] Spécifie une ProductLine pour la représentation d'environnement (par défaut : CATIA)
+[-h|-help]			Affiche cette aide.";
+
+HelpUNIX.text="Syntaxe de delcatenv
+[-e nom_environnement      ] Option obligatoire. Aucune valeur par défaut
+[-d nom_répertoire_stockage] Par défaut : $HOME/CATEnv
+[-a user|global            ] Type d'environnement. Par défaut : user
+[-server                   ] Active le mode serveur. Par défaut : pas activé (interactif)
+[-desktop yes|no           ] Supprime une représentation de bureau pour l'environnement. Par défaut : yes
+[-v yes|no                 ] Active le mode prolixe. Par défaut : yes
+[-unregserver              ] Annule l'enregistrement de CATIA sur le bureau (commande exclusive)
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live     ]  Spécifie une gamme de produit pour la représentation d'environnement (Par défaut : CATIA)
+[-h|-help]                  Affiche cette aide.";
+
+ErrDelEnvUsr.Text="Impossible de supprimer la représentation de l'environnement";
+ErrDelEnv.Text="Impossible de supprimer l'environnement";
+ErrUnset.Text="Impossible de réinitialiser l'ordinateur";
+MustBeSystemAdmin.text="Vous devez être Administrateur Système pour utiliser cette option";
+EnvNameNotSpecified.Text="Vous devez spécifier un nom pour l'environnement";
+DefaultFolderNotFound.Text="Le répertoire de stockage des environnements est introuvable";
+SpecifiedFolderNotFound.Text="Le répertoire de stockage spécifié est introuvable";
+EnvFileNotFound.Text="Le fichier d'environnement est introuvable";
+AccessPb.Text="Impossible de créer ou d'ouvrir un fichier. ]
+							   [Vérifiez vos droits d'accès. ]";
+NonValidType.Text="Un type d'environnement (user ou global) doit être spécifié via l'option -a.";
+InitFolderFailed.Text="------------------ Avertissement ----------------
+Le répertoire de stockage par défaut des environnements n'a pas été trouvé.
+Les environnements seront lus dans le répertoire suivant :
+";
+NoHome.Text="La variable d'environnement 'HOME' n'est pas définie";
+UnknownProductLine.Text="/P1 n'est pas une gamme de produit valide. Valeurs autorisées pour l'option -cs : CATIA, ENOVIA, DELMIA, ENOVIA_3D_Live, DELMIA.";

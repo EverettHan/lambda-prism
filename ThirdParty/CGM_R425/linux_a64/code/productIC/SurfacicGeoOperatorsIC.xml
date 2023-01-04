@@ -1,0 +1,50 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "SurfacicTopologicalOpe.tst"/>
+  <attached name = "SurfacicAdvancedTopoOpe.tst"/>
+  <attached name = "SurfacicGeoOperators.tst"/>
+  <attached name = "CurveBasedGeoOperators.tst"/>
+  <attached name = "CurveBasedTopoOperators.tst"/>
+  <attached name = "CGMSurfacicDSP.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AdvancedMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricOperators"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SurfacicMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" comment = "Disable build on MOBILE" name = "CATElfiniOpenSoftware"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMModelInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMOperatorsInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SGMOperatorsInterfaces"/>
+  <authorize access = "Public" comment = "-> The default mode is public " name = "CGMInterfaces.tst"/>
+  <authorize name = "BasicTopologicalOpe"/>
+  <authorize name = "CAT3DDsp1.tst"/>
+  <authorize name = "CAT3DDsp2.tst"/>
+  <authorize name = "CATSubdivisionAdvTopOper"/>
+  <authorize name = "CATSubdivisionTopOperators"/>
+  <authorize name = "CATSubdivisionTopTopoOpe"/>
+  <authorize name = "CATSubdivisionTopTopoOpe.tst"/>
+  <authorize name = "CurveBasedGeoOperators"/>
+  <authorize name = "PartDesign_Zero_CGM_MLK.tst"/>
+  <authorize access = "Private" name = "SGMOperatorsInterfaces.tst"/>
+  <authorize name = "SurfacicAdvancedTopoOpe"/>
+  <authorize name = "SurfacicAdvancedTopoOpe.tst"/>
+  <authorize name = "SurfacicGeoOperators.tst"/>
+  <authorize name = "SurfacicTopoOperators"/>
+  <authorize name = "SurfacicTopologicalOpe.tst"/>
+  <authorize name = "CATClassATopoOperators"/>
+  <authorize name = "CGMSurfacicDSP.tst"/>
+  <authorize name = "FunctionalTopologicalOpe"/>
+  <authorize name = "ICMOperatorTop"/>
+  <authorize comment = "Ajout RAQ le 25.07.2018" name = "CATCloudQsrResources"/>
+  <authorize comment = "DON'T REMOVE: FOR MSI " name = "CATLiveShapeInstaller"/>
+  <authorize name = "CATCloudEditorResources"/>
+  <authorize name = "CATLivePhotoStandaloneiOS"/>
+  <authorize access = "Protected" name = "GEOStructuralGeology"/>
+  <authorize access = "Protected" name = "GEOStructuralGeology.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

@@ -1,0 +1,56 @@
+#syntax: (PLMType,AuthoringLateType): PredefinedLoadingMode => LoadingMode
+# PLMType is the name of the (DS) PLMType, * is allowed and means any type
+# AuthoringLateType is the (CATDocument) late type of the "main Authoring stream descriptor"
+# PredefinedLoadingMode must belong to CATOmbLoadingModeRuleSet::PredifinedLoadMode enumeration
+# LoadingMode is the "Omb SwitchEngine nomenclature" loading mode, Authoring_Mode, AuthoringVisu_Mode etc...
+# one can add an alternative loading mode through synthax: LoadingMode | AlternativeLoadingMode
+
+# PLMMode
+(*, *) : PLMMode => PLM_Mode
+
+# VisuMode
+(*, cgr)              : VisuMode => Authoring_Mode
+(*, model)            : VisuMode => AuthoringVisu_Mode
+(*, uvr)              : VisuMode => Authoring_Mode
+(*, CATData)          : VisuMode => Authoring_Mode
+(*, CATDocumentImage) : VisuMode => Authoring_Mode
+(*, CATNature)        : VisuMode => Authoring_Mode
+(*, drwLight)         : VisuMode => Authoring_Mode
+(*, CGM)              : VisuMode => Authoring_Mode
+(*, CATProduct)       : VisuMode => PLM_Mode
+(*, CATXCAD3DDocument) : VisuMode => AuthoringVisu_Mode
+(*, CATXCAD2DDocument) : VisuMode => AuthoringVisu_Mode
+(XCADAssemblyRepReference, CATXCAD3DDocument) : VisuMode => PLM_Mode
+
+# LinkableMode
+(*,CATPart)     : LinkableMode => PartBRep_Mode
+(*,model)       : LinkableMode => Authoring_Mode
+(*,cgr)         : LinkableMode => Authoring_Mode
+(*,uvr)         : LinkableMode => Authoring_Mode
+(*,CATData)     : LinkableMode => Authoring_Mode
+(*,CATNature)   : LinkableMode => Authoring_Mode
+(*, CATProduct) : LinkableMode => PLM_Mode
+(*, CATXCAD3DDocument) : LinkableMode => Authoring_Mode
+
+# EditMode
+(*,CATPart)     : EditMode => PartEdit_Mode
+(*,*)           : EditMode => Authoring_Mode
+(*, CATProduct) : EditMode => PLM_Mode
+(*, CATXCAD3DDocument) : EditMode => Authoring_Mode
+
+# VisuMode2
+(*,cgr)              : VisuMode2 => Authoring_Mode
+(*,model)            : VisuMode2 => AuthoringVisu2_Mode
+(*,CATPart)          : VisuMode2 => AuthoringVisu2_Mode
+(*,CATSimulation)    : VisuMode2 => Authoring_Mode
+(*,uvr)              : VisuMode2 => Authoring_Mode
+(*,CATData)          : VisuMode2 => Authoring_Mode
+(*,CATDocumentImage) : VisuMode2 => Authoring_Mode
+(*, CATProduct)      : VisuMode2 => PLM_Mode
+(*, CATXCAD3DDocument) : VisuMode2 => AuthoringVisu2_Mode
+(*, CATXCAD2DDocument) : VisuMode2 => AuthoringVisu2_Mode
+(XCADAssemblyRepReference, CATXCAD3DDocument) : VisuMode2 => PLM_Mode
+
+# VisuModeV5:
+(*,CATDrawing)  : VisuModeV5 => V5Visu_Mode
+(*, CATProduct) : VisuModeV5 => PLM_Mode

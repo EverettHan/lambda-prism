@@ -1,0 +1,693 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="PLMDictionaryConstraints.xsl"?>
+
+<AllConstraints xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+	<ConstraintSet name="ContextKeyConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/context_key_declaration_constraints.html" applyOn="ContextKey">
+	
+		<Constraint name="ContextKeyConstraint1"  
+					errorNo="C401"
+					errorMSG="The referenced Simple has to be declared with the declaration parameter Type='String' " 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/context_key_declaration_constraints.html#ContextKeyConstraint1"
+					isWarning="No">
+					
+					<errorMsg> 
+					
+						The referenced <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> has to be <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the declaration parameter Type="String"
+						
+					</errorMsg>
+					
+		</Constraint>
+					
+		<Constraint name="ContextKeyConstraint2"  
+					errorNo="C402"
+					errorMSG="The referenced Simple is not a simple declared with the declaration parameter ExtendedEnterprise = 'No'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/context_key_declaration_constraints.html#ContextKeyConstraint2"
+					isWarning="No">
+					
+					<errorMsg> 
+					
+						The referenced <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> is not a simple <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the declaration parameter ExtendedEnterprise = "No"
+						
+					</errorMsg>
+					
+		</Constraint>
+					
+		<Constraint name="ContextKeyConstraint3"  
+					errorNo="C403"
+					errorMSG="The referenced Simple has to be declared with the parameter protection='User' or 'Free' or 'External'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/context_key_declaration_constraints.html#ContextKeyConstraint3"
+					isWarning="No">
+					
+					<errorMsg> 
+					
+						The referenced <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> has to be <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter protection='User' or 'Free' or 'External'" 
+						
+					</errorMsg>
+					
+		</Constraint>
+					
+		<Constraint name="ContextKeyConstraint4"  
+					errorNo="C404"
+					errorMSG="The referenced Simple has to belong to a Type (alias class) that is an ancestor of the Type of the ContextKey" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/context_key_declaration_constraints.html#ContextKeyConstraint4"
+					isWarning="No">
+					
+					<errorMsg> 
+					
+						The referenced <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> has to belong to a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> (alias class) that is an <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Ancestor_Type">ancestor</a> of the <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> of the <a href="http://plminf2e/plminf_plmdico_wiki/context_key.html">Context Key</a>
+						
+					</errorMsg>
+					
+		</Constraint>
+					
+		<Constraint name="ContextKeyConstraint5"  
+					errorNo="C405"
+					errorMSG="The Core Type of the Type where the declaration is made is either 'PLMConnection' or 'PLMPort'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/context_key_declaration_constraints.html#ContextKeyConstraint5"
+					isWarning="No">
+					
+					<errorMsg> 
+					
+						The <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Core_Type">Core Type</a> of the <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> where the <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declaration</a> is made is either "PLMConnection" or "PLMPort"
+						
+					</errorMsg>
+					
+		</Constraint>
+			
+	</ConstraintSet>
+	
+	<ConstraintSet name="IdentifierSetConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/identifier_set_declaration_constraints.html" applyOn="IdentifierSet">
+	
+		<Constraint name="IdentifierSetConstraint1"  
+					errorNo="C501"
+					errorMSG="An Identifier Set can only be declared inside a Type with the Core Type 'PLMCoreReference' or 'PLMCoreRepReference'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/identifier_set_declaration_constraints.html#IdentifierSetConstraint1"
+					isWarning="No">
+					
+					<errorMsg> 
+					
+						An <a href="http://plminf2e/plminf_plmdico_wiki/identifier_set.html">Identifier Set</a> can only be <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> inside a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> with the <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Core_Type">Core Type</a> "<a href="http://plminf2e/plminf_plmdico_wiki/plmcorereference.html">PLMCoreReference</a>" or "PLMCoreRepReference"
+						
+					</errorMsg>
+					
+		</Constraint>
+	    <!-- is warning = NO !!-->
+		<Constraint name="IdentifierSetConstraint2"  
+					errorNo="C502"
+					errorMSG="Among all the Simples referenced by an Identifier Set, at least one of them should be declared with the parameter Type='String'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/identifier_set_declaration_constraints.html#IdentifierSetConstraint2"
+					isWarning="Yes"
+					checkAtRuntime="Yes">
+					
+					<errorMsg> 
+					
+						Among all the <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simples</a> referenced by an <a href="http://plminf2e/plminf_plmdico_wiki/identifier_set.html">Identifier Set</a>, at least one of them should be <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Type='String'
+						
+					</errorMsg>
+					
+		</Constraint>
+					
+		<Constraint name="IdentifierSetConstraint3"  
+					errorNo="C503"
+					errorMSG="All the Simples referenced by an Identifier Set should be declared with the parameter Protection='External','ExternalR0' or 'Free'." 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/identifier_set_declaration_constraints.html#IdentifierSetConstraint3"
+					isWarning="No"
+					> 
+					
+					<errorMsg> 
+					
+						All the <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simples</a> referenced by an <a href="http://plminf2e/plminf_plmdico_wiki/identifier_set.html">Identifier Set</a> should be <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Protection='External','ExternalR0' or 'Free'. 
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		<Constraint name="IdentifierSetConstraint4"  
+					errorNo="C504"
+					errorMSG="The referenced Simples have to belong to a Type (alias class) that is an ancestor of the Type of this Identifier Set" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/identifier_set_declaration_constraints.html#IdentifierSetConstraint4"
+					isWarning="No"
+					> 
+					
+					<errorMsg> 
+					
+						The referenced <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simples</a> have to belong to a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> (alias class) that is an ancestor of the Type of this <a href="http://plminf2e/plminf_plmdico_wiki/identifier_set.html">Identifier Set</a>
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		<Constraint name="IdentifierSetConstraint5"  
+					errorNo="C505"
+					errorMSG="All the Simples referenced by an Identifier Set should be declared with the parameter CAAExposition='LO'." 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/identifier_set_declaration_constraints.html#IdentifierSetConstraint5"
+					isWarning="No"
+					> 
+					
+					<errorMsg> 
+					
+						All the <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simples</a> referenced by an <a href="http://plminf2e/plminf_plmdico_wiki/identifier_set.html">Identifier Set</a> should be <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter CAAExposition='LO'. 
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+	</ConstraintSet>
+	
+	
+	<ConstraintSet name="ClassConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints" applyOn="Class">
+	
+		<Constraint name="ClassConstraint2"  
+					errorNo="C202"
+					errorMSG="A Type declared in a 'Core' or 'Abstract' Modeler (Modeler declared with the parameter ModelerType='Core' or ModelerType='Abstract') is always declared with the parameters Abstract='Yes'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint2"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						A <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in a 'Core' or 'Abstract' Modeler (Modeler declared with the parameter ModelerType='Core' or ModelerType='Abstract') is always declared with the parameters Abstract='Yes'
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		<Constraint name="ClassConstraint3"  
+					errorNo="C203"
+					errorMSG="A Type declared in a 'Custo' Modeler (Modeler declared with the parameter ModelerType='Custo') is always declared with the parameter Abstract='No'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint3"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						A <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in a 'Custo' Modeler (Modeler declared with the parameter ModelerType='Custo') is always declared with the parameter Abstract='No'
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		<Constraint name="ClassConstraint4"  
+					errorNo="C204"
+					errorMSG="Only a Type declared in a 'Top' Modeler (Modeler declared with the parameter ModelerType='Top') can be declared with the parameter CAADerivable='Yes'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint4"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						Only a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in a 'Top' Modeler (Modeler declared with the parameter ModelerType='Top') can be declared with the parameter CAADerivable='Yes'
+						
+					</errorMsg>
+						
+		</Constraint>
+
+
+    <!-- [chd:18/10/2011]- suppression 
+    <Constraint name="ClassConstraint5"  
+					errorNo="C205"
+					errorMSG="A Type declared in a Top Modeler (Modeler declared with the parameter ModelerType='Top') should be declared with the parameters 'Abstract' and 'CAADerivable' both equal to 'Yes' or both equal to 'No'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint4"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						A <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in a Top Modeler (Modeler declared with the parameter ModelerType='Top') should be declared with the parameters 'Abstract' and 'CAADerivable' both equal to 'Yes' or both equal to 'No'
+						
+					</errorMsg>
+						
+		</Constraint>
+    -->
+					
+		<Constraint name="ClassConstraint6"  
+					errorNo="C206"
+					errorMSG="A Type can only inherit from a Type declared with the parameter CAADerivable='Yes' if it has been declared inside a Custo Modeler (Modeler declared with the parameter ModelerType='Custo')" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint6"
+					isWarning="No"> 
+					
+					<errorMsg> 
+					
+						A <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> can only inherit from a Type <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter CAADerivable='Yes' if it has been declared inside a Custo Modeler (Modeler declared with the parameter ModelerType='Custo')
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		 <!-- is warning = NO !!-->
+		<Constraint name="ClassConstraint7"  
+					errorNo="C207"
+					errorMSG="Every Type declared with the Core Type 'PLMCoreReference' or 'PLMCoreRepReference' and with the parameter 'Abstract='No'' should own an IdentifierSet" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint7"
+				    isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						Every <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Core_Type">Core Type</a> "<a href="http://plminf2e/plminf_plmdico_wiki/plmcorereference.html">PLMCoreReference</a>" or "PLMCoreRepReference" and with the parameter 'Abstract='No'' should own an IdentifierSet
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		<Constraint name="ClassConstraint8"  
+					errorNo="C208"
+					errorMSG="A Type which is not declared in a Core modeler can only inherit from a Type of a modeler which is a Super Modeler of the modeler of the first Type" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint8"
+					isWarning="No"> 
+					
+					<errorMsg> 
+					
+						A <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> which is not <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in a Core modeler can only inherit from a Type of a modeler which is a Super Modeler of the modeler of the first Type
+						
+					</errorMsg>
+						
+		</Constraint>
+				
+		<!-- is warning = NO !!-->
+		<Constraint name="ClassConstraint9"
+					errorNo="C209"
+					errorMSG="A Type declared in a 'Custo' Modeler (Modeler declared with the parameter ModelerType='Custo') is always inheriting from a Type declared with the parameter CAADerivable='Yes'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint9"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						A <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in a 'Custo' Modeler (Modeler declared with the parameter ModelerType='Custo') is always <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Type_Inheritance">inheriting</a> from a Type declared with the parameter CAADerivable='Yes'
+						
+					</errorMsg>
+						
+		</Constraint>
+		
+		
+		<Constraint name="ClassConstraint10"
+					errorNo="C210"
+					errorMSG="The Super Type of a none Structured Type (Structured='No'or undefined) is also none structured" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint10"
+					isWarning="No"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						The <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Type_Inheritance">Super Type</a> of a none <a href="http://plminf2e/plminf_plmdico_wiki/structured_type.html">Structured</a> Type (Structured='No'or undefined) is also none structured
+						
+					</errorMsg>
+						
+		</Constraint>
+		
+		
+		<Constraint name="ClassConstraint11"
+					errorNo="C211"
+					errorMSG="Only a Connection Type can be declared as Structured (Structured='Yes'or undefined)" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/type.html_Declaration_Constraints#ClassConstraint10"
+					isWarning="No"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						Only a <a href="http://plminf2e/plminf_plmdico_wiki/connection_type.html">Connection Type</a> can be declared as <a href="http://plminf2e/plminf_plmdico_wiki/structured_type.html">Structured</a> (Structured='Yes')
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+							
+	</ConstraintSet>
+	
+	
+	<ConstraintSet name="PackageConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/modeler_declaration_constraints.html" applyOn="Package">
+	
+		<Constraint name="PackageConstraint1"  
+					errorNo="C101"
+					errorMSG="A Custo Modeler (Modeler declared with the parameter ModelerType='Custo') should inherit from a single Top Modeler (Modeler declared with the parameter ModelerType='Top') " 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/modeler_declaration_constraints.html#PackageConstraint1"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						A Custo Modeler (Modeler declared with the parameter ModelerType='Custo') should <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in a 'Custo' Modeler (Modeler declared with the parameter ModelerType='Custo') is always <a href="http://plminf2e/plminf_plmdico_wiki/modeler.html#Modeler_Inheritance">inherit</a> from a single Top Modeler (Modeler declared with the parameter ModelerType='Top') 
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		<Constraint name="PackageConstraint2"  
+					errorNo="C102"
+					errorMSG="A Custo Modeler declaration (Modeler declared with the parameter ModelerType='Custo') should contain the declaration of an inheriting Type for every Customizable Types of the Super Modeler" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/modeler_declaration_constraints.html#PackageConstraint2"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						A Custo <a href="http://plminf2e/plminf_plmdico_wiki/modeler.html">Modeler</a> <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declaration</a> (Modeler declared with the parameter ModelerType='Custo') should contain the declaration of an inheriting Type for every  <a href="http://plminf2e/plminf_plmdico_wiki/customizable_type.html">Customizable Types</a> of the Super Modeler"
+						
+					</errorMsg>
+						
+		</Constraint>		
+					
+		<Constraint name="PackageConstraint3"  
+					errorNo="C103"
+					errorMSG="A Top Modeler (Modeler declared with the parameter ModelerType='Top') should inherit only from Abstract or Core Modelers (Modeler declared with the parameter ModelerType='Abstract ' or ModelerType='Core' ) " 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/modeler_declaration_constraints.html#PackageConstraint3"
+					isWarning="No"> 
+					
+					<errorMsg> 
+					
+						A Top <a href="http://plminf2e/plminf_plmdico_wiki/modeler.html">Modeler</a> (Modeler <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter ModelerType='Top') should inherit only from Abstract or Core Modelers (Modeler declared with the parameter ModelerType='Abstract ' or ModelerType='Core' ) 
+						
+					</errorMsg>
+						
+		</Constraint>		
+
+		<Constraint name="PackageConstraint4"  
+					errorNo="C104"
+					errorMSG="An Abstract Modeler (Modeler declared with the parameter ModelerType='Abstract') should inherit only from Abstract or Core Modelers (Modeler declared with the parameter ModelerType='Abstract' or ModelerType='Core' ) " 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/modeler_declaration_constraints.html#PackageConstraint4"
+					isWarning="No"> 
+					
+					<errorMsg> 
+						An Abstract <a href="http://plminf2e/plminf_plmdico_wiki/modeler.html">Modeler</a> (Modeler declared with the parameter ModelerType='Abstract') should inherit only from Abstract or Core Modelers (Modeler declared with the parameter ModelerType='Abstract' or ModelerType='Core' ) 
+						
+					</errorMsg>
+						
+		</Constraint>
+					
+		<Constraint name="PackageConstraint5"  
+					errorNo="C105"
+					errorMSG="A Core Modeler (Modeler declared with the parameter ModelerType='Core') should inherit only from other Core Modelers (Modeler declared with the parameter ModelerType='Core')" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/modeler_declaration_constraints.html#PackageConstraint5"
+					isWarning="No"> 
+					
+					<errorMsg> 
+						A Core <a href="http://plminf2e/plminf_plmdico_wiki/modeler.html">Modeler</a> (Modeler declared with the parameter ModelerType="Core") should inherit only from other Core Modelers (Modeler declared with the parameter ModelerType="Core") 
+						
+					</errorMsg>
+						
+		</Constraint>
+				
+	</ConstraintSet>
+	
+	<ConstraintSet name="SubRelationshipConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/subrelationship_declaration_constraints.html" applyOn="SubRelationship">
+	
+		<Constraint name="SubRelationshipConstraint1"  
+					errorNo="C701"
+					errorMSG="The declaration parameter 'RoleRef' should reference an Enumerator that belongs to the Enum with the name='C_Role_Enum' and the uuid='48131E8D-1DD2-11B2-B44D0003BA353BFB'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/subrelationship_declaration_constraints.html#SubRelationshipConstraint1"
+					isWarning="No"> 
+					
+					<errorMsg> 
+					
+						The <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html#Declaration_parameter">declaration parameter</a> 'RoleRef' should reference an <a href="http://plminf2e/plminf_plmdico_wiki/enumerator.html">Enumerator</a> that belongs to the <a href="http://plminf2e/plminf_plmdico_wiki/enum.html">Enum</a> with name="C_Role_Enum" and the uuid="48131E8D-1DD2-11B2-B44D0003BA353BFB"
+						
+					</errorMsg>
+				
+		</Constraint>
+		
+		<Constraint name="SubRelationshipConstraint3"  
+					errorNo="C703"
+					errorMSG="The Core Type of the Type where the declaration is made is either 'PLMConnection' or 'PLMPort'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/subrelationship_declaration_constraints.html#SubRelationshipConstraint3"
+					isWarning="Yes"> 
+					
+					<errorMsg> 
+					
+						The <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Core_Type">Core Type</a> of the <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> where the <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declaration</a> is made is either "PLMConnection" or "PLMPort"
+						
+					</errorMsg>
+				
+		</Constraint>
+						
+		<Constraint name="SubRelationshipConstraint4"  
+					errorNo="C704"
+					errorMSG="If the declaration is made inside a Type with the Core Type 'PLMPort', then no Ancestor Type should have an identifier set" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/subrelationship_declaration_constraints.html#SubRelationshipConstraint4"
+					isWarning="Yes"> 
+					
+					<errorMsg> 
+					
+						If the <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declaration</a> is made inside a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> with the <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Core_Type">Core Type</a> "PLMPort", then no <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Ancestor_Type">Ancestor Type</a> should have an identifier set
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+		<Constraint name="SubRelationshipConstraint5"  
+					errorNo="C705"
+					errorMSG="If the declaration is made inside a Type with the Core Type 'PLMConnection', then this Type should be declared inside an 'Abstract' or 'Top' Modeler (Modeler declared with the parameter ModelerType='Abstract' or ModelerType='Top')" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/subrelationship_declaration_constraints.html#SubRelationshipConstraint5"
+					isWarning="No"> 
+					
+					<errorMsg> 
+					
+						If the <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declaration</a> is made inside a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> with the <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Core_Type">Core Type</a> "PLMConnection", then this Type should be declared inside an 'Abstract' or 'Top' Modeler (Modeler declared with the parameter ModelerType='Abstract' or ModelerType='Top')
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+		<Constraint name="SubRelationshipConstraint6"  
+					errorNo="C706"
+					errorMSG="If the declaration is made inside a Type with the Core Type 'PLMPort', then this SubRelationship should be declared witht the parameter Multivaluated='No'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/subrelationship_declaration_constraints.html#SubRelationshipConstraint5"
+					isWarning="Yes"> 
+					
+					<errorMsg> 
+					
+						If the <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declaration</a> is made inside a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> with the <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Core_Type">Core Type</a> "PLMPort", then this SubRelationship should be declared witht the parameter Multivaluated='No'
+						
+					</errorMsg>
+				
+		</Constraint>
+				
+						
+	</ConstraintSet>
+	
+	<ConstraintSet name="AttributeOperationConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/attributeoperation_declaration_constraints.html" applyOn="AttributeOperation">
+	
+		<Constraint name="AttributeOperationConstraint1"  
+					errorNo="C801"
+					errorMSG="The referenced Attribute has to belong to a Type (alias class) that is an ancestor of the Type referenced by the ClassOperation" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/attributeoperation_declaration_constraints.html#AttributeOperationConstraint1"
+					isWarning="No"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						The referenced Attribute has to belong to a <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> (alias class) that is an <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Ancestor_Type">ancestor</a> of the Type referenced by the ClassOperation
+						
+					</errorMsg>
+				
+		</Constraint>
+				
+								
+	</ConstraintSet>
+	
+	<ConstraintSet name="SimpleConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/simple_declaration_constraints.html" applyOn="Simple">
+	
+		<Constraint name="SimpleConstraint1"  
+					errorNo="C301"
+					errorMSG="If a Simple is declared with the parameter Protection='Internal','InternalRO' or 'Private' then the values for the declaration parameter 'CAAExposition' should not be specified. For other 'Protection' values it have to be specified" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/simple_declaration_constraints.html#SimpleConstraint3"
+					isWarning="No"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						If a <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Protection='Internal','InternalRO' or 'Private' then the values for the declaration parameter 'CAAExposition' should not be specified. For other 'Protection' values it have to be specified
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+		<Constraint name="AttributeConstraint1"  
+					errorNo="C302"
+					errorMSG="If a Simple is declared with the parameter Multivaluated='Yes' then the paramters 'Upper' and 'Lower' should be specified" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/simple_declaration_constraints.html#SimpleConstraint2"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						If a <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Multivaluated='Yes' then the paramters 'Upper' and 'Lower' should be specified"
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+		<Constraint name="SimpleConstraint3"  
+					errorNo="C303"
+					errorMSG="If a Simple is declared with the parameter Type='Binary' then the values 'Free', 'External', 'ExternalRO' and 'User' are not allowed for the declaration parameter 'Protection'" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/simple_declaration_constraints.html#SimpleConstraint3"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						If a <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Type='Binary' then the values 'Free', 'External', 'ExternalRO' and 'User' are not allowed for the declaration parameter 'Protection'" 
+						
+					</errorMsg>
+				
+		</Constraint>
+		
+	<!-- NOT VALID ANYMORE
+	<Constraint name="SimpleConstraint4"  
+					errorNo="C304"
+					errorMSG="A Simple can only be declared with the parameter CAAExposition='L1' when the Class or the Extension in which this Simple is also declared with CAAExposition='L1'"
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/simple_declaration_constraints.html#SimpleConstraint1"
+					isWarning="Yes"
+					checkAtRuntime="No"
+					/>		
+	-->
+		
+	<Constraint name="SimpleConstraint5"  
+					errorNo="C305"
+					errorMSG="If Simple is declared with the parameters MaxLength='x', Type='String' and DefaultValue='myValue' then the length of the myValue has to be smaller or equal 'x'"
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/simple_declaration_constraints.html#SimpleConstraint5"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						If a <a href="http://plminf2e/plminf_plmdico_wiki/simple.html">Simple</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameters MaxLength="x", Type="String" and DefaultValue="myValue" then the length of the myValue has to be smaller or equal "x"
+						
+					</errorMsg>
+				
+		</Constraint>
+								
+	</ConstraintSet>
+	
+	<ConstraintSet name="RelationshipConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/relationship_declaration_constraints.html" applyOn="Relationship">
+	
+	
+		<Constraint name="RelationshipConstraint1"  
+					errorNo="C901"
+					errorMSG="When a relationship overloads a Relationship of a Super Type, the target Type of the overloaded Relationship should be an ancestor Type of the target Type of the other Relationship"
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/relationship_declaration_constraints.html#RelationshipConstraint1"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						When a <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">Relationship</a> overloads a Relationship of a <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Type_Inheritance">Super Type</a>, the target Type of the overloaded Relationship should be an <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Ancestor_Type">Ancestor Type</a> of the target Type of the other Relationship
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+		<Constraint name="AttributeConstraint1"  
+					errorNo="C902"
+					errorMSG="If a Relationship is declared with the parameter Multivaluated='Yes' then the paramters 'Upper' and 'Lower' should be specified" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/relationship_declaration_constraints.html#RelationshipConstraint2"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						If a <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">Relationship</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Multivaluated='Yes' then the paramters 'Upper' and 'Lower' should be specified
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+		<Constraint name="RelationshipConstraint3"  
+					errorNo="C903"
+					errorMSG="When a relationship is declared with the parameter Scope='Internal' or 'Path' then the 'TargetRef' parameter should have the Uuid of a declared Type or 'AnyObject' as value. Furthermore the declaration parameter 'Type' should be undefined."
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/relationship_declaration_constraints.html#RelationshipConstraint1"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						When a <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">Relationship</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Scope='Internal' or 'Path' then the 'TargetRef' parameter should have the Uuid of a declared  <a href="http://plminf2e/plminf_plmdico_wiki/type.html">Type</a> or 'AnyObject' as value. Furthermore the declaration parameter 'Type' should be undefined."
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+		<Constraint name="RelationshipConstraint4"  
+					errorNo="C904"
+					errorMSG="When a relationship is declared with the parameter Scope='External' or 'Vault' the 'Type' parameter should have the value 'String' or 'Binary'. Furthermore the parameter 'TargetRef' should be undefined"
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/relationship_declaration_constraints.html#RelationshipConstraint1"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						When a <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">Relationship</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Scope='External' or 'Vault' the 'Type' parameter should have the value 'String' or 'Binary'. Furthermore the parameter 'TargetRef' should be undefined"
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+	
+										
+	</ConstraintSet>
+	
+	
+	<ConstraintSet name="InverseConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/inverse_declaration_constraints.html" applyOn="Inverse">
+	
+	
+		<Constraint name="AttributeConstraint1"  
+					errorNo="C1001"
+					errorMSG="If an Inverse is declared with the parameter Multivaluated='Yes' then the paramters 'Upper' and 'Lower' should be specified" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/inverse_declaration_constraints.html#InverseConstraint1"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						If an <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">Inverse</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Multivaluated='Yes' then the paramters 'Upper' and 'Lower' should be specified" 
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+	
+										
+	</ConstraintSet>
+	
+	<ConstraintSet name="EnumConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/enum_declaration_constraints.html" applyOn="Enum">
+	
+		
+		<Constraint name="EnumConstraint1"  
+					errorNo="C601"
+					errorMSG="When an Enum is declared, the values (parameter 'Value') of the Enumerators declared in it should be unique and (1 &lt;= value &lt;= nbEnumerators), where nbEnumerators is the number of Enumberators declared in this Enum" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/enum_declaration_constraints.html#EnumConstraint1"
+					isWarning="Yes"
+					checkAtRuntime="Yes"> 
+					
+					<errorMsg> 
+					
+						When an <a href="http://plminf2e/plminf_plmdico_wiki/enum.html">Enum</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a>, the values (parameter 'Value') of the Enumerators declared in it should be unique and (1 &lt;= value &lt;= nbEnumerators) (where nbEnumerators is the number of <a href="http://plminf2e/plminf_plmdico_wiki/enumerator.html">Enumerators</a> declared in this Enum)
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+			<!-- errorMSG="When an Enum is declared the values (parameter 'Value') of the Enumerators declared in it, should be unique and (1 <= value <= nbEnumerators), where nbEnumerators is the number of Enumberators declared in this Enum"  -->
+				
+		<Constraint name="EnumConstraint2"  
+					errorNo="C602"
+					errorMSG="The name of the Enum should be unique among all Enums declared in the PLMDictionary" 
+					explanationURL="http://plminf2e/plminf_plmdico_wiki/enum_declaration_constraints.html#EnumConstraint2"
+					isWarning="Yes"
+					checkAtRuntime="No"> 
+					
+					<errorMsg> 
+					
+						The name of the <a href="http://plminf2e/plminf_plmdico_wiki/enum.html">Enum</a> should be unique among all Enums <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> in the PLMDictionary
+						
+					</errorMsg>
+				
+		</Constraint>
+					
+	</ConstraintSet>
+	
+			
+		
+</AllConstraints>
+

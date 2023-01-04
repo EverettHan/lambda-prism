@@ -1,0 +1,929 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidIconBoxCtl.cpp--> 
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  
+  <!--*************************************************************************************************************************-->
+  <!--                                            Internal icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Default" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+
+      <CATVidLayGrid syp:name="ArrowsButton" GridWeight="col3=1">
+        <CATVidCtlButton syp:Template="Button" syp:name="ArrowButton" IconDimension="8 8" LayoutWhenUnvisibleFlag="0"
+                   Icon="AfrToolbarButtonArrow.png" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LTB" EnableFlag="@HasItems"
+                        Click="@HandleShowEvent" />
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="ArrowLeftButtonLay" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RTB">
+          <CATVidCtlButton syp:Template="Toolbar" syp:name="ArrowLeftButton" IconDimension="8 8" LayoutWhenUnvisibleFlag="0"
+           Icon="AfrToolbarButtonArrowLeft.png"
+                Click="@HandleShowEvent" />
+        </CATVidLayLayer>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+      <CATVidLayGrid syp:name="Arrows" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+        <CATVidGPSquare Name="ArrowBottom" syp:name="ArrowBottom"
+                   RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrow.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RB"/>
+        <!--<CATVidGPSquare Name="ArrowRight" syp:name="ArrowRight"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowRight.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=R"/>
+        <CATVidGPSquare Name="ArrowLeft" syp:name="ArrowLeft"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowLeft.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+        <CATVidGPSquare Name="ArrowTop" syp:name="ArrowTop"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowUp.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT"/>-->
+      </CATVidLayGrid>
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0"  SnapSide="@IconBoxDirection"  SnapCenteredFlag="@PopupCenteredFlag">
+        <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" VisibleFlag="@HasItems">
+          <CATVidGPSquare  PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" />
+          <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder"  />
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+
+      <!-- Mode Selection -->
+
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnMoveOver">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Arrows" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClickOnArrow">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Arrows" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClick">
+        <CATSYPSetter Property="VisibleFlag" TargetName="Arrows" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="0"/>
+        <CATSYPSetter Property="AutoHideFlag" TargetName="Popup" Value="0"/>
+        <CATSYPSetter Property="ModalFlag" TargetName="Popup" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxDirection" Value="Bottom">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowBottom" Value="1"/>
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="ArrowRight" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeft" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowTop" Value="0"/>-->
+
+        <CATSYPSetter Property="Icon" TargetName="ArrowButton" Value="AfrToolbarButtonArrow.png"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxDirection" Value="Right">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowBottom" Value="0"/>
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="ArrowRight" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeft" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowTop" Value="0"/>-->
+
+        <CATSYPSetter Property="Icon" TargetName="ArrowButton" Value="AfrToolbarButtonArrowRight.png"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxDirection" Value="Left">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowBottom" Value="0"/>
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="ArrowRight" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeft" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowTop" Value="0"/>-->
+
+        <CATSYPSetter Property="Icon" TargetName="ArrowLeftButton" Value="AfrToolbarButtonArrowLeft.png"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButton" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxDirection" Value="Top">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowBottom" Value="0"/>
+        <!--<CATSYPSetter Property="VisibleFlag" TargetName="ArrowRight" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeft" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowTop" Value="1"/>-->
+
+        <CATSYPSetter Property="Icon" TargetName="ArrowButton" Value="AfrToolbarButtonArrowUp.png"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButton" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="1">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="StretchAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="0">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="NoAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxHidePolicy" Value="AutoHide">
+        <CATSYPSetter Property="ModalFlag" TargetName="Popup" Value="1"/>
+        <CATSYPSetter Property="AutoHideFlag" TargetName="Popup" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxHidePolicy" Value="HideOnTimer">
+        <CATSYPSetter Property="ModalFlag" TargetName="Popup" Value="0"/>
+        <CATSYPSetter Property="AutoHideFlag" TargetName="Popup" Value="0"/>
+      </CATSYPTrigger>
+
+    </CATSYPTriggerCollection>
+
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Balloon icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Balloon" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+
+      <CATVidCtl syp:name="Presenter" />
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag">
+        <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" >
+          <CATVidGPSmartSquare syp:name="VerticalBackground"  GridWeight="row1=1"
+                                    Texture="phylactere-popup-v.png" RequestedMinimumDimension="34 15">
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+
+          <CATVidGPSmartSquare syp:name="HorizontalBackground" VisibleFlag="0"  GridWeight="col1=1" Texture="phylactere-popup-h.png" RequestedMinimumDimension="34 15">
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+          <CATVidGPSquare  Name="PickZone"  PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" />
+          <CATVidLayGrid>
+            <CATVidSpacer syp:name="Spacer1" RequestedMinimumDimension="34 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+            <CATVidSpacer syp:name="Spacer2" RequestedMinimumDimension="34 5" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="1">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="StretchAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="0">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="NoAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Vertical">
+        <CATSYPSetter Property="VisibleFlag" TargetName="VerticalBackground" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HorizontalBackground" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="34 5"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="34 5"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Horizontal">
+        <CATSYPSetter Property="VisibleFlag" TargetName="VerticalBackground" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HorizontalBackground" Value="1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="5 34"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="5 34"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                            Balloon icon box For Signature                                               -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="BalloonSignature" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+
+      <CATVidCtl syp:name="Presenter" />
+     <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag">
+       <CATVidLayGrid GridWeight="col1=1 row1=1">
+         <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+            <CATVidGPSmartSquare syp:name="CATUiBalloonMouseHover" GridWeight="col1=1 row1=1" RequestedMinimumDimension="32 44" Texture="CATUiBalloonMouseHover.png">
+              <CATVidSpacer RequestedMinimumDimension="9 9"   CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 24" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="9 9"   CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+
+            <CATVidGPSquare Name="PickZone"  PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" />
+            <CATVidLayGrid>
+              <CATVidSpacer syp:name="Spacer1" RequestedMinimumDimension="41 5" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+              <CATVidSpacer syp:name="Spacer3" RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder"  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" />
+              <CATVidSpacer syp:name="Spacer4" RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer syp:name="Spacer2" RequestedMinimumDimension="41 5" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+       <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+       </CATVidLayGrid>
+     </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="1">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="StretchAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="0">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="NoAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Horizontal">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer3" Value="5 41"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer4" Value="5 41"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Vertical">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="41 5"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="41 5"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer3" Value="0 0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer4" Value="0 0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="SignatureContextMenu" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+
+
+      <CATVidCtl syp:name="Presenter" />
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0">
+
+        <CATAfrVidWidgetNoLayout>
+          <CATVidLayLayer>
+            <CATVidGPSquare Name="PickZone" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"/>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowCentered" GridWeight="col1=1 col3=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowLeft" GridWeight="col1=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowRight" GridWeight="col3=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+          </CATVidLayLayer>
+        </CATAfrVidWidgetNoLayout>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="2">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="255"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="SignatureMenu" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+      <!--<CATVidLayGrid syp:name="Arrows"  VisibleFlag="0">
+        <CATVidGPSquare Name="ArrowBottom" syp:name="ArrowBottom" LayoutWhenUnvisibleFlag="0"
+                   RequestedMinimumDimension="8 8"  UseManipulatorFlag="0" Texture="AfrToolbarButtonArrow.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowRight" syp:name="ArrowRight" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowRight.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 "/>
+        <CATVidGPSquare Name="ArrowLeft" syp:name="ArrowLeft" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowLeft.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowTop" syp:name="ArrowTop" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowUp.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      </CATVidLayGrid>-->
+      <CATVidLayGrid GridWeight="col0=1">
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="ArrowLeftButtonLay" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RTB">
+          <CATVidCtlButton syp:Template="Toolbar" syp:name="ArrowLeftButton" IconDimension="8 8" LayoutWhenUnvisibleFlag="0"
+           Icon="AfrToolbarButtonArrow.png"
+                Click="@HandleShowEvent" />
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+
+
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag" PopupCompactFlag="1" AutoHideFlag="1" ModalFlag="1" SnapFlag="1">
+        <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <CATVidGPSquare Name="PickZone" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"/>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowCentered" GridWeight="col1=1 col3=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowLeft" GridWeight="col1=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowRight" GridWeight="col3=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidLayGrid GridWeight="col1=1 row2=1">
+              <CATVidSpacer RequestedMinimumDimension="8 20"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayLayer syp:name="CommunCollection" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+                <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder" StackAttachmentAppendPolicy="StretchAttachmentPolicy"  />
+              </CATVidLayLayer>
+              <CATVidSpacer RequestedMinimumDimension="8 8"  CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClick">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClickOnArrow">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="2">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="255"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template> 
+  
+    <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="SignatureSearchMenu" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+      <!--<CATVidLayGrid syp:name="Arrows"  VisibleFlag="0">
+        <CATVidGPSquare Name="ArrowBottom" syp:name="ArrowBottom" LayoutWhenUnvisibleFlag="0"
+                   RequestedMinimumDimension="8 8"  UseManipulatorFlag="0" Texture="AfrToolbarButtonArrow.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowRight" syp:name="ArrowRight" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowRight.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 "/>
+        <CATVidGPSquare Name="ArrowLeft" syp:name="ArrowLeft" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowLeft.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowTop" syp:name="ArrowTop" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowUp.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      </CATVidLayGrid>-->
+      <CATVidGPSmartSquare GridWeight="col1=1" Texture="PLMBar/Search_Options.png">
+        <CATVidSpacer RequestedMinimumDimension="12 24" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+        <CATVidSpacer RequestedMinimumDimension="35 24" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+      </CATVidGPSmartSquare>
+      <CATVidLayGrid GridWeight="row1=1 col1=1">
+        <CATVidSpacer RequestedMinimumDimension="12 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB">
+                  <CATVidCtlButton Name="Arrow" syp:Template="Toolbar" syp:name="ArrowLeftButton" IconDimension="8 8" LayoutWhenUnvisibleFlag="0"
+           Icon="AfrToolbarButtonArrow.png"
+                Click="@HandleShowEvent" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LB"/>
+        </CATVidLayGrid>
+
+     
+      </CATVidLayGrid>
+
+
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag" PopupCompactFlag="1" AutoHideFlag="1" ModalFlag="1" SnapFlag="1">
+       <CATVidLayGrid GridWeight="row1=1">
+          <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <CATVidGPSquare Name="PickZone" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"/>
+            <CATVidGPSquare Color="234 235 235 255"/>
+            <CATVidLayGrid GridWeight="col1=1 row2=1">
+              <CATVidSpacer RequestedMinimumDimension="8 5"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayLayer syp:name="CommunCollection" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+                <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder" StackAttachmentAppendPolicy="StretchAttachmentPolicy"  />
+              </CATVidLayLayer>
+              <CATVidSpacer RequestedMinimumDimension="8 8"  CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+        </CATVidLayGrid>
+
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+  </Template> 
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="WhiteMenu" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+      <CATVidCtl syp:name="BgdPresenterCtl" VisibleFlag="@VisibleArrowFlag">
+        <CATVidGPSquare syp:name="BackgroundPresenter" BorderColor="127 127 127 255" Color="234 235 235 255" VisibleFlag="@VisibleFlag ElementName=Popup" />
+      </CATVidCtl>
+      
+      <!--<CATVidLayGrid syp:name="Arrows"  VisibleFlag="0">
+        <CATVidGPSquare Name="ArrowBottom" syp:name="ArrowBottom" LayoutWhenUnvisibleFlag="0"
+                   RequestedMinimumDimension="8 8"  UseManipulatorFlag="0" Texture="AfrToolbarButtonArrow.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowRight" syp:name="ArrowRight" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowRight.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 "/>
+        <CATVidGPSquare Name="ArrowLeft" syp:name="ArrowLeft" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowLeft.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowTop" syp:name="ArrowTop" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowUp.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      </CATVidLayGrid>-->
+      <CATVidLayGrid GridWeight="col0=1">
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="ArrowLeftButtonLay" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RTB">
+          <CATVidCtlButton syp:Template="Toolbar" syp:name="ArrowLeftButton" IconDimension="7 13" LayoutWhenUnvisibleFlag="0"
+              Icon="AfrAppOptionArrow.png"
+                Click="@HandleShowEvent" />
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+
+
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" ConsumeMouseEventFlag="0" SnapCenteredFlag="@PopupCenteredFlag" SnapAlignment="@IconBoxSnapAlignment" PopupCompactFlag="1" AutoHideFlag="1" ModalFlag="1" SnapFlag="1">
+ 
+        <CATVidLayLayer RequestedMinimumDimension="205 0" Dimension="@PopupDimension Mode=OneWayToSource">
+
+          <!--<CATVidLayGrid GridWeight="col1=1 row2=1">-->
+          <!--<CATVidSpacer RequestedMinimumDimension="0 5"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>-->
+          <CATVidLayLayer syp:name="CommunCollection" Name="@Name">
+            <CATVidGPNinePatchSquare syp:name="PopupBackgroundExtract" VisibleFlag="1" ScalableAreaBorder="0 4 6 5" TextureAlpha="255" Texture="dropdown_body.png" UseManipulatorFlag="0"/>
+            <CATVidLayGrid GridWeight="row1=1 col1=1">
+              <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayStack syp:name="PopupCollection"
+                              Orientation="@Orientation" CellBorder="@CellBorder"
+                              StackAttachmentAppendPolicy="StretchAttachmentPolicy"
+                              CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+          <!--<CATVidSpacer RequestedMinimumDimension="0 8"  CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>-->
+          <!--</CATVidLayGrid>-->
+        </CATVidLayLayer>
+
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClick">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClickOnArrow">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="1"/>
+      </CATSYPTrigger>
+
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           App Option Menu                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AppOption" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+      <CATVidCtl syp:name="BgdPresenterCtl">
+        <CATVidGPSquare syp:name="BackgroundPresenter" VisibleFlag="@VisibleFlag ElementName=Popup"/><!--Color="0.3 255"-->
+      </CATVidCtl>
+      
+      <CATVidLayGrid GridWeight="col0=1">
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="ArrowLeftButtonLay" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RTB">
+          <CATVidCtlButton syp:Template="Toolbar" syp:name="ArrowLeftButton" IconDimension="7 13" RequestedMinimumDimension="11 17" LayoutWhenUnvisibleFlag="0"
+           Icon="AfrAppOptionArrow.png" CheckMode="1" CheckState="@VisibleFlag ElementName=Popup" Click="@HandleShowEvent"/>
+                <!-- />-->
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+
+
+
+      <CATVidCtlPopup syp:name="Popup" Name="AppOtionPopup" VisibleFlag="0" SnapSide="Bottom" SnapAlignment="SnapAlignLeft"  PopupCompactFlag="1" AutoHideFlag="1" ModalFlag="1" SnapFlag="1">
+        <!--ExtractablePopupWindowFlag="1"-->
+
+        <CATVidLayLayer>
+          <CATVidGPSquare Color="158 158 158 255"/>
+          <CATVidLayGrid CellSpacing="1">
+            <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+              <CATVidGPSquare Color="234 235 235 255"/>
+              <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="3" StackAttachmentAppendPolicy="StretchAttachmentPolicy"  />
+            </CATVidLayLayer>
+
+          
+        </CATVidLayGrid>
+        </CATVidLayLayer>
+
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClick">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="IconBoxShowPolicy" Value="ShowOnClickOnArrow">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeftButtonLay" Value="1"/>
+      </CATSYPTrigger>
+
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="SignatureSubMenu" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+      <!--<CATVidLayGrid syp:name="Arrows"  VisibleFlag="0">
+        <CATVidGPSquare Name="ArrowBottom" syp:name="ArrowBottom" LayoutWhenUnvisibleFlag="0"
+                   RequestedMinimumDimension="8 8"  UseManipulatorFlag="0" Texture="AfrToolbarButtonArrow.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowRight" syp:name="ArrowRight" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowRight.png" CATVidLayGrid.IndexedConstraints="x=0 y=0 "/>
+        <CATVidGPSquare Name="ArrowLeft" syp:name="ArrowLeft" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowLeft.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidGPSquare Name="ArrowTop" syp:name="ArrowTop" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowUp.png" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      </CATVidLayGrid>-->
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidGPSquare Name="ArrowRight" syp:name="ArrowRight" LayoutWhenUnvisibleFlag="0"
+          RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowRight.png" CATVidLayGrid.IndexedConstraints="x=2 y=0 "/>
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidGPSquare Name="ArrowLeft" syp:name="ArrowLeft" LayoutWhenUnvisibleFlag="0"
+           RequestedMinimumDimension="8 8" UseManipulatorFlag="0" Texture="AfrToolbarButtonArrowLeft.png" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+
+      </CATVidLayGrid>
+
+
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag">
+        <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource">
+          <CATVidGPSquare Name="PickZone" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"/>
+          <CATVidCtlBorder syp:Template="Rounded" BackgroundColor="255 255 255 255">
+            <CATVidLayStack syp:name="PopupCollection" Orientation="Vertical" CellBorder="@CellBorder" StackAttachmentAppendPolicy="StretchAttachmentPolicy"  />
+          </CATVidCtlBorder>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowRight" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeft" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowRight" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeft" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="2">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowRight" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ArrowLeft" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************VisibleFlag="@HasItems" -->
+  <Template syp:name="SignatureStartMenu" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+      <CATVidCtl syp:name="Presenter"/>
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="1" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag">
+        <CATVidLayGrid  Dimension="@PopupDimension Mode=OneWayToSource">
+          <CATVidCtlBorder syp:Template="Rounded" BackgroundColor="0 0 0 255" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+            <CATVidLayGrid GridWeight="row1=1">
+              <CATVidSpacer RequestedMinimumDimension="5 70" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+
+              <CATVidLayGrid  syp:name="PopupCollection" GridAppendPolicy="1" GridWeight="row0=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+
+            </CATVidLayGrid>
+          </CATVidCtlBorder>
+          <CATVidLayGrid GridWeight="row1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+            <CATVidSpacer RequestedMinimumDimension="5 70" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidLayLayer syp:name="SecondCollection"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayGrid>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidIconBoxGrid"  >
+    <CATVidLayLayer>
+      <CATVidGPSquare  Name="PickZone"  PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" />
+      <CATVidCtl PresenterContent="@Content"/>
+    </CATVidLayLayer>
+
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidIconBoxItem"  >
+    <CATVidLayGrid GridWeight="col1=1">
+      <CATVidGPSquare RequestedMinimumDimension="8 8" Texture="AfrToolbarButtonArrowLeft.png" LayoutWhenUnvisibleFlag="0" VisibleFlag="@HasParentItemFlag" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidGPSquare syp:name="ActivatedSquare" VisibleFlag="@ItemActivatedFlag"/>
+        <CATVidCtl syp:name="WrapperItemCtl" />
+        <CATVidGPSquare UseManipulatorFlag="1" GiveFocusOnDragFlag="1" AcceptFocusOnDropFlag="1" VisibleFlag="@ItemDisabledFlag" PickFlag="1" Press="@HandleEvent" Entry="@HandleEvent" MoveOver="@HandleEvent" Leave="@HandleEvent"/>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Side" Value="Bottom">
+        <CATSYPSetter TargetName="ActivatedSquare" Property="Texture" Value="phylactere-iconActive-gauche.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Side" Value="Top">
+        <CATSYPSetter TargetName="ActivatedSquare" Property="Texture" Value="phylactere-iconActive-gauche.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Side" Value="Left">
+        <CATSYPSetter TargetName="ActivatedSquare" Property="Texture" Value="phylactere-iconActive-haut.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Side" Value="Right">
+        <CATSYPSetter TargetName="ActivatedSquare" Property="Texture" Value="phylactere-iconActive-haut.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+  <Template syp:name="Default" Target="CATAfrVidCtlHierachyWidget">
+    <CATVidLayGrid syp:name="MainGrid">
+      <CATAfrVidIconBoxCtl syp:name="IconBox" syp:Template="Default"  Orientation="Vertical"  IconBoxHidePolicy="AutoHide" IconBoxShowPolicy="ShowOnClickOnArrow" IconBoxDirection="Bottom"
+                                StretchPopupItemFlag="1"  LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidLayGrid  syp:name="Grid" GridAppendPolicy="2" ChildrenLifeCyclePolicy="DontDestroyChildren" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="1"/>
+      <CATVidGPSquare  LayoutWhenUnvisibleFlag="0" Dimension="@SpaceDimension Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+    </CATVidLayGrid>
+    <!--<CATSYPTriggerCollection> VisibleFlag="@SpaceVisibleFlag"
+      <CATSYPTrigger Property="SpaceVisibleFlag" Value="1">
+        <CATSYPSetter Property="GridWeight" TargetName="MainGrid" Value="col3=1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="SpaceVisibleFlag" Value="0">
+        <CATSYPSetter Property="GridWeight" TargetName="MainGrid" Value="col2=1"/>
+      </CATSYPTrigger>      
+    </CATSYPTriggerCollection>-->
+  </Template>
+
+  <!--===================================-->
+  <!--CATCAfrComponent Std-->
+  <!--===================================-->
+  <Template syp:name = "Std" Target="CATVidCtlTweakerCATAfrPathComponent">
+    <CATVidCtl syp:name="Content"
+                ChildrenLifeCyclePolicy="DontDestroyChildren">
+    </CATVidCtl>
+  </Template>
+
+  <!--===================================-->
+  <!--CATCAfrComponent AfrVidIconBoxCtl-->
+  <!--===================================-->
+  <Template syp:name = "AfrVidIconBox" Target="CATVidCtlTweakerCATAfrPathComponent">
+    <CATAfrVidIconBoxCtl syp:name="AfrVidIconBoxCtl"
+                         syp:Template="SignatureMenu"
+                         Orientation="Vertical"
+                         UsePresenterIconContentFlag="0"
+                         IconBoxHidePolicy="AutoHide"
+                         IconBoxShowPolicy="ShowOnClickOnArrow"
+                         IconBoxDirection="Bottom"
+                         InitialOffset="12 0"
+                         RequestedMinimumDimension="17 17">
+      <CATVidCtlButton Name="Name"
+                       syp:name="AfrStatusBarStartMenuButton"
+                       syp:Template="Toolbar"
+                       CheckMode="1"
+                       ClickMode="1"
+                       CropPolicy="NoCrop"
+                       IconDimension="17 17"
+                       RequestedMinimumDimension="17 17"
+                       FocusableFlag="0"
+                       KeyboardManipulationFlag="0"
+                       LayoutWhenUnvisibleFlag="0"
+                       Icon="@IconName"
+                       Label="@Title"
+                       Tooltip="@TooltipShortHelp ElementName=AfrVidIconBoxCtl"
+                       Click="@HandleShowEvent ElementName=AfrVidIconBoxCtl"
+                     />
+    </CATAfrVidIconBoxCtl>
+  </Template>
+
+  <!--===================================-->
+  <!--CATCAfrComponent AfrVidLabelBoxCtl-->
+  <!--===================================-->
+  <Template syp:name = "AfrVidLabelBoxCtl" Target="CATVidCtlTweakerCATAfrPathComponent">
+    <CATAfrVidIconBoxCtl syp:name="AfrVidIconBoxCtl"
+                         syp:Template="SignatureMenu"
+                         Orientation="Vertical"
+                         UsePresenterIconContentFlag="0"
+                         IconBoxHidePolicy="AutoHide"
+                         IconBoxShowPolicy="ShowOnClickOnArrow"
+                         IconBoxDirection="Bottom"
+                         InitialOffset="12 0"
+                         RequestedMinimumDimension="17 17">
+      <CATVidGPLabel syp:name="Label" 
+                     CropPolicy="NoCrop"
+                     Text="@Title"/>
+    </CATAfrVidIconBoxCtl>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            ContextBar and Properties Panels icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="CtxBarAndPanelsIconBox" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer syp:name="CtxBarAndPanelsIconBox_Layer" LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid syp:name="ArrowsButton" GridWeight="col2=1" LayoutWhenUnvisibleFlag="0">
+        
+        <CATVidGPSmartSquare syp:name="ButtonSquare" GridWeight="col1=1 row1=1"  LayoutWhenUnvisibleFlag="0" Texture="icons/SWXUiHUDDropBoxR32.png" TextureAlpha="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="14 36">
+          <CATVidSpacer RequestedMinimumDimension="3 4" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="7 30" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="4 4" CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RLTB" />
+        </CATVidGPSmartSquare>
+        <CATVidGPSmartSquare syp:name="ButtonSquarePopupShow" GridWeight="col1=1 row1=1" UseManipulatorFlag="0" LayoutWhenUnvisibleFlag="0" Texture="icons/SWXUiHUDDropBoxRSelected32.png" TextureAlpha="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="14 36">
+          <CATVidSpacer RequestedMinimumDimension="3 4" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="7 30" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="4 4" CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RLTB" />
+        </CATVidGPSmartSquare>
+        <CATVidCtlButton syp:Template="CATAfrIconBoxArrowButton" syp:name="ArrowButton" RequestedMinimumDimension="14 36" LayoutWhenUnvisibleFlag="0"
+                         CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB" EnableFlag="@HasItems"
+                         Click="@HandleShowEvent" CheckMode="1" AutoDetectTooltipTypeFlag="0"/>
+        
+        <CATVidGPSmartSquare syp:name="PresenterSquare" GridWeight="col1=1 row1=1" LayoutWhenUnvisibleFlag="0" Texture="icons/SWXUiHUDDropBoxL32.png" TextureAlpha="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+          <CATVidSpacer RequestedMinimumDimension="3 4" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="7 30" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="4 4" CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RLTB" />
+        </CATVidGPSmartSquare>
+        <CATVidGPSmartSquare syp:name="PresenterSquarePopupShow" GridWeight="col1=1 row1=1" UseManipulatorFlag="0" LayoutWhenUnvisibleFlag="0" Texture="icons/SWXUiHUDDropBoxL32.png" TextureAlpha="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+          <CATVidSpacer RequestedMinimumDimension="3 4" CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="7 30" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB" />
+          <CATVidSpacer RequestedMinimumDimension="4 4" CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RLTB" />
+        </CATVidGPSmartSquare>
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0"/>
+        
+        <CATVidSpacer LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+        <!--A enlever-->
+        <CATVidGPSquare Color="255 0 0 255" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+        <!--Fin A enlever-->
+      </CATVidLayGrid>
+
+      <CATVidCtlPopup Name ="IconBoxPopup" syp:name="Popup" VisibleFlag="0"  SnapSide="@IconBoxDirection"  SnapCenteredFlag="@PopupCenteredFlag" LayoutWhenUnvisibleFlag="0">
+        <CATVidLayGrid GridWeight="col1=1 row1=1">
+          <!--<CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>-->
+          <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" >
+            <CATVidGPSmartSquare syp:name="CATUiBalloonMouseHover" GridWeight="col1=1 row1=1" RequestedMinimumDimension="44 44" Texture="CATUiBalloonMouseHover.png" LayoutWhenUnvisibleFlag="0">
+              <CATVidSpacer RequestedMinimumDimension="9 9"   CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 24" CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="9 9"   CATVidGPSmartSquare.GPConstraints="x=2 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidGPSquare Name="PickZone"  LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"  />
+            <CATVidLayGrid LayoutWhenUnvisibleFlag="0">
+              <CATVidSpacer syp:name="Spacer1" RequestedMinimumDimension="41 5" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+              <CATVidSpacer syp:name="Spacer3" RequestedMinimumDimension="0 0" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0"/>
+              <CATVidSpacer syp:name="Spacer4" RequestedMinimumDimension="0 0" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer syp:name="Spacer2" RequestedMinimumDimension="41 5" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+        <!--<CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>-->
+        </CATVidLayGrid>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+    
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="1">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="StretchAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="0">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="NoAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxHidePolicy" Value="AutoHide">
+        <CATSYPSetter Property="ModalFlag" TargetName="Popup" Value="1"/>
+        <CATSYPSetter Property="AutoHideFlag" TargetName="Popup" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxHidePolicy" Value="HideOnTimer">
+        <CATSYPSetter Property="ModalFlag" TargetName="Popup" Value="0"/>
+        <CATSYPSetter Property="AutoHideFlag" TargetName="Popup" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="CtxBarAndPanelsIconBox_Layer">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquare" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquare" Value="255"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="CtxBarAndPanelsIconBox_Layer">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquare" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquare" Value="0"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="PopupShown">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquarePopupShow" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquarePopupShow" Value="255"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="PopupHidden">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquarePopupShow" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquarePopupShow" Value="0"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Menu views                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="AfrViewModeIconBox" Target="CATAfrVidIconBoxCtl" >
+    <CATVidLayLayer syp:name="CtxBarAndPanelsIconBox_Layer" LayoutWhenUnvisibleFlag="0">
+      <CATVidLayGrid syp:name="ArrowsButton" GridWeight="col2=1" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPNinePatchSquare syp:name="ButtonSquare" 
+                                 LayoutWhenUnvisibleFlag="0" 
+                                 ScalableAreaBorder="5"
+                                 Texture="icons/SWXUiHUDDropBoxR32.png" TextureAlpha="0" 
+                                 CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" 
+                                 RequestedMinimumDimension="14 26"/>
+        <CATVidGPNinePatchSquare syp:name="ButtonSquarePopupShow" 
+                                 LayoutWhenUnvisibleFlag="0" 
+                                 ScalableAreaBorder="5"
+                                 UseManipulatorFlag="0" 
+                                 Texture="icons/SWXUiHUDDropBoxRSelected32.png" 
+                                 TextureAlpha="0" 
+                                 CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" 
+                                 RequestedMinimumDimension="14 26"/>
+        <CATVidCtlButton syp:Template="CATAfrIconBoxArrowButton" syp:name="ArrowButton" 
+                         RequestedMinimumDimension="14 26" LayoutWhenUnvisibleFlag="0"
+                         CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB" 
+                         EnableFlag="@HasItems"
+                         Click="@HandleShowEvent" CheckMode="1" Tooltip=""/>
+        <CATVidGPNinePatchSquare syp:name="PresenterSquare" 
+                                 LayoutWhenUnvisibleFlag="0" 
+                                 ScalableAreaBorder="5"
+                                 Texture="icons/SWXUiHUDDropBoxL32.png" 
+                                 TextureAlpha="0" 
+                                 CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidGPNinePatchSquare syp:name="PresenterSquarePopupShow" 
+                                 LayoutWhenUnvisibleFlag="0" 
+                                 ScalableAreaBorder="5"
+                                 UseManipulatorFlag="0" 
+                                 Texture="icons/SWXUiHUDDropBoxL32.png" TextureAlpha="0" 
+                                 CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtl syp:name="Presenter" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0"/>
+
+        <CATVidSpacer LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+        <!--A enlever-->
+        <CATVidGPSquare Color="255 0 0 255" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+        <!--Fin A enlever-->
+      </CATVidLayGrid>
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0"  SnapSide="@IconBoxDirection"  SnapCenteredFlag="@PopupCenteredFlag" 
+                      LayoutWhenUnvisibleFlag="0" Name="ViewMenuPopup">
+        <CATVidLayGrid GridWeight="col1=1 row1=1">
+          <!--<CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>-->
+          <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" LayoutWhenUnvisibleFlag="0" 
+                          CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" >
+            <CATVidGPNinePatchSquare syp:name="CATUiBalloonMouseHover" 
+                                     ScalableAreaBorder="5"
+                                     RequestedMinimumDimension="34 34" 
+                                     Texture="CATUiBalloonMouseHover.png" LayoutWhenUnvisibleFlag="0"/>
+            <CATVidGPSquare Name="PickZone"  LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"  />
+            <CATVidLayGrid LayoutWhenUnvisibleFlag="0">
+              <CATVidSpacer syp:name="Spacer1" RequestedMinimumDimension="21 5" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+              <CATVidSpacer syp:name="Spacer3" RequestedMinimumDimension="0 0" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+              <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0"/>
+              <CATVidSpacer syp:name="Spacer4" RequestedMinimumDimension="0 0" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer syp:name="Spacer2" RequestedMinimumDimension="21 5" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidLayLayer>
+          <!--<CATVidSpacer RequestedMinimumDimension="2 2" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>-->
+        </CATVidLayGrid>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="1">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="StretchAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="0">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="NoAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxHidePolicy" Value="AutoHide">
+        <CATSYPSetter Property="ModalFlag" TargetName="Popup" Value="1"/>
+        <CATSYPSetter Property="AutoHideFlag" TargetName="Popup" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="IconBoxHidePolicy" Value="HideOnTimer">
+        <CATSYPSetter Property="ModalFlag" TargetName="Popup" Value="0"/>
+        <CATSYPSetter Property="AutoHideFlag" TargetName="Popup" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="CtxBarAndPanelsIconBox_Layer">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquare" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquare" Value="255"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="MouseLeave" TargetName="CtxBarAndPanelsIconBox_Layer">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquare" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquare" Value="0"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="PopupShown">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquarePopupShow" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquarePopupShow" Value="255"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="PopupHidden">
+        <CATSYPSetter Property="TextureAlpha" TargetName="PresenterSquarePopupShow" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="ButtonSquarePopupShow" Value="0"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  
+</Styles>

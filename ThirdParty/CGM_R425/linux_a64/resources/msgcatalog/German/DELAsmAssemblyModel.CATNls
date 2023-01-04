@@ -1,0 +1,124 @@
+<meta charset="UTF-8"/>
+DELAsmAssemblyModel="Prozessplanungserweiterungen";
+DELAsmAssemblyModel.DELAsmProvideFunctionRef="Bereitstellungsfunktion";
+DELAsmAssemblyModel.DELAsmProduceFunctionRef="Produktionsfunktion";
+DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_MAName="Name der Fertigungsbaugruppe";
+DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_MANumber="Nummer der Fertigungsbaugruppe";
+DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_Outsourced="Extern gefertigt";
+DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_PersistMfgAssembly="Dauerhafte Fertigungsbaugruppe";
+DELAsmAssemblyModel.DELAsmJoinFunctionRef="Verbindungsfunktion";
+DELAsmAssemblyModel.DELAsmGenericFunctionRef="Generische Funktion";
+DELAsmAssemblyModel.DELAsmGenericFunctionRef.V_ImplSemiFinishedPart="Implementiert Halbzeugteil";
+DELAsmAssemblyModel.DELAsmDisassembleFunctionRef="Zerlegungsfunktion";
+DELAsmAssemblyModel.DELAsmUnfastenFunctionRef="Ablösefunktion";
+DELAsmAssemblyModel.DELAsmRemoveFunctionRef="Entfernungsfunktion";
+DELAsmAssemblyModel.DELAsmPointFastenFunctionRef="Punktfixierungsfunktion";
+DELAsmAssemblyModel.DELAsmCurveFastenFunctionRef="Kurvenfixierungsfunktion";
+DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef="Materialentfernungsfunktion";
+DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef.V_RemoveMaterialSubType="Subtyp für Materialentfernung";
+DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef.V_DiameterOfFeature="Durchmesser der Komponente";
+DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef.V_DepthOfFeature="Tiefe der Komponente";
+DELAsmAssemblyModel.DELAsmAuxiliaryFunctionRef="Transformationsfunktion";
+DELAsmAssemblyModel.V_Outsourced_Enum="Extern gefertigt - Auflistung";
+DELAsmAssemblyModel.V_Outsourced_Enum.No="Nein";
+DELAsmAssemblyModel.V_Outsourced_Enum.Yes="Ja";
+DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum="Subtyp für Materialentfernung - Auflistung";
+DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.PreDrill="Vorbohren";
+DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Drill="Bohrer";
+DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Reserved="Reserviert";
+DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Cutting="Schneiden";
+DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Grinding="Schleifen";
+DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Beveling="Anschrägen";
+DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef="Elementare Enderzeugnisfunktion";
+DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_Manufacturing_Decision="Fertigungsentscheidung";
+DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_SerialNumberReq="Seriennummer erforderlich";
+DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_LotNumberReq="Losnummer erforderlich";
+DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_NeedDedicatedSystem="Planung erforderlich";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef="Baugruppenfunktion erzeugen";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_MAName="Name der Fertigungsbaugruppe";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_MANumber="Nummer der Fertigungsbaugruppe";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_Outsourced="Extern gefertigt";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_PersistMfgAssembly="Dauerhafte Fertigungsbaugruppe";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_Manufacturing_Decision="Fertigungsentscheidung";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_SerialNumberReq="Seriennummer erforderlich";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_LotNumberReq="Losnummer erforderlich";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_AssemblyComposition="Baugruppenzusammensetzung";
+DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_NeedDedicatedSystem="Planung erforderlich";
+DELAsmAssemblyModel.DELAsmFastenFunctionRef="Befestigungsfunktion";
+DELAsmAssemblyModel.DELAsmFastenFunctionRef.V_IsMovable="Ist bewegbar";
+DELAsmAssemblyModel.DELAsmUnitRef="Einheitenreferenz Erweiterung";
+DELAsmAssemblyModel.DELAsmUnitRef.V_SerialNumber="Seriennummer";
+DELAsmAssemblyModel.DELAsmUnitRef.V_LotNumber="Losnummer";
+DELAsmAssemblyModel.DELAsmUnitRef.V_LinkedProcess="Verknüpfte Prozesse";
+DELAsmAssemblyModel.DELAsmUnitInst="Einheiteninstanz Erweiterung";
+DELAsmAssemblyModel.DELAsmUnitInst.V_PlannedSerialNumber="Vorgesehene Seriennummer";
+DELAsmAssemblyModel.DELAsmUnitInst.V_PlannedLotNumber="Vorgesehene Losnummer";
+DELAsmAssemblyModel.DELAsmUnitInst.V_ExecutionStatus="Ausführungsstatus";
+DELAsmAssemblyModel.V_Manufacturing_Decision_Enum="V_Manufacturing_Decision_Enum";
+DELAsmAssemblyModel.V_Manufacturing_Decision_Enum.UNDEF="Nicht definiert";
+DELAsmAssemblyModel.V_Manufacturing_Decision_Enum.TO_BE_DETAILED="Weiter detaillieren";
+DELAsmAssemblyModel.V_Manufacturing_Decision_Enum.NOT_TO_BE_DETAILED="Nicht detaillieren";
+DELAsmAssemblyModel.V_AssemblyComposition_Enum="V_AssemblyComposition_Enum";
+DELAsmAssemblyModel.V_AssemblyComposition_Enum.Contextual="Kontextabhängig";
+DELAsmAssemblyModel.V_AssemblyComposition_Enum.Independent="Unabhängig";
+
+DELAsmAssemblyModel.V_MakeOrBuy_Enum="V_MakeOrBuy_Enum";
+DELAsmAssemblyModel.V_MakeOrBuy_Enum.Unassigned="Nicht zugewiesen";
+DELAsmAssemblyModel.V_MakeOrBuy_Enum.Buy="Erwerben";
+DELAsmAssemblyModel.V_MakeOrBuy_Enum.Make="Erstellen";
+
+DELAsmAssemblyModel.DELAsmMBOMFunctionRef="MBOM-Referenz Erweiterung";
+DELAsmAssemblyModel.DELAsmMBOMFunctionRef.V_MakeOrBuy="Eigenfertigung oder Fremdbezug";
+
+DELAsmAssemblyModel.DELAsmSplitFunctionRef="Aufteilungsfunktion";
+DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_NumberOfPieces="Anzahl geschnittener Teile in einem Rohteil";
+DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_XSplitDirection="Schnittlänge in X-Richtung";
+DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_YSplitDirection="Schnittlänge in Y-Richtung";
+DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_ZSplitDirection="Schnittlänge in Z-Richtung";
+DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_CustoSplitDirection="Schnittlänge in benutzerdefinierte Richtung";
+DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_NameCustoSplitDir="Name der benutzerdefinierten Richtung";
+
+DELAsmAssemblyModel.DELAsmCreateMaterialFunctionRef="Materialfunktion erstellen";
+DELAsmAssemblyModel.DELAsmCreateMaterialFunctionRef.V_NeedDedicatedSystem="Planung erforderlich";
+
+DELAsmAssemblyModel.DELAsmMarkingFunctionRef="Markierungsfunktion";
+DELAsmAssemblyModel.DELAsmMarkingFunctionRef.V_MarkingSubType="Markierungssubtyp";
+
+DELAsmAssemblyModel.V_MarkingSubType_Enum="V_MarkingSubType_Enum";
+DELAsmAssemblyModel.V_MarkingSubType_Enum.Annotation="Anmerkung";
+
+DELAsmAssemblyModel.DELAsmCreateKitFunctionRef="Kit-Funktion erzeugen";
+
+DELAsmAssemblyModel.DELAsmDataRequirementExt="Datenanforderungserweiterung";
+DELAsmAssemblyModel.DELAsmDataRequirementExt.V_DataQuantity="Datenmenge";
+
+DELAsmAssemblyModel.V_NeedDedicatedSystem_Enum="V_NeedDedicatedSystem_Enum";
+DELAsmAssemblyModel.V_NeedDedicatedSystem_Enum.NO="Nein";
+DELAsmAssemblyModel.V_NeedDedicatedSystem_Enum.YES="Ja";
+
+DELAsmAssemblyModel.DELAsmQuantity_Length="Mengenerweiterung";
+DELAsmAssemblyModel.DELAsmQuantity_Length.V_PartQuantity="Menge";
+
+DELAsmAssemblyModel.DELAsmQuantity_Volume="Mengenerweiterung";
+DELAsmAssemblyModel.DELAsmQuantity_Volume.V_PartQuantity="Menge";
+
+DELAsmAssemblyModel.DELAsmQuantity_Surface="Mengenerweiterung";
+DELAsmAssemblyModel.DELAsmQuantity_Surface.V_PartQuantity="Menge";
+
+DELAsmAssemblyModel.DELAsmQuantity_Weight="Mengenerweiterung";
+DELAsmAssemblyModel.DELAsmQuantity_Weight.V_PartQuantity="Menge";
+
+DELAsmAssemblyModel.DELAsmQuantity_Each="Mengenerweiterung";
+DELAsmAssemblyModel.DELAsmQuantity_Each.V_PartQuantity="Menge";
+
+DELAsmAssemblyModel.DELAsmMoveStructureRestrictionExt="Strukturbeschränkungserweiterung verschieben";
+DELAsmAssemblyModel.DELAsmMoveStructureRestrictionExt.V_AutoDownMoveLocked="Position in Grafik sperren";
+
+DELAsmAssemblyModel.DELAsmProcessOutputStatusExt="Erweiterung des Prozessausgabestatus";
+DELAsmAssemblyModel.DELAsmProcessOutputStatusExt.V_GeneratedFlag="Erzeugte Flagge";
+DELAsmAssemblyModel.DELAsmProcessOutputStatusExt.V_ListUpdateStamp_1="Erste Liste von Aktualisierungsstempel";
+DELAsmAssemblyModel.DELAsmProcessOutputStatusExt.V_ListUpdateStamp_2="Zweite Liste von Aktualisierungsstempel";
+
+
+DELAsmAssemblyModel.DELAsmInstallationFunctionRef="Installationsfunktion";
+DELAsmAssemblyModel.DELAsmInstallationFunctionRef.V_NeedDedicatedSystem="Planung erforderlich";

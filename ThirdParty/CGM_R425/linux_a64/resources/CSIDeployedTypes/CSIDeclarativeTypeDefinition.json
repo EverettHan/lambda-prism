@@ -1,0 +1,90 @@
+{
+  "grammarVersion": 3,
+  "desc": "CSI Parameters type description and its file content already pre-parsed, returned by command 'csiGetTypes' on pool 'CSIIntrospection'",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Name of the declarative type"
+    },
+    {
+      "label": "category",
+      "basic": "string",
+      "desc": "Category of the declarative type"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "desc": "Description of the declarative type"
+    },
+    {
+      "label": "filename",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Name of the file containing the declarative type definition"
+    },
+    {
+      "label": "filepath",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Path of the file containing the declarative type definition"
+    },
+    {
+      "label": "implementation",
+      "parameters": [
+        {
+          "label": "library",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Library name to (un)serial the type in native"
+        },
+        {
+          "label": "jsModule",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "JScript module to (un)serial the type"
+        },
+        {
+          "label": "javaClassPath",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "JAR's name"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ],
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "translatable",
+      "basic": "string",
+      "desc": "target type in which this one will be translated during CSI Record",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "definition",
+      "typeArray": "CSIPropertyDefinition",
+      "desc": "Definition of the declarative type"
+    }
+  ]
+}

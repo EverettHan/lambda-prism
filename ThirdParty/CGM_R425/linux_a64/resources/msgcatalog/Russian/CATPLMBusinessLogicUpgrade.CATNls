@@ -1,0 +1,18 @@
+<meta charset="UTF-8"/>
+CATPLMBusinessLogicUpgrade.Alias="Бизнес-логика PLM для поддержки обновления данных";
+CATPLMBusinessLogicUpgrade.Description="Определение открытий для обновления данных при необходимости.";
+
+INFRA_UnifiedTypingMigration.Alias="Унифицированная миграция типов: сопоставление типов и атрибутов";
+INFRA_UnifiedTypingMigration.Description="Позволяет вводить бизнес-правила для сопоставления типа и правил выражений, используемых во время миграции данных от прежней типизации к унифицированной. Чтобы обновить PVS (фильтр просмотра продуктов) и сохранить запросы";
+INFRA_UnifiedTypingMigration.ThisObject.Alias="Тип во входных данных (PVS или запрос)";
+INFRA_UnifiedTypingMigration.ThisObject.Description="Фиктивный объект, тип которого представляет собой тип прежней типизации, сохранен в запросе или PVS, который необходимо сопоставить.";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Alias="Имя типа по умолчанию для использования в запросе вместо прежнего";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Description="Целевой тип по умолчанию во входных данных.";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Alias="Список имен атрибутов";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Description="Список имен атрибутов во входных данных, которые относятся к данному запросу, для обновления.";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Alias="Имя типа для использования в запросе вместо прежнего";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Description="Введите имя этого типа, если необходимо изменить тип данного запроса.";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="Список имен атрибутов (потенциально сопоставленных)";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="Список должен быть того же размера, что и SavedAttributes во входных данных. С теми же именами, если атрибуты сохраняются, а не сопоставляются или переименовываются. Имя может быть пустым, если атрибут забыт.";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="Список имен расширений, куда помещается атрибут после миграции";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="Список должен быть того же размера, что и MappedAttributes в выходных данных. С пустыми именами, если атрибуты сохраняются для заданного типа или имени расширения, если атрибут находится в расширении после миграции.";

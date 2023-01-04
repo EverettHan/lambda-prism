@@ -1,0 +1,49 @@
+{
+  "grammarVersion": 2,
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {
+      "parameters": [
+        {
+          "label": "definition",
+          "basic": "string",
+          "desc": "Declarative file (JSON) of the workflow"
+        }
+      ]
+    },
+    "answers": {
+    }
+  },
+  "onCommandParameters": {
+    "in": {
+      "parameters": [
+        {
+          "label": "dataIn",
+          "type": "Parameters",
+          "desc": "The parameters used by the workflow"
+        }
+      ]
+    },
+    "answers": {
+      "parameters": [
+        {
+          "label": "dataOut",
+          "type": "Parameters",
+          "desc": "Output data of workflow"
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  },
+  "throwError": {
+    "type": "CSIWorkflowError"
+  }
+}

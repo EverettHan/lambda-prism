@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Maturity>
+<Graph InitialState="InWork">
+
+    <ModelerType Name="DELFmiFunctionReference" />
+
+    <State Name="InWork" >
+        <BehaviorControl >
+            <NotVersionable />
+        </BehaviorControl>
+        <OnEvent Name="Promote" Target="UnderRel" />
+    </State>
+
+    <State Name="UnderRel" >
+        <BehaviorControl >
+            <NotVersionable />
+            <NotEditable />
+        </BehaviorControl>
+        <OnEvent Name="Promote" Target="Approved" />
+        <OnEvent Name="Demote" Target="InWork" />
+    </State>
+
+    <State Name="Approved" >
+        <BehaviorControl >
+            <NotRemovable />
+            <NotVersionable />
+            <NotEditable />
+        </BehaviorControl>
+        <OnEvent Name="Promote" Target="Released" />
+        <OnEvent Name="Demote" Target="UnderRel" />
+    </State>
+
+    <State Name="Released" >
+        <BehaviorControl >
+            <NotRemovable />
+            <NotEditable />
+        </BehaviorControl>
+    </State>
+
+</Graph>
+</Maturity>

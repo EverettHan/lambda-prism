@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>_sbCbNode</NAME>
+  <FULL_SEMANTIC>FullNode</FULL_SEMANTIC>
+  <UNIFORM>
+    <NAME>WorldMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>WorldInverseTransposeMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>WorldViewMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>WorldViewInverseTransposeMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>
+
+
+<!--{ 
+    "Name" : "cbNode", 
+	"Parameters" : 
+	[
+		{"Semantic" : "WorldMatrix", "Type" : "Float4x4" },
+		{"Semantic" : "WorldInverseTransposeMatrix", "Type" : "Float4x4" }
+	]
+}-->

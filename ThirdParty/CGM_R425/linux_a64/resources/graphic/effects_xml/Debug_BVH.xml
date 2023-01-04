@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <ACCELERATION_STRUCTURE>
+    <NAME>TopLevelAS</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </ACCELERATION_STRUCTURE>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+    <STAGES>RaygenStage ClosestHitStage AnyHitStage MissStage</STAGES>
+  </CONSTANT_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>Vertices</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_Vertices</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <IS_BUFFER_REFERENCE>true</IS_BUFFER_REFERENCE>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>ObjectDesc</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>uniformsAddr</NAME>
+        <TYPE>uint64_t</TYPE>
+      </MEMBER>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>ObjectDesc_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_ObjectDesc</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>ObjectFormat</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>ObjectFormat_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_ObjectFormat</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>Indices16</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>uint16_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_Indices16</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <IS_BUFFER_REFERENCE>true</IS_BUFFER_REFERENCE>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>Indices32</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_Indices32</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <IS_BUFFER_REFERENCE>true</IS_BUFFER_REFERENCE>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>MaterialBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>MaterialBuffer_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_MaterialBuffer</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>PerMatrixCbOffsets</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>data[]</NAME>
+        <TYPE>PerMatrixCbOffsets_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <INSTANCE_NAME>g_PerMatrixCbOffsets</INSTANCE_NAME>
+    <ALIGNMENT_RULES>scalar</ALIGNMENT_RULES>
+    <STAGES>RaygenStage ClosestHitStage</STAGES>
+  </STRUCTURED_BUFFER>
+  
+  <SAMPLER>
+    <NAME>positions</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>texture2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>texture2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>DebugMap</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>rgba8</FORMAT>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>RaygenStage</STAGES>
+  </STORAGE_IMAGE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    
+    <RAYTRACING_PASS>
+      <NAME>Default</NAME>
+
+      <RAYGEN_STAGE>
+        commonHelpers ubos
+        PostEffect_Incl_Payload
+        Debug_BVH_RS
+      </RAYGEN_STAGE>
+      <MISS_STAGE>
+        PostEffect_Incl_Payload
+        Debug_BVH_MS
+      </MISS_STAGE>
+
+    </RAYTRACING_PASS>
+  </TECHNIQUE>
+</EFFECT>

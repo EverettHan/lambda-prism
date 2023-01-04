@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CATAfrBasicStyle.CATSYPStyle"/>
+     <ResourceDictionary Source="CATAfrPLMCompassEastWidgets.CATSYPStyle"/>   
+  </Resources>
+  <!--Empty Compass-->
+  <Template syp:name="Default" Target="CATAfrPLMCompassEast">
+
+
+    <!--<CATVidLayGrid RequestedMinimumDimension="1 113" GridWeight="col1=1">
+      <CATVidSpacer RequestedMinimumDimension="8 1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidLayGrid GridWeight="row2=1 row0=1 col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL">
+        <CATVidSpacer RequestedMinimumDimension="1 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtlTab syp:Template="PLMCompassTab"  HideTabBarWhenOnlyOnePageFlag="1"   TabPageSelected="@HandleEvent" Items="@TabPageItems" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+        <CATVidSpacer syp:name="Spacer" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+        <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+      </CATVidLayGrid>
+        --><!-- space for the axis system in the bottom-right corner --><!--
+      <CATVidSpacer RequestedMinimumDimension="85 5" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+    </CATVidLayGrid>-->
+
+    <CATVidLayGrid  GridWeight="row0=1 col1=1">
+
+      <!--IR-105714V6R2012x : Pas d'espace-->
+      <!--Left border of east toolbar-->
+      <!--<CATVidLayGrid  GridWeight="row0=1" RequestedMinimumDimension="@CentralEastBorderDimension" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="CompassEastLeftLayer" RequestedMinimumDimension="@CentralEastBorderDimension" Name="CompassWestDesignRightLayer" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+          <CATVidGPSquare syp:name="IP_CompassEastLeftBackground" Name="IP_CompassEastLeftBackground"
+                          Texture="Compass/East/CompassEastLeftBackground.png"
+                          ColorizeBlackPixelTo="0.5 255" TextureAlpha="255"/>
+          <CATVidGPSquare syp:name="IP_CompassEastLeftForeground" Name="IP_CompassEastLeftForeground"
+                          ColorizeBlackPixelTo="0.1 255"
+                        Texture="Compass/East/CompassEastLeftForeground.png" TextureAlpha="255"/>
+        </CATVidLayLayer>
+      </CATVidLayGrid>-->
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidLayGrid  syp:name="TabGrid" GridWeight="row0=1 col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+        <CATVidSpacer RequestedMinimumDimension="1 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidCtlTab syp:Template="PLMCompassTabNewStyle" syp:name="Tab" FocusableFlag="0" HideTabBarWhenOnlyOnePageFlag="1"   TabPageSelected="@HandleEvent" Items="@TabPageItems Mode=OneWayToSource" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+        <CATVidSpacer  syp:name="Spacer" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>         
+      </CATVidLayGrid> 
+       <!--space for the axis system in the bottom-right corner--> 
+      <!--<CATVidSpacer RequestedMinimumDimension="85 5" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>-->
+      <CATVidSpacer RequestedMinimumDimension="1 5" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+
+      <!--<CATSYPTrigger Property="SimulationModeFlag" Value="1">        
+        --><!--<CATSYPSetter Property="GridWeight" TargetName="TabGrid" Value="row0=1 col0=1"/>--><!--        
+        <CATSYPSetter Property="VisibleFlag" TargetName="Spacer" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationModeFlag" Value="0">
+        --><!--<CATSYPSetter Property="GridWeight" TargetName="TabGrid" Value="row0=1 col1=1"/>--><!--
+        <CATSYPSetter Property="VisibleFlag" TargetName="Spacer" Value="1"/>
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="CompassPosition" Value="Docked">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Tab" Value="113 131"/><!--+ 18 14 dimension de la tab bar--> 
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CompassPosition" Value="Anchored">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Tab" Value="85 85"/>
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+    
+  </Template>
+
+  <Template syp:name="SignatureEast" Target="CATAfrPLMCompassEast">
+        <CATVidCtlTab syp:Template="PLMCompassTabNewStyle" syp:name="Tab" FocusableFlag="0" HideTabBarWhenOnlyOnePageFlag="1"   TabPageSelected="@HandleEvent" Items="@TabPageItems Mode=OneWayToSource" />
+  </Template>
+  
+
+</Styles>

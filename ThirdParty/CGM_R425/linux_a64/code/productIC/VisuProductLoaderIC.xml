@@ -1,0 +1,29 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" comment = "AZX/OU4 21.06.2021 VisuInfra product loader" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENIntelTBB"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationEngines"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <buildtimeOnlyPrereq access = "Protected" comment = "2021.03.04 AZX/LMA9 Fast json parser for DELMIA product loader" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENRapidjson"/>
+  <buildtimeOnlyPrereq access = "Protected" comment = "2018.12.13 AZX/I2S Space Mouse Driver" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENBoost"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGCoreUtils"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "SGInfra"/>
+  <authorize access = "Private" name = "VisuPLMHelpers"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "VisualizationBase.tst"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" name = "VisuDebugTools"/>
+  <authorize access = "Private" name = "VisualizationNRE.tst"/>
+  <authorize access = "Private" name = "VisuBatchInfra.tst"/>
+  <authorize access = "Protected" name = "DELPXPSerialItemRendering"/>
+  <authorize access = "Private" comment = "AZX/FDT1 21.09.2021 ProductLoader packaging changes." name = "VisStreamCSI"/>
+  <attached name = "Visualization.tst"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

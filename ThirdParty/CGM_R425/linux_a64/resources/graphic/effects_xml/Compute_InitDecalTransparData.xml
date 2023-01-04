@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  
+  <STRUCTURED_BUFFER>
+    <NAME>DecalTransparData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_DecalTransparData[]</NAME>
+        <TYPE>DecalTransparData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>coherent</QUALIFIER>
+      <QUALIFIER>restrict</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <COMPUTE_PASS>
+      <NAME>Pass0</NAME>
+      <COMPUTE_STAGE>Compute_InitDecalTransparData</COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+</EFFECT>

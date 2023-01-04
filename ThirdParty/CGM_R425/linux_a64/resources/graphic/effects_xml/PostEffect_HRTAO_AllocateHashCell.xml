@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <DST_STATE_GROUP>
+    <NAME>DepthNoTestNoWrite</NAME>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>NoBlend</NAME>
+    <SEPARATE_BLEND>false</SEPARATE_BLEND>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapBufferKey</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMapKeys[]</NAME>
+        <TYPE>HashRecordKey</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapBufferContrib</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMap[]</NAME>
+        <TYPE>HashRecordContribSlots</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapVisualizationDataBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMapVisualizeData</NAME>
+        <TYPE>HashMapVisualizeData</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+  </STRUCTURED_BUFFER>
+
+  <STORAGE_IMAGE>
+    <NAME>positionNormals</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>!IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DMS</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <OPTION_GRAMMAR>IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <TECHNIQUE>
+    <NAME>R</NAME>
+    <PASS>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>HRTAO_GBUFFER_FETCH</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <NAME>Default</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>
+        PostEffect_HRTAO_Incl_Common
+        PostEffect_HRTAO_Incl_CommonSpatialHash
+        PostEffect_HRTAO_Incl_HashDataType_Shadows
+        PostEffect_HRTAO_Incl_HashmapVisualizeData
+        PostEffect_HRTAO_Incl_HashKeyAccess
+        PostEffect_HRTAO_Incl_HashDataAccess_Shadows
+        PostEffect_HRTAO_Incl_AllocateHashCellCommon
+        PostEffect_HRTAO_AllocateHashCell
+      </FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>RGB</NAME>
+    <PASS>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>HRTAO_GBUFFER_FETCH</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <NAME>Default</NAME>
+      <BLEND_STATE>NoBlend</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>DepthNoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>
+        PostEffect_HRTAO_Incl_Common
+        PostEffect_HRTAO_Incl_CommonSpatialHash
+        PostEffect_HRTAO_Incl_HashDataType_Color
+        PostEffect_HRTAO_Incl_HashmapVisualizeData
+        PostEffect_HRTAO_Incl_HashKeyAccess
+        PostEffect_HRTAO_Incl_HashDataAccess_Color
+        PostEffect_HRTAO_Incl_AllocateHashCellCommon
+        PostEffect_HRTAO_AllocateHashCell
+      </FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+</EFFECT>

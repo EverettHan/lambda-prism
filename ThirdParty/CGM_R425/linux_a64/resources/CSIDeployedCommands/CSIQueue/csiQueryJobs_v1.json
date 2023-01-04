@@ -1,0 +1,79 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Query Jobs from the database",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "query",
+          "basic": "string",
+          "desc": "json describing the query to run"
+        },
+        {
+          "label": "count",
+          "basic": "bool",
+          "desc": "Execute a SELECT COUNT(*) statement instead of selecting the rows",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "includeJobData",
+          "basic": "bool",
+          "desc": "Retrieve Job Data (input/progress/answer) in addition to job properties",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "limit",
+          "basic": "int32",
+          "desc": "maximum number of rows to return",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "offset",
+          "basic": "int32",
+          "desc": "offset of the first row to return.",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "orderBy",
+          "typeArray": "CSIQueryOrderField",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "nbJobs",
+          "basic": "int32"
+        },
+        {
+          "label": "jobs",
+          "typeArray": "CSIJobProperties",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" name = "Communications"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" name = "XMLParserItf"/>
+  <authorize access = "Private" comment = "TOREMOVE Wrong pattern for reexposition through PLMCommandInfraClient " meta = "TOREMOVE" name = "CATPLMIndexItfImpl"/>
+  <authorize access = "Protected" name = "PLMPosBase"/>
+  <authorize access = "Protected" name = "PLMPosBase.tst"/>
+  <authorize access = "Protected" name = "PLMPosClient"/>
+  <authorize access = "Protected" name = "PLMPosClient.tst"/>
+  <authorize access = "Protected" name = "CATPLMSessionDebug"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

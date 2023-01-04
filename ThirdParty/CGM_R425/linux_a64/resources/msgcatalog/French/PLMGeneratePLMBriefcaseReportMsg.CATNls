@@ -1,0 +1,72 @@
+<meta charset="UTF-8"/>
+//=======================================================================================
+// WARNING: YWE 18:09:24 SINGLE-CODE 2015x => NO LOCAL CHANGE EXPECTED - USE IMPORT  
+//=======================================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2013-2014
+// Messages for utilities to generate XML reports
+//
+//==================================================================================
+// January 2013  NLS declaration for PLM Briefcase report generation utilities        Jean-Luc Medioni
+//==================================================================================
+
+// -------------------------------------------------
+// --- PLMGeneratePLMBriefcaseReport utility messages
+// -------------------------------------------------
+
+UtilityInput.Prolog="***** Paramètres *****\n";
+UtilityInput.InputBriefcaseFile=" *** Fichier PLMBriefcase d'entrée : /p1\n";
+UtilityInput.InputBriefcaseFolder=" *** Dossier PLMBriefcase d'entrée : /p1\n";
+UtilityInput.OutputReportFile=" *** Fichier de sortie du rapport XML :  /p1\n";
+UtilityInput.XslReportFile=" *** Fichier alternatif XSL :        /p1\n";
+UtilityInput.SummaryReportFile=" *** Fichier récapitulatif de rapport texte :  /p1\n";
+UtilityInput.Epilog="**********************\n\n";
+UtilityInput.Extension=" *** Extension affichée\n";
+UtilityInput.AllAttributes=" *** Tous les attributs DS affichés\n";
+UtilityInput.CustoAttributes=" *** Attributs client affichés\n";
+UtilityInput.OtherOid=" *** ID principal et ID logique affichés\n";
+UtilityInput=" *** Activer le filtrage /p1 avec le paramètre défini sur /p2\n";
+UtilityInput.Other=" *** /p1: /p2\n";
+UtilityInput.Check=" *** Certaines vérifications seront exécutées.\n";
+UtilityInput.Iteration=" *** Numéro d'itération CD et EE affiché.\n";
+UtilityInput.JsonOutputFormat=" *** Format de sortie JSON.\n";
+UtilityInput.XmlOutputFormat=" *** Format de sortie XML.\n";
+
+PR_HELP_GENERAL_REPORT="Utilisation : PLMGeneratePLMBriefcaseReport  <indicateurs comme décrits ci-dessous>\n";
+PR_HELP_OUTPUT="-output <ReportFileName>        où <ReportFileName> représente le fichier de sortie du rapport XML. (Requis)\n";
+PR_HELP_INPUT="-input <BriefcaseFileName>      où <BriefcaseFileName> représente le fichier d'entrée PLMBriefcase à analyser ; il s'agit d'un fichier 3dxml ou PLMBriefcase.\n                                (l'une des 2 options -input ou -inFolder est obligatoire)\n";
+PR_HELP_INPUT_FOLDER="-inFolder <BriefcaseFolderName> où <BriefcaseFolderName> est le dossier d'entrée pour analyser tous les fichiers PLMBriefcase. Cette option est incompatible avec -input.\n";
+PR_HELP_XSL="-xsl <XslFileName>              où <XslFileName> est le fichier XSL qui sera utilisé dans le rapport XML.\n";
+PR_HELP_SUMMARY="-summary <TextFileName>         où <TextFileName> est le fichier de sortie récapitulatif de rapport texte. (Facultatif)\n";
+PR_HELP_FILTER_BY="-filterBy <Type> <Value>        où <Type> définit l'option de filtrage à utiliser et Value représente le paramètre de l'opération de filtrage.\n";
+PR_HELP_EXTENSION="-extension                      pour afficher des informations sur l'extension. (Facultatif)\n";
+PR_HELP_DS_ATTRIBUTES="-cd                             pour afficher tous les attributs des données de base et non uniquement les attributs de base. (Facultatif)\n";
+PR_HELP_CUSTO_ATTRIBUTES="-ee                             pour afficher tous les attributs d'entreprise étendue exposés. (Facultatif)\n";
+PR_HELP_OTHER_OID="-oid                            pour afficher l'ID principal et l'ID logique en tant qu'attributs. (Facultatif)\n";
+PR_HELP_CHECK="-check                         pour activer une vérification de PLMBriefcase.\n";
+PR_HELP_ITERATION="-iteration                      pour afficher le numéro d'itération concernant les pièces CD et EE.\n";
+PR_HELP_JSON="-json                           pour utiliser le format de sortie JSON pour la génération des rapports.\n";
+PR_HELP_XML="-xml                           pour utiliser le format de sortie XML pour la génération des rapports.\n";
+PR_HELP_HELP="-h                              l'aide\n";
+
+PR_REPORT_FAILED="ERROR : echec de l'exécution de PLMGeneratePLMBriefcaseReport\n";
+PR_REPORT_SUCCEEDED="L'exécution de PLMGeneratePLMBriefcaseReport a réussi\n";
+
+//PR_LOGIN_SUCCESS        = "** Login Successful\n" ;
+//PR_REP_PACKAGES_SUCCESS = "** Successfully obtained replication packages. Number of packages being processed: /p1.\n" ;
+
+PR_DUPLICATE_PARAM="Le paramètre /p1 apparaît plusieurs fois. Echec.";
+PR_MISSING_INPUT="Le mot clé /p1 nécessitait au moins une valeur, qui n'a pas été fournie. Echec.\n";
+PR_MISSING_PARAM="Le paramètre requis /p1 n'a pas été spécifié. Echec.\n";
+PR_NO_INPUT_DEFINED="Au moins un des 2 mots-clés -input ou -inFolder est requis pour définir le PLMBriefcase à analyser.  Echec.\n";
+PR_INCOMPATIBLE_INPUT="Les 2 mots-clés /p1 & /p2 sont incompatibles ; sélectionnez un seul mot-clé et relancez l'exécution.  Echec.\n";
+PR_PLMBRIEFCASE_FOUND="ERREUR : le répertoire /p1 ne contient aucun PLMBriefcase ; par conséquent, le rapport sera vide.\n";
+
+// ---> Error messages
+
+UtilityInput.FileNotFound="ERROR : fichier /p1 associé au mot clé /p2 introuvable.\n";
+UtilityInput.NotPLMBriefcase="ERROR : Le fichier /p1 n'est pas reconnu comme un fichier PLMBriefcase (il doit porter l'extension .3dxml ou .PLMBriefcase).\n";
+UtilityInput.NoPLMBriefcaseIn3dxml="ERROR : impossible d'ouvrir le fichier 3dxml /p1 ou le fichier 3dxml ne contient pas de données de création.\n";
+UtilityInput.NotXslFileType="ERREUR : Le fichier /p1 n'est pas reconnu comme un fichier XSL (il doit porter l'extension .xsl).\n";
+UtilityInput.FileWriteAccessFail="ERREUR : impossible d'écrire dans /p1.\n";
+UtilityInput.NotValidFilterOption="AVERTISSEMENT : /p1 n'est pas reconnu comme une option de filtre valide (la valeur a été définie sur /p2).\n";
+

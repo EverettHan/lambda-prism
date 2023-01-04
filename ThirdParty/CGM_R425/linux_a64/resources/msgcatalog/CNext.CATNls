@@ -1,0 +1,39 @@
+<meta charset="UTF-8"/>
+// StatusBar
+StatusBar.Name = "Status Bar"; //  @validatedUsage AJT 13:10:10 Status Bar
+StatusBar.TitleBeginning = "Welcome to ";
+StatusBar.Class2.LongHelp =
+"The status bar contains:
+  - An information icon to display the history of all the long help messages displayed throughout your session.
+  - An icon to the right of the box to make the current dialog box appear or disappear.  
+  - An area to the left of the box displaying the names of the dialog box options for which power input is possible. This is relevant only for editable boxes and spinners,
+    not for lists. The default values for those options are separated by commas. 
+	The power input box lets you:
+	 - Run commands. For example, entering \"c:open\" launches the \"open\" command.
+	 - Select objects (using a simple language) based on color, type, name and set criteria.
+	 - Enter content more easily by replacing certain dialog boxes."; //  @validatedUsage AJT 13:10:10 status bar
+
+StatusBar.Class1.LongHelp =
+"Status bar
+
+The status bar contains
+the current information or dialog message."; //  @validatedUsage AJT 13:10:10 Status bar
+
+// Message Log
+MessageLog.Title = "Log Messages";
+MessageLog.BOK = "Close";
+
+// Error panel
+ErrorCatcher.Title = "Runtime exception";
+ErrorCatcher.Message = "An error occurred in the following stacktrace:";
+
+// Help About
+HelpAboutMenu  = "About ";
+HelpAboutTitle = "About ";
+
+// Html browser window title
+HtmlBrowser.title = " Documentation ";
+
+Application.Student.Title = "for Student";
+Application.Admin.Title = " : Administration Mode";
+Application.Maintenance.Title = " : Maintenance Mode";

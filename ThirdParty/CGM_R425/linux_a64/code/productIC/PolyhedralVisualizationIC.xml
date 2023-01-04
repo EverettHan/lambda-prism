@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PolyhedralObjects"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Private" expose = "DoNotExposePrereq" name = "VisualizationCore"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Private" expose = "DoNotExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Private" expose = "DoNotExposePrereq" name = "VisualizationSceneGraph"/>
+  <attached name = "CATFuzzyOperators.tst"/>
+  <attached name = "PolyhedralObjects.tst"/>
+  <attached name = "PolyhedralOperators.tst"/>
+  <attached name = "PolyhedralVisuOperators.tst"/>
+  <authorize access = "Private" name = "PolyhedralGPGPU.tst"/>
+  <authorize access = "Private" name = "PolyhedralVisuToolkit.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

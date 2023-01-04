@@ -1,0 +1,32 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIQueuingModule"
+    }
+  },
+  "desc": "Get the job custom Properties",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "jobId",
+          "basic": "string"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "customProperties",
+          "basic": "string"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

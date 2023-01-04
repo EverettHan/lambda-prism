@@ -1,0 +1,20 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "LiteralFeatures.tst"/>
+  <attached name = "LiteralFeaturesRSW.tst"/>
+  <attached name = "Magnitude.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" name = "ObjectModelerInterfaces"/>
+  <prerequisite access = "Protected" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <authorize access = "Private" comment = " TO REMOVE  " name = "GenerativeKnowledge.tst"/>
+  <authorize access = "Private" name = "LiteralFeatures"/>
+  <authorize access = "Private" name = "LiteralFeatures.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

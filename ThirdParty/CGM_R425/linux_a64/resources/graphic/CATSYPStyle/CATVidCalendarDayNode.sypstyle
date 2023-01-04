@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template Target="CATVidCalendarDayNode" syp:name="CalendarDayNode">
+    <CATVidLayGrid RequestedMinimumDimension="26 22">
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="26 22">
+        <CATVidGPSquare syp:name="BgGP" Color="249 249 249 255" RequestedMinimumDimension="26 22"/>
+        <CATVidLayGrid RequestedMinimumDimension="24 20">
+          <CATVidCtlButtonIcon syp:name="DayCellButton" CATVidLayGrid.IndexedConstraints="x=0 y=0"  Release="@HandleReleaseEvent" RequestedMinimumDimension="24 20" CheckMode="1" OffTexture="CATVidDayNodeCell_Off.png" OnTexture="CATVidDayNodeCell_On.png" OverTexture="CATVidDayNodeCell_Over.png" OnAndOverTexture="CATVidDayNodeCell_OnAndOver.png" OnPressedTexture="CATVidDayNodeCell_OnAndOver.png"  />
+          <CATVidGPSquare syp:name="WeekendIconGP" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT" Color="255 255 255 255" ContentsMargins="1 1 1 1 " EnableFlag="0" MinificationFilter="Linear" RequestedMinimumDimension="6 6" Texture="WeekendIconForDayNode.png" VisibleFlag="@WeekendIconDisplay"/>
+          <CATVidGPLabel syp:name="DateLabel" Text="@DayCellLabelText" TextColor="@DayCellLabelColor" CATVidLayGrid.IndexedConstraints="x=0 y=0" EnableFlag="1" FontName="Arial" HorizontalAlignment="1" RequestedMinimumDimension="24 20" TextHeight="13" VerticalAlignment="1" VisibleFlag="1" CropPolicy="NoCrop"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+</Styles>

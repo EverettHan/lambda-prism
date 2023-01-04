@@ -1,0 +1,91 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <attached name = "CATCloudEditorResources.tst"/>
+  <attached name = "CATCloudEditorFeatures.tst"/>
+  <attached name = "CATCloudEditorUI.tst"/>
+  <attached name = "CATCloudEditorWorkbench.tst"/>
+  <attached name = "CATCloudQsrUI.tst"/>
+  <attached name = "CATCloudQsrWorkbench.tst"/>
+  <attached name = "CATCloudStlWorkbench.tst"/>
+  <attached name = "CATCloudReverseRSW.tst"/>
+  <attached name = "CATTerrainModeler.tst"/>
+  <attached name = "CATTerrainUI.tst"/>
+  <attached name = "CATTerrainWorkbench.tst"/>
+  <attached name = "PolyhedralOperatorsRvs.tst"/>
+  <authorize access = "Protected" comment = "for TOSCA's polyhedral result before the subdivision conversion (PFV's request/06-may-2019)" name = "CAT3DPrintingDesignUI"/>
+  <authorize access = "Protected" comment = "for CATIA to City - DTM import (VOI's request/22-oct-2019)" name = "CATCCTGlobeConnector"/>
+  <authorize access = "Protected" name = "CATCloudCGMUtilities"/>
+  <authorize access = "Protected" name = "CATCloudEditorFeatures"/>
+  <authorize access = "Protected" name = "CATCloudEditorResources"/>
+  <authorize access = "Protected" name = "CATCloudEditorUI"/>
+  <authorize access = "Protected" name = "CATCloudImportExport"/>
+  <authorize access = "Protected" name = "CATCloudQsrFeatures"/>
+  <authorize access = "Protected" name = "CATCloudQsrResources"/>
+  <authorize access = "Protected" name = "CATCloudQsrUI"/>
+  <authorize access = "Protected" name = "CATCompositesUI"/>
+  <authorize access = "Protected" name = "CATDigitizedMorphingAppUI"/>
+  <authorize access = "Protected" name = "CATDigitizedMorphingUI"/>
+  <authorize access = "Protected" comment = "for Flow Driven Generative Design (GDF) (PFV's request/04-jul-2019)" name = "CATFuncGenDesignCommonUI"/>
+  <authorize access = "Protected" name = "CATGVCExactGeomAlgos"/>
+  <authorize access = "Protected" name = "CATGVCTessellatedGeomAlgos"/>
+  <authorize access = "Protected" name = "CATHealingAssistantAlgos"/>
+  <authorize access = "Protected" name = "CATMaterialRemovalSimulation"/>
+  <authorize access = "Protected" name = "CATPolyMeshOperators"/>
+  <authorize access = "Protected" name = "CATR3DOperators"/>
+  <authorize access = "Protected" name = "CATStylingResources"/>
+  <authorize access = "Protected" name = "CATStylingUI"/>
+  <authorize access = "Protected" name = "CATSubdivisionMeshGenerator"/>
+  <authorize access = "Protected" comment = "for Point Pair Feature improvement (JLH's request/08-sep-2021)" name = "CATSurfacicPolyFusion"/>
+  <authorize access = "Protected" name = "CATTerrainModeler"/>
+  <authorize access = "Protected" name = "CATTerrainUI"/>
+  <authorize access = "Protected" name = "DELAdditiveMfgAlgos"/>
+  <authorize access = "Protected" name = "DELMachiningCmd"/>
+  <authorize access = "Protected" name = "DELPointCloudModeler"/>
+  <authorize access = "Protected" name = "KnowledgeCGMFunctions"/>
+  <authorize access = "Protected" name = "MachinistAlgos"/>
+  <authorize access = "Protected" name = "MachinistAlgosBase"/>
+  <authorize access = "Protected" name = "MachinistAlgosServices"/>
+  <authorize access = "Protected" name = "MachinistAlgosServicesWTT"/>
+  <authorize access = "Protected" name = "MachinistAlgosWTT"/>
+  <authorize access = "Protected" name = "MachiningBasicAlgos"/>
+  <authorize access = "Protected" name = "MachinistOpeInfra"/>
+  <authorize access = "Protected" name = "MachinistOperations"/>
+  <authorize access = "Protected" name = "Manufacturing"/>
+  <authorize access = "Protected" name = "ManufacturingCommands"/>
+  <authorize access = "Protected" name = "Milling2DServices"/>
+  <authorize access = "Protected" name = "Milling2DToolPath"/>
+  <authorize access = "Protected" name = "Milling3DServices"/>
+  <authorize access = "Protected" name = "OOCPointCloudOperators"/>
+  <authorize access = "Protected" name = "PolyhedralOperatorsRvs"/>
+  <authorize access = "Protected" name = "PrismaticMachining"/>
+  <authorize access = "Protected" name = "ProbingOperations"/>
+  <authorize access = "Protected" name = "SurfacicImplicitModelling"/>
+  <authorize access = "Protected" name = "SurfacicMathematics"/>
+  <authorize access = "Protected" name = "SurfacicTopoOperators"/>
+  <authorize access = "Protected" name = "TessellatedDataExchangeInput"/>
+  <authorize access = "Protected" name = "CAT3DDsp1.tst"/>
+  <authorize access = "Protected" name = "CATCloudBasicResources.tst"/>
+  <authorize access = "Protected" name = "CATCloudEditorFeatures.tst"/>
+  <authorize access = "Protected" name = "CATCloudEditorResources.tst"/>
+  <authorize access = "Protected" name = "CATCloudEditorUI.tst"/>
+  <authorize access = "Protected" name = "CATCloudImportExport.tst"/>
+  <authorize access = "Protected" name = "CATCloudQsrFeatures.tst"/>
+  <authorize access = "Protected" name = "CATCloudQsrResources.tst"/>
+  <authorize access = "Protected" name = "CATCloudQsrUI.tst"/>
+  <authorize access = "Protected" name = "CATMaterialRemovalSimu.tst"/>
+  <authorize access = "Protected" name = "CATR3DOperators.tst"/>
+  <authorize access = "Protected" name = "CATSubdivisionAdvTopOper.tst"/>
+  <authorize access = "Protected" name = "CATSubdivisionMeshGen.tst"/>
+  <authorize access = "Protected" name = "CATSubdivisionTopTopoOpe.tst"/>
+  <authorize access = "Protected" name = "MachinistAlg1.tst"/>
+  <authorize access = "Protected" name = "MachinistOperations.tst"/>
+  <authorize access = "Protected" name = "PolyhedralOperatorsRvs.tst"/>
+  <authorize access = "Protected" name = "SurfacicAdvancedTopoOpe.tst"/>
+  <authorize access = "Protected" comment = "for Urban Reconstruction: lexicogrphic mesher and other stuffs (JVY's request/15-nov-2019)" name = "UrbanReconstruction.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

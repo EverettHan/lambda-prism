@@ -1,0 +1,38 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "returns success is the two parameters are equals",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "lhs",
+          "type": "Parameters",
+          "desc": "The first parameters to compare"
+        },
+        {
+          "label": "rhs",
+          "type": "Parameters",
+          "desc": "The second parameters to compare"
+        }
+      ]
+    },
+    "out": {
+    }
+  },
+  "throwError": {
+    "parameters": [
+      {
+        "label": "differences",
+        "basicArray": "string",
+        "desc": "List of differences between the two parameters"
+      }
+    ]
+  }
+}

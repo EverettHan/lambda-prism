@@ -1,0 +1,12 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Private" name = "DSYInsInfra"/>
+  <prerequisite access = "Protected" name = "SystemTS"/>
+  <prerequisite access = "Protected" name = "System"/>
+  <authorize access = "Private" name = "DSYInsSetup"/>
+  <authorize access = "Private" name = "DSYInsInfra.tst"/>
+  <attached name = "DSYInsInfra.tst"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

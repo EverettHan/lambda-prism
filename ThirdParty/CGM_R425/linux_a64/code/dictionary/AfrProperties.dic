@@ -1,0 +1,26 @@
+# -----------------------------------------------------------------
+# Barre de progression dans Edition/Propriétés
+# -----------------------------------------------------------------
+#endif
+CATLoadTabPagesCmd	CATIProgressTask	libCATAfrProperties
+# -----------------------------------------------------------------
+
+CATSettingsGraphModel	            CATITreeViewModel	            libCATAfrProperties
+CATSettingsGraphModel	            CATITreeViewRecordReplayModel   libCATAfrProperties
+CATUserSettingsCAfrTreeController   CATICAfrComponentController     libCATAfrProperties
+
+CATAfrLock                          CATISYPIntrospectable           libCATAfrPreferenceModel
+CATAfrLock                          CATISYPPresenter                libCATAfrPreferenceModel
+CATAfrMorePreferences               CATISYPCollection               libCATAfrPreferenceModel
+CATAfrMorePreferences               CATISYPIntrospectable           libCATAfrPreferenceModel
+CATAfrMorePreferences               CATISYPPresenter                libCATAfrPreferenceModel
+CATAfrPrefItem                      CATISYPIntrospectable           libCATAfrPreferenceModel
+CATAfrPrefItem                      CATISYPPresenter                libCATAfrPreferenceModel
+CATAfrPrefItemGroup                 CATISYPCollection               libCATAfrPreferenceModel
+CATAfrPreferenceSAXParser           CATISAXContentHandler           libCATAfrPreferenceModel
+CATAfrPreferenceSAXParser           CATISAXErrorHandler             libCATAfrPreferenceModel
+CATCAfrPreferencePage               CATISYPCollection               libCATAfrPreferenceModel
+CATCAfrPreferencePage               CATISYPIntrospectable           libCATAfrPreferenceModel
+CATCAfrPreferencesController        CATICAfrComponentController     libCATAfrPreferenceModel
+CATAfrPrefPageStateToggle           CATISYPIntrospectable           libCATAfrPreferenceModel
+CATAfrPrefPageStateToggle           CATISYPPresenter                libCATAfrPreferenceModel

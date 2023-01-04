@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="Default" Target="CATVidCtlDataBlockFactoryEditor">
+    <CATVidLayGrid GridWeight="row0=1">
+
+      <CATVidCtlListView  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" HandleConsumedPressEventFlag="1" ViewMode="Multi" syp:name="DBFactoryEditorList">
+        <!--SelectionChanged="@OnSelectionChanged"-->        
+        <CATVidCtlListView.GridView>
+          <!--<CATVidGridViewColumn HeaderTitle="item number" Data ="item number" Width="5" CellDataTemplate="IndexDataTemplate" CellStyleSheet="VIDTestListViewModification.CATSYPStyle"/>-->
+          <CATVidGridViewColumn HeaderTitle="Property name" Id="Property name" Data ="PropertyName" EditableFlag="1" EditionTweakerDirectBindingFlag="1" Width="100" />
+          <CATVidGridViewColumn HeaderTitle="Property type" Id="Property type" Data="PropertyType" EditableFlag="1" EditionTweakerDirectBindingFlag="0" EditionMode="EditInPlace" Width="90"/>          
+          <CATVidGridViewColumn HeaderTitle="Property value" Id="Property value" Data="PropertyValue" EditableFlag="1" EditionTweakerDirectBindingFlag="1" EditionMode="EditOnClick" Width="140"/>
+          <CATVidGridViewColumn HeaderTitle="Property access mode" Id="Property access mode" Data="PropertyAccessMode" EditionTweakerDirectBindingFlag="1" EditableFlag="1" EditionMode="EditInPlace" Width="130"/>
+          <!--<CATVidGridViewColumn HeaderTitle="Property priority" Data="PropertyPriority" EditableFlag="1" Width="100"/>-->
+          <CATVidGridViewColumn HeaderTitle="Property tweak type" Id="Property tweak type" Data="PropertyTweakType" EditableFlag="1" EditionTweakerDirectBindingFlag="1" Width="130"/>
+        </CATVidCtlListView.GridView>
+      </CATVidCtlListView>
+
+      <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=1">
+        <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Label="+" Name="AddProperty" RequestedMinimumDimension="50 20" syp:Template="Button" Click="@OnAddProperty"/>
+        <CATVidCtlButton CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" Label="-" Name="RemoveProperty" RequestedMinimumDimension="50 20" syp:Template="Button" Click="@OnRemoveProperty"/>        
+      </CATVidLayGrid>
+      
+    </CATVidLayGrid>
+  </Template>
+ 
+</Styles>
+

@@ -1,0 +1,58 @@
+<meta charset="UTF-8"/>
+NameError.Diagnostic="Error with property name /P01 at line /P02.";
+NameError.Advice="Please check your property name.";
+
+TypeError.Diagnostic="Error with property type /P01 at line /P02.";
+TypeError.Advice="Please check your property type.";
+
+ValueError.Diagnostic="Error with property value /P01 at line /P02.";
+ValueError.Advice="Please check your property value.";
+
+AccessModeError.Diagnostic="Error with access mode /P01 at line /P02.";
+AccessModeError.Advice="Please check your property access mode.";
+
+EnumError.Diagnostic="Error with property access mode value '/P01' at line /P02.";
+EnumError.Advice="Please check your property access mode value.";
+
+PriorityError.Diagnostic="Error with property priority /P01 at line /P02.";
+PriorityError.Advice="Please check your property priority.";
+
+TweakTypeError.Diagnostic="Error with property tweak type /P01 at line /P02.";
+TweakTypeError.Advice="Please check your property tweak type.";
+
+FactoryPropertyAddError.Diagnostic="Error with adding property /P01 at line /P02.";
+FactoryPropertyAddError.Advice="Please check your property data consistency.";
+
+//Factory build failure errors
+FactoryNotFound.Diagnostic="The factory of property /P01 at line /P02 has not been found in a CATFactory dictionnary, or it can't be build from the found library.";
+FactoryNotFound.Advice="Please check your property data consistency.";
+
+EnumFactoryNotFound.Diagnostic="The enum factory of property /P01 at line /P02 has not been found."; 
+EnumFactoryNotFound.Advice="Please check your property data consistency.";
+
+ParsingError.Diagnostic="The parsing of the CATUnicodeString failed for property /P01 at line /P02.";
+ParsingError.Advice="Please check your property data consistency.";
+
+EmptyValueString.Diagnostic="The input CATUnicodeString is empty for property /P01 at line /P02.";
+EmptyValueString.Advice="Please check your property data consistency.";
+
+EmptyPropertyString.Diagnostic="The requested property type is empty for property /P01 at line /P02.";
+EmptyPropertyString.Advice="Please check your property data consistency.";
+
+BadNumberOfAttributes.Diagnostic="The input string of property /P01 at line /P02 has not the good number of attributes : once parsed.";
+BadNumberOfAttributes.Advice="Please check your property data consistency.";
+
+InvalidAttributes.Diagnostic="The input string of property /P01 at line /P02can not be parsed into correct attributes.";
+InvalidAttributes.Advice="Please check your property data consistency.";
+
+InvalidEnumValue.Diagnostic="The enum value of property /P01 at line /P02 is not valid.";
+InvalidEnumValue.Advice="Please check your property data consistency.";
+
+InvalidBitFieldValue.Diagnostic="The bitfield value of property /P01 at line /P02 is not valid.";
+InvalidBitFieldValue.Advice="Please check your property data consistency.";
+
+ResourceFileNotFound.Diagnostic="The resource file to use of property /P01 at line /P02 is not found.";
+ResourceFileNotFound.Advice="Please check your property data consistency.";
+
+XMLBuilderInternalError.Diagnostic="Error in the internal XML Builder for property /P01 at line /P02.";
+XMLBuilderInternalError.Advice="Please check your property data consistency.";

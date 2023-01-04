@@ -1,0 +1,69 @@
+<meta charset="UTF-8"/>
+DELLmiProductionTimeConstraintCnx="Zeitbedingung";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx="Zeitbedingungsbeziehung";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Abhängigkeitstyp";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Delay="Verzögerung";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Contiguity="Kontiguität";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_MaterialNeed="Materialbedarf";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_OptionalTimeConstraint="Optional";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.PLM_ExternalID="Titel";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_IsActive="Aktiv";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode="Verzögerungsmodus";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MinDelay="Mindestverzögerung";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MaxDelay="Max. Verzögerung";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.Synchro="Synchronisation";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint="Ressourcenbedingung";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.None="Kein(e)";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResources="Dieselben Ressourcen";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResourcesWithReservation="Dieselben Ressourcen mit Reservierung";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.DifferentResources="Verschiedene Ressourcen";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Abhängigkeitstyp";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType="Auflistung der Abhängigkeitstypen";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToStart="Ende bis Anfang";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToStart="Anfang bis Anfang";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToFinish="Ende bis Ende";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToFinish="Anfang bis Ende";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.PreviousCycle="Vorheriger Zyklus";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainingObject="Verknüpfung zum Zeitbedingungsobjekt";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainedObject="Verknüpfung zum zeitbedingten Objekt";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract="Abstrakte Kategorie";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract.V_ExecutionReturnCode="Ursachencode";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed="Fehlgeschlagen";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed.V_MaximumRetries="Maximale Anzahl an Wiederholungsversuchen";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintAlternative="Alternativ";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintScrapped="Ausschuss";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract="Abstrakte Überlagerungsmenge";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode="Ausführung des Rückkehrcodes";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MinQuantity="Mindestmenge";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MaxQuantity="Höchstmenge";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.Synchro="Synchronisation";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each="Jeweilige Überlagerungsmenge";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each.V_OverlapQty="Überlagerungsmenge";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area="Überlagerungsmenge - Bereich";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area.V_OverlapQty="Überlagerungsmenge";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length="Überlagerungsmenge - Länge";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length.V_OverlapQty="Überlagerungsmenge";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight="Überlagerungsmenge - Gewicht";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight.V_OverlapQty="Überlagerungsmenge";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume="Überlagerungsmenge - Volumen";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume.V_OverlapQty="Überlagerungsmenge";
+
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension="Produktflusserweiterung";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityIN="Eingabepriorität";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionIN="Eingabeverhältnis";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityOUT="Ausgabepriorität";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionOUT="Ausgabeverhältnis";

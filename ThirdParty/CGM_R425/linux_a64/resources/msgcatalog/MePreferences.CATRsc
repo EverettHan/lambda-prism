@@ -1,0 +1,84 @@
+MePreferences.MePreferenceDialogOk.HelpRsc = "AfrPropertiesHelpForCommands";
+MePreferences.MePreferenceDialogApply.HelpRsc = "AfrPropertiesHelpForCommands";
+MePreferences.MePreferenceDialogClose.HelpRsc = "AfrPropertiesHelpForCommands";
+MePreferences.MePreferenceDialogReset.HelpRsc = "AfrPropertiesHelpForCommands";
+MePreferences.MePreferenceDialogODTChecker.HelpRsc = "AfrPropertiesHelpForCommands";
+
+
+//Global OK, Cancel, Reset Callbacks
+
+//1. Callbacks for Drafting
+CallBack1.LibName= "PushButtonTest";
+CallBack1.CallbackFunction= "Drafting_PreferenceCallBack";
+
+CallBack_Profile.LibName= "CATVisOptions";
+CallBack_Profile.CallbackFunction= "AddCallbacksForVisuRepository";
+CallBack_Profile.RemoveCallbackFunction= "RemoveCallbacksForVisuRepository";
+
+//1. Callbacks for Drafting
+CallBack_Drafting.LibName= "CATDrwPref";
+CallBack_Drafting.CallbackFunction= "AddCallbacksForDraftingRepository";
+CallBack_Drafting.RemoveCallbackFunction= "RemoveCallbacksForDraftingRepository";
+
+//2. Callbacks for 2D_Layout_for_3D_Design
+CallBack_2D_Layout_for_3D_Design.LibName= "CAT2DLPref";
+CallBack_2D_Layout_for_3D_Design.CallbackFunction= "AddCallbacksFor2DLRepository";
+CallBack_2D_Layout_for_3D_Design.RemoveCallbackFunction= "RemoveCallbacksFor2DLRepository";
+
+//3. Callbacks for 2D_Layout_Insight
+CallBack_2D_Layout_Insight.LibName= "CAT2DLPref";
+CallBack_2D_Layout_Insight.CallbackFunction= "AddCallbacksFor2DLRepository";
+CallBack_2D_Layout_Insight.RemoveCallbackFunction= "RemoveCallbacksFor2DLRepository";
+
+//4. Callbacks for 3D_Tolerancing_and_Annotation
+CallBack_3D_Tolerancing_and_Annotation.LibName= "CATTPSPref";
+CallBack_3D_Tolerancing_and_Annotation.CallbackFunction= "AddCallbacksForFTARepository";
+CallBack_3D_Tolerancing_and_Annotation.RemoveCallbackFunction= "RemoveCallbacksForFTARepository";
+
+//5. Callbacks for 3D_Annotations
+CallBack_3D_Annotations.LibName= "CATTPSPref";
+CallBack_3D_Annotations.CallbackFunction= "AddCallbacksForFTARepository";
+CallBack_3D_Annotations.RemoveCallbackFunction= "RemoveCallbacksForFTARepository";
+
+//6. Callbacks for CallBack_Electrical_Raceway_3D_Design
+CallBack_Electrical_Raceway_3D_Design.LibName= "CATEscPreference";
+CallBack_Electrical_Raceway_3D_Design.CallbackFunction= "AddCallbacksFor3DFluidicRepository";
+CallBack_Electrical_Raceway_3D_Design.RemoveCallbackFunction= "RemoveCallbacksFor3DFluidicRepository";
+
+CallBack_Piping_and_Tubing_3D_Design.LibName= "CATEscPreference";
+CallBack_Piping_and_Tubing_3D_Design.CallbackFunction= "AddCallbacksFor3DFluidicRepository";
+CallBack_Piping_and_Tubing_3D_Design.RemoveCallbackFunction= "RemoveCallbacksFor3DFluidicRepository";
+
+CallBack_HVAC_3D_Design.LibName= "CATEscPreference";
+CallBack_HVAC_3D_Design.CallbackFunction= "AddCallbacksFor3DFluidicRepository";
+CallBack_HVAC_3D_Design.RemoveCallbackFunction= "RemoveCallbacksFor3DFluidicRepository";
+
+
+CallBack_Electrical_3D_Design.LibName= "CATEscPreference";
+CallBack_Electrical_3D_Design.CallbackFunction= "AddCallbacksFor3DElectricalRepository";
+CallBack_Electrical_3D_Design.RemoveCallbackFunction= "RemoveCallbacksFor3DElectricalRepository";
+
+
+CallBack_ElecMfgPrep.LibName= "CATEscPreference";
+CallBack_ElecMfgPrep.CallbackFunction= "AddCallbacksFor3DElectricalRepository";
+CallBack_ElecMfgPrep.RemoveCallbackFunction= "RemoveCallbacksFor3DElectricalRepository";
+
+//7. Callbacks for Multi_Discipline_Drafting
+CallBack_Multi_Discipline_Drafting.LibName= "AITDraftingUI";
+CallBack_Multi_Discipline_Drafting.CallbackFunction= "AddCallbacksForMultiDisciplineDraftingRepository";
+CallBack_Multi_Discipline_Drafting.RemoveCallbackFunction= "RemoveCallbacksForMultiDisciplineDraftingRepository";
+
+//Callbacks for DMU
+CallBack_Design_Review.LibName= "CATMkrBase";
+CallBack_Design_Review.CallbackFunction= "OnMarkerPrefLoad";
+CallBack_Design_Synthesis.LibName= "CATMkrBase";
+CallBack_Design_Synthesis.CallbackFunction= "OnMarkerPrefLoad";
+
+//9.Callback for Exchange management (3DXMLSettings.xml)
+CallBack_Exchange_Management.LibName= "CATPLM3DXMLSettings";
+CallBack_Exchange_Management.CallbackFunction= "On3DXMLSettingsLoad";
+CallBack_3DXML.LibName= "CATPLM3DXMLSettings";
+CallBack_3DXML.CallbackFunction= "On3DXMLSettingsLoad";
+
+CallBack_Product_Markup.LibName= "CATMkrBase";
+CallBack_Product_Markup.CallbackFunction= "OnPrdMarkupMakerPrefLoad";

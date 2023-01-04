@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic="Системная ошибка.";
+SystemERR.Advice="Обратитесь в службу поддержки.";
+
+
+ServerInternalERR.Diagnostic="Внутренняя ошибка сервера.";
+ServerInternalERR.Advice="Для сохранения данных было выполнено локальное сохранение. При необходимости сеанс можно восстановить.";
+
+ServerInternalERRNoLS.Diagnostic="Внутренняя ошибка сервера.";
+ServerInternalERRNoLs.Advice="Локальное сохранение невозможно. Повторите попытку позже.";
+
+VaultServerInternalERR.Diagnostic="При передаче потоков произошли ошибки.";
+VaultServerInternalERR.Advice="Для сохранения данных было выполнено локальное сохранение. При необходимости сеанс можно восстановить.";
+
+VaultServerInternalERRNoLs.Diagnostic="При передаче потоков произошли ошибки.";
+VaultServerInternalERRNoLs.Advice="Локальное сохранение невозможно. Повторите попытку позже.";
+
+NoObjectToSaveWRN.Diagnostic="Нет объектов для сохранения.";
+NoObjectToSaveWRN.Advice="Убедитесь, что вы выбрали именно то, что изменили.";
+
+GenericSaveErrorWithCompo.Diagnostic="Невозможно сохранить компонент [/p1].";
+GenericSaveErrorWithCompo.Advice="Операция сохранения не может быть связана с компонентом /p1.\nНастоятельно рекомендуется перезапустить приложение.";
+
+PLMSaveEngineError_501.Diagnostic="Невозможно выполнить операцию сохранения.";
+PLMSaveEngineError_501.Advice="Компонент /p1 не является затронутым элементом текущего ECA.";
+
+ChangeLogInternalERR.Diagnostic="Операция сохранения не может быть выполнена из-за данных ChangeLog.";
+ChangeLogInternalERR.Advice="Обратитесь в службу поддержки с последними трассировками DebugChangeLog*.log в каталоге CATTemp.";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic="Операция сохранения не может быть выполнена из-за таблицы сопоставления сосуществования.";
+SaveCoexMpgExchangeInternalERR.Advice="Обратитесь в службу поддержки.";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic="Невозможно выполнить операцию сохранения.";
+PLMSaveEngineError_601.Advice="Операция сохранения в автономном режиме не может быть связана с компонентом /p1. \nКомпонент изменен вне пространства разработки.";
+PLMSaveEngineError_602.Diagnostic="Невозможно выполнить операцию сохранения.";
+PLMSaveEngineError_602.Advice="Операция сохранения в автономном режиме не может быть связана с компонентом /p1. \nКомпонент задействован в транзакции жизненного цикла.";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic="Невозможно выполнить операцию сохранения.";
+PLMSaveEngineError_701.Advice="Операция сохранения не может быть связана с компонентом /p1. \nКомпонент изменен вне пространства разработки.";
+PLMSaveEngineError_702.Diagnostic="Невозможно выполнить операцию сохранения.";
+PLMSaveEngineError_702.Advice="Операция сохранения не может быть связана с компонентом /p1. \nКомпонент задействован в транзакции жизненного цикла.";

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_PostEffect</NAME>
+
+  <UNIFORM>
+    <NAME>u_Quality</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>5</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>20</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1</UI_STEP_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_Size</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.1</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>0.2</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.001</UI_STEP_VALUE>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>

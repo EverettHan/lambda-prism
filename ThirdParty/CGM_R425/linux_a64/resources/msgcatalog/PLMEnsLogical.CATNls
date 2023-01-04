@@ -1,0 +1,116 @@
+<meta charset="UTF-8"/>
+PLMEnsLogical="Equipment and Systems Logical";
+
+	PLMEnsLogical.EnsLogicalEquipment="Equipment";
+		PLMEnsLogical.EnsLogicalEquipment.V_Ens_SubType="SubType";
+		PLMEnsLogical.EnsLogicalEquipment.V_Ens_PredefinedPartNumber="Predefined Part Number";
+		PLMEnsLogical.EnsLogicalEquipment.V_Ens_PredefinedPartType="Predefined Part Type";
+		PLMEnsLogical.EnsLogicalEquipment.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsLogicalEquipment.V_Ref_PlacedIn="Geographical Container";
+		PLMEnsLogical.EnsLogicalEquipment.V_Ref_IntegratedIn="Composite";
+
+	PLMEnsLogical.PLMEnsLogicalEquipment="Equipment Extension";
+		PLMEnsLogical.PLMEnsLogicalEquipment.V_Ens_SubType="SubType";
+		PLMEnsLogical.PLMEnsLogicalEquipment.V_Ens_PredefinedPartNumber="Predefined Part Number";
+		PLMEnsLogical.PLMEnsLogicalEquipment.V_Ens_PredefinedPartType="Predefined Part Type";
+	
+	PLMEnsLogical.EnsLogicalReferenceEntity="Equipment And Systems Reference Entity";
+	    PLMEnsLogical.EnsLogicalReferenceEntity.V_Ens_SubType="Subtype";
+		PLMEnsLogical.EnsLogicalReferenceEntity.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsLogicalReferenceEntity.EnsLogicalOcc="Equipment And Systems Occurrence";
+		
+	PLMEnsLogical.EnsLogicalPart="Equipment And Systems Logical Part";
+	    PLMEnsLogical.EnsLogicalPart.V_Ens_SubType="Subtype";
+		PLMEnsLogical.EnsLogicalPart.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsLogicalPart.EnsLogicalPartOcc="Logical Part Occurrence";
+
+	PLMEnsLogical.EnsInCLoop="Logical InC Loop";
+	    PLMEnsLogical.EnsInCLoop.V_Ens_SubType="Subtype";
+		PLMEnsLogical.EnsInCLoop.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsInCLoop.EnsInCLoopOcc="Logical InC Loop Occurrence";
+		
+	PLMEnsLogical.EnsInCLogicalBranch="Logical InC Branch";
+	    PLMEnsLogical.EnsInCLogicalBranch.V_Ens_SubType="Subtype";
+		PLMEnsLogical.EnsInCLogicalBranch.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsInCLogicalBranch.EnsBranchOcc="Logical Branch Occurrence";	
+		
+	PLMEnsLogical.EnsInCLogicalComponent="Logical InC Component";
+	    PLMEnsLogical.EnsInCLogicalComponent.V_Ens_SubType="Subtype";
+		PLMEnsLogical.EnsInCLogicalComponent.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsInCLogicalComponent.V_Ens_MeasuredMagnitude="Measured Variable";
+		PLMEnsLogical.EnsInCLogicalComponent.V_Ens_MeasuredModifier="Variable Modifier";
+		PLMEnsLogical.EnsInCLogicalComponent.V_Ens_ReadoutFunction="Readout Function";
+		PLMEnsLogical.EnsInCLogicalComponent.V_Ens_OutputFunction="Output Function";
+		PLMEnsLogical.EnsInCLogicalComponent.V_Ens_ReadoutModifier="Readout Modifier";
+		PLMEnsLogical.EnsInCLogicalComponent.V_Ens_Location="Location";
+		PLMEnsLogical.EnsInCLogicalComponent.EnsComponentOcc="Logical InC Component Occurrence";	
+		
+	PLMEnsLogical.EnsInCLogicalRoute="Logical InC Route";
+	    PLMEnsLogical.EnsInCLogicalRoute.V_Ens_SubType="Subtype";
+		PLMEnsLogical.EnsInCLogicalRoute.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsInCLogicalRoute.V_Ens_ConnectionType="Connection Type";
+		PLMEnsLogical.EnsInCLogicalRoute.V_EnsRef_ConnectionMagnitude="Connection Magnitude";
+		PLMEnsLogical.EnsInCLogicalRoute.EnsRouteOcc="Logical InC Route Occurrence";
+
+	PLMEnsLogical.EnsLogicalPenetration="Logical Penetration";
+	    PLMEnsLogical.EnsLogicalPenetration.V_Ens_SubType="Subtype";
+		PLMEnsLogical.EnsLogicalPenetration.V_EnsRef_TagNumber="Tag";
+		PLMEnsLogical.EnsLogicalPenetration.V_EnsRef_Crossing="Crossing";
+		PLMEnsLogical.EnsLogicalPenetration.V_EnsRef_PredefinedPartNumber="Predefined Part Number";
+		PLMEnsLogical.EnsLogicalPenetration.V_EnsRef_PredefinedPartType="Predefined Part Type";
+		PLMEnsLogical.EnsLogicalPenetration.V_Ref_PlacedIn="Geographical Container";
+		PLMEnsLogical.EnsLogicalPenetration.V_Ref_IntegratedIn="Composite";
+		PLMEnsLogical.EnsLogicalPenetration.EnsLPenetrationOcc="Logical Penetration Occurrence";	
+		
+	// Instances related to classes:			
+	PLMEnsLogical.EnsLogicalEquipmentInst="Logical Equipment Instance";	
+		PLMEnsLogical.EnsLogicalEquipmentInst.V_Ens_TagNumber="Tag";
+		PLMEnsLogical.EnsLogicalEquipmentInst.V_Ens_PredefinedPartNumber="Predefined Part Number";
+		PLMEnsLogical.EnsLogicalEquipmentInst.V_Ens_PredefinedPartType="Predefined Part Type";
+		PLMEnsLogical.EnsLogicalEquipmentInst.V_PlacedIn="Geographical Container";
+		PLMEnsLogical.EnsLogicalEquipmentInst.V_IntegratedIn="Composite";
+	PLMEnsLogical.EnsLogicalInstanceEntity="Equipment And Systems Logical Instance";
+		PLMEnsLogical.EnsLogicalInstanceEntity.V_Ens_TagNumber="Tag";
+	PLMEnsLogical.EnsLogicalPart_Inst="Equipment And Systems Logical Part Instance";
+		PLMEnsLogical.EnsLogicalPart_Inst.V_Ens_TagNumber="Tag";
+	PLMEnsLogical.EnsInCLoop_Inst="Logical InC Loop Instance";	
+		PLMEnsLogical.EnsInCLoop_Inst.V_Ens_TagNumber="Tag";
+	PLMEnsLogical.EnsInCLogicalBranch_Inst="Logical InC Branch Instance";
+		PLMEnsLogical.EnsInCLogicalBranch_Inst.V_Ens_TagNumber="Tag";
+	PLMEnsLogical.EnsInCLogicalComponent_Inst="Logical InC Component Instance";
+		PLMEnsLogical.EnsInCLogicalComponent_Inst.V_Ens_TagNumber="Tag";
+	PLMEnsLogical.EnsInCLogicalRoute_Inst="Logical InC Route Instance";
+		PLMEnsLogical.EnsInCLogicalRoute_Inst.V_Ens_TagNumber="Tag";
+		PLMEnsLogical.EnsInCLogicalRoute_Inst.V_Ens_ConnectionMagnitude="Connection Magnitude";
+	PLMEnsLogical.EnsLogicalPenetration_Inst="Logical Penetration Instance";	
+		PLMEnsLogical.EnsLogicalPenetration_Inst.V_Ens_TagNumber="Tag";
+		PLMEnsLogical.EnsLogicalPenetration_Inst.V_Ens_Crossing="Crossing";
+		PLMEnsLogical.EnsLogicalPenetration_Inst.V_Ens_PredefinedPartNumber="Predefined Part Number";
+		PLMEnsLogical.EnsLogicalPenetration_Inst.V_Ens_PredefinedPartType="Predefined Part Type";
+		PLMEnsLogical.EnsLogicalPenetration_Inst.V_PlacedIn="Geographical Container";
+		PLMEnsLogical.EnsLogicalPenetration_Inst.V_IntegratedIn="Composite";
+	
+	PLMEnsLogical.LogicalEquipmentOcc="Logical Equipment Occurrence";
+
+	PLMEnsLogical.PLMEnsElectricalProperties="Electrical Properties";
+		PLMEnsLogical.PLMEnsElectricalProperties.V_Ens_NominalPower="Nominal Power";
+		
+	PLMEnsLogical.PLMEnsProperties="ENS Properties";
+		PLMEnsLogical.PLMEnsProperties.V_Ens_PredefinedPartNumber="Predefined Part Number";
+		PLMEnsLogical.PLMEnsProperties.V_Ens_PredefinedPartType="Predefined Part Type";
+			
+	
+	// Ports:	
+	PLMEnsLogical.EnsLogicalPort_Entity="Logical Port Entity";
+	    PLMEnsLogical.EnsLogicalPort_Entity.V_Ens_SubType="Subtype";	
+	
+	PLMEnsLogical.EnsLogicalPort="Ens Logical Port";
+	    PLMEnsLogical.EnsLogical_ort.V_SubType="Subtype";
+		
+	PLMEnsLogical.EnsInCLogicalPortEnd1="Ens InC Logical End Port One";
+	    PLMEnsLogical.EnsInCLogicalPortEnd1.V_SubType="Subtype";	
+		
+	PLMEnsLogical.EnsInCLogicalPortEnd2="Ens InC Logical End Port Two";
+	    PLMEnsLogical.EnsInCLogicalPortEnd2.V_SubType="Subtype";	
+	
+

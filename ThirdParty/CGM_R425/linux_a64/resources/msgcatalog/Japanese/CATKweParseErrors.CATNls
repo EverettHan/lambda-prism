@@ -1,0 +1,40 @@
+<meta charset="UTF-8"/>
+CATCkeBadNbArg1=" /P1 /P2 内の引数が正しくありません: /P4 ではなく /P3";
+CATCkeBadNbArg2=" /P1 /P2 内の引数が正しくありません。";
+CATCkeBadKindOfArg1=" /P2 /P3 の引数番号 /P1 の種類が正しくありません\n",
+" (/P5 ではなく /P4 にする必要があります)";
+CATCkeBadKindOfArg2=" /P2 /P3  内の引数番号 /P1 の種類が正しくありません";
+CATCkeBadKindOfArg3=" タイプ /P1 の変数とタイプ /P2  の変数は比較できません";
+CATCkeBadKindOfArg4=" タイプ /P2 の変数をタイプ /P1 の変数に適合できません。\n2 つの変数の間でキャスト操作する場合、<set x=y>の形式の構文を使用できます  ";
+CATCkeBadKindOfArg5=" タイプ /P2 の変数とタイプ /P3  の変数間では演算 /P1 は行えません";
+CATCkeBadKindOfArg6=" タイプ /P2  の変数に演算 /P1 は行えません";
+CATCkeNonExistingMethod=" 無効な /P1 が使用されました: /P2";
+CATCkeNonExistingMethod2=" 無効な /P1 の使用: /P2 \n ( /P1 /P2 はタイプ /P4 ではなくタイプ /P3 にあります)";
+CATCkeInvalidExpression2=" /P1 を返す式は /P2 タイプのパラメーターの値の指定には使用できません";
+CATCkeInvalidExpression=" 無効な種類の式: /P1 でなければなりません。";
+CATCkeNonExistingType=" 無効なタイプ名: /P1 ";
+CATCkeUndeterminableUnit=" /P1 の大きさを判断できません";
+CATCkeBadType=" ローカル変数の宣言に、タイプ /P1 は使用できません";
+CATCkeDoublyDefinedVariable=" 変数 /P1 はすでに定義済みです";
+CATCkeParseMultiLevel=" 誤った引数: /P1";
+CATCkeParseRestrictMethod=" メソッド /P1 は /P2 では許可されません";
+CATCkeParseRestrictFunction=" 関数 /P1 は /P2 のコンテキストでは使用できません";
+CATCkeParseRestrictOperator=" 演算子 /P1 は /P2 のコンテキストでは使用できません";
+CATCkeParseRestrictKeyword=" キーワード /P1 は /P2 のコンテキストでは使用できません";
+CATCkeParseRestrictType=" タイプ /P1 は /P2 のコンテキストでは使用できません";
+CATCkeSyntaxError="構文エラー";
+
+ExprIsNotAnOptConstraint="式は最適化制約条件ではありません。ブーリアン式でなくてはなりません。";
+ExprIsNotACheck="式がチェックではありません。ブーリアン式でなくてはなりません。";
+IncludesDefError="インクルード定義の構文エラー。正しい構文は、\"Include <Library name>;\" です。";
+MissingSemicolonInclude="インクルード定義の最後に ';' がありません。";
+IncludesRetrieveError="インクルード済みのライブラリー /P1 を取得できませんでした。現行コンテキストで Data Setup またはリソース テーブルをチェックしてください。";
+IncludesRetrieveErrorTitle="無効なインクルード";
+AlreadyIncludedLibTitle="ライブラリーが複数回インクルードされています。";
+AlreadyIncludedLib="ライブラリー /P1 は /P2 という名前ですでにインクルードされています。2 つのインクルードのいずれかを除去してください。";
+InvalidLibName="/P1 という名前の関数ライブラリーはインクルードされませんでした。ルールのインクルード セクションをチェックしてください。";
+InvalidReusableFunctionName="ライブラリー /P1 で /P2 という名前の関数が見つからなかったか、または引数に互換性がありません。このような関数がないかライブラリーをチェックしてください。";
+UnprotectedInteger="変数宣言に無効なタイプ名が含まれています。整数で始まるタイプ名を使用する場合は、逆引用符で囲んでください (例: let arc(`2DArc`))。";
+
+AttributesOnIncompatibleTypes="同じオブジェクトに対して、互換性のない異なるタイプで、2 回目の属性要求が行われました。タイプが正しい別の変数を使用するか、タイプを動的に取得する関数 (GetAttribute...) を使用してください";
+ExprIsNotAffectationForWithInit="式には単純な適合が含まれていません。";

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_Camera</NAME>
+  <RASTERIZER_UPDATE>PassThroughCameraUpdater</RASTERIZER_UPDATE>
+
+  <UNIFORM>
+    <NAME>u_ViewInverseMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>ViewInverseMatrix</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_NearFarLogFactor</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>NearFarLogFactor</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_BufferToViewNearPlane</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>BufferToViewNearPlane</SEMANTIC>
+  </UNIFORM> 
+  
+  <UNIFORM>
+    <NAME>u_EyePosition</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>EyeWorldPos</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_EyePositionLow</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>EyeWorldPosLow</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_EyePositionHigh</NAME>
+    <TYPE>float3</TYPE>
+    <SEMANTIC>EyeWorldPosHigh</SEMANTIC>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_PixelSize</NAME>
+    <TYPE>float2</TYPE>
+    <SEMANTIC>PixelSize</SEMANTIC>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>
+

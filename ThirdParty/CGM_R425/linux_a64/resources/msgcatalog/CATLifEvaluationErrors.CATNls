@@ -1,0 +1,65 @@
+<meta charset="UTF-8"/>
+MainMessageFormula="Evaluation error in formula /P1";
+MainMessageRule="Evaluation error in rule /P1";
+MainMessageCheck="Evaluation error in check /P1";
+MainMessageRelation="Evaluation error in relation /P1";
+MainMessageNeutral="Evaluation error";
+MainMessageNeutral2="Evaluation error in /P1";
+CallingMessage= "when calling /P1 ";
+MainMessageFormulaInformation="Information in formula /P1";
+MainMessageRuleInformation="Information in rule /P1";
+MainMessageCheckInformation="Information in check /P1";
+MainMessageRelationInformation="Information in relation /P1";
+MainMessageNeutralInformation="Information";
+MainMessageFormulaWarning="Warning in formula /P1";
+MainMessageRuleWarning="Warning in rule /P1";
+MainMessageCheckWarning="Warning in check /P1";
+MainMessageRelationWarning="Warning in relation /P1";
+MainMessageNeutralWarning="Warning";
+UnknownError="Unknown error";
+OutOfBounds="Argument is out of bounds: Cannot evaluate "; 
+DividedBy0="Division by zero: Cannot evaluate ";
+Unset="An unset value has been used in an operation.\nThe result is unpredictable.";
+ReadAttributeBadKind="Unable to read attribute /P1 of object /P2 of type /P3 as a /P4";
+WriteAttributeBadKind="Unable to write attribute /P1 of object /P2 of type /P3 as a /P4";
+InexistingAttribute="Unexisting attribute /P1 on the object /P2";
+ReadOnlyAttribute="Unable to modify attribute /P1 on object /P2";
+Update="Update failed";
+SetValueOnParmWithFormula="The attribute /P1 cannot be valuated because of the relation /P2";
+VBNotSupported="The object /P1 cannot be used in VB Script";
+EnableErrors="EnableErrors was called without a matching DisableErors call";	
+SilentErrorsMismatch="DisableErrors and EnableErrors were called an unmatching number of times.\nThis might lead to errors being hidden to the user.";	
+
+
+BadTypeError="An argument has a wrong type";
+BadTypeOfExpressionError="The expression is of the wrong type.";
+SelfAddedListError="A list can not be added to itself";
+StringNotAReal="The string /P1 can not be converted into real";
+StringNotADimension="The string /P1 could not be parsed as a dimension";	
+BadAssignementInLoop="The /P1th element of the list has not a compatible type with the variable of the loop (/P2 instead of /P3).";
+
+
+NotMagnitude="/P1 is not a existing unit";
+NotGoodMagnitude="/P1 is not a valid unit";
+nbDecError="The precision number must be a positive integer";
+MethodOnNullObject="The method /P1 is invoked on a NULL variable /P2.";
+ArgumentNULL="The argument number /P1 of function /P2 is NULL. This is not a valid call.";
+
+LineNumber="Line /P1 : ";	
+Update2="Update failed :\n/P1";	
+
+UnsetValueInOperation="An unset value has been used in the operation /P1.\nThe result is unpredictable.";
+DeleteImpossible="Impossible to delete object /P1.";
+UseMethodForbiddenInContext="Using function or method /P1 is invalid in this context.";
+ValueNotAuthorizedAsArgument="Error in /P1 /P2. The argument number /P3 cannot be equal to </P4>";
+NoLicenseToExecute="You're not authorized to execute /P1 /P2 because you do not have the necessary license (/P3)";
+EvaluationCycle="The evaluation stack maximum size has been reached. Check your expression for cycles or try to limit the recursivity used.";
+AttributeNotAccessible="The attribute /P1 cannot be accessed on object /P2.";
+
+OnlyOneDeploymentExtension="Impossible to add more than one deployment extension on an object";
+CannotExtend="Unauthorized to extend an object of type /P1 with an extension of type /P2";
+ReusableFunctionNotFoundAtEvaluation="Reusable function or method /P2 from Library /P1 was not found during evaluation of the expression. Check that the Library still contains such a function with matching arguments.";	
+ReusableFunctionSignatureChanged="Reusable function or method /P1 signature has changed since the calling expression was last validated and the signature is no longer compatible. Please modify the reusable function or calling script.";	
+BreakOutsideLoop="Break statement was called outside of a loop.";	
+ContinueOutsideLoop="Continue statement was called outside of a loop.";	
+

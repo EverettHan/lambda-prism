@@ -1,0 +1,55 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CGMV5Interoperability.tst"/>
+  <attached name = "A_CGM_REGKiller.tst"/>
+  <attached name = "A_Architectural_Comparison.tst"/>
+  <attached name = "Data_Exchanges.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "AdvancedMathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATMathStream"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GeometricObjectsCGM"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMScalarFieldsObjects"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "NewTopologicalObjects"/>
+  <prerequisite access = "Protected" name = "TopologicalOperators"/>
+  <prerequisite access = "Protected" name = "TopologicalOperatorsLight"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerContBase"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCATIA"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" comment = "Extract CATDUA services from OMB  " name = "CATDataCompatibilityInfra"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMModelInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "GMOperatorsInterfaces"/>
+  <authorize access = "Public" comment = "-> The default mode is public " name = "CGMInterfaces.tst"/>
+  <authorize access = "Protected" name = "A_CGM_REGKiller.tst"/>
+  <authorize name = "CGMV5InteropDbg.tst"/>
+  <authorize name = "CGMV5Interoperability.tst"/>
+  <authorize name = "CGMV5SpecsQuery"/>
+  <authorize name = "CGMTestToolkit.tst"/>
+  <authorize name = "FIXPART.tst"/>
+  <authorize name = "FromSolidV4toPart"/>
+  <authorize name = "GeometricObjectsCATIA"/>
+  <authorize name = "GeometricObjectsCATIA.tst"/>
+  <authorize name = "MMMEngine.tst"/>
+  <authorize name = "NurbsCompactor.tst"/>
+  <authorize name = "V4CGMInteroperability"/>
+  <authorize access = "Private" name = "V4CGMInteroperability.tst"/>
+  <authorize name = "CGMTopologyTests.tst"/>
+  <authorize access = "Private" name = "CGMSurfacicTests.tst"/>
+  <authorize name = "CGMShapeTests.tst"/>
+  <authorize name = "NewTopologicalObjects.tst"/>
+  <authorize access = "Private" name = "CATMathStream_UnitTests.tst"/>
+  <authorize name = "CAT3DControl.tst"/>
+  <authorize name = "CATGem.tst"/>
+  <authorize comment = "DON'T REMOVE: FOR MSI " name = "CATLiveShapeInstaller"/>
+  <authorize comment = "DON'T REMOVE: FOR iOS " name = "MechanicalModelerMobile.tst"/>
+  <authorize comment = "DON'T REMOVE: FOR iOS " name = "CATLivePhotoStandaloneiOS"/>
+  <authorize name = "CATLiveShapeMobile"/>
+  <authorize access = "Private" name = "CAT3DTopology.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

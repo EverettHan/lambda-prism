@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<!-- COPYRIGHT DASSAULT SYSTEMES 2013 -->
+<!-- PLM Exchange report model        -->
+
+<!-- Define XML ELEMENTs used in PLM Exchange Report model -->
+
+<!ELEMENT Set              ANY   >
+<!ELEMENT Execution        (Set|DataSource|Attribute|Notification|Metric|Engine)* >
+<!ELEMENT DataSource       EMPTY >
+<!ELEMENT Object           (Attribute|Mapping|Object|Notification)* >
+<!ELEMENT Attribute        EMPTY >
+<!ELEMENT Metric           EMPTY >
+<!ELEMENT Notification     EMPTY >
+<!ELEMENT Option           EMPTY >
+<!ELEMENT Engine           (Metric|Notification)*    >
+<!ELEMENT Mapping          (Attribute|Notification)* >
+
+<!-- XML attributes for Set element -->
+
+<!ATTLIST Set Id    ID    #REQUIRED
+              prop  CDATA #IMPLIED
+			     Name  CDATA #IMPLIED >
+
+<!-- XML attributes for Execution element           -->
+
+<!ATTLIST Execution Id       ID    #REQUIRED
+			           Name     CDATA #IMPLIED
+			           version  ( 0.1 ) '0.1'
+                    status   ( Unknown|Succeeded|Warning|Error|Abort ) 'Unknown' >
+
+<!-- XML attributes for Object element           -->
+
+<!ATTLIST Object Id     ID    #REQUIRED
+			        Name   CDATA #IMPLIED
+                 Oid    CDATA #IMPLIED  
+                 type   ( Unknown|Reference|Port|Connection|Instance|Representation|RepInstance|Entity|Relation ) 'Unknown'
+                 prop   CDATA #IMPLIED
+                 oper   CDATA #IMPLIED
+                 from   IDREF #IMPLIED
+                 to     IDREF #IMPLIED>
+
+<!-- XML attributes for Mapping element  -->
+
+<!ATTLIST Mapping Id    ID    #REQUIRED
+			         Name  CDATA #IMPLIED
+                  Oid   CDATA #IMPLIED  
+                  type  ( Unknown|Reference|Port|Connection|Instance|Representation|RepInstance|Entity|Relation ) 'Unknown'
+                  prop  CDATA #IMPLIED
+                  oper  CDATA #IMPLIED >
+
+<!-- XML attributes for Attribute element                               -->
+
+<!ATTLIST Attribute Id       ID    #REQUIRED
+			           Name     CDATA #IMPLIED
+			           value    CDATA #IMPLIED
+			           isSet    ( F|T ) 'F'
+                    type     ( boolean|integer|float|string|binary|date|timestamp) 'string'
+                    isLocked ( F|T ) 'F'
+                    isArray  ( F|T ) 'F'
+                    Hidden   ( F|T ) 'F'>
+
+<!-- XML attributes for DataSource element    -->
+
+<!ATTLIST DataSource Id      ID    #REQUIRED
+			            Name    CDATA #IMPLIED
+			            type    CDATA #IMPLIED >
+
+<!-- XML attributes for Metric element                                     -->
+
+<!ATTLIST Metric Id       ID    #REQUIRED
+			        Name     CDATA #IMPLIED
+			        value    CDATA #IMPLIED
+                 isSet    ( F|T ) 'F'
+                 type     ( boolean|integer|float|string|binary|date|timestamp) 'string'
+                 isLocked ( F|T ) 'F'
+                 isArray  ( F|T ) 'F'
+                 Hidden   ( F|T ) 'F'>
+
+<!-- XML attributes for Notification element                          -->
+
+<!ATTLIST Notification Id    ID    #REQUIRED
+			              Name  CDATA #IMPLIED
+                       Sev   ( Trace|Debug|Info|Warning|Error|Fatal ) 'Info'
+			              msg   CDATA #IMPLIED >
+
+
+<!-- XML attributes for Notification element -->
+
+<!ATTLIST Option Id       ID    #REQUIRED
+			        Name     CDATA #IMPLIED
+                 key      CDATA #IMPLIED
+			        value    CDATA #IMPLIED
+                 default  CDATA #IMPLIED
+                 isSet    ( F|T ) 'F'
+                 type     ( boolean|integer|float|string|binary|date|timestamp) 'string'
+                 isLocked ( F|T ) 'F'
+                 isArray  ( F|T ) 'F'
+                 Hidden   ( F|T ) 'F'>
+
+<!-- XML attributes for Engine element   -->
+
+<!ATTLIST Engine Id       ID    #REQUIRED
+			        Name     CDATA #IMPLIED
+                 status   ( Unknown|Succeeded|Warning|Error|Abort ) 'Unknown' >

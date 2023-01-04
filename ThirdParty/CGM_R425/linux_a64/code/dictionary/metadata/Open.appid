@@ -1,0 +1,43 @@
+//
+// Give the definition for the three base class PLMEntity, BusinessType and RelationType
+//
+
+NEWATTRDEF::OpenForAllIRPC
+  SpAttr::V_StrongRelations        
+  SpAttr::SD
+  SpAttr::SR
+  SpAttr::AllExtensionsAtt
+  CATPLMMask::CATPLMMaskDefault
+  PhysAttr::V_discipline
+END_NEWATTRDEF::OpenForAllIRPC
+
+NEWTYPEDEF::PLMEntity::#ALL#
+  AttrDefName::OpenForAllIRPC
+END_NEWTYPEDEF::PLMEntity::#ALL#
+
+NEWTYPEDEF::PLMInstance::#ALL#
+  AttrDefName::OpenForAllIRPC
+END_NEWTYPEDEF::PLMInstance::#ALL#
+
+NEWATTRDEF::OpenForAllBPC
+  SpAttr::SD
+  SpAttr::V_StrongRelations        
+  SpAttr::AllExtensionsAtt
+  CATPLMMask::CATPLMMaskDefault
+END_NEWATTRDEF::OpenForAllBPC
+
+NEWATTRDEF::SRForER
+  SpAttr::PathType
+END_NEWATTRDEF::SRForER
+
+NEWTYPEDEF::BusinessType::#ALL#
+  AttrDefName::OpenForAllBPC
+END_NEWTYPEDEF::BusinessType::#ALL#
+
+NEWTYPEDEF::RelationType::#ALL#
+  AttrDefName::OpenForAllBPC
+END_NEWTYPEDEF::RelationType::#ALL#
+
+NEWTYPEDEF::Change Action::#ALL#
+  AttrDefName::SRForER
+END_NEWTYPEDEF::Change Action::#ALL#

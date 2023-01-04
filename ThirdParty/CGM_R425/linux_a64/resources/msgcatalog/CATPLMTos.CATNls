@@ -1,0 +1,53 @@
+<meta charset="UTF-8"/>
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Request     = "An invalid code is returned during a reversible transaction.";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Diagnostic  = "/P1 transaction has an invalid return code during execution. Transaction is aborted and previous session is restored.";
+CATPLMTosReversibleTransactionWithInvalidReturnCode_ERR_001.Advice      = "Contact support on Session Services (TOS) with the complete scenario.";
+
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Request     = "Rollback critical failure on reversible transaction.";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Diagnostic  = "/P1 reversible transaction has failed and rollback is not complete. Session is aborted because contents is no more under control.";
+CATPLMTosReversibleTransactionWithRollbackFailure_ERR_002.Advice      = "Contact support on Session Services (TOS) with the complete scenario.";
+
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Request     = "Missing strong relationship.";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Diagnostic  = "/P1 transaction has detected a missing ownership or instance-reference relationship. Transaction is aborted and previous session is restored.";
+CATPLMTosReversibleTransactionStrongRelationalProblem_ERR_003.Advice      = "Contact support on Session Services (TOS) with the complete scenario.";
+
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Request     = "Network cyclicity.";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Diagnostic  = "/P1 transaction has detected a cyclicity. Transaction is aborted and previous session is restored.";
+CATPLMTosReversibleTransactionCyclicityProblem_ERR_004.Advice      = "Contact support on Session Services (TOS) with the complete scenario.";
+
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Request     = "A concurrent Import transaction is still running.";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Diagnostic  = "/P1 Import transaction is exclusive. Concurrent or interlinked Transaction are rejected.";
+CATPLMTosReversibleTransactionShouldBeExclusive_ERR_005.Advice      = "Contact support on Session Services (TOS) with the complete scenario.";
+
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Request     = "An equivalent minor version is still loaded.";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Diagnostic  = "/P1 transaction detect a MajorId collision. Transaction is aborted and previous session is restored.";
+CATPLMTosReversibleTransactionMinorVersionConflict_ERR_006.Advice      = "Contact support on Session Services (TOS) with the complete scenario.";
+
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Request     = "Load.";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Diagnostic  = "Some components cannot be loaded because their stream is missing or invalid.";
+CATPLMTosReversibleTransactionFatalSwitchProblem_ERR_007.Advice      = "Check additional errors.";
+
+CATPLMUnexpectedExceptionRaised_ERR_105.Request     = "Unexpected exception raised (It is strongly recommanded to close your Session).";
+CATPLMUnexpectedExceptionRaised_ERR_105.Diagnostic  = "/P1 has catched and rethrowed an unexpected exception.";
+CATPLMUnexpectedExceptionRaised_ERR_105.Advice      = "It is strongly recommanded to close your Session without saving your work and restart a new session.";
+
+CATPLMTosDataCorruption_ERR_107.Request    = "Data corruption.";
+CATPLMTosDataCorruption_ERR_107.Diagnostic = "An internal check has identified a remote data corruption.";
+CATPLMTosDataCorruption_ERR_107.Advice     = "Contact support on Session Services (TOS) with the complete scenario.";
+
+CATPLMTosStreamFileAccessRead_ERR_108.Request    = "File access/read Failed.";
+CATPLMTosStreamFileAccessRead_ERR_108.Diagnostic = "Access/read failed on /P1.";
+CATPLMTosStreamFileAccessRead_ERR_108.Advice     = "Check the specified filename (or binary/ascii ftp protocol).";
+
+CATPLMTosStreamFileAccessWrite_ERR_109.Request    = "File access/write Failed.";
+CATPLMTosStreamFileAccessWrite_ERR_109.Diagnostic = "Access/write failed on /P1.";
+CATPLMTosStreamFileAccessWrite_ERR_109.Advice     = "Check access control, disk full associated to specified filename.";
+
+CATPLMTosReadStreamInvalidData_ERR_111="The stream can not be read : invalid data format.";
+
+CATPLMTosReadStreamImpossibleAccess_ERR_112="The stream can not be read : impossible file access.";
+
+CATPLMTosReadOnlyStreamInvalidWrite_ERR_114="The stream is dedicated to read only, impossible writing.";
+
+CATPLMTosWriteOnlyStreamInvalidRead_ERR_115="The stream is dedicated to write only, impossible read back.";
+

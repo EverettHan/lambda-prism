@@ -1,0 +1,23 @@
+{
+  "grammarVersion": 3,
+  "desc": "A type defining an execution graph flow (control or data)",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "from",
+      "basic": "string",
+      "desc": "Path of the port from which this link starts (a path is composed with a block id, a port name and optianaly a set of hierarchical sub-properties, all alphanumeric and camelCase strings separated by dots)",
+      "optional": {
+        "isOptional": false
+      }
+    },
+    {
+      "label": "to",
+      "basic": "string",
+      "desc": "Path of the port to which this link ends (a path is composed with a block id, a port name and optianaly a set of hierarchical sub-properties, all alphanumeric and camelCase strings separated by dots)",
+      "optional": {
+        "isOptional": false
+      }
+    }
+  ]
+}

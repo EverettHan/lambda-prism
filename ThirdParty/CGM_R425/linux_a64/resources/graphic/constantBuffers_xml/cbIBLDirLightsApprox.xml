@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_IBLDirLightsApprox</NAME>
+
+  <STRUCT>
+    <NAME>IBLApproxDirLightsInfo</NAME>
+
+    <UNIFORM>
+      <NAME>direction</NAME>
+      <TYPE>float3</TYPE>
+      <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+    </UNIFORM>
+
+    <UNIFORM>
+      <NAME>solid_angle</NAME>
+      <TYPE>float</TYPE>
+      <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    </UNIFORM>
+
+    <UNIFORM>
+      <NAME>color</NAME>
+      <TYPE>float3</TYPE>
+      <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+    </UNIFORM>
+
+    <UNIFORM>
+      <NAME>padding1</NAME>
+      <TYPE>float</TYPE>
+      <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+    </UNIFORM>
+
+    <SIZE>32</SIZE>
+  </STRUCT>
+
+  <UNIFORM>
+    <NAME>u_IBLDirLightsApprox</NAME>
+    <TYPE>struct</TYPE>
+    <USER_TYPE>IBLApproxDirLightsInfo</USER_TYPE>
+    <ARRAY_SIZE>16</ARRAY_SIZE>
+    <SEMANTIC>IBLDirLightsApprox</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

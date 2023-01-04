@@ -1,0 +1,45 @@
+<meta charset="UTF-8"/>
+Usage="
+Утилита управления файлом захвата записи V5.
+
+Синтаксис: RecordTools -s name [-Check|-FindPath path |-FindCmd cmdname] [-h, -?, -help]
+       RecordTools -s name -d name -ChangePath    oldpath newpath [ID]
+       RecordTools -s name -d name -ChangeSubPath oldpath newpath
+       RecordTools -s name -d name -ChangeData  ID datapos newdata
+       RecordTools -s name -d name -ChangeDataString oldString NewString
+       RecordTools -s name -d name -ChangeEvent ID newevent
+       RecordTools -s name -d name -Delete ID
+       RecordTools -s name -d name -DeleteSubPath subpath
+
+   -h, -?, -help    : Эта справка
+   -s name          : Имя исходного файла (обычно capture.rec)
+   -d name          : Имя файла назначения
+
+   -Check           : Проверка целостности исходного файла и отображение в формате xml
+   -FindPath        : Поиск пути CATCommand в исходном файле
+   -findCmd         : Поиск имени CATCommand в исходном файле
+
+   -ChangePath      : Полностью меняет весь путь \"oldpath\" на \"newpath\", если не указан \"ID\"
+   -ChangeSubPath   : Меняет подпуть \"oldpath\" на \"newpath\"
+   -ChangeData      : Меняет данные в блоке записей \"ID\" расположения \"datapos\" на \"newdata\"
+   -ChangeDataString: Меняет oldString на newString во всех данных с типом CHAR для всех блоков
+   -ChangeEvent     : Меняет событие в блоке записи \"ID\" на \"newevent\"
+   -Delete          : Удаляет блок записи \"ID\"
+   -DeleteSubPath   : Удаляет все блоки записи, содержащие \"subpath\"
+
+   ID               : ИД взаимодействия в форме CRnnn или CInnn, как указано параметром -Check"; // @validatedUsage AJT 13:10:10 option
+
+Error.0="# RecordTools-ERROR: ";
+Error.1="-s: отсутствует исходный файл.";
+Error.2="Файл назначения не может совпадать с исходным файлом.";
+Error.3="-d: отсутствует файл назначения.";
+Error.4="Отсутствует номер блока записи.";
+Error.5="Отсутствует подпуть.";
+Error.6="-s: невозможно найти исходный файл";
+Error.7="Аргумент не распознан.";
+Error.8="-s: невозможно открыть исходный файл";
+Error.9="-d: отсутствует файл назначения.";
+Error.10="-d: файл назначения уже существует.";
+Error.11="-d: каталог назначения не существует.";
+
+Error.99="Неверное число аргументов.";

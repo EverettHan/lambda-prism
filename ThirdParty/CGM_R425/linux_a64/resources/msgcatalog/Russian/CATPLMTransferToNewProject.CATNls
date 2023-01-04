@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+TTNP_Dirty.Diagnostic="Невозможно обработать /p1, так как необходимо выполнить сохранение";
+TTNP_Dirty.Advice="Сохранить изменения";
+
+TTNP_Light.Diagnostic="Невозможно обработать /p1, так как загружено не полностью";
+TTNP_Light.Advice="Открыть /p1";
+
+TTNP_NoProject.Diagnostic="Невозможно извлечь пространство совместной работы /p1";
+TTNP_NoProject.Advice="";
+
+TTNP_CurrentProject.Diagnostic="Невозможно обработать /p1, так как он принадлежит к текущему пространству совместной работы";
+TTNP_CurrentProject.Advice="Проверить выбор";
+
+TTNP_MutipleProjects.Diagnostic="Невозможно обработать несколько пространств совместной работы: /p1 и /p2";
+TTNP_MutipleProjects.Advice="Проверить выбор";
+
+TTNP_Parent.Diagnostic="Невозможно обработать /p1 без родительского элемента /p2";
+TTNP_Parent.Advice="Добавьте /p1 к выбору или выгрузите";
+
+TTNP_Child.Diagnostic="Невозможно обработать /p1, так как дочерний /p2 элемент принадлежит к другому пространству совместной работы";
+TTNP_Child.Advice="Проверить структуру";
+
+TTNP_ParentAlreadyCloned.Diagnostic="Невозможно обработать /p1, так как родительский /p2 элемент уже клонирован";
+TTNP_ParentAlreadyCloned.Advice="Запустите операцию в окне, содержащем клон /p1";
+
+TTNP_ChildLost.Diagnostic="Невозможно обработать /p1, так как он создан после клонирования родительского элемента /p2";
+TTNP_ChildLost.Advice="";
+
+TTNP_PointingOutsideScope.Diagnostic="Невозможно обработать /p1, так как на него ссылается /p2, который не создан с помощью процесса клонирования";
+TTNP_PointingOutsideScope.Advice="Выгрузите /p1 или запустите операцию в сеансе, в котором он не открыт.\nОбратите внимание, что сервер не будет переадресовывать /p1 клону /p2";
+
+TTNP_QueryMapping.Diagnostic="Сбой запроса таблицы сопоставления";
+TTNP_QueryMapping.Advice="Обратитесь в службу поддержки";
+
+TTNP_QueryAttributes.Diagnostic="Не удалось извлечь атрибуты с сервера";
+TTNP_QueryAttributes.Advice="Обратитесь в службу поддержки";
+
+TTNP_Open.Diagnostic="Не удалось открыть данные, уже клонированные в /p1";
+TTNP_Open.Advice="Проверьте последующие сообщения об ошибках. Обратитесь в службу поддержки";
+
+TTNP_NothingToDo.Diagnostic="Все объекты уже клонированы";
+TTNP_NothingToDo.Advice="Открыть клонированную структуру";
+
+TTNP_ServerFork.Diagnostic="Сбой операции клонирования на стороне сервера";
+TTNP_ServerFork.Advice="Проверьте последующие сообщения об ошибках. Закройте окно";
+
+TTNP_CannotStartTask.Diagnostic="Не удалось запустить операцию клонирования на стороне сервера";
+TTNP_CannotStartTask.Advice="Закрыть окно";
+
+TTNP_RefreshSessionMessage="Обновите сеанс (нажмите F5), чтобы согласовать сервер и свой сеанс";
+
+TTNP_MissingForkRecord.Diagnostic="Дублирование выполнено, но /p1 не клонирован на сервере";
+TTNP_MissingForkRecord.Advice="Возможное объяснение: он был удален.\nЗакройте окно и откройте клонированные данные";
+
+TTNP_MissingForkImpactRecord.Diagnostic="Дублирование выполнено, но /p1 не переадресован на сервере";
+TTNP_MissingForkImpactRecord.Advice="Возможное объяснение: он был удален.\n/p1";
+
+TTNP_MissedImpact.Diagnostic="Дублирование выполнено, но /p1 не переадресован в сеансе";
+TTNP_MissedImpact.Advice="Возможное объяснение: он был открыт после запуска клонирования.\n/p1";
+
+TTNP_ConcurrentModification.Diagnostic="Дублирование выполнено, но на /p1 обнаружено одновременное изменение";
+TTNP_ConcurrentModification.Advice="/p1";
+
+TTNP_Internal1.Diagnostic="Во время обработки /p1 произошла внутренняя ошибка";
+TTNP_Internal1.Advice="Обратитесь в службу поддержки (/p1)";
+
+TTNP_Internal2.Diagnostic="Произошла внутренняя ошибка";
+TTNP_Internal2.Advice="Обратитесь в службу поддержки (/p1)";
+
+TTNP_SessionPreview.Diagnostic="Не удалось создать предварительный просмотр сеанса";
+TTNP_SessionPreview.Advice="Проверьте журнал ошибок";

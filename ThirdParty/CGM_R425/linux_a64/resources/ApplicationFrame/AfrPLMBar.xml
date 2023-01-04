@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <!--********   Remove comments when migration is done ************************************************-->
+    <!--<ResourceDictionary Source="CATAfrTopBarHeaders.xml" />-->
+    <ResourceDictionary Source="CATPLMUISignatureAddins.xml" /><!--To remove when migration is done !!!!!!!!!!!-->
+  </Resources>
+
+  <Resources>
+   
+  </Resources>
+  <!--Remove this template when migartion is done !!!!!!-->
+  <Template syp:name="CATAfrTopBarHeadersForMigration" Target="CATCAfrInclude">
+    <CATCmdHeadersList>
+      <!--PLM Bar Headers-->
+      <!-- 6W Tagger Header-->
+      <CATCommandHeader ID = "CATAfrPLMBar6WHdr" ClassName = "CATPLM6WTaggerCmd" SharedLibraryName = "CATImmSearchRefine"
+               ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+      <!--User Name header-->
+      <CATCommandHeader ID = "CATAfrPLMBarUserNameHdr"
+                     ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+
+      <!-- Me Menu Header-->
+      <!--<CATCommandHeader ID = "AfrCmpPLMBarUserHdr"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>-->
+
+      <!-- Plus Menu Header-->
+      <CATCommandHeader ID = "CATAfrTopBarPlusHdr"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+
+      <!-- Share Menu Header-->
+      <CATCommandHeader ID = "CATAfrTopBarShareHdr"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+
+      <!-- Home Header-->
+      <!--<CATCommandHeader ID = "CATAfrPLMBarHomeHdr" ClassName = "" SharedLibraryName = ""
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>-->
+
+      <!-- Help Header-->
+      <CATCommandHeader ID = "CATAfrTopBarHelpHdr" ClassName = "CATHelpOnCurrentCommand" SharedLibraryName = "CATAfrFoundation"
+               ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+
+      <!-- Include template from CATPLMUISignatureAddins.xml-->
+      <CATCAfrInclude syp:Template="CATAfrTopBarAddinsHeaders" />
+
+      <!-- Show/NoShow header-->
+      <CATCommandHeader ID = "CATAfrStatusBarSeeShownHdr" ClassName = "CATCmdSwapShowSpace" SharedLibraryName = "CATVisCommands"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+      <!-- HEADER FOR TEST-->
+      <CATCommandHeader ID = "CATAfrTestSearchMenu" ClassName = "CATCmdSwapShowSpace" SharedLibraryName = "CATVisCommands"
+                        ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+      <!--TO DISPLAY OLD MENU-->
+ 
+    </CATCmdHeadersList>
+
+
+  </Template>
+  <Template syp:name="AfrPLMBarHeaders" Target="CATCmdHeadersList">
+    <CATCmdHeadersList>
+      <!--PLM Bar Headers-->
+      <!--Remove comments when migration is done-->
+      <!--<CATCAfrInclude syp:Template="CATAfrTopBarHeaders" />-->
+      <CATCommandHeader ID = "CATAfrPLMBarStartMenuHdr" ClassName = "CATAfrPLMBarStartMenuCmd" SharedLibraryName = "CATAfrFoundation"
+                     ResourceFile="CATAfrStatusBarHdr" Available = "1"/>
+    </CATCmdHeadersList>
+
+  </Template>
+
+
+  <Template syp:name="CATAfrMenuSearchMenu" Target="CATAfrComponent">
+    <CATCAfrMenu Name="CATSignatureSearchMenu"  
+                 RegisteredFlag="1" 
+                 RepresentationType="AfrSearchMenu" />
+  </Template>
+  
+   <Template syp:name="CATAfrCloudExitMenu" Target="CATAfrComponent">
+    <CATCAfrMenu Name="CATAfrTopBarCloudExitMenu"  RegisteredFlag="1" Title="Exit" ContainerCommand="CATAfrTopBarCloudExitHdr"  />
+  </Template>
+
+
+  <Template syp:name="CATAfrTopBarModelAccess" Target="CATCAfrInclude">
+    <CATCAfrGroup>
+      <!--CURRENT BRAND-->
+      <CATCmdWorkButtonStarter Name="CATAfrSignatureBrandStr" Command="PLMBarSignatureBrandLogoHdr" RepresentationType="AfrTopBarBrand"/>
+      <!--CURRENT APPLICATION NAME-->
+      <CATCmdWorkButtonStarter Name="CATAfrPLMBarTitleStr" Command="CurrentWorkbench" RepresentationType="AfrPLMBarText"/>
+        <!-- SEARCH MENU-->
+      <CATCAfrInclude Condition="IsProjectActivated(UNIVERSAL_SEARCH_ON)==0"
+                   Template="CATAfrMenuSearchMenu" />
+        <!-- SEARCH FIELD-->
+        <CATCmdStarter Name="CATAfrPLMSearchStr" Command="PLMToolbarSearchHdr" RepresentationType="AfrPLMBarCombo"/>
+
+        <CATCAfrMenu Name="CATAfrSearchFieldMenu" Title="Search" RepresentationType="AfrEditor" Icon="I_PLMSearch.png" Visibility="0">
+          <CATCAfrList Name="CATAfrSearchAutoCompletionList"  RepresentationType="AfrMenu">
+
+          </CATCAfrList>
+        </CATCAfrMenu>
+      <!--6W TAGGER-->
+      <CATCmdStarter Name="CATAfrPLMBar6WStr" Command="CATAfrPLMBar6WHdr" RepresentationType="AfrRefinementButton"/>
+      <!--USER NAME-->
+      <CATCmdStarter Name="CATAfrPLMBarUserNameStr" Command="CATAfrPLMBarUserNameHdr"
+                     RepresentationType="AfrTopBarTitle"/>
+      <!--ME MENU-->
+      <CATCAfrMenu Name="CATAfrTopBarMeMenu" Title="Me"  ContainerCommand ="AfrCmpPLMBarUserHdr"
+                   RegisteredFlag="1" RepresentationType="AfrTopBarMeMenu"/>
+      <!--PLUS MENU-->
+      <CATCAfrMenu Name="CATAfrTopBarPlusMenu"  Title="Add" ContainerCommand ="CATAfrTopBarPlusHdr"
+                   RegisteredFlag="1" />
+      <!--SHARE MENU-->
+      <CATCAfrMenu  Name="ShareContainer" Title="Share" ContainerCommand ="CATAfrTopBarShareHdr"
+                    RegisteredFlag="1" />
+      <!--HOME MENU-->
+      <CATCAfrMenu  Name="CATAfrTopBarHomeMenu" Title="My Dashboards" ContainerCommand="CATAfrPLMBarHomeHdr" 
+                    RegisteredFlag="1" />
+      <!--HELP-->
+      <CATCAfrMenu Name="CATAfrTopBarHelpMenu" Title="Help" ContainerCommand="CATAfrTopBarHelpHdr" 
+                   RegisteredFlag="1"  />
+      <!-- EXIT-->
+      <CATCAfrInclude Condition="GetEnv(CATDlgDocumentMaximizedWithoutBorders)"
+                   Template="CATAfrCloudExitMenu" />
+    </CATCAfrGroup>
+  </Template>
+
+  
+  
+  <Template syp:name="CATAfrTopBarModelAccess" Target="CATCAfrInclude" syp:version="1">
+    <CATCAfrGroup>
+      <!--CURRENT BRAND-->
+      <CATCmdWorkButtonStarter Name="CATAfrSignatureBrandStr" Command="PLMBarSignatureBrandLogoHdr" RepresentationType="AfrTopBarBrand"/>
+      <!--CURRENT APPLICATION NAME-->
+      <CATCmdWorkButtonStarter Name="CATAfrPLMBarTitleStr" Command="CurrentWorkbench" RepresentationType="AfrPLMBarText"/>
+      <!-- SEARCH MENU-->
+      <CATCAfrInclude Condition="IsProjectActivated(UNIVERSAL_SEARCH_ON)==0"
+                   Template="CATAfrMenuSearchMenu" />
+      <!-- SEARCH FIELD-->
+      <CATCmdStarter Name="CATAfrPLMSearchStr" Command="PLMToolbarSearchHdr" RepresentationType="AfrPLMBarCombo"/>
+
+      <CATCAfrMenu Name="CATAfrSearchFieldMenu" Title="Search" RepresentationType="AfrEditor" Icon="I_PLMSearch.png" Visibility="0">
+        <CATCAfrList Name="CATAfrSearchAutoCompletionList"  RepresentationType="AfrMenu">
+
+        </CATCAfrList>
+      </CATCAfrMenu>
+      <!--6W TAGGER-->
+      <CATCmdStarter Name="CATAfrPLMBar6WStr" Command="CATAfrPLMBar6WHdr" RepresentationType="AfrRefinementButton"/>
+      <!--USER NAME-->
+      <CATCmdStarter Name="CATAfrPLMBarUserNameStr" Command="CATAfrPLMBarUserNameHdr"
+                     RepresentationType="AfrTopBarTitle"/>
+      <!--ME MENU-->
+      <CATCAfrMenu Name="CATAfrTopBarMeMenu" Title="Me"  ContainerCommand ="AfrCmpPLMBarUserHdr"
+                   RegisteredFlag="1" RepresentationType="AfrTopBarMeMenu"/>
+      <!--PLUS MENU-->
+      <CATCAfrMenu Name="CATAfrTopBarPlusMenu"  Title="Add" ContainerCommand ="CATAfrTopBarPlusHdr"
+                   RegisteredFlag="1" />
+      <!--SHARE MENU-->
+      <CATCAfrMenu  Name="ShareContainer" Title="Share" ContainerCommand ="CATAfrTopBarShareHdr"
+                    RegisteredFlag="1" />
+      <!--HOME MENU-->
+      <CATCAfrMenu  Name="CATAfrTopBarHomeMenu" Title="My Dashboards" ContainerCommand="CATAfrPLMBarHomeHdr"
+                         RegisteredFlag="1" RepresentationType="AfrTopBarHomeMenu" />   
+      
+      <!--HELP-->
+      <CATCAfrMenu Name="CATAfrTopBarHelpMenu" Title="Help" ContainerCommand="CATAfrTopBarHelpHdr"
+                   RegisteredFlag="1"  />
+      <!-- EXIT-->
+      <CATCAfrInclude Condition="GetEnv(CATDlgDocumentMaximizedWithoutBorders)"
+                   Template="CATAfrCloudExitMenu" />
+    </CATCAfrGroup>
+  </Template>
+
+  <Template syp:name="AfrPLMBarAccess" Target="CATCmdAddin">
+    <CATCmdAddin>
+      <CATCmdToolbars>
+        <CATAfrBottomToolbar RepresentationType="AfrPLMBarSignature" ResourceFile="AfrPLMBar">
+
+          <!--3DS ICON AND COMPASS-->
+          <CATCAfrMenu Name="Afr3DS_Compass_CurrentExpStr" ContainerCommand="CATAfrPLMBarStartMenuHdr" 
+                       RepresentationType="Afr3DS_Compass" IgnoreChildModifiedFlag="1"/>
+          
+          <CATCAfrInclude syp:Template="CATAfrTopBarModelAccess" /> 
+          
+
+        </CATAfrBottomToolbar>
+
+
+          <!--SHOW / NO SHOW -->
+        <CATCmdContainer Name="AfrBottomRightCtn" RepresentationType="AfrBottomRight">
+          <CATCmdStarter Name="ShowNoShowStarter" Command="CATAfrStatusBarSeeShownHdr"/>
+        </CATCmdContainer>
+    </CATCmdToolbars>
+    </CATCmdAddin>
+  </Template>
+  
+  <!--*************************************************************************************-->
+  <!--**********************             CID_FRAME TEMPLATE          **********************-->
+  <!--*************************************************************************************-->
+    <Template syp:name="AfrPLMBarAccess" Target="CATCmdAddin" syp:Variation="CID_FRAME">
+    <CATCmdAddin>
+      <CATCmdToolbars>
+
+        <CATAfrBottomToolbar RepresentationType="AfrCIDFrame" ResourceFile="AfrPLMBar">
+
+          <CATCmdContainer Name="CATAfrSignatureBar" RepresentationType="AfrPLMBarSignature" Visibility="1">
+            <!--A special separator to simulate the space of the compass -->
+            <CATCmdSeparator Name="EmptyCompass"  RepresentationType="Afr3DS_Compass_Empty"/>
+            <CATCAfrInclude syp:Template="CATAfrTopBarModelAccess" />
+          </CATCmdContainer>
+
+          <CATCAfrMenu Name="Afr3DS_Compass_CurrentExpStr"  RepresentationType="AfrCompassAppsList" IgnoreChildModifiedFlag="1"/>
+
+        </CATAfrBottomToolbar>
+
+
+          <!--SHOW / NO SHOW -->
+        <CATCmdContainer Name="AfrBottomRightCtn" RepresentationType="AfrBottomRight">
+          <CATCmdStarter Name="ShowNoShowStarter" Command="CATAfrStatusBarSeeShownHdr"/>
+        </CATCmdContainer>
+    </CATCmdToolbars>
+    </CATCmdAddin>
+  </Template>
+
+  <Template syp:name="AfrPLMBarAccess" Target="CATCmdAddin" syp:Variation="CID_FRAME_WEBCOMPASS">
+    <CATCmdAddin>
+      <CATCmdToolbars>
+
+        <CATAfrBottomToolbar RepresentationType="AfrCIDFrame_WebCompass" ResourceFile="AfrPLMBar">
+
+          <CATCmdContainer Name="CATAfrSignatureBar" RepresentationType="AfrPLMBarSignature" Visibility="1">
+            <!--A special separator to simulate the space of the compass -->
+            <CATCmdSeparator Name="EmptyCompass"  RepresentationType="Afr3DS_Compass_Empty"/>
+            <CATCAfrInclude syp:Template="CATAfrTopBarModelAccess" />
+          </CATCmdContainer>
+
+          <CATCAfrMenu Name="Afr3DS_Compass_CurrentExpStr"  RepresentationType="AfrCompassAppsList" IgnoreChildModifiedFlag="1"/>
+
+        </CATAfrBottomToolbar>
+
+
+        <!--SHOW / NO SHOW -->
+        <CATCmdContainer Name="AfrBottomRightCtn" RepresentationType="AfrBottomRight">
+          <CATCmdStarter Name="ShowNoShowStarter" Command="CATAfrStatusBarSeeShownHdr"/>
+        </CATCmdContainer>
+      </CATCmdToolbars>
+    </CATCmdAddin>
+  </Template>
+  
+
+</Styles>

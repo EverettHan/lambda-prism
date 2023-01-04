@@ -1,0 +1,124 @@
+<meta charset="UTF-8"/>
+DELAsmAssemblyModel="Process Planning Extensions";
+  DELAsmAssemblyModel.DELAsmProvideFunctionRef="Provide Function";
+  DELAsmAssemblyModel.DELAsmProduceFunctionRef="Produce Function";
+    DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_MAName="Name of Manufacturing Assembly";
+    DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_MANumber="Number of Manufacturing Assembly";
+    DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_Outsourced="Outsourced";
+    DELAsmAssemblyModel.DELAsmProduceFunctionRef.V_PersistMfgAssembly="Persist Manufacturing Assembly";
+  DELAsmAssemblyModel.DELAsmJoinFunctionRef="Join Function";
+  DELAsmAssemblyModel.DELAsmGenericFunctionRef="Generic Function";
+    DELAsmAssemblyModel.DELAsmGenericFunctionRef.V_ImplSemiFinishedPart="Implements Semi-finished Part";
+  DELAsmAssemblyModel.DELAsmDisassembleFunctionRef="Disassemble Function";
+  DELAsmAssemblyModel.DELAsmUnfastenFunctionRef="Unfasten Function";
+  DELAsmAssemblyModel.DELAsmRemoveFunctionRef="Remove Function";
+  DELAsmAssemblyModel.DELAsmPointFastenFunctionRef="Point Fasten Function";
+  DELAsmAssemblyModel.DELAsmCurveFastenFunctionRef="Curve Fasten Function";
+  DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef="Remove Material Function";
+    DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef.V_RemoveMaterialSubType="Remove Material Subtype";
+    DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef.V_DiameterOfFeature="Diameter of Feature";
+    DELAsmAssemblyModel.DELAsmRemoveMaterialFunctionRef.V_DepthOfFeature="Depth of Feature";
+  DELAsmAssemblyModel.DELAsmAuxiliaryFunctionRef="Transform Function";
+  DELAsmAssemblyModel.V_Outsourced_Enum="V_Outsourced_Enum";
+    DELAsmAssemblyModel.V_Outsourced_Enum.No="No";
+    DELAsmAssemblyModel.V_Outsourced_Enum.Yes="Yes";
+  DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum="V_RemoveMaterialSubType_Enum";
+    DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.PreDrill="PreDrill";
+    DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Drill="Drill";
+    DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Reserved="Reserved";
+    DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Cutting="Cutting";
+    DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Grinding="Grinding";
+    DELAsmAssemblyModel.V_RemoveMaterialSubType_Enum.Beveling="Beveling";
+  DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef="Elementary End Item Function";
+    DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_Manufacturing_Decision="Manufacturing Decision";    
+    DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_SerialNumberReq="Serial Number Required";
+    DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_LotNumberReq="Lot Number Required";   
+    DELAsmAssemblyModel.DELAsmElementaryEndItemFunctionRef.V_NeedDedicatedSystem="Planning Required";   
+  DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef="Create Assembly Function";
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_MAName="Name of Manufacturing Assembly";
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_MANumber="Number of Manufacturing Assembly";
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_Outsourced="Outsourced";
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_PersistMfgAssembly="Persist Manufacturing Assembly";
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_Manufacturing_Decision="Manufacturing Decision";    
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_SerialNumberReq="Serial Number Required";
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_LotNumberReq="Lot Number Required"; 
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_AssemblyComposition="Assembly Composition";   
+    DELAsmAssemblyModel.DELAsmCreateAssemblyFunctionRef.V_NeedDedicatedSystem="Planning Required";   
+  DELAsmAssemblyModel.DELAsmFastenFunctionRef="Fasten Function";
+    DELAsmAssemblyModel.DELAsmFastenFunctionRef.V_IsMovable="Is Movable";   
+  DELAsmAssemblyModel.DELAsmUnitRef="Unit Reference Extension";
+      DELAsmAssemblyModel.DELAsmUnitRef.V_SerialNumber="Serial Number";
+      DELAsmAssemblyModel.DELAsmUnitRef.V_LotNumber="Lot Number";
+      DELAsmAssemblyModel.DELAsmUnitRef.V_LinkedProcess="Linked Process";
+  DELAsmAssemblyModel.DELAsmUnitInst="Unit Instance Extension";
+      DELAsmAssemblyModel.DELAsmUnitInst.V_PlannedSerialNumber="Planned Serial Number";
+      DELAsmAssemblyModel.DELAsmUnitInst.V_PlannedLotNumber="Planned Lot Number";       
+      DELAsmAssemblyModel.DELAsmUnitInst.V_ExecutionStatus="Execution Status";       
+  DELAsmAssemblyModel.V_Manufacturing_Decision_Enum="V_Manufacturing_Decision_Enum";
+    DELAsmAssemblyModel.V_Manufacturing_Decision_Enum.UNDEF="Undefined";
+    DELAsmAssemblyModel.V_Manufacturing_Decision_Enum.TO_BE_DETAILED="To be detailed";
+    DELAsmAssemblyModel.V_Manufacturing_Decision_Enum.NOT_TO_BE_DETAILED="Not to be detailed";
+  DELAsmAssemblyModel.V_AssemblyComposition_Enum="V_AssemblyComposition_Enum";
+    DELAsmAssemblyModel.V_AssemblyComposition_Enum.Contextual="Contextual";
+    DELAsmAssemblyModel.V_AssemblyComposition_Enum.Independent="Independent";
+    
+  DELAsmAssemblyModel.V_MakeOrBuy_Enum="V_MakeOrBuy_Enum";
+    DELAsmAssemblyModel.V_MakeOrBuy_Enum.Unassigned="Unassigned";
+    DELAsmAssemblyModel.V_MakeOrBuy_Enum.Buy="Buy";
+    DELAsmAssemblyModel.V_MakeOrBuy_Enum.Make="Make";
+
+DELAsmAssemblyModel.DELAsmMBOMFunctionRef="MBOM Reference Extension";
+    DELAsmAssemblyModel.DELAsmMBOMFunctionRef.V_MakeOrBuy="Make Or Buy";
+
+  DELAsmAssemblyModel.DELAsmSplitFunctionRef="Split Function";
+    DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_NumberOfPieces="Number of cut pieces in one raw stock";
+    DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_XSplitDirection="X direction cutting length";
+    DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_YSplitDirection="Y direction cutting length";
+    DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_ZSplitDirection="Z direction cutting length";
+    DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_CustoSplitDirection="Custom direction cutting length";
+    DELAsmAssemblyModel.DELAsmSplitFunctionRef.V_NameCustoSplitDir="Name of the custom direction";
+
+  DELAsmAssemblyModel.DELAsmCreateMaterialFunctionRef="Create Material Function";
+    DELAsmAssemblyModel.DELAsmCreateMaterialFunctionRef.V_NeedDedicatedSystem="Planning Required";
+
+  DELAsmAssemblyModel.DELAsmMarkingFunctionRef="Marking Function";
+    DELAsmAssemblyModel.DELAsmMarkingFunctionRef.V_MarkingSubType="Marking Subtype";
+
+  DELAsmAssemblyModel.V_MarkingSubType_Enum="V_MarkingSubType_Enum";
+    DELAsmAssemblyModel.V_MarkingSubType_Enum.Annotation="Annotation";
+   
+  DELAsmAssemblyModel.DELAsmCreateKitFunctionRef="Create Kit Function";
+
+  DELAsmAssemblyModel.DELAsmDataRequirementExt="Data Requirement Extension";
+    DELAsmAssemblyModel.DELAsmDataRequirementExt.V_DataQuantity="Data Quantity";
+
+  DELAsmAssemblyModel.V_NeedDedicatedSystem_Enum="V_NeedDedicatedSystem_Enum";
+    DELAsmAssemblyModel.V_NeedDedicatedSystem_Enum.NO="No";
+    DELAsmAssemblyModel.V_NeedDedicatedSystem_Enum.YES="Yes";
+
+  DELAsmAssemblyModel.DELAsmQuantity_Length="Quantity Extension";
+    DELAsmAssemblyModel.DELAsmQuantity_Length.V_PartQuantity="Quantity";
+
+  DELAsmAssemblyModel.DELAsmQuantity_Volume="Quantity Extension";
+    DELAsmAssemblyModel.DELAsmQuantity_Volume.V_PartQuantity="Quantity";
+
+  DELAsmAssemblyModel.DELAsmQuantity_Surface="Quantity Extension";
+    DELAsmAssemblyModel.DELAsmQuantity_Surface.V_PartQuantity="Quantity";
+
+  DELAsmAssemblyModel.DELAsmQuantity_Weight="Quantity Extension";
+    DELAsmAssemblyModel.DELAsmQuantity_Weight.V_PartQuantity="Quantity";
+
+  DELAsmAssemblyModel.DELAsmQuantity_Each="Quantity Extension";
+    DELAsmAssemblyModel.DELAsmQuantity_Each.V_PartQuantity="Quantity";
+
+  DELAsmAssemblyModel.DELAsmMoveStructureRestrictionExt="Move Structure Restriction Extension";
+    DELAsmAssemblyModel.DELAsmMoveStructureRestrictionExt.V_AutoDownMoveLocked="Lock position in graph";
+
+  DELAsmAssemblyModel.DELAsmProcessOutputStatusExt="Process Output Status Extension";
+    DELAsmAssemblyModel.DELAsmProcessOutputStatusExt.V_GeneratedFlag="Generated Flag";
+    DELAsmAssemblyModel.DELAsmProcessOutputStatusExt.V_ListUpdateStamp_1="First List Of UpdateStamp";
+    DELAsmAssemblyModel.DELAsmProcessOutputStatusExt.V_ListUpdateStamp_2="Second List Of UpdateStamp";
+
+
+  DELAsmAssemblyModel.DELAsmInstallationFunctionRef="Installation Function";
+    DELAsmAssemblyModel.DELAsmInstallationFunctionRef.V_NeedDedicatedSystem="Planning Required";   

@@ -1,0 +1,18 @@
+<meta charset="UTF-8"/>
+CATPLMBusinessLogicUpgrade.Alias="データ アップグレードをサポートするための PLM ビジネス ロジック";
+CATPLMBusinessLogicUpgrade.Description="必要なときにデータをアップグレードするためのオープニングの定義。";
+
+INFRA_UnifiedTypingMigration.Alias="統合タイプ分けへの移行: タイプと属性のマッピング";
+INFRA_UnifiedTypingMigration.Description="以前のタイプ分けから統合タイプ分けへと移行する際に使用される、タイプと属性のマッピングを表現するためのビジネス ルールを導入できます。PVS (プロダクト ビュー フィルタ) をアップグレードして照会を保存するには、";
+INFRA_UnifiedTypingMigration.ThisObject.Alias="(PVS または照会の) 入力値を入力します";
+INFRA_UnifiedTypingMigration.ThisObject.Description="マップする必要がある照会または PVS に保存されている、以前のタイプ分けのフェイク オブジェクト。";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Alias="照会内で代わりに使用するデフォルト タイプの名前";
+INFRA_UnifiedTypingMigration.DefaultTargetTypeName.Description="入力内のデフォルト ターゲット タイプ。";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Alias="属性名のリスト";
+INFRA_UnifiedTypingMigration.PreviousAttributes.Description="アップグレードする照会に属する入力内の属性名のリスト。";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Alias="照会内で代わりに使用するタイプの名前";
+INFRA_UnifiedTypingMigration.ComputedTargetTypeName.Description="照会のタイプを変更する必要がある場合は、このタイプ名を入力します。";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="(マップされる可能性がある) 属性名のリスト";
+INFRA_UnifiedTypingMigration.MappedAttributes.Alias="リストのサイズは、入力内の SavedAttributes と同じでなければなりません。属性が保持され、マップされない場合は同じ名前、それ以外の場合は新しい名前を指定します。属性が不要な場合は、名前をブランクにして構いません。";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="移行後に属性の配置先となる拡張名のリスト";
+INFRA_UnifiedTypingMigration.MappedExtensions.Description="このリストは、出力内の MappedAttributes と同じサイズである必要があります。属性がタイプで保持される場合は、名前をブランクにします。属性が移行後に拡張に配置される場合は、拡張名を使用します。";

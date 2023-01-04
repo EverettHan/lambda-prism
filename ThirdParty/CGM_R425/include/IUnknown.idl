@@ -1,0 +1,113 @@
+#ifndef __IUnknown
+#define __IUnknown
+
+/*COPYRIGHT DASSAULT SYSTEMES 2000 */
+
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+/*IDLNOGEN*/
+
+#pragma MODIFIERS 0x0038
+
+/**
+ * @nodoc
+ * A type for unsigned long to be Microsoft(R) compatible.
+ */
+typedef unsigned long ULONG;
+
+#pragma ID HRESULT "DCE:8f872814-1330-11d1-a117080009dc6436"
+/**
+ * @nodoc
+ * Return type for the QueryInterface method, and for most interface methods. 
+ */
+typedef long HRESULT;
+/**
+ * @nodoc
+ * A type for octet to be Microsoft(R) compatible.
+ */
+typedef octet BYTE;
+/**
+ * @nodoc
+ * A type for unsigned long to be Microsoft(R) compatible.
+ */
+typedef unsigned long DWORD;
+/**
+ * @nodoc
+ * A type for short to be Microsoft(R) compatible.
+ */
+typedef unsigned short WORD;
+
+// definition of IID (Identifier of interfaces)
+#pragma ID GUID "DCE:b1404b16-1330-11d1-a117080009dc6436"
+
+/**
+ * @nodoc
+ * The structure to accommodate a Globally Unique Identifier.
+ */
+typedef struct  U_GUID
+{
+   DWORD Data1;
+   WORD Data2;
+   WORD Data3;
+   BYTE Data4[8];
+} GUID;
+/**
+ * @nodoc
+ * Interface Globally Unique Identifier.
+ */
+typedef GUID IID;
+/**
+ * @nodoc
+ * Class Globally Unique Identifier.
+ */
+typedef GUID CLSID;
+
+
+
+#pragma ID IUnknown "DCE:00000000-0000-0000-0000000000000000"
+/**
+ * Base interface for all interfaces.
+ * <b>Role</b>: All interfaces derive from <tt>IUnknown</tt> which replaces for UNIX the
+ * native Microsoft(R) <tt>IUnknown</tt> interface.
+ * This interface supplies the three basic methods QueryInterface, AddRef and
+ * Release to be COM (Microsoft(R) Component Object Model) compliant.
+ * These methods cannot be used in a macro.
+ */
+interface IUnknown
+{
+/**
+ * @nodoc
+ * Returns a pointer to a given interface.
+ * @param iid
+ *   The interface identifier for which a pointer is requested.
+ * @param ppv
+ *   The address where the returned pointer to the interface is located.
+ * @return
+ *   <dl>
+ *   <dt><tt>S_OK</tt>          <dd>If the query succeeds
+ *   <dt><tt>E_NOINTERFACE</tt> <dd>If the interface does not exist
+ *   <dt>Other                  <dd>If the query fails for any other reason.
+ *   </dl>
+ */
+   HRESULT QueryInterface(in /*IID*/ long iid, out IUnknown ppv);
+ /**
+  * @nodoc
+  * Increments the reference count for the given interface.
+  * @return The reference count value.
+  * <br>This information is meant to be used for diagnostic/testing purposes only, because, in certain situations, the value may be unstable.
+  */
+   ULONG AddRef();
+ /**
+  * @nodoc
+  * Decrements the reference count for the given interface.
+  * @return The reference count value.
+  * <br>This information is meant to be used for diagnostic/testing purposes only, because, in certain situations, the value may be unstable.
+  */
+   ULONG Release();
+};
+
+
+#endif

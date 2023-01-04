@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <DST_STATE_GROUP>
+    <DEPTH_ENABLE>false</DEPTH_ENABLE>
+    <DEPTH_WRITE>false</DEPTH_WRITE>
+    <NAME>NoTestNoWrite</NAME>
+  </DST_STATE_GROUP>
+
+  <BLEND_STATE_GROUP>
+    <NAME>BlendState</NAME>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>One</ALPHA_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <COLOR_DST_BLEND>One</COLOR_DST_BLEND>
+      <COLOR_SRC_BLEND>One</COLOR_SRC_BLEND>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+  
+  <BLEND_STATE_GROUP>
+    <NAME>NoBlendState</NAME>
+    <TARGET>
+      <ID>0</ID>
+      <BLEND_ENABLE>false</BLEND_ENABLE>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPrefilterEnvMap</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>s_EnvMap</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>s_EnvMapCube</NAME>
+    <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>s_EnvMapArray</NAME>
+    <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>s_CurrentEnvMapCube</NAME>
+    <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>s_CurrentEnvMapCubeArray</NAME>
+    <SAMPLER_TYPE>samplerCubeArray</SAMPLER_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER_STATE>
+    <NAME>EnvMapSampler</NAME> 
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>EnvMapSampler2</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Resolve</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapArray</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCubeArray</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <BLEND_STATE>NoBlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PrefilterEnvMapPSResolve</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>ClearLayered</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Geometry</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+        <STREAM>
+          <STAGES>Geometry_Fragment</STAGES>
+          <VARYING>
+            <NAME>gTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>SO_CONVOLUTION_USE_GEOMETRY_STAGE</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <BLEND_STATE>NoBlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>PostEffect_FullScreenQuadx6GS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PrefilterEnvMapPSClear</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>ResolveLayered</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Geometry</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+        <STREAM>
+          <STAGES>Geometry_Fragment</STAGES>
+          <VARYING>
+            <NAME>gTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapArray</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCubeArray</SAMPLER>
+          <STATES>EnvMapSampler2</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>SO_CONVOLUTION_USE_GEOMETRY_STAGE</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <BLEND_STATE>NoBlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>PostEffect_FullScreenQuadx6GS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PostEffect_EnvMap_Helpers PrefilterEnvMapPSResolve</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+  <TECHNIQUE>
+    <NAME>Blit</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Geometry</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+        <STREAM>
+          <STAGES>Geometry_Fragment</STAGES>
+          <VARYING>
+            <NAME>gTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCubeArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <BLEND_STATE>NoBlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>PostEffect_FullScreenQuadx6GS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PostEffect_EnvMap_Helpers PrefilterEnvMapPSBlit</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <TECHNIQUE>
+    <NAME>Diffuse</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <BLEND_STATE>BlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PostEffect_EnvMap_Helpers PrefilterEnvMapPSDiffuse PrefilterEnvMapPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>Specular</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCubeArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <BLEND_STATE>BlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PostEffect_EnvMap_Helpers dspbr_sheen PrefilterEnvMapPSSpecular PrefilterEnvMapPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+
+  <TECHNIQUE>
+    <NAME>DiffuseLayered</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Geometry</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+        <STREAM>
+          <STAGES>Geometry_Fragment</STAGES>
+          <VARYING>
+            <NAME>gTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>SO_CONVOLUTION_USE_GEOMETRY_STAGE</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <BLEND_STATE>NoBlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>PostEffect_FullScreenQuadx6GS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PostEffect_EnvMap_Helpers PrefilterEnvMapPSDiffuse PrefilterEnvMapPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>SpecularLayered</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Geometry</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float2</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+        <STREAM>
+          <STAGES>Geometry_Fragment</STAGES>
+          <VARYING>
+            <NAME>gTexCoord</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMap</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_EnvMapCube</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>s_CurrentEnvMapCubeArray</SAMPLER>
+          <STATES>EnvMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>TexCoordAsVec2</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+        <SHADER_OPTION>
+          <NAME>SO_CONVOLUTION_USE_GEOMETRY_STAGE</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+
+      <BLEND_STATE>NoBlendState</BLEND_STATE>
+      <DEPTH_STENCIL_STATE>NoTestNoWrite</DEPTH_STENCIL_STATE>
+
+      <COMMONS>streams varyings</COMMONS>
+      <VERTEX_STAGE>PostEffect_FullScreenQuadVS</VERTEX_STAGE>
+      <GEOMETRY_STAGE>PostEffect_FullScreenQuadx6GS</GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>PrefilterEnvMapPSHelpers PostEffect_EnvMap_Helpers dspbr_sheen PrefilterEnvMapPSSpecular PrefilterEnvMapPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  
+</EFFECT>

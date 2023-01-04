@@ -1,0 +1,1304 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrVIDCompass.m\src\CATAfrPLMCompassVid.cpp-->
+<!--@Used AfrImmersiveRender\CATAfrVIDCompass.m\src\CATAfr3DXPCompass.cpp-->
+<!--@Used AfrImmersiveRender\CATAfrVIDCompass.m\src\CATAfrPLMCompassProgressTaskLayer.cpp-->
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="Default_WebCompass" Target="CATAfrVidCompassWidget">
+    <!--syp:version="1"-->
+    <CATVidLayLayer syp:name="Hit">
+      <CATVidGPPolygon Name="North" syp:name="North" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@NorthContour" />
+      <CATVidGPPolygon Name="East" syp:name="East" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@EastContour"  />
+      <CATVidGPPolygon Name="South" syp:name="South" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@SouthContour" />
+      <CATVidGPPolygon Name="West" syp:name="West" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@WestContour" />
+      <CATVidLayGrid>
+        <CATVidGPPolygon Name="Simulation" syp:name="Play" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" TextureAlpha="50"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@PlayContour" Dimension="@PlayDimension" Drop="@HandleEvent"  CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+      </CATVidLayGrid>
+
+      <CATVidLayLayer  >
+        <!--CompassBaseLayer-->
+
+        <!--CompassBaseLayer-->
+        <CATVidGPSquare syp:name="CompassNormalState" Name="CompassNormalState"
+                                Texture="Compass/Signature_64/Foreground.png" TextureAlpha="255"
+                            />
+        <!--CompassGreyTexture-->
+        <CATVidGPSquare syp:name="CompassGreyState" Name="CompassGreyState"
+                                Texture="Compass/Signature_64/Grey.png" TextureAlpha="230"
+                            />
+        <!--Play-->
+        <CATVidGPSquare syp:name="CompassPlay" Name="CompassPlay"
+                        Texture="" TextureAlpha="230"
+                            />
+        <!--Play Pressed-->
+        <CATVidGPSquare syp:name="CompassPlayPress" Name="CompassPlayPress"
+                        Texture="Compass/Signature_64/Play_Over_NewCompass.png" TextureAlpha="0"
+                            />
+        <!--Play Focus-->
+        <CATVidGPSquare syp:name="CompassPlayFocus" Name="CompassPlayFocus"
+                        Texture="Compass/Signature_64/Play_Over2.png" TextureAlpha="0"
+                            />
+
+
+
+        <!--West Press-->
+        <CATVidGPSquare syp:name="CompassWestPress" Name="CompassWestPress"
+                  Texture="Compass/Signature_64/West.png" TextureAlpha="230"
+                            />
+
+        <!--West Focus-->
+        <CATVidGPSquare syp:name="CompassWestFocus" Name="CompassWestFocus"
+                  Texture="Compass/Signature_64/West_Over.png" TextureAlpha="230"
+                            />
+
+        <!--East Press-->
+        <CATVidGPSquare syp:name="CompassEastPress" Name="CompassEastPress"
+                  Texture="Compass/Signature_64/East.png" TextureAlpha="230"
+                            />
+
+        <!--East Focus-->
+        <CATVidGPSquare syp:name="CompassEastFocus" Name="CompassEastFocus"
+                  Texture="Compass/Signature_64/East_Over.png" TextureAlpha="230"
+                            />
+
+        <!--North Press-->
+        <CATVidGPSquare syp:name="CompassNorthPress" Name="CompassNorthPress"
+                  Texture="Compass/Signature_64/North.png" TextureAlpha="230"
+                            />
+
+        <!--North Focus-->
+        <CATVidGPSquare syp:name="CompassNorthFocus" Name="CompassNorthFocus"
+                  Texture="Compass/Signature_64/North_Over.png" TextureAlpha="230"
+                            />
+
+
+        <!--South Press-->
+        <CATVidGPSquare syp:name="CompassSouthPress" Name="CompassSouthPress"
+                  Texture="Compass/Signature_64/South.png" TextureAlpha="230"
+                            />
+
+        <!--South Focus-->
+        <CATVidGPSquare syp:name="CompassSouthFocus" Name="CompassSouthFocus"
+                   Texture="Compass/Signature_64/South_Over.png" TextureAlpha="230"
+                            />
+      </CATVidLayLayer>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="None">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSimulation">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassPlayFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StateMode" Value="None">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="255"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="255"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="OnPlayerVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OnPlayerVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="StateMode" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeCompass">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="230"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Mini">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="64 64"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_64/Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_64/Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_64/Play_Over_NewCompass.png"/>
+        <!--Value="Compass/Signature_64/Play_Over.png"-->
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_64/Play_On_NewCompass.png"/>
+        <!--Value="Compass/Signature_64/Play_On.png"-->
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_64/West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_64/North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_64/East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_64/South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_64/West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_64/East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_64/North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_64/South_Over.png"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Big">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="124 124"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_120/Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_120/Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_120/Play_Over_NewCompass.png"/>
+        <!--Value="Compass/Signature_120/Play_Over.png"-->
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_120/Play_On_NewCompass.png"/>
+        <!--Value="Compass/Signature_120/Play_On.png"-->
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_120/West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_120/North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_120/East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_120/South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_120/West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_120/East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_120/North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_120/South_Over.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Default" Target="CATAfrVidCompassWidget">
+    <CATVidLayLayer syp:name="Hit">
+      <CATVidGPPolygon Name="North" syp:name="North" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@NorthContour" />
+      <CATVidGPPolygon Name="East" syp:name="East" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@EastContour"  />
+      <CATVidGPPolygon Name="South" syp:name="South" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@SouthContour" />
+      <CATVidGPPolygon Name="West" syp:name="West" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@WestContour" />
+      <CATVidLayGrid>
+        <CATVidGPPolygon Name="Simulation" syp:name="Play" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" TextureAlpha="50"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@PlayContour" Dimension="@PlayDimension" Drop="@HandleEvent"  CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+      </CATVidLayGrid>
+
+      <CATVidLayLayer  >
+        <!--CompassBaseLayer-->
+
+        <!--CompassBaseLayer-->
+        <CATVidGPSquare syp:name="CompassNormalState" Name="CompassNormalState"
+                                Texture="Compass/Signature_64/Foreground.png" TextureAlpha="255"
+                            />
+        <!--CompassGreyTexture-->
+        <CATVidGPSquare syp:name="CompassGreyState" Name="CompassGreyState"
+                                Texture="Compass/Signature_64/Grey.png" TextureAlpha="230"
+                            />
+        <!--Play-->
+        <CATVidGPSquare syp:name="CompassPlay" Name="CompassPlay"
+                        Texture="" TextureAlpha="230"
+                            />
+        <!--Play Pressed-->
+        <CATVidGPSquare syp:name="CompassPlayPress" Name="CompassPlayPress"
+                        Texture="Compass/Signature_64/Play_Over.png" TextureAlpha="0"
+                            />
+        <!--Play Focus-->
+        <CATVidGPSquare syp:name="CompassPlayFocus" Name="CompassPlayFocus"
+                        Texture="Compass/Signature_64/Play_Over2.png" TextureAlpha="0"
+                            />
+
+
+
+        <!--West Press-->
+        <CATVidGPSquare syp:name="CompassWestPress" Name="CompassWestPress"
+                  Texture="Compass/Signature_64/West.png" TextureAlpha="230"
+                            />
+
+        <!--West Focus-->
+        <CATVidGPSquare syp:name="CompassWestFocus" Name="CompassWestFocus"
+                  Texture="Compass/Signature_64/West_Over.png" TextureAlpha="230"
+                            />
+
+        <!--East Press-->
+        <CATVidGPSquare syp:name="CompassEastPress" Name="CompassEastPress"
+                  Texture="Compass/Signature_64/East.png" TextureAlpha="230"
+                            />
+
+        <!--East Focus-->
+        <CATVidGPSquare syp:name="CompassEastFocus" Name="CompassEastFocus"
+                  Texture="Compass/Signature_64/East_Over.png" TextureAlpha="230"
+                            />
+
+        <!--North Press-->
+        <CATVidGPSquare syp:name="CompassNorthPress" Name="CompassNorthPress"
+                  Texture="Compass/Signature_64/North.png" TextureAlpha="230"
+                            />
+
+        <!--North Focus-->
+        <CATVidGPSquare syp:name="CompassNorthFocus" Name="CompassNorthFocus"
+                  Texture="Compass/Signature_64/North_Over.png" TextureAlpha="230"
+                            />
+
+
+        <!--South Press-->
+        <CATVidGPSquare syp:name="CompassSouthPress" Name="CompassSouthPress"
+                  Texture="Compass/Signature_64/South.png" TextureAlpha="230"
+                            />
+
+        <!--South Focus-->
+        <CATVidGPSquare syp:name="CompassSouthFocus" Name="CompassSouthFocus"
+                   Texture="Compass/Signature_64/South_Over.png" TextureAlpha="230"
+                            />
+      </CATVidLayLayer>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="None">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSimulation">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassPlayFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StateMode" Value="None">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="255"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="255"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="OnPlayerVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OnPlayerVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="StateMode" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="230"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Mini">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="64 64"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_64/Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_64/Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_64/Play_Over.png"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_64/Play_On.png"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_64/West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_64/North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_64/East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_64/South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_64/West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_64/East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_64/North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_64/South_Over.png"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Big">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="124 124"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_120/Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_120/Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_120/Play_Over.png"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_120/Play_On.png"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_120/West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_120/North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_120/East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_120/South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_120/West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_120/East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_120/North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_120/South_Over.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <Template syp:name="Default_WebCompassSimon" Target="CATAfrVidCompassWidget">
+    <!--syp:version="1"-->
+    <CATVidLayLayer syp:name="Hit">
+      <CATVidGPPolygon Name="North" syp:name="North" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@NorthContour" />
+      <CATVidGPPolygon Name="East" syp:name="East" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@EastContour"  />
+      <CATVidGPPolygon Name="South" syp:name="South" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@SouthContour" />
+      <CATVidGPPolygon Name="West" syp:name="West" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@WestContour" />
+      <CATVidLayGrid>
+        <CATVidGPPolygon Name="Simulation" syp:name="Play" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" TextureAlpha="50"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@PlayContour" Dimension="@PlayDimension" Drop="@HandleEvent"  CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+      </CATVidLayGrid>
+
+      <CATVidLayLayer  >
+        <!--CompassBaseLayer-->
+
+        <!--CompassBaseLayer-->
+        <CATVidGPSquare syp:name="CompassNormalState" Name="CompassNormalState"
+                                Texture="Compass/Signature_64/sim_Foreground.png" TextureAlpha="255"
+                            />
+        <!--CompassGreyTexture-->
+        <CATVidGPSquare syp:name="CompassGreyState" Name="CompassGreyState"
+                                Texture="Compass/Signature_64/sim_Grey.png" TextureAlpha="230"
+                            />
+        <!--Play-->
+        <CATVidGPSquare syp:name="CompassPlay" Name="CompassPlay"
+                        Texture="" TextureAlpha="230"
+                            />
+        <!--Play Pressed-->
+        <CATVidGPSquare syp:name="CompassPlayPress" Name="CompassPlayPress"
+                        Texture="Compass/Signature_64/sim_Play_Over_NewCompass.png" TextureAlpha="0"
+                            />
+        <!--Play Focus-->
+        <CATVidGPSquare syp:name="CompassPlayFocus" Name="CompassPlayFocus"
+                        Texture="Compass/Signature_64/sim_Play_Over2.png" TextureAlpha="0"
+                            />
+
+
+
+        <!--West Press-->
+        <CATVidGPSquare syp:name="CompassWestPress" Name="CompassWestPress"
+                  Texture="Compass/Signature_64/sim_West.png" TextureAlpha="230"
+                            />
+
+        <!--West Focus-->
+        <CATVidGPSquare syp:name="CompassWestFocus" Name="CompassWestFocus"
+                  Texture="Compass/Signature_64/sim_West_Over.png" TextureAlpha="230"
+                            />
+
+        <!--East Press-->
+        <CATVidGPSquare syp:name="CompassEastPress" Name="CompassEastPress"
+                  Texture="Compass/Signature_64/sim_East.png" TextureAlpha="230"
+                            />
+
+        <!--East Focus-->
+        <CATVidGPSquare syp:name="CompassEastFocus" Name="CompassEastFocus"
+                  Texture="Compass/Signature_64/sim_East_Over.png" TextureAlpha="230"
+                            />
+
+        <!--North Press-->
+        <CATVidGPSquare syp:name="CompassNorthPress" Name="CompassNorthPress"
+                  Texture="Compass/Signature_64/sim_North.png" TextureAlpha="230"
+                            />
+
+        <!--North Focus-->
+        <CATVidGPSquare syp:name="CompassNorthFocus" Name="CompassNorthFocus"
+                  Texture="Compass/Signature_64/sim_North_Over.png" TextureAlpha="230"
+                            />
+
+
+        <!--South Press-->
+        <CATVidGPSquare syp:name="CompassSouthPress" Name="CompassSouthPress"
+                  Texture="Compass/Signature_64/sim_South.png" TextureAlpha="230"
+                            />
+
+        <!--South Focus-->
+        <CATVidGPSquare syp:name="CompassSouthFocus" Name="CompassSouthFocus"
+                   Texture="Compass/Signature_64/sim_South_Over.png" TextureAlpha="230"
+                            />
+      </CATVidLayLayer>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="None">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSimulation">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassPlayFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <!--To="255"-->
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StateMode" Value="None">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="255"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="255"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="OnPlayerVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OnPlayerVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="StateMode" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="230"/>
+        <!--Value="230"-->
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeCompass">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="230"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Mini">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="64 64"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_64/sim_Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_64/sim_Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_64/sim_Play_Over_NewCompass.png"/>
+        <!--Value="Compass/Signature_64/sim_Play_Over.png"-->
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_64/sim_Play_On_NewCompass.png"/>
+        <!--Value="Compass/Signature_64/sim_Play_On.png"-->
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_64/sim_West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_64/sim_North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_64/sim_East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_64/sim_South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_64/sim_West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_64/sim_East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_64/sim_North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_64/sim_South_Over.png"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Big">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="124 124"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_120/sim_Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_120/sim_Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_120/sim_Play_Over_NewCompass.png"/>
+        <!--Value="Compass/Signature_120/sim_Play_Over.png"-->
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_120/sim_Play_On_NewCompass.png"/>
+        <!--Value="Compass/Signature_120/sim_Play_On.png"-->
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_120/sim_West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_120/sim_North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_120/sim_East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_120/sim_South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_120/sim_West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_120/sim_East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_120/sim_North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_120/sim_South_Over.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="DefaultSimon" Target="CATAfrVidCompassWidget">
+    <CATVidLayLayer syp:name="Hit">
+      <CATVidGPPolygon Name="North" syp:name="North" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@NorthContour" />
+      <CATVidGPPolygon Name="East" syp:name="East" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@EastContour"  />
+      <CATVidGPPolygon Name="South" syp:name="South" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent" Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@SouthContour" />
+      <CATVidGPPolygon Name="West" syp:name="West" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" Drag="@HandleEvent"  Drop="@HandleEvent"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Contour="@WestContour" />
+      <CATVidLayGrid>
+        <CATVidGPPolygon Name="Simulation" syp:name="Play" UseManipulatorFlag="1" AcceptFocusOnDropFlag="1" GiveFocusOnDragFlag="1" TextureAlpha="50"
+                       Press="@HandleEvent" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Drag="@HandleEvent"  Contour="@PlayContour" Dimension="@PlayDimension" Drop="@HandleEvent"  CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+      </CATVidLayGrid>
+
+      <CATVidLayLayer  >
+        <!--CompassBaseLayer-->
+
+        <!--CompassBaseLayer-->
+        <CATVidGPSquare syp:name="CompassNormalState" Name="CompassNormalState"
+                                Texture="Compass/Signature_64/sim_Foreground.png" TextureAlpha="255"
+                            />
+        <!--CompassGreyTexture-->
+        <CATVidGPSquare syp:name="CompassGreyState" Name="CompassGreyState"
+                                Texture="Compass/Signature_64/sim_Grey.png" TextureAlpha="230"
+                            />
+        <!--Play-->
+        <CATVidGPSquare syp:name="CompassPlay" Name="CompassPlay"
+                        Texture="" TextureAlpha="230"
+                            />
+        <!--Play Pressed-->
+        <CATVidGPSquare syp:name="CompassPlayPress" Name="CompassPlayPress"
+                        Texture="Compass/Signature_64/sim_Play_Over.png" TextureAlpha="0"
+                            />
+        <!--Play Focus-->
+        <CATVidGPSquare syp:name="CompassPlayFocus" Name="CompassPlayFocus"
+                        Texture="Compass/Signature_64/sim_Play_Over2.png" TextureAlpha="0"
+                            />
+
+
+
+        <!--West Press-->
+        <CATVidGPSquare syp:name="CompassWestPress" Name="CompassWestPress"
+                  Texture="Compass/Signature_64/sim_West.png" TextureAlpha="230"
+                            />
+
+        <!--West Focus-->
+        <CATVidGPSquare syp:name="CompassWestFocus" Name="CompassWestFocus"
+                  Texture="Compass/Signature_64/sim_West_Over.png" TextureAlpha="230"
+                            />
+
+        <!--East Press-->
+        <CATVidGPSquare syp:name="CompassEastPress" Name="CompassEastPress"
+                  Texture="Compass/Signature_64/sim_East.png" TextureAlpha="230"
+                            />
+
+        <!--East Focus-->
+        <CATVidGPSquare syp:name="CompassEastFocus" Name="CompassEastFocus"
+                  Texture="Compass/Signature_64/sim_East_Over.png" TextureAlpha="230"
+                            />
+
+        <!--North Press-->
+        <CATVidGPSquare syp:name="CompassNorthPress" Name="CompassNorthPress"
+                  Texture="Compass/Signature_64/sim_North.png" TextureAlpha="230"
+                            />
+
+        <!--North Focus-->
+        <CATVidGPSquare syp:name="CompassNorthFocus" Name="CompassNorthFocus"
+                  Texture="Compass/Signature_64/sim_North_Over.png" TextureAlpha="230"
+                            />
+
+
+        <!--South Press-->
+        <CATVidGPSquare syp:name="CompassSouthPress" Name="CompassSouthPress"
+                  Texture="Compass/Signature_64/sim_South.png" TextureAlpha="230"
+                            />
+
+        <!--South Focus-->
+        <CATVidGPSquare syp:name="CompassSouthFocus" Name="CompassSouthFocus"
+                   Texture="Compass/Signature_64/sim_South_Over.png" TextureAlpha="230"
+                            />
+      </CATVidLayLayer>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OverFlag" Value="None">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSimulation">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassPlayFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassWestFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassEastFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassNorthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OverFlag" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassWestFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPBeginStoryboard>
+          <CATSYPStoryboard Duration="0:0:0.2">
+            <CATSYPIntAnimation CATSYPStoryboard.TargetName="CompassSouthFocus" CATSYPStoryboard.TargetProperty="TextureAlpha" Duration="0:0:0.2" To="255"/>
+          </CATSYPStoryboard>
+        </CATSYPBeginStoryboard>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StateMode" Value="None">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="255"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="255"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="SimulationMode" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="OnPlayerVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="OnPlayerVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="CompassPlay" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="StateMode" Value="ModeWest">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeEast">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeNorth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="230"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="0"/>
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="StateMode" Value="ModeSouth">
+        <CATSYPSetter TargetName="CompassNormalState" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="TextureAlpha" Value="0"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="TextureAlpha" Value="230"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Mini">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="64 64"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_64/sim_Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_64/sim_Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_64/sim_Play_Over.png"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_64/sim_Play_On.png"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_64/sim_West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_64/sim_North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_64/sim_East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_64/sim_South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_64/sim_West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_64/sim_East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_64/sim_North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_64/sim_South_Over.png"/>
+
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="CompassLook" Value="Big">
+        <CATSYPSetter TargetName="Hit" Property="RequestedMinimumDimension" Value="124 124"/>
+        <CATSYPSetter TargetName="CompassNormalState" Property="Texture" Value="Compass/Signature_120/sim_Foreground.png"/>
+        <CATSYPSetter TargetName="CompassGreyState" Property="Texture" Value="Compass/Signature_120/sim_Grey.png"/>
+        <CATSYPSetter TargetName="CompassPlayFocus" Property="Texture" Value="Compass/Signature_120/sim_Play_Over.png"/>
+        <CATSYPSetter TargetName="CompassPlayPress" Property="Texture" Value="Compass/Signature_120/sim_Play_On.png"/>
+        <CATSYPSetter TargetName="CompassWestPress" Property="Texture" Value="Compass/Signature_120/sim_West.png"/>
+        <CATSYPSetter TargetName="CompassNorthPress" Property="Texture" Value="Compass/Signature_120/sim_North.png"/>
+        <CATSYPSetter TargetName="CompassEastPress" Property="Texture" Value="Compass/Signature_120/sim_East.png"/>
+        <CATSYPSetter TargetName="CompassSouthPress" Property="Texture" Value="Compass/Signature_120/sim_South.png"/>
+        <CATSYPSetter TargetName="CompassWestFocus" Property="Texture" Value="Compass/Signature_120/sim_West_Over.png"/>
+        <CATSYPSetter TargetName="CompassEastFocus" Property="Texture" Value="Compass/Signature_120/sim_East_Over.png"/>
+        <CATSYPSetter TargetName="CompassNorthFocus" Property="Texture" Value="Compass/Signature_120/sim_North_Over.png"/>
+        <CATSYPSetter TargetName="CompassSouthFocus" Property="Texture" Value="Compass/Signature_120/sim_South_Over.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <Template syp:name="Signature" Target="CATAfr3DXPCompass" syp:version="1">
+    <CATVidLayLayer>
+
+      <CATVidLayGrid GridWeight="row1=1 col2=1">
+        <!--Spacer for 3DS and its margin-->
+        <CATVidSpacer RequestedMinimumDimension="53 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <CATVidLayLayer syp:name="LayerForCompass70" RequestedMinimumDimension="81 1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <!--Popup containing the Compass -->
+          <CATAfrSmartCtl   syp:name="MobilePopupMiniCompass" Name="@MobileName"
+                     LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right"
+               ModalFlag="0" UpdateFlag="0">
+            <CATVidLayLayer syp:name="CompassMobileLayer">
+              <!--Background of the compass-->
+              <CATVidLayGrid  >
+                <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" VisibleFlag="@VisibleFlag ElementName=defaultCompassCentral" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+              </CATVidLayGrid>
+              <!--Primitive widget of the compass (CATAfrVidCompassWidget)-->
+              <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  >
+                <CATVidSpacer RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATAfrVidCompassWidget  syp:name="defaultCompassCentral"
+                                    Mode="@ModeApps"
+                                    SimulationMode="@PlayStatus Mode=TwoWays"
+                                    LayoutWhenUnvisibleFlag="1"
+                                    VisibleFlag="1"
+                                    Action="@HandleCompassEvent"
+                                    CompassLook="Mini"
+                                    RequestedMinimumDimension="64 64"
+                                    CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+
+                <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+          </CATAfrSmartCtl>
+        </CATVidLayLayer>
+        <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+
+      <!--Popup for Band Apps-->
+      <CATAfrSmartCtl syp:name="CompassPopup" Name="Afr3DS_Compass_CurrentExpStrBis" VisibilityPolicy="ClipAnimation" PopupVisibleFlag="@PopupVisibleFlag Mode=TwoWays" LayoutWhenUnvisibleFlag="0" CreateDialogBoxFlag="0" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Bottom" ConstraintUpdateAllowedFlag="0"
+                 ModalFlag="1" UpdateFlag="1" PopupBecomesUnvisible="@HandleEvent" >
+        <CATVidLayLayer syp:name="BandPopup" RequestedMinimumDimension="@BandDimension">
+          <!-- Background of band-->
+          <CATVidLayGrid GridWeight="row1=1">
+            <CATVidSpacer RequestedMinimumDimension="35 44" LayoutWhenUnvisibleFlag="0" VisibleFlag="@InsideViewerFlag"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidCtl syp:name="ContainerApps"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+          </CATVidLayGrid>
+          <!-- Layer for Big Compass when InsideViewerFlag is On  -->
+          <!--There is two primitive compass, one for default (Small) and the second when Full Screen activated -->
+          <CATVidCtl syp:name="CtlBigCompass" AlphaFilterValue="0" VisibleFlag="@InsideViewerFlag" EnableFlag="@InsideViewerFlag">
+            <CATVidLayGrid syp:name="BigCompassGrid"  GridWeight="row1=1 col2=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="@PopupVisibleFlag">
+              <!--Spacer for 3DS and its margin-->
+              <CATVidSpacer syp:name="SpacerPopup3DS" RequestedMinimumDimension="52 38" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidLayLayer  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                <!--Background of the compass-->
+                <CATVidLayGrid syp:name="BgPopupCompass" LayoutWhenUnvisibleFlag="0">
+                  <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidGPSquare Texture="Compass/Signature_64/bgcompass.png" RequestedMinimumDimension="77 76" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=T"/>
+                </CATVidLayGrid>
+                <!--Primitive widget of the compass (CATAfrVidCompassWidget)-->
+                <CATVidLayGrid GridWeight="col0=1 col2=1 row2=1"  RequestedMinimumDimension="77 76">
+                  <CATVidSpacer syp:name="SpacerPopupTopCompass" RequestedMinimumDimension="5 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATAfrVidCompassWidget  syp:name="bigCompassCentral"
+                                           Mode="@ModeApps"
+                                           SimulationMode="@PlayStatus Mode=TwoWays"
+                                           LayoutWhenUnvisibleFlag="0"
+                                           VisibleFlag="1"
+                                           Action="@HandleCompassEvent"
+                                           RequestedMinimumDimension="64 64"
+                                           CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3 attach=RLTB"/>
+                </CATVidLayGrid>
+              </CATVidLayLayer>
+              <CATVidSpacer RequestedMinimumDimension="0 0" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+            </CATVidLayGrid>
+          </CATVidCtl>
+          <!-- end layer for big compass-->
+        </CATVidLayLayer>
+      </CATAfrSmartCtl>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="MobileFlag" Value="1">
+        <CATSYPSetter TargetName="MobilePopupMiniCompass" Property="UpdateFlag" Value="1"/>
+
+        <CATSYPSetter TargetName="bigCompassCentral" Property="CompassLook" Value="Big"/>
+        <CATSYPSetter TargetName="SpacerPopup3DS" Property="RequestedMinimumDimension" Value="26 0"/>
+        <CATSYPSetter TargetName="SpacerPopupTopCompass" Property="RequestedMinimumDimension" Value="5 10"/>
+        <CATSYPSetter TargetName="BgPopupCompass" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag" Value="1">
+        <CATSYPSetter TargetName="CompassPopup" Property="SnapSide" Value="Right"/>
+        <CATSYPSetter TargetName="CtlBigCompass" Property="AlphaFilterValue" Value="255"/>
+        <!--<CATSYPSetter TargetName="SpacerForBigCompass" Property="RequestedMinimumDimension" Value="35 60"/>-->
+
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag" Value="0">
+        <CATSYPSetter TargetName="CompassPopup" Property="SnapSide" Value="Bottom"/>
+        <CATSYPSetter TargetName="CtlBigCompass" Property="AlphaFilterValue" Value="0"/>
+        <!--<CATSYPSetter TargetName="SpacerForBigCompass" Property="RequestedMinimumDimension" Value="35 4"/>-->
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="PopupVisibleFlag" Value="1">
+        -->
+      <!--<CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>-->
+      <!--
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="0">
+        <!--<CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>-->
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="0"/>
+        <CATSYPSetter TargetName="MobilePopupMiniCompass" Property="PopupVisibleFlag" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PopupVisibleFlag" Value="1">
+        <!--<CATSYPSetter TargetName="Scrollable" Property="VSingleStep" Value="128"/>-->
+        <CATSYPSetter TargetName="MobilePopupMiniCompass" Property="PopupVisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="LoadingVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="Scrollable" Property="VisibleFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LoadingVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="Scrollable" Property="VisibleFlag" Value="1"/>
+      </CATSYPTrigger>-->
+
+      <CATSYPEventTrigger RoutedEvent="MouseEnter" TargetName="defaultCompassCentral">
+        <CATSYPSetter TargetName="BigCompassGrid" Property="VisibleFlag" Value="1"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+</Styles>
+

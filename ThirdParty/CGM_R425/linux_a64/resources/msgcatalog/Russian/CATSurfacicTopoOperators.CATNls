@@ -1,0 +1,180 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for SurfacicTopoOperators  errors 
+// En_EN
+//----------------------------------invalid input
+//
+//8000->8099 **** Fill && PowerFill *************
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Request="Оператор заполнения:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Diagnostic="Вычисленная грань является самопересекающейся.";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8000.Advice="Измените этот введенный элемент или объекты, используемые для его формирования.";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Diagnostic="Спроецированная точка на исходной поверхности лежит слишком близко к линии подлежащего заполнению каркаса в сравнении с расстоянием между точкой и ее проекцией.";
+SurfacicTopOpInFillInvalidPoint_ERR_8001.Advice="Измените точку.";
+//
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Diagnostic="Кривая подлежащего заполнению каркаса слишком мала и превращается в точку при вычислении заполнения.";
+SurfacicTopOpInFillInvalidCurve_ERR_8002.Advice="Очистите каркас, удалив эту кривую.";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8003.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Diagnostic="Каркас является вырожденным.";
+SurfacicTopOpInFillInvalidWire_ERR_8003.Advice="Измените каркас.";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Diagnostic="Набор перпендикуляров, определенный ограничениями касания, имеет слишком большой разброс, и существует промежуточная точка.";
+SurfacicTopOpInFillInvalidConstraint_ERR_8004.Advice="Измените введенный элемент или объекты, используемые для его формирования, либо устраните промежуточную точку.";
+//
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Request="Оператор заполнения:";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Diagnostic="Невозможно сцепить подлежащий заполнению каркас.";
+SurfacicTopOpInFillImpossibleChain_ERR_8005.Advice="Проверьте каркас.";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Request="Оператор заполнения:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Diagnostic="Кривая подлежащего заполнению каркаса не лежит на его поддерживающем элементе.";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8006.Advice="Проверьте каркас";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Request="Оператор заполнения:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Diagnostic="Вычисленная грань имеет самопересечение, т.к. подлежащий заполнению каркас имеет самопересечение. ";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8007.Advice="Очистите каркас.";
+//
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Request="Оператор заполнения:";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Diagnostic="Результатом вычисления заполнения явилась грань с самопересечением.";
+SurfacicTopOpInFillSelfIntersectingFace_ERR_8008.Advice="Измените этот введенный элемент или объекты, используемые для его формирования.";
+//
+// **** 8009 a deplacer en 8209 dans Healing && HealGaps *************
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Request="Оператор исправления:";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Diagnostic="Исправление затронуло не определяющую многообразия топологию на кромках.";
+SurfacicTopOpInHealingNonManifoldTopologyOnEdge_ERR_8009.Advice="Измените этот введенный элемент или объекты, используемые для его формирования.";
+//
+SurfacicTopOpInFillInvalidWire_ERR_8009.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Diagnostic="Зазор между двумя кромками подлежащего заполнению каркаса больше самой короткой из этих кромок.";
+SurfacicTopOpInFillInvalidWire_ERR_8009.Advice="Очистите каркас.";
+//
+// **** 8011 a deplacer en 8211 dans Healing && HealGaps *************
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Request="Оператор исправления:";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Diagnostic="Недопустимая геометрия.";
+SurfacicTopOpInHealingInvalidGeometry_ERR_8011.Advice="Измените этот введенный элемент или объекты, используемые для его формирования.";
+//
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Diagnostic="Спроецированная точка на исходной поверхности находится вне подлежащего заполнению каркаса.";
+SurfacicTopOpInFillInvalidPoint_ERR_8012.Advice="Измените точку.";
+//
+// **** 8013 a deplacer en 8213 dans Healing && HealGaps *************
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Request="Оператор исправления:";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Diagnostic="ПРЕДУПРЕЖДЕНИЕ: слишком большой промежуток обнаружен на Вершине";
+SurfacicTopOpInHealingGapOnVertex_ERR_8013.Advice="Уменьшите сливающееся расстояние или измените поверхность входа перед применением Исправления.";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Request="Оператор заполнения:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Diagnostic="Кривая подлежащего заполнению каркаса не полностью лежит на его поддерживающем элементе.";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8014.Advice="Проверьте каркас";
+//
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Request="Оператор заполнения:";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Diagnostic="Сбой операции по выкладыванию кривой на ее основание, поскольку топологии до и после данной операции несовместимы.";
+SurfacicTopOpInFillCurveNotLyingOn_ERR_8015.Advice="Выполните проецирование на поддерживающий элемент заранее.";
+//
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Request="Оператор заполнения:";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Diagnostic="Граница не замкнута.";
+SurfacicTopOpInFillBoundaryNotClosed_ERR_8016.Advice="Попробуйте усовершенствовать геометрию.";
+
+//
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Request="Оператор заполнения:";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Diagnostic="Остается зазор на границе заполняющей поверхности.";
+SurfacicTopOpInFillTolerantFailed_ERR_8017.Advice="Увеличьте допуск.";
+
+SurfacicTopOpInFillPartialResult_ERR_8018.Request="Оператор заполнения:";
+SurfacicTopOpInFillPartialResult_ERR_8018.Diagnostic="Полученный результат частичен, поскольку следующие внутренние ограничения не приняты во внимание.";
+SurfacicTopOpInFillPartialResult_ERR_8018.Advice="Измените внутренние ограничения.";
+//
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Diagnostic="Результат не получен, поскольку набор перпендикуляров, заданный касанием ограничений, слишком рассредоточенный.";
+SurfacicTopOpInFillInvalidConstraint_ERR_8019.Advice="Удалите касательные ограничения.";
+//
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Request="Оператор заполнения:";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Diagnostic="Не удалось выполнить заполнение, так как входные данные несовместимы.";
+SurfacicTopOpInFillWithoutBoundary_ERR_8020.Advice="Измените входные данные.";
+//
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Request="Оператор заполнения:";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Diagnostic="Внутренние границы находятся одна в другой.";
+SurfacicTopOpInFillInvalidInnerBoundary_ERR_8021.Advice="Измените внутренние границы.";
+//
+
+//
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Request="Оператор PowerFill:";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Diagnostic="Регистрация оператора выполнена успешно.";
+SurfacicPowerFillRegisterInputsFailed_ERR_8022.Advice="Измените входные данные.";
+//
+SurfacicTopOpInFillPartialResult_ERR_8023.Request="Предупреждение о заполнении:";
+SurfacicTopOpInFillPartialResult_ERR_8023.Diagnostic="Ограничения G2 не учитываются (несовместимость ограничений).";
+SurfacicTopOpInFillPartialResult_ERR_8023.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8024.Request="Предупреждение о заполнении:";
+SurfacicTopOpInFillPartialResult_ERR_8024.Diagnostic="Введена самопересекающаяся линия каркаса. Профиль успешно исправлен.";
+SurfacicTopOpInFillPartialResult_ERR_8024.Advice="";
+//
+
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Request="Оператор заполнения";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Diagnostic="Для этой операции нет решения.";
+SurfacicTopOpInFillImpossibleResult_ERR_8025.Advice="";
+//
+SurfacicTopOpInFillPartialResult_ERR_8026.Request="Оператор заполнения:";
+SurfacicTopOpInFillPartialResult_ERR_8026.Diagnostic="Результат является частичным, так как ограничения G2 были заменены ограничениями G1.";
+SurfacicTopOpInFillPartialResult_ERR_8026.Advice="Переместите ограничения G2.";
+
+//
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Request="Оператор заполнения:";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Diagnostic="Одна кривая содержит несколько опорных поверхностей.";
+SurfacicTopOpInFillImpossibleResult_ERR_8027.Advice="Извлеките опорную поверхность, на которой требуются ограничения касательности или кривизны.";
+
+
+//
+//8100->8199 **** Deformation && Unbend *************
+//
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Request="Оператор деформации:";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Diagnostic="Деталь тела ввода расположена слишком близко к оси сгиба.";
+SurfacicTopOpDeformationInvalidInputParameter_ERR_8100.Advice="Операторы сгиба и выпрямления не могут деформировать материал, который находится в радиусе R от оси сгиба, где R = 20-кратное разрешение модели.";
+
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Request="Операция выпрямления:";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Diagnostic="Слишком большой угол выпрямления.";
+SurfacicTopOpUnbendInvalidInputParameter_ERR_8101.Advice="Угол сгиба должен иметь значение от 0 до 120 градусов.  Разделите операцию на несколько действий.";
+
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Request="Оператор деформации:";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Diagnostic="Внутренняя ошибка при классификации разделов в теле ввода.";
+SurfacicTopOpDeformationInvalidClassification_ERR_8102.Advice="";
+
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Request="Оператор деформации:";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Diagnostic="Внутренняя ошибка при оценке карты.";
+SurfacicTopOpDeformationNonSingularMap_ERR_8103.Advice="";
+
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Request="Оператор деформации:";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Diagnostic="Внутренняя ошибка при разделении тела ввода на разделы.";
+SurfacicTopOpDeformationInvalidPackId_ERR_8104.Advice="";
+
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Request="Оператор деформации:";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Diagnostic="Пустое окно тела ввода.";
+SurfacicTopOpDeformationInvalidInputBodyBox_ERR_8105.Advice="Убедитесь, что тело ввода существует.";
+
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Request="Оператор деформации:";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Diagnostic="Неоднородные тела в настоящее время не поддерживаются.";
+SurfacicTopOpDeformationInhomogeneousBody_ERR_8106.Advice="";
+
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Request="Оператор деформации:";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Diagnostic="Невозможно согнуть или выпрямить выбранную область.";
+SurfacicTopOpDeformationImpossibleBend_ERR_8110.Advice="Невозможно выполнить операцию сгиба/выпрямления при сохранении топологии тела ввода.";
+
+//
+
+//
+//8200->8299 **** Healing && HealGaps *************
+//
+SurfacicTopOpHealGaps_ERR_8200.Request="Оператор HealGaps:";
+SurfacicTopOpHealGaps_ERR_8200.Diagnostic="Остались невыполненные зазоры.";
+SurfacicTopOpHealGaps_ERR_8200.Advice="Используйте методы GetGaps для получения ячеек с зазором и попытайтесь ограничить исправление до этих ячеек.";
+//
+SurfacicTopOpHealingTopHealError_ERR_8220.Request="Оператор исправления:";
+SurfacicTopOpHealingTopHealError_ERR_8220.Diagnostic="Сбой при топологическом исправлении";
+SurfacicTopOpHealingTopHealError_ERR_8220.Advice="Разрешить деформацию формы";
+//
+
+
+

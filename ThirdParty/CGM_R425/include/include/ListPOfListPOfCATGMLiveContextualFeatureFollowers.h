@@ -1,0 +1,13 @@
+#ifndef __ListPOfListPOfCATGMLiveContextualFeatureFollowers_h__
+#define __ListPOfListPOfCATGMLiveContextualFeatureFollowers_h__
+
+#include "CATCGMLISTPP_Declare.h"
+#include "ListPOfCATGMLiveContextualFeatureFollowers.h"
+
+CATCGMLISTPP_DECLARE(ListPOfCATGMLiveContextualFeatureFollowers);
+
+typedef CATLISTP(ListPOfCATGMLiveContextualFeatureFollowers) ListPOfListPOfCATGMLiveContextualFeatureFollowers;
+
+class CATCGMOutput;
+
+#endif

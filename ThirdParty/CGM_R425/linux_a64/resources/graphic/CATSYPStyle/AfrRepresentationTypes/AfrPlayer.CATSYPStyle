@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>    
+    <ResourceDictionary Source="CATAfrBasicStyle.CATSYPStyle" />
+    <ResourceDictionary Source="AfrCompass/CATAfrVidPlayerStyle.CATSYPStyle" />  
+  </Resources>
+  
+
+  <Template syp:name="Default" Target="CATAfrVidPlayerPresenter">
+    <CATAfrSmartCtl syp:name="ExperiencePanel" Name="ExperiencePanel" CreateDialogBoxFlag="1" ConstraintsDialogBox="topPx=0 leftPercent=50" SnappableFlag="1"  Viewer="@Viewer" TitleDialogBox="@PlayerTitle"
+                   ResizableDialogBoxFlag="1" PanelHAlignment="0" PanelVAlignment="0" ContentPanelVisibleFlag="1"  CompactDialogBoxFlag="1" PanelDeleted="@OnPlayerExit" PanelClosed="@OnPlayerExit"
+                    >
+      <CATVidLayLayer>
+        <CATVidLayGrid GridWeight="col0=1 col2=1">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="PlayerContainer" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+
+
+        </CATVidLayGrid>
+
+      </CATVidLayLayer>
+      <CATAfrSmartCtl.EscapeButtonCtl>
+        <CATVidCtlButton Name="PlayerEscapeButton" Click="@OnPlayerExit"/>
+      </CATAfrSmartCtl.EscapeButtonCtl>
+
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="MobileFlag" Value="1">
+        <CATSYPSetter TargetName="ExperiencePanel" Property="SnappableFlag" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PlayerVisibleFlag" Value="1">
+        <CATSYPSetter TargetName="ExperiencePanel" Property="VisibleFlag" Value="1"/>
+        <CATSYPSetter TargetName="ExperiencePanel" Property="UpdateFlag" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="PlayerVisibleFlag" Value="0">
+        <CATSYPSetter TargetName="ExperiencePanel" Property="VisibleFlag" Value="0"/>
+
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="AfrPlayerPanel" Target="CATAfrSYPContainerView" >
+    <CATVidLayStack>
+
+      <CATAfrVidPlayerPresenter></CATAfrVidPlayerPresenter>
+    </CATVidLayStack>
+
+  </Template>
+</Styles>
+
+ 

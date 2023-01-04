@@ -1,0 +1,25 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Get Cpu usage in percent",
+  "onCall": {
+    "in": {},
+    "out": {
+      "parameters": [
+        {
+          "label": "value",
+          "basic": "double"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

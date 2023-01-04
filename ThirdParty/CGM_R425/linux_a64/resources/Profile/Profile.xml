@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="MasterProfile" Target="CATPAfrMasterProfile">
+    <CATPAfrMasterList>
+      <!--List of the variables managed by all the profiles-->
+      <CATPAfrMasterProfileList syp:name="MasterProfileList" Profiles="3DEXPERIENCEPROFILE;CATIAProfile;SWXProfile;SWXMEProfile;A3DProfile"/>
+      <CATPAfrPreferences syp:name="Errorvar1" file="filename" type="atype" default="defaultvalue"/>
+      <CATPAfrSettings syp:name="Errorvar2" file="filename" type="atype" default="defaultvalue"/>
+      <CATPAfrIProfile syp:name="Errorvar3" default="defaultvalue"/>
+      <CATPAfrSettings syp:name="DemoMode" file="GeneralGeneral" type="text" default="P"/>
+      <CATPAfrSettings syp:name="ApplyFilterMode" file="GeneralDisplayLayerFilter" type="int" default="0"/>
+      <CATPAfrIProfile syp:name="CATIProfileTest" default="defaultvalue"/>
+      <CATPAfrPreferences syp:name="FrameMaximized" file="FrameGeneral" type="int" default="0"/>
+      <CATPAfrSettings syp:name="SWNavigationMode" file="VisualizationRepository" type="boolean" default="false"/>
+      <CATPAfrSettings syp:name="3DAccuracy" type="uint" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="3DFxAccuracy" file="VisualizationRepository" type="float"/>
+      <CATPAfrSettings syp:name="3DPpAccuracy" type="float" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="StaticCull" type="uint" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="DynamicCull" type="uint" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="FullSceneAntiAliasingMode" type="uint" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="AntiAliasing" type="uint" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="AntiAliasingOffset" type="float" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="AADynamic" type="uint" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="RenderingStyle.Default" type="int" file="FrameGeneral"/>
+      <CATPAfrSettings syp:name="CustomerViewMode.Default" type="int" file="FrameGeneral"/>
+      <CATPAfrSettings syp:name="AccuratePickingMode" type="uint" file="VisualizationRepository"/>
+      <CATPAfrSettings syp:name="VersionCombo" type="int" file="3DShapeColor"/>
+      <CATPAfrSettings syp:name="OutlinesDynamic" file="VisualizationRepository" type="uint"/>
+      <CATPAfrSettings syp:name="SearchKeyWordEditor" default="#all" type="textUS" file="MaterialOptionsSettings"/>
+      <CATPAfrPreferences syp:name="PrtWks" default="SWXMechanicalWorkbench" type="text" file="AfrWorkbenches"/>
+      <CATPAfrPreferences syp:name="PRDWorkshop" default="SWXMechanicalWorkbench" type="text" file="AfrWorkbenches"/>
+      <CATPAfrSettings syp:name="PartProdMode" file="IGES" type="int" default="0"/>
+      <CATPAfrSettings syp:name="ApplyJoin" file="IGES" type="int" default="0"/>
+      <CATPAfrSettings syp:name="ActiveExactGeometry" file="MultiCAD" type="int" default="0"/>
+      <CATPAfrSettings syp:name="SWXOrientationMode" file="MultiCAD" type="int" default="0"/>
+    </CATPAfrMasterList>
+  </Template>
+  <Template syp:name="ProfileTest" Target="CATPAfrProfile">
+    <CATPAfrVariableList>
+      <!--List of the variables managed by the profile-->
+      <CATPAfrVariable syp:name="Errorvar1" vname="Errorvar1" default="defaultvalue"/>
+      <CATPAfrVariable syp:name="Errorvar2" vname="Errorvar2" default="defaultvalue"/>
+      <CATPAfrVariable syp:name="Errorvar3" vname="Errorvar3" default="defaultvalue"/>
+      <CATPAfrVariable syp:name="DemoMode" vname="DemoMode"/>
+      <CATPAfrVariable syp:name="ApplyFilterMode" vname="ApplyFilterMode" default="1"/>
+      <CATPAfrVariable syp:name="FrameMaximized" vname="FrameMaximized" default="1"/>
+    </CATPAfrVariableList>
+  </Template>
+  <Template syp:name="ProfileTest1" Target="CATPAfrProfile">
+    <CATPAfrVariableList>
+      <!--List of the variables managed by the profile-->
+      <CATPAfrVariable syp:name="CATIProfileTest" vname="CATIProfileTest" default="defaultvalue"/>
+    </CATPAfrVariableList>
+  </Template>
+</Styles>

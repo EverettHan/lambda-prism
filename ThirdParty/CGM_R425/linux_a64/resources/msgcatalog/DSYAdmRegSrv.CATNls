@@ -1,0 +1,16 @@
+<meta charset="UTF-8"/>
+Help.text = "Usage of DSYAdmRegSrv\n
+[-set CATIA|ENOVIA_DMU_Navigator|ENOVIA_LCA|DELMIA|ENOVIA_3d_com] Product line to be registered\n
+[-unset]                         Registration to be unset\n
+[-env environment_name]          Environment's name (default: DefaultEnvironment)\n
+[-direnv storage_directory_name] Environment's storage directory (default: CSIDL_APPDATA\\CATEnv)\n
+[-h|-help]                       This help.";
+SetOrUnset.text          = "-set or -unset option must be used";
+SetAndUnset.text         = "-set and -unset options cannot be used together";
+NotAdministrator         = "Installation program requires administrator pivileges.";
+VistaNotAdminPrivileges  = "Use an administrator command prompt to launch this program";
+MissingValueEnvName.text = "-env option must be followed by the name of the environment file.\n";
+InvalidOption.text        = "Option /p1 is invalid\n";
+MissingValueEnvDir.text   = "-direnv option must be followed by the name of the path of the environment file.";
+MissingValueSet.text      = "-set option must be followed by the name of a product line";
+ExtraValueUnset.text      = "-unset option is followed by a useless parameter /p1\n";

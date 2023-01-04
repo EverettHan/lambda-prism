@@ -1,0 +1,13 @@
+{
+  "library" : "AfrComputeServer",
+  "desc" : "Afr operation marking the beginning and the end of a client side command (for undo redo and model checks)",
+  "onBeginParameters" : {
+    "in" : { "cmdId" : "string"},    
+    "answers":  { "domainNames" : "string[]", "domains" : "Parameters" }
+  },
+  "onCommandParameters" : "none",
+  "onEndParameters" : {
+    "in" : { "cmdId" : "string"},    
+    "answers":  { "domainNames" : "string[]", "domains" : "Parameters" }
+  }
+} 

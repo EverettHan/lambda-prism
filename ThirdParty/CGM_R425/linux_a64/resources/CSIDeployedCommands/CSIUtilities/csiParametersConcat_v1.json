@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "function concat two parameters in one",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "p1",
+          "typeArray": "Parameters",
+          "desc": "The first parameters Array to concat"
+        },
+        {
+          "label": "p2",
+          "typeArray": "Parameters",
+          "desc": "The second parameters Array to concat"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "result",
+          "typeArray": "Parameters",
+          "desc": "The concatened parameters array of p1 and p2"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

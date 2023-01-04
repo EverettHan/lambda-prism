@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+// General switch messages format 
+// Key.Diag=Switch Diagnostic Value. /p1  where /p1 = 1rst internal error Diagnostic
+// Key.Advice=/p1                         where /p1 = [1rst internal error Key/Catalog] + its Advice 
+
+// ------- Validate a switch operation ------
+
+// WARNING
+ERR_OMB_SWITCH_PENDING.Diagnostic="正在为此部件执行另一切换。";
+ERR_OMB_SWITCH_PENDING.Advice="等待当前切换完成，并再次运行您的命令。";
+
+// SEVERE ERROR -> Factory can decide to use a different loading mode 
+ERR_OMB_SWITCH_TARGET_ACCESS.Diagnostic="无法达到目标加载模式。";
+ERR_OMB_SWITCH_TARGET_ACCESS.Advice="要加载的数据可能缺失或无法在目标模式中访问。";
+
+// ------- Message d'erreur BATCH_StartTransition ------
+
+// SEVERE ERROR -> unknown case -> better to cancel and to analyze the problem
+// Unknown error while performing the start transition step. 
+ERR_OMB_SWITCH_START.Diagnostic="启动切换操作时出现问题。/p1";
+ERR_OMB_SWITCH_START.Advice="/p1";
+
+// WARNING (This problem only arises when switching from a mode1 to a mode2)
+// The SD in the Vault are more recent than the one retrieved in the session
+ERR_OMB_SWITCH_SYNCHRO.Diagnostic="已在此会话之外修改部件。/p1";
+ERR_OMB_SWITCH_SYNCHRO.Advice="请在 VPM 编辑器中启动刷新命令，或关闭并重新打开该部件。";
+
+ERR_OMB_SWITCH_COMPID.Diagnostic="切换实体检查披露出问题。/p1";
+ERR_OMB_SWITCH_COMPID.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Unload 
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_UNLOAD.Diagnostic="卸载数据时出现问题。/p1";
+ERR_OMB_SWITCH_UNLOAD.Advice="/p1";
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_STREAM_REP.Diagnostic="将数据流式处理到高速缓存时出现问题。/p1";
+ERR_OMB_SWITCH_STREAM_REP.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Load 
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_LOAD.Diagnostic="加载数据时出现问题。/p1";
+ERR_OMB_SWITCH_LOAD.Advice="/p1";
+
+// SEVERE ERROR
+ERR_OMB_SWITCH_DOWNLOAD.Diagnostic="将数据下载到会话缓存时出现问题。/p1";
+ERR_OMB_SWITCH_DOWNLOAD.Advice="/p1";
+
+// ------- Message d'erreur BATCH_Close 
+// SEVERE ERROR
+ERR_OMB_SWITCH_CLOSE.Diagnostic="完成切换时出现问题。/p1";
+ERR_OMB_SWITCH_CLOSE.Advice="/p1";
+
+// ------- Messages additionnels RevertSwitch
+// ADDITIONAL WARNING
+WARN_OMB_SWITCH_REVERT="部件仍处于当前加载模式。";
+
+// ADDITIONAL ERROR
+ERR_OMB_SWITCH_REVERT="部件无法恢复至上一加载模式。";
+
+// -------- Message d'erreur divers --------------
+ERR_OMB_SWITCH_CSA_REENTRANCE="切换被拒绝，因为另一切换已经在此部件上运行 (SwitchSDs)";
+ERR_OMB_SWITCH_0001="目标模式“/p1”与约束 默认模式“/p2”不兼容。保留目标模式";
+
+// ------- Messages additionnels pour test error management
+// ADDITIONAL TEST WARNINGS
+INFO_OMB_TEST_SWITCH_EXECUTE="为测试生成的虚拟执行信息。";
+WARN_OMB_TEST_SWITCH_EXECUTE="为测试生成的虚拟执行警告。";
+

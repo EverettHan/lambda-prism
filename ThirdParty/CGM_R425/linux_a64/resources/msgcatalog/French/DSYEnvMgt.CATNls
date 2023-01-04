@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+HelpDSYEnvMgt.txt=" 
+DSYEnvMgt -create|-del [-e EnvName] [-d EnvDirPath|INSTALL] [-p ConcatPath] [-from Env|EnvFullPath [-append]] -h
+  -create ou -del       : pour créer ou supprimer un fichier d'environnement.
+  -e EnvName            : nom de l'environnement à créer ou à supprimer (facultatif).
+                          Le nom par défaut est Env.
+  -d EnvDirPath|INSTALL : dossier de stockage du fichier d'environnement (facultatif).
+                          Si non utilisé, EnvDir = \"/p1\".
+                          Si -d INSTALL, EnvDir = \"/p2\".
+                          Si -d EnvDirPath, EnvDir = EnvDirPath
+  -p ConcatPath         : chemin de concaténation. Plusieurs chemins peuvent être spécifiés (pour création seulement, facultatif).
+                          Valeur par défaut : \"/p3\".
+                          Si utilisé avec -from, ajoute ConcatPath au début du chemin d'installation.
+  -from Env|EnvFullPath : pour créer un nouveau fichier d'environnement à partir d'un fichier existant (pour création seulement, facultatif).
+                          Vous pouvez indiquer le nom de l'environnement ou son chemin complet.
+                          Par exemple : 
+                             DSYEnvMgt -create -e Env2 -from \"/p2\Env.txt\" créera Env2.txt dans \"/p1\".
+                          ou 
+                             DSYEnvMgt -create -e Env2 -from Env -d INSTALL créera Env2.txt dans \"/p2\".
+  -append               : si utilisé avec les options -from et -p, ajoute le ConcatPath à la fin de la concaténation.
+                          S'il n'est pas utilisé, et que les options -from et -p sont utilisées, le ConcatPath sera ajouté au début de la concaténation.
+  -h                   : cette aide.";
+
+MissingValue_e="L'option -e doit être suivie par le nom du fichier d'environnement.";
+MissingValue_d="L'option-d doit être suivie par le nom du chemin où le fichier d'environnement sera créé.";
+MissingValue_p="L'option -p doit être suivie par le chemin de concaténation.";
+MissingValue_from="L'option -from doit être suivie par le nom ou le chemin du fichier d'environnement que vous voulez copier.";
+InvalidArg="L'option /p1 n'est pas autorisée.";
+BadOptions_createdel="Les options -créer et -suppr ne peuvent pas être utilisées ensemble.";
+MissingOptions_createordel="L'une des options suivantes -créer ou -suppr est obligatoire.";
+MissingConcatPath="Impossible de récupérer le chemin de concaténation par défaut. Utilisez l'option -p pour indiquer le chemin de concaténation.";
+DirNotExist="Le répertoire \"/p1\" n'existe pas.";
+NotAdmin="Vous avez besoin des privilèges élevés pour créer le fichier d'environnement dans \"/p1\".";
+BadFrom_NotExist="L'option -from n'est pas valide : le chemin /p1 n'existe pas.\n";
+CreateEnvOK="Le fichier d'environnement \"/p1.txt\" a été créé.\n";
+CreateEnvKO="DSYEnvMgt n'a pas pu créer \"/p1.txt\".\n";
+CreateEnv="Création du fichier d'environnement \"/p1.txt\".\n";
+CreateDirFailed="DSYEnvMgt n'a pas pu créer \"/p1.txt\".";
+CreateDirFailedNotAdmin="DSYEnvMgt n'a pas pu créer \"/p1.txt\".\nVérifiez vos privilèges d'administrateur.";
+DeleteEnv="Suppression du fichier d'environnement \"/p1.txt\".";
+DeleteEnvOK="Le fichier d'environnement \"/p1.txt\" a été supprimé.";
+DeleteEnvKO="DSYEnvMgt n'a pas pu supprimer \"/p1.txt\".";
+CreateFromEnv="Création du fichier d'environnement \"/p1.txt\" à partir de \"/p2\".";
+BadOptiond="L'option -d n'est pas valide :\n-d doit être suivi par INSTALL ou par un chemin valide.";
+BadOptione="L'option -e n'est pas valide :\n-e doit être suivi par le nom d'un environnement.";
+BadOptionp="L'option -p n'est pas valide :\n-p doit être suivi par un chemin.";
+BadOptionfrom="L'option -from n'est pas valide :\n-from doit être suivi par un nom d'environnement valide ou par un chemin complet d'un nom d'environnement.";
+MissingArgs="Les options sont manquantes.\n";
+NotAdmin2="Vous avez besoin des privilèges élevés pour utiliser l'option /p1.\n";

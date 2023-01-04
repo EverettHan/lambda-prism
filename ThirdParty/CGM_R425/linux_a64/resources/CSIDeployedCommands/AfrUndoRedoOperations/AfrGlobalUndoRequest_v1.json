@@ -1,0 +1,27 @@
+{
+  "library": "AfrComputeServer",
+  "desc": "Afr global undo request",
+  "onBeginParameters": {
+    "in": {      
+      "operationId": { "type": "string" }
+    },
+    "answers": {
+      "domainNames": "string[]",
+      "domains": "Parameters"
+    }
+  },
+  "onCommandParameters": "none",
+  "onEndParameters": {
+    "in": {
+      "operationId": { "type": "string" },
+      "isCanceled": {
+        "type": "bool",
+        "defaultValue": false
+      }
+    },
+    "answers": {
+      "domainNames": "string[]",
+      "domains": "Parameters"
+    }
+  }
+}

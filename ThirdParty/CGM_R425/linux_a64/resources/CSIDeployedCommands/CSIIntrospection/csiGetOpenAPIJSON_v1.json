@@ -1,0 +1,48 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns the JSON description of a CSI Function for a OpenAPI Specification File",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pool",
+          "basic": "string",
+          "optional": {
+            "isOptional": false
+          }
+        },
+        {
+          "label": "function",
+          "basic": "string",
+          "optional": {
+            "isOptional": false
+          }
+        },
+        {
+          "label": "version",
+          "basic": "int32",
+          "optional": {
+            "isOptional": false
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "function",
+          "basic": "string"
+        }
+      ]
+    }
+  },
+  "throwError": {
+  }
+}

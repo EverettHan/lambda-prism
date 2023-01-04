@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVolScissor</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+
+  <UNIFORM>
+    <NAME>PushConstants</NAME>
+    <TYPE>float4</TYPE>
+  </UNIFORM>
+
+  <STORAGE_IMAGE>
+    <NAME>GPUPickingImage</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPickingImage</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <COMMONS>streams varyings ubos</COMMONS>
+      <VERTEX_STAGE>volScissorVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>volScissorPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+</EFFECT>

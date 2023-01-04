@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CATAfrIconBox.CATSYPStyle" />
+    <ResourceDictionary Source="CATAfrPLMCompassWidgets.CATSYPStyle" />
+  </Resources>
+
+
+
+ 
+
+
+  <!--***************************************************************************************************************************************-->
+  <!--                                  AfrDefault & AfrOnlyTitle representation types                                                                 -->
+  <!--***************************************************************************************************************************************-->
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+
+
+
+  <Template syp:name="AfrExpandable" Target="CATAfrSYPStarterView">
+
+    <CATVidCtlButton Name="@Name" syp:name="Button"
+                 syp:Template="Button"
+                 CheckMode="1"
+                 ClickMode="0"
+                 BackgroundColor="0 0 0 255"
+                 ForegroundColor="255 255 255 255"
+                 CheckState="@ActivationWidget Mode=TwoWays"
+                 EnableFlag="@EnableWidget"
+                 CropPolicy="NoCrop"
+                 IconDimension="32 32"
+                 Icon="@NormalIcon"
+                 Tooltip="@Help"
+                 LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                 LongHelpId="@LongHelpId"
+                 Click="@ActionEvent" />
+
+
+  </Template>
+  <Template syp:name="AfrOnlyTitle" Target="CATAfrSYPStarterView">
+
+    <CATVidCtlButton Name="@Name" syp:name="Button"
+                 syp:Template="Button"
+                 CheckMode="1"
+                 ClickMode="0"
+                 BackgroundColor="0 0 0 255"
+                 ForegroundColor="255 255 255 255"
+                 CheckState="@ActivationWidget Mode=TwoWays"
+                 EnableFlag="@EnableWidget"
+                 CropPolicy="NoCrop"
+                 Label="@Title"
+                 Tooltip="@Help"
+                 LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                 LongHelpId="@LongHelpId"
+                 Click="@ActionEvent" />
+
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Starters creation                                                          -->
+  <!--*************************************************************************************************************************-->
+  <DataTemplate syp:name="CATCAfrMenu_VIAAfrNavigationTab" >
+    <CATAfrSYPStarterViewMetaData syp:name="StarterMetadata"
+                                  SypNamePosition="RightElementCollection" >
+      <CATAfrVidIconBoxCtl  syp:Template="SignatureMenu"
+                            Orientation="Vertical"
+                            syp:name="Container"
+                            UsePresenterIconContentFlag="0"
+                            IconBoxHidePolicy="AutoHide"
+                            IconBoxShowPolicy="ShowOnClick"
+                            IconBoxDirection="Bottom"
+                            InitialOffset="-14 -1"
+                            PopupShown="@HandleEventMenuDeployed"
+                            RequestedMinimumDimension="150 28">
+        <CATVidLayLayer>
+          <CATVidCtlButton Name="@Name"
+                           syp:name="AfrNavigationButton"
+                           syp:Template="Toolbar"
+                           CheckMode="0"
+                           ClickMode="0"
+                           CheckState="@ActivationWidget Mode=TwoWays"
+                           EnableFlag="@EnableWidget"
+                           CropPolicy="NoCrop"
+                           IconDimension="28 28"
+                           RequestedMinimumDimension="28 28"
+                           Icon="@Image"
+                           Label="@Label"
+                           Tooltip="@Label"
+                           ForegroundColor="255 255 255 255"
+                           FontHeight="19"
+                           FocusableFlag="0"
+                           Click="@HandleShowEvent ElementName=Container"
+                           KeyboardManipulationFlag="0"
+                           LayoutWhenUnvisibleFlag="0"/>
+        </CATVidLayLayer>
+      </CATAfrVidIconBoxCtl>
+    </CATAfrSYPStarterViewMetaData>
+  </DataTemplate>
+
+
+
+
+</Styles>

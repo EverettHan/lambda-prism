@@ -1,0 +1,86 @@
+<meta charset="UTF-8"/>
+// COPYRIGHT DASSAULT SYSTEMES 2008-2013
+REPLENG_ERR0001.Request = "Exporting to a data Briefcase:";
+REPLENG_ERR0001.Diagnostic ="Briefcase file already exists. Command aborted." ;
+REPLENG_ERR0001.Advice     ="Delete previous Briefcase or use another path.";
+
+REPLENG_ERR0002.Request = "Exporting/Importing a data Briefcase:";
+REPLENG_ERR0002.Diagnostic ="Invalid Briefcase file extension. Command aborted." ;
+REPLENG_ERR0002.Advice     ="Provide another Briefcase file path with 'PLMBriefcase' extension.";
+
+REPLENG_ERR0003A.Request = "Exporting a data Briefcase:";
+REPLENG_ERR0003A.Diagnostic ="Briefcase file can not be created. Command aborted." ;
+REPLENG_ERR0003A.Advice     ="Verify provided path and access rights.";
+
+REPLENG_ERR0003B.Request = "Importing a data Briefcase:";
+REPLENG_ERR0003B.Diagnostic ="Briefcase file could not be read. File is not accessible or corrupted. Command aborted." ;
+REPLENG_ERR0003B.Advice     ="Verify provided path and access rights.";
+
+REPLENG_ERR0003C.Request = "Exporting a data Briefcase:";
+REPLENG_ERR0003C.Diagnostic ="Failed writing in briefcase file. Command aborted." ;
+REPLENG_ERR0003C.Advice     ="Check available disk space.";
+
+REPLENG_ERR0003D.Request = "Importing a data Briefcase:";
+REPLENG_ERR0003D.Diagnostic ="Failed reading from briefcase file. Briefcase might be corrupted. Command aborted." ;
+REPLENG_ERR0003D.Advice     ="";
+
+REPLENG_ERR0004.Request = "Exporting to a data Briefcase:";
+REPLENG_ERR0004.Diagnostic ="Invalid data to be exported. Export Command aborted." ;
+REPLENG_ERR0004.Advice     ="Check all objects to be exported belong to the same repository.";
+
+REPLENG_ERR0004B.Request = "Exporting to a data Briefcase:";
+REPLENG_ERR0004B.Diagnostic ="No data to be exported. Export Command aborted." ;
+REPLENG_ERR0004B.Advice     ="Please provide an non-empty data set to be exported.";
+
+REPLENG_ERR0005.Request = "Exporting/Importing a data Briefcase:";
+REPLENG_ERR0005.Diagnostic ="Briefcase Export/Import not supported for this repository type. Command aborted." ;
+REPLENG_ERR0005.Advice     ="Use another type of repository.";
+
+REPLENG_ERR0006.Request = "Exporting/Importing a data Briefcase:";
+REPLENG_ERR0006.Diagnostic ="Unexpected error happened. Command aborted." ;
+REPLENG_ERR0006.Advice     ="Try again to run Export/Import command.";
+
+REPLENG_ERR0007.Request = "Exporting/Importing a data Briefcase:";
+REPLENG_ERR0007.Diagnostic ="Briefcase Export/Import currently only supported in IN-PROCESS mode. Command aborted." ;
+REPLENG_ERR0007.Advice     ="Export REPL_INPROCESS and PLM_INPROCESS variables.";
+
+REPLENG_ERR0008.Request = "Exporting/Importing a data Briefcase:";
+REPLENG_ERR0008.Diagnostic ="Briefcase Export/Import command failed because data could not be transfered. Command aborted." ;
+REPLENG_ERR0008.Advice     ="Check your connection.";
+
+REPLENG_ERR0009.Request = "Importing a data Briefcase:";
+REPLENG_ERR0009.Diagnostic ="Briefcase Import failed at commit. Command aborted." ;
+REPLENG_ERR0009.Advice     = "";
+
+REPLENG_ERR0010.Request = "Exporting to a data Briefcase:";
+REPLENG_ERR0010.Diagnostic ="Briefcase Export failed because some data are being modified. Command aborted." ;
+REPLENG_ERR0010.Advice     = "Try again.";
+
+REPLENG_ERR0011.Request = "Importing a data Briefcase:";
+REPLENG_ERR0011.Diagnostic ="Briefcase file could not be imported because the format has changed. Command aborted." ;
+REPLENG_ERR0011.Advice     = "Briefcase needs to be exported and imported on the same release level.";
+
+REPLENG_ERR0012.Request = "Exporting/Importing a data Briefcase:";
+REPLENG_ERR0012.Diagnostic ="Command was interrupted on user request." ;
+REPLENG_ERR0012.Advice     = "You can run the command again.";
+
+REPLENG_ERR0013.Request = "Importing a data Briefcase:";
+REPLENG_ERR0013.Diagnostic ="Briefcase file could not be imported because you are not sufficiently granted. Command aborted." ;
+REPLENG_ERR0013.Advice     = "Ask for read access right on the briefcase file.";
+
+REPLENG_ERR0014.Request = "Extracting replication information from the repository:";
+REPLENG_ERR0014.Diagnostic ="Replication information could not be extracted from the repository. Command aborted." ;
+REPLENG_ERR0014.Advice     = "";
+
+REPLENG_ERR0015.Request = "Creating a replication report containing the extracted replication information:";
+REPLENG_ERR0015.Diagnostic ="Replication report could not be created based on extracted replication information. Command aborted." ;
+REPLENG_ERR0015.Advice     = "";
+
+REPLENG_ERR0016.Request = "Transferring Site Ownership:";
+REPLENG_ERR0016.Diagnostic ="Cannot transfer/cancel Site Ownership transfer, given PLMID is invalid. Command aborted." ;
+REPLENG_ERR0016.Advice     = "";
+
+REPLENG_ERR0017.Request = "Transferring Site Ownership:";
+REPLENG_ERR0017.Diagnostic ="Cannot Receive/Confirm Site Ownership transfer, given Ownership Transfer Document (OTC/OC) is invalid." ;
+REPLENG_ERR0017.Advice     = "";
+

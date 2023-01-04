@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic="Błąd systemowy.";
+SystemERR.Advice="Skontaktuj się z pomocą techniczną.";
+
+
+ServerInternalERR.Diagnostic="Wewnętrzny błąd serwera.";
+ServerInternalERR.Advice="W celu zachowania danych wykonano lokalny zapis. W razie potrzeby można przywrócić sesję.";
+
+ServerInternalERRNoLS.Diagnostic="Wewnętrzny błąd serwera.";
+ServerInternalERRNoLs.Advice="Zapisanie lokalne nie było możliwe. Spróbuj ponownie później.";
+
+VaultServerInternalERR.Diagnostic="Podczas przesyłania strumieni wystąpiły błędy.";
+VaultServerInternalERR.Advice="W celu zachowania danych wykonano lokalny zapis. W razie potrzeby można przywrócić sesję.";
+
+VaultServerInternalERRNoLs.Diagnostic="Podczas przesyłania strumieni wystąpiły błędy.";
+VaultServerInternalERRNoLs.Advice="Zapisanie lokalne nie było możliwe. Spróbuj ponownie później.";
+
+NoObjectToSaveWRN.Diagnostic="Nie ma żadnego obiektu do zapisania.";
+NoObjectToSaveWRN.Advice="Upewnij się, że rzeczywiście wybrano zmodyfikowane elementy.";
+
+GenericSaveErrorWithCompo.Diagnostic="Nie można zapisać komponentu [/p1].";
+GenericSaveErrorWithCompo.Advice="Operacja zapisu nie może obsłużyć komponentu /p1.\nZdecydowanie zaleca się ponowne uruchomienie tej aplikacji.";
+
+PLMSaveEngineError_501.Diagnostic="Nie można wykonać operacji zapisu.";
+PLMSaveEngineError_501.Advice="Komponent /p1 nie jest odpowiednim elementem obecnego ECA.";
+
+ChangeLogInternalERR.Diagnostic="Nie można wykonać operacji zapisu ze względu na dane ChangeLog.";
+ChangeLogInternalERR.Advice="Skontaktuj się z pomocą techniczną, przedstawiając ostatni dziennik śladów DebugChangeLog*.log z katalogu CATTemp.";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic="Nie można wykonać operacji zapisywania ze względu na istniejącą równolegle tabelę mapowania.";
+SaveCoexMpgExchangeInternalERR.Advice="Skontaktuj się z pomocą techniczną.";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic="Nie można wykonać operacji zapisu.";
+PLMSaveEngineError_601.Advice="Operacja OfflineSave nie może obsłużyć komponentu /p1.\nKomponent został zmodyfikowany poza obszarem tworzenia.";
+PLMSaveEngineError_602.Diagnostic="Nie można wykonać operacji zapisu.";
+PLMSaveEngineError_602.Advice="Operacja OfflineSave nie może obsłużyć komponentu /p1.\nKomponent należy do transakcji cyklu życia.";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic="Nie można wykonać operacji zapisu.";
+PLMSaveEngineError_701.Advice="Operacja zapisu nie może obsłużyć komponentu /p1.\nKomponent został zmodyfikowany poza obszarem tworzenia.";
+PLMSaveEngineError_702.Diagnostic="Nie można wykonać operacji zapisu.";
+PLMSaveEngineError_702.Advice="Operacja zapisu nie może obsłużyć komponentu /p1.\nKomponent należy do transakcji cyklu życia.";

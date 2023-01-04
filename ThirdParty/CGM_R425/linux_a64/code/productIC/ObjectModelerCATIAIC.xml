@@ -1,0 +1,31 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <authorize access = "Private" name = "ObjectModelerBase_PLM.tst"/>
+  <attached name = "ObjectModelerBase.tst"/>
+  <attached name = "ObjectModelerBase_Unit.tst"/>
+  <attached name = "ObjectModelerCATIA.tst"/>
+  <attached name = "ObjectSpecsModeler.tst"/>
+  <attached name = "ObjectModelerCATSDM.tst"/>
+  <attached name = "CATIAModelEditor.tst"/>
+  <attached name = "CATIADataBasics.tst"/>
+  <attached name = "CATV4IntegrationBase.tst"/>
+  <attached name = "DraftingDataExchange.tst"/>
+  <attached name = "FromSolidV4toPart.tst"/>
+  <attached name = "V5ToV4PartMigr.tst"/>
+  <attached name = "V5ToV4Geo.tst"/>
+  <prerequisite access = "Protected" name = "CATIADataBasics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerNavigator"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "ObjectModelerContBase"/>
+  <prerequisite access = "Protected" name = "CATV4DataAdmin"/>
+  <prerequisite access = "Protected" comment = "For move of CATSysFile to CATV4System " name = "CATV4System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerInterfaces"/>
+  <prerequisite access = "Protected" name = "CATVirtualVaultSystem"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

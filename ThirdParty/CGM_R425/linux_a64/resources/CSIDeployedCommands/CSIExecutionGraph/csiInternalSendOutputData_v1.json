@@ -1,0 +1,95 @@
+{
+  "desc": "Send data, output of a run called by another function (execute), to another node waiting it as input of another function (execute)",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "key",
+          "basic": "uint32"
+        },
+        {
+          "label": "toEngine",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "to",
+          "parameters": [
+            {
+              "label": "nodeId",
+              "basic": "buffer"
+            },
+            {
+              "label": "key",
+              "basic": "uint32"
+            }
+          ],
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "path",
+          "parameters": [
+            {
+              "label": "from",
+              "basic": "string"
+            },
+            {
+              "label": "to",
+              "basic": "string"
+            }
+          ],
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "release",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "from",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "to",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "data",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

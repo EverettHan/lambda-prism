@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="Не удается найти порт /p1 на хосте /p2 ";
+CATSysComPortFailure_150002.Request="Не удается сделать объявление в порту /p1 на хосте /p2";
+CATSysComPortAcceptFailed_150003.Request="Невозможно принять порт /p1";
+CATSysComPortAcceptFailed_150004.Request="Ошибка при ожидании порта /p1";
+CATSysComInitSocketError_150102.Request="Ошибка в операции гнезда. Вероятно, потеряно подключение к магистральной сети.";
+CATSysComSendSocketError_150103.Request="Ошибка в операции отправки гнезда. Вероятно, потеряно подключение к магистральной сети.";
+CATSysComRecvSocketError_150104.Request="Ошибка в операции получения гнезда. Вероятно, потеряно подключение к магистральной сети.";
+CATSysComMsgClassError_151001.Request="Класс сообщения \p1 не найден.";
+CATSysComMsgStreamError_151002.Request="Ошибка при потоковой передаче данных класса \p1.";
+CATSysComMsgUnstreamError_151003.Request="Ошибка при отмене потоковой передаче данных класса \p1.";
+CATSysComMsgClassInvalid_152001.Request="Класс сообщения \p1 должен реализовывать CATIStreamMsg.";
+CATSysComMsgClassInvalid_152002.Request="Класс сообщения \p1 должен реализовывать CATICommMsg.";
+CATSysComMsgInvalid_152003.Request="Сообщение не требует ответа.";
+CATSysComInstanciationError_152004.Request="Невозможно создать экземпляр объекта сообщения класса \p1.";
+CATSysComReentranceError_152005.Request="Внутренняя ошибка. Обнаружено состояние повторного входа.";
+CATSysComTimeoutOccurred_152006.Request="Превышено время ожидания.";
+CATSysComApplicationNotFound_152007.Request="Целевое приложение \p1 отсутствует.";

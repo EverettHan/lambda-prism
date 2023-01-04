@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <built comment = "NSI/AZX 12.11.2021 Short term. To be reviewed." meta = "NEVER" value = "false"/>
+  <attached name = "RenderEngine.tst"/>
+  <attached name = "VisuIOSSamples.tst"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGCoreUtils"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" comment = "AZX: indirectly used by V_ASSERT. If removed, causes link error when building with -dev option." export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "RenderEngine"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENVulkanLoader"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENVMA"/>
+  <prerequisite access = "Protected" comment = "02.06.2022 AZX/NJ3 VARJO/OpenXR" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "02.06.2022 AZX/NJ3 VARJO/OpenXR" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENOpenXR"/>
+  <prerequisite access = "Protected" comment = "20.10.22 NER2/AZX DLSS project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENDLSS"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

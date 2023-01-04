@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:dsfx0"
+           xmlns:tgn="urn:dsfx0"
+           elementFormDefault="qualified"
+>
+   
+ <xs:include schemaLocation="DSFX.xsd"/>
+
+  <!--Reducted scoope for Scene level effect-->
+  
+  <xs:complexType name="ScenePass">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="DEPTH_STENCIL_STATE" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="RASTERIZER_STATE" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="BLEND_STATE" minOccurs="0" maxOccurs="1" type="xs:string"/>      
+    </xs:all>
+  </xs:complexType>
+  
+   <xs:complexType name="SceneTechnique">
+     <xs:choice>
+       <xs:sequence>
+         <xs:element name="NAME" type="xs:string"/>
+         <xs:element name="PASS" minOccurs="1" maxOccurs="unbounded" type="tgn:ScenePass"/>
+       </xs:sequence>
+       <xs:sequence>
+         <xs:element name="DECLARE_NAME" type="xs:string"/>
+       </xs:sequence>
+   </xs:choice>
+  </xs:complexType>
+  
+  <xs:complexType name="SceneLevelEffect">
+    <xs:sequence>
+       
+      <xs:element name="DST_STATE_GROUP" minOccurs="0" maxOccurs="unbounded" type="tgn:DepthStencilStateGroup"/>      
+      <xs:element name="BLEND_STATE_GROUP" minOccurs="0" maxOccurs="unbounded" type="tgn:BlendStateGroup"/>      
+      <xs:element name="RAST_STATE_GROUP" minOccurs="0" maxOccurs="unbounded" type="tgn:RastStateGroup"/>                  
+      <xs:element name="TECHNIQUE" minOccurs="1" maxOccurs="unbounded" type="tgn:SceneTechnique"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--ROOT ELEMENT-->
+  <xs:element name="SCENE_EFFECT" type="tgn:SceneLevelEffect"/>
+
+</xs:schema>

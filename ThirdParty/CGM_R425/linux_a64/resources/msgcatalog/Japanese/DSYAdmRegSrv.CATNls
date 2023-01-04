@@ -1,0 +1,16 @@
+<meta charset="UTF-8"/>
+Help.text="DSYAdmRegSrv の使用法 \n
+[-set CATIA|ENOVIA_DMU_Navigator|ENOVIA_LCA|DELMIA|ENOVIA_3d_com] 登録する製品ライン\n
+ [-unset]                         設定を解除する登録 \n
+ [-env environment_name]          環境の名前 (デフォルト: DefaultEnvironment)\n
+ [-direnv storage_directory_name] 環境のストレージ ディレクトリ (デフォルト: CSIDL_APPDATA\\CATEnv)\n
+ [-h|-help]                       ヘルプを表示します。";
+SetOrUnset.text="-set または -unset オプションを使用する必要があります";
+SetAndUnset.text="-set および -unset オプションは同時に使用できません";
+NotAdministrator="インストール プログラムには管理者特権が必要です。";
+VistaNotAdminPrivileges="管理者コマンド プロンプトを使用してこのプログラムを起動します";
+MissingValueEnvName.text="-env オプションの後に環境ファイルの名前を続ける必要があります。\n";
+InvalidOption.text="オプション /p1 は無効です\n";
+MissingValueEnvDir.text="-direnv オプションの後に環境ファイルのパスの名前を続ける必要があります。";
+MissingValueSet.text="-set オプションの後に製品ラインの名前を続ける必要があります";
+ExtraValueUnset.text="-unset オプションの後に不要なパラメーター /p1 があります\n";

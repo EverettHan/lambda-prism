@@ -1,0 +1,72 @@
+<meta charset="UTF-8"/>
+//=======================================================================================
+// WARNING: YWE 18:09:24 SINGLE-CODE 2015x => NO LOCAL CHANGE EXPECTED - USE IMPORT  
+//=======================================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2013-2014
+// Messages for utilities to generate XML reports
+//
+//==================================================================================
+// January 2013  NLS declaration for PLM Briefcase report generation utilities        Jean-Luc Medioni
+//==================================================================================
+
+// -------------------------------------------------
+// --- PLMGeneratePLMBriefcaseReport utility messages
+// -------------------------------------------------
+
+UtilityInput.Prolog               = "***** Parameters *****\n"                                ;
+UtilityInput.InputBriefcaseFile   = " *** Input PLMBriefcase File:   /p1\n"                   ;
+UtilityInput.InputBriefcaseFolder = " *** Input PLMBriefcase folder: /p1\n"                   ;
+UtilityInput.OutputReportFile     = " *** Output XML report File:    /p1\n"                   ;
+UtilityInput.XslReportFile        = " *** XSL alternate File:        /p1\n"                   ;
+UtilityInput.SummaryReportFile    = " *** Summary text report File:  /p1\n"                   ;
+UtilityInput.Epilog               = "**********************\n\n"                              ;
+UtilityInput.Extension            = " *** Extension displayed\n"                              ;
+UtilityInput.AllAttributes        = " *** All DS attributes displayed\n"                      ;
+UtilityInput.CustoAttributes      = " *** Customer attributes displayed\n"                    ;
+UtilityInput.OtherOid             = " *** Major Id & Logical Id displayed\n"                  ;
+UtilityInput                      = " *** Activate /p1 filtering with parameter set to /p2\n" ;
+UtilityInput.Other                = " *** /p1: /p2\n"                                         ;
+UtilityInput.Check                = " *** Some checks will be ran.\n"                         ;
+UtilityInput.Iteration            = " *** CD & EE iteration number displayed.\n"              ;
+UtilityInput.JsonOutputFormat     = " *** JSON output format.\n"                              ;
+UtilityInput.XmlOutputFormat      = " *** XML output format.\n"                               ;
+
+PR_HELP_GENERAL_REPORT    = "Usage: PLMGeneratePLMBriefcaseReport  <flags as described below>\n" ;
+PR_HELP_OUTPUT            = "-output <ReportFileName>        where <ReportFileName> is the XML report output file. (Mandatory)\n"       ;
+PR_HELP_INPUT             = "-input <BriefcaseFileName>      where <BriefcaseFileName> is the PLMBriefcase input file to analyze; it is either a 3dxml or PLMBriefcase file.\n                                (one of the 2 options -input or -inFolder is mandatory)\n"  ;
+PR_HELP_INPUT_FOLDER      = "-inFolder <BriefcaseFolderName> where <BriefcaseFolderName> is the input folder to analyze all PLMBriefcase files; This option is not compatible with -input.\n"  ;
+PR_HELP_XSL               = "-xsl <XslFileName>              where <XslFileName> is the XSL file that will be used in XML report.\n"    ;
+PR_HELP_SUMMARY           = "-summary <TextFileName>         where <TextFileName> is the summary text report output file. (Optional)\n" ;
+PR_HELP_FILTER_BY         = "-filterBy <Type> <Value>        where <Type> defines filtering option to be used and value represents the parameter of filtering operation.\n" ;
+PR_HELP_EXTENSION         = "-extension                      to display extension information. (Optional)\n"                            ;
+PR_HELP_DS_ATTRIBUTES     = "-cd                             to display all Core Data attributes, not only basic ones. (Optional)\n"    ;
+PR_HELP_CUSTO_ATTRIBUTES  = "-ee                             to display all exposed Extended Enterprise attributes. (Optional)\n"       ;
+PR_HELP_OTHER_OID         = "-oid                            to display Major Id & Logical Id as attributes. (Optional)\n"              ;
+PR_HELP_CHECK             = "-check                          to activate some check of PLMBriefcase.\n"                                 ;
+PR_HELP_ITERATION         = "-iteration                      to display iteration number concerning CD & EE parts.\n"                   ;
+PR_HELP_JSON              = "-json                           to use JSON output format for generating report.\n"                        ;
+PR_HELP_XML               = "-xml                            to use XML output format for generating report.\n"                         ;
+PR_HELP_HELP              = "-h                              the help\n"                                                                ;
+
+PR_REPORT_FAILED          = "ERROR: PLMGeneratePLMBriefcaseReport execution failed\n" ;
+PR_REPORT_SUCCEEDED       = "PLMGeneratePLMBriefcaseReport execution succeed\n" ;
+
+//PR_LOGIN_SUCCESS        = "** Login Successful\n" ;
+//PR_REP_PACKAGES_SUCCESS = "** Successfully obtained replication packages. Number of packages being processed: /p1.\n" ;
+
+PR_DUPLICATE_PARAM        = "Parameter /p1 appears more than once.  Failing."                   ;
+PR_MISSING_INPUT          = "/p1 keyword required at least one value not provided.  Failing.\n" ;
+PR_MISSING_PARAM          = "Required parameter /p1 was not specified.  Failing.\n"             ;
+PR_NO_INPUT_DEFINED       = "At least one of the 2 keywords -input or -inFolder is required to define PLMBriefcase to be analyzed.  Failing.\n" ;
+PR_INCOMPATIBLE_INPUT     = "The 2 following keywords /p1 & /p2 are incompatible, select only one and restart execution.  Failing.\n" ;
+PR_PLMBRIEFCASE_FOUND     = "ERROR: The directory /p1 does not contain any PLMBriefcase, thus report will be empty.\n" ;
+
+// ---> Error messages
+
+UtilityInput.FileNotFound          = "ERROR: File /p1 associated to /p2 keyword not found.\n"           ;
+UtilityInput.NotPLMBriefcase       = "ERROR: File /p1 is not recognized as an PLMBriefcase file (extension must be set to .3dxml or .PLMBriefcase).\n" ;
+UtilityInput.NoPLMBriefcaseIn3dxml = "ERROR: Could not open the 3dxml file /p1 or 3dxml file does not contain any authoring data.\n"                   ;
+UtilityInput.NotXslFileType        = "ERROR: File /p1 is not recognized as an XSL file (extension must be set to .xsl).\n" ;
+UtilityInput.FileWriteAccessFail   = "ERROR: Not able to write in /p1.\n" ;
+UtilityInput.NotValidFilterOption  = "WARNING: /p1 is not recognized as a valid filter options (value was set to /p2).\n" ;
+ 

@@ -1,0 +1,89 @@
+<meta charset="UTF-8"/>
+CATCkeNullPtrAccess="Доступ к пустому указателю";
+CATCkeAssertFailed="Ошибка утверждения";
+CATCkeInvalidType="Неверный тип";
+CATCkeInvalidName=" Имя: /P1";
+CATCkeNotYetImplemented="К сожалению, еще не реализовано";
+CATCkeBoundError="/P1 вне границ, границы: /P2../P3";
+CATCkeConstObject="Объект const";
+CATCkeUnderlyingError="Ошибка базового средства моделирования";
+CATCkeWrongFormat="WrongFormat";
+
+CATCkeInvalidArg="Недопустимый аргумент: /P1";
+CATCkeUnsetParameter="Отменить параметр: /P1";
+
+CATCkeNotEvaluable="Не поддается оценке: /P1";
+CATCkeNotApplyable="Не применимо: /P1";
+CATCkeUnrecognisedUnit="Неопознанный модуль в: /P1";
+CATCkeBadUnit="Неисправность блока: /P1";
+CATCkeNotYetEvaluated="Еще не оценено";
+CATCkeWrongNumberArg="Неверное число аргументов";
+CATCkeWrongTypesArg="Неверные типы аргументов";
+CATCkeNoCurrentParmFactory="Нет текущих заводских параметров: используйте CATCkeCreateParmFactory";
+CATCkeValueOutOfRangeGT="Значение /P1 вне диапазона: должно быть больше /P2.\nЧтобы ввести это значение, измените диапазон.";
+CATCkeValueOutOfRangeLW="Значение /P1 вне диапазона: должно быть меньше /P2.\nЧтобы ввести это значение, измените диапазон.";
+CATCkeValueNotInEnum="Значение /P1 не в разрешенном списке";
+CATCkeValueNotAuthorized="Значение /P1 не авторизовано";
+
+ParseErrorTitle="Синтаксическая ошибка";
+ParseError="Синтаксическая ошибка в строке /P2:\n /P1";
+ParseWarningTitle="Предупреждение о синтаксисе";
+ParseWarning="Предупреждение о синтаксисе:\n /P1";
+CATCkeNotParsable=" Недопустимая структура: /P1 ";
+NearToken=" /P1 (рядом с маркером: < /P2 >)";
+ActionOrPredicate="Действие или предикат";
+PredicateOrConstraint="Предикат или ограничение";
+Predicate="Предикат";
+Block="Блок";
+FunctionalExpression="Функциональное выражение";
+CATCkeNonExistingType=" Недопустимое имя типа: /P1 ";
+CATCkeNonExistingUnit=" Недопустимое имя блока: /P1";
+CATCkeTypeConflict=" Тип конфликтов /P1 не имеет тип /P2";
+CATCkeInvalidExpression=" Недопустимый тип выражения: должно быть /P1";
+CATCkeNonExistingVariable=" Параметр /P1 не может использоваться в данном контексте.";
+CATCkeNonExistingMethod=" Недопустимое использование /P1: /P2";
+CATCkeStringNotFinished=" Строка /P1 должна заканчиваться символом \"";
+CATCkeNameNotFinished=" Имя параметра /P1 должно оканчиваться символом \"";
+CATCkeCommentNotFinished=" Комментарий должен заканчиваться комбинацией символов */";
+CATCkeNonExistingAttribute=" Использован недопустимый атрибут: /P1";
+CATCkeBadNbArg1=" Неверное количество аргументов в /P1: /P2 /P3 вместо /P4";
+CATCkeBadNbArg2=" Неверное число аргументов в /P1: /P2";
+CATCkeBadKindOfArg1=" Неверный тип номера аргумента /P1 в /P2 /P3 \n",
+" (должно быть /P4 вместо /P5)";
+CATCkeBadKindOfArg2=" неверный тип номера аргумента /P1 в /P2 /P3 ";
+CATCkeConstantModified=" Номер аргумента /P1 в /P2 /P3 изменен!\n",
+" (Он не может быть константой.)";
+
+CATCkeAssignMKS="Единицы измерения не однородны (/P1 в /P2).\n",
+"Рекомендуется указывать точные единицы для констант. В противном случае,\n\",\n				\"по умолчанию будут использоваться единицы Международной системы.\n\",\n				\"(Например: 10->10 мм или MyRealParameter->MyRealParameter*1 мм)\n";
+CATCkeAssignFctMKS="Единицы измерения не однородны в функции /P3 (/P1 в /P2).\n",
+"Рекомендуется указывать точные единицы для констант. В противном случае,\n\",\n				\"по умолчанию будут использоваться единицы Международной системы.\n\",\n				\"(Например: 10->10 мм или MyRealParameter->MyRealParameter*1 мм)\n";
+CATCkeCompareMKS="Единицы измерения не однородны (оператор /P1 между /P2 и /P3).\n",
+"Рекомендуется указывать точные единицы для констант. В противном случае,\n\",\n				\"по умолчанию будут использоваться единицы Международной системы.\n\",\n				\"(Например: 10->10 мм или MyRealParameter->MyRealParameter*1 мм)\n";
+CATCkePowerMKS="Попытка применить оператор ^ /P1 к однородному значению /P2";
+
+CATKWELifInParamWarning="Вы удаляете параметр во входных данных отношения /P1.\n",
+"Будет создан клон.";
+CATKWELifInParamWarningHd="Влияние удаления параметра";
+CATKWELifInParamDeleteFailed="Не удалось удалить параметр";
+
+CATKWELifInFeatWarning="Вы удаляете примитив во входных данных отношения /P1.\n",
+"Это отношение нарушено.";
+CATCkeMeasureInProduct="Если примитивы не находятся в одном контейнере, их не разрешается использовать во взаимосвязях на уровне продукта.";
+
+CATCkeBadLawNbFormal="В качестве входных данных закон должен использовать один и только один формальный параметр.";
+
+CATCkeNotFormalLawOutput="Закон должен вычислить один и только один формальный параметр.";
+CATCkeTypeNeeded2="Первый аргумент функции /P1 должен быть строковой константой, определяющей тип объекта.";
+CATCkeTypeNeeded="/P2 в функции /P1 должна быть существующим типом объекта.";
+
+CATCkeLawBadFormalName="Формальный параметр /P1 имеет такое же имя, как у существующего параметра. Необходимо его переименовать.";
+
+CATCkeBoundErrorSimpleMessage="Значение параметра /P1 выходит за пределы допустимых диапазонов.";
+PublicationType="ЗНАНИЯ";
+
+CATCkeMultipleValueErrorSimpleMessage="Значение параметра /P1 может не соответствовать списку нескольких значений.";
+CATCkeLexOverflow="Убедитесь в отсутствии длинного комментария в своей взаимосвязи и попробуйте уменьшить его размер.";
+
+CATCkeImpossibleConversion="Угол имеет значение по модулю (pi/2), которое невозможно преобразовать к этой единице измерения";
+CATCkeGenericParseError="/P1";

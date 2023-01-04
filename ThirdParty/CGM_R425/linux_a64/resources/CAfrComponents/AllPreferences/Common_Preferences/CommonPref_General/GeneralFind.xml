@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="GeneralFindsettings" Target="CATAfrComponent">
+
+    <preferencepage Name="GeneralFind" Resource="CommonGeneralMePreferences" RepositoryName="GeneralFind">
+
+      <preferencegroup Name="PrefixGroup" >
+        <preferenceitem syp:name="Prefix" Name="Prefix" UserDefinedCtr="Combo"  />
+      </preferencegroup>
+	  
+      <preferencegroup Name="ContextPriorityGroup" >
+        <preferenceitem Name="ContextScope"  UserDefinedCtr="Combo" />
+        <preferenceitem Name="ContextPriority"  />
+      </preferencegroup>
+
+      <preferencegroup Name="DeepSearchGroup"  >
+        <preferenceitem Name="DeepSearch"  />
+      </preferencegroup>      
+
+      <preferencegroup Name="MaxDisplayGroup" Align="1" >
+        <preferenceitem Name="MaxDisplay"  />
+      </preferencegroup>
+	  
+      <preferencegroup Name="MaxPSOGroup" >
+         <preferenceitem Name="MaxPSO"  />
+      </preferencegroup>   
+    </preferencepage>
+    
+    
+  </Template>
+</Styles>

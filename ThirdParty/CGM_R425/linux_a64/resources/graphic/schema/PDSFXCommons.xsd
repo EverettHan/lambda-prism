@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:dsfx0"
+           xmlns:tgn="urn:dsfx0"
+           elementFormDefault="qualified"
+>
+  <xs:include schemaLocation="DSFX.xsd"/>
+  
+  <!--To tweak if possible-->
+  <xs:simpleType name="PolygonOffset">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="Backward2"/>   <!--4.,4-->
+      <xs:enumeration value="Backward1"/>   <!--2.2,3 RenderMode2 -->
+      <xs:enumeration value="Backward0"/>   <!--1.,1  RenderMode1 -->
+      <xs:enumeration value ="Neutral"/>    <!--0.,0-->
+      <xs:enumeration value="Frontward0"/>  <!---0.9,-1-->
+      <xs:enumeration value="Frontward1"/>  <!---2.,-2-->    
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name ="pdsfxSampler">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:choice>
+        <xs:element name="SAMPLER_TYPE" type="tgn:SamplerType" minOccurs="0"/>
+        <xs:element name="SAMPLER_DECLARATION" type="tgn:SamplerDeclaration" minOccurs="0" maxOccurs="unbounded" />
+      </xs:choice>
+      <xs:element name="SAMPLER_SECONDARY_TYPE" type="tgn:SecondaryType" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="pdsfxStructuredBuffer">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string" minOccurs="1"/>
+      <xs:element name="DECLARATION" type="tgn:UnorderedBufferDeclaration" minOccurs="1" />
+      <xs:element name="QUALIFIERS" type="tgn:MemoryQualifierList"  minOccurs="0" />
+      <xs:element name="INSTANCE_NAME" type="xs:string" minOccurs="0" />
+      <xs:element name="ALIGNMENT_RULES" type="tgn:AlignmentRules" minOccurs="0" />
+      <xs:element name="OPTION_GRAMMAR" type="tgn:StringList" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--Vulkan DescriptorResources -->
+  <xs:complexType name="pdsfxStorageImage">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string" minOccurs="1"/>
+      <xs:element name="DECLARATION" type="tgn:ImageDeclaration" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="pdsfxAttributeEnum">
+    <xs:restriction base="xs:string">
+      <!--Restriction from dsfx attributes-->
+      <xs:enumeration value="TextureCoordinates1"/>
+      <xs:enumeration value="TextureCoordinates2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name ="pdsfxAttributes">
+    <xs:sequence>
+      <xs:element name ="ATTRIBUTE" type="tgn:pdsfxAttributeEnum" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name ="pdsfxMacro">
+    <xs:sequence>
+      <xs:element name="DEFINE" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="CONTENT" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name ="pdsfxMacroList">
+    <xs:sequence>
+      <xs:element name ="MACRO" type="tgn:pdsfxMacro" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name ="pdsfxEntryPointList">
+    <xs:sequence>
+      <xs:element name="ENTRY_NAME" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name ="pdsfxManualEntryPoint">
+    <xs:sequence>
+      <xs:element name="VERTEX_ENTRIES" type="tgn:pdsfxEntryPointList" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="GEOMETRY_ENTRIES" type="tgn:pdsfxEntryPointList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="FRAGMENT_ENTRIES" type="tgn:pdsfxEntryPointList" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

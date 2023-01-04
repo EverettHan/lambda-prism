@@ -1,0 +1,98 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" comment = "18.11.2011 TZW/CDT 3DXML V6" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationCG"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "AZX/OU4 21.06.2021 VisuInfra product loader" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENIntelTBB"/>
+  <buildtimeOnlyPrereq access = "Protected" comment = "2018.12.13 AZX/I2S Space Mouse Driver" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENBoost"/>
+  <buildtimeOnlyPrereq access = "Protected" comment = "2021.03.04 AZX/LMA9 Fast json parser for DELMIA product loader" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENRapidjson"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "VisualizationSceneGraph"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "VisualizationCore"/>
+  <prerequisite access = "Private" comment = "14.11.2011 QUQ/CDT Adding FreeType component" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationFreeType"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENnvAPI"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "SGCoreUtils"/>
+  <authorize access = "Private" name = "VisualizationGL.tst"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "VisualizationSG.tst"/>
+  <authorize access = "Private" name = "VisualizationBase.tst"/>
+  <authorize access = "Private" name = "VisuImmersiveDialog"/>
+  <authorize access = "Private" name = "VisuImmersiveUI"/>
+  <authorize access = "Private" name = "VisualizationController"/>
+  <authorize access = "Private" name = "VisualizationScalability"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" name = "VisualizationMeshTools"/>
+  <authorize access = "Private" name = "GraphicsTestSuite"/>
+  <authorize access = "Private" name = "VisualizationUT.tst"/>
+  <authorize access = "Private" name = "VisuDebugTools"/>
+  <authorize access = "Private" name = "GeometryVisualization"/>
+  <authorize access = "Private" name = "VisualizationOpenCL"/>
+  <authorize access = "Private" comment = "07.01.2013 NJ3/ODM R215" name = "VisualizationCuda"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "PolyhedralVisuAppli.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "SMAFeaBaseVisu"/>
+  <authorize access = "Private" name = "VisuImmersiveDialog.tst"/>
+  <authorize access = "Private" comment = "20.01.2012 JOV/CDT R213" name = "VisuImmersiveDialogEx.tst"/>
+  <authorize access = "Private" comment = "11.09.2012 SVQ/CDT R214" name = "PolyhedralVisualization"/>
+  <authorize access = "Private" comment = "14.12.2012 RNO/ODM R215" name = "CATMaterialRemovalSimulation"/>
+  <authorize access = "Private" name = "VisualizationDrivers"/>
+  <authorize access = "Private" name = "VisualizationEngines"/>
+  <authorize access = "Private" comment = "25.09.2013 FOR/CDT AR" name = "IVDeviceCore"/>
+  <authorize access = "Private" comment = "25.09.2013 FOR/CDT AR" name = "IVSUICore"/>
+  <authorize access = "Private" comment = "25.09.2013 FOR/CDT AR" name = "IVDeviceEnginesCore"/>
+  <authorize access = "Private" comment = "23.10.2013 ODM/CDT/PBI 3DIndex access to VisPrimitive" name = "PLM3DSearchGeoServices"/>
+  <authorize access = "Private" comment = "31.01.2014 ODM/LQ9 Dev binding JavaScript" name = "VisualizationJSBinding.tst"/>
+  <authorize access = "Private" name = "NATEnvironment"/>
+  <authorize access = "Private" name = "NATPlantModeler"/>
+  <authorize access = "Private" name = "PolyhedralGPGPU"/>
+  <authorize access = "Private" name = "PolyhedralGPGPU.tst"/>
+  <authorize access = "Private" name = "VisualizationNRE.tst"/>
+  <authorize access = "Private" name = "GlobeEngine"/>
+  <authorize access = "Private" name = "GlobeEngine.tst"/>
+  <authorize access = "Private" name = "VisualizationCG.tst"/>
+  <authorize access = "Private" name = "V6MobileNRESamples.tst"/>
+  <authorize access = "Private" name = "StellarEngine"/>
+  <authorize access = "Private" name = "CATSimulationPlayerResources"/>
+  <authorize access = "Private" name = "CSIGeoViewModel"/>
+  <authorize access = "Private" name = "CSIGeoViewModel.tst"/>
+  <authorize access = "Private" name = "VisuPLMHelpers"/>
+  <authorize access = "Private" name = "OOCPointCloudModeler.tst"/>
+  <authorize access = "Private" name = "OOCPointCloud.tst"/>
+  <authorize access = "Private" name = "OOCPointCloudOperators"/>
+  <authorize access = "Private" name = "OOCPointCloudUI.tst"/>
+  <authorize access = "Private" name = "NeurayEngine"/>
+  <authorize access = "Private" comment = "09.11.2015 NHD Scene Graph Compute Server" name = "SGManager"/>
+  <authorize access = "Private" name = "RenderingBase"/>
+  <authorize access = "Private" name = "IVDeviceEngines.tst"/>
+  <authorize access = "Private" name = "VisuBatchInfra.tst"/>
+  <authorize access = "Private" name = "VisuDirectAccessItf"/>
+  <authorize access = "Private" name = "XCTIrayTranslator"/>
+  <authorize access = "Private" comment = "23.010.2019 PTO/OXQ Service cloud visu" name = "VisualizationCSIHelpers"/>
+  <authorize access = "Private" comment = "AZX/PKO1 27.02.2020 NeurayEngine replacement" name = "VisuIrayTranslator"/>
+  <authorize access = "Private" comment = "AZX/OXQ 07.07.2021 Migrating to new CD FW. Remove VisualizationStreamingCommon entry after migration." name = "VisStreamClient"/>
+  <authorize access = "Private" comment = "AZX/FDT1 21.09.2021 ProductLoader packaging changes." name = "VisStreamCSI"/>
+  <authorize access = "Private" comment = "19.11.2021 AZX/FDT1 New FW for product loader access" name = "VisuProductLoader"/>
+  <attached name = "VisualizationUT.tst"/>
+  <attached name = "VisualizationRSW.tst"/>
+  <attached name = "VisualizationBase.tst"/>
+  <attached name = "Visualization.tst"/>
+  <attached name = "VisualizationSG.tst"/>
+  <attached name = "VisualizationOptions.tst"/>
+  <attached name = "GeometryVisualization.tst"/>
+  <attached name = "CATIAModelVisu.tst"/>
+  <attached name = "CATIAApplicationFrame.tst"/>
+  <attached name = "CATImmersiveUI.tst"/>
+  <attached name = "VisualizationCore.tst"/>
+  <attached name = "VisualizationSceneGraph.tst"/>
+  <attached name = "VisualizationApplication.tst"/>
+  <attached name = "IVToolkit.tst"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <attached name = "VisualizationCommands.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

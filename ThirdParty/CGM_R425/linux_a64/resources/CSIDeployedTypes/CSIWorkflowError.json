@@ -1,0 +1,23 @@
+{
+  "grammarVersion": 3,
+  "desc": "error returned with CSI::Channel::AnswerError(), received in onError client's callback. (javascript: node.createRequest({onError:func}, C++: request.OnError() ",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "flowError",
+      "basic": "string",
+      "optional": {
+        "isOptional": false
+      },
+      "desc": "name of the flow that produced an error"
+    },
+    {
+      "label": "error",
+      "type": "Parameters",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "error description"
+    }
+  ]
+}

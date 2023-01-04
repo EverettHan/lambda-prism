@@ -1,0 +1,39 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "pop the last parameters from a parameters array",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "array",
+          "typeArray": "Parameters",
+          "desc": "The parameters array"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "param",
+          "type": "Parameters",
+          "desc": "The parameter popped out of the array"
+        },
+        {
+          "label": "result",
+          "typeArray": "Parameters",
+          "desc": "The array without the param popped out"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

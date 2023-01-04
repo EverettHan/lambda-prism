@@ -1,0 +1,13 @@
+m|VENBasisUniversal/BasisLoader.mweb
+b|j|c,m
+b|c|c,m
+v|6.425.0.22148|3.2
+r|/u/lego/R425rel/BSF/.
+t|linux_a64/webapps/BasisLoader/BasisLoader.js|1653712478|35060
+s|VENBasisUniversal/BasisLoader.mweb/src/BasisLoader.js|1649402394|124716
+t|linux_a64/webapps/BasisLoader/assets/BasisLoader.wasm|1653712476|472914
+s|VENBasisUniversal/BasisLoader.mweb/src/assets/BasisLoader.wasm|1649347679|472914
+t|linux_a64/webapps/BasisLoader/assets/LICENSE_BasisLoader|1653712476|11325
+s|VENBasisUniversal/BasisLoader.mweb/src/assets/LICENSE_BasisLoader|1578315911|11325
+u|linux_a64/code/toolcmds/mkwebconcat.sh|1625160842|342
+u|linux_a64/code/toolcmds/terser.sh|1625160842|343

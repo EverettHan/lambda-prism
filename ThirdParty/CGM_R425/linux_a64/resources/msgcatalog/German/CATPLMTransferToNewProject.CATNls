@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+TTNP_Dirty.Diagnostic="/p1 kann nicht verarbeitet werden, da Speicherung erforderlich";
+TTNP_Dirty.Advice="Änderungen speichern";
+
+TTNP_Light.Diagnostic="/p1 kann nicht verarbeitet werden, da nicht vollständig geladen";
+TTNP_Light.Advice="/p1 öffnen";
+
+TTNP_NoProject.Diagnostic="Teamarbeitsbereich von /p1 kann nicht abgerufen werden";
+TTNP_NoProject.Advice="";
+
+TTNP_CurrentProject.Diagnostic="/p1 kann nicht verarbeitet werden, da zum aktuellen Teamarbeitsbereich gehörig";
+TTNP_CurrentProject.Advice="Auswahl prüfen";
+
+TTNP_MutipleProjects.Diagnostic="Es können nicht mehrere Teamarbeitsbereiche verarbeitet werden: /p1 und /p2";
+TTNP_MutipleProjects.Advice="Auswahl prüfen";
+
+TTNP_Parent.Diagnostic="/p1 ohne übergeordnetes Element /p2 kann nicht verarbeitet werden";
+TTNP_Parent.Advice="/p1 der Auswahl hinzufügen oder entladen";
+
+TTNP_Child.Diagnostic="/p1 kann nicht verarbeitet werden, da das untergeordnete Element /p2 zu einem anderen Teamarbeitsbereich gehört";
+TTNP_Child.Advice="Struktur prüfen";
+
+TTNP_ParentAlreadyCloned.Diagnostic="/p1 kann nicht verarbeitet werden, da das übergeordnete Element /p2 bereits geklont wurde";
+TTNP_ParentAlreadyCloned.Advice="Operation in einem Fenster mit dem Klon von /p1 starten";
+
+TTNP_ChildLost.Diagnostic="/p1 kann nicht verarbeitet werden, da nach dem Klonen des übergeordneten Elements /p2 erzeugt";
+TTNP_ChildLost.Advice="";
+
+TTNP_PointingOutsideScope.Diagnostic="/p1 kann nicht verarbeitet werden, da von /p2 referenziert, das nicht durch Klonprozess erzeugt wurde";
+TTNP_PointingOutsideScope.Advice="/p1 entladen oder Operation in einer Sitzung starten, in der es nicht geöffnet wurde.\nBeachten Sie, dass der Server /p1 nicht an den Klon von /p2 weiterleitet";
+
+TTNP_QueryMapping.Diagnostic="Abfrage der Zuordnungstabelle fehlgeschlagen";
+TTNP_QueryMapping.Advice="Support kontaktieren";
+
+TTNP_QueryAttributes.Diagnostic="Attribute konnten nicht vom Server abgerufen werden";
+TTNP_QueryAttributes.Advice="Support kontaktieren";
+
+TTNP_Open.Diagnostic="Bereits in /p1 geklonte Daten konnten nicht geöffnet werden";
+TTNP_Open.Advice="Nachfolgende Fehlermeldungen prüfen. Support kontaktieren";
+
+TTNP_NothingToDo.Diagnostic="Alle Objekte wurden bereits geklont";
+TTNP_NothingToDo.Advice="Geklonte Struktur öffnen";
+
+TTNP_ServerFork.Diagnostic="Serverseitige Klonoperation fehlgeschlagen";
+TTNP_ServerFork.Advice="Nachfolgende Fehlermeldungen prüfen. Fenster schließen";
+
+TTNP_CannotStartTask.Diagnostic="Der serverseitige Cloning-Vorgang konnte nicht gestartet werden";
+TTNP_CannotStartTask.Advice="Fenster schließen";
+
+TTNP_RefreshSessionMessage="Sitzung aktualisieren (F5 drücken), damit Server und Sitzung konsistent sind";
+
+TTNP_MissingForkRecord.Diagnostic="Duplizierung wurde erfolgreich abgeschlossen, aber /p1 wurde nicht auf dem Server geklont";
+TTNP_MissingForkRecord.Advice="Eine mögliche Erklärung könnte sein, dass es gelöscht wurde.\nFenster schließen und geklonte Daten öffnen";
+
+TTNP_MissingForkImpactRecord.Diagnostic="Duplizierung wurde erfolgreich abgeschlossen, aber /p1 wurde nicht auf dem Server weitergeleitet";
+TTNP_MissingForkImpactRecord.Advice="Eine mögliche Erklärung könnte sein, dass es gelöscht wurde.\n/p1";
+
+TTNP_MissedImpact.Diagnostic="Duplizierung wurde erfolgreich abgeschlossen, aber /p1 wurde nicht in der Sitzung weitergeleitet";
+TTNP_MissedImpact.Advice="Eine mögliche Erklärung könnte sein, dass es nach dem Starten des Klonvorgangs geöffnet wurde.\n/p1";
+
+TTNP_ConcurrentModification.Diagnostic="Duplizierung wurde erfolgreich abgeschlossen, aber es wurde eine gleichzeitige Änderung an /p1 erkannt";
+TTNP_ConcurrentModification.Advice="/p1";
+
+TTNP_Internal1.Diagnostic="Bei der Verarbeitung von /p1 ist ein interner Fehler aufgetreten.";
+TTNP_Internal1.Advice="Support kontaktieren (/p1)";
+
+TTNP_Internal2.Diagnostic="Ein interner Fehler ist aufgetreten.";
+TTNP_Internal2.Advice="Support kontaktieren (/p1)";
+
+TTNP_SessionPreview.Diagnostic="Sitzungsvorschau konnte nicht generiert werden";
+TTNP_SessionPreview.Advice="Fehler-Log prüfen";

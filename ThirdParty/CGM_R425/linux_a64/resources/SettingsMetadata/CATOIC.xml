@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+<st:Description name="CATOIC" PrimaryTabpage="/General/Online Information Collection">
+	<st:role>Online Information Collection Settings</st:role>
+	<st:detailedRole>Online Information Collection Settings allow to trigger the uploading of information onto a server.</st:detailedRole>
+	<st:RepositoryFile>CATOIC</st:RepositoryFile>
+	<st:version>1</st:version>
+	<st:compatibility>
+		<st:FullCompatibilityfromLevel>0</st:FullCompatibilityfromLevel>
+		<st:UpwardCompatibilityfromLevel>0</st:UpwardCompatibilityfromLevel>
+	</st:compatibility>
+</st:Description>
+
+<st:attributes>
+	<st:attribute Name="OICActivation_DevMode">
+    <st:role visibility="LA">Internal</st:role>
+		<st:boolean>
+			<st:default>  
+			<st:value>false</st:value>
+			</st:default>
+		</st:boolean>
+	</st:attribute>
+
+	<st:attribute Name="OICActivation">
+		<st:role>If Activation is set to true the V6 client will send USAGE information onto a by customer specified http server in case of application failure.</st:role>
+		<st:boolean>
+			<st:default>  
+			<st:value>false</st:value>
+			</st:default>
+		</st:boolean>
+	</st:attribute>
+	
+	<st:attribute Name="OICServerURL">
+		<st:role>Http URL where the OIC infrastructure uploads its file</st:role>
+		<st:string>
+			<st:default>
+				<st:value></st:value>
+			</st:default>
+		</st:string>
+	</st:attribute>
+
+	<st:attribute Name="MTBFServerURL">
+		<st:role>Http URL where the MTBF infrastructure uploads its file</st:role>
+		<st:string>
+			<st:default>
+				<st:value>https://ds3dexp-eu-listencat-ext.extranet.3ds.com/upload</st:value>
+			</st:default>
+		</st:string>
+	</st:attribute>
+
+  
+  
+	<st:attribute Name="OICHttpMode">
+	        <st:role>Enables the OIC to use a POST request.</st:role>
+		<st:detailedRole>By default the OIC process uploads its data with a PUT request. If a customer does not want to allow these request on his server, this setting enables to use a POST request in place of the PUT, but he has to develop an applet.</st:detailedRole>
+		<st:boolean>
+			<st:default>
+				<st:value>false</st:value>
+			</st:default>
+		</st:boolean>
+	</st:attribute>
+
+  <st:attribute Name="ActivateIRManager">
+    <st:role>If Activation is set to true the V6 client will run the incident report manager automatically considering the following command line.</st:role>
+    <st:boolean>
+      <st:default><st:value>true</st:value></st:default>
+    </st:boolean>
+  </st:attribute>
+
+	<st:attribute Name="IRManagerCmdLine">
+		<st:role>Incident Report Manager command line</st:role>
+		<st:string>
+			<st:default><st:value>DSYSysIRManager -sc</st:value></st:default>
+		</st:string>
+	</st:attribute>
+
+	</st:attributes>
+</st:repository>

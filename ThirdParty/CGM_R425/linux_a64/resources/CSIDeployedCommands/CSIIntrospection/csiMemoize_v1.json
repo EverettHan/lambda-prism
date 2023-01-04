@@ -1,0 +1,43 @@
+{
+  "grammarVersion": 1,
+  "desc": "Memoize is an optimization command used to speed up computer programs by storing the results of expensive command call and returning the cached result when the same inputs occur again (https://en.wikipedia.org/wiki/Memoization)",
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {
+      "command": {
+        "type": "string",
+        "desc": "The name of the command you want to invoke"
+      },
+      "version": {
+        "type": "int32",
+        "desc": "The version of the command you want to invoke"
+      }
+    },
+    "answers": "none"
+  },
+  "onCommandParameters": {
+    "in": {
+      "inputDataBegin": {
+        "type": "Parameters",
+        "desc": "The inputData of the onBeginParameters of the command you want to invoke",
+        "defaultValue": {
+        }
+      },
+      "inputDataCommand": {
+        "type": "Parameters",
+        "desc": "The inputData of the onCommandParameters of the command you want to invoke"
+      },
+      "inputDataEnd": {
+        "type": "Parameters",
+        "desc": "The inputData of the onEndParameters of the command you want to invoke",
+        "defaultValue": {
+        }
+      }
+    },
+    "answers": "Parameters"
+  },
+  "onEndParameters": "none"
+}

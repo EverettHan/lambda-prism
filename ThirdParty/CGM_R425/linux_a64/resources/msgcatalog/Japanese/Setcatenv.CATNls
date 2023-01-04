@@ -1,0 +1,62 @@
+<meta charset="UTF-8"/>
+HelpNT.text="setcatenv の使用法
+[-e environment_name      ]   必須オプション。デフォルト値はありません。
+[-d storage_directory_name]   デフォルト: CSIDL_APPDATA\CATEnv
+CATEnv
+[-p concatenation path    ]   デフォルト: ルートのインストール パス
+[-a user|global           ]   環境のタイプ。デフォルト: user
+[-server                  ]   サーバー モードを活動化します。デフォルト: 非活動化 (対話形式)
+[-new yes|no              ]   環境作成を指定します。デフォルト: yes
+[-icon  yes|no            ]   Windows デスクトップにアイコンを作成します。デフォルト: yes
+[-menu yes|no             ]   [スタート] メニューにショートカットを作成します。デフォルト: yes
+[-desktop yes|no          ]   環境のデスクトップ リプレゼンテーションを作成します。デフォルト: yes(-icon yes -menu yes に相当)
+[-cf path_of_environment  ]   変数値を path_of_environment で指定された環境に更新します。
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ]   環境リプレゼンテーションの製品ラインを指定します (デフォルト: CATIA)
+[-v yes|no                ]   冗長モードを活動化します。デフォルト: yes
+[-regserver               ]   CATIA をデスクトップに登録します (排他的コマンド)
+[-tools                   ]   ツールのショートカットを設定します (排他的コマンド)[-h|-help                 ]   このヘルプ。";
+HelpUNIX.text="setcatenv の使用法
+[-e environment_name      ]   必須オプション。デフォルト値はありません。
+[-d storage_directory_name] デフォルト: $HOME/CATEnv
+[-p concatenation path]     デフォルト: ルートのインストール パス (/usr/catia/DassaultSystemes/B06)
+[-a user|global]            環境のタイプ。デフォルト: user
+[-server]                   サーバー モードを活動化します。デフォルト: 非活動化 (対話形式)
+[-new yes|no]               環境作成を指定します。デフォルト: yes
+[-desktop yes|no]           環境のデスクトップの表示を作成します。デフォルト: IRIX 以外は yes
+[-cf path_of_environment  ]   変数値を path_of_environment で指定された環境に更新します。
+[-cs    CATIA
+        ENOVIA
+        DELMIA
+        ENOVIA_3D_Live    ]   環境リプレゼンテーションの製品ラインを指定します (デフォルト: CATIA)
+[-v yes|no]                 冗長モードを活動化します。デフォルト: yes
+[-regserver]                CATIA をデスクトップに登録します (排他コマンド)
+[-h|-help]                  このヘルプ。";
+NoBlankInEnvName.text="環境名にブランク文字は使用できません";
+NoHome.text="'HOME'環境変数が見つかりません";
+EnvCreationFailed.text="環境を作成できませんでした";
+IconeCreationFailed.text="環境アイコンを作成できませんでした";
+IconeCreationFailed2.text="デスクトップ ショートカットが作成されていません。インストール ディレクトリ内に /P1 があるかどうか確認してください。";
+ModifyVariableFailed.text="環境変数を修正できませんでした";
+UpdateVariableFailed.text="環境変数を更新できませんでした";
+NoSuchVariable.text="変数が存在しません";
+WSSsetupFailed.text="ワークステーションをセットアップできませんでした";
+ToolsSetupFailed.text="ツールをインストールできませんでした";
+MustBeSystemAdmin.text="このオプションはシステム管理者のみ使用できます";
+RefFileNotFound.Text="参照ファイル記述子が見つかりませんでした";
+EnvNameNotSpecified.Text="環境の名前を指定する必要があります";
+DefaultFolderNotFound.Text="環境のデフォルト フォルダーが見つかりませんでした";
+SpecifiedFolderNotFound.Text="ディレクトリ \"/P1\" が見つかりませんでした。";
+EnvFileNotFound.Text="環境ファイルが見つかりませんでした";
+AccessPb.Text="環境ファイルを \"/P1\" に保存できませんでした。";
+FileAlreadyExist.Text="環境ファイルはすでに存在します";
+NoConcatSpecified.Text="連結を指定する必要があります";
+DiskFull.Text="環境ファイルを保存できません: ディスクがフルです";
+InitFolderFailed.Text="------------------ 警告 ----------------
+デフォルトのストレージ フォルダーが見つかりませんでした。
+環境は次に保存されました:
+";
+UnknownProductLine.Text="/P1 は有効な製品ラインではありません。-cs オプションの許可された値は次のとおりです:";
+UnknownOption.Text="無効なオプション: /P1。";

@@ -1,0 +1,44 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Split a string in two strings separated by a delimiter",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "string",
+          "basic": "string",
+          "desc": "The string to split"
+        },
+        {
+          "label": "delimiter",
+          "basic": "string",
+          "desc": "The delimiter separating both parts"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "before",
+          "basic": "string",
+          "desc": "the sub string of the input before the delimiter (can be empty)"
+        },
+        {
+          "label": "after",
+          "basic": "string",
+          "desc": "the sub string of the input after the delimiter (can be empty)"
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

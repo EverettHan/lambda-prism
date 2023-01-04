@@ -1,0 +1,59 @@
+CATElement             CATIAlias                   libCATObjectModelerCATIA
+CATElement             LifeCycleObject			   libCATObjectModelerCATIA
+CATElement             CATImplementationCATIA      libCATObjectModelerCATIA
+CATElement             CATIAscendant			   libCATObjectModelerCATIA
+CATElement             CATILinkableObject          libCATObjectModelerCATIA
+
+model                  CATINamingContext    	   libCATObjectModelerCATIA
+model                  CATIPersistent    		   libCATObjectModelerCATIA
+CATDocument	           CATIV4Document			   libCATObjectModelerCATIA
+CATContainer           CATIContPersistStorage	   libCATObjectModelerCATIA
+CATContainer           CATIPersistStorage		   libCATObjectModelerCATIA
+CATContainer           CATIUserId				   libCATObjectModelerCATIA
+CATContainer           CATIAlias				   libCATObjectModelerCATIA
+
+CATV5Container         CATIPersistStorage          libCATObjectModelerCATIA
+CATV5Container         CATIContPersistStorage      libCATObjectModelerCATIA
+CATV5Container         CATIStoredProjectFlag       libCATObjectModelerCATIA
+
+CATContainer           CATIApplicativeV4ToV5Paste  libCATObjectModelerCATIA 
+
+# model Navigation (CATIAModelEditorBase)
+CATElement             CATINavigateModel           libCATObjectModelerCATIA
+# CATElement CATINavigateObject libCATObjectModelerCATIA # Removed to correct NNDE errors
+#CAT_28_1			   CATINavigateModel		   libCATObjectModelerCATIA
+
+# Technological Links
+CATContainer	      CATITechnoLinkable		   libCATObjectModelerCATIA
+
+# Pour le traitement intra dittos
+CATV4ElementThroughDitto CATIV4ElementThroughDittoAccess libCATObjectModelerCATIA
+
+CATElementAdhesion	CATIAlias	libCATObjectModelerCATIA
+CATElementAdhesion	CATIAscendant	libCATObjectModelerCATIA
+CATElementAdhesion	CATImplementationCATIA	libCATObjectModelerCATIA
+CATElementAdhesion	LifeCycleObject	libCATObjectModelerCATIA
+
+# Listener for UUID and CATIAEntity table (IR 580218)
+
+CATEntityAndUUIDImpl    CATIEntityAndUUID				libCATObjectModelerCATIA
+
+# Ajout JDY Sept 2008 MDE errors
+CATContainer			CATIContainerAdhesionItf		libCATObjectModelerCATIA   
+CATElement				CATIV4Linkable					libCATObjectModelerCATIA   
+ 
+
+# Listener to call unstream from ObjectModelerBase
+CATElement          CATIInternalLoad				libCATObjectModelerCATIA
+
+CATSDM_Model CATIOmbPlug libCATObjectModelerCATIA
+CATIAPlug CATIOmbPlug libCATObjectModelerCATIA
+CATDropTestCont CATIOmbPlug libCATObjectModelerCATIA
+
+CATContainer CATITechnoLinkable libCATObjectModelerCATIA
+
+CATContainer  CATIStoredProjectFlag   libCATObjectModelerCATIA
+
+CATCompoundCont CATIStream libCATObjectModelerCATIA
+AppliCont CATIStream libCATObjectModelerCATIA
+CATGEO3D CATIStream libCATObjectModelerCATIA

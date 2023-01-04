@@ -1,0 +1,39 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+
+
+NoElement.Diagnostic="В систему заполнения не отправлены элементы";
+NoElement.Advice="Проверьте доступность данных на сервере";
+
+NoElementGrowable.Diagnostic="Система заполнения не может обработать элементы";
+NoElementGrowable.Advice="Проверьте статус компонента перед его загрузкой";
+
+ComponentLogged.Diagnostic="Указанный компонент зарегистрирован в журнале";
+ComponentLogged.Advice="Убедитесь, что в ходе сеанса не было внесено никаких изменений";
+
+ComponentNotBrowsed.Diagnostic="Указанный компонент уже заполнен до выполнения этой операции";
+ComponentNotBrowsed.Advice="Проверьте статус компонента перед его загрузкой";
+
+ComponentNotRepresented.Diagnostic="Указанный компонент еще не открыт в сеансе";
+ComponentNotRepresented.Advice="Разверните данные перед его заполнением";
+
+ComponentNotInWS.Diagnostic="Указанный компонент недоступен в текущем рабочем пространстве";
+ComponentNotInWS.Advice="Проверьте место назначения для компонента перед его заполнением";
+
+Internal.Diagnostic="Внутренняя ошибка системы заполнения";
+Internal.Advice="Обратитесь к локальному администратору";

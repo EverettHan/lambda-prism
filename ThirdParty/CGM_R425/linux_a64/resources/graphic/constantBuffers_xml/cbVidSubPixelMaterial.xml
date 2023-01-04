@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+
+  <NAME>cb_cbVidMaterial</NAME>
+  <UNIFORM>
+    <NAME>u_LcdFilter</NAME>
+    <TYPE>mat4x4</TYPE> <!-- mat3x3 is not supported in NRE yet. -->
+    <DEFAULT_VALUE>0.33 0.22 0.11 0 0.33 0.22 0.11 0 0.33 0.22 0.11 0 0 0 0 1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_TexturingOnOff</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_TextureAlphaOnOff</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_Gamma</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+</CONSTANT_BUFFER>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Warning: This PDSFX is meant to be used by Simulia only. Its content may change depending on Simulia needs.-->
+
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVisSMAMpaFrontBackTranslucent</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>TextureName</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>defaultSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>TextureName</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v2_Tex</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <LIGHTING>true</LIGHTING>
+      <VERTEX_STAGE>VisSMAMpaFrontBackTranslucentVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAMpaFrontBackTranslucentFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+</PDSFX>

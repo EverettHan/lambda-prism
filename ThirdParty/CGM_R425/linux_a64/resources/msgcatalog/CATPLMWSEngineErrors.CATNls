@@ -1,0 +1,15 @@
+<meta charset="UTF-8"/>
+ERR_01.Diagnostic = "Transaction impossible because the component is currently loaded in the authoring session";
+ERR_01.Advice = "Unload the component before performing the operation";
+
+ERR_02.Diagnostic = "Provided attributes are not defined for this component";
+ERR_02.Advice = "Ensure that attributes can be applied to that kind of component";
+
+ERR_03.Diagnostic = "No component provided for the transaction";
+ERR_03.Advice = "Please provide components on which the transaction have to be performed";
+
+ERR_04.Diagnostic = "The Workspace and Reference components are not compatible";
+ERR_04.Advice = "Ensure that the Workspace component is from the same logical family than the Reference one";
+
+ERR_05.Diagnostic = "The change of lock status succeeded but the computation of the editability of at least one component failed";
+ERR_05.Advice = "Ensure that the server is working correctly and try changing the lock status again";

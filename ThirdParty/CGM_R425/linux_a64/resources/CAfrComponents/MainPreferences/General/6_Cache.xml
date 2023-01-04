@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+ <Resources>
+  <ResourceDictionary Source="AllPreferences\Common_Preferences\CommonPref_General\CachePage.xml"/>
+ </Resources>
+
+  <Template syp:name="Cachesettings" Target="CATAfrComponent">
+    <preferencepage Name="GeneralCache" Resource="MainGeneralMePreferences" RepositoryName="PLMCache">
+      <CATCAfrInclude Template="CacheForDisplay" Condition="!GetEnv(ADL_ODT_IN)"/>
+    </preferencepage>
+  </Template>
+
+  <Template syp:name="CacheForDisplay" Target="CATAfrComponent">
+    <preferencegroup Name="CachePageSett" Resource="CATPowerIOSettingsFrame" RepositoryName="PLMCache"> 
+      
+      <!-- Warning label  -->
+      <preferenceitem Name="RESTART_APP_WARNING_CACHE" IconName="I_WarningMsgFrameSet" MoreInfo="PlaceHolderControl" UserDefinedCtr="Label" Lock="0"/>
+      
+      <!-- Cache location dialog -->
+      <preferencegroup  Name="LocationCacheFrame" > 
+        <preferencegroup  Name="LocationCacheFrameOneLine" Align="1" Border="0" > 
+          <preferenceitem Name="CacheLocalPath"     UserDefinedCtr="FolderChooser" Lock="1"  />        
+          <preferenceitem Name="DeleteCacheButton"  MoreInfo="PlaceHolderControl" UserDefinedCtr="PushButton" Lock="0"/>
+        </preferencegroup>
+      </preferencegroup>
+      
+      <!-- Streams cache dialog -->
+      <preferencegroup Name="PersistentCacheFrame.HeaderFrame.Global" IconName="I_ExecuteCapture">               
+        <preferenceitem Name="CacheMaxSize"/>        
+        <!-- <preferenceitem Name="CacheUseLabel" MoreInfo="PlaceHolderControl" UserDefinedCtr="Label" Lock="0" />         -->
+        <preferenceitem Name="CheckCacheCoherency"/>
+      </preferencegroup>
+      
+      <!-- Metadata cache dialog -->
+      <preferencegroup Name="CacheMonitorFrame.HeaderFrame.Global" IconName="I_CacheMonitor">
+        <preferenceitem Name="CacheMetadataMaxElements"/>
+        <!-- <preferenceitem Name="NbMetadataLabel" MoreInfo=" PlaceHolderControl RuntimeValues " UserDefinedCtr="TextEdt" Lock="0"/>         -->
+      </preferencegroup>       
+    </preferencegroup>
+    
+  </Template> 
+
+</Styles>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbImage_2D</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>imageTexture</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>imageTextureSampler</NAME>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>           
+      <LIGHTING>false</LIGHTING>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>imageTexture</SAMPLER>
+          <STATES>imageTextureSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord0</NAME>
+            <TYPE>float2</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      <VERTEX_STAGE>Image_2DVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>Image_2DPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</PDSFX>

@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt=" 
+从桌面、菜单或工具上创建或删除链接到给定环境文件的所有应用程序的快捷方式：
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+仅从桌面上创建或删除链接到给定环境文件的自定义快捷方式：
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create 或 -del           ：从桌面、菜单或工具上创建或删除所有应用程序的快捷方式，或创建或删除自定义快捷方式。
+  -desktop|menu|tools       ：从桌面、菜单或工具上创建或删除所有应用程序的快捷方式。默认为桌面。在自定义模式下无用。
+  -e EnvName                ：环境文件名称。删除自定义快捷方式无用。
+  -d EnvDir                 ：环境文件存储文件夹（可选）。在删除模式下无用。
+                              如果未指定，且未使用 -a，则默认将为：EnvDir  = \"/p1\"
+                              如果未指定，但使用 -a global，则默认将为：EnvDir = \"/p2\"
+                              如果未指定，但使用 -a user，则默认将为：EnvDir =  \"/p1\"
+  -a global|user            ：创建或删除所有用户或仅当前用户的快捷方式（可选）。默认为 -a user。
+                              指定快捷方式的位置和类型。
+                             -a global：快捷方式将对所有用户可见。您必须具有管理员权限才能使用此选项。
+                             -a user：快捷方式将仅对当前用户可见。
+  -name DesktopShortcutName：创建或删除名为 DesktopshortcutName 的自定义桌面快捷方式以启动 Cmd 命令。
+  -cmd Cmd                  ：创建名为 DesktopshortcutName 的自定义桌面快捷方式，其中目标 = CATSTART -run Cmd env EnvName -direnv EnvDir。
+  -h                        ：此帮助。";
+
+MissingOption_e="选项 -e 为必需项，用于提供环境文件的名称。\n";
+MissingValue_e="-e 选择后面必须跟环境文件的名称。\n";
+MissingValue_d="-d 选项后面必须跟环境文件的路径名称。\n";
+MissingValue_a="-a 选项后面必须跟 global 或 user。\n";
+MissingValue_Cmd="-Cmd 选项后面必须跟将由快捷方式启动的命令。";
+MissingValue_name="-name 选项后面必须跟要创建的桌面快捷方式的名称。";
+MissingOption_cmd="选项 -name 必须与 -cmd 选项一起使用。\n";
+MissingOption_name="选项 -cmd 必须与 -name 选项一起使用。\n";
+BadOptions_menutools="自定义快捷方式只能在桌面上创建。\n";
+BadOptions_TypeShortcut="选项 -desktop、-tools 或 -menu 不可同时使用。\n";
+Option_aMustAdmin="选项 -a 需要管理员权限才能为所有用户创建快捷方式。\n";
+BadValue_a="选项 -a 选项后面只能跟 global 或 user。\n";
+MissingOptions_createordel="以下选项 -create 或 -del 中的一个为必需项。";
+MissingOption_typeshortcut="以下选项 -desktop、-tools 或 -menu 中的一个为必需项。\n";
+InvalidArg="选项 /p1 未经授权。";
+BadOptions_createdel="选项 -create 和 -del 不可同时使用。";
+EnvnameNotFound="未找到环境文件 /p1。请检查 -e 选项\n";
+CreateShortcutsIn="正在“/p1”中创建快捷方式\n";
+DeleteShortcutsIn="正在删除“/p1”中的快捷方式\n";
+CreateShortcutsDesktop="正在桌面上创建快捷方式...\n";
+CreateShortcutsDesktopOK="在桌面上创建快捷方式成功。\n";
+CreateShortcutsDesktopKO="在桌面上创建快捷方式失败。\n";
+CreateShortcutDesktop="正在创建桌面快捷方式 /p1 ...\n";
+CreateShortcutDesktopOK="创建桌面快捷方式成功。\n";
+CreateShortcutDesktopKO="创建桌面快捷方式失败。\n";
+CreateShortcutsTools="正在创建工具快捷方式...\n";
+CreateShortcutsToolsOK="创建工具快捷方式成功。\n";
+CreateShortcutsToolsKO="创建工具快捷方式失败。\n";
+CreateShortcutsMenu="正在“开始”菜单中创建快捷方式...\n";
+CreateShortcutsMenuOK="在“开始”菜单中创建快捷方式成功。\n";
+CreateShortcutsMenuKO="在“开始”菜单中创建快捷方式失败。\n";
+CreateDirFailed="无法创建目录“/P1”\n";
+DeleteShortcutsDesktop="正在删除桌面上的快捷方式...\n";
+DeleteShortcutsDesktopOK="桌面上的快捷方式删除成功。\n";
+DeleteShortcutsDesktopKO="桌面上的快捷方式删除失败。\n";
+DeleteShortcutDesktop="正在删除桌面快捷方式 /p1...\n";
+DeleteShortcutDesktopOK="删除桌面快捷方式成功。\n";
+DeleteShortcutDesktopKO="删除桌面快捷方式失败。\n";
+DeleteShortcutsTools="正在删除桌面上的工具快捷方式...\n";
+DeleteShortcutsToolsOK="工具快捷方式删除成功。\n";
+DeleteShortcutsToolsKO="工具快捷方式删除失败。\n";
+DeleteShortcutsMenu="正在删除“开始”菜单中的快捷方式...\n";
+DeleteShortcutsMenuOK="“开始”菜单中的快捷方式删除成功。\n";
+DeleteShortcutsMenuKO="“开始”菜单中的快捷方式删除失败。\n";
+DeleteShortcutfailed="无法删除快捷方式 /p1。\n";
+ShortcutNotFound="未找到文件 /p1。\n";
+DeleteShortcutOK="已删除快捷方式 /p1。\n";
+CreateShortcutOK="快捷方式 /p1 创建成功。\n";
+CreateShortcutKO="无法创建快捷方式 /p1。\n";
+BadStartInFolder_MissingPourcent="文件夹中的起始值：/p1 已被忽略，因为它包含不稳定的 % 字符。\n";
+BadStartInFolder_BadEnv="未设置环境变量 /p1。\n";
+BadStartInFolder_BadDir="文件夹中的起始值：/p1 已被忽略，因为不存在此路径。\n";
+NoModuleName="无法获取模块名称。\n";
+CustomexeNotFound="未在 PATH 连接中找到 Exe /p1。\n";
+Customexe2NotFound="未在 PATH 连接中找到 /p1.exe 或 /p1.bat。\n";
+NoShortcuts="无法检索要创建的快捷方式的列表。未找到文件 /p1。 \n";
+ErrGetRootPath="无法检索 /p1 的文件夹值。\n";
+DeleteDirKO="无法删除文件夹 /p1：/p2\n";
+InvalidDiskPathFormat="“/p1”路径是以无效磁盘驱动器开头的路径。";
+InvalidUNCPathFormat="“/p1”是无效 UNC 路径。";
+InvalidPathFormat="“/p1”是无效路径。";
+rootpathnotExist="根路径“/p1”不存在，因此无法创建文件夹。\n";

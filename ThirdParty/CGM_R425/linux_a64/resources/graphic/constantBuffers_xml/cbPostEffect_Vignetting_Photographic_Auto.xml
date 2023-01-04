@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_Vignetting_Auto</NAME>
+
+  <UNIFORM>
+    <NAME>u_CameraFocalLength</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>CameraFocalLength</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_CameraSensorSize</NAME>
+    <TYPE>float2</TYPE>
+    <SEMANTIC>CameraSensorSize</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ViewpointSize</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>ViewpointSize</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_ViewportToViewpointCoord</NAME>
+    <TYPE>float4</TYPE>
+    <SEMANTIC>ViewportToViewpointCoord</SEMANTIC>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

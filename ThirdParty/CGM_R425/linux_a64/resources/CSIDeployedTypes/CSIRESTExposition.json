@@ -1,0 +1,20 @@
+{
+  "grammarVersion": 2,
+  "desc": "A type to describe the REST exposition properties",
+  "category": "CSICommandBinder",
+  "definition": [
+    {
+      "label": "path",
+      "basic": "string",
+      "desc": "Path of the REST Web Service"
+    },
+    {
+      "label": "HTTPMethod",
+      "basic": "string",
+      "desc": "HTTP Method to use (in lowercase)",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

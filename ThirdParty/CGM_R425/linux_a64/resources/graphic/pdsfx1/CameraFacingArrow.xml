@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+  <INHERITANCE>Basic</INHERITANCE>
+  <CONSTANT_BUFFER>
+    <NAME>cbFixedSize</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>atlasTexture</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>atlasSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>atlasTexture</SAMPLER>
+          <STATES>atlasSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <LIGHTING>false</LIGHTING>
+      <VERTEX_STAGE>CameraFacingArrowVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>CameraFacingArrowFS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+</PDSFX>

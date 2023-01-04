@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="호스트 /p2에서 포트 /p1을(를) 찾을 수 없습니다. ";
+CATSysComPortFailure_150002.Request="호스트 /p2의 포트 /p1에서 선언할 수 없습니다.";
+CATSysComPortAcceptFailed_150003.Request="포트 /p1을(를) 수락할 수 없습니다.";
+CATSysComPortAcceptFailed_150004.Request="포트 /p1을(를) 기다리는 중에 오류가 발생했습니다.";
+CATSysComInitSocketError_150102.Request="소켓 작업에서 오류가 발생했습니다. 백본에 대한 연결이 끊어졌을 수 있습니다.";
+CATSysComSendSocketError_150103.Request="소켓 전송 작업에서 오류가 발생했습니다. 백본에 대한 연결이 끊어졌을 수 있습니다.";
+CATSysComRecvSocketError_150104.Request="소켓 수신 작업에서 오류가 발생했습니다. 백본에 대한 연결이 끊어졌을 수 있습니다.";
+CATSysComMsgClassError_151001.Request="메시지 클래스\P1이(가) 없습니다.";
+CATSysComMsgStreamError_151002.Request="클래스 \P1의 데이터 스트리밍 중 오류가 발생했습니다.";
+CATSysComMsgUnstreamError_151003.Request="클래스 \P1의 데이터 스트리밍 취소 중 오류가 발생했습니다.";
+CATSysComMsgClassInvalid_152001.Request="메시지 클래스 \P1은(는) CATIStreamMsg를 구현해야 합니다.";
+CATSysComMsgClassInvalid_152002.Request="메시지 클래스 \P1은(는) CATiCommMsg를 구현해야 합니다.";
+CATSysComMsgInvalid_152003.Request="메시지에 응답이 필요하지 않습니다.";
+CATSysComInstanciationError_152004.Request="클래스 \P1의 메시지 개체를 인스턴스화할 수 없습니다.";
+CATSysComReentranceError_152005.Request="내부 오류. 재입력 조건이 있습니다.";
+CATSysComTimeoutOccurred_152006.Request="시간 초과가 발생했습니다.";
+CATSysComApplicationNotFound_152007.Request="대상 애플리케이션 \P1이(가) 없습니다.";

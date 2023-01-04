@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+ <Resources>
+  <ResourceDictionary Source="AllPreferences\Common_Preferences\CommonPref_General\GeneralHelp.xml"/>
+ </Resources>
+
+  <Template syp:name="Helpsettings" Target="CATAfrComponent">
+    <preferencepage Name="GeneralHelp" Resource="MePreferencesGeneralHelp" RepositoryName="GeneralHelp">
+      <CATCAfrInclude Template="HelpForDisplay" Condition="!GetEnv(ADL_ODT_IN)"/>
+    </preferencepage>
+  </Template>
+
+  <Template syp:name="HelpForDisplay" Target="CATAfrComponent">
+    <preferencegroup Name="DocPathGroup"  IconName="I_Documentation" Resource="MePreferencesGeneralHelp" RepositoryName="GeneralHelp">
+      <preferenceitem syp:name="OnlineHelp"           Name="OnlineHelp"           UserDefinedCtr="Bool"/>
+      <preferenceitem syp:name="DocPath"              Name="DocPath"              UserDefinedCtr="CustomControl" MoreInfo="PlaceHolderControl"/>
+      <preferenceitem syp:name="DocLanguage"          Name="DocLanguage"          UserDefinedCtr="CustomControl" MoreInfo="PlaceHolderControl"/>
+      <preferenceitem syp:name="OnlineLanguagePolicy" Name="OnlineLanguagePolicy" UserDefinedCtr="Bool"/>
+    </preferencegroup> 
+ 
+    <CATSYPTriggerCollection>
+      
+		  <CATSYPTrigger Property="ControlValue" TargetName="OnlineHelp" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="DocPath" Value="1" />
+		    <CATSYPSetter Property="EnableFlag" TargetName="OnlineLanguagePolicy" Value="0" />
+      </CATSYPTrigger>
+	
+	    <CATSYPTrigger Property="ControlValue" TargetName="OnlineHelp" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="DocPath" Value="0" />
+        <CATSYPSetter Property="EnableFlag" TargetName="OnlineLanguagePolicy" Value="1" />
+      </CATSYPTrigger>
+      
+    </CATSYPTriggerCollection>
+  </Template> 
+
+</Styles>

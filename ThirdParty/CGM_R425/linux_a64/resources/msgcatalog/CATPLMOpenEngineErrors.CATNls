@@ -1,0 +1,70 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of Components concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each component 
+// This parameter has to be documented
+
+GenericMediatorErrorWithCompo.Diagnostic = "Cannot open component [/p1]";
+GenericMediatorErrorWithCompo.Advice = "Cannot open Component /p1.\nRestart the process.\nActivate Error Log Statistics to help your administrator troubleshooting the issue.\nTry running the Component Checker.";
+
+GenericMediatorError.Diagnostic = "An unexpected error occured during Session building.";
+GenericMediatorError.Advice = "It is strongly advised to restart the process. You might try running ComponentChecker.";
+
+BulkSessionManagementIntegrityFailure.Diagnostic = "An unexpected error occured during Session building. Integrity of the Session cannot be ensured.";
+BulkSessionManagementIntegrityFailure.Advice = "Restart the process.\nIntegrity components might be not reachable in the server. Check P&O rules on your server and contact your administrator.";
+
+//Copy-pasted from PLM_NotRetrievedComponent@PLMServerActionErrors.CATNls
+ComponentUnavailabilityInDatabase.Diagnostic = "The component could not be queried from the database.";
+ComponentUnavailabilityInDatabase.Advice = "The component may no longer exist, or its security policy prevents you from reading it.";
+
+AnotherMinorInSession.Diagnostic = "/p : other minor from the same major family is present in session, preventing from opening";
+AnotherMinorInSession.Advice = "Unload the minor to achieve open";
+
+AnotherMinorInInput.Diagnostic = "/p : other minor from the same major family is present as input element, preventing from opening";
+AnotherMinorInInput.Advice = "Contact your local administrator";
+
+ConcurrencyInSessionOfflineContent.Diagnostic="/p : this element has been modified in offline content and in the session.";
+ConcurrencyInSessionOfflineContent.Advice="Some elements in different state are already loaded in session.\n Close the tabs containing them before opening the Offline Content.";
+
+NoElement.Diagnostic = "No element sent to the open engine";
+NoElement.Advice     = "Check the data availability in the server";
+
+NoEltToOpen.Diagnostic = "All Components listed for opening are already loaded in session, but the data might not be up to date. No refresh is performed by the open operation";
+NoEltToOpen.Advice     = "If you want to load the latest update you have first to close current authoring session";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+AdapterCom.Diagnostic = "Problem occured while trying to retrieve information on the server";
+AdapterCom = "The connection with the server could be down";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// (correspond a une err systeme, donc a un abend)
+Internal.Diagnostic = "Internal open engine error";
+Internal.Advice     = "Contact your local administrator";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+MessageStructure.Diagnostic = "The data retrieved on the server are not consistent";
+MessageStructure.Advice     = "The data describing a component might be incomplete";
+
+AlreadyOpened_F_0.Diagnostic = "/p Components listed for opening are already in session, but the data might not be up to date. No refresh is performed by the open operation";
+AlreadyOpened_F_0.Advice     = "If you want to load the latest update you have first to close current authoring session";
+
+UnstreamPb.Diagnostic = "At least one stream could not be loaded";
+UnstreamPb.Advice     = "Please check the state of your vault";
+
+FactoryNotFound.Diagnostic = "A component of type /p could not be created in session due to a missing factory.";
+FactoryNotFound.Advice     = "Contact your administrator: you may be missing some package or licences for type /p.";
+
+ReentranceForbidden.Diagnostic = "It is not possible to start a new '/p1' operation now because another operation is running.";
+ReentranceForbidden.Advice     = "Contact support.";

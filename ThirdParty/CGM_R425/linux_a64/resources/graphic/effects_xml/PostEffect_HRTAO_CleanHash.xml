@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO_Auto</NAME>
+  </CONSTANT_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>hashMapKeysBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>hashMapKeys[]</NAME>
+        <TYPE>HashRecordKey</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>touchedListBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>touchedCells[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    
+    <COMPUTE_PASS>
+      <NAME>Default</NAME>
+      <COMPUTE_STAGE>
+        PostEffect_HRTAO_Incl_Common
+        PostEffect_HRTAO_Incl_CommonSpatialHash
+        PostEffect_HRTAO_Incl_HashKeyAccess
+        PostEffect_HRTAO_CleanHash
+      </COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+</EFFECT>

@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" comment = "YWE/VNC-2017.12-remove DoNotExposePrereq for UPS/CoexUPSJsonMapping access" export = "DoNotAddToClientPrereqs" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerNavigator"/>
+  <prerequisite access = "Protected" comment = "For reporting infra" expose = "DoNotExposePrereq" name = "PLMExchangeServices"/>
+  <prerequisite access = "Protected" comment = "YWE/BBX-2016.121-CATIPLMCompProviderRestrictedAccess" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" comment = "YWE/BBX-2016.12-CATIPLMCompProviderRestrictedAccess" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Public" comment = "For LargeScale project" expose = "ExposePrereq" name = "KnowledgeInterfaces"/>
+  <attached name = "CATDataCompatibilityInfra.tst"/>
+  <attached name = "CATDataCompatibility.tst"/>
+  <attached comment = "YWE-2015.10-Main PLMBatch custo with specific dev" name = "Cleaner.tst"/>
+  <attached comment = "YWE-2015.10-Main PLMBatch custo with specific dev" name = "DwCompatibility.tst"/>
+  <attached comment = "YWE-2018.03-for CoexUPSJsonMapping coverage" name = "XPGXCADPSExtractor.tst"/>
+  <attached comment = "YWE-2019.10-for CoexTrace coverage" name = "V5V6CoexistenceAdmin.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

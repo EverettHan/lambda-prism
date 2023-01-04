@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_IBL</NAME>
+
+  <UNIFORM>
+    <NAME>u_IBLDiffuseScaleFactor</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>IBLDiffuseScaleFactor</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_IBLSpecularScaleFactor</NAME>
+    <TYPE>float</TYPE>
+    <SEMANTIC>IBLSpecularScaleFactor</SEMANTIC>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_IBLTransfoMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <SEMANTIC>IBLTransfoMatrix</SEMANTIC>
+  </UNIFORM>
+  
+</CONSTANT_BUFFER>

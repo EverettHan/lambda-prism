@@ -1,0 +1,80 @@
+<meta charset="UTF-8"/>
+//  NLS File for gathering NLS Value of attribute PLMCoreReference (from KW Dicitionary). 
+//Notice on KW Dictionnary attribute of PLMReference are  only available through the Public PLMCoreRepReference or PLMCoreReference (this is why file may be translated twice)
+//take care that the meaning of value  may be different (depending on site deployment) 
+//Below meaning is entered for OOTB RACE IRPC deployment and would defaulty apply for  any of the PLMEntity derivative type
+//to ensure the Same NLS could be deployed both win and web; 
+//Do not forget to ask for updating Web accordingly to the translation of this in emxFrameworkStringResource.properties
+//when appropriate the emxFramework pattern is mentioned
+//----------------------------------------
+//-------------------------------- Policy section below; 
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type 
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.VPLM_SMB_Definition = Global Design Definition
+
+policy.VPLM_SMB_Definition="工程定义（经典）";
+policy.VPLM_SMB_Definition_MajorRev="工程定义";
+policy.VPLM_SMB_Definition_Document="工程定义文档（经典）";
+policy.VPLM_SMB_Definition_Document_MajorRev="工程定义文档";
+policy.VPLM_SMB_Evaluation="工程评估（经典）";
+policy.VPLM_SMB_Evaluation_MajorRev="工程评估";
+policy.VPLM_SMB_Resource="工程资源（经典）";
+policy.VPLM_SMB_Resource_MajorRev="工程资源";
+policy.VPLM_SMB_Management="个人工程";
+policy.VPLM_SMB_CoDesignRepRef="全局 Co 设计";
+policy.VPLM_SMB_CoDesignRef="全局协同设计";
+policy.VPLM_SMB_PostIt_Management="报事贴";
+policy.VPLM_SMB_Task_Management="全局设计任务";
+policy.VPLM_SMB_DesignPrj="全局设计项目";
+policy.VPLM_SMB_DesignWS="全局设计工作区";
+policy.VPLM_SMB_Action="全局设计操作";
+
+//emxFramework.Policy.VPLM_SMB = Global Sample Policy
+policy.VPLM_SMB="全局样本政策";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.VPLM_SMB_Definition.IN_WORK = Under Collaborative Design
+V_maturity.IN_WORK="工作中";
+V_maturity.FROZEN="已冻结";
+V_maturity.RELEASED="已发布";
+V_maturity.OBSOLETE="作废";
+V_maturity.PRIVATE="私有";
+V_maturity.REMOVED="已弃用";
+V_maturity.DEFAULT="未指定";
+
+V_maturity.Unspec="在规格下";
+V_maturity.In_work="持续活动";
+V_maturity.Completed="已完成";
+V_maturity.Unspecified="在规格下";
+V_maturity.WIP_Active="活动";
+V_maturity.WIP_Run="持续活动";
+V_maturity.WIP_Suspended="已挂起";
+V_maturity.WaitApproval="正在进行验证";
+V_maturity.Obsolete="作废";
+V_maturity.Create="创建";
+V_maturity.DesignWork="DesignWork";
+V_maturity.Review="审核";
+V_maturity.Rejected="已拒绝";
+
+current.IN_WORK="工作中";
+current.FROZEN="已冻结";
+current.RELEASED="已发布";
+current.OBSOLETE="作废";
+current.PRIVATE="私有";
+current.REMOVED="已弃用";
+current.DEFAULT="未指定";
+
+current.Unspec="在规格下";
+current.In_work="持续活动";
+current.Completed="已完成";
+current.Unspecified="在规格下";
+current.WIP_Active="活动";
+current.WIP_Run="持续活动";
+current.WIP_Suspended="已挂起";
+current.WaitApproval="正在进行验证";
+current.Obsolete="作废";
+current.Create="创建";
+current.DesignWork="设计工作";
+current.Review="审核";
+current.Rejected="已拒绝";

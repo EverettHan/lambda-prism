@@ -1,0 +1,35 @@
+<meta charset="UTF-8"/>
+//-------------------------------- Policy section below;
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.Comment = Comment
+
+policy.Comment="注释";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.Comment.InWork = In Work
+
+V_maturity.Active="工作中";
+V_maturity.Release="发布";
+V_maturity.Obsolete="作废";
+V_maturity.Private="私有";
+V_maturity.InWork="工作中";
+V_maturity.Frozen="已冻结";
+V_maturity.Release="发布";
+V_maturity.Obsolete="作废";
+
+
+current.Active="工作中";
+current.Release="发布";
+current.Obsolete="作废";
+current.Private="私有";
+current.InWork="工作中";
+current.Frozen="已冻结";
+current.Release="发布";
+current.Obsolete="作废";
+
+
+
+
+

@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Resources>
+    <ResourceDictionary Source="CIDFrame_Compass.CATSYPStyle"/>
+    <ResourceDictionary Source="AfrRepresentationTypes/AfrPLMBar.CATSYPStyle"/>
+  </Resources>
+
+  <DataTemplate syp:name="CATCAfrMenu_AfrCompassAppsList">
+    <!--<CATAfrSYPContainerViewMetaData SypNamePosition="Compass" AlwaysVisibleFlag="1" >
+      <CATVidCtl syp:name="Container"/>
+    </CATAfrSYPContainerViewMetaData>-->
+
+    <CATAfrSYPContainerViewMetaData SypNamePosition="ListApps" AlwaysVisibleFlag="1" >
+      <CATVidCtl syp:name="Container"/>
+    </CATAfrSYPContainerViewMetaData>
+  </DataTemplate>
+
+  <Template syp:name="Afr3DS_Compass_Empty" Target="CATAfrSYPSeparatorView">
+    <CATAfrSYPModelViewMetaData SypNamePosition="SupraContainerCompassPosition">
+      <CATVidSpacer RequestedMinimumDimension="144 32"/>
+    </CATAfrSYPModelViewMetaData>
+
+  </Template>
+
+  <!--*********************************************************************-->
+  <!--*******Frame like if we -->
+  <!--*********************************************************************-->
+  <Template syp:name="AfrCIDFrame" Target="CATAfrSYPContainerView">
+    <AfrWindowManagerVIDMDI syp:name="WindowManager" ModelView="@ModelView">
+      <CATVidLayLayer>
+        <CATVidGPSquare Name="Background" Color="244 245 246 255" PickFlag="0" UseManipulatorFlag="0"/>
+
+
+        <!--Creation of 3 toolbars of the frame-->
+
+        <!--Toolbar Top Bar-->
+        <CATAfrSmartCtl syp:name="TopBarToolbar"  CreateDialogBoxFlag="1" ToolbarFlag="1" InitialDockArea="TopDockArea" DockPriority="2">
+          <!--Layout of the Tab Bar and Spacer-->
+          <CATVidLayLayer syp:name="TopBarLayer" RequestedMinimumDimension="200 30">
+    
+            <!--Layout of the compass and Top Bar -->
+
+            <CATVidCtl RequestedMinimumDimension="200 30" syp:name="TopBarContainer"/>
+
+            <CATAfrSmartCtl syp:name="CompassPopup" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" SnapSide="Right" UpdateFlag="@UpdateFlag ElementName=TopBarToolbar" AutoExtractableFlag="0">
+              <CATVidLayLayer>
+                <CATVidLayGrid  GridWeight="col1=1 row1=1">
+              <!--<CATVidSpacer  RequestedMinimumDimension="14 6" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+                    <CATVidSpacer  RequestedMinimumDimension="32 32" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T" />-->
+              <CATAfr3DXPCompass syp:Template="Signature2"  syp:name="Compass" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=T ySpan=2"  />
+              <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" />
+            </CATVidLayGrid >
+                <CATVidLayGrid GridWeight="row1=1">
+                  <CATVidGPSquare syp:name="BlockingSquareForRecord" RequestedMinimumDimension="64 75"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Name="BlockingSquareForRecordCompass" UseManipulatorFlag="1" VisibleFlag="0"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+                </CATVidLayGrid>
+              
+              </CATVidLayLayer>
+                
+            </CATAfrSmartCtl>
+            
+
+            <!-- Layer for 3DS Icon-->
+            <CATVidLayGrid GridWeight="col2=1 row1=1">
+              <CATVidSpacer RequestedMinimumDimension="14 1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+              <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="3 44">
+                <CATVidGPSquare Texture="PLMBar/3ds_Logo.png" RequestedMinimumDimension="32 32" CATVidLayGrid.IndexedConstraints="x=1 y=0"  />
+              </CATVidLayGrid>
+
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+            </CATVidLayGrid>
+
+            <!--<CATVidGPSquare syp:name="BlockingSquareForRecord" Name="BlockingSquareForRecordTopBar" UseManipulatorFlag="1" VisibleFlag="0"/>-->
+
+          </CATVidLayLayer>
+
+          <!--/Layout of the compass and Top Bar -->
+        </CATAfrSmartCtl>
+
+        <!--/ Toolbar Top Bar-->
+
+        <!--Toolbar Tab Bar-->
+        <CATAfrSmartCtl syp:name="TabBarToolbar"  CreateDialogBoxFlag="1" ToolbarFlag="1" InitialDockArea="TopDockArea" DockPriority="0">
+          <CATVidLayGrid  GridWeight="col1=1 row0=1" RequestedMinimumDimension="0 30">
+            <CATVidSpacer    CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidSpacer   syp:name="SpacerTab"  LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="140 0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+            <CATVidCtlTabBar CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" syp:Template="Dashboard" syp:name="TabBarForMainTab"/>
+            <CATVidCtl CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0" ChildrenLifeCyclePolicy="DontDestroyChildren" VisibleFlag="FALSE" syp:name="GridWindowMaximizedHeaderPlaceholder"/>
+          </CATVidLayGrid>
+        </CATAfrSmartCtl>
+        <!--/Toolbar Tab Bar-->
+
+        <!--Toolbar Panel of Apps-->
+        <CATAfrSmartCtl syp:name="PanelAppsToolbar"  CreateDialogBoxFlag="1" VisibleFlag="@ContentVisibleFlag ElementName=Compass" DockPriority="1" ToolbarFlag="1" CompactDialogBoxFlag="1" InitialDockArea="LeftDockArea" >
+          <CATVidLayGrid  GridWeight="row1=1"  LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="@BandDimension ElementName=Compass" >
+            <CATVidSpacer RequestedMinimumDimension="35 1" LayoutWhenUnvisibleFlag="0"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidCtl syp:name="ListApps"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATAfrSmartCtl>
+        <!--/Toolbar Panel of Apps-->
+
+        <!--/ Creation of 3 toolbars of the frame-->
+
+        <!--Central Layout-->
+        <CATAfrSmartCtl syp:name="MainWindow" ViewerChangeableFlag="0" CreateDialogBoxFlag="1" DialogActivableFlag="0" ConstraintsDialogBox="leftPx=0 topPx=0 widthPercent=100 heightPercent=100" >
+          <CATVidLayLayer>
+            <CATVidLayGrid GridWeight="row1=1">
+
+
+
+              <!-- Border to isolate mdi from viewer content -->
+              <CATVidGPSquare RequestedMinimumDimension="0 1" Color="224 226 230 255" CATVidLayGrid.IndexedConstraints="x=0 y=0  attach=RLTB"/>
+
+              <!--/Special Layout for Band Apps-->
+              <CATVidCtlDashboard syp:name="Dashboard" CATVidLayGrid.IndexedConstraints="x=0 y=1  attach=RLTB"/>
+
+              <!-- ActionBar container -->
+              <CATVidCtl syp:name="ActionBarContainer" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" />
+
+            </CATVidLayGrid>
+
+            <CATVidLayLayer syp:name="LayerSplash" >
+              <CATVidGPSquare syp:name="LayerSplashGP" Color="239 239 239 230" UseManipulatorFlag="1" PickFlag="1"/>
+              <CATVidLaySideAttach syp:name="SplashAttach" RequestedMinimumDimension="64 64" Dimension="400 400" >
+
+                <CATVidGPSquare syp:name="splash"  Texture="splashscreens/3DExperienceSplash.png" RequestedMinimumDimension="64 64" Dimension="400 400"  TextureAlpha="255" CATVidLaySideAttach.IndexedConstraints="topPercent=50 leftPercent=50"/>
+              </CATVidLaySideAttach>
+
+            </CATVidLayLayer>
+          </CATVidLayLayer>
+
+        </CATAfrSmartCtl>
+
+        <!--/ Central Layout-->
+
+      </CATVidLayLayer>
+
+    </AfrWindowManagerVIDMDI>
+    <CATSYPTriggerCollection>
+
+      <CATSYPTrigger Property="ContentVisibleFlag"  TargetName="Compass" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SpacerTab" Value="5 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ContentVisibleFlag"  TargetName="Compass" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SpacerTab" Value="140 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag"  TargetName="Compass" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TopBarLayer" Value="200 70"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag"  TargetName="Compass" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TopBarLayer" Value="200 30"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  
+  <Template syp:name="AfrCIDFrame_WebCompass" Target="CATAfrSYPContainerView">
+    <AfrWindowManagerVIDMDI syp:name="WindowManager" ModelView="@ModelView">
+      <CATVidLayLayer>
+        <CATVidGPSquare Name="Background" Color="244 245 246 255" PickFlag="0" UseManipulatorFlag="0"/>
+
+
+        <!--Creation of 3 toolbars of the frame-->
+
+        <!--Toolbar Top Bar-->
+        <CATAfrSmartCtl syp:name="TopBarToolbar"  CreateDialogBoxFlag="1" ToolbarFlag="1" InitialDockArea="TopDockArea" DockPriority="2">
+          <!--Layout of the Tab Bar and Spacer-->
+          <CATVidLayLayer syp:name="TopBarLayer" RequestedMinimumDimension="200 30">
+
+            <!--Layout of the compass and Top Bar -->
+
+            <CATVidCtl RequestedMinimumDimension="200 30" syp:name="TopBarContainer"/>
+
+            <CATAfrSmartCtl syp:name="CompassPopup" CreateIconBoxFlag="1" CompactDialogBoxFlag="1" HideOnEscapeFlag="0" SnapSide="Right" UpdateFlag="@UpdateFlag ElementName=TopBarToolbar" AutoExtractableFlag="0">
+              <CATVidLayLayer>
+                <CATVidLayGrid  GridWeight="col1=1 row1=1">
+                  <!--<CATVidSpacer  RequestedMinimumDimension="14 6" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+                    <CATVidSpacer  RequestedMinimumDimension="32 32" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=T" />-->
+                  <CATAfr3DXPCompass syp:Template="Signature2_WebCompass"  syp:name="Compass" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=T ySpan=2"  />
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" />
+                </CATVidLayGrid >
+                <CATVidLayGrid GridWeight="row1=1">
+                  <CATVidGPSquare syp:name="BlockingSquareForRecord" RequestedMinimumDimension="64 75"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Name="BlockingSquareForRecordCompass" UseManipulatorFlag="1" VisibleFlag="0"/>
+                  <CATVidSpacer  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+                </CATVidLayGrid>
+
+              </CATVidLayLayer>
+
+            </CATAfrSmartCtl>
+
+
+            <!-- Layer for 3DS Icon-->
+            <CATVidLayGrid GridWeight="col2=1 row1=1">
+              <CATVidSpacer RequestedMinimumDimension="14 1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+              <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="3 44">
+                <CATVidGPSquare Texture="PLMBar/3ds_Logo.png" RequestedMinimumDimension="32 32" CATVidLayGrid.IndexedConstraints="x=1 y=0"  />
+              </CATVidLayGrid>
+
+              <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+            </CATVidLayGrid>
+
+            <!--<CATVidGPSquare syp:name="BlockingSquareForRecord" Name="BlockingSquareForRecordTopBar" UseManipulatorFlag="1" VisibleFlag="0"/>-->
+
+          </CATVidLayLayer>
+
+          <!--/Layout of the compass and Top Bar -->
+        </CATAfrSmartCtl>
+
+        <!--/ Toolbar Top Bar-->
+
+        <!--Toolbar Tab Bar-->
+        <CATAfrSmartCtl syp:name="TabBarToolbar"  CreateDialogBoxFlag="1" ToolbarFlag="1" InitialDockArea="TopDockArea" DockPriority="0">
+          <CATVidLayGrid  GridWeight="col1=1 row0=1" RequestedMinimumDimension="0 30">
+            <CATVidSpacer    CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidSpacer   syp:name="SpacerTab"  LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="140 0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+            <CATVidCtlTabBar CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" syp:Template="Dashboard" syp:name="TabBarForMainTab"/>
+            <CATVidCtl CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" LayoutWhenUnvisibleFlag="0" ChildrenLifeCyclePolicy="DontDestroyChildren" VisibleFlag="FALSE" syp:name="GridWindowMaximizedHeaderPlaceholder"/>
+          </CATVidLayGrid>
+        </CATAfrSmartCtl>
+        <!--/Toolbar Tab Bar-->
+
+        <!--Toolbar Panel of Apps-->
+        <CATAfrSmartCtl syp:name="PanelAppsToolbar"  CreateDialogBoxFlag="1" VisibleFlag="@ContentVisibleFlag ElementName=Compass" DockPriority="1" ToolbarFlag="1" CompactDialogBoxFlag="1" InitialDockArea="LeftDockArea" >
+          <CATVidLayGrid  GridWeight="row1=1"  LayoutWhenUnvisibleFlag="0" RequestedMinimumDimension="@BandDimension ElementName=Compass" >
+            <CATVidSpacer RequestedMinimumDimension="35 1" LayoutWhenUnvisibleFlag="0"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" />
+            <CATVidCtl syp:name="ListApps"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATAfrSmartCtl>
+        <!--/Toolbar Panel of Apps-->
+
+        <!--/ Creation of 3 toolbars of the frame-->
+
+        <!--Central Layout-->
+        <CATAfrSmartCtl syp:name="MainWindow" ViewerChangeableFlag="0" CreateDialogBoxFlag="1" DialogActivableFlag="0" ConstraintsDialogBox="leftPx=0 topPx=0 widthPercent=100 heightPercent=100" >
+          <CATVidLayLayer>
+            <CATVidLayGrid GridWeight="row1=1">
+
+
+
+              <!-- Border to isolate mdi from viewer content -->
+              <CATVidGPSquare RequestedMinimumDimension="0 1" Color="224 226 230 255" CATVidLayGrid.IndexedConstraints="x=0 y=0  attach=RLTB"/>
+
+              <!--/Special Layout for Band Apps-->
+              <CATVidCtlDashboard syp:name="Dashboard" CATVidLayGrid.IndexedConstraints="x=0 y=1  attach=RLTB"/>
+
+              <!-- ActionBar container -->
+              <CATVidCtl syp:name="ActionBarContainer" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" />
+
+            </CATVidLayGrid>
+
+            <CATVidLayLayer syp:name="LayerSplash" >
+              <CATVidGPSquare syp:name="LayerSplashGP" Color="239 239 239 230" UseManipulatorFlag="1" PickFlag="1"/>
+              <CATVidLaySideAttach syp:name="SplashAttach" RequestedMinimumDimension="64 64" Dimension="400 400" >
+
+                <CATVidGPSquare syp:name="splash"  Texture="splashscreens/3DExperienceSplash.png" RequestedMinimumDimension="64 64" Dimension="400 400"  TextureAlpha="255" CATVidLaySideAttach.IndexedConstraints="topPercent=50 leftPercent=50"/>
+              </CATVidLaySideAttach>
+
+            </CATVidLayLayer>
+          </CATVidLayLayer>
+
+        </CATAfrSmartCtl>
+
+        <!--/ Central Layout-->
+
+      </CATVidLayLayer>
+
+    </AfrWindowManagerVIDMDI>
+    <CATSYPTriggerCollection>
+
+      <CATSYPTrigger Property="ContentVisibleFlag"  TargetName="Compass" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SpacerTab" Value="5 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ContentVisibleFlag"  TargetName="Compass" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SpacerTab" Value="140 0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag"  TargetName="Compass" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TopBarLayer" Value="200 70"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="InsideViewerFlag"  TargetName="Compass" Value="0">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="TopBarLayer" Value="200 30"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+
+
+
+
+</Styles>

@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "refr_ior",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+
+    {
+      "name": "thin_walled",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "do_refractive_caustics",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "emissive_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "emissive_intensity",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+
+    {
+      "name": "bump",
+      "type": "Texture",
+      "nbElements": 3
+    }
+  ]
+}

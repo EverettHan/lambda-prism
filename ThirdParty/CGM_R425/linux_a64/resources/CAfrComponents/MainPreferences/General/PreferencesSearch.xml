@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="PreferencesSearchsettings" Target="CATAfrComponent">
+
+    <preferencepage Name="Preferences Search" syp:name="PreferencesSearch" Resource="PreferencesSearch" RepositoryName="PreferencesSearchOptions">
+
+      <preferencegroup Name="Preferences_Search" Border="0">
+        <preferencegroup Name="SearchPageExpandOptions">
+          <preferenceitem syp:name="PageExpandOptions" Name="PageExpandOptions"/>
+          <preferenceitem syp:name="NumberOfPagesToExpand" Name="NumberOfPagesToExpand" EnableFlag="0" Indent="1" />
+        </preferencegroup>
+        <preferenceitem Name="TreeFiltering"/>
+        <preferenceitem syp:name="IndexGenerationInProgress" Name="IndexGenerationInProgress" Visibility="0"/>
+        <preferenceitem syp:name="GenerateIndex" Name="GenerateIndex" UserDefinedCtr="PushButton" MoreInfo="PlaceHolderControl"/>
+      </preferencegroup>
+
+    </preferencepage>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ControlValue" TargetName="PageExpandOptions" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="NumberOfPagesToExpand" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="PageExpandOptions" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="NumberOfPagesToExpand" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="IndexGenerationInProgress" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="GenerateIndex" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="IndexGenerationInProgress" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="GenerateIndex" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="GenerateIndex" Value="5">
+        <CATSYPSetter Property="ControlValue" TargetName="IndexGenerationInProgress" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  
+  </Template>
+</Styles>
+

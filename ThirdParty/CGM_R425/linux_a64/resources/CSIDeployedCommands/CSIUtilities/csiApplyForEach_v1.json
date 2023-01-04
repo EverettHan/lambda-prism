@@ -1,0 +1,58 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "This ApplyForEach function calls a remote function for each input received",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "function",
+          "basic": "string"
+        },
+        {
+          "label": "version",
+          "basic": "int32"
+        },
+        {
+          "label": "pool",
+          "basic": "string"
+        },
+        {
+          "label": "inputs",
+          "typeArray": "Parameters"
+        },
+        {
+          "label": "timeout",
+          "basic": "int32",
+          "optional": {
+            "isOptional": true,
+            "default_value": "120"
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "successes",
+          "typeArray": "Parameters",
+          "desc": "The output of the function"
+        },
+        {
+          "label": "errors",
+          "typeArray": "Parameters",
+          "desc": "The output of the function",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  }
+}

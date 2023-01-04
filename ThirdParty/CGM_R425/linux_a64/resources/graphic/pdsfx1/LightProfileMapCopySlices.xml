@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbLightProfileMapCopy</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>sourceMapArray</NAME>
+    <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>profileMap</NAME>
+    <DECLARATION>
+      <TYPE>image2DArray</TYPE>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>sourceSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>SourceIsArray</NAME>
+    <COMPUTE_PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>sourceMapArray</SAMPLER>
+          <STATES>sourceSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <NAME>SourceIsArray</NAME>
+      <MACRO_LIST>
+        <MACRO>
+          <DEFINE>SourceIsArray</DEFINE>
+          <CONTENT>1</CONTENT>
+        </MACRO>
+      </MACRO_LIST>
+      <COMPUTE_STAGE>LightProfileMapCopyCS</COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+
+</PDSFX>

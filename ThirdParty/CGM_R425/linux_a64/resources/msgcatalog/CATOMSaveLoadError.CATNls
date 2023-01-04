@@ -1,0 +1,302 @@
+<meta charset="UTF-8"/>
+ERR_OMB_0005 = 
+"Can not open file  
+/p: 
+access denied";
+
+ERR_OMB_0006 = 
+"/p 
+The above file name is invalid.";
+
+ERR_OMB_0007 = 
+"/p 
+was already loaded from another directory. 
+Close this document before doing the New from.";
+
+ERR_OMB_0008 = 
+"Can not open file  
+:/p. Can not read corresponding links.";
+
+ERR_OMB_0009 = 
+"Open Error: Cannot read data from storage /p.";
+
+ERR_OMB_0010 = 
+"Save Error: Cannot Save document removed or under remove : /p1.";
+
+ERR_OMB_0011 = "Error during stream of container /p1 (HR=/p2). Is under remove : /p3. Error message : /p4";
+ERR_OMB_0012 = "Cannot check if document is flagged Academia";
+ERR_OMB_0013 = "Tentative of openning academia document in a non academia session (path : /p1). Open refused.";
+ERR_OMB_0014 = "Data transfer aborted";
+
+ERR_OMB_1002 =
+"Open Error: cannot unstream /p1 document data. Insufficient Licensing or DRM rights/p2.";
+
+ERR_OMB_1003 =
+"Cannot unstream /p1 document data. Internal error /p2 occured:\n/p3";
+
+ERR_OMB_1004 =
+"Cannot find /p1 data location for open.";
+
+ERR_OMB_1005 =
+"Expected /p1 file not streamed to session cache.";
+
+ERR_OMB_1006 =
+"Invalid empty /p1 file streamed to session cache.";
+
+ERR_OMB_1007 =
+"Cannot unstream document data. Invalid root structure.";
+
+ERR_OMB_1008 = "Error during streaming in cache and computing MD5 of repRef's streams";
+
+// Document Initialisation in session 
+ERR_OMB_1010 =
+"Cannot initialize document created in session. An internal error occured.";
+
+ERR_OMB_1011 =
+"Error while downloading /p1 file to session cache.";
+
+ERR_OMB_1012 = "Error while downloading /p1 large file to session cache.";
+ERR_OMB_1013 = "Exception catched during document initialisation, error details : /p1";
+ERR_OMB_1014 = "Exception catched during container initialisation, error details : /p1";
+
+ERR_OMB_1015.Request="/p1 large file modified outside this session and cannot be downloaded to session cache.";
+ERR_OMB_1015.Advice="Launch Refresh command in VPM Editor or close and reopen this component.";
+
+ERR_OMB_1155 ="Can not open file /p1: unknown type '/p2'.";
+
+ERR_OMB_0070 = "Can not save file: not enough space left on device.";
+
+ERR_OMB_0052 = "Cannot open /p1 : Share Violation";
+
+ERR_OMB_0053 = "Cannot open /p1 : Lock Violation";
+
+ERR_OMB_0054 = "Cannot open /p1 : File might be corrupted";
+
+ERR_OMB_0055 = "Invalid file header or footer detected while opening /p1 data.";
+
+SaveFailedUnknownReason = "Saving /p1 failed.";
+
+ERR_OMB_0056 = "Saving projected file /p1 failed";
+
+ERR_OMB_0057 = "Non CATIA Save operation failed: /p1";
+
+ERR_OMB_0102 = "/p
+The Above document is a composite. You must use the PX1CAA ToolBar for Open/Save Operations.";
+
+ERR_OMB_0012 = 
+"Some ABF data are not correctly stored in document /p, they may not be processed correctly. Please use the CATDUA to clean this model.";
+
+
+// ---------- Container
+
+ERR_OMB_0100 = "At least one applicative data container cannot be loaded in session.";
+
+// ---------- Exporter 
+
+ERR_OMB_0200 = "Exporter /p1 failed to generate [/p2,/p3] data stream with parameters: /p4";
+ERR_OMB_0201 = "No Exporter found to generate [/p1,/p2] data stream from [/p3,/p4] component type and parameters: /p5\nCheck (.capa/.xdefinition) declarative files.";
+INF_OMB_0202 = "Exporter to generate [/p1,/p2] data stream not found from [/p3,/p4] but from [/p5,/p6] component type and parameters: /p7";
+ERR_OMB_0203 = "Role parameter </p1> not usable by exporter /p2 to generate [/p3,/p4] data stream with parameters: /p5";
+ERR_OMB_0204 = "Component incompletely identified for export.\nContact your local support.";
+ERR_OMB_0205 = "Component wrongly typed for export.\nContact your local support.";
+ERR_OMB_0206 = "Component typing description invalid for export.\nContact your local support.";
+
+ERR_OMB_0208 = "Exporter defined in declarative files (.capa/.xdefinition) to generate [/p1,/p2] data stream from [/p3,/p4] component type and parameters: /p5 is not implemented ! Impossible to instantiate it.";
+ERR_OMB_0209 = "No main SD found on component when listing component types for export.";
+ERR_OMB_0210 = "Exception catched by application Exporter:";
+
+INF_OMB_0200 = "Exporter decl( From [/p1,/p2] generates [/p3,/p4,/p5,/p6] )added to exporter table.";
+
+// ---------- Importer
+
+ERR_OMB_0300 = "Importer /p1 failed to generate [/p2,/p3] data stream with parameters: /p4";
+ERR_OMB_0301 = "No Importer found to generate [/p1,/p2] data stream with parameters: /p3\nCheck (.capa/.xdefinition) declarative files.";
+ERR_OMB_0302 = "Importer defined in declarative files (.capa/.xdefinition) to generate [/p1,/p2] data stream with parameters: /p3 is not implemented ! Impossible to instantiate it.";
+
+// ---------- Import/Export declarative parsing
+
+ERR_OMB_0400 = "Failed to parse declarative file /p1\n for type /p2\n at line: /p3\nCheck (.capa/.xdefinition) declarative files.";
+
+// ---------- V5 Native
+
+ERR_OMB_0500 = "V5 Native data can't be modified.";
+ERR_OMB_0501 = "Representation reference cannot be reinitialized as it is not in PLM_Mode";
+ERR_OMB_0502 = "Requested document does not exist or not open in V5 Native";
+
+// ---------- OLE management
+
+ERR_OMB_0600 = "Cannot link file to OLE object. File pathes longer than 260 chars are not supported by OLE.";
+
+// ---------- Non CATIA Document
+
+ERR_OMB_0700 = "Cannot project or export Non CATIA source data to current projection location /p1";
+ERR_OMB_0701 = "Cannot export Non CATIA source data to the source location /p1";
+ERR_OMB_0702 = "Forbidden char(s) /p2 in projection file name /p1. Projection refused.";
+ERR_OMB_0703 = "Cannot project Non CATIA source data /p1 to target file /p2. Copy failed.";
+ERR_OMB_0704 = "Cannot export Non CATIA source data /p1 to target file /p2. Copy failed.";
+
+// ---------- Outliner
+
+ERR_OMB_0800 = "Outliner defined in declarative files (.capa/.xdefinition) to generate [/p1] from [/p2] is not implemented ! Impossible to instantiate it.";
+ERR_OMB_0801 = "No Outliner found to generate [/p1] from [/p2]\nCheck (.capa/.xdefinition) declarative files.";
+
+// ---------- Collaborative Streams
+
+ERR_OMB_0900 = "Relationnal view modified while generating collaborative file. Trying to rollback.";
+WAR_OMB_0901 = "Trying to switch in a mode that authorize write operation on native model while collaborative streams are not saved. This is not allowed, save collaborative streams to switch in this mode.";
+ERR_OMB_0902 = "Native authoring stream has been modified while collaborative streams are not saved. Model corrupted, trying to rollback.";
+ERR_OMB_0903 = "Forbidden operation as the Representation Reference is not in PLM_Mode";
+ERR_OMB_0904 = "Forbidden operation as the session is seen as modified";
+ERR_OMB_0905 = "Forbidden operation as the collaborative status is not ok";
+ERR_OMB_0906 = "Representation Reference not usable";
+ERR_OMB_0907 = "Representation Reference has to be in native mode to generate collaborative content";
+WAR_OMB_0908 = "Collaborative streams - Conversion of collborative stream /p1 with errors";
+ERR_OMB_0909 = "Collaborative streams - Failed to convert to collaborative stream /p1";
+ERR_OMB_0910 = "Failed to attach new main derivedFromCollaborative SD (/p1, /p2, /p3)";
+ERR_OMB_0911 = "Error during conversion from collaborative stream to derivedFromCollaborativeStream (/p1, /p2 /p3)";
+ERR_OMB_0912 = "Forbidden operation as the Representation Reference is not a V6 one";
+ERR_OMB_0913 = "Invalid Context to add nonCATIADocument SD";
+ERR_OMB_0914 = "Invalid Extension for NonCATIA document add as collaborative : /p1";
+ERR_OMB_0915 = "Error during update of Role/PN of nonCATIA collaborative stream";
+ERR_OMB_0916 = "Failed to add SD For NonCATIADocument";
+ERR_OMB_0917 = "This collaborative stream doesn't exist or is not authorized to be projected";
+WAR_OMB_0918 = "RepRef has been auto switched to access /p1 to reach wanted mode because OMB_COLLABORATIVE_AUTOSWITCH_ACCESS is set";
+ERR_OMB_0919 = "Failed to attach new visu SD from XCAD (/p1, /p2, /p3)";
+ERR_OMB_0920 = "Error during conversion from XCAD Authoring to visu SD (/p1, /p2 /p3)";
+ERR_OMB_0921 = "Impossible to switch from XCAD to classic NonCATIA document and reversly on the same Representation Reference";
+
+// ----------- Selector
+ERR_OMB_1000 = "Impossible to instantiate Selector for type /p1, latetype /p2 on interface /p3";
+ERR_OMB_1001 = "Selector asked for type /p1, latetype /p2 on interface /p3, but no such Selector has been parsed in RTV xdefinition files";
+ERR_OMB_1003 = "Previous selector request failed, trying with type /p1. No error below this one means operation is a success.";
+
+
+// ----------- Linkable Generation
+ERR_OMB_1100 = "ERR_OMB_1100 : Empty Object used for generation, please try to close the document and retry again";
+ERR_OMB_1101 = "ERR_OMB_1101 : One or more file(s) in this component are invalid  /p2 ; Component Info /p1";
+ERR_OMB_1102 = "ERR_OMB_1102 : The main file used in this generation is invalid /p2 ; Component Info /p1";
+ERR_OMB_1103 = "ERR_OMB_1103 : Component is not eligible for generation ; Reason is /p2 ; Component Info /p1";
+ERR_OMB_1104 = "ERR_OMB_1104 : Component does not have a PhysicalId ; Reason is /p2 ; Component Info /p1";
+ERR_OMB_1105 = "ERR_OMB_1105 : No main file was present for DerivedOutput Generation ; Component Info /p1";
+ERR_OMB_1106 = "ERR_OMB_1106 : Fatal error could not recover attributes from the main stream ; Component Info /p1";
+ERR_OMB_1107 = "ERR_OMB_1107 : A corrupted stream was detected during this Generation ; Corruption is /p2 ; Component Info /p1";
+ERR_OMB_1108 = "ERR_OMB_1108 : Unknown requested format to generate : /p2 ; Component Info /p1";
+ERR_OMB_1109 = "ERR_OMB_1109 : All inputs files to generate from have errors ";
+ERR_OMB_1110 = "ERR_OMB_1110 : UPDATER_ERROR Failed to get an updater for Linkable Generation : /p2 ; Component Info /p1";
+ERR_OMB_1111 = "ERR_OMB_1111 : UPDATER_ERROR Failed initialize job with updater for Linkable Generation : /p2 ; Component Info /p1";
+ERR_OMB_1112 = "ERR_OMB_1112 : No loading mode defined for this Product main file during Derived Output generation ; Component Info /p1"; 
+ERR_OMB_1113 = "ERR_OMB_1113 : Unexpected Switch Error occured while trying to switch to Authoring Mode " ;
+ERR_OMB_1114 = "ERR_OMB_1114 : Failed to create Linkable document ; Component Info /p1 " ; 
+ERR_OMB_1115 = "ERR_OMB_1115 : Failed to detach document from its current stream for update ; please close session and retry ; \nComponent Info /p1 ";
+ERR_OMB_1116 = "ERR_OMB_1116 : UPDATER_ERROR Updater returns an error during document update : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1117 = "ERR_OMB_1117 : Failed to process dwc_CATProdCont downward on linkable document : it is not complete and might not be opened ; \nComponent Info /p1 ";
+ERR_OMB_1118 = "ERR_OMB_1118 : Failed to stream linkable document in cache : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1119 = "ERR_OMB_1119 : Cannot get PersistencyName of the requested linkable file to generate : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1120 = "ERR_OMB_1120 : Unable to create Linkable stream ..  the component already has a Linkable Stream  : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1121 = "ERR_OMB_1121 : Failed to (re)attach document to its stream : /p2 ; \nComponent Info /p1 ";
+WAR_OMB_1122 = "WAR_OMB_1122 : Error during conversion of table of parameters for conversion";
+ERR_OMB_1123 = "ERR_OMB_1123 : Failed to stream viewable document in cache : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1124 = "ERR_OMB_1124 : the file path or URL of the Viewable stream was not set, this means that streaming in cache did not run as planned, please reset your cache and retry : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1125 = "ERR_OMB_1125 : No target Streams were selected for this Derived Output Generation ; \nComponent Info /p1 ";
+ERR_OMB_1126 = "ERR_OMB_1126 : Invalid or empty Requested stream to generates ; \nComponent Info /p1 ";
+ERR_OMB_1127 = "ERR_OMB_1127 : Cannot get Extension of the requested file to generate : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1128 = "ERR_OMB_1128 : Failed to stream DerivedOutput stream in cache : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1129 = "ERR_OMB_1129 : Cannot get url connection associated of the requested Derived output stream : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1130 = "ERR_OMB_1130 : Error during unloading switch at end of generation ; \nComponent Info /p1 ";
+ERR_OMB_1131 = "ERR_OMB_1131 : UPDATER_ERROR The updater sent an error when ending jobs : /p2 ; Component Info /p1";
+ERR_OMB_1132 = "ERR_OMB_1132 : Failed to set Stamps on saved streams, the generation process did not generated all of the requested files ; \nComponent Info /p1 ";
+ERR_OMB_1133 = "ERR_OMB_1133 : This Object is not in ombSA_Upload state. no target Streams were assigned or ServerUrl was not set ; Component Info /p1";
+ERR_OMB_1134 = "ERR_OMB_1134 : SD definitions list size on ObjectStream are not in interval [[1:2]] ; Component Info /p1";
+ERR_OMB_1135 = "ERR_OMB_1135 : No destination URL set on ObjectStream for upload  ; Component Info /p1";
+ERR_OMB_1136 = "ERR_OMB_1136 : Failed to associate to this Stream to the ServerUrl : /p2 ; Component Info /p1";
+ERR_OMB_1137 = "ERR_OMB_1137 : Main Derived output path is invalid : /p2 ; Component Info /p1";
+ERR_OMB_1138 = "ERR_OMB_1138 : Main Derived output file was not set or not saved ; Component Info /p1";
+ERR_OMB_1139 = "ERR_OMB_1139 : No Stream found for : /p2 ; Component Info /p1";
+ERR_OMB_1140 = "ERR_OMB_1140 : Error when streaming external format to external format : /p1 /p2 /p3 ";
+ERR_OMB_1141 = "ERR_OMB_1141 : Error when streaming Native Document to external format : /p1 /p2 /p3 /p4 ";
+ERR_OMB_1142 = "ERR_OMB_1142 : No Document found on SD for conversion. Check selective loading.";
+ERR_OMB_1144 = "ERR_OMB_1144 : Error when getting MD5 from cache for DO generation";
+ERR_OMB_1145 = "ERR_OMB_1145 : Error when getting url for MD5 compute for DO generation";
+ERR_OMB_1146 = "ERR_OMB_1146 : NoTOSMode is not allowed on Dirty StreamDescriptors";
+ERR_OMB_1148 = "ERR_OMB_1148 : Error when setting CATBack context for conversion from given parameters /p1 /p2";
+ERR_OMB_1149 = "ERR_OMB_1149 : V5 native certification error(s) on component /p1:\n /p2";
+ERR_OMB_1150 = "ERR_OMB_1150 : Document is invalid or does not exists : /p2 ; \nComponent Info /p1 ";
+ERR_OMB_1151 = "ERR_OMB_1151 : Selected Stream is not synchronised with master it cannot be set as source: /p2 ; Component Info /p1";
+WAR_OMB_1152 = "WAR_OMB_1152 : Can't downgrade already existing Linkable CATPart: /p2 ; Component Info /p1";
+ERR_OMB_1153 = "ERR_OMB_1153 : Error when streaming external format to Native document : /p1 /p2 /p3 ";
+ERR_OMB_1154 = "ERR_OMB_1154 : File not found for /p2 ; Component Info /p1";
+
+// ---------- Converter
+ERR_OMB_1200 = "No converter found from /p1 to /p2";
+ERR_OMB_1201 = "Error during conversion : /p1";
+ERR_OMB_1202 = "Error for conversion : url is missing in inputUrlConnection";
+ERR_OMB_1203 = "Error for conversion : ILB is missing in outputUrlConnection";
+WAR_OMB_1204 = "Warning : an unknown keyword has been found during parsing of converter declaration : /p1. Ignoring it.";
+
+// ---------- Cache File Status
+ERR_OMB_1300 = "No stream descriptor found with this key : /p1,/p2,/p3";
+ERR_OMB_1301 = "Empty stream is associated to stream descriptor";
+WAR_OMB_1302 = "No network speed is available";
+ERR_OMB_1303 = "No cache status for this SD key";
+WAR_OMB_1304 = "Cache Status computation not called. Empty results";
+
+// ---------- Session persistency manager
+
+PLMPersistType = "PLM";
+BLOBPersistType = "BLOB";
+
+RegOpNotSameTargetEnv = "/p1
+The target persistency mode belongs to /p2 environment but the target Id \"/p3\" belongs to /p4 environment.";
+
+RegOpUnitTargetNotSameEnv = "/p1
+The \"/p2\" document belongs to /p3 environment but the target Id \"/p4\" belongs to /p5 environment.";
+
+RegOpNotMasterUnit = "/p1
+The \"/p2\" is not a primary unit for this operation.";
+
+RegKOLockedUnit1 = "/p1
+Any operation is prohibited with the \"/p2\" document.";
+
+RegKOLockedUnit2 = "/p1
+The operation concerns the \"/p2\" document too, and any operation with it is prohibited.";
+
+RegKOExistingOp1 = "/p1
+An operation is already registered with this document: /p2.";
+
+RegKOExistingOp2 = "/p1
+The operation concerns the \"/p2\" document too, and an operation is already registered with it: /p3.";
+
+ValidKOAlreadyInvalid = "/p1
+The operation is already invalid.";
+
+ValidKOMissingIdentifier = "/p1
+Needed identifier has not been provided.";
+
+ValidKOInvalidIdType = "/p1
+Provided identifier is invalid: Type '/p2' is not acceptable.";
+
+ValidKOUnchangedId = "/p1
+Provided identifier is invalid: It must be different from the original file's identifier.";
+
+ValidKOIdExistsInSession = "/p1
+Provided identifier is invalid: it is already used in session.";
+
+ValidKOIdAlreadyUsedByValidOp = "/p1
+Provided identifier is invalid: it is already used by a validated operation.";
+
+ValidKOIdAlreadyUsedByRegOp = "/p1
+Provided identifier is invalid: you can't register two operations with the same identifier.";
+
+RegisterOpFailed = "/p1
+The registration failed.";
+
+SaveOp = "Saving \"/p1\"";
+
+RegKOReadOnlyInSessionUnit = "/p1
+The \"/p2\" document is set as read-only in the session.";
+
+SaveWithNewIdOp = "Saving \"/p1\" with a new identifier";
+
+SetPersistModeOp = "Changing \"/p1\"'s persistency type";
+
+SaveWithPersistModeOp = "Saving \"/p1\" with new persistency type";

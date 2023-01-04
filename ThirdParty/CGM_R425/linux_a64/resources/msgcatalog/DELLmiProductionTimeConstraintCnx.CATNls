@@ -1,0 +1,69 @@
+<meta charset="UTF-8"/>
+DELLmiProductionTimeConstraintCnx="Time Constraints";
+  DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx="Time constraint relation";
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Dependency type";
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Delay="Delay";
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Contiguity="Contiguity";
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_MaterialNeed="Material Need";
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_OptionalTimeConstraint="Optional";
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.PLM_ExternalID="Title";
+	DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_IsActive="Active";
+
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode="Delay mode";
+      DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MinDelay = "Minimum Delay";
+      DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MaxDelay = "Maximum Delay";
+      DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.Synchro = "Synchronization";
+
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint="Resource constraint";
+      DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.None = "None";
+      DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResources = "Same resources";
+      DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResourcesWithReservation = "Same resources with reservation";
+      DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.DifferentResources = "Different resources";
+
+   DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Dependency type";
+   DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType="Dependency type enum";
+     DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToStart = "Finish to Start";
+     DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToStart = "Start to Start";
+     DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToFinish = "Finish to Finish";
+     DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToFinish = "Start to Finish";
+     DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.PreviousCycle = "Previous Cycle";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainingObject="Link to time constraining object";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainedObject="Link to time constrained object";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract="Category abstract";
+    DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract.V_ExecutionReturnCode="Reason code";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed="Failed";
+  DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed.V_MaximumRetries="Maximum number of retries";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintAlternative="Alternative";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintScrapped="Scrapped";
+  
+  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract="Overlap Quantity abstract";
+    DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode="Execution return code";
+      DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MinQuantity="Minimum quantity";
+	  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MaxQuantity="Maximum quantity";
+	  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.Synchro="Synchronization";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each="Overlap quantity Each";
+    DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each.V_OverlapQty="Overlap quantity";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area="Overlap quantity Area";
+    DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area.V_OverlapQty="Overlap quantity";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length="Overlap quantity Length";
+    DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length.V_OverlapQty="Overlap quantity";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight="Overlap quantity Weight";
+    DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight.V_OverlapQty="Overlap quantity";
+    
+  DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume="Overlap quantity Volume";
+	DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume.V_OverlapQty="Overlap quantity";
+
+  DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension="Product Flow Extension";
+    DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityIN="Input Priority";
+	DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionIN="Input Proportion";
+	DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityOUT="Output Priority";
+	DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionOUT="Output Proportion";

@@ -1,0 +1,48 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "PLMExchangeExperience.tst"/>
+  <attached name = "PLMExchangeServices.tst"/>
+  <attached name = "CATPLMUI.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" name = "System"/>
+  <prerequisite access = "Protected" name = "SystemTS"/>
+  <authorize access = "Public" name = "NONE"/>
+  <authorize access = "Protected" name = "PLMExchangeServices"/>
+  <authorize access = "Protected" name = "PLMExchangeServices.tst"/>
+  <authorize access = "Protected" name = "PLMExchangeExperience"/>
+  <authorize access = "Protected" name = "PLMExchangeExperience.tst"/>
+  <authorize access = "Protected" name = "CATPLMREExportEngine"/>
+  <authorize access = "Protected" name = "CATPLMReplicationEngine"/>
+  <authorize access = "Protected" name = "CATPLMImportExportUI"/>
+  <authorize access = "Protected" comment = "Implementation of PLMIExchangeExperienceCustomization on January 2014 by JLM" name = "V5V6CoexistenceAdminUI"/>
+  <authorize access = "Protected" comment = "Implementation of FBDI on May 2014 by Jean-Luc MEDIONI at Aissata ROUAMBA request" name = "CATFbdImportUI"/>
+  <authorize access = "Protected" comment = "YWE/IV6-2017.05-For SolidWorks integration to Import command" name = "SWXCSInteropImpl"/>
+  <authorize access = "Protected" comment = "YWE/Y49-2018.06-For OMF integration to Import command" name = "GEODataExchangeOpsOMF"/>
+  <authorize access = "Protected" comment = "YWE-FBR-2020.01-SurpacSDM integration to Import command" name = "GEODataExchangeOpsSDM"/>
+  <authorize access = "Protected" comment = "YWE-FBR-2020.01-SurpacDTM,STR integration to Import command" name = "GEODataExchangeOpsDTM"/>
+  <authorize access = "Protected" comment = "YWE-FBR-2020.01-common options to GEOVIA Import command" name = "GEODataExchangeOperations"/>
+  <authorize access = "Protected" comment = "YWE/VE8-2019.01-For LITSMGComposer integration to Export command" name = "VCPLITUI"/>
+  <authorize access = "Protected" comment = "YWE/SDE30-2020.09-For PLMImportSchLib integration to Import command" name = "CATALTImportExport"/>
+  <authorize access = "Protected" name = "PLMExport_EV5_DXPAUT_ADV"/>
+  <authorize access = "Protected" name = "PLMExport_EV5_DXPREV_ADV"/>
+  <authorize access = "Protected" comment = "ExporttoCATIAFile-UnifiedExportArchitecture" name = "DwCompatibilityUI"/>
+  <authorize access = "Protected" name = "PLMExchange3DXMLServices.tst"/>
+  <authorize access = "Protected" name = "PLMImport_EV5_DXPAUT"/>
+  <authorize access = "Protected" name = "PLMImportBaseUI"/>
+  <authorize access = "Protected" name = "PLMImport_EV5_DXPAUT.tst"/>
+  <authorize access = "Protected" name = "PLMExchangeSpaceServices.tst"/>
+  <authorize access = "Protected" name = "CATPLMUI.tst"/>
+  <authorize access = "Protected" comment = "For SolidWorks to implement the CATIPLMImportUI interface for the integration to Import command" name = "SWXInteropUI"/>
+  <authorize access = "Protected" comment = "For SolidWorks to implement the CATIPLMImportUI interface for the integration to Import command" name = "SWXInterop"/>
+  <authorize access = "Protected" comment = "Exceptional Unauthorized prerequisite to REMOVE in R2016" name = "SWXBuildingUtilities"/>
+  <authorize access = "Protected" comment = "JLM-2015.01-For xPDM integration in Exchange Solution" name = "XPGCommands"/>
+  <authorize access = "Protected" comment = "JLM/SGA-2015.01-Implementation of Site Information custo" name = "PLMSiteMngtUI"/>
+  <authorize access = "Protected" comment = "OWX/OGM-2016.04" name = "CATSimRepModelerUI"/>
+  <authorize access = "Protected" comment = "YWE-2016.04" name = "DataExchangeUnifiedExperience"/>
+  <authorize access = "Protected" comment = "OGM/FPQ on 14-10-2020 for LandXML format" name = "DataExchangeCCTExperience"/>
+  <authorize access = "Protected" comment = "OGM/SRO2 on 28-10-2020 for 3XF options" name = "XCTXCAD3xfIOUI"/>
+  <authorize access = "Protected" comment = "C3O/RFE5 on 15-04-2021 for idf integration" name = "CATCBImportExport"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

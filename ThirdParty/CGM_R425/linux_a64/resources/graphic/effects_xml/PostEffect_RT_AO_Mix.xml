@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <SAMPLER>
+    <NAME>RaytraceColorMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>RaytraceOutput</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>rgba8</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>smp</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <COMPUTE_PASS>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>RaytraceColorMap</SAMPLER>
+          <STATES>smp</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <NAME>Default</NAME>
+      <COMPUTE_STAGE>
+        PostEffect_RT_AO_Mix
+      </COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+</EFFECT>

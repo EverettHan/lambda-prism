@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidIconBoxCtl.cpp--> 
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            Balloon icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="Balloon" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+
+      <CATVidCtl syp:name="Presenter" />
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0" SnapSide="@IconBoxDirection" SnapCenteredFlag="@PopupCenteredFlag">
+        <CATVidLayLayer Dimension="@PopupDimension Mode=OneWayToSource" >
+          <CATVidGPSmartSquare syp:name="VerticalBackground"  GridWeight="row1=1"
+                                    Texture="phylactere-popup-v.png" RequestedMinimumDimension="34 15">
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="34 5" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+
+          <CATVidGPSmartSquare syp:name="HorizontalBackground" VisibleFlag="0"  GridWeight="col1=1" Texture="phylactere-popup-h.png" RequestedMinimumDimension="34 15">
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="5 34" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+          <CATVidGPSquare  Name="PickZone"  PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" />
+          <CATVidLayGrid>
+            <CATVidSpacer syp:name="Spacer1" RequestedMinimumDimension="34 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+            <CATVidLayStack syp:name="PopupCollection" Orientation="@Orientation" CellBorder="@CellBorder"  CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB" />
+            <CATVidSpacer syp:name="Spacer2" RequestedMinimumDimension="34 5" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="1">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="StretchAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="StretchPopupItemFlag" Value="0">
+        <CATSYPSetter Property="StackAttachmentAppendPolicy" TargetName="PopupCollection" Value="NoAttachmentPolicy"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Vertical">
+        <CATSYPSetter Property="VisibleFlag" TargetName="VerticalBackground" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HorizontalBackground" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="34 5"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="34 5"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Orientation" Value="Horizontal">
+        <CATSYPSetter Property="VisibleFlag" TargetName="VerticalBackground" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HorizontalBackground" Value="1"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer1" Value="5 34"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Spacer2" Value="5 34"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           SIgnature icon box                                                        -->
+  <!--*************************************************************************************************************************-->
+  <Template syp:name="SignatureContextMenu" Target="CATAfrVidIconBoxCtl"  >
+    <CATVidLayLayer>
+
+
+      <CATVidCtl syp:name="Presenter" />
+
+      <CATVidCtlPopup syp:name="Popup" VisibleFlag="0">
+
+        <CATAfrVidWidgetNoLayout>
+          <CATVidLayLayer>
+            <CATVidGPSquare Name="PickZone" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent"/>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowCentered" GridWeight="col1=1 col3=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowLeft" GridWeight="col1=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+            <CATVidGPSmartSquare syp:name="BackgroundArrowRight" GridWeight="col3=1 row1=1" Texture="signature-pop-over.png"  >
+              <CATVidSpacer RequestedMinimumDimension="13 19"  CATVidGPSmartSquare.GPConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="24 29"  CATVidGPSmartSquare.GPConstraints="x=2 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="2 29"  CATVidGPSmartSquare.GPConstraints="x=3 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="13 16"  CATVidGPSmartSquare.GPConstraints="x=4 y=2 attach=RLTB"/>
+            </CATVidGPSmartSquare>
+          </CATVidLayLayer>
+        </CATAfrVidWidgetNoLayout>
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="0">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="1">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="255"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VerticalPositionOffset" Value="2">
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowLeft" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowCentered" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="BackgroundArrowRight" Value="255"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+</Styles>

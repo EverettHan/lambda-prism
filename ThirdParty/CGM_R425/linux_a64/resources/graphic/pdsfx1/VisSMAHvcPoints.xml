@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Warning: This PDSFX is meant to be used by Simulia only. Its content may change depending on Simulia needs.-->
+
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVisSMAResultsData</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVisSMAPointData</NAME>
+  </CONSTANT_BUFFER>
+
+  <SAMPLER>
+    <NAME>ContourMap1D</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+    <!--NRE does not support sampler1D-->
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>ContourMap2D</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <SAMPLER_STATE>
+    <NAME>defaultSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+  </SAMPLER_STATE>
+
+
+  <TECHNIQUE>
+    <NAME>Nodes</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>v4_WorldViewPosition</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_Size</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <LIGHTING>true</LIGHTING>
+      <VERTEX_STAGE>VisSMAHvcNodesVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcNodesFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>NodesDepth</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>v4_WorldViewPosition</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>f_Size</NAME>
+            <TYPE>float</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <LIGHTING>true</LIGHTING>
+      <VERTEX_STAGE>VisSMAHvcNodesDepthVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcNodesDepthFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <NAME>PtSym</NAME>
+
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap1D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ContourMap2D</SAMPLER>
+          <STATES>defaultSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>v4_color</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+          <VARYING>
+            <NAME>v4_WorldViewPosition</NAME>
+            <TYPE>float4</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <ATTRIBUTES>
+        <ATTRIBUTE>TextureCoordinates2</ATTRIBUTE>
+      </ATTRIBUTES>
+
+      <LIGHTING>false</LIGHTING>
+      <VERTEX_STAGE>VisSMAHvcNodesVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>VisSMAHvcPtSymFS</FRAGMENT_STAGE>
+    </PASS>
+
+  </TECHNIQUE>
+
+</PDSFX>

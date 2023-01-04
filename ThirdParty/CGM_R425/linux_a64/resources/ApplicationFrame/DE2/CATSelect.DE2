@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  
+  <Template syp:name="DragNDropWithCATSelect" Target="CATAfrComponent">
+    <CATCAfrGroup>
+      <CATDE2DialogAgent Id="BeginManipulate" Behavior="CATDE2WithoutUndo" Customization="CATMousePositionAgent" CustomizationDll="CATAfrSelection" />
+      <CATDE2DialogAgent Id="Manipulate" Behavior="CATDE2WithoutUndo" Customization="CATMousePositionAgent" CustomizationDll="CATAfrSelection" />
+
+      <CATDE2SelfTransition>
+        <CATDE2IsOutputSetCondition Agent="Manipulate"/>
+        <CATDE2Action Do="BeginDrag"/>
+      </CATDE2SelfTransition>
+    </CATCAfrGroup>
+  </Template>
+  
+  <Template syp:name="CATSelect" Target="CATSelect">
+    <CATDE2StateCommand Id="CATSelect" CommandMode="CATDE2CommandModeExclusive" Behavior="CATDE2Repeat|CATDE2WithoutUndoStart">
+      <CATDE2State Id="SelElem" >
+        <CATDE2PathElementAgent Id="Element" Customization="CATSelectObjectAgent" CustomizationDll="CATAfrSelection" Behavior="CATDE2WithPSO|CATDE2MultiAcquisition|CATDE2WithPrevaluation" />
+        <CATDE2PathElementAgent Id="ElementEdit" Customization="CATNoCustomFilterAgent" CustomizationDll="CATAfrSelection" Behavior="CATDE2WithoutUndo|CATDE2WithCSO|CATDE2WithEdit" />
+        <CATDE2PathElementAgent Id="ElementCtx" Customization="CATSelectObjectAgent" CustomizationDll="CATAfrSelection" Behavior="CATDE2WithContext" />
+        <CATDE2DialogAgent Id="Empty" Customization="CATNoCtrlAgent" CustomizationDll="CATAfrSelection" />
+        <CATDE2DialogAgent Id="MoveUndo" Behavior="CATDE2TriggersLocalSave" />
+        
+		    <CATDE2PathElementAgent Id="ElementTarget" Customization="CATNoCustomFilterAgent" CustomizationDll="" Behavior="CATDE2WithoutUndo|CATDE2WithCSO|CATDE2AcceptOnPrevaluate|CATDE2WithDrag" />
+        <CATDE2SelfTransition>
+          <CATDE2IsOutputSetCondition Agent="Element"/>
+          <CATDE2Action Do="PutIntoCSO" BeforeUndo="UndoPutIntoCSO" BeforeRedo="PutIntoCSO"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2IsOutputSetCondition Agent="ElementEdit"/>
+          <CATDE2Action Do="Edit"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2IsOutputSetCondition Agent="ElementCtx"/>
+          <CATDE2Action Do="ShowCtxMenu"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATEndContext" AgentId="EndCtx" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="HideCtxMenu"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2CompositeCondition Type ="AND">
+            <CATDE2IsOutputSetCondition Agent="Empty"/>
+            <CATDE2Condition Condition="EmptyCSOCondition"/>
+          </CATDE2CompositeCondition>
+          <CATDE2Action Do="EmptyCSO" BeforeUndo="UndoPutIntoCSO" BeforeRedo="EmptyCSO"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2IsOutputSetCondition Agent="Empty"/>
+          <CATDE2Action Do="FillContextBarFromCSO"/>
+        </CATDE2SelfTransition>
+        <CATDE2FinalTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATExitSelectNotif" AgentId="Exit" />
+        </CATDE2FinalTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATEndManipulate" AgentId="EndManipulate" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="EndManipulate"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATDlgDragEnterNotification" AgentId="DragEnter" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="DragEnter"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATDlgDragOverNotification" AgentId="DragOver" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="DragOver"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2IsOutputSetCondition Agent="ElementTarget"/>
+          <CATDE2Action Do="DropOverRep"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2IsLastModifiedAgentCondition Agent="ElementTarget"/>
+          <CATDE2Action Do="DragOverRep"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2CompositeCondition Type ="OR">
+            <CATDE2ReceivedEventCondition Sender="NULL" Event="CATBeginPreDrop" AgentId="DragVisu" Behavior="CATDE2WithoutUndo" />
+            <CATDE2ReceivedEventCondition Sender="NULL" Event="CATPreDrop" AgentId="DragVisu" Behavior="CATDE2WithoutUndo" />
+            <CATDE2ReceivedEventCondition Sender="NULL" Event="CATEndPreDrop" AgentId="DragVisu" Behavior="CATDE2WithoutUndo" />
+            <CATDE2ReceivedEventCondition Sender="NULL" Event="CATDrop" AgentId="DragVisu" Behavior="CATDE2WithoutUndo" />
+          </CATDE2CompositeCondition>
+          <CATDE2Action Do="DragVisu"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATDlgDragLeaveNotification" AgentId="DragLeave" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="DragLeave"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATDlgDropNotification" AgentId="Drop" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="Drop"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATDlgEndDropNotification" AgentId="EndDrop" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="EndDrop"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATDlgCancelDragNotification" AgentId="CancelDrag" Behavior="CATDE2WithoutUndo" />
+          <CATDE2Action Do="CancelDrag"/>
+        </CATDE2SelfTransition>
+        <CATDE2SelfTransition>
+          <CATDE2ReceivedEventCondition Sender="NULL" Event="CATSearchNotificationBeforeResults" AgentId="SearchAgent" />
+          <CATDE2Action Do="EmptyCSO"/>
+        </CATDE2SelfTransition>
+
+        <!--IF dragAndDrop: Notification de Tire-Dépose en provenance de la Visu -->
+        <CATCAfrInclude Condition="$DE2SelectDragAndDropSetting == 1" Template="DragNDropWithCATSelect" />
+      </CATDE2State>
+    </CATDE2StateCommand>
+  </Template>
+  
+  
+</Styles>

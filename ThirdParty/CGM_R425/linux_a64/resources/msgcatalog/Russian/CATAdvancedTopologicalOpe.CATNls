@@ -1,0 +1,54 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for AdvancedTopologicalOpe errors 
+// En_EN
+
+CATATOVolSwpIncorrectPoints_ERR_1100.Request="Объемный элемент по траектории:";
+CATATOVolSwpIncorrectPoints_ERR_1100.Diagnostic="Профиль элемента по траектории должен содержать не менее 4 точек.";
+CATATOVolSwpIncorrectPoints_ERR_1100.Advice="Добавьте точки в определение профиля";
+
+CATATOVolSwpProfileEndPerp_ERR_1200.Request="Объемный элемент по траектории:";
+CATATOVolSwpProfileEndPerp_ERR_1200.Diagnostic="Первый и последний линейные сегменты профиля должны быть перпендикулярны оси вращения.";
+CATATOVolSwpProfileEndPerp_ERR_1200.Advice="Сделайте первый и последний сегменты перпендикулярными оси вращения";
+
+CATATOVolSwpIncorrectRadii_ERR_1300.Request="Объемный элемент по траектории:";
+CATATOVolSwpIncorrectRadii_ERR_1300.Diagnostic="Число входных радиусов должно быть меньше числа точек профиля на 1 или 2";
+CATATOVolSwpIncorrectRadii_ERR_1300.Advice="Измените значения числа входных радиусов";
+
+CATATOVolSwpSmallRadii_ERR_1400.Request="Объемный элемент по траектории:";
+CATATOVolSwpSmallRadii_ERR_1400.Diagnostic="Сегмент профиля имеет малый радиус";
+CATATOVolSwpSmallRadii_ERR_1400.Advice="Увеличьте радиус сегмента профиля";
+
+CATATOVolSwpNonPlanar_ERR_1500.Request="Объемный элемент по траектории:";
+CATATOVolSwpNonPlanar_ERR_1500.Diagnostic="Тело провода входного профиля не определено на плоскости";
+CATATOVolSwpNonPlanar_ERR_1500.Advice="Определите тело провода входного профиля на плоскости";
+
+CATATOVolSwpNonStrCircular_ERR_1600.Request="Объемный элемент по траектории:";
+CATATOVolSwpNonStrCircular_ERR_1600.Diagnostic="Кромки в теле провода входного профиля должны быть прямыми линиями или окружностями";
+CATATOVolSwpNonStrCircular_ERR_1600.Advice="Создайте тело провода профиля, используя только прямые и круговые кромки";
+
+CATATOVolSwpNonCoPlanar_ERR_1700.Request="Объемный элемент по траектории:";
+CATATOVolSwpNonCoPlanar_ERR_1700.Diagnostic="Вершины во входном профиле тела провода не являются копланарными";
+CATATOVolSwpNonCoPlanar_ERR_1700.Advice="Определите профиль тела провода на плоскости";
+
+CATATOVolSwpLargeRadius_ERR_1800.Request="Объемный элемент по траектории:";
+CATATOVolSwpLargeRadius_ERR_1800.Diagnostic="Как минимум одно значение радиуса является большим";
+CATATOVolSwpLargeRadius_ERR_1800.Advice="Уменьшите значение радиуса";
+
+
+CATATOVolSwpSegNotPerp_ERR_1900.Request="Объемный элемент по траектории:";
+CATATOVolSwpSegNotPerp_ERR_1900.Diagnostic="Сегмент, который заканчивается на оси вращения профиля, не перпендикулярен оси.";
+CATATOVolSwpSegNotPerp_ERR_1900.Advice="Измените сегмент";
+
+CATATOVolSwpSegNotStraight_ERR_2000.Request="Объемный элемент по траектории:";
+CATATOVolSwpSegNotStraight_ERR_2000.Diagnostic="Сегмент, который заканчивается на оси вращения профиля, не является прямым.";
+CATATOVolSwpSegNotStraight_ERR_2000.Advice="Измените сегмент";
+
+CATATOVolSwpNoSolid_ERR_2100.Request="Объемный элемент по траектории:";
+CATATOVolSwpNoSolid_ERR_2100.Diagnostic="Не удалось объединить отдельные решения для конвертов в твердом теле";
+CATATOVolSwpNoSolid_ERR_2100.Advice="Измените движение";
+
+TopOpInNestingTrayDimension_ERR_7200.Request="Разметка PrintSetup:";
+TopOpInNestingTrayDimension_ERR_7200.Diagnostic="Слишком маленькие размеры листа.";
+TopOpInNestingTrayDimension_ERR_7200.Advice="Измените размеры листа.";
+

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="Default" Target="CATVidCtlTabLayoutEditor">
+    <CATVidLayGrid CellSpacing="8" GridWeight="col0=1" RequestedMinimumDimension="60 20">
+      <CATVidLayGrid CellSpacing="4" syp:name="row0" RequestedMinimumDimension="190 40" CATVidLayGrid.IndexedConstraints="x=0 y=0  attach=RLTB"/>
+      <CATVidCtlButton Name="DecRow0" syp:name="DecRow0" Click="@OnDecrement" CATVidLayGrid.IndexedConstraints="x=1 y=0  attach=RL" FontHeight="20" ForegroundColor="0.6 255" Label="-" RequestedMinimumDimension="30 30" syp:Template="Button"/>
+      <CATVidCtlButton Name="IncRow0" syp:name="IncRow0" Click="@OnIncrement" CATVidLayGrid.IndexedConstraints="x=2 y=0  attach=RL" FontHeight="20" ForegroundColor="0.6 255" Label="+" RequestedMinimumDimension="30 30" syp:Template="Button"/>
+      <CATVidLayGrid CellSpacing="4" syp:name="row1" RequestedMinimumDimension="190 60" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidCtlButton Name="DecRow1" syp:name="DecRow1" Click="@OnDecrement" CATVidLayGrid.IndexedConstraints="x=1 y=1  attach=RL" FontHeight="20" ForegroundColor="0.6 255" Label="-" RequestedMinimumDimension="30 30" syp:Template="Button"/>
+      <CATVidCtlButton Name="IncRow1" syp:name="IncRow1" Click="@OnIncrement" CATVidLayGrid.IndexedConstraints="x=2 y=1  attach=RL" FontHeight="20" ForegroundColor="0.6 255" Label="+" RequestedMinimumDimension="30 30" syp:Template="Button"/>
+      <CATVidLayGrid CellSpacing="4" syp:name="row2" RequestedMinimumDimension="190 40" CATVidLayGrid.IndexedConstraints="x=0 y=3  attach=RLTB"/>
+      <CATVidCtlButton Name="DecRow2" syp:name="DecRow2" Click="@OnDecrement" CATVidLayGrid.IndexedConstraints="x=1 y=3  attach=RL" FontHeight="20" ForegroundColor="0.6 255" Label="-" RequestedMinimumDimension="30 30" syp:Template="Button"/>
+      <CATVidCtlButton Name="IncRow2" syp:name="IncRow2" Click="@OnIncrement" CATVidLayGrid.IndexedConstraints="x=2 y=3  attach=RL" FontHeight="20" ForegroundColor="0.6 255" Label="+" RequestedMinimumDimension="30 30" syp:Template="Button"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="DisabledBox" Target="CATVidCtl">
+    <CATVidLayLayer>
+      <CATVidGPSquare Color="184 184 184 255"/>
+      <CATVidLayGrid CellSpacing="2">
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Color="250 250 250 255"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+  
+  <Template syp:name="EnabledBox" Target="CATVidCtl">
+    <CATVidLayLayer>
+      <CATVidGPSquare Color="160 160 160 255"/>
+      <CATVidLayGrid CellSpacing="2">
+        <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" Color="228 228 228 255"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+</Styles>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO_Auto</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_HRTAO_SkydomeCutpoint</NAME>
+  </CONSTANT_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>prefixSumOutputBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>prefixSum[]</NAME>
+        <TYPE>float</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <!--<ALIGNMENT_RULES>scalar</ALIGNMENT_RULES> scalar does not exist in opengl !! -->
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>prefixSumPartitionsBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>prefixSumPartitions[]</NAME>
+        <TYPE>PrefixSumPartition</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>volatile</QUALIFIER>
+      <QUALIFIER>coherent</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>cutPointBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>startIndices[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>metadataBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>metadata</NAME>
+        <TYPE>SkydomeCutpointMetadata</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>visibilityBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>visibility[]</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STORAGE_IMAGE>
+    <NAME>hdrEnv</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>rgba32f</FORMAT>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    
+    <COMPUTE_PASS>
+      <NAME>Default</NAME>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>SKYDOME_CUTPOINT_GENERATION</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <COMPUTE_STAGE>
+        PostEffect_HRTAO_Incl_SkydomeCutpointCommon
+        PostEffect_HRTAO_SkydomeCutpointCDF
+      </COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+</EFFECT>

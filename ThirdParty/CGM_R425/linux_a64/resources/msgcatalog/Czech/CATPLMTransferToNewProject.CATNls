@@ -1,0 +1,71 @@
+<meta charset="UTF-8"/>
+TTNP_Dirty.Diagnostic="Nelze zpracovat /p1, protože je třeba ji uložit";
+TTNP_Dirty.Advice="Uložte změny";
+
+TTNP_Light.Diagnostic="Nelze zpracovat /p1, protože není plně načtena";
+TTNP_Light.Advice="Otevřete /p1";
+
+TTNP_NoProject.Diagnostic="Nelze načíst prostor pro spolupráci /p1";
+TTNP_NoProject.Advice="";
+
+TTNP_CurrentProject.Diagnostic="Nelze zpracovat /p1, protože patří do aktuálního prostoru pro spolupráci";
+TTNP_CurrentProject.Advice="Zkontrolujte výběr";
+
+TTNP_MutipleProjects.Diagnostic="Nelze zpracovat několik prostorů pro spolupráci: /p1 a /p2";
+TTNP_MutipleProjects.Advice="Zkontrolujte výběr";
+
+TTNP_Parent.Diagnostic="Nelze zpracovat /p1 bez nadřazené položky /p2";
+TTNP_Parent.Advice="Přidejte /p1 k výběru nebo ji uvolněte";
+
+TTNP_Child.Diagnostic="Nelze zpracovat /p1, protože její potomek /p2 patří do jiného prostoru pro spolupráci";
+TTNP_Child.Advice="Zkontrolujte strukturu";
+
+TTNP_ParentAlreadyCloned.Diagnostic="Nelze zpracovat /p1, protože její rodič /p2 již byl naklonován";
+TTNP_ParentAlreadyCloned.Advice="Spusťte operaci v okně obsahujícím klon /p1";
+
+TTNP_ChildLost.Diagnostic="Nelze zpracovat /p1, protože byl vytvořen po klonování jeho nadřazené položky /p2";
+TTNP_ChildLost.Advice="";
+
+TTNP_PointingOutsideScope.Diagnostic="Nelze zpracovat /p1, protože na ni odkazuje /p2, která nebyla vytvořena procesem klonování";
+TTNP_PointingOutsideScope.Advice="Uvolněte /p1 nebo spusťte operaci v relaci, kde není otevřena.\nVšimněte si, že server nepřesměruje /p1 na klon /p2";
+
+TTNP_QueryMapping.Diagnostic="Dotaz na mapovací tabulku se nezdařil";
+TTNP_QueryMapping.Advice="Obraťte se na podporu";
+
+TTNP_QueryAttributes.Diagnostic="Nepodařilo se načíst atributy ze serveru";
+TTNP_QueryAttributes.Advice="Obraťte se na podporu";
+
+TTNP_Open.Diagnostic="Nepodařilo se otevřít data, která již byla naklonována v /p1";
+TTNP_Open.Advice="Zkontrolujte následné chybové zprávy. Obraťte se na podporu";
+
+TTNP_NothingToDo.Diagnostic="Všechny objekty již byly naklonovány";
+TTNP_NothingToDo.Advice="Otevřete naklonovanou struktury";
+
+TTNP_ServerFork.Diagnostic="Operace klonování na straně serveru se nezdařila";
+TTNP_ServerFork.Advice="Zkontrolujte následné chybové zprávy. Zavřete okno";
+
+TTNP_CannotStartTask.Diagnostic="Operaci klonování na straně serveru nelze spustit";
+TTNP_CannotStartTask.Advice="Zavřete okno";
+
+TTNP_RefreshSessionMessage="Obnovte relaci (stiskněte F5), aby byl server a vaše relace konzistentní";
+
+TTNP_MissingForkRecord.Diagnostic="Duplikace byla úspěšně dokončena, ale /p1 nebyla klonována na serveru";
+TTNP_MissingForkRecord.Advice="Možné vysvětlení může být v tom, že byla odstraněna.\nZavřete okno a otevřete klonovaná data";
+
+TTNP_MissingForkImpactRecord.Diagnostic="Duplikace byla úspěšně dokončena, ale /p1 nebyla přesměrována na serveru";
+TTNP_MissingForkImpactRecord.Advice="Možné vysvětlení může být v tom, že byla odstraněna.\n/p1";
+
+TTNP_MissedImpact.Diagnostic="Duplikace byla úspěšně dokončena, ale /p1 nebyla přesměrována v relaci";
+TTNP_MissedImpact.Advice="Možné vysvětlení může být v tom, že byla otevřena po zahájení klonování.\n/p1";
+
+TTNP_ConcurrentModification.Diagnostic="Duplikace byla úspěšně dokončena, ale byla zjištěna souběžná úprava na /p1";
+TTNP_ConcurrentModification.Advice="/p1";
+
+TTNP_Internal1.Diagnostic="Při zpracování /p1 došlo k interní chybě";
+TTNP_Internal1.Advice="Kontaktujte podporu (/p1)";
+
+TTNP_Internal2.Diagnostic="Došlo k interní chybě";
+TTNP_Internal2.Advice="Kontaktujte podporu (/p1)";
+
+TTNP_SessionPreview.Diagnostic="Náhled relace nelze vygenerovat";
+TTNP_SessionPreview.Advice="Zkontrolujte protokol chyb";

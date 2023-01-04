@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+	<Resources>
+		<!--ResourceDictionary Source="basicControls.sypstyle" /-->
+	</Resources>
+
+	<!--======================================================================-->
+	<!-- Tooltip : Data templates for short tooltip                           -->
+	<!--======================================================================-->
+
+  <DataTemplate syp:name="CustomShortTooltip" CellSpacing="0" >
+    <CATVidLayLayer>
+      <!-- Needed here and not in the dialog box to receive events on the tooltip. -->
+      <CATVidLayGrid GridWeight="row1=1">
+        <!--  Title area  VisibleFlag="@ShortHelpTitleVisibleFlag"-->
+        <CATVidLayLayer syp:name="TitleArea" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"  >
+          <CATVidGPNinePatchSquare Name="TooltipTitleArea" ScalableAreaBorder="2 2 0 2" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipTitle.png"/>
+
+          <CATVidLayGrid >
+            <CATVidGPText
+              Text="@Title"
+              Bold="1"
+              Color="80 80 80 255"
+              LeftMargin="5"
+              RightMargin="9"
+              TopMargin="3"
+              BottomMargin="3"
+              Interline="0"
+              WordWrapFlag="1"
+              WordWrapPolicy="ToleranceMargin"
+              WordWrapThreshold="@WrapThreshold"
+              WordWrapToleranceMargin="@WrapToleranceMargin"
+              OptimizeMinimumDimensionFlag="1"
+              CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+          <CATVidGPNinePatchSquare syp:name="ShortHelpBody" Name="ShortHelpBody" ScalableAreaBorder="0 2 2 2" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipBody.png"/>
+          <CATVidGPNinePatchSquare syp:name="ShortHelpBodyWithBorder" Name="ShortHelpBodyWithBorder" ScalableAreaBorder="3" VisibleFlag="@UseBackgroundWithBorder" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipBodyWithBorder.png"/>
+
+          <!--  Text area -->
+          <CATVidLayGrid GridWeight="row0=1">
+            <CATVidLayGrid GridWeight=" col1=1 row1=1" syp:name="ShortHelpArea" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+              <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPText
+                Color="80 80 80 255"
+                Text="@ShortHelp"
+                LeftMargin="0"
+                RightMargin="0"
+                TopMargin="0"
+                BottomMargin="0"
+                Interline="0"
+                WordWrapFlag="1"
+                WordWrapPolicy="ToleranceMargin"
+                WordWrapThreshold="@WrapThreshold"
+                WordWrapToleranceMargin="@WrapToleranceMargin"
+                OptimizeMinimumDimensionFlag="1"
+                CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+              <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+
+            <!-- Short Image area -->
+            <CATVidLayGrid syp:name="ShortHelpImageArea" GridWeight="col1=1 row1=1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              <CATVidGPSquare syp:name="ShortHelpImageSquare" CATVidLayGrid.IndexedConstraints="x=1 y=1" Texture="@ShortHelpImage" RequestedMinimumDimension="@SHImageDimension"/>
+              <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+            </CATVidLayGrid>
+
+            <!-- F1 - area -->
+            <CATVidLayLayer syp:name="F1Area" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB">
+              <CATVidLayGrid CellSpacing="2">
+                <CATVidGPSquare  Color="248 248 248 240" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+              </CATVidLayGrid>
+              <CATVidLayGrid syp:name="F1Icon" GridWeight="row1=1 col1=1">
+                <CATVidSpacer RequestedMinimumDimension="5 3" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+                  <CATVidGPSquare CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT" Texture="icons/AfrUiWarningHelp16x.png" RequestedMinimumDimension="16 16"/>
+                  <CATVidGPText
+                                  Color="80 80 80 255"
+                                  Text="@BottomMessage"
+                                  LeftMargin="4"
+                                  RightMargin="4"
+                                  TopMargin="0"
+                                  BottomMargin="0"
+                                  Interline="0"
+                                  WordWrapFlag="1"
+                                  WordWrapPolicy="ToleranceMargin"
+                                  WordWrapThreshold="@F1WrapThreshold"
+                                  WordWrapToleranceMargin="@WrapToleranceMargin"
+                                  OptimizeMinimumDimensionFlag="1"
+                                  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+                </CATVidLayGrid>
+                <CATVidSpacer RequestedMinimumDimension="5 3" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+              </CATVidLayGrid>
+            </CATVidLayLayer>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ShortHelp" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpArea" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Title" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="TitleArea" Value="0"/>
+        
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="UseBackgroundWithBorder" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpBodyWithBorder" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpBody" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="UseBackgroundWithBorder" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpBodyWithBorder" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpBody" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ShortHelpImage" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpImageArea" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="BottomMessage" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="F1Area" Value="0"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+	<!--======================================================================-->
+	<!-- Tooltip : Data templates for long tooltip                            -->
+	<!--======================================================================-->
+
+	<DataTemplate syp:name="CustomLongTooltip">
+
+		<CATVidLayLayer>
+			<CATVidLayGrid GridWeight="row1=1">
+				<!--  Title area VisibleFlag="@LongHelpTitleVisibleFlag" -->
+				<CATVidLayLayer syp:name="TitleArea" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" >
+          <CATVidGPNinePatchSquare Name="TooltipTitleArea" ScalableAreaBorder="2 2 0 2" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipTitle.png"/>
+					<CATVidLayGrid  >
+						<CATVidGPText
+              Text="@Title"
+              Bold="1"
+              Color="80 80 80 255"
+              LeftMargin="5"
+              RightMargin="9"
+              TopMargin="3"
+              BottomMargin="3"
+              Interline="0"
+              WordWrapFlag="1"
+              WordWrapPolicy="ToleranceMargin"
+              WordWrapThreshold="@WrapThreshold"
+              WordWrapToleranceMargin="@WrapToleranceMargin"
+              OptimizeMinimumDimensionFlag="1"
+              CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"
+              />
+					</CATVidLayGrid>
+				</CATVidLayLayer>
+
+				<!--  Body area -->
+				<CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+          <CATVidGPNinePatchSquare syp:name="LongHelpBody" Name="LongHelpBody" ScalableAreaBorder="0 2 2 2" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipBody.png"/>
+					<!--  Text area -->
+					<CATVidLayGrid GridWeight="row0=1">
+						<CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+							<!--  Short Help -->
+							<CATVidLayGrid GridWeight=" col1=1 row1=1" syp:name="ShortHelpArea" LayoutWhenUnvisibleFlag="0"  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+								<CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+								<CATVidGPText
+									Color="80 80 80 255"
+									Text="@ShortHelp"
+									LeftMargin="0"
+									RightMargin="0"
+									TopMargin="0"
+									BottomMargin="0"
+									Interline="0"
+									WordWrapFlag="1"
+									WordWrapPolicy="ToleranceMargin"
+									WordWrapThreshold="@WrapThreshold"
+									WordWrapToleranceMargin="@WrapToleranceMargin"
+									OptimizeMinimumDimensionFlag="1"
+									CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+								<CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+							</CATVidLayGrid>
+
+							<!--  Short Image area -->
+							<CATVidLayGrid syp:name="ShortHelpImageArea" GridWeight="col1=1 row1=1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+								<CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+								<CATVidGPSquare syp:name="ShortHelpImageSquare" CATVidLayGrid.IndexedConstraints="x=1 y=1" Texture="@ShortHelpImage" RequestedMinimumDimension="@SHImageDimension"/>
+								<CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+							</CATVidLayGrid>
+							
+							<!-- Long Help-->
+							<CATVidLayGrid syp:name="LongHelpArea" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" GridWeight="col1=1 row1=1">
+									<CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+									<CATVidGPText
+										Color="80 80 80 255"
+										Text="@LongHelp"
+										LeftMargin="0"
+										RightMargin="0"
+										TopMargin="0"
+										BottomMargin="0"
+										Interline="0"
+										WordWrapFlag="1"
+										WordWrapPolicy="ToleranceMargin"
+										WordWrapThreshold="@WrapThreshold"
+										WordWrapToleranceMargin="@WrapToleranceMargin"
+										OptimizeMinimumDimensionFlag="1"
+										CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+									<CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+								</CATVidLayGrid>
+
+							<!--  Image area -->
+							<CATVidLayGrid syp:name="LongHelpImageArea" GridWeight="col1=1 row1=1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB">
+								<CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+								<CATVidGPSquare syp:name="LongHelpImageSquare" CATVidLayGrid.IndexedConstraints="x=1 y=1" Texture="@LongHelpImage" RequestedMinimumDimension="@LHImageDimension"/>
+								<CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+							</CATVidLayGrid>
+							
+							<!-- F1 - area -->
+							<CATVidLayLayer syp:name="F1Area" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=4 attach=RLTB">
+								<CATVidLayGrid CellSpacing="2">
+									<CATVidGPSquare  Color="248 248 248 240" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+								</CATVidLayGrid>
+								<CATVidLayGrid syp:name="F1Icon" GridWeight="row1=1 col1=1">
+									<CATVidSpacer RequestedMinimumDimension="5 3" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+									<CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+                    <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT" Texture="icons/AfrUiWarningHelp16x.png" RequestedMinimumDimension="16 16"/>
+                    <CATVidGPText
+                      Color="80 80 80 255"
+                      Text="@BottomMessage"
+                      LeftMargin="4"
+                      RightMargin="4"
+                      TopMargin="0"
+                      BottomMargin="0"
+                      Interline="0"
+                      WordWrapFlag="1"
+                      WordWrapPolicy="ToleranceMargin"
+                      WordWrapThreshold="@F1WrapThreshold"
+                      WordWrapToleranceMargin="@WrapToleranceMargin"
+                      OptimizeMinimumDimensionFlag="1"
+																						   CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+				  </CATVidLayGrid>
+			      <CATVidSpacer RequestedMinimumDimension="5 3" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+				</CATVidLayGrid>
+			  </CATVidLayLayer>
+							
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+			<CATSYPTrigger Property="Title" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="TitleArea" Value="0"/>
+      
+			</CATSYPTrigger>
+			<CATSYPTrigger Property="ShortHelp" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpArea" Value="0"/>
+        
+			</CATSYPTrigger>
+			<CATSYPTrigger Property="ShortHelpImage" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpImageArea" Value="0"/>
+			</CATSYPTrigger>
+			<CATSYPTrigger Property="LongHelp" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="LongHelpArea" Value="0"/>
+			</CATSYPTrigger>
+			<CATSYPTrigger Property="LongHelpImage" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="LongHelpImageArea" Value="0"/>
+			</CATSYPTrigger>
+			<CATSYPTrigger Property="BottomMessage" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="F1Area" Value="0"/>
+			</CATSYPTrigger>
+			<!--CATSYPTrigger Property="HyperlinkLabel" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperlinkArea" Value="0"/>
+      </CATSYPTrigger>
+			<CATSYPTrigger Property="Image2" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="ImageArea2" Value="0"/>
+			</CATSYPTrigger-->
+		</CATSYPTriggerCollection>
+	</DataTemplate>
+  
+  <!--======================================================================-->
+  <!-- Tooltip : Data templates for long tooltip for nonswxcommands                           -->
+  <!--======================================================================-->
+
+  <DataTemplate syp:name="CustomLongTooltipForNonSWX">
+
+    <CATVidLayLayer>
+      <CATVidLayGrid GridWeight="row1=1">
+        <!--  Title area VisibleFlag="@LongHelpTitleVisibleFlag" -->
+        <CATVidLayLayer syp:name="TitleArea" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" >
+          <CATVidGPNinePatchSquare Name="TooltipTitleArea" ScalableAreaBorder="2 2 0 2" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipTitle.png"/>
+
+          <CATVidLayGrid  >
+            <CATVidGPText
+              Text="@Title"
+              Bold="1"
+              Color="80 80 80 255"
+              LeftMargin="5"
+              RightMargin="9"
+              TopMargin="3"
+              BottomMargin="3"
+              Interline="0"
+              WordWrapFlag="1"
+              WordWrapPolicy="ToleranceMargin"
+              WordWrapThreshold="@WrapThreshold"
+              WordWrapToleranceMargin="@WrapToleranceMargin"
+              OptimizeMinimumDimensionFlag="1"
+              CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"
+              />
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+        <!--  Body area -->
+        <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+          <CATVidGPNinePatchSquare syp:name="LongHelpBody" Name="LongHelpBody" ScalableAreaBorder="3" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipBody.png"/>
+          <CATVidGPNinePatchSquare syp:name="LongHelpBodyWithBorder" Name="LongHelpBodyWithBorder" ScalableAreaBorder="3" VisibleFlag="@NoTitleForNonSWX" LayoutWhenUnvisibleFlag="0" PickFlag="1" UseManipulatorFlag="1" Texture="icons/AfrUiTooltipBodyWithBorder.png"/>
+
+          <!--  Text area -->
+          <CATVidLayGrid GridWeight="row0=1">
+            <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+   
+              <!-- Long Help-->
+              <CATVidLayGrid syp:name="LongHelpArea" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" GridWeight="col1=1 row1=1">
+                <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidGPText
+                  Color="80 80 80 255"
+                  Text="@LongHelp"
+                  LeftMargin="0"
+                  RightMargin="0"
+                  TopMargin="0"
+                  BottomMargin="0"
+                  Interline="0"
+                  WordWrapFlag="1"
+                  WordWrapPolicy="ToleranceMargin"
+                  WordWrapThreshold="@WrapThreshold"
+                  WordWrapToleranceMargin="@WrapToleranceMargin"
+                  OptimizeMinimumDimensionFlag="1"
+                  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+                <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+              </CATVidLayGrid>
+
+              <!--  Image area -->
+              <CATVidLayGrid syp:name="LongHelpImageArea" GridWeight="col1=1 row1=1" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+                <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidGPSquare syp:name="LongHelpImageSquare" CATVidLayGrid.IndexedConstraints="x=1 y=1" Texture="@LongHelpImage" RequestedMinimumDimension="@LHImageDimension"/>
+                <CATVidSpacer RequestedMinimumDimension="5 5" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+              </CATVidLayGrid>
+
+              <!-- F1 - area -->
+              <CATVidLayLayer syp:name="F1Area" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB">
+                <CATVidLayGrid CellSpacing="2">
+                  <CATVidGPSquare  Color="248 248 248 240" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                </CATVidLayGrid>
+                <CATVidLayGrid syp:name="F1Icon" GridWeight="row1=1 col1=1">
+                  <CATVidSpacer RequestedMinimumDimension="5 3" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB">
+                    <CATVidGPSquare  CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LT" Texture="icons/AfrUiWarningHelp16x.png" RequestedMinimumDimension="16 16"/>
+                    <CATVidGPText
+                      Color="80 80 80 255"
+                      Text="@BottomMessage"
+                      LeftMargin="4"
+                      RightMargin="4"
+                      TopMargin="0"
+                      BottomMargin="0"
+                      Interline="0"
+                      WordWrapFlag="1"
+                      WordWrapPolicy="ToleranceMargin"
+                      WordWrapThreshold="@F1WrapThreshold"
+                      WordWrapToleranceMargin="@WrapToleranceMargin"
+                      OptimizeMinimumDimensionFlag="1"
+                      CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+                  </CATVidLayGrid>
+                  <CATVidSpacer RequestedMinimumDimension="5 3" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+                </CATVidLayGrid>
+              </CATVidLayLayer>
+
+            </CATVidLayGrid>
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Title" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="TitleArea" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="ShortHelpImage" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShortHelpImageArea" Value="0"/>
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="LongHelp" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpArea" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="LongHelpImage" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpImageArea" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="BottomMessage" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="F1Area" Value="0"/>
+      </CATSYPTrigger>
+      <!--<CATSYPTrigger Property="HasTitleForNonSWX" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="LongHelpBody" Value="icons/AfrUiTooltipBodyWithBorder.png"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="HasTitleForNonSWX" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="LongHelpBody" Value="icons/AfrUiTooltipBody.png"/>
+      </CATSYPTrigger>-->
+      <CATSYPTrigger Property="NoTitleForNonSWX" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpBodyWithBorder" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpBody" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="NoTitleForNonSWX" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpBodyWithBorder" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LongHelpBody" Value="1"/>
+      </CATSYPTrigger>
+      <!--CATSYPTrigger Property="HyperlinkLabel" Value="">
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperlinkArea" Value="0"/>
+      </CATSYPTrigger>
+			<CATSYPTrigger Property="Image2" Value="">
+				<CATSYPSetter Property="VisibleFlag" TargetName="ImageArea2" Value="0"/>
+			</CATSYPTrigger-->
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  
+</Styles>

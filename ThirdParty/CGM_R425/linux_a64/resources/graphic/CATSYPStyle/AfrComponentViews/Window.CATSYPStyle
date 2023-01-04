@@ -1,0 +1,1041 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+  <Resources>
+    <ResourceDictionary Source="basicTweakers.sypstyle"/>
+    <ResourceDictionary Source="CATAfrContextBar.CATSYPStyle"/>
+    <ResourceDictionary Source="CATAfrCustomStyles.CATSYPStyle"/>
+  </Resources>
+
+  <!--===================================-->
+  <!--FraPanel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrFraPanel">
+    <CATAfrSmartCtl Name                       ="@ViewName"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    SnappableFlag              ="1"
+                    DialogBoxDimension         ="@DialogBoxDimension Mode=TwoWays"
+                    ViewParent                 ="@ViewParent"
+                    CreateDialogBoxFlag        ="@RootFlag"
+                    ContentPanelVisibleFlag    ="@ContentVisibleFlag"
+                    ResizableDialogBoxFlag     ="@ResizableFlag"
+                    CompactDialogBoxFlag       ="@CompactFlag"
+                    VerticallyCompactDialogBoxFlag="@VerticallyCompactFlag"
+                    AutoCloseDialogBoxFlag     ="@AutoCloseFlag"
+                    PanelDeleted               ="@ViewDeletedCB"
+                    PanelClosed                ="@CloseCB"
+                    MinimizeCB                 ="@MinimizeCB"
+                    HorizontallyStretchableFlag="@HorizontallyStretchableFlag"
+                    VerticallyStretchableFlag  ="@VerticallyStretchableFlag"
+                    VisibleFlag                ="@Visibility"
+                    InitialDockArea            ="@InitialDockArea"
+                    AutoExtractableFlag        ="@AutoExtractableFlag"
+                    UserLifeCycleFlag          ="@UserLifeCycleFlag"
+                    CloseButtonDialogBoxFlag   ="@CloseButtonFlag"
+                    MinimizeFlag               ="@MinimizeFlag Mode=TwoWays"
+                    HandlePanel                ="@HandleEvent"
+                    ExtractedFlag              ="@ExtractedFlag">
+      <CATVidLayGrid syp:name="MainContainer"
+                     GridWeight="row1=1 col1=1">
+        <CATVidLayGrid syp:name="ContainerToolbar"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                       GridWeight="col1=1">
+          <CATVidCtl syp:name="AccessToolbarLeft"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare syp:name="AccessToolbarSpace"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="AccessToolbar"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Container"
+                       VisibleFlag="@Visibility"
+                       GridAppendPolicy="@Orientation"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+  </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ToolBarPos" Value="1">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="2">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="3">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="4">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="5">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="6">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="7">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=0 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="8">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=2 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--ActionPad specific panel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrActionPadPanel">
+    <CATAfrSmartCtl Name                       ="@ViewName"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    SnappableFlag              ="16"
+                    DialogBoxDimension         ="@DialogBoxDimension Mode=TwoWays"
+                    ViewParent                 ="@ViewParent"
+                    CreateDialogBoxFlag        ="@RootFlag"
+                    ContentPanelVisibleFlag    ="@ContentVisibleFlag"
+                    ResizableDialogBoxFlag     ="@ResizableFlag"
+                    CompactDialogBoxFlag       ="@CompactFlag"
+                    VerticallyCompactDialogBoxFlag="@VerticallyCompactFlag"
+                    AutoCloseDialogBoxFlag     ="@AutoCloseFlag"
+                    PanelDeleted               ="@ViewDeletedCB"
+                    PanelClosed                ="@CloseCB"
+                    MinimizeCB                 ="@MinimizeCB"
+                    HorizontallyStretchableFlag="@HorizontallyStretchableFlag"
+                    VerticallyStretchableFlag  ="@VerticallyStretchableFlag"
+                    VisibleFlag                ="@Visibility"
+                    InitialDockArea            ="@InitialDockArea"
+                    AutoExtractableFlag        ="@AutoExtractableFlag"
+                    UserLifeCycleFlag          ="@UserLifeCycleFlag"
+                    CloseButtonDialogBoxFlag   ="@CloseButtonFlag"
+                    MinimizeFlag               ="@MinimizeFlag Mode=TwoWays"
+                    HandlePanel                ="@HandleEvent"
+                    ExtractedFlag              ="@ExtractedFlag">
+      <CATVidLayGrid syp:name="MainContainer"
+                     GridWeight="row1=1 col1=1">
+        <CATVidLayGrid syp:name="ContainerToolbar"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                       GridWeight="col1=1">
+          <CATVidCtl syp:name="AccessToolbarLeft"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare syp:name="AccessToolbarSpace"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="AccessToolbar"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Container"
+                       VisibleFlag="@Visibility"
+                       GridAppendPolicy="@Orientation"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ToolBarPos" Value="1">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="2">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="3">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="4">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="5">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="6">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="7">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=0 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="8">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=2 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--FraPanelEx -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrFraPanelEx">
+    <CATAfrSmartCtl Name                       ="@Name"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    SnappableFlag              ="15"
+                    ViewParent                 ="@ViewParent"
+                    CreateDialogBoxFlag        ="@RootFlag"
+                    DialogBoxDimension         ="@DialogBoxDimension Mode=TwoWays"
+                    ContentPanelVisibleFlag    ="@ContentVisibleFlag"
+                    ResizableDialogBoxFlag     ="@ResizableFlag"
+                    CompactDialogBoxFlag       ="@CompactFlag"
+                    AutoCloseDialogBoxFlag     ="@AutoCloseFlag"
+                    PanelDeleted               ="@ViewDeletedCB"
+                    PanelClosed                ="@CloseCB"
+                    MinimizeCB                 ="@MinimizeCB"
+                    HorizontallyStretchableFlag="@HorizontallyStretchableFlag"
+                    VerticallyStretchableFlag  ="@VerticallyStretchableFlag"
+                    VisibleFlag                ="@Visibility"
+                    InitialDockArea            ="@InitialDockArea"
+                    AutoExtractableFlag        ="@AutoExtractableFlag"
+                    UserLifeCycleFlag          ="@UserLifeCycleFlag"
+                    CloseButtonDialogBoxFlag   ="@CloseButtonFlag"
+                    HandlePanel                ="@HandleEvent"
+                    MinimizeFlag               ="@MinimizeFlag Mode=TwoWays"
+                    MaximizedFlag              ="@MaximizedFlag"
+                    TitleBarVisibleFlag        ="@TitleBarVisibleFlag"
+                    ExtractedFlag              ="@ExtractedFlag">
+      <CATVidLayGrid syp:name="MainContainer"
+                     GridWeight="row1=1 col1=1">
+        <CATVidLayGrid syp:name="ContainerToolbar"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                       GridWeight="col1=1">
+          <CATVidCtl syp:name="AccessToolbarLeft"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare syp:name="AccessToolbarSpace"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="AccessToolbar"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Container"
+                       VisibleFlag="@Visibility"
+                       GridAppendPolicy="@Orientation"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+  </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ToolBarPos" Value="1">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="2">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="3">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="4">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="5">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="6">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="7">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=0 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="8">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=2 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--FraLabel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrFraLabel">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    SnappableFlag          ="2"
+                    AutoCloseDialogBoxFlag ="0"
+                    ViewParent             ="@ViewParent"
+                    TitleDialogBox         ="@Title"
+                    IconName               ="@IconName"
+                    DialogBoxDimension     ="@DialogBoxDimension Mode=TwoWays"
+                    CreateDialogBoxFlag    ="@RootFlag"
+                    ResizableDialogBoxFlag ="@ResizableFlag"
+                    CompactDialogBoxFlag   ="@CompactFlag"
+                    ContentPanelVisibleFlag="@ContentVisibleFlag"
+                    TitleBarVisibleFlag    ="@TitleBarVisibleFlag"
+                    AnchorPoint            ="@AnchorPoint"
+                    ConnectionPoint        ="@OffsetPoint"
+                    VisibleFlag            ="@Visibility"
+                    InitialDockArea        ="@InitialDockArea"
+                    ExtractedFlag          ="@ExtractedFlag"
+                    StandardButtonClick    ="@StandardButtonClick"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    CloseButtonDialogBoxFlag ="@CloseButtonFlag"
+                    UserLifeCycleFlag        ="@UserLifeCycleFlag"
+                    HandlePanel              ="@HandleEvent"
+                    PanelClosed            ="@CloseCB">
+      <CATVidLayStack VisibleFlag="@Visibility"
+                      syp:name="Container"
+                      Orientation="@Orientation"
+                      StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--FraMessageBox -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrFraMessageBox">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    SnappableFlag          ="4"
+                    AutoCloseDialogBoxFlag ="@AutoCloseFlag"
+                    ContentPanelVisibleFlag="1"
+                    ViewParent             ="@ViewParent"
+                    TitleDialogBox         ="@Title"
+                    IconName               ="@IconName"
+                    CreateDialogBoxFlag    ="1"
+                    ResizableDialogBoxFlag ="1"
+                    CompactDialogBoxFlag   ="1"
+                    DialogButtons          ="@DialogButtons"
+                    StandardButton         ="@StandardButton Mode=OneWayToSource"
+                    ModalFlag              ="@ModalFlag"
+                    VisibleFlag            ="@Visibility"
+                    TextMesBox             ="@TextMesBox"
+                    DetailedTextMesBox     ="@DetailedTextMesBox"
+                    InforTextMesBox        ="@InforTextMesBox"
+                    MsgBoxIconType         ="@MsgBoxIconType"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    PanelClosed            ="@CloseCB"
+                    StandardButtonClick    ="@StandardButtonClick"
+                    CloseButtonDialogBoxFlag ="@CloseButtonFlag"
+                    HandlePanel              ="@HandleEvent"
+                    ExtractedFlag          ="@ExtractedFlag">
+      <CATVidLayGrid/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--FraDialog -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrFraDialog">
+  <CATAfrSYPModelViewMetaData UpdateAtFinalizeView = "1">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    SnappableFlag          ="3"
+                    TitleDialogBox         ="@Title"
+                    IconName               ="@IconName"
+                    ViewParent             ="@ViewParent"
+                    DialogBoxDimension     ="@DialogBoxDimension Mode=TwoWays"
+                    CreateDialogBoxFlag    ="@RootFlag"
+                    ResizableDialogBoxFlag ="@ResizableFlag"
+                    CompactDialogBoxFlag   ="@CompactFlag"
+                    AutoCloseDialogBoxFlag ="@AutoCloseFlag"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    MinimizeCB             ="@MinimizeCB"
+                    StandardButton         ="@StandardButton Mode=OneWayToSource"
+                    DialogButtons          ="@DialogButtons"
+                    StandardButtonClick    ="@StandardButtonClick"
+                    VisibleFlag            ="@Visibility"
+                    ModalFlag              ="@ModalFlag"
+                    ExtractedFlag          ="@ExtractedFlag"
+                    MinimizeFlag           ="@MinimizeFlag Mode=TwoWays"
+                    CloseButtonDialogBoxFlag ="@CloseButtonFlag"
+                    PanelClosed            ="@CloseCB">
+      <CATVidLayGrid syp:name="MainContainer"
+                     GridWeight="row1=1 col1=1">
+        <CATVidLayGrid syp:name="ContainerToolbar"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                       GridWeight="col1=1">
+          <CATVidCtl syp:name="AccessToolbarLeft"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare syp:name="AccessToolbarSpace"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="AccessToolbar"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Container"
+                       VisibleFlag="@Visibility"
+                       GridAppendPolicy="@Orientation"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ToolBarPos" Value="1">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="2">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="3">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="4">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="5">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="6">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="7">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=0 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="8">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=2 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--DialogBox -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrDialogBox">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    AutoCloseDialogBoxFlag ="0"
+                    ViewParent             ="@ViewParent"
+                    CreateDialogBoxFlag    ="1"
+                    AutoExtractableFlag    ="1"
+                    ExtractedFlag          ="1"
+                    ConstraintsDialogBox   ="leftPercent=50 topPercent=50"
+                    ContentPanelVisibleFlag="@ContentVisibleFlag"
+                    VisibleFlag            ="@Visibility"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    PanelClosed            ="@CloseCB">
+      <CATVidCtl syp:name="Container"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--DialogBox Full-->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrDialogBoxFull">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    AutoCloseDialogBoxFlag ="0"
+                    ViewParent             ="@ViewParent"
+                    CreateDialogBoxFlag    ="1"
+                    AutoExtractableFlag    ="1"
+                    ExtractedFlag          ="@ExtractedFlag"
+                    UseRestrictedAreaFlag  ="1"
+                    ConstraintsDialogBox   ="widthPercent=100 heightPercent=100"
+                    ContentPanelVisibleFlag="@ContentVisibleFlag"
+                    VisibleFlag            ="@Visibility"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    PanelClosed            ="@CloseCB"
+                    DialogBoxType="@DialogBoxType">
+      <CATVidCtl syp:name="Container"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--CATCAfrUrlViewer -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrUrlViewer_Generic">
+    <CATAfrHtmlView syp:name="HtmlView"
+                    syp:Template="Default"
+                    VisibleFlag="@Visibility"
+                    NoPopup="@NoPopup"
+                    Silent="@Silent"
+                    JavaScript="@JavaScript"
+                    ErrorHtmlPage="@ErrorHtmlPage"
+                    HandleEvent="@HandleEvent"
+                    Dimension="@Dimension"
+                    RequestedMinimumDimension="@MinimumDimension"
+                    Url="@Url">
+    </CATAfrHtmlView>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrUrlViewer_Dialog">
+    <CATAfrUrlViewerDialog syp:name="HtmlViewDialog"
+                           NoPopup="@NoPopup"
+                           Silent="@Silent"
+                           JavaScript="@JavaScript"
+                           ErrorHtmlPage="@ErrorHtmlPage"
+                           HandleEvent="@HandleEvent"
+                           Dimension="@Dimension"
+                           Visibility="@Visibility"
+                           Url="@Url">
+    </CATAfrUrlViewerDialog>
+  </DataTemplate>
+
+  <DataTemplate syp:name="CATCAfrUrlViewer_WebViewer">
+    <CATAfrHtmlView syp:name="HtmlView"
+                    syp:Template="WebViewer"
+                    VisibleFlag="@Visibility"
+                    NoPopup="@NoPopup"
+                    UseContextMenuFlag="@UseContextMenuFlag"
+                    Silent="@Silent"
+                    SameOriginPolicyFlag="@SameOriginPolicyFlag"
+                    FileAccessFromFileURLsFlag="@FileAccessFromFileURLsFlag"
+                    AllowReloadFlag="@AllowReloadFlag"
+                    AllowBackForwardFlag="@AllowBackForwardFlag"
+                    AllowInsecureContentFlag="@AllowInsecureContentFlag"
+                    JavaScript="@JavaScript"
+                    ErrorHtmlPage="@ErrorHtmlPage"
+                    CustomSchemes="@CustomSchemes"
+                    HandleEvent="@HandleEvent"
+                    Dimension="@Dimension"
+                    DNDMode="@DropMode"
+                    RequestedMinimumDimension="@MinimumDimension"
+                    Url="@Url">
+    </CATAfrHtmlView>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--TagFraPanel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrTagFraPanel">
+    <CATAfrSmartCtl Name                       ="@Name"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    ViewParent                 ="@ViewParent"
+                    PanelDeleted               ="@ViewDeletedCB"
+                    UserLifeCycleFlag          ="@UserLifeCycleFlag"
+                    InitialDockArea            ="LeftDockArea"
+                    CreateDialogBoxFlag        ="1"
+                    ToolbarFlag                ="1"
+                    SnappableFlag              ="1"
+                    PanelVAlignment            ="0"
+                    PanelHAlignment            ="0"
+                    ContentPanelVisibleFlag    ="1"
+                    ResizableDialogBoxFlag     ="0"
+                    CompactDialogBoxFlag       ="1"
+                    AutoCloseDialogBoxFlag     ="1"
+                    VerticallyStretchableFlag  ="1"
+                    HandlePanel                ="@HandleEvent"
+                    VisibleFlag                ="@Visibility">
+      <CATVidCtl syp:name="Container"
+                 VisibleFlag="@Visibility"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--Quick Pick Panel -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrQuickPickFraPanel">
+    <CATAfrSmartCtl Name                       ="@Name"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    ViewParent                 ="@ViewParent"
+                    CreateDialogBoxFlag        ="@RootFlag"
+                    InitialDockArea            ="LeftDockArea"
+                    SnappableFlag              ="11"
+                    ContentPanelVisibleFlag    ="1"
+                    ResizableDialogBoxFlag     ="0"
+                    CompactDialogBoxFlag       ="1"
+                    VerticallyStretchableFlag  ="1"
+                    VisibleFlag                ="@Visibility"
+                    PanelDeleted               ="@ViewDeletedCB">
+      <CATVidCtl syp:name="Container"
+                 VisibleFlag="@Visibility"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--FraProgress -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrFraProgress">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    BalloonFlag            ="1"
+                    ViewParent             ="@ViewParent"
+                    CreateDialogBoxFlag    ="@RootFlag"
+                    VisibleFlag            ="@Visibility"
+                    CenteredFromTopWidgetFlag="1">
+      <CATVidLayStack VisibleFlag="@Visibility"
+                      syp:name="Container"
+                      LayoutWhenUnvisibleFlag="0"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--FraContextBar -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDContextBarTest">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    ContentPanelVisibleFlag="1"
+                    ViewParent             ="@ViewParent"
+                    CreateContextBarFlag   ="1"
+                    VisibleFlag            ="@Visibility"
+                    ExtractedFlag          ="@ExtractedFlag"
+                    MouseCursorOffset      ="-45 45"
+                    ListenToMouseMoveFlag  ="@ListenToMouseMoveFlag">
+      <CATVidLayStack VisibleFlag="@Visibility"
+                      syp:name="Container"
+                      Orientation="@Orientation"
+                      StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+  
+  
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDContextBar">
+    <CATAfrVidContextBarCtl Name                   ="@Name"
+                            syp:name               ="ContainerForAction"
+                            BarVisibleFlag         ="@Visibility"
+                            MouseCursorOffset      ="45 -45"
+                            ListenToMouseMoveFlag  ="@ListenToMouseMoveFlag"
+                            MenuVisibleFlag        ="@ContentVisibleFlag Mode=TwoWays"
+                            MenuToDeploy           ="@HandleEventCtxMenuToDeploy"
+                            WindowPressed          ="@HandleEventWindowPressed">
+      <CATVidLayStack VisibleFlag                  ="@Visibility"
+                      syp:name                     ="Container"
+                      Orientation                  ="Vertical"
+                      StackAttachmentAppendPolicy  ="StretchAttachmentPolicy"
+                      LayoutWhenUnvisibleFlag="0"/>
+    </CATAfrVidContextBarCtl>
+</DataTemplate>
+  
+    <DataTemplate syp:name="CATCAfrWindow_AfrVIDVolatileActionPad">
+        <CATAfrSmartCtl Name                   ="@Name"
+                        ContentPanelVisibleFlag="1"
+                        ViewParent             ="@ViewParent"
+                        CreateContextBarFlag   ="1"
+                        VisibleFlag            ="@Visibility"
+                        ExtractedFlag          ="@ExtractedFlag"
+                        MouseCursorOffset      ="-15 25">
+            <CATVidCtl ChildrenLifeCyclePolicy="DontDestroyChildren">
+                <CATVidLayStack VisibleFlag="@Visibility"
+                                syp:name="Container"
+                                Orientation="Vertical"
+                                StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+            </CATVidCtl>
+        </CATAfrSmartCtl>
+    </DataTemplate>
+  
+  
+  <!--===================================-->
+  <!--CAfr Window Dlg File -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrOpenFile">
+    <CATAfrFileOpenPanelDlg syp:name  ="DlgOpenFile"
+                            Title     ="@Title"
+                            Directory ="@Directory"
+                            FileName  ="@FileName"
+                            FilterExt  ="@FilterExt"
+                            Visibility ="@Visibility"
+                            HandleEvent ="@HandleEvent">
+    </CATAfrFileOpenPanelDlg>
+  </DataTemplate>
+  
+  <!--===================================-->
+  <!--CAfr Window Dlg Folder -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrOpenFolder">
+    <CATAfrFolderOpenPanelDlg syp:name  ="DlgOpenFolder"
+                            Title     ="@Title"
+                            Directory ="@Directory"
+                            Visibility ="@Visibility"
+                            HandleEvent ="@HandleEvent">
+    </CATAfrFolderOpenPanelDlg>
+    
+  <!--===================================-->
+  <!--CAfr Window PLM Chooser -->
+  <!--===================================-->  
+  </DataTemplate>
+  
+    <DataTemplate syp:name="CATCAfrWindow_PLMChooser">
+    <CATAfrPLMChooserlDlg syp:name  ="PLMChooserDialog"
+                            HandleEvent ="@HandleEvent">
+    </CATAfrPLMChooserlDlg>
+  </DataTemplate>  
+  
+  <!--===================================-->
+  <!--WindowGroup -->
+  <!--===================================--> 
+  <DataTemplate syp:name="CATCAfrWindowGroup_AfrWindowGroup">
+    <CATAfrWindowGroup syp:name="Container" WidgetsPanelVisibility="1" StackableFlag="@StackableFlag" />
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--AfrDeprecated -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDFraPanel">
+    <CATAfrSmartCtl Name                       ="@Name"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    SnappableFlag              ="1"
+                    DialogBoxDimension         ="@DialogBoxDimension Mode=TwoWays"
+                    ViewParent                 ="@ViewParent"
+                    CreateDialogBoxFlag        ="@RootFlag"
+                    ContentPanelVisibleFlag    ="@ContentVisibleFlag"
+                    ResizableDialogBoxFlag     ="@ResizableFlag"
+                    CompactDialogBoxFlag       ="@CompactFlag"
+                    AutoCloseDialogBoxFlag     ="@AutoCloseFlag"
+                    PanelClosed                ="@CloseCB"
+                    MinimizeCB                 ="@MinimizeCB"
+                    HorizontallyStretchableFlag="@HorizontallyStretchableFlag"
+                    VerticallyStretchableFlag  ="@VerticallyStretchableFlag"
+                    VisibleFlag                ="@Visibility"
+                    InitialDockArea            ="@InitialDockArea"
+                    AutoExtractableFlag        ="@AutoExtractableFlag"
+                    CloseButtonDialogBoxFlag   ="@CloseButtonFlag"
+                    MinimizeFlag               ="@MinimizeFlag Mode=TwoWays"
+                    HandlePanel                ="@HandleEvent"
+                    ExtractedFlag              ="@ExtractedFlag">
+      <CATVidLayGrid syp:name="MainContainer"
+                     GridWeight="row1=1 col1=1">
+        <CATVidLayGrid syp:name="ContainerToolbar"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                       GridWeight="col1=1">
+          <CATVidCtl syp:name="AccessToolbarLeft"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare syp:name="AccessToolbarSpace"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="AccessToolbar"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Container"
+                       VisibleFlag="@Visibility"
+                       GridAppendPolicy="@Orientation"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ToolBarPos" Value="1">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="2">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="3">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="4">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="5">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="6">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="7">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=0 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="8">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=2 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--AfrDeprecated -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDFraLabel">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    SnappableFlag          ="2"
+                    AutoCloseDialogBoxFlag ="0"
+                    ViewParent             ="@ViewParent"
+                    TitleDialogBox         ="@Title"
+                    IconName               ="@IconName"
+                    CreateDialogBoxFlag    ="@RootFlag"
+                    ResizableDialogBoxFlag ="@ResizableFlag"
+                    CompactDialogBoxFlag   ="@CompactFlag"
+                    ContentPanelVisibleFlag="@ContentVisibleFlag"
+                    TitleBarVisibleFlag    ="@TitleBarVisibleFlag"
+                    AnchorPoint            ="@AnchorPoint"
+                    ConnectionPoint        ="@OffsetPoint"
+                    VisibleFlag            ="@Visibility"
+                    InitialDockArea        ="@InitialDockArea"
+                    ExtractedFlag          ="@ExtractedFlag"
+                    StandardButtonClick    ="@StandardButtonClick"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    CloseButtonDialogBoxFlag ="@CloseButtonFlag"
+                    PanelClosed            ="@CloseCB">
+      <CATVidLayStack VisibleFlag="@Visibility"
+                      syp:name="Container"
+                      Orientation="@Orientation"
+                      StackAttachmentAppendPolicy="StretchAttachmentPolicy"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--AfrDeprecated -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDFraMessageBox">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    SnappableFlag          ="4"
+                    AutoCloseDialogBoxFlag ="@AutoCloseFlag"
+                    ContentPanelVisibleFlag="1"
+                    ViewParent             ="@ViewParent"
+                    TitleDialogBox         ="@Title"
+                    IconName               ="@IconName"
+                    CreateDialogBoxFlag    ="1"
+                    ResizableDialogBoxFlag ="1"
+                    CompactDialogBoxFlag   ="1"
+                    DialogButtons          ="@DialogButtons"
+                    StandardButton         ="@StandardButton Mode=OneWayToSource"
+                    ModalFlag              ="@ModalFlag"
+                    VisibleFlag            ="@Visibility"
+                    TextMesBox             ="@TextMesBox"
+                    DetailedTextMesBox     ="@DetailedTextMesBox"
+                    InforTextMesBox        ="@InforTextMesBox"
+                    MsgBoxIconType         ="@MsgBoxIconType"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    PanelClosed            ="@CloseCB"
+                    StandardButtonClick    ="@StandardButtonClick"
+                    CloseButtonDialogBoxFlag ="@CloseButtonFlag"
+                    ExtractedFlag          ="@ExtractedFlag">
+      <CATVidLayGrid/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--AfrDeprecated -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDFraDialog">
+  <CATAfrSYPModelViewMetaData UpdateAtFinalizeView = "1">
+    <CATAfrSmartCtl Name                   ="@Name"
+                    SnappableFlag          ="3"
+                    TitleDialogBox         ="@Title"
+                    IconName               ="@IconName"
+                    ViewParent             ="@ViewParent"
+                    CreateDialogBoxFlag    ="@RootFlag"
+                    ResizableDialogBoxFlag ="@ResizableFlag"
+                    CompactDialogBoxFlag   ="@CompactFlag"
+                    AutoCloseDialogBoxFlag ="@AutoCloseFlag"
+                    PanelDeleted           ="@ViewDeletedCB"
+                    MinimizeCB             ="@MinimizeCB"
+                    StandardButton         ="@StandardButton Mode=OneWayToSource"
+                    DialogButtons          ="@DialogButtons"
+                    StandardButtonClick    ="@StandardButtonClick"
+                    VisibleFlag            ="@Visibility"
+                    ModalFlag              ="@ModalFlag"
+                    ExtractedFlag          ="@ExtractedFlag"
+                    CloseButtonDialogBoxFlag ="@CloseButtonFlag"
+                    PanelClosed            ="@CloseCB">
+      <CATVidLayGrid syp:name="MainContainer"
+                     GridWeight="row1=1 col1=1">
+        <CATVidLayGrid syp:name="ContainerToolbar"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"
+                       GridWeight="col1=1">
+          <CATVidCtl syp:name="AccessToolbarLeft"
+                     CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+          <CATVidGPSquare syp:name="AccessToolbarSpace"
+                          CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidCtl syp:name="AccessToolbar"
+                     CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RTB"/>
+        </CATVidLayGrid>
+        <CATVidLayGrid syp:name="Container"
+                       VisibleFlag="@Visibility"
+                       GridAppendPolicy="@Orientation"
+                       CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATAfrSmartCtl>
+    </CATAfrSYPModelViewMetaData>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="ToolBarPos" Value="1">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="2">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="3">
+        <CATSYPSetter IndexName="ContainerToolbar" Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="4">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="5">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="6">
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=1 y=2 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=LTB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=1 y=0 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=2 y=0 attach=RTB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="7">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=0 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ToolBarPos" Value="8">
+        <CATSYPSetter Property="GridWeight" TargetName="ContainerToolbar" Value="row1=1"/>
+        <CATSYPSetter IndexName="ContainerToolbar"   Property="IndexedConstraints" TargetName="MainContainer" Value="x=2 y=1 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarLeft"  Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=0 attach=TB"/>
+        <CATSYPSetter IndexName="AccessToolbarSpace" Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=1 attach=RLTB"/>
+        <CATSYPSetter IndexName="AccessToolbar"      Property="IndexedConstraints" TargetName="ContainerToolbar" Value="x=0 y=2 attach=TB"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!--AfrDeprecated -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDTagFraPanel">
+    <CATAfrSmartCtl Name                       ="@Name"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    ViewParent                 ="@ViewParent"
+                    PanelDeleted               ="@ViewDeletedCB"
+                    InitialDockArea            ="LeftDockArea"
+                    CreateDialogBoxFlag        ="1"
+                    ToolbarFlag                ="1"
+                    SnappableFlag              ="1"
+                    PanelVAlignment            ="0"
+                    PanelHAlignment            ="0"
+                    ContentPanelVisibleFlag    ="1"
+                    ResizableDialogBoxFlag     ="0"
+                    CompactDialogBoxFlag       ="1"
+                    AutoCloseDialogBoxFlag     ="1"
+                    VerticallyStretchableFlag  ="1"
+                    VisibleFlag                ="@Visibility">
+      <CATVidCtl syp:name="Container"
+                 VisibleFlag="@Visibility"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+  <!--===================================-->
+  <!-- AfrDeprecated -->
+  <!--===================================-->
+  <DataTemplate syp:name="CATCAfrWindow_AfrVIDQuickPickFraPanel">
+    <CATAfrSmartCtl Name                       ="@Name"
+                    TitleDialogBox             ="@Title"
+                    IconName                   ="@IconName"
+                    ViewParent                 ="@ViewParent"
+                    CreateDialogBoxFlag        ="@RootFlag"
+                    InitialDockArea            ="LeftDockArea"
+                    SnappableFlag              ="11"
+                    ContentPanelVisibleFlag    ="1"
+                    ResizableDialogBoxFlag     ="0"
+                    CompactDialogBoxFlag       ="1"
+                    VerticallyStretchableFlag  ="1"
+                    VisibleFlag                ="@Visibility"
+                    PanelDeleted               ="@ViewDeletedCB">
+      <CATVidCtl syp:name="Container"
+                 VisibleFlag="@Visibility"/>
+    </CATAfrSmartCtl>
+  </DataTemplate>
+
+</Styles>

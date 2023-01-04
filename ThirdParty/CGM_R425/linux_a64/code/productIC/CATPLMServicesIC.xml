@@ -1,0 +1,49 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CATPLMServices.tst"/>
+  <attached name = "CATPLMServices_Unit.tst"/>
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMIntegrationAccess.tst"/>
+  <attached name = "CATPLMImplAdapter.tst"/>
+  <attached name = "CATPLMImplAdapterQL.tst"/>
+  <attached name = "CATPLMImplAdapterMQL.tst"/>
+  <attached name = "CATEnoviaVaultSystem.tst"/>
+  <attached name = "CATPLMIntegrationAsync.tst"/>
+  <attached name = "CATPLMModelerLanguage.tst"/>
+  <attached name = "CATPLMCommunication.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "PLMDictionaryInterfaces"/>
+  <prerequisite access = "Protected" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentification"/>
+  <prerequisite access = "Protected" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" comment = "structure CATPLMReplicationStreamInfo incluant un membre de type CATVVSUrl " expose = "ExposePrereq" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" comment = "V6 for Maintenance " expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Public" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "PLMPosBaseInterfaces"/>
+  <authorize access = "Private" name = "CATPLMImplAdapter"/>
+  <authorize access = "Private" name = "CATPLMImplAdapter.tst"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterQL"/>
+  <authorize access = "Private" name = "CATPLMServices"/>
+  <authorize access = "Private" name = "CATPLMCommunication"/>
+  <authorize access = "Private" name = "CATPLMIntegrationBase"/>
+  <authorize access = "Private" name = "CATPLMAdapterOdtBase.tst"/>
+  <authorize access = "Private" name = "CATPLMAdapterOdtBaseImport.tst"/>
+  <authorize access = "Private" name = "CATPLMImplDebug.tst"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterQL.tst"/>
+  <authorize access = "Private" name = "CATPLMImplAdapterMQL.tst"/>
+  <authorize access = "Private" name = "CATPLMImplDebug"/>
+  <authorize access = "Private" name = "CATEnoviaVaultSystem.tst"/>
+  <authorize access = "Private" name = "CATAsyncStreamFoundation"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess"/>
+  <authorize access = "Private" name = "CATPLMImplMx"/>
+  <authorize access = "Private" name = "CATPLMQL"/>
+  <authorize access = "Private" name = "CATPLMIntegration"/>
+  <authorize access = "Private" name = "CATPLMProviderDebug"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

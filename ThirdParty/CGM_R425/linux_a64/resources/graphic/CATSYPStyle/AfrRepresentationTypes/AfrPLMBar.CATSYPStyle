@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<!--@Used AfrFoundation\CATAfrModelAndReps.m\src\CATAfrBottomToolbar.cpp-->
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP"> 
+
+  <Resources>
+    <ResourceDictionary Source="AfrRepresentationTypes/AfrExtraRepresentation.CATSYPStyle"/>
+    <ResourceDictionary Source="AfrTopBar.CATSYPStyle"/>
+    <ResourceDictionary Source="CATAfrIconBox.CATSYPStyle"/>
+  </Resources>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                           TOP BAR SIGNATURE                                                -->
+  <!--*************************************************************************************************************************-->
+
+  <!-- ======================================================================-->
+  <!-- ===============            MAIN CONTAINER       =======================-->
+  <!-- ======================================================================-->
+  <Template syp:name="AfrPLMBarSignature" Target="CATAfrSYPContainerView" syp:version="5">
+    <CATAfrSYPContainerViewMetaData SypNamePosition="TopBarContainer" AlwaysVisibleFlag="1" >
+      <CATAfrSYPContainerViewMetaData.ControllerPresenter>
+        <CATAfrTopBarController syp:name="Controller"   />
+      </CATAfrSYPContainerViewMetaData.ControllerPresenter>
+  
+      <CATAfrSmartCtl  Viewer="@Viewer" Name="@Name" ViewParent="@Parent" InitialDockArea="TopDockArea" VisibleFlag="@WidgetsPanelVisibility" ToolbarFlag="1"
+                  CreateDialogBoxFlag="@CreateDialogBoxFlag" DoNotDispatchTunnelInformationFlag="1"
+                  ConstraintsDialogBox="widthPercent=100 topPercent=0">
+        <CATVidLayLayer>
+          <CATAfrVidTopBar syp:name="Container" AppTitle="@AppTitle ElementName=Controller" 
+                           BrandName="@BrandName ElementName=Controller" 
+                           UserName="@UserName ElementName=Controller" 
+                           Editor="@Editor ElementName=Controller" 
+                           CompassVisibleFlag="@InsideViewerFlag ElementName=Controller"
+                           Items="@ToolsItems Mode=OneWayToSource"
+                           ResponsiveFlag="1">
+            <!--Container For Compass -->
+            <CATAfrVidTopBar.CompassContainer>
+              <CATVidCtl syp:name="SupraContainerCompassPosition" />
+            </CATAfrVidTopBar.CompassContainer>
+            <!--Container For Search -->
+            <CATAfrVidTopBar.SearchContainer>
+              <CATVidLayLayer EnableFlag="@EditorEnableFlag ElementName=Controller" RequestedMinimumDimension="100 24" LayoutWhenUnvisibleFlag="0">
+
+
+                <CATVidGPNinePatchSquare  ScalableAreaBorder="4" Texture="PLMBar/Search_backround.png"></CATVidGPNinePatchSquare>
+                <CATVidLayGrid syp:name="Grid"  GridWeight="col1=1 row2=1" >
+                  <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                  <CATVidLayGrid GridWeight="col1=1"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+                    <!---->
+                    <CATVidCtl syp:name="SearchMenuPosition" VisibleFlag="1"  LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                    <CATVidLayLayer syp:name="SearchFieldPosition" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+
+                  </CATVidLayGrid>
+                  <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+
+                </CATVidLayGrid>
+              </CATVidLayLayer>
+            </CATAfrVidTopBar.SearchContainer>
+            <!--Container For Refinement Button -->
+            <CATAfrVidTopBar.RefinementContainer>
+              <CATVidCtl syp:name="SearchRefinement" LayoutWhenUnvisibleFlag="0"/>
+            </CATAfrVidTopBar.RefinementContainer>
+             <!--Container For Home Menu Container -->
+             <!--<CATAfrVidTopBar.HomeMenuContainer>
+                <CATVidCtl syp:name="HomeMenuPosition" LayoutWhenUnvisibleFlag="0" VisibleFlag="1"/>
+             </CATAfrVidTopBar.HomeMenuContainer>-->
+
+             <!--Container For Blocking square of menu during record -->
+            <CATAfrVidTopBar.BlockingSquareCtl>
+              <CATVidGPSquare syp:name="BlockingSquareForMenu" Name="BlockingSquareForMenu" UseManipulatorFlag="1" VisibleFlag="0"/>
+            </CATAfrVidTopBar.BlockingSquareCtl>
+
+          </CATAfrVidTopBar>
+          <!--Blocking square of all the Top Bar during record -->
+          <CATVidGPSquare syp:name="BlockingSquareForRecord" Name="BlockingSquareForRecordTopBar" UseManipulatorFlag="1" VisibleFlag="0"/>
+        </CATVidLayLayer>
+
+    </CATAfrSmartCtl>
+    </CATAfrSYPContainerViewMetaData>
+  </Template>
+  <!-- ======================================================================-->
+  <!-- ===============            MAIN STARTER       =======================-->
+  <!-- ======================================================================-->
+  <Template syp:name="AfrPLMBarSignature" Target="CATAfrSYPStarterView">
+    <CATAfrSYPStarterViewMetaData  >
+      <CATVidLayGrid GridWeight="col1=1">
+        <CATVidCtlButtonIcon syp:name="Button" syp:Template="Icon" Name="@Name"
+                           CheckMode="1"
+                           IconDimension="32 32"
+                           RequestedMinimumDimension="32 32"
+                           ClickMode="0"
+                           CheckState="@ActivationWidget Mode=TwoWays"
+                           EnableFlag="@EnableWidget"
+                           CropPolicy="NoCrop"
+                           Label="@TitleIfNoIcon"
+                           OffTexture="@NormalIcon"
+                           OnTexture="@SelectedIcon"
+                           OverTexture="@FocusedIcon"
+                           Tooltip="@Help"
+                           Click="@ActionEvent"
+                             CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"
+                         />
+        <CATVidGPSquare RequestedMinimumDimension="15 8" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" />
+      </CATVidLayGrid>
+
+    </CATAfrSYPStarterViewMetaData>
+
+  </Template>
+  <!--*****************************************END  MAIN TOP BAR SIGNATURE CONTAINER ***********************************************-->
+
+
+  <!--*************************************************************************************************************************-->
+  <!--                                            ZEARCH ZONE                                                          -->
+  <!--*************************************************************************************************************************-->
+ <!-- ======================================================================-->
+  <!-- ===============            ZEARCH MENU         =======================-->
+  <!-- ======================================================================-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrSearchMenu" syp:version="1">
+    <CATAfrSYPModelViewMetaData syp:name="MetaData" RegisteredFlag="1" NameBis="@Name" SypNamePosition="SearchMenuPosition">
+      <!--IconBox like HoverMenu-->
+      
+        <CATAfrVidIconBoxCtl  syp:Template="WhiteMenu"  Name="@NameBis ElementName=MetaData" Orientation="Vertical" syp:name="Container"
+                         PopupVisibleFlag="@ContentVisibleFlag Mode=TwoWays" VisibleArrowFlag="0"
+                         UsePresenterIconContentFlag="0" LayoutWhenUnvisibleFlag="0" VisibleFlag="@Visibility"
+                         IconBoxHidePolicy="AutoHide"
+                         IconBoxShowPolicy="ShowOnClick" ForceSnapFlag="1"
+                         IconBoxDirection="Bottom" PopupCenteredFlag="0"
+                         InitialOffset="0 0" PopupShown="@HandleEventMenuDeployed"  PresenterClick="@HandleActionEvent" PopupHidden="@HandleEventMenuHidden"
+                       >
+          <!--Presenter of Icon Box-->
+          <CATVidCtl >
+             <CATVidLayGrid GridWeight="col1=1">
+              <CATVidSpacer RequestedMinimumDimension="0 5" CATVidLayGrid.IndexedConstraints="x=0 y=0  attach=RLTB"/>
+               <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1  attach=RLTB" >
+                   <CATVidCtlButtonIcon syp:name="MenuButton" syp:Template="IconText" Name="@Name"
+                           CheckMode="1"
+                           IconDimension="12 12"
+                           ForegroundColor="255 255 255 255"
+                           ClickMode="0"
+                           CheckState="@ContentVisibleFlag"
+                           CropPolicy="CropWithDots"
+                           Label="@Title"
+                           LayoutWhenUnvisibleFlag="0"
+                           FontHeight="18"
+                           UnderlineFlag="@HasChildsFlag"
+                           OverTexture="PLMBar/I_SearchArrow.png" 
+                           OffTexture="PLMBar/I_SearchArrow.png"
+                           OnTexture="PLMBar/I_SearchArrow.png"
+                           Tooltip="@Tooltip"
+                           Click="@HandleShowEvent ElementName=Container"
+                           CursorShape="NorthHandCursor"       />
+                 <!--Different button if multitouch mode is activated-->
+                 <CATVidCtlButtonIcon syp:name="MenuButtonTouch" syp:Template="IconTextTouch" Name="@NameTer ElementName=MetaData"
+                           CheckMode="1"
+                           IconDimension="12 12"
+                           RequestedMinimumDimension="32 28"
+                           ForegroundColor="255 255 255 255"
+                           ClickMode="0"
+                           CheckState="@ContentVisibleFlag"
+                           CropPolicy="CropWithDots"
+                           Label="@Title"
+                           LayoutWhenUnvisibleFlag="0" VisibleFlag="0"
+                           FontHeight="18"
+                           UnderlineFlag="@HasChildsFlag"
+                           OverTexture="PLMBar/I_SearchArrow.png" 
+                           OffTexture="PLMBar/I_SearchArrow.png"
+                           OnTexture="PLMBar/I_SearchArrow.png"
+                           Tooltip="@Tooltip"
+                           Click="@HandleShowEvent ElementName=Container"
+                           CursorShape="NorthHandCursor"       />
+               </CATVidLayLayer>
+              <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=2 y=2  attach=RLTB"/>
+            </CATVidLayGrid>
+
+          </CATVidCtl>
+        </CATAfrVidIconBoxCtl>
+    </CATAfrSYPModelViewMetaData>
+    <CATSYPTriggerCollection>
+      <!--Trigger when touch mode is activated-->
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="MenuButton" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="MenuButtonTouch" Value="1"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+  <!-- ======================================================================-->
+  <!-- ===============            ZEARCH COMBO   DEPRECATED      =======================-->
+  <!-- ======================================================================-->
+   <Template syp:name="AfrPLMBarCombo" Target="CATAfrSYPStarterView">
+    <CATAfrSYPModelViewMetaData syp:name="MetaData" RegisteredFlag="1" SypNamePosition="SearchFieldPosition">
+
+
+                   <CATVidLayGrid  GridWeight="col1=1 row1=1" LayoutWhenUnvisibleFlag="0" VisibleFlag="@VisibleFlag"  RequestedMinimumDimension="90 10" Dimension="90 10" >
+                     <!-- <CATVidSpacer RequestedMinimumDimension="4 2" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=2 attach=RLTB"/> -->
+                     <CATVidSpacer RequestedMinimumDimension="4 1" CATVidLayGrid.IndexedConstraints="x=0 xSpan=2 y=0 attach=RLTB"/>
+                       <CATVidCtlLineEditor TextMargins="5 3 4 4" BorderVisibleFlag="0" syp:name="PLMBarCombo"  Name="@Name" FontHeight="11" SelectAllTextOnFocusFlag="1"
+                                            PlaceholderText="Ready to search"
+                                            ResetButtonVisibleFlag="1" BackgroundColor="255 255 255 0"
+                                            RequestedMinimumDimension="90 10" Dimension="90 10" 
+                                            ReturnPressed="@ActionEvent"
+                                            CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+
+                     <CATVidCtlButtonIcon Name="PLMBarButton"
+                               syp:name="PLMBarButton"
+                               syp:Template="Icon"
+                               CheckMode="1"
+                               ClickMode="0"
+                               CheckState="@ActivationWidget Mode=TwoWays"
+                               EnableFlag="@EnableWidget"
+                               CropPolicy="NoCrop"
+                               IconDimension="24 24"
+                               RequestedMinimumDimension="24 24"
+                               OffTexture="@NormalIcon"
+                               OverTexture="@FocusedIcon"
+                               OnTexture="@NormalIcon"
+                               FocusableFlag="0"
+                               KeyboardManipulationFlag="0"
+                               LayoutWhenUnvisibleFlag="0"
+                               Tooltip="@ShortHelp"
+                               LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                               LongHelpId="@LongHelpId"
+                               Click="@ActionEvent" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=R"
+                        />
+                     <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=2 attach=RLTB"/> 
+
+                   </CATVidLayGrid>
+
+
+    </CATAfrSYPModelViewMetaData>
+
+  </Template>
+<!-- ======================================================================-->
+  <!-- ===============            ZEARCH COMBO WITH LIST         =======================-->
+  <!-- ======================================================================-->
+  <DataTemplate syp:name="CATCAfrMenu_AfrEditor" syp:version="2">
+    <CATAfrSYPModelViewMetaData syp:name="MetaData" RegisteredFlag="1" SypNamePosition="SearchFieldPosition" NormalIcon="@Icon" NameBis="@Name">
+    <!--Controller of the view to bind extra properties -->
+      <CATAfrSYPModelViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="Editor:=ExtraViewPresenter.PresenterContent EditorEnableFlag:=Grid.EnableFlag"/>
+      </CATAfrSYPModelViewMetaData.ControllerPresenter>
+      <CATVidLayLayer Name="@NameBis ElementName=MetaData" VisibleFlag="@Visibility" LayoutWhenUnvisibleFlag="0">
+        <CATVidGPNinePatchSquare  ScalableAreaBorder="4" Texture="border_backround.png"></CATVidGPNinePatchSquare>
+
+        <CATVidLayGrid  syp:name="Grid" GridWeight="col1=1 row1=1"  RequestedMinimumDimension="90 10" >
+          <CATVidSpacer RequestedMinimumDimension="4 1" CATVidLayGrid.IndexedConstraints="x=0 xSpan=2 y=0 attach=RLTB"/>
+          <!--Extended view of an editor -->
+          <CATAfrVidExtraViewPresenter  syp:name="ExtraViewPresenter" ExtraViewDataTemplate="AfrComboWithList"
+                                               PropertiesBinding="Editor.Name:=Name Editor.Text:=:Title Editor.PopupVisibleFlag:=ContentVisibleFlag Editor.ReturnPressed=:HandleActionEvent  Editor.ReturnReleased=:HandleActionEvent  Editor.TextChanged=:HandleEventMenuDeployed Editor.SelectionChanged=:HandleEventSelectText Editor.TextActivated=:HandleEventTextActivated Editor.EditingFinished=:HandleEventMenuHidden Editor.EnableFlag=:Grid.EnableFlag"
+                                               ProxyContainer="Editor"
+                                              CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+
+          <CATVidLaySideAttach syp:name="SideAttach"  CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" RequestedMinimumDimension="24 24">
+            <!--Icon Button of Search -->
+            <CATVidCtlButtonIcon Name="@NameTer ElementName=MetaData"
+                                 syp:name="SearchButton"
+                                 syp:Template="Compact"
+                                 CheckMode="1"
+                                 ClickMode="0"
+                                 CheckState="@ActivationWidget Mode=TwoWays"
+                                 CropPolicy="NoCrop"
+                                 IconDimension="24 24"
+                                 RequestedMinimumDimension="24 24"
+                                 OffTexture="@ConvertedNormalIcon ElementName=MetaData"
+                                 OverTexture="@ConvertedFocusedIcon ElementName=MetaData"
+                                 OnTexture="@ConvertedNormalIcon ElementName=MetaData"
+                                 FocusableFlag="0"
+                                 KeyboardManipulationFlag="0"
+                                 LayoutWhenUnvisibleFlag="0"
+                                 Tooltip="@Tooltip"
+                                 LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongTooltip"  TooltipTitle="@Title"
+                                 Click="@HandleActionEvent"
+                                 CATVidLaySideAttach.IndexedConstraints="leftPx=0 topPercent=50"
+                        />
+          </CATVidLaySideAttach>
+          <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATAfrSYPModelViewMetaData>
+    <CATSYPTriggerCollection>
+      <!--Trigger when touch mode is activated-->
+      <CATSYPTrigger Property="TouchFlag" Value="1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SearchButton" Value="48 48"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="SideAttach" Value="32 24"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </DataTemplate>
+
+  
+
+  <!-- ======================================================================-->
+  <!-- =============== Starter for Refinement Panel =======================-->
+  <!-- ======================================================================-->
+  <Template syp:name="AfrRefinementButton" Target="CATAfrSYPStarterView" syp:version="1">
+    <CATAfrSYPModelViewMetaData SypNamePosition="SearchRefinement">
+        <CATVidCtlButtonIcon syp:name="Button"  Name="@Name"
+                           CheckMode="1"
+                           IconDimension="44 44"
+                           RequestedMinimumDimension="44 44"
+                           ClickMode="0"
+                           CheckState="@ActivationWidget Mode=TwoWays"
+                           VisibleFlag="@EnableWidget"
+                           LayoutWhenUnvisibleFlag="0"
+                           CropPolicy="NoCrop"
+                           OffTexture="@NormalIcon"
+                           OnTexture="@SelectedIcon"
+                           OverTexture="@FocusedIcon"
+                           OnAndOverTexture="@FocusedIcon"
+                           Tooltip="@Help"
+                           LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                           LongHelpId="@LongHelpId"
+                           Click="@ActionEvent"
+                         />
+
+    </CATAfrSYPModelViewMetaData>
+
+
+  </Template>
+
+  <!--*****************************************             END ZEARCH ZONE         *****************************************-->
+    <!--                                            AfrBottomRight                                                           -->
+  <Template syp:name="AfrBottomRight" Target="CATAfrSYPContainerView">
+    <CATAfrSmartCtl   LayoutWhenUnvisibleFlag="0"
+                      Name="@Name"
+                      CreateDialogBoxFlag="@CreateDialogBoxFlag"
+                      ConstraintsDialogBox="leftPercent=100 topPercent=100" UseRestrictedAreaFlag="1" Viewer="@Viewer">
+      <CATVidLayStack Items="@ToolsItems Mode=OneWayToSource"  CellBorder="2"
+                          Orientation="Horizontal"/>
+    </CATAfrSmartCtl>
+  </Template>
+    <Template syp:name="AfrBottomRight" Target="CATAfrSYPStarterView">
+      <CATVidCtlButtonIcon Name="@Name"
+                           syp:Template="Icon"
+                           CheckMode="1"
+                           ClickMode="0"
+                           CheckState="@ActivationWidget Mode=TwoWays"
+                           EnableFlag="@EnableWidget"
+                           CropPolicy="CropWithDots"
+                           IconDimension="28 28"
+                           RequestedMinimumDimension="28 28"
+                           OffTexture="@NormalIcon"
+                           OnTexture="@SelectedIcon"
+                           OverTexture="@FocusedIcon"
+                           KeyboardManipulationFlag="1"
+                           LayoutWhenUnvisibleFlag="0"
+                           Tooltip="@Help"
+                           LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                           LongHelpId="@LongHelpId"
+                           Click="@ActionEvent"/>
+  </Template>
+
+  <!--*************************************************************************************************************************-->
+  <!--                                              RIGHT ELEMENTS ZONE                                                        -->
+  <!--*************************************************************************************************************************-->
+
+  <!--==========================================================================================-->
+  <!--===========================    TOP BAR LABEL     =========================================-->
+  <!--==========================================================================================-->
+  <Template syp:name="AfrPLMBarText" Target="CATAfrSYPStarterView" syp:version="2"><!--Remove RequestedMinimumDimension="140 1"-->
+    <CATAfrSYPModelViewMetaData  SypNamePosition="CurrentAppliNamePosition">
+      <CATAfrSYPModelViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="AppTitle:=Label.Label"/>
+      </CATAfrSYPModelViewMetaData.ControllerPresenter>
+      <CATVidCtlButton syp:name="Label"  Label="@Title"/>
+      <!--<CATVidGPLabel Name="AfrStatusBarLabel" syp:name="Label" LayoutWhenUnvisibleFlag="0"
+                Text="@Title" BoldFlag="0"  FontName="3ds"
+                TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="CropWithDots" TextColor="255 255 255 255"/>-->
+       <!--<CATAfrVidSmartContainer syp:name="SmartContainer" NotifyVisibleItemsFlag="1" >
+         <CATVidGPLabel Name="AfrStatusBarLabel" syp:name="Label" VisibleFlag="@AllItemsVisibleFlag ElementName=SmartContainer" LayoutWhenUnvisibleFlag="0"
+                         Text="@Title" BoldFlag="0"
+                         TextHeight ="20" VerticalAlignment="1" HorizontalAlignment="0" RequestedMinimumDimension="100 20" CropPolicy="CropWithDots" TextColor="255 255 255 255"/>
+       </CATAfrVidSmartContainer>-->
+
+    </CATAfrSYPModelViewMetaData>
+    <!--<CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="ShowVisibleItems" TargetName="SmartContainer">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Label" Value="100 20"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="HideVisibleItems" TargetName="SmartContainer">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Label" Value="0 20"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>-->
+
+  </Template>
+  <Template syp:name="AfrTopBarTitle" Target="CATAfrSYPStarterView" syp:version="1">
+    <CATAfrSYPModelViewMetaData  SypNamePosition="UserNamePosition" >
+      <CATAfrSYPModelViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="UserName:=Label.Label"/>
+      </CATAfrSYPModelViewMetaData.ControllerPresenter>
+      <CATVidCtlButton syp:name="Label"  Label="@Title"/>
+      <!--<CATAfrVidSmartContainer syp:name="SmartContainer" NotifyVisibleItemsFlag="1">VisibleFlag="@AllItemsVisibleFlag ElementName=SmartContainer"-->
+
+              <!--<CATVidGPLabel Name="AfrStatusBarLabel" syp:name="Label"
+                        LayoutWhenUnvisibleFlag="0"
+                       Text="@Title" FontName="3ds"
+                       TextHeight="18"
+                       VerticalAlignment="1"
+                       HorizontalAlignment="2"
+                       CropPolicy="CropWithDots"
+                       TextColor="255 255 255 255" />-->
+   
+
+      <!--</CATAfrVidSmartContainer>-->
+
+
+
+    </CATAfrSYPModelViewMetaData>
+       <!--<CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="ShowVisibleItems" TargetName="SmartContainer">
+        <CATSYPSetter Property="CropPolicy" TargetName="Label" Value="NoCrop"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="HideVisibleItems" TargetName="SmartContainer">
+        <CATSYPSetter Property="CropPolicy" TargetName="Label" Value="CropCut"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>-->
+  </Template>
+  <Template syp:name="AfrTopBarBrand" Target="CATAfrSYPStarterView" syp:version="1">
+    <CATAfrSYPModelViewMetaData  SypNamePosition="CurrentBrandNamePosition">
+      <CATAfrSYPModelViewMetaData.ControllerPresenter>
+        <CATAfrSYPController DelayBinding="BrandName:=Label.Label"/>
+      </CATAfrSYPModelViewMetaData.ControllerPresenter>
+      <CATVidCtlButton syp:name="Label"  Label="@Title"/>
+      <!--<CATVidGPLabel Name="AfrBrandLabel" syp:name="Label" LayoutWhenUnvisibleFlag="0"
+                Text="@Title" BoldFlag="1" FontName="3ds"
+                TextHeight ="19" VerticalAlignment="1" HorizontalAlignment="0"  CropPolicy="NoCrop" TextColor="255 255 255 255"/>-->
+       <!--<CATAfrVidSmartContainer syp:name="SmartContainer" NotifyVisibleItemsFlag="1" >
+         <CATVidGPLabel Name="AfrStatusBarLabel" syp:name="Label" VisibleFlag="@AllItemsVisibleFlag ElementName=SmartContainer" LayoutWhenUnvisibleFlag="0"
+                         Text="@Title" BoldFlag="0"
+                         TextHeight ="20" VerticalAlignment="1" HorizontalAlignment="0" RequestedMinimumDimension="100 20" CropPolicy="CropWithDots" TextColor="255 255 255 255"/>
+       </CATAfrVidSmartContainer>-->
+
+    </CATAfrSYPModelViewMetaData>
+    <!--<CATSYPTriggerCollection>
+      <CATSYPEventTrigger RoutedEvent="ShowVisibleItems" TargetName="SmartContainer">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Label" Value="100 20"/>
+      </CATSYPEventTrigger>
+      <CATSYPEventTrigger RoutedEvent="HideVisibleItems" TargetName="SmartContainer">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="Label" Value="0 20"/>
+      </CATSYPEventTrigger>
+    </CATSYPTriggerCollection>-->
+
+  </Template>
+  
+  <!--******************************************** END RIGHT ELEMENTS ZONE *****************************************************-->
+
+</Styles>

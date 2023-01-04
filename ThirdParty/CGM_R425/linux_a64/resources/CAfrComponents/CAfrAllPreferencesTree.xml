@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <!--======================================-->
+  <!-- CATCAfrTree_All-->
+  <!--======================================-->
+  <Template syp:name="CATCAfrTree_All" Target="CATCAfrInclude">
+
+    <CATCAfrForm Name ="MyPreferencesTree2"
+                 Title ="All Preferences"
+                 Visibility ="1"
+                 RepresentationType="AfrFullSpace"
+                 IconName = "Preferences\\Options_Customize_Small.png"
+                 ResourceFile = "CATCAllPreferencesTree">
+                 
+      <CATCAfrTree Name="AllPreferences"
+                   Display="All Preferences"
+                   Tooltip="All Preferences"
+                   Visibility ="1"
+                   RepresentationType="Classic"
+                   SelectionMode="MultiRange"
+                   RootDecorationFlag="0"
+                   ExpanderLook="Arrow"
+                   ExpandedFlag="1"
+                   RegisterFlag="1"
+                   MinimumDimension="200 325"
+                 ResourceFile = "CATCAllPreferencesTree">
+
+        <CATCAfrTree Name="Common_Preferences" Icon="Preferences\\Pref_homecompass_1.png" Visibility ="1" Display="3DEXPERIENCE Platform Common Preferences" Tooltip="Common preferences for all apps" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="CommonPref_General" Icon="Preferences\\Parameter_Small.png" Display="General" Tooltip="General preferences for all apps"/>
+          <CATCAfrTree Name="Display" Icon="Preferences\\I_Display_On.png" Display="Display" Tooltip="Display preferences"/>
+          <CATCAfrTree Name="Modeling" Icon="Preferences\\I_Modeling.png" Display="Modeling" Tooltip="Modeling preferences"/>
+          <CATCAfrTree Name="Content_Access" Icon="Preferences\\Pref_homecompass_1.png" Display="Content Access" Tooltip="Content Access preferences"/>
+          <CATCAfrTree Name="3DMessaging" Icon="Preferences\\Pref_homecompass_1.png" Display="3DMessaging" Tooltip="3DMessaging preferences"/>
+          <CATCAfrTree Name="Import" Icon="Preferences\\Pref_homecompass_1.png" Display="Import" Tooltip="File import preferences"/>
+          <CATCAfrTree Name="Compatibility" Icon="Preferences\\Pref_homecompass_1.png" Visibility ="1" Display="Compatibility" Tooltip="Compatibility preferences" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1"/>
+          <CATCAfrTree Name="Immersive_Virtuality" Icon="I_VRIcon.bmp" Display="Immersive Virtuality" Tooltip="Immersive Virtuality preferences for all apps" ExpanderLook="Arrow" RootDecorationFlag="1"/>
+          <CATCAfrTree Name="3D_Annotations" Icon="Preferences\\Pref_homecompass_1.png" Display="3D Annotations" Tooltip="3D Annotations" ExpanderLook="Arrow" RootDecorationFlag="1"/>
+          <!--CATCAfrTree Name="Native_Apps_Common_Preferences" Icon="Preferences\\NFO1_Icon1.png" Visibility ="1" Display="Native Apps Common Preferences" Tooltip="Preferences for all native apps" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="General" Icon="Preferences\\Parameter_Small.png" Display="General" Tooltip="General preferences"/>
+            <CATCAfrTree Name="Display" Icon="Preferences\\I_Display_On.png" Display="Display" Tooltip="Display preferences"/>
+            <CATCAfrTree Name="Modeling" Icon="Preferences\\I_Modeling.png" Display="Modeling" Tooltip="Modeling preferences"/>
+            <CATCAfrTree Name="Import" Icon="Preferences\\Pref_homecompass_1.png" Display="Import" Tooltip="File import preferences"/>
+            <CATCAfrTree Name="Compatibility" Icon="Preferences\\Pref_homecompass_1.png" Visibility ="1" Display="Compatibility" Tooltip="Compatibility preferences" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1"/>
+          </CATCAfrTree-->
+        </CATCAfrTree>
+        
+
+        <CATCAfrTree Name="Social_And_Collaborative" Icon="Preferences\\Pref_Social_and_CollabApps_Icon.png" Visibility ="1" Display="Social and Collaborative" Tooltip="Preferences for Social and Collaborative Apps" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="3DSwym" Icon="Preferences\\Pref_homecompass_1.png" Display="3DSwym" Tooltip="3DSwym"/>
+          <CATCAfrTree Name="3DSpace" Icon="Preferences\\Pref_homecompass_1.png" Display="3DSpace" Tooltip="3DSpace"/>
+          <CATCAfrTree Name="3DDrive" Icon="Preferences\\Pref_homecompass_1.png" Display="3DDrive" Tooltip="3DDrive"/>
+          <CATCAfrTree Name="Collaboration_and_Approvals" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Collaboration and Approvals" Tooltip="Collaboration and Approvals"/>
+          <CATCAfrTree Name="Folder_Editor" Icon="Preferences\\enolma_ap_appicon22.png" Display="Folder Editor" Tooltip="Folder Editor"/>
+          <CATCAfrTree Name="Relational_IP_Explorer" Icon="Preferences\\enolma_ap_appicon22.png" Display="Relational IP Explorer" Tooltip="Relational IP Explorer"/>
+          <CATCAfrTree Name="Product_Structure_Editor" Icon="Preferences\\enolma_ap_appicon22.png" Display="Product Structure Editor" Tooltip="Product Structure Editor"/>
+          <CATCAfrTree Name="3DLive_Examine" Icon="Preferences\\enolma_ap_appicon22.png" Display="3DLive Examine" Tooltip="3DLive Examine"/>
+          <CATCAfrTree Name="Interactive_Experience" Icon="Preferences\\xctlma_ap_appicon22.png" Visibility ="1" Display="Interactive Experience" Tooltip="Interactive Experience" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Creative_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="Creative Experience" Tooltip="Creative Experience"/>
+            <CATCAfrTree Name="3D_Illustrator" Icon="Preferences\\NFO1_Icon1.png" Display="3D Illustrator" Tooltip="3D Illustrator"/>
+            <CATCAfrTree Name="Human_Animation_Studio" Icon="Preferences\\NFO1_Icon1.png" Display="Human Animation Studio" Tooltip="Human Animation Studio"/>
+            <CATCAfrTree Name="Planets_Studio" Icon="Preferences\\NFO1_Icon1.png" Display="Planets Studio" Tooltip="Planets Studio"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Product_Planning_And_Program_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Product Planning and Program Management" Tooltip="Product Planning and Program Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Collaborative_Tasks" Icon="Preferences\\NFO1_Icon1.png" Display="Collaborative Tasks" Tooltip="Collaborative Tasks"/>
+            <CATCAfrTree Name="Project_Execution" Icon="Preferences\\NFO1_Icon1.png" Display="Project Execution" Tooltip="Project Execution"/>
+            <CATCAfrTree Name="Project_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Project Management" Tooltip="Project Management"/>
+            <CATCAfrTree Name="Program_Change_Control" Icon="Preferences\\NFO1_Icon1.png" Display="Program Change Control" Tooltip="Program Change Control"/>
+            <CATCAfrTree Name="Program_and_Contract_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Program and Contract Management" Tooltip="Program and Contract Management"/>
+            <CATCAfrTree Name="Variant_Analysis_and_Reuse" Icon="Preferences\\NFO1_Icon1.png" Display="Variant Analysis and Reuse" Tooltip="Variant Analysis and Reuse"/>
+            <CATCAfrTree Name="Project_and_DHF_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Project and DHF Management" Tooltip="Project and DHF Management"/>
+            <CATCAfrTree Name="Product_Line" Icon="Preferences\\NFO1_Icon1.png" Display="Product Line" Tooltip="Product Line"/>
+            <CATCAfrTree Name="Collection_Design_and_Development" Icon="Preferences\\NFO1_Icon1.png" Display="Collection Design and Development" Tooltip="Collection Design and Development"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Configuration_and_Change_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Configuration and Change Management" Tooltip="Configuration and Change Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Variant_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Variant Management" Tooltip="Variant Management"/>
+            <CATCAfrTree Name="Configured_BOM" Icon="Preferences\\NFO1_Icon1.png" Display="Configured BOM" Tooltip="Configured BOM"/>
+            <CATCAfrTree Name="3DConfigurator" Icon="Preferences\\NFO1_Icon1.png" Display="3DConfigurator" Tooltip="3DConfigurator"/>
+            <CATCAfrTree Name="Configured_Engineering" Icon="Preferences\\NFO1_Icon1.png" Display="Configured Engineering" Tooltip="Configured Engineering"/>
+            <CATCAfrTree Name="Change" Icon="Preferences\\NFO1_Icon1.png" Display="Enterprise Change Management" Tooltip="Enterprise Change Management"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Global_Design_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Global Design Management" Tooltip="Global Design Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="3D_Review" Icon="Preferences\\NFO1_Icon1.png" Display="3D Review" Tooltip="3D Review"/>
+            <CATCAfrTree Name="Product_Finder_Classic" Icon="Preferences\\NFO1_Icon1.png" Display="Product Finder Classic" Tooltip="Product Finder Classic"/>
+            <CATCAfrTree Name="Product_Finder" Icon="Preferences\\NFO1_Icon1.png" Display="Product Finder" Tooltip="Product Finder"/>
+            <CATCAfrTree Name="System_Finder" Icon="Preferences\\NFO1_Icon1.png" Display="System Finder" Tooltip="System Finder"/>
+            <CATCAfrTree Name="Interference_Finder" Icon="Preferences\\NFO1_Icon1.png" Display="Interference Finder" Tooltip="Interference Finder"/>
+            <CATCAfrTree Name="Simulation_Finder" Icon="Preferences\\NFO1_Icon1.png" Display="Simulation Finder" Tooltip="Simulation Finder"/>
+            <CATCAfrTree Name="Manufacturing_Finder" Icon="Preferences\\NFO1_Icon1.png" Display="Manufacturing Finder" Tooltip="Manufacturing Finder"/>
+            <CATCAfrTree Name="Compare" Icon="Preferences\\NFO1_Icon1.png" Display="Compare" Tooltip="Compare"/>
+            <CATCAfrTree Name="Collaborative_Lifecycle_for_Dashboard" Icon="Preferences\\NFO1_Icon1.png" Display="Collaborative Lifecycle for Dashboard" Tooltip="Collaborative Lifecycle for Dashboard"/>
+            <CATCAfrTree Name="Collaborative_IP_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Collaborative IP Management" Tooltip="Collaborative IP Management"/>
+            <CATCAfrTree Name="Collaborative_Lifecycle" Icon="Preferences\\NFO1_Icon1.png" Display="Collaborative Lifecycle" Tooltip="Collaborative Lifecycle"/>
+            <CATCAfrTree Name="Exchange_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Exchange Management" Tooltip="Exchange Management"/>
+            <CATCAfrTree Name="Design_IP_Classification" Icon="Preferences\\NFO1_Icon1.png" Display="Design IP Classification" Tooltip="Design IP Classification"/>
+            <CATCAfrTree Name="Folder" Icon="Preferences\\NFO1_Icon1.png" Display="Folder" Tooltip="Folder"/>
+            <CATCAfrTree Name="Impact_Analysis" Icon="Preferences\\NFO1_Icon1.png" Display="Impact Analysis" Tooltip="Impact Analysis"/>
+            <CATCAfrTree Name="FLP_Web_Browser" Icon="Preferences\\NFO1_Icon1.png" Display="FLP Web Browser" Tooltip="FLP Web Browser"/>
+            <CATCAfrTree Name="Reminder" Icon="Preferences\\NFO1_Icon1.png" Display="Reminder" Tooltip="Reminder"/>
+            <CATCAfrTree Name="Coexistence_and_Migration" Icon="Preferences\\NFO1_Icon1.png" Display="Coexistence and Migration" Tooltip="Coexistence and Migration" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+              <CATCAfrTree Name="File_Coexistence_and_Migration" Icon="Preferences\\NFO1_Icon1.png" Display="File Coexistence and Migration" Tooltip="File Coexistence and Migration"/>
+              <CATCAfrTree Name="Database_Design_Import" Icon="Preferences\\NFO1_Icon1.png" Display="Database Design Import" Tooltip="Database Design Import"/>
+              <CATCAfrTree Name="ENOVIAvpm" Icon="Preferences\\NFO1_Icon1.png" Display="ENOVIAvpm Coexistence and Migration" Tooltip="ENOVIAvpm Coexistence and Migration"/>
+              <CATCAfrTree Name="ENOVIAVPMV5" Icon="Preferences\\NFO1_Icon1.png" Display="ENOVIA VPM V5 Coexistence and Migration" Tooltip="ENOVIA VPM V5 Coexistence and Migration"/>
+              <CATCAfrTree Name="ENOVIASMT" Icon="Preferences\\NFO1_Icon1.png" Display="ENOVIA SmarTeam V5 Coexistence and Migration" Tooltip="ENOVIA SmarTeam V5 Coexistence and Migration"/>
+              <CATCAfrTree Name="ENOVIAXCAD" Icon="Preferences\\NFO1_Icon1.png" Display="X-CAD Design Coexistence and Migration" Tooltip="X-CAD Design Coexistence and Migration"/>
+              <CATCAfrTree Name="ENOVIA_Manufacturing_Hub_Data_Migration" Icon="Preferences\\NFO1_Icon1.png" Display="ENOVIA Manufacturing Hub Data Migration" Tooltip="ENOVIA Manufacturing Hub Data Migration"/>
+              <CATCAfrTree Name="V4_Integration" Icon="Preferences\\NFO1_Icon1.png" Display="V4 Integration" Tooltip="V4 Integration"/>
+              <CATCAfrTree Name="DELMIA_D5_Integration" Icon="Preferences\\NFO1_Icon1.png" Display="DELMIA D5 Integration" Tooltip="DELMIA D5 Integration"/>
+              <CATCAfrTree Name="SIMULIA_Associative_Interface_for_Abaqus_CAE" Icon="Preferences\\NFO1_Icon1.png" Display="SIMULIA Associative Interface for Abaqus/CAE" Tooltip="SIMULIA Associative Interface for Abaqus/CAE"/>
+            </CATCAfrTree>
+            <CATCAfrTree Name="Design_Review" Icon="Preferences\\NFO1_Icon1.png" Display="Design Review" Tooltip="Design Review"/>
+            <CATCAfrTree Name="Design_Synthesis" Icon="Preferences\\NFO1_Icon1.png" Display="Design Synthesis" Tooltip="Design Synthesis"/>
+            <CATCAfrTree Name="Interference_Check" Icon="Preferences\\NFO1_Icon1.png" Display="Interference Check" Tooltip="Interference Check"/>
+            <CATCAfrTree Name="Volume_Computation" Icon="Preferences\\NFO1_Icon1.png" Display="Volume Computation" Tooltip="Volume Computation"/>
+            <CATCAfrTree Name="Collocation_Data_Exchange" Icon="Preferences\\NFO1_Icon1.png" Display="Collocation Data Exchange" Tooltip="Collocation Data Exchange"/>
+            <CATCAfrTree Name="Engineering_Workspace" Icon="Preferences\\NFO1_Icon1.png" Display="Engineering Workspace" Tooltip="Engineering Workspace"/>
+            <CATCAfrTree Name="X-CAD" Icon="Preferences\\NFO1_Icon1.png" Display="X-CAD" Tooltip="X-CAD" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+              <CATCAfrTree Name="X-CAD_Design_Management" Icon="Preferences\\NFO1_Icon1.png" Display="X-CAD Design Management" Tooltip="X-CAD Design Management"/>
+              <CATCAfrTree Name="MultiCAD" Icon="Preferences\\NFO1_Icon1.png" Display="MultiCAD" Tooltip="MultiCAD"/>
+            </CATCAfrTree>
+            <CATCAfrTree Name="Semiconductor" Icon="Preferences\\NFO1_Icon1.png" Display="Semiconductor" Tooltip="Semiconductor" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+              <CATCAfrTree Name="Synchronicity_DesignSync_Data_Manager" Icon="Preferences\\NFO1_Icon1.png" Display="Synchronicity DesignSync Data Manager" Tooltip="Synchronicity DesignSync Data Manager"/>
+              <CATCAfrTree Name="ProjectSync" Icon="Preferences\\NFO1_Icon1.png" Display="ProjectSync" Tooltip="ProjectSync"/>
+              <CATCAfrTree Name="Synchronicity_DesignSync_Data_Manager - HCM" Icon="Preferences\\NFO1_Icon1.png" Display="Synchronicity DesignSync Data Manager - HCM" Tooltip="Synchronicity DesignSync Data Manager - HCM"/>
+              <CATCAfrTree Name="DesignSync_Data_Manager_for_Eclipse_Connector" Icon="Preferences\\NFO1_Icon1.png" Display="DesignSync Data Manager for Eclipse Connector" Tooltip="DesignSync Data Manager for Eclipse Connector"/>
+              <CATCAfrTree Name="Enterprise_DesignSync_Administration" Icon="Preferences\\NFO1_Icon1.png" Display="Enterprise DesignSync Administration" Tooltip="Enterprise DesignSync Administration"/>
+              <CATCAfrTree Name="Defect_Management_and_Collaboration" Icon="Preferences\\NFO1_Icon1.png" Display="Defect Management and Collaboration" Tooltip="Defect Management and Collaboration"/>
+            </CATCAfrTree>
+            <CATCAfrTree Name="Copy_and_Artwork" Icon="Preferences\\NFO1_Icon1.png" Display="Copy and Artwork" Tooltip="Copy and Artwork" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+              <CATCAfrTree Name="Copy_and_Artwork_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Copy and Artwork Management" Tooltip="Copy and Artwork Management"/>
+              <CATCAfrTree Name="Copy_and_Artwork_Composition" Icon="Preferences\\NFO1_Icon1.png" Display="Copy and Artwork Composition" Tooltip="Copy and Artwork Composition"/>
+              <CATCAfrTree Name="Brand_Assets_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Brand Assets Management" Tooltip="Brand Assets Management"/>
+            </CATCAfrTree>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Global_Engineering_And_Manufacturing_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Global Engineering and Manufacturing Management" Tooltip="Global Engineering and Manufacturing Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Engineering_BOM_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Engineering BOM Management" Tooltip="Engineering BOM Management"/>
+            <CATCAfrTree Name="Engineering_BOM_and_Specification_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Engineering BOM and Specification Management" Tooltip="Engineering BOM and Specification Management"/>
+            <CATCAfrTree Name="Costing_and_Analytics" Icon="Preferences\\NFO1_Icon1.png" Display="Costing and Analytics" Tooltip="Costing and Analytics"/>
+            <CATCAfrTree Name="Manufacturing_BOM_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Manufacturing BOM Management" Tooltip="Manufacturing BOM Management"/>
+            <CATCAfrTree Name="Unit_BOM_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Unit BOM Management" Tooltip="Unit BOM Management"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Strategic_Supplier_Relationship_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Strategic Supplier Relationship Management" Tooltip="Strategic Supplier Relationship Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="RFQ_Management" Icon="Preferences\\NFO1_Icon1.png" Display="RFQ Management" Tooltip="RFQ Management"/>
+            <CATCAfrTree Name="Buyer_Analytics" Icon="Preferences\\NFO1_Icon1.png" Display="Buyer Analytics" Tooltip="Buyer Analytics"/>
+            <CATCAfrTree Name="RFQ_Response" Icon="Preferences\\NFO1_Icon1.png" Display="RFQ Response" Tooltip="RFQ Response"/>
+            <CATCAfrTree Name="Collection_Sourcing" Icon="Preferences\\NFO1_Icon1.png" Display="Collection Sourcing" Tooltip="Collection Sourcing"/>
+            <CATCAfrTree Name="Collection_Sourcing_for_Partners" Icon="Preferences\\NFO1_Icon1.png" Display="Collection Sourcing for Partners" Tooltip="Collection Sourcing for Partners"/>
+            <CATCAfrTree Name="Supplier_Quality_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Supplier Quality Management" Tooltip="Supplier Quality Management"/>
+            <CATCAfrTree Name="Supplier_Quality_Response" Icon="Preferences\\NFO1_Icon1.png" Display="Supplier Quality Response" Tooltip="Supplier Quality Response"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Quality_And_Compliance_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Quality and Compliance Management" Tooltip="Quality and Compliance Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Materials_Compliance_Reporting" Icon="Preferences\\NFO1_Icon1.png" Display="Materials Compliance Reporting" Tooltip="Materials Compliance Reporting"/>
+            <CATCAfrTree Name="Materials_Compliance_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Materials Compliance Management" Tooltip="Materials Compliance Management"/>
+            <CATCAfrTree Name="Materials_Compliance_Supplier_Portal" Icon="Preferences\\NFO1_Icon1.png" Display="Materials Compliance Supplier Portal" Tooltip="Materials Compliance Supplier Portal"/>
+            <CATCAfrTree Name="BOM_Materials_Compliancy" Icon="Preferences\\NFO1_Icon1.png" Display="BOM Materials Compliancy" Tooltip="BOM Materials Compliancy"/>
+            <CATCAfrTree Name="CAPA_and_Audit_Management" Icon="Preferences\\NFO1_Icon1.png" Display="CAPA and Audit Management" Tooltip="CAPA and Audit Management"/>
+            <CATCAfrTree Name="Complaints_and_NCR_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Complaints and NCR Management" Tooltip="Complaints and NCR Management"/>
+            <CATCAfrTree Name="Adverse_Events_Reporting" Icon="Preferences\\NFO1_Icon1.png" Display="Adverse Events Reporting" Tooltip="Adverse Events Reporting"/>
+            <CATCAfrTree Name="Quality-based_Document_Control" Icon="Preferences\\NFO1_Icon1.png" Display="Quality-based Document Control" Tooltip="Quality-based Document Control"/>
+            <CATCAfrTree Name="Market_Registration" Icon="Preferences\\NFO1_Icon1.png" Display="Market Registration" Tooltip="Market Registration"/>
+            <CATCAfrTree Name="Device_Master_Record_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Device Record Management" Tooltip="Device Record Management"/>
+            <CATCAfrTree Name="Device_Identification" Icon="Preferences\\NFO1_Icon1.png" Display="Device Identification" Tooltip="Device Identification"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="IP_Classification_and_Security_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="IP Classification and Security Management" Tooltip="IP Classification and Security Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Classify_and_Reuse" Icon="Preferences\\NFO1_Icon1.png" Display="Classify and Reuse" Tooltip="Classify and Reuse"/>
+            <CATCAfrTree Name="IPCls" Icon="Preferences\\NFO1_Icon1.png" Display="IP Classification" Tooltip="IP Classification"/>
+            <CATCAfrTree Name="IP_Protection_Classification" Icon="Preferences\\NFO1_Icon1.png" Display="IP Protection Classification" Tooltip="IP Protection Classification"/>
+            <CATCAfrTree Name="IP_Controlled_Access" Icon="Preferences\\NFO1_Icon1.png" Display="IP Controlled Access" Tooltip="IP Controlled Access"/>
+            <CATCAfrTree Name="New_Part_Request" Icon="Preferences\\NFO1_Icon1.png" Display="New Part Request" Tooltip="New Part Request"/>
+            <CATCAfrTree Name="Component_Classification" Icon="Preferences\\NFO1_Icon1.png" Display="Component Classification" Tooltip="Component Classification"/>
+            <CATCAfrTree Name="Component_Classify_and_Reuse" Icon="Preferences\\NFO1_Icon1.png" Display="Component Classify and Reuse" Tooltip="Component Classify and Reuse"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Strategic_Customer_Relationship_Management" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="Strategic Customer Relationship Management" Tooltip="Strategic Customer Relationship Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Traceable_Requirements_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Traceable Requirements Management" Tooltip="Traceable Requirements Management"/>
+            <CATCAfrTree Name="Requirements_Structure_Editor" Icon="Preferences\\NFO1_Icon1.png" Display="Requirements Structure Editor" Tooltip="Requirements Structure Editor"/>
+            <CATCAfrTree Name="Requirements_Specification_Editor" Icon="Preferences\\NFO1_Icon1.png" Display="Requirements Specification Editor" Tooltip="Requirements Specification Editor"/>
+            <CATCAfrTree Name="3D_Merchandising" Icon="Preferences\\NFO1_Icon1.png" Display="3D Merchandising" Tooltip="3D Merchandising"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="3DEXPERIENCE_Open" Icon="Preferences\\enolma_ap_appicon22.png" Visibility ="1" Display="3DEXPERIENCE Open" Tooltip="3DEXPERIENCE Open" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="AutoVue_2D_Viewer" Icon="Preferences\\NFO1_Icon1.png" Display="AutoVue 2D Viewer" Tooltip="AutoVue 2D Viewer"/>
+            <CATCAfrTree Name="AutoVue_3D_Viewer" Icon="Preferences\\NFO1_Icon1.png" Display="AutoVue 3D Viewer" Tooltip="AutoVue 3D Viewer"/>
+            <CATCAfrTree Name="Connector_for_SOLIDWORKS" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for SOLIDWORKS" Tooltip="Connector for SOLIDWORKS"/>
+            <CATCAfrTree Name="Connector_for_AutoCAD" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for AutoCAD" Tooltip="Connector for AutoCAD"/>
+            <CATCAfrTree Name="Connector_for_CATIA_V5" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for CATIA V5" Tooltip="Connector for CATIA V5"/>
+            <CATCAfrTree Name="Connector_for_Inventor" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Inventor" Tooltip="Connector for Inventor"/>
+            <CATCAfrTree Name="Connector_for_Creo_Parametric" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Creo Parametric" Tooltip="Connector for Creo Parametric"/>
+            <CATCAfrTree Name="Connector_for_Solid_Edge" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Solid Edge" Tooltip="Connector for Solid Edge"/>
+            <CATCAfrTree Name="Connector_for_NX" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for NX" Tooltip="Connector for NX"/>
+            <CATCAfrTree Name="Connector_for_Cadence_Allegro_HDL" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Cadence Allegro HDL" Tooltip="Connector for Cadence Allegro HDL"/>
+            <CATCAfrTree Name="Connector_for_Zuken_CR-5000" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Zuken CR-5000" Tooltip="Connector for Zuken CR-5000"/>
+            <CATCAfrTree Name="Connector_for_Mentor_Graphics_Expedition_Enterprise" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Mentor Graphics Expedition Enterprise" Tooltip="Connector for Mentor Graphics Expedition Enterprise"/>
+            <CATCAfrTree Name="Connector_for_Mentor_Graphics_Design_Manager" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Mentor Graphics Design Manager" Tooltip="Connector for Mentor Graphics Design Manager"/>
+            <CATCAfrTree Name="2D_Design_with_Collection_Adobe_Illustrator" Icon="Preferences\\NFO1_Icon1.png" Display="2D Design with Collection Adobe Illustrator" Tooltip="2D Design with Collection Adobe Illustrator"/>
+            <CATCAfrTree Name="Connector_for_Artwork_Copy_Adobe_Illustrator" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for Artwork Copy Adobe Illustrator" Tooltip="Connector for Artwork Copy Adobe Illustrator"/>
+            <CATCAfrTree Name="Format_Converters" Icon="Preferences\\NFO1_Icon1.png" Display="Format Converters" Tooltip="Format Converters"/>
+            <CATCAfrTree Name="Connector_for_DesignSync_for_DFII" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for DesignSync for DFII" Tooltip="Connector for DesignSync for DFII"/>
+            <CATCAfrTree Name="Connector_for_DesignSync_for_MilkyWay" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for DesignSync for MilkyWay" Tooltip="Connector for DesignSync for MilkyWay"/>
+            <CATCAfrTree Name="Connector_for_DesignSync_for_Visual_Studio" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for DesignSync for Visual Studio" Tooltip="Connector for DesignSync for Visual Studio"/>
+            <CATCAfrTree Name="Connector_for_DesignSync_for_Simulink" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for DesignSync for Simulink" Tooltip="Connector for DesignSync for Simulink"/>
+            <CATCAfrTree Name="Connector_for_DesignSync_for_Synopsis_Custom_Designer" Icon="Preferences\\NFO1_Icon1.png" Display="Connector for DesignSync for Synopsis Custom Designer" Tooltip="Connector for DesignSync for Synopsis Custom Designer"/>
+            <CATCAfrTree Name="X-BOM_Connector_for_Oracle_Manufacturing" Icon="Preferences\\NFO1_Icon1.png" Display="X-BOM Connector for Oracle Manufacturing" Tooltip="X-BOM Connector for Oracle Manufacturing"/>
+            <CATCAfrTree Name="X-BOM_Connector_for_SAP" Icon="Preferences\\NFO1_Icon1.png" Display="X-BOM Connector for SAP" Tooltip="X-BOM Connector for SAP"/>
+            <CATCAfrTree Name="Adapter_for_X-PDM" Icon="Preferences\\NFO1_Icon1.png" Display="Adapter for X-PDM" Tooltip="Adapter for X-PDM"/>
+            <CATCAfrTree Name="X-BOM_Connector_for_ENOVIA_VPM_V5" Icon="Preferences\\NFO1_Icon1.png" Display="X-BOM Connector for ENOVIA VPM V5" Tooltip="X-BOM Connector for ENOVIA VPM V5"/>
+            <CATCAfrTree Name="Collaboration_for_Microsoft" Icon="Preferences\\NFO1_Icon1.png" Display="Collaboration for Microsoft" Tooltip="Collaboration for Microsoft"/>
+          </CATCAfrTree>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="3D_Modeling" Icon="Preferences\\Pref_3DModelingApps_Icon.png" Visibility ="1" Display="3D Modeling" Tooltip="3D Modeling Apps" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="3DPlay_for_Dashboard" Icon="Preferences\\Pref_homecompass_1.png" Display="3DPlay for Dashboard" Tooltip="3DPlay for Dashboard"/>
+          <CATCAfrTree Name="3DPlay" Icon="Preferences\\Pref_homecompass_1.png" Display="3DPlay" Tooltip="3DPlay"/>
+          <CATCAfrTree Name="Globe_Viewer" Icon="Preferences\\Pref_homecompass_1.png" Display="Globe Viewer" Tooltip="Globe Viewer"/>
+          <CATCAfrTree Name="BioSystems_Design_and_Analysis" Icon="Preferences\\biolma_ap_appicon22.png" Display="BioSystems Design and Analysis" Tooltip="BioSystems Design and Analysis"/>
+          <CATCAfrTree Name="3D_Modeling_Core" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="3D Modeling Core" Tooltip="3D Modeling Core" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Natural_Shape" Icon="Preferences\\NFO1_Icon1.png" Display="Natural Shape" Tooltip="Natural Shape"/>
+            <CATCAfrTree Name="Sketcher" Icon="Preferences\\NFO1_Icon1.png" Display="Sketcher" Tooltip="Sketcher"/>
+            <CATCAfrTree Name="Part_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Part Design" Tooltip="Part Design"/>
+            <CATCAfrTree Name="Functional_Plastic_Parts" Icon="Preferences\\NFO1_Icon1.png" Display="Functional Plastic Parts" Tooltip="Functional Plastic Parts"/>
+            <CATCAfrTree Name="Generative_Shape_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Generative Shape Design" Tooltip="Generative Shape Design"/>
+            <CATCAfrTree Name="Collaborative_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Collaborative Design" Tooltip="Collaborative Design"/>
+            <CATCAfrTree Name="Virtual_to_Real_Shape_Morphing" Icon="Preferences\\NFO1_Icon1.png" Display="Virtual to Real Shape Morphing" Tooltip="Virtual to Real Shape Morphing"/>
+            <CATCAfrTree Name="Shape_Healing" Icon="Preferences\\NFO1_Icon1.png" Display="Shape Healing" Tooltip="Shape Healing"/>
+            <CATCAfrTree Name="Simulation_Model_Preparation" Icon="Preferences\\NFO1_Icon1.png" Display="Simulation Model Preparation" Tooltip="Simulation Model Preparation"/>
+            <CATCAfrTree Name="Part_Feature_Recognition" Icon="Preferences\\NFO1_Icon1.png" Display="Part Feature Recognition" Tooltip="Part Feature Recognition"/>
+            <CATCAfrTree Name="Human_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Human Design" Tooltip="Human Design"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Styling" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Styling" Tooltip="Styling" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Natural_Sketch" Icon="Preferences\\NFO1_Icon1.png" Display="Natural Sketch" Tooltip="Natural Sketch"/>
+            <CATCAfrTree Name="Imagine_and_Shape" Icon="Preferences\\NFO1_Icon1.png" Display="Imagine and Shape" Tooltip="Imagine and Shape"/>
+            <CATCAfrTree Name="FreeStyle_Shape_Design" Icon="Preferences\\NFO1_Icon1.png" Display="FreeStyle Shape Design" Tooltip="FreeStyle Shape Design"/>
+            <CATCAfrTree Name="ICEM_Shape_Design" Icon="Preferences\\NFO1_Icon1.png" Display="ICEM Shape Design" Tooltip="ICEM Shape Design"/>
+            <CATCAfrTree Name="Mechanical_Surface_Refinement" Icon="Preferences\\NFO1_Icon1.png" Display="Mechanical Surface Refinement" Tooltip="Mechanical Surface Refinement"/>
+            <CATCAfrTree Name="Rendering_Scene_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Rendering Scene Design" Tooltip="Rendering Scene Design"/>
+            <CATCAfrTree Name="Live_Rendering" Icon="Preferences\\NFO1_Icon1.png" Display="Live Rendering" Tooltip="Live Rendering"/>
+            <CATCAfrTree Name="Sketch_Tracer" Icon="Preferences\\NFO1_Icon1.png" Display="Sketch Tracer" Tooltip="Sketch Tracer"/>
+            <CATCAfrTree Name="Product_Perception_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="Product Perception Experience" Tooltip="Product Perception Experience"/>
+            <CATCAfrTree Name="ICEM_Design_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="ICEM Design Experience" Tooltip="ICEM Design Experience"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Digitized_Shape" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Digitized Shape" Tooltip="Digitized Shape" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="3D_Printing_Preparation" Icon="Preferences\\NFO1_Icon1.png" Display="3D Printing Preparation" Tooltip="3D Printing Preparation"/>
+            <CATCAfrTree Name="Digitized_Shape_Preparation" Icon="Preferences\\NFO1_Icon1.png" Display="Digitized Shape Preparation" Tooltip="Digitized Shape Preparation"/>
+            <CATCAfrTree Name="Digitized_Shape_Sculpting" Icon="Preferences\\NFO1_Icon1.png" Display="Digitized Shape Sculpting" Tooltip="Digitized Shape Sculpting"/>
+            <CATCAfrTree Name="Digitized_Shape_to_Surface" Icon="Preferences\\NFO1_Icon1.png" Display="Digitized Shape to Surface" Tooltip="Digitized Shape to Surface"/>
+            <CATCAfrTree Name="Experience_Models_Preparation" Icon="Preferences\\NFO1_Icon1.png" Display="Experience Models Preparation" Tooltip="Experience Models Preparation"/>
+            <CATCAfrTree Name="Photo_to_Shape" Icon="Preferences\\NFO1_Icon1.png" Display="Photo to Shape" Tooltip="Photo to Shape"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Systems_Architecture" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Systems Architecture" Tooltip="Systems Architecture" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Functional_and_Logical_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Functional and Logical Design" Tooltip="Functional and Logical Design"/>
+            <CATCAfrTree Name="Electrical_Systems_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Electrical Systems Design" Tooltip="Electrical Systems Design"/>
+            <CATCAfrTree Name="Piping_and_Tubing_Systems_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Piping and Tubing Systems Design" Tooltip="Piping and Tubing Systems Design"/>
+            <CATCAfrTree Name="HVAC_Systems_Design" Icon="Preferences\\NFO1_Icon1.png" Display="HVAC Systems Design" Tooltip="HVAC Systems Design"/>
+            <CATCAfrTree Name="Symbol_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Symbol Design" Tooltip="Symbol Design"/>
+            <CATCAfrTree Name="Systems_3D_Allocation" Icon="Preferences\\NFO1_Icon1.png" Display="Systems 3D Allocation" Tooltip="Systems 3D Allocation"/>
+            <CATCAfrTree Name="Product_Structure_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Product Structure Design" Tooltip="Product Structure Design"/>
+            <CATCAfrTree Name="Systems_Report_Generation" Icon="Preferences\\NFO1_Icon1.png" Display="Systems Report Generation" Tooltip="Systems Report Generation"/>
+            <CATCAfrTree Name="Systems_Traceability" Icon="Preferences\\NFO1_Icon1.png" Display="Systems Traceability" Tooltip="Systems Traceability"/>
+            <CATCAfrTree Name="Systems_Synthesis" Icon="Preferences\\NFO1_Icon1.png" Display="Systems Synthesis" Tooltip="Systems Synthesis"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Systems_Modeling_and_Execution" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Systems Modeling and Execution" Tooltip="Systems_Modeling_and_Execution" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Dymola_Behavior_Modeling" Icon="Preferences\\NFO1_Icon1.png" Display="Dymola Behavior Modeling" Tooltip="Dymola Behavior Modeling"/>
+            <CATCAfrTree Name="Behavior_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="Behavior Experience" Tooltip="Behavior Experience"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Mechanical_Systems" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Mechanical Systems" Tooltip="Mechanical Systems" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Natural_Assembly" Icon="Preferences\\NFO1_Icon1.png" Display="Natural Assembly" Tooltip="Natural Assembly"/>
+            <CATCAfrTree Name="Assembly_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Assembly Design" Tooltip="Assembly Design"/>
+            <CATCAfrTree Name="Mechanical_Systems_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Mechanical Systems Design" Tooltip="Mechanical Systems Design"/>
+            <CATCAfrTree Name="Mechanical_Systems_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="Mechanical Systems Experience" Tooltip="Mechanical Systems Experience"/>
+            <CATCAfrTree Name="2D_Layout_Insight" Icon="Preferences\\NFO1_Icon1.png" Display="2D Layout Insight" Tooltip="2D Layout Insight"/>
+            <CATCAfrTree Name="2D_Layout_for_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="2D Layout for 3D Design" Tooltip="2D Layout for 3D Design"/>
+            <CATCAfrTree Name="3D_Tolerancing_and_Annotation" Icon="Preferences\\NFO1_Icon1.png" Display="3D Tolerancing and Annotation" Tooltip="3D Tolerancing and Annotation"/>
+            <CATCAfrTree Name="3D_Annotation_Insight" Icon="Preferences\\NFO1_Icon1.png" Display="3D Annotation Insight" Tooltip="3D Annotation Insight"/>
+            <CATCAfrTree Name="3D_Geometry_Insight" Icon="Preferences\\NFO1_Icon1.png" Display="3D Geometry Insight" Tooltip="3D Geometry Insight"/>
+            <CATCAfrTree Name="Drafting" Icon="Preferences\\NFO1_Icon1.png" Display="Drafting" Tooltip="Drafting"/>
+            <CATCAfrTree Name="Tooling_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Tooling Design" Tooltip="Tooling Design"/>
+            <CATCAfrTree Name="Mold_Tooling_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Mold Tooling Design" Tooltip="Mold Tooling Design"/>
+            <CATCAfrTree Name="Core_and_Cavity_Separation" Icon="Preferences\\NFO1_Icon1.png" Display="Core and Cavity Separation" Tooltip="Core and Cavity Separation"/>
+            <CATCAfrTree Name="Die_Face_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Die Face Design" Tooltip="Die Face Design"/>            
+          </CATCAfrTree>
+          <CATCAfrTree Name="ElecSys" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Electrical and Electronic Systems" Tooltip="Electrical and Electronic Systems" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Electrical_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Electrical 3D Design" Tooltip="Electrical 3D Design"/>
+            <CATCAfrTree Name="Electrical_3D_Part_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Electrical 3D Part Design" Tooltip="Electrical 3D Part Design"/>
+            <CATCAfrTree Name="ElecMfgPrep" Icon="Preferences\\NFO1_Icon1.png" Display="Electrical Manufacturing Preparation" Tooltip="Electrical Manufacturing Preparation"/>
+            <CATCAfrTree Name="Electrical_Raceway_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Electrical Raceway 3D Design" Tooltip="Electrical Raceway 3D Design"/>
+            <CATCAfrTree Name="Electrical_Raceway_3D_Part_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Electrical Raceway 3D Part Design" Tooltip="Electrical Raceway 3D Part Design"/>
+            <CATCAfrTree Name="Hanger_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Hanger Design" Tooltip="Hanger Design"/>
+            <CATCAfrTree Name="Circuit_Board_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Circuit Board Design" Tooltip="Circuit Board Design"/>
+            <CATCAfrTree Name="Flexible_Circuit_Board_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Flexible Circuit Board Design" Tooltip="Flexible Circuit Board Design"/>
+            <CATCAfrTree Name="Rigid_Flexible_Circuit_Board_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Rigid Flexible Circuit Board Design" Tooltip="Rigid Flexible Circuit Board Design"/>
+            <CATCAfrTree Name="Electrical_Location_Plan" Icon="Preferences\\NFO1_Icon1.png" Display="Electrical Location Plan" Tooltip="Electrical Location Plan"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Fluid_Systems" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Fluid Systems" Tooltip="Fluid Systems" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Piping_and_Tubing_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Piping and Tubing 3D Design" Tooltip="Piping and Tubing 3D Design"/>
+            <CATCAfrTree Name="Piping_and_Tubing_3D_Part_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Piping and Tubing 3D Part Design" Tooltip="Piping and Tubing 3D Part Design"/>
+            <CATCAfrTree Name="HVAC_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="HVAC 3D Design" Tooltip="HVAC 3D Design"/>
+            <CATCAfrTree Name="HVAC_3D_Part_Design" Icon="Preferences\\NFO1_Icon1.png" Display="HVAC 3D Part Design" Tooltip="HVAC 3D Part Design"/>
+            <CATCAfrTree Name="Generative_Fluid_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Generative Fluid 3D Design" Tooltip="Generative Fluid 3D Design"/>
+            <CATCAfrTree Name="Engineering_Specification_Capture_and_Reuse" Icon="Preferences\\NFO1_Icon1.png" Display="Engineering Specification Capture and Reuse" Tooltip="Engineering Specification Capture and Reuse"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Multi_Discipline_Engineering" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Multi Discipline Engineering" Tooltip="Multi Discipline Engineering" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="3D_Annotation_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="3D Annotation Experience" Tooltip="3D Annotation Experience"/>
+            <CATCAfrTree Name="3D_Annotation_Insight" Icon="Preferences\\NFO1_Icon1.png" Display="3D Annotation Insight" Tooltip="3D Annotation Insight"/>
+            <CATCAfrTree Name="3D_Compose" Icon="Preferences\\NFO1_Icon1.png" Display="3D Compose" Tooltip="3D Compose"/>
+            <CATCAfrTree Name="Structural_Package_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Structural Package Design" Tooltip="Structural Package Design"/>
+            <CATCAfrTree Name="Bent_Part_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Bent Part Design" Tooltip="Bent Part Design"/>
+            <CATCAfrTree Name="Sheet_Metal_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Sheet Metal Design" Tooltip="Sheet Metal Design"/>
+            <CATCAfrTree Name="Sheet_Metal_for_Hydro-formed_Parts" Icon="Preferences\\NFO1_Icon1.png" Display="Sheet Metal for Hydro-formed Parts" Tooltip="Sheet_Metal_for_Hydro-formed_Parts"/>
+            <CATCAfrTree Name="Functional_Gen_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Functional Gen. Design" Tooltip="Functional Generative Design"/>
+            <CATCAfrTree Name="Composites_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Composites Design" Tooltip="Composites Design"/>
+            <CATCAfrTree Name="Composites_Braiding" Icon="Preferences\\NFO1_Icon1.png" Display="Composites Braiding" Tooltip="Composites Braiding"/>
+            <CATCAfrTree Name="Composites_Laser_Projection" Icon="Preferences\\NFO1_Icon1.png" Display="Composites Laser Projection" Tooltip="Composites Laser Projection"/>
+            <CATCAfrTree Name="Composites_Insight" Icon="Preferences\\NFO1_Icon1.png" Display="Composites Insight" Tooltip="Composites Insight"/>
+            <CATCAfrTree Name="Fastening" Icon="Preferences\\NFO1_Icon1.png" Display="Fastening" Tooltip="Fastening"/>
+            <CATCAfrTree Name="Weld_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Weld Design" Tooltip="Weld Design"/>
+            <CATCAfrTree Name="Functional_Shape_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Functional Shape Design" Tooltip="Functional Shape Design"/>
+            <CATCAfrTree Name="Accommodation_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Accommodation Design" Tooltip="Accommodation Design"/>
+            <CATCAfrTree Name="Space_Referential" Icon="Preferences\\NFO1_Icon1.png" Display="Space Referential" Tooltip="Space Referential"/>
+            <CATCAfrTree Name="Space_Allocation" Icon="Preferences\\NFO1_Icon1.png" Display="Space Allocation" Tooltip="Space Allocation"/>
+            <CATCAfrTree Name="Structure_Functional_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Structure Functional Design" Tooltip="Structure Functional Design"/>
+            <CATCAfrTree Name="Structure_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Structure Design" Tooltip="Structure Design"/>
+            <CATCAfrTree Name="Steel_Outfitting_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Steel Outfitting Design" Tooltip="Steel Outfitting Design"/>
+            <CATCAfrTree Name="Weight_Analysis" Icon="Preferences\\NFO1_Icon1.png" Display="Weight Analysis" Tooltip="Weight Analysis"/>
+            <CATCAfrTree Name="Terrain_Preparation" Icon="Preferences\\NFO1_Icon1.png" Display="Terrain Preparation" Tooltip="Terrain Preparation"/>
+            <CATCAfrTree Name="Civil_Engineering_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Civil Engineering Design" Tooltip="Civil Engineering Design"/>
+            <CATCAfrTree Name="Civil_Engineering_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Civil Engineering 3D Design" Tooltip="Civil Engineering 3D Design"/>
+            <CATCAfrTree Name="Concrete_Structures_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Concrete Structures 3D Design" Tooltip="Concrete Structures 3D Design"/>
+            <CATCAfrTree Name="Building_Engineering_3D_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Building Engineering 3D Design" Tooltip="Building Engineering 3D Design"/>
+            <CATCAfrTree Name="Buildings_Space_Planning" Icon="Preferences\\NFO1_Icon1.png" Display="Buildings Space Planning" Tooltip="Buildings Space Planning"/>
+            <CATCAfrTree Name="Buildings_Structures" Icon="Preferences\\NFO1_Icon1.png" Display="Buildings Structures" Tooltip="Buildings Structures"/>
+            <CATCAfrTree Name="Ergonomics_for_Car_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Ergonomics for Car Design" Tooltip="Ergonomics for Car Design"/>
+            <CATCAfrTree Name="Insulation_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Insulation Design" Tooltip="Insulation Design"/>
+            <CATCAfrTree Name="Comp_Forming" Icon="Preferences\\NFO1_Icon1.png" Display="Composites Forming" Tooltip="Composites Forming"/>
+            <CATCAfrTree Name="Composites_Mfg_Prep" Icon="Preferences\\NFO1_Icon1.png" Display="Composites Mfg Preparation" Tooltip="Composites Mfg Preparation"/>
+            <CATCAfrTree Name="Multi_Discipline_Drafting" Icon="Preferences\\NFO1_Icon1.png" Display="Multi-Discipline Drafting" Tooltip="Multi-Discipline Drafting"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Capture_and_Reuse_Design_Intent" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="Capture and Reuse Design Intent" Tooltip="Capture and Reuse Design Intent" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Engineering_IP_Control" Icon="Preferences\\NFO1_Icon1.png" Display="Engineering IP Control" Tooltip="Engineering IP Control"/>
+            <CATCAfrTree Name="Component_Family" Icon="Preferences\\NFO1_Icon1.png" Display="Component Family" Tooltip="Component Family"/>
+            <CATCAfrTree Name="Design_Optimization" Icon="Preferences\\NFO1_Icon1.png" Display="Design Optimization" Tooltip="Design Optimization"/>
+            <CATCAfrTree Name="3D_Templates_Capture" Icon="Preferences\\NFO1_Icon1.png" Display="3D Templates Capture" Tooltip="3D Templates Capture"/>
+            <CATCAfrTree Name="Knowledge_Basics" Icon="Preferences\\NFO1_Icon1.png" Display="Knowledge Basics" Tooltip="Knowledge Basics"/>
+            <CATCAfrTree Name="Engineering_Rules_Capture" Icon="Preferences\\NFO1_Icon1.png" Display="Engineering Rules Capture" Tooltip="Engineering Rules Capture"/>
+            <CATCAfrTree Name="Engineering_Templates_Capture" Icon="Preferences\\NFO1_Icon1.png" Display="Engineering Templates Capture" Tooltip="Engineering Templates Capture"/>
+            <CATCAfrTree Name="Know-how_Capture" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Capture" Tooltip="Know-how Capture"/>
+            <CATCAfrTree Name="Know-how_Reuse" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Reuse" Tooltip="Know-how Reuse"/>
+            <CATCAfrTree Name="Know-how_Apps_Authoring_Suite" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Apps Authoring Suite" Tooltip="Know-how Apps Authoring Suite" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+              <CATCAfrTree Name="Know-how_Apps_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Apps Creation" Tooltip="Know-how Apps Creation"/>
+                <CATCAfrTree Name="Know-how_Apps_Resources" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Apps Resources" Tooltip="Know-how Apps Resources"/>
+                <CATCAfrTree Name="Know-how_Apps_User_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Apps User Experience" Tooltip="Know-how Apps User Experience"/>
+                <CATCAfrTree Name="Know-how_Apps_Components" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Apps Components" Tooltip="Know-how Apps Components"/>
+                <CATCAfrTree Name="Know-how_Apps_Logic" Icon="Preferences\\NFO1_Icon1.png" Display="Know-how Apps Logic" Tooltip="Know-how Apps Logic"/>
+            </CATCAfrTree>
+            <CATCAfrTree Name="Mechanical_Interface_Templates_Capture" Icon="Preferences\\NFO1_Icon1.png" Display="Mechanical Interface Templates Capture" Tooltip="Mechanical Interface Templates Capture"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="SOLIDWORKS" Icon="Preferences\\swxlma_ap_appicon22.png" Visibility ="1" Display="SOLIDWORKS" Tooltip="SOLIDWORKS" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Common_Services" Icon="Preferences\\NFO1_Icon1.png" Display="Common Services" Tooltip="Common Services"/>
+            <CATCAfrTree Name="Conceptual_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Conceptual Design" Tooltip="Conceptual Design"/>
+            <CATCAfrTree Name="Industrial_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Industrial Design" Tooltip="Industrial Design"/>
+            <CATCAfrTree Name="Sketch_Mechanism" Icon="Preferences\\NFO1_Icon1.png" Display="Sketch Mechanism" Tooltip="Sketch Mechanism"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="3DEXPERIENCE_Open" Icon="Preferences\\catlma_ap_appicon22.png" Visibility ="1" Display="3DEXPERIENCE Open" Tooltip="3DEXPERIENCE Open" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="IGES_Converter" Icon="Preferences\\NFO1_Icon1.png" Display="IGES Converter" Tooltip="IGES Converter"/>
+            <CATCAfrTree Name="STEP_Converter" Icon="Preferences\\NFO1_Icon1.png" Display="STEP Converter" Tooltip="STEP Converter"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Motion" Icon="Preferences\\SWXMOTI_AP_AppIcon22.png" Visibility ="1" Display="Motion" Tooltip="Motion" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          </CATCAfrTree>          
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="Simulation" Icon="Preferences\\Pref_Content_and_SimulationApps_Icon.png" Visibility ="1" Display="Simulation" Tooltip="Simulation Apps" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="MfgAppsCmnSrvc" Icon="Preferences\\dellma_ap_appicon22.png" Display="Manufacturing Apps Common Services" Tooltip="Manufacturing Apps Common Services" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="LiSimApps" Icon="Preferences\\NFO1_Icon1.png" Display="Live Simulation Apps Common Services" Tooltip="Live Simulation Apps Common Services"/>
+          <CATCAfrTree Name="MfgPlnApps" Icon="Preferences\\NFO1_Icon1.png" Display="Manufacturing Planning Apps Common Services" Tooltip="Manufacturing Planning Apps Common Services"/>
+          <CATCAfrTree Name="SimPlnApps" Icon="Preferences\\NFO1_Icon1.png" Display="Simulation and Planning Apps Common Services" Tooltip="Simulation and Planning Apps Common Services"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Manufacturing_Planning" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Manufacturing Planning" Tooltip="Manufacturing Planning" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Manufacturing_Context_Builder" Icon="Preferences\\NFO1_Icon1.png" Display="Manufacturing Context Builder" Tooltip="Manufacturing Context Builder"/>
+            <CATCAfrTree Name="Planning_Structure" Icon="Preferences\\NFO1_Icon1.png" Display="Planning Structure" Tooltip="Planning Structure"/>
+            <CATCAfrTree Name="Equipment_Allocation" Icon="Preferences\\NFO1_Icon1.png" Display="Equipment Allocation" Tooltip="Equipment Allocation"/>
+            <CATCAfrTree Name="Manufactured_Item_Definition" Icon="Preferences\\NFO1_Icon1.png" Display="Manufactured Item Definition" Tooltip="Manufactured Item Definition"/>
+            <CATCAfrTree Name="Process_Planning" Icon="Preferences\\NFO1_Icon1.png" Display="Process Planning" Tooltip="Process Planning"/>
+            <CATCAfrTree Name="Fastened_Item_Definition" Icon="Preferences\\NFO1_Icon1.png" Display="Fastened Item Definition" Tooltip="Fastened Item Definition"/>
+            <CATCAfrTree Name="Fastener_Planning" Icon="Preferences\\NFO1_Icon1.png" Display="Fastener Planning" Tooltip="Fastener Planning"/>
+            <CATCAfrTree Name="Tool_Analysis" Icon="Preferences\\NFO1_Icon1.png" Display="Tool Analysis" Tooltip="Tool Analysis"/>
+            <CATCAfrTree Name="Heavy_Industry_Manufacturing" Icon="Preferences\\NFO1_Icon1.png" Display="Heavy Industry Manufacturing" Tooltip="Heavy Industry Manufacturing"/>
+            <CATCAfrTree Name="Heavy_Industry_Process_Planning" Icon="Preferences\\NFO1_Icon1.png" Display="Heavy Industry Process Planning" Tooltip="Heavy Industry Process Planning"/>
+            <CATCAfrTree Name="Heavy_Industry_Structure_Fabrication" Icon="Preferences\\NFO1_Icon1.png" Display="Heavy Industry Structure Fabrication" Tooltip="Heavy Industry Structure Fabrication"/>
+            <CATCAfrTree Name="Heavy_Industry_Fluidic_Fabrication" Icon="Preferences\\NFO1_Icon1.png" Display="Heavy Industry Fluidic Fabrication" Tooltip="Heavy Industry Fluidic Fabrication"/>
+            <CATCAfrTree Name="Planning_Review" Icon="Preferences\\NFO1_Icon1.png" Display="Planning Review" Tooltip="Planning Review"/>
+            <CATCAfrTree Name="Time-Motion_Study" Icon="Preferences\\NFO1_Icon1.png" Display="Time-Motion Study" Tooltip="Time-Motion Study"/>
+            <CATCAfrTree Name="Construction_Planner" Icon="Preferences\\NFO1_Icon1.png" Display="Construction Planner" Tooltip="Construction Planner"/>
+            <CATCAfrTree Name="Manufactured_Items_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Manufactured Items Management" Tooltip="Manufactured Items Management"/>
+            <CATCAfrTree Name="Process_Management" Icon="Preferences\\NFO1_Icon1.png" Display="Process Management" Tooltip="Process Management"/>
+            <CATCAfrTree Name="Logistics_Planning" Icon="Preferences\\NFO1_Icon1.png" Display="Logistics Planning" Tooltip="Logistics Planning"/>
+            <CATCAfrTree Name="Service_Structure" Icon="Preferences\\NFO1_Icon1.png" Display="Service Structure" Tooltip="Service Structure"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Manufacturing_Process_Documentation" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Manufacturing Process Documentation" Tooltip="Manufacturing Process Documentation" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Assembly_Path_Optimization" Icon="Preferences\\NFO1_Icon1.png" Display="Assembly Path Optimization" Tooltip="Assembly Path Optimization"/>
+            <CATCAfrTree Name="Assembly_Evaluation" Icon="Preferences\\NFO1_Icon1.png" Display="Assembly Evaluation" Tooltip="Assembly Evaluation"/>
+            <CATCAfrTree Name="Assembly_Definition" Icon="Preferences\\NFO1_Icon1.png" Display="Assembly Definition" Tooltip="Assembly Definition"/>
+            <CATCAfrTree Name="Assembly_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="Assembly Experience" Tooltip="Assembly Experience"/>
+            <CATCAfrTree Name="Work_Instructions" Icon="Preferences\\NFO1_Icon1.png" Display="Work Instructions" Tooltip="Work Instructions"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Process_Flow_and_Plant" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Process Flow and Plant" Tooltip="Process Flow and Plant" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Factory_Flow_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Factory Flow Simulation" Tooltip="Factory Flow Simulation"/>
+            <CATCAfrTree Name="Plant_Layout_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Plant Layout Design" Tooltip="Plant Layout Design"/>
+            <CATCAfrTree Name="Process_Flow_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Process Flow Simulation" Tooltip="Process Flow Simulation"/>
+            <CATCAfrTree Name="Simulation_Experience" Icon="Preferences\\NFO1_Icon1.png" Display="Simulation Experience" Tooltip="Simulation Experience"/>
+            <CATCAfrTree Name="Equipment_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Equipment Design" Tooltip="Equipment Design"/>
+            <CATCAfrTree Name="Equipment_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Equipment Simulation" Tooltip="Equipment Simulation"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Robotics" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Robotics" Tooltip="Robotics" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Robot_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Robot Simulation" Tooltip="Robot Simulation"/>
+            <CATCAfrTree Name="Robot_Programming" Icon="Preferences\\NFO1_Icon1.png" Display="Robot Programming" Tooltip="Robot Programming"/>
+            <CATCAfrTree Name="Robot_Spot_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Robot Spot Simulation" Tooltip="Robot Spot Simulation"/>
+            <CATCAfrTree Name="Robot_Arc_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Robot Arc Simulation" Tooltip="Robot Arc Simulation"/>
+            <CATCAfrTree Name="Realistic_Robot_Simulation_II" Icon="Preferences\\NFO1_Icon1.png" Display="Realistic Robot Simulation II" Tooltip="Realistic Robot Simulation II"/>
+            <CATCAfrTree Name="Robot_Surface_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Robot Surface Simulation" Tooltip="Robot Surface Simulation"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Additive_Manufacturing" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Additive Manufacturing" Tooltip="Additive Manufacturing" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Additive_Manufacturing_Apps_Common_Services" Icon="Preferences\\NFO1_Icon1.png" Display="Additive Manufacturing Apps Common Services" Tooltip="Additive Manufacturing Apps Common Services "/>
+            <CATCAfrTree Name="Additive_Part_Preparation" Icon="Preferences\\NFO1_Icon1.png" Display="Additive Part Preparation" Tooltip="Additive Part Preparation"/>
+            <CATCAfrTree Name="Powder_Bed_Fabrication" Icon="Preferences\\NFO1_Icon1.png" Display="Powder Bed Fabrication" Tooltip="Powder Bed Fabrication"/>
+            <CATCAfrTree Name="Material_Deposition_Fabrication" Icon="Preferences\\NFO1_Icon1.png" Display="Material Deposition Fabrication" Tooltip="Material Deposition Fabrication"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Machining" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Machining" Tooltip="Machining" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="NC_Machining_Apps_Common_Services" Icon="Preferences\\NFO1_Icon1.png" Display="NC Machining Apps Common Services" Tooltip="NC Machining Apps Common Services"/>
+            <CATCAfrTree Name="Mill-Turn_Machining" Icon="Preferences\\NFO1_Icon1.png" Display="Mill-Turn Machining" Tooltip="Mill-Turn Machining"/>
+            <CATCAfrTree Name="Prismatic_and_Turning_Machining" Icon="Preferences\\NFO1_Icon1.png" Display="Prismatic and Turning Machining" Tooltip="Prismatic and Turning Machining"/>
+            <CATCAfrTree Name="Milling_Machining" Icon="Preferences\\NFO1_Icon1.png" Display="Milling Machining" Tooltip="Milling Machining"/>
+            <CATCAfrTree Name="Multi-Axis_Machining" Icon="Preferences\\NFO1_Icon1.png" Display="Multi-Axis Machining" Tooltip="Multi-Axis Machining"/>
+            <CATCAfrTree Name="Prismatic_Milling_Machining" Icon="Preferences\\NFO1_Icon1.png" Display="Prismatic Milling Machining" Tooltip="Prismatic Milling Machining"/>
+            <CATCAfrTree Name="Drilling_and_Riveting" Icon="Preferences\\NFO1_Icon1.png" Display="Drilling and Riveting" Tooltip="Drilling and Riveting"/>
+            <CATCAfrTree Name="Machining_Validation" Icon="Preferences\\NFO1_Icon1.png" Display="Machining Validation" Tooltip="Machining Validation"/>
+            <CATCAfrTree Name="Cutting_Tools_Builder" Icon="Preferences\\NFO1_Icon1.png" Display="Cutting Tools Builder" Tooltip="Machining Cutting Tools Builder"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Ergonomics" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Ergonomics" Tooltip="Ergonomics" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Ergonomics_Evaluation" Icon="Preferences\\NFO1_Icon1.png" Display="Ergonomics Evaluation" Tooltip="Ergonomics Evaluation"/>
+            <CATCAfrTree Name="Ergonomics_Manikin_Editor" Icon="Preferences\\NFO1_Icon1.png" Display="Ergonomics Manikin Editor" Tooltip="Ergonomics Manikin Editor"/>
+            <CATCAfrTree Name="Ergonomics_at_Work" Icon="Preferences\\NFO1_Icon1.png" Display="Ergonomics at Work" Tooltip="Ergonomics at Work"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Manufacturing_Operations_Management" Icon="Preferences\\dellma_ap_appicon22.png" Visibility ="1" Display="Manufacturing Operations Management" Tooltip="Manufacturing Operations Management" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Work_Plan_Publication" Icon="Preferences\\NFO1_Icon1.png" Display="Work Plan Publication" Tooltip="Work Plan Publication"/>
+            <CATCAfrTree Name="3DEXPERIENCE_Apriso" Icon="Preferences\\NFO1_Icon1.png" Display="3DEXPERIENCE Apriso" Tooltip="3DEXPERIENCE Apriso"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Physics_Simulation_and_Simulation_for_Designers" Icon="Preferences\\simlma_ap_appicon22.png" Visibility ="1" Display="Physics Simulation and Simulation for Designers" Tooltip="Physics Simulation and Simulation for Designers" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Common_Model" Icon="Preferences\\NFO1_Icon1.png" Display="Common Model" Tooltip="Common Model"/>
+            <CATCAfrTree Name="Common_Scenario" Icon="Preferences\\NFO1_Icon1.png" Display="Common Scenario" Tooltip="Common Scenario"/>
+            <CATCAfrTree Name="Common_Result" Icon="Preferences\\NFO1_Icon1.png" Display="Common Result" Tooltip="Common Result"/>
+            <CATCAfrTree Name="Common_Execution" Icon="Preferences\\NFO1_Icon1.png" Display="Common Execution" Tooltip="Common Execution"/>
+            <CATCAfrTree Name="Model_Assembly_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Model Assembly Design" Tooltip="Model Assembly Design"/>
+            <CATCAfrTree Name="Material_Definition" Icon="Preferences\\NFO1_Icon1.png" Display="Material Definition" Tooltip="Material Definition"/>
+          </CATCAfrTree>
+          <!-- CATCAfrTree Name="Simulation_Apps_Common_Services" Icon="Preferences\\simlma_ap_appicon22.png" Display="Simulation Apps Common Services" Tooltip="Simulation Apps Common Services" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          </CATCAfrTree>
+          <CATCAfrTree Name="Physics_Simulation" Icon="Preferences\\simlma_ap_appicon22.png" Visibility ="1" Display="Physics Simulation" Tooltip="Physics Simulation" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Material_Definition" Icon="Preferences\\NFO1_Icon1.png" Display="Material Definition" Tooltip="Material Definition"/>
+            <CATCAfrTree Name="Mesh_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Mesh Creation" Tooltip="Mesh Creation"/>
+            <CATCAfrTree Name="Model_Assembly_Design" Icon="Preferences\\NFO1_Icon1.png" Display="Model Assembly Design" Tooltip="Model Assembly Design"/>
+            <CATCAfrTree Name="Fluid_Model_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Fluid Model Creation" Tooltip="Fluid Model Creation"/>
+            <CATCAfrTree Name="Fluid_Scenario_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Fluid Scenario Creation" Tooltip="Fluid Scenario Creation"/>
+            <CATCAfrTree Name="Structural_Model_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Structural Model Creation" Tooltip="Structural Model Creation"/>
+            <CATCAfrTree Name="Structural_Scenario_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Structural Scenario Creation" Tooltip="Structural Scenario Creation"/>
+            <CATCAfrTree Name="Mechanical_Scenario_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Mechanical Scenario Creation" Tooltip="Mechanical Scenario Creation"/>
+            <CATCAfrTree Name="Linear_Dynamics_Scenario_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Linear Dynamics Scenario Creation" Tooltip="Linear Dynamics Scenario Creation"/>
+            <CATCAfrTree Name="Physics_Results_Explorer" Icon="Preferences\\NFO1_Icon1.png" Display="Physics Results Explorer" Tooltip="Physics Results Explorer"/>
+            <CATCAfrTree Name="Physics_Simulation_Review" Icon="Preferences\\NFO1_Icon1.png" Display="Physics Simulation Review" Tooltip="Physics Simulation Review"/>
+            <CATCAfrTree Name="Multiscale_Experiment_Creation" Icon="Preferences\\NFO1_Icon1.png" Display="Multiscale Experiment Creation" Tooltip="Multiscale Experiment Creation"/>
+            <CATCAfrTree Name="Run_Abaqus/CAE" Icon="Preferences\\NFO1_Icon1.png" Display="Run Abaqus/CAE" Tooltip="Run Abaqus/CAE"/>
+            <CATCAfrTree Name="Abaqus_Study" Icon="Preferences\\NFO1_Icon1.png" Display="Abaqus Study" Tooltip="Abaqus Study"/>
+          </CATCAfrTree>
+          <CATCAfrTree Name="Simulation_for_Designers" Icon="Preferences\\simlma_ap_appicon22.png" Visibility ="1" Display="Simulation for Designers" Tooltip="Simulation for Designers" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Introduction_to_Simulation" Icon="Preferences\\NFO1_Icon1.png" Display="Introduction to Simulation" Tooltip="Introduction to Simulation"/>
+            <CATCAfrTree Name="Static_Study" Icon="Preferences\\NFO1_Icon1.png" Display="Static Study" Tooltip="Static Study"/>
+            <CATCAfrTree Name="Fluid_Validation" Icon="Preferences\\NFO1_Icon1.png" Display="Fluid Validation" Tooltip="Fluid Validation"/>
+            <CATCAfrTree Name="Structural_Validation" Icon="Preferences\\NFO1_Icon1.png" Display="Structural Validation" Tooltip="Structural Validation"/>
+            <CATCAfrTree Name="Durability_Validation" Icon="Preferences\\NFO1_Icon1.png" Display="Durability Validation" Tooltip="Durability Validation"/>
+            <CATCAfrTree Name="Plastic_Part_Filling" Icon="Preferences\\NFO1_Icon1.png" Display="Plastic Part Filling" Tooltip="Plastic Part Filling"/>
+            <CATCAfrTree Name="Plastic_Part_Injection" Icon="Preferences\\NFO1_Icon1.png" Display="Plastic Part Injection" Tooltip="Plastic Part Injection"/>
+            <CATCAfrTree Name="Plastic_Mold_Injection" Icon="Preferences\\NFO1_Icon1.png" Display="Plastic Mold Injection" Tooltip="Plastic Mold Injection"/>
+          </CATCAfrTree -->
+          <CATCAfrTree Name="Simulation_Process_Modeling" Icon="Preferences\\simlma_ap_appicon22.png" Visibility ="1" Display="Simulation Process Modeling" Tooltip="Simulation Process Modeling" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+            <CATCAfrTree Name="Job_Monitor" Icon="Preferences\\NFO1_Icon1.png" Display="Job Monitor" Tooltip="Job Monitor"/>
+            <CATCAfrTree Name="My_Simulations" Icon="Preferences\\NFO1_Icon1.png" Display="My Simulations" Tooltip="My Simulations"/>
+            <CATCAfrTree Name="Performance_Study" Icon="Preferences\\NFO1_Icon1.png" Display="Performance Study" Tooltip="Performance Study"/>
+            <CATCAfrTree Name="Performance_Study_for_Dashboard" Icon="Preferences\\NFO1_Icon1.png" Display="Performance Study for Dashboard" Tooltip="Performance Study for Dashboard"/>
+            <CATCAfrTree Name="Process_Composer" Icon="Preferences\\NFO1_Icon1.png" Display="Process Composer" Tooltip="Process Composer"/>
+            <CATCAfrTree Name="Process_Composer_Web" Icon="Preferences\\NFO1_Icon1.png" Display="Process Composer (Web)" Tooltip="Process Composer (Web)"/>
+            <CATCAfrTree Name="Process_Experience_Studio" Icon="Preferences\\NFO1_Icon1.png" Display="Process Experience Studio" Tooltip="Process Experience Studio"/>
+            <CATCAfrTree Name="Process_Experience_Studio_for_Dashboard" Icon="Preferences\\NFO1_Icon1.png" Display="Process Experience Studio for Dashboard" Tooltip="Process Experience Studio for Dashboard"/>
+            <CATCAfrTree Name="Results_Analytics" Icon="Preferences\\NFO1_Icon1.png" Display="Results Analytics" Tooltip="Results Analytics"/>
+            <CATCAfrTree Name="Results_Analytics_for_Dashboard" Icon="Preferences\\NFO1_Icon1.png" Display="Results Analytics for Dashboard" Tooltip="Results Analytics for Dashboard"/>
+            <CATCAfrTree Name="Simulation_Companion" Icon="Preferences\\NFO1_Icon1.png" Display="Simulation Companion" Tooltip="Simulation Companion"/>
+            <CATCAfrTree Name="Simulation_Companion_for_Dashboard" Icon="Preferences\\NFO1_Icon1.png" Display="Simulation Companion for Dashboard" Tooltip="Simulation Companion for Dashboard"/>
+            <CATCAfrTree Name="Station_Administration" Icon="Preferences\\NFO1_Icon1.png" Display="Station Administration" Tooltip="Station Administration"/>
+            <CATCAfrTree Name="Station Launcher" Icon="Preferences\\NFO1_Icon1.png" Display="Station Launcher" Tooltip="Station Launcher"/>
+          </CATCAfrTree>
+        </CATCAfrTree>
+
+        <CATCAfrTree Name="Information_Intelligence" Icon="Preferences\\Pref_InformationIntelligenceApps_Icon.png" Visibility ="1" Display="Information Intelligence" Tooltip="Information Intelligence Apps" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="3DDashboard" Icon="Preferences\\I_eastTOC.png" Display="3DDashboard" Tooltip="3DDashboard"/>
+          <CATCAfrTree Name="B_I_Essentials" Icon="Preferences\\I_eastTOC.png" Display="B.I. Essentials" Tooltip="B.I. Essentials"/>
+          <CATCAfrTree Name="OnePart" Icon="Preferences\\I_eastTOC.png" Display="OnePart" Tooltip="OnePart"/>
+          <CATCAfrTree Name="OnePart_in_3DEXPERIENCE" Icon="Preferences\\I_eastTOC.png" Display="OnePart in 3DEXPERIENCE" Tooltip="OnePart in 3DEXPERIENCE"/>
+          <CATCAfrTree Name="Product_Performance_Assessment" Icon="Preferences\\Pref_ProdPerfoAsmnt.png" Display="Product Performance Assessment" Tooltip="Product Performance Assessment"/>
+    	</CATCAfrTree>
+
+        <CATCAfrTree Name="Installation_and_Administration" Icon="Preferences\\Pref_logo_infrastructurel.png" Visibility ="1" Display="Installation and Administration" Tooltip="Installation and Administration" ExpandedFlag="1" ExpanderLook="Arrow" RootDecorationFlag="1">
+          <CATCAfrTree Name="Topic1" Icon="Preferences\\NFO1_Icon1.png" Display="Topic1" Tooltip="Topic1.1"/>
+          <CATCAfrTree Name="Topic2" Icon="Preferences\\NFO1_Icon1.png" Display="Topic2" Tooltip="Topic2.2"/>
+        </CATCAfrTree>
+
+      </CATCAfrTree>
+    </CATCAfrForm>
+
+  </Template>
+
+</Styles>

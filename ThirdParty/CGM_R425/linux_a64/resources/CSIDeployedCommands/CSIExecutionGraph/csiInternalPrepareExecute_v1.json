@@ -1,0 +1,53 @@
+{
+  "desc": "Enlist a future block execution called by another function (execute) and input data comes by another other function (receive)",
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "port",
+          "basic": "string"
+        },
+        {
+          "label": "inputs",
+          "typeArray": "CSIExecGraphFlow",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "localData",
+          "type": "Parameters",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "multipleCall",
+          "basic": "bool",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "key",
+          "basic": "uint32"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

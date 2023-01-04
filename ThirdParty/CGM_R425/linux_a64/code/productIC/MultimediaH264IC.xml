@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <built value = "true"/>
+  <attached name = "Multimedia.tst"/>
+  <runtimeOnlyPrereq name = "VENFFmpegTranscoder"/>
+  <prerequisite access = "Public" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Private" comment = "20170313 JFS/BTY was protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENFFMPEG"/>
+  <buildtimeOnlyPrereq access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENx264Lib"/>
+  <authorize access = "Private" comment = "20170314 JFS/BTY" name = "Multimedia.tst"/>
+  <authorize access = "Private" comment = "20210317 BTY/EGO RenderingBatch will replace NeurayEngine." name = "RenderingBatch"/>
+  <authorize access = "Private" comment = "20190415 JFS/EGO/BTY" name = "RenderingServer"/>
+  <authorize access = "Private" comment = "20170808 JFS/AZX" name = "VisSphericalMedia"/>
+  <authorize access = "Private" comment = "20200925 BTY To be accessed by VisuToolkitSample" name = "Visualization.tst"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

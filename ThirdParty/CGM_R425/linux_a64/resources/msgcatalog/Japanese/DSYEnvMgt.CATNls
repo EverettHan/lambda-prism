@@ -1,0 +1,49 @@
+<meta charset="UTF-8"/>
+HelpDSYEnvMgt.txt=" 
+DSYEnvMgt -create|-del [-e EnvName] [-d EnvDirPath|INSTALL] [-p ConcatPath] [-from Env|EnvFullPath [-append]] -h
+  -create または -del       : 環境ファイルを作成または削除します
+  -e EnvName            : 作成または削除する環境の名前 (オプション)。
+                          デフォルト名は Env。
+  -d EnvDirPath|INSTALL : 環境ファイルの格納フォルダー (オプション)。
+                          使用しなければ、EnvDir = \"/p1\"
+                          -d INSTALL ならば EnvDir = \"/p2\"
+                          -d EnvDirPath ならば EnvDir = EnvDirPath
+  -p ConcatPath         : 連結パス。複数のパスを指定できます (作成の場合のみ、オプション)。
+                          デフォルト値: \"/p3\"
+                          -from と組み合わせて使用すると、ConcatPath がインストール パスの先頭に追加されます。
+  -from Env|EnvFullPath : 新しい環境ファイルを既存のものから作成します (作成の場合のみ、オプション)。
+                          環境の名前またはそのフル パスを指定できます
+                          例: 
+                             DSYEnvMgt -create -e Env2 -from \"/p2\Env.txt\" は、\"/p1\" に Env2.txt を作成します
+                          または
+                             DSYEnvMgt -create -e Env2 -from Env -d INSTALL は、\"/p2\" に Env2.txt を作成します
+  -append               : -from および -p オプションと組み合わせて使用すると、ConcatPath が連結パスの末尾に追加されます
+                          このオプションを使用せずに -from および -p オプションを使用した場合は、ConcatPath は連結パスの先頭に追加されます
+   -h                   : このヘルプ。";
+
+MissingValue_e="-e オプションの後に環境ファイルの名前を続ける必要があります。";
+MissingValue_d="-d オプションの後に環境ファイルを作成するパスの名前を続ける必要があります。";
+MissingValue_p="-p オプションの後に連結パスを続ける必要があります。";
+MissingValue_from="-from オプションの後にコピーする環境ファイルの名前またはパスを続ける必要があります。";
+InvalidArg="オプション /p1 は許可されていません。";
+BadOptions_createdel="オプション -create と -del は同時に使用できません。";
+MissingOptions_createordel="-create または -del オプションのいずれかが必須です。";
+MissingConcatPath="デフォルトの連結パスを取得できません。-p オプションを指定して、連結パスを指定してください。";
+DirNotExist="ディレクトリ \"/p1 \" は存在しません。";
+NotAdmin="環境ファイルを \"/p1\" に作成するには昇格された特権が必要です。";
+BadFrom_NotExist="-from オプションが無効です: パス /p1 は存在しません。\n";
+CreateEnvOK="環境ファイル \"/p1.txt\" は正常に作成されました。\n";
+CreateEnvKO="DSYEnvMgt は \"/p1.txt\" の作成に失敗しました。\n";
+CreateEnv="環境ファイル \"/p1.txt\" を作成しています。\n";
+CreateDirFailed="DSYEnvMgt は \"/p1.txt\" の作成に失敗しました。";
+CreateDirFailedNotAdmin="DSYEnvMgt は \"/p1.txt\" の作成に失敗しました。\n管理者特権を確認してください。";
+DeleteEnv="環境ファイル \"/p1.txt\" を削除しています。";
+DeleteEnvOK="環境ファイル \"/p1.txt\" は正常に削除されました。";
+DeleteEnvKO="DSYEnvMgt は \"/p1.txt\" の削除に失敗しました。";
+CreateFromEnv="環境ファイル \"/p1.txt\" を \"/p2 \" から作成しています。";
+BadOptiond="オプション -d が無効です:\n-d の後に INSTALL または有効なパスを続ける必要があります";
+BadOptione="オプション -e が無効です:\n-e の後に環境の名前を続ける必要があります";
+BadOptionp="オプション -p が無効です:\n-p の後にパスを続ける必要があります";
+BadOptionfrom="オプション -from が無効です:\n-from の後に有効な環境名または環境名のフル パスを続ける必要があります";
+MissingArgs="オプションが欠落しています。\n";
+NotAdmin2="/p1 オプションを使用するには、昇格された特権が必要です。\n";

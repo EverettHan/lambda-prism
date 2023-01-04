@@ -1,0 +1,48 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "RenderEngine.tst"/>
+  <attached name = "VisuIOSSamples.tst"/>
+  <attached name = "VisualizationNRE.tst"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SGCoreUtils"/>
+  <prerequisite access = "Public" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENGlew"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "VENOpenVR"/>
+  <prerequisite access = "Private" expose = "DoNotExposePrereq" name = "VENnvAPI"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENIntelTBB"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "VENOpenCL"/>
+  <prerequisite access = "Protected" comment = "25.03.2021 JME4/AZX" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENOpenXR"/>
+  <prerequisite access = "Private" comment = "12.01.22 NJ3/AZX" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENNvml"/>
+  <prerequisite access = "Protected" comment = "20.10.22 NER2/AZX DLSS project" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENDLSS"/>
+  <runtimeOnlyPrereq comment = "Vulcan dev" name = "RenderEngineVulkan"/>
+  <runtimeOnlyPrereq comment = "Vulcan dev" name = "GlslangAbstraction"/>
+  <runtimeOnlyPrereq comment = "D3D11 integration" name = "RenderEngineD3D11"/>
+  <buildtimeOnlyPrereq access = "Protected" comment = "02.06.2022 AZX/NJ3 VARJO/OpenXR" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENRapidJson1_1_2110"/>
+  <buildtimeOnlyPrereq access = "Private" comment = "12.01.22 GF8/AZX Performance hash map" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENRobinHoodHashing"/>
+  <authorize access = "Private" comment = "02.06.2022 AZX/NJ3 VARJO/OpenXR" name = "IVDeviceCore"/>
+  <authorize access = "Private" comment = "02.06.2022 AZX/NJ3 D3D11 integration" name = "RenderEngineD3D11"/>
+  <authorize access = "Private" name = "RenderEngine.tst"/>
+  <authorize access = "Private" name = "RenderEngineMesa.tst"/>
+  <authorize access = "Private" name = "VisuIOSSamples.tst"/>
+  <authorize access = "Private" name = "VisualizationDrivers"/>
+  <authorize access = "Private" name = "VisualizationEngines"/>
+  <authorize access = "Private" name = "VisualizationEngines.tst"/>
+  <authorize access = "Private" name = "VisualizationOpenCL"/>
+  <authorize access = "Private" name = "VisualizationCuda"/>
+  <authorize access = "Private" name = "VisualizationGPU"/>
+  <authorize access = "Private" name = "VisualizationGPGPUInternals"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" name = "VisualizationNRE.tst"/>
+  <authorize access = "Private" name = "VisuToolkit.tst"/>
+  <authorize access = "Private" name = "VisuDirectAccessItf"/>
+  <authorize access = "Private" name = "RenderEngineMesa"/>
+  <authorize access = "Private" comment = "06.11.2018 AZX/NJ3 Vulkan integration" name = "RenderEngineVulkan"/>
+  <authorize access = "Private" comment = "06.11.2019 AZX/NJ3 Vulkan integration" name = "GlslangAbstraction"/>
+  <authorize access = "Private" comment = "23.06.21 AZX/NJ3 Snapshot dependency" name = "VisuBatchInfra.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

@@ -1,0 +1,84 @@
+<meta charset="UTF-8"/>
+
+HelpDSYShortcutsMgt.txt=" 
+Pour créer ou supprimer tous les raccourcis d'applications sur le bureau, dans le menu ou dans les outils liés à un fichier d'environnement donné :
+DSYShortcutsMgt -create|-del [-desktop|-menu|-tools] -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd] -h
+Pour créer ou supprimer un raccourci personnalisé sur le bureau uniquement lié à un fichier d'environnement donné :
+DSYShortcutsMgt -create|-del -e EnvName [-d EnvDir |-a global|user] [-name DesktopshortcutName -cmd Cmd]
+  -create ou -del           : pour créer ou supprimer tous les raccourcis d'applications sur le bureau, dans le menu ou dans les outils, ou pour créer ou supprimer un raccourci personnalisé
+  -desktop|menu|tools       : pour créer ou supprimer tous les raccourcis d'applications sur le bureau, dans le menu ou dans les outils. L'emplacement par défaut est le bureau. Inutile en mode personnalisé.
+  -e EnvName                : nom du fichier d'environnement. Inutile pour effacer un raccourci personnalisé.
+  -d EnvDir                 : répertoire de stockage du fichier d'environnement (optionnel). Inutile en mode effacement.
+                              si non spécifié, et si -a n'est pas utilisé, la valeur par défaut sera : EnvDir  = \"/p1\"
+                              si non spécifié, mais que -a global est utilisé, la valeur par défaut sera : EnvDir = \"/p2\"
+                              si non spécifié, mais que -a user est utilisé, la valeur par défaut sera : EnvDir =  \"/p1\"
+  -a global|user            : pour créer ou supprimer les raccourcis pour tous les utilisateurs ou seulement pour l'utilisateur actuel (facultatif). La valeur par défaut est -a user.
+                              Spécifie l'emplacement et le type de raccourcis.
+                             -a global : les raccourcis seront visibles pour tous les utilisateurs. Vous devez disposer des privilèges d'administrateur pour utiliser cette option.
+                             -a user : les raccourcis ne seront visibles que pour l'utilisateur actuel.
+  -name DesktopShortcutName : pour créer ou supprimer un raccourci bureau personnalisé appelé DesktopshortcutName pour lancer l'invite de commandes Cmd.
+  -cmd Cmd                  : pour créer un raccourci bureau personnalisé appelé DesktopshortcutName avec Target = CATSTART -run Cmd env EnvName -direnv EnvDir.
+  -h                        : cette aide.";
+
+MissingOption_e="L'option -e est obligatoire pour dénommer le fichier d'environnement.\n";
+MissingValue_e="L'option -e doit être suivie par le nom du fichier d'environnement.\n";
+MissingValue_d="L'option -d doit être suivie par le nom du chemin de fichier d'environnement.\n";
+MissingValue_a="L'option -a doit être suivie par global ou utilisateur.\n";
+MissingValue_Cmd="L'option -Cmd doit être suivie de la commande devant être lancée par le raccourci.";
+MissingValue_name="L'option -name doit être suivie par le nom du raccourci bureau à créer.";
+MissingOption_cmd="L'option -name doit être utilisée avec l'option -cmd.\n";
+MissingOption_name="L'option -cmd doit être utilisée avec l'option -name.\n";
+BadOptions_menutools="Les raccourcis personnalisés ne peuvent être créés que sur le bureau.\n";
+BadOptions_TypeShortcut="Les options -bureau , -outils ou -menu ne peuvent pas être utilisées ensemble.\n";
+Option_aMustAdmin="L'option -a a besoin de privilèges d'administrateur pour créer des raccourcis pour tous les utilisateurs.\n";
+BadValue_a="L'option -a doit être suivie par global ou utilisateur.\n";
+MissingOptions_createordel="L'une des options suivantes -créer ou -suppr est obligatoire.";
+MissingOption_typeshortcut="L'une des options suivantes -bureau, -outils ou -menu est obligatoire.\n";
+InvalidArg="L'option /p1 n'est pas autorisée.";
+BadOptions_createdel="Les options -créer et -suppr ne peuvent pas être utilisées ensemble.";
+EnvnameNotFound="Le fichier d'environnement /p1 est introuvable. Vérifier l'option -e\n";
+CreateShortcutsIn="Création de raccourcis dans : \"/p1\"\n";
+DeleteShortcutsIn="Suppression de raccourcis dans : \"/p1\"\n";
+CreateShortcutsDesktop="Création de raccourcis sur le bureau...\n";
+CreateShortcutsDesktopOK="La création de raccourcis sur le bureau a réussi.\n";
+CreateShortcutsDesktopKO="La création de raccourcis sur le bureau a échoué.\n";
+CreateShortcutDesktop="Création du raccourci bureau /p1 ...\n";
+CreateShortcutDesktopOK="La création du raccourci bureau a réussi.\n";
+CreateShortcutDesktopKO="La création du raccourci bureau a échoué.\n";
+CreateShortcutsTools="Crée des raccourcis Outils...\n";
+CreateShortcutsToolsOK="La création de raccourcis d'outils a réussi.\n";
+CreateShortcutsToolsKO="La création de raccourcis d'outils a échoué.\n";
+CreateShortcutsMenu="Création de raccourcis dans le menu Démarrer...\n";
+CreateShortcutsMenuOK="La création de raccourcis dans le menu Démarrer a réussi.\n";
+CreateShortcutsMenuKO="La création de raccourcis dans le menu Démarrer a échoué.\n";
+CreateDirFailed="Echec de la création du répertoire : \"/P1\".\n";
+DeleteShortcutsDesktop="Suppression de raccourcis sur le bureau...\n";
+DeleteShortcutsDesktopOK="La suppression de raccourcis sur le bureau a réussi.\n";
+DeleteShortcutsDesktopKO="La suppression de raccourcis sur le bureau a échoué.\n";
+DeleteShortcutDesktop="Suppression du raccourci bureau /p1...\n";
+DeleteShortcutDesktopOK="La suppression du raccourci bureau a réussi.\n";
+DeleteShortcutDesktopKO="La suppression du raccourci bureau a échoué.\n";
+DeleteShortcutsTools="Suppression de raccourcis d'outils sur le bureau...\n";
+DeleteShortcutsToolsOK="La suppression de raccourcis d'outils sur le bureau a réussi.\n";
+DeleteShortcutsToolsKO="La suppression de raccourcis d'outils sur le bureau a échoué.\n";
+DeleteShortcutsMenu="Suppression de raccourcis dans le menu Démarrer...\n";
+DeleteShortcutsMenuOK="La suppression de raccourcis dans le menu Démarrer a réussi.\n";
+DeleteShortcutsMenuKO="La suppression de raccourcis dans le menu Démarrer a échoué.\n";
+DeleteShortcutfailed="Echec de la suppression du raccourci /p1.\n";
+ShortcutNotFound="Le raccourci /p1 est introuvable.\n";
+DeleteShortcutOK="Le raccourci /p1 a été supprimé.\n";
+CreateShortcutOK="Le raccourci /p1 a été créé.\n";
+CreateShortcutKO="Echec de la création du raccourci /p1.\n";
+BadStartInFolder_MissingPourcent="La valeur de départ dans le dossier : /p1 est ignorée car elle contient des caractères % déséquilibrés.\n";
+BadStartInFolder_BadEnv="La variable d'environnement /p1 n'est pas définie.\n";
+BadStartInFolder_BadDir="La valeur de départ dans le dossier : /p1 est ignorée car le chemin n'existe pas.\n";
+NoModuleName="Impossible d'obtenir le nom du module.\n";
+CustomexeNotFound="Exe /p1 introuvable dans la concaténation du PATH.\n";
+Customexe2NotFound="/p1.exe ou /p1.bat introuvables dans la concaténation du PATH.\n";
+NoShortcuts="Impossible de récupérer la liste des raccourcis à créer. Fichier /p1 introuvable. \n";
+ErrGetRootPath="Impossible d'extraire la valeur de dossier pour /p1.\n";
+DeleteDirKO="Impossible de supprimer le dossier /p1 : /p2\n";
+InvalidDiskPathFormat="Le chemin '/p1' commence par un lecteur de disque incorrect.";
+InvalidUNCPathFormat="'/p1' est un chemin UNC incorrect.";
+InvalidPathFormat="'/p1' est un chemin incorrect.";
+rootpathnotExist="Le chemin racine /p1 n'existe pas. Le dossier ne peut pas être créé.";

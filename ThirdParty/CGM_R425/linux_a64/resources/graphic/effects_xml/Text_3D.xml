@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >  
+
+  <CONSTANT_BUFFER>
+    <NAME>cbNode</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbText_Default</NAME>
+  </CONSTANT_BUFFER>
+
+  <UNIFORM>
+    <NAME>PushConstants</NAME>
+    <TYPE>float4</TYPE>
+  </UNIFORM>
+
+  <SAMPLER>
+    <NAME>atlasTexture</NAME>
+    <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+  </SAMPLER>
+
+  <STORAGE_IMAGE>
+    <NAME>GPUPickingImage</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPickingImage</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>atlasSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>atlasTexture</SAMPLER>
+          <STATES>atlasSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float3</TYPE>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+      
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>NeedUVs</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <COMMONS>streams varyings ubos</COMMONS>
+      <VERTEX_STAGE>TextVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>Text_Default</FRAGMENT_STAGE>
+
+    </PASS>
+  </TECHNIQUE>
+</EFFECT>

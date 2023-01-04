@@ -1,0 +1,57 @@
+<meta charset="UTF-8"/>
+//------------------------------------------------------
+// Resource file for input tesselation errors 
+// En_EN
+//================================================================
+//                           INPUT
+//================================================================
+//----------------------------------hlr
+//
+TessInHLROutOfRange="タイプ /p2 のオブジェクトのメソッド /p1 に指定されたインデックス (値は /p3 ) は範囲外です。
+      /p4 から /p5 が有効です。";
+//
+TessInHLRNoSuchBody="指定した CATHLRBodyId に対応するボディーがないか、ボディーが無効です (エッジを含みません)。";
+//
+TessInHLRInvalidObject="HLR に指定されたタイプ CATBaseUnknown のオブジェクトは認識されません。
+      実装の本当のタイプは /p1 です。";
+//
+TessInHLREmptyObject="HLR に指定されたオブジェクトは意味のないデータを含みます:
+      たとえば、エッジなし、認識されない V4 オブジェクト";
+//
+//----------------------------------tessellation
+//
+TessInTooLargeLength="メソッド /p1::/p2 に指定された長さは大きすぎます。
+      その値は /p3 より小である必要があります。";
+//
+TessInTooSmallLength="メソッド /p1::/p2 に指定された長さは小さすぎます。
+      その値は /p3 より大である必要があります。";
+//
+TessInInvalidSag="サグ /p1 は小さすぎます。/p2 より大である必要があります。";
+//
+TessInInvalidStep="ステップ /p1 は小さすぎます。/p2 より大である必要があります。";
+//
+TessInInvalidAngle="最大角度 /p1 が正しくありません。[ /p2, /p3 ] の範囲内である必要があります。";
+//================================================================
+//                           INternal
+//================================================================
+//----------------------------------Null or invalid input
+//
+TessIntHLRImpossibleProjection="曲線の投影は不可能か、縮退します。";
+//
+TessIntHLRComputationError="隠線の計算中にエラーが発生しました。";
+//
+TessIntHLRNoProjectionData="投影データを指定せずに曲線を投影しようとしました。";
+//
+TessIntHLRNoSeledtedDataResult="/p1 が選択されませんでした。
+      結果を読む前に、/p2 を選択する必要があります。";
+//
+//----------------------------------tessellation
+//
+TessInUnableToAllocate=" 割り当てできません ";
+//
+TessInInternalError=" テッセレーションで内部エラー ";
+//
+TessInInvalidTransaction_ERR_101.Request="テッセレーションが無効です。";
+TessInInvalidTransaction_ERR_101.Diagnostic="開始終了トランザクションに相互関係がありません。";
+TessInInvalidTransaction_ERR_101.Advice="CATTessellate/Threading の使用法をチェックしてください。";
+//

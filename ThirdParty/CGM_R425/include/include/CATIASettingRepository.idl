@@ -1,0 +1,155 @@
+#ifndef CATIASettingRepository_IDL
+#define CATIASettingRepository_IDL
+/*IDLNOGEN*/
+/*IDLREP*/
+
+// COPYRIGHT DASSAULT SYSTEMES 2005
+/**
+ * @CAA2Level L1
+ * @CAA2Usage U3
+ */
+
+#include "CATIABase.idl"
+#include "CATVariant.idl"
+#include "CATSafeArray.idl"
+#include "CATIASettingController.idl"
+#include "CATBSTR.idl"
+
+/**
+* Represents the base object to handle the parameters of a setting
+*/
+interface CATIASettingRepository : CATIASettingController
+{
+/**
+ * Retieves a attribute.
+ * @param iAttrName
+ *	 the attribute name
+ * @param oAttr
+ *       a CATVariant
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT GetAttr (in CATBSTR iAttrName,
+		   inout /*IDLRETVAL*/ CATVariant oAttr);
+
+/**
+ * Sets an attribute of type array.
+ * @param iAttrName
+ *	 the attribute name
+ * @param iArray
+ *       a CATSafeArrayVariant.
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT PutAttr (in CATBSTR iAttrName, in CATVariant iAttr);
+/**
+ * Retieves a attribute of type array
+ * @param iAttrName
+ *	 the attribute name
+ * @param oArray
+ *       a CATSafeArrayVariant
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT GetAttrArray (in CATBSTR iAttrName,
+			out /*IDLRETVAL*/ CATSafeArrayVariant oArray);
+
+/**
+ * Sets an attribute of type array.
+ * @param iAttrName
+ *	 the attribute name
+ * @param iArray
+ *       a CATSafeArrayVariant.
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/
+  HRESULT PutAttrArray (in CATBSTR iAttrName, in CATSafeArrayVariant iArray);
+
+/** 
+ * Locks or unlocks an attribute.
+ * <br><b>Role</b>: Locking a setting attribute prevents the end user, or the 
+ * administrators below the current one, from changing the setting parameter 
+ * value. Locking or unlocking the attribute setting parameter is an 
+ * administrator task and is possible  when running a session in the
+ * administration mode only.
+ * @param iAttrName [in]
+ *   the attribute name.
+ * @param iLocked [in] 
+ *   A flag to indicate whether the attribute setting parameter should be 
+ *   locked.
+ *   <br><b>Legal values</b>: True to lock, and False to unlock.
+*/
+  HRESULT SetAttrLock(in CATBSTR iAttrName, in  boolean iLocked);     
+  
+/** 
+ * Retrieves environment informations for the given attribute.
+ * <br><b>Role</b>: This information defines the state of the setting parameter
+ * and is made up of:</p>
+ * <ul>
+ * <li>The administration level that sets the current value or the value used to reset it</li>
+ * <li>The administration level that has locked the setting parameter.</li>
+ * <li>A flag to indicate whether the setting parameter was modified.</li>
+ * </ul>
+ * <dl>
+ * @param iAttrName [in]
+ *        the attribute name.
+ * @param ioAdminLevel [inout]
+ *   The administration level that defines the value used when resetting the
+ *   setting parameter.
+ *   <p><b>Legal values</b>:</p>
+ *   <ul>
+ *     <li><b>Default value</b> if the setting parameter has never been explicitly
+ *         set in the administration concatenation.</li>
+ *	   <li><b>Set at Admin Level n</b> if the setting parameter has been 
+ *         administered, <br>where n is an integer starting from 0 representing 
+ *         the rank of the administration level.</li>
+ *   </ul>
+ * @param ioLocked [inout]
+ *   A character string to indicate whether the parameter is locked and the 
+ *   level of administration where the locking has been proceeded.
+ *   <br><b>Legal values</b>: 
+ *   <ul>
+ *     <li><b>Locked at Admin Level n</b> if the setting parameter is locked by 
+ *            then administration level n, <br>where n is an integer starting 
+ *            from 0. The setting parameter can not be modified at the current
+ *            level.
+ *     <li><b>Locked</b> if the setting parameter is locked by the current 
+ *            administration level. Only an admistrator can get this value.</li>
+ *     <li><b>Unlocked</b> if the setting parameter is not locked</li>
+ *   </ul>
+ * @param oModified [out]
+ *    <b>True</b> to indicate that the setting parameter value has been 
+ *    explicitely modified  at the current administrator or user level.
+ *    This is only possible with unlocked parameters.
+ *    <b>False</b> means that it inherits the administered value.</dd>
+ * @return
+ *	<b>Legal values</b>:
+ *	<br><tt>S_OK :</tt>   on Success
+ * 	<br><tt>E_FAIL:</tt>  on failure
+*/ 
+  HRESULT GetAttrInfo(in CATBSTR iAttrName,
+		      inout CATBSTR AdminLevel,
+		      inout CATBSTR Locked,
+		      out boolean oModified); 
+
+
+ 
+
+};
+
+// Interface Name : CATIASettingRepository
+#pragma ID CATIASettingRepository "DCE:b9ff6571-bac8-0000-0280031074000000"
+#pragma DUAL CATIASettingRepository
+
+// VB Object Name : SettingRepository
+#pragma ID SettingRepository "DCE:ba11effc-51b0-0000-0280031074000000"
+#pragma ALIAS CATIASettingRepository SettingRepository
+#endif

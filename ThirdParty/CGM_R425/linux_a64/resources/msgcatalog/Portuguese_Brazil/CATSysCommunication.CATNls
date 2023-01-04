@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="Não foi possível encontrar a porta /p1 no host /p2 ";
+CATSysComPortFailure_150002.Request="Não foi possível declarar na porta /p1 no host /p2";
+CATSysComPortAcceptFailed_150003.Request="Não foi possível aceitar a porta /p1";
+CATSysComPortAcceptFailed_150004.Request="Ocorreu um erro durante a espera pela porta /p1";
+CATSysComInitSocketError_150102.Request="Ocorreu um erro em uma operação de soquete. A conexão com o backbone provavelmente foi perdida.";
+CATSysComSendSocketError_150103.Request="Ocorreu um erro em uma operação de envio de soquete. A conexão com o backbone provavelmente foi perdida.";
+CATSysComRecvSocketError_150104.Request="Ocorreu um erro em uma operação de recebimento de soquete. A conexão com o backbone provavelmente foi perdida.";
+CATSysComMsgClassError_151001.Request="A classe de mensagem \p1 não encontrada.";
+CATSysComMsgStreamError_151002.Request="Erro durante o streaming de dados da classe \p1.";
+CATSysComMsgUnstreamError_151003.Request="Erro durante o unstreaming de dados da classe \p1.";
+CATSysComMsgClassInvalid_152001.Request="A classe de mensagem \p1 deve implementar CATIStreamMsg.";
+CATSysComMsgClassInvalid_152002.Request="A classe de mensagem \p1 deve implementar CATICommMsg.";
+CATSysComMsgInvalid_152003.Request="A mensagem não precisa de resposta.";
+CATSysComInstanciationError_152004.Request="Não é possível instanciar objeto de mensagem da classe \p1.";
+CATSysComReentranceError_152005.Request="Erro interno. Condição de reentrada encontrada.";
+CATSysComTimeoutOccurred_152006.Request="Tempo esgotado.";
+CATSysComApplicationNotFound_152007.Request="Aplicação de destino \p1 não presente.";

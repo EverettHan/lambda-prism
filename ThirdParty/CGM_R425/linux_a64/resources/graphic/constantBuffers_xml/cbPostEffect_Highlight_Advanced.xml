@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_PostEffect_Highlight_Advanced</NAME>
+  
+  <UNIFORM>
+    <NAME>u_OutlineColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 1 1 1</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_HaloColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 0.6 1 1</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_HaloIntensity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>2</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_HaloSize</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>3</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_Level</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ScanEffectIntensity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ScanEffectColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 0.6078 1 1</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  
+
+
+</CONSTANT_BUFFER>

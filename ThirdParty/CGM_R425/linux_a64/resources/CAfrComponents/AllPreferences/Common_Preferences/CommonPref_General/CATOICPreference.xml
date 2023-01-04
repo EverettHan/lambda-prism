@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+    <Template syp:name="CATOICPreferencesettings" Target="CATAfrComponent">
+
+    <preferencepage Name="OICPreference" Resource="CATOICPreference" RepositoryName="CATOIC">
+        <preferencegroup Name="UsageUpload">
+            <preferenceitem syp:name="OICActivation" Name="OICActivation" />
+            <preferenceitem syp:name="OICServerURL" Name="OICServerURL" UserDefinedCtr="TextEditor"/>
+            <preferenceitem syp:name="MTBFServerURL" Name="MTBFServerURL" UserDefinedCtr="TextEditor"/>
+            <preferenceitem syp:name="OICActivation_DevMode" Name="OICActivation_DevMode" Visibility="0"/>
+        </preferencegroup>
+        <preferencegroup Name="SendReport2" Align="1" Border="0">
+                <preferenceitem Name="OICShowPrivacyButton" MoreInfo="PlaceHolderControl" UserDefinedCtr="PushButton" WithoutLockAndIcon="1"/> 
+        </preferencegroup>
+    </preferencepage>
+
+
+    <CATSYPTriggerCollection>
+      <!-- URL fields must be allways activated when checkbox is true because some no web-connected onPremise customer use it to redirect MTBF to an unique connected entry-point -->
+      <CATSYPTrigger Property="ControlValue" TargetName="OICActivation" Value="1">
+          <CATSYPSetter Property="EnableFlag" TargetName="OICServerURL" Value="1" />
+          <CATSYPSetter Property="EnableFlag" TargetName="MTBFServerURL" Value="1" />
+     </CATSYPTrigger>
+      <CATSYPTrigger Property="ControlValue" TargetName="OICActivation" Value="0">
+          <CATSYPSetter Property="EnableFlag" TargetName="OICServerURL" Value="0" />
+          <CATSYPSetter Property="EnableFlag" TargetName="MTBFServerURL" Value="0" />
+     </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+
+    </Template>
+</Styles>

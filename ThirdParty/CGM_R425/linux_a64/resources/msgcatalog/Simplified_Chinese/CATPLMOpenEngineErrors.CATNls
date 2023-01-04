@@ -1,0 +1,70 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of Components concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each component 
+// This parameter has to be documented
+
+GenericMediatorErrorWithCompo.Diagnostic="无法打开部件 [/p1]";
+GenericMediatorErrorWithCompo.Advice="无法打开部件 /p1。\n重新启动流程。\n激活错误日志统计数据帮助您的管理员排除故障。\n尝试运行部件检查器。";
+
+GenericMediatorError.Diagnostic="会话构建期间发生意外错误。";
+GenericMediatorError.Advice="强烈建议重新启动此流程。您可尝试运行部件检查器。";
+
+BulkSessionManagementIntegrityFailure.Diagnostic="构建会话期间发生意外错误。无法确保会话的完整性。";
+BulkSessionManagementIntegrityFailure.Advice="重新启动流程。\n此服务器中可能无法找到完整部件。在服务器上检查 P&O 规则并联系您的管理员。";
+
+//Copy-pasted from PLM_NotRetrievedComponent@PLMServerActionErrors.CATNls
+ComponentUnavailabilityInDatabase.Diagnostic="不能从数据库查询部件。";
+ComponentUnavailabilityInDatabase.Advice="部件可能不再存在，或其安全策略阻止您读取它。";
+
+AnotherMinorInSession.Diagnostic="/p：会话中存在来自同一主要系列的其他次要对象，从而阻止打开";
+AnotherMinorInSession.Advice="卸载次要对象以实现打开";
+
+AnotherMinorInInput.Diagnostic="/p：存在作为输入元素的来自同一主要系列的其他次要对象，从而阻止打开";
+AnotherMinorInInput.Advice="请联系当地管理员。";
+
+ConcurrencyInSessionOfflineContent.Diagnostic="/p：此元素已在脱机内容和会话中修改。";
+ConcurrencyInSessionOfflineContent.Advice="已在会话中加载了某些状态不同的元素。\n请关闭包含这些元素的选项卡，然后再打开脱机内容。";
+
+NoElement.Diagnostic="未将任何元素发送到开放引擎";
+NoElement.Advice="检查服务器中数据的可用性";
+
+NoEltToOpen.Diagnostic="已在会话中加载要打开的所有部件，但数据可能不是最新的。打开操作未执行任何刷新";
+NoEltToOpen.Advice="如果要加载最新更新，必须先关闭当前的创作会话";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+AdapterCom.Diagnostic="尝试检索服务器上的信息时发生问题";
+AdapterCom="会断开与服务器之间的连接";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// (correspond a une err systeme, donc a un abend)
+Internal.Diagnostic="内部开放引擎错误";
+Internal.Advice="请联系当地管理员";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+MessageStructure.Diagnostic="在服务器上检索的数据不一致";
+MessageStructure.Advice="描述部件的数据可能不完整";
+
+AlreadyOpened_F_0.Diagnostic="/p 已在会话中加载要打开的所有部件，但数据可能不是最新的。打开操作未执行任何刷新";
+AlreadyOpened_F_0.Advice="如果要加载最新更新，必须先关闭当前的创作会话";
+
+UnstreamPb.Diagnostic="至少有一个流无法加载";
+UnstreamPb.Advice="请检查资源库的状态";
+
+FactoryNotFound.Diagnostic="由于缺少工厂而无法在会话中创建类型为 /p 的部件。";
+FactoryNotFound.Advice="请与管理员联系：您可能缺少类型 /p 的一些包或许可证。";
+
+ReentranceForbidden.Diagnostic="现在无法启动新的“/p1”操作，因为另一个操作正在运行。";
+ReentranceForbidden.Advice="接触支持面。";

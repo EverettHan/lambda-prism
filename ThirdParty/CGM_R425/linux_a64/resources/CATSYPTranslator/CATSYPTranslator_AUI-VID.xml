@@ -1,0 +1,908 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template syp:name="AUI-VID" Target="CATSYPModelTranslatorTagFactory">
+
+    <CATSYPTranslatorGroup>
+
+      <CATSYPTranslatorTag Input="Control" Output="CATVidCtl" FatherName="Container">
+        <CATSYPTranslatorAttribute Input="IgnoreMinimumDimensionFlag" Output="IgnoreMinimumDimensionFlag"/>
+        <CATSYPTranslatorAttribute Input="AlphaFilterValue" Output="AlphaFilterValue"/>
+        <CATSYPTranslatorAttribute Input="FocusableFlag" Output="FocusableFlag"/>
+        <CATSYPTranslatorAttribute Input="FocusedFlag" Output="FocusedFlag"/>
+        <CATSYPTranslatorAttribute Input="UseViewportFilter" Output="UseViewportFilter"/>
+        <CATSYPTranslatorAttribute Input="MinimumViewport" Output="MinimumViewport"/>
+        <CATSYPTranslatorAttribute Input="MinimumViewportHeight" Output="MinimumViewportHeight"/>
+        <CATSYPTranslatorAttribute Input="MinimumViewportWidth" Output="MinimumViewportWidth"/>
+        <CATSYPTranslatorAttribute Input="VisibilityPolicy" Output="VisibilityPolicy"/>
+        <CATSYPTranslatorAttribute Input="Item" Output="Item"/>
+        <CATSYPTranslatorAttribute Input="PresenterContent" Output="PresenterContent"/>
+        <CATSYPTranslatorAttribute Input="ShortTooltipTemplateName" Output="ShortTooltipTemplateName"/>
+        <CATSYPTranslatorAttribute Input="LongTooltipTemplateName" Output="LongTooltipTemplateName"/>
+        <CATSYPTranslatorAttribute Input="ShortTooltipStyleSheet" Output="ShortTooltipStyleSheet"/>
+        <CATSYPTranslatorAttribute Input="LongTooltipStyleSheet" Output="LongTooltipStyleSheet"/>
+        <CATSYPTranslatorAttribute Input="TooltipImage" Output="TooltipImage"/>
+        <CATSYPTranslatorAttribute Input="TooltipImageDimension" Output="TooltipImageDimension"/>
+        <CATSYPTranslatorAttribute Input="TooltipTitle" Output="TooltipTitle"/>
+        <CATSYPTranslatorAttribute Input="TooltipShortHelp" Output="TooltipShortHelp"/>
+        <CATSYPTranslatorAttribute Input="TooltipLongHelp" Output="TooltipLongHelp"/>
+        <CATSYPTranslatorAttribute Input="TooltipHyperlinkLabel" Output="TooltipHyperlinkLabel"/>
+        <CATSYPTranslatorAttribute Input="LongHelpId" Output="LongHelpId"/>
+        <CATSYPTranslatorAttribute Input="TooltipWrapThreshold" Output="TooltipWrapThreshold"/>
+        <CATSYPTranslatorAttribute Input="TooltipWrapToleranceMargin" Output="TooltipWrapToleranceMargin"/>
+        <CATSYPTranslatorAttribute Input="TooltipInitialDelay" Output="TooltipInitialDelay"/>
+        <CATSYPTranslatorAttribute Input="TooltipShortToLongDelay" Output="TooltipShortToLongDelay"/>
+        <CATSYPTranslatorAttribute Input="TooltipAutoPopDelay" Output="TooltipAutoPopDelay"/>
+        <CATSYPTranslatorAttribute Input="TooltipDeactivateDelay" Output="TooltipDeactivateDelay"/>
+        <CATSYPTranslatorAttribute Input="TooltipReshowDelay" Output="TooltipReshowDelay"/>
+        <CATSYPTranslatorAttribute Input="TooltipType" Output="TooltipType"/>
+        <CATSYPTranslatorAttribute Input="TooltipPersistence" Output="TooltipPersistence"/>
+        <CATSYPTranslatorAttribute Input="TooltipWrapPolicy" Output="TooltipWrapPolicy"/>
+        <CATSYPTranslatorAttribute Input="TooltipAnimationPolicy" Output="TooltipAnimationPolicy"/>
+        <CATSYPTranslatorAttribute Input="TooltipOffset" Output="TooltipOffset"/>
+        <CATSYPTranslatorAttribute Input="TooltipHyperlinkURL" Output="TooltipHyperlinkURL"/>
+        <CATSYPTranslatorAttribute Input="TooltipProvider" Output="TooltipProvider"/>
+        <CATSYPTranslatorAttribute Input="AutoDetectTooltipTypeFlag" Output="AutoDetectTooltipTypeFlag"/>
+        <CATSYPTranslatorAttribute Input="TooltipPersistOverCtlFlag" Output="TooltipPersistOverCtlFlag"/>
+        <CATSYPTranslatorAttribute Input="UpdateLongTooltipPositionFlag" Output="UpdateLongTooltipPositionFlag"/>
+        <CATSYPTranslatorAttribute Input="DragMode" Output="DragMode"/>
+        <CATSYPTranslatorAttribute Input="DropMode" Output="DropMode"/>
+        <CATSYPTranslatorAttribute Input="TooltipHyperlinkClicked" Output="TooltipHyperlinkClicked"/>
+        <CATSYPTranslatorAttribute Input="TooltipBeforeDisplay" Output="TooltipBeforeDisplay"/>
+        <CATSYPTranslatorAttribute Input="ContextMenuRequired" Output="ContextMenuRequired"/>
+        <CATSYPTranslatorAttribute Input="Dragged" Output="Dragged"/>
+        <CATSYPTranslatorAttribute Input="Dropped" Output="Dropped"/>
+        <CATSYPTranslatorAttribute Input="CanImportData" Output="CanImportData"/>
+        <CATSYPTranslatorAttribute Input="ImportData" Output="ImportData"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Container" Output="CATVidContainer" FatherName="Widget">
+        <CATSYPTranslatorAttribute Input="ChildrenLifeCyclePolicy" Output="ChildrenLifeCyclePolicy"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Widget" Output="CATVidWidget">
+        <CATSYPTranslatorAttribute Input="VisibleFlag" Output="VisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="EnableFlag" Output="EnableFlag"/>
+        <CATSYPTranslatorAttribute Input="EnableState" Output="EnableState"/>
+        <CATSYPTranslatorAttribute Input="LayoutWhenUnvisibleFlag" Output="LayoutWhenUnvisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="MinimumDimension" Output="RequestedMinimumDimension"/>
+        <CATSYPTranslatorAttribute Input="RequestedMinimumDimension" Output="RequestedMinimumDimension"/>
+        <CATSYPTranslatorAttribute Input="Dimension" Output="Dimension"/>
+        <CATSYPTranslatorAttribute Input="Name" Output="Name"/>
+        <CATSYPTranslatorAttribute Input="KeyboardManipulationFlag" Output="KeyboardManipulationFlag"/>
+        <CATSYPTranslatorAttribute Input="MouseHoveringState" Output="MouseHoveringState"/>
+        <CATSYPTranslatorAttribute Input="RotationInDegree" Output="RotationInDegree"/>
+        <CATSYPTranslatorAttribute Input="FatherWidget" Output="FatherWidget"/>
+        <CATSYPTranslatorAttribute Input="MouseEnter" Output="MouseEnter"/>
+        <CATSYPTranslatorAttribute Input="MouseLeave" Output="MouseLeave"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Form" Output="CATVidCtlForm" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="Data" Output="Data"/>
+        <CATSYPTranslatorAttribute Input="GridFlag" Output="GridFlag"/>
+        <CATSYPTranslatorAttribute Input="AlternateBackgroundFlag" Output="AlternateBackgroundFlag"/>
+        <CATSYPTranslatorAttribute Input="AlternateBackgroundColor" Output="AlternateBackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="UndoButtonFlag" Output="UndoButtonFlag"/>
+        <CATSYPTranslatorAttribute Input="LabelsCropPolicy" Output="LabelsCropPolicy"/>
+        <CATSYPTranslatorAttribute Input="LabelsAlignment" Output="LabelsAlignment"/>
+        <CATSYPTranslatorAttribute Input="NlsFiles" Output="NlsFiles"/>
+        <CATSYPTranslatorAttribute Input="Items" Output="Items"/>
+        <CATSYPTranslatorAttribute Input="UseTransactionFlag" Output="UseTransactionFlag"/>
+        <CATSYPTranslatorAttribute Input="UseDetailedViewTransactionFlag" Output="UseDetailedViewTransactionFlag"/>
+        <CATSYPTranslatorAttribute Input="EditingStarted" Output="EditingStarted"/>
+        <CATSYPTranslatorAttribute Input="ValueLiveChanged" Output="ValueLiveChanged"/>
+        <CATSYPTranslatorAttribute Input="ValueChanged" Output="ValueChanged"/>
+        <CATSYPTranslatorAttribute Input="EditingFinished" Output="EditingFinished"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="FormItem" Output="CATVidCtlFormItem" FatherName="Control">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Spacer" Output="CATVidSpacer" FatherName="Widget">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Button" Output="CATVidCtlButton" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="ButtonPressedFlag" Output="ButtonPressedFlag"/>
+        <CATSYPTranslatorAttribute Input="MouseOverFlag" Output="MouseOverFlag"/>
+        <CATSYPTranslatorAttribute Input="OverFlag" Output="OverFlag"/>
+        <CATSYPTranslatorAttribute Input="OnFlag" Output="OnFlag"/>
+        <CATSYPTranslatorAttribute Input="UseIconFlag" Output="UseIconFlag"/>
+        <CATSYPTranslatorAttribute Input="UseLabelFlag" Output="UseLabelFlag"/>
+        <CATSYPTranslatorAttribute Input="ColorizeIconBlackPixelFlag" Output="ColorizeIconBlackPixelFlag"/>
+        <CATSYPTranslatorAttribute Input="CursorShape" Output="CursorShape"/>
+        <CATSYPTranslatorAttribute Input="ClickMode" Output="ClickMode"/>
+        <CATSYPTranslatorAttribute Input="CheckState" Output="CheckState"/>
+        <CATSYPTranslatorAttribute Input="MixedState" Output="MixedState"/>
+        <CATSYPTranslatorAttribute Input="CyclingThreeStateFlag" Output="CyclingThreeStateFlag"/>
+        <CATSYPTranslatorAttribute Input="AllCheckedAfterMixedStateFlag" Output="AllCheckedAfterMixedStateFlag"/>
+        <CATSYPTranslatorAttribute Input="CheckMode" Output="CheckMode"/>
+        <CATSYPTranslatorAttribute Input="Label" Output="Label"/>
+        <CATSYPTranslatorAttribute Input="Icon" Output="Icon"/>
+        <CATSYPTranslatorAttribute Input="Tooltip" Output="Tooltip"/>
+        <CATSYPTranslatorAttribute Input="ColorizeIconBlackPixelTo" Output="ColorizeIconBlackPixelTo"/>
+        <CATSYPTranslatorAttribute Input="IconDimension" Output="IconDimension"/>
+        <CATSYPTranslatorAttribute Input="IconFilter" Output="IconFilter"/>
+        <CATSYPTranslatorAttribute Input="ForegroundColor" Output="ForegroundColor"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="ShortHelpAttachmentSide" Output="ShortHelpAttachmentSide"/>
+        <CATSYPTranslatorAttribute Input="FontHeight" Output="FontHeight"/>
+        <CATSYPTranslatorAttribute Input="FontWeight" Output="FontWeight"/>
+        <CATSYPTranslatorAttribute Input="CropPolicy" Output="CropPolicy"/>
+        <CATSYPTranslatorAttribute Input="AllowMultiplePressFlag" Output="AllowMultiplePressFlag"/>
+        <CATSYPTranslatorAttribute Input="ShortHelpBeginTime" Output="ShortHelpBeginTime"/>
+        <CATSYPTranslatorAttribute Input="MenuContextualItems" Output="MenuContextualItems"/>
+        <CATSYPTranslatorAttribute Input="ShortHelpItem" Output="ShortHelpItem"/>
+        <CATSYPTranslatorAttribute Input="IconPixelImage" Output="IconPixelImage"/>
+        <CATSYPTranslatorAttribute Input="DefaultFlag" Output="DefaultFlag"/>
+        <CATSYPTranslatorAttribute Input="AutoDefaultFlag" Output="AutoDefaultFlag"/>
+        <CATSYPTranslatorAttribute Input="UnderlineFlag" Output="UnderlineFlag"/>
+        <CATSYPTranslatorAttribute Input="GiveFocusOnDragFlag" Output="GiveFocusOnDragFlag"/>
+        <CATSYPTranslatorAttribute Input="AcceptFocusOnDropFlag" Output="AcceptFocusOnDropFlag"/>
+        <CATSYPTranslatorAttribute Input="DragAndDropFlag" Output="DragAndDropFlag"/>
+        <CATSYPTranslatorAttribute Input="Drag" Output="Drag"/>
+        <CATSYPTranslatorAttribute Input="Click" Output="Click"/>
+        <CATSYPTranslatorAttribute Input="Press" Output="Press"/>
+        <CATSYPTranslatorAttribute Input="Release" Output="Release"/>
+        <CATSYPTranslatorAttribute Input="MultiplePress" Output="MultiplePress"/>
+        <CATSYPTranslatorAttribute Input="DoubleClick" Output="DoubleClick"/>
+        <CATSYPTranslatorAttribute Input="DoubleRelease" Output="DoubleRelease"/>
+        <CATSYPTranslatorAttribute Input="RightClick" Output="RightClick"/>
+        <CATSYPTranslatorAttribute Input="Entry" Output="Entry"/>
+        <CATSYPTranslatorAttribute Input="Leave" Output="Leave"/>
+        <CATSYPTranslatorAttribute Input="MoveOver" Output="MoveOver"/>
+        <CATSYPTranslatorAttribute Input="BeginPreDrop" Output="BeginPreDrop"/>
+        <CATSYPTranslatorAttribute Input="PreDrop" Output="PreDrop"/>
+        <CATSYPTranslatorAttribute Input="EndPreDrop" Output="EndPreDrop"/>
+        <CATSYPTranslatorAttribute Input="Drop" Output="Drop"/>
+        <CATSYPTranslatorAttribute Input="PostDrop" Output="PostDrop"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="GroupBox" Output="CATVidCtlGroupBox" FatherName="HeaderedContent">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="HeaderedContent" Output="CATVidCtlHeaderedContent" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="Label" Output="Label"/>
+        <CATSYPTranslatorAttribute Input="UseLabelFlag" Output="UseLabelFlag"/>
+        <CATSYPTranslatorAttribute Input="Icon" Output="Icon"/>
+        <CATSYPTranslatorAttribute Input="UseIconFlag" Output="UseIconFlag"/>
+        <CATSYPTranslatorAttribute Input="ColorizeIconBlackPixelTo" Output="ColorizeIconBlackPixelTo"/>
+        <CATSYPTranslatorAttribute Input="IconDimension" Output="IconDimension"/>
+        <CATSYPTranslatorAttribute Input="ForegroundColor" Output="ForegroundColor"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="FontHeight" Output="FontHeight"/>
+        <CATSYPTranslatorAttribute Input="FontWeight" Output="FontWeight"/>
+        <CATSYPTranslatorAttribute Input="CropPolicy" Output="CropPolicy"/>
+        <CATSYPTranslatorAttribute Input="ColorizeIconBlackPixelFlag" Output="ColorizeIconBlackPixelFlag"/>
+        <CATSYPTranslatorAttribute Input="HeaderedContentItem" Output="HeaderedContentItem"/>
+        <CATSYPTranslatorAttribute Input="Content" Output="Content"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="RadioButton" Output="CATVidCtlRadioButton" FatherName="CheckBox">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="CheckBox" Output="CATVidCtlCheckBox" FatherName="Button">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ButtonIcon" Output="CATVidCtlButtonIcon" FatherName="Button">
+        <CATSYPTranslatorAttribute Input="OffTexture" Output="OffTexture"/>
+        <CATSYPTranslatorAttribute Input="OnTexture" Output="OnTexture"/>
+        <CATSYPTranslatorAttribute Input="OverTexture" Output="OverTexture"/>
+        <CATSYPTranslatorAttribute Input="DisabledTexture" Output="DisabledTexture"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Editor" Output="CATVidCtlEditor" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="DataType" Output="DataType"/>
+        <CATSYPTranslatorAttribute Input="IntegerValue" Output="IntegerValue"/>
+        <CATSYPTranslatorAttribute Input="FloatValue" Output="FloatValue"/>
+        <CATSYPTranslatorAttribute Input="Value" Output="Value"/>
+        <CATSYPTranslatorAttribute Input="Line" Output="Line"/>
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="ListenKeybdEntryFlag" Output="ListenKeybdEntryFlag"/>
+        <CATSYPTranslatorAttribute Input="ShiftEnterActiveFlag" Output="ShiftEnterActiveFlag"/>
+        <CATSYPTranslatorAttribute Input="MultilineFlag" Output="MultilineFlag"/>
+        <CATSYPTranslatorAttribute Input="PasswordFlag" Output="PasswordFlag"/>
+        <CATSYPTranslatorAttribute Input="WordWrapFlag" Output="WordWrapFlag"/>
+        <CATSYPTranslatorAttribute Input="ReadOnlyFlag" Output="ReadOnlyFlag"/>
+        <CATSYPTranslatorAttribute Input="Underline" Output="Underline"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="ForegroundColor" Output="ForegroundColor"/>
+        <CATSYPTranslatorAttribute Input="Modify" Output="Modify"/>
+        <CATSYPTranslatorAttribute Input="ModifyExt" Output="ModifyExt"/>
+        <CATSYPTranslatorAttribute Input="FocusIn" Output="FocusIn"/>
+        <CATSYPTranslatorAttribute Input="FocusOut" Output="FocusOut"/>
+        <CATSYPTranslatorAttribute Input="KeybdEntry" Output="KeybdEntry"/>
+        <CATSYPTranslatorAttribute Input="SelectionChange" Output="SelectionChange"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="TextEditor" Output="CATVidCtlTextEditor" FatherName="AbstractScrollableArea">
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="XHTMLText" Output="XHTMLText"/>
+        <CATSYPTranslatorAttribute Input="DocumentTitle" Output="DocumentTitle"/>
+        <CATSYPTranslatorAttribute Input="OverwriteModeFlag" Output="OverwriteModeFlag"/>
+        <CATSYPTranslatorAttribute Input="ReadOnlyFlag" Output="ReadOnlyFlag"/>
+        <CATSYPTranslatorAttribute Input="TabChangesFocusFlag" Output="TabChangesFocusFlag"/>
+        <CATSYPTranslatorAttribute Input="TabStopWidth" Output="TabStopWidth"/>
+        <CATSYPTranslatorAttribute Input="MaxNumberOfCharacters" Output="MaxNumberOfCharacters"/>
+        <CATSYPTranslatorAttribute Input="WordWrapMode" Output="WordWrapMode"/>
+        <CATSYPTranslatorAttribute Input="TextInteractionFlags" Output="TextInteractionFlags"/>
+        <CATSYPTranslatorAttribute Input="Alignment" Output="Alignment"/>
+        <CATSYPTranslatorAttribute Input="ReturnKeyType" Output="ReturnKeyType"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="CursorPoint" Output="CursorPoint"/>
+        <CATSYPTranslatorAttribute Input="CursorHeight" Output="CursorHeight"/>
+        <CATSYPTranslatorAttribute Input="Selection" Output="Selection"/>
+        <CATSYPTranslatorAttribute Input="SelectionChanged" Output="SelectionChanged"/>
+        <CATSYPTranslatorAttribute Input="CursorPositionChanged" Output="CursorPositionChanged"/>
+        <CATSYPTranslatorAttribute Input="TextChanged" Output="TextChanged"/>
+        <CATSYPTranslatorAttribute Input="TextActivated" Output="TextActivated"/>
+        <CATSYPTranslatorAttribute Input="EditingFinished" Output="EditingFinished"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="AbstractScrollableArea" Output="CATVidCtlAbstractScrollableArea" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="HScrollbarSide" Output="HScrollbarSide"/>
+        <CATSYPTranslatorAttribute Input="VScrollbarSide" Output="VScrollbarSide"/>
+        <CATSYPTranslatorAttribute Input="HScrollbarPolicy" Output="HScrollbarPolicy"/>
+        <CATSYPTranslatorAttribute Input="VScrollbarPolicy" Output="VScrollbarPolicy"/>
+        <CATSYPTranslatorAttribute Input="TMargin" Output="TMargin"/>
+        <CATSYPTranslatorAttribute Input="BMargin" Output="BMargin"/>
+        <CATSYPTranslatorAttribute Input="RMargin" Output="RMargin"/>
+        <CATSYPTranslatorAttribute Input="LMargin" Output="LMargin"/>
+        <CATSYPTranslatorAttribute Input="BRMargins" Output="BRMargins"/>
+        <CATSYPTranslatorAttribute Input="TLMargins" Output="TLMargins"/>
+        <CATSYPTranslatorAttribute Input="TWidget" Output="TWidget"/>
+        <CATSYPTranslatorAttribute Input="BWidget" Output="BWidget"/>
+        <CATSYPTranslatorAttribute Input="RWidget" Output="RWidget"/>
+        <CATSYPTranslatorAttribute Input="LWidget" Output="LWidget"/>
+        <CATSYPTranslatorAttribute Input="TLWidget" Output="TLWidget"/>
+        <CATSYPTranslatorAttribute Input="BLWidget" Output="BLWidget"/>
+        <CATSYPTranslatorAttribute Input="TRWidget" Output="TRWidget"/>
+        <CATSYPTranslatorAttribute Input="BRWidget" Output="BRWidget"/>
+        <CATSYPTranslatorAttribute Input="BackgroundWidget" Output="BackgroundWidget"/>
+        <CATSYPTranslatorAttribute Input="HStretchPolicy" Output="HStretchPolicy"/>
+        <CATSYPTranslatorAttribute Input="VStretchPolicy" Output="VStretchPolicy"/>
+        <CATSYPTranslatorAttribute Input="ScrolledWidgetHAlignment" Output="ScrolledWidgetHAlignment"/>
+        <CATSYPTranslatorAttribute Input="ScrolledWidgetVAlignment" Output="ScrolledWidgetVAlignment"/>
+        <CATSYPTranslatorAttribute Input="ShrinkScrolledWidgetFlag" Output="ShrinkScrolledWidgetFlag"/>
+        <CATSYPTranslatorAttribute Input="PickAndScrollFlag" Output="PickAndScrollFlag"/>
+        <CATSYPTranslatorAttribute Input="ScrollbarsOnlyOnScrollFlag" Output="ScrollbarsOnlyOnScrollFlag"/>
+        <CATSYPTranslatorAttribute Input="MouseScrollFlag" Output="MouseScrollFlag"/>
+        <CATSYPTranslatorAttribute Input="InertiaFlag" Output="InertiaFlag"/>
+        <CATSYPTranslatorAttribute Input="VInertiaFlag" Output="VInertiaFlag"/>
+        <CATSYPTranslatorAttribute Input="HInertiaFlag" Output="HInertiaFlag"/>
+        <CATSYPTranslatorAttribute Input="VReboundFlag" Output="VReboundFlag"/>
+        <CATSYPTranslatorAttribute Input="HReboundFlag" Output="HReboundFlag"/>
+        <CATSYPTranslatorAttribute Input="LockOneDirectionOnScrollFlag" Output="LockOneDirectionOnScrollFlag"/>
+        <CATSYPTranslatorAttribute Input="HScrollOffset" Output="HScrollOffset"/>
+        <CATSYPTranslatorAttribute Input="VScrollOffset" Output="VScrollOffset"/>
+        <CATSYPTranslatorAttribute Input="HScrollPercentage" Output="HScrollPercentage"/>
+        <CATSYPTranslatorAttribute Input="VScrollPercentage" Output="VScrollPercentage"/>
+        <CATSYPTranslatorAttribute Input="HSingleStep" Output="HSingleStep"/>
+        <CATSYPTranslatorAttribute Input="VSingleStep" Output="VSingleStep"/>
+        <CATSYPTranslatorAttribute Input="HScrollbarPlaceholderFlag" Output="HScrollbarPlaceholderFlag"/>
+        <CATSYPTranslatorAttribute Input="VScrollbarPlaceholderFlag" Output="VScrollbarPlaceholderFlag"/>
+        <CATSYPTranslatorAttribute Input="HScrollExtent" Output="HScrollExtent"/>
+        <CATSYPTranslatorAttribute Input="VScrollExtent" Output="VScrollExtent"/>
+        <CATSYPTranslatorAttribute Input="ViewportWidth" Output="ViewportWidth"/>
+        <CATSYPTranslatorAttribute Input="ViewportHeight" Output="ViewportHeight"/>
+        <CATSYPTranslatorAttribute Input="ScrolledWidgetWidth" Output="ScrolledWidgetWidth"/>
+        <CATSYPTranslatorAttribute Input="ScrolledWidgetHeight" Output="ScrolledWidgetHeight"/>
+        <CATSYPTranslatorAttribute Input="HScrollbarVisibleState" Output="HScrollbarVisibleState"/>
+        <CATSYPTranslatorAttribute Input="VScrollbarVisibleState" Output="VScrollbarVisibleState"/>
+        <CATSYPTranslatorAttribute Input="HScrollIndicatorVisibleState" Output="HScrollIndicatorVisibleState"/>
+        <CATSYPTranslatorAttribute Input="VScrollIndicatorVisibleState" Output="VScrollIndicatorVisibleState"/>
+        <CATSYPTranslatorAttribute Input="HScrollNeededState" Output="HScrollNeededState"/>
+        <CATSYPTranslatorAttribute Input="VScrollNeededState" Output="VScrollNeededState"/>
+        <CATSYPTranslatorAttribute Input="HScrollbarMovingState" Output="HScrollbarMovingState"/>
+        <CATSYPTranslatorAttribute Input="VScrollbarMovingState" Output="VScrollbarMovingState"/>
+        <CATSYPTranslatorAttribute Input="Scroll" Output="Scroll"/>
+        <CATSYPTranslatorAttribute Input="TopReached" Output="TopReached"/>
+        <CATSYPTranslatorAttribute Input="BottomReached" Output="BottomReached"/>
+        <CATSYPTranslatorAttribute Input="RightReached" Output="RightReached"/>
+        <CATSYPTranslatorAttribute Input="LeftReached" Output="LeftReached"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Notepad" Output="CATVidCtlNotepad" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="TextEditor" Output="TextEditor"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="NotepadTools" Output="CATVidCtlNotepadTools" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="BoldFlag" Output="BoldFlag"/>
+        <CATSYPTranslatorAttribute Input="ItalicFlag" Output="ItalicFlag"/>
+        <CATSYPTranslatorAttribute Input="UnderlineFlag" Output="UnderlineFlag"/>
+        <CATSYPTranslatorAttribute Input="FontHeight" Output="FontHeight"/>
+        <CATSYPTranslatorAttribute Input="TextColor" Output="TextColor"/>
+        <CATSYPTranslatorAttribute Input="CanPaste" Output="CanPaste"/>
+        <CATSYPTranslatorAttribute Input="StyleCopyState" Output="StyleCopyState"/>
+        <CATSYPTranslatorAttribute Input="BoldChkBTooltip" Output="BoldChkBTooltip"/>
+        <CATSYPTranslatorAttribute Input="ItalicChkBTooltip" Output="ItalicChkBTooltip"/>
+        <CATSYPTranslatorAttribute Input="UnderlineChkBTooltip" Output="UnderlineChkBTooltip"/>
+        <CATSYPTranslatorAttribute Input="FontHtUpBtnTooltip" Output="FontHtUpBtnTooltip"/>
+        <CATSYPTranslatorAttribute Input="FontHtDownBtnTooltip" Output="FontHtDownBtnTooltip"/>
+        <CATSYPTranslatorAttribute Input="TextColorBtnTooltip" Output="TextColorBtnTooltip"/>
+        <CATSYPTranslatorAttribute Input="StyleCopyChkBtnTooltip" Output="StyleCopyChkBtnTooltip"/>
+        <CATSYPTranslatorAttribute Input="CutBtnTooltip" Output="CutBtnTooltip"/>
+        <CATSYPTranslatorAttribute Input="CopyBtnTooltip" Output="CopyBtnTooltip"/>
+        <CATSYPTranslatorAttribute Input="PasteBtnTooltip" Output="PasteBtnTooltip"/>
+        <CATSYPTranslatorAttribute Input="TextEditor" Output="TextEditor"/>
+        <CATSYPTranslatorAttribute Input="SelectionPresent" Output="SelectionPresent"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="GridSplitter" Output="CATVidCtlGridSplitter" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="GraphicPrimitive" Output="CATVidGP" FatherName="Widget">
+        <CATSYPTranslatorAttribute Input="UseManipulatorFlag" Output="UseManipulatorFlag"/>
+        <CATSYPTranslatorAttribute Input="PickFlag" Output="PickFlag"/>
+        <CATSYPTranslatorAttribute Input="GiveFocusOnDragFlag" Output="GiveFocusOnDragFlag"/>
+        <CATSYPTranslatorAttribute Input="AcceptFocusOnDropFlag" Output="AcceptFocusOnDropFlag"/>
+        <CATSYPTranslatorAttribute Input="NoScrollOnDownHoldTouchFlag" Output="NoScrollOnDownHoldTouchFlag"/>
+        <CATSYPTranslatorAttribute Input="StandaloneManipulatorFlag" Output="StandaloneManipulatorFlag"/>
+        <CATSYPTranslatorAttribute Input="Entry" Output="Entry"/>
+        <CATSYPTranslatorAttribute Input="Leave" Output="Leave"/>
+        <CATSYPTranslatorAttribute Input="Press" Output="Press"/>
+        <CATSYPTranslatorAttribute Input="Drag" Output="Drag"/>
+        <CATSYPTranslatorAttribute Input="Release" Output="Release"/>
+        <CATSYPTranslatorAttribute Input="DoubleClick" Output="DoubleClick"/>
+        <CATSYPTranslatorAttribute Input="DoubleRelease" Output="DoubleRelease"/>
+        <CATSYPTranslatorAttribute Input="MoveOver" Output="MoveOver"/>
+        <CATSYPTranslatorAttribute Input="RightClick" Output="RightClick"/>
+        <CATSYPTranslatorAttribute Input="EndContext" Output="EndContext"/>
+        <CATSYPTranslatorAttribute Input="MultiplePress" Output="MultiplePress"/>
+        <CATSYPTranslatorAttribute Input="BeginPreDrop" Output="BeginPreDrop"/>
+        <CATSYPTranslatorAttribute Input="EndPreDrop" Output="EndPreDrop"/>
+        <CATSYPTranslatorAttribute Input="PreDrop" Output="PreDrop"/>
+        <CATSYPTranslatorAttribute Input="Drop" Output="Drop"/>
+        <CATSYPTranslatorAttribute Input="TouchDown" Output="TouchDown"/>
+        <CATSYPTranslatorAttribute Input="TouchMove" Output="TouchMove"/>
+        <CATSYPTranslatorAttribute Input="TouchRelease" Output="TouchRelease"/>
+        <CATSYPTranslatorAttribute Input="DownHold" Output="DownHold"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Label" Output="CATVidGPLabel" FatherName="GraphicPrimitive">
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="TextColor" Output="TextColor"/>
+        <CATSYPTranslatorAttribute Input="TextHeight" Output="TextHeight"/>
+        <CATSYPTranslatorAttribute Input="FontSize" Output="FontSize"/>
+        <CATSYPTranslatorAttribute Input="CaptionFontFlag" Output="CaptionFontFlag"/>
+        <CATSYPTranslatorAttribute Input="TesselateFontFlag" Output="TesselateFontFlag"/>
+        <CATSYPTranslatorAttribute Input="FontName" Output="FontName"/>
+        <CATSYPTranslatorAttribute Input="UnderlineFlag" Output="UnderlineFlag"/>
+        <CATSYPTranslatorAttribute Input="ItalicFlag" Output="ItalicFlag"/>
+        <CATSYPTranslatorAttribute Input="BoldFlag" Output="BoldFlag"/>
+        <CATSYPTranslatorAttribute Input="CropPolicy" Output="CropPolicy"/>
+        <CATSYPTranslatorAttribute Input="HorizontalAlignment" Output="HorizontalAlignment"/>
+        <CATSYPTranslatorAttribute Input="VerticalAlignment" Output="VerticalAlignment"/>
+        <CATSYPTranslatorAttribute Input="HorizontalMargin" Output="HorizontalMargin"/>
+        <CATSYPTranslatorAttribute Input="VerticalMargin" Output="VerticalMargin"/>
+        <CATSYPTranslatorAttribute Input="TopMargin" Output="TopMargin"/>
+        <CATSYPTranslatorAttribute Input="BottomMargin" Output="BottomMargin"/>
+        <CATSYPTranslatorAttribute Input="LeftMargin" Output="LeftMargin"/>
+        <CATSYPTranslatorAttribute Input="RightMargin" Output="RightMargin"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Line" Output="CATVidGPLine" FatherName="GraphicPrimitive">
+        <CATSYPTranslatorAttribute Input="FirstPoint" Output="FirstPoint"/>
+        <CATSYPTranslatorAttribute Input="SecondPoint" Output="SecondPoint"/>
+        <CATSYPTranslatorAttribute Input="Color" Output="Color"/>
+        <CATSYPTranslatorAttribute Input="OutlineColor" Output="OutlineColor"/>
+        <CATSYPTranslatorAttribute Input="LineType" Output="LineType"/>
+        <CATSYPTranslatorAttribute Input="Length" Output="Length"/>
+        <CATSYPTranslatorAttribute Input="Offset" Output="Offset"/>
+        <CATSYPTranslatorAttribute Input="OutlineLineType" Output="OutlineLineType"/>
+        <CATSYPTranslatorAttribute Input="DesaturatedFlag" Output="DesaturatedFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Triangle" Output="CATVidGPTriangle" FatherName="GraphicPrimitive">
+        <CATSYPTranslatorAttribute Input="FirstPoint" Output="FirstPoint"/>
+        <CATSYPTranslatorAttribute Input="SecondPoint" Output="SecondPoint"/>
+        <CATSYPTranslatorAttribute Input="BaseDirection" Output="BaseDirection"/>
+        <CATSYPTranslatorAttribute Input="VertexA" Output="VertexA"/>
+        <CATSYPTranslatorAttribute Input="VertexB" Output="VertexB"/>
+        <CATSYPTranslatorAttribute Input="VertexC" Output="VertexC"/>
+        <CATSYPTranslatorAttribute Input="EdgeLength" Output="EdgeLength"/>
+        <CATSYPTranslatorAttribute Input="Color" Output="Color"/>
+        <CATSYPTranslatorAttribute Input="OutlineColor" Output="OutlineColor"/>
+        <CATSYPTranslatorAttribute Input="LineType" Output="LineType"/>
+        <CATSYPTranslatorAttribute Input="Length" Output="Length"/>
+        <CATSYPTranslatorAttribute Input="Offset" Output="Offset"/>
+        <CATSYPTranslatorAttribute Input="OutlineLineType" Output="OutlineLineType"/>
+        <CATSYPTranslatorAttribute Input="OutlineLineThickness" Output="OutlineLineThickness"/>
+        <CATSYPTranslatorAttribute Input="DesaturatedFlag" Output="DesaturatedFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="SmartSquare" Output="CATVidGPSmartSquare" FatherName="TexturedWidget">
+        <CATSYPTranslatorAttribute Input="GridWeight" Output="GridWeight"/>
+        <CATSYPTranslatorAttribute Input="Items" Output="Items"/>
+        <CATSYPTranslatorAttribute Input="GPConstraints" Output="GPConstraints"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="TexturedWidget" Output="CATVidGPTexturedWidget" FatherName="GraphicPrimitive">
+        <CATSYPTranslatorAttribute Input="Color" Output="Color"/>
+        <CATSYPTranslatorAttribute Input="ColorizeBlackPixelTo" Output="ColorizeBlackPixelTo"/>
+        <CATSYPTranslatorAttribute Input="Texture" Output="Texture"/>
+        <CATSYPTranslatorAttribute Input="TextureFilter" Output="TextureFilter"/>
+        <CATSYPTranslatorAttribute Input="TextureAlpha" Output="TextureAlpha"/>
+        <CATSYPTranslatorAttribute Input="MinificationFilter" Output="MinificationFilter"/>
+        <CATSYPTranslatorAttribute Input="DesaturatedFlag" Output="DesaturatedFlag"/>
+        <CATSYPTranslatorAttribute Input="AnimationOnFlag" Output="AnimationOnFlag"/>
+        <CATSYPTranslatorAttribute Input="PixelAnimationFrame" Output="PixelAnimationFrame"/>
+        <CATSYPTranslatorAttribute Input="UseColorizeFlag" Output="UseColorizeFlag"/>
+        <CATSYPTranslatorAttribute Input="ColorizeWithAlphaFlag" Output="ColorizeWithAlphaFlag"/>
+        <CATSYPTranslatorAttribute Input="ImageBlender" Output="ImageBlender"/>
+        <CATSYPTranslatorAttribute Input="PixelImage" Output="PixelImage"/>
+        <CATSYPTranslatorAttribute Input="LowerBoundDimensionWithTextureFlag" Output="LowerBoundDimensionWithTextureFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="NinePatchSquare" Output="CATVidGPNinePatchSquare" FatherName="TexturedWidget">
+        <CATSYPTranslatorAttribute Input="ScalableAreaBorder" Output="ScalableAreaBorder"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Square" Output="CATVidGPSquare" FatherName="TexturedWidget">
+        <CATSYPTranslatorAttribute Input="BorderColor" Output="BorderColor"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Text" Output="CATVidGPText" FatherName="GraphicPrimitive">
+        <CATSYPTranslatorAttribute Input="Color" Output="Color"/>
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="FontFamily" Output="FontFamily"/>
+        <CATSYPTranslatorAttribute Input="WordWrapFlag" Output="WordWrapFlag"/>
+        <CATSYPTranslatorAttribute Input="Underline" Output="Underline"/>
+        <CATSYPTranslatorAttribute Input="Bold" Output="Bold"/>
+        <CATSYPTranslatorAttribute Input="FontHeight" Output="FontHeight"/>
+        <CATSYPTranslatorAttribute Input="Interline" Output="Interline"/>
+        <CATSYPTranslatorAttribute Input="LeftMargin" Output="LeftMargin"/>
+        <CATSYPTranslatorAttribute Input="RightMargin" Output="RightMargin"/>
+        <CATSYPTranslatorAttribute Input="TopMargin" Output="TopMargin"/>
+        <CATSYPTranslatorAttribute Input="BottomMargin" Output="BottomMargin"/>
+        <CATSYPTranslatorAttribute Input="LineCount" Output="LineCount"/>
+        <CATSYPTranslatorAttribute Input="WordWrapThreshold" Output="WordWrapThreshold"/>
+        <CATSYPTranslatorAttribute Input="WordWrapToleranceMargin" Output="WordWrapToleranceMargin"/>
+        <CATSYPTranslatorAttribute Input="WordWrapPolicy" Output="WordWrapPolicy"/>
+        <CATSYPTranslatorAttribute Input="OptimizeMinimumDimensionFlag" Output="OptimizeMinimumDimensionFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Grid" Output="CATVidLayGrid" FatherName="Collection">
+        <CATSYPTranslatorAttribute Input="CellSpacing" Output="CellSpacing"/>
+        <CATSYPTranslatorAttribute Input="Color" Output="Color"/>
+        <CATSYPTranslatorAttribute Input="GridWeight" Output="GridWeight"/>
+        <CATSYPTranslatorAttribute Input="Weight" Output="GridWeight"/>
+        <CATSYPTranslatorAttribute Input="GridAppendPolicy" Output="GridAppendPolicy"/>
+        <CATSYPTranslatorAttribute Input="IndexedConstraints" Output="IndexedConstraints"/>
+        <CATSYPTranslatorAttribute Input="Constraints" Output="IndexedConstraints"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Collection" Output="CATVidLayCollection" FatherName="Container">
+        <CATSYPTranslatorAttribute Input="Items" Output="Items"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Layer" Output="CATVidLayLayer" FatherName="Collection">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Flow" Output="CATVidLayFlow" FatherName="Collection">
+        <CATSYPTranslatorAttribute Input="CellDimension" Output="CellDimension"/>
+        <CATSYPTranslatorAttribute Input="CellSpacing" Output="CellSpacing"/>
+        <CATSYPTranslatorAttribute Input="Align" Output="Align"/>
+        <CATSYPTranslatorAttribute Input="ComputedCellDimensionFlag" Output="ComputedCellDimensionFlag"/>
+        <CATSYPTranslatorAttribute Input="UniformCellSizesFlag" Output="UniformCellSizesFlag"/>
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Stack" Output="CATVidLayStack" FatherName="Collection">
+        <CATSYPTranslatorAttribute Input="CellBorder" Output="CellBorder"/>
+        <CATSYPTranslatorAttribute Input="PreferredCellSize" Output="PreferredCellSize"/>
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+        <CATSYPTranslatorAttribute Input="StackAttachmentAppendPolicy" Output="StackAttachmentAppendPolicy"/>
+        <CATSYPTranslatorAttribute Input="IndexedConstraints" Output="IndexedConstraints"/>
+        <CATSYPTranslatorAttribute Input="Constraints" Output="IndexedConstraints"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="CtlStack" Output="CATVidCtlStack" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="CellBorder" Output="CellBorder"/>
+        <CATSYPTranslatorAttribute Input="PreferredCellSize" Output="PreferredCellSize"/>
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+        <CATSYPTranslatorAttribute Input="StackAttachmentAppendPolicy" Output="StackAttachmentAppendPolicy"/>
+        <CATSYPTranslatorAttribute Input="UseScrollableAreaFlag" Output="UseScrollableAreaFlag"/>
+        <CATSYPTranslatorAttribute Input="DataTemplateName" Output="DataTemplateName"/>
+        <CATSYPTranslatorAttribute Input="DataTemplateStyleSheet" Output="DataTemplateStyleSheet"/>
+        <CATSYPTranslatorAttribute Input="SelectedIndex" Output="SelectedIndex"/>
+        <CATSYPTranslatorAttribute Input="UseScrollingButtonsState" Output="UseScrollingButtonsState"/>
+        <CATSYPTranslatorAttribute Input="AlwaysShowComboBoxFlag" Output="AlwaysShowComboBoxFlag"/>
+        <CATSYPTranslatorAttribute Input="UseComboBoxState" Output="UseComboBoxState"/>
+        <CATSYPTranslatorAttribute Input="Items" Output="Items"/>
+        <CATSYPTranslatorAttribute Input="IndexedConstraints" Output="IndexedConstraints"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="SideAttach" Output="CATVidLaySideAttach" FatherName="Collection">
+        <CATSYPTranslatorAttribute Input="RestrictedArea" Output="RestrictedArea"/>
+        <CATSYPTranslatorAttribute Input="IgnoreChildrenMinimumDimensionFlag" Output="IgnoreChildrenMinimumDimensionFlag"/>
+        <CATSYPTranslatorAttribute Input="IndexedConstraints" Output="IndexedConstraints"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Scrollable" Output="CATVidLayScrollable" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="VerticalScrollbarSide" Output="VerticalScrollbarSide"/>
+        <CATSYPTranslatorAttribute Input="HorizontalScrollbarSide" Output="HorizontalScrollbarSide"/>
+        <CATSYPTranslatorAttribute Input="PickableBackgroundFlag" Output="PickableBackgroundFlag"/>
+        <CATSYPTranslatorAttribute Input="FirstStepV" Output="FirstStepV"/>
+        <CATSYPTranslatorAttribute Input="FirstStepH" Output="FirstStepH"/>
+        <CATSYPTranslatorAttribute Input="HandledWidget" Output="HandledWidget"/>
+        <CATSYPTranslatorAttribute Input="HScrollbarValue" Output="HScrollbarValue"/>
+        <CATSYPTranslatorAttribute Input="VScrollbarValue" Output="VScrollbarValue"/>
+        <CATSYPTranslatorAttribute Input="ScrollAction" Output="ScrollAction"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="MenuItem" Output="CATVidCtlMenuItem">
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="IconName" Output="IconName"/>
+        <CATSYPTranslatorAttribute Input="EnableFlag" Output="EnableFlag"/>
+        <CATSYPTranslatorAttribute Input="VisibleFlag" Output="VisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="MenuItemActivate" Output="MenuItemActivate"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ImageAndLabelCombo" Output="CATVidCtlImageAndLabelCombo" FatherName="BaseCombo">
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="EditableFlag" Output="EditableFlag"/>
+        <CATSYPTranslatorAttribute Input="TextSearchEnableFlag" Output="TextSearchEnableFlag"/>
+        <CATSYPTranslatorAttribute Input="KeybdEntry" Output="KeybdEntry"/>
+        <CATSYPTranslatorAttribute Input="ImplicitCollection" Output="ImplicitCollection"/>
+        <CATSYPTranslatorAttribute Input="ImageAndLabelItems" Output="ImageAndLabelItems"/>
+        <CATSYPTranslatorAttribute Input="ImageDimension" Output="ImageDimension"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="BaseCombo" Output="CATVidCtlBaseCombo" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="Icon" Output="Icon"/>
+        <CATSYPTranslatorAttribute Input="IconDimension" Output="IconDimension"/>
+        <CATSYPTranslatorAttribute Input="UseIconFlag" Output="UseIconFlag"/>
+        <CATSYPTranslatorAttribute Input="Popup" Output="Popup"/>
+        <CATSYPTranslatorAttribute Input="TopLineWidget" Output="TopLineWidget"/>
+        <CATSYPTranslatorAttribute Input="DropListFlag" Output="DropListFlag"/>
+        <CATSYPTranslatorAttribute Input="ShowTopLineFlag" Output="ShowTopLineFlag"/>
+        <CATSYPTranslatorAttribute Input="ShowDropDownButtonFlag" Output="ShowDropDownButtonFlag"/>
+        <CATSYPTranslatorAttribute Input="SelectedIndex" Output="SelectedIndex"/>
+        <CATSYPTranslatorAttribute Input="DropSide" Output="DropSide"/>
+        <CATSYPTranslatorAttribute Input="MaxVisibleItems" Output="MaxVisibleItems"/>
+        <CATSYPTranslatorAttribute Input="SizeAdjustPolicy" Output="SizeAdjustPolicy"/>
+        <CATSYPTranslatorAttribute Input="CropPolicy" Output="CropPolicy"/>
+        <CATSYPTranslatorAttribute Input="MoreButtonFlag" Output="MoreButtonFlag"/>
+        <CATSYPTranslatorAttribute Input="ComboSelect" Output="ComboSelect"/>
+        <CATSYPTranslatorAttribute Input="ComboPreDropDown" Output="ComboPreDropDown"/>
+        <CATSYPTranslatorAttribute Input="ComboMoreButtonPress" Output="ComboMoreButtonPress"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ImageAndLabelData" Output="CATVidImageAndLabelData">
+        <CATSYPTranslatorAttribute Input="Label" Output="Label"/>
+        <CATSYPTranslatorAttribute Input="ResourceImage" Output="ResourceImage"/>
+        <CATSYPTranslatorAttribute Input="Image" Output="Image"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="TabHeaderData" Output="CATVidTabHeaderData" FatherName="ImageAndLabelData">
+        <CATSYPTranslatorAttribute Input="AllowCloseButtonFlag" Output="AllowCloseButtonFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Expander" Output="CATVidCtlExpander" FatherName="HeaderedContent">
+        <CATSYPTranslatorAttribute Input="ExpandedFlag" Output="ExpandedFlag"/>
+        <CATSYPTranslatorAttribute Input="ExclusiveFlag" Output="ExclusiveFlag"/>
+        <CATSYPTranslatorAttribute Input="Expanded" Output="Expanded"/>
+        <CATSYPTranslatorAttribute Input="Collapsed" Output="Collapsed"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="TabExpander" Output="CATVidCtlTabExpander" FatherName="Expander">
+        <CATSYPTranslatorAttribute Input="PinnedFlag" Output="PinnedFlag"/>
+        <CATSYPTranslatorAttribute Input="AutoHideEnabledFlag" Output="AutoHideEnabledFlag"/>
+        <CATSYPTranslatorAttribute Input="AutoHideEnabledState" Output="AutoHideEnabledState"/>
+        <CATSYPTranslatorAttribute Input="ExpanderSide" Output="ExpanderSide"/>
+        <CATSYPTranslatorAttribute Input="ExpandCollapseTooltip" Output="ExpandCollapseTooltip"/>
+        <CATSYPTranslatorAttribute Input="ExpandCollapseTooltipLongHelp" Output="ExpandCollapseTooltipLongHelp"/>
+        <CATSYPTranslatorAttribute Input="TabBar" Output="TabBar"/>
+        <CATSYPTranslatorAttribute Input="ShowTabBarFlag" Output="ShowTabBarFlag"/>
+        <CATSYPTranslatorAttribute Input="DividerVisibleFlag" Output="DividerVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="HeaderDimension" Output="HeaderDimension"/>
+        <CATSYPTranslatorAttribute Input="Click" Output="Click"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Border" Output="CATVidCtlBorder" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="ForegroundColor" Output="ForegroundColor"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="BorderItem" Output="BorderItem"/>
+        <CATSYPTranslatorAttribute Input="Content" Output="Content"/>
+        <CATSYPTranslatorAttribute Input="BorderVisibleFlag" Output="BorderVisibleFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Help" Output="CATVidCtlHelp" FatherName="Control">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ShortHelp" Output="CATVidCtlShortHelp" FatherName="Help">
+        <CATSYPTranslatorAttribute Input="UsePixelImageFlag" Output="UsePixelImageFlag"/>
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="Title" Output="Title"/>
+        <CATSYPTranslatorAttribute Input="PixelImage" Output="PixelImage"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Slider" Output="CATVidCtlSlider" FatherName="AbstractSlider">
+        <CATSYPTranslatorAttribute Input="TickInterval" Output="TickInterval"/>
+        <CATSYPTranslatorAttribute Input="TickPosition" Output="TickPosition"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="AbstractSlider" Output="CATVidCtlAbstractSlider" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="InvertedAppearanceFlag" Output="InvertedAppearanceFlag"/>
+        <CATSYPTranslatorAttribute Input="TrackingFlag" Output="TrackingFlag"/>
+        <CATSYPTranslatorAttribute Input="MaximumValue" Output="MaximumValue"/>
+        <CATSYPTranslatorAttribute Input="MinimumValue" Output="MinimumValue"/>
+        <CATSYPTranslatorAttribute Input="Value" Output="Value"/>
+        <CATSYPTranslatorAttribute Input="SingleStep" Output="SingleStep"/>
+        <CATSYPTranslatorAttribute Input="PageStep" Output="PageStep"/>
+        <CATSYPTranslatorAttribute Input="Percentage" Output="Percentage"/>
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+        <CATSYPTranslatorAttribute Input="ValueChanged" Output="ValueChanged"/>
+        <CATSYPTranslatorAttribute Input="DragStarted" Output="DragStarted"/>
+        <CATSYPTranslatorAttribute Input="DragEnded" Output="DragEnded"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Scrollbar" Output="CATVidCtlScrollbar" FatherName="AbstractSlider">
+        <CATSYPTranslatorAttribute Input="SliderBarSizePercentage" Output="SliderBarSizePercentage"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ProgressBar" Output="CATVidCtlProgressBar" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="ForegroundColor" Output="ForegroundColor"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="MaximumValue" Output="MaximumValue"/>
+        <CATSYPTranslatorAttribute Input="MinimumValue" Output="MinimumValue"/>
+        <CATSYPTranslatorAttribute Input="Value" Output="Value"/>
+        <CATSYPTranslatorAttribute Input="Percentage" Output="Percentage"/>
+        <CATSYPTranslatorAttribute Input="InfiniteFlag" Output="InfiniteFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Tab" Output="CATVidCtlTab" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="CurrentIndex" Output="CurrentIndex"/>
+        <CATSYPTranslatorAttribute Input="TabPosition" Output="TabPosition"/>
+        <CATSYPTranslatorAttribute Input="IconDimension" Output="IconDimension"/>
+        <CATSYPTranslatorAttribute Input="Items" Output="Items"/>
+        <CATSYPTranslatorAttribute Input="TabBar" Output="TabBar"/>
+        <CATSYPTranslatorAttribute Input="CurrentWidget" Output="CurrentWidget"/>
+        <CATSYPTranslatorAttribute Input="ForceIconFlag" Output="ForceIconFlag"/>
+        <CATSYPTranslatorAttribute Input="PagesClosableFlag" Output="PagesClosableFlag"/>
+        <CATSYPTranslatorAttribute Input="PreferredTabSize" Output="PreferredTabSize"/>
+        <CATSYPTranslatorAttribute Input="MinimumTabSize" Output="MinimumTabSize"/>
+        <CATSYPTranslatorAttribute Input="TextDisplayMode" Output="TextDisplayMode"/>
+        <CATSYPTranslatorAttribute Input="TextVisibleFlag" Output="TextVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="CropPolicy" Output="CropPolicy"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonFlag" Output="AdditionalButtonFlag"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonIcon" Output="AdditionalButtonIcon"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonTooltip" Output="AdditionalButtonTooltip"/>
+        <CATSYPTranslatorAttribute Input="AlwaysShowComboBoxFlag" Output="AlwaysShowComboBoxFlag"/>
+        <CATSYPTranslatorAttribute Input="ShowTabBarState" Output="ShowTabBarState"/>
+        <CATSYPTranslatorAttribute Input="TextVisibleState" Output="TextVisibleState"/>
+        <CATSYPTranslatorAttribute Input="HideTabBarWhenOnlyOnePageFlag" Output="HideTabBarWhenOnlyOnePageFlag"/>
+        <CATSYPTranslatorAttribute Input="ColorizeBorderBlackPixelTo" Output="ColorizeBorderBlackPixelTo"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="Margins" Output="Margins"/>
+        <CATSYPTranslatorAttribute Input="UseMarginsFlag" Output="UseMarginsFlag"/>
+        <CATSYPTranslatorAttribute Input="ActivateTabOnRightClickFlag" Output="ActivateTabOnRightClickFlag"/>
+        <CATSYPTranslatorAttribute Input="PickFlag" Output="PickFlag"/>
+        <CATSYPTranslatorAttribute Input="HeaderData" Output="HeaderData"/>
+        <CATSYPTranslatorAttribute Input="TabPageRemoved" Output="TabPageRemoved"/>
+        <CATSYPTranslatorAttribute Input="CloseCurrentTabPage" Output="CloseCurrentTabPage"/>
+        <CATSYPTranslatorAttribute Input="TabPageSelected" Output="TabPageSelected"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonClicked" Output="AdditionalButtonClicked"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="LineEditor" Output="CATVidCtlLineEditor" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="DisplayText" Output="DisplayText"/>
+        <CATSYPTranslatorAttribute Input="SelectedText" Output="SelectedText"/>
+        <CATSYPTranslatorAttribute Input="InputMask" Output="InputMask"/>
+        <CATSYPTranslatorAttribute Input="PlaceholderText" Output="PlaceholderText"/>
+        <CATSYPTranslatorAttribute Input="SelectedTextFlag" Output="SelectedTextFlag"/>
+        <CATSYPTranslatorAttribute Input="BoldFlag" Output="BoldFlag"/>
+        <CATSYPTranslatorAttribute Input="ItalicFlag" Output="ItalicFlag"/>
+        <CATSYPTranslatorAttribute Input="UnderlineFlag" Output="UnderlineFlag"/>
+        <CATSYPTranslatorAttribute Input="TesselateFontFlag" Output="TesselateFontFlag"/>
+        <CATSYPTranslatorAttribute Input="ReadOnlyFlag" Output="ReadOnlyFlag"/>
+        <CATSYPTranslatorAttribute Input="SelectionVisibleFlag" Output="SelectionVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="CursorVisibleFlag" Output="CursorVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="IsEmptyFlag" Output="IsEmptyFlag"/>
+        <CATSYPTranslatorAttribute Input="SelectAllTextOnFocusFlag" Output="SelectAllTextOnFocusFlag"/>
+        <CATSYPTranslatorAttribute Input="BorderVisibleFlag" Output="BorderVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="ResetButtonVisibleFlag" Output="ResetButtonVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="MaxLength" Output="MaxLength"/>
+        <CATSYPTranslatorAttribute Input="CursorPosition" Output="CursorPosition"/>
+        <CATSYPTranslatorAttribute Input="CursorPoint" Output="CursorPoint"/>
+        <CATSYPTranslatorAttribute Input="SelectionToPoint" Output="SelectionToPoint"/>
+        <CATSYPTranslatorAttribute Input="SelectionFromPoint" Output="SelectionFromPoint"/>
+        <CATSYPTranslatorAttribute Input="Alignment" Output="Alignment"/>
+        <CATSYPTranslatorAttribute Input="EchoMode" Output="EchoMode"/>
+        <CATSYPTranslatorAttribute Input="ReturnKeyType" Output="ReturnKeyType"/>
+        <CATSYPTranslatorAttribute Input="FontHeight" Output="FontHeight"/>
+        <CATSYPTranslatorAttribute Input="ActualFontHeight" Output="ActualFontHeight"/>
+        <CATSYPTranslatorAttribute Input="FontName" Output="FontName"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="ForegroundColor" Output="ForegroundColor"/>
+        <CATSYPTranslatorAttribute Input="CursorColor" Output="CursorColor"/>
+        <CATSYPTranslatorAttribute Input="SelectionColor" Output="SelectionColor"/>
+        <CATSYPTranslatorAttribute Input="TextMargins" Output="TextMargins"/>
+        <CATSYPTranslatorAttribute Input="Selection" Output="Selection"/>
+        <CATSYPTranslatorAttribute Input="OffsetMatrix" Output="OffsetMatrix"/>
+        <CATSYPTranslatorAttribute Input="EditorContent" Output="EditorContent"/>
+        <CATSYPTranslatorAttribute Input="PlaceholderLine" Output="PlaceholderLine"/>
+        <CATSYPTranslatorAttribute Input="SelectionChanged" Output="SelectionChanged"/>
+        <CATSYPTranslatorAttribute Input="CursorPositionChanged" Output="CursorPositionChanged"/>
+        <CATSYPTranslatorAttribute Input="TextChanged" Output="TextChanged"/>
+        <CATSYPTranslatorAttribute Input="TextEdited" Output="TextEdited"/>
+        <CATSYPTranslatorAttribute Input="TextActivated" Output="TextActivated"/>
+        <CATSYPTranslatorAttribute Input="EditingFinished" Output="EditingFinished"/>
+        <CATSYPTranslatorAttribute Input="ReturnPressed" Output="ReturnPressed"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="SpinBox" Output="CATVidCtlSpinBox" FatherName="AbstractSpinBox">
+        <CATSYPTranslatorAttribute Input="Suffix" Output="Suffix"/>
+        <CATSYPTranslatorAttribute Input="Prefix" Output="Prefix"/>
+        <CATSYPTranslatorAttribute Input="CleanText" Output="CleanText"/>
+        <CATSYPTranslatorAttribute Input="MaximumValue" Output="MaximumValue"/>
+        <CATSYPTranslatorAttribute Input="MinimumValue" Output="MinimumValue"/>
+        <CATSYPTranslatorAttribute Input="SingleStepValue" Output="SingleStepValue"/>
+        <CATSYPTranslatorAttribute Input="Value" Output="Value"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="AbstractSpinBox" Output="CATVidCtlAbstractSpinBox" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="LineEditor" Output="LineEditor"/>
+        <CATSYPTranslatorAttribute Input="Validator" Output="Validator"/>
+        <CATSYPTranslatorAttribute Input="SpecialValueText" Output="SpecialValueText"/>
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="EditorText" Output="EditorText"/>
+        <CATSYPTranslatorAttribute Input="BoldFlag" Output="BoldFlag"/>
+        <CATSYPTranslatorAttribute Input="ItalicFlag" Output="ItalicFlag"/>
+        <CATSYPTranslatorAttribute Input="UnderlineFlag" Output="UnderlineFlag"/>
+        <CATSYPTranslatorAttribute Input="TesselateFontFlag" Output="TesselateFontFlag"/>
+        <CATSYPTranslatorAttribute Input="ReadOnlyFlag" Output="ReadOnlyFlag"/>
+        <CATSYPTranslatorAttribute Input="MaxLength" Output="MaxLength"/>
+        <CATSYPTranslatorAttribute Input="WrappingFlag" Output="WrappingFlag"/>
+        <CATSYPTranslatorAttribute Input="CorrectionMode" Output="CorrectionMode"/>
+        <CATSYPTranslatorAttribute Input="StepEnabledFlag" Output="StepEnabledFlag"/>
+        <CATSYPTranslatorAttribute Input="SpinBoxButtonStyle" Output="SpinBoxButtonStyle"/>
+        <CATSYPTranslatorAttribute Input="Alignment" Output="Alignment"/>
+        <CATSYPTranslatorAttribute Input="FontHeight" Output="FontHeight"/>
+        <CATSYPTranslatorAttribute Input="FontName" Output="FontName"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="ForegroundColor" Output="ForegroundColor"/>
+        <CATSYPTranslatorAttribute Input="CursorColor" Output="CursorColor"/>
+        <CATSYPTranslatorAttribute Input="SelectionColor" Output="SelectionColor"/>
+        <CATSYPTranslatorAttribute Input="TextMargins" Output="TextMargins"/>
+        <CATSYPTranslatorAttribute Input="EditorFocusedFlag" Output="EditorFocusedFlag"/>
+        <CATSYPTranslatorAttribute Input="ValueChanged" Output="ValueChanged"/>
+        <CATSYPTranslatorAttribute Input="EditingFinished" Output="EditingFinished"/>
+        <CATSYPTranslatorAttribute Input="UpOrDownButtonPressed" Output="UpOrDownButtonPressed"/>
+        <CATSYPTranslatorAttribute Input="UpOrDownButtonReleased" Output="UpOrDownButtonReleased"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="DoubleSpinBox" Output="CATVidCtlDoubleSpinBox" FatherName="AbstractSpinBox">
+        <CATSYPTranslatorAttribute Input="Suffix" Output="Suffix"/>
+        <CATSYPTranslatorAttribute Input="Prefix" Output="Prefix"/>
+        <CATSYPTranslatorAttribute Input="CleanText" Output="CleanText"/>
+        <CATSYPTranslatorAttribute Input="MaximumValue" Output="MaximumValue"/>
+        <CATSYPTranslatorAttribute Input="MinimumValue" Output="MinimumValue"/>
+        <CATSYPTranslatorAttribute Input="SingleStepValue" Output="SingleStepValue"/>
+        <CATSYPTranslatorAttribute Input="DecimalPlaces" Output="DecimalPlaces"/>
+        <CATSYPTranslatorAttribute Input="HighExponentProperty" Output="HighExponentProperty"/>
+        <CATSYPTranslatorAttribute Input="LowExponentProperty" Output="LowExponentProperty"/>
+        <CATSYPTranslatorAttribute Input="Value" Output="Value"/>
+        <CATSYPTranslatorAttribute Input="StepEnabledFlag" Output="StepEnabledFlag"/>
+        <CATSYPTranslatorAttribute Input="ShowTrailingZerosFlag" Output="ShowTrailingZerosFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Popup" Output="CATVidCtlPopup" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="PopupCompactFlag" Output="PopupCompactFlag"/>
+        <CATSYPTranslatorAttribute Input="SnapFlag" Output="SnapFlag"/>
+        <CATSYPTranslatorAttribute Input="SnapSide" Output="SnapSide"/>
+        <CATSYPTranslatorAttribute Input="SnapAlignment" Output="SnapAlignment"/>
+        <CATSYPTranslatorAttribute Input="SnapCenteredFlag" Output="SnapCenteredFlag"/>
+        <CATSYPTranslatorAttribute Input="ModalFlag" Output="ModalFlag"/>
+        <CATSYPTranslatorAttribute Input="PositionOffset" Output="PositionOffset"/>
+        <CATSYPTranslatorAttribute Input="PopupDimension" Output="PopupDimension"/>
+        <CATSYPTranslatorAttribute Input="AutoHideFlag" Output="AutoHideFlag"/>
+        <CATSYPTranslatorAttribute Input="ConsumeMouseEventFlag" Output="ConsumeMouseEventFlag"/>
+        <CATSYPTranslatorAttribute Input="ConstraintUpdateAllowedFlag" Output="ConstraintUpdateAllowedFlag"/>
+        <CATSYPTranslatorAttribute Input="VisibleStateChanged" Output="VisibleStateChanged"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="SlidingButton" Output="CATVidCtlSlidingButton" FatherName="Button">
+        <CATSYPTranslatorAttribute Input="XPercent" Output="XPercent"/>
+        <CATSYPTranslatorAttribute Input="YPercent" Output="YPercent"/>
+        <CATSYPTranslatorAttribute Input="XWidthPercent" Output="XWidthPercent"/>
+        <CATSYPTranslatorAttribute Input="YWidthPercent" Output="YWidthPercent"/>
+        <CATSYPTranslatorAttribute Input="InvertedPercentFlag" Output="InvertedPercentFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Ruler" Output="CATVidGPRuler" FatherName="GraphicPrimitive">
+        <CATSYPTranslatorAttribute Input="InvertedAppearanceFlag" Output="InvertedAppearanceFlag"/>
+        <CATSYPTranslatorAttribute Input="MaximumValue" Output="MaximumValue"/>
+        <CATSYPTranslatorAttribute Input="MinimumValue" Output="MinimumValue"/>
+        <CATSYPTranslatorAttribute Input="TickInterval" Output="TickInterval"/>
+        <CATSYPTranslatorAttribute Input="TickColor" Output="TickColor"/>
+        <CATSYPTranslatorAttribute Input="Side" Output="Side"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="TabBar" Output="CATVidCtlTabBar" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="CurrentIndex" Output="CurrentIndex"/>
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+        <CATSYPTranslatorAttribute Input="IconDimension" Output="IconDimension"/>
+        <CATSYPTranslatorAttribute Input="ColorizeBorderBlackPixelTo" Output="ColorizeBorderBlackPixelTo"/>
+        <CATSYPTranslatorAttribute Input="ForceIconFlag" Output="ForceIconFlag"/>
+        <CATSYPTranslatorAttribute Input="PagesClosableFlag" Output="PagesClosableFlag"/>
+        <CATSYPTranslatorAttribute Input="TextVisibleFlag" Output="TextVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="CropPolicy" Output="CropPolicy"/>
+        <CATSYPTranslatorAttribute Input="PreferredTabSize" Output="PreferredTabSize"/>
+        <CATSYPTranslatorAttribute Input="MinimumTabSize" Output="MinimumTabSize"/>
+        <CATSYPTranslatorAttribute Input="UsedPreferredTabSize" Output="UsedPreferredTabSize"/>
+        <CATSYPTranslatorAttribute Input="MinimumTabDimension" Output="MinimumTabDimension"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonFlag" Output="AdditionalButtonFlag"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonIcon" Output="AdditionalButtonIcon"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonTooltip" Output="AdditionalButtonTooltip"/>
+        <CATSYPTranslatorAttribute Input="AlwaysShowComboBoxFlag" Output="AlwaysShowComboBoxFlag"/>
+        <CATSYPTranslatorAttribute Input="EmptyState" Output="EmptyState"/>
+        <CATSYPTranslatorAttribute Input="DividerVisibleFlag" Output="DividerVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="ActivateTabOnRightClickFlag" Output="ActivateTabOnRightClickFlag"/>
+        <CATSYPTranslatorAttribute Input="ButtonCollection" Output="ButtonCollection"/>
+        <CATSYPTranslatorAttribute Input="TabPageSelected" Output="TabPageSelected"/>
+        <CATSYPTranslatorAttribute Input="CloseCurrentTabPage" Output="CloseCurrentTabPage"/>
+        <CATSYPTranslatorAttribute Input="AdditionalButtonClicked" Output="AdditionalButtonClicked"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="TabButton" Output="CATVidCtlTabButton" FatherName="RadioButton">
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+        <CATSYPTranslatorAttribute Input="TextVisibleFlag" Output="TextVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="UseCloseButtonFlag" Output="UseCloseButtonFlag"/>
+        <CATSYPTranslatorAttribute Input="AllowCloseButtonFlag" Output="AllowCloseButtonFlag"/>
+        <CATSYPTranslatorAttribute Input="TabPosition" Output="TabPosition"/>
+        <CATSYPTranslatorAttribute Input="DividerVisibleFlag" Output="DividerVisibleFlag"/>
+        <CATSYPTranslatorAttribute Input="UseCloseButtonState" Output="UseCloseButtonState"/>
+        <CATSYPTranslatorAttribute Input="CloseButtonTooltip" Output="CloseButtonTooltip"/>
+        <CATSYPTranslatorAttribute Input="CloseButtonPress" Output="CloseButtonPress"/>
+        <CATSYPTranslatorAttribute Input="CloseButtonClick" Output="CloseButtonClick"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="TabDivider" Output="CATVidCtlTabDivider" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="Orientation" Output="Orientation"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Combo" Output="CATVidCtlCombo" FatherName="BaseCombo">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ScrollableArea" Output="CATVidCtlScrollableArea" FatherName="AbstractScrollableArea">
+        <CATSYPTranslatorAttribute Input="ScrolledWidget" Output="ScrolledWidget"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="AbstractItemsView" Output="CATVidCtlAbstractItemsView" FatherName="AbstractScrollableArea">
+        <CATSYPTranslatorAttribute Input="SourceModel" Output="SourceModel"/>
+        <CATSYPTranslatorAttribute Input="ItemsScrollMode" Output="ItemsScrollMode"/>
+        <CATSYPTranslatorAttribute Input="SelectionMode" Output="SelectionMode"/>
+        <CATSYPTranslatorAttribute Input="SelectionFeedback" Output="SelectionFeedback"/>
+        <CATSYPTranslatorAttribute Input="DataTemplateName" Output="DataTemplateName"/>
+        <CATSYPTranslatorAttribute Input="DataTemplateStyleSheet" Output="DataTemplateStyleSheet"/>
+        <CATSYPTranslatorAttribute Input="BackgroundColor" Output="BackgroundColor"/>
+        <CATSYPTranslatorAttribute Input="SelectionColor" Output="SelectionColor"/>
+        <CATSYPTranslatorAttribute Input="SelectionBorderColor" Output="SelectionBorderColor"/>
+        <CATSYPTranslatorAttribute Input="CurrentItemBorderColor" Output="CurrentItemBorderColor"/>
+        <CATSYPTranslatorAttribute Input="PreHighlightBorderColor" Output="PreHighlightBorderColor"/>
+        <CATSYPTranslatorAttribute Input="PreHighlightColor" Output="PreHighlightColor"/>
+        <CATSYPTranslatorAttribute Input="SelectionDataTemplateName" Output="SelectionDataTemplateName"/>
+        <CATSYPTranslatorAttribute Input="SelectionStyleSheet" Output="SelectionStyleSheet"/>
+        <CATSYPTranslatorAttribute Input="SelectOnReleaseFlag" Output="SelectOnReleaseFlag"/>
+        <CATSYPTranslatorAttribute Input="SelectionChanged" Output="SelectionChanged"/>
+        <CATSYPTranslatorAttribute Input="ItemViewBuilt" Output="ItemViewBuilt"/>
+        <CATSYPTranslatorAttribute Input="DeletePressed" Output="DeletePressed"/>
+        <CATSYPTranslatorAttribute Input="EditPressed" Output="EditPressed"/>
+        <CATSYPTranslatorAttribute Input="ItemsDragged" Output="ItemsDragged"/>
+        <CATSYPTranslatorAttribute Input="ItemsDropped" Output="ItemsDropped"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ListView" Output="CATVidCtlListView" FatherName="AbstractItemsView">
+        <CATSYPTranslatorAttribute Input="UniformItemSizes" Output="UniformItemSizes"/>
+        <CATSYPTranslatorAttribute Input="HandleConsumedPressEventFlag" Output="HandleConsumedPressEventFlag"/>
+        <CATSYPTranslatorAttribute Input="ItemsFlow" Output="ItemsFlow"/>
+        <CATSYPTranslatorAttribute Input="ViewMode" Output="ViewMode"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ColorAbstractShape" Output="CATVidCtlColorAbstractShape" FatherName="ColorPicker">
+        <CATSYPTranslatorAttribute Input="CrossHairIcon" Output="CrossHairIcon"/>
+        <CATSYPTranslatorAttribute Input="CrossHairDimension" Output="CrossHairDimension"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ColorPicker" Output="CATVidCtlColorPicker" FatherName="Control">
+        <CATSYPTranslatorAttribute Input="RGBAColor" Output="RGBAColor"/>
+        <CATSYPTranslatorAttribute Input="ColorChange" Output="ColorChange"/>
+        <CATSYPTranslatorAttribute Input="ColorEditingStarted" Output="ColorEditingStarted"/>
+        <CATSYPTranslatorAttribute Input="ColorEditingFinished" Output="ColorEditingFinished"/>
+        <CATSYPTranslatorAttribute Input="ColorSelected" Output="ColorSelected"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ColorCompositePicker" Output="CATVidCtlColorCompositePicker" FatherName="ColorPicker">
+        <CATSYPTranslatorAttribute Input="ReferenceColor" Output="ReferenceColor"/>
+        <CATSYPTranslatorAttribute Input="ColorPickers" Output="ColorPickers"/>
+        <CATSYPTranslatorAttribute Input="ShowReferenceColorFlag" Output="ShowReferenceColorFlag"/>
+        <CATSYPTranslatorAttribute Input="ShowColorComparatorFlag" Output="ShowColorComparatorFlag"/>
+        <CATSYPTranslatorAttribute Input="ShowHexEditorFlag" Output="ShowHexEditorFlag"/>
+        <CATSYPTranslatorAttribute Input="NewColor" Output="NewColor"/>
+        <CATSYPTranslatorAttribute Input="CurrentColor" Output="CurrentColor"/>
+      </CATSYPTranslatorTag>
+      <!--<CATSYPTranslatorTag Input="ActionBase" Output="CATVidActionBase">
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="AbstractAction" Output="CATVidAbstractAction" FatherName="ActionBase">
+        <CATSYPTranslatorAttribute Input="RecordName" Output="RecordName"/>
+        <CATSYPTranslatorAttribute Input="EnableFlag" Output="EnableFlag"/>
+        <CATSYPTranslatorAttribute Input="EnableState" Output="EnableState"/>
+        <CATSYPTranslatorAttribute Input="Icon" Output="Icon"/>
+        <CATSYPTranslatorAttribute Input="Text" Output="Text"/>
+        <CATSYPTranslatorAttribute Input="Image" Output="Image"/>
+        <CATSYPTranslatorAttribute Input="ImageDimension" Output="ImageDimension"/>
+        <CATSYPTranslatorAttribute Input="Title" Output="Title"/>
+        <CATSYPTranslatorAttribute Input="ShortHelp" Output="ShortHelp"/>
+        <CATSYPTranslatorAttribute Input="LongHelp" Output="LongHelp"/>
+        <CATSYPTranslatorAttribute Input="HyperlinkLabel" Output="HyperlinkLabel"/>
+        <CATSYPTranslatorAttribute Input="HyperlinkURL" Output="HyperlinkURL"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="SubMenuAction" Output="CATVidSubMenuAction" FatherName="AbstractAction">
+        <CATSYPTranslatorAttribute Input="Group" Output="Group"/>
+        <CATSYPTranslatorAttribute Input="SubMenu" Output="SubMenu"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="Action" Output="CATVidAction" FatherName="AbstractAction">
+        <CATSYPTranslatorAttribute Input="Group" Output="Group"/>
+        <CATSYPTranslatorAttribute Input="AcceleratorLabel" Output="AcceleratorLabel"/>
+        <CATSYPTranslatorAttribute Input="ExclusiveFlag" Output="ExclusiveFlag"/>
+        <CATSYPTranslatorAttribute Input="CheckableFlag" Output="CheckableFlag"/>
+        <CATSYPTranslatorAttribute Input="CheckState" Output="CheckState"/>
+        <CATSYPTranslatorAttribute Input="Activated" Output="Activated"/>
+        <CATSYPTranslatorAttribute Input="CheckStateChanged" Output="CheckStateChanged"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ColorAction" Output="CATVidColorAction" FatherName="Action">
+        <CATSYPTranslatorAttribute Input="Color" Output="Color"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="AbstractActionGroup" Output="CATVidAbstractActionGroup" FatherName="ActionBase">
+        <CATSYPTranslatorAttribute Input="EnableFlag" Output="EnableFlag"/>
+      </CATSYPTranslatorTag>
+      <CATSYPTranslatorTag Input="ActionGroup" Output="CATVidActionGroup" FatherName="AbstractActionGroup">
+        <CATSYPTranslatorAttribute Input="ExclusiveFlag" Output="ExclusiveFlag"/>
+        <CATSYPTranslatorAttribute Input="CheckedActionIdx" Output="CheckedActionIdx"/>
+        <CATSYPTranslatorAttribute Input="CheckedAction" Output="CheckedAction"/>
+        <CATSYPTranslatorAttribute Input="CheckedActionChanged" Output="CheckedActionChanged"/>
+      </CATSYPTranslatorTag>-->
+
+    </CATSYPTranslatorGroup>
+
+  </Template>
+
+</Styles>
+

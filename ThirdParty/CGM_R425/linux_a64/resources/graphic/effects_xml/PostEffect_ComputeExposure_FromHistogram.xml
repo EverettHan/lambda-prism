@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">    
+    
+  <CONSTANT_BUFFER>
+    <NAME>cbTime</NAME>
+  </CONSTANT_BUFFER>
+  
+   <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Luminance_Histogram</NAME>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbPostEffect_Luminance_Auto</NAME>
+  </CONSTANT_BUFFER>
+
+  <STORAGE_IMAGE>
+    <NAME>i_HistogramMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage1D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>readonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>EXPOSURE_MODE=1</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>i_LuminanceMap</NAME>
+    <DECLARATION>
+      <TYPE>image2D</TYPE>
+      <FORMAT>r32f</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>readonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>!EXPOSURE_MODE</OPTION_GRAMMAR>
+      <OPTION_GRAMMAR>EXPOSURE_MODE=0</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>i_ExposureMap</NAME>
+    <DECLARATION>
+      <TYPE>image1D</TYPE>
+      <FORMAT>r32f</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>i_LastLuminanceMap</NAME>
+    <DECLARATION>
+      <TYPE>image1D</TYPE>
+      <FORMAT>r32f</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>EYE_ADAPTATION</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+    
+  <TECHNIQUE>
+    <NAME>PostProcess</NAME>
+
+    <COMPUTE_PASS>
+      <NAME>Pass0</NAME>
+      
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>EXPOSURE_MODE</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <COMPUTE_STAGE>PostEffect_ComputeExposure</COMPUTE_STAGE>
+      
+    </COMPUTE_PASS>
+    
+  </TECHNIQUE>
+    
+</EFFECT>

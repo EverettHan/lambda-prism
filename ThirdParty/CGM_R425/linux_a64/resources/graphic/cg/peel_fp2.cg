@@ -1,0 +1,73 @@
+struct fragment_out
+{
+  float4 color	: COLOR;
+  float depth : DEPTH;
+};
+
+struct fragment_in
+{
+  float4 color	: COLOR;
+  float4 position : WPOS;
+  float4 texcoord : TEXCOORD0;
+};
+
+fragment_out main(fragment_in IN,
+    uniform samplerRECT sampler,
+    uniform samplerRECT sampler2,
+    uniform sampler2D texturesampler2:TEXUNIT0,
+    uniform float istheretexture2,
+    uniform float texturefunc2)
+{
+  fragment_out OUT;	
+
+  /************* DEPTH TEST **************/
+  float4 depthtest1=texRECT(sampler,IN.position.xyz);
+  float4 depthtest2=texRECT(sampler2,IN.position.xyz);
+
+  if (depthtest1.r==0 || depthtest2.r==0) 
+  {
+    discard;
+  }
+
+  OUT.depth=IN.position.z;
+
+
+  /************* TEXTURE MAPPING *********/
+
+  float4 texcolor = tex2D(texturesampler2,IN.texcoord.xy);
+
+  // Using a trick to avoid using the if statement 
+  //OUT.color=lerp(IN.color,lerp(IN.color*texcolor,(1-texcolor.a)*IN.color + texcolor.a*texcolor,texturefunc-8448),istheretexture);
+
+  if (istheretexture == 0)
+  {
+    OUT.color = IN.color;
+  }
+  else
+  {
+    if (texturefunc == 8448)
+    {
+      //***** MODULATE ******
+      OUT.color =  IN.color * texcolor;
+    }	 
+    else if( texturefunc == 8449)
+    {
+      //******* DECAL *******
+      OUT.color.xyz = (1-texcolor.a)*IN.color.xyz + texcolor.a*texcolor.xyz;
+      OUT.color.a=IN.color.a;
+    }
+    else if ( texturefunc == 7681)
+    {
+      //******* REPLACE *****
+      OUT.color = texcolor;
+    }
+    else if ( texturefunc == 3042 )
+    {
+      //******** BLEND *******
+      OUT.color.xyz = (1-texcolor.xyz)*OUT.color.xyz+texcolor.xyz*OUT.color.xyz;
+      OUT.color.a = texcolor.a*OUT.color.a;
+    }
+  }
+
+  return OUT;
+}

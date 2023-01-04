@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="Impossibile trovare la porta /p1 sull'host /p2 ";
+CATSysComPortFailure_150002.Request="Impossibile dichiarare sulla porta /p1 sull'host /p2";
+CATSysComPortAcceptFailed_150003.Request="Impossibile accettare la porta /p1";
+CATSysComPortAcceptFailed_150004.Request="Errore durante l'attesa per la porta /p1";
+CATSysComInitSocketError_150102.Request="Errore in un'operazione socket. Probabile perdita della connessione alla backbone.";
+CATSysComSendSocketError_150103.Request="Errore in un'operazione di invio socket. Probabile perdita della connessione alla backbone.";
+CATSysComRecvSocketError_150104.Request="Errore in un'operazione di ricezione socket. Probabile perdita della connessione alla backbone.";
+CATSysComMsgClassError_151001.Request="Classe messaggio \p1 non trovata.";
+CATSysComMsgStreamError_151002.Request="Errore durante lo streaming dei dati della classe \p1.";
+CATSysComMsgUnstreamError_151003.Request="Errore durante l'unstreaming dei dati della classe \p1.";
+CATSysComMsgClassInvalid_152001.Request="La classe messaggio \p1 deve implementare CATIStreamMsg.";
+CATSysComMsgClassInvalid_152002.Request="La classe messaggio \p1 deve implementare CATICommMsg.";
+CATSysComMsgInvalid_152003.Request="Il messaggio non richiede una risposta.";
+CATSysComInstanciationError_152004.Request="Impossibile creare un'istanza dell'oggetto messaggio della classe \p1.";
+CATSysComReentranceError_152005.Request="Errore interno. Rilevata condizione di rientranza.";
+CATSysComTimeoutOccurred_152006.Request="Timeout.";
+CATSysComApplicationNotFound_152007.Request="Applicazione di destinazione \p1 non presente.";

@@ -1,0 +1,59 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client PLM error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p PLM< components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of PLM concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each PLM component 
+// This parameter has to be documented
+
+
+SystemERR.Diagnostic="Systemfehler.";
+SystemERR.Advice="Wenden Sie sich an den Support.";
+
+
+ServerInternalERR.Diagnostic="Interner Serverfehler.";
+ServerInternalERR.Advice="Es wurde eine lokale Sicherung durchgeführt, um Ihre Daten zu erhalten. Sie können Ihre Sitzung bei Bedarf wiederherstellen.";
+
+ServerInternalERRNoLS.Diagnostic="Interner Serverfehler.";
+ServerInternalERRNoLs.Advice="Eine lokale Sicherung war nicht möglich. Versuchen Sie es später erneut.";
+
+VaultServerInternalERR.Diagnostic="Bei der Übertragung von Datenströmen sind einige Fehler aufgetreten.";
+VaultServerInternalERR.Advice="Es wurde eine lokale Sicherung durchgeführt, um Ihre Daten zu erhalten. Sie können Ihre Sitzung bei Bedarf wiederherstellen.";
+
+VaultServerInternalERRNoLs.Diagnostic="Bei der Übertragung von Datenströmen sind einige Fehler aufgetreten.";
+VaultServerInternalERRNoLs.Advice="Eine lokale Sicherung war nicht möglich. Versuchen Sie es später erneut.";
+
+NoObjectToSaveWRN.Diagnostic="Keine zu sichernden Objekte vorhanden.";
+NoObjectToSaveWRN.Advice="Stellen Sie sicher, dass Sie wirklich die geänderten Elemente ausgewählt haben.";
+
+GenericSaveErrorWithCompo.Diagnostic="Die Komponente [/p1] kann nicht gespeichert werden.";
+GenericSaveErrorWithCompo.Advice="Speicheroperation kann Komponente /p1 nicht verarbeiten. \nEs wird dringend empfohlen, diese Anwendung neu zu starten.";
+
+PLMSaveEngineError_501.Diagnostic="Sicherungsoperation kann nicht ausgeführt werden.";
+PLMSaveEngineError_501.Advice="Die Komponente /p1 ist kein betroffenes Element für die aktuelle ECA.";
+
+ChangeLogInternalERR.Diagnostic="Sicherungsoperation kann wegen ChangeLog-Daten nicht ausgeführt werden.";
+ChangeLogInternalERR.Advice="Wenden Sie sich mit den aktuellen Traces von DebugChangeLog*.log in Ihrem CATTemp-Verzeichnis an den Support.";
+
+SaveCoexMpgExchangeInternalERR.Diagnostic="Speicheroperation kann wegen der Zuordnungstabelle für die Koexistenz nicht ausgeführt werden.";
+SaveCoexMpgExchangeInternalERR.Advice="Wenden Sie sich an den Support.";
+
+//CheckSpace
+//OfflineContentSaveengine
+PLMSaveEngineError_601.Diagnostic="Sicherungsoperation kann nicht ausgeführt werden.";
+PLMSaveEngineError_601.Advice="Der Offline-Speichervorgang kann nicht mit der Komponente /p1 ausgeführt werden. \nDie Komponente wurde außerhalb eines Authoring-Bereichs geändert.";
+PLMSaveEngineError_602.Diagnostic="Sicherungsoperation kann nicht ausgeführt werden.";
+PLMSaveEngineError_602.Advice="Der Offline-Speichervorgang kann nicht mit der Komponente /p1 ausgeführt werden. \nDie Komponente unter einer Lebenszyklus-Transaktion.";
+//SaveEngine
+PLMSaveEngineError_701.Diagnostic="Sicherungsoperation kann nicht ausgeführt werden.";
+PLMSaveEngineError_701.Advice="Der Speichervorgang kann nicht mit der Komponente /p1 ausgeführt werden. \nDie Komponente wurde außerhalb eines Authoring-Bereichs geändert.";
+PLMSaveEngineError_702.Diagnostic="Sicherungsoperation kann nicht ausgeführt werden.";
+PLMSaveEngineError_702.Advice="Der Speichervorgang kann nicht mit der Komponente /p1 ausgeführt werden. \nDie Komponente unter einer Lebenszyklus-Transaktion.";

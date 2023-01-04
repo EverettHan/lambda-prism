@@ -1,0 +1,117 @@
+{
+  "grammarVersion": 2,
+  "desc": "Definition of a CSI declarative function",
+  "category": "CSIIntrospection",
+  "definition": [
+    {
+      "label": "name",
+      "basic": "string",
+      "desc": "Function name",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "version",
+      "basic": "uint32",
+      "desc": "Function version",
+      "optional": {
+        "isOptional": true
+      }
+    },
+    {
+      "label": "pool",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function pool"
+    },
+    {
+      "label": "desc",
+      "basic": "string",
+      "desc": "Description of the function"
+    },
+    {
+      "label": "filename",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function filename"
+    },
+    {
+      "label": "filepath",
+      "basic": "string",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function install path"
+    },
+    {
+      "label": "implementation",
+      "parameters": [
+        {
+          "label": "name",
+          "basic": "string",
+          "desc": "Name of the custom implementation to use"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "desc": "Version of the custom implementation to use"
+        },
+        {
+          "label": "settings",
+          "type": "Parameters",
+          "desc": "Settings required by the specified custom implementation"
+        }
+      ]
+    },
+    {
+      "label": "onCall",
+      "parameters": [
+        {
+          "label": "in",
+          "type": "CSICommandSignatureDefinition"
+        },
+        {
+          "label": "out",
+          "type": "CSICommandSignatureDefinition"
+        }
+      ],
+      "desc": "Function input and output signature"
+    },
+    {
+      "label": "progress",
+      "type": "CSICommandSignatureDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function progress message format"
+    },
+    {
+      "label": "throwError",
+      "type": "CSICommandSignatureDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function error message format"
+    },
+    {
+      "label": "emit",
+      "typeArray": "CSIEmitEventDefinition",
+      "optional": {
+        "isOptional": true
+      },
+      "desc": "Function error message format"
+    },
+    {
+      "label": "RESTExposition",
+      "type": "CSIRESTExposition",
+      "optional": {
+        "isOptional": true
+      }
+    }
+  ]
+}

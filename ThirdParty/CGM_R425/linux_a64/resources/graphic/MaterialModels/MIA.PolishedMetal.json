@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "diffuse_weight",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "diffuse",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+    {
+      "name": "reflectivity",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "refr_ior",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "emissive_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "emissive_intensity",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+
+    {
+      "name": "bump",
+      "type": "Texture",
+      "nbElements": 3
+    }
+  ]
+}

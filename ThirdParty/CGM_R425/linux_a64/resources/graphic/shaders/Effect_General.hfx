@@ -1,0 +1,11 @@
+#ifndef Effect_General_H
+#define Effect_General_H
+
+struct pixelInput
+{
+    float4 hPosition      : POSITION;
+    float3 texCoord		    : TEXCOORD0;
+    float4 color          : COLOR;
+};
+
+#endif

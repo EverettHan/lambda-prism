@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Background_Camera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Background_Generic</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAmbiance_Background_GenericAuto</NAME>
+  </CONSTANT_BUFFER>
+  
+
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Pass0</NAME>
+      
+      <STREAMS>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vRay</NAME>
+            <TYPE>float3</TYPE>
+            <QUALIFIER>smooth</QUALIFIER>
+          </VARYING>
+        </STREAM>
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vDomePosition</NAME>
+            <TYPE>float3</TYPE>
+            <QUALIFIER>flat</QUALIFIER>
+            <OPTION>BACKGROUND_GEOMETRY</OPTION>
+          </VARYING>
+        </STREAM>
+      </STREAMS>
+
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>BACKGROUND_RAY</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      
+      <COMMONS>streams varyings Ambiance_Background_CBCamera</COMMONS>
+      <VERTEX_STAGE>Ambiance_Background_MainVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>Ambiance_Background_DeclarePS RayTracer_Helpers Ambiance_Background_GenericPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</EFFECT>

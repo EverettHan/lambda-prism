@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SCENE_EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0">
+    
+
+
+  <DST_STATE_GROUP>
+    <NAME>Test</NAME>
+    <DEPTH_ENABLE protected="1">true</DEPTH_ENABLE>
+    <DEPTH_WRITE protected="1">false</DEPTH_WRITE>
+    <DEPTH_FUNC protected="1">LessEqual</DEPTH_FUNC>
+    <STENCIL_ENABLE>false</STENCIL_ENABLE>
+  </DST_STATE_GROUP>
+  
+  <BLEND_STATE_GROUP>
+    <NAME>Accumulation</NAME>
+    <SEPARATE_BLEND protected="1">false</SEPARATE_BLEND>
+    <TARGET protected="1">
+      <ID>0</ID>
+      <BLEND_ENABLE>true</BLEND_ENABLE>
+      <LOGIC_OP_ENABLE>false</LOGIC_OP_ENABLE>
+      <COLOR_W_MASK>All</COLOR_W_MASK>
+      <COLOR_SRC_BLEND>SrcAlpha</COLOR_SRC_BLEND>
+      <COLOR_DST_BLEND>One</COLOR_DST_BLEND>
+      <COLOR_BLEND_OP>Add</COLOR_BLEND_OP>
+      <ALPHA_SRC_BLEND>One</ALPHA_SRC_BLEND>
+      <ALPHA_DST_BLEND>One</ALPHA_DST_BLEND>
+      <ALPHA_BLEND_OP>Add</ALPHA_BLEND_OP>
+    </TARGET>
+  </BLEND_STATE_GROUP>
+
+  <RAST_STATE_GROUP>
+    <NAME>Transparent</NAME>
+    <FILL_MODE protected="1">Solid</FILL_MODE>
+    <CULL_MODE protected="1">None</CULL_MODE>
+    <IS_FRONT_CCW>true</IS_FRONT_CCW>
+    <DEPTH_BIAS protected="1">1</DEPTH_BIAS>
+    <DEPTH_SLOPE_FACTOR protected="1">1.1</DEPTH_SLOPE_FACTOR>
+  </RAST_STATE_GROUP>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <RASTERIZER_STATE>Transparent</RASTERIZER_STATE>
+      <DEPTH_STENCIL_STATE>Test</DEPTH_STENCIL_STATE>
+      <BLEND_STATE>Accumulation</BLEND_STATE>
+    </PASS>
+  </TECHNIQUE>
+
+</SCENE_EFFECT>

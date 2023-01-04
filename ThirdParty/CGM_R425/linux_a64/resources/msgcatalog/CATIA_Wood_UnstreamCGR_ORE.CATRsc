@@ -1,0 +1,19 @@
+
+InheritsFrom = "CATIA_ShaderV5";
+
+/// BEGIN - Data Model Semantic
+
+MappingScale.ParameterValue = "DiffuseScale DiffuseScale";
+
+/// END - Data Model Semantic
+
+/// BEGIN - NRE Configuration
+
+diffuse.ParameterSemantic              = "tinted-texture";
+diffuse.ParameterUniform               = "DiffuseColor";
+diffuse.ParameterSpatial               = "Diffuse2DMap";
+diffuse.ParameterVariability           = "Spatial";
+diffuse.ParameterM1                    = "DiffuseStrength";
+diffuse.ParameterM2                    = "DiffuseBlend";
+    
+/// END - NRE Configuration

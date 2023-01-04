@@ -1,0 +1,20 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" name = "AutomationInterfaces"/>
+  <authorize access = "Protected" name = "ENOCorDesktopAdmin.tst"/>
+  <authorize access = "Protected" name = "AutomationInfrastructure.tst"/>
+  <authorize access = "Protected" name = "CATCollabInfraSametime"/>
+  <authorize access = "Protected" name = "CATLiveShapeInstaller"/>
+  <authorize access = "Protected" name = "CATSimBatch"/>
+  <authorize access = "Protected" name = "MkManagedReplay"/>
+  <authorize access = "Protected" name = "VIALivePlayerSetup"/>
+  <authorize access = "Protected" name = "CATCollabInfraXMPP"/>
+  <authorize access = "Protected" name = "XPGInfrastructure"/>
+  <authorize access = "Protected" name = "CATJavaBridge.tst"/>
+  <attached name = "CATJavaBridge.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

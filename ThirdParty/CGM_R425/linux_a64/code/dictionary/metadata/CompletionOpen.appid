@@ -1,0 +1,138 @@
+//
+// Give the definition for the three base class PLMEntity, BusinessType and RelationType
+//
+
+NEWATTRDEF::CompletionForAllIRPC
+  PhysAttr::V_discipline
+  SpAttr::V_StrongRelations  
+  SpAttr::ReservedBy     
+  SpAttr::IsReserved
+END_NEWATTRDEF::CompletionForAllIRPC
+
+NEWATTRDEF::CompletionForFastenerCnx
+  PhysAttr::V_description
+  SpAttr::SR
+END_NEWATTRDEF::CompletionForFastenerCnx
+
+NEWATTRDEF::CompletionForFastenerInst
+  PhysAttr::V_description
+END_NEWATTRDEF::CompletionForFastenerInst
+
+NEWATTRDEF::CompletionForSRs
+  SpAttr::SR
+END_NEWATTRDEF::CompletionForSRs
+
+NEWATTRDEF::CompletionForSRsFEM
+  SpAttr::SlimSR
+  MandatorySR::SIM_FmtLinked3DShape
+  MandatorySR::SIM_FmtAssembledFEMRep
+END_NEWATTRDEF::CompletionForSRsFEM
+
+NEWATTRDEF::CompletionForOldNavReps
+  PhysAttr::PLM_ExternalID
+END_NEWATTRDEF::CompletionForOldNavReps
+
+NEWATTRDEF::CompletionForRepRefs
+  PhysAttr::V_isOnceInstantiable
+  PhysAttr::V_usage
+  PhysAttr::V_nature
+END_NEWATTRDEF::CompletionForRepRefs
+
+NEWTYPEDEF::PLMEntity::#ALL#
+  AttrDefName::CompletionForAllIRPC
+END_NEWTYPEDEF::PLMEntity::#ALL#
+
+NEWTYPEDEF::PLMInstance::#ALL#
+  AttrDefName::CompletionForAllIRPC
+  AttrDefName::CompletionForFastenerInst
+END_NEWTYPEDEF::PLMInstance::#ALL#
+
+NEWTYPEDEF::PLMCoreRepReference::#ALL#
+  AttrDefName::CompletionForRepRefs
+END_NEWTYPEDEF::PLMCoreRepReference::#ALL#
+
+NEWTYPEDEF::VPMRepReference::#ALL#
+  AttrDefName::CompletionForOldNavReps
+END_NEWTYPEDEF::VPMRepReference::#ALL#
+
+NEWTYPEDEF::VPMRepInstance::#ALL#
+  AttrDefName::CompletionForOldNavReps
+END_NEWTYPEDEF::VPMRepInstance::#ALL#
+
+# Fastener Connections (CATMCXMechanicalConnection, _FastenerCnx)
+# Filter MCX on owner (CATMCXMechanicalConnection, _MCXCnx)
+NEWTYPEDEF::CATMCXMechanicalConnection::#ALL#
+  AttrDefName::CompletionForFastenerCnx
+END_NEWTYPEDEF::CATMCXMechanicalConnection::#ALL#
+
+# Config Effectivities (VPMCfgEffectivity, _EffectivityCnx)
+NEWTYPEDEF::VPMCfgEffectivity::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::VPMCfgEffectivity::#ALL#
+
+# Config Mapping (VPMCfgInstanceConfiguration, _configMappingCnx)
+NEWTYPEDEF::VPMCfgInstanceConfiguration::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::VPMCfgInstanceConfiguration::#ALL#
+
+# Instance Configuration (InstanceConfiguration, _configInstanceConfigurationCnx)
+NEWTYPEDEF::InstanceConfiguration::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::InstanceConfiguration::#ALL#
+
+# Implement Links (RFLPLMImplementConnection, _RFLImplementLinkCnx)
+NEWTYPEDEF::RFLPLMImplementConnection::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::RFLPLMImplementConnection::#ALL#
+
+# PPR Implement Links (DELFmiProcessImplementCnx, _PPRImplementLinkCnx)
+NEWTYPEDEF::DELFmiProcessImplementCnx::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::DELFmiProcessImplementCnx::#ALL#
+
+# DIF representations (DIFShapeRep, _DIFShapeRep)
+NEWTYPEDEF::DIFShapeRep::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::DIFShapeRep::#ALL#
+
+# DIF background rep view (DIFBackgroundViewRep, _DIFBGRep)
+NEWTYPEDEF::DIFBackgroundViewRep::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::DIFBackgroundViewRep::#ALL#
+
+# DIF stream view (DIFViewStream, _DIFStreamRep)
+NEWTYPEDEF::DIFViewStream::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::DIFViewStream::#ALL#
+
+# DIF stream view (DIFSymbolRefStream, _DIFSymbolRep)
+NEWTYPEDEF::DIFSymbolRefStream::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::DIFSymbolRefStream::#ALL#
+
+# DIF connections (DIFAttachedPresentation, _DIFCnx)
+NEWTYPEDEF::DIFAttachedPresentation::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::DIFAttachedPresentation::#ALL#
+
+# Material Connections (CATMatConnection, _materialCnx)
+NEWTYPEDEF::CATMatConnection::#ALL#
+  AttrDefName::CompletionForSRs
+END_NEWTYPEDEF::CATMatConnection::#ALL#
+
+# Material FEM representations (VPMRepReference#FEM, _FEMRepRef)
+NEWTYPEDEF::VPMRepReference::FEM
+  AttrDefName::CompletionForSRsFEM
+END_NEWTYPEDEF::VPMRepReference::FEM
+
+NEWATTRDEF::CompletionForAllBPC
+  SpAttr::StrongRelations
+END_NEWATTRDEF::CompletionForAllBPC
+
+NEWTYPEDEF::BusinessType::#ALL#
+  AttrDefName::CompletionForAllBPC
+END_NEWTYPEDEF::BusinessType::#ALL#
+
+NEWTYPEDEF::RelationType::#ALL#
+  AttrDefName::CompletionForAllBPC
+END_NEWTYPEDEF::RelationType::#ALL#

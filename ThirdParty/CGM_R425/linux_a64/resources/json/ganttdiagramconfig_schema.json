@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "ganttdiagramconfig_schema.json",
+  "title": "GanttDiagramSchemaConfig",
+  "type": "object",
+  "properties": {
+    "diagramWidth": {
+      "description": "Diagram's width, in char count. Default value: 200",
+      "type": "integer",
+      "minimum": 150
+    },
+    "nameColumnWidth" : {
+      "description": "Name column width, in char count. Default value: 14",
+      "type": "integer",
+      "minimum": 10
+    },
+    "typeColumnWidth" : {
+      "description": "Type column width, in char count. Default value: 14",
+      "type": "integer",
+      "minimum": 10
+    },
+    "paddingSize" : {
+      "description": "Cells' padding size. Default value: 1",
+      "type": "integer",
+      "minimum": 1
+    },
+    "borderSize" : {
+      "description": "Cells' border size. Default value: 1",
+      "type": "integer",
+      "minimum": 1
+    },
+    "headerDescription" : {
+      "description": "Description displayed in the header. Default value: empty",
+      "type": "string"
+    },
+    "unit" : {
+      "description": "Diagram's unit: ms, sec.... Default value: 'ms'",
+      "type": "string"
+    },
+    "outputFilePath": {
+      "description": "Output file path where the diagram is dumped. Mandatory",
+      "type": "string"
+    },
+    "nodeTypeField" : {
+      "description": "Field which contain the node type. Json path is supported. Default value: 'type'",
+      "type": "string"
+    },
+    "nodeTypes" : {
+      "description": "Array of types description",
+      "type": "array",
+      "items":  {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the given type",
+            "type": "string"
+          },
+          "nameColumnField": {
+            "description": "Field which contain the value of the name column. Json path is supported. Default value: 'nameColumnValue'",
+            "type": "string"
+          },
+          "typeColumnField": {
+            "description": "Field which contain the value of the type column. Json path is supported. Exclusive with typeColumnValue.",
+            "type": "string"
+          },
+          "typeColumnValue": {
+            "description": "Hard coded value of the type column. Exclusive with typeColumnField.",
+            "type": "string"
+          },
+          "representationChar": {
+            "description": "Char which represents this node type in the diagram. Default value: '*'",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "startTimeField": {
+            "description": "Field which contain the start time value of the entry. Json path is supported. Default value: 'startTimeValue'",
+            "type": "string"
+          },
+          "endTimeField": {
+            "description": "Field which contain the end time value of the entry. Json path is supported. Default value: 'endTimeValue'",
+            "type": "string"
+          },
+          "childNodesField": {
+            "description": "Field which contain the child nodes of the entry. Json path is supported. Optional, empty means there are no childs. Default value: empty",
+            "type": "string"
+          }
+        },
+        "required": ["name", "nameColumnField", "representationChar", "startTimeField", "endTimeField"]
+      }
+    }
+  },
+  "required": ["outputFilePath"]
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PDSFX xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0">
+  <VERSION>1</VERSION>
+
+  <!--Hello shader - most basic effect-->
+    
+  <CONSTANT_BUFFER>
+    <NAME>cbSymbol</NAME>
+  </CONSTANT_BUFFER> 
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <STREAMS>      
+        <STREAM>
+          <STAGES>Vertex_Fragment</STAGES>
+          <VARYING>
+            <NAME>vTexCoord</NAME>
+            <TYPE>float3</TYPE>
+            <!--Add a shader option-->
+          </VARYING>
+        </STREAM>
+        
+      </STREAMS>
+      <LIGHTING>true</LIGHTING>      
+      <VERTEX_STAGE>SymbolGlyphVS</VERTEX_STAGE>
+      <FRAGMENT_STAGE>SymbolGlyphPS</FRAGMENT_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+</PDSFX>

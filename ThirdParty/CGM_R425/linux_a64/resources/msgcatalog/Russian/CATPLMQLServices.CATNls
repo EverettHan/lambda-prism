@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+INVALID_SELECT_DEFAULT_PLMTYPE="Семантическая ошибка. Неоднозначный тип PLMType для атрибута условия SELECT /p1";
+INVALID_SELECT_DEFAULT_PLMTYPE_ERR_ADV="Проверьте псевдоним PLMType для атрибутов SELECT";
+
+INVALID_SELECT_MISSING_PLMTYPE="Семантическая ошибка. Неоднозначный псевдоним PLMType /p1 для атрибута условия SELECT. Псевдоним PLMType отсутствует в условии FROM";
+INVALID_SELECT_MISSING_PLMTYPE_ERR_ADV="Добавить указанный выше тип PLMType в условие FROM";
+
+INVALID_WHERE_MISSING_PLMTYPE="Семантическая ошибка. Неоднозначный псевдоним PLMType /p1 для атрибута условия WHERE. Псевдоним PLMType отсутствует в условии FROM";
+INVALID_WHERE_MISSING_PLMTYPE_ERR_ADV="Добавить указанный выше тип PLMType в условие FROM";
+
+INVALID_FROM_PLMTYPE="Семантическая ошибка. В условии FROM для PLMType '/p1' использованы недопустимые индикаторы пакета/класса";
+INVALID_FROM_PLMTYPE_ERR_ADV="Проверьте правильность значений пакета/класса для указанного выше типа PLMType";
+
+NVALID_FROM_PLMTYPEID="Семантическая ошибка. В условии FROM для PLMType используются недопустимые индикаторы '/p1' ";
+INVALID_FROM_PLMTYPEID_ERR_ADV="Проверьте правильность значений пакета/класса для указанного выше типа PLMType";
+
+INVALID_FROM_MULTIPLMTYPE="Семантическая ошибка. В условии FROM псевдоним PLMType /p1 используется несколько раз";
+INVALID_FROM_MULTIPLMTYPE="Проверьте псевдоним PLMType условия FROM";
+
+INVALID_SELECT_ATTRIBUTE="Семантическая ошибка. В условии SELECT используется недопустимый атрибут /p1 вместе с псевдонимом PLMType /p2";
+INVALID_SELECT_ATTRIBUTE_ERR_ADV="Проверьте наличие допустимых атрибутов, поддерживаемых данным типом PLMType";
+
+INVALID_WHERE_ATTRIBUTE="Семантическая ошибка. В условии используется недопустимый атрибут /p1 вместе с псевдонимом PLMType /p2";
+INVALID_WHERE_ATTRIBUTE_ERR_ADV="Проверьте наличие допустимых атрибутов, поддерживаемых данным типом PLMType";
+
+INVALID_CREATE_RELATION="Семантическая ошибка. В инструкции CREATE используется недопустимая взаимосвязь /p1";
+INVALID_CREATE_RELATION_ERR_ADV="Проверьте, что для заданного типа PLMType поддерживаются взаимосвязи";
+
+INVALID_CREATE_ATTRIBUTE="Семантическая ошибка. В инструкции CREATE используется недопустимый атрибут /p1 вместе с типом PLMType";
+INVALID_CREATE_ATTRIBUTE_ERR_ADV="Проверьте наличие допустимых атрибутов, поддерживаемых данным типом PLMType";
+
+INVALID_CREATE_PLMTYPE="Семантическая ошибка. В инструкции CREATE для PLMType '/p1' использованы недопустимые идентификаторы пакета/класса";
+INVALID_CREATE_PLMTYPE_ERR_ADV="Проверьте правильность значений пакета/класса для указанного выше типа PLMType";
+
+UNMATCHED_ATTR_AND_ATTRVALUES=" Размеры списка атрибутов и списка значений атрибутов не совпадают";
+UNMATCHED_ATTR_AND_ATTRVALUES_ERR_ADV="Проверьте размеры списка атрибута и списка значений атрибута";
+
+ERROR_PLMQL_INTERFACE="PLMQLError: не удалось запросить интерфейс CATIPLMQLbnfStatement";
+ERROR_PLMQL_INTERFACE_ERR_ADV="";
+
+ERROR_PLMQL_INVALID_STATEMENT="PLMQLError: недопустимая инструкция PLMQL, ошибка в синтаксисе/грамматике";
+ERROR_PLMQL_INTERFACE_ERR_ADV="Проверьте синтаксис и грамматику инструкции";
+
+ERROR_PLMQL_MULTIPLE_QUERY="PLMQLError: не разрешено подавать несколько запросов";
+ERROR_PLMQL_INTERFACE_ERR_ADV="Выполните каждый запрос в отдельном окне";
+
+ERROR_PLMQL_MULTIPLE_STATEMENTS="PLMQLError: CRUD, NV, CLONE, QUEOP, MATURITY смешаны";
+ERROR_PLMQL_MULTIPLE_STATEMENTS_ERR_ADV="Убедитесь, что несколько операций не являются частью нескольких инструкций";
+
+INVALID_EXT_ATTRIBUTE="Семантическая ошибка. В условии SELECT используется недопустимый атрибут расширения /p1 вместе с псевдонимом PLMType /p2";
+INVALID_EXT_ATTRIBUTE_ERR_ADV="Проверьте допустимые атрибуты, поддерживаемые заданным типом PLMType расширения";
+
+INVALID_EXT_PLMTYPE="Семантическая ошибка. В условии SELECT используются недопустимые идентификаторы [Custo]/Modeler/CoreType для EXT PLMType '/p1'";
+INVALID_EXT_PLMTYPE_ERR_ADV="Проверьте правильность значений [Custo]/Modeler/CoreType для указанного выше PLMType расширения";
+
+INVALID_PLMTYPE_USED="Тип PLMTYPE НЕ НАЙДЕН В МЕТАДАННЫХ";
+INVALID_PLMTYPE_USED_ERR_REQ="Тип PLMTYPE НЕ НАЙДЕН В МЕТАДАННЫХ";
+
+INVALID_PLMID_USED="Недопустимое имя PLMID/Repository для подключенного поставщика";
+INVALID_PLMID_USED_ERR_REQ="Недопустимое имя PLMID/Repository для подключенного поставщика";
+
+
+INVALID_SELECT_LIST_ERR_REQ="";
+INVALID_SELECT_LIST_ERR_DIAG="";
+INVALID_SELECT_LIST_ERR_ADV="";
+INVALID_SELECT_LIST_BQ="Недопустимый список атрибутов SELECT в BuildQuery";
+
+Err_PLMQL_STMT="ОШИБКА В ИНСТРУКЦИИ INPUT. НЕКОТОРЫЕ ПАРАМЕТРЫ НЕ ВЕРНЫ";
+Err_PLMQL_STMT_ERR_REQ="Ошибка в инструкции input";
+Err_PLMQL_STMT_ERR_DIAG="Ошибка в инструкции input";
+Err_PLMQL_STMT_ERR_ADV="См. ссылку на язык";
+
+INVALID_SELECT_LIST_SIZE_ZERO="Недопустимый список атрибутов SELECT с нулевым размером списка";
+
+APPLY_EVENT_ADAPTER_ERROR="Идентификатор input не представляет объект, который принадлежит к PDM, связанному с транзакцией.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_REQ="Идентификатор input не представляет объект, который принадлежит к PDM, связанному с транзакцией.";
+APPLY_EVENT_ADAPTER_ERROR_ERR_ADV="Проверьте значение PLMID в инструкции Input.";
+
+COMMIT_STREAMS_ERROR="Существует проблема с передачей потоков в хранилище.";
+COMMIT_STREAMS_ERROR_ERR_REQ="Не удалось передать потоки из источника в целевой объект";
+COMMIT_STREAMS_ERROR_ERR_ADV="Проверьте соответствующие настройки или синтаксис потоков";

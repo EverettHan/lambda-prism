@@ -1,0 +1,53 @@
+{
+  "grammarVersion": 2,
+  "desc": "Loads a recorded scenario on the node in order to replay it next.",
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  },
+  "onCommandParameters": {
+    "in": {
+      "parameters": [
+        {
+          "label": "binary",
+          "basic": "buffer",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "A binary comming from a record"
+        }
+      ]
+    },
+    "answers": {
+      "parameters": [
+        {
+          "label": "id",
+          "basic": "int32",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Identifier of the replay added"
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  }
+}

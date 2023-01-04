@@ -1,0 +1,201 @@
+CATCommandHeader        CATIHelp                libCATAfrFoundation
+CATCameraFeat           CATIReframeCamera       libCATAfrFoundation
+
+
+CATCommand              CATIHelp                libCATAfrFoundation
+CATCommand              CATIInteractiveCommand  libCATAfrFoundation
+CATDocument             CATInPlaceSite          libCATAfrFoundation
+CATCSO                  CATIObjectSet           libCATAfrFoundation
+CATCSO                  CATIModelUndoRedoManager libCATAfrFoundation
+CATCSO                  CATIConnectionPointContainerInit libCATAfrFoundation
+CATISO                  CATI3DGeoVisu           libCATAfrFoundation
+CATISO                  CATI2DGeoVisu            libCATAfrFoundation
+CATISO                  CATIModelEvents         libCATAfrFoundation
+
+CATCmdAccess            CATMarshallableCorba    libCATAfrFoundation
+CATCmdContainer         CATMarshallableCorba    libCATAfrFoundation
+CATCmdSeparator         CATMarshallableCorba    libCATAfrFoundation
+CATCmdStarter           CATMarshallableCorba    libCATAfrFoundation
+CATCmdWorkbench         CATMarshallableCorba    libCATAfrFoundation
+CATCmdWorkshop          CATMarshallableCorba    libCATAfrFoundation
+CATCommand              CATICCHelp              libCATAfrFoundation
+CATPalette              CATMarshallableCorba    libCATAfrFoundation
+CATHeaderAttributes     CATMarshallableCorba    libCATAfrFoundation
+
+CATExtIUIActivate       CATIUIActivate          libCATAfrFoundation
+CATApplicationFrame     CATIFrameController     libCATAfrFoundation
+CATAfrModelUndoRedoManagerForJournaling  CATIModelUndoRedoManager     libCATAfrFoundation
+
+CATAfrBottomToolbarHeader  CATIAfrBottomToolbarHeaderArgument libCATAfrFoundation
+CATAfrBottomToolbarHeader  CATIAfrCommandHeaderArgument       libCATAfrFoundation
+CATAfrBottomToolbarHeader  CATIAfrCommandHeaderRep            libCATAfrFoundation
+CATCommandHeader		   CATIAfrCommandHeader	              libCATAfrFoundation
+CATSimpleCommandMessageHandler  CATIMessageReceiver           libCATAfrFoundation
+
+CATFrmEditor			CATIAfrEditor						  libCATAfrFoundation
+CATFrmEditor			CATIFrmEditorCtxMenu  	  libCATAfrFoundation
+
+CATAfrPLMEditorNLSInfo     CATIOmbLifeCycleOwnerNLSInfo       libCATAfrFoundation
+
+CATDrawing            CATITemporaryCamera  libCATAfrFoundation
+CATFrm2DCamera        CATI2DCamera         libCATAfrFoundation
+CATFrm2DCamera        CATICamera           libCATAfrFoundation
+CATFrm2DCamera        CATIReframeCamera    libCATAfrFoundation
+CATFrm3DCamera        CATI3DCamera         libCATAfrFoundation
+CATFrm3DCamera        CATICamera           libCATAfrFoundation
+CATFrm3DCamera        CATIReframeCamera    libCATAfrFoundation
+CATPart               CATITemporaryCamera  libCATAfrFoundation
+CATShape              CATITemporaryCamera  libCATAfrFoundation
+CATSrvPlugInReceiver  CATIMessageReceiver  libCATAfrCompanion
+CATSrvPlugInStream    CATICreateInstance   libCATAfrCompanion
+CATSrvPlugInStream    CATISrvPlugInStream  libCATAfrCompanion
+CATSrvPlugInStream    CATIStreamMsg        libCATAfrCompanion
+TestGraph3D           CATITemporaryCamera  libCATAfrFoundation
+aec                   CATITemporaryCamera  libCATAfrFoundation
+cgm                   CATITemporaryCamera  libCATAfrFoundation
+cgr                   CATITemporaryCamera  libCATAfrFoundation
+fit                   CATITemporaryCamera  libCATAfrFoundation
+inplace               CATITemporaryCamera  libCATAfrFoundation
+model                 CATITemporaryCamera  libCATAfrFoundation
+rgc                   CATITemporaryCamera  libCATAfrFoundation
+tif                   CATITemporaryCamera  libCATAfrFoundation
+
+# PLM Bar
+CATAfrPLMBarVidView	    CATIAfrStarterViewFactory	      libCATAfrFoundation
+AfrPLMBarStartMenu	    CATIAfrDynamicCreationContainer	  libCATAfrFoundation
+CATAfrPLMBarVidView     CATIAfrPLMBarStarterFactory       libCATAfrFoundation  
+CATAfrPLMBarDlgLateType CATIAfrComboWrapper               libCATAfrFoundation
+CATAfrPLMBarDlgLateType CATIAfrButtonWrapper              libCATAfrFoundation
+AfrPLMBarBridge         CATIAfrPLMBarBridge               libCATAfrFoundation
+CATAfrPLMBarStarterView CATISYPIntrospectable             libCATAfrFoundation
+AfrPLMBar                 CATIAfrGeneralWksAddin           libCATAfrFoundation
+
+ToolLineAddin             CATIAfrGeneralWksAddin           libCATAfrFoundation
+
+CATCmdStarter         CATIAfrGlobalWidgetsAccess      libCATAfrFoundation
+
+# Declarative AfrFoundation
+CATCmdAccess              CATISYPIntrospectable            libCATAfrFoundation
+CATCmdAccess              CATISYPPresenter                 libCATAfrFoundation
+CATCmdContainer           CATISYPIntrospectable            libCATAfrFoundation
+CATCmdContainer           CATISYPCollection                libCATAfrFoundation
+CATAfrBottomToolbar       CATISYPIntrospectable            libCATAfrFoundation
+CATAfrBottomToolbar       CATISYPCollection                libCATAfrFoundation
+CATCmdStarter             CATISYPIntrospectable            libCATAfrFoundation
+CATCmdStarter             CATISYPPresenter                 libCATAfrFoundation
+CATCmdWorkButtonStarter   CATISYPIntrospectable            libCATAfrFoundation
+CATCmdWorkbench           CATISYPIntrospectable            libCATAfrFoundation
+CATCmdWorkshop            CATISYPIntrospectable            libCATAfrFoundation
+CATCmdSeparator           CATISYPIntrospectable            libCATAfrFoundation
+CATCommandHeader          CATISYPIntrospectable            libCATAfrFoundation
+CATCommandHeader          CATISYPPresenter                 libCATAfrFoundation
+CATDE2CommandHeader       CATISYPIntrospectable            libCATAfrFoundation
+CATDE2CommandHeader       CATISYPPresenter                 libCATAfrFoundation
+CATCheckHeader            CATISYPIntrospectable            libCATAfrFoundation
+CATFrmCheckHeader         CATISYPIntrospectable            libCATAfrFoundation
+CATCmdHeadersList         CATISYPIntrospectable            libCATAfrFoundation
+CATCmdHeadersList         CATISYPCollection                libCATAfrFoundation
+CATCmdToolbars            CATISYPIntrospectable            libCATAfrFoundation
+CATCmdToolbars            CATISYPCollection                libCATAfrFoundation
+CATCmdMenuBar             CATISYPIntrospectable            libCATAfrFoundation
+CATCmdMenuBar             CATISYPPresenter                 libCATAfrFoundation
+CATCmdAccessChain         CATISYPIntrospectable            libCATAfrFoundation
+CATCmdAccessChain         CATISYPCollection                libCATAfrFoundation
+CATCmdAccessChain         CATISYPPresenter                 libCATAfrFoundation
+CATCmdInterface           CATISYPIntrospectable            libCATAfrFoundation
+CATCmdInterface           CATISYPPresenter                 libCATAfrFoundation
+CATCmdAddin               CATISYPIntrospectable            libCATAfrFoundation
+CATCmdAddin               CATISYPCollection                libCATAfrFoundation
+CATCmdAddin               CATISYPPresenter                 libCATAfrFoundation
+CATCode                   CATISYPIntrospectable            libCATAfrFoundation
+CATCode                   CATISYPCollection                libCATAfrFoundation
+CATDll                    CATISYPIntrospectable            libCATAfrFoundation
+CATDll                    CATISYPPresenter                 libCATAfrFoundation
+CATWorkbenchOptions       CATISYPIntrospectable            libCATAfrFoundation
+CATWorkbenchOptions       CATISYPPresenter                 libCATAfrFoundation
+CATDAfrTemplateObject     CATISYPTemplate                  libCATAfrFoundation
+CATCode                   CATISYPTemplate                  libCATAfrFoundation
+CATCmdAccessChain         CATISYPTemplate                  libCATAfrFoundation
+CATCommandHeaderFromFactory CATISYPIntrospectable          libCATAfrFoundation
+CATAfrCommandHeaderArgs   CATISYPIntrospectable            libCATAfrFoundation
+CATAfrCommandHeaderArgs   CATISYPCollection                libCATAfrFoundation
+CATCommandHeaderArg       CATISYPIntrospectable            libCATAfrFoundation
+CATCommandHeader		  CATIAfrCommandHeaderResources    libCATAfrFoundation
+CATAfrResourceStarterRep  CATISYPIntrospectable            libCATAfrFoundation
+CATEAfrCommandHeaderResources     CATISYPIntrospectable    libCATAfrFoundation
+CATCAfrMenu     CATISYPIntrospectable            libCATAfrFoundation
+
+AfrFrame                  CATIAfrGeneralWksAddin           libCATAfrFoundation
+
+CATAfrBalloonItem         CATISYPIntrospectable            libCATAfrFoundation
+CATAfrBalloonSubFamily    CATISYPIntrospectable            libCATAfrFoundation
+
+#Profile management
+CATPAfrIProfile			  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrMasterList    	  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrMasterList    	  CATISYPCollection				   libCATAfrFoundation
+CATPAfrMasterProfile   	  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrMasterProfile      CATISYPPresenter                 libCATAfrFoundation
+CATPAfrMasterProfile      CATISYPTemplate                  libCATAfrFoundation
+CATPAfrMasterProfileList  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrPreferences   	  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrProfile      	  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrProfile            CATISYPPresenter                 libCATAfrFoundation
+CATPAfrProfile            CATISYPTemplate                  libCATAfrFoundation
+CATPAfrSettings     	  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrVariable      	  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrVariableList    	  CATISYPIntrospectable            libCATAfrFoundation
+CATPAfrVariableList    	  CATISYPCollection				   libCATAfrFoundation
+
+#HEB ajout suite erreur MDE
+CATBoxingOfCATAfrAvailabilityMode    CATISYPValues                  libCATAfrFoundation
+CATPAfrItem			     CATISYPIntrospectable          libCATAfrFoundation
+AppModeRepType                       CATIAfrContainerViewFactory    libCATAfrFoundation
+ObjectPropertiesRepType              CATIAfrContainerViewFactory    libCATAfrFoundation 
+
+#CDT ajout suite erreur MDE
+CATAfrCommandHeaderResource   CATISYPIntrospectable   libCATAfrFoundation 
+
+
+CATCAfrSearchSignatureControllerBase CATICAfrComponentController libCATAfrFoundation
+CATCmdContainer						 CATICAfrComponent			 libCATAfrFoundation	
+CATCmdContainer						 CATICAfrComponentElement	 libCATAfrFoundation
+
+CATAfrListAppsController			 CATICAfrComponentController  libCATAfrFoundation
+l_CATAfrApp							 CATISYPPresenter			  libCATAfrFoundation
+l_CATAfrApp							 CATIAfrAppsOption			  libCATAfrFoundation
+l_CATAfrAppListController			 CATICAfrComponentController  libCATAfrFoundation
+CATAfrAppsSAXParser					 CATISAXContentHandler		  libCATAfrFoundation
+CATAfrAppsSAXParser					 CATISAXErrorHandler		  libCATAfrFoundation
+
+ObjectPropertiesRepresentationType CATIAfrContainerViewFactory libCATAfrFoundation
+AppModeRepresentationType CATIAfrContainerViewFactory libCATAfrFoundation
+
+CATDeclarativeCommandsList  CATISYPIntrospectable  libCATAfrFoundation
+CATDeclarativeHelpAboutCommand  CATISYPIntrospectable  libCATAfrFoundation
+CATAfrContextBarManager   CATIAfrCtxBarManager             libCATAfrFoundation
+CATAfrContextBarManager   CATIAfrCtxMenuToNewInfra         libCATAfrFoundation
+ 
+CATCAfrModesAndPropertiesController		CATICAfrComponentController	 libCATAfrFoundation
+
+AfrRolesMenu				CATICAfrMenuEntryPoint		 libCATAfrFoundation
+AfrDashboards				CATICAfrMenuEntryPoint		 libCATAfrFoundation
+CATCAfrPanelApps    	  CATISYPCollection				   libCATAfrFoundation
+
+CATAfrContextBarController  CATICAfrComponentController  libCATAfrFoundation
+CATAfrCoachMarkController	CATICAfrComponentController  libCATAfrFoundation
+CATCAfrCommandList			CATICAfrComponentController  libCATAfrFoundation
+CATAfrRole					CATIAfrAppsRole				 libCATAfrFoundation
+
+CATAfrRadioGroup            CATISYPCollection              libCATAfrFoundation
+CATAfrMigrationRadioGroup   CATISYPCollection              libCATAfrFoundation
+AfrGenericCefActor_AfrCtxBar  CATIAfrCtxBar  libCATAfrFoundation 
+
+CATCmdGhostStarter  CATMarshallableCorba  libCATAfrFoundation
+
+CATCAfrMenu  CATICAfrDumpCallback  libCATAfrFoundation
+CATAfrCommandLauncherSearch  CATISYPIntrospectable  libCATAfrFoundation
+AfrHelpStandard            CATICAfrMenuEntryPoint          libCATAfrFoundation
+#UndoRedo Split AfrCore 
+CATISplitAfrServicesImpl   CATISplitAfrServices    libCATAfrFoundation
+l_CATApplicationFrame		AfrITransitionNotifier    libCATAfrFoundation

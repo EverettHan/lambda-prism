@@ -1,0 +1,1514 @@
+//In case of addition of new path manually, the format need to be respected
+// additition of the odt name in the 'odtnames' category. Each odt name must have a ',' before and after. It involves starting and ending the catogry with ','
+// [odt].path =";[path]1/;[path2]/;"; 
+//		'/' at the end of the controls compare the paths with system function 'GetPathFromCmd' who return a path with '/' at the end
+// 		each path must have ';' before and after. It involves starting and ending the catogry with ';'
+//  	Take care, each '-' in odt names must be changed to '_' and each '\' must be changed to '|' due to CATRsc limitations
+
+odtnames = ",FSSDraftUpdateWithMirrorXMLDump,FSSDynDraftNewPartBodyMode2,FSSEditSetIWONewPartBodyMode1,FSSIsophoteMappingNoWarningModeXMLDump,FSSMirrorIsophotesXMLDump3,FSSIsophotesMapping_IR062461,FSSMirrorIsophotesXMLDump,FSSMirrorIsophotesXMLDump2,ODT_TEST_ChangeFeedback,ODT_TEST_GroupEmptyProduct_IR118223,ODT_TEST_IRSenarios_2,ODT_TEST_LICGroupSelection,ODT_TEST_LIC_GroupSelection,PIMUI_Record_PICNew_ContxtGrp,CATCommandsList_FT,CATPreferredWorkbenchHeader_FT,CATQuickStartHeader_FT,CATCloudQsrCanonic01,CATCloudQsrCurveNetwork02,CATCloudQsrCurveNetwork03,CATCloudQsrCurveNetwork05,CATCloudQsrQuickSurface03,COVProduceInspection_02-MultiplePointsSeletionInGs,COV_REC_N1_Flattening_FlattenCategorization,RecSldBeamBeamPln0001,RecSldStiffenerWithSingleSupport_IR093675,Rec_SFD_Beam_RefPln0002,RFLP_Display_Management_Presentation_View_REG_436807,VOA_Passenger_feet_optimization,AsyncRecord01,CATIAfrUIActivation,KeyboardAnalyser02,SearchAdvancedTestREC2,SearchTestREC,PLMActionEditorX5_AttachRelatedObjectsAttachments,PLMActionEditorX5_AttachRelatedObjectsInputs,PLMRTCNav_HDNavigatorVideo_CS_MS,MCX_LineExtremities,MCX_OK,MRX_Inherit1,DMRMeasureBetween_BandAnalysis_Publish,DMRMeasureBewteen_Publish,DMRMeasureItem_Publish,DMRMeasure_Between_AloneSelection,DMRMeasure_NewVisualization,DMRMeasure_Plane_04,DMRMeasure_Section_NonPersistent,DMRMeasure_Publish,DMR_MeasureItem_PublishCommand,DMU_N1_OPT_REC_OS_Measure,DMU_N1_OPT_REC_OS_Measure_NewDlg,MMUIRecAxisSystemContextualPanels,GSMAxisSystem06,CATSbuClassRename,CATSbuClassRename4,CATSbuVersioningUnload,CATEmuSignalOperatorsMovingAverageRec,CATEpuSVESignalOperatorsRec,CATEpuXYPlotBasicTestRec,CATSysSimInterference_LP,RecEdiAdvisor03CreateDatumTarget,RecEdiExtract02,TerRecTechnoResultFileLegacy1,ODTREC_MeasureBetween1,ODTREC_DELMPCheckServices_Check_Move_SAA,DELWKIR421IR-754847_NOA_MissingIn3Dworkbook,DELPDMFolder_AddExistingDocument,DELPDMFolder_AddExistingRepresentation,DELPPRLiveSysRecCompassConsistency_Check_BL_SAA_BalancingConstraintBasic,Measure,DNBSpotTestEKL,DNBTSAResultsUIV2GunSearch,DRWRecV5R2FrontViewFromPointsAndEdges,DRWRecV5R2FrontViewFromSelectionSets,EHI_REC_RemBranPtEditRouteWithPtOnFly_N1,EWD_REC_WireRouting_DistantLinks_N1,GSM2DViewSection34,CkeParmReorder,CkeRec502,MfgRec_ResConfig_MachineAssignment,MfgRec_R1X_MPSendToCatalog,PrtRecN1AxisToAxis,PrtRecN1BooleanOperationGSM15,PrtRecN1BooleanOperationGSM18,PrtRecN1BooleanOperationGSM2,PrtRecN1BooleanOperationGSM5,PrtRecN1BooleanOperationGSM8,PrtRecN1ChamferPreview04,PrtRecN1DraftLimiting03,PrtRecN1GSOAutoFilletJournalling,PrtRecN1PC_ConstantDraft01,PrtRecN1PrismFromSurfMacro,PrtRecN1Sweep_RefSurface,PrtRecN1ThreadTapAnalysis,PrtRecN1ThreadAnalysis01,PrtRecN1_RI0347388,PrtRecHoleAuto05,PrtODT_MirrorListAsResult_IR-673488,PrtODT_ThreadTapAnalysisDiameter_IR-661412,PrtOdtRecFillet_RI0357395,PrtRecBooleanAvoidSecondOperandReuse,PrtRecBooleanAvoidUseOfOperatedTool,PrtRecBooleanBodiesUnderOGS02,PrtRecBooleanMixedCases,PrtRecDFPrismUpdateErr,PrtRecDefeaturingPreview,PrtRecDraftPCInstanciation,PrtRecHoleUpToSurfaceMacro,PrtRecHoleAuto04,PrtRecIntersectFilletPC02,PrtRecMacro_SweepMoveProfile,PrtRecMacroHole,PrtRecN1ExtractSurfPad01,PrtRecPatternAuto01,PrtRecPatternAutoRect24,PrtRecReverseReorder,PrtRecRevol_AxisMacro,PrtRecSewSurfaceAuto_Surfacic,PrtRecThicknessAuto03,PrtRecSewSurfaceFlagModifySupport,PrtRecShellAuto03,PrtRecTrim05,PrtRecVarFilletReroutePropagEdge,PrtRecThinSweepAuto01,PrtRecUnionTrim_IR_696503,PrtRecVolumeBoolAuto,PrtRecVolumeFeatAuto,RecN1_InsertExisting_Product_Reframe,SWXTestBuPowercopy_SteelDetail,AutoDimCstPolygon,SKUEditUseEdge01,SKUGeneretaCatalog01,SKUHighlightRefElt01,SKUPowerCopy04,SKUText03,SKUText02,SKUUseEdgeProjection09,SKUTestTextCom,SKU_RI_620815_DatumCurveDiscretization,TECHNO_3DEXP_QA_RW00,FastMultiInst_NoConfig_Ok,CATCldUIMeshMorphing01,CATCloudPointSelect01,CATCloudStopGap02,EsuTransferLineID2,CATFst_UC_NC1_SpotFastener_PLMUpdate_01,CATSpdTestBossRec009,DELPPRLivePcsRec_AssignwithAA,DELPPRLivePcsRec_BizRule_ReparentProcess,DELPPRLivePcsRec_SynchroVariant,DELPPRLivePcsRec_UnAssignStackedPcsOnInstall,CATUdfRec_037_UseIdenticalNameForGeomParam,TestClipping,TestClippingMixte,TestClippingTexts,TestClippingWith3DScissor,PG00REC14,PG0PrinterReading02,TestLineThickness,TestNegativeFontSpacing_IR594812,3DScalePlane,Addin,BottomToolbar,DragAndDropOnViewerEmptiness,GlobalAddin,BatchMonitor07,CAATmcCombCrvMultiSel02,CAAWSPNavFilterAddin_TST,CATAImAssyImpactsSolidRec001,ASM_PATTERN_ActivateDeactivate_ContextToolBar,ASM_PATTERN_ActivateDeactivate_MixedScale,ASM_PATTERN_Rect_Edit_rec,CBT_UpdWizard,BIWMatingFlangeNoDefaultDir,InstantiatePLMTemplateEditability,QueryComp_LoadRef,QueryComp_LoadRepRef,CcvRecDSMLaw02,CcvRecPDirCylinder01,RecRfgGridOnADeckPlate1,RecRfgGridTestSelBoundary,RecRfgPanelCreationByFormulainRefPlneBrowser_IR065166,CsuRecRacewayPortAttributes,EnsRecBuildPartUpdateValues,EnsRecBuildPartWithMaterial,RecSfdCreatePlate,RecSfdCreatePlateLimitedHull,RecSfdCreatePlateMltCreateTransversalBulkhead,RecSfdCreatePlateMltCreateTransversalBulkheadWithFormula,RecSfdCreatePlateNamedManually,RecSfdCreatePlateWithMaterialTable,RecSfdCreateSurfCylinderAlongAxisX,RecSfdCreateSurfCylinderAlongAxisY,RecSfdCreateSurfCylinderAlongAxisZ,RecSfdMltCreateTransversalBulkheadWithReferencePlaneBrowser,RecSfdMltCreateTransversalBulkheadWithReferencePlaneBrowserKeyIn,RecSfdPanelSplitPlateMTOAfterEditLimits_IR113767,Wiki_SFD_PanelCmd_032,RecSddCreateOpening_IR077559,RecSddCreateSFEWithLimitNormalOffset_Cov,RecSddCreateStiffenerWithLimitNormalOffset_Cov,RecSddEdtPlateWithNoChangeActivatePart,RecSddEdtSlotwithChangeStiffener,RecSddEdtStiffenerWithLimitType,RecSddMemberCmdOKButtonSensitivity,RecSfdBreakPlate_IR102657,RecSfdCreateBeamWithPtLimit_IR037238,RecSfdCreateBeamPtToPtRemovePtsFromEltList_117356,RecSfdCreateEndCutwithLimitedByPanel_IR071514,RecSfdCreateMemberBeamsAndPlaneWithCorrectNaming_IR040323,RecSfdCreateMemberChangeMaterial_IR376505,RecSfdCreateMemberReferencePlanesWithCorrectNaming_IR040323,RecSfdCreateOpening_IR043608,RecSfdCreatePanelWithVolume,RecSfdCreatePlateWithStiffener_IR036999,RecSfdCreateSeamPlateWithVerifyingNames,RecSfdCreateSFEWithLimitNormalOffset_Cov,RecSfdCreateStiffenerWithLimitNormalOffset_Cov,RecSfdEdtSeamPlateWithRemove_IR121428,RecSldEditMember_IR573367,RecSfdCreateSlotEdtStiffenerWithSectionInSingleSystem,RecSfdCreateSlotEdtStiffenerWithSectionInCrossSystem,RecSfdCreateStiffener_IR114959,RecSfdEdtPlateWithReferenceDlg_IR091973,RecSfdEdtSeamPlateWithDifferentThickness,RecSfdEdtSeamPlateWithRemoveAndAdd,RecSfdEdtSeamPlateWithSketcherForNewLine,RecSfdEdtStiffenerSection_IR058401,RecSfdOpeningCreateStandard_IR031622,RecSfdSeamPanelDeleteSketch_IR603251,RecSFDEditMultiStiffener_IR-707372,RecSfdCreateOpeningWith3DAxisSystem_IR137525,RecSfdOpeningMultiEdition_Standard_001,RecSfdSeamRemoveExtSketch_IR687137,RecSldConvertStiffenerRerouteStiffenerFlangeFaceLimit_DataSizeEnhancement,RecSldCreateMultiPlate_IR078251,RecSldCreateMultiPlate_IR078183,RecSldCreateStiffenerWithSectionOrientationPlateSide,RecSldReplaceStiffenerSupport_IR134298,TestDisableErrorsAndParamSet,GSM3DTagUI_002_Rec_LeaderPoints,StandardEditor09,HASCGMLocalHealing01,Checker_SettingsBatch,ODTREC_FilterDialog_0564549,ODTREC_FilterDialog_566703,ODTREC_FilterDialog_TST,RecN1_TST_FilterPredefinedToolTip,CATMmFMRec013_CCP_FuncBody,CATMmFMRec020_Edit,CATFst_UC_NC1_SpotFastenerInstance_10,CATFst_UC_NC1_SpotFastenerInstance_08,KPT_CreateInstantiateNoUpdate01,KPT_CreateInstantiateRepeat1,Rec_PLMChooserV2_DefaultOpenOptions,Rec_PLMChooserV2_Folder_SelectRepReference,Rec_PLMChooserV2_FromSession_SelAgent_RepDrw_FromVPMSearch,Rec_PLMChooserV2_FromSession_SelAgent_UC_IR582008,Rec_PLMChooserV2_MultiSelShift,ODTREC_OpenErrorLicensingPrdFromPLMChooser,ODTREC_Save_TestErrorUnchanged,PLMChangeAction_AddReferential,PipRecCreateRouteWithPipXPort,RecSLDCreateOpeningSTDDirectionArrowPosition,RecSfdCreateStiffenerApplyMitercut,RecSfdCreatePlateWithSniffByStiffener_IR196281,RecSfdMltEdtSFEWithCategoryChange,RecSldCreateOpening_IR203661,RecSldEdtSFEwithChangeOfCategory_IR138726,RecSbvSyncMemberOnSeamPlate,RecSbvSyncPlatewithSeamPlateLimits_IR262536,RecSddBracket_COV2,RecSddCheckCategoryNameForSuperCategory,RecSddCreateEditStiffenerMultiPlate,RecSddCreateEditSFEMultiPlate,RecSddCreatePlate00,RecSddCreatePlateOffsetTest,RecSddCreatePlate_IR090062,RecSddCreateStiffenerWithLimitSddPlate,RecSddCreateStiffenerWithOtherPlate,RecSddCreateStiffenerWithPlateAndSectionSideWhenChangeCategory,RecSddCreateStiffenerWithRemovingOtherplate,RecSddEdtSFEWithAutomaticNamingAfterChangeCategory,RecSddEdtStiffenerWithAutomaticNamingAfterChangeCategory,RecSddEdtStiffenerWithLimitOffset,RecSddEdtStiffenerWithPlateSide,RecSddEdtStiffenerWithWebSupportByRefPlaneManip_IR172651,RecSddEdtStiffener_IR090802,RecSddMultiEdtPlateWithChangeOfCategory_IR136840,RecSddeditSitffenerSupportwithSnaptoReferencePlanethrough3DViewer_IR168425,GSACornerRelief01,GSACornerRelief02,GSAWeb05,GSAWebRemoveLimits,CATSmUserStampNewUI_02,CATSmdCorner02,CATSmd_WallOnEdge_Replace01,ObjectMeasure_Between_OnCGR,ObjectMeasure_Item_CofG_IR658054,ObjectMeasure_Item_MultiSel_WithPanel,ObjectMeasure_Item_PositionProduct,ObjectMeasure_Item_Radius,ObjectMeasure_SelectionFilter,RecSddEditSFEonLimit_IR644050,RecSldCreateStiffenerwithColorActionRule,RecSldCreateStiffener_WeldVisu_IR506302,RecSldEdtSeamedAndSuperPlateWithMaterial_IR062191,RecSldBreakShellPanelByProjectionLine_IR078070,CATStyEmbossTest004,CATStyMeshMeshIntersectTest002,CATStyProjectTest001,CATStyProjectTest002,CATStyProjectTest003,CATStySliceTest001,CATStySliceTest004,CATStyWorkflowTest001,CATStyDecimateTest001,CATStyDecimateTest002,CATStySplitTrimTest009,ODTREC_00_AAF_Coverage,ODTREC_00_AA_Coverage,ODTREC_01_AA_OpenAssignmentAssistant,ODTREC_02_AAF_FastenersDiameterAndCategories,ODTREC_03_AAF_AssignEffectivityToFasten,ODTREC_03_AA_MultiScopeAssignment,ODTREC_05_AAF_CheckAssembly-CheckFasteners,ODTREC_05_AA_Commands,ODTREC_07_AAF_AssemblyLogic_UseExistingFasten,ODTREC_09_AAF_Freeze_Release_Fastens,ODTREC_11_AAA_AssignablePartsFasteners,ODTREC_12_AAA_AssignablePartsFasteners_BL,ODTREC_12_AAF_ShowHide_Fastener_Axis,ODTREC_13_V5NativeIntegartionWithFastenedItemDef_AT1,ODTREC_14_AAA_SaveReadPreferences,ODTREC_AAA_SaveReadDlgOptions,ODTREC_UseSameFastenRef_OneScope,ODTREC_SAA_Create_AssignUnassign,ODTREC_SAA_Joining_Product_Fasteners,ODTREC_SAA_Config_Create,ODTREC_SAA_Filter_Assignable_Fasteners,DELMSD_MultiModel_PartialLoading1Square_AssignOperation,DELMSD_SAA_SaveReadDlgOptions,DELMSD_SAA_SaveReadPreferences,ODTREC_MSD_SAA_3D_SingleSelection,ODTREC_SAA_Assign_Previous_Fasten,ODTREC_SAA_Assign_Unassign_Same_Operation_Instances,ODTREC_SAA_Assign_Under_Operation,ODTREC_SAA_BizRule_GeneralOp_SubType,ODTREC_SAA_DeSelect,ODTREC_SAA_Fasteners_Assignment_Status,ODTREC_SAA_Fastener_Selection,ODTREC_SAA_Dispatch_Fasten_Process,ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test03,ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test04,ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test05,ODTREC_SAA_Filter_Fasteners_NoDiameter,ODTREC_SAA_Filter_Fastener,ODTREC_SAA_Freeze_Release_Fasten,ODTREC_SAA_From_Gantt,ODTREC_SAA_FstHIDDEN_Assignments,ODTREC_SAA_Joining_Linked_Fasteners,ODTREC_SAA_Keep_Operation_During_UnAssign01,ODTREC_SAA_Launch_On_Specific_Operation,ODTREC_SAA_ManufacturedPart_Selection,ODTREC_SAA_LinkedFasteners_SysSelection,ODTREC_SAA_MultiAssign001,ODTREC_SAA_MultiAssign004,ODTREC_SAA_MultiAssign003,ODTREC_SAA_OUTPUT_Selection,ODTREC_SAA_MultiAssign005,ODTREC_SAA_RemoveMaterial_Assignment,ODTREC_SAA_PreSelection_System_Operation,ODTREC_SAA_MultiAssign_With_SameAlias,ODTREC_SAA_SHOW_IN_CONTEXT,ODTREC_SAA_SHOW_ONLY_SELECTED,ODTREC_SAA_SystemSelectionFromLSE,ODTREC_SAA_TumbnailSelection_MenuContextual_EmtySpace,ODTREC_SAA_System_MultiLevel,SLATstEKLbyActions,DELDBGEKLGetKinematicsMgr,DELDBGEKLGetKinMgr2,DELDBGEKLGetMotionProfile,DELDBGEKLRscHomePosMgr,DELDBGEKLRscMotionGroup,DELDBGEKLRscMotionProfile,DELDBGEKLRscMountsMgr,DNBIgpCalibSigAutoIDErrors,PLMbatch_ImportExportUI_DXFDWG,testperiodiccapture,DbuMoveViewLocked_Main_Background,DRWINTRECSearch00,FSS3DCurve_IR250893,FSSBreak_IRA0500424,FSSBreak_PreSelection,FSSCstMatchAutomaticTargetSelectionImprovement,FSSCstMatchExactAndInsideMode,FSSCstMatchFeatureModelingInternalEdge,FSSExtend,FSSExtend2,FSSDashboard,FSSCurveOnSurface,FSSExtend_160764,FSSIsoparam_IRA0510724,FSSNUPBSExtrude,FSSMatchConstraints_IR345826,FSSMatchCurve,FSSStylingExtrapolate_07,FSSStylingCorner_ckeSpinnerAndSaveSettings,FSSSurfMatchConversion,FSSTopoFillet_Approximation,FSSTopoFilletE_IR066196,FSSTopoFillet_IR041017,FSSUnifiedPatch_4PointCloudFit,FSSUnifiedPatch_IR067863,FSSUnifiedPatch_SurfaceSupportUndoRedo,FSSTopoFillet_IR430288,FSSUnifiedPatch_IR526132,FSSUntrim_IR294733,FSSUnifiedPatch_PlanetoPlane_SurfacetoPlaneRefChange,FSSUnifiedPatch_PlanetoSurface_SurfacetoSurfaceRefChange,FSSUnifiedPatch_RefSupport_02,GSM2DViewSection20,GSM2DViewSectionTrimmedCorners,GSMAdaptativeSweep01,GSMCxtSB-DIWO-RI413534,GSMDeactivate08,GSMDirectionLocalAxisSystem,GSMExtrude6,GSMFrontiere14,GSMMultiSel05_Empilage,GSMMultiple2,GSMMultiple7,GSMPlaneLocalAxisSystem,GSMPointLocalAxisSystem,GSMSweepLaw,GSMTweakFace01,GSMTranslateLocalAxisSystem,GSMSweepExpProfileDir01,GSMJournalingCreationAssemblageRec,GSMJournalingCreationBoundaryRec,GSMJournalingCreationConicRec,GSMJournalingCreationExtrapolRec,GSMJournalingCreationExtrudeUptoElement,GSMJournalingCreationRevolWithUptoElement,GSMMacroRec_002_Wire,GSMMacroRec_018_Spine,GSMMacroRec_019_Combined,GSMMacroRec_014_Intersect,GSMMacroRec_MidSurface_Automatic,GSMMacroRec_RevolUptoOffset,GSMMacroRec_SplitWithExtrapolation,GSMJournalingBoundaryNewMethodsRec,GSMJournalingCircleCenterTangentRec,GSMJournalingCylinder,GSMJournalingTrimCircle,PFR_IR_B0418087,PFR_N1_SRA_27,PFR_N1_SRA_23,CkeCreateDeletePub1,ICMCLADiaUIGap_ITC_0001,ICMCLADiaUIIsoCurvature_ITC_0003_manip,ICMCLADiaUISplit_DisplaySetSelection_ITC_0001,ICMCLAShpUIAdjust_ITC_0001,ICMCLAShpUICurveChecker_ITC_0001,ICMCLAShpUICurveBlend_ITC_0008,ICMCLAShpUIFlange_ITC_0006_PSA_CXR19,ICMCLAShpUIModeling_ITC_0001,ICMCLAShpUIModeling_ITC_0002,ICMCLAShpUIProject_ITC_0002,ICMCLAShpUIStylingCorner_ITC_0001,ICMCLAShpUISurfaceChecker_ITC_0001,ICMCLAShpUISweep_ITC_0001,ICMUIManipulatorSet_ITC_0002,ICMUIMovingFrames_ITC_0002,KnowSharedRec_001_NewIconBrowser,KnowledgeRec006,MEAS_MI_Visu_In_the_tree,ShapeBodyReorderOfContextual2,ShapeBodyReorderOfContextual3,ShapeBodyReorder_Ri370715,ShapeBodyReorder_Ri408659,ShapeBody_067_ReorderMultiple,MMUIRecInternalCopyEdition_01_SolidFeaures,MMUIRecPLMCreateImportNotAllowed_BSO,MMUIRecPLMCreateImportNotAllowed,MMUIRecReorderPadToEmptyBody,MMUIRecReorderPad,RecReporting,RecN1_CatalogBrowser_HideEmptyChapters,ODTREC_PLMDesignerWorkspaceSynchronizationTest,IR671043SettingPrinterPropertiesInBatchPrint,PrtRec_WTA_IR0595597_0596107,PrtRecEditVolumeBooleanForOGS_HS02,PrtRecTrimRemoveFaces,PrtRecVolumeBoolean04,PrtRecVolumeBooleanForGS_HS,PrtRecVolumeBooleanForOGS_MS,DUC_PART_CircPattern,SIMAnimCompileZeroDuration,ScalePlaneProperties,PrtRecFilletAuto02,";
+
+FSSDraftUpdateWithMirrorXMLDump.fw = "FreeStyleAnalysisUI.tst";
+FSSDraftUpdateWithMirrorXMLDump.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSDynDraftNewPartBodyMode2.fw = "FreeStyleAnalysisUI.tst";
+FSSDynDraftNewPartBodyMode2.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSEditSetIWONewPartBodyMode1.fw = "FreeStyleAnalysisUI.tst";
+FSSEditSetIWONewPartBodyMode1.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSIsophoteMappingNoWarningModeXMLDump.fw = "FreeStyleAnalysisUI.tst";
+FSSIsophoteMappingNoWarningModeXMLDump.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSMirrorIsophotesXMLDump3.fw = "FreeStyleAnalysisUI.tst";
+FSSMirrorIsophotesXMLDump3.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSIsophotesMapping_IR062461.fw = "FreeStyleAnalysisUI.tst";
+FSSIsophotesMapping_IR062461.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSMirrorIsophotesXMLDump.fw = "FreeStyleAnalysisUI.tst";
+FSSMirrorIsophotesXMLDump.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSMirrorIsophotesXMLDump2.fw = "FreeStyleAnalysisUI.tst";
+FSSMirrorIsophotesXMLDump2.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+ODT_TEST_ChangeFeedback.fw = "PLMPIMUI.tst";
+ODT_TEST_ChangeFeedback.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|PLMPIMUIAuthoringProbeCreationDynDlg|;";
+
+ODT_TEST_GroupEmptyProduct_IR118223.fw = "PLMPIMUI.tst";
+ODT_TEST_GroupEmptyProduct_IR118223.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|PLMPIMUIAuthoringSimuCreationDlg|;";
+
+ODT_TEST_IRSenarios_2.fw = "PLMPIMUI.tst";
+ODT_TEST_IRSenarios_2.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|PLMPIMUIAuthoringSimuCreationDlg|;";
+
+ODT_TEST_LICGroupSelection.fw = "PLMPIMUI.tst";
+ODT_TEST_LICGroupSelection.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|PLMPIMUIAuthoringSimuCreationDlg|;";
+
+ODT_TEST_LIC_GroupSelection.fw = "PLMPIMUI.tst";
+ODT_TEST_LIC_GroupSelection.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|PLMPIMUIAuthoringSimuCreationDlg|;";
+
+PIMUI_Record_PICNew_ContxtGrp.fw = "PLMPIMUI.tst";
+PIMUI_Record_PICNew_ContxtGrp.path = ";CATCommandSelector|CommandSelector2|EditPanel|;";
+
+CATCommandsList_FT.fw = "AfrFoundation.tst";
+CATCommandsList_FT.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+CATPreferredWorkbenchHeader_FT.fw = "AfrFoundation.tst";
+CATPreferredWorkbenchHeader_FT.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+CATQuickStartHeader_FT.fw = "AfrFoundation.tst";
+CATQuickStartHeader_FT.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+CATCloudQsrCanonic01.fw = "CATCloudQsrUI.tst";
+CATCloudQsrCanonic01.path = ";CATCommandSelector|CommandSelector1|CATQsrCanonicCmd|Selection_Box|;";
+
+CATCloudQsrCurveNetwork02.fw = "CATCloudQsrUI.tst";
+CATCloudQsrCurveNetwork02.path = ";CATCommandSelector|CommandSelector1|CATQsrCurveNetworkDlg|;";
+
+CATCloudQsrCurveNetwork03.fw = "CATCloudQsrUI.tst";
+CATCloudQsrCurveNetwork03.path = ";CATCommandSelector|CommandSelector1|CATQsrCurveNetworkDlg|;";
+
+CATCloudQsrCurveNetwork05.fw = "CATCloudQsrUI.tst";
+CATCloudQsrCurveNetwork05.path = ";CATCommandSelector|CommandSelector1|CATQsrCurveNetworkDlg|;";
+
+CATCloudQsrQuickSurface03.fw = "CATCloudQsrUI.tst";
+CATCloudQsrQuickSurface03.path = ";CATCommandSelector|CommandSelector1|CATQsrQuickSurfaceDlg|;";
+
+
+COVProduceInspection_02_MultiplePointsSeletionInGs.fw = "CATCompositesUI.tst";
+COVProduceInspection_02_MultiplePointsSeletionInGs.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATCoProduceInspectionDlg|;";
+
+RecSldBeamBeamPln0001.fw = "CATEnsStrProfUI.tst";
+RecSldBeamBeamPln0001.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSldStiffenerWithSingleSupport_IR093675.fw = "CATEnsStrProfUI.tst";
+RecSldStiffenerWithSingleSupport_IR093675.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+Rec_SFD_Beam_RefPln0002.fw = "CATEnsStrProfUI.tst";
+Rec_SFD_Beam_RefPln0002.path = ";CATCommandSelector|CommandSelector2|MemberLimitsSelRefPlaneAgent|LimitRefPlaneDlg|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|CATStrMemberDlgTabContainer|CATStrMemberDlgTabGeometry|FrmGeometryTab|FrmGeometry|FrameMemberPosInput|MemberRefPlanesFrame|MemberRefPlanesDlg|;";
+
+RFLP_Display_Management_Presentation_View_REG_436807.fw = "CATFLEditorUI.tst";
+RFLP_Display_Management_Presentation_View_REG_436807.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|FilterDlg|;";
+
+VOA_Passenger_feet_optimization.fw = "CATHumanPackaging.tst";
+VOA_Passenger_feet_optimization.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATVoaPassengerFeetOptDlg|;";
+
+AsyncRecord01.fw = "CATIAApplicationFrameUI.tst";
+AsyncRecord01.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+CATIAfrUIActivation.fw = "CATIAApplicationFrameUI.tst";
+CATIAfrUIActivation.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+KeyboardAnalyser02.fw = "CATIAApplicationFrameUI.tst";
+KeyboardAnalyser02.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+SearchAdvancedTestREC2.fw = "CATIAApplicationFrameUI.tst";
+SearchAdvancedTestREC2.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+SearchTestREC.fw = "CATIAApplicationFrameUI.tst";
+SearchTestREC.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+PLMActionEditorX5_AttachRelatedObjectsAttachments.fw = "CATImmWtpChgMgmt.tst";
+PLMActionEditorX5_AttachRelatedObjectsAttachments.path = ";CATCommandSelector|CommandSelector2|UnknownStateCmd2|CATPLMNewChooserKernel|Search for objects to attach to the current ECA|;CATCommandSelector|CommandSelector2|UnknownStateCmd3|IDD_FRAME01|Search for objects to attach to the current ECA|;CATCommandSelector|CommandSelector2|UnknownStateCmd4|IDD_FRAME03|Search for objects to attach to the current ECA|;";
+
+PLMActionEditorX5_AttachRelatedObjectsInputs.fw = "CATImmWtpChgMgmt.tst";
+PLMActionEditorX5_AttachRelatedObjectsInputs.path = ";CATCommandSelector|CommandSelector2|UnknownStateCmd2|CATPLMNewChooserKernel|Search for objects as affected items of the current ECA|;CATCommandSelector|CommandSelector2|UnknownStateCmd3|IDD_FRAME01|Search for objects as affected items of the current ECA|;CATCommandSelector|CommandSelector2|UnknownStateCmd4|IDD_FRAME03|Search for objects as affected items of the current ECA|;";
+
+PLMRTCNav_HDNavigatorVideo_CS_MS.fw = "CATInstantCollab.tst";
+PLMRTCNav_HDNavigatorVideo_CS_MS.path = ";CATCommandSelector|CATApplication|CNEXT|CATTreeCommunityAddUsersDlg|;";
+
+MCX_LineExtremities.fw = "CATMcxAssemblyUI.tst";
+MCX_LineExtremities.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATMCXAssemblyEditionDlg|;";
+
+MCX_OK.fw = "CATMcxAssemblyUI.tst";
+MCX_OK.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATMCXAssemblyEditionDlg|;";
+
+MRX_Inherit1.fw = "CATMcxAssemblyUI.tst";
+MRX_Inherit1.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATMCXAssemblyEditionDlg|;";
+
+DMRMeasureBetween_BandAnalysis_Publish.fw = "CATSpaDMRMeasure.tst";
+DMRMeasureBetween_BandAnalysis_Publish.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+DMRMeasureBewteen_Publish.fw = "CATSpaDMRMeasure.tst";
+DMRMeasureBewteen_Publish.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+DMRMeasureItem_Publish.fw = "CATSpaDMRMeasure.tst";
+DMRMeasureItem_Publish.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+DMRMeasure_Between_AloneSelection.fw = "CATSpaDMRMeasure.tst";
+DMRMeasure_Between_AloneSelection.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+DMRMeasure_NewVisualization.fw = "CATSpaDMRMeasure.tst";
+DMRMeasure_NewVisualization.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+DMRMeasure_Plane_04.fw = "CATSpaDMRMeasure.tst";
+DMRMeasure_Plane_04.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+DMRMeasure_Section_NonPersistent.fw = "CATSpaDMRMeasure.tst";
+DMRMeasure_Section_NonPersistent.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+DMRMeasure_Publish.fw = "CATSpaDMRMeasure.tst";
+DMRMeasure_Publish.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+DMR_MeasureItem_PublishCommand.fw = "CATSpaDMRMeasure.tst";
+DMR_MeasureItem_PublishCommand.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+DMU_N1_OPT_REC_OS_Measure.fw = "CATSpaceManagementDynUI.tst";
+DMU_N1_OPT_REC_OS_Measure.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+DMU_N1_OPT_REC_OS_Measure_NewDlg.fw = "CATSpaceManagementDynUI.tst";
+DMU_N1_OPT_REC_OS_Measure_NewDlg.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+MMUIRecAxisSystemContextualPanels.fw = "CATSurfacicUIResources.tst";
+MMUIRecAxisSystemContextualPanels.path = ";CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|XAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|YAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|ZAxisRotationPanel|;";
+
+GSMAxisSystem06.fw = "CATSurfacicUIResources.tst";
+GSMAxisSystem06.path = ";CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|XAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|YAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|XAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|YAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|XAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemCreation|AxisSystemCreationPanel|XAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemDefinition|AxisSystemDefinitionPanel|XAxisRotationPanel|;CATCommandSelector|CommandSelector1|AxisSystemDefinition|AxisSystemDefinitionPanel|XAxisRotationPanel|;";
+
+CATSbuClassRename.fw = "CATSysBehaviorUI.tst";
+CATSbuClassRename.path = ";CATCommandSelector|CommandSelector2|CATSbuClassAttributesCmd|CATSbuClassAttributesPanel|;CATCommandSelector|CommandSelector3|CATSbuClassAttributesCmd|CATSbuClassAttributesPanel|;CATCommandSelector|CommandSelector3|CATSbuClassAttributesCmd|CATSbuClassAttributesPanel|;";
+
+CATSbuClassRename4.fw = "CATSysBehaviorUI.tst";
+CATSbuClassRename4.path = ";CATCommandSelector|CommandSelector2|CATSbuClassAttributesCmd|CATSbuClassAttributesPanel|;";
+
+CATSbuVersioningUnload.fw = "CATSysBehaviorUI.tst";
+CATSbuVersioningUnload.path = ";CATCommandSelector|CommandSelector2|CATSbuVersioningCmd|CATSbuVersioningPanel|IDD_FRAME03|CATSbuVersioningPanelChooserBasicQuery|;";
+
+CATEmuSignalOperatorsMovingAverageRec.fw = "CATSysExecModelicaUI.tst";
+CATEmuSignalOperatorsMovingAverageRec.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATEmuCreateSignalOperatorDlg|;";
+
+CATEpuSVESignalOperatorsRec.fw = "CATSysExecPlotterUI.tst";
+CATEpuSVESignalOperatorsRec.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATEmuCreateSignalOperatorDlg|;";
+
+CATEpuXYPlotBasicTestRec.fw = "CATSysExecPlotterUI.tst";
+CATEpuXYPlotBasicTestRec.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATEpu2DPlotterDlg|;";
+
+CATSysSimInterference_LP.fw = "CATSysSimulationUI.tst";
+CATSysSimInterference_LP.path = ";CATCommandSelector|CommandSelector5|CATKinPublishedGeomTraceCmd|CATGeomOutputDlg|;";
+
+RecEdiAdvisor03CreateDatumTarget.fw = "CATTPSRecordPartFTA.tst";
+RecEdiAdvisor03CreateDatumTarget.path = ";CATCommandSelector|CommandSelector1|BaseCreation|CATTPSDatumTargetWind|;";
+
+RecEdiExtract02.fw = "CATTPSRecordPartFTA.tst";
+RecEdiExtract02.path = ";CATCommandSelector|CommandSelector4|CATFrmEditor3Decorator|SAVEPLMFrm|;";
+
+TerRecTechnoResultFileLegacy1.fw = "CATTechResult.tst";
+TerRecTechnoResultFileLegacy1.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|SAVEPLMFrm|;";
+
+
+ODTREC_MeasureBetween1.fw = "DELManufPlanningCommands.tst";
+ODTREC_MeasureBetween1.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|PartMeasBetweenDlg|;";
+
+ODTREC_DELMPCheckServices_Check_Move_SAA.fw = "DELManufPlanningServices.tst";
+ODTREC_DELMPCheckServices_Check_Move_SAA.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+DELWKIR421IR_754847_NOA_MissingIn3Dworkbook.fw = "DELPLMWorkInstructionUI.tst";
+DELWKIR421IR_754847_NOA_MissingIn3Dworkbook.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELPDMFolder_AddExistingDocument.fw = "DELMfgContextBuilderUI.tst";
+DELPDMFolder_AddExistingDocument.path = ";CATCommandSelector|CommandSelector2|DELPDMFolderAddExistingReferenceCmd|IDD_FRAME01|Add Existing Representation|;";
+
+DELPDMFolder_AddExistingRepresentation.fw = "DELMfgContextBuilderUI.tst";
+DELPDMFolder_AddExistingRepresentation.path = ";CATCommandSelector|CommandSelector2|DELPDMFolderAddExistingReferenceCmd|CATPLMNewChooserKernel|Add Existing Representation|;CATCommandSelector|CommandSelector2|DELPDMFolderAddExistingReferenceCmd|IDD_FRAME01|Add Existing Representation|;";
+
+DELPPRLiveSysRecCompassConsistency_Check_BL_SAA_BalancingConstraintBasic.fw = "DELPPRLiveResourceEditor.tst";
+DELPPRLiveSysRecCompassConsistency_Check_BL_SAA_BalancingConstraintBasic.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+Measure.fw = "DNBHumanModelingUI.tst";
+Measure.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+DNBSpotTestEKL.fw = "DNBSpotWeldingCommands.tst";
+DNBSpotTestEKL.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DNBTSAResultsUIV2GunSearch.fw = "DNBTSACommands.tst";
+DNBTSAResultsUIV2GunSearch.path = ";CATCommandSelector|CommandSelector2|DNBTSAAutoGunSearchCmd|AutoGunSearchMainFrame|CATPLMNewChooserKernel|Weldgun Query|;";
+
+DRWRecV5R2FrontViewFromPointsAndEdges.fw = "DraftingGenUI.tst";
+DRWRecV5R2FrontViewFromPointsAndEdges.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|SAVEPLMFrm|;";
+
+DRWRecV5R2FrontViewFromSelectionSets.fw = "DraftingGenUI.tst";
+DRWRecV5R2FrontViewFromSelectionSets.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|SAVEPLMFrm|;";
+
+EHI_REC_RemBranPtEditRouteWithPtOnFly_N1.fw = "ElectricalHarnessDesign.tst";
+EHI_REC_RemBranPtEditRouteWithPtOnFly_N1.path = ";CATCommandSelector|CommandSelector1|CATEHIUICurvePanel|;CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|BundleSplit_Definition|;";
+
+EWD_REC_WireRouting_DistantLinks_N1.fw = "ElectricalWiringDesign.tst";
+EWD_REC_WireRouting_DistantLinks_N1.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+GSM2DViewSection34.fw = "GSMUI_V6ONLY.tst";
+GSM2DViewSection34.path = ";CATCommandSelector|CommandSelector3|duplicatebody|;";
+
+CkeParmReorder.fw = "LiteralsEditor.tst";
+CkeParmReorder.path = ";CATCommandSelector|CommandSelector1|CATLieReorderDlg|;";
+
+CkeRec502.fw = "LiteralsEditor.tst";
+CkeRec502.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+MfgRec_ResConfig_MachineAssignment.fw = "Manufacturing.tst";
+MfgRec_ResConfig_MachineAssignment.path = ";CATCommandSelector|CommandSelector2|DELMfgResourceConfigurationCom|CATPLMNewChooserKernel|Select machine or configured machining cell|;";
+
+MfgRec_R1X_MPSendToCatalog.fw = "Manufacturing1.tst";
+MfgRec_R1X_MPSendToCatalog.path = ";CATCommandSelector|CommandSelector3|ApplyMPFromV6Catalog|CATMfgMachProcessApplyUI|;";
+
+PrtRecN1AxisToAxis.fw = "PartDesignN1.tst";
+PrtRecN1AxisToAxis.path = ";CATCommandSelector|CommandSelector1|CATGSMUICommandCreation|CATGSMUICommandCreationPanel|XAxisRotationPanel|;";
+
+PrtRecN1BooleanOperationGSM15.fw = "PartDesignN1.tst";
+PrtRecN1BooleanOperationGSM15.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecN1BooleanOperationGSM18.fw = "PartDesignN1.tst";
+PrtRecN1BooleanOperationGSM18.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecN1BooleanOperationGSM2.fw = "PartDesignN1.tst";
+PrtRecN1BooleanOperationGSM2.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecN1BooleanOperationGSM5.fw = "PartDesignN1.tst";
+PrtRecN1BooleanOperationGSM5.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecN1BooleanOperationGSM8.fw = "PartDesignN1.tst";
+PrtRecN1BooleanOperationGSM8.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecN1ChamferPreview04.fw = "PartDesignN1.tst";
+PrtRecN1ChamferPreview04.path = ";CATCommandSelector|CommandSelector1|ChamferPanel|;";
+
+PrtRecN1DraftLimiting03.fw = "PartDesignN1.tst";
+PrtRecN1DraftLimiting03.path = ";CATCommandSelector|CommandSelector1|DraftPanel|;";
+
+PrtRecN1GSOAutoFilletJournalling.fw = "PartDesignN1.tst";
+PrtRecN1GSOAutoFilletJournalling.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecN1PC_ConstantDraft01.fw = "PartDesignN1.tst";
+PrtRecN1PC_ConstantDraft01.path = ";CATCommandSelector|CommandSelector1|duplicatebody|;";
+
+PrtRecN1PrismFromSurfMacro.fw = "PartDesignN1.tst";
+PrtRecN1PrismFromSurfMacro.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecN1Sweep_RefSurface.fw = "PartDesignN1.tst";
+PrtRecN1Sweep_RefSurface.path = ";CATCommandSelector|CommandSelector1|SweepPanel|;";
+
+PrtRecN1ThreadTapAnalysis.fw = "PartDesignN1.tst";
+PrtRecN1ThreadTapAnalysis.path = ";CATCommandSelector|CommandSelector1|ThreadAnalysis|;";
+
+PrtRecN1ThreadAnalysis01.fw = "PartDesignN1.tst";
+PrtRecN1ThreadAnalysis01.path = ";CATCommandSelector|CommandSelector1|ThreadAnalysis|;";
+
+PrtRecN1_RI0347388.fw = "PartDesignN1.tst";
+PrtRecN1_RI0347388.path = ";CATCommandSelector|CommandSelector1|RevolPanel|;";
+
+PrtRecHoleAuto05.fw = "PartDesignUI.tst";
+PrtRecHoleAuto05.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtODT_MirrorListAsResult_IR_673488.fw = "PartDesignUI.tst";
+PrtODT_MirrorListAsResult_IR_673488.path = ";CATCommandSelector|CommandSelector1|ThreadAnalysis|;";
+
+PrtODT_ThreadTapAnalysisDiameter_IR_661412.fw = "PartDesignUI.tst";
+PrtODT_ThreadTapAnalysisDiameter_IR_661412.path = ";CATCommandSelector|CommandSelector1|ThreadAnalysis|;";
+
+PrtOdtRecFillet_RI0357395.fw = "PartDesignUI.tst";
+PrtOdtRecFillet_RI0357395.path = ";CATCommandSelector|CommandSelector1|EdgeFilletPanel|;";
+
+PrtRecBooleanAvoidSecondOperandReuse.fw = "PartDesignUI.tst";
+PrtRecBooleanAvoidSecondOperandReuse.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecBooleanAvoidUseOfOperatedTool.fw = "PartDesignUI.tst";
+PrtRecBooleanAvoidUseOfOperatedTool.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecBooleanBodiesUnderOGS02.fw = "PartDesignUI.tst";
+PrtRecBooleanBodiesUnderOGS02.path = ";CATCommandSelector|CommandSelector1|TrimPanel|;";
+
+PrtRecBooleanMixedCases.fw = "PartDesignUI.tst";
+PrtRecBooleanMixedCases.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecDFPrismUpdateErr.fw = "PartDesignUI.tst";
+PrtRecDFPrismUpdateErr.path = ";CATCommandSelector|CommandSelector1|PrismPanel|;";
+
+PrtRecDefeaturingPreview.fw = "PartDesignUI.tst";
+PrtRecDefeaturingPreview.path = ";CATCommandSelector|CommandSelector1|CATPrtDefeaturingDlg|;";
+
+PrtRecDraftPCInstanciation.fw = "PartDesignUI.tst";
+PrtRecDraftPCInstanciation.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+PrtRecHoleUpToSurfaceMacro.fw = "PartDesignUI.tst";
+PrtRecHoleUpToSurfaceMacro.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecHoleAuto04.fw = "PartDesignUI.tst";
+PrtRecHoleAuto04.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecIntersectFilletPC02.fw = "PartDesignUI.tst";
+PrtRecIntersectFilletPC02.path = ";CATCommandSelector|CommandSelector1|duplicatebody|;";
+
+PrtRecMacro_SweepMoveProfile.fw = "PartDesignUI.tst";
+PrtRecMacro_SweepMoveProfile.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecMacroHole.fw = "PartDesignUI.tst";
+PrtRecMacroHole.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecN1ExtractSurfPad01.fw = "PartDesignUI.tst";
+PrtRecN1ExtractSurfPad01.path = ";CATCommandSelector|CommandSelector1|PrismPanel|;";
+
+PrtRecPatternAuto01.fw = "PartDesignUI.tst";
+PrtRecPatternAuto01.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecPatternAutoRect24.fw = "PartDesignUI.tst";
+PrtRecPatternAutoRect24.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecReverseReorder.fw = "PartDesignUI.tst";
+PrtRecReverseReorder.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecRevol_AxisMacro.fw = "PartDesignUI.tst";
+PrtRecRevol_AxisMacro.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecSewSurfaceAuto_Surfacic.fw = "PartDesignUI.tst";
+PrtRecSewSurfaceAuto_Surfacic.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecThicknessAuto03.fw = "PartDesignUI.tst";
+PrtRecThicknessAuto03.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecSewSurfaceFlagModifySupport.fw = "PartDesignUI.tst";
+PrtRecSewSurfaceFlagModifySupport.path = ";CATCommandSelector|CommandSelector2|SewingPanelVolume|;";
+
+PrtRecShellAuto03.fw = "PartDesignUI.tst";
+PrtRecShellAuto03.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecTrim05.fw = "PartDesignUI.tst";
+PrtRecTrim05.path = ";CATCommandSelector|CommandSelector1|TrimPanel|;";
+
+PrtRecVarFilletReroutePropagEdge.fw = "PartDesignUI.tst";
+PrtRecVarFilletReroutePropagEdge.path = ";CATCommandSelector|CommandSelector1|CATPrtUpdateCommandSelector|EdgeFilletPanel|;";
+
+PrtRecThinSweepAuto01.fw = "PartDesignUI.tst";
+PrtRecThinSweepAuto01.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecUnionTrim_IR_696503.fw = "PartDesignUI.tst";
+PrtRecUnionTrim_IR_696503.path = ";CATCommandSelector|CommandSelector1|TrimPanelVolume|;";
+
+PrtRecVolumeBoolAuto.fw = "PartDesignUI.tst";
+PrtRecVolumeBoolAuto.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PrtRecVolumeFeatAuto.fw = "PartDesignUI.tst";
+PrtRecVolumeFeatAuto.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+RecN1_InsertExisting_Product_Reframe.fw = "ProductStructureUI.tst";
+RecN1_InsertExisting_Product_Reframe.path = ";CATCommandSelector|CommandSelector1|PLMCmdInsertExistingProduct|CATPLMNewChooserKernel|Select products to insert|;";
+
+SWXTestBuPowercopy_SteelDetail.fw = "SWXBuildingUI.tst";
+SWXTestBuPowercopy_SteelDetail.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+AutoDimCstPolygon.fw = "SketcherUI.tst";
+AutoDimCstPolygon.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+SKUEditUseEdge01.fw = "SketcherUI.tst";
+SKUEditUseEdge01.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATPanelEdit2DOperator|;";
+
+SKUGeneretaCatalog01.fw = "SketcherUI.tst";
+SKUGeneretaCatalog01.path = ";CATCommandSelector|CommandSelector2|CATComDYSText|3DTextDialog|;";
+
+SKUHighlightRefElt01.fw = "SketcherUI.tst";
+SKUHighlightRefElt01.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATPanelEdit2DOperator|;";
+
+SKUPowerCopy04.fw = "SketcherUI.tst";
+SKUPowerCopy04.path = ";CATCommandSelector|CommandSelector1|duplicatebody|;";
+
+SKUText03.fw = "SketcherUI.tst";
+SKUText03.path = ";CATCommandSelector|CommandSelector1|CATComDYSText|3DTextDialog|;";
+
+SKUText02.fw = "SketcherUI.tst";
+SKUText02.path = ";CATCommandSelector|CommandSelector2|CATComDYSText|3DTextDialog|;";
+
+SKUUseEdgeProjection09.fw = "SketcherUI.tst";
+SKUUseEdgeProjection09.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATPanelEdit2DOperator|;";
+
+SKUTestTextCom.fw = "SketcherUI.tst";
+SKUTestTextCom.path = ";CATCommandSelector|CommandSelector2|CATComDYSText|3DTextDialog|;";
+
+SKU_RI_620815_DatumCurveDiscretization.fw = "SketcherUI.tst";
+SKU_RI_620815_DatumCurveDiscretization.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATPanelEdit2DOperator|;";
+
+TECHNO_3DEXP_QA_RW00.fw = "TECHNO3DUXRSW.tst";
+TECHNO_3DEXP_QA_RW00.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+FastMultiInst_NoConfig_Ok.fw = "CATAssemblyCommands.tst";
+FastMultiInst_NoConfig_Ok.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+CATCldUIMeshMorphing01.fw = "CATCloudEditorUI.tst";
+CATCldUIMeshMorphing01.path = ";CATCommandSelector|CommandSelector1|CATCldUIMeshMorphingDlg|;";
+
+CATCloudPointSelect01.fw = "CATCloudEditorUI.tst";
+CATCloudPointSelect01.path = ";CATCommandSelector|CommandSelector1|CATCloudStateCommand|Selection_Box|;";
+
+CATCloudStopGap02.fw = "CATCloudEditorUI.tst";
+CATCloudStopGap02.path = ";CATCommandSelector|CommandSelector1|CATCloudStopGapDlg|;";
+
+EsuTransferLineID2.fw = "CATEnsFluidicUI.tst";
+EsuTransferLineID2.path = ";CATCommandSelector|CommandSelector4|CATEsuTransferLineIDDlg|;";
+
+CATFst_UC_NC1_SpotFastener_PLMUpdate_01.fw = "CATPLMFstIntegrationBase.tst";
+CATFst_UC_NC1_SpotFastener_PLMUpdate_01.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATAsmUpdUpFrontPanel|;";
+
+CATSpdTestBossRec009.fw = "CATSpdFunctionalModeler.tst";
+CATSpdTestBossRec009.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATSpdBossDialog|;";
+
+DELPPRLivePcsRec_AssignwithAA.fw = "DELPPRLiveProcessEditor.tst";
+DELPPRLivePcsRec_AssignwithAA.path = ";CATCommandSelector|CommandSelector3|CATFrmEditor2Decorator|DELAssignmentAssistantDlg|;";
+
+DELPPRLivePcsRec_BizRule_ReparentProcess.fw = "DELPPRLiveProcessEditor.tst";
+DELPPRLivePcsRec_BizRule_ReparentProcess.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+DELPPRLivePcsRec_SynchroVariant.fw = "DELPPRLiveProcessEditor.tst";
+DELPPRLivePcsRec_SynchroVariant.path = ";CATCommandSelector|CommandSelector3|CATPropertyDialog|;";
+
+DELPPRLivePcsRec_UnAssignStackedPcsOnInstall.fw = "DELPPRLiveProcessEditor.tst";
+DELPPRLivePcsRec_UnAssignStackedPcsOnInstall.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+CATUdfRec_037_UseIdenticalNameForGeomParam.fw = "GSMUtilities.tst";
+CATUdfRec_037_UseIdenticalNameForGeomParam.path = ";CATCommandSelector|CommandSelector1|duplicatebody|;";
+
+TestClipping.fw = "Print.tst";
+TestClipping.path = ";CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;";
+
+TestClippingMixte.fw = "Print.tst";
+TestClippingMixte.path = ";CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;";
+
+TestClippingTexts.fw = "Print.tst";
+TestClippingTexts.path = ";CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;";
+
+TestClippingWith3DScissor.fw = "Print.tst";
+TestClippingWith3DScissor.path = ";CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|Print Sample|PrintCmdDecoratorDlg|PrintDlg|l_PrintDlg|Printer|PrinterConfigureDialog|;";
+
+PG00REC14.fw = "Print.tst";
+PG00REC14.path = ";CATCommandSelector|CATApplication|MainWindow|PrintDialog|l_PrintDialog|Printer|PrinterConfigureDialog|PrintProperties|;";
+
+PG0PrinterReading02.fw = "Print.tst";
+PG0PrinterReading02.path = ";CATCommandSelector|CATApplication|MainWindow|PrintManDialog|PrinterManagerFrame|PrinterConfigureDialog|RunTimeEditor|;CATCommandSelector|CATApplication|MainWindow|PrintManDialog|PrinterManagerFrame|PrinterConfigureDialog|ExecutionEditor|;CATCommandSelector|CATApplication|MainWindow|PrintManDialog|PrinterManagerFrame|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|MainWindow|PrintManDialog|PrinterManagerFrame|PrinterConfigureDialog|DefaultMargins|;CATCommandSelector|CATApplication|MainWindow|PrintManDialog|PrinterManagerFrame|PrinterConfigureDialog|PrintProperties|;CATCommandSelector|CATApplication|MainWindow|PrintManDialog|PrinterManagerFrame|PrinterConfigureDialog|PrintProperties|;";
+
+TestLineThickness.fw = "Print.tst";
+TestLineThickness.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|Print|l_Print|Printer|PrinterConfigureDialog|PrintProperties|;";
+
+TestNegativeFontSpacing_IR594812.fw = "Print.tst";
+TestNegativeFontSpacing_IR594812.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|Print|l_Print|Printer|PrinterConfigureDialog|PrintProperties|;";
+
+3DScalePlane.fw = "Visualization.tst";
+3DScalePlane.path = ";CATCommandSelector|CATApplication|Demos|Navigation3D|MotifObject|ScalePlaneProperties|;";
+
+Addin.fw = "ApplicationFrame.tst";
+Addin.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+BottomToolbar.fw = "ApplicationFrame.tst";
+BottomToolbar.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+DragAndDropOnViewerEmptiness.fw = "ApplicationFrame.tst";
+DragAndDropOnViewerEmptiness.path = ";CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+GlobalAddin.fw = "ApplicationFrame.tst";
+GlobalAddin.path = ";CATCommandSelector|CATApplication|CNEXT|List_of_commands|;";
+
+BatchMonitor07.fw = "BatchMonitorUI.tst";
+BatchMonitor07.path = ";CATCommandSelector|CATApplication|BatchMonitorDocument|BatchMonitorFrame|NewBatchDialog|;";
+
+CAATmcCombCrvMultiSel02.fw = "CAAGSMTmcCombCrv.tst";
+CAATmcCombCrvMultiSel02.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CAATmcCombCrvDlg|;";
+
+CAAWSPNavFilterAddin_TST.fw = "CAAWorkspaceInterfaces.tst";
+CAAWSPNavFilterAddin_TST.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|FilterDlg|;";
+
+CATAImAssyImpactsSolidRec001.fw = "CATAImAssyImpacts.tst";
+CATAImAssyImpactsSolidRec001.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+ASM_PATTERN_ActivateDeactivate_ContextToolBar.fw = "CATAsmPatternUI.tst";
+ASM_PATTERN_ActivateDeactivate_ContextToolBar.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATAsmPatternPanel|;";
+
+ASM_PATTERN_ActivateDeactivate_MixedScale.fw = "CATAsmPatternUI.tst";
+ASM_PATTERN_ActivateDeactivate_MixedScale.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATAsmPatternPanel|;";
+
+ASM_PATTERN_Rect_Edit_rec.fw = "CATAsmPatternUI.tst";
+ASM_PATTERN_Rect_Edit_rec.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATAsmPatternPanel|;";
+
+CBT_UpdWizard.fw = "CATAssemblyUpdateUI.tst";
+CBT_UpdWizard.path = ";CATCommandSelector|CommandSelector2|CATPLMELReportPanel|;";
+
+BIWMatingFlangeNoDefaultDir.fw = "CATBIWDesignUI.tst";
+BIWMatingFlangeNoDefaultDir.path = ";CATCommandSelector|CommandSelector1|BIWRidgePanel|;";
+
+InstantiatePLMTemplateEditability.fw = "CATBehaviorForDesignUI.tst";
+InstantiatePLMTemplateEditability.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0|CATQueryComponentCmd|CATPLMNewChooserKernel|PLMObjectChooser|;";
+
+QueryComp_LoadRef.fw = "CATBehaviorForDesignUI.tst";
+QueryComp_LoadRef.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0|CATQueryComponentCmd|CATPLMNewChooserKernel|PLMObjectChooser|;";
+
+QueryComp_LoadRepRef.fw = "CATBehaviorForDesignUI.tst";
+QueryComp_LoadRepRef.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0|CATQueryComponentCmd|CATPLMNewChooserKernel|PLMObjectChooser|;";
+
+CcvRecDSMLaw02.fw = "CATCoreCavity_N1.tst";
+CcvRecDSMLaw02.path = ";CATCommandSelector|CommandSelector2|CATDSMPreparationDlg|;";
+
+CcvRecPDirCylinder01.fw = "CATCoreCavity_N1.tst";
+CcvRecPDirCylinder01.path = ";CATCommandSelector|CommandSelector2|CATCCSPDirCylinderDlg|;";
+
+RecRfgGridOnADeckPlate1.fw = "CATEngRefGeomUI.tst";
+RecRfgGridOnADeckPlate1.path = ";CATCommandSelector|CommandSelector2|CATEngRefGeomSetGridPanel|;";
+
+RecRfgGridTestSelBoundary.fw = "CATEngRefGeomUI.tst";
+RecRfgGridTestSelBoundary.path = ";CATCommandSelector|CommandSelector2|CATEngRefGeomSetGridPanel|;";
+
+RecRfgPanelCreationByFormulainRefPlneBrowser_IR065166.fw = "CATEngRefGeomUI.tst";
+RecRfgPanelCreationByFormulainRefPlneBrowser_IR065166.path = ";CATCommandSelector|CommandSelector2|PlateSupportPlaneSelectAgent|SelectWindow|;";
+
+CsuRecRacewayPortAttributes.fw = "CATEns3DSetupUI.tst";
+CsuRecRacewayPortAttributes.path = ";CATCommandSelector|CommandSelector2|CATPipPortSpecCmd|CATCsuPortSpecMainDlg|;";
+
+EnsRecBuildPartUpdateValues.fw = "CATEns3DSetupUI.tst";
+EnsRecBuildPartUpdateValues.path = ";CATCommandSelector|CommandSelector2|CATPipBuildPartCmd|CATCsuBuildPartMainDlg|;";
+
+EnsRecBuildPartWithMaterial.fw = "CATEns3DSetupUI.tst";
+EnsRecBuildPartWithMaterial.path = ";CATCommandSelector|CommandSelector2|CATPipBuildPartCmd|CATCsuBuildPartMainDlg|;";
+
+RecSfdCreatePlate.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreatePlate.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreatePlateLimitedHull.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreatePlateLimitedHull.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreatePlateMltCreateTransversalBulkhead.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreatePlateMltCreateTransversalBulkhead.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreatePlateMltCreateTransversalBulkheadWithFormula.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreatePlateMltCreateTransversalBulkheadWithFormula.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreatePlateNamedManually.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreatePlateNamedManually.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreatePlateWithMaterialTable.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreatePlateWithMaterialTable.path = ";CATCommandSelector|CommandSelector3|PlateSupportPlaneSelectAgent|SelectWindow|;";
+
+RecSfdCreateSurfCylinderAlongAxisX.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreateSurfCylinderAlongAxisX.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreateSurfCylinderAlongAxisY.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreateSurfCylinderAlongAxisY.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreateSurfCylinderAlongAxisZ.fw = "CATEnsStrPlatUI.tst";
+RecSfdCreateSurfCylinderAlongAxisZ.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdMltCreateTransversalBulkheadWithReferencePlaneBrowser.fw = "CATEnsStrPlatUI.tst";
+RecSfdMltCreateTransversalBulkheadWithReferencePlaneBrowser.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdMltCreateTransversalBulkheadWithReferencePlaneBrowserKeyIn.fw = "CATEnsStrPlatUI.tst";
+RecSfdMltCreateTransversalBulkheadWithReferencePlaneBrowserKeyIn.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdPanelSplitPlateMTOAfterEditLimits_IR113767.fw = "CATEnsStrPlatUI.tst";
+RecSfdPanelSplitPlateMTOAfterEditLimits_IR113767.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+Wiki_SFD_PanelCmd_032.fw = "CATEnsStrPlatUI.tst";
+Wiki_SFD_PanelCmd_032.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSddCreateOpening_IR077559.fw = "CATEnsStrUI.tst";
+RecSddCreateOpening_IR077559.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrOpeningDlg|;";
+
+RecSddCreateSFEWithLimitNormalOffset_Cov.fw = "CATEnsStrUI.tst";
+RecSddCreateSFEWithLimitNormalOffset_Cov.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddCreateStiffenerWithLimitNormalOffset_Cov.fw = "CATEnsStrUI.tst";
+RecSddCreateStiffenerWithLimitNormalOffset_Cov.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtPlateWithNoChangeActivatePart.fw = "CATEnsStrUI.tst";
+RecSddEdtPlateWithNoChangeActivatePart.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSddEdtSlotwithChangeStiffener.fw = "CATEnsStrUI.tst";
+RecSddEdtSlotwithChangeStiffener.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtStiffenerWithLimitType.fw = "CATEnsStrUI.tst";
+RecSddEdtStiffenerWithLimitType.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddMemberCmdOKButtonSensitivity.fw = "CATEnsStrUI.tst";
+RecSddMemberCmdOKButtonSensitivity.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSfdBreakPlate_IR102657.fw = "CATEnsStrUI.tst";
+RecSfdBreakPlate_IR102657.path = ";CATCommandSelector|CommandSelector2|PlatePanelAgent|BreakPanel|;";
+
+RecSfdCreateBeamWithPtLimit_IR037238.fw = "CATEnsStrUI.tst";
+RecSfdCreateBeamWithPtLimit_IR037238.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|CATStrMemberDlgTabContainer|CATStrMemberDlgTabGeometry|FrmGeometryTab|FrmGeometry|FrameMemberPosInput|FrmPointUpToLimit|PtLimitFrameRefPlanesDlg|;";
+
+RecSfdCreateBeamPtToPtRemovePtsFromEltList_117356.fw = "CATEnsStrUI.tst";
+RecSfdCreateBeamPtToPtRemovePtsFromEltList_117356.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSfdCreateEndCutwithLimitedByPanel_IR071514.fw = "CATEnsStrUI.tst";
+RecSfdCreateEndCutwithLimitedByPanel_IR071514.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdCreateMemberBeamsAndPlaneWithCorrectNaming_IR040323.fw = "CATEnsStrUI.tst";
+RecSfdCreateMemberBeamsAndPlaneWithCorrectNaming_IR040323.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSfdCreateMemberChangeMaterial_IR376505.fw = "CATEnsStrUI.tst";
+RecSfdCreateMemberChangeMaterial_IR376505.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSfdCreateMemberReferencePlanesWithCorrectNaming_IR040323.fw = "CATEnsStrUI.tst";
+RecSfdCreateMemberReferencePlanesWithCorrectNaming_IR040323.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSfdCreateOpening_IR043608.fw = "CATEnsStrUI.tst";
+RecSfdCreateOpening_IR043608.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrOpeningDlg|;";
+
+RecSfdCreatePanelWithVolume.fw = "CATEnsStrUI.tst";
+RecSfdCreatePanelWithVolume.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreatePlateWithStiffener_IR036999.fw = "CATEnsStrUI.tst";
+RecSfdCreatePlateWithStiffener_IR036999.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreateSeamPlateWithVerifyingNames.fw = "CATEnsStrUI.tst";
+RecSfdCreateSeamPlateWithVerifyingNames.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|CATStrPlateDlgTabContainer|CATStrPlateDlgTabMaterialOrientation|FrmMatOrient|FrmMaterial|CombosFrame|MatSpacerFrame|MaterialSearchButton|Search|IDD_FRAME01|Search|;CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdCreateSFEWithLimitNormalOffset_Cov.fw = "CATEnsStrUI.tst";
+RecSfdCreateSFEWithLimitNormalOffset_Cov.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdCreateStiffenerWithLimitNormalOffset_Cov.fw = "CATEnsStrUI.tst";
+RecSfdCreateStiffenerWithLimitNormalOffset_Cov.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdEdtSeamPlateWithRemove_IR121428.fw = "CATEnsStrUI.tst";
+RecSfdEdtSeamPlateWithRemove_IR121428.path = ";CATCommandSelector|CommandSelector2|PlatePanelAgent|SeamPanel|;";
+
+RecSldEditMember_IR573367.fw = "CATEnsStrUI.tst";
+RecSldEditMember_IR573367.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSfdCreateSlotEdtStiffenerWithSectionInSingleSystem.fw = "CATEnsStrUI02.tst";
+RecSfdCreateSlotEdtStiffenerWithSectionInSingleSystem.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|TabsFrame|TabContainer|MaterialOrientionTabPage|MaterialFrame|CombosFrame|Combo3SpacerFrame|ValueSearchButton|Search|IDD_FRAME05|Search|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdCreateSlotEdtStiffenerWithSectionInCrossSystem.fw = "CATEnsStrUI02.tst";
+RecSfdCreateSlotEdtStiffenerWithSectionInCrossSystem.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|TabsFrame|TabContainer|MaterialOrientionTabPage|MaterialFrame|CombosFrame|Combo3SpacerFrame|ValueSearchButton|Search|IDD_FRAME05|Search|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdCreateStiffener_IR114959.fw = "CATEnsStrUI02.tst";
+RecSfdCreateStiffener_IR114959.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdEdtPlateWithReferenceDlg_IR091973.fw = "CATEnsStrUI02.tst";
+RecSfdEdtPlateWithReferenceDlg_IR091973.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdEdtSeamPlateWithDifferentThickness.fw = "CATEnsStrUI02.tst";
+RecSfdEdtSeamPlateWithDifferentThickness.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdEdtSeamPlateWithRemoveAndAdd.fw = "CATEnsStrUI02.tst";
+RecSfdEdtSeamPlateWithRemoveAndAdd.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|CATStrPlateDlgTabContainer|CATStrPlateDlgTabMaterialOrientation|FrmMatOrient|FrmMaterial|CombosFrame|MatSpacerFrame|MaterialSearchButton|Search|IDD_FRAME01|Search|;CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdEdtSeamPlateWithSketcherForNewLine.fw = "CATEnsStrUI02.tst";
+RecSfdEdtSeamPlateWithSketcherForNewLine.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|CATStrPlateDlgTabContainer|CATStrPlateDlgTabMaterialOrientation|FrmMatOrient|FrmMaterial|CombosFrame|MatSpacerFrame|MaterialSearchButton|Search|IDD_FRAME01|Search|;CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSfdEdtStiffenerSection_IR058401.fw = "CATEnsStrUI02.tst";
+RecSfdEdtStiffenerSection_IR058401.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdOpeningCreateStandard_IR031622.fw = "CATEnsStrUI02.tst";
+RecSfdOpeningCreateStandard_IR031622.path = ";CATCommandSelector|CommandSelector2|StdOpeningReferencesPlaneSelectAgent|SelectWindow|;";
+
+RecSfdSeamPanelDeleteSketch_IR603251.fw = "CATEnsStrUI02.tst";
+RecSfdSeamPanelDeleteSketch_IR603251.path = ";CATCommandSelector|CommandSelector2|PlatePanelAgent|SeamPanel|;";
+
+RecSFDEditMultiStiffener_IR_707372.fw = "CATEnsStrUI03.tst";
+RecSFDEditMultiStiffener_IR_707372.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdCreateOpeningWith3DAxisSystem_IR137525.fw = "CATEnsStrUI03.tst";
+RecSfdCreateOpeningWith3DAxisSystem_IR137525.path = ";CATCommandSelector|CommandSelector2|StandardOpeningAgent|SelectWindow|;";
+
+RecSfdOpeningMultiEdition_Standard_001.fw = "CATEnsStrUI03.tst";
+RecSfdOpeningMultiEdition_Standard_001.path = ";CATCommandSelector|CommandSelector2|StandardOpeningAgent|SelectWindow|;";
+
+RecSfdSeamRemoveExtSketch_IR687137.fw = "CATEnsStrUI03.tst";
+RecSfdSeamRemoveExtSketch_IR687137.path = ";CATCommandSelector|CommandSelector2|PlatePanelAgent|SeamPanel|;";
+
+RecSldConvertStiffenerRerouteStiffenerFlangeFaceLimit_DataSizeEnhancement.fw = "CATEnsStrUI03.tst";
+RecSldConvertStiffenerRerouteStiffenerFlangeFaceLimit_DataSizeEnhancement.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSldCreateMultiPlate_IR078251.fw = "CATEnsStrUI03.tst";
+RecSldCreateMultiPlate_IR078251.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSldCreateMultiPlate_IR078183.fw = "CATEnsStrUI03.tst";
+RecSldCreateMultiPlate_IR078183.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSldCreateStiffenerWithSectionOrientationPlateSide.fw = "CATEnsStrUI03.tst";
+RecSldCreateStiffenerWithSectionOrientationPlateSide.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSldReplaceStiffenerSupport_IR134298.fw = "CATEnsStrUI03.tst";
+RecSldReplaceStiffenerSupport_IR134298.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+TestDisableErrorsAndParamSet.fw = "CATExpressionEngineClient.tst";
+TestDisableErrorsAndParamSet.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+GSM3DTagUI_002_Rec_LeaderPoints.fw = "CATGSM3DTagUI.tst";
+GSM3DTagUI_002_Rec_LeaderPoints.path = ";CATCommandSelector|CommandSelector1|CATGSM3DTagDlg|;";
+
+StandardEditor09.fw = "CATGeneralWorkshopCommands.tst";
+StandardEditor09.path = ";CATCommandSelector|CATApplication|CNEXT|StandardEditor|CATStdEditorFrame|frame|Values|value|userFrame|CATDrwFrmStyle|StyleDialog|;";
+
+HASCGMLocalHealing01.fw = "CATHealingAssistantCGM.tst";
+HASCGMLocalHealing01.path = ";CATCommandSelector|CommandSelector1|LocalHealingDlg|;";
+
+Checker_SettingsBatch.fw = "CATImmVPMBaseUI.tst";
+Checker_SettingsBatch.path = ";CATCommandSelector|CATApplication|BatchMonitorDocument|BatchMonitorFrame|NewBatchDialog|;";
+
+ODTREC_FilterDialog_0564549.fw = "CATImmVPMFilter.tst";
+ODTREC_FilterDialog_0564549.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|AddAttrType|;";
+
+ODTREC_FilterDialog_566703.fw = "CATImmVPMFilter.tst";
+ODTREC_FilterDialog_566703.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|AddAttrType|;";
+
+ODTREC_FilterDialog_TST.fw = "CATImmVPMFilter.tst";
+ODTREC_FilterDialog_TST.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|AddAttrType|;";
+
+RecN1_TST_FilterPredefinedToolTip.fw = "CATImmWtpCfgMgmt.tst";
+RecN1_TST_FilterPredefinedToolTip.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATImm3DNavCfgFilterCrtDlg|;";
+
+CATMmFMRec013_CCP_FuncBody.fw = "CATMmFunctionalModelerRec.tst";
+CATMmFMRec013_CCP_FuncBody.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATSpdCutFeatureDialog|;";
+
+CATMmFMRec020_Edit.fw = "CATMmFunctionalModelerRec.tst";
+CATMmFMRec020_Edit.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATSpdShapeFeatureDialog|;";
+
+CATFst_UC_NC1_SpotFastenerInstance_10.fw = "CATPLMFstUICommands.tst";
+CATFst_UC_NC1_SpotFastenerInstance_10.path = ";CATCommandSelector|CommandSelector2|CATFstFastenerInstCmd|CATPLMNewChooserKernel|Fastener Reference Chooser|;CATCommandSelector|CommandSelector2|CATFstFastenerInstCmd|SpotFastenerPanel|;";
+
+CATFst_UC_NC1_SpotFastenerInstance_08.fw = "CATPLMFstUICommands.tst";
+CATFst_UC_NC1_SpotFastenerInstance_08.path = ";CATCommandSelector|CommandSelector2|CATFstFastenerInstCmd|CATPLMNewChooserKernel|Fastener Reference Chooser|;";
+
+KPT_CreateInstantiateNoUpdate01.fw = "CATPLMTemplatesUI.tst";
+KPT_CreateInstantiateNoUpdate01.path = ";CATCommandSelector|CommandSelector3|duplicatebody|;";
+
+KPT_CreateInstantiateRepeat1.fw = "CATPLMTemplatesUI.tst";
+KPT_CreateInstantiateRepeat1.path = ";CATCommandSelector|CommandSelector3|duplicatebody|;";
+
+Rec_PLMChooserV2_DefaultOpenOptions.fw = "CATPLMUIChooser.tst";
+Rec_PLMChooserV2_DefaultOpenOptions.path = ";CATCommandSelector|PLMChooserTstCmd|CATPLMNewChooserKernel|TstObjChooserBasicQuery|;";
+
+Rec_PLMChooserV2_Folder_SelectRepReference.fw = "CATPLMUIChooser.tst";
+Rec_PLMChooserV2_Folder_SelectRepReference.path = ";CATCommandSelector|CommandSelector2|FolderAddExistingReference2|CATPLMNewChooserKernel|Add Existing Representation|;";
+
+Rec_PLMChooserV2_FromSession_SelAgent_RepDrw_FromVPMSearch.fw = "CATPLMUIChooser.tst";
+Rec_PLMChooserV2_FromSession_SelAgent_RepDrw_FromVPMSearch.path = ";CATCommandSelector|CommandSelector2|PLMCmdInsertExistingDrawing|CATPLMNewChooserKernel|Select drawings to insert|;";
+
+Rec_PLMChooserV2_FromSession_SelAgent_UC_IR582008.fw = "CATPLMUIChooser.tst";
+Rec_PLMChooserV2_FromSession_SelAgent_UC_IR582008.path = ";CATCommandSelector|CommandSelector1|PLMChooserTstCmd|CATPLMNewChooserKernel|TstObjChooserBasicQuery|;";
+
+Rec_PLMChooserV2_MultiSelShift.fw = "CATPLMUIChooser.tst";
+Rec_PLMChooserV2_MultiSelShift.path = ";CATCommandSelector|PLMChooserTstCmd|IDD_FRAME01|TstObjChooserBasicQuery|;";
+
+ODTREC_OpenErrorLicensingPrdFromPLMChooser.fw = "CATPLMUIOpen.tst";
+ODTREC_OpenErrorLicensingPrdFromPLMChooser.path = ";CATCommandSelector|CommandSelector2|PLMCmdInsertExistingProduct|CATPLMNewChooserKernel|Select products to insert|;";
+
+ODTREC_Save_TestErrorUnchanged.fw = "CATPLMUIPropagate.tst";
+ODTREC_Save_TestErrorUnchanged.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|SAVEPLMFrm|;";
+
+PLMChangeAction_AddReferential.fw = "CATPLMUnifiedChgMgmt.tst";
+PLMChangeAction_AddReferential.path = ";CATCommandSelector|CommandSelector2|UnknownStateCmd2|CATPLMNewChooserKernel|Search for Objects to add as Referential|;";
+
+PipRecCreateRouteWithPipXPort.fw = "CATPipingUI.tst";
+PipRecCreateRouteWithPipXPort.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+RecSLDCreateOpeningSTDDirectionArrowPosition.fw = "CATSLDWorkbenchUI.tst";
+RecSLDCreateOpeningSTDDirectionArrowPosition.path = ";CATCommandSelector|CommandSelector2|StandardOpeningAgent|SelectWindow|;";
+
+RecSfdCreateStiffenerApplyMitercut.fw = "CATSLDWorkbenchUI.tst";
+RecSfdCreateStiffenerApplyMitercut.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdCreatePlateWithSniffByStiffener_IR196281.fw = "CATSLDWorkbenchUI.tst";
+RecSfdCreatePlateWithSniffByStiffener_IR196281.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSfdMltEdtSFEWithCategoryChange.fw = "CATSLDWorkbenchUI.tst";
+RecSfdMltEdtSFEWithCategoryChange.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSldCreateOpening_IR203661.fw = "CATSLDWorkbenchUI.tst";
+RecSldCreateOpening_IR203661.path = ";CATCommandSelector|CommandSelector2|StandardOpeningAgent|SelectWindow|;";
+
+RecSldEdtSFEwithChangeOfCategory_IR138726.fw = "CATSLDWorkbenchUI.tst";
+RecSldEdtSFEwithChangeOfCategory_IR138726.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSbvSyncMemberOnSeamPlate.fw = "CATSPDWorkbenchUI02.tst";
+RecSbvSyncMemberOnSeamPlate.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrMemberDlg|;";
+
+RecSbvSyncPlatewithSeamPlateLimits_IR262536.fw = "CATSPDWorkbenchUI02.tst";
+RecSbvSyncPlatewithSeamPlateLimits_IR262536.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddBracket_COV2.fw = "CATSPDWorkbenchUI02.tst";
+RecSddBracket_COV2.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrSketchBasedPlateDlg|;";
+
+RecSddCheckCategoryNameForSuperCategory.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCheckCategoryNameForSuperCategory.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddCreateEditStiffenerMultiPlate.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreateEditStiffenerMultiPlate.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddCreateEditSFEMultiPlate.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreateEditSFEMultiPlate.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddCreatePlate00.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreatePlate00.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSddCreatePlateOffsetTest.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreatePlateOffsetTest.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSddCreatePlate_IR090062.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreatePlate_IR090062.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSddCreateStiffenerWithLimitSddPlate.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreateStiffenerWithLimitSddPlate.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|TabsFrame|TabContainer|MaterialOrientionTabPage|MaterialFrame|CombosFrame|MatSpacerFrame|MaterialSearchButton|Search|IDD_FRAME03|Search|;";
+
+RecSddCreateStiffenerWithOtherPlate.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreateStiffenerWithOtherPlate.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddCreateStiffenerWithPlateAndSectionSideWhenChangeCategory.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreateStiffenerWithPlateAndSectionSideWhenChangeCategory.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddCreateStiffenerWithRemovingOtherplate.fw = "CATSPDWorkbenchUI02.tst";
+RecSddCreateStiffenerWithRemovingOtherplate.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtSFEWithAutomaticNamingAfterChangeCategory.fw = "CATSPDWorkbenchUI02.tst";
+RecSddEdtSFEWithAutomaticNamingAfterChangeCategory.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtStiffenerWithAutomaticNamingAfterChangeCategory.fw = "CATSPDWorkbenchUI02.tst";
+RecSddEdtStiffenerWithAutomaticNamingAfterChangeCategory.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtStiffenerWithLimitOffset.fw = "CATSPDWorkbenchUI02.tst";
+RecSddEdtStiffenerWithLimitOffset.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtStiffenerWithPlateSide.fw = "CATSPDWorkbenchUI02.tst";
+RecSddEdtStiffenerWithPlateSide.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtStiffenerWithWebSupportByRefPlaneManip_IR172651.fw = "CATSPDWorkbenchUI02.tst";
+RecSddEdtStiffenerWithWebSupportByRefPlaneManip_IR172651.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddEdtStiffener_IR090802.fw = "CATSPDWorkbenchUI02.tst";
+RecSddEdtStiffener_IR090802.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddMultiEdtPlateWithChangeOfCategory_IR136840.fw = "CATSPDWorkbenchUI02.tst";
+RecSddMultiEdtPlateWithChangeOfCategory_IR136840.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSddeditSitffenerSupportwithSnaptoReferencePlanethrough3DViewer_IR168425.fw = "CATSPDWorkbenchUI02.tst";
+RecSddeditSitffenerSupportwithSnaptoReferencePlanethrough3DViewer_IR168425.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+GSACornerRelief01.fw = "CATSmaDUI.tst";
+GSACornerRelief01.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CornerReliefPanel|;";
+
+GSACornerRelief02.fw = "CATSmaDUI.tst";
+GSACornerRelief02.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CornerReliefPanel|;";
+
+GSAWeb05.fw = "CATSmaDUI.tst";
+GSAWeb05.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|WebPanel|;";
+
+GSAWebRemoveLimits.fw = "CATSmaDUI.tst";
+GSAWebRemoveLimits.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|WebPanel|;";
+
+CATSmUserStampNewUI_02.fw = "CATSmdDUI.tst";
+CATSmUserStampNewUI_02.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATSmUserStampPanel|;";
+
+CATSmdCorner02.fw = "CATSmdDUI.tst";
+CATSmdCorner02.path = ";CATCommandSelector|CommandSelector1|CATSmCornerCmd|CATSmCornerDialog|;";
+
+CATSmd_WallOnEdge_Replace01.fw = "CATSmdDUI.tst";
+CATSmd_WallOnEdge_Replace01.path = ";CATCommandSelector|CommandSelector1|duplicatebody|;";
+
+ObjectMeasure_Between_OnCGR.fw = "CATSpaMeasureObject.tst";
+ObjectMeasure_Between_OnCGR.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+ObjectMeasure_Item_CofG_IR658054.fw = "CATSpaMeasureObject.tst";
+ObjectMeasure_Item_CofG_IR658054.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+ObjectMeasure_Item_MultiSel_WithPanel.fw = "CATSpaMeasureObject.tst";
+ObjectMeasure_Item_MultiSel_WithPanel.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+ObjectMeasure_Item_PositionProduct.fw = "CATSpaMeasureObject.tst";
+ObjectMeasure_Item_PositionProduct.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+ObjectMeasure_Item_Radius.fw = "CATSpaMeasureObject.tst";
+ObjectMeasure_Item_Radius.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+ObjectMeasure_SelectionFilter.fw = "CATSpaMeasureObject.tst";
+ObjectMeasure_SelectionFilter.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasBetweenDlg|;";
+
+RecSddEditSFEonLimit_IR644050.fw = "CATStrDetailModeler.tst";
+RecSddEditSFEonLimit_IR644050.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSldCreateStiffenerwithColorActionRule.fw = "CATStrFunctionalModeler.tst";
+RecSldCreateStiffenerwithColorActionRule.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSldCreateStiffener_WeldVisu_IR506302.fw = "CATStrFunctionalModeler.tst";
+RecSldCreateStiffener_WeldVisu_IR506302.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATStrCreateStiffenerFunctionDlg|;";
+
+RecSldEdtSeamedAndSuperPlateWithMaterial_IR062191.fw = "CATStrFunctionalModeler.tst";
+RecSldEdtSeamedAndSuperPlateWithMaterial_IR062191.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+RecSldBreakShellPanelByProjectionLine_IR078070.fw = "CATStrServices.tst";
+RecSldBreakShellPanelByProjectionLine_IR078070.path = ";CATCommandSelector|CommandSelector2|SectionPanelAgent|CATStrPlateDlg|;";
+
+CATStyEmbossTest004.fw = "CATStylingUI.tst";
+CATStyEmbossTest004.path = ";CATCommandSelector|CommandSelector2|CATStyAreaSculptingCmdId|AreaSculptingDialogName|;";
+
+CATStyMeshMeshIntersectTest002.fw = "CATStylingUI.tst";
+CATStyMeshMeshIntersectTest002.path = ";CATCommandSelector|CommandSelector2|CATStyMeshMeshIntersectCmdID|Mesh Intersect|;";
+
+CATStyProjectTest001.fw = "CATStylingUI.tst";
+CATStyProjectTest001.path = ";CATCommandSelector|CommandSelector2|CATStyProjectionCmdId|ProjectionDialogName|;";
+
+CATStyProjectTest002.fw = "CATStylingUI.tst";
+CATStyProjectTest002.path = ";CATCommandSelector|CommandSelector2|CATStyProjectionCmdId|ProjectionDialogName|;";
+
+CATStyProjectTest003.fw = "CATStylingUI.tst";
+CATStyProjectTest003.path = ";CATCommandSelector|CommandSelector1|CATStyProjectionCmdId|ProjectionDialogName|;";
+
+CATStySliceTest001.fw = "CATStylingUI.tst";
+CATStySliceTest001.path = ";CATCommandSelector|CommandSelector2|CATStySliceCmdID|Slice|;";
+
+CATStySliceTest004.fw = "CATStylingUI.tst";
+CATStySliceTest004.path = ";CATCommandSelector|CommandSelector2|CATStySliceCmdID|Slice|;";
+
+CATStyWorkflowTest001.fw = "CATStylingUI.tst";
+CATStyWorkflowTest001.path = ";CATCommandSelector|CommandSelector1|CATStyStitchingCmdId|StitchingDialogName|;";
+
+CATStyDecimateTest001.fw = "CATStylingUIReverse.tst";
+CATStyDecimateTest001.path = ";CATCommandSelector|CommandSelector2|CATStyDecimateCmdId|DecimateDialogName|;";
+
+CATStyDecimateTest002.fw = "CATStylingUIReverse.tst";
+CATStyDecimateTest002.path = ";CATCommandSelector|CommandSelector2|CATStyDecimateCmdId|DecimateDialogName|;";
+
+CATStySplitTrimTest009.fw = "CATStylingUIReverse.tst";
+CATStySplitTrimTest009.path = ";CATCommandSelector|CommandSelector2|CATStySplitCmdId|SplitDialogName|;";
+
+ODTREC_00_AAF_Coverage.fw = "DELAssignmentAssistant.tst";
+ODTREC_00_AAF_Coverage.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_00_AA_Coverage.fw = "DELAssignmentAssistant.tst";
+ODTREC_00_AA_Coverage.path = ";CATCommandSelector|CommandSelector3|CATFrmEditor2Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_01_AA_OpenAssignmentAssistant.fw = "DELAssignmentAssistant.tst";
+ODTREC_01_AA_OpenAssignmentAssistant.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_02_AAF_FastenersDiameterAndCategories.fw = "DELAssignmentAssistant.tst";
+ODTREC_02_AAF_FastenersDiameterAndCategories.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_03_AAF_AssignEffectivityToFasten.fw = "DELAssignmentAssistant.tst";
+ODTREC_03_AAF_AssignEffectivityToFasten.path = ";CATCommandSelector|CommandSelector3|CATFrmEditor2Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_03_AA_MultiScopeAssignment.fw = "DELAssignmentAssistant.tst";
+ODTREC_03_AA_MultiScopeAssignment.path = ";CATCommandSelector|CommandSelector3|CATFrmEditor2Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_05_AAF_CheckAssembly_CheckFasteners.fw = "DELAssignmentAssistant.tst";
+ODTREC_05_AAF_CheckAssembly_CheckFasteners.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_05_AA_Commands.fw = "DELAssignmentAssistant.tst";
+ODTREC_05_AA_Commands.path = ";CATCommandSelector|CommandSelector3|CATFrmEditor2Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_07_AAF_AssemblyLogic_UseExistingFasten.fw = "DELAssignmentAssistant.tst";
+ODTREC_07_AAF_AssemblyLogic_UseExistingFasten.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_09_AAF_Freeze_Release_Fastens.fw = "DELAssignmentAssistant.tst";
+ODTREC_09_AAF_Freeze_Release_Fastens.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_11_AAA_AssignablePartsFasteners.fw = "DELAssignmentAssistant.tst";
+ODTREC_11_AAA_AssignablePartsFasteners.path = ";CATCommandSelector|CommandSelector3|CATFrmEditor2Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_12_AAA_AssignablePartsFasteners_BL.fw = "DELAssignmentAssistant.tst";
+ODTREC_12_AAA_AssignablePartsFasteners_BL.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_12_AAF_ShowHide_Fastener_Axis.fw = "DELAssignmentAssistant.tst";
+ODTREC_12_AAF_ShowHide_Fastener_Axis.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_13_V5NativeIntegartionWithFastenedItemDef_AT1.fw = "DELAssignmentAssistant.tst";
+ODTREC_13_V5NativeIntegartionWithFastenedItemDef_AT1.path = ";CATCommandSelector|CommandSelector3|CATFrmEditor2Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_14_AAA_SaveReadPreferences.fw = "DELAssignmentAssistant.tst";
+ODTREC_14_AAA_SaveReadPreferences.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_AAA_SaveReadDlgOptions.fw = "DELAssignmentAssistant.tst";
+ODTREC_AAA_SaveReadDlgOptions.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_UseSameFastenRef_OneScope.fw = "DELDPMAssProcPlanCommands.tst";
+ODTREC_UseSameFastenRef_OneScope.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DELAssignmentAssistantDlg|;";
+
+ODTREC_SAA_Create_AssignUnassign.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Create_AssignUnassign.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Joining_Product_Fasteners.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Joining_Product_Fasteners.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Config_Create.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Config_Create.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Filter_Assignable_Fasteners.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Filter_Assignable_Fasteners.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+DELMSD_MultiModel_PartialLoading1Square_AssignOperation.fw = "DELManufSysDefCommands.tst";
+DELMSD_MultiModel_PartialLoading1Square_AssignOperation.path = ";CATCommandSelector|CATApplication|CNEXT|SAVEPLMFrm|;";
+
+DELMSD_SAA_SaveReadDlgOptions.fw = "DELManufSysDefCommands.tst";
+DELMSD_SAA_SaveReadDlgOptions.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+DELMSD_SAA_SaveReadPreferences.fw = "DELManufSysDefCommands.tst";
+DELMSD_SAA_SaveReadPreferences.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_MSD_SAA_3D_SingleSelection.fw = "DELManufSysDefCommands.tst";
+ODTREC_MSD_SAA_3D_SingleSelection.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Assign_Previous_Fasten.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Assign_Previous_Fasten.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Assign_Unassign_Same_Operation_Instances.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Assign_Unassign_Same_Operation_Instances.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Assign_Under_Operation.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Assign_Under_Operation.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_BizRule_GeneralOp_SubType.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_BizRule_GeneralOp_SubType.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_DeSelect.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_DeSelect.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Fasteners_Assignment_Status.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Fasteners_Assignment_Status.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Fastener_Selection.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Fastener_Selection.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Dispatch_Fasten_Process.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Dispatch_Fasten_Process.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test03.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test03.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test04.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test04.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test05.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Fasteners_MFG_WELD_Assignment_Test05.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Filter_Fasteners_NoDiameter.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Filter_Fasteners_NoDiameter.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Filter_Fastener.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Filter_Fastener.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Freeze_Release_Fasten.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Freeze_Release_Fasten.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_From_Gantt.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_From_Gantt.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_FstHIDDEN_Assignments.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_FstHIDDEN_Assignments.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Joining_Linked_Fasteners.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Joining_Linked_Fasteners.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Keep_Operation_During_UnAssign01.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Keep_Operation_During_UnAssign01.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_Launch_On_Specific_Operation.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_Launch_On_Specific_Operation.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_ManufacturedPart_Selection.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_ManufacturedPart_Selection.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_LinkedFasteners_SysSelection.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_LinkedFasteners_SysSelection.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_MultiAssign001.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_MultiAssign001.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_MultiAssign004.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_MultiAssign004.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_MultiAssign003.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_MultiAssign003.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_OUTPUT_Selection.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_OUTPUT_Selection.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_MultiAssign005.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_MultiAssign005.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_RemoveMaterial_Assignment.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_RemoveMaterial_Assignment.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_PreSelection_System_Operation.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_PreSelection_System_Operation.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_MultiAssign_With_SameAlias.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_MultiAssign_With_SameAlias.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_SHOW_IN_CONTEXT.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_SHOW_IN_CONTEXT.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_SHOW_ONLY_SELECTED.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_SHOW_ONLY_SELECTED.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_SystemSelectionFromLSE.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_SystemSelectionFromLSE.path = ";CATCommandSelector|CommandSelector2|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_TumbnailSelection_MenuContextual_EmtySpace.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_TumbnailSelection_MenuContextual_EmtySpace.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+ODTREC_SAA_System_MultiLevel.fw = "DELManufSysDefCommands.tst";
+ODTREC_SAA_System_MultiLevel.path = ";CATCommandSelector|CommandSelector3|ResourceBasedAACmd|SystemAssignmentAssistant|;";
+
+SLATstEKLbyActions.fw = "DELSLABehavior.tst";
+SLATstEKLbyActions.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELDBGEKLGetKinematicsMgr.fw = "DNBDeviceBase.tst";
+DELDBGEKLGetKinematicsMgr.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELDBGEKLGetKinMgr2.fw = "DNBDeviceBase.tst";
+DELDBGEKLGetKinMgr2.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELDBGEKLGetMotionProfile.fw = "DNBDeviceBase.tst";
+DELDBGEKLGetMotionProfile.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELDBGEKLRscHomePosMgr.fw = "DNBDeviceBase.tst";
+DELDBGEKLRscHomePosMgr.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELDBGEKLRscMotionGroup.fw = "DNBDeviceBase.tst";
+DELDBGEKLRscMotionGroup.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELDBGEKLRscMotionProfile.fw = "DNBDeviceBase.tst";
+DELDBGEKLRscMotionProfile.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DELDBGEKLRscMountsMgr.fw = "DNBDeviceBase.tst";
+DELDBGEKLRscMountsMgr.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+DNBIgpCalibSigAutoIDErrors.fw = "DNBIgpCalibCommands.tst";
+DNBIgpCalibSigAutoIDErrors.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DNBIgpSigCalibAutoIDDlg|;";
+
+PLMbatch_ImportExportUI_DXFDWG.fw = "DataExchangePLMBatch.tst";
+PLMbatch_ImportExportUI_DXFDWG.path = ";CATCommandSelector|CATApplication|BatchMonitorDocument|NewBatchDialog|;";
+
+testperiodiccapture.fw = "Dialog.tst";
+testperiodiccapture.path = ";CATCommandSelector|CATApplication|periodic|DlgWindow|;";
+
+DbuMoveViewLocked_Main_Background.fw = "Drafting2DLInfraUI.tst";
+DbuMoveViewLocked_Main_Background.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+DRWINTRECSearch00.fw = "DraftingIntCommands.tst";
+DRWINTRECSearch00.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+.fw = "l_C";
+.path = ";CATCommandSelector|CommandSelector2|CATComDYSText|3DTextDialog|;CATCommandSelector|CATApplication|CNEXT|HelpAboutWindow|;";
+
+
+FSS3DCurve_IR250893.fw = "FreeStyleShapeUI.tst";
+FSS3DCurve_IR250893.path = ";CATCommandSelector|CommandSelector1|CATStCmd3DCurve|3DCurveDialogName|;";
+
+FSSBreak_IRA0500424.fw = "FreeStyleShapeUI.tst";
+FSSBreak_IRA0500424.path = ";CATCommandSelector|CommandSelector1|CATStCmdBreak|CATStBreakDialog|;";
+
+FSSBreak_PreSelection.fw = "FreeStyleShapeUI.tst";
+FSSBreak_PreSelection.path = ";CATCommandSelector|CommandSelector1|CATStCmdBreak|CATStBreakDialog|;";
+
+FSSCstMatchAutomaticTargetSelectionImprovement.fw = "FreeStyleShapeUI.tst";
+FSSCstMatchAutomaticTargetSelectionImprovement.path = ";CATCommandSelector|CommandSelector1|CATStCmdCstMatch|CATStCstNewMatchDialog|;";
+
+FSSCstMatchExactAndInsideMode.fw = "FreeStyleShapeUI.tst";
+FSSCstMatchExactAndInsideMode.path = ";CATCommandSelector|CommandSelector1|CATStCmdCstMatch|CATStCstNewMatchDialog|;";
+
+FSSCstMatchFeatureModelingInternalEdge.fw = "FreeStyleShapeUI.tst";
+FSSCstMatchFeatureModelingInternalEdge.path = ";CATCommandSelector|CommandSelector1|CATStCmdCstMatch|CATStCstNewMatchDialog|;";
+
+FSSExtend.fw = "FreeStyleShapeUI.tst";
+FSSExtend.path = ";CATCommandSelector|CommandSelector1|CATStCmdPXtend|ExtendDialogName|;";
+
+FSSExtend2.fw = "FreeStyleShapeUI.tst";
+FSSExtend2.path = ";CATCommandSelector|CommandSelector1|CATStCmdPXtend|ExtendDialogName|;";
+
+FSSDashboard.fw = "FreeStyleShapeUI.tst";
+FSSDashboard.path = ";CATCommandSelector|CommandSelector1|CATStCmdCBlend|CrvBlend|;CATCommandSelector|CommandSelector1|CATStCmdSegment|CATStApproxManager|ApproxManagerDialogName|;CATCommandSelector|CommandSelector1|CATStCmdSegment|CATStApproxManager|ApproxManagerDialogName|;";
+
+FSSCurveOnSurface.fw = "FreeStyleShapeUI.tst";
+FSSCurveOnSurface.path = ";CATCommandSelector|CommandSelector1|CATStCmdCrvOnSurf|CrvOnSurfDialog|;";
+
+FSSExtend_160764.fw = "FreeStyleShapeUI.tst";
+FSSExtend_160764.path = ";CATCommandSelector|CommandSelector1|CATSurfacicXMLDumpCommand|SurfacicXMLDumper|;";
+
+FSSIsoparam_IRA0510724.fw = "FreeStyleShapeUI.tst";
+FSSIsoparam_IRA0510724.path = ";CATCommandSelector|CommandSelector1|CATStCmdOffset|OffsetDialogName|;";
+
+FSSNUPBSExtrude.fw = "FreeStyleShapeUI.tst";
+FSSNUPBSExtrude.path = ";CATCommandSelector|CommandSelector1|CATStCmdOffset|OffsetDialogName|;";
+
+FSSMatchConstraints_IR345826.fw = "FreeStyleShapeUI.tst";
+FSSMatchConstraints_IR345826.path = ";CATCommandSelector|CommandSelector2|CATStCmdCstMatch|CATStCstNewMatchDialog|;";
+
+FSSMatchCurve.fw = "FreeStyleShapeUI.tst";
+FSSMatchCurve.path = ";CATCommandSelector|CommandSelector1|CATStCmdCrvMatch|Match_Options|;";
+
+FSSStylingExtrapolate_07.fw = "FreeStyleShapeUI.tst";
+FSSStylingExtrapolate_07.path = ";CATCommandSelector|CommandSelector1|CATStCmdExtrudeSurface|CATStExtrudeSurfaceDialog|;";
+
+FSSStylingCorner_ckeSpinnerAndSaveSettings.fw = "FreeStyleShapeUI.tst";
+FSSStylingCorner_ckeSpinnerAndSaveSettings.path = ";CATCommandSelector|CommandSelector2|CATStCmdCrvFillet|CurveFilletOptions|;";
+
+FSSSurfMatchConversion.fw = "FreeStyleShapeUI.tst";
+FSSSurfMatchConversion.path = ";CATCommandSelector|CommandSelector1|MatchCmdOptionPanel|;";
+
+FSSTopoFillet_Approximation.fw = "FreeStyleShapeUI.tst";
+FSSTopoFillet_Approximation.path = ";CATCommandSelector|CommandSelector1|CATStCmdAdvFill|FillOptions|;";
+
+FSSTopoFilletE_IR066196.fw = "FreeStyleShapeUI.tst";
+FSSTopoFilletE_IR066196.path = ";CATCommandSelector|CommandSelector1|CATStCmdDisassemble|DisassembleDialogName|;";
+
+FSSTopoFillet_IR041017.fw = "FreeStyleShapeUI.tst";
+FSSTopoFillet_IR041017.path = ";CATCommandSelector|CommandSelector1|CATStCmdExtrudeSurface|CATStExtrudeSurfaceDialog|;";
+
+FSSUnifiedPatch_4PointCloudFit.fw = "FreeStyleShapeUI.tst";
+FSSUnifiedPatch_4PointCloudFit.path = ";CATCommandSelector|CommandSelector1|CATStCmdUnifiedPatch|CATStUnifiedPatchDialog|;";
+
+FSSUnifiedPatch_IR067863.fw = "FreeStyleShapeUI.tst";
+FSSUnifiedPatch_IR067863.path = ";CATCommandSelector|CommandSelector1|CATStCmdUnifiedPatch|CATStUnifiedPatchDialog|;";
+
+FSSUnifiedPatch_SurfaceSupportUndoRedo.fw = "FreeStyleShapeUI.tst";
+FSSUnifiedPatch_SurfaceSupportUndoRedo.path = ";CATCommandSelector|CommandSelector1|CATStCmdUnifiedPatch|CATStUnifiedPatchDialog|;";
+
+FSSTopoFillet_IR430288.fw = "FreeStyleShapeUI.tst";
+FSSTopoFillet_IR430288.path = ";CATCommandSelector|CommandSelector1|CATStCmdTopoFillet|CATStTopoFilletDialog|;";
+
+FSSUnifiedPatch_IR526132.fw = "FreeStyleShapeUI.tst";
+FSSUnifiedPatch_IR526132.path = ";CATCommandSelector|CommandSelector1|CATStCmdUnifiedPatch|CATStUnifiedPatchDialog|;";
+
+FSSUntrim_IR294733.fw = "FreeStyleShapeUI.tst";
+FSSUntrim_IR294733.path = ";CATCommandSelector|CommandSelector1|CATStCmdFeatUntrim|UntrimDialogName|;";
+
+FSSUnifiedPatch_PlanetoPlane_SurfacetoPlaneRefChange.fw = "FreeStyleShapeUI.tst";
+FSSUnifiedPatch_PlanetoPlane_SurfacetoPlaneRefChange.path = ";CATCommandSelector|CommandSelector1|CATStCmdUnifiedPatch|CATStUnifiedPatchDialog|;";
+
+FSSUnifiedPatch_PlanetoSurface_SurfacetoSurfaceRefChange.fw = "FreeStyleShapeUI.tst";
+FSSUnifiedPatch_PlanetoSurface_SurfacetoSurfaceRefChange.path = ";CATCommandSelector|CommandSelector1|CATStCmdUnifiedPatch|CATStUnifiedPatchDialog|;";
+
+FSSUnifiedPatch_RefSupport_02.fw = "FreeStyleShapeUI.tst";
+FSSUnifiedPatch_RefSupport_02.path = ";CATCommandSelector|CommandSelector1|CATStCmdUnifiedPatch|CATStUnifiedPatchDialog|;";
+
+GSM2DViewSection20.fw = "GSMUI.tst";
+GSM2DViewSection20.path = ";CATCommandSelector|CommandSelector1|InsertSectionPanel|;";
+
+GSM2DViewSectionTrimmedCorners.fw = "GSMUI.tst";
+GSM2DViewSectionTrimmedCorners.path = ";CATCommandSelector|CommandSelector1|InsertSectionPanel|;";
+
+GSMAdaptativeSweep01.fw = "GSMUI.tst";
+GSMAdaptativeSweep01.path = ";CATCommandSelector|CommandSelector1|SweepVarPanel|;";
+
+GSMCxtSB_DIWO_RI413534.fw = "GSMUI.tst";
+GSMCxtSB_DIWO_RI413534.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+GSMDeactivate08.fw = "GSMUI.tst";
+GSMDeactivate08.path = ";CATCommandSelector|CommandSelector1|SweepPanel|;";
+
+GSMDirectionLocalAxisSystem.fw = "GSMUI.tst";
+GSMDirectionLocalAxisSystem.path = ";CATCommandSelector|CommandSelector1|AxisSystemDefinition|AxisSystemDefinitionPanel|ZAxisRotationPanel|;";
+
+GSMExtrude6.fw = "GSMUI.tst";
+GSMExtrude6.path = ";CATCommandSelector|CommandSelector1|ExtrudePanel|FraEXTRUDE|FraDirection|PanelCoord|;";
+
+GSMFrontiere14.fw = "GSMUI.tst";
+GSMFrontiere14.path = ";CATCommandSelector|CommandSelector1|CATPrtUpdateCommandSelector|Boundary|;";
+
+GSMMultiSel05_Empilage.fw = "GSMUI.tst";
+GSMMultiSel05_Empilage.path = ";CATCommandSelector|CommandSelector1|TranslatePanel|;";
+
+GSMMultiple2.fw = "GSMUI.tst";
+GSMMultiple2.path = ";CATCommandSelector|CommandSelector1|LinePanel|;CATCommandSelector|CommandSelector1|PlanePanel|;CATCommandSelector|CommandSelector1|MultiplePanel|;CATCommandSelector|CommandSelector1|CurveParPanel|;CATCommandSelector|CommandSelector1|MultiplePanel|;";
+
+GSMMultiple7.fw = "GSMUI.tst";
+GSMMultiple7.path = ";CATCommandSelector|CommandSelector1|MultiplePlanePanel|;";
+
+GSMPlaneLocalAxisSystem.fw = "GSMUI.tst";
+GSMPlaneLocalAxisSystem.path = ";CATCommandSelector|CommandSelector1|AxisSystemDefinition|AxisSystemDefinitionPanel|XAxisRotationPanel|;";
+
+GSMPointLocalAxisSystem.fw = "GSMUI.tst";
+GSMPointLocalAxisSystem.path = ";CATCommandSelector|CommandSelector1|AxisSystemDefinition|AxisSystemDefinitionPanel|XAxisRotationPanel|;";
+
+GSMSweepLaw.fw = "GSMUI.tst";
+GSMSweepLaw.path = ";CATCommandSelector|CommandSelector1|IntersectPanel|;";
+
+GSMTweakFace01.fw = "GSMUI.tst";
+GSMTweakFace01.path = ";CATCommandSelector|CommandSelector1|CATGuiTweakFacePanel|;";
+
+GSMTranslateLocalAxisSystem.fw = "GSMUI.tst";
+GSMTranslateLocalAxisSystem.path = ";CATCommandSelector|CommandSelector1|AxisSystemDefinition|AxisSystemDefinitionPanel|YAxisRotationPanel|;";
+
+GSMSweepExpProfileDir01.fw = "GSMUI.tst";
+GSMSweepExpProfileDir01.path = ";CATCommandSelector|CommandSelector1|SweepPanel|;";
+
+GSMJournalingCreationAssemblageRec.fw = "GSMXAutomation.tst";
+GSMJournalingCreationAssemblageRec.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingCreationBoundaryRec.fw = "GSMXAutomation.tst";
+GSMJournalingCreationBoundaryRec.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingCreationConicRec.fw = "GSMXAutomation.tst";
+GSMJournalingCreationConicRec.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingCreationExtrapolRec.fw = "GSMXAutomation.tst";
+GSMJournalingCreationExtrapolRec.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingCreationExtrudeUptoElement.fw = "GSMXAutomation.tst";
+GSMJournalingCreationExtrudeUptoElement.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingCreationRevolWithUptoElement.fw = "GSMXAutomation.tst";
+GSMJournalingCreationRevolWithUptoElement.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMMacroRec_002_Wire.fw = "GSMXAutomation.tst";
+GSMMacroRec_002_Wire.path = ";CATCommandSelector|CommandSelector1|ProjectPanel|;";
+
+GSMMacroRec_018_Spine.fw = "GSMXAutomation.tst";
+GSMMacroRec_018_Spine.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMMacroRec_019_Combined.fw = "GSMXAutomation.tst";
+GSMMacroRec_019_Combined.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMMacroRec_014_Intersect.fw = "GSMXAutomation.tst";
+GSMMacroRec_014_Intersect.path = ";CATCommandSelector|CommandSelector1|IntersectPanel|;";
+
+GSMMacroRec_MidSurface_Automatic.fw = "GSMXAutomation.tst";
+GSMMacroRec_MidSurface_Automatic.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMMacroRec_RevolUptoOffset.fw = "GSMXAutomation.tst";
+GSMMacroRec_RevolUptoOffset.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMMacroRec_SplitWithExtrapolation.fw = "GSMXAutomation.tst";
+GSMMacroRec_SplitWithExtrapolation.path = ";CATCommandSelector|CommandSelector1|SplitPanel|;";
+
+GSMJournalingBoundaryNewMethodsRec.fw = "GSMXN1.tst";
+GSMJournalingBoundaryNewMethodsRec.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingCircleCenterTangentRec.fw = "GSMXN1.tst";
+GSMJournalingCircleCenterTangentRec.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingCylinder.fw = "GSMXN1.tst";
+GSMJournalingCylinder.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+GSMJournalingTrimCircle.fw = "GSMXN1.tst";
+GSMJournalingTrimCircle.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+PFR_IR_B0418087.fw = "GSSPartDesignFR.tst";
+PFR_IR_B0418087.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|GSSFCFRCommandDlg|;";
+
+PFR_N1_SRA_27.fw = "GSSPartDesignFR.tst";
+PFR_N1_SRA_27.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|GSSFCFRCommandDlg|;";
+
+PFR_N1_SRA_23.fw = "GSSPartDesignFR.tst";
+PFR_N1_SRA_23.path = ";CATCommandSelector|CATApplication|CNEXT|SearchDialog|;";
+
+CkeCreateDeletePub1.fw = "GenerativeKnowledge.tst";
+CkeCreateDeletePub1.path = ";CATCommandSelector|CommandSelector2|duplicatebody|;";
+
+ICMCLADiaUIGap_ITC_0001.fw = "ICMCLADiagUI.tst";
+ICMCLADiaUIGap_ITC_0001.path = ";CATCommandSelector|CommandSelector1|ICMCLADiagGapCmd|ICMCLADiagGapPanel|;";
+
+ICMCLADiaUIIsoCurvature_ITC_0003_manip.fw = "ICMCLADiagUI.tst";
+ICMCLADiaUIIsoCurvature_ITC_0003_manip.path = ";CATCommandSelector|CommandSelector1|ICMCLADiagIsoCurvatureCmd|ICMCLADiagIsoCurvaturePanel|;";
+
+ICMCLADiaUISplit_DisplaySetSelection_ITC_0001.fw = "ICMCLADiagUI.tst";
+ICMCLADiaUISplit_DisplaySetSelection_ITC_0001.path = ";CATCommandSelector|CommandSelector1|ICMCLADiagSplitAnalysisCmd|ICMCLADiagSplitAnalysisPanel|;";
+
+ICMCLAShpUIAdjust_ITC_0001.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUIAdjust_ITC_0001.path = ";CATCommandSelector|CommandSelector2|ICMCLAShapeAdjustCmd|ICMCLAShapeAdjustPanel|;";
+
+ICMCLAShpUICurveChecker_ITC_0001.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUICurveChecker_ITC_0001.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeCurveCheckerCmd|ICMCLAShapeCurveCheckerPanel|;";
+
+ICMCLAShpUICurveBlend_ITC_0008.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUICurveBlend_ITC_0008.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeCurveBlendCmd|ICMCLAShapeCurveBlendPanel|;";
+
+ICMCLAShpUIFlange_ITC_0006_PSA_CXR19.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUIFlange_ITC_0006_PSA_CXR19.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeFlangeCmd|ICMCLAShapeFlangePanel|;";
+
+ICMCLAShpUIModeling_ITC_0001.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUIModeling_ITC_0001.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeModelingCmd|ICMCLAShapeModelingPanel|;";
+
+ICMCLAShpUIModeling_ITC_0002.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUIModeling_ITC_0002.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeModelingCmd|ICMCLAShapeModelingPanel|;";
+
+ICMCLAShpUIProject_ITC_0002.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUIProject_ITC_0002.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeProjectCmd|ICMCLAShapeProjectPanel|;";
+
+ICMCLAShpUIStylingCorner_ITC_0001.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUIStylingCorner_ITC_0001.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeStylingCornerCmd|ICMCLAShapeStylingCornerPanel|;";
+
+ICMCLAShpUISurfaceChecker_ITC_0001.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUISurfaceChecker_ITC_0001.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeSurfaceCheckerCmd|ICMCLAShapeSurfaceCheckerPanel|;";
+
+ICMCLAShpUISweep_ITC_0001.fw = "ICMCLAShapeUI.tst";
+ICMCLAShpUISweep_ITC_0001.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeSweepCmd|ICMCLAShapeSweepPanel|;";
+
+ICMUIManipulatorSet_ITC_0002.fw = "ICMUIComponents.tst";
+ICMUIManipulatorSet_ITC_0002.path = ";CATCommandSelector|CommandSelector2|ICMCLAShapeFlangeCmd|ICMCLAShapeFlangePanel|;";
+
+ICMUIMovingFrames_ITC_0002.fw = "ICMUIComponents.tst";
+ICMUIMovingFrames_ITC_0002.path = ";CATCommandSelector|CommandSelector1|ICMCLAShapeSurfaceBlendCmd|ICMCLAShapeSurfaceBlendPanel|;";
+
+KnowSharedRec_001_NewIconBrowser.fw = "KnowledgeSharedUI.tst";
+KnowSharedRec_001_NewIconBrowser.path = ";CATCommandSelector|CommandSelector1|Sequence|TabContainer|PageProperties|frameProperties|Icon Browser|;";
+
+KnowledgeRec006.fw = "KnowledgewareUI.tst";
+KnowledgeRec006.path = ";CATCommandSelector|CommandSelector1|MacroRecordId|;";
+
+MEAS_MI_Visu_In_the_tree.fw = "MeasureVisuBase.tst";
+MEAS_MI_Visu_In_the_tree.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|DmrMeasItemDlg|;";
+
+ShapeBodyReorderOfContextual2.fw = "MechanicalModelerShape.tst";
+ShapeBodyReorderOfContextual2.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+ShapeBodyReorderOfContextual3.fw = "MechanicalModelerShape.tst";
+ShapeBodyReorderOfContextual3.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+ShapeBodyReorder_Ri370715.fw = "MechanicalModelerShape.tst";
+ShapeBodyReorder_Ri370715.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+ShapeBodyReorder_Ri408659.fw = "MechanicalModelerShape.tst";
+ShapeBodyReorder_Ri408659.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+ShapeBody_067_ReorderMultiple.fw = "MechanicalModelerShape.tst";
+ShapeBody_067_ReorderMultiple.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+MMUIRecInternalCopyEdition_01_SolidFeaures.fw = "MechanicalModelerUI.tst";
+MMUIRecInternalCopyEdition_01_SolidFeaures.path = ";CATCommandSelector|CommandSelector1|InternalCopyEdition|;";
+
+MMUIRecPLMCreateImportNotAllowed_BSO.fw = "MechanicalModelerUI.tst";
+MMUIRecPLMCreateImportNotAllowed_BSO.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATMmuCreateImportPanel|;";
+
+MMUIRecPLMCreateImportNotAllowed.fw = "MechanicalModelerUI.tst";
+MMUIRecPLMCreateImportNotAllowed.path = ";CATCommandSelector|CommandSelector1|CATFrmEditor0Decorator|CATMmuCreateImportPanel|;";
+
+MMUIRecReorderPadToEmptyBody.fw = "MechanicalModelerUI.tst";
+MMUIRecReorderPadToEmptyBody.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+MMUIRecReorderPad.fw = "MechanicalModelerUI.tst";
+MMUIRecReorderPad.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+RecReporting.fw = "ObjectSpecEditor.tst";
+RecReporting.path = ";CATCommandSelector|CATApplication|SpecBrowser|GenericSpecBrowser|FindDialog|;";
+
+RecN1_CatalogBrowser_HideEmptyChapters.fw = "PLMCatalogUI.tst";
+RecN1_CatalogBrowser_HideEmptyChapters.path = ";CATCommandSelector|CommandSelector2|PLMCatalogBrowserCmd|PLMECatalogBrowser|FrmClgLocator|CATPLMNewChooserKernel|PLMCatalogBrowserChooser|;";
+
+ODTREC_PLMDesignerWorkspaceSynchronizationTest.fw = "PLMDesignWorkspaceODT.tst";
+ODTREC_PLMDesignerWorkspaceSynchronizationTest.path = ";CATCommandSelector|CommandSelector2|CATFrmEditor1Decorator|CATPLMWorkspaceCompareDlg|;";
+
+IR671043SettingPrinterPropertiesInBatchPrint.fw = "PLMPrintBatch.tst";
+IR671043SettingPrinterPropertiesInBatchPrint.path = ";CATCommandSelector|CATApplication|BatchMonitorDocument|NewBatchDialog|frameUI|CATPrintBatchGUIFrameMonitor|PLMPrintBatch|FrameOperation|CATPrintBatchGUIBatchApplUI|frame|FrameDefaults|Printers|PrinterConfigureDialog|DefaultMargins|;CATCommandSelector|CATApplication|BatchMonitorDocument|NewBatchDialog|frameUI|CATPrintBatchGUIFrameMonitor|PLMPrintBatch|FrameOperation|CATPrintBatchGUIBatchApplUI|frame|FrameDefaults|Printers|PrinterConfigureDialog|;";
+
+PrtRec_WTA_IR0595597_0596107.fw = "PartDesignAnalysis.tst";
+PrtRec_WTA_IR0595597_0596107.path = ";CATCommandSelector|CommandSelector1|WallThicknessAnalysis|;CATCommandSelector|CommandSelector1|ThreadAnalysis|;";
+
+PrtRecEditVolumeBooleanForOGS_HS02.fw = "PartDesignHybridBody.tst";
+PrtRecEditVolumeBooleanForOGS_HS02.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecTrimRemoveFaces.fw = "PartDesignHybridBody.tst";
+PrtRecTrimRemoveFaces.path = ";CATCommandSelector|CommandSelector1|TrimPanelVolume|;";
+
+PrtRecVolumeBoolean04.fw = "PartDesignHybridBody.tst";
+PrtRecVolumeBoolean04.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecVolumeBooleanForGS_HS.fw = "PartDesignHybridBody.tst";
+PrtRecVolumeBooleanForGS_HS.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+PrtRecVolumeBooleanForOGS_MS.fw = "PartDesignHybridBody.tst";
+PrtRecVolumeBooleanForOGS_MS.path = ";CATCommandSelector|CommandSelector1|Insert|;";
+
+DUC_PART_CircPattern.fw = "PartDesignTransverse.tst";
+DUC_PART_CircPattern.path = ";CATCommandSelector|CommandSelector1|Crown Pattern|;";
+
+SIMAnimCompileZeroDuration.fw = "SIMAnimation.tst";
+SIMAnimCompileZeroDuration.path = ";CATCommandSelector|CommandSelector2|CATSIMAnimCompileCmdId|CATSIMAnimCompileDlg|;CATCommandSelector|CommandSelector2|CATSIMMovieCompileCmdId|CATSIMMovieCompileCmd|;";
+
+ScalePlaneProperties.fw = "VisualizationCommands.tst";
+ScalePlaneProperties.path = ";CATCommandSelector|CommandSelector1|CATFrmWindow1|CATFrmWindowViewerFrame2|3DViewer|MotifObject|ScalePlaneProperties|;";
+
+PrtRecFilletAuto02.fw = "PartDesignRSW.tst";
+PrtRecFilletAuto02.path = ";CATCommandSelector|CommandSelector1|EdgeFilletPanel|;";

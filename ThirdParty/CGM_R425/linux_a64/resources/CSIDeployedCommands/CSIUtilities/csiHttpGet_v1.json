@@ -1,0 +1,43 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Return the content of the filePath",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "url",
+          "basic": "string",
+          "desc": "The URL you want to get answer from"
+        },
+        {
+          "label": "timeout",
+          "basic": "int32",
+          "desc": "Timeout in milliseconds",
+          "optional": {
+            "isOptional": true,
+            "default_value": "60000"
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "response",
+          "basic": "string",
+          "desc": "The HTTP response as a string"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+    <!-- ActionPad Section -->
+    <Template syp:name="AfrActionPadSection" Target="CATAfrSYPContainerView">
+        <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" RegisteredFlag="1"
+                                        InsertInCAfrComponent="CAfrTemplates.xml/AfrActionPad:AfrActionPad:CATCAfrActionPadController:AutoDeletion">
+            <CATCAfrToolbar  Visibility="1" RepresentationType="AfrActionPad"        Name="@Name" syp:name="MainToolbar" >
+                <CATCAfrForm Visibility="1" RepresentationType="AfrActionPadSection" Items="@ToolsItems Mode=OneWayToSource"/>
+                <CATCAfrToolbar Visibility="0" RepresentationType="AfrActionPadGroupCustomize" syp:name="CustomizeGroup" Name="NewGroup"/>
+            </CATCAfrToolbar>
+        </CATAfrSYPContainerViewMetaData>
+        
+        <CATSYPTriggerCollection>
+            <CATSYPTrigger Property="Customizing" TargetName="MainToolbar" Value="1">
+                <CATSYPSetter Property="Visibility" TargetName="CustomizeGroup" Value="1"/>
+            </CATSYPTrigger>
+            <CATSYPTrigger Property="Customizing" TargetName="MainToolbar" Value="0">
+                <CATSYPSetter Property="Visibility" TargetName="CustomizeGroup" Value="0"/>
+            </CATSYPTrigger>
+        </CATSYPTriggerCollection>
+    </Template>
+
+    <!-- ActionPad Group -->
+    <Template syp:name="AfrActionPadGroup" Target="CATAfrSYPContainerView">
+        <CATAfrSYPContainerViewMetaData AlwaysVisibleFlag="1" RegisteredFlag="1" Mode="CAfr">
+            <CATCAfrToolbar Name="@Name"
+                         RepresentationType="AfrActionPadGroup"
+                         Visibility ="1"
+                         Items="@ToolsItems Mode=OneWayToSource"/>
+        </CATAfrSYPContainerViewMetaData>
+    </Template>
+
+    <DataTemplate syp:name="CATCAfrToolbar_AfrActionPad">
+        <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="@RootFlag"
+                      ViewParent="@ViewParent"
+                      CanImportData="@OnDragDropEventCB" ImportData="@OnDragDropEventCB" Dragged="@OnDragDropEventCB" Dropped="@OnDragDropEventCB"
+                      DragMode="Internal" DropMode="External"
+                      RequestedMinimumDimension="@MinimumDimension"
+                      VisibleFlag="@Visibility"
+                      Dimension="@Dimension Mode=OneWayToSource">
+            <CATVidCtlScrollableArea syp:name="ScrollableArea" RequestedMinimumDimension="135 38" VSingleStep="36" VAutoscrollMargins="20">
+                <CATVidLayGrid GridAppendPolicy="GridRowAppend" GridWeight=" row1=1">
+                    <CATVidLayGrid syp:name="Container" GridAppendPolicy="GridRowAppend" CellSpacing="0"/>
+                    <CATVidSpacer/>
+                </CATVidLayGrid>
+            </CATVidCtlScrollableArea>
+        </CATAfrSmartCtl>
+
+      <CATSYPTriggerCollection>
+        <CATSYPTrigger Property="Customizing" Value="1">
+          <CATSYPSetter Property="VScrollPercentage" TargetName="ScrollableArea" Value="100"/>
+        </CATSYPTrigger>
+      </CATSYPTriggerCollection>
+    </DataTemplate>
+
+    <DataTemplate syp:name="CATCAfrForm_AfrActionPadSection">
+        <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="0"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility">
+            <CATVidLayGrid syp:name="Container" GridAppendPolicy="GridRowAppend" CellSpacing="1"/>
+        </CATAfrSmartCtl>
+    </DataTemplate>
+
+    <DataTemplate syp:name="CATCAfrToolbar_AfrActionPadGroup">
+        <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="0"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility"
+                      Dimension="@Dimension Mode=OneWayToSource">
+            <CATVidLayLayer>
+                <CATVidGPSquare UseManipulatorFlag="1" PickFlag="1" syp:name="Background" EndPreDrop="@OnDragDropEventCB"/>
+                <CATVidLayGrid GridWeight="col1=1">
+                    <CATVidSpacer RequestedMinimumDimension="1 1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LRT"/>
+                    <CATVidLayFlow CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=LRT" syp:name="Container" ComputedCellDimensionFlag="1" UniformCellSizesFlag="0" CellSpacing="0"/>
+                    <CATVidGPSquare RequestedMinimumDimension="28 1" Texture="I_VIAImmersiveToolBar_Sep.png" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLT" VisibleFlag="@HasNextItemFlag" LayoutWhenUnvisibleFlag="0"/>
+                    <CATVidSpacer RequestedMinimumDimension="1 1" CATVidLayGrid.IndexedConstraints="x=2 y=3 attach=LRT"/>
+                </CATVidLayGrid>
+            </CATVidLayLayer>
+        </CATAfrSmartCtl>
+    </DataTemplate>
+
+    <DataTemplate syp:name="CATCAfrToolbar_AfrActionPadGroupCustomize">
+        <CATVidLayGrid LayoutWhenUnvisibleFlag="0" VisibleFlag="@Visibility" GridWeight="col1=1" GridAppendPolicy="GridRowAppend" Dimension="@Dimension Mode=OneWayToSource">
+            <CATVidGPSquare RequestedMinimumDimension="28 1" Texture="I_VIAImmersiveToolBar_Sep.png"/>
+            <CATVidLayLayer RequestedMinimumDimension="118 36">
+                <CATVidGPNinePatchSquare UseManipulatorFlag="1" PickFlag="1" ScalableAreaBorder="4" Texture="ActionBar/ABNewGroupBackground.png"/>
+                <CATVidGPLabel  UseManipulatorFlag="1" PickFlag="1" Text="@Title" HorizontalAlignment="1" VerticalAlignment="1" />
+            </CATVidLayLayer>
+        </CATVidLayGrid>
+    </DataTemplate>
+
+    <DataTemplate syp:name="CATCAfrToolbar_AfrActionPadTopBar">
+       <CATAfrSmartCtl LayoutWhenUnvisibleFlag="0"
+                      CreateDialogBoxFlag="0"
+                      ViewParent="@ViewParent"
+                      VisibleFlag="@Visibility"
+                      Dimension="@Dimension Mode=OneWayToSource">
+                 <CATVidLayGrid GridWeight="row0=1" LayoutWhenUnvisibleFlag="0">
+                    <CATVidLayStack CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RT" syp:name="Container" CellBorder="0" Orientation="Horizontal"/>
+                </CATVidLayGrid>
+        </CATAfrSmartCtl>
+    </DataTemplate>
+    
+    <!-- Customization button -->
+    <Template syp:name="AfrActionPadCustomize" Target="CATAfrSYPStarterView">
+        <CATVidLayGrid GridAppendPolicy="GridRowAppend">
+            <CATVidSpacer RequestedMinimumDimension="2 5"/>
+            <CATVidCtlButton Name="@Name"
+                         syp:Template="AfrActionPadCustomizeButton"
+                         CheckMode="1"
+                         ClickMode="0"
+                         CheckState="@ActivationWidget Mode=TwoWays"
+                         EnableFlag="@EnableWidget"
+                         GiveFocusOnDragFlag="1"
+                         AcceptFocusOnDropFlag="1"
+                         CropPolicy="CropWithDots"
+                         IconDimension="25 25"
+                         BackgroundColor="239 239 239 255"
+                         RequestedMinimumDimension="118 28"
+                         Icon="@NormalIcon"
+                         Label="@Title"
+                         KeyboardManipulationFlag="1"
+                         LayoutWhenUnvisibleFlag="0"
+                         Tooltip="@ShortHelp"
+                         LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                         LongHelpId="@LongHelpId"
+                         Click="@ActionEvent"/>
+        </CATVidLayGrid>
+    </Template>
+    
+    <!-- Customization button -->
+    <Template syp:name="AfrActionPadTopBar" Target="CATAfrSYPStarterView">
+        <CATVidCtlButtonIcon Name="@Name"
+                           syp:Template="Icon"
+                           CheckMode="1"
+                           ClickMode="0"
+                           CheckState="@ActivationWidget Mode=TwoWays"
+                           EnableFlag="@EnableWidget"
+                           CropPolicy="CropWithDots"
+                           RequestedMinimumDimension="17 17"
+                           OffTexture="@NormalIcon"
+                           OnTexture="@SelectedIcon"
+                           OverTexture="@FocusedIcon"
+                           KeyboardManipulationFlag="1"
+                           LayoutWhenUnvisibleFlag="0"
+                           Tooltip="@Title"
+                           LongTooltipStyleSheet="CATAfrBasicStyle.CATSYPStyle"  LongTooltipTemplateName="DefaultAfrLongTooltip" TooltipLongHelp="@LongHelp" TooltipImage="@LongHelpIconName"  TooltipTitle="@LongHelpTitle" TooltipHyperlinkLabel="@LongHelpHyperlink"
+                           LongHelpId="@LongHelpId"
+                           Click="@ActionEvent"/>
+    </Template>
+
+    <Template syp:name="AfrActionPadCustomizeButton" Target="CATVidCtlButton">
+        <CATAfrVidSmartContainer syp:name="SmartContainer" MaximumWidth="345">
+            <CATVidLayLayer Name="Layer">
+                <CATVidGPSquare syp:name="BackgroundLayer" BorderColor="160 160 160 255" Color="@BackgroundColor" GiveFocusOnDragFlag="@GiveFocusOnDragFlag" AcceptFocusOnDropFlag="@AcceptFocusOnDropFlag" Name="PickZone" PickFlag="1" UseManipulatorFlag="1" Release="@HandleEvent" Entry="@HandleEvent" Leave="@HandleEvent" DoubleClick="@HandleEvent" Press="@HandleEvent" Drag="@HandleEvent" MoveOver="@HandleEvent" MultiplePress="@HandleEvent" RightClick="@HandleEvent" BeginPreDrop="@HandleEvent" PreDrop="@HandleEvent" EndPreDrop="@HandleEvent" Drop="@HandleEvent"/>
+                <CATVidLayGrid GridWeight="col1=1">
+                     <CATVidLayGrid syp:name="Label" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" LayoutWhenUnvisibleFlag="0" VisibleFlag="0">
+                        <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=0 xSpan=3"/>
+                        <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+                        <CATVidGPLabel syp:name="LabelText" Text="@Label" FontName="3ds" TextHeight="@FontHeight" HorizontalAlignment="1" CaptionFontFlag="@FontWeight" CropPolicy="@CropPolicy ElementName=SmartContainer" UnderlineFlag="@UnderlineFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RL"/>
+                        <CATVidSpacer RequestedMinimumDimension="8 0" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+                        <CATVidSpacer RequestedMinimumDimension="0 4" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=3"/>
+                    </CATVidLayGrid>
+                </CATVidLayGrid>
+            </CATVidLayLayer>
+        </CATAfrVidSmartContainer>
+
+        <CATSYPTriggerCollection>
+            <CATSYPTrigger Property="OverFlag" Value="1">
+                <CATSYPSetter Property="TextColor" Value="13 97 150 255" TargetName="LabelText"/>
+                <CATSYPSetter Property="BorderColor" Value="13 97 150 255" TargetName="BackgroundLayer"/>
+            </CATSYPTrigger>
+            <CATSYPTrigger Property="OverFlag" Value="0">
+                <CATSYPSetter Property="TextColor" Value="0 0 0 255" TargetName="LabelText"/>
+                <CATSYPSetter Property="BorderColor" Value="160 160 160 255" TargetName="BackgroundLayer"/>
+            </CATSYPTrigger>
+            <CATSYPTrigger Property="UseLabelFlag" Value="1">
+                <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="1"/>
+            </CATSYPTrigger>
+            <CATSYPTrigger Property="UseLabelFlag" Value="0">
+                <CATSYPSetter Property="VisibleFlag" TargetName="Label" Value="0"/>
+            </CATSYPTrigger>
+        </CATSYPTriggerCollection>
+    </Template>
+
+
+</Styles>

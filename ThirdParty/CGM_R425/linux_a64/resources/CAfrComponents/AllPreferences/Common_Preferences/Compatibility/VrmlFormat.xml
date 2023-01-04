@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="VrmlFormatsettings" Target="CATAfrComponent">
+
+    <preferencepage Name="VrmlFormat" Resource="VrmlFormat" RepositoryName="VrmlFormat">
+
+      <preferencegroup Name="ImportUnitGroup" >
+        <preferenceitem Name="ImportUnit" UserDefinedCtr="Combo"  RepositoryName="VrmlFormat"/>
+      </preferencegroup>
+	 	  
+	  <preferencegroup Name="ImportOptionsGroup" >
+        <preferenceitem Name="ImportCreaseAngle"   RepositoryName="VrmlFormat"/>
+      </preferencegroup>
+	  
+	  <preferencegroup Name="ExportVersionGroup" >
+        <preferenceitem syp:name="ExportVersion" Name="ExportVersion" UserDefinedCtr="Radio"  RepositoryName="VrmlFormat"/>
+      </preferencegroup>
+	  
+	  <preferencegroup Name="ExportOptionsGroup" >
+        <preferenceitem syp:name="ExportNormals" Name="ExportNormals"   RepositoryName="VrmlFormat"/>
+		<preferenceitem syp:name="ExportEdges" Name="ExportEdges"   RepositoryName="VrmlFormat"/>
+		<preferenceitem syp:name="ExportTexture" Name="ExportTexture"   RepositoryName="VrmlFormat"/>
+		<preferenceitem syp:name="ExportTextureFile" Name="ExportTextureFile"   RepositoryName="VrmlFormat"/>
+		<preferenceitem syp:name="ExportBackgroundColor" Name="ExportBackgroundColor"   RepositoryName="VrmlFormat"/>
+      </preferencegroup>
+	  
+    </preferencepage>
+    
+	<CATSYPTriggerCollection>
+    
+      <CATSYPTrigger Property="ControlValue" TargetName="ExportVersion" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="ExportNormals" Value="0" />
+		<CATSYPSetter Property="EnableFlag" TargetName="ExportEdges" Value="0" />
+		<CATSYPSetter Property="EnableFlag" TargetName="ExportTexture" Value="0" />
+		<CATSYPSetter Property="EnableFlag" TargetName="ExportTextureFile" Value="0" />
+		<CATSYPSetter Property="EnableFlag" TargetName="ExportBackgroundColor" Value="0" />
+      </CATSYPTrigger>
+
+      <CATSYPTrigger Property="ControlValue" TargetName="ExportVersion" Value="2">
+        <CATSYPSetter Property="EnableFlag" TargetName="ExportNormals" Value="1" />
+		<CATSYPSetter Property="EnableFlag" TargetName="ExportEdges" Value="1" />
+		<CATSYPSetter Property="EnableFlag" TargetName="ExportTexture" Value="1" />
+		<CATSYPSetter Property="EnableFlag" TargetName="ExportBackgroundColor" Value="1" />
+      </CATSYPTrigger>
+    
+	  <CATSYPTrigger Property="ControlValue" TargetName="ExportTexture" Value="0">
+        <CATSYPSetter Property="EnableFlag" TargetName="ExportTextureFile" Value="0" />
+	  </CATSYPTrigger>
+	  
+	  <CATSYPTrigger Property="ControlValue" TargetName="ExportTexture" Value="1">
+        <CATSYPSetter Property="EnableFlag" TargetName="ExportTextureFile" Value="1" />
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>	
+    	
+  
+  </Template>
+</Styles>

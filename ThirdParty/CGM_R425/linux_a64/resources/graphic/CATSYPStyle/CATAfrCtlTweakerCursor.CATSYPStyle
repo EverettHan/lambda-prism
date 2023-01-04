@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <!--===================================-->
+ <!--Tweaker Cursor-->
+ <!--===================================-->
+ <!-- CATVisCIDComboLinetype-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerCursor">
+  <CATVidLayStack syp:name="Container"  Orientation="Horizontal" VisibleFlag="1">
+   <CATVidCtlSimpleCombo ImageDimension="22 22"
+                        MaxVisibleItems="10"
+                        RequestedMinimumDimension="100 22"
+                        SelectedIndex="@Value Mode=TwoWays"
+                          >
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StNorthWestArrow"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StCross"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StNorthHand"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StNorthWestHand"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StMoveArrow"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StCursorTarget"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StForward"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StOpenedHand"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StClosedHand"/>
+    <CATVidImageAndLabelData  Label="" ResourceImage="I_StCrossWhiteContour"/>
+   </CATVidCtlSimpleCombo>
+  </CATVidLayStack>
+ </Template>
+ </Styles>

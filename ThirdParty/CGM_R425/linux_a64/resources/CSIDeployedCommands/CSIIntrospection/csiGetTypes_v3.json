@@ -1,0 +1,49 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Function that returns a list of type definition for given categories if specified or pools if specified (in which case it will return the types used by the pools' commands",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pools",
+          "basicArray": "string",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "categories",
+          "basicArray": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "types",
+          "typeArray": "CSIDeclarativeTypeDefinition"
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

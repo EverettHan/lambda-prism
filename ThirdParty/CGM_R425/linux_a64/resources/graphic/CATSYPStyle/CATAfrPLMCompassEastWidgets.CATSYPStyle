@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+
+  <Template Target="CATAfrPLMCompassComboAndLegendTab" syp:name="Default" >
+
+    <!--VisibleFlag="@VisibleBackground"-->
+    <CATVidLayGrid GridWeight="row0=1 row2=1 col1=1">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="1 0"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" RequestedMinimumDimension="1 0"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="1 0"/>
+      <CATVidLayLayer  EnableFlag="@EnableFlag" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB">
+        <CATVidCtlXRect syp:name="HandleCompassLegends" syp:Template="HandleCompass" FocusableFlag="0" Color="0 0 0 0" MenuContextualItems="@HideShowItems Mode=OneWayToSource"/>
+        <CATVidLayGrid syp:name="ShowLegendInfo" VisibleFlag="0">
+          <CATVidCtlButton syp:name="HyperLinkShowInfo" syp:Template="CompassHyperLinkText" FocusableFlag="0" CursorShape="NorthHandCursor" Label="@ShowLegendInfo" Click="@HandleEvent" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+        </CATVidLayGrid>
+        <CATVidLayLayer syp:name="LayerLegends">
+          <CATVidGPSmartSquare syp:name="LegendBackgroundAlone" VisibleFlag="1" GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.25 255" TextureAlpha="254" Texture="Compass/Player/CompassLegendBackground.png">
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+          <CATVidLayGrid GridWeight="col1=1" >
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="1 0"/>
+            <CATVidLayGrid CellSpacing="8" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LTB">
+              <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB">
+                <CATVidCtlCheckBox syp:Template="Default" syp:name="CheckBoxAttributeSet" FocusableFlag="0" VisibleFlag="@ExtraFlag" LayoutWhenUnvisibleFlag="0" Click="@HandleEvent" BackgroundColor="0.4 200" ForegroundColor="0 0 0 200" RequestedMinimumDimension="16 16" CheckState="@CheckStateOnCurrentAttributeSet Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+                <CATVidCtlImageAndLabelCombo syp:name="ComboLegend" ImageAndLabelItems="@ComboItems Mode=OneWayToSource" FocusableFlag="0" LayoutWhenUnvisibleFlag="0" VisibleFlag="@VisibleComboFlag" ComboSelect="@HandleEvent" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB"/>
+              </CATVidLayGrid>
+      <!--<CATVidLayFlow Align="2" ComputedCellDimensionFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=LTB">
+        <CATAfrPLMCompassLegend Name="Shiny"  syp:Template="DefaultCompassLegend" Label="Shiny" Color="0 255 15 213" />
+        <CATAfrPLMCompassLegend Name="Icy" syp:Template="DefaultCompassLegend"   Label="Icy" Color="255 100 15 213"/>
+        <CATAfrPLMCompassLegend Name="Neon" syp:Template="DefaultCompassLegend"  Label="Neon" Color="0 5 255 213"/>
+      </CATVidLayFlow>-->
+              <CATVidCtlButtonIcon syp:Template="Icon" VisibleFlag="@RefineIconVisibility" Name="ShowRefinePanel" RequestedMinimumDimension="16 16" OffTexture="Compass/I_CompassRefinementShow.png" OverTexture="Compass/I_CompassRefinementShow.png" OnTexture="Compass/I_CompassRefinementShow.png" Click="@HandleShowRefine" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"/>
+              <CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 attach=RL">
+                <CATVidSpacer syp:name="SpacerBeforeLegends" VisibleFlag="@ExtraFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="24 0"/>
+                <!--<CATVidLayFlow CellSpacing="0" Align="0"  ComputedCellDimensionFlag="1" Orientation="Vertical" Items="@LegendItems"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL"/>-->
+                <CATVidLayGrid syp:name="LegendCollection" Items="@LegendItems Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL"/>
+              </CATVidLayGrid>
+
+            </CATVidLayGrid>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" RequestedMinimumDimension="5 5"/>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" RequestedMinimumDimension="5 5"/>
+
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleBackground" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShowLegendInfo" Value="1"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="LegendBackgroundAlone" Value="10"/>        
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisibleBackground" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShowLegendInfo" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="LegendBackgroundAlone" Value="255"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableShowLegendFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="1"/>        
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableShowLegendFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableHideLegendFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableHideLegendFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="1"/>
+      </CATSYPTrigger>
+
+    </CATSYPTriggerCollection>
+   
+  </Template>
+    <Template Target="CATAfrPLMCompassComboAndLegendTab" syp:name="SignatureEast" >
+
+    <!--VisibleFlag="@VisibleBackground"-->
+    <CATVidLayGrid GridWeight="row0=1 row2=1 col1=1">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="1 0"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" RequestedMinimumDimension="1 0"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="1 0"/>
+      <CATVidLayLayer  EnableFlag="@EnableFlag" CATVidLayGrid.IndexedConstraints="y=1 x=0 attach=RLTB">
+        <CATVidCtlXRect syp:name="HandleCompassLegends" syp:Template="HandleCompass" FocusableFlag="0" Color="0 0 0 0" MenuContextualItems="@HideShowItems Mode=OneWayToSource"/>
+        <CATVidLayGrid syp:name="ShowLegendInfo" VisibleFlag="0">
+          <CATVidCtlButton syp:name="HyperLinkShowInfo" syp:Template="CompassHyperLinkText" FocusableFlag="0" CursorShape="NorthHandCursor" Label="@ShowLegendInfo" Click="@HandleEvent" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+        </CATVidLayGrid>
+        <CATVidLayLayer syp:name="LayerLegends">
+          <CATVidGPSmartSquare syp:name="LegendBackgroundAlone" VisibleFlag="1" GridWeight="col1=1 row1=1" ColorizeBlackPixelTo="0.25 255" TextureAlpha="254" Texture="Compass/Player/CompassLegendBackground.png">
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=0 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=0 x=2 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="21 21" CATVidGPSmartSquare.GPConstraints="y=1 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 21" CATVidGPSmartSquare.GPConstraints="y=1 x=2 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=0 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="21 6" CATVidGPSmartSquare.GPConstraints="y=2 x=1 attach=RLTB"/>
+            <CATVidSpacer RequestedMinimumDimension="6 6" CATVidGPSmartSquare.GPConstraints="y=2 x=2 attach=RLTB"/>
+          </CATVidGPSmartSquare>
+          <CATVidLayGrid GridWeight="col1=1" >
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="1 0"/>
+            <CATVidLayGrid CellSpacing="8" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=LTB">
+              <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB">
+                <CATVidCtlCheckBox syp:Template="Default" syp:name="CheckBoxAttributeSet" FocusableFlag="0" VisibleFlag="@ExtraFlag" LayoutWhenUnvisibleFlag="0" Click="@HandleEvent" BackgroundColor="0.4 200" ForegroundColor="0 0 0 200" RequestedMinimumDimension="16 16" CheckState="@CheckStateOnCurrentAttributeSet Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+                <CATVidCtlImageAndLabelCombo syp:name="ComboLegend" ImageAndLabelItems="@ComboItems Mode=OneWayToSource" FocusableFlag="0" LayoutWhenUnvisibleFlag="0" VisibleFlag="@VisibleComboFlag" ComboSelect="@HandleEvent" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB"/>
+              </CATVidLayGrid>
+      <!--<CATVidLayFlow Align="2" ComputedCellDimensionFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=LTB">
+        <CATAfrPLMCompassLegend Name="Shiny"  syp:Template="DefaultCompassLegend" Label="Shiny" Color="0 255 15 213" />
+        <CATAfrPLMCompassLegend Name="Icy" syp:Template="DefaultCompassLegend"   Label="Icy" Color="255 100 15 213"/>
+        <CATAfrPLMCompassLegend Name="Neon" syp:Template="DefaultCompassLegend"  Label="Neon" Color="0 5 255 213"/>
+      </CATVidLayFlow>-->
+              <CATVidCtlButtonIcon syp:Template="Icon" VisibleFlag="@RefineIconVisibility" Name="ShowRefinePanel" RequestedMinimumDimension="16 16" OffTexture="Compass/I_CompassRefinementShow.png" OverTexture="Compass/I_CompassRefinementShow.png" OnTexture="Compass/I_CompassRefinementShow.png" Click="@HandleShowRefine" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"/>
+              <CATVidLayGrid GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 attach=RL">
+                <CATVidSpacer syp:name="SpacerBeforeLegends" VisibleFlag="@ExtraFlag" LayoutWhenUnvisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="24 0"/>
+                <!--<CATVidLayFlow CellSpacing="0" Align="0"  ComputedCellDimensionFlag="1" Orientation="Vertical" Items="@LegendItems"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL"/>-->
+                <CATVidLayGrid syp:name="LegendCollection" Items="@LegendItems Mode=OneWayToSource"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL"/>
+              </CATVidLayGrid>
+
+            </CATVidLayGrid>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" RequestedMinimumDimension="5 5"/>
+            <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB" RequestedMinimumDimension="5 5"/>
+
+          </CATVidLayGrid>
+        </CATVidLayLayer>
+
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="VisibleBackground" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShowLegendInfo" Value="1"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="LegendBackgroundAlone" Value="10"/>        
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="VisibleBackground" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShowLegendInfo" Value="0"/>
+        <CATSYPSetter Property="TextureAlpha" TargetName="LegendBackgroundAlone" Value="255"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableShowLegendFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="1"/>        
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableShowLegendFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableHideLegendFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="EnableHideLegendFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="LayerLegends" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="HyperLinkShowInfo" Value="1"/>
+      </CATSYPTrigger>
+
+    </CATSYPTriggerCollection>
+   
+  </Template>
+
+  <Template Target="CATAfrPLMCompassLegend" syp:name="DefaultCompassLegend" >
+    <CATVidLayGrid  GridWeight="col5=1">
+      <CATVidCtlCheckBox syp:Template="Default" syp:name="CheckBox" Click="@HandleCheckEvent" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" BackgroundColor="0.4 200" ForegroundColor="0 0 0 200" RequestedMinimumDimension="16 16" CheckState="@CheckState Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="5 0"/>
+      <CATVidGPSquare syp:name="ShadingIcon" UseManipulatorFlag="1" Texture="Compass/East/Legend/Compass-legend-mask.png" Press="@HandleShadingEvent" DoubleClick="@HandleShadingEvent" ColorizeBlackPixelTo="@Color" RequestedMinimumDimension="16 16" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=L"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB" RequestedMinimumDimension="5 5"/>
+      <!--On activera le crop plus tard CropPolicy="CropWithDots"-->
+      <CATVidCtlButton syp:name="LegendLabel" syp:Template="CompassHyperLinkText" LayoutWhenUnvisibleFlag="0" CursorShape="NorthHandCursor" CropPolicy="@LabelCropPolicy" Label="@Label" Tooltip="@Label" Press="@HandleLabelEvent" DoubleClick="@HandleLabelEvent"  RequestedMinimumDimension="@LabelMinimumDimension" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=L"/>
+      <!--<CATVidGPLabel syp:name="LegendLabel" UseManipulatorFlag="1" CropPolicy="NoCrop" TextHeight="16" VerticalAlignment="1" TextColor="0.8 255" Text="@Label" Entry="@HandleEvent" Leave="@HandleEvent" Press="@HandleEvent" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=L"/>-->
+      <CATVidLayGrid syp:name="legendChartGrid" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=5 y=0 attach=RL">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension="10 0"/>
+        <CATVidLayGrid syp:name="ExtraLabel" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" GridWeight="col0=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+          <CATVidGPLabel  CropPolicy="NoCrop"  TextHeight="16" VerticalAlignment="1" TextColor="0.8 255" Text="@ExtraLabel"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=R"/>
+        </CATVidLayGrid>
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB" RequestedMinimumDimension="10 0"/>
+        <!--<CATAfrBarChartCtl syp:Template="ButtonBar" syp:name="BarChart" ButtonSize="16 16" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" PercentValue="@PercentValue" ColorBar="@Color" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=R"/>-->
+        <CATVidCtlProgressBar syp:Template="Default" syp:name="BarChart" RequestedMinimumDimension="160 16" LayoutWhenUnvisibleFlag="0"  VisibleFlag="0" MinimumValue="0" MaximumValue="100" Value="@PercentValue Mode=TwoWays" ForegroundColor="@Color"  CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=R"/>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+
+    <CATSYPTriggerCollection>
+      <!-- Mode Selection -->
+      <CATSYPTrigger Property="ExtraLegendFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CheckBox" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ExtraLabel" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="BarChart" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ExtraLegendFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CheckBox" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ExtraLabel" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="BarChart" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AttributesFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CheckBox" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShadingIcon" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AttributesFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CheckBox" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="ShadingIcon" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CheckBoxVisibilityFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CheckBox" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CheckBoxVisibilityFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="CheckBox" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CheckBoxLayoutWhenUnvisibleFlag" Value="0">
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="CheckBox" Value="0"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="CheckBoxLayoutWhenUnvisibleFlag" Value="1">
+        <CATSYPSetter Property="LayoutWhenUnvisibleFlag" TargetName="CheckBox" Value="1"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OnLabelFlag" Value="1">
+        <CATSYPSetter Property="UnderlineFlag" TargetName="LegendLabel" Value="1"/>
+        <!--<CATSYPSetter Property="TextColor" TargetName="LegendLabel" Value="0 0 255 255"/>-->
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="OnLabelFlag" Value="0">
+        <CATSYPSetter Property="UnderlineFlag" TargetName="LegendLabel" Value="0"/>
+        <!--<CATSYPSetter Property="TextColor" TargetName="LegendLabel" Value="0.8 255"/>-->
+      </CATSYPTrigger>
+      
+      <CATSYPTrigger Property="ShowChart" Value="-1">
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BarChart" Value="160 16"/>
+      </CATSYPTrigger>      
+      
+      <CATSYPTrigger Property="ShowChart" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="BarChart" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LegendLabel" Value="0"/>
+        <CATSYPSetter Property="RequestedMinimumDimension" TargetName="BarChart" Value="80 8"/>     
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="ShowChart" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="BarChart" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LegendLabel" Value="1"/>
+        
+      </CATSYPTrigger>
+      <!--
+      <CATSYPTrigger Property="ShowChart" Value="-1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="BarChart" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="LegendLabel" Value="1"/>
+        <CATSYPSetter Property="ButtonSize" TargetName="BarChart" Value="16 16"/>
+      </CATSYPTrigger>
+      -->
+    </CATSYPTriggerCollection>
+    
+  </Template>
+</Styles>
+
+

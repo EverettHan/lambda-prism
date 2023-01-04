@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+ <Resources>
+  <ResourceDictionary Source="AllPreferences\Common_Preferences\CommonPref_General\ProfilePrefs.xml"/>
+ </Resources>
+
+   <Template syp:name="Profilesettings" Target="CATAfrComponent">
+    <preferencepage Name="Profile" Resource="MainGeneralMePreferences" RepositoryName="UserProfileRepository">
+      <CATCAfrInclude Template="ProfileForODT" Condition="GetEnv(ADL_ODT_IN)"/>
+      <CATCAfrInclude Template="ProfileForDiaply" Condition="!GetEnv(ADL_ODT_IN)"/>
+    </preferencepage>
+  </Template>
+  
+  <Template syp:name="ProfileForODT" Target="CATAfrComponent">
+    <preferenceitem syp:name="ProfileName" Name="ProfileName"  Lock="1" UserDefinedCtr="Combo" />
+  </Template>  
+ 
+  <Template syp:name="ProfileForDiaply" Target="CATAfrComponent">
+    <preferencegroup Name="Profile" Resource="ProfilePrefs" RepositoryName="UserProfileRepository" Border="0">
+      <preferencegroup Name="ProfileMgmt">
+        <preferencegroup Name="ProfileName" Border="0" Lock="1">
+          <preferenceitem Name="Test" UserDefinedCtr="Label" MoreInfo="PlaceHolderControl RuntimeValues" Visibility="0" />
+          <preferenceitem syp:name="ProfileNameDisplay" Name="ProfileNameDisplay"  UserDefinedCtr="Combo" MoreInfo="PlaceHolderControl RuntimeValues" Lock="0"/>
+          <preferenceitem syp:name="ProfileName" Name="ProfileName" Visibility="0"/>
+        </preferencegroup>
+      </preferencegroup>
+      
+      <preferencegroup Name="ProfileDesc">
+        <preferenceitem syp:name="A3DLabel" Name="A3DLabel"  UserDefinedCtr="Label" MoreInfo="PlaceHolderControl" Visibility="0" WithoutLockAndIcon="1"/>
+        <preferenceitem syp:name="SWLabel" Name="SWLabel"  UserDefinedCtr="Label" MoreInfo="PlaceHolderControl" Visibility="0" WithoutLockAndIcon="1"/>
+        <preferenceitem syp:name="CATLabel" Name="CATLabel"  UserDefinedCtr="Label" MoreInfo="PlaceHolderControl" Visibility="0" WithoutLockAndIcon="1"/>
+        <preferenceitem syp:name="3DXLabel" Name="3DXLabel"  UserDefinedCtr="Label" MoreInfo="PlaceHolderControl" Visibility="0" WithoutLockAndIcon="1"/>
+      </preferencegroup>
+    </preferencegroup>
+  
+    <CATSYPTriggerCollection>
+    
+      <CATSYPTrigger Property="ValueChanged" TargetName="ProfileNameDisplay" Value="1">
+        <CATSYPSetter Property="ControlValue" TargetName="ProfileName" Value="InputValue:ProfileNameDisplay"/>
+      </CATSYPTrigger> 
+
+      <CATSYPTrigger Property="ControlValue" TargetName="ProfileName" Value="A3DProfile">
+        <CATSYPSetter Property="Visibility" TargetName="A3DLabel" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="SWLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="CATLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="3DXLabel" Value="0"/>
+      </CATSYPTrigger> 
+      <CATSYPTrigger Property="ControlValue" TargetName="ProfileName" Value="SWXProfile">
+        <CATSYPSetter Property="Visibility" TargetName="A3DLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SWLabel" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="CATLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="3DXLabel" Value="0"/>
+      </CATSYPTrigger> 
+      <CATSYPTrigger Property="ControlValue" TargetName="ProfileName" Value="CATIAProfile">
+        <CATSYPSetter Property="Visibility" TargetName="A3DLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SWLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="CATLabel" Value="1"/>
+        <CATSYPSetter Property="Visibility" TargetName="3DXLabel" Value="0"/>
+      </CATSYPTrigger> 
+      <CATSYPTrigger Property="ControlValue" TargetName="ProfileName" Value="3DEXPERIENCEPROFILE">
+        <CATSYPSetter Property="Visibility" TargetName="A3DLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="SWLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="CATLabel" Value="0"/>
+        <CATSYPSetter Property="Visibility" TargetName="3DXLabel" Value="1"/>
+      </CATSYPTrigger> 
+
+    </CATSYPTriggerCollection>
+  
+  </Template>
+
+</Styles>

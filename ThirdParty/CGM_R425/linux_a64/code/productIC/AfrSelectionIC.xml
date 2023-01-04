@@ -1,0 +1,34 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CATIAApplicationFrame.tst"/>
+  <attached name = "CATIAApplicationFrameUI.tst"/>
+  <attached name = "ApplicationFrame.tst"/>
+  <prerequisite access = "Public" name = "VisualizationCore"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" comment = "09.10.2011 ERS/CDT R213 C-Afr" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "AfrComponentsModel"/>
+  <prerequisite access = "Protected" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" name = "Dialog"/>
+  <prerequisite access = "Protected" name = "DialogEngine"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" name = "VisualizationController"/>
+  <prerequisite access = "Protected" name = "SGManager"/>
+  <prerequisite access = "Protected" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" name = "SGInfra"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" comment = "20130206 MF6/HEB Robot V3D" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "VisuImmersive3D"/>
+  <prerequisite access = "Protected" comment = "20130206 MF6/HEB Robot V3D" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "20141128 Q62/HEB Selection D2E" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "202128 VR2/HEB Componentisation" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIModelInterfaces"/>
+  <prerequisite access = "Protected" comment = "20220131 ERS/HEB Suppression du split AfrCore" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "AfrCore"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "Afr3DCompass"/>
+  <prerequisite access = "Private" comment = "20160405 R57/HEB Gestion Contextbar lors de la manipulation robot" expose = "ExposePrereq" name = "AfrFoundation"/>
+  <authorize access = "Private" name = "CATIAApplicationFrame"/>
+  <authorize access = "Private" name = "CATIAApplicationFrame.tst"/>
+  <authorize access = "Private" name = "ApplicationFrame.tst"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "DELLiveSimulationEditor"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

@@ -1,0 +1,1589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+
+  <!-- Camera \\RenderEngine.tst\CNext\resouces\graphics\rasterizer\constantBuffers_xml\cbCamera.xml-->
+  <CONSTANT_BUFFER>
+    <NAME>cbCamera</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbHighPrecisionCamera</NAME>
+    <NEEDS_OPTION>HighPrecisionCamera</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbViewTransition</NAME>
+    <NEEDS_OPTION>PassThroughTransition</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbSinglePassStereo</NAME>
+    <NEEDS_OPTION>MultiviewSinglePass</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <!--Node \\RenderEngine.tst\CNext\resouces\graphics\rasterizer\constantBuffers_xml\cbNode.xml-->
+  <CONSTANT_BUFFER>
+    <NAME>cbNode</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>LightsSB2</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbLightsWithProfile</NAME>
+    <NEEDS_OPTION>NumberOfLightsWithProfile</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbAreaLights</NAME>
+    <NEEDS_OPTION>NumberOfAreaLights</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbLightChannels</NAME>
+    <NEEDS_OPTION>LightChannels</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbShadow</NAME>
+    <NEEDS_OPTION>ShadowMap</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCloudShadow</NAME>
+    <NEEDS_OPTION>CloudShadows</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbMultiShadow</NAME>
+    <NEEDS_OPTION>MultiShadow</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCascadedShadow</NAME>
+    <NEEDS_OPTION>CascadedShadow</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbClipping</NAME>
+    <NEEDS_OPTION>Clipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbGPUSectionProfile</NAME>
+    <NEEDS_OPTION>GPUSectionProfile Clipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbClippingIndices</NAME>
+    <NEEDS_OPTION>Clipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbClippingSpheres</NAME>
+    <NEEDS_OPTION>SphereClipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbClippingSpheresIndices</NAME>
+    <NEEDS_OPTION>SphereClipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+  
+  <CONSTANT_BUFFER>
+    <NAME>cbClippingAdvanced</NAME>
+    <NEEDS_OPTION>kClipVolMethod SectioningMapAsArray ClipVolMapAsArray</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbClippingVolume</NAME>
+    <NEEDS_OPTION>kClipVolMethod</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCurveClipping</NAME>
+    <NEEDS_OPTION>CurveClipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbGroundClipping</NAME>
+    <NEEDS_OPTION>GroundClipping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbFog</NAME>
+    <NEEDS_OPTION>Fog LowLight</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBL</NAME>
+    <NEEDS_OPTION>ImageBasedLighting</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLDefaultCorrection</NAME>
+    <NEEDS_OPTION>IBLDefaultCorrection</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLCorrection</NAME>
+    <NEEDS_OPTION>IBLParallaxCorrection</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLCorrectionIndex</NAME>
+    <NEEDS_OPTION>IBLParallaxCorrection</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLLocal</NAME>
+    <NEEDS_OPTION>IBLLocal</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbIBLLocalIndex</NAME>
+    <NEEDS_OPTION>IBLLocal</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVolMaterial</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbCapping</NAME>
+    <NEEDS_OPTION>Capping</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbViewport</NAME>
+  </CONSTANT_BUFFER>
+
+  <CONSTANT_BUFFER>
+    <NAME>cbVoxel_Auto</NAME>
+    <NEEDS_OPTION>VoxelMapGeneration</NEEDS_OPTION>
+  </CONSTANT_BUFFER>
+
+  <UNIFORM>
+    <NAME>PushConstants</NAME>
+    <TYPE>float4</TYPE>
+  </UNIFORM>
+
+  <!-- Waiting for applications to migrate their shader to the new slot PDSFXInstanceBuffer -->
+  <BUFFER>CustomInstanceBuffer</BUFFER>
+
+  <TEXTURE_BUFFER>
+    <NAME>PDSFXInstanceBuffer</NAME>
+    <OPTION_GRAMMAR>PDSFXInstancing</OPTION_GRAMMAR>
+  </TEXTURE_BUFFER>
+  
+  <TEXTURE_BUFFER>
+    <NAME>BoneTransformationBuffer</NAME>
+    <OPTION_GRAMMAR>BoneInformation</OPTION_GRAMMAR>
+  </TEXTURE_BUFFER>
+
+  <TEXTURE_BUFFER>
+    <NAME>BonePositionBuffer</NAME>
+    <OPTION_GRAMMAR>BoneInstanceInformation</OPTION_GRAMMAR>
+  </TEXTURE_BUFFER>
+
+  <TEXTURE_BUFFER>
+    <NAME>sectionProfileData</NAME>
+    <OPTION_GRAMMAR>Sectioning SectioningAllowed</OPTION_GRAMMAR>
+  </TEXTURE_BUFFER>
+
+  <TEXTURE_BUFFER>
+    <NAME>clippingVolumeData</NAME>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=3</OPTION_GRAMMAR>
+  </TEXTURE_BUFFER>
+
+  <TEXTURE_BUFFER>
+    <NAME>curveClippingData</NAME>
+    <OPTION_GRAMMAR>CurveClipping CurveClippingAllowed</OPTION_GRAMMAR>
+  </TEXTURE_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>ShadowBuffer</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_shadowBuffer[]</NAME>
+        <TYPE>ShadowData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>ShadowMap MultiShadow</OPTION_GRAMMAR>
+    <OPTION_GRAMMAR>ShadowMap CascadedShadow</OPTION_GRAMMAR>
+    <OPTION_GRAMMAR>GROUND_SHADOW MultiShadow</OPTION_GRAMMAR>
+    <OPTION_GRAMMAR>GROUND_SHADOW PointGroundShadows</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>ProfilingData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>myData</NAME>
+        <TYPE>int</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <OPTION_GRAMMAR>PROFILING_STATS</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>GPUSectionProfileData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>indirectCount</NAME>
+        <TYPE>uint</TYPE>
+      </MEMBER>
+      <MEMBER>
+		<NAME>indirectPrimCount</NAME>
+		<TYPE>uint</TYPE>
+	  </MEMBER>
+	  <MEMBER>
+		<NAME>indirectFirst</NAME>
+		<TYPE>uint</TYPE>
+	  </MEMBER>
+	  <MEMBER>
+		<NAME>indirectBaseInstance</NAME>
+		<TYPE>uint</TYPE>
+	  </MEMBER>
+	  <MEMBER>
+		<NAME>sectionProfilePoints[]</NAME>
+		<TYPE>float</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>restrict</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>GPUSectionProfile ComputeSectionProfileInGS_SinglePass</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>TriangleData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_TriangleData[]</NAME>
+        <TYPE>TriangleData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+      <QUALIFIER>restrict</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=1</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>VertexData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_VertexData[]</NAME>
+        <TYPE>VertexData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+      <QUALIFIER>restrict</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=1</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>TriangleReferences</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_TriangleReferences[]</NAME>
+        <TYPE>TriangleReference_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+      <QUALIFIER>restrict</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=1</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>OctreeData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_OctreeData[]</NAME>
+        <TYPE>OctreeNodeData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+      <QUALIFIER>restrict</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=1</OPTION_GRAMMAR>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=2</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+  
+  <STRUCTURED_BUFFER>
+    <NAME>ClippingVolumeData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_ClippingVolumeData[]</NAME>
+        <TYPE>ClippingVolumeData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>readonly</QUALIFIER>
+      <QUALIFIER>restrict</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=1</OPTION_GRAMMAR>
+    <OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod=2</OPTION_GRAMMAR>
+  </STRUCTURED_BUFFER>
+
+  <STRUCTURED_BUFFER>
+    <NAME>DecalTransparData</NAME>
+    <DECLARATION>
+      <MEMBER>
+        <NAME>g_DecalTransparData[]</NAME>
+        <TYPE>DecalTransparData_t</TYPE>
+      </MEMBER>
+    </DECLARATION>
+    <QUALIFIERS>
+      <QUALIFIER>restrict</QUALIFIER>
+      <QUALIFIER>coherent</QUALIFIER>
+    </QUALIFIERS>
+    <ALIGNMENT_RULES>std430</ALIGNMENT_RULES>
+    <OPTION_GRAMMAR>DecalTranspar</OPTION_GRAMMAR>
+    <STAGES>FragmentStage</STAGES>
+  </STRUCTURED_BUFFER>
+  
+  <SAMPLER>
+    <NAME>IBLDiffuseTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>IBLSpecularTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting !MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCubeArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>AreaLightGGX</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR> NumberOfAreaLights </SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>LookUpTexture2D</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting !MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting IBLLocal !MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting IBLLocal MultiBRDFIBL</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>IBLLocalDiffuseTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting IBLLocal</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting IBLLocal IBLLocal</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>IBLLocalSpecularTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting ImageBasedLighting IBLLocal</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting IBLLocal IBLLocal</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>lightMapTexture</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting LightMap</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>lightProfileMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting NumberOfLightsWithProfile !LightProfileMapAsArray</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>!_PDSFX_NOLIGHTING StdLighting !NoNormalAndLighting NumberOfLightsWithProfile LightProfileMapAsArray</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>ShadowCubeMapTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCubeArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow MultiPointLightShadows</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow PointLightShadows</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>transparentShadowCubeMapTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCubeArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap MultiShadow MultiPointLightShadows</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap MultiShadow PointLightShadows</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>ShadowCubeMapESMTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCubeArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow MultiPointLightShadows ESM</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow PointLightShadows ESM</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>shadowMapTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArrayShadow</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow MultiNonPointShadows</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap CascadedShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DShadow</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap NonPointShadow !MultiNonPointShadows !CascadedShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>shadowMapTex2</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow MultiNonPointShadows PCF SO_EVISUPBR_SUBSURFACE</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow MultiNonPointShadows ESM</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap MultiShadow MultiNonPointShadows PCSS</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap CascadedShadow PCF SO_EVISUPBR_SUBSURFACE</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap CascadedShadow ESM</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap CascadedShadow PCSS</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>GROUND_SHADOW MultiGroundShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap  NonPointShadow !MultiNonPointShadows !CascadedShadow PCF SO_EVISUPBR_SUBSURFACE</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap  NonPointShadow !MultiNonPointShadows !CascadedShadow ESM</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap  NonPointShadow !MultiNonPointShadows !CascadedShadow PCSS</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>GROUND_SHADOW !MultiGroundShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>transparentShadowMapTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap MultiShadow MultiNonPointShadows</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap MultiShadow MultiNonPointShadows SO_EVISUPBR_SUBSURFACE</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap CascadedShadow</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap CascadedShadow SO_EVISUPBR_SUBSURFACE</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow GROUND_SHADOW MultiGroundShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap NonPointShadow !MultiNonPointShadows !CascadedShadow</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow ShadowMap NonPointShadow !MultiNonPointShadows !CascadedShadow SO_EVISUPBR_SUBSURFACE</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow GROUND_SHADOW !MultiGroundShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>transparentShadowMapTex2</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow GROUND_SHADOW MultiGroundShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>TransparentShadow GROUND_SHADOW !MultiGroundShadow</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+
+  <SAMPLER>
+    <NAME>shadowMapESMTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>MultiShadow MultiNonPointShadows ESM</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>CascadedShadow ESM</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>NonPointShadow !MultiNonPointShadows !CascadedShadow ESM</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>sectionProfileTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>isampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>Sectioning SectioningAllowed SectioningMapAsArray</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>isampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>Sectioning SectioningAllowed !SectioningMapAsArray</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>clippingVolumeTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>isampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod ClipVolMapAsArray</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>isampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ClippingVol ClippingVolAllowed kClipVolMethod !ClipVolMapAsArray</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>pdsfxZMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ZMapAccess !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ManualZTest !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ZMapAccess IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>ManualZTest IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>pdsfxColorMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ColorMapAccess !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ColorMapAccess IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>mirrorMapTex</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>MirrorMapAccess</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_SECONDARY_TYPE>color</SAMPLER_SECONDARY_TYPE>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>pdsfxStencilMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>usampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>StencilTest IS_MSAA Clipping Capping CappingFromPassSystem</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>usampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>StencilTest !IS_MSAA Clipping Capping CappingFromPassSystem</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>DepthOffsetNormalMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>UseFragmentDepthOffset !FragmentDepthOffsetForSurface FragmentDepthOffsetForLines !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>UseFragmentDepthOffset !FragmentDepthOffsetForSurface FragmentDepthOffsetForLines IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>DecalNormalMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  
+  <SAMPLER>
+    <NAME>DecalUVMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>DecalZMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>DecalLighting IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>sparseLODMap</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SparseTextureRenderPass</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  <SAMPLER>
+    <NAME>CloudCoverCM</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>samplerCube</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>ShadowMap CloudShadows</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>RTAOOutput</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO !IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMSArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO !IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>RTAOGlossyOutput</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS !IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMSArray</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS IS_MSAA SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS !IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_HRTAO_ENABLE_SPECULAR_SHADOWS IS_MSAA !SO_HRTAO_AS_ARRAY</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+
+  <SAMPLER>
+    <NAME>reflectionsOutput</NAME>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2D</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_REFLECTIONS !IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+    <SAMPLER_DECLARATION>
+      <SAMPLER_TYPE>sampler2DMS</SAMPLER_TYPE>
+      <SAMPLER_OPTION_GRAMMAR>SO_REFLECTIONS IS_MSAA</SAMPLER_OPTION_GRAMMAR>
+    </SAMPLER_DECLARATION>
+  </SAMPLER>
+  
+  <STORAGE_IMAGE>
+    <NAME>voxelMap</NAME>
+    <DECLARATION>
+      <TYPE>image3D</TYPE>
+      <FORMAT>rgba8</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>VoxelMapGeneration MIPMAP_MODE=3</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>image3D</TYPE>
+      <FORMAT>r8</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>VoxelMapGeneration !MIPMAP_MODE</OPTION_GRAMMAR>
+      <OPTION_GRAMMAR>VoxelMapGeneration MIPMAP_MODE=0</OPTION_GRAMMAR>
+      <OPTION_GRAMMAR>VoxelMapGeneration MIPMAP_MODE=1</OPTION_GRAMMAR>
+      <OPTION_GRAMMAR>VoxelMapGeneration MIPMAP_MODE=2</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>FragmentStage</STAGES>
+  </STORAGE_IMAGE>
+  
+  <STORAGE_IMAGE>
+    <NAME>DecalTransparZMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>DecalTranspar</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>FragmentStage</STAGES>
+  </STORAGE_IMAGE>
+  
+  <STORAGE_IMAGE>
+    <NAME>accumulateColor</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OIT !OIT_HDR</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>rg32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OIT OIT_HDR</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  <STORAGE_IMAGE>
+    <NAME>accumulateFresnel</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OIT !OIT_HDR</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>rg32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OIT OIT_HDR</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>attenuations</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OIT !OIT_HDR</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>rg32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OIT OIT_HDR</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>semaphoreImg</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OIT</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>capDataMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>Clipping Capping CappingFromPassSystem IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>Clipping Capping CappingFromPassSystem !IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>capColorMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>Clipping Capping CappingFromPassSystem IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>rgba32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>Clipping Capping CappingFromPassSystem !IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE> 
+
+  <STORAGE_IMAGE>
+    <NAME>capNormalMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2DArray</TYPE>
+      <FORMAT>rg32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>Clipping Capping CappingFromPassSystem IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>rg32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+        <QUALIFIER>restrict</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>Clipping Capping CappingFromPassSystem !IS_MSAA</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>transparDepth</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>!IS_MSAA WriteDepth</OPTION_GRAMMAR>
+    </DECLARATION>
+    <DECLARATION>
+      <TYPE>uimage2DMS</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>IS_MSAA WriteDepth</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  
+  <STORAGE_IMAGE>
+    <NAME>GPUPickingDecalMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPicking</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>FragmentStage</STAGES>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>GPUPickingCappingMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPicking</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>FragmentStage</STAGES>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>OITGPUPickingMap</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>coherent</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPicking</OPTION_GRAMMAR>
+    </DECLARATION>
+    <STAGES>FragmentStage</STAGES>
+  </STORAGE_IMAGE>
+
+  <STORAGE_IMAGE>
+    <NAME>GPUPickingImage</NAME>
+    <DECLARATION>
+      <TYPE>uimage2D</TYPE>
+      <FORMAT>r32ui</FORMAT>
+      <QUALIFIERS>
+        <QUALIFIER>restrict</QUALIFIER>
+        <QUALIFIER>writeonly</QUALIFIER>
+      </QUALIFIERS>
+      <OPTION_GRAMMAR>OutputGPUPickingImage</OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+
+  <SAMPLER_STATE>
+    <NAME>Lut2DSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 0.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>CubeSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>CubeSamplerNoMip</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>shadowSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <CMP_FUNC>LessEqual</CMP_FUNC>
+    <CMP_MODE>CompareRefToTexture</CMP_MODE>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>1.0 1.0 1.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>Nearest</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>Nearest</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>DecalNormalMapSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>DecalZMapSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>NearestClampToEdge</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>Nearest</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>NearestClampToEdgeNoMip</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>Linear</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>LinearClampToEdge</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>LinearClampToBorder</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>Repeat</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+
+  <SAMPLER_STATE>
+    <NAME>LinearWithMips</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>Linear</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+    <MAX_ANISOTROPY>16</MAX_ANISOTROPY>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>TransparentShadowSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToBorder</WRAP_U>
+    <WRAP_V>ClampToBorder</WRAP_V>
+    <WRAP_W>ClampToBorder</WRAP_W>
+    <BORDER_COLOR>1.0 1.0 1.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>StencilSampler</NAME>
+    <MAG_FILTER>Nearest</MAG_FILTER>
+    <MIN_FILTER>Nearest</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>ClampToEdge</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>ClampToEdge</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+
+  <SAMPLER_STATE>
+    <NAME>LightProfileMapSampler</NAME>
+    <MAG_FILTER>Linear</MAG_FILTER>
+    <MIN_FILTER>Linear</MIN_FILTER>
+    <MIP_FILTER>None</MIP_FILTER>
+    <WRAP_U>Repeat</WRAP_U>
+    <WRAP_V>ClampToEdge</WRAP_V>
+    <WRAP_W>Repeat</WRAP_W>
+    <BORDER_COLOR>0.0 0.0 0.0 1.0</BORDER_COLOR>
+  </SAMPLER_STATE>
+  
+  <TECHNIQUE>
+    <!-- Targeted by vSAXPdsfx0::_GetTechniqueIndex -->
+    <NAME>PDSFX0</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLDiffuseTexture</SAMPLER>
+          <STATES>CubeSamplerNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLSpecularTexture</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLLocalDiffuseTexture</SAMPLER>
+          <STATES>CubeSamplerNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLLocalSpecularTexture</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapTex</SAMPLER>
+          <STATES>shadowSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ShadowCubeMapTex</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparentShadowCubeMapTex</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ShadowCubeMapESMTex</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapTex2</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapESMTex</SAMPLER>
+          <STATES>LinearWithMips</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparentShadowMapTex</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparentShadowMapTex2</SAMPLER>
+          <STATES>TransparentShadowSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>LookUpTexture2D</SAMPLER>
+          <STATES>Lut2DSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>CloudCoverCM</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>pdsfxZMap</SAMPLER>
+          <STATES>NearestClampToEdgeNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>pdsfxColorMap</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>mirrorMapTex</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>sectionProfileTex</SAMPLER>
+          <STATES>NearestClampToEdgeNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>clippingVolumeTex</SAMPLER>
+          <STATES>NearestClampToEdgeNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>lightMapTexture</SAMPLER>
+          <STATES>LinearWithMips</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>lightProfileMap</SAMPLER>
+          <STATES>LightProfileMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>pdsfxStencilMap</SAMPLER>
+          <STATES>StencilSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DecalNormalMap</SAMPLER>
+          <STATES>DecalNormalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DecalUVMap</SAMPLER>
+          <STATES>DecalNormalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DecalZMap</SAMPLER>
+          <STATES>DecalZMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>sparseLODMap</SAMPLER>
+          <STATES>Linear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DepthOffsetNormalMap</SAMPLER>
+          <STATES>DecalNormalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>PDSFX0</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <COMMONS>
+        streams varyings
+        ubos
+        prototypes
+        pdsfxCommons commonHelpers ShadowsData
+      </COMMONS>
+      <VERTEX_STAGE>
+        ShadowsVS
+        ShaderBuilderUberVertexProcessing_1.1
+        ShaderBuilderUberVS_1.1
+      </VERTEX_STAGE>
+      <GEOMETRY_STAGE>
+        ShadowsGS
+        ShaderBuilderUberGS_1.1
+      </GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>
+        PoissonDisk ShadowsPS CloudShadows
+        Fabrics
+        subsurface
+        lightingHelpers lighting lightingAdvanced
+        glossiness
+        iblHelpers ibl
+        compositing
+        Mutex OITCommons OIT
+        RayTracer_Helpers
+        DecalMapping
+        CappingCommons Capping
+        CurveClipping
+        SectionProfile
+        ClippingVolume
+        ClippingSphere
+        Decals
+        PolygonOffset
+        RayOriginOffset
+        ShaderBuilderUberPS_1.1
+      </FRAGMENT_STAGE>
+      <TESS_CONTROL_STAGE>ShaderBuilderUberCS_1.1</TESS_CONTROL_STAGE>
+      <TESS_EVALUATION_STAGE>ShaderBuilderUberVertexProcessing_1.1 ShaderBuilderUberES_1.1</TESS_EVALUATION_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <!-- Targeted by vSAXPdsfx1::_GetTechniqueIndex -->
+    <NAME>PDSFX1</NAME>
+    <PASS>
+      <NAME>Default</NAME>
+      <SAMPLER_ASSIGNMENT_LIST>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLDiffuseTexture</SAMPLER>
+          <STATES>CubeSamplerNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>AreaLightGGX</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLSpecularTexture</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLLocalDiffuseTexture</SAMPLER>
+          <STATES>CubeSamplerNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>IBLLocalSpecularTexture</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapTex</SAMPLER>
+          <STATES>shadowSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapTex2</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>shadowMapESMTex</SAMPLER>
+          <STATES>LinearWithMips</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparentShadowMapTex</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparentShadowMapTex2</SAMPLER>
+          <STATES>TransparentShadowSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ShadowCubeMapTex</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>transparentShadowCubeMapTex</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>ShadowCubeMapESMTex</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>LookUpTexture2D</SAMPLER>
+          <STATES>Lut2DSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>pdsfxZMap</SAMPLER>
+          <STATES>NearestClampToEdgeNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>pdsfxColorMap</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>mirrorMapTex</SAMPLER>
+          <STATES>LinearClampToEdge</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>sectionProfileTex</SAMPLER>
+          <STATES>NearestClampToEdgeNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>clippingVolumeTex</SAMPLER>
+          <STATES>NearestClampToEdgeNoMip</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>lightMapTexture</SAMPLER>
+          <STATES>LinearWithMips</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>lightProfileMap</SAMPLER>
+          <STATES>LightProfileMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>pdsfxStencilMap</SAMPLER>
+          <STATES>StencilSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DecalNormalMap</SAMPLER>
+          <STATES>DecalNormalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DecalUVMap</SAMPLER>
+          <STATES>DecalNormalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DecalZMap</SAMPLER>
+          <STATES>DecalZMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>DepthOffsetNormalMap</SAMPLER>
+          <STATES>DecalNormalMapSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>sparseLODMap</SAMPLER>
+          <STATES>Linear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>RTAOOutput</SAMPLER>
+          <STATES>Linear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>RTAOGlossyOutput</SAMPLER>
+          <STATES>Linear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>reflectionsOutput</SAMPLER>
+          <STATES>Linear</STATES>
+        </SAMPLER_ASSIGNMENT>
+        <SAMPLER_ASSIGNMENT>
+          <SAMPLER>CloudCoverCM</SAMPLER>
+          <STATES>CubeSampler</STATES>
+        </SAMPLER_ASSIGNMENT>
+      </SAMPLER_ASSIGNMENT_LIST>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>PDSFX1</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <COMMONS>
+        streams varyings
+        ubos
+        prototypes
+        pdsfxCommons commonHelpers ShadowsData
+      </COMMONS>
+      <VERTEX_STAGE>
+        ShadowsVS
+        ShaderBuilderUberVertexProcessing_1.2
+        ShaderBuilderUberVS_1.1
+      </VERTEX_STAGE>
+      <GEOMETRY_STAGE>
+        ShaderBuilderUberGS_1.2
+      </GEOMETRY_STAGE>
+      <FRAGMENT_STAGE>
+        PoissonDisk ShadowsPS CloudShadows
+        Fabrics
+        subsurface
+        dspbr_flakes
+        dspbr_sheen
+        xrite_carpaint2
+        lightingHelpers lighting lightingAdvanced
+        IsInShadows
+        glossiness
+        iblHelpers ibl
+        compositing
+        Mutex OITCommons OIT
+        RayTracer_Helpers
+        DecalMapping
+        CappingCommons Capping
+        CurveClipping
+        SectionProfile
+        ClippingVolume
+        ClippingSphere
+        Decals
+        PolygonOffset
+        LogDepth
+        VoxelPS
+        RayOriginOffset
+        PostEffect_HRTAO_Incl_MetallicRoughnessCommon
+        ShaderBuilderUberPS_1.2
+      </FRAGMENT_STAGE>
+      <TESS_CONTROL_STAGE>ShaderBuilderUberCS_1.1</TESS_CONTROL_STAGE>
+      <TESS_EVALUATION_STAGE>ShaderBuilderUberVertexProcessing_1.2 ShaderBuilderUberES_1.1</TESS_EVALUATION_STAGE>
+    </PASS>
+  </TECHNIQUE>
+
+  <TECHNIQUE>
+    <!-- Targeted by vSAXPdsfx1::_GetTechniqueIndex -->
+    <NAME>RT</NAME>
+    <RAYTRACING_PASS>
+      <NAME>Default</NAME>
+      <SHADER_OPTIONS>
+        <SHADER_OPTION>
+          <NAME>PDSFX1</NAME>
+          <OPTION_VALUE>1</OPTION_VALUE>
+        </SHADER_OPTION>
+      </SHADER_OPTIONS>
+      <HIT_GROUP>
+        <CLOSEST_HIT_STAGE>
+          <!-- Common -->
+          streams_rt
+          varyings
+          ubos
+          prototypes
+          pdsfxCommons commonHelpers ShadowsData
+          
+          <!-- Vertex stage -->
+          ShadowsVS
+          ShaderBuilderUberVertexProcessing_rt
+          
+          <!-- Fragment stage -->
+          PoissonDisk ShadowsPS CloudShadows
+          Fabrics
+          subsurface
+          dspbr_flakes
+          dspbr_sheen
+          xrite_carpaint2
+          lightingHelpers lighting lightingAdvanced
+          IsInShadows
+          glossiness
+          iblHelpers ibl
+          compositing
+          Mutex OITCommons OIT
+          RayTracer_Helpers
+          DecalMapping
+          CappingCommons Capping
+          CurveClipping
+          SectionProfile
+          ClippingVolume
+          ClippingSphere
+          Decals
+          PolygonOffset
+          LogDepth
+          VoxelPS
+
+          <!-- Hit stage -->
+          PostEffect_Incl_Payload
+          PostEffect_Reflections_Incl_Common
+          ShaderBuilderUberHitGroup_1.2
+        </CLOSEST_HIT_STAGE>
+      </HIT_GROUP>
+      
+    </RAYTRACING_PASS>
+  </TECHNIQUE>
+</EFFECT>

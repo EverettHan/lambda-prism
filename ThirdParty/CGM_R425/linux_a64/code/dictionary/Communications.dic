@@ -1,0 +1,44 @@
+CATComBBEventHandler 	CATIMessageReceiver 	libCATComDrvBB 
+CATComBBMessage 	CATICreateInstance 	libCATComDrvBB 
+CATComBBMessage 	CATIStreamMsg 	 	libCATComDrvBB 
+CATP2PMessage 	   CATICreateInstance 	libCATP2PCore
+CATP2PHTTPMultiCastEndPoint CATICreateInstance 	libCATComHTTPEndPoint
+CATP2PHTTPUniCastEndPoint  CATICreateInstance 	libCATComHTTPEndPoint
+
+CATBB_IsDeclared  CATICreateInstance  libCATComServices
+CATBB_IsDeclared  CATIStreamMsg  libCATComServices
+
+CATComFindDrvEventHandler  CATIMessageReceiver  libCATComServices
+CATComFindDrvMessage  CATICreateInstance  libCATComServices
+CATComFindDrvMessage  CATIStreamMsg  libCATComServices
+
+CATComSidlProcessor  CATICreateInstance libCATComSidl
+CATComSidlStreamProcessor  CATICreateInstance libCATComSidl
+CATComSidlFileStream CATICreateInstance libCATComSidlFile
+CATComSidlFileStream CATIComSidlStreamTube libCATComSidlFile
+CATComSidlFileInputStream  CATIComSidlInputStream  libCATComSidlFile
+CATComSidlFileOutputStream  CATIComSidlOutputStream  libCATComSidlFile
+CATComSidlInputPacketStreamCommon  CATIComSidlInputStream  libCATComSidl
+CATComSidlInputStreamCommon  CATIComSidlInputStream  libCATComSidl
+CATComSidlOutputPacketStreamCommon  CATIComSidlOutputStream  libCATComSidl 
+CATComSidlOutputStreamCommon  CATIComSidlOutputStream  libCATComSidl
+CATComSidlStreamTube  CATIComSidlStreamTube  libCATComSidl
+CATComSidlStreamTube  CATIComSidlStreamTubeServices  libCATComSidl
+CATComSidlTube  CATIComSidlTube  libCATComSidl
+
+CATComSrvEventHandler  CATIMessageReceiver  libCATComServices
+CATP2PDiscoveryService  CATICreateInstance  libCATP2PCore
+
+CATP2PGroupService  CATICreateInstance  libCATP2PCore
+CATP2PMessage  CATIP2PMessage  libCATP2PCore
+CATP2PMultiCastEndPoint  CATICreateInstance  libCATP2PCore
+CATP2PPeer  CATIP2PPeer  libCATP2PCore
+CATP2PPeerService  CATICreateInstance  libCATP2PCore
+CATP2PService  CATIMessageReceiver  libCATP2PCore
+CATP2PTCPEndPoint  CATICreateInstance  libCATP2PCore
+
+CATP2PAwarenessService  CATICreateInstance  libCATP2PCore
+CATP2PChatService  CATICreateInstance  libCATP2PCore
+CATP2PSessionService  CATICreateInstance  libCATP2PCore
+CATP2PStatusService  CATICreateInstance  libCATP2PCore
+

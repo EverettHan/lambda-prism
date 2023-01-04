@@ -1,0 +1,30 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "AfrImmersiveRender.tst"/>
+  <attached name = "CATView.tst"/>
+  <attached comment = "2012.01.06 TPC/CDT R213 C-Afr" name = "AfrComponentsModel.tst"/>
+  <attached comment = "2020.06.22 ERS/HEB R423 C-Afr" name = "AfrProperties.tst"/>
+  <prerequisite access = "Private" comment = "2011.07.22 LD3/CDT R212 Ballon" expose = "DoNotExposePrereq" name = "AfrInterfaces"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "UIVCoreTools"/>
+  <prerequisite access = "Private" expose = "DoNotExposePrereq" name = "VisuImmersiveDialog"/>
+  <prerequisite access = "Protected" comment = "2011.10.14 TPC/CDT R213 C-Afr" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisuImmersiveDialogEx"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Protected" expose = "DoNotExposePrereq" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" comment = "2013.06.14 TPC/HEB R216 Ctlviewer creation" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisuImmersiveUI"/>
+  <prerequisite access = "Protected" comment = "02.10.2019 HEB R422 Split interfaces model DevOps" export = "AddToClientPrereqs" expose = "ExposePrereq" name = "UIModelInterfaces"/>
+  <authorize access = "Private" name = "AfrImmersiveRender.tst"/>
+  <authorize access = "Private" name = "CATView.tst"/>
+  <authorize access = "Private" comment = "2014.07.07 VV6/HEB R417 New AB" name = "AfrImmersive"/>
+  <authorize access = "Private" comment = "2016.01.29 JOV/HEB R419 Testing CID_FRAME" name = "Afr_CID_FRAME.tst"/>
+  <authorize access = "Protected" comment = "2020.10.16 VV6/HEB R423 AUthorize protected" name = "AfrNotExistingFWToPreventAnyPrereq"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

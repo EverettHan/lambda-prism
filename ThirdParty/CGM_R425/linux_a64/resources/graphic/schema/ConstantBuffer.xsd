@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:dsfx0"
+           xmlns:tgn="urn:dsfx0"
+           elementFormDefault="qualified"
+>
+   <xs:include schemaLocation="DSFX.xsd"/>
+ 
+
+  <xs:complexType name="defaultValue">
+    <xs:choice>
+      <xs:element name="INT" type="tgn:IntList" minOccurs="0"/>
+      <xs:element name="FLOAT" type="tgn:FloatList" minOccurs="0"/>
+      <xs:element name="SIZE_IN_BYTES" type="xs:int" minOccurs="0"/>
+    </xs:choice>
+  </xs:complexType>
+                  
+  <!--Defines a struct : it will be used during code generation-->
+  <xs:complexType name="UserType">
+    <xs:sequence>
+      <xs:element name = "NAME" type="xs:string"/>      
+      <xs:element name = "UNIFORM" type="tgn:Uniform" minOccurs="2" maxOccurs="unbounded"/>
+      <!--This is hardcoded for now-->
+      <xs:element name = "SIZE" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConstantBuffer">
+    <xs:sequence>
+      <xs:element name = "NAME" type="xs:string"/>
+      <xs:element name = "USAGE" type="tgn:UsageValue" minOccurs="0"/>
+      <xs:element name = "RASTERIZER_UPDATE" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name = "FULL_SEMANTIC" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name = "STRUCT" type="tgn:UserType" minOccurs="0"  maxOccurs="unbounded"/>
+      <xs:element name = "UNIFORM" type="tgn:Uniform" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+ 
+  <!--ROOT ELEMENT-->
+  <xs:element name="CONSTANT_BUFFER" type="tgn:ConstantBuffer"/>
+ 
+</xs:schema>

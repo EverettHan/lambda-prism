@@ -1,0 +1,47 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" name = "PLMDictionaryInterfaces"/>
+  <prerequisite access = "Protected" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Protected" name = "ObjectModelerInterfaces"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerBase"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" comment = "CATMathTransformation dans Itf CATIPLMPSCacheFactory " name = "Mathematics"/>
+  <prerequisite access = "Protected" comment = "Access to rep URL in CATRecPLMIntegrationServices.cpp__GetQueryResultsFromRecord " name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIntegrationAccessItf"/>
+  <prerequisite access = "Private" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMIntegrationBase"/>
+  <prerequisite access = "Private" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Private" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Private" comment = "CATOxEntity::SwitchRelation - temporary" name = "CATPLMIdentification"/>
+  <prerequisite access = "Protected" name = "CATPLMComponentInterfaces"/>
+  <prerequisite access = "Protected" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" name = "CATPLMStreamDescriptor"/>
+  <prerequisite access = "Private" name = "CATPLMImplAdapter"/>
+  <prerequisite access = "Protected" name = "CATPLMModelerLanguage"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMIndexInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATPLMCommunication"/>
+  <prerequisite access = "Protected" name = "CATOmbLinkNavigationAccess"/>
+  <prerequisite access = "Public" name = "XMLParserItf"/>
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMIntegrationAccess.tst"/>
+  <attached comment = "not valid from a pure component base point of view but necessary to follow this test framework in QM dashboard " name = "CATPLMInfBasicUseCases.tst"/>
+  <attached name = "CAAPLMClientAdapter.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationUse"/>
+  <authorize access = "Private" name = "CATPLMIntegration"/>
+  <authorize access = "Private" name = "CATPLMIntegAccess_Unit.tst"/>
+  <authorize access = "Private" name = "CATPLMSessionDebug"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegration.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccessX"/>
+  <authorize access = "Private" name = "CATPLMItgXPVSMS"/>
+  <authorize access = "Private" name = "CATPLMItgXOpener"/>
+  <authorize access = "Private" name = "CATPLMIdentification_PLM.tst"/>
+  <authorize access = "Private" name = "ObjectModelerBase_PLM.tst"/>
+  <authorize access = "Private" name = "zzPCS_CATPLMIdentification.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

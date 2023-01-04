@@ -1,0 +1,47 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSIUtilities"
+    }
+  },
+  "desc": "Check if the string contains the given pattern",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "string",
+          "basic": "string",
+          "desc": "The string where to search"
+        },
+        {
+          "label": "search",
+          "basic": "string",
+          "desc": "The pattern to search"
+        }
+      ]
+    },
+    "out": {
+       "parameters": [
+        {
+          "label": "contains",
+          "basic": "bool",
+          "desc": "return true if the search is into the string"
+        },
+        {
+          "label": "index",
+          "basic": "uint32",
+          "desc": "the index of the searched string inside the input string, if it is contained",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "throwError": {
+     "type": "CSIError"
+  }
+}

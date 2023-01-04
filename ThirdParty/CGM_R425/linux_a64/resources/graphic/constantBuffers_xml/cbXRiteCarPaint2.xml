@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <NAME>cb_XRiteCarPaint2</NAME>
+
+  <!-- Base -->
+
+  <UNIFORM>
+    <NAME>ct_coeffs</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>ct_f0s</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>ct_spreads</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>ct_n_lobes</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>ct_diffuse</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- Flakes -->
+
+  <UNIFORM>
+    <NAME>flakes_uv_trf_scale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>num_thetaF</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>num_thetaI</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>max_thetaI</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- Cleacoat -->
+
+  <UNIFORM>
+    <NAME>clearcoat_no_refraction</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>clearcoat_ior</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.5</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- Flakes -->
+
+  <UNIFORM>
+    <NAME>thetaFI_sliceLUT</NAME>
+    <TYPE>int</TYPE>
+    <ARRAY_SIZE>64</ARRAY_SIZE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

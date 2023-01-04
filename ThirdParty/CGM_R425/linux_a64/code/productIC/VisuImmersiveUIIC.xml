@@ -1,0 +1,29 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "CATStyleProcessor"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Public" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "MultimediaPixelImage"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Public" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationController"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VisualizationCore"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "VisuImmersiveDialog"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <authorize access = "Private" name = "VisuImmersiveDialog.tst"/>
+  <authorize access = "Private" name = "VisuImmersiveDialogEx.tst"/>
+  <authorize access = "Private" comment = "2013.09.26 JOV/HEB R216" name = "VisuToolkit.tst"/>
+  <attached name = "CATIAApplicationFrame.tst"/>
+  <attached name = "Visualization.tst"/>
+  <attached name = "VisuImmersiveDialog.tst"/>
+  <attached name = "VisuImmersiveDialogEx.tst"/>
+  <attached comment = "05.02.2016 CLE2/HEB R419 CID FRAME" name = "Afr_CID_FRAME.tst"/>
+  <attached name = "IVToolkit.tst"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

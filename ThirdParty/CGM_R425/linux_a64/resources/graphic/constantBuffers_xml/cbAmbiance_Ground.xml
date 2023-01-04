@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_Ground</NAME>
+  
+  <USAGE>Dynamic</USAGE>
+  
+  <UNIFORM>
+    <NAME>u_GroundColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1 0 1 1</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_MirrorCoef</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_MirrorScaleFactor</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_MirrorSpecularReflectance</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_MirrorRoughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!-- Now the buffer is doubled and the type is a float4
+       This is used to be able to handle mutliples shadows. 
+       Each shadow uses a specific float up to 8.-->
+  <UNIFORM>
+    <NAME>u_ShadowsBlurDelta</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 0 0 0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_ShadowsBlurDelta2</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 0 0 0</DEFAULT_VALUE>
+  </UNIFORM>
+      
+  <UNIFORM>
+    <NAME>u_RadiusRatio</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.8 0.4 0 0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_GroundScaling</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_GroundRadiusRatio</NAME>
+    <TYPE>float2</TYPE>
+    <DEFAULT_VALUE>1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_DeltaPosition</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 0 0 0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_Radius</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>
+

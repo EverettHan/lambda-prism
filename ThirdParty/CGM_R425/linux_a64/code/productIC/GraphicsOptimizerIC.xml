@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "GraphicsOptimizer.tst"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "Dialog"/>
+  <prerequisite access = "Public" name = "Mathematics"/>
+  <prerequisite access = "Public" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Public" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Public" name = "VisualizationController"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "VisualizationFoundation"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SGInfra"/>
+  <prerequisite access = "Protected" name = "VisualizationInterfaces"/>
+  <prerequisite access = "Protected" name = "MultimediaPixelImage"/>
+  <authorize access = "Protected" name = "AfrFoundation"/>
+  <authorize access = "Protected" name = "CAT3DXMLPlayerOptimizer"/>
+  <authorize access = "Protected" name = "CAT3DXMLPlayerSetup"/>
+  <authorize access = "Protected" name = "CATLiveShapeGraphicsOptimizer"/>
+  <authorize access = "Public" name = "CATLiveShapeInstaller"/>
+  <authorize access = "Private" name = "GraphicsOptimizer.tst"/>
+  <authorize access = "Public" name = "NextGenInstaller"/>
+  <authorize access = "Protected" name = "NXGGraphicsOptimizer"/>
+  <authorize access = "Public" name = "VIALivePlayerSetup"/>
+  <authorize access = "Protected" name = "VisuGraphicsOptimizer"/>
+  <authorize access = "Protected" name = "VisuGraphicsOptimizer.tst"/>
+  <authorize access = "Protected" name = "VisuGraphicsOptimizerUI"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

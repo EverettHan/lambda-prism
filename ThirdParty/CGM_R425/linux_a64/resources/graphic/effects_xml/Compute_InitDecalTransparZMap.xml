@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns ="urn:dsfx0">
+  <STORAGE_IMAGE>
+    <NAME>DecalTransparZMap</NAME>
+    <DECLARATION>
+    <TYPE>uimage2DArray</TYPE>
+    <FORMAT>r32ui</FORMAT>
+    <QUALIFIERS>
+      <QUALIFIER>coherent</QUALIFIER>
+    </QUALIFIERS>
+    <OPTION_GRAMMAR></OPTION_GRAMMAR>
+    </DECLARATION>
+  </STORAGE_IMAGE>
+  
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <COMPUTE_PASS>
+      <NAME>Pass0</NAME>
+      <COMPUTE_STAGE>Compute_InitDecalTransparZMap</COMPUTE_STAGE>
+    </COMPUTE_PASS>
+  </TECHNIQUE>
+</EFFECT>

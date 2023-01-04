@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="PLMDictionaryConstraints.xsl"?>
+
+<AllConstraints xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <ConstraintSet name="RelationshipConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/plmdictionarydeclarationconstraints.xml#C901" applyOn="Relationship">
+    <Constraint name="RelationshipConstraint1"
+        errorNo="C901"
+        errorMSG="When a relationship overloads a Relationship of a Super Type, the target Type of the overloaded Relationship should be an ancestor Type of the target Type of the other Relationship"
+        explanationURL="http://plminf2e/plminf_plmdico_wiki/plmdictionarydeclarationconstraints.xml#C901"
+        isWarning="Yes"
+        checkAtRuntime="No">
+      <errorMsg>
+        When a <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">relationship</a> overloads a relationship of an <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Ancestor_Type">Ancestor Type</a>, the target type of the overloaded Relationship should be an <a href="http://plminf2e/plminf_plmdico_wiki/type.html#Ancestor_Type">Ancestor Type</a> of the target Type of the other Relationship
+      </errorMsg>
+    </Constraint>
+    <Constraint name="RelationshipConstraint3"
+        errorNo="C903"
+        errorMSG="When a relationship is declared with the parameter Scope='Internal' or 'Path' then the 'TargetRef' parameter should have the Uuid of a declared Type or 'AnyObject' as value. Furthermore the declaration parameter 'Type' should be undefined."
+        explanationURL="http://plminf2e/plminf_plmdico_wiki/plmdictionarydeclarationconstraints.xml#C903"
+        isWarning="Yes"
+        checkAtRuntime="No">
+      <errorMsg>
+        When a <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">relationship</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Scope='Internal' or 'Path' then the 'TargetRef' parameter should have the Uuid of a declared  <a href="http://plminf2e/plminf_plmdico_wiki/type.html">type</a> or 'AnyObject' as value. Furthermore the declaration parameter 'Type' should be undefined."
+      </errorMsg>
+    </Constraint>
+    <Constraint name="RelationshipConstraint4"
+        errorNo="C904"
+        errorMSG="When a relationship is declared with the parameter Scope='External' or 'Vault' the 'Type' parameter should have the value 'String' or 'Binary'. Furthermore the parameter 'TargetRef' should be undefined"
+        explanationURL="http://plminf2e/plminf_plmdico_wiki/plmdictionarydeclarationconstraints.xml#C904"
+        isWarning="Yes"
+        checkAtRuntime="No">
+      <errorMsg>
+        When a <a href="http://plminf2e/plminf_plmdico_wiki/relationship.html">relationship</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> with the parameter Scope='External' or 'Vault' the 'Type' parameter should have the value 'String' or 'Binary'. Furthermore the parameter 'TargetRef' should be undefined"
+      </errorMsg>
+    </Constraint>
+  </ConstraintSet>
+  
+  <ConstraintSet name="SemanticRelationConstraints" explanationURL="http://plminf2e/plminf_plmdico_wiki/plmdictionarydeclarationconstraints.xml#C1101" applyOn="SemanticRelation">
+    <Constraint name="SemanticRelationConstraint1"
+    errorNo="C1101"
+    errorMSG="If a SemanticRelation is declared such as AllowedTargetPath='Simple', then no ContextConstraint element can be defined within the SemanticRelation"
+    explanationURL="http://plminf2e/plminf_plmdico_wiki/plmdictionarydeclarationconstraints.xml#C1101"
+    isWarning="No"
+    checkAtRuntime="No">
+      <errorMsg>
+        If a <a href="http://plminf2e/plminf_plmdico_wiki/semanticrelation.html">SemanticRelation</a> is <a href="http://plminf2e/plminf_plmdico_wiki/element_declaration.html">declared</a> such as AllowedTargetPath="Simple", then no <a href="http://plminf2e/plminf_plmdico_wiki/contextconstraint.html">ContextConstraint</a> element can be defined within the SemanticRelation
+      </errorMsg>
+    </Constraint>
+  </ConstraintSet>
+
+ </AllConstraints>
+

@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template syp:name="AfrRepresentationTypesManager" Target="CATAfrRepresentationTypesManager">
+    <CATCAfrGroup>
+      
+      <!--###########################################################################-->
+      <!--                       [Official]    Access representations-->
+      <!--###########################################################################-->
+      <!--AfrToolbarLiveTouch - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily Name="AfrToolbarLiveTouch" LocationTemplate="AfrRepresentationTypes/AfrToolbarLiveTouch.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrToolbarLiveTouch" Name="AfrToolbarLiveTouch" SubContainerRepType="AfrRep3LevelCascadeThirdLevel"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <!--AfrRep3LevelCascade - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrRep3LevelCascade" Name="AfrRep3LevelCascade" LocationTemplate="AfrRepresentationTypes/AfrRep3LevelCascade.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrRep3LevelCascadeFirstLevel" Name="AfrRep3LevelCascadeFirstLevel" SubContainerRepType="AfrRep3LevelCascadeSecondLevel"/>
+        <CATAfrRepresentationType syp:name="AfrRep3LevelCascadeSecondLevel" Name="AfrRep3LevelCascadeSecondLevel" SubContainerRepType="AfrRep3LevelCascadeThirdLevel"/>
+        <CATAfrRepresentationType syp:name="AfrRep3LevelCascadeThirdLevel" Name="AfrRep3LevelCascadeThirdLevel" />
+      </CATAfrRepresentationTypeFamily>
+
+
+      <!--AfrFixedSectionFamily - Creator:QF1-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrFixedSectionFamily" Name="AfrFixedSectionFamily" >
+        <CATAfrRepresentationType syp:name="AfrFixedSection" Name="AfrFixedSection" SubContainerRepType="AfrFixedSectionSubContainer"/>
+        <CATAfrRepresentationType syp:name="AfrFixedSectionSubContainer" Name="AfrFixedSectionSubContainer"/>
+      </CATAfrRepresentationTypeFamily>
+      
+      <!--ToolLine - Creator:QF1-->
+      <CATAfrRepresentationTypeFamily syp:name="ToolLine" Name="ToolLine" LocationTemplate="XAfrActionBarProto.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="CATAfrToolLineContainerVid" Name="CATAfrToolLineContainerVid"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <!--ActionBar - Creator:QF1-->
+      <CATAfrRepresentationTypeFamily syp:name="ActionBar" Name="ActionBar">
+        <CATAfrRepresentationType syp:name="AfrActionBarFixedSection" Name="AfrActionBarFixedSection" />        
+        <CATAfrRepresentationType syp:name="AfrActionBar" Name="AfrActionBar" SubContainerRepType="AfrActionBarSection"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarSection" Name="AfrActionBarSection" SubContainerRepType="AfrActionBarToolbar"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarToolbar" Name="AfrActionBarToolbar" SubContainerRepType="AfrActionBarDropDown"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarDropDown" Name="AfrActionBarDropDown" />
+      </CATAfrRepresentationTypeFamily>
+     
+      <!--ObjectProperties - Creator:R57 Comment:ajout famille de rep pour App Options et Object Properties  -->
+      <CATAfrRepresentationTypeFamily syp:name="ObjectProperties" Name="ObjectProperties" LocationTemplate="AfrRepresentationTypes/AfrAppModeAndProperties.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrObjectProperties" Name="AfrObjectProperties" SubContainerRepType="AfrObjectPropertiesPopover" />
+        <CATAfrRepresentationType syp:name="AfrOptionsMenu" Name="AfrOptionsMenu"/>
+        <CATAfrRepresentationType syp:name="AfrObjectPropertiesPopover" Name="AfrObjectPropertiesPopover" />
+      </CATAfrRepresentationTypeFamily>
+      <!--AppMode - Creator:R57-->
+      <CATAfrRepresentationTypeFamily syp:name="AppMode" Name="AppMode" LocationTemplate="AfrRepresentationTypes/AfrAppModeAndProperties.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrAppMode" Name="AfrAppMode" SubContainerRepType="AfrAppModePopover" />
+        <CATAfrRepresentationType syp:name="AfrAppModePopover" Name="AfrAppModePopover" />
+        <CATAfrRepresentationType syp:name="AfrViewModePopover" Name="AfrViewModePopover" />
+      </CATAfrRepresentationTypeFamily>
+
+      <CATAfrRepresentationTypeFamily syp:name="ActionPadRepType"    Name="ActionPadRepType" LocationTemplate="AfrRepresentationTypes/AfrActionPad.CATSYPStyle">
+          <CATAfrRepresentationType syp:name="AfrActionPadSection"   Name="AfrActionPadSection" SubContainerRepType="AfrActionPadGroup" />
+          <CATAfrRepresentationType syp:name="AfrActionPadGroup"     Name="AfrActionPadGroup" DefaultChildrenRepType="AfrImmersiveContextBar"/>
+          <CATAfrRepresentationType syp:name="AfrActionPadCustomize" Name="AfrActionPadCustomize"/>
+          <CATAfrRepresentationType syp:name="AfrActionPadTopBar"    Name="AfrActionPadTopBar"/>
+          <CATAfrRepresentationType syp:name="AfrActionPadGroupCustomize"    Name="AfrActionPadGroupCustomize"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <!--MouseMenu - Creator:J99-->
+      <CATAfrRepresentationTypeFamily syp:name="MouseMenuRepTypeFamily" Name="MouseMenuRepType" LocationTemplate="AfrMouseMenu.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="MouseMenuRepType" Name="MouseMenuRepType" DefaultChildrenRepType="MouseMenuButtonRepType" SubContainerRepType="SubMenuRepType" />
+        <CATAfrRepresentationType syp:name="MouseMenuButtonRepType" Name="MouseMenuButtonRepType"/>
+        <CATAfrRepresentationType syp:name="MouseMenuMiddleButtonRepType" Name="MouseMenuMiddleButtonRepType"/>
+      </CATAfrRepresentationTypeFamily>
+     
+
+      <!--AfrPLMBar - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrPLMBar" Name="AfrPLMBar" LocationTemplate="AfrRepresentationTypes/AfrPLMBar.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrPLMBarSignature" Name="AfrPLMBarSignature" SubContainerRepType="AfrTopBarMenu"/>
+      </CATAfrRepresentationTypeFamily>
+      <!--AfrFrame - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrFrame" Name="AfrFrame" LocationTemplate="AfrRepresentationTypes/CIDFrame.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrCIDFrame" Name="AfrCIDFrame" SubContainerRepType="AfrPLMBarSignature"/>
+        <CATAfrRepresentationType syp:name="AfrCIDFrame_WebCompass" Name="AfrCIDFrame_WebCompass" SubContainerRepType="AfrPLMBarSignature"/>
+      </CATAfrRepresentationTypeFamily>
+      <!--AfrTopBarMenu - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily  Name="AfrTopBarMenu" LocationTemplate="AfrRepresentationTypes/AfrTopBarMenu.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrTopBarMenu" Name="AfrTopBarMenu" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarSubMenu" Name="AfrTopBarSubMenu" SubContainerRepType="AfrTopBarSubMenu" DefaultChildrenRepType="AfrTopBarMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarSubMenu_ActivableHeader" Name="AfrTopBarSubMenu_ActivableHeader" SubContainerRepType="AfrTopBarSubMenu" DefaultChildrenRepType="AfrTopBarMenu"/>
+        <CATAfrRepresentationType syp:name="VerticalFlat" Name="VerticalFlat" DefaultChildrenRepType="AfrTopBarMenu" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrPLMBarCollabMenu" Name="AfrPLMBarCollabMenu" DefaultChildrenRepType="AfrTopBarMenu" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarMeMenu" Name="AfrTopBarMeMenu" DefaultChildrenRepType="AfrTopBarMenu" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarHomeMenu" Name="AfrTopBarHomeMenu" SubContainerRepType="AfrTopBarSubMenu" DefaultChildrenRepType="AfrTopBarMenu" />
+        <CATAfrRepresentationType syp:name="AfrHomeMenuRep" Name="AfrHomeMenuRep" SubContainerRepType="AfrTopBarSubMenu" DefaultChildrenRepType="AfrTopBarMenu" />
+        <!--ZBJ- Added for update badges-->
+        <CATAfrRepresentationType syp:name="AfrTopBarMenu_uptoDate" Name="AfrTopBarMenu_uptoDate" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarMenu_ScanForUpdate" Name="AfrTopBarMenu_ScanForUpdate" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarMenu_UpdateError" Name="AfrTopBarMenu_UpdateError" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarMenu_Update" Name="AfrTopBarMenu_Update" SubContainerRepType="AfrTopBarSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTopBarMenu_UpdateRequired" Name="AfrTopBarMenu_UpdateRequired" SubContainerRepType="AfrTopBarSubMenu"/>
+      </CATAfrRepresentationTypeFamily>
+      <!--AfrBottomRight - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily Name="AfrBottomRight" LocationTemplate="AfrRepresentationTypes/AfrPLMBar.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrBottomRight" Name="AfrBottomRight" />
+      </CATAfrRepresentationTypeFamily>
+ 
+
+    
+
+
+
+      <!--AfrContext - Creator:R57 Comment: MANAGEMENT REP TYPE FOR FORMS-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrContext" Name="AfrContext" LocationTemplate="AfrRepresentationTypes/AfrImmersiveContextBar.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrContextMenu" Name="AfrContextMenu" SubContainerRepType="AfrContextSubMenu" />
+        <CATAfrRepresentationType syp:name="AfrLegacyMenu" Name="AfrLegacyMenu" SubContainerRepType="AfrContextSubMenu" DefaultChildrenRepType="AfrContextMenu" />
+        <CATAfrRepresentationType syp:name="AfrContextSubMenu" Name="AfrContextSubMenu" DefaultChildrenRepType="AfrContextMenu" SubContainerRepType="AfrContextSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrImmersiveContextBar" Name="AfrImmersiveContextBar" SubContainerRepType="AfrImmersiveContextBarPopover"/>
+        <CATAfrRepresentationType syp:name="AfrImmersiveContextBarPopover" Name="AfrImmersiveContextBarPopover"/>
+      </CATAfrRepresentationTypeFamily>
+      <!--###########################################################################-->
+      <!--                       [Official]    CAfr representations-->
+      <!--###########################################################################-->
+      <!--AfrList - Creator:TPC-->
+      <CATAfrRepresentationTypeFamily Name="AfrList" LocationTemplate="AfrComponentViews/List.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="Classic" Name="Classic" />
+        <CATAfrRepresentationType syp:name="Classic_New" Name="Classic_New" />
+        <CATAfrRepresentationType syp:name="Classic_Tiers" Name="Classic_Tiers" />
+        <CATAfrRepresentationType syp:name="Multi" Name="Multi" />
+        <CATAfrRepresentationType syp:name="Channel" Name="Channel" />
+        <CATAfrRepresentationType syp:name="Channel_New" Name="Channel_New" />
+        <CATAfrRepresentationType syp:name="AfrMenu" Name="CATCAfrList_AfrMenu" />     
+        <CATAfrRepresentationType syp:name="AfrMenuWithTitle" Name="AfrMenuWithTitle" />   
+        <CATAfrRepresentationType syp:name="List" Name="List" />
+        <CATAfrRepresentationType syp:name="List2" Name="List2" />
+        <CATAfrRepresentationType syp:name="SearchMenuList" Name="SearchMenuList" /> 
+        <CATAfrRepresentationType syp:name="HeaderList" Name="HeaderList" />     
+        <CATAfrRepresentationType syp:name="AfrExpandable" Name="AfrExpandable" />
+        <CATAfrRepresentationType syp:name="CAfrView" Name="CAfrView" />             
+        <CATAfrRepresentationType syp:name="CAfrComponent" Name="CAfrComponent" />
+        <CATAfrRepresentationType syp:name="AfrChannelUndef" Name="AfrChannelUndef" />
+        <CATAfrRepresentationType syp:name="AfrChannelExpander" Name="AfrChannelExpander" />
+        <CATAfrRepresentationType syp:name="CATCAfrTree_Default" Name="CATCAfrTree_Default" />
+        <CATAfrRepresentationType syp:name="Web" Name="Web" />
+        <CATAfrRepresentationType syp:name="Combo" Name="Combo" />
+        <CATAfrRepresentationType syp:name="ClassicPreferences" Name="ClassicPreferences" />
+
+      </CATAfrRepresentationTypeFamily>
+      <!--AfrWindow - Creator:TPC-->
+      <CATAfrRepresentationTypeFamily Name="AfrWindow" LocationTemplate="AfrComponentViews/Window.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrFraPanel" Name="AfrFraPanel" />
+        <CATAfrRepresentationType syp:name="AfrFraPanelEx" Name="AfrFraPanelEx" />
+        <CATAfrRepresentationType syp:name="AfrFraLabel" Name="AfrFraLabel" />
+        <CATAfrRepresentationType syp:name="AfrFraMessageBox" Name="AfrFraMessageBox" />
+        <CATAfrRepresentationType syp:name="AfrFraDialog" Name="AfrFraDialog" />
+        <CATAfrRepresentationType syp:name="AfrTagFraPanel" Name="AfrTagFraPanel" />
+        <CATAfrRepresentationType syp:name="AfrQuickPickFraPanel" Name="AfrQuickPickFraPanel" />
+        <CATAfrRepresentationType syp:name="AfrFraProgress" Name="AfrFraProgress" />
+        <CATAfrRepresentationType syp:name="AfrDialogBox" Name="AfrDialogBox"/>
+        <CATAfrRepresentationType syp:name="AfrDialogBoxFull" Name="AfrDialogBoxFull"/>
+        <CATAfrRepresentationType syp:name="AfrOpenFile" Name="AfrOpenFile"/>
+        <CATAfrRepresentationType syp:name="AfrOpenFolder" Name="AfrOpenFolder"/>
+        <CATAfrRepresentationType syp:name="PLMChooser" Name="PLMChooser"/>
+        <CATAfrRepresentationType syp:name="Generic" Name="Generic" />
+        <CATAfrRepresentationType syp:name="Dialog" Name="Dialog" />
+        <CATAfrRepresentationType syp:name="WebViewer" Name="WebViewer" />
+        <CATAfrRepresentationType syp:name="AfrVIDContextBar" Name="AfrVIDContextBar" />
+        <CATAfrRepresentationType syp:name="AfrVIDContextBarTest" Name="AfrVIDContextBarTest"/>
+        <CATAfrRepresentationType syp:name="AfrMouseMenu" Name="AfrMouseMenu" />
+        <CATAfrRepresentationType syp:name="AfrWindowGroup" Name="AfrWindowGroup" />
+        <CATAfrRepresentationType syp:name="AfrActionPadPanel" Name="AfrActionPadPanel" />
+        <!--AfrWindow AfrDeprecated- Creator:TPC-->
+        <CATAfrRepresentationType syp:name="AfrVIDFraPanel" Name="AfrVIDFraPanel" />
+        <CATAfrRepresentationType syp:name="AfrVIDFraLabel" Name="AfrVIDFraLabel" />
+        <CATAfrRepresentationType syp:name="AfrVIDFraMessageBox" Name="AfrVIDFraMessageBox" />
+        <CATAfrRepresentationType syp:name="AfrVIDFraDialog" Name="AfrVIDFraDialog" />
+        <CATAfrRepresentationType syp:name="AfrVIDTagFraPanel" Name="AfrVIDTagFraPanel" />
+        <CATAfrRepresentationType syp:name="AfrVIDQuickPickFraPanel" Name="AfrVIDQuickPickFraPanel" />
+        <CATAfrRepresentationType syp:name="AfrVIDFraProgress" Name="AfrVIDFraProgress" />
+        <CATAfrRepresentationType syp:name="AfrVIDVolatileActionPad" Name="AfrVIDVolatileActionPad"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <!--AfrForm - Creator:TPC-->
+      <CATAfrRepresentationTypeFamily Name="AfrForm" LocationTemplate="AfrComponentViews/Form.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrFormUndef" Name="AfrFormUndef" />
+        <CATAfrRepresentationType syp:name="Undef" Name="Undef" />
+        <CATAfrRepresentationType syp:name="AfrFormCenter" Name="AfrFormCenter" />
+        <CATAfrRepresentationType syp:name="AfrFormExpander" Name="AfrFormExpander" />
+        <CATAfrRepresentationType syp:name="AfrFormGroupBox" Name="AfrFormGroupBox" />
+        <CATAfrRepresentationType syp:name="AfrGroupBox" Name="AfrGroupBox" />
+        <CATAfrRepresentationType syp:name="AfrFormFrame" Name="AfrFormFrame" />
+        <CATAfrRepresentationType syp:name="CATCAfrForm_AfrMenu" Name="CATCAfrForm_AfrMenu" />
+        <CATAfrRepresentationType syp:name="AfrFormLeft_TabPage" Name="AfrFormLeft_TabPage" />
+        <CATAfrRepresentationType syp:name="AfrFormTabPage" Name="AfrFormTabPage" />
+        <CATAfrRepresentationType syp:name="AfrFormScrollableArea" Name="AfrFormScrollableArea" />
+        <CATAfrRepresentationType syp:name="AfrHorizontal" Name="AfrHorizontal" />
+        <CATAfrRepresentationType syp:name="AfrMePrefHorizontal" Name="AfrMePrefHorizontal" />
+        <CATAfrRepresentationType syp:name="AfrFormListSingleSelection" Name="AfrFormListSingleSelection" />
+        <CATAfrRepresentationType syp:name="AfrFormList" Name="AfrFormList" />
+        <CATAfrRepresentationType syp:name="AfrFullSpace" Name="AfrFullSpace" />
+        <CATAfrRepresentationType syp:name="AfrFormToolbar" Name="AfrFormToolbar" />
+        <CATAfrRepresentationType syp:name="AfrGridSplitter" Name="AfrGridSplitter" />
+      </CATAfrRepresentationTypeFamily>
+
+      <!--CAfrToolbar - Creator:TPC-->
+      <CATAfrRepresentationTypeFamily Name="CAfrToolbar" LocationTemplate="AfrComponentViews/CATCAfrToolbarRep.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="EmptyDecorationToolBar" Name="EmptyDecorationToolBar" DefaultChildrenRepType="VIAImmersiveToolBar" SubContainerRepType="AfrRep3LevelCascadeThirdLevel"/>
+        <CATAfrRepresentationType syp:name="EmptyDecorationToolBarLeft" Name="EmptyDecorationToolBarLeft" DefaultChildrenRepType="VIAImmersiveToolBar" SubContainerRepType="AfrRep3LevelCascadeThirdLevel"/>
+        <!--REP TYPE FAMILLY FOR CATCAFRTOOLBAR-->
+        <CATAfrRepresentationType syp:name="Default" Name="CATCAfrToolbar_Default" SubContainerRepType="Default" DefaultChildrenRepType="Default" />
+        <CATAfrRepresentationType syp:name="DefaultVertical" Name="DefaultVertical" SubContainerRepType="DefaultVertical" DefaultChildrenRepType="AfrTopBarMenu"/>
+
+      </CATAfrRepresentationTypeFamily>
+      <!--CAfrToolbar - Creator:TPC-->
+      <CATAfrRepresentationTypeFamily Name="VIAImmersiveToolBar" LocationTemplate="AfrRepresentationTypes/VIAImmersiveToolBar.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="VIAImmersiveToolBar" Name="VIAImmersiveToolBar" SubContainerRepType="AfrRep3LevelCascadeThirdLevel"/>
+        <CATAfrRepresentationType syp:name="VIAImmersiveToolBarLeft" Name="VIAImmersiveToolBarLeft" DefaultChildrenRepType="VIAImmersiveToolBar" SubContainerRepType="AfrRep3LevelCascadeThirdLevel"/>
+
+      </CATAfrRepresentationTypeFamily>
+      <!--CATAfrVIAImmersiveView - Creator:TPC-->
+      <CATAfrRepresentationTypeFamily Name="CATAfrVIAImmersiveView">
+        <CATAfrRepresentationType syp:name="CATAfrVIAImmersiveView_AfrVIDWidget" Name="CATAfrVIAImmersiveView_AfrVIDWidget"/>
+        <CATAfrRepresentationType syp:name="CAfrStarterRep" Name="CAfrStarterRep"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <!--AfrChart - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily Name="AfrChart" LocationTemplate="AfrComponentViews/Chart.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="CATAfrHierarchyItem_Default" Name="CATAfrHierarchyItem_Default" />
+        <CATAfrRepresentationType syp:name="CATCAfrViewsBrowser_Default" Name="CATCAfrViewsBrowser_Default" />
+        <CATAfrRepresentationType syp:name="CATAfrModelWrapper_Default" Name="CATAfrModelWrapper_Default" />
+        <CATAfrRepresentationType syp:name="Options" Name="Options" />
+        <CATAfrRepresentationType syp:name="Spider" Name="Spider" />  
+        <CATAfrRepresentationType syp:name="VerticalBar" Name="VerticalBar" /> 
+      </CATAfrRepresentationTypeFamily>
+
+      <!--AfrApps - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrApps" Name="AfrApps" LocationTemplate="AfrComponentViews/Apps.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="Afr3DS_Compass" Name="Afr3DS_Compass" />
+        <CATAfrRepresentationType syp:name="Afr3DS_Compass_old" Name="Afr3DS_Compass_old" />
+        <CATAfrRepresentationType syp:name="ContainerApps" Name="ContainerApps" />
+          <CATAfrRepresentationType syp:name="ListApps" Name="ListApps" />
+        <CATAfrRepresentationType syp:name="FloatingApps" Name="FloatingApps" />
+        <CATAfrRepresentationType syp:name="FloatingAppsJustHeader" Name="FloatingAppsJustHeader" NoCreateChildFlag="1" />
+        <CATAfrRepresentationType syp:name="CATCAfrMenu_AfrOptionsMenu" Name="CATCAfrMenu_AfrOptionsMenu" />
+        <CATAfrRepresentationType syp:name="AppOptionList" Name="AppOptionList" />
+         <CATAfrRepresentationType syp:name="CATAfrAppPlatform_Default" Name="CATAfrAppPlatform_Default" />
+        <CATAfrRepresentationType syp:name="ListRoles" Name="ListRoles" />
+        <CATAfrRepresentationType syp:name="SubGroupListApps" Name="SubGroupListApps" />
+        <CATAfrRepresentationType syp:name="GroupListAppsNew" Name="GroupListAppsNew" />
+        <!--SRO3-->
+        <CATAfrRepresentationType syp:name="ListAppsNew" Name="ListAppsNew" />
+        <!--SRO3-->
+        <CATAfrRepresentationType syp:name="ListRolesNew" Name="ListRolesNew" />
+        <!--SRO3-->
+      </CATAfrRepresentationTypeFamily>
+      <!--###########################################################################-->
+      <!--                       [Custom]    Access representations-->
+      <!--###########################################################################-->
+
+
+      <!--NXGVidToolbar_RepType Creator:RZH-->
+      <CATAfrRepresentationTypeFamily  Name="NXGVidToolbar_RepType">
+        <CATAfrRepresentationType syp:name="NXGVidToolbar_RepType" Name="NXGVidToolbar_RepType" />
+      </CATAfrRepresentationTypeFamily>
+      <!--CATLSMenuView Creator:RZH-->
+      <CATAfrRepresentationTypeFamily  Name="CATLSMenuView">
+        <CATAfrRepresentationType syp:name="CATLSMenuView" Name="CATLSMenuView" />
+      </CATAfrRepresentationTypeFamily>
+      <!--FbwRepFirstLevelContainer Creator:LOW-->
+      <CATAfrRepresentationTypeFamily  Name="FbwRepFirstLevelContainer">
+        <CATAfrRepresentationType syp:name="FbwRepFirstLevelContainer" Name="FbwRepFirstLevelContainer" SubContainerRepType="FbwRepSecondLevelContainer"/>
+        <CATAfrRepresentationType syp:name="FbwRepSecondLevelContainer" Name="FbwRepSecondLevelContainer" />
+      </CATAfrRepresentationTypeFamily>
+      <!--SSEExportContainer Creator:LOK-->
+      <CATAfrRepresentationTypeFamily  Name="SSEExportContainer">
+        <CATAfrRepresentationType syp:name="SSEExportContainer" Name="SSEExportContainer" />
+      </CATAfrRepresentationTypeFamily>
+      <!--SSEExportContainer Creator:LOK-->
+      <CATAfrRepresentationTypeFamily  Name="LBSViewpointContainerL1">
+        <CATAfrRepresentationType syp:name="LBSViewpointContainerL1" Name="LBSViewpointContainerL1" SubContainerRepType="LBSViewpointContainerL2"/>
+        <CATAfrRepresentationType syp:name="LBSViewpointContainerL2" Name="LBSViewpointContainerL2" />
+      </CATAfrRepresentationTypeFamily>
+      <!--CAT3DXPVidToolbar Creator:FOC-->
+      <CATAfrRepresentationTypeFamily  Name="CAT3DXPVidToolbar">
+        <CATAfrRepresentationType syp:name="CAT3DXPVidToolbar" Name="CAT3DXPVidToolbar" />
+      </CATAfrRepresentationTypeFamily>
+      <!--CATLiveVidToolbar_RepType Creator:CUO-->
+      <CATAfrRepresentationTypeFamily  Name="CATLiveVidToolbar_RepType">
+        <CATAfrRepresentationType syp:name="CATLiveVidToolbar_RepType" Name="CATLiveVidToolbar_RepType" />
+      </CATAfrRepresentationTypeFamily>
+      <!--CATCrDToolBar_RepresentationType Creator:FLZ-->
+      <CATAfrRepresentationTypeFamily  Name="CATCrDToolBar_RepresentationType">
+        <CATAfrRepresentationType syp:name="CATCrDToolRoll_RepresentationType" Name="CATCrDToolRoll_RepresentationType" />        
+        <CATAfrRepresentationType syp:name="CATCrDCommandProvider_RepresentationType" Name="CATCrDCommandProvider_RepresentationType" />               
+        <CATAfrRepresentationType syp:name="CATCrDOptionsToolBox_RepresentationType" Name="CATCrDOptionsToolBox_RepresentationType" />                  
+      </CATAfrRepresentationTypeFamily>
+      <!--CATCrDToolBarMobile_RepresentationType Creator:FLZ-->
+      <CATAfrRepresentationTypeFamily  Name="CATCrDToolBarMobile_RepresentationType">
+        <CATAfrRepresentationType syp:name="CATCrDToolBarMobile_RepresentationType" Name="CATCrDToolBarMobile_RepresentationType" />
+        <CATAfrRepresentationType syp:name="CATCrDOptionsBarMobile_RepresentationType" Name="CATCrDOptionsBarMobile_RepresentationType" />
+        <CATAfrRepresentationType syp:name="CATCrDBackgroundMobile_RepresentationType" Name="CATCrDBackgroundMobile_RepresentationType" />
+        <CATAfrRepresentationType syp:name="CATCrDGeneralBarMobile_RepresentationType" Name="CATCrDGeneralBarMobile_RepresentationType" />
+        <CATAfrRepresentationType syp:name="CATCrDImagesMobile_RepresentationType" Name="CATCrDImagesMobile_RepresentationType" />
+        <CATAfrRepresentationType syp:name="CATCrDUndoRedoBarMobile_RepresentationType" Name="CATCrDUndoRedoBarMobile_RepresentationType" />
+      </CATAfrRepresentationTypeFamily>
+      <!--CATDes_VNav_RepresentationType Creator:FLZ-->
+      <CATAfrRepresentationTypeFamily  Name="CATDes_VNav_RepresentationType">
+        <CATAfrRepresentationType syp:name="CATDes_VNav_RepresentationType" Name="CATDes_VNav_RepresentationType" />
+      </CATAfrRepresentationTypeFamily>
+      <!--SWX_RepType Creator:HFS 2014/3/27-->
+      <CATAfrRepresentationTypeFamily  Name="SWX_RepType">                
+        <CATAfrRepresentationType syp:name="SWXGestureMenu" Name="SWXGestureMenu" />
+        <CATAfrRepresentationType syp:name="SWXShortcutMenu" Name="SWXShortcutMenu" />
+        <CATAfrRepresentationType syp:name="SWXContextToolbar" Name="SWXContextToolbar" />
+        <CATAfrRepresentationType syp:name="SWXContextMenu" Name="SWXContextMenu" />
+      </CATAfrRepresentationTypeFamily>
+      <!--DboPropRepType Creator: Carlos-->
+      <CATAfrRepresentationTypeFamily  Name="DboPropRepType">
+        <CATAfrRepresentationType syp:name="DboPropRepTypeCheck" Name="DboPropRepTypeCheck" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeComboFavorite" Name="DboPropRepTypeComboFavorite" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeComboEditable" Name="DboPropRepTypeComboEditable" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeComboNonEditable" Name="DboPropRepTypeComboNonEditable" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeSpinnerDouble" Name="DboPropRepTypeSpinnerDouble" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeFlyout" Name="DboPropRepTypeFlyout" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeGraphicColor" Name="DboPropRepTypeGraphicColor" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeGraphicThickness" Name="DboPropRepTypeGraphicThickness" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeGraphicLineType" Name="DboPropRepTypeGraphicLineType" />
+        <CATAfrRepresentationType syp:name="DboPropRepTypeGraphicPointType" Name="DboPropRepTypeGraphicPointType" />
+        <CATAfrRepresentationType syp:name="GraphicsPropertiesRepTypeComboNonEditable" Name="GraphicsPropertiesRepTypeComboNonEditable" />        <!--GADE Seema -->
+        <CATAfrRepresentationType syp:name="DboPropRepTypeEditor" Name="DboPropRepTypeEditor" />        <!--DESHPANDE Amit -->
+      </CATAfrRepresentationTypeFamily>
+
+      <!--EditFilterStarter - Client : CNA (App: 2D Layout for 3D design)-->
+      <CATAfrRepresentationTypeFamily  Name="EditFilterStarter">
+        <CATAfrRepresentationType syp:name="EditFilterStarter" Name="EditFilterStarter" />
+      </CATAfrRepresentationTypeFamily>
+      
+      <!--###########################################################################-->
+      <!--                  [Prototypes/Deprecated]    Access representations-->
+      <!--###########################################################################-->
+
+      <!--AfrPLMCompassWestToolbar - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily Name="AfrPLMCompassWestToolbar_deprecated" Prototype="1" LocationTemplate="AfrPLMCompassWestToolbar_deprecated.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrPLMCompassWestToolbar" Name="AfrPLMCompassWestToolbar" />
+        <CATAfrRepresentationType syp:name="WTB" Name="WTB" />
+      </CATAfrRepresentationTypeFamily>
+      <!--AfrPLMCompassWestToolbarNoBackground - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily Name="AfrPLMCompassWestToolbarNoBackground_deprecated" Prototype="1" LocationTemplate="AfrPLMCompassWestToolbar_deprecated.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrPLMCompassWestToolbarNoBackground" Name="AfrPLMCompassWestToolbarNoBackground" />
+      </CATAfrRepresentationTypeFamily>
+      <!--CATAfrPLMBarVidView - Creator:ERS-->
+      <CATAfrRepresentationTypeFamily Name="CATAfrPLMBarVidView_deprecated" Prototype="1" >
+        <CATAfrRepresentationType syp:name="CATAfrPLMBarVidView" Name="CATAfrPLMBarVidView" />
+      </CATAfrRepresentationTypeFamily>
+      <!--CATAfrStartMenuVidView - Creator:ERS-->
+      <CATAfrRepresentationTypeFamily Name="CATAfrStartMenuVidView_deprecated" Prototype="1" >
+        <CATAfrRepresentationType syp:name="CATAfrStartMenuVidView" Name="CATAfrStartMenuVidView" />
+      </CATAfrRepresentationTypeFamily>
+      <!--AfrV6Signature - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily Name="CATAfrV6Signature_deprecated" Prototype="1" LocationTemplate="AfrV6Signature.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="CATAfrV6Signature" Name="CATAfrV6Signature" />
+      </CATAfrRepresentationTypeFamily>      
+
+      <!--AfrRep3LevelCascade_ - Creator:LD3-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrRep3LevelCascade_" Name="AfrRep3LevelCascade_" Prototype="1" >
+        <CATAfrRepresentationType syp:name="AfrRep3LevelCascade_FirstLevel" Name="AfrRep3LevelCascade_FirstLevel" SubContainerRepType="AfrRep3LevelCascade_SecondLevel"/>
+        <CATAfrRepresentationType syp:name="AfrRep3LevelCascade_SecondLevel" Name="AfrRep3LevelCascade_SecondLevel" SubContainerRepType="AfrRep3LevelCascade_ThirdLevel"/>
+        <CATAfrRepresentationType syp:name="AfrRep3LevelCascade_ThirdLevel" Name="AfrRep3LevelCascade_ThirdLevel" />
+      </CATAfrRepresentationTypeFamily>
+
+
+
+      <CATAfrRepresentationTypeFamily syp:name="ActionBarProto" Name="ActionBarProto" Prototype="1" LocationTemplate="XAfrActionBarProto.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="ProtoActionBarMain" Name="ProtoActionBarMain" SubContainerRepType="ProtoActionBarSection"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarFixedSection" Name="ProtoActionBarFixedSection" SubContainerRepType="ProtoActionBarGroup"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarSection" Name="ProtoActionBarSection" SubContainerRepType="ProtoActionBarGroup"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarGroup" Name="ProtoActionBarGroup" SubContainerRepType="ProtoActionBarDropDown" DefaultChildrenRepType="ProtoActionBarStarter"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarDropDown" Name="ProtoActionBarDropDown" DefaultChildrenRepType="ProtoActionBarStarter"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <CATAfrRepresentationTypeFamily syp:name="ActionBarProto2" Name="ActionBarProto2" LocationTemplate="ActionBarXAfrProto.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="ProtoActionBarMain2" Name="ProtoActionBarMain2" SubContainerRepType="ProtoActionBarSection2"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarFixedSection2" Name="ProtoActionBarFixedSection2" SubContainerRepType="ProtoActionBarGroup2"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarSection2" Name="ProtoActionBarSection2" SubContainerRepType="ProtoActionBarGroup2"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarGroup2" Name="ProtoActionBarGroup2" SubContainerRepType="ProtoActionBarDropDown2" DefaultChildrenRepType="ProtoActionBarStarter2"/>
+        <CATAfrRepresentationType syp:name="ProtoActionBarDropDown2" Name="ProtoActionBarDropDown2" DefaultChildrenRepType="ProtoActionBarStarter2"/>
+        <!--<CATAfrRepresentationType syp:name="ProtoActionBarPlayerSection" Name="ProtoActionBarPlayerSection" DefaultChildrenRepType="ProtoActionBarGroup2"/>-->
+
+      </CATAfrRepresentationTypeFamily>
+
+      <CATAfrRepresentationTypeFamily syp:name="ActionBarV3" Name="ActionBarV3">
+        <CATAfrRepresentationType syp:name="AfrActionBarV3_MainView" Name="AfrActionBarV3_MainView" SubContainerRepType="AfrActionBarV3_Section"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarV3_Section" Name="AfrActionBarV3_Section" SubContainerRepType="AfrActionBarV3_Group"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarV3_Group" Name="AfrActionBarV3_Group" SubContainerRepType="AfrActionBarV3_FlyOut" DefaultChildrenRepType="AfrActionBarV3_Starter"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarV3_FlyOut" Name="AfrActionBarV3_FlyOut" DefaultChildrenRepType="AfrActionBarV3_Starter"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <CATAfrRepresentationTypeFamily syp:name="ActionBarA2X" Name="ActionBarA2X">
+        <CATAfrRepresentationType syp:name="AfrActionBarA2X_MainView" Name="AfrActionBarA2X_MainView" SubContainerRepType="AfrActionBarA2X_Section"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarA2X_Section" Name="AfrActionBarA2X_Section" SubContainerRepType="AfrActionBarA2X_Group"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarA2X_Group" Name="AfrActionBarA2X_Group" SubContainerRepType="AfrActionBarA2X_FlyOut" DefaultChildrenRepType="AfrActionBarA2X_Starter"/>
+        <CATAfrRepresentationType syp:name="AfrActionBarA2X_FlyOut" Name="AfrActionBarA2X_FlyOut" DefaultChildrenRepType="AfrActionBarA2X_Starter"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <!--AfrPlayerPanel - Creator:LD3-->
+
+      <CATAfrRepresentationTypeFamily syp:name="AfrPlayerABV3" Name="AfrPlayerABV3" LocationTemplate="AfrActionBar/AfrPlayer.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="PlayerInPanel" Name="PlayerInPanel" />
+      </CATAfrRepresentationTypeFamily>
+      <CATAfrRepresentationTypeFamily syp:name="AfrPlayerAB" Name="AfrPlayerAB" LocationTemplate="AfrActionBar/AfrPlayer.CATSYPStyle">
+              <CATAfrRepresentationType syp:name="ProtoActionBarPlayerSection" Name="ProtoActionBarPlayerSection" />
+       </CATAfrRepresentationTypeFamily>  
+       <CATAfrRepresentationTypeFamily syp:name="AfrPlayer" Name="AfrPlayer" LocationTemplate="AfrRepresentationTypes/AfrPlayer.CATSYPStyle">
+              <CATAfrRepresentationType syp:name="AfrPlayerPanel" Name="AfrPlayerPanel" />
+       </CATAfrRepresentationTypeFamily>
+      <!--AfrObjectPropertiesRepType - Creator:DCF LocationTemplate="AfrRepresentationTypes/AfrAppModeAndProperties.CATSYPStyle"-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrObjectPropertiesRepType" Name="AfrObjectPropertiesRepType" >
+        <CATAfrRepresentationType syp:name="ObjectPropertiesRepType" Name="ObjectPropertiesRepType" SubContainerRepType="ObjectPropertiesRepTypePopover" />
+        <CATAfrRepresentationType syp:name="ObjectPropertiesRepTypePopover" Name="ObjectPropertiesRepTypePopover" />
+      </CATAfrRepresentationTypeFamily>
+      <!--AfrAppModeRepType - Creator:DCF  LocationTemplate="AfrRepresentationTypes/AfrAppModeAndProperties.CATSYPStyle"-->
+      <CATAfrRepresentationTypeFamily syp:name="AfrAppModeRepType" Name="AfrAppModeRepType">
+        <CATAfrRepresentationType syp:name="AppModeRepType" Name="AppModeRepType" SubContainerRepType="AppModeRepTypePopover" />
+        <CATAfrRepresentationType syp:name="AfrDialogRepType" Name="AfrDialogRepType" />
+        <CATAfrRepresentationType syp:name="AppModeRepTypePopover" Name="AppModeRepTypePopover" />
+      </CATAfrRepresentationTypeFamily>
+       <!--AfrBalloonV6 - Creator:LD3 -->
+      <CATAfrRepresentationTypeFamily  Name="AfrBalloonV6" Prototype="1" LocationTemplate="Balloon.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="AfrLegacyV6" Name="AfrLegacyV6" SubContainerRepType="AfrBalloonV6" />
+        <CATAfrRepresentationType syp:name="AfrBalloonV6" Name="AfrBalloonV6" DefaultChildrenRepType="AfrBalloonV6" />
+        <CATAfrRepresentationType syp:name="AfrSubBalloonV6" Name="AfrSubBalloonV6" DefaultChildrenRepType="AfrBalloonV6" />
+      </CATAfrRepresentationTypeFamily>
+      <!--XAfrTestForCAfr - Creator:LD3 -->
+      <CATAfrRepresentationTypeFamily  Name="XAfrTestForCAfr" Prototype="1" LocationTemplate="AfrPrototypes_deprecated.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="MyCAfrRepType" Name="MyCAfrRepType"  />
+      </CATAfrRepresentationTypeFamily>
+      <!--CATMyCAfrRepType - Creator:LD3 -->
+      <CATAfrRepresentationTypeFamily  Name="CATMyCAfrRepType" Prototype="1" >
+        <CATAfrRepresentationType syp:name="CATMyCAfrRepType" Name="CATMyCAfrRepType"  />
+      </CATAfrRepresentationTypeFamily>
+      <CATAfrRepresentationTypeFamily  Name="AfrTstCIDMenu" Prototype="1" LocationTemplate="AfrTestIntegrationCIDMenu.CATSYPStyle" >
+        <CATAfrRepresentationType syp:name="AfrTstCIDMenu" Name="AfrTstCIDMenu" SubContainerRepType="AfrTstCIDSubMenu"/>
+        <CATAfrRepresentationType syp:name="AfrTstCIDSubMenu" Name="AfrTstCIDSubMenu" SubContainerRepType="AfrTstCIDSubMenu" DefaultChildrenRepType="AfrTstCIDMenu"/>
+      </CATAfrRepresentationTypeFamily>      
+
+      <!--Pallet_RepType Creator:MTG-->
+      <CATAfrRepresentationTypeFamily syp:name="PalletRepType"    Name="PalletRepType" LocationTemplate="PalletComponent.CATSYPStyle">
+        <CATAfrRepresentationType syp:name="PalletRepTypeSection"   Name="PalletRepTypeSection" SubContainerRepType="PalletRepTypeGroup"/>
+        <CATAfrRepresentationType syp:name="PalletRepTypeGroup"     Name="PalletRepTypeGroup" SubContainerRepType="PalletRepTypeLine" DefaultChildrenRepType="PalletRepType"/>
+        <CATAfrRepresentationType syp:name="PalletRepTypeLine"      Name="PalletRepTypeLine" SubContainerRepType="AfrAppModePopover" DefaultChildrenRepType="PalletRepType"/>
+      </CATAfrRepresentationTypeFamily>
+
+      <!--CATFluSnapStepCombo Creator:GANGUMALLA Lakshmi Suresh Kumar-->
+      <CATAfrRepresentationTypeFamily  Name="CATFluSnapStepCombo">
+        <CATAfrRepresentationType syp:name="CATFluSnapStepCombo" Name="CATFluSnapStepCombo" />
+      </CATAfrRepresentationTypeFamily>
+
+    </CATCAfrGroup>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Case" Value="ActionBar_V2">
+        <CATSYPSetter TargetName="AfrActionBar" Property="SubContainerRepType" Value="ProtoActionBarSection2"/>
+        <CATSYPSetter TargetName="AfrActionBarFixedSection" Property="Name" Value="ProtoActionBarFixedSection2"/>
+        <CATSYPSetter TargetName="AfrActionBarFixedSection" Property="SubContainerRepType" Value="ProtoActionBarGroup2"/>
+        <CATSYPSetter TargetName="AfrActionBarSection" Property="Name" Value="ProtoActionBarSection2"/>
+        <CATSYPSetter TargetName="AfrActionBarSection" Property="SubContainerRepType" Value="ProtoActionBarGroup2"/>
+        <CATSYPSetter TargetName="AfrActionBarToolbar" Property="Name" Value="ProtoActionBarGroup2"/>
+        <CATSYPSetter TargetName="AfrActionBarToolbar" Property="SubContainerRepType" Value="ProtoActionBarDropDown2"/>
+        <CATSYPSetter TargetName="AfrActionBarDropDown" Property="Name" Value="ProtoActionBarDropDown2"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Case" Value="ActionBar_V3">
+        <CATSYPSetter TargetName="AfrActionBar" Property="SubContainerRepType" Value="AfrActionBarV3_Section"/>
+        <CATSYPSetter TargetName="AfrActionBarFixedSection" Property="Name" Value="AfrActionBarV3_Section"/>
+        <CATSYPSetter TargetName="AfrActionBarFixedSection" Property="SubContainerRepType" Value="AfrActionBarV3_Group"/>
+        <CATSYPSetter TargetName="AfrActionBarSection" Property="Name" Value="AfrActionBarV3_Section"/>
+        <CATSYPSetter TargetName="AfrActionBarSection" Property="SubContainerRepType" Value="AfrActionBarV3_Group"/>
+        <CATSYPSetter TargetName="AfrActionBarToolbar" Property="Name" Value="AfrActionBarV3_Group"/>
+        <CATSYPSetter TargetName="AfrActionBarToolbar" Property="SubContainerRepType" Value="AfrActionBarV3_FlyOut"/>
+        <CATSYPSetter TargetName="AfrActionBarDropDown" Property="Name" Value="AfrActionBarV3_FlyOut"/>
+        <CATSYPSetter TargetName="ProtoActionBarPlayerSection" Property="Name" Value="PlayerInPanel"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Case" Value="ActionBar_A2X">
+        <CATSYPSetter TargetName="AfrActionBar" Property="SubContainerRepType" Value="AfrActionBarA2X_Section"/>
+        <CATSYPSetter TargetName="AfrActionBarFixedSection" Property="Name" Value="AfrActionBarA2X_Section"/>
+        <CATSYPSetter TargetName="AfrActionBarFixedSection" Property="SubContainerRepType" Value="AfrActionBarA2X_Group"/>
+        <CATSYPSetter TargetName="AfrActionBarSection" Property="Name" Value="AfrActionBarA2X_Section"/>
+        <CATSYPSetter TargetName="AfrActionBarSection" Property="SubContainerRepType" Value="AfrActionBarA2X_Group"/>
+        <CATSYPSetter TargetName="AfrActionBarToolbar" Property="Name" Value="AfrActionBarA2X_Group"/>
+        <CATSYPSetter TargetName="AfrActionBarToolbar" Property="SubContainerRepType" Value="AfrActionBarA2X_FlyOut"/>
+        <CATSYPSetter TargetName="AfrActionBarDropDown" Property="Name" Value="AfrActionBarA2X_FlyOut"/>
+        <CATSYPSetter TargetName="ProtoActionBarPlayerSection" Property="Name" Value="PlayerInPanel"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+
+
+</Styles>
+

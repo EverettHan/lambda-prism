@@ -1,0 +1,52 @@
+{
+  "grammarVersion": 2,
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "desc": "Returns a list of command definition for given pools if specified",
+  "onBeginParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  },
+  "onCommandParameters": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pools",
+          "basicArray": "string",
+          "optional": {
+            "isOptional": true,
+            "default_value": "[]"
+          }
+        }
+      ]
+    },
+    "answers": {
+      "parameters": [
+        {
+          "label": "pools",
+          "typeArray": "CSIDeclarativePoolDefinition",
+          "optional": {
+            "isOptional": true
+          }
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  }
+}

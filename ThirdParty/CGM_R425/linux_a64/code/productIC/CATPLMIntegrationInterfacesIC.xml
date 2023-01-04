@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "CATPLMIntegration.tst"/>
+  <attached name = "CATPLMIdentification.tst"/>
+  <attached name = "CATPLMIntegrationAccess.tst"/>
+  <attached name = "CATPLMTransitionEngine.tst"/>
+  <attached name = "CATPLMDocEnv.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIntegrationAccessItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "ObjectModelerCollection"/>
+  <authorize access = "Private" name = "CATPLMIntegrationBase"/>
+  <authorize access = "Private" name = "CATPLMIntegration"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess"/>
+  <authorize access = "Private" name = "CATPLMTransitionEngine"/>
+  <authorize access = "Private" name = "CATPLMTransitionAuthoring"/>
+  <authorize access = "Private" name = "CATPLMReplicationEngine"/>
+  <authorize access = "Private" name = "CATPLMReplicationEngine.tst"/>
+  <authorize access = "Private" name = "CATPLMIdentification.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationAccess.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegration.tst"/>
+  <authorize access = "Private" name = "CATPLMIntegrationUI"/>
+  <authorize access = "Private" name = "CATPLMPXn"/>
+  <authorize access = "Private" name = "CATPLMPXn.tst"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

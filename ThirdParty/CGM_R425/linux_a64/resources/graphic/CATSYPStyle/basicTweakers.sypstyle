@@ -1,0 +1,1425 @@
+<?xml version="1.0"?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP" xmlns:vid="http://www.3ds.com/xsd/VID">
+  <!--===================================-->
+  <!--CATVidCtlTweaker-->
+  <!--===================================-->
+  <Template  syp:name="FormLineReadOnly" Target="CATVidCtlTweaker" syp:version="2">
+    <CATVidLayGrid GridWeight="col1=1" RequestedMinimumDimension="0 21">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPLabel syp:name="_AutoColoredText" VerticalAlignment="1" BoldFlag="@StrongFlag" Text="@ValueAsString" CropPolicy="CropWithDots" FontSize="12" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="1 18" />
+    </CATVidLayGrid>
+  </Template>
+
+  <Template  syp:name="FormLineReadOnly" Target="CATVidCtlTweaker">
+    <CATVidLayGrid GridWeight="col1=1" RequestedMinimumDimension="0 21">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPLabel syp:name="_AutoColoredText" VerticalAlignment="1" Text="@ValueAsString" CropPolicy="CropWithDots" TextHeight="16" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB" RequestedMinimumDimension="1 18" />
+    </CATVidLayGrid>
+  </Template>
+
+  <Template  syp:name="FormLineStd" Target="CATVidCtlTweaker">
+    <CATVidCtlLineEditor Name="Value" UndefinedFlag="@UndefinedFlag Mode=TwoWays" IncorrectInputFlag="@IncorrectInputFlag" RequestedMinimumDimension="35 21" Text="@ValueAsString" TextActivated="@OnEditingStarted" TextEdited="@OnEditorTextEdited" ReturnPressed="@OnEditorEditingFinished" EscapePressed="@OnEditingEscaped" EditingFinished="@OnEditorEditingFinished"/>
+  </Template>
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATVidPalette-->
+  <!--===================================-->
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATVidPalette">
+    <CATVidLayGrid GridWeight="col0=1" RequestedMinimumDimension="0 21">
+      <CATVidCtlLineEditor Text="@ValueAsString" SelectAllTextOnFocusFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidCtlButton syp:name="PopupModelEditorCheck" CheckMode="1" RequestedMinimumDimension="21 0" Icon="vid_paletteIcon.png" IconDimension="16 16"/>
+        <CATVidCtlPopup syp:name="PopupModelEditor" SnapFlag="1" SnapSide="1" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=PopupModelEditorCheck" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped" PopupDimension="300 200">
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+  <!--===================================-->
+  <!--CATVidCtlTweakerint-->
+  <!--===================================-->
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerint">
+    <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" Validator="@TextValidator" />
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerint" syp:Variation="WithRange">
+    <CATVidCtlSpinBox  Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" Validator="@TextValidator" />
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerint" syp:Variation="{100,0}/WithRange">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" TickInterval="0" RequestedMinimumDimension="20 21" SingleStepValue="@SingleStepValueAsInt" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="52 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" Validator="@TextValidator" />
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerint" syp:Variation="{100,0}/WithRange" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" Validator="@TextValidator" />
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerint" syp:Variation="{200,0}/WithRange" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" Validator="@TextValidator" />
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerint">
+    <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" Validator="@TextValidator" />
+  </Template>
+  <Template syp:name="Std" Target="CATVidCtlTweakerint" syp:Variation="WithRange">
+    <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" Validator="@TextValidator" />
+  </Template>
+  <Template syp:name="Std" Target="CATVidCtlTweakerint" syp:Variation="{100,0}/WithRange">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="52 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" Validator="@TextValidator" />
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerint" syp:Variation="{100,0}/WithRange" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" Validator="@TextValidator" />
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerint" syp:Variation="{200,0}/WithRange" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValueAsInt" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB" Validator="@TextValidator" />
+    </CATVidLayGrid>
+  </Template>
+
+  <!--New read-only view with font-icons for boolean tweaker-->
+  <Template syp:name="FormLineReadOnly_bool" Target="CATVidCtlTweakerint">
+    <CATVidLayGrid GridWeight="col1=1">
+      <CATVidGPFontIcon FontSize="16" RequestedMinimumDimension="0 21" Name="Value" syp:name="_AutoColoredText"/>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="Value" Value="1">
+        <CATSYPSetter Property="IconName" TargetName="_AutoColoredText" Value="check"/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="Value" Value="0">
+        <CATSYPSetter Property="IconName" TargetName="_AutoColoredText" Value="wrong"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <Template syp:name="FormLineStd_bool" Target="CATVidCtlTweakerint">
+    <CATVidCtlCheckBox RequestedMinimumDimension="0 21" Name="Value" CheckMode="1" CheckState="@Value Mode=TwoWays" AllCheckedAfterMixedStateFlag="@Value" MixedState="@UndefinedFlag Mode=TwoWays" />
+  </Template>
+  <Template syp:name="CheckBox" Target="CATVidCtlTweakerint">
+    <CATVidCtlCheckBox RequestedMinimumDimension="0 21" Name="Value" CheckMode="1" CheckState="@Value Mode=TwoWays" MixedState="@UndefinedFlag Mode=TwoWays" Label="@Label" />
+  </Template>
+  <Template syp:name="Radio" Target="CATVidCtlTweakerint">
+    <CATVidCtlRadioButton RequestedMinimumDimension="0 21" Name="Value" CheckState="@Value Mode=TwoWays" Label="@Label" />
+  </Template>
+
+  <!--===================================-->
+  <!--CATVidCtlTweakerdouble-->
+  <!--===================================-->
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerdouble">
+    <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue" DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" />
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerdouble" syp:Variation="WithRange">
+    <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue" DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" />
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerdouble" syp:Variation="{100,0}/WithRange">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="0" MaximumValue="100" Value="@SliderValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue" DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="52 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerdouble" syp:Variation="{100,0}/WithRange" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="0" MaximumValue="100" Value="@SliderValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue" DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerdouble" syp:Variation="{200,0}/WithRange" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="0" MaximumValue="100" Value="@SliderValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue" DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerdouble">
+    <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue" DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" Suffix="@UnitSymbol"/>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerdouble" syp:Variation="WithRange">
+    <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue" DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" Suffix="@UnitSymbol"/>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerdouble" syp:Variation="{100,0}/WithRange">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="0" MaximumValue="100" Value="@SliderValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue"  DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="52 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped"  Suffix="@UnitSymbol" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerdouble" syp:Variation="{100,0}/WithRange"  syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="0" MaximumValue="100" Value="@SliderValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue"  DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped"  Suffix="@UnitSymbol" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerdouble" syp:Variation="{200,0}/WithRange" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="0" MaximumValue="100" Value="@SliderValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValue" MaximumValue="@MaximumValue" SingleStepValue="@SingleStepValue"  DecimalPlaces="@DecimalPlaces" HighExponentProperty="@HighExponentProperty" LowExponentProperty="@LowExponentProperty" ShowTrailingZerosFlag="@ShowTrailingZerosFlag" Validator="@TextValidator" RequestedMinimumDimension="72 21" BackgroundColor="255 255 255 255" Value="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped"  Suffix="@UnitSymbol" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template  syp:name="FormLineReadOnly_gradient" Target="CATVidCtlTweakerCATUnicodeString" syp:version="2">
+    <CATVidLayGrid GridWeight="col1=1" RequestedMinimumDimension="0 35">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPLabel syp:name="_AutoColoredText" Text="@ValueAsString" HorizontalAlignment="2" VerticalAlignment="2" CropPolicy="@CropPolicy" FontSize="12" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL" RequestedMinimumDimension="1 35" />
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0" RequestedMinimumDimension="5 0"/>
+    </CATVidLayGrid>
+  </Template>
+  <Template  syp:name="FormLineReadOnly_gradient" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidLayGrid GridWeight="col1=1" RequestedMinimumDimension="0 35">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPLabel syp:name="_AutoColoredText" Text="@ValueAsString" HorizontalAlignment="2" VerticalAlignment="2" CropPolicy="@CropPolicy" TextHeight="16" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RL" RequestedMinimumDimension="1 35" />
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0" RequestedMinimumDimension="5 0"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template  syp:name="FormLineStd_gradient" Target="CATVidCtlTweakerCATUnicodeString" syp:version="2">
+    <CATVidLayGrid GridWeight="col0=1 col2=1">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+      <CATVidCtlLineEditor CATVidLayGrid.IndexedConstraints="x=0 y=1" Name="Value" UndefinedFlag="@UndefinedFlag Mode=TwoWays" IncorrectInputFlag="@IncorrectInputFlag" RequestedMinimumDimension="35 21" Text="@ValueAsString" TextActivated="@OnEditingStarted" TextEdited="@OnEditorTextEdited" ReturnPressed="@OnEditorEditingFinished" EscapePressed="@OnEditingEscaped" EditingFinished="@OnEditorEditingFinished"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+    </CATVidLayGrid>
+  </Template>
+  <Template  syp:name="FormLineStd_gradient" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidLayGrid GridWeight="col0=1 col2=1">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" />
+      <CATVidCtlLineEditor CATVidLayGrid.IndexedConstraints="x=0 y=1" Name="Value" UndefinedFlag="@UndefinedFlag Mode=TwoWays" IncorrectInputFlag="@IncorrectInputFlag" RequestedMinimumDimension="35 21" Text="@ValueAsString" TextActivated="@OnEditingStarted" TextEdited="@OnEditorTextEdited" ReturnPressed="@OnEditorEditingFinished" EscapePressed="@OnEditingEscaped" EditingFinished="@OnEditorEditingFinished"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidCtlLineEditor Name="Value" UndefinedFlag="@UndefinedFlag Mode=TwoWays" RequestedMinimumDimension="35 21" TextMargins="5 0 1 0" TextActivated="@OnEditingStarted" TextEdited="@OnEditorTextEdited" ReturnPressed="@OnEditorEditingFinished" EscapePressed="@OnEditingEscaped" EditingFinished="@OnEditorEditingFinished" Text="@Value"/>
+  </Template>
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidURL">
+    <CATVidCtlLineEditor Name="Value" RequestedMinimumDimension="35 21" TextMargins="5 0 1 0" TextActivated="@OnEditingStarted" TextEdited="@OnTextEdited" ReturnPressed="@HandleEditingFinishedEvent" EscapePressed="@OnEditingEscaped" EditingFinished="@HandleEditingFinishedEvent"/>
+  </Template>
+  <Template syp:name="Label" Target="CATVidCtlTweakerCATUnicodeString" syp:version="2">
+    <CATVidGPLabel Name="Label" Text="@Value" TextColor="ColorDarkGray 255" FontSize="12" VerticalAlignment="1" CropPolicy="NoCrop" RequestedMinimumDimension="35 21"/>
+  </Template>
+
+  <Template syp:name="Label" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidGPLabel Name="Label" Text="@Value" TextColor="0.85 200" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" RequestedMinimumDimension="35 21"/>
+  </Template>
+  <Template syp:name="LabelCrop" Target="CATVidCtlTweakerCATUnicodeString" syp:version="2">
+    <CATVidGPLabel Name="LabelCrop" Text="@Value" TextColor="0.85 200"
+                   FontSize="12" VerticalAlignment="1"
+                   BoldFlag="1" CropPolicy="CropWithDots"
+                   UseManipulatorFlag="1"
+                   RequestedMinimumDimension="50 21"/>
+  </Template>
+
+  <Template syp:name="LabelCrop" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidGPLabel Name="LabelCrop" Text="@Value" TextColor="0.85 200"
+                   TextHeight="16" VerticalAlignment="1"
+                   BoldFlag="1" CropPolicy="CropWithDots"
+                   UseManipulatorFlag="1"
+                   RequestedMinimumDimension="50 21"/>
+  </Template>
+  <Template syp:name = "Image" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidLayGrid>
+      <CATVidGPSquare syp:name = "IconSquare"
+                      Texture="@Value"
+                      RequestedMinimumDimension = "17 17"
+                      CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name = "Thumbnail" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidLayGrid>
+      <CATVidGPSquare syp:name = "IconSquare"
+                      Texture="@Value"
+                      RequestedMinimumDimension = "144 108"
+                      CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=LTB"/>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="fontFamily" Target="CATVidCtlTweakerCATUnicodeString">
+    <CATVidLayLayer/>
+  </Template>
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATVidColor-->
+  <!--===================================-->
+  <Template  syp:name="FormLineReadOnly" Target="CATVidCtlTweakerCATVidColor"  syp:version="2">
+    <CATVidLayGrid GridWeight="col3=1" RequestedMinimumDimension="0 21">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPSquare RequestedMinimumDimension="14 14" Color="@Value" syp:name="squareColor" CATVidLayGrid.IndexedConstraints="x=1 y=0" PickFlag="0" UseManipulatorFlag="0"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPLabel syp:name="_AutoColoredText" Text="@ValueAsString" CropPolicy="CropWithDots" FontSize="12" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RL" RequestedMinimumDimension="1 18" />
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="AutoColorFlag" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="squareColor" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AutoColorFlag" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="squareColor" Value="vid_paletteIcon.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template  syp:name="FormLineReadOnly" Target="CATVidCtlTweakerCATVidColor">
+    <CATVidLayGrid GridWeight="col3=1" RequestedMinimumDimension="0 21">
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPSquare RequestedMinimumDimension="14 14" Color="@Value" syp:name="squareColor" CATVidLayGrid.IndexedConstraints="x=1 y=0" PickFlag="0" UseManipulatorFlag="0"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=0" RequestedMinimumDimension="3 0"/>
+      <CATVidGPLabel syp:name="_AutoColoredText" Text="@ValueAsString" CropPolicy="CropWithDots" TextHeight="16" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RL" RequestedMinimumDimension="1 18" />
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="AutoColorFlag" Value="0">
+        <CATSYPSetter Property="Texture" TargetName="squareColor" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AutoColorFlag" Value="1">
+        <CATSYPSetter Property="Texture" TargetName="squareColor" Value="vid_paletteIcon.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="NoAutoColor" Target="CATVidCtlTweakerCATVidColor">
+    <CATVidCtlTweakerCATVidRGBA ColorPickers="ColorSlidersAndSpinBoxes|ColorPaletteCATIAColors" ValueAsVidColor="@Value Mode=TwoWays" UseTransactionFlag="@UseTransactionFlag" UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag" UndefinedFlag="@UndefinedFlag Mode=TwoWays" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished"/>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidColor" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="row1=1 col1=1">
+      <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=L" RequestedMinimumDimension="20 19">
+        <CATVidCtlButton syp:name="check" syp:Template="ButtonColor" IconDimension="14 14" CheckMode="1" BackgroundColor="@Color"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 13" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState ElementName=check Mode=TwoWays" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidLayGrid CellSpacing="2" RequestedMinimumDimension="150 0">
+            <CATVidCtlImageAndLabelCombo syp:name="ColorRole" Name="ColorRole" LayoutWhenUnvisibleFlag="0" Text="@ColorRole Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+              <CATVidImageAndLabelData Label="RGBA Color"/>
+              <CATVidImageAndLabelData Label="Auto Color"/>
+            </CATVidCtlImageAndLabelCombo>
+            <CATVidCtl syp:name="RGBAEditor" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidLayGrid  CellSpacing="1" GridWeight="col1=1">
+                <CATVidGPLabel FontSize="12" Text="R" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+                <CATVidGPLabel FontSize="12" Text="G" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=1 x=0"/>
+                <CATVidGPLabel FontSize="12" Text="B" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=2 x=0"/>
+                <CATVidGPLabel FontSize="12" Text="A" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=3 x=0"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Reditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Geditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Beditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=2 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Aeditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=3 x=1 attach=RLTB"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Reditor" Name="R" RequestedMinimumDimension="30 17" BackgroundColor="255 255 255 255" Value="@R Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=0 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Geditor" Name="G" RequestedMinimumDimension="30 17" Value="@G Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=1 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Beditor" Name="B" RequestedMinimumDimension="30 17" Value="@B Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=2 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Aeditor" Name="A" RequestedMinimumDimension="30 17" Value="@A Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=3 x=2"/>
+              </CATVidLayGrid>
+            </CATVidCtl>
+            <CATVidCtl syp:name="AutoColorEditor" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidLayGrid  CellSpacing="1" GridWeight="col1=1">
+                <CATVidGPLabel FontSize="12" Text="Auto Color" VerticalAlignment="1" CropPolicy="NoCrop" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+                <CATVidGPLabel FontSize="12" Text="A" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=1 x=0"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=AutoColoreditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=AACeditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="AutoColoreditor" Name="AutoColoreditor" RequestedMinimumDimension="30 17" Value="@AutoColor Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=0 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0"  syp:name="AACeditor" Name="A" RequestedMinimumDimension="30 17" Value="@A Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=1 x=2"/>
+              </CATVidLayGrid>
+            </CATVidCtl>
+          </CATVidLayGrid>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="AutoColorFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="RGBAEditor" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AutoColorEditor" Value="0"/>
+        <CATSYPSetter Property="Icon" TargetName="check" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AutoColorFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="RGBAEditor" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AutoColorEditor" Value="1"/>
+        <CATSYPSetter Property="Icon" TargetName="check" Value="vid_paletteIcon.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidColor">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="row1=1 col1=1">
+      <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=L" RequestedMinimumDimension="20 19">
+        <CATVidCtlButton syp:name="check" syp:Template="ButtonColor" IconDimension="14 14" CheckMode="1" BackgroundColor="@Color"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 13" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState ElementName=check Mode=TwoWays" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidLayGrid CellSpacing="2" RequestedMinimumDimension="150 0">
+            <CATVidCtlImageAndLabelCombo syp:name="ColorRole" Name="ColorRole" LayoutWhenUnvisibleFlag="0" Text="@ColorRole Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB">
+              <CATVidImageAndLabelData Label="RGBA Color"/>
+              <CATVidImageAndLabelData Label="Auto Color"/>
+            </CATVidCtlImageAndLabelCombo>
+            <CATVidCtl syp:name="RGBAEditor" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidLayGrid  CellSpacing="1" GridWeight="col1=1">
+                <CATVidGPLabel TextHeight="16" Text="R" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+                <CATVidGPLabel TextHeight="16" Text="G" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=1 x=0"/>
+                <CATVidGPLabel TextHeight="16" Text="B" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=2 x=0"/>
+                <CATVidGPLabel TextHeight="16" Text="A" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=3 x=0"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Reditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Geditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Beditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=2 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=Aeditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=3 x=1 attach=RLTB"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Reditor" Name="R" RequestedMinimumDimension="30 17" BackgroundColor="255 255 255 255" Value="@R Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=0 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Geditor" Name="G" RequestedMinimumDimension="30 17" Value="@G Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=1 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Beditor" Name="B" RequestedMinimumDimension="30 17" Value="@B Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=2 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="Aeditor" Name="A" RequestedMinimumDimension="30 17" Value="@A Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=3 x=2"/>
+              </CATVidLayGrid>
+            </CATVidCtl>
+            <CATVidCtl syp:name="AutoColorEditor" LayoutWhenUnvisibleFlag="0" VisibleFlag="0" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB">
+              <CATVidLayGrid  CellSpacing="1" GridWeight="col1=1">
+                <CATVidGPLabel TextHeight="16" Text="Auto Color" VerticalAlignment="1" CropPolicy="NoCrop" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=0 x=0"/>
+                <CATVidGPLabel TextHeight="16" Text="A" VerticalAlignment="1" RequestedMinimumDimension="13 13" CATVidLayGrid.IndexedConstraints="y=1 x=0"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=AutoColoreditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=0 x=1 attach=RLTB"/>
+                <CATVidCtlSlider ShowMagnifierFlag="0" MinimumValue="0" MaximumValue="255" Value="@Value Mode=TwoWays ElementName=AACeditor" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="y=1 x=1 attach=RLTB"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0" syp:name="AutoColoreditor" Name="AutoColoreditor" RequestedMinimumDimension="30 17" Value="@AutoColor Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=0 x=2"/>
+                <CATVidCtlSpinBox MaximumValue="255" MinimumValue="0"  syp:name="AACeditor" Name="A" RequestedMinimumDimension="30 17" Value="@A Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="y=1 x=2"/>
+              </CATVidLayGrid>
+            </CATVidCtl>
+          </CATVidLayGrid>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+    </CATVidLayGrid>
+    <CATSYPTriggerCollection>
+      <CATSYPTrigger Property="AutoColorFlag" Value="0">
+        <CATSYPSetter Property="VisibleFlag" TargetName="RGBAEditor" Value="1"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AutoColorEditor" Value="0"/>
+        <CATSYPSetter Property="Icon" TargetName="check" Value=""/>
+      </CATSYPTrigger>
+      <CATSYPTrigger Property="AutoColorFlag" Value="1">
+        <CATSYPSetter Property="VisibleFlag" TargetName="RGBAEditor" Value="0"/>
+        <CATSYPSetter Property="VisibleFlag" TargetName="AutoColorEditor" Value="1"/>
+        <CATSYPSetter Property="Icon" TargetName="check" Value="vid_paletteIcon.png"/>
+      </CATSYPTrigger>
+    </CATSYPTriggerCollection>
+  </Template>
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATVidRGBA-->
+  <!--===================================-->
+  <Template syp:name="FormLineReadOnly" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid>
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid>
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=check" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished" ColorDoubleClick="@OnDoubleClick"
+                                         ColorPickers="@ColorPickers Mode=TwoWays" ColorValidatorClassName="@ColorValidatorClassName Mode=TwoWays"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="@ShowAlphaEditorFlag" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="FormLineReadOnly_QuickColorSelector" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid syp:name="MainGrid" GridWeight="col1=1">
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+      </CATVidLayLayer>
+      <CATVidLayGrid syp:name="SonGrid" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension = "3 0"/>
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidCtlColorQuickSelector Name="ColorQuickSelector" syp:name="ColorQuickSelector" RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" CrossHairDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="FormLineStd_QuickColorSelector" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid syp:name="MainGrid" GridWeight="col1=1">
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=check" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished" ColorDoubleClick="@OnDoubleClick"
+                                         ColorPickers="@ColorPickers Mode=TwoWays" ColorValidatorClassName="@ColorValidatorClassName Mode=TwoWays"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="@ShowAlphaEditorFlag" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+      <CATVidLayGrid syp:name="SonGrid" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension = "3 0"/>
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidCtlColorQuickSelector Name="ColorQuickSelector" syp:name="ColorQuickSelector" RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" CrossHairDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid>
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=check" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished" ColorDoubleClick="@OnDoubleClick"
+                                         ColorPickers="@ColorPickers Mode=TwoWays" ColorValidatorClassName="@ColorValidatorClassName Mode=TwoWays"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="@ShowAlphaEditorFlag" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="QuickColorSelector" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid syp:name="MainGrid" GridWeight="col1=1">
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=check" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished" ColorDoubleClick="@OnDoubleClick"
+                                         ColorPickers="@ColorPickers Mode=TwoWays" ColorValidatorClassName="@ColorValidatorClassName Mode=TwoWays"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="@ShowAlphaEditorFlag" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+      <CATVidLayGrid syp:name="SonGrid" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension = "3 0"/>
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidCtlColorQuickSelector Name="ColorQuickSelector" syp:name="ColorQuickSelector" RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" CrossHairDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="Unset" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid syp:name="MainGrid" GridWeight="col1=1">
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=check" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished" ColorDoubleClick="@OnDoubleClick"
+                                         ColorPickers="@ColorPickers Mode=TwoWays" ColorValidatorClassName="@ColorValidatorClassName Mode=TwoWays"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="@ShowAlphaEditorFlag" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+      <CATVidLayGrid  GridWeight="col0=1 col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=LTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension = "3 0"/>
+        <CATVidCtlButton Name="UnsetColor" syp:name="UnsetColor" Icon="vid_color_unset" IconDimension="20 20" Click="@ClickOnUnsetColorButton"  TooltipShortHelp="nls Unset current color"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="QuickColorSelectorAndUnset" Target="CATVidCtlTweakerCATVidRGBA">
+    <CATVidLayGrid syp:name="MainGrid" GridWeight="col1=1">
+      <CATVidLayLayer RequestedMinimumDimension="20 20" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L">
+        <CATVidCtlButton Name="TweakerCATVidRGBAButton" syp:name="check" syp:Template="ButtonColor" CheckMode="1" BackgroundColor="@ValueAsVidColor"/>
+        <CATVidLayGrid>
+          <CATVidGPSquare Texture="vid_undefinedColor.png" RequestedMinimumDimension="14 14" VisibleFlag="@UndefinedFlag" CATVidLayGrid.IndexedConstraints="x=1 y=1" PickFlag="0" UseManipulatorFlag="0"/>
+        </CATVidLayGrid>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=check" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished" ColorDoubleClick="@OnDoubleClick"
+                                         ColorPickers="@ColorPickers Mode=TwoWays" ColorValidatorClassName="@ColorValidatorClassName Mode=TwoWays"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="@ShowAlphaEditorFlag" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"/>
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+      <CATVidLayGrid syp:name="SonGrid" GridWeight="col1=1" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension = "3 0"/>
+        <CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+          <CATVidCtlColorQuickSelector Name="ColorQuickSelector" syp:name="ColorQuickSelector" RGBAColor="@Value Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" CrossHairDimension="5 5" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished"/>
+        </CATVidLayGrid>
+      </CATVidLayGrid>
+      <CATVidLayGrid  GridWeight="col0=1 col1=1" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LTB">
+        <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB" RequestedMinimumDimension = "3 0"/>
+        <CATVidCtlButton Name="UnsetColor" syp:name="UnsetColor" Icon="vid_color_unset" IconDimension="20 20" Click="@ClickOnUnsetColorButton"  TooltipShortHelp="nls Unset current color"  CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      </CATVidLayGrid>
+    </CATVidLayGrid>
+  </Template>
+  <!--===================================-->
+  <!--CATPixelImage -->
+  <!--===================================-->
+  <Template syp:name = "Std" Target="CATVidCtlTweakerCATPixelImage">
+    <CATVidGPSquare syp:name = "IconSquare"
+                    PixelImage = "@IconPixelImage"
+                    RequestedMinimumDimension = "17 17"/>
+  </Template>
+  <Template syp:name = "FormLineReadOnly" Target="CATVidCtlTweakerCATPixelImage">
+    <CATVidGPSquare syp:name = "IconSquare"
+                    PixelImage = "@IconPixelImage"
+                    RequestedMinimumDimension = "17 17"/>
+  </Template>
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATMathVector2Df-->
+  <!--===================================-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathVector2Df"  syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathVector2Df">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATMathVector2Df" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATMathVector2Df">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATMathVectorf" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATMathVectorf">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATMathPointf" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATMathPointf">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATVidRGBAGradient">
+    <CATVidLayGrid GridWeight="row0=1 row1=1">
+      <CATVidLayLayer RequestedMinimumDimension="10 10" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLBT">
+        <CATVidGPSquare RequestedMinimumDimension="10 10"  PickFlag="0" UseManipulatorFlag="0" Color="@EndColorAsVidColor"/>
+        <CATVidCtlButton Name="TweakerCATVidRGBAEndButton" syp:name="checkTop" syp:Template="Toolbar" CheckMode="1" BackgroundColor="@EndColorAsVidColor"/>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="EndPopup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=checkTop" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@EndValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished"
+                                         ColorPickers="ColorSquareV" ShowCustomColors="0" ShowColorEditorFlag="1"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="1" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"
+                                         />
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+      <CATVidLayLayer RequestedMinimumDimension="10 10" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLBT">
+        <CATVidGPSquare RequestedMinimumDimension="10 10"  PickFlag="0" UseManipulatorFlag="0" Color="@StartColorAsVidColor"/>
+        <CATVidCtlButton Name="TweakerCATVidRGBAStartButton" syp:name="checkBottom" syp:Template="Toolbar" CheckMode="1" BackgroundColor="@StartColorAsVidColor"/>
+        <CATVidCtlPopup Name="TweakerCATVidRGBAPopup" syp:name="startPopup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=checkBottom" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@StartValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished"
+                                         ColorPickers="ColorSquareV" ShowCustomColors="0" ShowColorEditorFlag="1"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="1" ShowUnsetColorAndAlphaButtonsFlag="@ShowUnsetColorAndAlphaButtonsFlag"
+                                         />
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--Try putting only one color picker with a current color...does not work for now.
+  <Template syp:name="FormLineStd" Target="CATVidCtlTweakerCATVidRGBAGradient">
+      <CATVidLayLayer RequestedMinimumDimension="10 10">
+        <CATVidGPSquare RequestedMinimumDimension="10 10"  PickFlag="0" UseManipulatorFlag="0" Color="@CurrentColorAsVidColor"/>
+        <CATVidCtlButton Name="TweakerCurrentColorButton" syp:name="checkTop" syp:Template="Toolbar" CheckMode="1" BackgroundColor="@CurrentColorAsVidColor"/>
+        <CATVidCtlPopup Name="TweakerCurrentColorPopup" syp:name="Popup" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=checkTop" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+          <CATVidCtlColorCompositePicker RGBAColor="@CurrentValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" ColorEditingStarted="@OnEditingStarted" ColorEditingFinished="@OnEditingFinished"
+                                         ColorPickers="ColorSquareV" ShowCustomColors="0" ShowColorEditorFlag="1"
+                                         ShowHexEditorFlag="1" ShowColorComparatorFlag="1" ShowReferenceColorFlag="0" ShowAlphaEditorFlag="1"
+                                         />
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+  </Template>-->
+
+  <Template syp:name = "FormLineReadOnly" Target="CATVidCtlTweakerCATVidRGBAGradient">
+    <CATVidLayGrid>
+      <CATVidGPSquare syp:name="ColorGradientSquare" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLBT" RequestedMinimumDimension="10 10"  PickFlag="0" UseManipulatorFlag="0"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlCATSYPBindingData">
+    <CATVidLayGrid GridWeight="col0=1">
+      <CATVidCtl PresenterContent="@EmbeddedTweaker" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidCtlButton IconDimension="24 24" Icon="vid_delete_binding.png" TooltipShortHelp="@StringValue" Press="@OnRemoveBindingCB" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathLine" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="Origin " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="OriginX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Direction " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidCtlDoubleSpinBox Name="DirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@DirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="DirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@DirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="DirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@DirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathLine">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="Origin " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="OriginX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Direction " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidCtlDoubleSpinBox Name="DirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@DirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="DirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@DirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="DirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@DirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathAxis" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="Origin " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="OriginX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=RLTB"/>
+
+      <CATVidGPLabel Text="First Direction " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidCtlDoubleSpinBox Name="FirstDirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@FirstDirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="FirstDirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@FirstDirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="FirstDirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@FirstDirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=1 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Second Direction " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=2"/>
+      <CATVidCtlDoubleSpinBox Name="SecondDirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@SecondDirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=2"/>
+      <CATVidCtlDoubleSpinBox  Name="SecondDirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@SecondDirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=2 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=2"/>
+      <CATVidCtlDoubleSpinBox  Name="SecondDirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@SecondDirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=2 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Third Direction " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=3"/>
+      <CATVidCtlDoubleSpinBox Name="ThirdDirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@ThirdDirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=3 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=3"/>
+      <CATVidCtlDoubleSpinBox  Name="ThirdDirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@ThirdDirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=3 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=3"/>
+      <CATVidCtlDoubleSpinBox  Name="ThirdDirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@ThirdDirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=3 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathAxis">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="Origin " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="OriginX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=RLTB"/>
+
+      <CATVidGPLabel Text="First Direction " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidCtlDoubleSpinBox Name="FirstDirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@FirstDirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="FirstDirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@FirstDirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="FirstDirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@FirstDirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=1 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Second Direction " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=2"/>
+      <CATVidCtlDoubleSpinBox Name="SecondDirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@SecondDirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=2 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=2"/>
+      <CATVidCtlDoubleSpinBox  Name="SecondDirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@SecondDirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=2 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=2"/>
+      <CATVidCtlDoubleSpinBox  Name="SecondDirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@SecondDirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=2 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Third Direction " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=3"/>
+      <CATVidCtlDoubleSpinBox Name="ThirdDirectionX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@ThirdDirectionX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=3 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=3"/>
+      <CATVidCtlDoubleSpinBox  Name="ThirdDirectionY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@ThirdDirectionY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=3 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=3"/>
+      <CATVidCtlDoubleSpinBox  Name="ThirdDirectionZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@ThirdDirectionZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=3 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPlane" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="Origin " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="OriginX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Normal Direction " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidCtlDoubleSpinBox Name="NormalX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@NormalX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="NormalY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@NormalY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="NormalZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@NormalZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPlane">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="Origin " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="OriginX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox  Name="OriginZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@OriginZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=RLTB"/>
+
+      <CATVidGPLabel Text="Normal Direction " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidCtlDoubleSpinBox Name="NormalX" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@NormalX Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=3 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="NormalY" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@NormalY Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=4 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text=" Z: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=5 y=1"/>
+      <CATVidCtlDoubleSpinBox  Name="NormalZ" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@NormalZ Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPointf" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPointf">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPoint" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@X Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Y Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Z Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPoint">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@X Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Y Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Z Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathDirection" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@X Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Y Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=R"/>
+      <CATVidGPLabel Text="Z:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Z Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=5 y=0 attach=R"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathDirection">
+    <CATVidLayGrid RequestedMinimumDimension="0 21">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@X Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=R"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Y Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=R"/>
+      <CATVidGPLabel Text="Z:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@Z Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=5 y=0 attach=R"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPoint2Df" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="Width:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Height:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathPoint2Df">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="Width:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Height:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0 attach=R"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathDirection2Df" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathDirection2Df">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathVectorf" syp:version="2">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" FontSize="12" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATMathVectorf">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col2=1 col6=1 col10=1">
+      <CATVidGPLabel Text="X:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="X" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@XAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=3 y=0"/>
+      <CATVidGPLabel Text="Y:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=4 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=5 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Y" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@YAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=6 y=0 attach=LR"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=7 y=0"/>
+      <CATVidGPLabel Text="Z:" TextHeight="16" VerticalAlignment="1" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=8 y=0"/>
+      <CATVidSpacer RequestedMinimumDimension="5 0" CATVidLayGrid.IndexedConstraints="x=9 y=0"/>
+      <CATVidCtlDoubleSpinBox Name="Z" ShowTrailingZerosFlag="0" RequestedMinimumDimension="37 21" BackgroundColor="255 255 255 255" Value="@ZAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=10 y=0 attach=LR"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidMargin">
+    <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+      <CATVidCtlSpinBox Name="LeftMargin" RequestedMinimumDimension="30 17" BackgroundColor="255 255 255 255" Value="@LeftMargin Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+      <CATVidCtlSpinBox Name="RightMargin" RequestedMinimumDimension="30 17" BackgroundColor="255 255 255 255" Value="@RightMargin Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      <CATVidCtlSpinBox Name="TopMargin" RequestedMinimumDimension="30 17" BackgroundColor="255 255 255 255" Value="@TopMargin Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+      <CATVidCtlSpinBox Name="BottomMargin" RequestedMinimumDimension="30 17" BackgroundColor="255 255 255 255" Value="@BottomMargin Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=3 y=1"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidLayGridConstraints" syp:version="2">
+    <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+      <CATVidGPLabel Text="X: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidCtlSpinBox Name="X" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@X Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text="Y: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=0"/>
+      <CATVidCtlSpinBox  Name="Y" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@Y Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text="SpanX: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+      <CATVidCtlSpinBox Name="XSpan" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@XSpan Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text="SpanY: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+      <CATVidCtlSpinBox Name="YSpan" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@YSpan Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=3 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text="Left: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+      <CATVidCtlCheckBox Name="LeftAttach" CheckMode="1" CheckState="@LeftAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=1 y=2"/>
+      <CATVidGPLabel Text="Right" FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+      <CATVidCtlCheckBox Name="RightAttach" CheckMode="1" CheckState="@RightAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=3 y=2"/>
+      <CATVidGPLabel Text="Top" FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3"/>
+      <CATVidCtlCheckBox Name="TopAttach" CheckMode="1" CheckState="@TopAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=1 y=3"/>
+      <CATVidGPLabel Text="Bottom" FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=3"/>
+      <CATVidCtlCheckBox Name="BottomAttach" CheckMode="1" CheckState="@BottomAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=3 y=3"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidLayGridConstraints">
+    <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+      <CATVidGPLabel Text="X: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidCtlSpinBox Name="X" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@X Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text="Y: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=0"/>
+      <CATVidCtlSpinBox  Name="Y" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@Y Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=3 y=0 attach=RLTB"/>
+      <CATVidGPLabel Text="SpanX: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+      <CATVidCtlSpinBox Name="XSpan" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@XSpan Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text="SpanY: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=1"/>
+      <CATVidCtlSpinBox Name="YSpan" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@YSpan Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=3 y=1 attach=RLTB"/>
+      <CATVidGPLabel Text="Left: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+      <CATVidCtlCheckBox Name="LeftAttach" CheckMode="1" CheckState="@LeftAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=1 y=2"/>
+      <CATVidGPLabel Text="Right" TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+      <CATVidCtlCheckBox Name="RightAttach" CheckMode="1" CheckState="@RightAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=3 y=2"/>
+      <CATVidGPLabel Text="Top" TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3"/>
+      <CATVidCtlCheckBox Name="TopAttach" CheckMode="1" CheckState="@TopAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=1 y=3"/>
+      <CATVidGPLabel Text="Bottom" TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=2 y=3"/>
+      <CATVidCtlCheckBox Name="BottomAttach" CheckMode="1" CheckState="@BottomAttachFlag Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=3 y=3"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerfloat">
+    <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValueAsDouble" MaximumValue="@MaximumValueAsDouble" SingleStepValue="@SingleStepValue" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@ValueAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" />
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerfloat" syp:Variation="WithRange">
+    <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValueAsDouble" MaximumValue="@MaximumValueAsDouble" SingleStepValue="@SingleStepValue" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Value="@ValueAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" />
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerfloat" syp:Variation="{100,0}/WithRange">
+    <CATVidLayGrid RequestedMinimumDimension="0 21" GridWeight="col0=1">
+      <CATVidCtlSlider Name="ValueSlider" ShowMagnifierFlag="0" TickInterval="0" RequestedMinimumDimension="20 21" MinimumValue="0" MaximumValue="100" Value="@SliderValue Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" DragStarted="@OnEditingStarted" DragEnded="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+      <CATVidSpacer RequestedMinimumDimension="4 0" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+      <CATVidCtlDoubleSpinBox Name="Value" MinimumValue="@MinimumValueAsDouble" MaximumValue="@MaximumValueAsDouble" SingleStepValue="@SingleStepValue" RequestedMinimumDimension="52 21" BackgroundColor="255 255 255 255" Value="@ValueAsDouble Mode=TwoWays" UndefinedFlag="@UndefinedFlag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=2 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidHyperlink">
+    <CATVidCtlStack>
+      <CATVidCtlLineEditor Text="@URL Mode=TwoWays" RequestedMinimumDimension="35 21" TextMargins="5 0 1 0" TextActivated="@OnEditingStarted" TextEdited="@OnTextEdited" ReturnPressed="@HandleEditingFinishedEvent" EscapePressed="@OnEditingEscaped" EditingFinished="@HandleEditingFinishedEvent"/>
+      <CATVidCtlLineEditor Text="@Tooltip Mode=TwoWays" RequestedMinimumDimension="35 21" TextMargins="5 0 1 0" TextActivated="@OnEditingStarted" TextEdited="@OnTextEdited" ReturnPressed="@HandleEditingFinishedEvent" EscapePressed="@OnEditingEscaped" EditingFinished="@HandleEditingFinishedEvent"/>
+      <CATVidCtlCheckBox CheckState="@VisitedFlag Mode=TwoWays" />
+    </CATVidCtlStack>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidImageBlender" syp:version="2">
+    <CATVidLayLayer RequestedMinimumDimension="0 21">
+      <CATVidLayGrid>
+        <CATVidGPLabel Text="Blending Color: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidCtlTweakerCATVidColor syp:Template="Std" Color="@Color Mode=OneWayToSource" UseTransactionFlag="@UseTransactionFlag" UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+        <CATVidGPLabel Text="Blending Mode: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+        <CATVidCtlTweakerEnum Name="BlendingMode" SelectedIndex="@BlendingMode Mode=TwoWays" EnumType="CATVidImageProcessing::BlendingMode" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidImageBlender">
+    <CATVidLayLayer RequestedMinimumDimension="0 21">
+      <CATVidLayGrid>
+        <CATVidGPLabel Text="Blending Color: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidCtlTweakerCATVidColor syp:Template="Std" Color="@Color Mode=OneWayToSource" UseTransactionFlag="@UseTransactionFlag" UseDetailedViewTransactionFlag="@UseDetailedViewTransactionFlag" EditingStarted="@OnEditingStarted" EditingFinished="@OnEditingFinished" CATVidLayGrid.IndexedConstraints="x=1 y=0"/>
+        <CATVidGPLabel Text="Blending Mode: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+        <CATVidCtlTweakerEnum Name="BlendingMode" SelectedIndex="@BlendingMode Mode=TwoWays" EnumType="CATVidImageProcessing::BlendingMode" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidPalette">
+    <CATVidLayGrid GridWeight="col0=1" RequestedMinimumDimension="0 21">
+      <CATVidCtlLineEditor Text="@ValueAsString" SelectAllTextOnFocusFlag="1" ReadOnlyFlag="1" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidLayLayer CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB">
+        <CATVidCtlButton syp:name="PopupModelEditorCheck"  CheckMode="1" RequestedMinimumDimension="21 0" Icon="vid_paletteIcon.png" IconDimension="16 16"/>
+        <CATVidCtlPopup syp:name="PopupModelEditor" SnapFlag="1" SnapSide="1" PopupCompactFlag="1" VisibleFlag="@CheckState Mode=TwoWays ElementName=PopupModelEditorCheck" VisibleStateChanged="@OnDetailedViewVisibleStateChanged" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped" PopupDimension="300 200">
+        </CATVidCtlPopup>
+      </CATVidLayLayer>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--===================================-->
+  <!--CATVidCtlTweakerCATVidLayGridWeight -->
+  <!--===================================-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidLayGridWeight">
+    <CATVidLayGrid GridWeight="col1=1" RequestedMinimumDimension="0 21">
+      <CATVidSpacer RequestedMinimumDimension="2 0" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidLayGrid  CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB" RequestedMinimumDimension="20 19">
+        <CATVidCtlLineEditor Name="Value" RequestedMinimumDimension="205 21" TextMargins="5 0 1 0" TextActivated="@OnEditingStarted" ReturnPressed="@HandleEditingFinishedEvent" EscapePressed="@OnEditingEscaped" EditingFinished="@HandleEditingFinishedEvent" Text="@ValueAsString" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+        <!--<CATVidLayGrid CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L">
+        <CATVidLayLayer  RequestedMinimumDimension="20 19">
+          <CATVidCtlButton syp:name="checkRow"  IconDimension="14 14" CheckMode="1" Icon="vid_rows.png" TooltipShortHelp="rows weight" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+          <CATVidCtlPopup syp:name="popupRow" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState ElementName=checkRow Mode=TwoWays" ModalFlag="1" AutoHideFlag="1">
+            <CATVidCtlGroupBox syp:Template="GroupBox" Label="Rows">
+              <CATVidLayGrid CellSpacing="2" GridWeight="row1=1" RequestedMinimumDimension="80 0">
+                <CATVidCtlListView syp:name="ColumnsList" HReboundFlag="0"  VReboundFlag="0" UniformItemSizes="1" ItemsScrollMode="ItemPerItem" SelectionMode="SingleElement" ItemsFlow="TopToBottom" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+                <CATVidCtlButton  IconDimension="16 16" Icon="vid_add_row_big.png" TooltipShortHelp="add row weight" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=L"/>
+              </CATVidLayGrid>
+            </CATVidCtlGroupBox>
+          </CATVidCtlPopup>
+         </CATVidLayLayer>
+        <CATVidLayLayer RequestedMinimumDimension="20 19">
+          <CATVidCtlButton syp:name="checkColumn"  IconDimension="14 14" Icon="vid_columns.png" CheckMode="1" TooltipShortHelp="columns weight" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=L"/>
+          <CATVidCtlPopup syp:name="popupColumn" SnapFlag="1" SnapSide="Bottom" PopupCompactFlag="1" VisibleFlag="@CheckState ElementName=checkColumn Mode=TwoWays" ModalFlag="1" AutoHideFlag="1">
+            <CATVidCtlGroupBox syp:Template="GroupBox" Label="Columns">
+              <CATVidLayGrid CellSpacing="2" GridWeight="row1=1" RequestedMinimumDimension="80 0">
+                <CATVidCtlListView syp:name="RowsList" HReboundFlag="0"  VReboundFlag="0" UniformItemSizes="1" ItemsScrollMode="ItemPerItem" SelectionMode="SingleElement" ItemsFlow="TopToBottom" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=L"/>
+                <CATVidCtlButton  IconDimension="16 16" Icon="vid_add_column.png" TooltipShortHelp="add column weight" CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=L"/>
+              </CATVidLayGrid>
+            </CATVidCtlGroupBox>
+          </CATVidCtlPopup>
+        </CATVidLayLayer>
+        </CATVidLayGrid>-->
+      </CATVidLayGrid>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=2 y=2"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--===================================-->
+  <!--CATString -->
+  <!--===================================-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATString">
+    <CATVidCtlLineEditor
+                         Name="Value"
+                         Text="@ValueAsCATUnicodeString"
+                         UndefinedFlag="@UndefinedFlag Mode=TwoWays"
+                         RequestedMinimumDimension="35 21"
+                         TextMargins="5 0 1 0"
+                         TextActivated="@OnEditingStarted"
+                         TextEdited="@OnTextEdited"
+                         ReturnPressed="@HandleEditingFinishedEvent"
+                         EscapePressed="@OnEditingEscaped"
+                         EditingFinished="@HandleEditingFinishedEvent"/>
+  </Template>
+
+  <!--===================================-->
+  <!--BitField -->
+  <!--===================================-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerBitField">
+    <CATVidLayLayer>
+      <CATVidCtlButton syp:name="Check" Label="@BitFieldString"  CheckMode="1"/>
+      <!--PopupCompactFlag="1"-->
+      <CATVidCtlPopup syp:name="Popup" SnapFlag="1" SnapSide="Bottom" VisibleFlag="@CheckState Mode=TwoWays ElementName=Check" ModalFlag="1" AutoHideFlag="1" AutoHide="@OnEditingEscaped">
+        <CATVidCtlBasicList syp:name="BitFieldList" HScrollbarPolicy="AlwaysHidden" VScrollbarPolicy="AlwaysHidden"
+                            RequestedMinimumDimension="@Dimension ElementName=Check" VStretchPolicy="NoStretchFit"
+                            SelectionMode="MultiRange"/>
+        <!--RequestedMinimumDimension="100 100"-->
+      </CATVidCtlPopup>
+    </CATVidLayLayer>
+  </Template>
+
+  <!--=======================================-->
+  <!--Generic Type Representation as String  -->
+  <!--=======================================-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerGenericRepresentation">
+    <!--<CATVidCtlLineEditor
+                        syp:name="Editor"
+                        Name="Value"
+                        UndefinedFlag="@UndefinedFlag Mode=TwoWays"
+                        RequestedMinimumDimension="35 21"
+                        TextMargins="5 0 1 0" />-->
+    <CATVidCtlLineEditor Name="Value" UndefinedFlag="@UndefinedFlag Mode=TwoWays" IncorrectInputFlag="@IncorrectInputFlag" RequestedMinimumDimension="35 21" Text="@ValueAsString" TextActivated="@OnEditingStarted" TextEdited="@OnEditorTextEdited" ReturnPressed="@OnEditorEditingFinished" EscapePressed="@OnEditingEscaped" EditingFinished="@OnEditorEditingFinished"/>
+
+  </Template>
+
+  <!--======================================================-->
+  <!-- CATVidCtlForm : Template form -->
+  <!--======================================================-->
+  <Template syp:name="Form" Target="CATVidCtlForm" syp:clonableFlag="FALSE">
+    <CATVidLayGrid GridWeight="row1=1">
+      <CATVidCtl syp:name="GridFormContainer" CATVidLayGrid.IndexedConstraints="x=0 y=0 attach=RLTB"/>
+      <CATVidSpacer CATVidLayGrid.IndexedConstraints="x=0 y=1 attach=RLTB"/>
+    </CATVidLayGrid>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlForm" syp:clonableFlag="FALSE">
+    <CATVidCtl syp:name="GridFormContainer"/>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidGPPolygonContour" syp:version="2">
+    <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+      <CATVidGPLabel Text="2D points : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidCtlLineEditor Name="X" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Text="@PointsByString Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidCtlGroupBox Label="Circle" CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="Radius : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@CircleRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="Sag  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@Sag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour circle"  Click="@CreateCircleCB" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+      <CATVidCtlGroupBox Label="Star" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="Big Radius : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@StarBigRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="Little Radius : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@StarLittleRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidGPLabel Text="Nb branchs  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+          <CATVidCtlSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@StarNbBranchs Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour circle"  Click="@CreateStarCB" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+      <CATVidCtlGroupBox Label="Pie" CATVidLayGrid.IndexedConstraints="x=0 y=3 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="Radius : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="Sag  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieSag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidGPLabel Text="Start Angle (degree)  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieStartAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+          <CATVidGPLabel Text="Pie Angle (degree)  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=3 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour pie"  Click="@CreatePieCB" CATVidLayGrid.IndexedConstraints="x=0 y=4 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+      <CATVidCtlGroupBox Label="Donut" CATVidLayGrid.IndexedConstraints="x=0 y=4 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="BigRadius : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutBigRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="LittleRadius : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutLittleRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidGPLabel Text="Sag  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutSag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+          <CATVidGPLabel Text="Start Angle (degree)  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutStartAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=3 attach=RLTB"/>
+          <CATVidGPLabel Text="Pie Angle (degree)  : " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=4"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=4 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour donut"  Click="@CreateDonutCB" CATVidLayGrid.IndexedConstraints="x=0 y=5 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+    </CATVidLayGrid>
+  </Template>
+
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidGPPolygonContour">
+    <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+      <CATVidGPLabel Text="2D points : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+      <CATVidCtlLineEditor Name="X" RequestedMinimumDimension="35 21" BackgroundColor="255 255 255 255" Text="@PointsByString Mode=TwoWays" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+      <CATVidCtlGroupBox Label="Circle" CATVidLayGrid.IndexedConstraints="x=0 y=1 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="Radius : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@CircleRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="Sag  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@Sag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour circle"  Click="@CreateCircleCB" CATVidLayGrid.IndexedConstraints="x=0 y=2 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+      <CATVidCtlGroupBox Label="Star" CATVidLayGrid.IndexedConstraints="x=0 y=2 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="Big Radius : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@StarBigRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="Little Radius : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@StarLittleRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidGPLabel Text="Nb branchs  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+          <CATVidCtlSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@StarNbBranchs Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour circle"  Click="@CreateStarCB" CATVidLayGrid.IndexedConstraints="x=0 y=3 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+      <CATVidCtlGroupBox Label="Pie" CATVidLayGrid.IndexedConstraints="x=0 y=3 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="Radius : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="Sag  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieSag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidGPLabel Text="Start Angle (degree)  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieStartAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+          <CATVidGPLabel Text="Pie Angle (degree)  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@PieAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=3 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour pie"  Click="@CreatePieCB" CATVidLayGrid.IndexedConstraints="x=0 y=4 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+      <CATVidCtlGroupBox Label="Donut" CATVidLayGrid.IndexedConstraints="x=0 y=4 xSpan=2 attach=RLTB">
+        <CATVidLayGrid  RequestedMinimumDimension="0 21" >
+          <CATVidGPLabel Text="BigRadius : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutBigRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+          <CATVidGPLabel Text="LittleRadius : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutLittleRadius Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=1 attach=RLTB"/>
+          <CATVidGPLabel Text="Sag  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=2"/>
+          <CATVidCtlDoubleSpinBox RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutSag Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=2 attach=RLTB"/>
+          <CATVidGPLabel Text="Start Angle (degree)  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=3"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutStartAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=3 attach=RLTB"/>
+          <CATVidGPLabel Text="Pie Angle (degree)  : " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=4"/>
+          <CATVidCtlSpinBox MinimumValue="0" MaximumValue="360" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255"  Value="@DonutAngleInDegree Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=4 attach=RLTB"/>
+          <CATVidCtlButton  Label="contour donut"  Click="@CreateDonutCB" CATVidLayGrid.IndexedConstraints="x=0 y=5 attach=RLTB"/>
+        </CATVidLayGrid>
+      </CATVidCtlGroupBox>
+    </CATVidLayGrid>
+  </Template>
+
+  <!--=========================================-->
+  <!--CATVidCtlTweakerCATVidLayDockConstraints -->
+  <!--=========================================-->
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidLayDockConstraints" syp:version="2">
+    <CATVidLayLayer RequestedMinimumDimension="0 21">
+      <CATVidLayGrid>
+        <CATVidGPLabel Text="Priority: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidCtlSpinBox Name="Priority" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@Priority Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidGPLabel Text="DockConstraint: " FontSize="12" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+        <CATVidCtlTweakerEnum Name="DockConstraint" SelectedIndex="@DockConstraint Mode=TwoWays" EnumType="CATVid::DockConstraint" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+  <Template syp:name="Std" Target="CATVidCtlTweakerCATVidLayDockConstraints">
+    <CATVidLayLayer RequestedMinimumDimension="0 21">
+      <CATVidLayGrid>
+        <CATVidGPLabel Text="Priority: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=0"/>
+        <CATVidCtlSpinBox Name="Priority" RequestedMinimumDimension="35 17" BackgroundColor="255 255 255 255" Value="@Priority Mode=TwoWays" UpOrDownButtonPressed="@OnEditingStarted" UpOrDownButtonReleased="@OnEditingFinished" EditingEscaped="@OnEditingEscaped" CATVidLayGrid.IndexedConstraints="x=1 y=0 attach=RLTB"/>
+        <CATVidGPLabel Text="DockConstraint: " TextHeight="16" BoldFlag="1" CropPolicy="NoCrop" CATVidLayGrid.IndexedConstraints="x=0 y=1"/>
+        <CATVidCtlTweakerEnum Name="DockConstraint" SelectedIndex="@DockConstraint Mode=TwoWays" EnumType="CATVid::DockConstraint" CATVidLayGrid.IndexedConstraints="x=1 y=1"/>
+      </CATVidLayGrid>
+    </CATVidLayLayer>
+  </Template>
+
+
+  <!--=========================================-->
+  <!--DEPRECATED -->
+  <!--=========================================-->
+  <Template syp:name="bool" Target="CATVidCtlTweakerint">
+    <CATVidCtlCheckBox RequestedMinimumDimension="0 21" Name="Value" CheckMode="1" CheckState="@Value Mode=TwoWays" AllCheckedAfterMixedStateFlag="@Value" MixedState="@UndefinedFlag Mode=TwoWays" />
+  </Template>
+
+</Styles>

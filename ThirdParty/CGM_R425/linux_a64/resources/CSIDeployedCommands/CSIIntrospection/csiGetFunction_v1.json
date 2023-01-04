@@ -1,0 +1,40 @@
+{
+  "grammarVersion": 3,
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "desc": "Returns the declarative function definition for a specified function identifier",
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "pool",
+          "basic": "string"
+        },
+        {
+          "label": "function",
+          "basic": "string"
+        },
+        {
+          "label": "version",
+          "basic": "uint32"
+        }
+      ]
+    },
+    "out": {
+      "parameters": [
+        {
+          "label": "function",
+          "type": "CSIDeclarativeFunctionDefinition"
+        }
+      ]
+    }
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

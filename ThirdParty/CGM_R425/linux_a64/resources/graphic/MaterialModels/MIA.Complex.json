@@ -1,0 +1,427 @@
+{
+  "parameters": [
+    {
+      "name": "diffuse_weight",
+      "type": "FloatParam",
+      "nbElements": 1
+    },
+    {
+      "name": "diffuse",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true,
+      "MADSupported": true
+    },
+    {
+      "name": "diffuse_roughness",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "reflectivity",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+    {
+      "name": "refl_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true,
+      "MADSupported": true
+    },
+    {
+      "name": "refl_gloss",
+      "type": "Float",
+      "nbElements": 1
+    },
+    {
+      "name": "refl_gloss_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "refl_interpolate",
+      "type": "Int",
+      "nbElements": 1
+    },
+    {
+      "name": "refl_hl_only",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refl_is_metal",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "transparency",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+
+    {
+      "name": "refr_ior",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true,
+      "MADSupported": true
+    },
+
+    {
+      "name": "refr_gloss",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_gloss_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_interpolate",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_translucency",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_trans_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true,
+      "MADSupported": true
+    },
+
+    {
+      "name": "refr_trans_weight",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "anisotropy",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "anisotropy_rotation",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "anisotropy_channel",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "brdf_fresnel",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "brdf_0_degree_refl",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "brdf_90_degree_refl",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "brdf_curve",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "brdf_conserve_energy",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_grid_density",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_refl_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_refl_ddist_on",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_refl_ddist",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "intr_refr_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "single_env_sample",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refl_falloff_on",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refl_falloff_dist",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refl_falloff_color_on",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refl_falloff_color",
+      "type": "Float",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "refl_depth",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refl_cutoff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_falloff_on",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_falloff_dist",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_falloff_color_on",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_falloff_color",
+      "type": "Float",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "refr_depth",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "refr_cutoff",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "indirect_multiplier",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "fg_quality",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "fg_quality_w",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "ao_on",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "ao_samples",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "ao_distance",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "ao_dark",
+      "type": "Float",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "ao_ambient",
+      "type": "Float",
+      "nbElements": 3,
+      "DoGammaCorrection": true
+    },
+
+    {
+      "name": "ao_do_details",
+      "nbElements": 1,
+      "type": "Int"
+    },
+
+    {
+      "name": "thin_walled",
+
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "no_visible_area_hl",
+
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "skip_inside_refl",
+
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "do_refractive_caustics",
+
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "backface_cull",
+
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "propagate_alpha",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "hl_vs_refl_balance",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "cutout_opacity",
+      "type": "FloatParam",
+      "nbElements": 1,
+      "MADSupported": true
+    },
+
+    {
+      "name": "emissive",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "emissive_color",
+      "type": "FloatParam",
+      "nbElements": 3,
+      "DoGammaCorrection": true,
+      "MADSupported": true
+    },
+
+    {
+      "name": "emissive_intensity",
+      "type": "Float",
+      "nbElements": 1
+    },
+
+    {
+      "name": "bump",
+      "type": "Texture",
+      "nbElements": 3
+    },
+
+    {
+      "name": "no_diffuse_bump",
+      "type": "Int",
+      "nbElements": 1
+    },
+
+    {
+      "name": "mode",
+      "type": "Int",
+      "nbElements": 1
+    }
+
+  ]
+}

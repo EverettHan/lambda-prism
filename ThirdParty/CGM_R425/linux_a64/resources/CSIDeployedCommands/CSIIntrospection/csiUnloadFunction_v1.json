@@ -1,0 +1,31 @@
+{
+  "grammarVersion": 3,
+  "desc": "Unloads a previously uploaded function on the node running this current function",
+  "implementation": {
+    "name": "library",
+    "version": 2,
+    "settings": {
+      "library": "CSICommandBinder"
+    }
+  },
+  "onCall": {
+    "in": {
+      "parameters": [
+        {
+          "label": "name",
+          "basic": "string",
+          "desc": "previously uploaded function name"
+        },
+        {
+          "label": "version",
+          "basic": "uint32",
+          "desc": "previously uploaded function version"
+        }
+      ]
+    },
+    "out": {}
+  },
+  "throwError": {
+    "type": "CSIError"
+  }
+}

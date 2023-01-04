@@ -1,0 +1,69 @@
+<meta charset="UTF-8"/>
+DELLmiProductionTimeConstraintCnx="Ограничения по времени";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx="Взаимосвязь ограничений по времени";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Тип зависимости";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Delay="Задержка";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_Contiguity="Непрерывность";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_MaterialNeed="Потребность в материалах";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_OptionalTimeConstraint="Необязательно";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.PLM_ExternalID="Заголовок";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_IsActive="Активный";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode="Режим задержки";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MinDelay="Минимальная задержка";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.MaxDelay="Максимальная задержка";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DelayMode.Range.Equal.Synchro="Синхронизация";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint="Ограничение ресурса";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.None="Нет";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResources="Одни и те же ресурсы";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.SameResourcesWithReservation="Те же ресурсы с резервированием";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_ResourceConstraint.Range.Equal.DifferentResources="Различные ресурсы";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.V_DependencyType="Тип зависимости";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType="Перечисление типов зависимостей";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToStart="Закончить, чтобы начать";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToStart="Начать, чтобы начать";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.FinishToFinish="Закончить, чтобы закончить";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.StartToFinish="Начать, чтобы закончить";
+DELLmiProductionTimeConstraintCnx.DELLmi_DependencyType.PreviousCycle="Предыдущий цикл";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainingObject="Ссылка на объект ограничения по времени";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCnx.DELLinkToConstrainedObject="Ссылка на объект с ограничением по времени";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract="Абстрактная категория";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintCategoryAbstract.V_ExecutionReturnCode="Код причины";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed="Сбой";
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintFailed.V_MaximumRetries="Максимальное количество попыток";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintAlternative="Альтернативный";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTimeConstraintScrapped="Списано";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract="Абстрактное количество перекрытий";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode="Код возврата выполнения";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MinQuantity="Минимальное количество";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.MaxQuantity="Максимальное количество";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Abstract.V_OverlapQuantityMode.Range.Equal.Synchro="Синхронизация";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each="Количество перекрытий для каждого";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Each.V_OverlapQty="Количество перекрытий";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area="Количество перекрытий для площади";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Area.V_OverlapQty="Количество перекрытий";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length="Количество перекрытий для длины";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Length.V_OverlapQty="Количество перекрытий";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight="Количество перекрытий для веса";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Weight.V_OverlapQty="Количество перекрытий";
+
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume="Количество перекрытий для объема";
+DELLmiProductionTimeConstraintCnx.DELLmiTCOverlapQty_Volume.V_OverlapQty="Количество перекрытий";
+
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension="Расширение потока продукта";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityIN="Приоритет ввода";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionIN="Входная пропорция";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_PriorityOUT="Приоритет выхода";
+DELLmiProductionTimeConstraintCnx.DELLmiProductFlowExtension.V_ProportionOUT="Выходная пропорция";

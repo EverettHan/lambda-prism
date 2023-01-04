@@ -1,0 +1,44 @@
+<meta charset="UTF-8"/>
+ASYNC_Process_Death_NormalEnd.Diagnostic="正常に終了しました。";
+ASYNC_Process_Death_NormalEnd.Advice="";
+ASYNC_Process_Death_NormalEnd.Request="";
+
+ASYNC_Process_Death_KilledByCATIA.Diagnostic="操作はユーザーによってキャンセルされました。";
+ASYNC_Process_Death_KilledByCATIA.Advice="";
+ASYNC_Process_Death_KilledByCATIA.Request="";
+
+ASYNC_Process_Death_KilledByTimeOut.Diagnostic="操作がキャンセルされました。サーバーの応答がタイムアウトしました。";
+ASYNC_Process_Death_KilledByTimeOut.Advice="";
+ASYNC_Process_Death_KilledByTimeOut.Request="";
+
+ASYNC_Process_Death_KilledByUser.Diagnostic="操作がキャンセルされました。外部アプリケーションから非同期プロセスが強制終了されました。";
+ASYNC_Process_Death_KilledByUser.Advice="他のアプリケーションが非同期プロセスを強制終了しないことを確認してください。";
+ASYNC_Process_Death_KilledByUser.Request="";
+
+ASYNC_Process_Death_SystemError.Diagnostic="操作がキャンセルされました。内部エラー。";
+ASYNC_Process_Death_SystemError.Advice="異常終了したファイルを取得してローカル サポートに連絡します。";
+ASYNC_Process_Death_SystemError.Request="";
+
+ASYNC_Process_Death_Unknown.Diagnostic="操作がキャンセルされました。想定外のエラー。";
+ASYNC_Process_Death_Unknown.Advice="異常終了したファイルを取得してローカル サポートに連絡します。";
+ASYNC_Process_Death_Unknown.Request="";
+
+ASYNC_Task_End_CanceledByUser.Diagnostic="操作はユーザーによってキャンセルされました。";
+ASYNC_Task_End_CanceledByUser.Advice="";
+ASYNC_Task_End_CanceledByUser.Request="";
+
+ASYNC_Task_End_AsyncPlatformError.Diagnostic="操作がキャンセルされました。内部エラー。";
+ASYNC_Task_End_AsyncPlatformError.Advice="非同期コマンドが非活動化されます。";
+ASYNC_Task_End_AsyncPlatformError.Request="";
+
+ASYNC_Process_Death_At_Connect.Diagnostic="すべてのコマンドは同期して実行されます。";
+ASYNC_Process_Death_At_Connect.Advice="詳細は、資料で「非同期性」を検索してください。作業は続行できます。";
+ASYNC_Process_Death_At_Connect.Request="非同期性";
+
+ASYNC_Process_Death_At_Connect_DevStage.Diagnostic="非同期要求をサポートしているプロセスが接続中に予期せず非活動状態になりました。\nこれで非同期要求が非活動状態となり、すべての要求が同期して実行されます。";
+ASYNC_Process_Death_At_Connect_DevStage.Advice="接続パラメーターを確認し、この問題について CATPLMxProviderConnection::Connect の所有者にご連絡ください。";
+ASYNC_Process_Death_At_Connect_DevStage.Request="プロセス非活動状態 - 接続エラー";
+
+ASYNC_Platform_Deactivated.Diagnostic="これで非同期要求が非活動状態となり、すべての要求が同期して実行されます。";
+ASYNC_Platform_Deactivated.Advice="";
+ASYNC_Platform_Deactivated.Request="";

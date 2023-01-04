@@ -1,0 +1,25 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "PLMPosAdministration.tst"/>
+  <attached name = "PLMPosBase.tst"/>
+  <attached name = "PLMPosClient.tst"/>
+  <attached name = "PLMPosModeler.tst"/>
+  <attached name = "PLMPosServer.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" name = "SystemTS"/>
+  <prerequisite access = "Protected" name = "CATPLMDictionary"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Private" expose = "ExposePrereq" name = "PLMPosBaseInterfaces"/>
+  <prerequisite access = "Protected" name = "PLMCommunicationHelpers"/>
+  <authorize access = "Private" name = "PLMPosBase.tst"/>
+  <authorize access = "Private" name = "PLMPosClient"/>
+  <authorize access = "Private" name = "PLMPosClient.tst"/>
+  <authorize access = "Private" name = "PLMPosServer"/>
+  <authorize access = "Private" name = "PLMPosServer.tst"/>
+  <authorize access = "Private" name = "PLMPosModeler"/>
+  <authorize access = "Private" name = "PLMPosModeler.tst"/>
+  <authorize access = "Private" name = "VPMPosManager"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

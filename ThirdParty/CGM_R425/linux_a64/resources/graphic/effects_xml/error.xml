@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EFFECT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+
+<!--Effect for handling shader pipeline failing-->
+  <TECHNIQUE>
+    <NAME>Default</NAME>
+    <PASS>
+      <NAME>Default</NAME>      
+      <VERTEX_STAGE>error</VERTEX_STAGE>
+      <FRAGMENT_STAGE>error</FRAGMENT_STAGE>
+      <GEOMETRY_STAGE>error</GEOMETRY_STAGE>
+      <TESS_CONTROL_STAGE>error</TESS_CONTROL_STAGE>
+      <TESS_EVALUATION_STAGE>error</TESS_EVALUATION_STAGE>
+    </PASS>
+  </TECHNIQUE>
+  <TECHNIQUE>
+    <NAME>DefaultRT</NAME>
+    <RAYTRACING_PASS>
+      <NAME>Default</NAME>
+      <RAYGEN_STAGE>error</RAYGEN_STAGE>
+      <MISS_STAGE>error</MISS_STAGE>
+    </RAYTRACING_PASS>
+  </TECHNIQUE>
+</EFFECT>
+

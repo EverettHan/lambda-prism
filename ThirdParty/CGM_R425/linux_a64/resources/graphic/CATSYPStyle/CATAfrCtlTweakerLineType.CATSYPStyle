@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--@Used AfrImmersiveRender\CATAfrSYPView.m\src\CATAfrVidCtlListView.cpp-->
+<Styles xmlns:syp = "http://www.3ds.com/xsd/SYP">
+
+ <!--===================================-->
+ <!--Tweaker Line Type-->
+ <!--===================================-->
+ <!-- CATVisCIDComboLinetype-->
+ <Template syp:name="Std" Target="CATAfrCtlTweakerLineType">
+  <CATVidLayStack syp:name="Container"  Orientation="Horizontal" VisibleFlag="1">
+   <CATVidCtlSimpleCombo ImageDimension="60 16"
+                         MaxVisibleItems="8"
+                         RequestedMinimumDimension="100 21"
+                         SelectedIndex="@Value Mode=TwoWays"
+                          >
+    <CATVidImageAndLabelData Label="1" ResourceImage="MePreference/LineType/LineType_1.PNG"/>
+    <CATVidImageAndLabelData Label="2" ResourceImage="MePreference/LineType/LineType_2.PNG"/>
+    <CATVidImageAndLabelData Label="3" ResourceImage="MePreference/LineType/LineType_3.PNG"/>
+    <CATVidImageAndLabelData Label="4" ResourceImage="MePreference/LineType/LineType_4.PNG"/>
+    <CATVidImageAndLabelData Label="5" ResourceImage="MePreference/LineType/LineType_5.PNG"/>
+    <CATVidImageAndLabelData Label="6" ResourceImage="MePreference/LineType/LineType_6.PNG"/>
+    <CATVidImageAndLabelData Label="7" ResourceImage="MePreference/LineType/LineType_7.PNG"/>
+    <!--<CATVidImageAndLabelData Label="8" ResourceImage="MePreference/LineType/LineType_8.PNG"/>-->
+
+   </CATVidCtlSimpleCombo>
+  </CATVidLayStack>
+ </Template>
+ </Styles>

@@ -1,0 +1,23 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "MultimediaPixelImage.tst"/>
+  <attached name = "Multimedia.tst"/>
+  <attached name = "Visualization.tst"/>
+  <prerequisite access = "Protected" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" name = "SystemTS"/>
+  <prerequisite access = "Protected" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" comment = "22.09.2017 JFS/BTY R420 ExposePrereq" export = "DoNotAddToClientPrereqs" name = "UIVCoreTools"/>
+  <prerequisite access = "Protected" comment = "2013.08.02 CMG/CDT R216 Adding ICC profile color management" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENLittleCMS"/>
+  <prerequisite access = "Private" comment = "2021.10.08 CPT fix compilation errors" export = "DoNotAddToClientPrereqs" expose = "DoNotExposePrereq" name = "VENwmf"/>
+  <authorize access = "Private" meta = "TOREMOVE" name = "CVMTestCorruption.tst"/>
+  <authorize access = "Private" comment = "2017.11.27 BTY/JFS" name = "Multimedia"/>
+  <authorize access = "Private" comment = "2017.05.10 V2E/JFS R420 Split of VENImageMagick" name = "MultimediaRasterFormats_IM"/>
+  <authorize access = "Private" name = "MultimediaRasterFormats_SB"/>
+  <authorize access = "Private" comment = "2017.11.27 BTY/JFS" name = "Multimedia.tst"/>
+  <authorize access = "Private" comment = "01.12.2015 O1X/CDT R218 : for libJPEG, libPNG,ZLIB" name = "VENCEGUI"/>
+  <authorize access = "Private" comment = "2015.12.07 V2E/JFS R419 Snowbound Replacement by ImageMagick" name = "VENImageMagick"/>
+  <authorize access = "Private" name = "Visualization.tst"/>
+  <authorize access = "Private" comment = "20190516 DBE/HEB FW VENOpenEXR creation" name = "VENOpenEXR"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

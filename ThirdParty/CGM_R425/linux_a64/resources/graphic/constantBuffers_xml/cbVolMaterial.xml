@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_cbVolMaterial</NAME>
+  <UNIFORM>
+    <NAME>u_TextureMatrix</NAME>
+    <TYPE>mat4x4</TYPE>
+    <DEFAULT_VALUE>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 </DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_AmbientColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_DiffuseColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_SpecularColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1 0 0 1</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_MaterialTextureProjPlaneS</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>1 0 0 0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_MaterialTextureProjPlaneT</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0 1 0 0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_Shininess</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_Transparence</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_AlphaLimit</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_PointSize</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_MaterialTextureFunction</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_MaterialTextureProjection</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_AlphaFunc</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_LightChannels</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>-1</DEFAULT_VALUE>
+  </UNIFORM> 
+  <UNIFORM>
+    <NAME>u_NumBones</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+   </UNIFORM>
+  <UNIFORM>
+    <NAME>u_DecalID</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>0</DEFAULT_VALUE>
+  </UNIFORM>
+</CONSTANT_BUFFER>
+
+
+

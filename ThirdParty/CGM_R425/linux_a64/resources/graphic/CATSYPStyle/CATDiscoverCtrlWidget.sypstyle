@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Styles xmlns:syp="http://www.3ds.com/xsd/SYP">
+  <Template Target="CATDiscoverCtrlWidget" syp:name="Default">
+
+    <CATVidCtlButtonIcon Name="DiscoverButton"
+                             syp:name="DiscoverButton"
+                             RequestedMinimumDimension="32 32"
+                             VisibleFlag="1"
+                             Click="@OnClick" 
+                             Entry="@OnEntry"
+                             Release="@OnLeave"
+                             OffTexture="I_DiscoverCIRCLE.png"
+                             OnTexture="l_DiscoverCIRCLE-Pressed.png"
+                             OverTexture="I_DiscoverCIRCLE-Hover.png"
+                              />
+
+    <!--CATVidCtlButton  Name="DiscoverButton"
+                             syp:name="DiscoverButton"
+                             RequestedMinimumDimension="32 32"
+                             VisibleFlag="1"
+                             Click="@OnClick" 
+                             Entry="@OnEntry"
+                             Leave="@OnLeave"
+                             Icon="I_DiscoverCIRCLE.png"
+                             IconDimension="32 32" CheckMode="0"
+                             DragMode="Itself"/-->
+  
+  </Template>
+</Styles>

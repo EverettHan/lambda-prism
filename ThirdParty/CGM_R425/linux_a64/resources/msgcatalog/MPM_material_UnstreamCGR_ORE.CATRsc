@@ -1,0 +1,75 @@
+
+/// BEGIN - NRE Configuration
+    Sampler.minFilter.DefaultValue       = "eLinear";
+    Sampler.magFilter.DefaultValue       = "eLinear";
+    Sampler.mipFilter.DefaultValue       = "eLinear";
+    Sampler.texCoordUWrap.DefaultValue   = "eRepeat";
+    Sampler.texCoordVWrap.DefaultValue   = "eRepeat";
+ 
+    MappingOperator.ParameterValue       = "mapping_type";
+    MappingFlip.ParameterValue           = "mapping_flip_u mapping_flip_v";
+    MappingScale.ParameterValue          = "mapping_scale_u mapping_scale_v";
+    MappingOffset.ParameterValue         = "mapping_offset_u mapping_offset_v";
+    MappingRotation.ParameterValue       = "mapping_rotation_z";
+
+    AlphaMode.DefaultValue               = "ePhysicalMaterial";
+    Normal.DefaultValue                  = "none";
+    Height.DefaultValue                  = "none";
+    Coating.DefaultValue                 = "none";
+    Flakes.DefaultValue                  = "none";
+    glossiness.DefaultValue              = "0.85";
+    anisotropy.DefaultValue              = "0.0";
+    anisotropyAngle.DefaultValue         = "0.0";
+    bumpScale.DefaultValue               = "0.0";
+    transparency.DefaultValue            = "0.0";
+    opacity.DefaultValue                 = "1.0";
+    edgeColorBias.DefaultValue           = "0.0";
+    displacement.DefaultValue            = "0.0";
+    flakesWeight.DefaultValue            = "0.0";
+    flakesStrength.DefaultValue          = "0.0";
+    flakesScale.DefaultValue             = "0.0";
+    diffuse.DefaultValue                 = "1.0 1.0 1.0";
+    fresnelCoefficient.DefaultValue      = "0.04 0.04 0.04";
+    edgeColor.DefaultValue               = "0.0 0.0 0.0";
+    flakesColor.DefaultValue             = "0.0 0.0 0.0";
+
+    Normal.ParameterValue                        = "Normal2D";
+    bumpScale.ParameterUniform                   = "default_sp_bump";
+
+    Height.ParameterValue                        = "Height2D";
+    displacement.ParameterUniform                = "default_sp_displacement";
+
+    diffuse.ParameterUniform                     = "default_generic_brdf_diffuse_color";
+    diffuse.ParameterSpatial                     = "Diffuse2D";
+    diffuse.ParameterVariability                 = "default_slot_diffuse_color";
+    diffuse.ParameterVariabilitySemantic         = "MPM";
+    diffuse.ParameterM1                          = "default_generic_brdf_diffuse_weight";
+
+    fresnelCoefficient.ParameterSemantic         = "ior";
+    fresnelCoefficient.ParameterUniform          = "default_generic_brdf_ior";
+    fresnelCoefficient.ParameterM1               = "default_generic_brdf_specular_weight";
+    fresnelCoefficient.ParameterM2               = "default_generic_brdf_specular_color";
+
+    glossiness.ParameterUniform                  = "default_generic_brdf_specular_glossiness";
+    glossiness.ParameterSpatial                  = "SpecularGlossiness2D";
+    glossiness.ParameterVariability              = "default_slot_specular_glossiness";
+    glossiness.ParameterVariabilitySemantic      = "MPM";
+
+    anisotropy.ParameterValue                    = "default_generic_brdf_specular_anisotropy";
+
+    anisotropyAngle.ParameterUniform             = "default_generic_brdf_specular_anisotropy_rotation";
+    anisotropyAngle.ParameterSpatial             = "SpecularAnisotropyDirection2D";
+    anisotropyAngle.ParameterVariability         = "default_slot_specular_anisotropy_direction";
+    anisotropyAngle.ParameterVariabilitySemantic = "MPM";
+
+    transparency.ParameterUniform                = "default_generic_btdf_transparency_weight";
+    transparency.ParameterSpatial                = "Transparency2D";
+    transparency.ParameterVariability            = "default_slot_transparency";
+    transparency.ParameterVariabilitySemantic    = "MPM";
+
+    opacity.ParameterUniform                     = "default_slot_opacity";
+    opacity.ParameterSpatial                     = "Opacity2D";
+    opacity.ParameterVariability                 = "default_slot_opacity";
+    opacity.ParameterVariabilitySemantic         = "MPM";
+
+/// END - NRE Configuration

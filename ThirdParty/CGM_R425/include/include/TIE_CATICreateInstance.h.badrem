@@ -1,0 +1,174 @@
+#ifndef __TIE_CATICreateInstance
+#define __TIE_CATICreateInstance
+
+// COPYRIGHT DASSAULT SYSTEMES 2012
+
+/** @CAA2Required */
+/**********************************************************************/
+/* DON T DIRECTLY INCLUDE THIS HEADER IN YOUR APPLICATION CODE. IT IS */
+/* REQUIRED TO BUILD CAA APPLICATIONS BUT IT MAY DISAPEAR AT ANY TIME */
+/**********************************************************************/
+
+#include <string.h>
+#include "CATBaseUnknown.h"
+#include "CATMetaClass.h"
+#include "CATMacForTie.h"
+#include "CATICreateInstance.h"
+#include "JS0DSPA.h"
+
+
+#ifdef _WINDOWS_SOURCE
+#define Exported __declspec(dllexport)
+#define Imported __declspec(dllimport)
+#define CallingConvention __stdcall
+#else
+#define Exported 
+#define Imported 
+#define CallingConvention 
+#endif
+
+
+/* To link an implementation with the interface CATICreateInstance */
+#define declare_TIE_CATICreateInstance(classe,TIE_Version) \
+ \
+      CATForwardDeclareTemplateFunctionSpecialization_##TIE_Version(classe) \
+ \
+class TIECATICreateInstance##classe : public CATICreateInstance \
+{ \
+   private: \
+      CATDeclareCommonTIEMembers \
+   public: \
+      CATDeclareTIEMethods(CATICreateInstance, classe) \
+      CATDeclareIUnknownMethodsForCATBaseUnknownTIE \
+      CATDeclareCATBaseUnknownMethodsForTIE \
+      virtual HRESULT CallingConvention CreateInstance(void **oPPV) ; \
+};
+
+
+
+#define ENVTIEdeclare_CATICreateInstance(ENVTIEName,ENVTIETypeLetter,ENVTIELetter) \
+virtual HRESULT CallingConvention CreateInstance(void **oPPV) ; \
+
+
+#define ENVTIEdefine_CATICreateInstance(ENVTIEName,ENVTIETypeLetter,ENVTIELetter) \
+HRESULT CallingConvention  ENVTIEName::CreateInstance(void **oPPV)  \
+{ \
+return (ENVTIECALL(CATICreateInstance,ENVTIETypeLetter,ENVTIELetter)CreateInstance(oPPV)); \
+} \
+
+
+/* Name of the TIE class */
+#define class_TIE_CATICreateInstance(classe)    TIECATICreateInstance##classe
+
+
+/* Common methods inside a TIE */
+#define common_TIE_CATICreateInstance(classe,TIE_Version) \
+ \
+ \
+/* Static initialization */ \
+CATDefineCommonTIEMembers(CATICreateInstance, classe) \
+ \
+ \
+CATImplementTIEMethods(CATICreateInstance, classe) \
+CATImplementIUnknownMethodsForCATBaseUnknownTIE(CATICreateInstance, classe, 1) \
+CATImplementCATBaseUnknownMethodsForTIE(CATICreateInstance, classe) \
+ \
+HRESULT CallingConvention  TIECATICreateInstance##classe::CreateInstance(void **oPPV)  \
+{ \
+   return(((classe *)Tie_Method_##TIE_Version(NecessaryData.ForTIE,ptstat,classe))->CreateInstance(oPPV)); \
+} \
+
+
+
+/* Macro used to link an implementation with an interface */
+#define Real_TIE_CATICreateInstance(classe,TIE_Version) \
+ \
+ \
+declare_TIE_CATICreateInstance(classe,TIE_Version) \
+ \
+ \
+CATMetaClass * __stdcall TIECATICreateInstance##classe::MetaObject() \
+{ \
+   if (!meta_object) \
+   { \
+      meta_object=new CATMetaClass(&IID_CATICreateInstance,"CATICreateInstance",CATICreateInstance::MetaObject(),classe::MetaObject(),TIE); \
+   } \
+   return(meta_object); \
+} \
+ \
+ \
+common_TIE_CATICreateInstance(classe,TIE_Version) \
+ \
+ \
+/* creator function of the interface */ \
+/* encapsulate the new */ \
+CATImplementTIECreation(CATICreateInstance, classe) \
+ \
+/* to put information into the dictionary */ \
+static CATFillDictionary DicCATICreateInstance##classe(classe::MetaObject(),CATICreateInstance::MetaObject(),(void *)CreateTIECATICreateInstance##classe)
+
+
+
+/* Macro used to link an implementation with an interface */
+/* This TIE is chained on the implementation object */
+#define Real_TIEchain_CATICreateInstance(classe,TIE_Version) \
+ \
+ \
+declare_TIE_CATICreateInstance(classe,TIE_Version) \
+ \
+ \
+CATMetaClass * __stdcall TIECATICreateInstance##classe::MetaObject() \
+{ \
+   if (!meta_object) \
+   { \
+      meta_object=new CATMetaClass(&IID_CATICreateInstance,"CATICreateInstance",CATICreateInstance::MetaObject(),classe::MetaObject(),TIEchain); \
+   } \
+   return(meta_object); \
+} \
+ \
+ \
+common_TIE_CATICreateInstance(classe,TIE_Version) \
+ \
+ \
+/* creator function of the interface */ \
+/* encapsulate the new */ \
+CATImplementTIEchainCreation(CATICreateInstance, classe) \
+ \
+/* to put information into the dictionary */ \
+static CATFillDictionary DicCATICreateInstance##classe(classe::MetaObject(),CATICreateInstance::MetaObject(),(void *)CreateTIECATICreateInstance##classe)
+
+
+/* Macro to switch between BOA and TIE at build time */ 
+#ifdef CATSYS_BOA_IS_TIE
+#define BOA_CATICreateInstance(classe) TIE_CATICreateInstance(classe)
+#else
+#define BOA_CATICreateInstance(classe) CATImplementBOA(CATICreateInstance, classe)
+#endif
+
+
+
+#ifdef CATICREATEINSTANCE_IS_NOT_AUTHORIZED
+
+#pragma message (" BADREM : JBX 121025 " __FILE__ " CATICreateInstance implementation should be replaced by CATCreateAndAddOMFactoryFunction macro")
+
+#define TIE_Deprecated_CATICreateInstance(classe) CompilationError_TIE_Deprecated_CATICreateInstance
+#define TIEchain_Deprecated_CATICreateInstance(classe) CompilationError_TIEchain_Deprecated_CATICreateInstance
+#define TIE_CATICreateInstance(classe) Real_TIE_CATICreateInstance(classe,TIEV2) CompilationError_TIE_CATICreateInstance
+#define TIEchain_CATICreateInstance(classe) Real_TIEchain_CATICreateInstance(classe,TIEV2) CompilationError_TIEchain_CATICreateInstance
+
+#else
+
+/* Macros used to link an implementation with an interface */
+#define TIE_Deprecated_CATICreateInstance(classe) Real_TIE_CATICreateInstance(classe,TIEV1)
+#define TIEchain_Deprecated_CATICreateInstance(classe) Real_TIEchain_CATICreateInstance(classe,TIEV1) 
+#ifdef New_TIE_Invoke 
+#define TIE_CATICreateInstance(classe) Real_TIE_CATICreateInstance(classe,TIEV2)
+#define TIEchain_CATICreateInstance(classe) Real_TIEchain_CATICreateInstance(classe,TIEV2) 
+#else
+#define TIE_CATICreateInstance(classe) Real_TIE_CATICreateInstance(classe,TIEV1)
+#define TIEchain_CATICreateInstance(classe) Real_TIEchain_CATICreateInstance(classe,TIEV1) 
+#endif
+
+#endif //else CATICREATEINSTANCE_IS_NOT_AUTHORIZED
+
+#endif

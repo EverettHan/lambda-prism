@@ -1,0 +1,42 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "Visualization.tst"/>
+  <attached name = "VisuImmersiveDialog.tst"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" comment = "20110305 ADT/HPN System Split" expose = "ExposePrereq" name = "SystemTS"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "Mathematics"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Private" comment = "13.05.2011 DMO/CDT Introspection is now exposed" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "IntrospectionInfrastructure"/>
+  <prerequisite access = "Protected" comment = "25.07.2012 R214 CKO/CDT iVSensors" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "UIVCoreTools"/>
+  <authorize access = "Protected" name = "CAT3DXMLPlayerSetup"/>
+  <authorize access = "Protected" name = "VIDBridge.tst"/>
+  <authorize access = "Protected" name = "NextGenInstaller"/>
+  <authorize access = "Protected" name = "VisuImmersiveDialog"/>
+  <authorize access = "Private" name = "VisuImmersiveDialog.tst"/>
+  <authorize access = "Private" name = "V6UserExperienceIOSApp.tst"/>
+  <authorize access = "Protected" name = "VisuImmersiveUI"/>
+  <authorize access = "Protected" name = "Visualization.tst"/>
+  <authorize access = "Protected" name = "VisuToolkit.tst"/>
+  <authorize access = "Protected" name = "DialogXMLUI.tst"/>
+  <authorize access = "Protected" name = "VIDToolkit.tst"/>
+  <authorize access = "Protected" name = "CATLiveDialog"/>
+  <authorize access = "Protected" name = "AfrImmersiveRender"/>
+  <authorize access = "Protected" name = "SWXBaseUI"/>
+  <authorize access = "Protected" name = "SWXConnectUI"/>
+  <authorize access = "Protected" name = "AfrFoundation"/>
+  <authorize access = "Protected" name = "VisuImmersiveDialogEx"/>
+  <authorize access = "Protected" name = "VisuImmersiveDialogEx.tst"/>
+  <authorize access = "Protected" comment = "2011.10.09 ERS/CDT R213 C-Afr" name = "AfrComponentsModel"/>
+  <authorize access = "Protected" comment = "2011.06.05 JOV/CDT R212 CID Introspection Refactoring" name = "SWXBaseUI.tst"/>
+  <authorize access = "Protected" comment = "2011.11.18 VR2/CDT CID Designer" name = "DSxDevCIDDesigner"/>
+  <authorize access = "Protected" comment = "2011.11.18 VR2/CDT CID Designer" name = "DSxDevCIDDesigner.tst"/>
+  <authorize access = "Protected" comment = "2012.04.06 CKO/CDT CID Debug Tools" name = "CIDDebugTools"/>
+  <authorize access = "Protected" comment = "2012.09.12 JOV/CDT" name = "VisuImmersive3D"/>
+  <authorize access = "Protected" comment = "11.03.2013 JOV/CDT R216 Declarative DialogEngine" name = "DialogEngine"/>
+  <authorize access = "Protected" comment = "17.04.2013 JOV/CDT R216 Declarative Dialog" name = "Dialog"/>
+  <authorize access = "Protected" comment = "29.08.2014 EFM/HEB JS Bindings Tests" name = "UIScript.tst"/>
+  <authorize access = "Protected" comment = "06.11.2015 ASR4/HEB ApplicationFrame App Server" name = "AfrAppServer"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

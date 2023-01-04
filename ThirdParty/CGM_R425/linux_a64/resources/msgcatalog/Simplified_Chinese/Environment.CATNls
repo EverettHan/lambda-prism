@@ -1,0 +1,204 @@
+<meta charset="UTF-8"/>
+//===================================================================================
+//XX  XX   XXXXXXX  XXXX     XXXXXX            XX   XX   XXXXXX    XXXX
+//XX  XX    XX   X   XX       XX  XX           XXX XXX  XX    X   XX  X
+//XX  XX    XX X     XX       XX  XX           XXXXXXX  XX       XX
+//XXXXXX    XXXX     XX       XXXXX            XX X XX   XXXXX   XX
+//XX  XX    XX X     XX       XX               XX   XX       XX  XX  XXX
+//XX  XX    XX   X   XX  XX   XX               XX   XX  X    XX   XX  XX
+//XX  XX   XXXXXXX  XXXXXXX  XXXX              XX   XX  XXXXXX     XXX X
+//====================================================================================
+SETCATENV_HELP.text="创建新的环境文件 
+
+setcatenv -e 名称 [-d directory][-p concatenation ][-a user|global][-new yes|no][-server][-cf path][-v yes|no]
+
+常规选项：
+    -e environment_name：环境名称。必选项。
+    -d directory        ：环境文件存储文件夹。 
+                          默认值：\"/P1\"。
+    -p concatenation    ：安装路径。可指定多路径，使用 : 作为路径分隔符。
+                          默认值：\"/P2\"
+    -a user|global      ：环境的类型。除非指定 -d。
+                          user： 环境文件存储在 \"/P3\" 中。
+                          global：环境文件存储在 \"/P4\" 中
+                          默认值：user
+    -new     是|否     ：如果环境具有相同名称，则覆盖。
+                          默认值：是
+    -server             ：激活服务器模式。
+    -cf    file_path    ：指定您要从中创建环境的现有环境的名称或路径。
+                          例如，命令：   setcatenv -e MyNewEnv -cf MyFirstEnv
+                          从 MyFirstEnv 副本中创建新环境 MyNewEnv。
+                          此操作允许您继承上次自定义而无需在新环境中重建。
+    -v 是|否           ：激活详细模式。默认：是
+    -h|-help            ：此帮助";
+
+//***************************************************************************************************************************************    
+DELCATENV_HELP.text="删除环境文件。
+
+delcatenv -e 名称 [-d directory][-a user|global][-desktop yes|no][-v yes|no]
+
+常规选项：
+    -e environment_name：环境名称。必选项。
+    -d directory        ：环境文件存储文件夹。 
+                          默认值：\"/P1\"。
+    -a user|global      ：环境的类型。除非指定 -d。
+                          user：  环境文件存储在 \"/P2\" 中。
+                          global：环境文件存储在 \"/P3\" 中
+                          默认值：user
+    -v 是|否           ：激活详细模式。默认：是
+    -h|-help            ：此帮助。";
+
+//***************************************************************************************************************************************    
+
+LSCATENV_HELP.text="列出可用环境： 
+
+lscatenv   [-a user|global] [-d storage_directory_name]
+
+选项：
+    -d directory        ：环境文件存储文件夹。
+                        默认值为 \"/P1\"。
+    -a user|global      ：环境类型。若指定了 -d，则无用。
+                        user：环境文件存储于 \"/P2\"。
+                        global：环境文件存储于 \"/P3\" 
+                        默认值：user";
+//***************************************************************************************************************************************
+READCATENV_HELP.text="显示环境文件的内容。
+
+readcatenv -e name [-d directory][-a user|global][-var variable][-short][-l]
+
+选项：
+    -e environment_name ：环境名称，必选项。
+    -d directory        ：环境文件存储文件夹。
+                        默认值为 \"/P1\"。
+    -a user|global      ：环境类型。若指定了 -d，则无用。
+                        user：环境文件存储于 \"/P2\"。
+                        global：环境文件存储于 \"/P3\"
+                        默认值：user
+    -var varname        ：仅显示指定的变量值。若未设置此选项，
+                        则 readcatenv 显示环境文件中赋值的所有变量。
+    -short              ：仅显示变量值。
+    -l                  ：不扩展变量值。";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_NT.text="编辑环境文件中的变量。
+
+chcatenv -e name -var variable=value [-d directory][-a user|global][-new][-com][-del]
+
+Options:
+    -e environment_name：环境名称。必需选项。
+    -d directory：环境文件存储文件夹。
+                          如果未指定 -a  选项，则为必需项。
+    -a user|global：环境类型。
+                          除非指定 –d，如果未指定 –d，则为必需项。
+                          user：环境文件存储在“/P2”中。
+                          global：环境文件存储在“/P3”中
+                          如果指定 -d 选项，则默认值为 user
+    -var var1=new_value：将变量 var1 的值设为 new_value。使用 \" 将参数包括起来。
+                          例如：chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\MyData\"
+                          或  chcatenv -e MyEnv -a user -var \"CATTemp=C:\Temp\My Data\"
+                          如果要更新变量，请运行此命令文件，如下所示：
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=%CATInstallPath%;C:\Temp\MyNewPath\"                           
+                          或 
+                          chcatenv -e MyEnv -a user -var \"CATInstallPath=C:\Temp\MyNewPath\;%CATInstallPath%\"                            
+    -new：如果在 -var 选项中指定的变量不存在，请创建它。
+                          例如：chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new。
+                          为避免出现不需要的行为，应避免在变量名称中使用空字符。
+    -com \"Comment\"：在环境文件中为指定变量添加备注。
+                          仅对用户创建的变量可用。
+                          例如：chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"在此处添加一些备注\"
+    -del：删除在 -var 选项中指定的变量（仅对用户创建的变量可用）。
+                          例如：chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+
+//***************************************************************************************************************************************
+CHCATENV_HELP_UNIX.text="编辑环境文件中的变量。
+
+chcatenv -e name -var variable=value [-d directory][-a user|global][-new][-com][-del]
+
+选项：
+    -e environment_name ：环境名称，必选项。
+    -d directory        ：环境文件存储文件夹。
+                        默认值为 \"/P1\"。
+    -a user|global      ：环境类型。若指定了 -d，则无用。
+                        user：环境文件存储于 \"/P2\"。
+                        global：环境文件存储于 \"/P3\"
+                        默认值：user
+    -var var1=new_value ：用 new_value 设置变量 var1；用引号将此参数括起。
+                        例如：chcatenv -e MyEnv -a user -var \"CATTemp=/tmp/MyData\"
+                        若要更新变量，请按以下方式运行命令：
+                        chcatenv -e MyEnv -a user -var \"CATInstallPath=\$CATInstallPath:/tmp/MyNewPath\"                           
+                        或
+                        chcatenv -e MyEnv -a user -var \"CATInstallPath=/tmp/MyNewPath:\$CATInstallPath\"
+    -new                ：若 -var 选项中指定的变量不存在，则创建一个。
+                        例如：chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -new. 
+                        要避免未请求的行为，应在变量名中避免空白字符。
+    -com \"Comment\"    ：为指定变量在环境文件中添加备注；
+                        仅可用于由用户创建的变量。
+                        例如：chcatenv -e MyEnv -a user -var \"MyVariable=FOOBAR\" -com \"Add some comment here\"
+    -del                ：删除 -var 选项中指定的变量（仅针对由用户创建的变量）。
+                        例如：chcatenv -e MyEnv -a user -var \"MyVariable\" -del";
+//***************************************************************************************************************************************
+
+
+//***************************************************************************************************************************************
+
+
+//====================================================================================
+//XXXXXXX  XXXXXX   XXXXXX    XXXXX   XXXXXX            XX   XX   XXXXXX    XXXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XXX XXX  XX    X   XX  X
+// XX X     XX  XX   XX  XX  XX   XX   XX  XX           XXXXXXX  XX       XX
+// XXXX     XXXXX    XXXXX   XX   XX   XXXXX            XX X XX   XXXXX   XX
+// XX X     XX XX    XX XX   XX   XX   XX XX            XX   XX       XX  XX  XXX
+// XX   X   XX  XX   XX  XX  XX   XX   XX  XX           XX   XX  X    XX   XX  XX
+//XXXXXXX  XXX  XX  XXX  XX   XXXXX   XXX  XX           XX   XX  XXXXXX     XXX X
+//====================================================================================
+
+AccessPb.Text="无法在 \"/P1\" 中保存环境文件。";
+BadFormatedVariable.Text="-var 选项中指定的值无效。";
+BadOptions.Text="参数错误，请检查命令行";
+CannotDelOfficalVar.Text="不能删除此变量，只能删除新变量。";
+DefaultFolderNotFound.Text="默认环境存储文件夹 (/P1) 不可访问";
+DirDoesntExist.Text="目录 /P1 不可访问。";
+DiskFull.Text="无法保存环境文件：磁盘已满";
+EnvCreationFailed.text="环境创建失败";
+EnvFileDoesntExist.Text="找不到指定的环境。";
+EnvFileNotFound.Text="找不到环境文件";
+EnvNameNotSpecified.Text="环境名称必须在“-e” 选项中指定。";
+ErrDelEnv.Text="删除环境失败";
+ErrDelEnvUsr.Text="删除环境展示失败";
+ErrUnset.Text="取消设置工作站失败";
+FileAlreadyExist.Text="环境文件已存在";
+GeneralFailure.Text="chcatenv 初始化期间出现问题。";
+IconeCreationFailed.text="环境图标创建失败";
+IconeCreationFailed2.text="未创建任何桌面快捷方式，请检查安装目录中是否存在 /P1。";
+InitFolderFailed.Text="找不到默认储存文件夹。\n环境保存于：/P1";
+InvalidEnvModeOption.Text="\"-a\"  选项必须设置为 \"user\" 或 \"global\"。";
+InvalidEnvNameOption.Text="环境名称必须在 \"-e\" 选项中指定。";
+ModifyVariableFailed.text="环境变量修改失败。";
+MustBeSystemAdmin.Text="执行此工作指令需要管理员权限。";
+NoBlankInEnvName.text="环境名称中不允许有空白字符";
+NoCommentOnOfficialVar.Text="您只能备注新变量。";
+NoConcatSpecified.Text="必须指定连接";
+NoDirModeOption.Text="\"-a\" 选项必须设置为 \"user\" 或 \"global\" ，或通过 \"-d\" 选项指定存储目录。";
+NoHome.text="找不到 \$HOME 环境变量";
+NoNewOfficialVariable.Text="/P1 已存在，请选择其他变量名称。";
+NoReadAccessInDir.Text="目录 /P1 不可以读取模式访问";
+NoSuchVariable.text="环境文件中找不到变量。";
+NoVarSpecified.Text="必须指定 \"-var\" 选项。";
+NoWriteAccessInDir.Text="目录 /P1 不可以写入模式访问";
+NonValidType.Text="必须通过 -a 选项指定类型（user 或 global）。";
+ReadFailed.text="无法读取此环境";
+ReadFailed.text="无法读取此环境";
+RefFileNotFound.Text="找不到参考文件描述符。";
+SpecifiedFolderNotFound.Text="目录 \"/P1\" 不可访问。";
+ToolsSetupFailed.text="工具安装失败";
+UnableToReadEnvFile.Text="无法读取环境文件。";
+UnableToWriteFile.Text="无法保存已修改的环境文件。";
+UnknownOption.Text="无效选项：/P1。 ";
+UnknownProductLine.Text="/P1 不是有效的产品系列。\n-cs 选项的授权值为：/P2";
+UnknownError.Text="发生错误：/P1。";
+UpdateVariableFailed.text="环境变量更新失败。";
+VariableNotFound.Text="环境文件中找不到变量 /P1。 ";
+VariableNotValued.Text="未赋值变量 /P1。若要将空字符串设为新值，则不要在 = 符号后添加任何内容。\n例如：chcatenv -e MyEnv -a user -var\"MyNewVar=\" ";
+WSSsetupFailed.text="工作站设置失败";
+
+

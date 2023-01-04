@@ -1,0 +1,45 @@
+<meta charset="UTF-8"/>
+Usage="
+V5 レコード キャプチャ ファイル管理ユーティリティ。
+
+使用法: RecordTools -s name [-Check|-FindPath path |-FindCmd cmdname] [-h, -?, -help]
+       RecordTools -s name -d name -ChangePath    oldpath newpath [ID]
+       RecordTools -s name -d name -ChangeSubPath oldpath newpath
+       RecordTools -s name -d name -ChangeData  ID datapos newdata
+       RecordTools -s name -d name -ChangeDataString oldString NewString
+       RecordTools -s name -d name -ChangeEvent ID newevent
+       RecordTools -s name -d name -Delete ID
+       RecordTools -s name -d name -DeleteSubPath subpath
+
+   -h, -?, -help    : このヘルプ
+   -s name          : ソース ファイルの名前 (通常は capture.rec)
+   -d name          : 宛先ファイルの名前
+
+   -Check           : ソース ファイルの整合性を確認し、XML 形式で表示します
+   -FindPath        : ソース ファイルから CATCommand パスを検索します
+   -findCmd         : ソース ファイルから CATCommand 名を検索します
+
+   -ChangePath      : 'ID' が指定されていない限り、完全パス 'oldpath' をすべて 'newpath' に変更します
+   -ChangeSubPath   : サブパス 'oldpath' を 'newpath' に変更します
+   -ChangeData      : 'datapos' 位置にあるレコード ブロック 'ID' 内のデータを 'newdata' に変更します
+   -ChangeDataString: 全ブロックの CHAR 型のすべてのデータで oldString を newString に置換します
+   -ChangeEvent     : レコード ブロック 'ID' 内のイベントを 'newevent' に変更します
+   -Delete          : レコード ブロック 'ID' を削除します
+   -DeleteSubPath   : 'subpath' を含むすべてのレコード ブロックを削除します
+
+   ID               : -Check オプションで指定された、CRnnn または CInnn 形式の対話 ID"; // @validatedUsage AJT 13:10:10 option
+
+Error.0="# レコード ツール-エラー: ";
+Error.1="-s: ソース ファイルがありません。";
+Error.2="宛先ファイルとソース ファイルを同じにすることはできません。";
+Error.3="-d: 宛先ファイルがありません。";
+Error.4="レコード ブロック番号がありません。";
+Error.5="サブパスがありません。";
+Error.6="-s: ソース ファイルが見つかりません";
+Error.7="引数が認識されません。";
+Error.8="-s: ソース ファイルを開けません";
+Error.9="-d: 宛先ファイルがありません。";
+Error.10="-d: 宛先ファイルはすでに存在しています。";
+Error.11="-d: 宛先ディレクトリが存在していません。";
+
+Error.99="正しくない引数の数。";

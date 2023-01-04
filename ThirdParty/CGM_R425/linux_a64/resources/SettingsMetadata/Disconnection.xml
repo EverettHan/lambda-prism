@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<st:repository xsi:schemaLocation="urn:com:dassault_systemes:settings settings.xsd" xmlns:st="urn:com:dassault_systemes:settings" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+<st:Description name="Disconnection" PrimaryTabpage="/General/General">
+	<st:role>Automatic disconnection setting</st:role>
+	<st:detailedRole>Setting used to handle the parameters of automatic disconnection. If the automatic disconnection is enabled, the V5 session will be kill after a  user-defined duration of inactivity.</st:detailedRole>
+	<st:RepositoryFile>CATAutoLogoff</st:RepositoryFile>
+	<st:version>1</st:version>
+	<st:compatibility>
+		<st:FullCompatibilityfromLevel>0</st:FullCompatibilityfromLevel>
+		<st:UpwardCompatibilityfromLevel>0</st:UpwardCompatibilityfromLevel>
+	</st:compatibility>
+</st:Description>
+	
+<st:attributes>
+	<st:attribute Name="Activation" alias="AutoLogoffActive">
+		<st:role></st:role>
+		<st:boolean size="1">
+			<st:default size="1">  
+			<st:value>false</st:value>
+			</st:default>
+		</st:boolean>
+	</st:attribute>
+	
+	<st:attribute Name="InactivityDuration" alias="MaximumInactivity">
+		<st:role>timeout in seconds before the automatic disconnection when no activity has been detected, if the mechanism is enabled</st:role>
+		<st:int>
+			<st:default>	
+				<st:value>300</st:value>
+			</st:default>
+		</st:int>
+	</st:attribute>
+		
+		
+		<st:attribute Name="Version">
+			<st:role visibility="LA">Internal</st:role>
+			<st:int>
+				<st:default>
+					<st:value>1</st:value>
+				</st:default>
+			</st:int>
+		</st:attribute>
+		
+	</st:attributes>
+	<st:relations>
+		<st:relation src="Activation" dest="InactivityDuration" kind="GroupedWith"/>
+	</st:relations>
+</st:repository>

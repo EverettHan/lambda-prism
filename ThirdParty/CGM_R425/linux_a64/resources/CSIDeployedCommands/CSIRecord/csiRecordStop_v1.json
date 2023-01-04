@@ -1,0 +1,51 @@
+{
+  "grammarVersion": 2,
+  "desc": "Stops the running record on the node.",
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "onBeginParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  },
+  "onCommandParameters": {
+    "in": {
+    },
+    "answers": {
+      "parameters": [
+        {
+          "label": "id",
+          "basic": "int32",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "Identifier of the generated record. Will be used to launch the replay"
+        },
+        {
+          "label": "binary",
+          "basic": "buffer",
+          "optional": {
+            "isOptional": true
+          },
+          "desc": "A binary containing the stream of the record in order to be able to replay the scenario on another node"
+        },
+        {
+          "label": "errors",
+          "basic": "string",
+          "optional": {
+            "isOptional": true
+          }
+        }
+      ]
+    }
+  },
+  "onEndParameters": {
+    "in": {
+    },
+    "answers": {
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<meta charset="UTF-8"/>
+//-------------------------------- Policy section below;
+//may be enriched by CSE Customer if needed, but rather should be deployed on the customer specific type
+//most common policy defined here. it is assumed others are non visible to user
+//emxFramework.Policy.Comment = Comment
+
+policy.Comment="Commentaire";
+
+//----------------------------------  V_maturity section
+//notice web principal is NLS of state are given by policy
+//emxFramework.State.Comment.InWork = In Work
+
+V_maturity.Active="En traitement";
+V_maturity.Release="Distribué";
+V_maturity.Obsolete="Obsolète";
+V_maturity.Private="Privé";
+V_maturity.InWork="En traitement";
+V_maturity.Frozen="Figé";
+V_maturity.Release="Distribué";
+V_maturity.Obsolete="Obsolète";
+
+
+current.Active="En traitement";
+current.Release="Distribué";
+current.Obsolete="Obsolète";
+current.Private="Privé";
+current.InWork="En traitement";
+current.Frozen="Figé";
+current.Release="Distribué";
+current.Obsolete="Obsolète";
+
+
+
+
+

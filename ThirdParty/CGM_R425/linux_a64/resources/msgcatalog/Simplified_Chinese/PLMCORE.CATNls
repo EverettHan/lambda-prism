@@ -1,0 +1,94 @@
+<meta charset="UTF-8"/>
+PLMCORE="核心模型";
+
+//--------------------------------------------------------
+PLMCORE.PLMReference="PLMReference";
+//-- Simple from PLMReference --
+PLMCORE.PLMReference.V_ApplicabilityDate="适用性日期";
+PLMCORE.PLMReference.V_AuthorityControl="授权控制";
+PLMCORE.PLMReference.V_DerivedFrom="衍生自";
+PLMCORE.PLMReference.V_EffectivityKind="有效性类别";
+PLMCORE.PLMReference.V_ProjectApplicability="在项目中适用";
+PLMCORE.PLMReference.V_VersionID="版本标识";
+PLMCORE.PLMReference.V_fromExternalID="创建自";
+PLMCORE.PLMReference.V_hasConfigContext="可配置";
+PLMCORE.PLMReference.V_isLastMinorVersion="是最后一个次要修订版";
+PLMCORE.PLMReference.V_isLastVersion="是最后一个修订版";
+PLMCORE.PLMReference.V_isVPLMControlled="物理控制";
+PLMCORE.PLMReference.V_order="顺序";
+PLMCORE.PLMReference.V_versionComment="修订版备注";
+//-- Simple from BusinessType (but which are "internal" ? -- 
+PLMCORE.PLMReference.majororder="主要的顺序";
+PLMCORE.PLMReference.minororder="次要的顺序";
+PLMCORE.PLMReference.versionid="版本标识";
+//-- Volatile from PLMReference --
+PLMCORE.PLMReference.InstantiatedBy="实例化者";
+PLMCORE.PLMReference.IsExported="已导出";
+PLMCORE.PLMReference.V_maturity="成熟度";
+PLMCORE.PLMReference.V_version="修订版";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreReference="PLMCoreReference";
+//-- Simple from PLMCoreReference --
+PLMCORE.PLMCoreReference.V_ChangeHistory="更改历史记录";
+PLMCORE.PLMCoreReference.V_isTerminal="为终端";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepReference="PLMCoreRepReference";
+//-- Simple from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.V_isOnceInstantiable="为 OnceInstantiable";
+PLMCORE.PLMCoreRepReference.V_markstamp="Markstamp";
+//-- Volatile from PLMCoreRepReference --
+PLMCORE.PLMCoreRepReference.AggregatingReference="聚合参考";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMConnection="PLMConnection";
+//-- Simple from PLMConnection --
+PLMCORE.PLMConnection.V_isVPLMControlled="由 PLM 控制";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMPort="PLMPort";
+//-- Simple from PLMPort --
+PLMCORE.PLMPort.V_isVPLMControlled="由 PLM 控制";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMInstance="PLMInstance";
+//-- Simple from PLMInstance --
+PLMCORE.PLMInstance.PLM_ExternalID="名称";
+PLMCORE.PLMInstance.V_CustoDiscipline="自定义规定";
+PLMCORE.PLMInstance.V_EffectivityCompiledForm="有效性编译表单";
+PLMCORE.PLMInstance.V_Name="标题";
+PLMCORE.PLMInstance.V_TreeOrder="结构树顺序";
+PLMCORE.PLMInstance.V_description="描述";
+PLMCORE.PLMInstance.V_discipline="规则";
+PLMCORE.PLMInstance.V_hasConfigEffectivity="已配置";
+PLMCORE.PLMInstance.V_hasConfigStaticMapping="为已映射的配置";
+PLMCORE.PLMInstance.V_isVPLMControlled="由 PLM 控制";
+PLMCORE.PLMInstance.V_nature="性质";
+PLMCORE.PLMInstance.V_sec_level="安全级别";
+PLMCORE.PLMInstance.V_usage="用法";
+//-- Simple from RelationType --
+PLMCORE.PLMInstance.modified="上次修改";
+PLMCORE.PLMInstance.originated="创建日期";
+PLMCORE.PLMInstance.owner="所有者";
+//-- Volatile from PLMInstance --
+PLMCORE.PLMInstance.C_created="创建日期";
+PLMCORE.PLMInstance.C_modified="上次修改";
+PLMCORE.PLMInstance.LOCKSTATUS="已锁定";
+PLMCORE.PLMInstance.LOCKUSER="锁定者";
+PLMCORE.PLMInstance.V_confidentiality="机密性";
+PLMCORE.PLMInstance.V_organization="组织";
+PLMCORE.PLMInstance.V_project="协作区";
+PLMCORE.PLMInstance.V_user="所有者";
+
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreInstance="PLMCoreInstance";
+
+//--------------------------------------------------------
+PLMCORE.PLMCoreRepInstance="PLMCoreRepInstance";

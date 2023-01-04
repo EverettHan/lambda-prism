@@ -1,0 +1,103 @@
+<meta charset="UTF-8"/>
+ERR_LINK_0 = "Can not create link because the requested size is to big.";
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2009
+//=================================================================
+//
+// Usage Notes:    This is the OmbLink Document Unstream Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to OMB Document Unstream
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :   
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error. 
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters : 
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms 
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use. 
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+//=================   DURING OPEN OR FBDI PROCESS  ===========================================
+
+// To be interpreted by the client open engine and the FBDI engine
+OMBLink_Missing_Catalog_Error.Diagnostic = "The following resource /p contains required Feature definitions, but cannot be found. Data may have been improperly opened." ;
+OMBLink_Missing_Catalog_Error.Advice = "Please ensure that your installation is containing all needed resources." ;
+OMBLink_Missing_Catalog_Error.Request = "" ;
+
+//=================   DURING SAVE  ===========================================
+
+ERR_LINK_1.Diagnostic = "Cannot save links table : inconsistency in ULRComplementaryData. " ;
+ERR_LINK_1.Advice = "" ;
+ERR_LINK_1.Request = "" ;
+
+ERR_REL_1.Request = "";
+ERR_REL_1.Diagnostic = "This component has two relations with the same id";
+ERR_REL_1.Advice = "Contact support.\nTechnical details: component=/p1, IDRel=/p2.";
+
+ERR_REL_2.Diagnostic = "One or several relations from this component break relation integrity ";
+ERR_REL_2.Advice = "";
+ERR_REL_2.Request = "";
+
+CannotSaveCorruptedSRMetadata.Diagnostic = "Cannot save data due to corrupted link.";
+CannotSaveCorruptedSRMetadata.Advice = "Technical details: component=/p1. type SR=/p2. reason='/p3'.";
+CannotSaveCorruptedSRMetadata.Request = "";
+
+CannotOpenCorruptedSRMetadata.Diagnostic = "Cannot open data due to corrupted link.";
+CannotOpenCorruptedSRMetadata.Advice = "Technical details: component=/p1. type SR=/p2. reason='/p3'.";
+CannotOpenCorruptedSRMetadata.Request = "";
+
+CannotOpenCATLnk.Request = "Open links";
+CannotOpenCATLnk.Diagnostic = "Cannot open the file containing component links informations";
+CannotOpenCATLnk.Advice = "This problem may be due to a download issue, a file system error or a concurrent modification/deletion of the associated component.\nClose session, erase cache located at /p1 and retry operation.\nIf the problem persists, contact support, details:\n/p2";
+
+CannotUnstreamLinks.Request = "Open links";
+CannotUnstreamLinks.Diagnostic = "Cannot unstream links";
+CannotUnstreamLinks.Advice = "Contact support";
+
+CtxLinkInfo_01.Request = "Getting informations about possibility of a contextual link creation";
+CtxLinkInfo_01.Diagnostic = "The input arguments should have a pointed object.";
+CtxLinkInfo_01.Advice = "" ;
+
+CtxLinkInfo_02.Request = "Getting informations about possibility of a contextual link creation";
+CtxLinkInfo_02.Diagnostic = "Impossible to retrieve the Representation Reference from the Pointed object.";
+CtxLinkInfo_02.Advice = "";
+
+CtxLinkInfo_03.Request = "Getting informations about possibility of a contextual link creation";
+CtxLinkInfo_03.Diagnostic = "No Representation Reference found in the selected context.";
+CtxLinkInfo_03.Advice = "";
+
+CtxLinkInfo_04.Request = "Getting informations about possibility of a contextual link creation";
+CtxLinkInfo_04.Diagnostic = "An Internal Link on a Port of Product is not valid.";
+CtxLinkInfo_04.Advice = "";
+
+CtxLinkInfo_05.Request    = "Attempt to define a new context for a representation already having one.";
+CtxLinkInfo_05.Diagnostic = "This operation is not allowed because this new context is neither an extension nor a suboccurence of the existing context of the representation.\n\nExising context: /p1\n";
+CtxLinkInfo_05.Advice     = "In order to define  proposed context as new context on this representation,  either (through Edit Links & Relations):\n- Isolate this contextual representation. Current associativity will be lost.\n- Change the context of this representation to the new one. Current associativity will be kept.";
+
+CtxLinkInfo_06.Request    = "Attempt to define a new context for a representation already having one.";
+CtxLinkInfo_06.Diagnostic = "This operation is not allowed because there is already an existing context of the representation and it is currently broken so impossible to compare to the new one proposed.\n";
+CtxLinkInfo_06.Advice     = "In order to define proposed context as new context on this representation,  either (through Edit Links & Relations):\n Try to repair current context of the representation and try again. \n- Isolate this contextual representation. Current associativity will be lost.\n- Change the context of this representation to the new one. Current associativity will be kept.";

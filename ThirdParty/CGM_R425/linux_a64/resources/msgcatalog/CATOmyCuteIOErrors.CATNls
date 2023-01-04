@@ -1,0 +1,81 @@
+<meta charset="UTF-8"/>
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2005
+//=================================================================
+//
+// Usage Notes:    This is the CuteIO-PowerIO Warning/Errors Catalog
+//
+//
+// In this catalog should only be declared all user messages relative to CuteIO/PowerIO functions
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Advice     = "........";
+//                                             MyErrKey.Request    = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :
+//                               Example:      In Diagnostic's /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error.
+//                This field can be empty.
+//   Diagnostic,Advice,Request's nls parameters :
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use.
+//
+//   NLS parameters :
+//   - have to be understandable by the end user
+//   - NEVER indicate which PLM component is concerned by the error.
+//     The PLM component concerned by the error is indicated with the CATComponentId associated to the error.
+//
+//=================================================================
+
+
+
+//=================   DURING LOAD PROCESS  ===========================================
+//=================   DURING UNLOAD PROCESS  =========================================
+//=================   DURING LOCAL SAVE PROCESS  =====================================
+//=================   DURING CLOSE PROCESS  ==========================================
+//=================   DURING ASYNCHRONOUS LOAD PROCESS  ==============================
+
+//=================   DURING SAVE PROCESS  ===========================================
+
+// To be interpreted by the client save engine - factorisation case
+CIO_Save_CopyURL_Error.Diagnostic = "At least one Stream cannot be uploaded to the Vault for this transaction.";
+CIO_Save_CopyURL_Error.Advice = "Please check the server connection.";
+CIO_Save_CopyURL_Error.Request = "If server connection is OK, please contact your local support.";
+
+CIO_Open_Index_Error.Diagnostic = "The Cache Index cannot be opened. Reset Cache.";
+CIO_Open_Index_Error.Advice = "";
+CIO_Open_Index_Error.Request = "";
+CIO_Version_Cache_Error.Diagnostic = "Cache version differs. Reset cache.";
+CIO_Version_Cache_Error.Advice = "";
+CIO_Version_Cache_Error.Request = "";
+CIO_LS_Cache_Error.Diagnostic = "Too many local save images. Reset cache.";
+CIO_LS_Cache_Error.Advice = "";
+CIO_LS_Cache_Error.Request = "";
+CIO_Coherency_Index_Error.Diagnostic = "Index files not present or missing. Reset cache.";
+CIO_Coherency_Index_Error.Advice = "";
+CIO_Coherency_Index_Error.Request = "";
+//=================   DURING OPEN PROCESS  ===========================================
+CIO_Index_Points_Missing_Files.Diagnostic = "Cache incoherencies have been detected. Cache will be fixed at next restart. Local Save images will be lost.";
+CIO_Index_Points_Missing_Files.Advice = "Save your changes and restart the app.";
+CIO_Index_Points_Missing_Files.Request = "";
+
+CIO_LoadCommit_Points_Missing_Files.Diagnostic = "Some files cannot be downloaded from the server.";
+CIO_LoadCommit_Points_Missing_Files.Advice = "If server connection is OK, please contact your local support to check store integrity.";
+CIO_LoadCommit_Points_Missing_Files.Request = "";
+
+CIO_SaveCommit_Points_Missing_Files.Diagnostic = "Some files cannot be uploaded to the store.";
+CIO_SaveCommit_Points_Missing_Files.Advice = "Try saving again. If the problem persists, contact your administrator or customer support. ";
+CIO_SaveCommit_Points_Missing_Files.Request = "";
+

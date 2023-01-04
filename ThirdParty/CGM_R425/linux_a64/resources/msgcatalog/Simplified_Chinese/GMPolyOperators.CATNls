@@ -1,0 +1,119 @@
+<meta charset="UTF-8"/>
+// WMN20200723 Reprise de TopologicalOperators.CATNls
+// WMN20200723 9000-9099- Polyhedral operators : Resp DPS, Week-07 2019.
+// CLO2 Change errors to 9200-9299 (KUB VariationnalOperators already use error 9000-9099)
+
+//Déplacement de toutes les erreurs
+// 9200-9209 Polyhedral Operators Name
+// Polyhedral operators names :
+
+GMPolyInPolySculptingOpe_ERR_9200="多面体雕刻";
+GMPolyInPolySweepDraftOpe_ERR_9201="多面体扫掠拔模";
+GMPolyInPolyConversionOpe_ERR_9202="多面体转换";
+GMPolyInPolyBodyJoin_ERR_9203="多面体接合几何体";
+GMPolyInPolyBodyTrimShells_ERR_9204="多面体修剪壳体";
+GMPolyInPolyBodySplitShells_ERR_9205="多面体分割壳体";
+GMPolyInPolyBodyVolByTrim_ERR_9206="多面体 VolumeByTrim";
+GMPolyInPolyBodyRoughOffset_ERR_9207="多面体 RoughOffset";
+
+
+// 9210-9299 Polyhedral errors
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Request="/p1 运算符：";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Diagnostic="由于当前限制或永久限制，不能计算结果。";
+GMPolyInPolyOperatorCurrentRestriction_ERR_9210.Advice="修改输入操作数或/和参数。";
+
+//
+GMPolyInPolyInvalidResult_ERR_9211.Request="/p1 运算符：";
+GMPolyInPolyInvalidResult_ERR_9211.Diagnostic="无效结果";
+GMPolyInPolyInvalidResult_ERR_9211.Advice="";
+
+// WMN20200723 Duplication ici, a supprimer de l'autre CATNls
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Request="多面体转换运算符：";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Diagnostic="顶点彼此过于接近。";
+GMPolyInPolyConversionOpVtxProximity_ERR_9212.Advice="";
+
+//
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Request="多面体雕刻运算符：";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Diagnostic="至少有一个操作数与所需的规格不一致。";
+GMPolyInPolySculptingOpInconsistentOperand_ERR_9213.Advice="放大操作数的形状或反转方向。";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Request="/p1 运算符：";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Diagnostic="至少有两个面相交";
+GMPolyInPolyFaceFaceIntersection_ERR_9214.Advice="修改输入曲面以避免相交";
+
+//CLO2 - FaceFaceIntersection - IR712050
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Request="/p1 运算符：";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Diagnostic="至少一条边线的相邻面有不一致的方向";
+GMPolyInPolyBadEdgeFaceOrientation_ERR_9215.Advice="修改输入曲面。";
+
+//CLO2 - Extrapol Needed - IR790103 
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Request="/p1 运算符：";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Diagnostic="输入曲面没有相互断开";
+GMPolyInPolySplitTrimShellsNoExtrapol_ERR_9216.Advice="修改输入曲面或启用外插延伸模式";
+
+//CLO2 - Extension too short - IR79003 
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Request="VolumeByTrim 运算符：";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Diagnostic="输入曲面之间的相交曲线未闭合。无法计算包络体";
+GMPolyInPolyVolByTrimExtTooShort_ERR_9217.Advice="放大输入的形状或添加扩展";
+
+//CLO2 - Extension too short - IR790103 
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Request="VolumeByTrim 运算符：";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Diagnostic="输入曲面无法生成闭合曲面。无法计算包络体";
+GMPolyInPolyVolByTrimSurfNotClosed_ERR_9218.Advice="检查每个曲面输入要保留的输入侧";
+
+//CLO2 - Rename and change ID
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Request="多面体雕刻运算符：";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Diagnostic="“剪切”和“填充”操作数相交。";
+GMPolyInPolySculptingOpCuttingFillingClash_ERR_9219.Advice="修改剪切或/和填充操作数的形状。";
+
+//WMN20220209
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Request="/p1 运算符：";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Diagnostic="至少有一个面自相交";
+GMPolyInPolyFaceSelfIntersection_ERR_9220.Advice="修改输入曲面以避免相交";
+
+//WMN20220209
+GMPolyInPolyFaceSelfContact_ERR_9221.Request="/p1 运算符：";
+GMPolyInPolyFaceSelfContact_ERR_9221.Diagnostic="至少有一个面自接触";
+GMPolyInPolyFaceSelfContact_ERR_9221.Advice="修改输入曲面以避免接触";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Request="/p1 运算符：";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Diagnostic="闭合或非流形曲面不能拉伸。";
+GMPolyInPolyLinearExtrusionClosedInput_ERR_9222.Advice="仅使用开放和流形曲面。";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Request="/p1 运算符：";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Diagnostic="闭合或非流形平面曲线不能在同一平面中拉伸。";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9223.Advice="选择不与此平面平行的拉伸方向。";
+
+//WMN20220601
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Request="/p1 运算符：";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Diagnostic="轮廓局部平行于拉伸方向。";
+GMPolyInPolyLinearExtrusionCoplanarInp_ERR_9224.Advice="选择不与拉伸轮廓平行的拉伸方向。";
+
+//RBU3_20222806
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Request="/p1 运算符：";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Diagnostic="偏移值过低，无法计算偏移。";
+GMPolyInPolyRoughOffsetOffsetValue_ERR_9225.Advice="偏移值应大于零件大小的 1/1000。";
+
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Request="/p1 运算符：";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Diagnostic="输入无效。";
+GMPolyInPolyRoughOffsetBadInput_ERR_9226.Advice="输入几何体必须是均匀的流形，具有单包络体块。必须设置 offsetValue。";
+
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Request="/p1 运算符：";
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Diagnostic="偏移的结果为空，应是几乎闭合的曲面或包络体内的偏移所致。";
+GMPolyInPolyRoughOffsetEmptyResult_ERR_9227.Advice="修改 offsetValue 以获得更接近输入几何体的结果。";
+
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Request="/p1 运算符：";
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Diagnostic="内部错误。";
+GMPolyInPolyRoughOffsetInternalError_ERR_9228.Advice="";
+
+
+
+
+// WMN20200723 Nouveau
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Request="多面体转换运算符：";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Diagnostic="无效结果";
+GMPolyInPolyConversionOpInvalidResult_ERR_9266.Advice="";

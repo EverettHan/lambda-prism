@@ -1,0 +1,115 @@
+//--------------------------------------------------------------------------------------------------------
+// The objective of this CATRsc is to make a correspondance between the old Polar bear types (that do not exist anymore) and the Unicorn equivalent types
+// In order to migrate natively briefcases
+// The key is the name of the Polar bear type
+// The value is the name of the Unicorn type
+//--------------------------------------------------------------------------------------------------------
+
+// Requirement, requirement spec, chapter and comment translation from Polar bear type to Unicorn type
+//--------------------------------------------------------------------------------------------------------
+VPLMReqProjRequirementReference="Requirement";
+VPLMReqProjReqSpecificationReference="Requirement Specification";
+VPLMReqProjChapterReference="Chapter";
+VPLMReqProjCommentReference="Comment";
+VPLMReqProjSubRequirementInstance="Sub Requirement"; 
+VPLMReqProjCommonInstance="Specification Structure";
+
+// Requirement, requirement spec, chapter and comment translation from Polar bear doublet to Unicorn type
+//--------------------------------------------------------------------------------------------------------
+PLMCoreReference.VPLMReqProjRequirement="Requirement";
+PLMCoreReference.VPLMReqProjReqSpecification="Requirement Specification";
+PLMCoreReference.VPLMReqProjChapter="Chapter";
+PLMCoreReference.VPLMReqProjComment="Comment";
+PLMCoreInstance.VPLMReqProjRequirement="Sub Requirement"; 
+PLMCoreInstance.VPLMReqProjCommon="Specification Structure";
+
+
+// Requirement, requirement spec, chapter and comment translation from Polar bear doublet to Unicorn type
+//--------------------------------------------------------------------------------------------------------
+
+// OOTB derivation of type Requirement
+VPLMReqProjUserReqReference="User Requirement";
+PLMCoreReference.VPLMReqProjRequirement.VPLMReqProjUserReq="User Requirement";
+
+VPLMReqProjCustoReqReference="Customer Requirement";
+PLMCoreReference.VPLMReqProjRequirement.VPLMReqProjCustoReq="Customer Requirement";
+
+// OOTB derivation of type Requirement Specification
+VPLMReqProjCustoSpecReference="Customer Specification";
+PLMCoreReference.VPLMReqProjReqSpecification.VPLMReqProjCustoSpec="Customer Specification";
+
+VPLMReqProjCustoReqSpecReference="Customer Requirement Specification";
+PLMCoreReference.VPLMReqProjReqSpecification.VPLMReqProjCustoReqSpec="Customer Requirement Specification";
+
+VPLMReqProjCustoRespReqSpecReference="Customer Response Requirement Specification";
+PLMCoreReference.VPLMReqProjReqSpecification.VPLMReqProjCustoRespReqSpec="Customer Response Requirement Specification";
+
+VPLMReqProjPrdReqSpecReference="Product Requirement Specification";
+PLMCoreReference.VPLMReqProjReqSpecification.VPLMReqProjPrdReqSpec="Product Requirement Specification";
+
+VPLMReqProjFeatReqSpecReference="Feature Requirement Specification";
+PLMCoreReference.VPLMReqProjReqSpecification.VPLMReqProjFeatReqSpec="Feature Requirement Specification";
+
+VPLMReqProjSysReqSpecReference="System Requirement Specification";
+PLMCoreReference.VPLMReqProjReqSpecification.VPLMReqProjSysReqSpec="System Requirement Specification";
+
+VPLMReqProjSubSysReqSpecReference="Sub System Requirement Specification";
+PLMCoreReference.VPLMReqProjReqSpecification.VPLMReqProjSubSysReqSpec="Sub System Requirement Specification";
+
+
+// Document
+//--------------------------------------------------------------------------------------------------------
+CDM_Document="Document";
+PLMCoreRepReference.CDM_Document="Document";
+Generic_Document="Generic Document";
+PLMCoreRepReference.Generic_Document="Generic Document";
+
+// SLM
+//--------------------------------------------------------------------------------------------------------
+SLMActivity="Simulation Activity";
+PLMCoreReference.SLMActivity="Simulation Activity";
+
+SLMCategory="Simulation Category";
+PLMCoreReference.SLMCategory="Simulation Category";
+
+SLMCategoryContext="Simulation Category - Context";
+PLMCoreReference.SLMCategoryContext="Simulation Category - Context";
+
+SLMCategoryInternalData="Simulation Category - Internal Data";
+PLMCoreReference.SLMCategoryInternalData="Simulation Category - Internal Data";
+
+SLMCategoryProduct="Simulation Category - Product";
+PLMCoreReference.SLMCategoryProduct="Simulation Category - Product";
+
+SLMCategoryResults="Simulation Category - Results";
+PLMCoreReference.SLMCategoryResults="Simulation Category - Results";
+
+SLMCategorySpecifications="Simulation Category - Specifications";
+PLMCoreReference.SLMCategorySpecifications="Simulation Category - Specifications";
+
+SLMCategoryValidatedData="Simulation Category - Validated Data";
+PLMCoreReference.SLMCategoryValidatedData="Simulation Category - Validated Data";
+
+SLMDocumentNV="Simulation Document - NonVersioned";
+PLMCoreRepReference.SLMDocumentNV="Simulation Document - NonVersioned";
+
+SLMDocumentV="Simulation Document - Versioned";
+PLMCoreRepReference.SLMDocumentV="Simulation Document - Versioned";
+
+SLMFolder="Simulation Folder";
+PLMCoreReference.SLMFolder="Simulation Folder";
+
+SLMFolders="Simulation Folders";
+PLMCoreReference.SLMFolders="Simulation Folders";
+
+SLMJob="Simulation Job";
+PLMCoreReference.SLMJob="Simulation Job";
+
+SLMProcess="Simulation";
+PLMCoreReference.SLMProcess="Simulation";
+
+SLMTemplate="Simulation Template";
+PLMCoreReference.SLMTemplate="Simulation Template";
+
+SLMSimulationAbstract="SIMULATIONS";
+PLMCoreReference.SLMSimulationAbstract="SIMULATIONS";

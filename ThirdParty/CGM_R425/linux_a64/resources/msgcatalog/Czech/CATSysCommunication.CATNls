@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+//*-------------------------------*//
+//* CATSysCommunication messages *//
+//*-------------------------------*//
+CATSysComPortNotFound_150001.Request="Nelze najít port /p1 na hostiteli /p2 ";
+CATSysComPortFailure_150002.Request="Nelze deklarovat na portu /p1 na hostiteli /p2";
+CATSysComPortAcceptFailed_150003.Request="Nelze přijmout port /p1";
+CATSysComPortAcceptFailed_150004.Request="Při čekání na port /p1 došlo k chybě";
+CATSysComInitSocketError_150102.Request="Při operaci soketu došlo k chybě. Připojení k páteřní síti se pravděpodobně ztratilo.";
+CATSysComSendSocketError_150103.Request="Při odesílání soketu došlo k chybě. Připojení k páteřní síti se pravděpodobně ztratilo.";
+CATSysComRecvSocketError_150104.Request="Při operaci příjmu soketu došlo k chybě. Připojení k páteřní síti se pravděpodobně ztratilo.";
+CATSysComMsgClassError_151001.Request="Třída zpráv \p1 nenalezena.";
+CATSysComMsgStreamError_151002.Request="Chyba při přenosu dat datového proudu třídy \p1.";
+CATSysComMsgUnstreamError_151003.Request="Chyba při rušení datového proudu třídy \p1.";
+CATSysComMsgClassInvalid_152001.Request="Třída zpráv \p1 musí implementovat CATIStreamMsg.";
+CATSysComMsgClassInvalid_152002.Request="Třída zpráv \p1 musí implementovat CATICommMsg.";
+CATSysComMsgInvalid_152003.Request="Zpráva nevyžaduje odpověď.";
+CATSysComInstanciationError_152004.Request="Nelze vytvořit instanci objektu zprávy třídy \p1.";
+CATSysComReentranceError_152005.Request="Vnitřní chyba. Byla nalezena podmínka pro opětovný vstup.";
+CATSysComTimeoutOccurred_152006.Request="Došlo k překročení časového limitu.";
+CATSysComApplicationNotFound_152007.Request="Cílová aplikace \p1 není přítomna.";

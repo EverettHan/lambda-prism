@@ -1,0 +1,26 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <authorize access = "Private" name = "DSYAdmEnvMgt"/>
+  <authorize access = "Private" name = "DSYInsDoc"/>
+  <authorize access = "Private" name = "DSYInsLauncher"/>
+  <authorize access = "Private" name = "DSYInsListInstalls"/>
+  <authorize access = "Private" name = "DSYInsSetup"/>
+  <authorize access = "Private" name = "DSYInsSetupCLI"/>
+  <authorize access = "Private" name = "DSYInsSetupGUI"/>
+  <authorize access = "Private" name = "DSYInsSetupPipeServer"/>
+  <authorize access = "Private" name = "DSYInsStdInfra"/>
+  <authorize access = "Private" name = "InsVC10preq"/>
+  <authorize access = "Private" name = "InsVC11preq"/>
+  <authorize access = "Private" name = "InsVC12preq"/>
+  <authorize access = "Private" name = "DSYInsInfra.tst"/>
+  <attached name = "DSYInsInfra.tst"/>
+  <authorize access = "Private" name = "DSYInsSetup.tst"/>
+  <attached name = "DSYInsSetup.tst"/>
+  <authorize access = "Private" name = "DSYInsLauncher.tst"/>
+  <attached name = "DSYInsLauncher.tst"/>
+  <attached name = "DSYInsStdInfra.tst"/>
+  <attached name = "DSYInstaller.tst"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

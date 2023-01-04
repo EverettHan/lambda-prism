@@ -1,0 +1,104 @@
+
+//=================================================================
+// COPYRIGHT DASSAULT SYSTEMES 2005
+//=================================================================
+// VPM (c) Copyright Dassault Systemes 2005
+//=================================================================
+//
+// Usage Notes:               This is a PLM ERRORS Catalog
+//
+//
+// In this catalog can be declared ONLY PLM ERRORS.
+// Please refer to the PES PLM Error Managment for the definition of a PLM error.
+//
+// Any error of this catalog must be described with :
+//
+// - a Definition   :    \\ DEFINTION_WITTEN_WITH_CAPITAL_LETTERS
+// - the Mode of Treatment of this error : to be interpreted by ... / to be converted   (comment form)
+// - an Error Key & associated description :   MyErrKey.Diagnostic = "........";
+//                                             MyErrKey.Request    = "........";
+//                                             MyErrKey.Advice     = "........";
+// - Diagnostic,Advice,Request's nls parameters documentation :   
+//                                             /p :  content,  ...
+//
+//   Diagnostic : what exactly happens
+//   Advice     : what to do to solve the error or understand it better
+//   Request    : for "by action" error only, expresses what is requested on the PLM component to prevent this error. 
+//                This field can be empty.
+//
+//   This fields are to write in understandable terms for the end user (no debug messages!)
+//
+//   These fields may be empty : if the error is not understandable in end user terms 
+//   (no more possible explanation than "the action failed") these fields may be empty
+//   This means that the PLM error is only dedicated to interpretration use. 
+//
+//   The  nls parameters (/p1, ...) that may be included in the Diagnostic,Advice,Request fields 
+//   haved to be documented !
+//
+//=================================================================
+
+
+
+
+
+// **************   FURTHER SERVER ERRORS TO PLM ERRORS : MAPPING   **************
+//
+// FROM ENOVPLMIntegrationErrors.CATNls  :
+//
+// OperationError                               --->  PLM_NotFirstVersionNotModifiable
+//
+// *********************************************************************************
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+// Query, Expand, Open, Save ( modif or delete ),new version              + lock, unlock ?
+//////////////////////////////////////////////////////////////////////
+
+
+
+// INFORMING OF AT LEAST ONE ACTION FAILURE
+// To be interpreted by the client engine ( -> "hushing up" : no communication of this error to the listener)
+PLM_AtLeastOneActionFailure.Request    = "";
+PLM_AtLeastOneActionFailure.Diagnostic = "At least one action failed";
+PLM_AtLeastOneActionFailure.Advice     = "Please read action status";
+
+
+
+// SERVER CORRUPTION
+// To be converted by the client engine 
+// Note :
+//  - This error is not to use in an action status  : 
+//    only global status is allowed to inform (in a compact way) that a unsolvable system probem occurs
+//  In Diagnostic's /p : Precision on which system problem occurs: this is DEBUG information
+PLM_CorruptedServer.Diagnostic  = "The server session is corrupted" ;
+PLM_CorruptedServer.Advice      = "Restart your server process and contact the support (Debug information : \p)";
+PLM_CorruptedServer.Request     = "";
+
+
+// ADMINISTRATION PROBLEM
+// To be converted by the client engine 
+// This error is  ONE OF THE 2 ERRRORS THAT CAN BE USED FOR A "GLOBAL" OR A "BY ACTION" STATUS
+//  In Diagnostic's /p : Precision on which administration problem occurs: this is DEBUG information
+PLM_SystemPbDueToAdmin.Diagnostic="Problem relative to your administration.\n(Information for the administrator: /p)";
+PLM_SystemPbDueToAdmin.Advice    ="Please contact your administrator";
+PLM_SystemPbDueToAdmin.Request   = "";
+
+
+
+// Possible traitment des err systeme dans le futur, si on ne choisit pas de les remonter uniquement via .params
+// SYSTEM ERROR 
+// To be converted by the client engine 
+// This error is ONE OF THE 2 ERRRORS THAT CAN BE USED FOR A "GLOBAL" OR A "BY ACTION" STATUS
+//  In Diagnostic's /p : Precision on which system problem occurs: this is DEBUG information
+PLM_SystemPb.Diagnostic  = "System problem in the server.\n(Information to report to the support : /p)" ;
+PLM_SystemPb.Advice      = "Please contact the support.";
+PLM_SystemPb.Request     = "";
+
+
+

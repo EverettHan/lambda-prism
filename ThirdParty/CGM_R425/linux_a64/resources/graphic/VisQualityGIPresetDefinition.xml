@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="VisQualityPresetDefinition.xsl"?>
+
+<VisRenderQuality>
+  <GIActive RenderMode="GIStatic;GIDynamic"/>
+  <VisRenderQualityDef MajorVersion="0" MinorVersion="0">
+
+   <ParamGroup Name="GIAccumulativeSettingsGr">
+      <!--Param Type="ePowerInt" Name="SamplesPerPixel" Range="1-1048576" SoftRange="32-8192"/--> 
+      <Param Type="eInt" Name="TargetQuality" Range="10-70" SoftRange="20-50"/>
+	    <Param Type="ePowerInt" Name="SamplesPerFrame" Range="1-256" SoftRange="1-64"/>
+      
+     <Param Type="eBool" Name="EnableSampleLuminance"/>
+      <Param Type="eTwoDecimalFloat" Name="MaxSampleLuminance" Range="0.10-1000000.00" SoftRange="1.00-200.00"/>
+    
+     <!--ParamGroup Name="TempGr" Range="3"-->
+      <Param Type="eBool" Name="GaussFiltering"/>
+     <!--Param Type="eFloat" Name="GaussSize" Range="1.0-6.0" SoftRange="1.0-4.0"/--><!-- This is disabled untill gauss filter not active -->
+     <Param Type="eFloat" Name="GaussWeight" Range="0.0-1.0" SoftRange="0.0-0.5"/><!-- This is disabled untill gauss filter not active -->
+	  <!--/ParamGroup-->
+      <Param Type="eBool" Name="Denoiser"/>
+	    <Param Type="eInt" Name="StartIteration" Range="1-100" SoftRange="1-16"/>
+   </ParamGroup>
+    
+	<ParamGroup Name="GIGlobalIlluminationPreciseGr">
+      <Param Type="eInt" Name="MaxPathDepth" Range="1-1000" SoftRange="8-64"/>
+      <Param Type="eInt" Name="MinPathDepth" Range="1-1000" SoftRange="2-8"/>
+	    <Param Type="eTwoDecimalFloat" Name="GlossyThreshold" Range="0.01-1.00" SoftRange="0.50-1.00"/>
+      <Param Type="eBool" Name="RefractiveShadows"/>
+      <Param Type="eBool" Name="LightTracing"/>
+	  <Param Type="eBool" Name="WavefrontCausticPhotons"/>
+	  <Param Type="eThreeDecimalFloat" Name="WavefrontCausticPhotonsRadius" Range="0.001001-10000.000" SoftRange="0.1-10.0" />
+      <Param Type="eBool" Name="FastSubsurfaceScattering"/>
+	    <Param Type="eBool" Name="MultiLightOptimization"/>
+	    <Param Type="eLabel" Name="EmissiveObjectsSampling"/>
+	    <Param Type="eEnum" Name="SamplingDistribution" Range="Equal;ProportionalToPower"/>
+	    <Param Type="eTwoDecimalFloat" Name="SamplingFactor" Range="0.00-1000.00" SoftRange="0.05-20.00"/>
+      <Param Type="eThreeDecimalFloat" Name="RayOffset" Range="0.001-10000.000" SoftRange="0.010-1000.000"/>
+      <Param Type="eEnum" Name="PhotonMapVisualizationMode" Range="VisualizeNone;VisualizeFinalGathering;VisualizeCaustics"/>
+   </ParamGroup>
+	
+	<ParamGroup Name="GIFinalGatheringGr">
+      <Param Type="eBool" Name="EnableFinalGathering"/>
+	    <Param Type="eInt" Name="FinalNoOfPhotons" Range="1000-100000000" SoftRange="100000-10000000"/>
+      <!--Param Type="eInt" Name="PathDepth" Range="1-1000" SoftRange="1-32"/--> 
+	    <Param Type="eFloat" Name="PhotonRadius" Range="0.1-1000000.0" SoftRange="1.0-1000.0"/> 
+	    <Param Type="eBool" Name="FinalProgressiveRefinement"/>
+	    <Param Type="eBool" Name="PrecalculateIrradiance"/>
+   </ParamGroup>
+
+	 <ParamGroup Name="GICausticsGr">
+	    <Param Type="eEnum" Name="Caustics" Range="CausticsModeNone;Pathtracer;CausticPhotons"/>
+      <Param Type="eInt" Name="CausticNoOfPhotons" Range="1000-100000000" SoftRange="10000-1000000"/>
+      <!--Param Type="eInt" Name="CausticPathDepth" Range="1-1000" SoftRange="1-32"/--> 
+	    <Param Type="eTwoDecimalFloat" Name="CausticRadius" Range="0.01-100000.00" SoftRange="0.10-100.00"/> 
+	    <Param Type="eBool" Name="CausticProgressiveRefinement"/>
+   </ParamGroup>
+   	
+    <!--ParamGroup Name="GIRayOffsetGr">
+	    <Param Type="eThreeDecimalFloat" Name="RayOffset" Range="0.001-10000.000" SoftRange="0.010-1000.000"/> 
+   </ParamGroup/-->
+   	
+	  <ParamGroup Name="GIDownsamplingGr">
+      <Param Type="eFloat" Name="GIDownsamplingFactor" Range="0.4-1.0" SoftRange="0.4-1.0"/>
+    </ParamGroup>
+
+    <DisableParam RenderMode="GIDynamic" Name="FinalProgressiveRefinement"/>
+    <DisableParam RenderMode="GIDynamic" Name="PrecalculateIrradiance"/>
+    <DisableParam RenderMode="GIDynamic" Name="CausticProgressiveRefinement"/>
+    <!--HideParam RenderMode="GIBatch" Name="SamplesPerPixel"/-->
+    <DisableParam RenderMode="GIBatch" Name="SamplesPerPixel"/>
+    
+    <DisableParam RenderMode="GIBatch" Name="SamplesPerFrame"/>
+    <DisableParam RenderMode="GIBatch" Name="PhotonMapVisualizationMode"/>
+    <DisableParam RenderMode="GIBatch" Name="GIDownsamplingFactor"/><!-- This is one member only so the whole group will be invisible -->
+
+    <PresetDef Name="GIStandard" RenderMode="GIDynamic"
+                   SamplesPerPixel="512" TargetQuality="60" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="5"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="16" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="false" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="false" FinalNoOfPhotons="500000" PhotonRadius="200.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="Pathtracer" CausticNoOfPhotons="200000" CausticRadius="5.0" CausticProgressiveRefinement="false"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="false" WavefrontCausticPhotonsRadius="1"/>
+
+    <PresetDef Name="GIOptInt" RenderMode="GIDynamic"
+                   SamplesPerPixel="1024" TargetQuality="60" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="15"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="16" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="true" FastSubsurfaceScattering="true"  MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="true" FinalNoOfPhotons="500000" PhotonRadius="200.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="Pathtracer" CausticNoOfPhotons="200000" CausticRadius="5.0" CausticProgressiveRefinement="false"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="false" WavefrontCausticPhotonsRadius="1"/>
+
+    <PresetDef Name="GIOptCaust" RenderMode="GIDynamic"
+                   SamplesPerPixel="2048" TargetQuality="60" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="50"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="16" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="true" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="false" FinalNoOfPhotons="500000" PhotonRadius="200.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="CausticPhotons" CausticNoOfPhotons="200000" CausticRadius="5.0" CausticProgressiveRefinement="false"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="true" WavefrontCausticPhotonsRadius="1"/>
+
+    <PresetDef Name="GIStandard" RenderMode="GIStatic"
+                   SamplesPerPixel="512" TargetQuality="60" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="5"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="32" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="false" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="false" FinalNoOfPhotons="500000" PhotonRadius="200.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="Pathtracer" CausticNoOfPhotons="200000" CausticRadius="5.0" CausticProgressiveRefinement="true"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="false" WavefrontCausticPhotonsRadius="1"/>
+
+    <PresetDef Name="GIOptInt" RenderMode="GIStatic"
+                   SamplesPerPixel="1024" TargetQuality="60" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="15"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="32" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="true" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="true" FinalNoOfPhotons="500000" PhotonRadius="200.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="Pathtracer" CausticNoOfPhotons="200000" CausticRadius="5.0" CausticProgressiveRefinement="true"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="false" WavefrontCausticPhotonsRadius="1"/>
+
+    <PresetDef Name="GIOptCaust" RenderMode="GIStatic"
+                   SamplesPerPixel="2048" TargetQuality="60" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="50"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="32" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="true" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="false" FinalNoOfPhotons="500000" PhotonRadius="200.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="CausticPhotons" CausticNoOfPhotons="200000" CausticRadius="5.0" CausticProgressiveRefinement="true"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="true" WavefrontCausticPhotonsRadius="1"/>
+
+
+    <PresetDef Name="GIStandard" RenderMode="GIBatch"
+                   SamplesPerPixel="4096" TargetQuality="40" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="5"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="32" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="true" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="false" FinalNoOfPhotons="2000000" PhotonRadius="100.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="Pathtracer" CausticNoOfPhotons="200000" CausticPathDepth="32" CausticRadius="3.0" CausticProgressiveRefinement="true"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="false" WavefrontCausticPhotonsRadius="1"/>
+
+    <PresetDef Name="GIOptInt" RenderMode="GIBatch"
+                   SamplesPerPixel="4096" TargetQuality="40" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="15"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="32" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="true" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="true" FinalNoOfPhotons="2000000" PhotonRadius="100.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="Pathtracer" CausticNoOfPhotons="200000" CausticPathDepth="32" CausticRadius="3.0" CausticProgressiveRefinement="true"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="false" WavefrontCausticPhotonsRadius="1"/>
+
+    <PresetDef Name="GIOptCaust" RenderMode="GIBatch"
+                   SamplesPerPixel="8192" TargetQuality="45" SamplesPerFrame="1" EnableSampleLuminance="true"  MaxSampleLuminance="50"  GaussFiltering="false" GaussSize="3" GaussWeight="0.4" Denoiser="false"  StartIteration="8"
+                   MaxPathDepth="32" GlossyThreshold="0.8" RefractiveShadows="true" LightTracing="true" FastSubsurfaceScattering="true" MultiLightOptimization="false" SamplingDistribution="Equal" SamplingFactor="1.0" MinPathDepth="3" PhotonMapVisualizationMode="VisualizeNone"
+                   EnableFinalGathering="false" FinalNoOfPhotons="2000000" PhotonRadius="100.0" FinalProgressiveRefinement="false" PrecalculateIrradiance="false"
+                   Caustics="CausticPhotons" CausticNoOfPhotons="200000" CausticPathDepth="32" CausticRadius="3.0" CausticProgressiveRefinement="true"
+                   RayOffset="0.050"
+                   GIDownsamplingFactor="1.0" WavefrontCausticPhotons="true" WavefrontCausticPhotonsRadius="1"/>
+    
+
+    <PresetDef Name="Custom"  RenderMode="GIStatic"  BasePreset="GIStandard"/>
+    <PresetDef Name="Custom"  RenderMode="GIDynamic" BasePreset="GIStandard"/>
+    <PresetDef Name="Custom"  RenderMode="GIBatch"   BasePreset="GIStandard"/>
+    
+
+   <!--
+     "ParamDependancy" tag has been removed because it didn't work in all cases, and wasn't flexible enough.
+     
+     As an example of the new behavior, these lines will disable the SSRQuality parameter if
+     (GroundReflMode=None AND InterObjReflMode=None) OR (GroundReflMode=Mirror AND InterObjReflMode=None):
+     
+       <DisableParamIf Key="SSRQuality" Condition="GroundReflMode=None;InterObjReflMode=None" />
+       <DisableParamIf Key="SSRQuality" Condition="GroundReflMode=Mirror;InterObjReflMode=None" />
+      
+     See VisQualityPresetDefinition.xml for more examples.
+
+	   <ParamDependancy Key="GaussFiltering" Value="false" DisabledParameters="GaussSize;CenterWeight" />
+     <ParamDependancy Key="EnableFinalGathering" Value="false" DisabledParameters="FinalNoOfPhotons;PathDepth;PhotonRadius;FinalProgressiveRefinement;PrecalculateIrradiance" />
+     <ParamDependancy Key="Caustics" Value="0;1" DisabledParameters="CausticNoOfPhotons;CausticPathDepth;CausticRadius;CausticProgressiveRefinement" />
+     <ParamDependancy Key="Denoiser" Value="false" DisabledParameters="StartIteration" />
+   -->
+    
+    <DisableParamIf Key="GaussSize;GaussWeight" Condition="GaussFiltering=false" />
+    <DisableParamIf Key="WavefrontCausticPhotons;WavefrontCausticPhotonsRadius" Condition="LightTracing=false" />
+    <DisableParamIf Key="WavefrontCausticPhotonsRadius" Condition="WavefrontCausticPhotons=false" />
+    <DisableParamIf Key="FinalNoOfPhotons;PathDepth;PhotonRadius;FinalProgressiveRefinement;PrecalculateIrradiance" Condition="EnableFinalGathering=false" />
+    <DisableParamIf Key="CausticNoOfPhotons;CausticPathDepth;CausticRadius;CausticProgressiveRefinement" Condition="Caustics=CausticsModeNone" />
+    <DisableParamIf Key="CausticNoOfPhotons;CausticPathDepth;CausticRadius;CausticProgressiveRefinement" Condition="Caustics=Pathtracer" />
+    <DisableParamIf Key="StartIteration" Condition="Denoiser=false" />
+    <DisableParamIf Key="MaxSampleLuminance" Condition="EnableSampleLuminance=false" />
+		
+  </VisRenderQualityDef>
+
+</VisRenderQuality>
+

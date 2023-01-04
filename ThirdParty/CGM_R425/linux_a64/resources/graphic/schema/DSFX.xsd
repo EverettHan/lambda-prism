@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="urn:dsfx0"
+           xmlns:tgn="urn:dsfx0"
+           elementFormDefault="qualified"
+           version ="0.1"
+>
+
+  <!-- This Schema is aimed to designed an xml file which will deschribe a RenderEngine\ProtectedInterfaces\vEffect.h-->
+
+  <xs:simpleType name="FilterValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Nearest"/>
+      <xs:enumeration value="Linear"/>
+      <xs:enumeration value="Anisotropic"/>
+      <xs:enumeration value="None"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CmpModeValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CompareRefToTexture"/>
+      <xs:enumeration value="None"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="WrapModeValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Repeat"/>
+      <xs:enumeration value="ClampToEdge"/>
+      <xs:enumeration value="ClampToBorder"/>
+      <xs:enumeration value="Mirror"/>
+      <xs:enumeration value="MirrorOnce"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="DepthStencilTextureModeValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DepthComponent"/>
+      <xs:enumeration value="StencilComponent"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CmpFuncValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Never"/>
+      <xs:enumeration value="Equal"/>
+      <xs:enumeration value="NotEqual"/>
+      <xs:enumeration value="Less"/>
+      <xs:enumeration value="LessEqual"/>
+      <xs:enumeration value="Greater"/>
+      <xs:enumeration value="GreaterEqual"/>
+      <xs:enumeration value="Always"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ovCmpFuncValue">
+    <xs:simpleContent>
+      <xs:extension base="tgn:CmpFuncValue">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="LogicOpValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Clear"/>
+      <xs:enumeration value="Set"/>
+      <xs:enumeration value="Copy"/>
+      <xs:enumeration value="CopyInverted"/>
+      <xs:enumeration value="Noop"/>
+      <xs:enumeration value="Invert"/>
+      <xs:enumeration value="And"/>
+      <xs:enumeration value="NAnd"/>
+      <xs:enumeration value="Or"/>
+      <xs:enumeration value="NOr"/>
+      <xs:enumeration value="XOr"/>
+      <xs:enumeration value="Equiv"/>
+      <xs:enumeration value="AndReverse"/>
+      <xs:enumeration value="AndInverted"/>
+      <xs:enumeration value="OrReverse"/>
+      <xs:enumeration value="OrInverted"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="BlendValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Zero"/>
+      <xs:enumeration value="One"/>
+      <xs:enumeration value="SrcColor"/>
+      <xs:enumeration value="OneMinusSrcColor"/>
+      <xs:enumeration value="SrcAlpha"/>
+      <xs:enumeration value="OneMinusSrcAlpha"/>
+      <xs:enumeration value="DstColor"/>
+      <xs:enumeration value="OneMinusDstColor"/>
+      <xs:enumeration value="DstAlpha"/>
+      <xs:enumeration value="OneMinusDstAlpha"/>
+      <xs:enumeration value="ConstFactor"/>
+      <xs:enumeration value="OneMinusConstFactor"/>
+      <xs:enumeration value="Src1Color"/>
+      <xs:enumeration value="OneMinusSrc1Color"/>
+      <xs:enumeration value="Src1Alpha"/>
+      <xs:enumeration value="OneMinusSrc1Alpha"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CWM">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Red"/>
+      <xs:enumeration value="Green"/>
+      <xs:enumeration value="Blue"/>
+      <xs:enumeration value="Alpha"/>
+      <xs:enumeration value="All"/>
+      <xs:enumeration value="None"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BlendOpValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Add"/>
+      <xs:enumeration value="Subtract"/>
+      <xs:enumeration value="RevSubtract"/>
+      <xs:enumeration value="Min"/>
+      <xs:enumeration value="Max"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+  <xs:complexType name="ovPerTargetBlendStateGroup">
+    <xs:all>
+      <xs:element name="ID" type="xs:int"/>
+      <xs:element name="BLEND_ENABLE" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="LOGIC_OP_ENABLE" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="COLOR_W_MASK" type="tgn:CWM" minOccurs="0"/>
+      <xs:element name="COLOR_SRC_BLEND" type="tgn:BlendValue" minOccurs="0"/>
+      <xs:element name="COLOR_DST_BLEND" type="tgn:BlendValue" minOccurs="0"/>
+      <xs:element name="COLOR_BLEND_OP" type="tgn:BlendOpValue" minOccurs="0"/>
+      <xs:element name="ALPHA_SRC_BLEND" type="tgn:BlendValue" minOccurs="0"/>
+      <xs:element name="ALPHA_DST_BLEND" type="tgn:BlendValue" minOccurs="0"/>
+      <xs:element name="ALPHA_BLEND_OP" type="tgn:BlendOpValue" minOccurs="0"/>
+      <xs:element name="LOGIC_OP" type="tgn:LogicOpValue" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+  </xs:complexType>
+
+  <xs:complexType name="BlendStateGroup">
+    <xs:sequence>
+      <xs:element name ="NAME" type="xs:string"/>
+      <xs:element name="ALPHA_TO_COVERAGE" type="tgn:ovBoolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SEPARATE_BLEND" type="tgn:ovBoolean" minOccurs="0" maxOccurs="1"/>
+      <!--MAX RENDER TARGETS IS 8 This may change!!-->
+      <xs:element name="TARGET" minOccurs="1" maxOccurs="8" type="tgn:ovPerTargetBlendStateGroup"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="StencilOpValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Keep"/>
+      <xs:enumeration value="Zero"/>
+      <xs:enumeration value="Replace"/>
+      <xs:enumeration value="IncrementSat"/>
+      <xs:enumeration value="DecrementSat"/>
+      <xs:enumeration value="Invert"/>
+      <xs:enumeration value="Increment"/>
+      <xs:enumeration value="Decrement"/>
+      <xs:enumeration value="Count"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="uint8">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ovUint8">
+    <xs:simpleContent>
+      <xs:extension base="tgn:uint8">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="int32">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="-2147483648"/>
+      <xs:maxInclusive value="2147483647"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ovInt32">
+    <xs:simpleContent>
+      <xs:extension base="tgn:int32">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="UsageValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Static"/>
+      <xs:enumeration value="Dynamic"/>
+      <xs:enumeration value="Stream"/>
+      <xs:enumeration value="Copy"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Precision">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="lowp"/>
+      <xs:enumeration value="mediump"/>
+      <xs:enumeration value="highp"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="IntList">
+    <xs:list itemType="xs:integer"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="FloatList">
+    <xs:list itemType="xs:float"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="StringList">
+    <xs:list itemType="xs:string"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="NonEmptyStringList">
+    <xs:restriction base="tgn:StringList">
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="ovStencilBehaviour">
+    <xs:all>
+      <xs:element name="STENCIL_WRITE_MASK" type="tgn:uint8" minOccurs="0" />
+      <xs:element name="STENCIL_FAIL_OP" type="tgn:StencilOpValue" minOccurs="0"/>
+      <xs:element name="DEPTH_FAIL_OP" type="tgn:StencilOpValue" minOccurs="0"/>
+      <xs:element name="STENCIL_PASS_OP" type="tgn:StencilOpValue" minOccurs="0"/>
+      <xs:element name="STENCIL_FUNC" type="tgn:CmpFuncValue" minOccurs="0"/>
+    </xs:all>
+    <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+  </xs:complexType>
+
+
+
+  <xs:complexType name="SamplerState">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="MAG_FILTER" type="tgn:FilterValue" minOccurs="0"/>
+      <xs:element name="MIN_FILTER" type="tgn:FilterValue" minOccurs="0"/>
+      <xs:element name="MIP_FILTER" type="tgn:FilterValue" minOccurs="0"/>
+      <xs:element name="MAX_ANISOTROPY" type="xs:int" minOccurs="0"/>
+      <xs:element name="CMP_FUNC"  type="tgn:CmpFuncValue" minOccurs="0"/>
+      <xs:element name="CMP_MODE"  type="tgn:CmpModeValue" minOccurs="0"/>
+      <xs:element name="WRAP_U" type="tgn:WrapModeValue" minOccurs="0"/>
+      <xs:element name="WRAP_V" type="tgn:WrapModeValue" minOccurs="0"/>
+      <xs:element name="WRAP_W" type="tgn:WrapModeValue" minOccurs="0"/>
+      <xs:element name="BORDER_COLOR" type="tgn:FloatList" minOccurs="0"/>
+      <xs:element name="LOD_BIAS" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MIN_LOD" type="xs:decimal" minOccurs="0"/>
+      <xs:element name="MAX_LOD" type="xs:decimal" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="SamplerType">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="sampler1D"/>
+      <xs:enumeration value="sampler1DArray"/>
+      <xs:enumeration value="sampler2D"/>
+      <xs:enumeration value="usampler2D"/>
+      <xs:enumeration value="usampler2DArray"/>
+      <xs:enumeration value="usampler2DMS"/>
+      <xs:enumeration value="sampler2DArray"/>
+      <xs:enumeration value="isampler2D"/>
+      <xs:enumeration value="isampler2DArray"/>
+      <xs:enumeration value="sampler2DMS"/>
+      <xs:enumeration value="sampler2DMSArray"/>
+      <xs:enumeration value="sampler2DShadow"/>
+      <xs:enumeration value="sampler2DArrayShadow"/>
+      <xs:enumeration value="samplerCube"/>
+      <xs:enumeration value="samplerCubeArray"/>
+      <xs:enumeration value="sampler3D"/>
+      <xs:enumeration value="utexture1D"/>
+      <xs:enumeration value="texture2D"/>
+      <xs:enumeration value="utexture2D"/>
+      <xs:enumeration value="texture2DMS"/>
+      <xs:enumeration value="utexture2DMS"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Gamma correction -->
+  <xs:simpleType name="SecondaryType">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="color"/>
+      <xs:enumeration value="value"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name ="SamplerDeclaration">
+    <xs:sequence>
+      <xs:element name="SAMPLER_TYPE" type="tgn:SamplerType" minOccurs="1"/>
+      <xs:element name="SAMPLER_OPTION_GRAMMAR" type="tgn:StringList" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!--This type is defined for the sampler generation in public dsfx - should be extended to dsfx after -->
+  <xs:complexType name ="Sampler">
+    <xs:choice>
+      <xs:sequence>
+        <xs:element name="EXTERNAL_NAME" type="xs:string"/>
+        <xs:element name="SAMPLER_SECONDARY_TYPE" type="tgn:SecondaryType" minOccurs="0"/>
+      </xs:sequence>
+      <xs:sequence>
+        <xs:element name="NAME" type="xs:string"/>
+        <xs:element name="IS_VARIABLE_SIZE" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+        <xs:choice>
+          <xs:element name="SAMPLER_TYPE" type="tgn:SamplerType" minOccurs="1"/>
+          <xs:element name="SAMPLER_DECLARATION" type="tgn:SamplerDeclaration" minOccurs="1" maxOccurs="unbounded" />
+        </xs:choice>
+        <xs:element name="SAMPLER_SECONDARY_TYPE" type="tgn:SecondaryType" minOccurs="0"/>
+        <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      </xs:sequence>
+    </xs:choice>
+  </xs:complexType>
+
+
+  <xs:simpleType name ="FillModeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Wireframe"/>
+      <xs:enumeration value="Solid"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:complexType name="ovFillModeType">
+    <xs:simpleContent>
+      <xs:extension base="tgn:FillModeType">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+
+  <xs:simpleType name ="CullModeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Front"/>
+      <xs:enumeration value="Back"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:complexType name="ovCullModeType">
+    <xs:simpleContent>
+      <xs:extension base="tgn:CullModeType">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+	<xs:simpleType name ="VRSType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="e2x2"/>
+			<xs:enumeration value="e4x4"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="ovVRSType">
+		<xs:simpleContent>
+			<xs:extension base="tgn:VRSType">
+				<xs:attribute name="protected" type="tgn:uint8" default="0"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+  <xs:complexType name="ovString">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ovDecimal">
+    <xs:simpleContent>
+      <xs:extension base="xs:decimal">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="ovBoolean">
+    <xs:simpleContent>
+      <xs:extension base="xs:boolean">
+        <xs:attribute name="protected" type="tgn:uint8" default="0"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="RastStateGroup">
+    <xs:all>
+      <xs:element name ="NAME" type="tgn:ovString"/>
+      <xs:element name ="FILL_MODE" type="tgn:ovFillModeType" minOccurs="0"  />
+      <xs:element name ="CULL_MODE" type="tgn:ovCullModeType" minOccurs="0"/>
+      <xs:element name="IS_FRONT_CCW" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="DEPTH_BIAS" type ="tgn:ovInt32" minOccurs="0"/>
+      <xs:element name="DEPTH_BIAS_CLAMP" type ="tgn:ovDecimal" minOccurs="0"/>
+      <xs:element name="DEPTH_SLOPE_FACTOR" type ="tgn:ovDecimal" minOccurs="0"/>
+      <xs:element name="DEPTH_CLIP_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="SCISSOR_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="MULTI_SAMPLE_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+	  <xs:element name="VRS_SHADING_RATE" type="tgn:ovVRSType" minOccurs="0"  />
+	  <xs:element name="VRS_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="ANTI_ALIASED_POLYGON_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="ANTI_ALIASED_LINE_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="LINE_STIPPLE_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="REPRESENTATIVE_FRAGMENT_TEST_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+      <xs:element name="CONSERVATIVE_RASTERIZATION_ENABLE" type ="tgn:ovBoolean" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="DepthStencilStateGroup">
+    <xs:all>
+      <xs:element name ="NAME" type="xs:string"/>
+      <xs:element name="DEPTH_ENABLE"     type="tgn:ovBoolean"   minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DEPTH_WRITE"      type="tgn:ovBoolean"   minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DEPTH_FUNC"       type="tgn:ovCmpFuncValue" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="STENCIL_ENABLE"   type="tgn:ovBoolean" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="STENCIL_READ_MASK"  type="tgn:ovUint8" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="STENCIL_REF"  type="tgn:ovUint8" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="FRONT_FACE" type="tgn:ovStencilBehaviour" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BACK_FACE" type="tgn:ovStencilBehaviour" minOccurs="0" maxOccurs="1"/>
+    </xs:all>
+  </xs:complexType>
+
+    <!--SAMPLER ASSOCIATIVITY-->
+  <xs:complexType name="SamplerAssociativity">
+    <xs:all>
+      <xs:element name="SAMPLER" type="xs:string"/>
+      <xs:element name="STATES" type="xs:string"/>      
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name ="SamplerAssociativityList">
+    <xs:sequence>
+      <xs:element name ="SAMPLER_ASSIGNMENT" type="tgn:SamplerAssociativity" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--IMAGE-->
+  <xs:element name="IMAGE" type="xs:string"/>
+  <!--STREAMING-->
+
+  <xs:simpleType name="VaryingType">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="float"/>
+      <xs:enumeration value="float2"/>
+      <xs:enumeration value="float3"/>
+      <xs:enumeration value="float4"/>
+      <xs:enumeration value="int"/>
+      <xs:enumeration value="bool"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Qualifier">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="smooth"/>
+      <xs:enumeration value="flat"/>
+      <xs:enumeration value="noperspective"/>
+      <xs:enumeration value="invariant"/>
+      <xs:enumeration value="centroid"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Varying">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="TYPE" type="tgn:VaryingType"/>
+      <!--Currently, only 3 different qualifier types are supported: interpolation, invariant and auxiliary storage.-->
+      <xs:element name="QUALIFIER" minOccurs="0" maxOccurs="3" type="tgn:Qualifier"/>
+      <!--option is the shaderoption needed to be activated, right now only one-->
+      <xs:element name="OPTION" minOccurs="0" type="xs:string"/>
+      <!--Location will be taken in account only for fragments output-->
+      <xs:element name="LOCATION" minOccurs="0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="StreamEnum">
+    <xs:restriction base="xs:string">
+      <!--TODO add more streams possible-->
+      <xs:enumeration value="Application_Vertex"/>
+      <xs:enumeration value="Vertex_Fragment"/>
+      <xs:enumeration value="Geometry_Fragment"/>
+      <xs:enumeration value="Fragment_Render"/>
+      <xs:enumeration value="Vertex_TessControl"/>
+      <xs:enumeration value="Vertex_Geometry"/>
+      <xs:enumeration value="TessControl_TessEval"/>
+      <xs:enumeration value="TessEval_Fragment"/>
+      <xs:enumeration value="Render"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Stream">
+    <xs:sequence>
+      <xs:element name="STAGES" type="tgn:StreamEnum"/>
+      <xs:element name="VARYING" maxOccurs="unbounded" type="tgn:Varying"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name ="Streams">
+    <xs:sequence>
+      <xs:element name ="STREAM" type="tgn:Stream" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="AttributeEnum">
+    <xs:restriction base="xs:string">
+      <!--TODO add more streams possible-->
+      <xs:enumeration value="TextureCoordinates1"/>
+      <xs:enumeration value="TextureCoordinates2"/>
+      <xs:enumeration value="Tangent"/>
+      <xs:enumeration value="Binormal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name ="Attributes">
+    <xs:sequence>
+      <xs:element name ="ATTRIBUTE" type="tgn:AttributeEnum" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name = "ShaderOption">
+    <xs:sequence>
+      <xs:element name="NAME" type ="xs:string"/>
+      <xs:element name="OPTION_VALUE" type ="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name = "ShaderOptions">
+    <xs:sequence>
+      <xs:element name="SHADER_OPTION" type="tgn:ShaderOption" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--PASS-->
+  <xs:complexType name="Pass">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="DEPTH_STENCIL_STATE" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="RASTERIZER_STATE" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="BLEND_STATE" minOccurs="0" maxOccurs="1" type="xs:string"/>
+
+      <!--I must declare a sampler associativity list type because I use xs:all-->
+      <xs:element name="SAMPLER_ASSIGNMENT_LIST" minOccurs="0"  type="tgn:SamplerAssociativityList"/>
+      <xs:element name="LOGZ_ACTIVATION" minOccurs="0" type="xs:boolean"/>
+      
+      <xs:element name="ATTRIBUTES" minOccurs="0" type="tgn:Attributes"/>
+      <!--Streaming : super lourd mais le xs:all me force a faire une surcouche pour pouvoir une sequence d element-->
+      <xs:element name="STREAMS" minOccurs="0" type="tgn:Streams"/>
+      
+      <xs:element name="SHADER_OPTIONS" minOccurs="0" type ="tgn:ShaderOptions"/>
+
+      <!--Shader Stage-->
+      <xs:element name="COMMONS" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="VERTEX_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="FRAGMENT_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="GEOMETRY_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="TESS_CONTROL_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="TESS_EVALUATION_STAGE" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+
+  <!--COMPUTE PASS-->
+  <xs:complexType name="ComputePass">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="SAMPLER_ASSIGNMENT_LIST" minOccurs="0"  type="tgn:SamplerAssociativityList"/>
+      <xs:element name="SHADER_OPTIONS" minOccurs="0" type ="tgn:ShaderOptions"/>
+      <xs:element name="COMPUTE_STAGE" type="tgn:NonEmptyStringList" minOccurs="1"/>
+    </xs:all>
+  </xs:complexType>
+
+
+  <!--RT HIT_GROUP-->
+  <xs:complexType name="HitGroup">
+    <xs:all>
+      <xs:element name="ANY_HIT_STAGE"    type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="CLOSEST_HIT_STAGE"    type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="INTERSECTION_STAGE"    type="tgn:NonEmptyStringList" minOccurs="0"/>     
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:simpleType name="ImageType">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="image1D" />
+      <xs:enumeration value="image2D" />
+      <xs:enumeration value="image3D" />
+      <xs:enumeration value="imageCube" />
+      <xs:enumeration value="image2DRect" />
+      <xs:enumeration value="image1DArray" />
+      <xs:enumeration value="image2DArray" />
+      <xs:enumeration value="imageCubeArray" />
+      <xs:enumeration value="imageBuffer" />
+      <xs:enumeration value="image2DMS" />
+      <xs:enumeration value="image2DMSArray" />
+      <xs:enumeration value="uimage1D" />
+      <xs:enumeration value="uimage2D" />
+      <xs:enumeration value="uimage3D" />
+      <xs:enumeration value="uimageCube" />
+      <xs:enumeration value="uimage2DRect" />
+      <xs:enumeration value="uimage1DArray" />
+      <xs:enumeration value="uimage2DArray" />
+      <xs:enumeration value="uimageCubeArray" />
+      <xs:enumeration value="uimageBuffer" />
+      <xs:enumeration value="uimage2DMS" />
+      <xs:enumeration value="uimage2DMSArray" />
+      <xs:enumeration value="iimage1D" />
+      <xs:enumeration value="iimage2D" />
+      <xs:enumeration value="iimage3D" />
+      <xs:enumeration value="iimageCube" />
+      <xs:enumeration value="iimage2DRect" />
+      <xs:enumeration value="iimage1DArray" />
+      <xs:enumeration value="iimage2DArray" />
+      <xs:enumeration value="iimageCubeArray" />
+      <xs:enumeration value="iimageBuffer" />
+      <xs:enumeration value="iimage2DMS" />
+      <xs:enumeration value="iimage2DMSArray" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="ImageDeclaration">
+    <xs:sequence>
+      <xs:element name="TYPE" type="tgn:ImageType" minOccurs="1"/>
+      <xs:element name="FORMAT" type="tgn:FormatQualifier" minOccurs="0"/>
+      <xs:element name="QUALIFIERS" type="tgn:MemoryQualifierList"  minOccurs="0" />
+      <xs:element name="OPTION_GRAMMAR" type="tgn:StringList" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!--Vulkan DescriptorResources -->
+  <xs:complexType name="StorageImage">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string" minOccurs="1"/>
+      <xs:element name="DECLARATION" type="tgn:ImageDeclaration" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="MemoryQualifier">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="coherent"/>
+      <xs:enumeration value="volatile"/>
+      <xs:enumeration value="restrict"/>
+      <xs:enumeration value="readonly"/>
+      <xs:enumeration value="writeonly"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="FormatQualifier">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="rgba32f"/>
+      <xs:enumeration value="rgba16f"/>
+      <xs:enumeration value="rg32f"/>
+      <xs:enumeration value="rg16f"/>
+      <xs:enumeration value="r11f_g11f_b10f"/>
+      <xs:enumeration value="r32f"/>
+      <xs:enumeration value="r16f"/>
+      <xs:enumeration value="rgba16"/>
+      <xs:enumeration value="rgb10_a2"/>
+      <xs:enumeration value="rgba8"/>
+      <xs:enumeration value="rg16"/>
+      <xs:enumeration value="rg8"/>
+      <xs:enumeration value="r16"/>
+      <xs:enumeration value="r8"/>
+      <xs:enumeration value="rgba16_snorm"/>
+      <xs:enumeration value="rgba8_snorm"/>
+      <xs:enumeration value="rg16_snorm"/>
+      <xs:enumeration value="rg8_snorm"/>
+      <xs:enumeration value="r16_snorm"/>
+      <xs:enumeration value="r8_snorm"/>
+      <xs:enumeration value="rgba32i"/>
+      <xs:enumeration value="rgba16i"/>
+      <xs:enumeration value="rgba8i"/>
+      <xs:enumeration value="rg32i"/>
+      <xs:enumeration value="rg16i"/>
+      <xs:enumeration value="rg8i"/>
+      <xs:enumeration value="r32i"/>
+      <xs:enumeration value="r16i"/>
+      <xs:enumeration value="r8i"/>
+      <xs:enumeration value="rgba32ui"/>
+      <xs:enumeration value="rgba16ui"/>
+      <xs:enumeration value="rgb10_a2ui"/>
+      <xs:enumeration value="rgba8ui"/>
+      <xs:enumeration value="rg32ui"/>
+      <xs:enumeration value="rg16ui"/>
+      <xs:enumeration value="rg8ui"/>
+      <xs:enumeration value="r32ui"/>
+      <xs:enumeration value="r16ui"/>
+      <xs:enumeration value="r8ui"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="MemoryQualifierList">
+    <xs:sequence>
+      <xs:element name="QUALIFIER" type="tgn:MemoryQualifier" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="UnorderedBufferMember">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string" minOccurs="1" />
+      <xs:element name="TYPE" type="xs:string" minOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UnorderedBufferDeclaration">
+    <xs:sequence>
+      <xs:element name="MEMBER" type="tgn:UnorderedBufferMember" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="AlignmentRules">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="shared"/>
+      <xs:enumeration value="packed"/>
+      <xs:enumeration value="std140"/>
+      <xs:enumeration value="std430"/>
+      <xs:enumeration value="scalar"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="StructuredBuffer">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string" minOccurs="1"/>
+      <xs:element name="DECLARATION" type="tgn:UnorderedBufferDeclaration" minOccurs="0" />
+      <xs:element name="QUALIFIERS" type="tgn:MemoryQualifierList"  minOccurs="0" />
+      <xs:element name="INSTANCE_NAME" type="xs:string" minOccurs="0" />
+      <xs:element name="ALIGNMENT_RULES" type="tgn:AlignmentRules" minOccurs="0" />
+      <xs:element name="IS_BUFFER_REFERENCE" type="xs:boolean" minOccurs="0" />
+      <xs:element name="OPTION_GRAMMAR" type="tgn:StringList" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TextureBuffer">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string" minOccurs="1"/>
+      <xs:element name="OPTION_GRAMMAR" type="tgn:StringList" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!--Vulkan DescriptorSet-->
+
+  <!--RT PASS-->
+  <xs:complexType name="RayTracingPass">
+    <xs:all>
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="SAMPLER_ASSIGNMENT_LIST" minOccurs="0"  type="tgn:SamplerAssociativityList"/>
+      <xs:element name="SHADER_OPTIONS" minOccurs="0" type ="tgn:ShaderOptions"/>
+      <xs:element name="COMMONS" type="tgn:NonEmptyStringList" minOccurs="0"/>
+      <xs:element name="RAYGEN_STAGE" type="tgn:NonEmptyStringList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MISS_STAGE"   type="tgn:NonEmptyStringList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="HIT_GROUP"    type="tgn:HitGroup" minOccurs="0" maxOccurs="1"/>
+   </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="Technique">
+    <xs:choice>
+      <xs:sequence>
+        <xs:element name="NAME" type="xs:string"/>
+        <xs:choice>
+          <xs:element name="PASS" minOccurs="1" maxOccurs="unbounded" type="tgn:Pass"/>
+          <xs:element name="COMPUTE_PASS" minOccurs="1" maxOccurs="unbounded" type="tgn:ComputePass"/>
+          <xs:element name="RAYTRACING_PASS" minOccurs="1" maxOccurs="unbounded" type="tgn:RayTracingPass"/>
+        </xs:choice>
+      </xs:sequence>
+
+      <xs:sequence>
+        <xs:element name="DECLARE_NAME" type="xs:string"/>
+      </xs:sequence>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="_ConstantBuffer">
+    <xs:all>
+      <xs:element name ="NAME" type="xs:string"/>      
+      <xs:element name ="NEEDS_OPTION" type="tgn:StringList" minOccurs="0"/>
+      <xs:element name ="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="_AccelerationStructure">
+    <xs:sequence>
+      <xs:element name="NAME" type="xs:string" minOccurs="0"/>
+      <xs:element name="OPTION_GRAMMAR" type="tgn:StringList" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="STAGES" type="tgn:NonEmptyStringList" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:simpleType name="UniformType">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="float"/>
+      <xs:enumeration value="float2"/>
+      <xs:enumeration value="float3"/>
+      <xs:enumeration value="float4"/>
+      <xs:enumeration value="int"/>
+      <xs:enumeration value="mat4x4"/>
+      <xs:enumeration value="mat4x4d"/>
+      <xs:enumeration value="bool"/>
+      <xs:enumeration value="struct"/>
+      <xs:enumeration value="Unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Uniform">
+    <xs:sequence>
+      <!--Precision is only for int, float, mat in GLSL-->
+      <!--Type of default values can not be checked - responsbility of the user -->
+      <xs:element name="NAME" type="xs:string"/>
+      <xs:element name="TYPE" maxOccurs="1" minOccurs="1" type="tgn:UniformType"/>
+      <!--In case of the use of struct, we should give a reference to the struct used-->
+      <xs:element name="USER_TYPE" maxOccurs="1" minOccurs="0" type="xs:string"/>
+      <!--To handle array-->
+      <xs:element name="ARRAY_SIZE" minOccurs="0" maxOccurs="1" type="xs:int"/>
+      <xs:element name="DEFAULT_VALUE" minOccurs="0" maxOccurs="1" type="tgn:FloatList"/>
+      <xs:element name="SEMANTIC" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      <xs:element name="UI_MIN_VALUE" minOccurs="0" maxOccurs="1" type="xs:float"/>
+      <xs:element name="UI_MAX_VALUE" minOccurs="0" maxOccurs="1" type="xs:float"/>
+      <xs:element name="UI_STEP_VALUE" minOccurs="0" maxOccurs="1" type="xs:float"/>
+      <!--Gamma correction-->
+      <xs:element name="SECONDARY_TYPE" maxOccurs="1" minOccurs="0" type="tgn:SecondaryType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Effect">
+    <xs:sequence>      
+      <!--DEPTH STENCIL STATES-->
+      <xs:element name="DST_STATE_GROUP" minOccurs="0" maxOccurs="unbounded" type="tgn:DepthStencilStateGroup"/>
+      <!--BLEND STATES-->
+      <xs:element name="BLEND_STATE_GROUP" minOccurs="0" maxOccurs="unbounded" type="tgn:BlendStateGroup"/>
+      <!--RASTERIZER STATES-->
+      <xs:element name="RAST_STATE_GROUP" minOccurs="0" maxOccurs="unbounded" type="tgn:RastStateGroup"/>
+      <!--ACCELERATION STRUCTURES-->
+      <xs:element name="ACCELERATION_STRUCTURE" minOccurs="0" type ="tgn:_AccelerationStructure"/>
+      <!--CONSTANT BUFFERS-->
+      <xs:element name="CONSTANT_BUFFER" minOccurs="0" maxOccurs="unbounded" type="tgn:_ConstantBuffer"/>
+
+      <xs:element name="UNIFORM" minOccurs="0" maxOccurs="unbounded" type="tgn:Uniform"/>
+      
+      <!--BUFFER-->
+      <xs:element name="BUFFER" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+
+      <!--TEXTURE_BUFFER: Same as buffer but supports better declaration syntax -->
+      <xs:element name="TEXTURE_BUFFER" minOccurs="0" maxOccurs="unbounded" type="tgn:TextureBuffer"/>
+      <!--UNORDERED BUFFER-->
+      <xs:element name="UNORDERED_BUFFER" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+      <!--STRUCTURED BUFFER: Same as UNORDERED_BUFFER with better declaration syntax-->
+      <xs:element name="STRUCTURED_BUFFER" minOccurs="0" maxOccurs="unbounded" type="tgn:StructuredBuffer"/>
+      <!--TEXTURE-->
+      <xs:element name="SAMPLER" minOccurs="0" maxOccurs="unbounded" type="tgn:Sampler"/>
+      <!--IMAGE-->
+      <xs:element name="IMAGE" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+      <!--STORAGE IMAGE: Same as IMAGE but supports better declaration syntax-->
+      <xs:element name="STORAGE_IMAGE" minOccurs="0" maxOccurs="unbounded" type="tgn:StorageImage"/>
+      <!--SAMPLER STATES-->
+      <xs:element name="SAMPLER_STATE" minOccurs="0" maxOccurs="unbounded" type="tgn:SamplerState"/>
+      <!-- TECHNIQUES-->
+      <xs:element name="TECHNIQUE" minOccurs="1" maxOccurs="unbounded" type="tgn:Technique"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--ROOT ELEMENT-->
+  <xs:element name="EFFECT" type="tgn:Effect"/>
+
+</xs:schema>

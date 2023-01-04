@@ -1,0 +1,41 @@
+
+/// BEGIN - NRE Configuration
+
+AlphaMode.DefaultValue               = "ePhysicalMaterial";
+
+Normal.DefaultValue                  = "none";
+Height.DefaultValue                  = "none";
+Coating.DefaultValue                 = "none";
+Flakes.DefaultValue                  = "none";
+
+glossiness.DefaultValue              = "0.85";
+anisotropy.DefaultValue              = "0.0";
+anisotropyAngle.DefaultValue         = "0.0";
+bumpScale.DefaultValue               = "0.0";
+transparency.DefaultValue            = "0.0";
+opacity.DefaultValue                 = "1.0";
+edgeColorBias.DefaultValue           = "0.0";
+displacement.DefaultValue            = "0.0";
+flakesWeight.DefaultValue            = "0.0";
+flakesStrength.DefaultValue          = "0.0";
+flakesScale.DefaultValue             = "0.0";
+diffuse.DefaultValue                 = "0.0 0.0 0.0";
+fresnelCoefficient.DefaultValue      = "0.0 0.0 0.0";
+edgeColor.DefaultValue               = "0.0 0.0 0.0";
+flakesColor.DefaultValue             = "0.0 0.0 0.0";
+
+diffuse.ParameterValue               = "DiffuseColor";
+diffuse.ParameterM                   = "Diffuse";
+
+fresnelCoefficient.ParameterUniform    = "Fresnel";
+fresnelCoefficient.ParameterM        = "SpecularColor";
+fresnelCoefficient.ParameterM2       = "Specular";
+
+glossiness.ParameterSemantic         = "remap";
+glossiness.ParameterUniform            = "Roughness";
+glossiness.ParameterMin              = "20.0";
+glossiness.ParameterMax              = "0.0";
+
+transparency.ParameterUniform          = "Transparency";
+
+/// END - NRE Configuration

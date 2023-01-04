@@ -1,0 +1,21 @@
+{
+  "implementation": {
+    "library": "CSICommandBinder",
+    "version": 2
+  },
+  "desc": "Returns a list of all parameters files for given pools if specified",
+  "onBeginParameters": "none",
+  "onCommandParameters": {
+    "in": {
+      "pools": {
+        "type": "string[]",
+        "defaultValue": []
+      }
+    },
+    "answers": {
+      "parametersFiles": "CSIParametersFileDefinition[]",
+      "errors": "string"
+    }
+  },
+  "onEndParameters": "none"
+}

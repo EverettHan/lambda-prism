@@ -1,0 +1,70 @@
+<meta charset="UTF-8"/>
+
+// FACTORIZATION ERROR DECLARATION :
+// XXXXX_F_n  : _F indicated that this client error is a factorization error
+// XXXXX_F_n.Advice & XXXXX_F_n.Request : common to all the concerned component
+
+// Case 0 : XXXXX_F_0:  Factorization error without parameter  
+// XXXXX_F_0.Diagnostic = "\p components cannot ....."
+// where \p is not given at the error posting to the reporter :
+// \p is computed by the reporter just before sending the error to the listener
+// \p value : the number of Components concerned by the error.
+
+// Case 1 : XXXXX_F_1 : Factorization error with 1 parameter : 
+// This parameter is the list of paramters coresponding to each component 
+// This parameter has to be documented
+
+GenericMediatorErrorWithCompo.Diagnostic="Nie można otworzyć komponentu [/p1]";
+GenericMediatorErrorWithCompo.Advice="Nie można otworzyć komponentu /p1.\nUruchom ponownie proces.\nAktywuj statystykę dziennika błędów, aby pomóc administratorowi w rozwiązaniu problemu.\nSpróbuj uruchomić narzędzie Component Checker.";
+
+GenericMediatorError.Diagnostic="Podczas tworzenia sesji wystąpił nieoczekiwany błąd.";
+GenericMediatorError.Advice="Zaleca się ponowne uruchomienie procesu. Możesz spróbować uruchomić narzędzie Component Checker.";
+
+BulkSessionManagementIntegrityFailure.Diagnostic="Podczas tworzenia sesji wystąpił nieoczekiwany błąd. Nie można zapewnić integralności sesji.";
+BulkSessionManagementIntegrityFailure.Advice="Uruchom ponownie proces.\nKomponenty integralności mogą być niedostępne na serwerze. Sprawdź reguły P&O na serwerze i skontaktuj się z administratorem.";
+
+//Copy-pasted from PLM_NotRetrievedComponent@PLMServerActionErrors.CATNls
+ComponentUnavailabilityInDatabase.Diagnostic="Nie można uzyskać komponentu z bazy danych.";
+ComponentUnavailabilityInDatabase.Advice="Komponent może już nie istnieć lub jego zasady zabezpieczeń uniemożliwiają jego odczytanie.";
+
+AnotherMinorInSession.Diagnostic="/p: w sesji obecna jest inna wersja pomocnicza z tej samej rodziny głównej, co uniemożliwia otwarcie";
+AnotherMinorInSession.Advice="Rozładuj wersję pomocniczą, aby umożliwić otwarcie";
+
+AnotherMinorInInput.Diagnostic="/p: inna wersja pomocnicza z tej samej rodziny głównej jest obecna jako element wejściowy, co uniemożliwia otwarcie";
+AnotherMinorInInput.Advice="Skontaktuj się z lokalnym administratorem";
+
+ConcurrencyInSessionOfflineContent.Diagnostic="/p: ten element został zmodyfikowany w zawartości offline i w sesji.";
+ConcurrencyInSessionOfflineContent.Advice="Niektóre elementy o innym stanie są już załadowane w sesji.\nZamknij karty zawierające te elementy przed otwarciem zawartości offline.";
+
+NoElement.Diagnostic="Do silnika otwierania nie został przesyłany żaden element";
+NoElement.Advice="Sprawdź dostępność danych na serwerze";
+
+NoEltToOpen.Diagnostic="Wszystkie komponenty wymienione do otwarcia są już załadowane w sesji, ale dane mogą być nieaktualne. Operacja otwierania nie powoduje odświeżenia";
+NoEltToOpen.Advice="Aby załadować najnowszą aktualizację, najpierw zamknij bieżącą sesję tworzenia";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+AdapterCom.Diagnostic="Wystąpił problem podczas próby pobrania informacji na serwerze";
+AdapterCom="Połączenie z serwerem może być nieaktywne";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// (correspond a une err systeme, donc a un abend)
+Internal.Diagnostic="Wewnętrzny błąd silnika otwierania";
+Internal.Advice="Skontaktuj się z lokalnym administratorem";
+
+// a faire disparaitre ainsi que toutes ses emission apres migration sur session builder.
+// Remplacer par "ServerSystemPb" ?
+MessageStructure.Diagnostic="Dane pobrane na serwerze nie są spójne";
+MessageStructure.Advice="Dane opisujące komponent mogą być niekompletne";
+
+AlreadyOpened_F_0.Diagnostic="Komponenty wymienione do otwarcia, w liczbie /p, są już w sesji, ale dane mogą być nieaktualne. Operacja otwierania nie powoduje odświeżenia";
+AlreadyOpened_F_0.Advice="Aby załadować najnowszą aktualizację, najpierw zamknij bieżącą sesję tworzenia";
+
+UnstreamPb.Diagnostic="Nie można załadować co najmniej jednego strumienia";
+UnstreamPb.Advice="Sprawdź stan przechowalni";
+
+FactoryNotFound.Diagnostic="Nie można utworzyć komponentu typu /p w sesji z powodu braku fabryki.";
+FactoryNotFound.Advice="Skontaktuj się z administratorem: być może brakuje niektórych pakietów lub licencji dla typu /p.";
+
+ReentranceForbidden.Diagnostic="Nie można rozpocząć teraz nowej operacji '/p1', ponieważ uruchomiona jest inna operacja.";
+ReentranceForbidden.Advice="Skontaktuj się z pomocą techniczną.";

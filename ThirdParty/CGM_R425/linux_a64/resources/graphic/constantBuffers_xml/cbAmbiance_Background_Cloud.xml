@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_Cloud</NAME>
+  <USAGE>Dynamic</USAGE>
+  
+  <UNIFORM>
+    <NAME>u_DensityMax</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.001</UI_STEP_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_DensityScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.001</UI_STEP_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_Height</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.1</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0001</UI_MIN_VALUE>
+    <UI_MAX_VALUE>1.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.0001</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_UVTransfo</NAME>
+    <TYPE>mat4x4</TYPE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_SampleStep</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.001</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0001</UI_MIN_VALUE>
+    <UI_MAX_VALUE>0.01</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.0001</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_NumStep</NAME>
+    <TYPE>int</TYPE>
+    <DEFAULT_VALUE>8</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>20</UI_MAX_VALUE>
+    <UI_STEP_VALUE>1</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_DensityBias</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.01</UI_MIN_VALUE>
+    <UI_MAX_VALUE>10.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.01</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_DensitySharpness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>2.4</DEFAULT_VALUE>
+    <UI_MIN_VALUE>0.0</UI_MIN_VALUE>
+    <UI_MAX_VALUE>10.0</UI_MAX_VALUE>
+    <UI_STEP_VALUE>0.01</UI_STEP_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_SkyColor</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.356863 0.356863 0.356863 1.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_SunBoost</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_FadingFactor</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_CentralClipping_Begin</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.25</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_CentralClipping_End</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.5</DEFAULT_VALUE>
+  </UNIFORM>
+  
+
+</CONSTANT_BUFFER>
+

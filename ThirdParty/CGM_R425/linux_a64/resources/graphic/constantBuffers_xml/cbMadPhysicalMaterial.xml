@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>PMadMat</NAME>
+
+  <UNIFORM>
+    <NAME>m_diffuse</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>m_flakesColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.12 0.12 0.12</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>m_pearlFlakesColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.08 0.08 0.08</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>m_emissive</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>m_roughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>m_glossiness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_diffuse</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_flakesColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_pearlFlakesColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_emissive</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_roughness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_glossiness</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--________________________________________________-->
+
+  <UNIFORM>
+    <NAME>m_edgeColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>m_edgeColorBias</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_edgeColor</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_edgeColorBias</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--________________________________________________-->
+
+
+  <UNIFORM>
+    <NAME>m_displacement</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_displacement</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--________________________________________________-->
+  
+  <UNIFORM>
+    <NAME>m_fresnelCoefficient</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>m_coatingFresnelCoefficient</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>m_anisotropy</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_fresnelCoefficient</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_coatingFresnelCoefficient</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_anisotropy</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>      
+
+  <!--________________________________________________-->
+
+  <UNIFORM>
+    <NAME>m_anisotropyAngle</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+
+  <UNIFORM>
+    <NAME>a_anisotropyAngle</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--________________________________________________-->
+
+  <UNIFORM>
+    <NAME>m_bumpScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_bumpScale</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--________________________________________________-->
+
+  <UNIFORM>
+    <NAME>m_transparency</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_transparency</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <!--________________________________________________-->
+
+  <UNIFORM>
+    <NAME>m_opacity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_opacity</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <!--________________________________________________-->
+
+  <!--<UNIFORM>
+    <NAME>m_normalMap</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_normalMap</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+
+  <UNIFORM>
+    <NAME>m_heightMap</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_heightMap</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+
+  <UNIFORM>
+    <NAME>m_bumpMap</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>1.0 1.0 1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>a_bumpMap</NAME>
+    <TYPE>float3</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  -->
+</CONSTANT_BUFFER>
+

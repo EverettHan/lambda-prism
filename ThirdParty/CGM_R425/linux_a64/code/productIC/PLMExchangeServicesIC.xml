@@ -1,0 +1,80 @@
+<?xml version='1.0' ?>
+<codeFramework xmlns = "http://www.3ds.ic" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://www.3ds.ic ICModel.xsd">
+  <attached name = "PLMExchangeServices.tst"/>
+  <attached name = "CATPLMUI.tst"/>
+  <attached name = "PLMExchangeExperience.tst"/>
+  <attached name = "PLMImportExportBaseUI.tst"/>
+  <attached comment = "YWE-2019.06" name = "CATPLMReplicationEngine.tst"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" name = "CATPLMServices"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "CATPLMIdentificationAccess"/>
+  <prerequisite access = "Protected" name = "ObjectModelerCollection"/>
+  <prerequisite access = "Protected" export = "DoNotAddToClientPrereqs" name = "CATPLMIntegrationInterfaces"/>
+  <prerequisite access = "Protected" name = "CATVirtualVaultSystem"/>
+  <prerequisite access = "Protected" name = "ObjectModelerSystem"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "SpecialAPI"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "System"/>
+  <prerequisite access = "Protected" name = "SystemTS"/>
+  <prerequisite access = "Protected" name = "XMLParserItf"/>
+  <prerequisite access = "Protected" expose = "ExposePrereq" name = "KnowledgeInterfaces"/>
+  <prerequisite access = "Public" name = "PLMDictionaryNavServices"/>
+  <prerequisite access = "Protected" name = "CATFmuFileAccessInterfaces"/>
+  <prerequisite access = "Protected" comment = "YWE/SKN14-2021.04-FUN106266" name = "PLMBusinessLogicInterfaces"/>
+  <authorize access = "Public" name = "NONE"/>
+  <authorize access = "Protected" name = "PLMExchangeServices.tst"/>
+  <authorize access = "Protected" name = "PLMExchangeExperience"/>
+  <authorize access = "Protected" name = "PLMExchangeExperience.tst"/>
+  <authorize access = "Protected" name = "PLMExchangeSpaceServices"/>
+  <authorize access = "Protected" name = "CATPLMUI.tst"/>
+  <authorize access = "Protected" comment = "Added by JLM on October 25th 2013 for Exchange UI" name = "PLMExchangeCmdsResources"/>
+  <authorize access = "Protected" name = "PLMExportBaseUI"/>
+  <authorize access = "Protected" name = "PLMImportBaseUI"/>
+  <authorize access = "Protected" name = "PLMImportExportBaseUI"/>
+  <authorize access = "Protected" name = "ENOVBriefcaseExchange"/>
+  <authorize access = "Protected" name = "PLMSRMTools"/>
+  <authorize access = "Protected" name = "ENOVSendDataToUser"/>
+  <authorize access = "Protected" name = "PLMSRMServices"/>
+  <authorize access = "Protected" name = "PLMSiteMngtUI"/>
+  <authorize access = "Protected" name = "CATPLMImportExportUI"/>
+  <authorize access = "Protected" name = "PLMSupplyChainUI"/>
+  <authorize access = "Protected" name = "PLMImport_EV5_DXPAUT"/>
+  <authorize access = "Protected" name = "PLMSRMExposedServices"/>
+  <authorize access = "Protected" name = "PLMSRMServices.tst"/>
+  <authorize access = "Protected" comment = "Added by JLM on July 5th 2013" name = "PLMExportScope"/>
+  <authorize access = "Protected" name = "CATPLMServerDebug"/>
+  <authorize access = "Protected" name = "CATPLMReplicationEngine"/>
+  <authorize access = "Protected" name = "CATPLMReplicationEngine.tst"/>
+  <authorize access = "Protected" name = "CATPLMTransitionAuthoring"/>
+  <authorize access = "Protected" name = "CATPLMTransitionEngine"/>
+  <authorize access = "Protected" name = "CATPLMTransitionEngineBatch"/>
+  <authorize access = "Protected" name = "V5V6CoexistenceBatch"/>
+  <authorize access = "Protected" comment = "YWE/LBD2-2016.07" name = "DwCompatibilityUI"/>
+  <authorize access = "Protected" name = "DwCompatibility"/>
+  <authorize access = "Protected" name = "PLMCoexistenceServices"/>
+  <authorize access = "Protected" name = "CATDataCompatibilityInfra"/>
+  <authorize access = "Protected" name = "CATDataCompatibility"/>
+  <authorize access = "Protected" name = "PLMExport_EV5_DXPAUT_ADV"/>
+  <authorize access = "Protected" name = "PLMExport_EV5_DXPREV_ADV"/>
+  <authorize access = "Protected" name = "PLMExchange3DXMLServices.tst"/>
+  <authorize access = "Protected" name = "CAT3DXMLPlayerSetup"/>
+  <authorize access = "Protected" name = "VIALivePlayerSetup"/>
+  <authorize access = "Protected" name = "SWXInteropUI"/>
+  <authorize access = "Protected" name = "CATPLMREExportEngine"/>
+  <authorize access = "Protected" name = "Cleaner"/>
+  <authorize access = "Protected" name = "PLMCoexistenceUIServices"/>
+  <authorize access = "Protected" name = "PLMBatchDataAccessInterfaces"/>
+  <authorize access = "Protected" name = "CATImmWtpUI"/>
+  <authorize access = "Protected" name = "CATDataCompatibilityDebug"/>
+  <authorize access = "Protected" name = "V5V6CoexistenceAdmin"/>
+  <authorize access = "Protected" name = "DataExchangePLMBatch"/>
+  <authorize access = "Protected" comment = "YWE-2016.04" name = "DataExchangeUnifiedExperience"/>
+  <authorize access = "Protected" comment = "OGM-2017.04, for StepPDM report" name = "StepPDMDataExchangeBatch"/>
+  <authorize access = "Protected" comment = "YWE/CRM-2018.11: code rearchitecture" name = "StepPDMDataExchangeBatch"/>
+  <authorize access = "Protected" comment = "OGM/FPQ on 21-10-2020 for LandXML format" name = "DataExchangeCCTExperience"/>
+  <authorize access = "Protected" comment = "OGM/SRO2 on 28-10-2020 for 3XF options" name = "XCTXCAD3xfIOUI"/>
+  <authorize access = "Protected" comment = "C3O/RFE5 on 15-04-2021 for idf integration" name = "CATCBImportExport"/>
+  <authorize access = "Protected" comment = "YWE/SKN14-2021.04-FUN106266" name = "CATFbdImportUI"/>
+  <authorize access = "Protected" comment = "YWE/SKN14-2021.04-FUN106266" name = "CATFbdImportModeler"/>
+  <authorize access = "Protected" comment = "Added on 2021, Nov. 09th by IUV/OGM for FUN115695" name = "XPGBatchUtility"/>
+  <built value = "true"/>
+  <copyright companyName = "Dassault Systemes" label = "Copyright Dassault Systemes 1999-2022"/>
+</codeFramework>

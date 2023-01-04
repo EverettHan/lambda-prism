@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CONSTANT_BUFFER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns ="urn:dsfx0"
+        >
+  <NAME>cb_VoxelAO</NAME> 
+  
+  <UNIFORM>
+    <NAME>u_Color</NAME>
+    <TYPE>float4</TYPE>
+    <DEFAULT_VALUE>0.0 0.0 0.0 1.0</DEFAULT_VALUE>
+    <SECONDARY_TYPE>color</SECONDARY_TYPE>
+  </UNIFORM>
+ 
+  <UNIFORM>
+    <NAME>u_Power</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_Radius</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.2</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_OffsetMultiplier</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_AngleMultiplier</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+    
+  <UNIFORM>
+    <NAME>u_SlotAngle</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_DistanceMultiplier</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>2.0</DEFAULT_VALUE>
+  </UNIFORM>
+    <UNIFORM>
+      
+  <NAME>u_StartDistanceMultiplier</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.73</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_NormalFactor</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_AOMin</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>0.0</DEFAULT_VALUE>
+  </UNIFORM>
+  
+  <UNIFORM>
+    <NAME>u_AOMax</NAME>
+    <TYPE>float</TYPE>
+    <DEFAULT_VALUE>1.0</DEFAULT_VALUE>
+  </UNIFORM>
+
+  <UNIFORM>
+    <NAME>u_SamplingDir0</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_SamplingDir1</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_SamplingDir2</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_SamplingDir3</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_SamplingDir4</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+  <UNIFORM>
+    <NAME>u_SamplingDir5</NAME>
+    <TYPE>float3</TYPE>
+  </UNIFORM>
+
+</CONSTANT_BUFFER>

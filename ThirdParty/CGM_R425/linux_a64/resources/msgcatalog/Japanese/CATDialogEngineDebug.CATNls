@@ -1,0 +1,41 @@
+<meta charset="UTF-8"/>
+GRAPH.ErrorStart="================!!! エラー !!!===================";
+GRAPH.ErrorEnd="===============! エラーの終わり !==================";
+GRAPH.Address="アドレス";
+GRAPH.Id="ID";
+GRAPH.Number="番号";
+GRAPH.GraphEnd="コマンド グラフ終了"; // @validatedUsage AJT 13:10:10 graph
+GRAPH.Result="結果";
+
+GRAPH.NoState="コマンドには状態が含まれていません。
+コマンドに状態をリンクするには方法
+CATICmdStateCommand::AddState(CATICmdState *iState)
+を使用します";
+
+GRAPH.NoInitialState="コマンドには初期状態が含まれていません。
+コマンドの初期状態を定義するには方法
+CATICmdStateCommand::SetInitialState(CATICmdState *iState)
+を使用します";
+
+GRAPH.NoTransition="コマンドには変位が含まれていません。
+コマンドに変位をリンクするには方法
+CATICmdStateCommand::AddTransition(CATICmdTransition *iTrans)
+を使用します";
+
+GRAPH.NoSourceState="変位はソース状態にリンクされていません。
+状態を変位ソース状態として宣言するには方法
+CATICmdStateTransition::AddSourceState(CATICmdState *iState)
+を使用します";
+
+GRAPH.UnlinkedState="状態は変位にリンクされていないので、
+初期状態でないと到達できません。
+状態を変位にリンクするには方法
+CATICmdStateTransition::AddSourceState(CATICmdState *iState)
+または
+CATICmdStateTransition::AddTargerState(CATICmdState *iState)
+を使用します";
+
+GRAPH.UnknownState="状態がコマンドに知らされていません。
+状態をコマンドにリンクするには方法
+CATICmdStateCommand::AddState(CATICmdState *iState)
+を使用します";

@@ -86,19 +86,28 @@ Next attached the `AWSLambdaBasicExecutionRole` policy to the new role to allow 
 ```bash 
 aws iam attach-role-policy --role-name lambda-prism --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 ```
+result arn: 
+```bash
+arn:aws:iam::788766113629:role/lambda-prism
+```
 
 ## Deploy 
 We can now deploy the lambda function with the following CLI command.
 ```bash
-aws lambda create-function --function-name demo \
+aws lambda create-function --function-name lambda-prism \
   --role <specify role arn from previous step here> \
   --runtime provided --timeout 15 --memory-size 128 \
   --handler demo --zip-file fileb://demo.zip
 ```
+result function: 
+```bash
+77bASiCM0cQ+iz/yxBd/+zd61gkiDgNIDN9bgI7Lm/I=    16616192                arn:aws:lambda:us-east-1:788766113629:function:lambda-prism     lambda-prism    demo    2023-01-04T21:28:17.979+0000    128     c56aa753-02ab-4997-a326-f71ead0c33af    arn:aws:iam::788766113629:role/lambda-prism     provided        PendingThe function is being created.   Creating        15      $LATEST
+TRACINGCONFIG   PassThrough
+```
 
 ## Test
 ```bash
-aws lambda invoke --function-name demo --cli-binary-format raw-in-base64-out --payload '{"location_X": 0, "location_Y": 0, "location_Z": 0, "size_length": 100, "size_width": 100, "size_height": 40}' output.json
+aws lambda invoke --function-name lambda-prism --cli-binary-format raw-in-base64-out --payload '{"location_X": 0, "location_Y": 0, "location_Z": 0, "size_length": 100, "size_width": 100, "size_height": 40}' output.json
 ```
 
 ## References

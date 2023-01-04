@@ -4,7 +4,7 @@ The main aim of this project is to test AWS Lambda function with C++ runtime on 
 </p>
 If the main aim is achieved, want to integrate this with other AWS services. 1. read/write input/output parameters in DynamoDB; 2. write large solid model data as binary blob in S3, and save ARN as reference in an output parametes.
 
-# aws-lambda-cpp-local-build
+# lambda-prism local-build
 This repo build a C++ Lambda function on a local workstation and then deploys it with the CLI.   
 A YouTube walk through of this repo can also be found [here](https://youtu.be/LaDrQqrrmrI).
 
@@ -52,8 +52,8 @@ make install
 
 ## Build the Actual C++ Lambda Function
 ```bash
-git clone git@github.com:daniel-fudge/aws-lambda-cpp-local-build.git
-cd ~/aws-lambda-cpp-local-build
+git clone git@github.com:everetthan/lambda-prism.git
+cd ~/lambda-prism
 mkdir build
 cd build
 cmake3 .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/install
@@ -78,13 +78,13 @@ First create a JSON file that defines the required permissions as shown below.
 ```
 Then create the IAM role in the CLI as shown below.
 ```bash
-aws iam create-role --role-name lambda-demo --assume-role-policy-document file://trust-policy.json
+aws iam create-role --role-name lambda-prism --assume-role-policy-document file://trust-policy.json
 ```
-The output of the above command will include the ARN of the new role. You must copy this ARN. It will be required when you deploy the Lambda function. It will most like have the form `arn:aws:iam::<your AWS account number>:role/lambda-demo`.   
+The output of the above command will include the ARN of the new role. You must copy this ARN. It will be required when you deploy the Lambda function. It will most like have the form `arn:aws:iam::<your AWS account number>:role/lambda-prism`.   
 
 Next attached the `AWSLambdaBasicExecutionRole` policy to the new role to allow the Lambda function to write to CloudWatch Logs. This is performed with the following CloudWatch command.
 ```bash 
-aws iam attach-role-policy --role-name lambda-demo --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+aws iam attach-role-policy --role-name lambda-prism --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 ```
 
 ## Deploy 
@@ -98,7 +98,7 @@ aws lambda create-function --function-name demo \
 
 ## Test
 ```bash
-aws lambda invoke --function-name demo --cli-binary-format raw-in-base64-out --payload '{"location": "somewhere"}' output.json
+aws lambda invoke --function-name demo --cli-binary-format raw-in-base64-out --payload '{"location_X": 0, "location_Y": 0, "location_Z": 0, "size_length": 100, "size_width": 100, "size_height": 40}' output.json
 ```
 
 ## References

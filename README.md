@@ -4,6 +4,36 @@ The main aim of this project is to test AWS Lambda function with C++ runtime on 
 </p>
 If the main aim is achieved, want to integrate this with other AWS services. 1. read/write input/output parameters in DynamoDB; 2. write large solid model data as binary blob in S3, and save ARN as reference in an output parametes.
 
+# Amazon linux 2 VM on WSL
+As lambda functions are running on Amazon Linux 2 VMs, we need create the same VM on local Windows machine so that we can do some local testing.
+ ## Download Amazon Linux 2 WSL installer from https://github.com/yosukes-dev/AmazonWSL
+ ## Unzip the zip file to a temp folder
+ ## Install and setup Amazon Linux 2 WSL
+ ```bash
+wsl -l -v
+wsl -s Amazon2
+wsl --set-version Amazon2 2
+wsl
+yum update -y && yum update -y
+amazon-linux-extras install -y kernel-ng
+yum install -y sudo awscli openssh git zsh util-linux-user passwd tar gcc g++ make
+useradd -m zhn
+passwd zhnvisudo
+#add: zhn     ALL=(ALL)       NOPASSWD: ALL
+chsh zhn -s /bin/zsh
+su - zhn
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+vi .zshrc
+# add "tonotdo" as the theme for easier git usage
+/bin/zsh
+yum install cmake3
+yum install gcc-c++ libcurl-devel
+export CC=gcc
+export CXX=g++
+yum install zlib-devel zlib-static openssl-devel openssl-static
+
+```
+
 # lambda-prism local-build
 This repo build a C++ Lambda function on a local workstation and then deploys it with the CLI.   
 A YouTube walk through of this repo can also be found [here](https://youtu.be/LaDrQqrrmrI).
@@ -13,6 +43,20 @@ A YouTube walk through of this repo can also be found [here](https://youtu.be/La
 sudo yum install cmake3
 sudo yum install make
 sudo yum install zip
+sudo yum install build-essential gdb
+
+sudo alternatives --install /usr/local/bin/cmake cmake /usr/bin/cmake 10 \
+--slave /usr/local/bin/ctest ctest /usr/bin/ctest \
+--slave /usr/local/bin/cpack cpack /usr/bin/cpack \
+--slave /usr/local/bin/ccmake ccmake /usr/bin/ccmake \
+--family cmake
+
+sudo alternatives --install /usr/local/bin/cmake cmake /usr/bin/cmake3 20 \
+--slave /usr/local/bin/ctest ctest /usr/bin/ctest3 \
+--slave /usr/local/bin/cpack cpack /usr/bin/cpack3 \
+--slave /usr/local/bin/ccmake ccmake /usr/bin/ccmake3 \
+--family cmake
+
 ```
 
 ## Build the AWS C++ SDK
@@ -52,8 +96,16 @@ make install
 
 ## Build the Actual C++ Lambda Function
 ```bash
+cd ~
+ssh-keygen -t rsa -b 4096
+cat ~/.ssh/id_rsa.pub
+#add public access key to github repos
+git config --global user.email "huili_han@yahoo.com"
+git config --global user.name "everetthan"
+mkdir ~/git
+cd ~/git
 git clone git@github.com:everetthan/lambda-prism.git
-cd ~/lambda-prism
+cd ~/git/lambda-prism
 mkdir build
 cd build
 cmake3 .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/install

@@ -107,36 +107,10 @@ static void createPrism(double x, double y, double z, double length, double widt
 
 	int status = CATCGMTable(0, 314159);
     printf("CATCGMTable returns status = %d\n", status);
-    
-    CATLibStatus lib_status = CATPutEnv("CATCGMC1Modeler=1");
+#ifndef _DEBUG
+    CATLibStatus lib_status = CATPutEnv("CATDictionaryPath=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_a64/code/dictionary");
     assert(lib_status==CATLibSuccess);
-    lib_status = CATPutEnv("CATCX_CHECKUP=NULL");
-    assert(lib_status==CATLibSuccess);
-    lib_status = CATPutEnv("CATDevelopmentStage=TRUE");
-    assert(lib_status==CATLibSuccess);
-    lib_status = CATPutEnv("CGM_DIR=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425");
-    assert(lib_status==CATLibSuccess);
-    lib_status = CATPutEnv("CATEnvironment=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_a64");
-    assert(lib_status==CATLibSuccess);
-    lib_status = CATPutEnv("CATInstallPath=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_a64");
-    assert(lib_status==CATLibSuccess);
-    lib_status = CATPutEnv("CATDictionaryPath=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_a64/code/dictionary");
-    assert(lib_status==CATLibSuccess);
-	lib_status = CATPutEnv("LIBPATH=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_csa64/code/bin:$LIBPATH");
-    assert(lib_status==CATLibSuccess);
-	lib_status = CATPutEnv("LD_LIBRARY_PATH=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_csa64/code/bin:$LD_LIBRARY_PATH");
-    assert(lib_status==CATLibSuccess);
-	lib_status = CATPutEnv("LD_LIBRARYN32_PATH=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_csa64/code/bin:$LD_LIBRARYN32_PATH");
-    assert(lib_status==CATLibSuccess);
-	lib_status = CATPutEnv("SHLIB_PATH=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_csa64/code/bin:$SHLIB_PATH");
-    assert(lib_status==CATLibSuccess);
-	lib_status = CATPutEnv("DYLD_LIBRARY_PATH=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_csa64/code/bin:$DYLD_LIBRARY_PATH");
-    assert(lib_status==CATLibSuccess);
-	lib_status = CATPutEnv("CATICPath=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_csa64/code/productIC");
-    assert(lib_status==CATLibSuccess);
-	lib_status = CATPutEnv("CATCommandPath=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_csa64/code/command");
-    assert(lib_status==CATLibSuccess);
-
+#endif
 
     //basic container create
     CATIPGMBasicTopoOpeItfBldr* pBasicTopoOpeItfBldr = CATCGMGetBasicTopoOpeItfBldr();
@@ -192,9 +166,9 @@ static invocation_response my_handler(invocation_request const& request)
 
 int main()
 {
-	setenv("AWS_LAMBDA_RUNTIME_API","0",1);
+	//setenv("AWS_LAMBDA_RUNTIME_API","0",1);
 
-#ifdef _DEBUG
+#ifndef _DEBUG
 	createPrism(0,0,0,100,100,40);
 #else
     run_handler(my_handler);

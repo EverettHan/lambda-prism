@@ -156,6 +156,13 @@ result function:
 77bASiCM0cQ+iz/yxBd/+zd61gkiDgNIDN9bgI7Lm/I=    16616192                arn:aws:lambda:us-east-1:788766113629:function:lambda-prism     lambda-prism    demo    2023-01-04T21:28:17.979+0000    128     c56aa753-02ab-4997-a326-f71ead0c33af    arn:aws:iam::788766113629:role/lambda-prism     provided        PendingThe function is being created.   Creating        15      $LATEST
 TRACINGCONFIG   PassThrough
 ```
+After creating the lambda-prism function, the function code can be updated using the following awscli command:
+```bash
+aws lambda update-function-code \
+--function-name lambda-prism \
+--region us-east-1 \
+--zip-file fileb://demo.zip
+```
 
 ## Test
 ```bash

@@ -142,6 +142,14 @@ result arn:
 ```bash
 arn:aws:iam::788766113629:role/lambda-prism
 ```
+In case the lambda function needs to access VPC dependent AWS services, the role can be created with the following command.
+```bash 
+aws iam attach-role-policy --role-name lambda-prism2 --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+```
+result arn: 
+```bash
+arn:aws:iam::788766113629:role/lambda-prism2
+```
 
 ## Deploy 
 We can now deploy the lambda function with the following CLI command.

@@ -107,7 +107,7 @@ static void createPrism(double x, double y, double z, double length, double widt
 
 	int status = CATCGMTable(0, 314159);
     printf("CATCGMTable returns status = %d\n", status);
-#ifndef _DEBUG
+#ifdef _DEBUG
     CATLibStatus lib_status = CATPutEnv("CATDictionaryPath=/home/zhn/git/lambda-prism/ThirdParty/CGM_R425/linux_a64/code/dictionary");
     assert(lib_status==CATLibSuccess);
 #endif
@@ -168,7 +168,7 @@ int main()
 {
 	//setenv("AWS_LAMBDA_RUNTIME_API","0",1);
 
-#ifndef _DEBUG
+#ifdef _DEBUG
 	createPrism(0,0,0,100,100,40);
 #else
     run_handler(my_handler);

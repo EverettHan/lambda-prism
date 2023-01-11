@@ -130,51 +130,73 @@ First create a JSON file that defines the required permissions as shown below.
 ```
 Then create the IAM role in the CLI as shown below.
 ```bash
-aws iam create-role --role-name lambda-prism --assume-role-policy-document file://trust-policy.json
+aws iam create-role --role-name lambda-prism2 --assume-role-policy-document file://trust-policy.json
 ```
-The output of the above command will include the ARN of the new role. You must copy this ARN. It will be required when you deploy the Lambda function. It will most like have the form `arn:aws:iam::<your AWS account number>:role/lambda-prism`.   
-
-Next attached the `AWSLambdaBasicExecutionRole` policy to the new role to allow the Lambda function to write to CloudWatch Logs. This is performed with the following CloudWatch command.
-```bash 
-aws iam attach-role-policy --role-name lambda-prism --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-```
-result arn: 
-```bash
-arn:aws:iam::788766113629:role/lambda-prism
-```
-In case the lambda function needs to access VPC dependent AWS services, the role can be created with the following command.
-```bash 
-aws iam attach-role-policy --role-name lambda-prism2 --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
-```
+The output of the above command will include the ARN of the new role. You must copy this ARN. It will be required when you deploy the Lambda function. It will most like have the form `arn:aws:iam::<your AWS account number>:role/lambda-prism`. 
 result arn: 
 ```bash
 arn:aws:iam::788766113629:role/lambda-prism2
 ```
 
+Next attached the `AWSLambdaVPCAccessExecutionRole` or `AWSLambdaBasicExecutionRole` policy to the new role to allow the Lambda function. This is performed with the following awscli command.
+
+```bash 
+aws iam attach-role-policy --role-name lambda-prism2 --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+```
+
 ## Deploy 
 We can now deploy the lambda function with the following CLI command.
+
 ```bash
-aws lambda create-function --function-name lambda-prism \
-  --role <specify role arn from previous step here> \
+aws lambda create-function --function-name lambda-prism2 \
+  --role arn:aws:iam::788766113629:role/lambda-prism2 \
   --runtime provided --timeout 15 --memory-size 128 \
   --handler demo --zip-file fileb://demo.zip
 ```
-result function: 
-```bash
-77bASiCM0cQ+iz/yxBd/+zd61gkiDgNIDN9bgI7Lm/I=    16616192                arn:aws:lambda:us-east-1:788766113629:function:lambda-prism     lambda-prism    demo    2023-01-04T21:28:17.979+0000    128     c56aa753-02ab-4997-a326-f71ead0c33af    arn:aws:iam::788766113629:role/lambda-prism     provided        PendingThe function is being created.   Creating        15      $LATEST
-TRACINGCONFIG   PassThrough
-```
-After creating the lambda-prism function, the function code can be updated using the following awscli command:
+
+After creating the lambda-prism2 function, the function code can be updated using the following awscli command:
 ```bash
 aws lambda update-function-code \
---function-name lambda-prism \
+--function-name lambda-prism2 \
 --region us-east-1 \
 --zip-file fileb://demo.zip
 ```
+## Config lambda-prism2 with EFS and Environment Variables
+
+To run the 3D modeling code, an environment variable `CATDictionaryPath` must be set so that some shared object libraries can be dynamically loaded and called. After some try-and-error, it seems that we can save the dictionary data in the temp data storage assoicated with Lambda function with a fixed path, and Config the following environment variable in the lambda-prism2 console: `CATDictionaryPath=/mnt/dictionary`
+
+### AWS EFS 
+An AWS EFS is configed with the following keep options:
+1. To reduce cost, the EFS is only linked to a single zone us-east-1f;
+2. An EFS endpoint is created with a subfolder so that this efs can be used for other lambda functions (using different subfolders). The configuration options of the endpoint are:
+Name – dictionary files
+User ID – 1001
+Group ID – 1001
+Path – /dictionary
+Permissions – 755
+Owner user ID – 1001
+Group user ID – 1001
+
+### AWS EC2
+To upload the dictionary data from local disk to AWS EFS, we need to create an AWS EC2 instance with SSH and mount the EFS on it. It should be pointed out that:
+1. The subnet of networking must be set to us-east-1f too.
+2. the ssh command is `ssh -i "ec2 for dictionary upload.pem" ec2-user@ec2-34-239-175-224.compute-1.amazonaws.com
+3. The access mode of mounted folder is changed with
+```bash
+cd /mnt/efs
+sudo chmod 755 fs1
+```
+4. Use winSCP to copy dictionary files from local disk to EC2
+
+### Config the VPC in the lambda-prism2 console. 
+I used only us-east-1f subnet to reduce cost.
+
+### Config the file system in the lambda-prism2 console
+Select EFS to mount.
 
 ## Test
 ```bash
-aws lambda invoke --function-name lambda-prism --cli-binary-format raw-in-base64-out --payload '{"location_X": 0, "location_Y": 0, "location_Z": 0, "size_length": 100, "size_width": 100, "size_height": 40}' output.json
+aws lambda invoke --function-name lambda-prism2 --cli-binary-format raw-in-base64-out --payload '{"location_X": 0, "location_Y": 0, "location_Z": 0, "size_length": 100, "size_width": 100, "size_height": 40}' output.json
 ```
 
 ## References

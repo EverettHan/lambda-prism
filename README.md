@@ -150,7 +150,7 @@ We can now deploy the lambda function with the following CLI command.
 ```bash
 aws lambda create-function --function-name lambda-prism2 \
   --role arn:aws:iam::788766113629:role/lambda-prism2 \
-  --runtime provided --timeout 15 --memory-size 128 \
+  --runtime provided --timeout 15 --memory-size 1024 \
   --handler demo --zip-file fileb://demo.zip
 ```
 

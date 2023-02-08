@@ -196,7 +196,7 @@ Select EFS to mount.
 
 ## Test
 ```bash
-aws lambda invoke --function-name lambda-prism2 --cli-binary-format raw-in-base64-out --payload '{"location_X": 0, "location_Y": 0, "location_Z": 0, "size_length": 100, "size_width": 100, "size_height": 40}' output.json
+aws lambda invoke --function-name lambda-prism2 --cli-binary-format raw-in-base64-out --payload '{"primitive_type": "primitive_pyramid", "location_X": 0, "location_Y": 0, "location_Z": 0, "size_length": 100, "size_width": 100, "size_height": 40}' output.json
 ```
 
 ## References

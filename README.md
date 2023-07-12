@@ -19,13 +19,25 @@ amazon-linux-extras install -y kernel-ng
 yum install -y sudo awscli openssh git zsh util-linux-user passwd tar gcc g++ make
 useradd -m zhn
 passwd zhnvisudo
-#add: zhn     ALL=(ALL)       NOPASSWD: ALL
+```
+Add user "zhn" in the sudo list
+```bash
+#add "zhn     ALL=(ALL)       NOPASSWD: ALL"  in the sudoers file using vi command
+vi /etc/sudoers
+```
+```bash
+#set up zsh for easier git handling (optional)
 chsh zhn -s /bin/zsh
 su - zhn
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+# add "tonotdo" as the theme for easier git usage in the .zshrc file using vi command
 vi .zshrc
-# add "tonotdo" as the theme for easier git usage
+
+#run zsh now
 /bin/zsh
+
+#install cmake3 for project build
 yum install cmake3
 yum install gcc-c++ libcurl-devel
 export CC=gcc
@@ -45,6 +57,7 @@ sudo yum install make
 sudo yum install zip
 sudo yum install build-essential gdb
 
+#make cmake3 as the default cmake (instead of the old cmake)
 sudo alternatives --install /usr/local/bin/cmake cmake /usr/bin/cmake 10 \
 --slave /usr/local/bin/ctest ctest /usr/bin/ctest \
 --slave /usr/local/bin/cpack cpack /usr/bin/cpack \

@@ -20,13 +20,15 @@ yum install -y sudo awscli openssh git zsh util-linux-user passwd tar gcc g++ ma
 useradd -m zhn
 passwd zhnvisudo
 ```
+
 Add user "zhn" in the sudo list
 ```bash
 #add "zhn     ALL=(ALL)       NOPASSWD: ALL"  in the sudoers file using vi command
 vi /etc/sudoers
 ```
+
+Set up zsh for easier git handling (optional)
 ```bash
-#set up zsh for easier git handling (optional)
 chsh zhn -s /bin/zsh
 su - zhn
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -36,8 +38,10 @@ vi .zshrc
 
 #run zsh now
 /bin/zsh
+```
 
-#install cmake3 for project build
+Install cmake3 for project build
+```bash
 yum install cmake3
 yum install gcc-c++ libcurl-devel
 export CC=gcc

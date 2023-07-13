@@ -7,7 +7,7 @@ If the main aim is achieved, want to integrate this with other AWS services. 1. 
 # Amazon linux 2 VM on WSL
 As lambda functions are running on Amazon Linux 2 VMs, we need create the same VM on local Windows machine so that we can do some local testing.
  ## Download Amazon Linux 2 WSL installer from https://github.com/yosukes-dev/AmazonWSL
- ## Unzip the zip file to a temp folder
+ ## Unzip the zip file to a temp folder, and rename the exe file name from AL2022.exe to a name you want for your distribution under wsl, such as AmazonLinux2022.exe
  ## Install and setup Amazon Linux 2 WSL
  ```bash
 wsl -l -v

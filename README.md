@@ -17,6 +17,7 @@ wsl
 yum update -y && yum update -y
 amazon-linux-extras install -y kernel-ng
 yum install -y sudo awscli openssh git zsh util-linux-user passwd tar gcc g++ make
+#please choose your own user name and password. zhn is for me. :-)
 useradd -m zhn
 passwd zhnvisudo
 ```

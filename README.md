@@ -47,7 +47,7 @@ yum install cmake3
 yum install gcc-c++ libcurl-devel
 export CC=gcc
 export CXX=g++
-yum install zlib-devel zlib-static openssl-devel openssl-static
+yum install zlib-devel zlib-static openssl-devel
 
 ```
 
@@ -60,7 +60,7 @@ A YouTube walk through of this repo can also be found [here](https://youtu.be/La
 sudo yum install cmake3
 sudo yum install make
 sudo yum install zip
-sudo yum install build-essential gdb
+sudo yum install gdb
 
 #make cmake3 as the default cmake (instead of the old cmake)
 sudo alternatives --install /usr/local/bin/cmake cmake /usr/bin/cmake 10 \
@@ -83,11 +83,11 @@ We are also only installing the `core` package. Other packages may be required f
 ```bash
 mkdir ~/install
 cd ~
-git clone https://github.com/aws/aws-sdk-cpp.git
+git clone  --recurse-submodules https://github.com/aws/aws-sdk-cpp.git
 cd aws-sdk-cpp
 mkdir build
 cd build
-cmake3 .. -DBUILD_ONLY="core" \
+cmake .. -DBUILD_ONLY="core" \
   -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_SHARED_LIBS=OFF \
   -DENABLE_UNITY_BUILD=ON \
